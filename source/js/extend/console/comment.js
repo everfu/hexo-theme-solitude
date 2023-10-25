@@ -32,8 +32,7 @@ const changeContent = (content) => {
           'date': new Date(e.created).toISOString()
         }))
 
-        if(window.location.href === "https://blog.sondy.top/links/" || window.location.href === "https://blog.sondy.top/links"){
-        // if(window.location.href === "http://localhost:4000/links/" || window.location.href === "http://localhost:4000/links"){
+        if(window.location.pathname === "/links/" || window.location.pathname === "/links"){
             let submit = document.getElementsByClassName('tk-submit ')
             let text = document.getElementsByClassName("el-textarea__inner");
             text[0].value = `昵称（请勿包含博客等字样）：
