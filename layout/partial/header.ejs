@@ -1,0 +1,6 @@
+<header class="<%= is_post() ? 'post-bg' : 'not-top-img' %>" id="page-header">
+    <%- partial('partial/nav', {cache: true}) %>
+    <% if(is_post()){ %>
+        <%- partial('partial/compoment/post/postMeta') %>
+    <% } %>    
+</header>

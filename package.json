@@ -1,0 +1,23 @@
+{
+  "name": "hexo-theme-acrylic",
+  "version": "1.1.6",
+  "description": "A beautiful, powerful, and efficient Hexo theme developed by the hexo-theme-Acrylic team",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hexo-theme-Acrylic/hexo-theme-Acrylic.git"
+  },
+  "keywords": [
+    "hexo",
+    "theme",
+    "hexo-theme-Acrylic"
+  ],
+  "author": "Hexo-Theme-Acrylic<Acrylic@marcus233.top>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hexo-theme-Acrylic/hexo-theme-Acrylic/issues"
+  },
+  "homepage": "https://github.com/hexo-theme-Acrylic/hexo-theme-Acrylic#readme"
+}

@@ -1,0 +1,26 @@
+<div id='album' class="thumbnail_canvas">
+    <div class="author-content author-content-item album single nolazyload" style="background: url(<%= page.cover %>) no-repeat center;background-size: cover;">
+        <div class="card-content">
+            <div class="author-content-item-tips"><%= page.title %></div>
+            <span class="author-content-item-title"><%= page.desc %></span>
+            <div class="content-bottom">
+                <div class="tips"><%= page.tips || '' %></div>
+            </div>
+        </div>
+    </div>
+    <div class="card-album">
+        <% for(i in site.data.album){ %>
+            <% const item = site.data.album[i]; %>
+            <div class="card" onclick="pjax.loadUrl('<%= item.path_name %>')">
+                <img class="card_cover nolazyload" src="<%= item.cover %>">
+                <div class="card__content">
+                    <p class="card__category"><%= item.class_name %></p>
+                    <h3 class="card__heading"><%= item.description %></h3>
+                </div>
+            </div>
+        <% }%>
+            <div class="album-content-nocover"></div>
+            <div class="album-content-nocover"></div>
+            <div class="album-content-nocover"></div>
+    </div>
+</div>

@@ -1,0 +1,21 @@
+<div class="flink-list">
+    <% data.forEach(item =>{ %>
+        <div class="flink-list-item">
+            <a class="cf-friends-link" href="<%= url_for(item.link) %>" title="<%= item.name %>">
+                <% if(item.tag){ %>
+                    <% if(item.vip){ %>
+                        <span class="site-card-tag vip"><%= item.tag %></span>
+                    <% }else{ %>
+                        <span class="site-card-tag"><%= item.tag %></span>
+                    <% } %>
+                <% } %>
+                <img class="flink-avatar cf-friends-avatar" alt="<%= item.name %>" src="<%= item.avatar %>">
+                <div class="img-alt is-center"><%= item.name %></div>
+                <div class="flink-item-info">
+                    <span class="flink-item-name cf-friends-name"><%= item.name %></span>
+                    <span class="flink-item-desc" title="<%= item.descr %>"><%= item.descr %></span>
+                </div>
+            </a>
+        </div>
+    <% }) %>    
+</div>

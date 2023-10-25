@@ -1,0 +1,411 @@
+# 站点设置
+site:
+  name: # 左上角显示内容
+    class:   #i_class/text/img
+    custom:  #自定义内容
+  siteIcon:  # 网页icon
+  icon:  # 页脚的icon、加载动画默认的icon
+  icp:  # ICP
+
+
+# 导航栏
+nav:
+#导航栏左侧
+  left:
+    enable: false
+    menu:
+       博客:
+         主页:
+           icon: https://p.sondy.top/ico/favicon.png!cover
+           url: https://www.sondy.top/
+         博客:
+           icon: https://p.sondy.top/ico/blog_favicon.png!cover
+           url: /
+       项目:
+         DuoSco:
+           icon: https://p.sondy.top/blog/content/DuoSco.png!cover
+           url: https://github.com/DuoSco
+# 导航栏内容
+  menu:
+     # 文库:
+     #   url: false
+     #   child:
+     #     文章列表:
+     #       url: /archives/
+     #       icon: scoicon sco-archives
+     #     全部分类:
+     #       url: /categories/
+     #       icon: scoicon sco-categories
+     #     全部标签:
+     #       url: /tags/
+     #       icon: scoicon sco-tags
+     # 专栏:
+     #   url: false
+     #   child:
+     #     日常奋斗:
+     #       url: /categories/日常奋斗/
+     #       icon: scoicon sco-running
+     # 友链:
+     #   url: false
+     #   child:
+     #     友链鱼塘:
+     #       url: /circle/
+     #       icon: scoicon sco-wifi
+     #     友情链接:
+     #       url: /links/
+     #       icon: scoicon sco-links
+     #     宝藏博主:
+     #       url: javascript:travelling()
+     #       icon: scoicon sco-gift
+     # 我的:
+     #   url: false
+     #   child:
+     #     音乐:
+     #       icon: scoicon sco-disc
+     #       url: /music/
+     #     装备:
+     #       url: /equipment/
+     #       icon: scoicon sco-laptap
+     #     工具箱:
+     #       url: /tlink/
+     #       icon: scoicon sco-toolbox
+     # 关于:
+     #   url: false
+     #   child:
+     #     关于本站:
+     #       url: /about/
+     #       icon: scoicon sco-aboutus
+     #     用户协议:
+     #       url: /privacy/
+     #       icon: scoicon sco-shield-user
+     #     版权协议:
+     #       url: /copyright/
+     #       icon: scoicon sco-creative-commons
+
+
+# 导航栏右侧快捷菜单
+  right: # @todo 允许用户自定义
+    travellings: true   #开往
+    random: true        #
+    console: true       #控制台
+
+# 首页顶部样式
+hometop:
+  bbtime: true
+  banner:
+    enable: true
+    title: 宁静致远<br>热爱生活
+    url: WWW.SONDY.TOP
+    icon:
+       # HTML:
+       #   img: https://p.sondy.top/banner_icon/HTML.png!cover
+       #   color: '#e9572b'
+       # JS:
+       #   img: https://p.sondy.top/banner_icon/JS.png!cover
+       #   color: '#f7cb4f'
+       # Kotlin:
+       #   img: https://p.sondy.top/banner_icon/kotlin.png!cover
+       #   color: '#ffffff'
+       # Dart:
+       #   img: https://p.sondy.top/banner_icon/dart.png!cover
+       #   color: '#ffffff'
+       # Docker:
+       #   img: https://p.sondy.top/banner_icon/docker.png!cover
+       #   color: '#57b6e6'
+       # Compose:
+       #   img: https://p.sondy.top/banner_icon/compose.png!cover
+       #   color: '#ffffff'
+       # Flutter:
+       #   img: https://p.sondy.top/banner_icon/flutter.png!cover
+       #   color: '#ffffff'
+       # WebPack:
+       #   img: https://p.sondy.top/banner_icon/webpack.png!cover
+       #   color: '#2e3a41'
+       # Git:
+       #   img: https://p.sondy.top/banner_icon/git.png!cover
+       #   color: '#df5b40'
+       # VS:
+       #   img: https://p.sondy.top/banner_icon/vs-logo.png!cover
+       #   color: '#ffffff'
+
+  categoryGroup:
+    G1:
+      name: 实用教程
+      icon: scoicon sco-plan
+      url: /tags/教程/
+    G2:
+      name: 日常奋斗
+      icon: scoicon sco-coder
+      url: /categories/日常奋斗/
+    G3:
+      name: 生活记录
+      icon: scoicon sco-life
+      url: /
+
+  recommendList:
+    sup: 置顶
+    title: 缘木求鱼
+    url: /about/
+    img: https://p.sondy.top/blog/link/20230913194258.png!cover
+    color:
+
+# 个人卡片
+aside:
+  home:
+    noSticky: "about"
+    Sticky: "allInfo"
+  post:
+    noSticky: "about"
+    Sticky: "power,newestPost"
+  page:
+    noSticky: "about"
+    Sticky: "newestPost,allInfo"
+  # 爱发电
+  power:
+    link: https://afdian.net/a/wleelw0u0
+    post: true
+    page: false
+  # 侧边栏信息卡片
+  # card:
+  #   author:
+  #     img: https://p.sondy.top/ico/blog_favicon.png!cover
+  #     js: https://cdn3.codesign.qq.com/icons/XgRxnjPG4VZLmqr/latest/iconfont.js
+  #     state: "#sco-smile"
+  #   content: 分享自己对编程的<b>热爱</b>，对美好生活的<b>向往</b>，对知识海洋<b>探索历程</b>。
+  #   content2: 相信你可以在这里找到对你有用的知识和教程。<br />博主高考去了，暂停更新☕
+  #   information:
+  #      Github:
+  #        icon: scoicon sco-github
+  #        url: https://github.com/wleelw
+  #      Bilibili:
+  #        icon: scoicon sco-bilibili
+  #        url: https://space.bilibili.com/1329819902
+  #   button:
+  #     text: 了解更多
+  #     url: /about/
+  # 公众号二维码
+  flip:
+    face:
+    backface:
+  # 页面目录
+  toc: 
+    post: true
+    page: false
+
+
+  # 建站时间
+  siteinfo:
+    postcount: true # 文章数
+    wordcount: true # 总字数
+    pv: false # 访问量
+    uv: false # 访客数
+    updatetime: false # 最后更新日期
+    runtimeenable: true # 建站时间
+    runtime: '2023-04-20 00:00:00'
+
+# 页脚
+footer:
+  # 底部图标
+  information:
+    # left:
+    #    Github:
+    #      icon: scoicon sco-github
+    #      url: https://github.com/wleelw
+    #    Mail:
+    #      icon: scoicon sco-email
+    #      url: mailto:wleelw@sondy.top
+    # right:
+    #    Bilibili:
+    #      icon: scoicon sco-bilibili
+    #      url: https://space.bilibili.com/1329819902
+    #    抖音:
+    #      icon: scoicon sco-douyin
+    #      url: https://v.douyin.com/iJsLc8jt/
+  # 底部导航栏
+  group:
+     # 导航:
+     #   归档: /archives/
+     #   分类: /categories/
+     #   标签: /tags/
+     # 服务:
+     #   阿里云: https://aliyun.com/
+     #   51la统计: https://v6.51.la/
+     #   百度统计: https://tongji.baidu.com/
+     # 支持:
+     #   打赏记录: /about/
+     # 协议:
+     #   Cookies: /cookies/
+     #   用户协议: /privacy/
+     #   版权协议: /copyright/
+  # 底部随机友链
+  randomlink: true
+  # 主题
+  theme:
+    url: /update/
+  # rss
+  rss:
+    url: /rss/
+  # 版权
+  license:
+    url: /copyright/
+
+# 页面页默认设置
+page:
+  error: true #
+  tags: true # 标签
+  categories: true # 分类
+  default: # 默认值
+    cover: https://npm.elemecdn.com/wzheo-absolute@1.0.3/image/source/default_cover.png # 默认图片
+
+# 文章页默认设置
+post:
+  default:
+    cover: https://npm.elemecdn.com/wzheo-absolute@1.0.3/image/source/default_cover.png
+    locate: 衡阳
+    copyright: 原创
+  # 顶部文章简介
+  meta:
+    date: true
+    updated: true
+    locate: true
+    wordcount: true
+    readtime: true
+    pv: true
+    comment: true
+  # 打赏
+  award:
+    enable: false
+    wechat: https://p.sondy.top/blog/img/20230913203219.png!cover
+    alipay: https://p.sondy.top/blog/img/20230916173807.png!cover
+    url: /about
+  # 文章颜色获取
+  covercolor: #文章cover取色
+    enable: true
+    local: true
+
+# 关于界面
+about: true
+
+# 404 页面
+errorpage:
+  img: https://npm.elemecdn.com/wzheo-absolute@1.0.3/image/source/404.png
+  text: =awa= 页面走丢了
+  recommendList: true
+
+# 懒加载
+lazyload:
+  enable: true
+  placeholder: /img/loading.gif
+  errorimg: /img/error_load.png
+
+# 图片灯箱
+lightbox: true
+
+#代码高亮增强
+hightlight:
+  enable: true
+  hightlimit: 200
+
+# 加载动画
+loading:
+  fullpage: true
+  pace: true
+
+# 第三方设置
+thirdparty:
+  wordcount: true
+  busuanzi:
+    enable: true
+    usecomment: true #当评论系统开启时文章页面使用评论系统的统计数据
+  search:
+    algolia_search:
+      enable: true
+      # hits:
+      #   per_page: 6
+    local_search:
+      enable: false
+      preload: false
+      CDN:
+
+  aplayer:
+    enable: true
+    server: tencent
+    id: 8651639768
+    api: "https://api.injahow.cn/meting/?server=:server&type=:type&id=:id&auth=:auth&r=:r" #自定义api
+  #中控台拓展
+  consolePlus: true
+
+# 评论
+comment:
+  enable: true
+  twikoo:
+    envId: https://acrylic-next.sondy.top/twikoo
+    path: window.location.pathname
+    lang: 'zh-CN'
+
+ai:
+  enable: true
+
+# 朋友圈配置
+circle:
+  api: https://circle.sondy.top/  # api 地址
+  error_img: /img/theme/avatar.png # 头像加载失败显示错误图片
+  sort_rule: created # 排序规则
+  expire_days: 1 # 文章缓存天数
+  page_init_number: 12 # 默认加载文章数，默认10
+  page_turning_number: 12 # 加载更多文章数，默认10
+  tips: # banner 左右下方提示文字
+    left: ""
+    right: "使用 友链朋友圈 订阅友链最新文章"
+  angle: # 钓鱼
+    enable: true
+  appjs: '/js/circle.js' # 主题appjs
+  bundlejs: '/lib/bundle.js' # 主题bundejs
+
+# 文章统计
+echarts:
+  js: https://cdn.bootcdn.net/ajax/libs/echarts/5.4.2/echarts.min.js
+
+# 插入代码到头部 </head> 之前 和 底部 </body> 之前
+# 插入额外代码 如：统计，广告等
+extends: 
+  head: # 在head中插入
+    # - <meta name="baidu_union_verify" content="4d079e9db2247164254eaa5537350e53">
+  body: # 在body中插入
+    # - <script charset="UTF-8" id="LA_COLLECT" src="https://sdk.51.la/js-sdk-pro.min.js"></script>
+    # - <script>LA.init({id:"3F15j2vtdTo7PPcN",ck:"3F15j2vtdTo7PPcN"})</script>
+
+# 文章底部推荐文章
+related_post:
+  enable: true
+  limit: 2 # 推荐文章数量
+  date_type: created # 根据创建日期（created）或是更新日期（updated）
+
+
+# 站点验证
+verify:
+  # 百度
+  # baidu: codeva-VdFv8gULTn
+
+# 非必要勿动
+cdn:
+  head:
+    fontawesomecss: https://cdn3.codesign.qq.com/icons/7pOrz0WXB5ZWJPX/latest/iconfont.css
+    instantsearch: https://cdn.bootcdn.net/ajax/libs/instantsearch.js/4.9.1/instantsearch.production.min.js
+    twikoojs: https://cdn.bootcdn.net/ajax/libs/twikoo/1.6.16/twikoo.all.min.js
+    algolia: https://cdn.bootcdn.net/ajax/libs/algoliasearch/4.9.3/algoliasearch-lite.umd.min.js
+    pacejs: https://cdn.bootcdn.net/ajax/libs/pace/1.2.4/pace.min.js
+    snackbarcss: /lib/snackbar.min.css
+  body:
+    swiperjs: https://cdn.bootcdn.net/ajax/libs/Swiper/9.2.4/swiper-bundle.min.js
+    busuanzijs: https://cdn.bootcdn.net/ajax/libs/busuanzi/2.3.0/bsz.pure.mini.min.js
+    swipercss: https://cdn.bootcdn.net/ajax/libs/Swiper/9.2.4/swiper-bundle.min.css
+    pjaxjs: https://cdn.bootcdn.net/ajax/libs/pjax/0.2.8/pjax.min.js
+    viewimagejs: /lib/view-image.js
+    waterfalljs: /lib/waterfall.min.js
+    lazyloadjs: /lib/lazyload.js
+    snackbarjs: /lib/snackbar.js
+    aplayercss: https://cdn.bootcdn.net/ajax/libs/aplayer/1.9.1/APlayer.min.css
+    aplayerjs: https://cdn.bootcdn.net/ajax/libs/aplayer/1.9.1/APlayer.min.js
+    metingjs: https://cdn.bootcdn.net/ajax/libs/meting/2.0.1/Meting.min.js
+    scoicon: https://cdn3.codesign.qq.com/icons/7pOrz0WXB5ZWJPX/latest/iconfont.js

@@ -1,0 +1,52 @@
+<div class="post-reward">
+    <div class="reward-button button--animated" title="赞赏作者">
+        <script>
+            if (utils.isMobile()) {
+                const showReward = () => {
+                    const rewardMain = document.querySelector('.reward-main');
+                    rewardMain.style.display = 'flex';
+                    document.addEventListener('touchstart', hideReward);
+                };
+                const hideReward = () => {
+                    const rewardMain = document.querySelector('.reward-main');
+                    rewardMain.style.display = 'none';
+                    document.removeEventListener('touchstart', hideReward);
+                };
+                const rewardButton = document.querySelector('.reward-button');
+                rewardButton.addEventListener('touchstart', event => {
+                    event.stopPropagation();
+                    showReward();
+                });
+            }
+        </script>
+        <i class="heofont icon-hand-heart-fill"></i>
+        打赏作者
+    </div>
+    <div class="reward-main">
+        <ul class="reward-all">
+            <span class="reward-title">感谢你赐予我前进的力量</span>
+            <ul class="reward-group">
+                <% if(theme.post.award.wechat){ %>
+                    <li class="reward-item">
+                        <a href="<%= theme.post.award.wechat %>" target="_blank">
+                            <img class="post-qr-code-img" src="<%= theme.post.award.wechat %>" alt="微信">
+                        </a>
+                        <div class="post-qr-code-desc">微信</div>
+                    </li>
+                <% } %>
+                <% if(theme.post.award.alipay){ %>
+                    <li class="reward-item">
+                        <a href="<%= theme.post.award.alipay %>" target="_blank">
+                            <img class="post-qr-code-img" src="<%= theme.post.award.alipay %>" alt="支付宝">
+                        </a>
+                        <div class="post-qr-code-desc">支付宝</div>
+                    </li>
+                <% } %>
+            </ul>
+            <a class="reward-main-btn" href="<%= url_for(theme.post.award.url) %>">
+                <div class="reward-text">赞赏者名单</div>
+                <div class="reward-dec">因为你们的支持让我意识到写文章的价值🙏</div>
+            </a>
+        </ul>
+    </div>
+</div>

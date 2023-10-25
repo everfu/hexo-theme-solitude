@@ -1,0 +1,12 @@
+<h1 class="page-title"><%= __('page.tag') %></h1>
+<div class="category-lists">
+    <div class="tag-cloud-list is-center">
+        <% site.tags.data.forEach(data => { %>
+            <a href="<%= url_for(data.path) %>">
+                <span class="tags-punctuation"></span>
+                <%= data.name %>
+                <span class="tagsPageCount"><%= data.length %></span>
+            </a>
+        <% }) %>
+    </div>
+</div>

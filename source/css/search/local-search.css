@@ -1,0 +1,138 @@
+/* 搜索 */
+.search-dialog {
+    position: fixed;
+    top: 5rem;
+    left: 50%;
+    z-index: 1001;
+    display: none;
+    margin-left: -15rem;
+    padding: 1rem;
+    width: 30rem;
+    box-shadow: var(--sco-shadow-lightblack);
+    background: var(--sco-card-bg);
+    border: var(--style-border);
+    transition: 0.3s;
+    border-radius: 12px;
+}
+
+@media screen and (max-width: 768px) {
+    .search-dialog {
+        top: 0px;
+        left: 0px;
+        margin: 0px;
+        width: 100%;
+        height: 100%;
+    }
+
+    #search-results {
+        max-height: 80vh !important;
+    }
+}
+
+.search-dialog .search-close-button {
+    color: rgb(133, 133, 133);
+    font-size: 1.2em;
+    line-height: 1;
+    cursor: pointer;
+    transition: color 0.2s ease-in-out 0s;
+}
+
+.search-dialog .search-close-button:hover {
+    color: rgb(48, 122, 246);
+}
+
+#search-mask {
+    position: fixed;
+    inset: 0px;
+    z-index: 1000;
+    display: none;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+/* 搜索背景模糊 */
+#search-mask {
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    transform: translateZ(0);
+    background: var(--sco-maskbgdeep);
+}
+
+.search-wrap {
+    display: none;
+}
+
+#loading-database,
+#loading-status {
+    text-align: center;
+    padding-top: 10px;
+}
+
+.search-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 0.2rem 0.7rem 0.2rem;
+}
+
+.search-dialog-title {
+    font-weight: bold;
+    color: var(--sco-main);
+    font-size: 1.4em;
+    line-height: 1;
+}
+
+/* 搜索框间距 */
+.search-dialog .search-box {
+    padding-top: 8px;
+    max-width: 100%;
+}
+
+.search-dialog .search-box input {
+    height: 100%;
+    width: 100%;
+    padding: 0.25rem 0.7rem;
+    outline: 0px;
+    border: var(--style-border);
+    border-radius: 8px;
+    background: var(--sco-secondbg);
+    color: var(--search-input-color);
+}
+
+.search-dialog .search-box input:focus {
+    border: var(--style-border-hover);
+}
+
+#search-results {
+    max-height: calc(80vh - 130px);
+    overflow-y: auto;
+}
+
+#search-results .search__hit-item {
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+#search-results .search-result {
+    margin: 0;
+    font-weight: 500;
+}
+
+#search-results .search-keyword {
+    color: var(--sco-theme);
+    font-style: normal;
+}
+
+#search__hits-empty {
+    text-align: center;
+    font-weight: 600;
+}
+
+.search__hits-count {
+    color: var(--sco-gray);
+    font-size: .8rem;
+    font-weight: bold;
+}
+
+.search-box input::placeholder {
+    color: var(--sco-gray);
+}

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="<%= config.language %>" data-theme="light">
+    <head>
+        <%- partial('partial/head', {cache: true}) %>
+    </head>
+    <body id="body">
+        <% if(theme.loading.fullpage){ %>
+            <%- partial('partial/loading', {cache: true}) %>
+        <% } %>
+        <%- partial('partial/console', {cache: true}) %>
+        <%- partial('partial/sidebar', {cache: true}) %>
+        <%- partial('partial/compoment/dorakika/rightmenu', {cache: true}) %>
+        <% if(page.type !== '404'){ %>
+            <div class="<%= is_post() ? 'post' : 'page' %>" id="body-wrap">
+                <%- partial('partial/header') %>
+                <%- body %>
+                <footer id="footer">
+                    <%- partial('partial/footer', {cache: true}) %>
+                    <%- js('/js/commentBarrage') %>
+                </footer>
+            </div>
+        <% }else{ %>
+            <div class="error" id="body-wrap">
+                <%- body %>
+            </div>
+         <% } %>
+        <script>
+            (function (){
+                console.log= function(){}
+            })()
+        </script>
+        <%- partial('partial/body', {cache: true}) %>
+        <%- partial('partial/compoment/third-party/search/index', {cache: true}) %>
+        <%- partial('partial/compoment/third-party/music', {cache: true}) %>
+    </body>
+</html>

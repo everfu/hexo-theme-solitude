@@ -1,0 +1,39 @@
+<div class="card-widget card-info">
+    <div class="card-content">
+        <div class="card-info-avatar is-center">
+            <div class="author-info__top-group">
+                <div class="author-info__sayhi" id="author-info__sayhi" onclick="sco.changeSayHelloText()">
+                    一日之计在于晨
+                </div>
+            </div>
+        </div>
+        <div class="avatar-img-group">
+            <img class="avatar-img" alt="avatar" src="<%= theme.aside.card.author.img %>">
+            <div class="avatar-sticker">
+                <svg class="avatar-sticker-img"  alt="avatar" aria-hidden="true">
+                    <use xlink:href="<%= theme.aside.card.author.state %>"></use>
+                </svg>
+                <%- js(theme.aside.card.author.js) %>
+            </div>
+        </div>
+        <div class="author-info__description_group">
+            <div class="author-info__description"><%- theme.aside.card.content %></div>
+            <div class="author-info__description2"><%- theme.aside.card.content2 %></div>
+        </div>
+        <div class="author-info__bottom-group">
+            <a class="author-info__bottom-group-left" href="/about" data-pjax-state="">
+                <div class="author-info__name">
+                    <%= config.author %>
+                </div>
+                <div class="author-info__desc"><%- config.subtitle %></div>
+            </a>
+            <div class="card-info-social-icons is-center">
+                <% for(const i in theme.aside.card.information){ %>
+                    <a class="social-icon" href="<%= url_for(theme.aside.card.information[i].url) %>" title="<%= i %>">
+                        <i class="<%= theme.aside.card.information[i].icon %>"></i>
+                    </a>
+                <% } %>
+            </div>
+        </div>
+    </div>
+</div>

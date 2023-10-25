@@ -1,0 +1,10 @@
+<% if(theme.thirdparty.search.local_search.enable){ %>
+    <%- partial('partial/compoment/third-party/search/local-search') %>
+    <%- css('/css/search/local-search.css') %>
+    <%- js('/js/extend/search/local-search.js') %>
+<% } %>
+<% if(theme.thirdparty.search.algolia_search.enable){ %>
+    <%- partial('partial/compoment/third-party/search/algolia-search') %>
+        <%- css('/css/search/algolia-search') %>
+    <%- js('/js/extend/search/algolia-search.js') %>
+<% } %>     

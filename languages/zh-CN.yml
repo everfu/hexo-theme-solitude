@@ -1,0 +1,39 @@
+theme:
+  dark: 已切换至深色模式
+  light: 已切换至浅色模式
+
+copy:
+  success: 复制成功
+  error: 复制失败
+
+time:
+  recent: 最近
+  yesterday: 昨天
+  berforeyesterday: 前天
+  daybefore: 天前
+  runtime:  天
+
+sayhello:
+  morning: 早上好
+  noon: 中午好
+  afternoon: 下午好
+  night: 晚上好
+  goodnight: 晚安
+  iam: '!  我是'
+
+page:
+  tag: 标签
+  category: 分类
+  archives: 文章
+
+nav:
+  backtop: 返回顶部
+  travellings: 开往-友链接力
+  search: 搜索
+  randompost: 随机一篇文章
+  console: 中控台
+
+search:
+  empty: 搜索结果为空
+  hit: 已为您找到 ${query} 条结果
+  placeholder: 输入关键词快速查找

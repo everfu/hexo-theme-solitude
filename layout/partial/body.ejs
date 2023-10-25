@@ -1,0 +1,8 @@
+<div>
+    <script type="text/javascript" src='/js/main.js' rel="external nofollow"></script>
+    <%- partial('partial/compoment/inject/body', {cache: true}) %>
+    <%- partial('partial/compoment/third-party/pjax', {cache: true}) %>
+    <% if (theme.extends.body) for (const i of theme.extends.body){ %>
+        <%- i %>
+    <% } %>
+</div>

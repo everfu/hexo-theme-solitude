@@ -1,0 +1,48 @@
+<style type="text/css">
+    <!--.topGroup .todayCard::after {-->
+    <!--    box-shadow: 0 -109px 133px -9px <%- theme.hometop.recommendList.color %> inset;-->
+    <!--}-->
+
+    .todayCard-title,
+    .todayCard-tips,
+    .topGroup .banner-button {
+        color: #ffffff;
+    }
+
+    .topGroup .todayCard {
+        background: <%- theme.hometop.recommendList.color %>;
+    }
+</style>
+<% for (const post of site.posts.data.filter(item => item.recommend === true).slice(0,6)){ %>
+    <div class="recent-post-item">
+        <div class="post_cover left_radius">
+            <a href="<%= url_for(post.path) %>"
+                title="<%= post.title %>">
+                <span class="recent-post-top-text">荐</span>
+                <img class="post_bg"
+                    alt="<%= post.title %>" src="<%= post.cover %>" loading="lazy">
+            </a>
+        </div>
+        <div class="recent-post-info">
+            <a class="article-title" href="<%= url_for(post.path) %>"
+                title="<%= post.title %>"><%= post.title %>
+            </a>
+        </div>
+    </div> 
+<% } %>
+<div class="todayCard" id="todayCard" onclick="pjax.loadUrl('<%= theme.hometop.recommendList.url %>')"
+    style="z-index: 1;">
+    <div class="todayCard-info">
+        <div class="todayCard-tips"><%= theme.hometop.recommendList.sup %></div>
+        <div class="todayCard-title"><%= theme.hometop.recommendList.title %></div>
+    </div>
+    <div class="todayCard-cover nolazyload"
+        style="background: url('<%- theme.hometop.recommendList.img %>') no-repeat center /cover">
+    </div>
+    <div class="banner-button-group"><a class="banner-button"
+            onclick="window.event.cancelBubble=true;sco.hideTodayCard();">
+            <i class="scoicon sco-add"></i>
+            <span class="banner-button-text">更多推荐</span>
+        </a>
+    </div>
+</div>

@@ -1,0 +1,83 @@
+<div class="coverdiv" id="coverdiv">
+    <img id="post-cover" class="nolazyload" src="<%= page.cover %>" alt="cover">
+</div>
+<div id="post-info">
+    <div id="post-firstinfo">
+        <div class="meta-firstline">
+            <a class="post-meta-original" title="该文章为<%= page.cc %>文章，注意版权协议">
+                <%= page.cc %>
+            </a>
+            <% if (page.categories.data.length) { %>
+            <span class="post-meta-categories">
+                <% page.categories.data.forEach(item => { %>
+                    <a class="post-meta-categories" href="<%= url_for(item.path) %>"><%= item.name %></a>
+                <% }) %>
+            </span>
+            <% } %>
+            <div class="tag_share">
+                <div class="post-meta__tag-list">
+                    <% page.tags.data.forEach(tags => { %>
+                        <a class="post-meta__tags" href="<%= url_for(tags.path) %>">
+                            <span class="tags-punctuation"></span>
+                            <span class="tags-name"><%= tags.name %></span>
+                        </a>
+                    <% }) %>
+                </div>
+            </div>
+        </div>
+    </div>
+    <h1 class="post-title"><%= page.title %></h1>
+    <div id="post-meta">
+        <div class="meta-secondline">
+            <span class="post-meta-date" title="发布于">
+                <i class="post-meta-icon scoicon sco-calendar"></i>
+                <time datetime="<%= moment(page.date).format() %>"></time>
+            </span>
+            <% if(theme.post.meta.updated){ %>
+                <span class="post-meta-date" title="更新于">
+                    <i class="post-meta-icon scoicon sco-update"></i>
+                    <time datetime="<%= moment(page.updated).format() %>"></time>
+                </span>
+            <% } %>
+            <% if(theme.post.meta.locate){ %>
+                <span class="post-meta-position" title="作者IP归属地为<%= page.locate %>">
+                    <i class="post-meta-icon scoicon sco-location"></i>
+                    <span><%= page.locate %></span>
+                </span>
+            <% } %>
+            <% if(theme.thirdparty.wordcount){ %>
+                <% if(theme.post.meta.wordcount){ %>
+                    <span class="post-meta-wordcount">
+                        <i class="scoicon sco-word post-meta-icon" title="文章字数"></i>
+                        <span class="word-count"><%= wordcount(page.content) %></span>
+                    </span>
+                <% } %>
+                <% if(theme.post.meta.readtime){ %>
+                    <span class="post-meta-time">
+                        <i class="scoicon sco-clock-fill post-meta-icon" title="阅读耗时"></i>
+                        <span><%= min2read(page.content) %> min</span>
+                    </span>
+                <% } %>
+            <% } %>
+            <% if(theme.thirdparty.busuanzi.enable && theme.post.meta.pv){ %>
+                <span class="post-meta-pv" title="文章热度">
+                    <i class="scoicon sco-hot post-meta-icon"></i>
+                    <% if(theme.thirdparty.busuanzi.usecomment){ %>
+                        <span id="twikoo_visitors"><i class="scoicon sco-loading"></i></span>
+                    <% }else{ %>
+                        <span id="busuanzi_value_page_pv"><i class="scoicon sco-loading"></i></span>
+                    <% } %>        
+                </span>
+            <% } %>
+            <% if(theme.post.meta.comment && page.comment){ %>
+                <span class="post-meta-commentcount" title="评论数">
+                    <i class="scoicon sco-comment-text"></i>
+                    <a href="#post-comment">
+                        <span id="twikoo-count"><i class="scoicon sco-loading"></i></span>
+                    </a>
+                </span>
+            <% } %>    
+        </div>
+    </div>
+</div>
+<%- partial('partial/compoment/post/wave', {cache: true}) %>

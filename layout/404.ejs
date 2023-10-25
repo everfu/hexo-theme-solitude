@@ -1,0 +1,34 @@
+<div id="error-wrap">
+    <div class="error-content">
+        <div class="error-img" style="background-image: url('<%= theme.errorpage.img %>')"></div>
+        <div class="error-info">
+            <h1 class="error_title">404</h1>
+            <div class="error_subtitle">
+                <%= theme.errorpage.text %>
+            </div>
+            <a class="button--animated" href="/">
+                <i class="scoicon sco-external-link"></i>
+                回到主页
+            </a>
+        </div>
+    </div>
+</div>
+<% if(theme.errorpage.recommendList){ %>
+    <div class="aside-list">
+        <div class="aside-list-group">
+            <% for (const [index, post] of site.posts.sort('-date').data.entries()){ %>
+                <% if(index >= 5)break; %>
+                <div class="aside-list-item">
+                    <a class="thumbnail" href="<%= url_for(post.path) %>" title="<%= post.title %>">
+                        <img src="<%= post.cover %>" alt="<%= post.title %>">
+                    </a>
+                    <div class="content">
+                        <a class="title" href="<%= url_for(post.path) %>" title="<%= post.title %>">
+                            <%= post.title %>
+                        </a>
+                    </div>
+                </div>        
+            <% } %>
+        </div>
+    </div>
+<% } %>

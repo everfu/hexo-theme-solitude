@@ -1,0 +1,40 @@
+<main class="layout" id="content-inner">
+    <div id="post">
+        <article class="post-content" id="article-container">
+            <%- page.content %>
+        </article>
+        <%- partial('partial/compoment/post/copyright') %>
+
+        <div class="post-tools-right">
+            <div class="tag_share">
+                <div class="post-meta__tag-list">
+                    <% page.tags.data.forEach(data => { %>
+                        <a href="<%= url_for(data.path) %>" class="post-meta__tags">
+                            <span class="tags-punctuation"></span>
+                            <%= data.name %>
+                            <span class="tagsPageCount"><%= data.length %></span>
+                        </a>
+                    <% }) %>
+                </div>
+            </div>
+        </div>
+
+        <%- partial('partial/compoment/post/postNav') %>
+
+        <%- related_posts(page, site.posts) %>
+
+        <% if(page.comment){ %>
+            <%- partial('partial/compoment/third-party/comments/comment') %>
+        <% } %>
+    </div>
+
+    <%- partial('partial/compoment/aside/aside') %>
+
+    <% if (page.katex){ %>
+        <link href="https://cdn.bootcdn.net/ajax/libs/KaTeX/0.16.6/katex.min.css" rel="stylesheet">
+        <script src="https://cdn.bootcdn.net/ajax/libs/KaTeX/0.16.6/katex.min.js"></script>
+    <% } %>
+    <% if(theme.ai.enable){ %>
+        <script src="/js/post_ai.js"></script>
+    <% } %>
+</main>

@@ -1,0 +1,18 @@
+<% const cdn = theme.cdn.head %>
+<% if(theme.verify.baidu){%>
+    <meta name="baidu-site-verification" content="<%- theme.verify.baidu %>" />
+<%} %>
+<% if(theme.loading.pace){ %>
+    <script data-pace-options="{ &quot;restartOnRequestAfter&quot;:false,&quot;eventLag&quot;:false}" src="<%= cdn.pacejs %>"></script>
+<% } %>
+<%- css(cdn.fontawesomecss) %>    
+<%- css(cdn.snackbarcss) %>
+<%- css('/css/commentBarrage') %>
+<% if(theme.comment.enable){ %>
+    <%- js(cdn.twikoojs) %>
+<% } %>
+<% if(theme.thirdparty.search.algolia_search.enable){ %>
+    <%- js(cdn.instantsearch) %>
+    <%- js(cdn.algolia) %>
+<% } %>
+<script type="text/javascript" src="/js/utils.js"></script>

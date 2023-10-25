@@ -1,0 +1,41 @@
+<nav class="needEndHide pagination-post" id="pagination">
+    <% if(page.prev && page.next){ %>
+        <div class="prev-post pull-left">
+            <a href="<%= url_for(page.prev.path) %>">
+                <div class="pagination-info">
+                    <div class="label">上一篇</div>
+                    <div class="prev_info"><%= page.prev.title %></div>
+                </div>
+            </a>
+        </div>
+        <div class="next-post pull-right">
+            <a href="<%= url_for(page.next.path) %>">
+                <div class="pagination-info">
+                    <div class="label">下一篇</div>
+                    <div class="next_info"><%= page.next.title %></div>
+                </div>
+            </a>
+        </div>
+    <% }else{ %>
+        <% if(!page.prev && page.next){ %>
+            <div class="next-post pull-full">
+                <a href="<%= url_for(page.next.path) %>">
+                    <div class="pagination-info">
+                        <div class="label">下一篇</div>
+                        <div class="next_info"><%= page.next.title %></div>
+                    </div>
+                </a>
+            </div>
+        <% } %>        
+        <% if(!page.next && page.prev){ %>
+            <div class="prev-post pull-full">
+                <a href="<%= url_for(page.prev.path) %>">
+                    <div class="pagination-info">
+                        <div class="label">上一篇</div>
+                        <div class="prev_info"><%= page.prev.title %></div>
+                    </div>
+                </a>
+            </div>
+        <% } %>
+    <% } %>
+</nav>

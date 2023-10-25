@@ -1,0 +1,62 @@
+<div class="author-content">
+ <% const skills = site.data.about.skills; %>
+    <div class="author-content-item skills">
+        <div class="card-content">
+        <div class="author-content-item-tips"><%= skills.title %></div>
+        <span class="author-content-item-title"><%= skills.subtitle %></span>
+        <div class="skills-style-group">
+            <div class="tags-group-all">
+            <div class="tags-group-wrapper">
+                <div class="tags-group-all">
+                    <div class="tags-group-wrapper" >
+                        <% for (let i = 0; i < 2; i++) { %>
+                            <% skills.tags.reduce(function(acc, tag, index) { %>
+                                <% if (index % 2 === 0) { %>
+                                    <% if (index !== 0) { %>
+                                    </div>
+                                    <% } %>
+                                    <div class="tags-group-icon-pair">
+                                <% } %>
+                                <div class="tags-group-icon" style="background:<%= tag.color %>">
+                                    <img src="<%= tag.icon %>" title="<%= tag.title %>">
+                                </div>
+                                <% if (index === skills.tags.length - 1) { %>
+                                    </div>
+                                <% } %>
+                            <% }, '') %>
+                        <% } %>
+                    </div>      
+                </div>
+            </div>
+            </div>
+            <div class="skills-list">
+            <% skills.tags.forEach(function(tag){ %>
+            <div class="skill-info">
+                <div class="skill-icon" style="background:<%= tag.color %>">
+                <img src="<%= tag.icon %>" title="<%= tag.title %>">
+                </div>
+                <div class="skill-name"> <span><%= tag.title %></span></div>
+            </div>
+            <% }); %>
+            <div class="etc">...</div>
+            </div>
+        </div>
+        </div>
+    </div>
+    <% const careers = site.data.about.careers; %>
+    <div class="author-content-item careers">
+        <div class="card-content">
+        <div class="author-content-item-tips"><%= careers.title %></div>
+        <span class="author-content-item-title"><%= careers.subtitle %></span>
+        <div class="careers-group">
+            <% careers.items.forEach(function(item) { %>
+            <div class="careers-item">
+                <div class="circle" style="background: <%= item.color %>"></div>
+                <div class="name"><%= item.school %>, <%= item.major %></div>
+            </div>
+            <% }); %>
+        </div>
+        <img class="author-content-img" src="<%= careers.image %>" alt="<%= careers.title %>">
+        </div>
+    </div>
+</div> 

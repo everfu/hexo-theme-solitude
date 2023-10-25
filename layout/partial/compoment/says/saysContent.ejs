@@ -1,0 +1,11 @@
+<div id="bber-content">
+    <p class="datacont"><%- item.content %></p>
+    <% if(item.image){ %>
+        <div class="bber-content-img">
+            <% item.image.forEach(img => { %>
+                <img src="<%= img %>" title="即刻短文配图">
+            <% }); %>
+            </a>
+        </div>
+    <% } %>
+</div>

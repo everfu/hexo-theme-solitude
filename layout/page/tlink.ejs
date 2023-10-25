@@ -1,0 +1,11 @@
+<%- partial('partial/compoment/tlink/banner') %>
+<div class="flink" id="article-container">
+    <% site.data.tlink.links.forEach(data => { %>
+        <h2><%= data.class_name %></h2>
+        <div class="flink-desc"><%= data.descr %></div>
+        <%- partial('partial/compoment/links/linksItem', {data: data.link_list}) %>
+    <% }); %>
+</div>
+<div id="article-container">
+    <%- page.content %>
+</div>

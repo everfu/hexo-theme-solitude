@@ -1,0 +1,121 @@
+<div id="rightMenu">
+    <div class="rightMenu-group rightMenu-small">
+        <a class="rightMenu-item" href="javascript:window.history.back();">
+            <i class="scoicon sco-arrow-left"></i>
+        </a>
+        <a class="rightMenu-item" href="javascript:window.history.forward();">
+            <i class="scoicon sco-arrow-right"></i>
+        </a>
+        <a class="rightMenu-item" href="javascript:window.location.reload();">
+            <i class="scoicon sco-restart"></i>
+        </a>
+        <a class="rightMenu-item" href="javascript:sco.toTop();">
+            <i class="scoicon sco-arrow-up"></i>
+        </a>
+    </div>
+    <div class="rightMenu-group rightMenu-line hide" id="menu-text">
+        <a class="rightMenu-item" href="javascript:rmf.copySelect();">
+            <i class="scoicon sco-copy-fill"></i>
+            <span>复制选中文本</span>
+        </a>
+    </div>
+    <div class="rightMenu-group rightMenu-line">
+        <a class="rightMenu-item" href="javascript:toRandomPost();">
+            <i class="scoicon sco-signal-tower-fill"></i>
+            <span>随便逛逛</span>
+        </a>
+        <a class="rightMenu-item" href="/categories/">
+            <i class="scoicon sco-categories"></i>
+            <span>文章分类</span>
+        </a>
+        <a class="rightMenu-item" href="/tags/">
+            <i class="scoicon sco-tags"></i>
+            <span>文章标签</span>
+        </a>
+    </div>
+    <div class="rightMenu-group rightMenu-line">
+        <a class="rightMenu-item" href="/privacy/">
+            <i class="scoicon sco-shield-user"></i>
+            <span>用户协议</span>
+        </a>
+        <a class="rightMenu-item" href="/copyright/">
+            <i class="scoicon sco-creative-commons"></i>
+            <span>版权协议</span>
+        </a>
+    </div>
+    <div class="rightMenu-group rightMenu-line">
+        <a class="rightMenu-item" href="javascript:sco.switchDarkMode();">
+            <i class="scoicon sco-moon-clear-fill"></i>
+            <span>昼夜转换</span>
+        </a>
+        <a class="rightMenu-item" href="javascript:sco.copyPageUrl();">
+            <i class="scoicon sco-external-link"></i>
+            <span>复制地址</span>
+        </a>
+        <a class="rightMenu-item" href="javascript:sco.switchCommentBarrage()">
+            <i class="scoicon sco-comment"></i>
+            <span class="menu-commentBarrage-text">关闭热评</span>
+        </a>
+    </div>
+</div>
+<script>
+    let rmf = {};
+    rmf.showRightMenu = function (isTrue, x = 0, y = 0) {
+        let rightMenu = document.getElementById('rightMenu');
+        rightMenu.style.top = x + 'px';
+        rightMenu.style.left = y + 'px';
+
+        if (isTrue) {
+            rightMenu.style.display = 'block';
+        } else {
+            rightMenu.style.display = 'none';
+        }
+    }
+
+    //复制选中文字
+    rmf.copySelect = function () {
+        document.execCommand('Copy', false, null);
+        //这里可以写点东西提示一下 已复制
+    }
+
+    rmf.hideRightMenu = function() {
+        rmf.showRightMenu(false);
+        document.getElementById("rightmenu-item").style.display = "none";
+    };
+
+    rmf.rightmenuCopyText = function(e) {
+        navigator.clipboard && navigator.clipboard.writeText(e),
+            rmf.hideRightMenu()
+    }
+
+    // 右键菜单事件
+    if (!(navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i))) {
+        window.oncontextmenu = function (event) {
+            let rightMenuGroup = document.querySelectorAll('.rightMenu-group.hide');
+            rightMenuGroup.forEach(function (group) {
+                group.style.display = 'none';
+            });
+
+            //如果有文字选中，则显示 文字选中相关的菜单项
+            if (document.getSelection().toString()) {
+                document.getElementById('menu-text').style.display = 'block';
+            }
+
+            let pageX = event.clientX + 10;
+            let pageY = event.clientY;
+            let rmWidth = document.getElementById('rightMenu').offsetWidth;
+            let rmHeight = document.getElementById('rightMenu').offsetHeight;
+            if (pageX + rmWidth > window.innerWidth) {
+                pageX -= rmWidth + 10;
+            }
+            if (pageY + rmHeight > window.innerHeight) {
+                pageY -= pageY + rmHeight - window.innerHeight;
+            }
+
+            rmf.showRightMenu(true, pageY, pageX);
+            return false;
+        };
+
+        window.addEventListener('click', function () { rmf.showRightMenu(false); });
+    }
+</script>

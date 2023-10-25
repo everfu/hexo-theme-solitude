@@ -1,0 +1,49 @@
+<% let sum = 0; %>
+<div class="author-content">
+  <div class="author-content-item single reward">
+    <div class="author-content-item-tips">致谢</div>
+    <span class="author-content-item-title">赞赏名单</span>
+    <div class="author-content-item-description">感谢赞赏的人，因为你们，让我感受到写博客这件事情能够给你们创造了价值。这会让我在这条路上走得更远。</div>
+    <div class="reward-list-all">
+      <% site.data.about.rewardList.forEach(function(reward) {
+        sum += reward.money
+      %>
+        <div class="reward-list-item">
+          <div class="reward-list-item-name"><%= reward.name %></div>
+          <div class="reward-list-bottom-group">
+            <div class="reward-list-item-money" <% if (reward.vip) { %>style="background: var(--sco-vip);" <% } %> >¥ <%= reward.money %></div>
+            <time class="datatime reward-list-item-time" datetime="<%= moment(reward.time).format() %>"></time>
+          </div>
+        </div>
+      <% }); %>
+      <div class="post-reward">
+        <div class="post-reward" onclick="AddRewardMask()"></div>
+        <div class="reward-button" title="赞赏作者"><i class="heofont icon-hand-heart-fill"></i> 打赏作者</div>
+        <div class="reward-main">
+          <ul class="reward-all">
+            <span class="reward-title">感谢你赐予我前进的力量</span>
+            <ul class="reward-group">
+              <% var rewards = [
+                { image: theme?.post?.award?.wechat, description: '微信' },
+                { image: theme?.post?.award?.alipay, description: '支付宝' }
+              ]; %>
+              <% for (var i = 0; i < rewards.length; i++) { %>
+                <li class="reward-item">
+                  <a href="<%= rewards[i].image %>" target="_blank" >
+                    <img class="post-qr-code-img" alt="<%= rewards[i].description %>" src="<%= rewards[i].image %>">
+                  </a>
+                  <div class="post-qr-code-desc">
+                    <%= rewards[i].description %>
+                  </div>
+                </li>
+              <% } %>
+            </ul>                                
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="reward-list-tips">
+      <p>总金额：¥ <%- sum %>，将全部用于博客的维护</p>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,30 @@
+<div class="banners-title">
+    <div class="banners-title-big">
+        <%- theme.hometop.banner.title %>
+    </div>
+    <div class="banners-title-small">
+        <%= theme.hometop.banner.url %>
+    </div>
+</div>
+<div class="tags-group-all">
+    <div class="tags-group-wrapper">
+        <% for(let i = 1; i <= 2; i++){ %>
+            <% for(let j = 0; j < Object.keys(theme.hometop.banner.icon).length; j++){ %>
+                <% const key = Object.keys(theme.hometop.banner.icon)[j] %>
+                <% if(j % 2 == 0){ %>
+                    <div class="tags-group-icon-pair">
+                <% } %>    
+                    <div class="tags-group-icon" style="background: <%- theme.hometop.banner.icon[key].color %>">
+                        <img src="<%= theme.hometop.banner.icon[key].img %>" title="<%= key %>">
+                    </div>
+                <% if(j % 2 == 1 || j == Object.keys(theme.hometop.banner.icon).length - 1){ %>
+                    </div>
+                <% } %>
+            <% } %>   
+        <% } %>    
+    </div>
+</div>
+<a id="banner-hover" onclick="toRandomPost()" data-pjax-state="">
+    <span class="bannerText">随便逛逛</span>
+    <i class="scoicon sco-arrow-right banner-righticon"></i>
+</a>

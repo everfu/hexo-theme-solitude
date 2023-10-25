@@ -1,0 +1,31 @@
+<div class="card-widget card-recent-post">
+    <div class="item-headline">
+        <i class="scoicon sco-map"></i>
+        <span>最近发布</span>
+    </div>
+    <div class="aside-list">
+        <% let index = 1 %>
+        <% for (const post of site.posts.data.sort((a, b) => {
+            return b.date < a.date ? -1 : 1
+        })){ %>
+            <div class="aside-list-item">
+                <a class="thumbnail" href="<%= url_for(post.path) %>" title="<%= post.title %>">
+                    <img
+                        alt="<%= post.title %>"
+                        src="<%= post.cover %>">
+                </a>
+                <div class="content">
+                    <% post.categories.data.forEach(categories => { %>
+                        <a class="article-recent_post_categories" href="<%= url_for(post.path) %>">
+                            <%= categories.name %>
+                        </a>
+                    <% }) %>
+                    <a class="title" href="<%= url_for(post.path) %>" title="<%= post.title %>">
+                        <%= post.title %>
+                    </a>
+                </div>
+            </div>
+            <% index++;if(index > 5)break; %>    
+        <% } %>
+    </div>
+</div>

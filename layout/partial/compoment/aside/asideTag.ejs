@@ -1,0 +1,5 @@
+<div class="card-tag-cloud">
+    <% site.tags.data.slice(0, 50).forEach((data, index) => { %>
+        <a href="<%= url_for(data.path) %>" style="font-size: 0.8rem; color: #d3d3d3"><%= data.name %><sup><%= data.length %></sup></a>
+    <% }) %>
+</div>

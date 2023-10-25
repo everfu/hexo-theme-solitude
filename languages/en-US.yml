@@ -1,0 +1,39 @@
+theme:
+  dark: Switched to dark mode
+  light: Switched to light mode
+
+copy:
+  success: Copied successfully
+  error: Copied failed
+
+time:
+  recent: Recent
+  yesterday: Yesterday
+  berforeyesterday: TDBY
+  daybefore: Days ago
+  runtime:  days
+
+sayhello:
+  morning: Good morning
+  noon: Good noon
+  afternoon: Good afternoon
+  night: Good evening
+  goodnight: Good night
+  iam: '! I am'
+
+page:
+  tag: Tags
+  category: Categories
+  archives: Archives
+
+nav:
+  backtop: Back to top
+  travellings: Traveling - Friends Link
+  search: Search
+  randompost: Random post
+  console: Console
+
+search:
+  empty: No results found
+  hit: Found ${query} results for you
+  placeholder: Enter keywords to quickly search

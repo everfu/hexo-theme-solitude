@@ -1,0 +1,186 @@
+@charset "UTF-8";
+
+:root {
+    --sco-white: #fff;
+    --sco-white-op: rgba(255, 255, 255, 0.2);
+    --sco-black: #000;
+    --sco-black-op: rgba(0, 0, 0, 0.2);
+    --sco-none: #00000000;
+    --sco-gray: #999999;
+    --sco-gray-op: #9999992b;
+    --sco-vip: #e5a80d;
+    --sco-main: var(--sco-theme);
+    --sco-main-op: var(--sco-theme-op);
+    --sco-main-op-deep: var(--sco-theme-op-deep);
+    --sco-main-op-light: var(--sco-theme-op-light);
+    --sco-main-none: var(--sco-theme-none);
+    --sco-shadow-theme: 0 8px 12px -3px var(--sco-theme-op);
+    --sco-shadow-blackdeep: 0 2px 16px -3px rgba(0, 0, 0, .15);
+    --sco-shadow-main: 0 8px 12px -3px var(--sco-main-op);
+    --sco-shadow-blue: 0 8px 12px -3px rgba(40, 109, 234, .20);
+    --sco-shadow-white: 0 8px 12px -3px rgba(255, 255, 255, .20);
+    --sco-shadow-black: 0 0 12px 4px rgba(0, 0, 0, .05);
+    --sco-shadow-yellow: 0px 38px 77px -26px rgba(255, 201, 62, .12);
+    --sco-shadow-red: 0 8px 12px -3px #ee7d7936;
+    --sco-shadow-green: 0 8px 12px -3px #87ee7936;
+    --sco-logo-color: linear-gradient(215deg, #4584ff 0%, #cf0db9 100%);
+    --sco-snackbar-time: 5s;
+
+    --global-font-size: 14px;
+
+
+    --global-bg: #fff;
+    --hr-border: #97bcfb;
+    --hr-before-color: #6ea2f9;
+    --search-bg: #f6f8fa;
+    --search-input-color: #4c4948;
+    --search-result-title: #4c4948;
+    --preloader-bg: #37474f;
+    --preloader-color: #fff;
+    --tab-border-color: #f0f0f0;
+    --tab-botton-bg: #f0f0f0;
+    --tab-botton-color: #1f2d3d;
+    --tab-button-hover-bg: #dcdcdc;
+    --tab-button-active-bg: #fff;
+    --sidebar-bg: #f6f8fa;
+    --btn-hover-color: #ff7242;
+    --btn-color: #fff;
+    --btn-bg: #307af6;
+    --text-bg-hover: #307af6;
+    --light-grey: #eee;
+    --text-highlight-color: #1f2d3d;
+    --blockquote-color: #6a737d;
+    --blockquote-bg: rgba(73, 177, 245, 0.1);
+    --reward-pop: #f5f5f5;
+    --toc-link-color: #666261;
+    --card-box-shadow: 0 3px 8px 6px rgba(7, 17, 27, 0.06);
+    --card-hover-box-shadow: 0 3px 8px 6px rgba(7, 17, 27, 0.15);
+
+    --offset: 0px;
+
+    /* highlight */
+    --hl-color: #eff;
+    --hl-bg: #212121;
+    --hltools-bg: #1c1c1c;
+    --hltools-color: rgba(238, 255, 255, 0.8);
+    --hlnumber-bg: #212121;
+    --hlnumber-color: rgba(238, 255, 255, 0.5);
+    --hlscrollbar-bg: #121212;
+    --hlexpand-bg: linear-gradient(180deg, rgba(33, 33, 33, 0.6), rgba(33, 33, 33, 0.9));
+
+    /*  ai  */
+    --ai-post-bg:rgba(255,255,255,0.32);
+    --ai-border:1px solid #e3e8f7bd;
+    --ai-tag-bg:rgba(48, 52, 63, 0.86);
+    --ai-cursor:#333;
+
+    /* 相册变量定义 */
+    --album-background-dark: #2d3548;
+    --album-text-light: rgba(255, 255, 255, 0.6);
+    --album-text-lighter: rgba(255, 255, 255, 0.9);
+    --album-spacing-s: 8px;
+    --album-spacing-m: 16px;
+    --album-spacing-l: 24px;
+    --album-spacing-xl: 32px;
+    --album-spacing-xxl: 64px;
+}
+
+::selection {
+    background: var(--sco-fontcolor);
+    color: var(--sco-background)
+}
+
+[data-theme=light] {
+    --sco-theme: #bdbdf0;
+    --sco-theme-op: #4259ef23;
+    --sco-theme-op-deep: #eccec5;
+    --sco-theme-op-light: #4259ef0d;
+    --sco-theme-none: #4259ef01;
+    --sco-blue: #425AEF;
+    --sco-red: #f04a63;
+    --sco-pink: #FF7C7C;
+    --sco-green: #57bd6a;
+    --sco-yellow: #c28b00;
+    --sco-yellow-op: #d99c001a;
+    --sco-orange: #e38100;
+    --sco-purple: #7a60d2;
+    --sco-fontcolor: #363636;
+    --sco-background: #f7f9fe;
+    --sco-reverse: #000;
+    --sco-maskbg: rgba(255, 255, 255, 0.6);
+    --sco-maskbgdeep: rgba(255, 255, 255, 0.85);
+    --sco-hovertext: var(--sco-main);
+    --sco-ahoverbg: #F7F7FA;
+    --sco-lighttext: var(--sco-main);
+    --sco-secondtext: rgba(60, 60, 67, 0.8);
+    --sco-scrollbar: rgba(60, 60, 67, 0.4);
+    --sco-card-btn-bg: #edf0f7;
+    --sco-post-blockquote-bg: #fafcff;
+    --sco-post-tabs-bg: #f2f5f8;
+    --sco-secondbg: #f7f7f9;
+    --sco-shadow-nav: 0 5px 12px -5px rgba(102, 68, 68, 0.05);
+    --sco-card-bg: #fff;
+    --sco-card-bg-op: var(--sco-black-op);
+    --sco-card-bg-none: rgba(255, 255, 255, 0);
+    --sco-shadow-lightblack: 0 5px 12px -5px rgba(102, 68, 68, 0.00);
+    --sco-shadow-light2black: 0 5px 12px -5px rgba(102, 68, 68, 0.00);
+    --sco-card-border: #e3e8f7;
+    --sco-shadow-border: 0 8px 16px -4px #2c2d300c;
+    --style-border: 1px solid var(--sco-card-border);
+    --style-border-always: 1px solid var(--sco-card-border);
+    --style-border-hover: 1px solid var(--sco-main);
+    --style-border-hover-always: 1px solid var(--sco-main);
+    --style-border-dashed: 1px dashed var(--sco-theme-op);
+    --style-border-forever: 2px solid var(--sco-main);
+    --sco-navbg: var(--sco-theme-op);
+}
+
+[data-theme=dark] {
+    --sco-theme: #f2b94b;
+    --sco-theme-op: #f2b94b23;
+    --sco-theme-op-deep: #f2b94bdd;
+    --sco-theme-none: #f2b94b00;
+    --sco-blue: #0084FF;
+    --sco-red: #FF3842;
+    --sco-pink: #d44040;
+    --sco-green: #3e9f50;
+    --sco-purple: #7a60d2;
+    --sco-yellow: #ffc93e;
+    --sco-yellow-op: #ffc93e30;
+    --sco-orange: #ff953e;
+    --sco-fontcolor: #F7F7FA;
+    --sco-background: #18171d;
+    --sco-reverse: #fff;
+    --sco-maskbg: rgba(0, 0, 0, 0.6);
+    --sco-maskbgdeep: rgba(0, 0, 0, 0.85);
+    --sco-hovertext: #0A84FF;
+    --sco-ahoverbg: #fff;
+    --sco-lighttext: var(--sco-theme);
+    --sco-secondtext: #a1a2b8;
+    --sco-scrollbar: rgba(200, 200, 223, 0.4);
+    --sco-card-btn-bg: #30343f;
+    --sco-post-blockquote-bg: #000;
+    --sco-post-tabs-bg: #121212;
+    --sco-secondbg: #30343f;
+    --sco-shadow-nav: 0 5px 20px 0px rgba(28, 28, 28, 0.4);
+    --sco-card-bg: #1b1c20;
+    --sco-card-bg-op: var(--sco-white-op);
+    --sco-card-bg-none: #1d1b2600;
+    --sco-shadow-lightblack: 0 5px 12px -5px rgba(102, 68, 68, 0.0);
+    --sco-shadow-light2black: 0 5px 12px -5px rgba(102, 68, 68, 0.0);
+    --sco-card-border: #3d3d3f;
+    --sco-shadow-border: 0 8px 16px -4px #00000050;
+    --style-border: 1px solid var(--sco-card-border);
+    --style-border-always: 1px solid var(--sco-card-border);
+    --style-border-hover: 1px solid var(--sco-theme);
+    --style-border-hover-always: 1px solid var(--sco-theme);
+    --style-border-dashed: 1px dashed var(--sco-theme-op);
+    --style-border-forever: 2px solid var(--sco-lighttext)
+}
+
+@media screen and (max-width: 768px) {
+    :root {
+        --style-border: 0px solid var(--sco-card-border);
+        --style-border-hover: 0px solid var(--sco-main)
+    }
+}
