@@ -4,7 +4,7 @@
 
 > 下一代Acrylic何必是butterfly
 
-主题预览:  🤟[adil](https://blog.adil.com.cn) 👋[王卓Sco](https://acrylic.sondy.top/)
+主题预览:  🤟[adil](https://blog.adil.com.cn) 👋[王卓Sco](https://acrylic-next.sondy.top/)
 
 文档: [📖文档](/) 有时间写一个，原作者文档链接：[acrylic文档](https://next-docs.acrylic.org.cn/)
 
