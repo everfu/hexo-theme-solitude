@@ -1,10 +1,6 @@
 原项目地址：[Acrylic-Next](https://github.com/hexo-theme-Acrylic/Hexo-Theme-Acrylic-Next)
 
->***原作者已不再维护，此项目为二次魔改，有些功能做了改动***
-
-> 下一代Acrylic何必是butterfly
-
-主题预览:  🤟[adil](https://blog.adil.com.cn) 👋[王卓Sco](https://acrylic-next.sondy.top/)
+主题预览: 👋[王卓Sco](https://acrylic-next.sondy.top/)
 
 文档: [📖文档](/) 有时间写一个，原作者文档链接：[acrylic文档](https://next-docs.acrylic.org.cn/)
 
@@ -15,25 +11,25 @@
 在博客根目录里安装稳定版【推荐】
 
 ```powershell
-git clone -b main https://github.com/DuoSco/Hexo-Theme-Acrylic-Next-Sco.git themes/Acrylic
+git clone -b main https://github.com/DuoSco/Hexo-theme-bugbear.git themes/bugbear
 ```
 
 ## ⚙ 应用主题
 
-修改hexo配置文件`_config.yml`，把主题改为`Acrylic`
+修改hexo配置文件`_config.yml`，把主题改为`bugbear`
 
 ```
-theme: Acrylic
+theme: bugbear
 ```
 
 ## 更好的配置
 - macos/linux
   在博客根目录运行
 ```bash
-cp -rf ./themes/Acrylic/_config.yml ./_config.Acrylic.yml
+cp -rf ./themes/bugbear/_config.yml ./_config.bugbear.yml
 ```
 - windows
-  复制```/themes/Acrylic/_config.yml```此文件到hexo根目录，并重命名为```_config.Acrylic.yml```
+  复制```/themes/bugbear/_config.yml```此文件到hexo根目录，并重命名为```_config.bugbear.yml```
 
 ## ✨ 贡献者
 > 欢迎你对本主题做出贡献
@@ -45,7 +41,7 @@ cp -rf ./themes/Acrylic/_config.yml ./_config.Acrylic.yml
 [@timigomen](https://github.com/timigomen)
 [@Glannons](https://github.com/Glannons)
 [@Adil](https://github.com/adil-zhang)
-### 魔改参与开发
+### 新主题参与开发
 [@王卓Sco](https://github.com/wleelw)
 ### 主题设计
 [@张洪Heo](https://github.com/zhheo)
