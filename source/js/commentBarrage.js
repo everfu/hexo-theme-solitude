@@ -1,7 +1,7 @@
 var commentBarrageConfig = {
     maxBarrage: 1,
     barrageTime: 8e3,
-    twikooUrl: "https://acrylic-next.sondy.top/twikoo",
+    twikooUrl: "https://twikoo.sondy.top",
     pageUrl: window.location.pathname,
     barrageTimer: [],
     barrageList: [],
