@@ -1,6 +1,12 @@
 <div id="sco-footer-bar">
     <div class="footer-logo">
-        <i class="scoicon sco-logo"></i>
+        <% if (theme.site.name.class === 'i_class') { %>
+            <i class="<%= theme.site.name.custom %>" style="font-size: 16px;"></i>
+        <% } else if (theme.site.name.class === 'img') { %>
+            <i style="background-image: url('<%= url_for(theme.site.name.custom) %>')"></i>
+        <% } else if (theme.site.name.class === 'text') { %>
+            <span class="scoicon"><%= theme.site.name.custom %></span>
+        <% } %>
     </div>
     <div class="footer-bar-description">来自 <%- config.title %> 最新设计与科技的文章</div>
     <a class="footer-bar-link" href="/" data-pjax-state="">了解更多</a>
@@ -38,7 +44,7 @@
             <div class="footer-title-group">
                 <h3 class="footer-title">友链</h3>
                 <a class="random-friends-btn" href="javascript:randomLinksList();" rel="external nofollow">
-                    <i class="scoicon sco-refresh"></i>
+                    <i class="ri-refresh-line"></i>
                 </a>
             </div>
             <div class="footer-links" id="friend-links-in-footer">
@@ -66,7 +72,7 @@
         <div class="footer-bar-right">
             <a class="footer-bar-link" href="<%- theme.footer.rss.url %>" rel="external nofollow"
                target="_self">订阅</a>
-            <a class="footer-bar-link" href="<%- theme.footer.theme.url %>" rel="external nofollow"
+            <a class="footer-bar-link" href="https://github.com/DuoSco/hexo-theme-bugbear" rel="external nofollow"
                target="_self">主题</a>
             <% if(theme.site.icp){ %>
                 <a class="footer-bar-link" target="_blank" href="https://beian.miit.gov.cn/#/Integrated/index"
@@ -75,10 +81,10 @@
                 </a>
             <% } %>
             <a class="footer-bar-link cc" href="<%- theme.footer.license.url %>" target="_self" rel="external nofollow">
-                <i class="scoicon sco-copyright"></i>
-                <i class="scoicon sco-by-line"></i>
-                <i class="scoicon sco-nc-line"></i>
-                <i class="scoicon sco-nd-line"></i>
+                <i class="ri-copyright-line"></i>
+                <i class="ri-creative-commons-by-line"></i>
+                <i class="ri-creative-commons-nc-line"></i>
+                <i class="ri-creative-commons-nd-line"></i>
             </a>
         </div>
     </div>

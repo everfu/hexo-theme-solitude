@@ -43,7 +43,7 @@ function postTabs (args, content) {
     const icon = tabIcon.trim()
     tabIcon.length > 0 && (tabIcon = `<svg ${isOnlyicon} class="scoicon tab" aria-hidden="true"><use xlink:href="#${icon}"></use></svg>`)
 
-    const toTop = '<button type="button" class="tab-to-top" aria-label="scroll to top"><i class="scoicon sco-arrow-up"></i></button>'
+    const toTop = '<button type="button" class="tab-to-top" aria-label="scroll to top"><i class="ri-arrow-up-line"></i></button>'
 
     const isActive = (tabActive > 0 && tabActive === tabId) || (tabActive === 0 && tabId === 1) ? ' active' : ''
     tabNav += `<li class="tab${isActive}"><button type="button" data-href="#${tabHref}">${tabIcon + tabCaption.trim()}</button></li>`

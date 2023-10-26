@@ -1,23 +1,23 @@
 {
-  "name": "hexo-theme-acrylic",
-  "version": "1.1.6",
-  "description": "A beautiful, powerful, and efficient Hexo theme developed by the hexo-theme-Acrylic team",
+  "name": "hexo-theme-bugbear",
+  "version": "1.0.0",
+  "description": "A beautiful, powerful, and efficient Hexo theme developed by the hexo-theme-Bugbear team",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hexo-theme-Acrylic/hexo-theme-Acrylic.git"
+    "url": "git+https://github.com/DuoSco/hexo-theme-bugbear.git"
   },
   "keywords": [
     "hexo",
     "theme",
-    "hexo-theme-Acrylic"
+    "hexo-theme-bugbear"
   ],
-  "author": "Hexo-Theme-Acrylic<Acrylic@marcus233.top>",
+  "author": "Hexo-Theme-Bugbear<wleelw@sondy.top>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/hexo-theme-Acrylic/hexo-theme-Acrylic/issues"
+    "url": "https://github.com/DuoSco/Hexo-theme-bugbear/issues"
   },
-  "homepage": "https://github.com/hexo-theme-Acrylic/hexo-theme-Acrylic#readme"
+  "homepage": "https://github.com/DuoSco/hexo-theme-bugbear#readme"
 }

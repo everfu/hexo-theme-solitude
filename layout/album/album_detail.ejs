@@ -9,7 +9,7 @@
             </div>
             <div class="banner-button-group">
                 <a class="banner-button" onclick="pjax.loadUrl(/album/)" data-pjax-state="">
-                    <i class="scoicon sco-arrow-right" style="font-size:1.2rem"></i> &nbsp;
+                    <i class="ri-arrow-right-up-fill" style="font-size:1.2rem"></i> &nbsp;
                     <span class="banner-button-text">返回</span>
                 </a>
             </div>
@@ -39,7 +39,7 @@
                                     <div class="album-bottom">
                                         <div class="album-info">
                                             <div class="album-info-time">
-                                                <i class="scoicon sco-xiangji"></i> &nbsp;
+                                                <i class="ri-camera-2-fill"></i> &nbsp;
                                                 <time class="datatime"
                                                       datetime="<%= moment(iten.date).format() %>"></time>
                                             </div>
@@ -47,25 +47,25 @@
                                                 <a class="album-content-link" target="_blank"
                                                    title="跳转到短文指引的链接" href="<%= iten.link %>"
                                                    rel="external nofollow">
-                                                    <i class="scoicon sco-link"></i>
+                                                    <i class="ri-link-m"></i>
                                                     链接
                                                 </a>
                                             <% } %>
                                             <% if (iten.address) { %>
                                                 <div class="album-info-address">
-                                                    <i class="scoicon sco-dizhi"></i>
+                                                    <i class="ri-link-m"></i>
                                                     <span><%= iten.address %></span>
                                                 </div>
                                             <% } %>
                                             <div class="album-info-from">
-                                                <i class="scoicon sco-other"></i>
+                                                <i class=""></i>
                                                 <% if (iten.from) { %>
                                                     <span><%= iten.from %></span>
                                                 <% } %>
                                             </div>
                                         </div>
                                         <a class="bber-reply" onclick="sco.toTalk('<%- iten.content %>')" >
-                                            <i class="scoicon sco-comment" style="font-size: 1rem;">
+                                            <i class="ri-message-3-fill" style="font-size: 1rem;">
                                             </i>
                                         </a>
                                     </div>

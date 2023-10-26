@@ -560,8 +560,8 @@ class sco {
 class hightlight {
     static createEle(langEl, item) {
         const fragment = document.createDocumentFragment()
-        const highlightCopyEle = '<i class="scoicon sco-copy-fill"></i>'
-        const highlightExpandEle = '<i class="scoicon sco-arrow-down expand" style="font-size: 16px"></i>'
+        const highlightCopyEle = '<i class="ri-file-copy-fill"></i>'
+        const highlightExpandEle = '<i class="ri-arrow-down-s-line expand" style="font-size: 16px"></i>'
 
         const hlTools = document.createElement('div')
         hlTools.className = `highlight-tools`
@@ -599,7 +599,7 @@ class hightlight {
         if (GLOBALCONFIG.hightlight.limit && itemHeight > GLOBALCONFIG.hightlight.limit + 30) {
             $table.setAttribute('style', `height: ${GLOBALCONFIG.hightlight.limit}px`)
             ele.className = 'code-expand-btn'
-            ele.innerHTML = '<i class="scoicon sco-show" style="font-size: 1.2rem"></i>'
+            ele.innerHTML = '<i class="ri-arrow-down-double-fill" style="font-size: 1.2rem"></i>'
             ele.addEventListener('click', (e) => {
                 $table.setAttribute('style', `height: ${itemHeight}px`)
                 e.target.className !== 'code-expand-btn' ? e.target.parentNode.classList.add('expand-done') : e.target.classList.add('expand-done')

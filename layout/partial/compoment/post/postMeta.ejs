@@ -30,50 +30,50 @@
     <div id="post-meta">
         <div class="meta-secondline">
             <span class="post-meta-date" title="发布于">
-                <i class="post-meta-icon scoicon sco-calendar"></i>
+                <i class="post-meta-icon ri-calendar-todo-fill"></i>
                 <time datetime="<%= moment(page.date).format() %>"></time>
             </span>
             <% if(theme.post.meta.updated){ %>
                 <span class="post-meta-date" title="更新于">
-                    <i class="post-meta-icon scoicon sco-update"></i>
+                    <i class="post-meta-icon ri-refresh-line"></i>
                     <time datetime="<%= moment(page.updated).format() %>"></time>
                 </span>
             <% } %>
             <% if(theme.post.meta.locate){ %>
                 <span class="post-meta-position" title="作者IP归属地为<%= page.locate %>">
-                    <i class="post-meta-icon scoicon sco-location"></i>
+                    <i class="post-meta-icon ri-map-pin-fill"></i>
                     <span><%= page.locate %></span>
                 </span>
             <% } %>
             <% if(theme.thirdparty.wordcount){ %>
                 <% if(theme.post.meta.wordcount){ %>
                     <span class="post-meta-wordcount">
-                        <i class="scoicon sco-word post-meta-icon" title="文章字数"></i>
+                        <i class="ri-file-word-fill post-meta-icon" title="文章字数"></i>
                         <span class="word-count"><%= wordcount(page.content) %></span>
                     </span>
                 <% } %>
                 <% if(theme.post.meta.readtime){ %>
                     <span class="post-meta-time">
-                        <i class="scoicon sco-clock-fill post-meta-icon" title="阅读耗时"></i>
+                        <i class="ri-time-fill post-meta-icon" title="阅读耗时"></i>
                         <span><%= min2read(page.content) %> min</span>
                     </span>
                 <% } %>
             <% } %>
             <% if(theme.thirdparty.busuanzi.enable && theme.post.meta.pv){ %>
                 <span class="post-meta-pv" title="文章热度">
-                    <i class="scoicon sco-hot post-meta-icon"></i>
+                    <i class="ri-fire-fill post-meta-icon"></i>
                     <% if(theme.thirdparty.busuanzi.usecomment){ %>
-                        <span id="twikoo_visitors"><i class="scoicon sco-loading"></i></span>
+                        <span id="twikoo_visitors"><i class="ri-loader-2-fill"></i></span>
                     <% }else{ %>
-                        <span id="busuanzi_value_page_pv"><i class="scoicon sco-loading"></i></span>
+                        <span id="busuanzi_value_page_pv"><i class="ri-loader-2-fill"></i></span>
                     <% } %>        
                 </span>
             <% } %>
             <% if(theme.post.meta.comment && page.comment){ %>
                 <span class="post-meta-commentcount" title="评论数">
-                    <i class="scoicon sco-comment-text"></i>
+                    <i class="ri-message-fill"></i>
                     <a href="#post-comment">
-                        <span id="twikoo-count"><i class="scoicon sco-loading"></i></span>
+                        <span id="twikoo-count"><i class="ri-loader-2-fill"></i></span>
                     </a>
                 </span>
             <% } %>    
