@@ -1,3 +1,5 @@
+![](https://github.com/DuoSco/Hexo-theme-solitude/assets/74389842/78b527e5-7d8e-456d-b190-859acd9ffdec)
+
 原项目地址：[Acrylic-Next](https://github.com/hexo-theme-Acrylic/Hexo-Theme-Acrylic-Next)
 
 主题预览: 👋[王卓Sco](https://acrylic-next.sondy.top/)
