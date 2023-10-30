@@ -1,23 +1,23 @@
 {
-  "name": "hexo-theme-bugbear",
+  "name": "hexo-theme-solitude",
   "version": "1.0.0",
-  "description": "A beautiful, powerful, and efficient Hexo theme developed by the hexo-theme-Bugbear team",
+  "description": "A beautiful, powerful, and efficient Hexo theme developed by the hexo-theme-Solitude team",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/DuoSco/hexo-theme-bugbear.git"
+    "url": "git+https://github.com/DuoSco/hexo-theme-solitude.git"
   },
   "keywords": [
     "hexo",
     "theme",
-    "hexo-theme-bugbear"
+    "hexo-theme-solitude"
   ],
-  "author": "Hexo-Theme-Bugbear<wleelw@sondy.top>",
+  "author": "Hexo-Theme-Solitude<wleelw@sondy.top>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/DuoSco/Hexo-theme-bugbear/issues"
+    "url": "https://github.com/DuoSco/Hexo-theme-solitude/issues"
   },
-  "homepage": "https://github.com/DuoSco/hexo-theme-bugbear#readme"
+  "homepage": "https://github.com/DuoSco/hexo-theme-solitude#readme"
 }

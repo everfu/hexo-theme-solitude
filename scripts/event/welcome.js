@@ -10,6 +10,6 @@ hexo.on('ready', () => {
       #####   ####    ###  #####  ###### #    # #    #
                             ${version}
   ===================================================================
-  主题链接：https://github.com/DuoSco/Hexo-theme-bugbear
+  主题链接：https://github.com/DuoSco/Hexo-theme-solitude
   主题开发：王卓Sco`)
 })
