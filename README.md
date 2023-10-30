@@ -2,9 +2,9 @@
 
 原项目地址：[Acrylic-Next](https://github.com/hexo-theme-Acrylic/Hexo-Theme-Acrylic-Next)
 
-主题预览: 👋[王卓Sco](https://acrylic-next.sondy.top/)
+主题预览: 👋[王卓Sco](https://solitude.sondy.top/)
 
-文档: [📖文档](/) 有时间写一个，原作者文档链接：[acrylic文档](https://next-docs.acrylic.org.cn/)
+文档: [📖文档](https://solitude-docs.sondy.top/)
 
 ## 💻 安裝
 
