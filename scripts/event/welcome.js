@@ -1,8 +1,6 @@
-const logger = require('hexo-log')()
-
 hexo.on('ready', () => {
   const { version } = require('../../package.json')
-  logger.log.info(`
+  hexo.log.info(`
   ===================================================================
       #####  #    #  ####  #####  ######   ##   #####
       #    # #    # #    # #    # #       #  #  #    #
@@ -12,6 +10,6 @@ hexo.on('ready', () => {
       #####   ####    ###  #####  ###### #    # #    #
                             ${version}
   ===================================================================
-  主题链接：https://github.com/DuoSco/Hexo-theme-bugbear
+  主题链接：https://github.com/DuoSco/Hexo-theme-solitude
   主题开发：王卓Sco`)
 })

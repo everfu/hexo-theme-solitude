@@ -11,25 +11,25 @@
 在博客根目录里安装稳定版【推荐】
 
 ```powershell
-git clone -b main https://github.com/DuoSco/Hexo-theme-bugbear.git themes/bugbear
+git clone -b main https://github.com/DuoSco/Hexo-theme-solitude.git themes/solitude
 ```
 
 ## ⚙ 应用主题
 
-修改hexo配置文件`_config.yml`，把主题改为`bugbear`
+修改hexo配置文件`_config.yml`，把主题改为`solitude`
 
 ```
-theme: bugbear
+theme: solitude
 ```
 
 ## 更好的配置
 - macos/linux
   在博客根目录运行
 ```bash
-cp -rf ./themes/bugbear/_config.yml ./_config.bugbear.yml
+cp -rf ./themes/solitude/_config.yml ./_config.solitude.yml
 ```
 - windows
-  复制```/themes/bugbear/_config.yml```此文件到hexo根目录，并重命名为```_config.bugbear.yml```
+  复制```/themes/solitude/_config.yml```此文件到hexo根目录，并重命名为```_config.solitude.yml```
 
 ## ✨ 贡献者
 > 欢迎你对本主题做出贡献
@@ -37,7 +37,7 @@ cp -rf ./themes/bugbear/_config.yml ./_config.bugbear.yml
 [贡献指南](https://opensource.guide/zh-hans/how-to-contribute/#%E5%A6%82%E4%BD%95%E6%8F%90%E4%BA%A4%E8%B4%A1%E7%8C%AE)
 
 ### 原主题参与开发
-[@rootlex](https://github.com/rootlexblog)
+[@rootlex](https://github.com/rootlexme)
 [@timigomen](https://github.com/timigomen)
 [@Glannons](https://github.com/Glannons)
 [@Adil](https://github.com/adil-zhang)
