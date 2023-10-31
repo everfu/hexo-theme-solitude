@@ -6,6 +6,8 @@
 
 文档: [📖文档](https://solitude-docs.sondy.top/)
 
+主题交流群：![主题交流群](https://github.com/DuoSco/Hexo-theme-solitude/assets/74389842/6cf365f2-1b69-4bf1-89a7-7b2c945ebdba)
+
 ## 💻 安裝
 
 ### Git 安裝
