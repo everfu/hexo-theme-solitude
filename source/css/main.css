@@ -15293,8 +15293,6 @@ span.hexo-douban-pagenum {
 }
 
 .author-content-item.game-apex {
-    background: url(https://p.sondy.top/blog/img/202309161747638.webp!cover) no-repeat top;
-    background-size: cover;
     min-height: 300px;
     overflow: hidden;
     color: var(--sco-white);
@@ -15371,8 +15369,6 @@ video.author-content-video {
 
 .author-content-item.game-jl {
     width: 39%;
-    background: url(https://p.sondy.top/blog/img/202309161746049.webp!cover) no-repeat top;
-    background-size: cover;
     min-height: 300px;
     overflow: hidden;
     color: var(--sco-white)

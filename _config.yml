@@ -1,81 +1,64 @@
 # 站点设置
 site:
   name: # 左上角显示内容
-    class:  i_class #i_class/text/img
-    custom: scoicon sco-logo #自定义内容 例如：scoicon sco-logo / 王卓Sco / https://p.sondy.top/logo.png
-  siteIcon: https://p.sondy.top/favicon/256/blog_favicon.ico # 网页icon
-  icon: https://p.sondy.top/favicon/256/blog_favicon.ico # 页脚的icon、加载动画默认的icon
+    class:  text #i_class/text/img
+    custom: Solitude #自定义内容 例如：scoicon sco-logo / 王卓Sco / https://p.sondy.top/logo.png
+  siteIcon: https://bu.dusays.com/2023/10/31/6540daf117d20.png # 网页icon
+  icon: https://bu.dusays.com/2023/10/31/6540daf117d20.png # 页脚的icon、加载动画默认的icon
   icp: 湘ICP备2023015327号 # ICP 例如：湘ICP备2023015327号
 
 
 # 导航栏
 nav:
-#导航栏左侧
+  #导航栏左侧
   left:
     enable: true
     menu:
-       # 博客:
-       #   主页:
-       #     icon: https://p.sondy.top/ico/favicon.png!cover
-       #     url: https://www.sondy.top/
-       #   博客:
-       #     icon: https://p.sondy.top/ico/blog_favicon.png!cover
-       #     url: /
-       # 项目:
-       #   DuoSco:
-       #     icon: https://p.sondy.top/blog/content/DuoSco.png!cover
-       #     url: https://github.com/DuoSco
-# 导航栏内容
+      项目:
+        Solitude:
+          icon: https://bu.dusays.com/2023/10/31/6540daf117d20.png
+          url: https://github.com/DuoSco/Hexo-Theme-solitude
+  # 导航栏内容
   menu:
-     # 文库:
-     #   url: false
-     #   child:
-     #     文章列表:
-     #       url: /archives/
-     #       icon: ri-archive-fill
-     #     全部分类:
-     #       url: /categories/
-     #       icon: ri-send-backward
-     #     全部标签:
-     #       url: /tags/
-     #       icon: ri-price-tag-3-fill
-     # 专栏:
-     #   url: false
-     #   child:
-
-     # 友链:
-     #   url: false
-     #   child:
-     #     友链鱼塘:
-     #       url: /circle/
-     #       icon: ri-bubble-chart-fill
-     #     友情链接:
-     #       url: /links/
-     #       icon: ri-links-line
-     #     宝藏博主:
-     #       url: javascript:travelling()
-     #       icon: ri-gift-fill
-     # 我的:
-     #   url: false
-     #   child:
-     #     音乐:
-     #       icon: ri-disc-fill
-     #       url: /music/
-     #     装备:
-     #       url: /equipment/
-     #       icon: ri-macbook-fill
-     #     工具箱:
-     #       url: /tlink/
-     #       icon: ri-tools-fill
-     # 关于:
-     #   url: false
-     #   child:
-     #     关于本站:
-     #       url: /about/
-     #       icon: ri-user-smile-fill
+    文库:
+      url: false
+      child:
+        文章列表:
+          url: /archives/
+          icon: ri-archive-fill
+        全部分类:
+          url: /categories/
+          icon: ri-send-backward
+        全部标签:
+          url: /tags/
+          icon: ri-price-tag-3-fill
+    友链:
+      url: false
+      child:
+        友情链接:
+          url: /links/
+          icon: ri-links-line
+        宝藏博主:
+          url: javascript:travelling()
+          icon: ri-gift-fill
+    #      我的:
+    #        url: false
+    #        child:
+    #          装备:
+    #            url: /equipment/
+    #            icon: ri-macbook-fill
+    #          工具箱:
+    #            url: /tlink/
+    #            icon: ri-tools-fill
+    关于:
+      url: false
+      child:
+        关于本站:
+          url: /about/
+          icon: ri-user-smile-fill
 
 
-# 导航栏右侧快捷菜单 (true,false)
+  # 导航栏右侧快捷菜单 (true,false)
   right: # @todo 允许用户自定义
     travellings: true   #开往
     random: true        #
@@ -83,37 +66,37 @@ nav:
 
 # 首页顶部样式
 hometop:
-  bbtime: true # 即刻顶部是否开启
+  bbtime: false # 即刻顶部是否开启
   banner:
     enable: true # 是否打开顶部banner
     title: 宁静致远<br>热爱生活 # 左上角显示文字
     url: WWW.SONDY.TOP # title下方小字
     # 轮播icon
     icon:
-       # HTML:
-       #   img: https://npm.elemecdn.com/wleelw-blog-abs@1.0.0/img/icon/HTML.png
-       #   color: '#e9572b'
-       # JS:
-       #   img: https://npm.elemecdn.com/wleelw-blog-abs@1.0.0/img/icon/JS.png
-       #   color: '#f7cb4f'
-       # Kotlin:
-       #   img: https://npm.elemecdn.com/wleelw-blog-abs@1.0.0/img/icon/kotlin-logo.svg
-       #   color: '#ffffff'
-       # Docker:
-       #   img: https://npm.elemecdn.com/wleelw-blog-abs@1.0.0/img/icon/docker.png
-       #   color: '#57b6e6'
-       # Flutter:
-       #   img: https://npm.elemecdn.com/wleelw-blog-abs@1.0.0/img/icon/flutter.png
-       #   color: '#ffffff'
-       # WebPack:
-       #   img: https://npm.elemecdn.com/wleelw-blog-abs@1.0.0/img/icon/webpack.png
-       #   color: '#2e3a41'
-       # Git:
-       #   img: https://npm.elemecdn.com/wleelw-blog-abs@1.0.0/img/icon/git.png
-       #   color: '#df5b40'
-       # VS:
-       #   img: https://npm.elemecdn.com/wleelw-blog-abs@1.0.0/img/icon/vs-logo.svg
-       #   color: '#ffffff'
+      HTML:
+        img: https://npm.elemecdn.com/wleelw-blog-abs@1.0.0/img/icon/HTML.png
+        color: '#e9572b'
+      JS:
+        img: https://npm.elemecdn.com/wleelw-blog-abs@1.0.0/img/icon/JS.png
+        color: '#f7cb4f'
+      Kotlin:
+        img: https://npm.elemecdn.com/wleelw-blog-abs@1.0.0/img/icon/kotlin-logo.svg
+        color: '#ffffff'
+      Docker:
+        img: https://npm.elemecdn.com/wleelw-blog-abs@1.0.0/img/icon/docker.png
+        color: '#57b6e6'
+      Flutter:
+        img: https://npm.elemecdn.com/wleelw-blog-abs@1.0.0/img/icon/flutter.png
+        color: '#ffffff'
+      WebPack:
+        img: https://npm.elemecdn.com/wleelw-blog-abs@1.0.0/img/icon/webpack.png
+        color: '#2e3a41'
+      Git:
+        img: https://npm.elemecdn.com/wleelw-blog-abs@1.0.0/img/icon/git.png
+        color: '#df5b40'
+      VS:
+        img: https://npm.elemecdn.com/wleelw-blog-abs@1.0.0/img/icon/vs-logo.svg
+        color: '#ffffff'
 
   # 顶部三大分类
   categoryGroup:
@@ -135,8 +118,8 @@ hometop:
     sup: 置顶 # 左上角显示文字
     title: 缘木求鱼 # 左下角大字
     url: /about/ # 点击跳转链接
-    img: https://p.sondy.top/blog/link/20230913194258.png!cover # 显示背景
-    color: # 背景颜色
+    img: /img/default.png # 显示背景
+    color: '#ff0000' # 背景颜色
 
 # 个人卡片
 aside:
@@ -146,7 +129,7 @@ aside:
     Sticky: "allInfo"
   post: # 在文章页显示的侧边栏信息
     noSticky: "about"
-    Sticky: "power,newestPost"
+    Sticky: "newestPost"
   page: # 在页面中显示的侧边栏信息
     noSticky: "about"
     Sticky: "newestPost,allInfo"
@@ -158,19 +141,19 @@ aside:
   # 侧边栏个人信息卡片
   card:
     author:
-      img: https://p.sondy.top/ico/blog_favicon.png!cover # 自己的头像
+      img: https://bu.dusays.com/2023/10/31/6540daf117d20.png # 自己的头像
       js: https://cdn3.codesign.qq.com/icons/XgRxnjPG4VZLmqr/latest/iconfont.js # 自定义图标js（用于显示带颜色的状态表情）
       state: "#sco-smile" # 状态表情
     content: 分享自己对编程的<b>热爱</b>，对美好生活的<b>向往</b>，对知识海洋<b>探索历程</b>。 # 文案1
     content2: 相信你可以在这里找到对你有用的知识和教程。 # 文案2
     # 个人信息卡片底部的小图标，按照例子填写
     information:
-       # Github:
-       #   icon: ri-github-fill
-       #   url: https://github.com/wleelw
-       # Bilibili:
-       #   icon: ri-bilibili-fill
-       #   url: https://space.bilibili.com/1329819902
+      Github:
+        icon: ri-github-fill
+        url: https://github.com/DuoSco/Hexo-Theme-slitude
+      Bilibili:
+        icon: ri-bilibili-fill
+        url: https://space.bilibili.com/1329819902
     # 跳转按钮
     button:
       text: 了解更多
@@ -180,7 +163,7 @@ aside:
     face: # 正面
     backface: # 鼠标悬停翻转图片
   # 页面目录
-  toc: 
+  toc:
     post: true # 在文章页显示
     page: false # 在任意页显示
 
@@ -188,7 +171,7 @@ aside:
   # 建站时间
   siteinfo:
     postcount: true # 文章数
-    wordcount: true # 总字数
+    wordcount: false # 总字数
     pv: false # 访问量
     uv: false # 访客数
     updatetime: false # 最后更新日期
@@ -200,35 +183,35 @@ footer:
   # 底部上方一排图标
   information:
     left: # 左侧显示图标
-       # Github:
-       #   icon: ri-github-fill
-       #   url: https://github.com/wleelw
-       # Mail:
-       #   icon: ri-mail-fill
-       #   url: mailto:wleelw@sondy.top
+    # Github:
+    #   icon: ri-github-fill
+    #   url: https://github.com/wleelw
+    # Mail:
+    #   icon: ri-mail-fill
+    #   url: mailto:wleelw@sondy.top
     right: # 右侧显示图标
-       # Bilibili:
-       #   icon: ri-bilibili-fill
-       #   url: https://space.bilibili.com/1329819902
-       # 抖音:
-       #   icon: ri-tiktok-line
-       #   url: https://v.douyin.com/iJsLc8jt/
+    # Bilibili:
+    #   icon: ri-bilibili-fill
+    #   url: https://space.bilibili.com/1329819902
+    # 抖音:
+    #   icon: ri-tiktok-line
+    #   url: https://v.douyin.com/iJsLc8jt/
   # 底部导航栏
   group: # 从左至右
-     # 导航:
-     #   归档: /archives/
-     #   分类: /categories/
-     #   标签: /tags/
-     # 服务:
-     #   阿里云: https://aliyun.com/
-     #   51la统计: https://v6.51.la/
-     #   百度统计: https://tongji.baidu.com/
-     # 支持:
-     #   打赏记录: /about/
-     # 协议:
-     #   Cookies: /cookies/
-     #   用户协议: /privacy/
-     #   版权协议: /copyright/
+  # 导航:
+  #   归档: /archives/
+  #   分类: /categories/
+  #   标签: /tags/
+  # 服务:
+  #   阿里云: https://aliyun.com/
+  #   51la统计: https://v6.51.la/
+  #   百度统计: https://tongji.baidu.com/
+  # 支持:
+  #   打赏记录: /about/
+  # 协议:
+  #   Cookies: /cookies/
+  #   用户协议: /privacy/
+  #   版权协议: /copyright/
 
   # 底部随机友链
   randomlink: true
@@ -245,12 +228,12 @@ page:
   tags: true # 标签
   categories: true # 分类
   default: # 默认值
-    cover: https://npm.elemecdn.com/wzheo-absolute@1.0.3/image/source/default_cover.png # 默认图片
+    cover: /img/default.png # 默认图片
 
 # 文章页默认设置
 post:
   default:
-    cover: https://npm.elemecdn.com/wzheo-absolute@1.0.3/image/source/default_cover.png
+    cover: /img/default.png
     locate: 衡阳
     copyright: 原创
   # 顶部文章简介
@@ -264,7 +247,7 @@ post:
     comment: true # 评论数
   # 打赏
   award:
-    enable: true
+    enable: false
     wechat: https://p.sondy.top/blog/img/20230913203219.png!cover # 微信收款码
     alipay: https://p.sondy.top/blog/img/20230916173807.png!cover # 支付宝收款码
     url: /about # 打赏统计页面链接
@@ -309,7 +292,7 @@ thirdparty:
     usecomment: true #当评论系统开启时文章页面使用评论系统的统计数据
   search: # 搜索
     algolia_search:
-      enable: true
+      enable: false
       # hits:
       #   per_page: 6
     local_search:
@@ -327,14 +310,14 @@ thirdparty:
 
 # 评论
 comment:
-  enable: true
+  enable: false
   twikoo:
     envId: https://twikoo.sondy.top
     path: window.location.pathname
     lang: 'zh-CN'
 
 ai: # 文章页面AI
-  enable: true
+  enable: false
 
 # 朋友圈配置
 circle:
@@ -348,7 +331,7 @@ circle:
     left: ""
     right: "使用 友链朋友圈 订阅友链最新文章"
   angle: # 钓鱼
-    enable: true
+    enable: false
   appjs: '/js/circle.js' # 主题appjs
   bundlejs: '/lib/bundle.js' # 主题bundejs
 
@@ -358,7 +341,7 @@ echarts:
 
 # 插入代码到头部 </head> 之前 和 底部 </body> 之前
 # 插入额外代码 如：统计，广告等
-extends: 
+extends:
   head: # 在head中插入
   body: # 在body中插入
 
@@ -397,3 +380,5 @@ cdn:
     aplayercss: https://cdn.bootcdn.net/ajax/libs/aplayer/1.9.1/APlayer.min.css
     aplayerjs: https://cdn.bootcdn.net/ajax/libs/aplayer/1.9.1/APlayer.min.js
     metingjs: https://cdn.bootcdn.net/ajax/libs/meting/2.0.1/Meting.min.js
+    katexcss: https://cdn.bootcdn.net/ajax/libs/KaTeX/0.16.6/katex.min.css
+    katexjs: https://cdn.bootcdn.net/ajax/libs/KaTeX/0.16.6/katex.min.js

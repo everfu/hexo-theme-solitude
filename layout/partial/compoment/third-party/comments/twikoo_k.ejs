@@ -6,63 +6,6 @@
                 el: '#comment',
                 onCommentLoaded: function() {
                     GLOBALCONFIG.lightbox && sco.lightbox('#article-container img, #twikoo .tk-content img:not(.tk-owo-emotion)')
-                    //   setTimeout(function () {
-                    //       let tk_comment = document.querySelectorAll('.tk-comments-container .tk-comment');
-                    //       if (tk_comment.length > 0) {
-                    //           let html = `<div class="swiper-wrapper">`;
-                    //           for (let i = 0; i < tk_comment.length; i++) {
-                    //               let tk_id = tk_comment[i].getAttribute('id') || '';
-                    //               let tk_nick = tk_comment[i].querySelector('.tk-nick')?.innerText || '';
-                    //               let tk_href = tk_comment[i].querySelector('.tk-nick')?.href || '';
-                    //               let tk_avatar = tk_comment[i].querySelector('.tk-avatar-img')?.src || '';
-                    //               let tk_time = tk_comment[i].querySelector('.tk-time')?.innerText || '';
-                    //               let tk_city = tk_comment[i].querySelector('.tk-extras .tk-extra:first-child span:last-child')?.innerText || '';
-                    //               let tk_content = tk_comment[i].querySelector('.tk-content>span:last-child')?.innerHTML || '';
-                    //               tk_content = tk_content.replace(/\n/g, ''); // replace \n
-                    //               tk_content = tk_content.replace(/<blockquote>.*?<\/blockquote>/gi, ''); // replace blockquote
-                    //               tk_content = tk_content.replace(/<pre.*?<\/pre>/gi, '[!{_p("aside.card_newest_comments.code")}]'); // replace code
-                    //               html += `
-                    // <div class="swiper-slide">
-                    //   <div class="comment-barrage-item">
-                    //     <div class="barrage-info">
-                    //       <a class="barrage-title" title="跳转至评论区" href="#post-comment">热评</a>
-                    //       <a href="${tk_href ? tk_href + '" target="_blank" rel="noopener noreferrer" title="访问 ' + tk_nick + '"' : 'javascript:void(0);"'}>
-                    //         <img class="barrage-avatar" src="${tk_avatar}">
-                    //       </a>
-                    //       <span class="barrage-nick">${tk_nick}</span>
-                    //       <span class="barrage-city">${tk_city}</span>
-                    //       <span class="barrage-time">${tk_time}</span>
-                    //       <a class="barrage-close" onclick="acrylic.switchCommentBarrage()" title="隐藏热评"><i class="fa-solid fa-xmark"></i></a>
-                    //     </div>
-                    //     <div class="barrage-content">
-                    //       <a title="跳转至该评论" href="#${tk_id}">${tk_content}</a>
-                    //     </div>
-                    //   </div>
-                    // </div>`;
-                    //           }
-                    //           html += '</div>';
-                    //           let barrageContainer = document.getElementById('comment-barrage') || document.createElement('div');
-                    //           barrageContainer.id = 'comment-barrage';
-                    //           barrageContainer.innerHTML = html;
-                    //           barrageContainer.style.display = window.localStorage.getItem('commentBarrageDisplay') === 'false' ? 'none' : 'block';
-                    //           document.getElementById('post-comment').appendChild(barrageContainer);
-                    //           var barrageSwiper = new Swiper('#comment-barrage', {
-                    //               direction: 'vertical',
-                    //               loop: true,
-                    //               mousewheel: true,
-                    //               autoplay: {
-                    //                   delay: 3000,
-                    //                   disableOnInteraction: true,
-                    //               }
-                    //           });
-                    //           barrageContainer.onmouseenter = function () {
-                    //               barrageSwiper.autoplay.stop();
-                    //           };
-                    //           barrageContainer.onmouseleave = function () {
-                    //               barrageSwiper.autoplay.start();
-                    //           };
-                    //       }
-                    //   }, 1000);
                 }
             }
         )
