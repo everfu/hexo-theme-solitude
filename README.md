@@ -6,6 +6,8 @@
 
 文档: [📖文档](https://solitude-docs.sondy.top/)
 
+主题交流群：![](https://bu.dusays.com/2023/10/31/6540af9083739.jpg)
+
 ## 💻 安裝
 
 ### Git 安裝
