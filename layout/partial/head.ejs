@@ -13,7 +13,7 @@
     else if(is_page() || is_post())title = page.title
     if(is_home())subtitle = config.subtitle ? ' - ' + config.subtitle : ''
     else subtitle = title ? ' | ' + config.title : config.title
-    var description = page.description || page.excerpt || config.description
+    var description = page.desc || page.excerpt || config.description
 -%>
 <title><%= title + subtitle %></title>
 <noscript>开启Javascript是必要的</noscript>

@@ -49,12 +49,14 @@
                 </a>
             </div>
         <% } %>
-        <div class="console-btn-item on" id="consoleCommentBarrage" onclick="sco.switchCommentBarrage()"
-             title="热评开关">
-            <a class="commentBarrage">
-                <i class="ri-message-3-fill"></i>
-            </a>
-        </div>
+        <% if(theme.comment.enable) { %>
+            <div class="console-btn-item on" id="consoleCommentBarrage" onclick="sco.switchCommentBarrage()"
+                 title="热评开关">
+                <a class="commentBarrage">
+                    <i class="ri-message-3-fill"></i>
+                </a>
+            </div>
+        <% }%>
     </div>
     <div class="console-mask" onclick="sco.hideConsole()" href="javascript:void(0);" rel="external nofollow"></div>
 </div>

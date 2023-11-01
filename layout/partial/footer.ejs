@@ -70,8 +70,10 @@
             </div>
         </div>
         <div class="footer-bar-right">
-            <a class="footer-bar-link" href="<%- theme.footer.rss.url %>" rel="external nofollow"
-               target="_self">订阅</a>
+            <% if(theme.footer.rss.enable){ %>
+                <a class="footer-bar-link" href="/rss/" rel="external nofollow"
+                   target="_self">订阅</a>
+            <% } %>
             <a class="footer-bar-link" href="https://github.com/DuoSco/hexo-theme-solitude" rel="external nofollow"
                target="_self">主题</a>
             <% if(theme.site.icp){ %>
@@ -100,3 +102,6 @@
 </div>
 <div class="comment-barrage">
 </div>
+<% if(theme.comment.enable){ %>
+    <%- js('/js/commentBarrage') %>
+<% } %>

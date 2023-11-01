@@ -501,6 +501,7 @@ function ChucklePostAI(AI_option) {
 
     ai_init();
 }
+
 // AI构造函数
 new ChucklePostAI({
     /* 必须配置 */

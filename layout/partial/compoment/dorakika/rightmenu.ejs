@@ -42,10 +42,12 @@
             <i class="scoicon ri-external-link-fill"></i>
             <span>复制地址</span>
         </a>
-        <a class="rightMenu-item" href="javascript:sco.switchCommentBarrage()">
-            <i class="scoicon ri-message-3-fill"></i>
-            <span class="menu-commentBarrage-text">关闭热评</span>
-        </a>
+        <% if(theme.comment.enable){ %>
+            <a class="rightMenu-item" href="javascript:sco.switchCommentBarrage()">
+                <i class="scoicon ri-message-3-fill"></i>
+                <span class="menu-commentBarrage-text">关闭热评</span>
+            </a>
+        <% } %>
     </div>
 </div>
 <script>
@@ -68,12 +70,12 @@
         //这里可以写点东西提示一下 已复制
     }
 
-    rmf.hideRightMenu = function() {
+    rmf.hideRightMenu = function () {
         rmf.showRightMenu(false);
         document.getElementById("rightmenu-item").style.display = "none";
     };
 
-    rmf.rightmenuCopyText = function(e) {
+    rmf.rightmenuCopyText = function (e) {
         navigator.clipboard && navigator.clipboard.writeText(e),
             rmf.hideRightMenu()
     }
@@ -106,6 +108,8 @@
             return false;
         };
 
-        window.addEventListener('click', function () { rmf.showRightMenu(false); });
+        window.addEventListener('click', function () {
+            rmf.showRightMenu(false);
+        });
     }
 </script>

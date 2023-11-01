@@ -30,11 +30,7 @@
 
     <%- partial('partial/compoment/aside/aside') %>
 
-    <% if (page.katex){ %>
-        <link href="https://cdn.bootcdn.net/ajax/libs/KaTeX/0.16.6/katex.min.css" rel="stylesheet">
-        <script src="https://cdn.bootcdn.net/ajax/libs/KaTeX/0.16.6/katex.min.js"></script>
-    <% } %>
     <% if(theme.ai.enable){ %>
-        <script src="/js/post_ai.js"></script>
+        <script type="text/javascript" src="/js/post_ai.js"></script>
     <% } %>
 </main>

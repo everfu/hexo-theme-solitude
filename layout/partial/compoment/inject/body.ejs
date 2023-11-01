@@ -50,3 +50,8 @@
     <%- js('/js/extend/console/comment')
     %>
 <% } %>
+
+<% if (page.katex){ %>
+    <% css(cdn.katexcss) %>
+    <% js(cdn.katexjs) %>
+<% } %>

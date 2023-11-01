@@ -1,18 +1,20 @@
 <div class="flink" id="banners">
     <%- partial('partial/compoment/links/banner') %>
 </div>
-<div class="title-h2-a">
-    <div class="title-h2-a-left"><h2 style="padding-top: 0;margin:0.6rem 0 0 0;">随机文章</h2>
-        <a id="random-post-start" href="javascript:fetchRandomPost();" rel="external nofollow" data-pjax-state=""
-           style="transition-duration: 0.3s; transform: rotate(9000deg); opacity: 1;">
-            <i class="ri-refresh-line"></i>
-        </a>
+<% if(theme.circle.angle.enable){ %>
+    <div class="title-h2-a">
+        <div class="title-h2-a-left"><h2 style="padding-top: 0;margin:0.6rem 0 0 0;">随机文章</h2>
+            <a id="random-post-start" href="javascript:fetchRandomPost();" rel="external nofollow" data-pjax-state=""
+               style="transition-duration: 0.3s; transform: rotate(9000deg); opacity: 1;">
+                <i class="ri-refresh-line"></i>
+            </a>
+        </div>
+        <div class="title-h2-a-right">
+            <a class="random-post-all" href="/circle/" data-pjax-state="">查看鱼塘</a>
+        </div>
     </div>
-    <div class="title-h2-a-right">
-        <a class="random-post-all" href="/circle/" data-pjax-state="">查看鱼塘</a>
-    </div>
-</div>
-<div id="random-post"></div>
+    <div id="random-post"></div>
+<% } %>
 <div class="flink" id="article-container">
     <% site.data.links.links.forEach(data => { %>
         <h2><%= data.class_name %></h2>
@@ -28,6 +30,28 @@
         <% break; } %>
     <% }); %>
 </div>
-<div id="article-container">
-    <%- page.content %>
-</div>
+<h3 align="end">——本站友链排序不分先后，所有站点都值得一看。</h3>
+<% if(theme.comment.enable){ %>
+    <h2 id="友情链接申请">友情链接申请</h2>
+    <div id="article-container">
+        <%- page.content %>
+    </div>
+    <p>请<b>勾选</b>你符合的条件：</p>
+    <div id="friendlink_checkboxs">
+        <p>
+            <label><input type="checkbox" id="checkbox1" onclick="checkForm()"> 我已添加 <b><%= config.title %></b>
+                博客的友情链接</label>
+        </p>
+        <p>
+            <label><input type="checkbox" id="checkbox2" onclick="checkForm()"> 我的链接主体为
+                <b>个人</b>，网站类型为<b>博客</b></label>
+        </p>
+        <p>
+            <label><input type="checkbox" id="checkbox3" onclick="checkForm()">
+                我的网站现在可以在中国大陆区域正常访问</label>
+        </p>
+        <p>
+            <label><input type="checkbox" id="checkbox4" onclick="checkForm()"> 网站内容符合中国大陆法律法规</label>
+        </p>
+    </div>
+<% } %>
