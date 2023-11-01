@@ -222,7 +222,7 @@ footer:
   #   版权协议: /copyright/
 
   # 底部随机友链
-  randomlink: true
+  randomlink: false
   # rss
   rss:
     enable: true
