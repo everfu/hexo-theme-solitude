@@ -1,1 +1,14 @@
 <script src="<%= theme.echarts.js %>" rel="external nofollow"></script>
+
+<main class="layout hide-aside" id="content-inner">
+    <div id="page">
+        <%- page.content %>
+        <% if(page.comment){ %>
+            <%- partial('partial/compoment/third-party/comments/comment') %>
+        <% } %>
+    </div>
+
+    <% if(page.aside){%>
+        <%- partial('partial/compoment/aside/aside') %>
+    <%} %>
+</main>
