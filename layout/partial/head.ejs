@@ -18,12 +18,8 @@
 <title><%= title + subtitle %></title>
 <noscript>开启Javascript是必要的</noscript>
 <link rel="icon" type="image/x-icon" href="<%= url_for(theme.site.siteIcon) %>">
-<link rel="apple-touch-icon" href="<%= url_for(theme.site.siteIcon) %>">
-<meta name="apple-mobile-web-app-title" content="<%= config.title %>">
-<link rel="bookmark" href="<%= url_for(theme.site.siteIcon) %>">
-<link rel="apple-touch-icon-precomposed" sizes="180x180" href="<%= url_for(theme.site.siteIcon) %>">
-<meta name="description" content="<%= description %>">
-<meta name="theme-color" content="#1C1C1F">
+<meta name="description" content="<%= description %>"><% if (theme.pwa.enable) { %>
+<%- partial('partial/pwa') %><% } %>
 <link rel="stylesheet" href="/css/var.css">
 <link rel="stylesheet" href="/css/main.css">
 <link rel="stylesheet" href="/css/custom.css">
