@@ -191,16 +191,16 @@ footer:
   # 底部上方一排图标
   information:
     left: # 左侧显示图标
-    # Github:
-    #   icon: ri-github-fill
-    #   url: https://github.com/wleelw
+      Github:
+        icon: ri-github-fill
+        url: https://github.com/wleelw
     # Mail:
     #   icon: ri-mail-fill
     #   url: mailto:wleelw@sondy.top
     right: # 右侧显示图标
-    # Bilibili:
-    #   icon: ri-bilibili-fill
-    #   url: https://space.bilibili.com/1329819902
+      Bilibili:
+        icon: ri-bilibili-fill
+        url: https://space.bilibili.com/1329819902
     # 抖音:
     #   icon: ri-tiktok-line
     #   url: https://v.douyin.com/iJsLc8jt/
@@ -329,6 +329,7 @@ comment:
 
 ai: # 文章页面AI
   enable: false
+  key: Qi7QIXLOrxLCyKBW0bie
 
 # 朋友圈配置
 circle:

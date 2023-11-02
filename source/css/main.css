@@ -2537,6 +2537,10 @@ blockquote footer cite::before {
     text-shadow: none
 }
 
+#page-header #nav a:hover span.scoicon {
+    opacity: 0;
+}
+
 #page-header.nav-fixed #nav {
     position: fixed;
     top: 0;
