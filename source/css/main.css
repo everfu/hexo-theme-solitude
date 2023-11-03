@@ -2537,6 +2537,10 @@ blockquote footer cite::before {
     text-shadow: none
 }
 
+#page-header #nav a:hover span.scoicon {
+    opacity: 0;
+}
+
 #page-header.nav-fixed #nav {
     position: fixed;
     top: 0;
@@ -13829,6 +13833,24 @@ div#sco-footer-bar .footer-bar-description {
 
 #bber .bber-music .aplayer-lrc {
     display: none
+}
+
+#bber .bber-video {
+    position: relative;
+    padding: 30% 50%;
+    margin: 0.5rem 0
+}
+
+#bber .bber-video video,
+#bber .bber-video iframe {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    margin: 0;
+    border-radius: 8px;
+    border: var(--style-border)
 }
 
 #bber-tips {

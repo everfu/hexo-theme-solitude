@@ -1,18 +1,3 @@
-<style type="text/css">
-    <!--.topGroup .todayCard::after {-->
-    <!--    box-shadow: 0 -109px 133px -9px <%- theme.hometop.recommendList.color %> inset;-->
-    <!--}-->
-
-    .todayCard-title,
-    .todayCard-tips,
-    .topGroup .banner-button {
-        color: #ffffff;
-    }
-
-    .topGroup .todayCard {
-        background: <%- theme.hometop.recommendList.color %>;
-    }
-</style>
 <% for (const post of site.posts.data.filter(item => item.recommend === true).slice(0,6)){ %>
     <div class="recent-post-item">
         <div class="post_cover left_radius">
