@@ -15,8 +15,16 @@
         </div>
     </div> 
 <% } %>
-<div class="todayCard" id="todayCard" onclick="pjax.loadUrl('<%= theme.hometop.recommendList.url %>')"
-    style="z-index: 1;">
+<% if (theme.hometop.recommendList.url.startsWith('/') && theme.hometop.recommendList.url.endsWith('/')) { %>
+<div class="todayCard" id="todayCard" onclick="pjax.loadUrl('<%= theme.hometop.recommendList.url %>')" style="z-index: 1;">
+<% } else { %>
+<script>
+    function GoTodayCard() {
+        window.open("<%= theme.hometop.recommendList.url %>", "_blank");
+    }
+</script>
+<div class="todayCard" id="todayCard" onclick="GoTodayCard()" style="z-index: 1;">
+<% } %>
     <div class="todayCard-info">
         <div class="todayCard-tips"><%= theme.hometop.recommendList.sup %></div>
         <div class="todayCard-title"><%= theme.hometop.recommendList.title %></div>
