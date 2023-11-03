@@ -13835,6 +13835,24 @@ div#sco-footer-bar .footer-bar-description {
     display: none
 }
 
+#bber .bber-video {
+    position: relative;
+    padding: 30% 50%;
+    margin: 0.5rem 0
+}
+
+#bber .bber-video video,
+#bber .bber-video iframe {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    margin: 0;
+    border-radius: 8px;
+    border: var(--style-border)
+}
+
 #bber-tips {
     font-size: 14px;
     display: flex;
