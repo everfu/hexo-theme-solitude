@@ -12830,7 +12830,7 @@ span.tags-punctuation {
 }
 
 span.tags-punctuation::before {
-    content: "\edfc";
+    content: "\e071";
     font-family: scoicon, serif !important;
     font-size: 14px;
     opacity: .4;
