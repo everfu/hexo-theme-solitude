@@ -47,7 +47,7 @@ class search{
     if (!GLOBALCONFIG.localsearch.preload && dataObj === null) dataObj = this.fetchData(GLOBALCONFIG.localsearch.path)
     $input.addEventListener('input', function type() {
       const keywords = this.value.trim().toLowerCase().split(/[\s]+/)
-      if (keywords[0] !== '') $loadingStatus.innerHTML = '<i class="ri-loader-2-fill"></i><span>加载中</span>'
+      if (keywords[0] !== '') $loadingStatus.innerHTML = '<i class="scoicon sco-loading-line"></i><span>加载中</span>'
       else {
         $resultContent.innerHTML = ''
         return

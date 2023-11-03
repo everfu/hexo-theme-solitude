@@ -2,18 +2,7 @@
     <%- partial('partial/compoment/links/banner') %>
 </div>
 <% if(theme.circle.angle.enable){ %>
-    <div class="title-h2-a">
-        <div class="title-h2-a-left"><h2 style="padding-top: 0;margin:0.6rem 0 0 0;">随机文章</h2>
-            <a id="random-post-start" href="javascript:fetchRandomPost();" rel="external nofollow" data-pjax-state=""
-               style="transition-duration: 0.3s; transform: rotate(9000deg); opacity: 1;">
-                <i class="ri-refresh-line"></i>
-            </a>
-        </div>
-        <div class="title-h2-a-right">
-            <a class="random-post-all" href="/circle/" data-pjax-state="">查看鱼塘</a>
-        </div>
-    </div>
-    <div id="random-post"></div>
+    <%- partial('partial/compoment/links/angle') %>
 <% } %>
 <div class="flink" id="article-container">
     <% site.data.links.links.forEach(data => { %>

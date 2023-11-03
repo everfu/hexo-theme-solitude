@@ -5,7 +5,7 @@ site:
     custom: Solitude #自定义内容 例如：scoicon sco-logo / 王卓Sco / https://p.sondy.top/logo.png
   siteIcon: https://bu.dusays.com/2023/10/31/6540daf117d20.png # 网页icon
   icon: https://bu.dusays.com/2023/10/31/6540daf117d20.png # 页脚的icon、加载动画默认的icon
-  icp: 湘ICP备2023015327号 # ICP 例如：湘ICP备2023015327号
+  icp:  # ICP 例如：湘ICP备2023015327号
 
 
 # 导航栏
@@ -25,40 +25,40 @@ nav:
       child:
         文章列表:
           url: /archives/
-          icon: ri-archive-fill
+          icon: scoicon sco-folder-fill
         全部分类:
           url: /categories/
-          icon: ri-send-backward
+          icon: scoicon sco-checkbox-multiple-blank-fill
         全部标签:
           url: /tags/
-          icon: ri-price-tag-3-fill
+          icon: scoicon sco-price-tag-fill
     友链:
       url: false
       child:
         鱼塘:
           url: /moments/
-          icon: ri-bubble-chart-fill
+          icon: scoicon sco-wifi-fill
         友情链接:
           url: /links/
-          icon: ri-links-line
+          icon: scoicon sco-group-fill
         宝藏博主:
           url: javascript:travelling()
-          icon: ri-gift-fill
+          icon: scoicon sco-gift-fill
     我的:
       url: false
       child:
         装备:
           url: /equipment/
-          icon: ri-macbook-fill
+          icon: scoicon sco-laptop-line
         工具箱:
           url: /tlink/
-          icon: ri-tools-fill
+          icon: scoicon sco-tools-fill
     关于:
       url: false
       child:
         关于本站:
           url: /about/
-          icon: ri-user-smile-fill
+          icon: scoicon sco-contacts-fill
 
 
   # 导航栏右侧快捷菜单 (true,false)
@@ -77,7 +77,7 @@ hometop:
   banner:
     enable: true # 是否打开顶部banner
     title: 宁静致远<br>热爱生活 # 左上角显示文字
-    url: WWW.SONDY.TOP # title下方小字
+    url: WWW.WZSCO.TOP # title下方小字
     # 轮播icon
     icon:
       HTML:
@@ -109,15 +109,15 @@ hometop:
   categoryGroup:
     G1:
       name: 必看精选
-      icon: ri-git-repository-fill
+      icon: scoicon sco-star-smile-fill
       url: /tags/精选/
     G2:
       name: 热门文章
-      icon: ri-fire-fill
+      icon: scoicon sco-fire-fill
       url: /categories/热门/
     G3:
       name: 实用教程
-      icon: ri-code-box-fill
+      icon: scoicon sco-book-mark-fill
       url: /tags/教程/
 
   # 右侧置顶列表（在文章的front matter中添加“recommend: true”）
@@ -156,10 +156,10 @@ aside:
     # 个人信息卡片底部的小图标，按照例子填写
     information:
       Github:
-        icon: ri-github-fill
+        icon: scoicon sco-github-line
         url: https://github.com/DuoSco/Hexo-Theme-slitude
       Bilibili:
-        icon: ri-bilibili-fill
+        icon: scoicon sco-bilibili-line
         url: https://space.bilibili.com/1329819902
     # 跳转按钮
     button:
@@ -192,34 +192,34 @@ footer:
   information:
     left: # 左侧显示图标
       Github:
-        icon: ri-github-fill
+        icon: scoicon sco-bilibili-line
         url: https://github.com/wleelw
-    # Mail:
-    #   icon: ri-mail-fill
-    #   url: mailto:wleelw@sondy.top
+      Mail:
+        icon: scoicon sco-mail-line
+        url: mailto:wleelw@wzsco.top
     right: # 右侧显示图标
       Bilibili:
-        icon: ri-bilibili-fill
+        icon: scoicon sco-bilibili-line
         url: https://space.bilibili.com/1329819902
-    # 抖音:
-    #   icon: ri-tiktok-line
-    #   url: https://v.douyin.com/iJsLc8jt/
+      抖音:
+        icon: scoicon sco-douyin-fill
+        url: https://v.douyin.com/iJsLc8jt/
   # 底部导航栏
   group: # 从左至右
-  # 导航:
-  #   归档: /archives/
-  #   分类: /categories/
-  #   标签: /tags/
-  # 服务:
-  #   阿里云: https://aliyun.com/
-  #   51la统计: https://v6.51.la/
-  #   百度统计: https://tongji.baidu.com/
-  # 支持:
-  #   打赏记录: /about/
-  # 协议:
-  #   Cookies: /cookies/
-  #   用户协议: /privacy/
-  #   版权协议: /copyright/
+    导航:
+      归档: /archives/
+      分类: /categories/
+      标签: /tags/
+    服务:
+      阿里云: https://aliyun.com/
+      51la统计: https://v6.51.la/
+      百度统计: https://tongji.baidu.com/
+    支持:
+      打赏记录: /about/
+    协议:
+      Cookies: /cookies/
+      用户协议: /privacy/
+      版权协议: /copyright/
 
   # 底部随机友链
   randomlink: false
@@ -411,7 +411,7 @@ pwa:
 # 非必要勿动
 cdn:
   head:
-    remixicon: https://cdn.bootcdn.net/ajax/libs/remixicon/3.5.0/remixicon.css
+    scoicon: https://cdn.bootcdn.net/ajax/libs/remixicon/3.5.0/remixicon.css
     instantsearch: https://cdn.bootcdn.net/ajax/libs/instantsearch.js/4.9.1/instantsearch.production.min.js
     twikoojs: https://cdn.bootcdn.net/ajax/libs/twikoo/1.6.16/twikoo.all.min.js
     algolia: https://cdn.bootcdn.net/ajax/libs/algoliasearch/4.9.3/algoliasearch-lite.umd.min.js

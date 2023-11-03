@@ -929,7 +929,7 @@ blockquote footer cite::before {
     font-size: 16px
 }
 
-.highlight-tools .ri-file-copy-fill {
+.highlight-tools .sco-copy-fill {
     position: absolute;
     right: .7rem;
     cursor: pointer;
@@ -937,7 +937,7 @@ blockquote footer cite::before {
     font-size: 18px
 }
 
-.highlight-tools .ri-file-copy-fill:hover {
+.highlight-tools .sco-copy-fill:hover {
     color: var(--sco-main)
 }
 
@@ -2535,10 +2535,6 @@ blockquote footer cite::before {
 #page-header.not-top-img #nav a:hover {
     color: var(--sco-white);
     text-shadow: none
-}
-
-#page-header #nav a:hover span.scoicon {
-    opacity: 0;
 }
 
 #page-header.nav-fixed #nav {
@@ -5469,9 +5465,9 @@ html {
         position: absolute;
         display: flex;
         z-index: 1;
-        content: "\ee24";
+        content: "\e008";
         transition: .2s;
-        font-family: remixicon, serif !important;
+        font-family: scoicon, serif !important;
         align-items: center;
         justify-content: center;
         font-size: 22px;
@@ -7638,7 +7634,7 @@ a.categoryButton i {
     opacity: .2;
     position: absolute;
     right: 0;
-    top: 7%;
+    top: 20%;
     transition: .3s;
     width: 100px;
     text-align: center;
@@ -12831,7 +12827,7 @@ span.tags-punctuation {
 
 span.tags-punctuation::before {
     content: "\edfc";
-    font-family: remixicon, serif !important;
+    font-family: scoicon, serif !important;
     font-size: 14px;
     opacity: .4;
 }

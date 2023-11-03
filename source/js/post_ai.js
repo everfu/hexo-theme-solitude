@@ -37,7 +37,7 @@ function ChucklePostAI(AI_option) {
     post_ai_box.setAttribute('id', 'post-ai');
     targetElement.insertBefore(post_ai_box, targetElement.firstChild);
     post_ai_box.innerHTML = `<div class="ai-title">
-      <i class="ri-robot-2-fill"></i>
+      <i class="scoicon sco-ai-line"></i>
       <div class="ai-title-text">${interface.name}</div>
       <div class="ai-tag">${interface.version}</div>
     </div>
@@ -500,4 +500,4 @@ function ChucklePostAI(AI_option) {
     }
 
     ai_init();
-}
+}}
