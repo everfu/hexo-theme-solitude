@@ -14,51 +14,52 @@ nav:
   left:
     enable: false
     menu:
-      项目:
-        Solitude:
-          icon: https://bu.dusays.com/2023/10/31/6540daf117d20.png
-          url: https://github.com/DuoSco/Hexo-Theme-solitude
-  # 导航栏内容
+#      项目:
+#        Solitude:
+#          icon: https://bu.dusays.com/2023/10/31/6540daf117d20.png
+#          url: https://github.com/DuoSco/Hexo-Theme-solitude
+
+# 导航栏内容
   menu:
-    文库:
-      url: false
-      child:
-        文章列表:
-          url: /archives/
-          icon: scoicon sco-folder-fill
-        全部分类:
-          url: /categories/
-          icon: scoicon sco-checkbox-multiple-blank-fill
-        全部标签:
-          url: /tags/
-          icon: scoicon sco-price-tag-fill
-    友链:
-      url: false
-      child:
+#    文库:
+#      url: false
+#      child:
+#        文章列表:
+#          url: /archives/
+#          icon: scoicon sco-folder-fill
+#        全部分类:
+#          url: /categories/
+#          icon: scoicon sco-checkbox-multiple-blank-fill
+#        全部标签:
+#          url: /tags/
+#          icon: scoicon sco-price-tag-fill
+#    友链:
+#      url: false
+#      child:
 #        鱼塘:
 #          url: /moments/
 #          icon: scoicon sco-wifi-fill
-        友情链接:
-          url: /links/
-          icon: scoicon sco-group-fill
-        宝藏博主:
-          url: javascript:travelling()
-          icon: scoicon sco-gift-fill
-    我的:
-      url: false
-      child:
-        装备:
-          url: /equipment/
-          icon: scoicon sco-laptop-line
-        工具箱:
-          url: /tlink/
-          icon: scoicon sco-tools-fill
-    关于:
-      url: false
-      child:
-        关于本站:
-          url: /about/
-          icon: scoicon sco-contacts-fill
+#        友情链接:
+#          url: /links/
+#          icon: scoicon sco-group-fill
+#        宝藏博主:
+#          url: javascript:travelling()
+#          icon: scoicon sco-gift-fill
+#    我的:
+#      url: false
+#      child:
+#        装备:
+#          url: /equipment/
+#          icon: scoicon sco-laptop-line
+#        工具箱:
+#          url: /tlink/
+#          icon: scoicon sco-tools-fill
+#    关于:
+#      url: false
+#      child:
+#        关于本站:
+#          url: /about/
+#          icon: scoicon sco-contacts-fill
 
 
   # 导航栏右侧快捷菜单 (true,false)
@@ -185,7 +186,7 @@ aside:
 
   # 建站信息
   siteinfo:
-    postcount: true # 文章数
+    postcount: false # 文章数
     wordcount: false # 总字数
     pv: false # 访问量
     uv: false # 访客数
@@ -199,35 +200,35 @@ footer:
   # 底部上方一排图标
   information:
     left: # 左侧显示图标
-      Github:
-        icon: scoicon sco-bilibili-line
-        url: https://github.com/wleelw
-      Mail:
-        icon: scoicon sco-mail-line
-        url: mailto:wleelw@wzsco.top
+#      Github:
+#        icon: scoicon sco-bilibili-line
+#        url: https://github.com/wleelw
+#      Mail:
+#        icon: scoicon sco-mail-line
+#        url: mailto:wleelw@wzsco.top
     right: # 右侧显示图标
-      Bilibili:
-        icon: scoicon sco-bilibili-line
-        url: https://space.bilibili.com/1329819902
-      抖音:
-        icon: scoicon sco-douyin-fill
-        url: https://v.douyin.com/iJsLc8jt/
+#      Bilibili:
+#        icon: scoicon sco-bilibili-line
+#        url: https://space.bilibili.com/1329819902
+#      抖音:
+#        icon: scoicon sco-douyin-fill
+#        url: https://v.douyin.com/iJsLc8jt/
   # 底部导航栏
   group: # 从左至右
-    导航:
-      归档: /archives/
-      分类: /categories/
-      标签: /tags/
-    服务:
-      阿里云: https://aliyun.com/
-      51la统计: https://v6.51.la/
-      百度统计: https://tongji.baidu.com/
-    支持:
-      打赏记录: /about/
-    协议:
-      Cookies: /cookies/
-      用户协议: /privacy/
-      版权协议: /copyright/
+#    导航:
+#      归档: /archives/
+#      分类: /categories/
+#      标签: /tags/
+#    服务:
+#      阿里云: https://aliyun.com/
+#      51la统计: https://v6.51.la/
+#      百度统计: https://tongji.baidu.com/
+#    支持:
+#      打赏记录: /about/
+#    协议:
+#      Cookies: /cookies/
+#      用户协议: /privacy/
+#      版权协议: /copyright/
 
   # 底部随机友链
   randomlink: false
