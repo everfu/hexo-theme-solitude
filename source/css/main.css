@@ -2534,7 +2534,8 @@ blockquote footer cite::before {
 
 #page-header.not-top-img #nav a:hover {
     color: var(--sco-white);
-    text-shadow: none
+    text-shadow: none;
+    align-items: center
 }
 
 #page-header #nav a:hover span.scoicon {
@@ -5470,7 +5471,6 @@ html {
         display: flex;
         z-index: 1;
         content: "\e008";
-        transition: .2s;
         font-family: scoicon, serif !important;
         align-items: center;
         justify-content: center;
@@ -5480,7 +5480,8 @@ html {
     }
 
     .post #nav #site-name:hover {
-        background: var(--sco-white-op)
+        background: var(--sco-white-op);
+        align-items: center
     }
 
     .nav-fixed #nav #site-name:hover {
@@ -6497,7 +6498,7 @@ a.console_switchbutton {
     height: 35px;
     width: 70px;
     justify-content: center;
-    align-items: center;
+    align-items: flex-end;
     text-shadow: none;
     border-radius: 40px;
     cursor: pointer

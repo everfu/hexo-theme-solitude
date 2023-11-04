@@ -500,4 +500,4 @@ function ChucklePostAI(AI_option) {
     }
 
     ai_init();
-}}
+}
