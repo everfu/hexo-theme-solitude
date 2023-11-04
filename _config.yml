@@ -35,9 +35,9 @@ nav:
     友链:
       url: false
       child:
-        鱼塘:
-          url: /moments/
-          icon: scoicon sco-wifi-fill
+#        鱼塘:
+#          url: /moments/
+#          icon: scoicon sco-wifi-fill
         友情链接:
           url: /links/
           icon: scoicon sco-group-fill

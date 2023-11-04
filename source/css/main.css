@@ -7195,7 +7195,7 @@ span.fund_name {
     align-content: center
 }
 
-#aside-content .card-widget.card-power {
+#aside-content .card-widget.card-power,#aside-content .card-widget.card-history,#aside-content .card-widget.card-welcome {
     padding: .4rem .6rem !important
 }
 

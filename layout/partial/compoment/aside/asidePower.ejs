@@ -1,5 +1,5 @@
 <div class="card-widget card-power">
-    <% const data = site.data.aifadian.links %>
+    <% const data = site.data.afadian.links %>
     <% const vip = data[Math.floor(Math.random() * data.length)] %>
     <div class="item-headline">
         <img src="/img/power.png" style="width: 1.2rem">
@@ -7,7 +7,7 @@
         <a class="power-charge" href="<%= theme.aside.power.link %>" rel="external nofollow" target="_blank"
            title="赞助博主">赞助</a>
     </div>
-    <a id="power-star" data-pjax-state="" href="<%= vip.url %>>">
+    <a id="power-star" data-pjax-state="" href="<%= vip.url %>">
         <div id="power-star-image"
              style="background-image: url('<%= vip.avatar %>');"></div>
         <div class="power-star-body">

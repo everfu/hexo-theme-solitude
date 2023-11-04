@@ -794,36 +794,3 @@ document.addEventListener('pjax:complete', () => {
 window.onkeydown = function (e) {
     123 === e.keyCode && utils.snackbarShow("开发者模式已打开，请遵循GPL协议", !1, 3e3)
 };
-
-(win=> {
-        win.saveToLocal = {
-            set: function setWithExpiry(key, value, ttl) {
-                if (ttl === 0)
-                    return
-                const now = new Date()
-                const expiryDay = ttl * 86400000
-                const item = {
-                    value: value,
-                    expiry: now.getTime() + expiryDay,
-                }
-                localStorage.setItem(key, JSON.stringify(item))
-            },
-
-            get: function getWithExpiry(key) {
-                const itemStr = localStorage.getItem(key)
-
-                if (!itemStr) {
-                    return undefined
-                }
-                const item = JSON.parse(itemStr)
-                const now = new Date()
-
-                if (now.getTime() > item.expiry) {
-                    localStorage.removeItem(key)
-                    return undefined
-                }
-                return item.value
-            }
-        }
-    }
-)(window)
