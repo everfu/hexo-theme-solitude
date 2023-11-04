@@ -12,7 +12,7 @@ site:
 nav:
   #导航栏左侧
   left:
-    enable: true
+    enable: false
     menu:
       项目:
         Solitude:
@@ -64,12 +64,12 @@ nav:
   # 导航栏右侧快捷菜单 (true,false)
   right: # @todo 允许用户自定义
     travellings: true   #开往
-    random: true        #
+    random: true        # 随机文章跳转
     console: true       #控制台
 
 # 自定义icon
 icon:
-  customicon: https://cdn3.codesign.qq.com/icons/7pOrz0WXB5ZWJPX/latest/iconfont.css
+  customicon:
 
 # 首页顶部样式
 hometop:
@@ -419,7 +419,7 @@ pwa:
 # 非必要勿动
 cdn:
   head:
-    scoicon: https://cdn.bootcdn.net/ajax/libs/remixicon/3.5.0/remixicon.css
+    scoicon: https://cdn3.codesign.qq.com/icons/7pOrz0WXB5ZWJPX/latest/iconfont.css
     instantsearch: https://cdn.bootcdn.net/ajax/libs/instantsearch.js/4.9.1/instantsearch.production.min.js
     twikoojs: https://cdn.bootcdn.net/ajax/libs/twikoo/1.6.16/twikoo.all.min.js
     algolia: https://cdn.bootcdn.net/ajax/libs/algoliasearch/4.9.3/algoliasearch-lite.umd.min.js
