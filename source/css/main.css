@@ -2534,7 +2534,8 @@ blockquote footer cite::before {
 
 #page-header.not-top-img #nav a:hover {
     color: var(--sco-white);
-    text-shadow: none
+    text-shadow: none;
+    align-items: center
 }
 
 #page-header #nav a:hover span.scoicon {
@@ -5470,7 +5471,6 @@ html {
         display: flex;
         z-index: 1;
         content: "\e008";
-        transition: .2s;
         font-family: scoicon, serif !important;
         align-items: center;
         justify-content: center;
@@ -5480,7 +5480,8 @@ html {
     }
 
     .post #nav #site-name:hover {
-        background: var(--sco-white-op)
+        background: var(--sco-white-op);
+        align-items: center
     }
 
     .nav-fixed #nav #site-name:hover {
@@ -6497,7 +6498,7 @@ a.console_switchbutton {
     height: 35px;
     width: 70px;
     justify-content: center;
-    align-items: center;
+    align-items: flex-end;
     text-shadow: none;
     border-radius: 40px;
     cursor: pointer
@@ -7194,47 +7195,6 @@ span.fund_name {
     align-content: center
 }
 
-#aside-content .card-widget#card-wechat {
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    padding: 0;
-    cursor: pointer;
-    border: none;
-    height: 100px
-}
-
-#aside-content .card-widget#card-wechat::before {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    left: 0;
-    top: 0;
-    /*background: url() center center no-repeat;*/
-    content: '';
-    background-size: cover
-}
-
-#aside-content .card-widget#card-wechat img {
-    max-height: 110px;
-    object-fit: cover
-}
-
-.friend-link {
-    display: flex;
-    justify-content: center;
-    align-content: center
-}
-
-#flip-wrapper {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-    display: flex;
-    justify-content: center
-}
-
 #aside-content .card-widget.card-power {
     padding: .4rem .6rem !important
 }
@@ -7327,40 +7287,6 @@ div#power-star-title {
     position: relative;
     width: calc(100% - 68px);
     justify-content: center
-}
-
-#flip-wrapper {
-    -webkit-perspective: 1000;
-    perspective: 1000
-}
-
-#flip-content {
-    width: 100%;
-    height: 100%;
-    -webkit-transform-style: preserve-3d;
-    transform-style: preserve-3d;
-    transition: cubic-bezier(0, 0, 0, 1.29) .3s
-}
-
-#flip-wrapper:hover #flip-content {
-    -webkit-transform: rotateY(180deg);
-    transform: rotateY(180deg)
-}
-
-.face {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-}
-
-.back.face {
-    display: block;
-    -webkit-transform: rotateY(180deg);
-    transform: rotateY(180deg);
-    box-sizing: border-box;
-    border: var(--sco-card-border);
 }
 
 #card-vip-designweekly.card-widget {

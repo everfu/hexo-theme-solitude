@@ -130,7 +130,7 @@ hometop:
 
 # 侧边栏
 aside:
-  # 值：about（关于我）、power（爱发电）、newestPost（最新文章）、allInfo（网站信息）、flip（公众号二维码）
+  # 值：about（关于我）、power（爱发电）、newestPost（最新文章）、allInfo（网站信息）、flip（公众号二维码）、welcome（个性定位）、history（那年今日）
   home: # 在主页显示的侧边栏信息
     noSticky: "about"
     Sticky: "allInfo"
@@ -166,14 +166,22 @@ aside:
       text: 了解更多
       url: /about/
   # 公众号二维码
-  flip: # 填url
+  flip:
+    favicon: # 右下角头像
     face: # 正面
     backface: # 鼠标悬停翻转图片
+  # 个性定位
+  welcome:
+    title: #【选填】留空将默认显示为：来访者
+    icon: 
+  # 那年今日
+  history:
+    title: #【选填】留空将默认显示为：那年今日
+    icon: 
   # 页面目录
   toc:
     post: true # 在文章页显示
     page: false # 在任意页显示
-
 
   # 建站信息
   siteinfo:

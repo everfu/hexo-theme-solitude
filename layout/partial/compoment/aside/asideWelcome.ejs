@@ -1,0 +1,25 @@
+<style>
+    #welcome-info {
+        overflow: hidden;
+        margin-top: 4px
+    }
+    #welcome-info .welcome-time {
+        width: 100%;
+        margin: 12px 0 0;
+        display: inline-flex
+    }
+    #welcome-info .welcome-message {
+        width: 100%;
+        margin-bottom: 8px;
+        display: inline-flex
+    }
+</style>
+<div class="card-widget card-welcome">
+    <div class="item-headline">
+        <i class="<%- theme.aside.welcome.icon || 'scoicon sco-map-pin-fill' %>"></i>
+        <span><%- theme.aside.welcome.title || '来访者' %></span>
+    </div>
+    <div id="welcome-info"></div>
+</div>
+<script type="text/javascript" src="https://unpkg.zhimg.com/jquery@latest/dist/jquery.min.js"></script>
+<script defer data-pjax src="/js/txmap.js"></script>
