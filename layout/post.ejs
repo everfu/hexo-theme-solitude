@@ -19,7 +19,9 @@
             </div>
         </div>
 
-        <%- partial('partial/compoment/post/postNav') %>
+        <% if(site.posts.length > 1){%>
+            <%- partial('partial/compoment/post/postNav') %>
+        <%} %>
 
         <%- related_posts(page, site.posts) %>
 

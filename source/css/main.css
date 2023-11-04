@@ -12706,7 +12706,7 @@ button.el-button.tk-cancel.el-button--default.el-button--small {
 }
 
 #page .tag-cloud-list a:hover {
-    background: var(--sco-blue) !important;
+    background: var(--sco-main) !important;
     box-shadow: var(--sco-shadow-blue);
     color: var(--sco-white) !important;
     border: var(--style-border-hover)
