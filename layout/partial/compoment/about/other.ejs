@@ -1,68 +1,76 @@
 <div class="author-content">
-    <div class="about-statistic author-content-item" style="background: url(<%= site.data.about.tj.img %>);">
-        <div class="card-content">
-            <div class="author-content-item-tips">数据</div>
-            <span class="author-content-item-title">访问统计</span>
-            <div id="statistic"></div>
-            <div class="post-tips">
-                统计信息来自 <a href="https://invite.51.la/1NzKqTeb?target=V6" target="_blank" rel="noopener nofollow">51la网站统计</a>
-            </div>
-            <div class="banner-button-group">
-                <a class="banner-button" onclick="pjax.loadUrl(&quot;/echart/&quot;)" data-pjax-state="">
-                    <i class="scoicon sco-right-btn-fill"></i>
-                    <span class="banner-button-text">文章统计</span>
-                </a>
+    <% if(site.data.about.tj){ %>
+        <div class="about-statistic author-content-item" style="background: url(<%= site.data.about.tj.img %>);">
+            <div class="card-content">
+                <div class="author-content-item-tips">数据</div>
+                <span class="author-content-item-title">访问统计</span>
+                <div id="statistic"></div>
+                <div class="post-tips">
+                    统计信息来自 <a href="https://invite.51.la/1NzKqTeb?target=V6" target="_blank"
+                                    rel="noopener nofollow">51la网站统计</a>
+                </div>
+                <div class="banner-button-group">
+                    <a class="banner-button" onclick="pjax.loadUrl(&quot;/echart/&quot;)" data-pjax-state="">
+                        <i class="scoicon sco-right-btn-fill"></i>
+                        <span class="banner-button-text">文章统计</span>
+                    </a>
+                </div>
             </div>
         </div>
-    </div>
-    <script>
-        fetch("<%= site.data.about.tj.url %>")
-            .then(res => res.text())
-            .then(data => {
-                let title = ["最近活跃", "今日人数", "今日访问", "昨日人数", "昨日访问", "本月访问", "总访问量"];
-                let num = data.match(/(<\/span><span>).*?(\/span><\/p>)/g);
-                num = num.map(el => {
-                    let val = el.replace(/(<\/span><span>)/g, "");
-                    let str = val.replace(/(<\/span><\/p>)/g, "");
-                    return str;
+        <script>
+            fetch("<%= site.data.about.tj.url %>")
+                .then(res => res.text())
+                .then(data => {
+                    let title = ["最近活跃", "今日人数", "今日访问", "昨日人数", "昨日访问", "本月访问", "总访问量"];
+                    let num = data.match(/(<\/span><span>).*?(\/span><\/p>)/g);
+                    num = num.map(el => {
+                        let val = el.replace(/(<\/span><span>)/g, "");
+                        let str = val.replace(/(<\/span><\/p>)/g, "");
+                        return str;
+                    });
+                    let s = document.getElementById("statistic");
+                    let statistic = [];
+                    for (let i = 0; i < num.length; i++) {
+                        if (i == 0 || i == num.length - 1) continue;
+                        s.innerHTML += "<div><span>" + title[i] + "</span><span id=" + title[i] + ">" + num[i] + "</span></div>";
+                    }
                 });
-                let s = document.getElementById("statistic");
-                let statistic = [];
-                for (let i = 0; i < num.length; i++) {
-                    if (i == 0 || i == num.length - 1) continue;
-                    s.innerHTML += "<div><span>" + title[i] + "</span><span id=" + title[i] + ">" + num[i] + "</span></div>";
-                }
-            });
-    </script>
-    <style>
-        :root {
-            --site-about-oneself-map--light: url(<%= site.data.about.oneself.map.light %>);
-            --site-about-oneself-map--dark: url(<%= site.data.about.oneself.map.dark %>);
-        }
-    </style>
-    <% const oneself = site.data.about.oneself; %>
-    <div class="author-content-item-group column mapAndInfo">
-        <div class="author-content-item map single">
-            <span class="map-title">我现在住在 <b><%= oneself.location %></b></span></div>
-        <div class="author-content-item selfInfo single">
-            <div><span class="selfInfo-title">生于</span>
-                <span class="selfInfo-content" style="color: #43a6c6;"><%= oneself.birthYear %></span>
-            </div>
-            <div>
-                <span class="selfInfo-title"><%= oneself.university %></span>
-                <span class="selfInfo-content" style="color: #c69043;"><%= oneself.major %></span>
-            </div>
-            <div>
-                <span class="selfInfo-title">现在职业</span>
-                <span class="selfInfo-content" style="color: #b04fe6;"><%= oneself.occupation %></span>
+        </script>
+    <% } %>
+    <% if(site.data.about.oneself){ %>
+        <style>
+            :root {
+                --site-about-oneself-map--light: url(<%= site.data.about.oneself.map.light %>);
+                --site-about-oneself-map--dark: url(<%= site.data.about.oneself.map.dark %>);
+            }
+        </style>
+        <% const oneself = site.data.about.oneself; %>
+        <div class="author-content-item-group column mapAndInfo">
+            <div class="author-content-item map single">
+                <span class="map-title">我现在住在 <b><%= oneself.location %></b></span></div>
+            <div class="author-content-item selfInfo single">
+                <div><span class="selfInfo-title">生于</span>
+                    <span class="selfInfo-content" style="color: #43a6c6;"><%= oneself.birthYear %></span>
+                </div>
+                <div>
+                    <span class="selfInfo-title"><%= oneself.university %></span>
+                    <span class="selfInfo-content" style="color: #c69043;"><%= oneself.major %></span>
+                </div>
+                <div>
+                    <span class="selfInfo-title">现在职业</span>
+                    <span class="selfInfo-content" style="color: #b04fe6;"><%= oneself.occupation %></span>
+                </div>
             </div>
         </div>
-    </div>
+    <% } %>
 </div>
-<div class="author-content">
-    <div class="create-site-post author-content-item single">
-        <div class="author-content-item-tips">心路历程</div>
-        <span class="author-content-item-title">为什么建站？</span>
-        <%- site.data.about.cause %>
+
+<% if(site.data.about.cause){ %>
+    <div class="author-content">
+        <div class="create-site-post author-content-item single">
+            <div class="author-content-item-tips">心路历程</div>
+            <span class="author-content-item-title">为什么建站？</span>
+            <%- site.data.about.cause %>
+        </div>
     </div>
-</div>
+<% } %>

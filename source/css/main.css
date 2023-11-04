@@ -6710,17 +6710,17 @@ a.console_switchbutton {
     }
 }
 
-@media screen and (min-width: 768px) {
-    #aside-content .sticky_layout {
-        margin-top: 1rem
-    }
-}
+/*@media screen and (min-width: 768px) {*/
+/*    #aside-content .sticky_layout {*/
+/*        margin-top: 1rem*/
+/*    }*/
+/*}*/
 
-@media screen and (min-width: 1300px) {
-    #aside-content .sticky_layout {
-        margin-top: 1rem
-    }
-}
+/*@media screen and (min-width: 1300px) {*/
+/*    #aside-content .sticky_layout {*/
+/*        margin-top: 1rem*/
+/*    }*/
+/*}*/
 
 #aside-content .sticky_layout {
     top: 80px;

@@ -338,6 +338,88 @@ class toc {
 let lastSayHello = "";
 
 class sco {
+    /**
+     * 那年今日
+     * @type {*}
+     */
+    static history() {
+        if (document.getElementById('history-container')) {
+            function append(parent, text) {
+                if (typeof text === 'string') {
+                    let temp = document.createElement('div');
+                    temp.innerHTML = text;
+                    // 防止元素太多 进行提速
+                    let frag = document.createDocumentFragment();
+                    while (temp.firstChild) {
+                        frag.appendChild(temp.firstChild);
+                    }
+                    parent.appendChild(frag);
+                } else {
+                    parent.appendChild(text);
+                }
+            }
+
+            let history_data = sco.history_get_data()
+            fetch(history_data[0])
+                .then(data => data.json())
+                .then(data => {
+                    console.log(data[history_data[1]])
+                    let html_item = ''
+                    for (let item of data[history_data[1]]) {
+                        html_item += '<div class="swiper-slide history_slide"><span class="history_slide_time">A.D.' +
+                            item.year + '</span>' + '<span class="history_slide_link">' + item.title + '</span></div>'
+
+                    }
+                    var history_container_wrapper = document.getElementById('history_container_wrapper')
+                    append(history_container_wrapper, html_item);
+                    var swiper_history = new Swiper('.history_swiper-container', {
+                        passiveListeners: true,
+                        spaceBetween: 30,
+                        effect: 'coverflow',
+                        coverflowEffect: {
+                            rotate: 30,
+                            slideShadows: false,
+                        },
+                        loop: true,
+                        direction: 'vertical',
+                        autoplay: {
+                            disableOnInteraction: true,
+                            delay: 5000
+                        },
+
+                        mousewheel: false,
+                        // autoHeight: true,
+
+                    });
+
+                    let history_comtainer = document.getElementById('history-container');
+                    history_comtainer.onmouseenter = function() {
+                        swiper_history.autoplay.stop();
+                    };
+                    history_comtainer.onmouseleave = function() {
+                        swiper_history.autoplay.start();
+                    }
+                })
+        }
+    }
+    static history_get_data() {
+        let myDate = new Date();
+        let myMonth = myDate.getMonth() + 1;
+        let getMonth;
+        if (myMonth < 10) {
+            getMonth = "0" + String(myMonth);
+        } else {
+            getMonth = String(myMonth);
+        }
+        let getDate = String(myDate.getDate());
+        if (getDate < 10) {
+            getDate = "0" + String(getDate);
+        } else {
+            getDate = String(getDate);
+        }
+        let getMonthDate = "S" + getMonth + getDate;
+        return ["https://cdn.meuicat.com/gh/Zfour/Butterfly-card-history@2.08/" + getMonth + ".json", getMonthDate]
+    }
     /*
      * 隐藏协议提醒助手
      */
@@ -694,6 +776,7 @@ window.refreshFn = () => {
     }
     GLOBALCONFIG.covercolor && coverColor();
     set_fest()
+    if (document.getElementById('history-baidu')) sco.history() // 那年今日
 }
 
 sco.initTheme()
@@ -705,98 +788,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
 document.addEventListener('pjax:complete', () => {
     window.refreshFn()
+    if (document.getElementById('history-baidu')) sco.history()
 })
 
 window.onkeydown = function (e) {
     123 === e.keyCode && utils.snackbarShow("开发者模式已打开，请遵循GPL协议", !1, 3e3)
-}
-
-var solitude = {
-    history_get_data: function() {
-        var myDate = new Date();
-        var myMonth = myDate.getMonth() + 1;
-        if (myMonth < 10) {
-            getMonth = "0" + String(myMonth);
-        } else {
-            getMonth = String(myMonth);
-        }
-        var getDate = String(myDate.getDate());
-        if (getDate < 10) {
-            getDate = "0" + String(getDate);
-        } else {
-            getDate = String(getDate);
-        }
-        var getMonthDate = "S" + getMonth + getDate;
-        return ["https://cdn.meuicat.com/gh/Zfour/Butterfly-card-history@2.08/" + getMonth + ".json", getMonthDate]
-    },
-	history: function() {
-        if (document.getElementById('history-container')) {
-            function append(parent, text) {
-                if (typeof text === 'string') {
-                    var temp = document.createElement('div');
-                    temp.innerHTML = text;
-                    // 防止元素太多 进行提速
-                    var frag = document.createDocumentFragment();
-                    while (temp.firstChild) {
-                        frag.appendChild(temp.firstChild);
-                    }
-                    parent.appendChild(frag);
-                } else {
-                    parent.appendChild(text);
-                }
-            }
-        
-            var history_data = solitude.history_get_data()
-            fetch(history_data[0])
-                .then(data => data.json())
-                .then(data => {
-                    console.log(data[history_data[1]])
-                    html_item = ''
-                    for (var item of data[history_data[1]]) {
-                        html_item += '<div class="swiper-slide history_slide"><span class="history_slide_time">A.D.' +
-                            item.year + '</span>' + '<span class="history_slide_link">' + item.title + '</span></div>'
-        
-                    }
-                    var history_container_wrapper = document.getElementById('history_container_wrapper')
-                    append(history_container_wrapper, html_item);
-                    var swiper_history = new Swiper('.history_swiper-container', {
-                        passiveListeners: true,
-                        spaceBetween: 30,
-                        effect: 'coverflow',
-                        coverflowEffect: {
-                            rotate: 30,
-                            slideShadows: false,
-                        },
-                        loop: true,
-                        direction: 'vertical',
-                        autoplay: {
-                            disableOnInteraction: true,
-                            delay: 5000
-                        },
-        
-                        mousewheel: false,
-                        // autoHeight: true,
-        
-                    });
-        
-                    var history_comtainer = document.getElementById('history-container');
-                    history_comtainer.onmouseenter = function() {
-                        swiper_history.autoplay.stop();
-                    };
-                    history_comtainer.onmouseleave = function() {
-                        swiper_history.autoplay.start();
-                    }
-                })
-        }
-	} //那年今日
-}
-
-function whenDOMReady() {
-	if (document.getElementById('history-baidu')) solitude.history()
-}
-
-whenDOMReady() // 打开网站先执行一次
-document.addEventListener("pjax:complete", whenDOMReady) // pjax加载完成（切换页面）后再执行一次
 };
 
 (win=> {
