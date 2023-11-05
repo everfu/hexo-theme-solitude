@@ -342,7 +342,8 @@ comment:
 
 ai: # 文章页面AI
   enable: false
-  key: Qi7QIXLOrxLCyKBW0bie
+  key: # 前往tianli-AI 购买
+  rec_method: # 推荐文章方式（all:匹配数据库所有文章、web:仅当前博客文章）默认：web
 
 # 朋友圈配置
 circle:
@@ -372,6 +373,8 @@ related_post:
   enable: true
   limit: 2 # 推荐文章数量
   date_type: created # 根据创建日期（created）或是更新日期（updated）
+
+# rightmenu(右键菜单)
 
 # 站点验证
 verify:
@@ -428,7 +431,7 @@ cdn:
     scoicon: https://cdn3.codesign.qq.com/icons/7pOrz0WXB5ZWJPX/latest/iconfont.css
     aplayercss: https://cdn.bootcdn.net/ajax/libs/aplayer/1.10.1/APlayer.min.css
     swipercss: https://cdn.bootcdn.net/ajax/libs/Swiper/9.2.4/swiper-bundle.min.css
-    twikoojs: https://cdn.bootcdn.net/ajax/libs/twikoo/1.6.16/twikoo.all.min.js
+    twikoojs: https://cdn.bootcdn.net/ajax/libs/twikoo/1.6.20/twikoo.all.min.js
     instantsearch: https://cdn.bootcdn.net/ajax/libs/instantsearch.js/4.9.1/instantsearch.production.min.js
     algolia: https://cdn.bootcdn.net/ajax/libs/algoliasearch/4.9.3/algoliasearch-lite.umd.min.js
     pacejs: https://cdn.bootcdn.net/ajax/libs/pace/1.2.4/pace.min.js

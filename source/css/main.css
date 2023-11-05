@@ -1837,7 +1837,7 @@ blockquote footer cite::before {
     position: absolute;
     opacity: 1;
     transition: .3s;
-    border: 5px solid var(--sco-white)
+
 }
 
 .author-info__top-group {
@@ -6727,10 +6727,6 @@ a.console_switchbutton {
     transition: top 0s
 }
 
-#aside-content .sticky_layout .card-widget:first-child {
-    margin-top: 0
-}
-
 #aside-content .card-widget:hover {
     box-shadow: var(--sco-shadow-border)
 }
@@ -9209,7 +9205,8 @@ div#author-info__sayhi:hover {
     border-radius: 500px;
     position: absolute;
     transition: cubic-bezier(.69, .39, 0, 1.21) .3s;
-    transform-origin: bottom
+    transform-origin: bottom;
+    border: 5px solid var(--sco-card-bg)
 }
 
 #aside-content .card-info:hover .avatar-img-group {
