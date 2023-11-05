@@ -175,7 +175,7 @@ window.oncontextmenu = function (e) {
             }
         } else {
             for (let j = 0; j < i.length; j++) {
-                i[j].style.display = 'block';
+                i[j].style.display = 'none';
             }
         }
 
