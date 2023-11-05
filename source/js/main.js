@@ -1,12 +1,12 @@
 function set_fest() {
     let date = new Date();
-    switch ((date.getMonth() + 1).toString() + '.' + date.getDate()){
+    switch ((date.getMonth() + 1).toString() + '.' + date.getDate()) {
         case '1.8': // 周总理逝世
         case '9.9': // 毛主席逝世
         case '7.7': // 七七事变
         case '9.18': // 九一八事变
         case '12.13': // 南京大屠杀国家公祭日
-             {
+        {
             // 创建一个<style>元素
             const styleElement = document.createElement('style');
             // 定义要添加的CSS样式
@@ -24,7 +24,8 @@ function set_fest() {
             styleElement.appendChild(document.createTextNode(css));
             // 将<style>元素添加到<head>标签中
             document.head.appendChild(styleElement);
-        }break;
+        }
+            break;
     }
 }
 
@@ -339,10 +340,37 @@ let lastSayHello = "";
 
 class sco {
     /**
+     * 个性定位
+     */
+    static card_welcome(){
+        /**
+         * 请求数据
+         */
+        ipLoacation = window.saveToLocal.get('ipLocation');
+        if (ipLoacation) {
+            // 使用 ipLocation
+
+        } else {
+            // 数据已过期或不存在
+            var script = document.createElement('script');
+            var url = `https://apis.map.qq.com/ws/location/v1/ip?key=${txkey}&output=jsonp`;
+            script.src = url;
+            window.QQmap = function (data) {
+                ipLoacation = data;
+                // 将数据保存到 localStorage，过期时间设置为 1 天
+                window.saveToLocal.set('ipLocation', ipLoacation, 1);
+                document.body.removeChild(script);
+                delete window.QQmap;
+            };
+            document.body.appendChild(script);
+        }
+        showWelcome();
+    }
+    /**
      * 那年今日
      * @type {*}
      */
-    static history() {
+    static card_history() {
         if (document.getElementById('history-container')) {
             function append(parent, text) {
                 if (typeof text === 'string') {
@@ -363,7 +391,6 @@ class sco {
             fetch(history_data[0])
                 .then(data => data.json())
                 .then(data => {
-                    console.log(data[history_data[1]])
                     let html_item = ''
                     for (let item of data[history_data[1]]) {
                         html_item += '<div class="swiper-slide history_slide"><span class="history_slide_time">A.D.' +
@@ -393,15 +420,16 @@ class sco {
                     });
 
                     let history_comtainer = document.getElementById('history-container');
-                    history_comtainer.onmouseenter = function() {
+                    history_comtainer.onmouseenter = function () {
                         swiper_history.autoplay.stop();
                     };
-                    history_comtainer.onmouseleave = function() {
+                    history_comtainer.onmouseleave = function () {
                         swiper_history.autoplay.start();
                     }
                 })
         }
     }
+
     static history_get_data() {
         let myDate = new Date();
         let myMonth = myDate.getMonth() + 1;
@@ -420,6 +448,7 @@ class sco {
         let getMonthDate = "S" + getMonth + getDate;
         return ["https://cdn.meuicat.com/gh/Zfour/Butterfly-card-history@2.08/" + getMonth + ".json", getMonthDate]
     }
+
     /*
      * 隐藏协议提醒助手
      */
@@ -471,7 +500,7 @@ class sco {
         }
     }
 
-    static switchHideAside(){
+    static switchHideAside() {
         const e = document.documentElement.classList;
         e.contains("hide-aside") ? saveToLocal.set("aside-status", "show", 2) : saveToLocal.set("aside-status", "hide", 2),
             e.toggle("hide-aside"),
@@ -499,10 +528,12 @@ class sco {
             document.documentElement.setAttribute('data-theme', 'dark')
             localStorage.setItem('theme', 'dark')
             utils.snackbarShow(GLOBALCONFIG.lang.theme.dark, false, 2000)
+            document.querySelector(".menu-darkmode-text").textContent = "深色模式";
         } else {
             document.documentElement.setAttribute('data-theme', 'light')
             localStorage.setItem('theme', 'light')
             utils.snackbarShow(GLOBALCONFIG.lang.theme.light, false, 2000)
+            document.querySelector(".menu-darkmode-text").textContent = "浅色模式";
         }
     }
 
@@ -623,6 +654,38 @@ class sco {
             }
         });
     }
+    /*
+     * 图片加水印
+     */
+    static downloadImage(e, t) {
+        rm.hideRightMenu();
+        if (0 == rm.downloadimging) {
+            rm.downloadimging = !0;
+            utils.snackbarShow("正在下载中，请稍后", !1, 1e4);
+            setTimeout((function() {
+                let o = new Image;
+                o.setAttribute("crossOrigin", "anonymous");
+                o.onload = function() {
+                    let e = document.createElement("canvas");
+                    e.width = o.width;
+                    e.height = o.height;
+                    e.getContext("2d").drawImage(o, 0, 0, o.width, o.height);
+                    let n = e.toDataURL("image/png");
+                    let a = document.createElement("a");
+                    let l = new MouseEvent("click");
+                    a.download = t || "photo";
+                    a.href = n;
+                    a.dispatchEvent(l);
+                };
+                o.src = e;
+                utils.snackbarShow("图片已添加盲水印，请遵守版权协议");
+                rm.downloadimging = !1;
+            }), "10000");
+        } else {
+            utils.snackbarShow("有正在进行中的下载，请稍后再试");
+        }
+    }
+
 
     static musicToggle() {
         const $music = document.querySelector('#nav-music'),
@@ -633,12 +696,34 @@ class sco {
             $console.classList.remove("on")
             wleelw_musicPlaying = false;
             $meting.aplayer.pause();
+            document.getElementById('menu-music-toggle').innerHTML = `<i class="scoicon sco-play-fill"></i><span>播放音乐</span>`
         } else {
             $music.classList.add("playing")
             $console.classList.add("on")
             wleelw_musicPlaying = true;
             $meting.aplayer.play();
+            document.getElementById('menu-music-toggle').innerHTML = `<i class="scoicon sco-pause-fill"></i><span>暂停音乐</span>`
         }
+        rm.hideRightMenu()
+    }
+
+    static musicSkipBack() {
+        document.querySelector('meting-js').aplayer.skipBack()
+        rm.hideRightMenu()
+    }
+
+    static musicSkipForward() {
+        document.querySelector('meting-js').aplayer.skipForward()
+        rm.hideRightMenu()
+    }
+
+    static musicGetName() {
+        var e = document.querySelectorAll('.aplayer-title');
+        var t = [];
+        for (var o = e.length - 1; o >= 0; o--) {
+            t[o] = e[o].innerText;
+        }
+        return t[0];
     }
 
     static scrollToComment() {
@@ -757,6 +842,7 @@ window.refreshFn = () => {
     sco.hideCookie()
     sco.addPhotoFigcaption()
     sco.sayhi()
+    addRightMenuClickEvent()
     GLOBALCONFIG.lazyload.enable && sco.lazyloadImg()
     GLOBALCONFIG.lightbox && sco.lightbox('')
     GLOBALCONFIG.randomlinks && randomLinksList()
@@ -776,7 +862,8 @@ window.refreshFn = () => {
     }
     GLOBALCONFIG.covercolor && coverColor();
     set_fest()
-    if (document.getElementById('history-baidu')) sco.history() // 那年今日
+    if (document.getElementById('history-baidu')) sco.card_history() // 那年今日
+    if (document.getElementById('welcome-info')) sco.card_welcome() // 个性定位
 }
 
 sco.initTheme()
@@ -788,7 +875,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
 document.addEventListener('pjax:complete', () => {
     window.refreshFn()
-    if (document.getElementById('history-baidu')) sco.history()
 })
 
 window.onkeydown = function (e) {

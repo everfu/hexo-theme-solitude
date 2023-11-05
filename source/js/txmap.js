@@ -1,26 +1,3 @@
-/**
- * 请求数据
- */
-var ipLoacation;
-
-ipLoacation = window.saveToLocal.get('ipLocation');
-if (ipLoacation) {
-    // 使用 ipLocation
-
-} else {
-    // 数据已过期或不存在
-    var script = document.createElement('script');
-    var url = `https://apis.map.qq.com/ws/location/v1/ip?key=${txkey}&output=jsonp`;
-    script.src = url;
-    window.QQmap = function (data) {
-        ipLoacation = data;
-        // 将数据保存到 localStorage，过期时间设置为 1 天
-        window.saveToLocal.set('ipLocation', ipLoacation, 1);
-        document.body.removeChild(script);
-        delete window.QQmap;
-    };
-    document.body.appendChild(script);
-}
 
 function getDistance(e1, n1, e2, n2) {
     const R = 6371
@@ -257,6 +234,3 @@ function showWelcome() {
         // console.log("Pjax无法获取#welcome-info元素🙄🙄🙄")
     }
 }
-
-window.onload = showWelcome;
-document.addEventListener('pjax:complete', showWelcome);

@@ -142,6 +142,17 @@ class search{
 
 const searchClickFn = () => {
   document.querySelector('#search-button > .search').addEventListener('click', search.openSearch)
+  document.getElementById('menu-search').addEventListener('click', function() {
+    rm.hideRightMenu();
+    search.openSearch();
+    let t = document.getElementsByClassName('search-box-input')[0];
+    let evt = new Event('input', {
+      bubbles: true,
+      cancelable: true
+    });
+    t.value = selectTextNow;
+    t.dispatchEvent(evt);
+  })
 }
 
 const searchClickFnOnce = () => {

@@ -8,10 +8,11 @@
     <%- js(cdn.viewimagejs) %>
 <% } %>
 <% if(theme.hometop.bbtime){ %>
-    <%- css(cdn.swipercss) %>
     <%- js(cdn.swiperjs) %>
 <% } %>
+<%- js('/js/utils') %>
 <div id="js-pjax">
+    <%- partial('partial/compoment/dorakika/rightmenu', {cache: true}) %>
     <% if(page.type === 'says' || page.type === 'album' || page.type === 'album_detail' ){ %>
         <%- js(cdn.waterfalljs) %>
         <script>
@@ -27,8 +28,8 @@
                 src="<%= cdn.busuanzijs %>"></script>
     <% } %>
 </div>
+<%- js('/js/main') %>
 <% if(theme.thirdparty.aplayer.enable){ %>
-    <%- css(cdn.aplayercss) %>
     <%- js(cdn.aplayerjs) %>
     <%- js(cdn.metingjs) %>
     <script>
@@ -50,13 +51,22 @@
     <%- js('/js/extend/console/comment')
     %>
 <% } %>
+<%- js('/js/rightmenu') %>
+
+<% if(theme.comment.enable){ %>
+    <%- js('/js/commentBarrage') %>
+<% } %>
 
 <% if (page.katex){ %>
-    <% css(cdn.katexcss) %>
-    <% js(cdn.katexjs) %>
+    <%- css(cdn.katexcss) %>
+    <%- js(cdn.katexjs) %>
 <% } %>
 
 <% if (page.katex){ %>
     <% css(cdn.katexcss) %>
     <% js(cdn.katexjs) %>
 <% } %>
+
+<% if(theme.aside.welcome.enable){%>
+    <%- js('/js/txmap.js') %>
+<%} %>

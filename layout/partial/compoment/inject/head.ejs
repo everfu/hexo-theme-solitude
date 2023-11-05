@@ -16,7 +16,12 @@
     <%- js(cdn.instantsearch) %>
     <%- js(cdn.algolia) %>
 <% } %>
-<script type="text/javascript" src="/js/utils.js"></script>
+<% if(theme.thirdparty.aplayer.enable){%>
+    <%- css(cdn.aplayercss) %>
+<%} %>
+<% if(theme.hometop.bbtime){ %>
+    <%- css(cdn.swipercss) %>
+<% } %>
 <script>
     (win=> {
             win.saveToLocal = {
@@ -50,4 +55,6 @@
             }
         }
     )(window)
+
+    console.log("%c🔥 程序：Hexo | 主题：Hexo-Theme-Solitude | 作者：DuoSco团队 | 官网：https://github.com/DuoSco/Hexo-theme-solitude 😋", "color:#fff; background: linear-gradient(270deg, #18d7d3, #68b7dd, #8695e6, #986fee); padding: 8px 15px; border-radius: 8px");
 </script>
