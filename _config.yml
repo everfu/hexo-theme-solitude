@@ -181,6 +181,7 @@ aside:
     Latitude: 26.430308353457896 # 纬度
   # 那年今日
   history:
+    enable: false
     title: #【选填】留空将默认显示为：那年今日
     icon: 
   # 页面目录

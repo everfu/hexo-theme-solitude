@@ -1,40 +1,49 @@
-<style>
-    .swiper-wrapper{
-        flex-direction: column
-    }
-    .history_slide {
-        text-align:left;
-        display: flex !important;
-        flex-direction:column;
-        align-items: flex-start
-    }
-    #history-baidu > .blog-slider__pagination{
-        display:none
-    }
-    .history_slide_time{
-        color: var(--sco-secondtext);
-        font-size: 14px;
-        font-style: italic;
-        font-weight: lighter
-    }
-    .history_slide_link a{
-        color: var(--sco-main);
-        padding: 0 4px;
-        border-radius: 4px;
-    }
-    .history_slide_link a:hover{
-        color: var(--sco-white);
-        background: var(--sco-main);
-    }
-</style>
-<div class="card-widget card-history">
-    <div class="item-headline">
-        <i class="<%- theme.aside.history.icon || 'scoicon sco-clock-fill' %>"></i>
-        <span><%- theme.aside.history.title || '那年今日' %></span>
-    </div>
-    <div id="history-baidu" style="height: 100px;overflow: hidden">
-        <div id="history-container" class="history_swiper-container" style="width: 100%;height: 100%;margin-top: 6px">
-            <div id="history_container_wrapper" class="swiper-wrapper" style="height:20px"></div>
+<% if(theme.aside.history.enable){ %>
+    <style>
+        .swiper-wrapper{
+            flex-direction: column
+        }
+        .history_slide {
+            text-align:left;
+            display: flex !important;
+            flex-direction:column;
+            align-items: flex-start
+        }
+        #history-baidu > .blog-slider__pagination{
+            display:none
+        }
+        .history_slide_time{
+            color: var(--sco-secondtext);
+            font-size: 14px;
+            font-style: italic;
+            font-weight: lighter
+        }
+        .history_slide_link {
+            line-height: 1.5;
+            -webkit-line-clamp: 2;
+            display: -webkit-box;
+            overflow: hidden;
+            -webkit-box-orient: vertical
+        }
+        .history_slide_link a{
+            color: var(--sco-main);
+            padding: 0 4px;
+            border-radius: 4px
+        }
+        .history_slide_link a:hover{
+            color: var(--sco-white);
+            background: var(--sco-main)
+        }
+    </style>
+    <div class="card-widget card-history">
+        <div class="item-headline">
+            <i class="<%- theme.aside.history.icon || 'scoicon sco-clock-fill' %>"></i>
+            <span><%- theme.aside.history.title || '那年今日' %></span>
+        </div>
+        <div id="history-baidu" style="height: 100px;overflow: hidden">
+            <div id="history-container" class="history_swiper-container" style="width: 100%;height: 100%;margin-top: 6px">
+                <div id="history_container_wrapper" class="swiper-wrapper" style="height:20px"></div>
+            </div>
         </div>
     </div>
-</div>
+<% } %>
