@@ -93,7 +93,7 @@
 }
 
 .search-box input::placeholder {
-    color: var(--sco-theme);
+    color: var(--sco-gray);
 }
 
 #algolia-search #search-results{

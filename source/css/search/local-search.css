@@ -95,7 +95,7 @@
     border: var(--style-border);
     border-radius: 8px;
     background: var(--sco-secondbg);
-    color: var(--search-input-color);
+    color: var(--sco-fontcolor);;
 }
 
 .search-dialog .search-box input:focus {
