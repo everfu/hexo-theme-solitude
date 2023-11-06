@@ -41,7 +41,7 @@ function postTabs (args, content) {
 
     const isOnlyicon = tabIcon.length > 0 && tabCaption.length === 0 ? ' style="text-align: center;"' : ''
     const icon = tabIcon.trim()
-    tabIcon.length > 0 && (tabIcon = `<svg ${isOnlyicon} class="scoicon tab" aria-hidden="true"><use xlink:href="#${icon}"></use></svg>`)
+    tabIcon.length > 0 && (tabIcon = `<i ${isOnlyicon} class="tab scoicon ${icon}"></i>`)
 
     const toTop = '<button type="button" class="tab-to-top" aria-label="scroll to top"><i class="scoicon sco-arrow-up-line"></i></button>'
 

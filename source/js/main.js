@@ -574,7 +574,15 @@ class sco {
 
     static initTheme() {
         const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        const cachedMode = saveToLocal.get('theme');
+        try {
+            const cachedMode = saveToLocal.get('theme');
+        } catch (e) {
+            if (isDarkMode) {
+                saveToLocal.set('theme', 'dark', 2)
+            } else {
+                saveToLocal.set('theme', 'light', 2)
+            }
+        }
 
         if (cachedMode === undefined) {
             const nowMode =
@@ -758,7 +766,7 @@ class hightlight {
                     $expand[0].setAttribute('style', 'display:block')
                 }
                 if (itemHeight < 200) {
-                    $table.setAttribute('style', 'height:' + itemHeight + "px")
+                    $table.setAttribute('style', 'height: auto')
                 } else {
                     $table.setAttribute('style', 'height:200px')
                     ele.classList.remove("expand-done")

@@ -4115,70 +4115,6 @@ blockquote.pullquote.right {
     height: 100%
 }
 
-.hide-block > .hide-button, .hide-inline > .hide-button {
-    display: inline-block;
-    padding: .3rem 1rem;
-    background: #307af6;
-    color: var(--sco-white)
-}
-
-.hide-block > .hide-button.open, .hide-inline > .hide-button.open {
-    display: none
-}
-
-.hide-block > .hide-button.open + div, .hide-inline > .hide-button.open + div {
-    display: block
-}
-
-.hide-block > .hide-button.open + span, .hide-inline > .hide-button.open + span {
-    display: inline
-}
-
-.hide-block > .hide-content, .hide-inline > .hide-content {
-    display: none
-}
-
-.hide-inline > .hide-button {
-    margin: 0 .3rem
-}
-
-.hide-inline > .hide-content {
-    margin: 0 .3rem
-}
-
-.hide-block {
-    margin: 0 0 .8rem
-}
-
-.hide-toggle {
-    margin-bottom: 1rem;
-    border: 1px solid #f0f0f0
-}
-
-.hide-toggle > .hide-button {
-    padding: .3rem .5rem;
-    background: #f0f0f0;
-    color: #1f2d3d;
-    cursor: pointer
-}
-
-.hide-toggle > .hide-button > i {
-    font-size: 1.2em;
-    transition: all .3s ease 0s
-}
-
-.hide-toggle > .hide-button.open i {
-    transform: rotate(90deg)
-}
-
-.hide-toggle > .hide-button.open + div {
-    display: block
-}
-
-.hide-toggle > .hide-content {
-    display: none;
-    margin: 1.5rem 1.2rem
-}
 
 #article-container .inline-img {
     display: inline;
@@ -4386,7 +4322,7 @@ blockquote.pullquote.right {
 
 .note:not(.no-icon)::before {
     position: absolute;
-    top: calc(50% - 15px);
+    top: calc(50% - 19px);
     left: .7rem;
     font-size: larger
 }
@@ -4452,7 +4388,7 @@ blockquote.pullquote.right {
 }
 
 .note.primary:not(.no-icon)::before {
-    content: ""
+    content: "\e060"
 }
 
 .note.primary:not(.no-icon):not(.modern)::before {
