@@ -1,115 +1,100 @@
 <div id="rightMenu">
     <div class="rightMenu-group rightMenu-small">
-        <a class="rightMenu-item" href="javascript:window.history.back();">
-            <i class="scoicon ri-arrow-left-circle-fill"></i>
-        </a>
-        <a class="rightMenu-item" href="javascript:window.history.forward();">
-            <i class="scoicon ri-arrow-right-circle-fill"></i>
-        </a>
-        <a class="rightMenu-item" href="javascript:window.location.reload();">
-            <i class="scoicon ri-restart-fill"></i>
-        </a>
-        <a class="rightMenu-item" href="javascript:sco.toTop();">
-            <i class="scoicon ri-arrow-up-circle-fill"></i>
-        </a>
+        <div class="rightMenu-item" id="menu-backward">
+            <i class="scoicon sco-arrow-left-line"></i>
+        </div>
+        <div class="rightMenu-item" id="menu-forward">
+            <i class="scoicon sco-arrow-right-line"></i>
+        </div>
+        <div class="rightMenu-item" id="menu-refresh">
+            <i class="scoicon sco-restart-line" style="font-size: 19px;"></i>
+        </div>
+        <div class="rightMenu-item" id="menu-top">
+            <i class="scoicon sco-arrow-up-line"></i>
+        </div>
     </div>
-    <div class="rightMenu-group rightMenu-line hide" id="menu-text">
-        <a class="rightMenu-item" href="javascript:rmf.copySelect();">
-            <i class="scoicon ri-file-copy-fill"></i>
+    <div class="rightMenu-group rightMenu-line rightMenuPlugin">
+        <div class="rightMenu-item" id="menu-copytext">
+            <i class="scoicon sco-copy-fill"></i>
             <span>复制选中文本</span>
+        </div>
+        <div class="rightMenu-item" id="menu-pastetext">
+            <i class="heofont icon-clipboard-fill"></i>
+            <span>粘贴文本</span>
+        </div>
+        <a class="rightMenu-item" id="menu-commenttext" data-pjax-state="">
+            <i class="scoicon sco-chat-new-fill"></i>
+            <span>引用到评论</span>
         </a>
+        <div class="rightMenu-item" id="menu-newwindow">
+            <i class="scoicon sco-window-fill"></i>
+            <span>新窗口打开</span>
+        </div>
+        <div class="rightMenu-item" id="menu-copylink">
+            <i class="scoicon sco-link-line"></i>
+            <span>复制链接地址</span>
+        </div>
+        <div class="rightMenu-item" id="menu-copyimg">
+            <i class="scoicon sco-copy-fill"></i>
+            <span>复制此图片</span>
+        </div>
+        <div class="rightMenu-item" id="menu-downloadimg">
+            <i class="scoicon sco-download-cloud-fill"></i>
+            <span>下载此图片</span>
+        </div>
+        <div class="rightMenu-item" id="menu-search">
+            <i class="scoicon sco-search-line"></i>
+            <span>站内搜索</span>
+        </div>
+        <div class="rightMenu-item" id="menu-searchBaidu">
+            <i class="scoicon sco-baidu-fill"></i>
+            <span>百度搜索</span>
+        </div>
+        <div class="rightMenu-item" id="menu-music-toggle">
+            <i class="scoicon sco-play-fill"></i>
+            <span>播放音乐</span>
+        </div>
+        <div class="rightMenu-item" id="menu-music-back">
+            <i class="scoicon sco-skip-back-fill"></i>
+            <span>切换到上一首</span>
+        </div>
+        <div class="rightMenu-item" id="menu-music-forward">
+            <i class="scoicon sco-skip-forward-fill"></i>
+            <span>切换到下一首</span>
+        </div>
+        <div class="rightMenu-item" id="menu-music-playlist"
+             onclick="window.open('<%- theme.thirdparty.aplayer.server == 'tencent' ? `https://y.qq.com/n/ryqq/playlist/${theme.thirdparty.aplayer.id}` : `https://music.163.com/#/playlist?id=${theme.thirdparty.aplayer.id}` %>', '_blank');">
+            <i class="scoicon sco-play-list-2-line"></i>
+            <span>查看所有歌曲</span></div>
+        <div class="rightMenu-item" id="menu-music-copyMusicName">
+            <i class="scoicon sco-copy-fill"></i>
+            <span>复制歌名</span>
+        </div>
     </div>
-    <div class="rightMenu-group rightMenu-line">
-        <a class="rightMenu-item" href="javascript:toRandomPost();">
-            <i class="scoicon ri-signal-tower-fill"></i>
-            <span>随便逛逛</span>
-        </a>
-        <a class="rightMenu-item" href="/categories/">
-            <i class="scoicon ri-send-backward"></i>
-            <span>文章分类</span>
-        </a>
-        <a class="rightMenu-item" href="/tags/">
-            <i class="scoicon ri-price-tag-3-fill"></i>
-            <span>文章标签</span>
-        </a>
+    <div class="rightMenu-group rightMenu-line rightMenuOther">
+        <a class="rightMenu-item menu-Link" id="menu-randomPost" data-pjax-state="">
+            <i class="scoicon sco-signal-tower-fill"></i>
+            <span>随便逛逛</span></a>
+        <a class="rightMenu-item menu-link" href="/categories/" data-pjax-state="">
+            <i class="scoicon sco-checkbox-multiple-blank-fill"></i>
+            <span>博客分类</span></a>
+        <a class="rightMenu-item menu-link" href="/tags/" data-pjax-state="">
+            <i class="scoicon sco-price-tag-fill"></i>
+            <span>文章标签</span></a>
     </div>
-    <div class="rightMenu-group rightMenu-line">
-        <a class="rightMenu-item" href="javascript:sco.switchDarkMode();">
-            <i class="scoicon ri-contrast-2-fill"></i>
-            <span>昼夜转换</span>
-        </a>
-        <a class="rightMenu-item" href="javascript:sco.copyPageUrl();">
-            <i class="scoicon ri-external-link-fill"></i>
+    <div class="rightMenu-group rightMenu-line rightMenuOther">
+        <div class="rightMenu-item" id="menu-copy">
+            <i class="scoicon sco-external-link-fill"></i>
             <span>复制地址</span>
-        </a>
-        <% if(theme.comment.enable){ %>
-            <a class="rightMenu-item" href="javascript:sco.switchCommentBarrage()">
-                <i class="scoicon ri-message-3-fill"></i>
-                <span class="menu-commentBarrage-text">关闭热评</span>
-            </a>
-        <% } %>
+        </div>
+        <div class="rightMenu-item" id="menu-commentBarrage">
+            <i class="scoicon sco-chat-fill"></i>
+            <span class="menu-commentBarrage-text">关闭热评</span>
+        </div>
+        <div class="rightMenu-item" id="menu-darkmode">
+            <i class="scoicon sco-moon-clear-fill"></i>
+            <span class="menu-darkmode-text">浅色模式</span>
+        </div>
     </div>
 </div>
-<script>
-    let rmf = {};
-    rmf.showRightMenu = function (isTrue, x = 0, y = 0) {
-        let rightMenu = document.getElementById('rightMenu');
-        rightMenu.style.top = x + 'px';
-        rightMenu.style.left = y + 'px';
-
-        if (isTrue) {
-            rightMenu.style.display = 'block';
-        } else {
-            rightMenu.style.display = 'none';
-        }
-    }
-
-    //复制选中文字
-    rmf.copySelect = function () {
-        document.execCommand('Copy', false, null);
-        //这里可以写点东西提示一下 已复制
-    }
-
-    rmf.hideRightMenu = function () {
-        rmf.showRightMenu(false);
-        document.getElementById("rightmenu-item").style.display = "none";
-    };
-
-    rmf.rightmenuCopyText = function (e) {
-        navigator.clipboard && navigator.clipboard.writeText(e),
-            rmf.hideRightMenu()
-    }
-
-    // 右键菜单事件
-    if (!(navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i))) {
-        window.oncontextmenu = function (event) {
-            let rightMenuGroup = document.querySelectorAll('.rightMenu-group.hide');
-            rightMenuGroup.forEach(function (group) {
-                group.style.display = 'none';
-            });
-
-            //如果有文字选中，则显示 文字选中相关的菜单项
-            if (document.getSelection().toString()) {
-                document.getElementById('menu-text').style.display = 'block';
-            }
-
-            let pageX = event.clientX + 10;
-            let pageY = event.clientY;
-            let rmWidth = document.getElementById('rightMenu').offsetWidth;
-            let rmHeight = document.getElementById('rightMenu').offsetHeight;
-            if (pageX + rmWidth > window.innerWidth) {
-                pageX -= rmWidth + 10;
-            }
-            if (pageY + rmHeight > window.innerHeight) {
-                pageY -= pageY + rmHeight - window.innerHeight;
-            }
-
-            rmf.showRightMenu(true, pageY, pageX);
-            return false;
-        };
-
-        window.addEventListener('click', function () {
-            rmf.showRightMenu(false);
-        });
-    }
-</script>
+<div id="rightmenu-mask"></div>

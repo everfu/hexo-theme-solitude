@@ -4,26 +4,29 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <%
-    var title = '', subtitle = ''
-    if(is_home()){title = config.title}
-    else if(is_archive())title = '归档 ' + (page.year || '')
-    else if(is_category())title = '分类 ' + page.category
-    else if(is_tag())title = '标签 ' + page.tag
-    else if(page.type === '404')title = '404 ' + theme.errorpage.text
-    else if(is_page() || is_post())title = page.title
-    if(is_home())subtitle = config.subtitle ? ' - ' + config.subtitle : ''
-    else subtitle = title ? ' | ' + config.title : config.title
-    var description = page.desc || page.excerpt || config.description
+var title = '', subtitle = ''
+if (is_home()) {
+    title = config.title
+} else if (is_archive()) title = '归档 ' + (page.year || '')
+else if (is_category()) title = '分类 ' + page.category
+else if (is_tag()) title = '标签 ' + page.tag
+else if (page.type === '404') title = '404 ' + theme.errorpage.text
+else if (is_page() || is_post()) title = page.title
+if (is_home()) subtitle = config.subtitle ? ' - ' + config.subtitle : ''
+else subtitle = title ? ' | ' + config.title : config.title
+var description = page.desc || page.excerpt || config.description
 -%>
 <title><%= title + subtitle %></title>
 <noscript>开启Javascript是必要的</noscript>
 <link rel="icon" type="image/x-icon" href="<%= url_for(theme.site.siteIcon) %>">
-<link rel="apple-touch-icon" href="<%= url_for(theme.site.siteIcon) %>">
-<meta name="apple-mobile-web-app-title" content="<%= config.title %>">
-<link rel="bookmark" href="<%= url_for(theme.site.siteIcon) %>">
-<link rel="apple-touch-icon-precomposed" sizes="180x180" href="<%= url_for(theme.site.siteIcon) %>">
 <meta name="description" content="<%= description %>">
-<meta name="theme-color" content="#1C1C1F">
+<% if (theme.pwa.enable) { %>
+    <%- partial('partial/pwa') %>
+<% }else{ %>
+    <meta name="apple-mobile-web-app-title" content="<%= config.title %>">
+    <link rel="bookmark" href="<%= url_for(theme.site.siteIcon) %>">
+    <link rel="apple-touch-icon-precomposed" sizes="180x180" href="<%= url_for(theme.site.siteIcon) %>">
+<% } %>
 <link rel="stylesheet" href="/css/var.css">
 <link rel="stylesheet" href="/css/main.css">
 <link rel="stylesheet" href="/css/custom.css">

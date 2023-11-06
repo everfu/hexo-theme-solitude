@@ -1,5 +1,5 @@
-hexo.extend.helper.register('export_config', function() {
-    const { config, theme } = this, lang = hexo.theme.i18n.get(config.language || 'zh-CN')
+hexo.extend.helper.register('export_config', function () {
+    const {config, theme} = this, lang = hexo.theme.i18n.get(config.language || 'zh-CN')
     let exportGlobalConfig = {
         root: config.root,
         runtime: theme.aside.siteinfo.runtimeenable ? theme.aside.siteinfo.runtime : false,
@@ -47,17 +47,19 @@ hexo.extend.helper.register('export_config', function() {
         covercolor: theme.post.covercolor.enable,
         comment: {
             enable: theme.comment.enable,
-            twikooUrl: theme.comment.twikoo.envId
-
-        }
+            twikooUrl: theme.comment.twikoo.envId,
+            twikooAccessToken: theme.comment.twikoo.accessToken
+        },
     }
 
     // 搜索数据
-    if(theme.thirdparty.search.local_search.enable)exportGlobalConfig = Object.assign(exportGlobalConfig, {localsearch: {
-        preload: theme.thirdparty.search.local_search.preload,
-        path: theme.thirdparty.search.local_search.path || '/search.xml'
-    }})
-    if(theme.thirdparty.search.algolia_search.enable)exportGlobalConfig = Object.assign(exportGlobalConfig, {
+    if (theme.thirdparty.search.local_search.enable) exportGlobalConfig = Object.assign(exportGlobalConfig, {
+        localsearch: {
+            preload: theme.thirdparty.search.local_search.preload,
+            path: theme.thirdparty.search.local_search.path || '/search.xml'
+        }
+    })
+    if (theme.thirdparty.search.algolia_search.enable) exportGlobalConfig = Object.assign(exportGlobalConfig, {
         algolia: {
             appId: config.algolia.appId,
             apiKey: config.algolia.apiKey,

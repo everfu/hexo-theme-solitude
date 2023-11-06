@@ -929,7 +929,7 @@ blockquote footer cite::before {
     font-size: 16px
 }
 
-.highlight-tools .ri-file-copy-fill {
+.highlight-tools .sco-copy-fill {
     position: absolute;
     right: .7rem;
     cursor: pointer;
@@ -937,7 +937,7 @@ blockquote footer cite::before {
     font-size: 18px
 }
 
-.highlight-tools .ri-file-copy-fill:hover {
+.highlight-tools .sco-copy-fill:hover {
     color: var(--sco-main)
 }
 
@@ -1837,7 +1837,7 @@ blockquote footer cite::before {
     position: absolute;
     opacity: 1;
     transition: .3s;
-    border: 5px solid var(--sco-white)
+
 }
 
 .author-info__top-group {
@@ -2534,7 +2534,12 @@ blockquote footer cite::before {
 
 #page-header.not-top-img #nav a:hover {
     color: var(--sco-white);
-    text-shadow: none
+    text-shadow: none;
+    align-items: center
+}
+
+#page-header #nav a:hover span.scoicon {
+    opacity: 0;
 }
 
 #page-header.nav-fixed #nav {
@@ -5465,9 +5470,8 @@ html {
         position: absolute;
         display: flex;
         z-index: 1;
-        content: "\ee24";
-        transition: .2s;
-        font-family: remixicon, serif !important;
+        content: "\e008";
+        font-family: scoicon, serif !important;
         align-items: center;
         justify-content: center;
         font-size: 22px;
@@ -5476,7 +5480,8 @@ html {
     }
 
     .post #nav #site-name:hover {
-        background: var(--sco-white-op)
+        background: var(--sco-white-op);
+        align-items: center
     }
 
     .nav-fixed #nav #site-name:hover {
@@ -6493,7 +6498,7 @@ a.console_switchbutton {
     height: 35px;
     width: 70px;
     justify-content: center;
-    align-items: center;
+    align-items: flex-end;
     text-shadow: none;
     border-radius: 40px;
     cursor: pointer
@@ -6705,25 +6710,21 @@ a.console_switchbutton {
     }
 }
 
-@media screen and (min-width: 768px) {
-    #aside-content .sticky_layout {
-        margin-top: 1rem
-    }
-}
+/*@media screen and (min-width: 768px) {*/
+/*    #aside-content .sticky_layout {*/
+/*        margin-top: 1rem*/
+/*    }*/
+/*}*/
 
-@media screen and (min-width: 1300px) {
-    #aside-content .sticky_layout {
-        margin-top: 1rem
-    }
-}
+/*@media screen and (min-width: 1300px) {*/
+/*    #aside-content .sticky_layout {*/
+/*        margin-top: 1rem*/
+/*    }*/
+/*}*/
 
 #aside-content .sticky_layout {
     top: 80px;
     transition: top 0s
-}
-
-#aside-content .sticky_layout .card-widget:first-child {
-    margin-top: 0
 }
 
 #aside-content .card-widget:hover {
@@ -7190,48 +7191,7 @@ span.fund_name {
     align-content: center
 }
 
-#aside-content .card-widget#card-wechat {
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    padding: 0;
-    cursor: pointer;
-    border: none;
-    height: 100px
-}
-
-#aside-content .card-widget#card-wechat::before {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    left: 0;
-    top: 0;
-    /*background: url() center center no-repeat;*/
-    content: '';
-    background-size: cover
-}
-
-#aside-content .card-widget#card-wechat img {
-    max-height: 110px;
-    object-fit: cover
-}
-
-.friend-link {
-    display: flex;
-    justify-content: center;
-    align-content: center
-}
-
-#flip-wrapper {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-    display: flex;
-    justify-content: center
-}
-
-#aside-content .card-widget.card-power {
+#aside-content .card-widget.card-power,#aside-content .card-widget.card-history,#aside-content .card-widget.card-welcome {
     padding: .4rem .6rem !important
 }
 
@@ -7323,40 +7283,6 @@ div#power-star-title {
     position: relative;
     width: calc(100% - 68px);
     justify-content: center
-}
-
-#flip-wrapper {
-    -webkit-perspective: 1000;
-    perspective: 1000
-}
-
-#flip-content {
-    width: 100%;
-    height: 100%;
-    -webkit-transform-style: preserve-3d;
-    transform-style: preserve-3d;
-    transition: cubic-bezier(0, 0, 0, 1.29) .3s
-}
-
-#flip-wrapper:hover #flip-content {
-    -webkit-transform: rotateY(180deg);
-    transform: rotateY(180deg)
-}
-
-.face {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-}
-
-.back.face {
-    display: block;
-    -webkit-transform: rotateY(180deg);
-    transform: rotateY(180deg);
-    box-sizing: border-box;
-    border: var(--sco-card-border);
 }
 
 #card-vip-designweekly.card-widget {
@@ -7634,7 +7560,7 @@ a.categoryButton i {
     opacity: .2;
     position: absolute;
     right: 0;
-    top: 7%;
+    top: 20%;
     transition: .3s;
     width: 100px;
     text-align: center;
@@ -9268,7 +9194,11 @@ div#author-info__sayhi:hover {
     font-size: 12px;
     color: var(--sco-white);
     opacity: .6;
-    line-height: 1
+    line-height: 1.5;
+    -webkit-line-clamp: 2;
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-box-orient: vertical
 }
 
 .avatar-img-group {
@@ -9279,7 +9209,8 @@ div#author-info__sayhi:hover {
     border-radius: 500px;
     position: absolute;
     transition: cubic-bezier(.69, .39, 0, 1.21) .3s;
-    transform-origin: bottom
+    transform-origin: bottom;
+    border: 5px solid var(--sco-card-bg)
 }
 
 #aside-content .card-info:hover .avatar-img-group {
@@ -9511,7 +9442,7 @@ div#author-info__sayhi:hover {
     display: flex;
     justify-content: flex-start;
     flex-direction: row;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     cursor: pointer
 }
 
@@ -12776,7 +12707,7 @@ button.el-button.tk-cancel.el-button--default.el-button--small {
 }
 
 #page .tag-cloud-list a:hover {
-    background: var(--sco-blue) !important;
+    background: var(--sco-main) !important;
     box-shadow: var(--sco-shadow-blue);
     color: var(--sco-white) !important;
     border: var(--style-border-hover)
@@ -12826,8 +12757,8 @@ span.tags-punctuation {
 }
 
 span.tags-punctuation::before {
-    content: "\edfc";
-    font-family: remixicon, serif !important;
+    content: "\e071";
+    font-family: scoicon, serif !important;
     font-size: 14px;
     opacity: .4;
 }
@@ -13829,6 +13760,24 @@ div#sco-footer-bar .footer-bar-description {
 
 #bber .bber-music .aplayer-lrc {
     display: none
+}
+
+#bber .bber-video {
+    position: relative;
+    padding: 30% 50%;
+    margin: 0.5rem 0
+}
+
+#bber .bber-video video,
+#bber .bber-video iframe {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    margin: 0;
+    border-radius: 8px;
+    border: var(--style-border)
 }
 
 #bber-tips {

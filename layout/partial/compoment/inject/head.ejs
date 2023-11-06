@@ -5,8 +5,10 @@
 <% if(theme.loading.pace){ %>
     <script data-pace-options="{ &quot;restartOnRequestAfter&quot;:false,&quot;eventLag&quot;:false}" src="<%= cdn.pacejs %>"></script>
 <% } %>
-<%- css(theme.icon.customicon) %>
-<%- css(cdn.remixicon) %>
+<% if(theme.icon.customicon){ %>
+    <%- css(theme.icon.customicon) %>
+<% } %>
+<%- css(cdn.scoicon) %>
 <%- css(cdn.snackbarcss) %>
 <% if(theme.comment.enable){ %>
     <%- css('/css/commentBarrage') %>
@@ -16,4 +18,67 @@
     <%- js(cdn.instantsearch) %>
     <%- js(cdn.algolia) %>
 <% } %>
-<script type="text/javascript" src="/js/utils.js"></script>
+<% if(theme.thirdparty.aplayer.enable){%>
+    <%- css(cdn.aplayercss) %>
+<%} %>
+<% if(theme.hometop.bbtime || theme.aside.history.enable){ %>
+    <%- css(cdn.swipercss) %>
+<% } %>
+<script>
+    (win=> {
+            win.saveToLocal = {
+                set: function setWithExpiry(key, value, ttl) {
+                    if (ttl === 0)
+                        return
+                    const now = new Date()
+                    const expiryDay = ttl * 86400000
+                    const item = {
+                        value: value,
+                        expiry: now.getTime() + expiryDay,
+                    }
+                    localStorage.setItem(key, JSON.stringify(item))
+                },
+
+                get: function getWithExpiry(key) {
+                    const itemStr = localStorage.getItem(key)
+
+                    if (!itemStr) {
+                        return undefined
+                    }
+                    const item = JSON.parse(itemStr)
+                    const now = new Date()
+
+                    if (now.getTime() > item.expiry) {
+                        localStorage.removeItem(key)
+                        return undefined
+                    }
+                    return item.value
+                }
+            }
+
+            const DarkModeStatus = saveToLocal.get('theme')
+            if(DarkModeStatus !== undefined){
+                if(DarkModeStatus === 'dark'){
+                    document.documentElement.setAttribute('data-theme', 'dark')
+
+                }else{
+                    document.documentElement.setAttribute('data-theme', 'light')
+                }
+            }
+
+            const asideStatus = saveToLocal.get('aside-status')
+            if (asideStatus !== undefined) {
+                if (asideStatus === 'hide') {
+                    document.documentElement.classList.add('hide-aside')
+                } else {
+                    document.documentElement.classList.remove('hide-aside')
+                }
+            }
+        }
+    )(window)
+
+    console.log("%c🔥 程序：Hexo | 主题：Hexo-Theme-Solitude | 作者：DuoSco团队 | 官网：https://github.com/DuoSco/Hexo-theme-solitude 😋", "color:#fff; background: linear-gradient(270deg, #18d7d3, #68b7dd, #8695e6, #986fee); padding: 8px 15px; border-radius: 8px");
+</script>
+<% if(theme.ai.enable){ %>
+    <%- js('/lib/chuckle-post-ai') %>
+<% } %>

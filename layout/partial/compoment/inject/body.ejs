@@ -7,11 +7,12 @@
 <% if(theme.lightbox){ %>
     <%- js(cdn.viewimagejs) %>
 <% } %>
-<% if(theme.hometop.bbtime){ %>
-    <%- css(cdn.swipercss) %>
+<% if(theme.hometop.bbtime || theme.aside.history.enable){ %>
     <%- js(cdn.swiperjs) %>
 <% } %>
+<%- js('/js/utils') %>
 <div id="js-pjax">
+    <%- partial('partial/compoment/dorakika/rightmenu', {cache: true}) %>
     <% if(page.type === 'says' || page.type === 'album' || page.type === 'album_detail' ){ %>
         <%- js(cdn.waterfalljs) %>
         <script>
@@ -22,13 +23,13 @@
             }), 500);
         </script>
     <% } %>
-    <% if(theme.thirdparty.busuanzi && (theme.aside.siteinfo.uv || theme.aside.siteinfo.pv)){ %>
+    <% if(theme.thirdparty.busuanzi && (theme.aside.siteinfo.uv || theme.aside.siteinfo.pv || theme.thirdparty.busuanzi.usecomment === false)){ %>
         <script async
                 src="<%= cdn.busuanzijs %>"></script>
     <% } %>
 </div>
+<%- js('/js/main') %>
 <% if(theme.thirdparty.aplayer.enable){ %>
-    <%- css(cdn.aplayercss) %>
     <%- js(cdn.aplayerjs) %>
     <%- js(cdn.metingjs) %>
     <script>
@@ -50,8 +51,22 @@
     <%- js('/js/extend/console/comment')
     %>
 <% } %>
+<%- js('/js/rightmenu') %>
+
+<% if(theme.comment.enable){ %>
+    <script data-pjax src="/js/commentBarrage.js"></script>
+<% } %>
+
+<% if (page.katex){ %>
+    <%- css(cdn.katexcss) %>
+    <%- js(cdn.katexjs) %>
+<% } %>
 
 <% if (page.katex){ %>
     <% css(cdn.katexcss) %>
     <% js(cdn.katexjs) %>
+<% } %>
+
+<% if(theme.aside.welcome.enable){ %>
+    <%- js('/js/txmap.js') %>
 <% } %>

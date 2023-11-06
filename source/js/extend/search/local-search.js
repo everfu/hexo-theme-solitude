@@ -47,7 +47,7 @@ class search{
     if (!GLOBALCONFIG.localsearch.preload && dataObj === null) dataObj = this.fetchData(GLOBALCONFIG.localsearch.path)
     $input.addEventListener('input', function type() {
       const keywords = this.value.trim().toLowerCase().split(/[\s]+/)
-      if (keywords[0] !== '') $loadingStatus.innerHTML = '<i class="ri-loader-2-fill"></i><span>加载中</span>'
+      if (keywords[0] !== '') $loadingStatus.innerHTML = '<i class="scoicon sco-loading-line"></i><span>加载中</span>'
       else {
         $resultContent.innerHTML = ''
         return
@@ -142,6 +142,17 @@ class search{
 
 const searchClickFn = () => {
   document.querySelector('#search-button > .search').addEventListener('click', search.openSearch)
+  document.getElementById('menu-search').addEventListener('click', function() {
+    rm.hideRightMenu();
+    search.openSearch();
+    let t = document.getElementsByClassName('search-box-input')[0];
+    let evt = new Event('input', {
+      bubbles: true,
+      cancelable: true
+    });
+    t.value = selectTextNow;
+    t.dispatchEvent(evt);
+  })
 }
 
 const searchClickFnOnce = () => {

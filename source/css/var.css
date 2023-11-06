@@ -83,6 +83,9 @@
     --album-spacing-l: 24px;
     --album-spacing-xl: 32px;
     --album-spacing-xxl: 64px;
+
+    /* 个性定位 */
+    --icat-card-welcome: #49B1F5
 }
 
 ::selection {

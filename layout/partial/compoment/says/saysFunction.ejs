@@ -1,0 +1,15 @@
+<% if(item.aplayer){ %>
+<div class="bber-music">
+    <meting-js server="<%= item.aplayer.server %>" type="song" id="<%= item.aplayer.id %>" mutex="true" preload="none" theme="var(--sco-main)" data-lrctype="0"></meting-js>
+</div>
+<% } %>
+<% if(item.video){ %>
+<div class="bber-video">
+    <% if(item.video.player){ %>
+        <video src="<%= item.video.player %>" controls="controls" style="object-fit: cover;"></video>
+    <% } %>
+    <% if(item.video.bilibili){ %>
+        <iframe src="<%= item.video.bilibili %>" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
+    <% } %>
+</div>
+<% } %>

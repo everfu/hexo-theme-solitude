@@ -1,12 +1,10 @@
 ![](https://github.com/DuoSco/Hexo-theme-solitude/assets/74389842/78b527e5-7d8e-456d-b190-859acd9ffdec)
 
-原项目地址：[Acrylic-Next](https://github.com/hexo-theme-Acrylic/Hexo-Theme-Acrylic-Next)
-
-主题预览: 👋[王卓Sco](https://solitude.wzsco.top/)
+主题预览: 👋[Demo](https://solitude.wzsco.top/) | [王卓Sco](https://blog.wzsco.top/)
 
 文档: [📖文档](https://docs.wzsco.top/)
 
-主题交流群：![](https://bu.dusays.com/2023/10/31/6540af9083739.jpg)
+主题交流群：`文档内有群二维码和链接`
 
 ## 💻 安裝
 
@@ -35,18 +33,24 @@ cp -rf ./themes/solitude/_config.yml ./_config.solitude.yml
 - windows
   复制```/themes/solitude/_config.yml```此文件到hexo根目录，并重命名为```_config.solitude.yml```
 
+## 为爱发电
+> 如果你能对我们进行赞助，我们将收获动力
+
+![王卓Sco](https://bu.dusays.com/2023/11/04/6545e229cc17a.jpeg)
+
 ## ✨ 贡献者
 > 欢迎你对本主题做出贡献
 
 [贡献指南](https://opensource.guide/zh-hans/how-to-contribute/#%E5%A6%82%E4%BD%95%E6%8F%90%E4%BA%A4%E8%B4%A1%E7%8C%AE)
 
-### 原主题参与开发
+### 主题参与开发
+[@王卓Sco](https://github.com/wleelw)
+[@亦封](https://github.com/yife68)
 [@rootlex](https://github.com/rootlexme)
 [@timigomen](https://github.com/timigomen)
 [@Glannons](https://github.com/Glannons)
 [@Adil](https://github.com/adil-zhang)
-### 新主题参与开发
-[@王卓Sco](https://github.com/wleelw)
+
 ### 主题设计
 [@张洪Heo](https://github.com/zhheo)
 ### 域名提供

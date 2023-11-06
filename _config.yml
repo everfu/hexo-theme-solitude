@@ -5,71 +5,72 @@ site:
     custom: Solitude #自定义内容 例如：scoicon sco-logo / 王卓Sco / https://p.sondy.top/logo.png
   siteIcon: https://bu.dusays.com/2023/10/31/6540daf117d20.png # 网页icon
   icon: https://bu.dusays.com/2023/10/31/6540daf117d20.png # 页脚的icon、加载动画默认的icon
-  icp: 湘ICP备2023015327号 # ICP 例如：湘ICP备2023015327号
+  icp:  # ICP 例如：湘ICP备2023015327号
 
 
 # 导航栏
 nav:
   #导航栏左侧
   left:
-    enable: true
+    enable: false
     menu:
-      项目:
-        Solitude:
-          icon: https://bu.dusays.com/2023/10/31/6540daf117d20.png
-          url: https://github.com/DuoSco/Hexo-Theme-solitude
-  # 导航栏内容
+#      项目:
+#        Solitude:
+#          icon: https://bu.dusays.com/2023/10/31/6540daf117d20.png
+#          url: https://github.com/DuoSco/Hexo-Theme-solitude
+
+# 导航栏内容
   menu:
-    文库:
-      url: false
-      child:
-        文章列表:
-          url: /archives/
-          icon: ri-archive-fill
-        全部分类:
-          url: /categories/
-          icon: ri-send-backward
-        全部标签:
-          url: /tags/
-          icon: ri-price-tag-3-fill
-    友链:
-      url: false
-      child:
-        鱼塘:
-          url: /moments/
-          icon: ri-bubble-chart-fill
-        友情链接:
-          url: /links/
-          icon: ri-links-line
-        宝藏博主:
-          url: javascript:travelling()
-          icon: ri-gift-fill
-    我的:
-      url: false
-      child:
-        装备:
-          url: /equipment/
-          icon: ri-macbook-fill
-        工具箱:
-          url: /tlink/
-          icon: ri-tools-fill
-    关于:
-      url: false
-      child:
-        关于本站:
-          url: /about/
-          icon: ri-user-smile-fill
+#    文库:
+#      url: false
+#      child:
+#        文章列表:
+#          url: /archives/
+#          icon: scoicon sco-folder-fill
+#        全部分类:
+#          url: /categories/
+#          icon: scoicon sco-checkbox-multiple-blank-fill
+#        全部标签:
+#          url: /tags/
+#          icon: scoicon sco-price-tag-fill
+#    友链:
+#      url: false
+#      child:
+#        鱼塘:
+#          url: /moments/
+#          icon: scoicon sco-wifi-fill
+#        友情链接:
+#          url: /links/
+#          icon: scoicon sco-group-fill
+#        宝藏博主:
+#          url: javascript:travelling()
+#          icon: scoicon sco-gift-fill
+#    我的:
+#      url: false
+#      child:
+#        装备:
+#          url: /equipment/
+#          icon: scoicon sco-laptop-line
+#        工具箱:
+#          url: /tlink/
+#          icon: scoicon sco-tools-fill
+#    关于:
+#      url: false
+#      child:
+#        关于本站:
+#          url: /about/
+#          icon: scoicon sco-contacts-fill
 
 
   # 导航栏右侧快捷菜单 (true,false)
   right: # @todo 允许用户自定义
     travellings: true   #开往
-    random: true        #
+    random: true        # 随机文章跳转
     console: true       #控制台
 
 # 自定义icon
 icon:
-  customicon: https://cdn3.codesign.qq.com/icons/7pOrz0WXB5ZWJPX/latest/iconfont.css
+  customicon:
 
 # 首页顶部样式
 hometop:
@@ -77,7 +78,7 @@ hometop:
   banner:
     enable: true # 是否打开顶部banner
     title: 宁静致远<br>热爱生活 # 左上角显示文字
-    url: WWW.SONDY.TOP # title下方小字
+    url: WWW.WZSCO.TOP # title下方小字
     # 轮播icon
     icon:
       HTML:
@@ -109,28 +110,28 @@ hometop:
   categoryGroup:
     G1:
       name: 必看精选
-      icon: ri-git-repository-fill
+      icon: scoicon sco-star-smile-fill
       url: /tags/精选/
     G2:
       name: 热门文章
-      icon: ri-fire-fill
+      icon: scoicon sco-fire-fill
       url: /categories/热门/
     G3:
       name: 实用教程
-      icon: ri-code-box-fill
+      icon: scoicon sco-book-mark-fill
       url: /tags/教程/
 
   # 右侧置顶列表（在文章的front matter中添加“recommend: true”）
   recommendList:
     sup: 置顶 # 左上角显示文字
-    title: 缘木求鱼 # 左下角大字
-    url: /about/ # 点击跳转链接
+    title: 主题文档 # 左下角大字
+    url: https://docs.wzsco.top/ # 点击跳转链接
     img: /img/default.png # 显示背景
     color: '#ff0000' # 背景颜色
 
 # 侧边栏
 aside:
-  # 值：about（关于我）、power（爱发电）、newestPost（最新文章）、allInfo（网站信息）、flip（公众号二维码）
+  # 值：about（关于我）、power（爱发电）、newestPost（最新文章）、allInfo（网站信息）、flip（公众号二维码）、welcome（个性定位）、history（那年今日）
   home: # 在主页显示的侧边栏信息
     noSticky: "about"
     Sticky: "allInfo"
@@ -156,28 +157,41 @@ aside:
     # 个人信息卡片底部的小图标，按照例子填写
     information:
       Github:
-        icon: ri-github-fill
+        icon: scoicon sco-github-line
         url: https://github.com/DuoSco/Hexo-Theme-slitude
       Bilibili:
-        icon: ri-bilibili-fill
+        icon: scoicon sco-bilibili-line
         url: https://space.bilibili.com/1329819902
     # 跳转按钮
     button:
       text: 了解更多
       url: /about/
   # 公众号二维码
-  flip: # 填url
+  flip:
+    favicon: # 右下角头像
     face: # 正面
     backface: # 鼠标悬停翻转图片
+  # 个性定位
+  welcome:
+    enable: false
+    title: #【选填】留空将默认显示为：来访者
+    icon:
+    key: # 腾讯key
+    longitude: 112.8455033596802 # 经度
+    Latitude: 26.430308353457896 # 纬度
+  # 那年今日
+  history:
+    enable: false
+    title: #【选填】留空将默认显示为：那年今日
+    icon: 
   # 页面目录
   toc:
     post: true # 在文章页显示
     page: false # 在任意页显示
 
-
   # 建站信息
   siteinfo:
-    postcount: true # 文章数
+    postcount: false # 文章数
     wordcount: false # 总字数
     pv: false # 访问量
     uv: false # 访客数
@@ -191,35 +205,35 @@ footer:
   # 底部上方一排图标
   information:
     left: # 左侧显示图标
-    # Github:
-    #   icon: ri-github-fill
-    #   url: https://github.com/wleelw
-    # Mail:
-    #   icon: ri-mail-fill
-    #   url: mailto:wleelw@sondy.top
+#      Github:
+#        icon: scoicon sco-bilibili-line
+#        url: https://github.com/wleelw
+#      Mail:
+#        icon: scoicon sco-mail-line
+#        url: mailto:wleelw@wzsco.top
     right: # 右侧显示图标
-    # Bilibili:
-    #   icon: ri-bilibili-fill
-    #   url: https://space.bilibili.com/1329819902
-    # 抖音:
-    #   icon: ri-tiktok-line
-    #   url: https://v.douyin.com/iJsLc8jt/
+#      Bilibili:
+#        icon: scoicon sco-bilibili-line
+#        url: https://space.bilibili.com/1329819902
+#      抖音:
+#        icon: scoicon sco-douyin-fill
+#        url: https://v.douyin.com/iJsLc8jt/
   # 底部导航栏
   group: # 从左至右
-  # 导航:
-  #   归档: /archives/
-  #   分类: /categories/
-  #   标签: /tags/
-  # 服务:
-  #   阿里云: https://aliyun.com/
-  #   51la统计: https://v6.51.la/
-  #   百度统计: https://tongji.baidu.com/
-  # 支持:
-  #   打赏记录: /about/
-  # 协议:
-  #   Cookies: /cookies/
-  #   用户协议: /privacy/
-  #   版权协议: /copyright/
+#    导航:
+#      归档: /archives/
+#      分类: /categories/
+#      标签: /tags/
+#    服务:
+#      阿里云: https://aliyun.com/
+#      51la统计: https://v6.51.la/
+#      百度统计: https://tongji.baidu.com/
+#    支持:
+#      打赏记录: /about/
+#    协议:
+#      Cookies: /cookies/
+#      用户协议: /privacy/
+#      版权协议: /copyright/
 
   # 底部随机友链
   randomlink: false
@@ -324,11 +338,13 @@ comment:
   enable: false
   twikoo:
     envId: https://twikoo.sondy.top
-    path: window.location.pathname
     lang: 'zh-CN'
+    accessToken:  # accessToken
 
 ai: # 文章页面AI
   enable: false
+  key: # 前往tianli-AI 购买
+  rec_method: # 推荐文章方式（all:匹配数据库所有文章、web:仅当前博客文章）默认：web
 
 # 朋友圈配置
 circle:
@@ -340,8 +356,8 @@ circle:
   page_turning_number: 12 # 加载更多文章数，默认10
   angle: # 钓鱼
     enable: false
-  appjs: '/js/circle.js' # 主题appjs
-  bundlejs: '/lib/bundle.js' # 主题bundejs
+  appjs: '/lib/circle.min.js' # 主题appjs
+  bundlejs: '/lib/bundle.min.js' # 主题bundejs
 
 # 文章统计
 echarts:
@@ -359,31 +375,76 @@ related_post:
   limit: 2 # 推荐文章数量
   date_type: created # 根据创建日期（created）或是更新日期（updated）
 
+# rightmenu(右键菜单)
+
 # 站点验证
 verify:
   # 百度
   baidu:
 
+# PWA
+# https://github.com/JLHwung/hexo-offline
+pwa:
+  enable: false
+  startup_image_enable: false
+  manifest: /manifest.json
+  theme_color: '#ffffff'
+  mask_icon: /img/pwa/180.png
+  apple_touch_icon: /img/pwa/180.png
+  bookmark_icon: /img/pwa/180.png
+  favicon_32_32: /img/pwa/32.png
+  favicon_16_16: /img/pwa/16.png
+  favicon_2048_2732: /img/pwa/siteicon/splash-2048x2732.png
+  favicon_2732_2048: /img/pwa/siteicon/splash-2732x2048.png
+  favicon_1668_2388: /img/pwa/siteicon/splash-1668x2388.png
+  favicon_2388_1668: /img/pwa/siteicon/splash-2388x1668.png
+  favicon_1536_2048: /img/pwa/siteicon/splash-1536x2048.png
+  favicon_2048_1536: /img/pwa/siteicon/splash-2048x1536.png
+  favicon_1668_2224: /img/pwa/siteicon/splash-1668x2224.png
+  favicon_2224_1668: /img/pwa/siteicon/splash-2224x1668.png
+  favicon_1620_2160: /img/pwa/siteicon/splash-1620x2160.png
+  favicon_2160_1620: /img/pwa/siteicon/splash-2160x1620.png
+  favicon_1290_2796: /img/pwa/siteicon/splash-1290x2796.png
+  favicon_2796_1290: /img/pwa/siteicon/splash-2796x1290.png
+  favicon_1179_2556: /img/pwa/siteicon/splash-1179x2556.png
+  favicon_2556_1179: /img/pwa/siteicon/splash-2556x1179.png
+  favicon_1248_2778: /img/pwa/siteicon/splash-1248x2778.png
+  favicon_2778_1248: /img/pwa/siteicon/splash-2778x1248.png
+  favicon_1170_2532: /img/pwa/siteicon/splash-1170x2532.png
+  favicon_2532_1170: /img/pwa/siteicon/splash-2532x1170.png
+  favicon_1125_2436: /img/pwa/siteicon/splash-1125x2436.png
+  favicon_2436_1125: /img/pwa/siteicon/splash-2436x1125.png
+  favicon_1242_2688: /img/pwa/siteicon/splash-1242x2688.png
+  favicon_2688_1242: /img/pwa/siteicon/splash-2688x1242.png
+  favicon_828_1792: /img/pwa/siteicon/splash-828x1792.png
+  favicon_1792_828: /img/pwa/siteicon/splash-1792x828.png
+  favicon_1242_2208: /img/pwa/siteicon/splash-1242x2208.png
+  favicon_2208_1242: /img/pwa/siteicon/splash-2208x1242.png
+  favicon_750_1334: /img/pwa/siteicon/splash-750x1334.png
+  favicon_1334_750: /img/pwa/siteicon/splash-1334x750.png
+  favicon_640_1136: /img/pwa/siteicon/splash-640x1136.png
+  favicon_1136_640: /img/pwa/siteicon/splash-1136x640.png
+
 # 非必要勿动
 cdn:
   head:
-    remixicon: https://cdn.bootcdn.net/ajax/libs/remixicon/3.5.0/remixicon.css
+    snackbarcss: /lib/snackbar.min.css
+    scoicon: https://cdn3.codesign.qq.com/icons/7pOrz0WXB5ZWJPX/latest/iconfont.css
+    aplayercss: https://cdn.bootcdn.net/ajax/libs/aplayer/1.10.1/APlayer.min.css
+    swipercss: https://cdn.bootcdn.net/ajax/libs/Swiper/9.2.4/swiper-bundle.min.css
+    twikoojs: https://cdn.bootcdn.net/ajax/libs/twikoo/1.6.20/twikoo.all.min.js
     instantsearch: https://cdn.bootcdn.net/ajax/libs/instantsearch.js/4.9.1/instantsearch.production.min.js
-    twikoojs: https://cdn.bootcdn.net/ajax/libs/twikoo/1.6.16/twikoo.all.min.js
     algolia: https://cdn.bootcdn.net/ajax/libs/algoliasearch/4.9.3/algoliasearch-lite.umd.min.js
     pacejs: https://cdn.bootcdn.net/ajax/libs/pace/1.2.4/pace.min.js
-    snackbarcss: /lib/snackbar.min.css
   body:
+    viewimagejs: /lib/view-image.min.js
+    waterfalljs: /lib/waterfall.min.js
+    lazyloadjs: /lib/lazyload.min.js
+    snackbarjs: /lib/snackbar.min.js
     swiperjs: https://cdn.bootcdn.net/ajax/libs/Swiper/9.2.4/swiper-bundle.min.js
     busuanzijs: https://cdn.bootcdn.net/ajax/libs/busuanzi/2.3.0/bsz.pure.mini.min.js
-    swipercss: https://cdn.bootcdn.net/ajax/libs/Swiper/9.2.4/swiper-bundle.min.css
     pjaxjs: https://cdn.bootcdn.net/ajax/libs/pjax/0.2.8/pjax.min.js
-    viewimagejs: /lib/view-image.js
-    waterfalljs: /lib/waterfall.min.js
-    lazyloadjs: /lib/lazyload.js
-    snackbarjs: /lib/snackbar.js
-    aplayercss: https://cdn.bootcdn.net/ajax/libs/aplayer/1.9.1/APlayer.min.css
-    aplayerjs: https://cdn.bootcdn.net/ajax/libs/aplayer/1.9.1/APlayer.min.js
+    aplayerjs: https://cdn.bootcdn.net/ajax/libs/aplayer/1.10.1/APlayer.min.js
     metingjs: https://cdn.bootcdn.net/ajax/libs/meting/2.0.1/Meting.min.js
     katexcss: https://cdn.bootcdn.net/ajax/libs/KaTeX/0.16.6/katex.min.css
     katexjs: https://cdn.bootcdn.net/ajax/libs/KaTeX/0.16.6/katex.min.js

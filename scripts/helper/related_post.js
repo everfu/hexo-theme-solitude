@@ -46,7 +46,7 @@ hexo.extend.helper.register('related_posts', function (currentPost, allPosts) {
 
     if (relatedPosts.length > 0) {
         result += '<div class="relatedPosts">'
-        result += `<div class="headline"><i class="ri-star-smile-fill"></i><span>${headlineLang}</span><div class="relatedPosts-link"><a onclick="event.preventDefault(); toRandomPost();" href="javascript:void(0);" rel="external nofollow" data-pjax-state="">随便逛逛</a></div></div>`
+        result += `<div class="headline"><i class="scoicon sco-star-smile-fill"></i><span>${headlineLang}</span><div class="relatedPosts-link"><a onclick="event.preventDefault(); toRandomPost();" href="javascript:void(0);" rel="external nofollow" data-pjax-state="">随便逛逛</a></div></div>`
         result += '<div class="relatedPosts-list">'
 
         for (let i = 0; i < Math.min(relatedPosts.length, limitNum); i++) {

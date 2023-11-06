@@ -6,7 +6,8 @@
                 el: '#comment',
                 onCommentLoaded: function() {
                     GLOBALCONFIG.lightbox && sco.lightbox('#article-container img, #twikoo .tk-content img:not(.tk-owo-emotion)')
-                }
+                },
+                lang: '<%= theme.comment.twikoo.lang %>',
             }
         )
         await twikoo.init(initOptions)

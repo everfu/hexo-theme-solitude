@@ -15,8 +15,5 @@
         expire_days: <%= theme.circle.expire_days %>,
     }
 </script>
-<script type="text/javascript"
-    src="<%= theme.circle.appjs ? theme.circle.appjs : '/js/circle.js' %>"    rel="external nofollow"></script>
-<script type="text/javascript"
-    src="<%= theme.circle.bundejs ? theme.circle.bundejs : 'https://npm.elemecdn.com/wzheo-absolute@1.0.3/lib/bundle.min.js' %>"
-    rel="external nofollow"></script>
+<script type="text/javascript" src="<%= theme.circle.appjs %>"></script>
+<script type="text/javascript" src="<%= theme.circle.bundlejs %>"></script>

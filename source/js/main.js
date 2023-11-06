@@ -1,12 +1,12 @@
 function set_fest() {
     let date = new Date();
-    switch ((date.getMonth() + 1).toString() + '.' + date.getDate()){
+    switch ((date.getMonth() + 1).toString() + '.' + date.getDate()) {
         case '1.8': // 周总理逝世
         case '9.9': // 毛主席逝世
         case '7.7': // 七七事变
         case '9.18': // 九一八事变
         case '12.13': // 南京大屠杀国家公祭日
-             {
+        {
             // 创建一个<style>元素
             const styleElement = document.createElement('style');
             // 定义要添加的CSS样式
@@ -24,7 +24,8 @@ function set_fest() {
             styleElement.appendChild(document.createTextNode(css));
             // 将<style>元素添加到<head>标签中
             document.head.appendChild(styleElement);
-        }break;
+        }
+            break;
     }
 }
 
@@ -338,6 +339,117 @@ class toc {
 let lastSayHello = "";
 
 class sco {
+    /**
+     * 个性定位
+     */
+    static card_welcome() {
+        /**
+         * 请求数据
+         */
+        ipLoacation = window.saveToLocal.get('ipLocation');
+        if (ipLoacation) {
+            // 使用 ipLocation
+
+        } else {
+            // 数据已过期或不存在
+            var script = document.createElement('script');
+            var url = `https://apis.map.qq.com/ws/location/v1/ip?key=${txkey}&output=jsonp`;
+            script.src = url;
+            window.QQmap = function (data) {
+                ipLoacation = data;
+                // 将数据保存到 localStorage，过期时间设置为 1 天
+                window.saveToLocal.set('ipLocation', ipLoacation, 1);
+                document.body.removeChild(script);
+                delete window.QQmap;
+            };
+            document.body.appendChild(script);
+        }
+        showWelcome();
+    }
+
+    /**
+     * 那年今日
+     * @type {*}
+     */
+    static card_history() {
+        if (document.getElementById('history-container')) {
+            function append(parent, text) {
+                if (typeof text === 'string') {
+                    let temp = document.createElement('div');
+                    temp.innerHTML = text;
+                    // 防止元素太多 进行提速
+                    let frag = document.createDocumentFragment();
+                    while (temp.firstChild) {
+                        frag.appendChild(temp.firstChild);
+                    }
+                    parent.appendChild(frag);
+                } else {
+                    parent.appendChild(text);
+                }
+            }
+
+            let history_data = sco.history_get_data()
+            fetch(history_data[0])
+                .then(data => data.json())
+                .then(data => {
+                    let html_item = ''
+                    for (let item of data[history_data[1]]) {
+                        html_item += '<div class="swiper-slide history_slide"><span class="history_slide_time">A.D.' +
+                            item.year + '</span>' + '<span class="history_slide_link">' + item.title + '</span></div>'
+
+                    }
+                    var history_container_wrapper = document.getElementById('history_container_wrapper')
+                    append(history_container_wrapper, html_item);
+                    var swiper_history = new Swiper('.history_swiper-container', {
+                        passiveListeners: true,
+                        spaceBetween: 30,
+                        effect: 'coverflow',
+                        coverflowEffect: {
+                            rotate: 30,
+                            slideShadows: false,
+                        },
+                        loop: true,
+                        direction: 'vertical',
+                        autoplay: {
+                            disableOnInteraction: true,
+                            delay: 5000
+                        },
+
+                        mousewheel: false,
+                        // autoHeight: true,
+
+                    });
+
+                    let history_comtainer = document.getElementById('history-container');
+                    history_comtainer.onmouseenter = function () {
+                        swiper_history.autoplay.stop();
+                    };
+                    history_comtainer.onmouseleave = function () {
+                        swiper_history.autoplay.start();
+                    }
+                })
+        }
+    }
+
+    static history_get_data() {
+        let myDate = new Date();
+        let myMonth = myDate.getMonth() + 1;
+        let getMonth;
+        if (myMonth < 10) {
+            getMonth = "0" + String(myMonth);
+        } else {
+            getMonth = String(myMonth);
+        }
+        let getDate = String(myDate.getDate());
+        if (getDate < 10) {
+            getDate = "0" + String(getDate);
+        } else {
+            getDate = String(getDate);
+        }
+        let getMonthDate = "S" + getMonth + getDate;
+        return ["https://cdn.meuicat.com/gh/Zfour/Butterfly-card-history@2.08/" + getMonth + ".json", getMonthDate]
+    }
+
     /*
      * 隐藏协议提醒助手
      */
@@ -389,6 +501,17 @@ class sco {
         }
     }
 
+    static switchHideAside() {
+        const e = document.documentElement.classList;
+        e.contains("hide-aside") ? saveToLocal.set("aside-status", "show", 2) : saveToLocal.set("aside-status", "hide", 2),
+            e.toggle("hide-aside"),
+            e.contains("hide-aside") ? document.querySelector("#consoleHideAside").classList.add("on") : document.querySelector("#consoleHideAside").classList.remove("on")
+    }
+
+    static initConsoleState() {
+        document.documentElement.classList.contains("hide-aside") ? document.querySelector("#consoleHideAside").classList.add("on") : document.querySelector("#consoleHideAside").classList.remove("on")
+    }
+
     static sayhi() {
         document.querySelector("#author-info__sayhi") && (document.getElementById("author-info__sayhi").innerHTML = getTimeState())
     }
@@ -408,12 +531,14 @@ class sco {
             'light'
         if (nowMode === 'light') {
             document.documentElement.setAttribute('data-theme', 'dark')
-            localStorage.setItem('theme', 'dark')
+            saveToLocal.set('theme', 'dark', 0.5);
             utils.snackbarShow(GLOBALCONFIG.lang.theme.dark, false, 2000)
+            document.querySelector(".menu-darkmode-text").textContent = "深色模式";
         } else {
             document.documentElement.setAttribute('data-theme', 'light')
-            localStorage.setItem('theme', 'light')
+            saveToLocal.set('theme', 'light', 0.5);
             utils.snackbarShow(GLOBALCONFIG.lang.theme.light, false, 2000)
+            document.querySelector(".menu-darkmode-text").textContent = "浅色模式";
         }
     }
 
@@ -449,19 +574,16 @@ class sco {
 
     static initTheme() {
         const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        const cachedMode = localStorage.getItem('theme');
-        const isLightMode = !isDarkMode;
+        const cachedMode = saveToLocal.get('theme');
 
-        const nowMode =
-            cachedMode && (cachedMode === 'dark' || cachedMode === 'light')
-                ? cachedMode === 'dark' && isLightMode ? 'light'
-                    : cachedMode === 'light' && isDarkMode ? 'dark'
-                        : cachedMode
-                : isDarkMode ? 'dark'
-                    : 'light';
-
-        document.documentElement.setAttribute('data-theme', nowMode);
-        localStorage.setItem('theme', nowMode);
+        if (cachedMode === undefined) {
+            const nowMode =
+                isDarkMode ? 'dark' : 'light'
+            document.documentElement.setAttribute('data-theme', nowMode);
+            saveToLocal.set('theme', nowMode, 2);
+        } else {
+            document.documentElement.setAttribute('data-theme', cachedMode);
+        }
     }
 
     static reflashEssayWaterFall() {
@@ -535,6 +657,39 @@ class sco {
         });
     }
 
+    /*
+     * 图片加水印
+     */
+    static downloadImage(e, t) {
+        rm.hideRightMenu();
+        if (0 == rm.downloadimging) {
+            rm.downloadimging = !0;
+            utils.snackbarShow("正在下载中，请稍后", !1, 1e4);
+            setTimeout((function () {
+                let o = new Image;
+                o.setAttribute("crossOrigin", "anonymous");
+                o.onload = function () {
+                    let e = document.createElement("canvas");
+                    e.width = o.width;
+                    e.height = o.height;
+                    e.getContext("2d").drawImage(o, 0, 0, o.width, o.height);
+                    let n = e.toDataURL("image/png");
+                    let a = document.createElement("a");
+                    let l = new MouseEvent("click");
+                    a.download = t || "photo";
+                    a.href = n;
+                    a.dispatchEvent(l);
+                };
+                o.src = e;
+                utils.snackbarShow("图片已添加盲水印，请遵守版权协议");
+                rm.downloadimging = !1;
+            }), "10000");
+        } else {
+            utils.snackbarShow("有正在进行中的下载，请稍后再试");
+        }
+    }
+
+
     static musicToggle() {
         const $music = document.querySelector('#nav-music'),
             $meting = document.querySelector('meting-js'),
@@ -544,12 +699,34 @@ class sco {
             $console.classList.remove("on")
             wleelw_musicPlaying = false;
             $meting.aplayer.pause();
+            document.getElementById('menu-music-toggle').innerHTML = `<i class="scoicon sco-play-fill"></i><span>播放音乐</span>`
         } else {
             $music.classList.add("playing")
             $console.classList.add("on")
             wleelw_musicPlaying = true;
             $meting.aplayer.play();
+            document.getElementById('menu-music-toggle').innerHTML = `<i class="scoicon sco-pause-fill"></i><span>暂停音乐</span>`
         }
+        rm.hideRightMenu()
+    }
+
+    static musicSkipBack() {
+        document.querySelector('meting-js').aplayer.skipBack()
+        rm.hideRightMenu()
+    }
+
+    static musicSkipForward() {
+        document.querySelector('meting-js').aplayer.skipForward()
+        rm.hideRightMenu()
+    }
+
+    static musicGetName() {
+        var e = document.querySelectorAll('.aplayer-title');
+        var t = [];
+        for (var o = e.length - 1; o >= 0; o--) {
+            t[o] = e[o].innerText;
+        }
+        return t[0];
     }
 
     static scrollToComment() {
@@ -560,8 +737,8 @@ class sco {
 class hightlight {
     static createEle(langEl, item) {
         const fragment = document.createDocumentFragment()
-        const highlightCopyEle = '<i class="ri-file-copy-fill"></i>'
-        const highlightExpandEle = '<i class="ri-arrow-down-s-line expand" style="font-size: 16px"></i>'
+        const highlightCopyEle = '<i class="scoicon sco-copy-fill"></i>'
+        const highlightExpandEle = '<i class="scoicon sco-arrow-down expand" style="font-size: 16px"></i>'
 
         const hlTools = document.createElement('div')
         hlTools.className = `highlight-tools`
@@ -599,7 +776,7 @@ class hightlight {
         if (GLOBALCONFIG.hightlight.limit && itemHeight > GLOBALCONFIG.hightlight.limit + 30) {
             $table.setAttribute('style', `height: ${GLOBALCONFIG.hightlight.limit}px`)
             ele.className = 'code-expand-btn'
-            ele.innerHTML = '<i class="ri-arrow-down-double-fill" style="font-size: 1.2rem"></i>'
+            ele.innerHTML = '<i class="scoicon sco-show-line" style="font-size: 1.2rem"></i>'
             ele.addEventListener('click', (e) => {
                 $table.setAttribute('style', `height: ${itemHeight}px`)
                 e.target.className !== 'code-expand-btn' ? e.target.parentNode.classList.add('expand-done') : e.target.classList.add('expand-done')
@@ -668,6 +845,7 @@ window.refreshFn = () => {
     sco.hideCookie()
     sco.addPhotoFigcaption()
     sco.sayhi()
+    addRightMenuClickEvent()
     GLOBALCONFIG.lazyload.enable && sco.lazyloadImg()
     GLOBALCONFIG.lightbox && sco.lightbox('')
     GLOBALCONFIG.randomlinks && randomLinksList()
@@ -687,6 +865,10 @@ window.refreshFn = () => {
     }
     GLOBALCONFIG.covercolor && coverColor();
     set_fest()
+    sco.initConsoleState()
+    if (document.getElementById('history-baidu')) sco.card_history() // 那年今日
+    if (document.getElementById('welcome-info')) sco.card_welcome() // 个性定位
+    if (GLOBALCONFIG.comment.enable) initializeCommentBarrage() // 热评
 }
 
 sco.initTheme()
@@ -702,4 +884,4 @@ document.addEventListener('pjax:complete', () => {
 
 window.onkeydown = function (e) {
     123 === e.keyCode && utils.snackbarShow("开发者模式已打开，请遵循GPL协议", !1, 3e3)
-}
+};
