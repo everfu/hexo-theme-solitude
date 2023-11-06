@@ -7,7 +7,7 @@
 <% if(theme.lightbox){ %>
     <%- js(cdn.viewimagejs) %>
 <% } %>
-<% if(theme.hometop.bbtime){ %>
+<% if(theme.hometop.bbtime || theme.aside.history.enable){ %>
     <%- js(cdn.swiperjs) %>
 <% } %>
 <%- js('/js/utils') %>

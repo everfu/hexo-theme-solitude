@@ -9194,7 +9194,11 @@ div#author-info__sayhi:hover {
     font-size: 12px;
     color: var(--sco-white);
     opacity: .6;
-    line-height: 1
+    line-height: 1.5;
+    -webkit-line-clamp: 2;
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-box-orient: vertical
 }
 
 .avatar-img-group {
@@ -9438,7 +9442,7 @@ div#author-info__sayhi:hover {
     display: flex;
     justify-content: flex-start;
     flex-direction: row;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     cursor: pointer
 }
 

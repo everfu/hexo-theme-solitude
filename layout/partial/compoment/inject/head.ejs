@@ -5,7 +5,9 @@
 <% if(theme.loading.pace){ %>
     <script data-pace-options="{ &quot;restartOnRequestAfter&quot;:false,&quot;eventLag&quot;:false}" src="<%= cdn.pacejs %>"></script>
 <% } %>
-<%- css(theme.icon.customicon) %>
+<% if(theme.icon.customicon){ %>
+    <%- css(theme.icon.customicon) %>
+<% } %>
 <%- css(cdn.scoicon) %>
 <%- css(cdn.snackbarcss) %>
 <% if(theme.comment.enable){ %>
@@ -19,7 +21,7 @@
 <% if(theme.thirdparty.aplayer.enable){%>
     <%- css(cdn.aplayercss) %>
 <%} %>
-<% if(theme.hometop.bbtime){ %>
+<% if(theme.hometop.bbtime || theme.aside.history.enable){ %>
     <%- css(cdn.swipercss) %>
 <% } %>
 <script>
