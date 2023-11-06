@@ -33,10 +33,11 @@ cp -rf ./themes/solitude/_config.yml ./_config.solitude.yml
 - windows
   复制```/themes/solitude/_config.yml```此文件到hexo根目录，并重命名为```_config.solitude.yml```
 
-## 为爱发电
-> 如果你能对我们进行赞助，我们将收获动力
+## 赞助我们
 
-![王卓Sco](https://bu.dusays.com/2023/11/04/6545e229cc17a.jpeg)
+由于我们是为爱发电，域名和一些零零散散的API都是由开发者承担费用，并且没有收入（学生），希望能够得到一些补充吧，谢谢🙏，即使没有赞助我们也会用心开发。
+
+[王卓Sco](https://afdian.net/a/wleelw0u0) &nbsp;  [亦封](https://afdian.net/a/yife68)
 
 ## ✨ 贡献者
 > 欢迎你对本主题做出贡献
