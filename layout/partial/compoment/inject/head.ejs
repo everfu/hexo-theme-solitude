@@ -56,8 +56,8 @@
                 }
             }
 
-            const DarkModeStatus = saveToLocal.get('theme')
-            if(DarkModeStatus !== undefined){
+            const DarkModeStatus = localStorage.getItem('theme')
+            if(DarkModeStatus !== null){
                 if(DarkModeStatus === 'dark'){
                     document.documentElement.setAttribute('data-theme', 'dark')
 
