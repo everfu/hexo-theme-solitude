@@ -60,11 +60,15 @@ function imageToBlob(e) {
 }
 
 async function copyImage(e) {
-    const n = await imageToBlob(e)
-        , t = new ClipboardItem({
-        "image/png": n
-    });
-    navigator.clipboard.write([t])
+    try {
+        const n = await imageToBlob(e);
+        const t = new ClipboardItem({
+            "image/png": n
+        });
+        await navigator.clipboard.write([t]);
+    } catch (error) {
+        console.error('Failed to copy image: ', error);
+    }
 }
 
 function stopMaskScroll() {
@@ -195,17 +199,16 @@ window.oncontextmenu = function (e) {
 };
 rm.downloadimging = !1
 rm.writeClipImg = function (e) {
-    const n = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' ? 0 : 10000;
+    const n = "localhost" === window.location.hostname || "127.0.0.1" === window.location.hostname ? 0 : 1e4;
     rm.hideRightMenu();
-    utils.snackbarShow("正在下载中，请稍后", false, n);
-
-    if (rm.downloadimging === 0) {
-        rm.downloadimging = true;
-        setTimeout(function () {
-            copyImage(e);
+    utils.snackbarShow("正在下载中，请稍后", !1, n);
+    if (0 == rm.downloadimging) {
+        rm.downloadimging = !0;
+        setTimeout(async function() {
+            await copyImage(e);
             utils.snackbarShow("复制成功！图片已添加盲水印，请遵守版权协议");
-            rm.downloadimging = false;
-        }, `${lazyTime}`);
+            rm.downloadimging = !1;
+        }, 1000);
     }
 }
 
@@ -285,10 +288,6 @@ function addRightMenuClickEvent() {
     var menuDarkmode = document.getElementById('menu-darkmode');
     menuDarkmode.onclick = null;
     menuDarkmode.addEventListener('click', rm.switchDarkMode);
-
-    // document.getElementById('menu-home').addEventListener('click', function () {
-    //     window.location.href = window.location.origin;
-    // });
 
     document.getElementById('menu-randomPost').addEventListener('click', function () {
         toRandomPost();

@@ -342,7 +342,7 @@ class sco {
     /**
      * 个性定位
      */
-    static card_welcome(){
+    static card_welcome() {
         /**
          * 请求数据
          */
@@ -366,6 +366,7 @@ class sco {
         }
         showWelcome();
     }
+
     /**
      * 那年今日
      * @type {*}
@@ -654,6 +655,7 @@ class sco {
             }
         });
     }
+
     /*
      * 图片加水印
      */
@@ -662,10 +664,10 @@ class sco {
         if (0 == rm.downloadimging) {
             rm.downloadimging = !0;
             utils.snackbarShow("正在下载中，请稍后", !1, 1e4);
-            setTimeout((function() {
+            setTimeout((function () {
                 let o = new Image;
                 o.setAttribute("crossOrigin", "anonymous");
-                o.onload = function() {
+                o.onload = function () {
                     let e = document.createElement("canvas");
                     e.width = o.width;
                     e.height = o.height;
@@ -864,6 +866,7 @@ window.refreshFn = () => {
     set_fest()
     if (document.getElementById('history-baidu')) sco.card_history() // 那年今日
     if (document.getElementById('welcome-info')) sco.card_welcome() // 个性定位
+    if (GLOBALCONFIG.comment.enable) initializeCommentBarrage() // 热评
 }
 
 sco.initTheme()

@@ -47,7 +47,8 @@ hexo.extend.helper.register('export_config', function () {
         covercolor: theme.post.covercolor.enable,
         comment: {
             enable: theme.comment.enable,
-            twikooUrl: theme.comment.twikoo.envId
+            twikooUrl: theme.comment.twikoo.envId,
+            twikooAccessToken: theme.comment.twikoo.accessToken
         },
     }
 

@@ -338,8 +338,8 @@ comment:
   enable: false
   twikoo:
     envId: https://twikoo.sondy.top
-    path: window.location.pathname
     lang: 'zh-CN'
+    accessToken:  # accessToken
 
 ai: # 文章页面AI
   enable: false

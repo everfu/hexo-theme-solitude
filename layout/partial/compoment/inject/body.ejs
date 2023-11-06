@@ -54,7 +54,7 @@
 <%- js('/js/rightmenu') %>
 
 <% if(theme.comment.enable){ %>
-    <%- js('/js/commentBarrage') %>
+    <script data-pjax src="/js/commentBarrage.js"></script>
 <% } %>
 
 <% if (page.katex){ %>
@@ -67,6 +67,6 @@
     <% js(cdn.katexjs) %>
 <% } %>
 
-<% if(theme.aside.welcome.enable){%>
+<% if(theme.aside.welcome.enable){ %>
     <%- js('/js/txmap.js') %>
-<%} %>
+<% } %>
