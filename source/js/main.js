@@ -574,15 +574,22 @@ class sco {
 
     static initTheme() {
         const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        const cachedMode = saveToLocal.get('theme');
-
-        if (cachedMode === undefined) {
-            const nowMode =
-                isDarkMode ? 'dark' : 'light'
-            document.documentElement.setAttribute('data-theme', nowMode);
-            saveToLocal.set('theme', nowMode, 2);
-        } else {
-            document.documentElement.setAttribute('data-theme', cachedMode);
+        try {
+            const cachedMode = saveToLocal.get('theme');
+            if (cachedMode === undefined) {
+                const nowMode =
+                    isDarkMode ? 'dark' : 'light'
+                document.documentElement.setAttribute('data-theme', nowMode);
+                saveToLocal.set('theme', nowMode, 2);
+            } else {
+                document.documentElement.setAttribute('data-theme', cachedMode);
+            }
+        } catch (e) {
+            if (isDarkMode) {
+                saveToLocal.set('theme', 'dark', 2)
+            } else {
+                saveToLocal.set('theme', 'light', 2)
+            }
         }
     }
 
@@ -758,7 +765,7 @@ class hightlight {
                     $expand[0].setAttribute('style', 'display:block')
                 }
                 if (itemHeight < 200) {
-                    $table.setAttribute('style', 'height:' + itemHeight + "px")
+                    $table.setAttribute('style', 'height: auto')
                 } else {
                     $table.setAttribute('style', 'height:200px')
                     ele.classList.remove("expand-done")
