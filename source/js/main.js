@@ -508,6 +508,10 @@ class sco {
             e.contains("hide-aside") ? document.querySelector("#consoleHideAside").classList.add("on") : document.querySelector("#consoleHideAside").classList.remove("on")
     }
 
+    static initConsoleState() {
+        document.documentElement.classList.contains("hide-aside") ? document.querySelector("#consoleHideAside").classList.add("on") : document.querySelector("#consoleHideAside").classList.remove("on")
+    }
+
     static sayhi() {
         document.querySelector("#author-info__sayhi") && (document.getElementById("author-info__sayhi").innerHTML = getTimeState())
     }
@@ -527,12 +531,12 @@ class sco {
             'light'
         if (nowMode === 'light') {
             document.documentElement.setAttribute('data-theme', 'dark')
-            localStorage.setItem('theme', 'dark')
+            saveToLocal.set('theme', 'dark', 0.5);
             utils.snackbarShow(GLOBALCONFIG.lang.theme.dark, false, 2000)
             document.querySelector(".menu-darkmode-text").textContent = "深色模式";
         } else {
             document.documentElement.setAttribute('data-theme', 'light')
-            localStorage.setItem('theme', 'light')
+            saveToLocal.set('theme', 'light', 0.5);
             utils.snackbarShow(GLOBALCONFIG.lang.theme.light, false, 2000)
             document.querySelector(".menu-darkmode-text").textContent = "浅色模式";
         }
@@ -570,19 +574,16 @@ class sco {
 
     static initTheme() {
         const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        const cachedMode = localStorage.getItem('theme');
-        const isLightMode = !isDarkMode;
+        const cachedMode = saveToLocal.get('theme');
 
-        const nowMode =
-            cachedMode && (cachedMode === 'dark' || cachedMode === 'light')
-                ? cachedMode === 'dark' && isLightMode ? 'light'
-                    : cachedMode === 'light' && isDarkMode ? 'dark'
-                        : cachedMode
-                : isDarkMode ? 'dark'
-                    : 'light';
-
-        document.documentElement.setAttribute('data-theme', nowMode);
-        localStorage.setItem('theme', nowMode);
+        if (cachedMode === undefined) {
+            const nowMode =
+                isDarkMode ? 'dark' : 'light'
+            document.documentElement.setAttribute('data-theme', nowMode);
+            saveToLocal.set('theme', nowMode, 2);
+        } else {
+            document.documentElement.setAttribute('data-theme', cachedMode);
+        }
     }
 
     static reflashEssayWaterFall() {
@@ -864,6 +865,7 @@ window.refreshFn = () => {
     }
     GLOBALCONFIG.covercolor && coverColor();
     set_fest()
+    sco.initConsoleState()
     if (document.getElementById('history-baidu')) sco.card_history() // 那年今日
     if (document.getElementById('welcome-info')) sco.card_welcome() // 个性定位
     if (GLOBALCONFIG.comment.enable) initializeCommentBarrage() // 热评

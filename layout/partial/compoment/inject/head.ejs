@@ -55,6 +55,25 @@
                     return item.value
                 }
             }
+
+            const DarkModeStatus = saveToLocal.get('theme')
+            if(DarkModeStatus !== undefined){
+                if(DarkModeStatus === 'dark'){
+                    document.documentElement.setAttribute('data-theme', 'dark')
+
+                }else{
+                    document.documentElement.setAttribute('data-theme', 'light')
+                }
+            }
+
+            const asideStatus = saveToLocal.get('aside-status')
+            if (asideStatus !== undefined) {
+                if (asideStatus === 'hide') {
+                    document.documentElement.classList.add('hide-aside')
+                } else {
+                    document.documentElement.classList.remove('hide-aside')
+                }
+            }
         }
     )(window)
 
