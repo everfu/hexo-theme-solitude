@@ -531,12 +531,12 @@ class sco {
             'light'
         if (nowMode === 'light') {
             document.documentElement.setAttribute('data-theme', 'dark')
-            saveToLocal.set('theme', 'dark', 0.5);
+            saveToLocal.set('theme', 'dark', 0.04);
             utils.snackbarShow(GLOBALCONFIG.lang.theme.dark, false, 2000)
             document.querySelector(".menu-darkmode-text").textContent = "深色模式";
         } else {
             document.documentElement.setAttribute('data-theme', 'light')
-            saveToLocal.set('theme', 'light', 0.5);
+            saveToLocal.set('theme', 'light', 0.04);
             utils.snackbarShow(GLOBALCONFIG.lang.theme.light, false, 2000)
             document.querySelector(".menu-darkmode-text").textContent = "浅色模式";
         }
