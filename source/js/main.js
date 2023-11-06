@@ -576,21 +576,20 @@ class sco {
         const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
         try {
             const cachedMode = saveToLocal.get('theme');
+            if (cachedMode === undefined) {
+                const nowMode =
+                    isDarkMode ? 'dark' : 'light'
+                document.documentElement.setAttribute('data-theme', nowMode);
+                saveToLocal.set('theme', nowMode, 2);
+            } else {
+                document.documentElement.setAttribute('data-theme', cachedMode);
+            }
         } catch (e) {
             if (isDarkMode) {
                 saveToLocal.set('theme', 'dark', 2)
             } else {
                 saveToLocal.set('theme', 'light', 2)
             }
-        }
-
-        if (cachedMode === undefined) {
-            const nowMode =
-                isDarkMode ? 'dark' : 'light'
-            document.documentElement.setAttribute('data-theme', nowMode);
-            saveToLocal.set('theme', nowMode, 2);
-        } else {
-            document.documentElement.setAttribute('data-theme', cachedMode);
         }
     }
 
