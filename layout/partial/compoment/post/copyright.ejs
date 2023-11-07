@@ -11,15 +11,17 @@
     </div>
     <div class="post-tools" id="post-tools">
         <div class="post-tools-left">
-            <% if(theme.post.award.enable){%>
+            <% if(theme.post.award.enable){ %>
                 <%- partial('/award', {cache: true}) %>
-            <%} %>
-            <div class="reward-link mode">
-                <a class="reward-link-button" href="<%= theme.footer.rss.url %>">
-                    <i class="scoicon sco-plant-fill"></i>
-                    订阅
-                </a>
-            </div>
+            <% } %>
+            <% if(theme.footer.rss.enable){ %>
+                <div class="reward-link mode">
+                    <a class="reward-link-button" href="<%- theme.footer.rss.url %>">
+                        <i class="scoicon sco-plant-fill"></i>
+                        订阅
+                    </a>
+                </div>
+            <% } %>
         </div>
     </div>
     <div class="post-copyright__notice">

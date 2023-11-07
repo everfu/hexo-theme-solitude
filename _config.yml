@@ -273,8 +273,8 @@ post:
   # 打赏
   award:
     enable: false # 开启后文章底部显示打赏按钮
-    wechat: https://p.sondy.top/blog/img/20230913203219.png!cover # 微信收款码
-    alipay: https://p.sondy.top/blog/img/20230916173807.png!cover # 支付宝收款码
+    wechat: https://bu.dusays.com/2023/11/07/6549e79364fa3.png # 微信收款码
+    alipay: https://bu.dusays.com/2023/11/07/6549e79d02bd6.png # 支付宝收款码
     url: /about # 打赏统计页面链接
   # 文章颜色获取
   covercolor: #文章cover取色
