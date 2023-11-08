@@ -70,7 +70,7 @@ npm update hexo-theme-solitude
 theme: solitude
 ```
 
-## 更好的配置
+## 🛠️ 更好的配置
 - macos/linux
   在博客根目录运行
 ```bash
