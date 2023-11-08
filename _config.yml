@@ -3,8 +3,8 @@ site:
   name: # 左上角显示内容
     class:  text #i_class/text/img
     custom: Solitude #自定义内容 例如：scoicon sco-logo / 王卓Sco / https://p.sondy.top/logo.png
-  siteIcon: https://bu.dusays.com/2023/10/31/6540daf117d20.png # 网页icon
-  icon: https://bu.dusays.com/2023/10/31/6540daf117d20.png # 页脚的icon、加载动画默认的icon
+  siteIcon: https://bu.dusays.com/2023/11/08/654af68b25bb8.jpg # 网页icon
+  icon: https://bu.dusays.com/2023/11/08/654af68b25bb8.jpg # 页脚的icon、加载动画默认的icon
   icp:  # ICP 例如：湘ICP备2023015327号
 
 
@@ -16,7 +16,7 @@ nav:
     menu:
   #      项目:
   #        Solitude:
-  #          icon: https://bu.dusays.com/2023/10/31/6540daf117d20.png
+  #          icon: https://bu.dusays.com/2023/11/08/654af68b25bb8.jpg
   #          url: https://github.com/DuoSco/Hexo-Theme-solitude
 
   # 导航栏内容
@@ -78,7 +78,7 @@ hometop:
   banner:
     enable: false # 是否打开顶部banner
     title: 宁静致远<br>热爱生活 # 左上角显示文字
-    url: WWW.WZSCO.TOP # title下方小字
+    url: Hexo-Theme-Solitude # title下方小字
     # 轮播icon
     icon:
       HTML:
@@ -124,7 +124,7 @@ hometop:
   # 右侧置顶列表（在文章的front matter中添加“recommend: true”）
   recommendList:
     sup: 置顶 # 左上角显示文字
-    title: 主题文档 # 左下角大字
+    title: Solitude主题文档 # 左下角大字
     url: https://docs.wzsco.top/ # 点击跳转链接
     img: /img/default.png # 显示背景
     color: '#ff0000' # 背景颜色
@@ -149,7 +149,7 @@ aside:
   # 侧边栏个人信息卡片
   card:
     author:
-      img: https://bu.dusays.com/2023/10/31/6540daf117d20.png # 头像
+      img: https://bu.dusays.com/2023/11/08/654af68b25bb8.jpg # 头像
       js: https://cdn3.codesign.qq.com/icons/XgRxnjPG4VZLmqr/latest/iconfont.js # 自定义图标js（用于显示带颜色的状态表情）
       state: "#sco-smile" # 状态表情（使用symbol）
     content: 分享自己对编程的<b>热爱</b>，对美好生活的<b>向往</b>，对知识海洋<b>探索历程</b>。 # 文案1
@@ -334,7 +334,7 @@ thirdparty:
   consolePlus: false
 
   ai: # 文章页面AI
-    enable: false
+    enable: true
     key: # 前往tianli-AI 购买
     rec_method: # 推荐文章方式（all:匹配数据库所有文章、web:仅当前博客文章）默认：web
 

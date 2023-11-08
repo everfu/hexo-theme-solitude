@@ -5954,6 +5954,17 @@ i.fab {
 }
 
 @media screen and (max-width: 768px) {
+    #page-header #nav a:hover span.scoicon {
+        opacity: 1 !important;
+    }
+    #page-header.not-top-img #nav a:hover {
+        align-items: flex-end !important;
+    }
+
+    #nav #site-name span{
+        padding-left: 8px
+    }
+
     #sidebar #sidebar-menus .menus_items li .site-page:hover {
         background: var(--sco-main);
         color: var(--sco-white)
@@ -6432,12 +6443,18 @@ a.console_switchbutton {
     transition: .3s;
     display: flex;
     height: 35px;
-    width: 70px;
     justify-content: center;
     align-items: flex-end;
     text-shadow: none;
     border-radius: 40px;
     cursor: pointer
+}
+
+#nav #site-name img {
+    height: 100%
+}
+#nav #site-name:hover img {
+    opacity: 0
 }
 
 #search-button > a > span {
