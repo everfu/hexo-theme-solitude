@@ -105,5 +105,5 @@ cp -rf ./themes/solitude/_config.yml ./_config.solitude.yml
 ### 主题设计
 [@张洪Heo](https://github.com/zhheo)
 
-## 仓库统计
+## 📊 仓库统计
 ![仓库统计](https://repobeats.axiom.co/api/embed/75ec216f1d0b289e1b6a92f585342f3eeeeb0fdd.svg "Repobeats analytics image")
