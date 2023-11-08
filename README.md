@@ -79,7 +79,7 @@ cp -rf ./themes/solitude/_config.yml ./_config.solitude.yml
 - windows
   复制```/themes/solitude/_config.yml```此文件到hexo根目录，并重命名为```_config.solitude.yml```
 
-## 赞助我们
+## 🎁 赞助我们
 
 由于我们是为爱发电，域名和一些零零散散的API都是由开发者承担费用，并且没有收入（学生），希望能够得到一些补充吧，谢谢🙏，即使没有赞助我们也会用心开发。
 
