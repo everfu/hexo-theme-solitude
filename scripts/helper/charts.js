@@ -1,7 +1,6 @@
 hexo.extend.filter.register('after_render:html', function (locals) {
     try {
         const cheerio = require('cheerio')
-        const moment = require('moment')
         const $ = cheerio.load(locals)
         const post = $('#posts-chart')
         const tag = $('#tags-chart')
@@ -36,6 +35,7 @@ hexo.extend.filter.register('after_render:html', function (locals) {
 }, 15)
 
 function postsChart(startMonth) {
+    const moment = require('moment')
     const startDate = moment(startMonth || '2020-01')
     const endDate = moment()
 
