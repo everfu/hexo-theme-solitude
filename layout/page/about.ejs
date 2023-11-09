@@ -9,5 +9,7 @@
     <%- partial('partial/compoment/about/other' ) %>
     <%- partial('partial/compoment/about/award' ) %>
 </div>
-<script src="<%= theme.echarts.js %>" rel="external nofollow"></script>
+<% if(theme.thirdparty.echarts.enable){%>
+    <%- js(theme.thirdparty.echarts.js) %>
+<%} %>
 <% } %>

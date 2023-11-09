@@ -1,25 +1,6 @@
 <div class="post-reward">
-    <div class="reward-button button--animated" title="赞赏作者">
-        <script>
-            if (utils.isMobile()) {
-                const showReward = () => {
-                    const rewardMain = document.querySelector('.reward-main');
-                    rewardMain.style.display = 'flex';
-                    document.addEventListener('touchstart', hideReward);
-                };
-                const hideReward = () => {
-                    const rewardMain = document.querySelector('.reward-main');
-                    rewardMain.style.display = 'none';
-                    document.removeEventListener('touchstart', hideReward);
-                };
-                const rewardButton = document.querySelector('.reward-button');
-                rewardButton.addEventListener('touchstart', event => {
-                    event.stopPropagation();
-                    showReward();
-                });
-            }
-        </script>
-        <i class="heofont icon-hand-heart-fill"></i>
+    <div class="reward-button button--animated" onclick="AddRewardMask()" title="赞赏作者">
+        <i class="scoicon sco-hand-heart-fill"></i>
         打赏作者
     </div>
     <div class="reward-main">
@@ -50,3 +31,30 @@
         </ul>
     </div>
 </div>
+<script type="text/javascript">
+    function RemoveRewardMask() {
+        let rewardMainElements = document.querySelectorAll(".reward-main");
+        let quitBoxElement = document.querySelector("#quit-box");
+
+        rewardMainElements.forEach(element => {
+            element.style.display = "none";
+        });
+
+        if (quitBoxElement) {
+            quitBoxElement.style.display = "none";
+        }
+    }
+
+    function AddRewardMask() {
+        let rewardMainElements = document.querySelectorAll(".reward-main");
+        let quitBoxElement = document.querySelector("#quit-box");
+
+        rewardMainElements.forEach(element => {
+            element.style.display = "flex";
+        });
+
+        if (quitBoxElement) {
+            quitBoxElement.style.display = "flex";
+        }
+    }
+</script>

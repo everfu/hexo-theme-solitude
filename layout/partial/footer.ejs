@@ -96,9 +96,14 @@
     <div class="cookies-window-content">
         <span class="cookies-tip">查看本站为你的个人隐私做出的努力</span>
         <a class="cookies-link" href="/privacy/" title="本站如何保护你的隐私" data-pjax-state="">
-            <i class="heofont icon-arrow-right-circle-fill"></i>
+            <i class="scoicon sco-arrow-right-circle-fill"></i>
         </a>
     </div>
 </div>
-<div class="comment-barrage">
-</div>
+<% if(theme.post.award.enable){%>
+    <div id="quit-box" onclick="RemoveRewardMask()" style="display: none"></div>
+<%} %>
+<% if(theme.comment.enable){ %>
+    <div class="comment-barrage">
+    </div>
+<% } %>

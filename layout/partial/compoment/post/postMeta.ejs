@@ -8,11 +8,11 @@
                 <%= page.cc %>
             </a>
             <% if (page.categories.data.length) { %>
-            <span class="post-meta-categories">
-                <% page.categories.data.forEach(item => { %>
-                    <a class="post-meta-categories" href="<%= url_for(item.path) %>"><%= item.name %></a>
-                <% }) %>
-            </span>
+                <span class="post-meta-categories">
+                    <% page.categories.data.forEach(item => { %>
+                        <a class="post-meta-categories" href="<%= url_for(item.path) %>"><%= item.name %></a>
+                    <% }) %>
+                </span>
             <% } %>
             <div class="tag_share">
                 <div class="post-meta__tag-list">
@@ -29,10 +29,12 @@
     <h1 class="post-title"><%= page.title %></h1>
     <div id="post-meta">
         <div class="meta-secondline">
-            <span class="post-meta-date" title="发布于">
+            <% if(theme.post.meta.date){ %>
+                <span class="post-meta-date" title="发布于">
                 <i class="post-meta-icon scoicon sco-calendar-todo-fill"></i>
                 <time datetime="<%= moment(page.date).format() %>"></time>
             </span>
+            <% } %>
             <% if(theme.post.meta.updated){ %>
                 <span class="post-meta-date" title="更新于">
                     <i class="post-meta-icon scoicon sco-refresh-line"></i>
@@ -66,7 +68,7 @@
                         <span id="twikoo_visitors"><i class="scoicon sco-loading-line"></i></span>
                     <% }else{ %>
                         <span id="busuanzi_value_page_pv"><i class="scoicon sco-loading-line"></i></span>
-                    <% } %>        
+                    <% } %>
                 </span>
             <% } %>
             <% if(theme.post.meta.comment && page.comment){ %>
@@ -76,7 +78,7 @@
                         <span id="twikoo-count"><i class="scoicon sco-loading-line"></i></span>
                     </a>
                 </span>
-            <% } %>    
+            <% } %>
         </div>
     </div>
 </div>

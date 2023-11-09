@@ -36,9 +36,7 @@
         var meting_api = "<%- theme.thirdparty.aplayer.api %>";
     </script>
 <% } %>
-<% if(theme.post.covercolor && !theme.post.covercolor.local){ %>
-    <%- js('/js/extend/covercolor/web') %>
-<% }else{ %>
+<% if(theme.post.covercolor){ %>
     <%- js('/js/extend/covercolor/local') %>
 <% } %>
 

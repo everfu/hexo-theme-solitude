@@ -1,38 +1,41 @@
-const cheerio = require('cheerio')
-const moment = require('moment')
-
 hexo.extend.filter.register('after_render:html', function (locals) {
-    const $ = cheerio.load(locals)
-    const post = $('#posts-chart')
-    const tag = $('#tags-chart')
-    const category = $('#categories-chart')
-    const htmlEncode = false
+    try {
+        const cheerio = require('cheerio')
+        const moment = require('moment')
+        const $ = cheerio.load(locals)
+        const post = $('#posts-chart')
+        const tag = $('#tags-chart')
+        const category = $('#categories-chart')
+        const htmlEncode = false
 
-    if (post.length > 0 || tag.length > 0 || category.length > 0) {
-        if (post.length > 0 && $('#postsChart').length === 0) {
-            if (post.attr('data-encode') === 'true') htmlEncode = true
-            post.after(postsChart(post.attr('data-start')))
-        }
-        if (tag.length > 0 && $('#tagsChart').length === 0) {
-            if (tag.attr('data-encode') === 'true') htmlEncode = true
-            tag.after(tagsChart(tag.attr('data-length')))
-        }
-        if (category.length > 0 && $('#categoriesChart').length === 0) {
-            if (category.attr('data-encode') === 'true') htmlEncode = true
-            category.after(categoriesChart(category.attr('data-parent')))
-        }
+        if (post.length > 0 || tag.length > 0 || category.length > 0) {
+            if (post.length > 0 && $('#postsChart').length === 0) {
+                if (post.attr('data-encode') === 'true') htmlEncode = true
+                post.after(postsChart(post.attr('data-start')))
+            }
+            if (tag.length > 0 && $('#tagsChart').length === 0) {
+                if (tag.attr('data-encode') === 'true') htmlEncode = true
+                tag.after(tagsChart(tag.attr('data-length')))
+            }
+            if (category.length > 0 && $('#categoriesChart').length === 0) {
+                if (category.attr('data-encode') === 'true') htmlEncode = true
+                category.after(categoriesChart(category.attr('data-parent')))
+            }
 
-        if (htmlEncode) {
-            return $.root().html().replace(/&amp;#/g, '&#')
+            if (htmlEncode) {
+                return $.root().html().replace(/&amp;#/g, '&#')
+            } else {
+                return $.root().html()
+            }
         } else {
-            return $.root().html()
+            return locals
         }
-    } else {
-        return locals
+    } catch (e) {
+
     }
 }, 15)
 
-function postsChart (startMonth) {
+function postsChart(startMonth) {
     const startDate = moment(startMonth || '2020-01')
     const endDate = moment()
 
@@ -164,12 +167,14 @@ function postsChart (startMonth) {
   </script>`
 }
 
-function tagsChart (len) {
+function tagsChart(len) {
     const tagArr = []
     hexo.locals.get('tags').map(function (tag) {
-        tagArr.push({ name: tag.name, value: tag.length, path: tag.path })
+        tagArr.push({name: tag.name, value: tag.length, path: tag.path})
     })
-    tagArr.sort((a, b) => { return b.value - a.value })
+    tagArr.sort((a, b) => {
+        return b.value - a.value
+    })
 
     const dataLength = Math.min(tagArr.length, len) || tagArr.length
     const tagNameArr = []
@@ -285,7 +290,7 @@ function tagsChart (len) {
   </script>`
 }
 
-function categoriesChart (dataParent) {
+function categoriesChart(dataParent) {
     const categoryArr = []
     let categoryParentFlag = false
     hexo.locals.get('categories').map(function (category) {
@@ -299,8 +304,11 @@ function categoriesChart (dataParent) {
         })
     })
     categoryParentFlag = categoryParentFlag && dataParent === 'true'
-    categoryArr.sort((a, b) => { return b.value - a.value })
-    function translateListToTree (data, parent) {
+    categoryArr.sort((a, b) => {
+        return b.value - a.value
+    })
+
+    function translateListToTree(data, parent) {
         let tree = []
         let temp
         data.forEach((item, index) => {
@@ -316,7 +324,10 @@ function categoriesChart (dataParent) {
         })
         return tree
     }
-    const categoryNameJson = JSON.stringify(categoryArr.map(function (category) { return category.name }))
+
+    const categoryNameJson = JSON.stringify(categoryArr.map(function (category) {
+        return category.name
+    }))
     const categoryArrJson = JSON.stringify(categoryArr)
     const categoryArrParentJson = JSON.stringify(translateListToTree(categoryArr, '0'))
 

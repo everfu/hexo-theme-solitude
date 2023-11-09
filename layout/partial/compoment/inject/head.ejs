@@ -60,7 +60,6 @@
             if(DarkModeStatus !== null){
                 if(DarkModeStatus === 'dark'){
                     document.documentElement.setAttribute('data-theme', 'dark')
-
                 }else{
                     document.documentElement.setAttribute('data-theme', 'light')
                 }
@@ -79,6 +78,6 @@
 
     console.log("%c🔥 程序：Hexo | 主题：Hexo-Theme-Solitude | 作者：DuoSco团队 | 官网：https://github.com/DuoSco/Hexo-theme-solitude 😋", "color:#fff; background: linear-gradient(270deg, #18d7d3, #68b7dd, #8695e6, #986fee); padding: 8px 15px; border-radius: 8px");
 </script>
-<% if(theme.ai.enable){ %>
+<% if(theme.thirdparty.ai.enable){ %>
     <%- js('/lib/chuckle-post-ai') %>
 <% } %>

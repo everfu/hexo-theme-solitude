@@ -564,10 +564,6 @@ class sco {
         }
     }
 
-    static copyPageUrl() {
-        utils.copy(window.location.href)
-    }
-
     static lightbox(el) {
         window.ViewImage && window.ViewImage.init("#article-container img:not(.flink-avatar), .bber-content-img img, #album_detail img, #equipment img, #twikoo .tk-content img:not(.tk-owo-emotion)");
     }
@@ -580,15 +576,15 @@ class sco {
                 const nowMode =
                     isDarkMode ? 'dark' : 'light'
                 document.documentElement.setAttribute('data-theme', nowMode);
-                saveToLocal.set('theme', nowMode, 2);
+                saveToLocal.set('theme', nowMode, 0.5);
             } else {
                 document.documentElement.setAttribute('data-theme', cachedMode);
             }
         } catch (e) {
             if (isDarkMode) {
-                saveToLocal.set('theme', 'dark', 2)
+                saveToLocal.set('theme', 'dark', 0.5)
             } else {
-                saveToLocal.set('theme', 'light', 2)
+                saveToLocal.set('theme', 'light', 0.5)
             }
         }
     }

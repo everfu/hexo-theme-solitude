@@ -2,18 +2,18 @@
 <script>
     let UserConfig = {
         // 填写你的api地址
-        private_api_url: '<%= theme.circle.api %>',
+        private_api_url: '<%= theme.thirdparty.circle.api %>',
         // 默认加载文章数
-        page_init_number: <%= theme.circle.page_init_number%>,
+        page_init_number: <%= theme.thirdparty.circle.page_init_number%>,
         // 点击加载更多时，一次最多加载几篇文章，默认10
-        page_turning_number: <%= theme.circle.page_turning_number %>,
+        page_turning_number: <%= theme.thirdparty.circle.page_turning_number %>,
         // 头像加载失败时，默认头像地址
-        error_img: '<%= theme.circle.error_img %>',
+        error_img: '<%= theme.thirdparty.circle.error_img %>',
         // 进入页面时第一次的排序规则
-        sort_rule: '<%= theme.circle.sort_rule %>',
+        sort_rule: '<%= theme.thirdparty.circle.sort_rule %>',
         // 本地文章缓存数据过期时间（天）
-        expire_days: <%= theme.circle.expire_days %>,
+        expire_days: <%= theme.thirdparty.circle.expire_days %>,
     }
 </script>
-<script type="text/javascript" src="<%= theme.circle.appjs %>"></script>
-<script type="text/javascript" src="<%= theme.circle.bundlejs %>"></script>
+<%- js(theme.thirdparty.circle.appjs) %>
+<%- js(theme.thirdparty.circle.bundlejs) %>

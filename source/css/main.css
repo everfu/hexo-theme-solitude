@@ -5954,6 +5954,17 @@ i.fab {
 }
 
 @media screen and (max-width: 768px) {
+    #page-header #nav a:hover span.scoicon {
+        opacity: 1 !important;
+    }
+    #page-header.not-top-img #nav a:hover {
+        align-items: flex-end !important;
+    }
+
+    #nav #site-name span{
+        padding-left: 8px
+    }
+
     #sidebar #sidebar-menus .menus_items li .site-page:hover {
         background: var(--sco-main);
         color: var(--sco-white)
@@ -6432,12 +6443,19 @@ a.console_switchbutton {
     transition: .3s;
     display: flex;
     height: 35px;
-    width: 70px;
+    min-width: 70px;
     justify-content: center;
     align-items: flex-end;
     text-shadow: none;
     border-radius: 40px;
     cursor: pointer
+}
+
+#nav #site-name img {
+    height: 100%
+}
+#nav #site-name:hover img {
+    opacity: 0
 }
 
 #search-button > a > span {
@@ -11235,7 +11253,8 @@ a.reward-main-btn:hover {
 
 @media screen and (max-width: 768px) {
     #quit-box {
-        display: none !important
+        z-index: 109;
+        height: calc(100vh - 380px);
     }
 }
 
@@ -12281,7 +12300,7 @@ button.el-button.tk-cancel.el-button--default.el-button--small {
         bottom: 0;
         left: 0;
         right: 0;
-        z-index: 102;
+        z-index: 1003;
         width: 100%;
         margin: auto;
         padding: 0
@@ -16263,94 +16282,4 @@ div#equipment {
 
 a.bber-reply {
     cursor: pointer
-}
-
-/*
- * ai
- */
-.post-ai {
-    background: var(--ai-post-bg);
-    border-radius: 12px;
-    padding: 12px 16px;
-    line-height: 1.3;
-    border: 1px solid #e3e8f7bd;;
-    margin-top: 10px;
-    margin-bottom: 6px;
-    transition: all .3s;
-    -webkit-transition: all .3s;
-    -moz-transition: all .3s;
-    -ms-transition: all .3s;
-    -o-transition: all .3s
-}
-
-.ai-title {
-    display: flex;
-    color: var(--sco-fontcolor);
-    border-radius: 8px;
-    align-items: center;
-    padding: 0 5px
-}
-
-.ai-title i {
-    font-weight: 800
-}
-
-.ai-title-text {
-    font-weight: 700;
-    margin-left: 8px
-}
-
-.ai-tag {
-    font-size: 12px;
-    background-color: var(--ai-tag-bg);
-    color: rgba(255, 255, 255, .9);
-    border-radius: 4px;
-    margin-left: auto;
-    line-height: 1;
-    padding: 4px 5px;
-    border: var(--ai-border)
-}
-
-.ai-explanation {
-    padding: 8px;
-    margin-top: 11px;
-    font-size: 16px;
-    line-height: 1.4;
-    border: 1px solid var(--sco-card-border);
-    border-radius: 8px;
-}
-
-.ai-btn-box {
-    font-size: 16px;
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap
-}
-
-.ai-btn-item {
-    padding: 5px 10px;
-    margin: 10px 16px 0 5px;
-    width: fit-content;
-    line-height: 1;
-    background: var(--sco-card-btn-bg);
-    border: var(--ai-border);
-    color: var(--sco-fontcolor);
-    border-radius: 6px 6px 6px 0;
-    -webkit-border-radius: 6px 6px 6px 0;
-    -moz-border-radius: 6px 6px 6px 0;
-    -ms-border-radius: 6px 6px 6px 0;
-    -o-border-radius: 6px 6px 6px 0;
-    user-select: none;
-    transition: all .3s;
-    -webkit-transition: all .3s;
-    -moz-transition: all .3s;
-    -ms-transition: all .3s;
-    -o-transition: all .3s
-}
-
-.ai-btn-item:hover {
-    background: var(--sco-main);
-    color: var(--sco-white);
-    cursor: pointer;
 }

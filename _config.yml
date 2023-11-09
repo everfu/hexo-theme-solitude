@@ -3,8 +3,8 @@ site:
   name: # 左上角显示内容
     class:  text #i_class/text/img
     custom: Solitude #自定义内容 例如：scoicon sco-logo / 王卓Sco / https://p.sondy.top/logo.png
-  siteIcon: https://bu.dusays.com/2023/10/31/6540daf117d20.png # 网页icon
-  icon: https://bu.dusays.com/2023/10/31/6540daf117d20.png # 页脚的icon、加载动画默认的icon
+  siteIcon: https://bu.dusays.com/2023/11/08/654af68b25bb8.jpg # 网页icon
+  icon: https://bu.dusays.com/2023/11/08/654af68b25bb8.jpg # 页脚的icon、加载动画默认的icon
   icp:  # ICP 例如：湘ICP备2023015327号
 
 
@@ -14,59 +14,59 @@ nav:
   left:
     enable: false
     menu:
-#      项目:
-#        Solitude:
-#          icon: https://bu.dusays.com/2023/10/31/6540daf117d20.png
-#          url: https://github.com/DuoSco/Hexo-Theme-solitude
+  #      项目:
+  #        Solitude:
+  #          icon: https://bu.dusays.com/2023/11/08/654af68b25bb8.jpg
+  #          url: https://github.com/DuoSco/Hexo-Theme-solitude
 
-# 导航栏内容
+  # 导航栏内容
   menu:
-#    文库:
-#      url: false
-#      child:
-#        文章列表:
-#          url: /archives/
-#          icon: scoicon sco-folder-fill
-#        全部分类:
-#          url: /categories/
-#          icon: scoicon sco-checkbox-multiple-blank-fill
-#        全部标签:
-#          url: /tags/
-#          icon: scoicon sco-price-tag-fill
-#    友链:
-#      url: false
-#      child:
-#        鱼塘:
-#          url: /moments/
-#          icon: scoicon sco-wifi-fill
-#        友情链接:
-#          url: /links/
-#          icon: scoicon sco-group-fill
-#        宝藏博主:
-#          url: javascript:travelling()
-#          icon: scoicon sco-gift-fill
-#    我的:
-#      url: false
-#      child:
-#        装备:
-#          url: /equipment/
-#          icon: scoicon sco-laptop-line
-#        工具箱:
-#          url: /tlink/
-#          icon: scoicon sco-tools-fill
-#    关于:
-#      url: false
-#      child:
-#        关于本站:
-#          url: /about/
-#          icon: scoicon sco-contacts-fill
+  #    文库:
+  #      url: false
+  #      child:
+  #        文章列表:
+  #          url: /archives/
+  #          icon: scoicon sco-folder-fill
+  #        全部分类:
+  #          url: /categories/
+  #          icon: scoicon sco-checkbox-multiple-blank-fill
+  #        全部标签:
+  #          url: /tags/
+  #          icon: scoicon sco-price-tag-fill
+  #    友链:
+  #      url: false
+  #      child:
+  #        鱼塘:
+  #          url: /moments/
+  #          icon: scoicon sco-wifi-fill
+  #        友情链接:
+  #          url: /links/
+  #          icon: scoicon sco-group-fill
+  #        宝藏博主:
+  #          url: javascript:travelling()
+  #          icon: scoicon sco-gift-fill
+  #    我的:
+  #      url: false
+  #      child:
+  #        装备:
+  #          url: /equipment/
+  #          icon: scoicon sco-laptop-line
+  #        工具箱:
+  #          url: /tlink/
+  #          icon: scoicon sco-tools-fill
+  #    关于:
+  #      url: false
+  #      child:
+  #        关于本站:
+  #          url: /about/
+  #          icon: scoicon sco-contacts-fill
 
 
   # 导航栏右侧快捷菜单 (true,false)
   right: # @todo 允许用户自定义
-    travellings: true   #开往
-    random: true        # 随机文章跳转
-    console: true       #控制台
+    travellings: false   #开往
+    random: false        # 随机文章跳转
+    console: false       #控制台
 
 # 自定义icon
 icon:
@@ -76,9 +76,9 @@ icon:
 hometop:
   bbtime: false # 即刻顶部是否开启
   banner:
-    enable: true # 是否打开顶部banner
+    enable: false # 是否打开顶部banner
     title: 宁静致远<br>热爱生活 # 左上角显示文字
-    url: WWW.WZSCO.TOP # title下方小字
+    url: Hexo-Theme-Solitude # title下方小字
     # 轮播icon
     icon:
       HTML:
@@ -124,7 +124,7 @@ hometop:
   # 右侧置顶列表（在文章的front matter中添加“recommend: true”）
   recommendList:
     sup: 置顶 # 左上角显示文字
-    title: 主题文档 # 左下角大字
+    title: Solitude主题文档 # 左下角大字
     url: https://docs.wzsco.top/ # 点击跳转链接
     img: /img/default.png # 显示背景
     color: '#ff0000' # 背景颜色
@@ -149,7 +149,7 @@ aside:
   # 侧边栏个人信息卡片
   card:
     author:
-      img: https://bu.dusays.com/2023/10/31/6540daf117d20.png # 头像
+      img: https://bu.dusays.com/2023/11/08/654af68b25bb8.jpg # 头像
       js: https://cdn3.codesign.qq.com/icons/XgRxnjPG4VZLmqr/latest/iconfont.js # 自定义图标js（用于显示带颜色的状态表情）
       state: "#sco-smile" # 状态表情（使用symbol）
     content: 分享自己对编程的<b>热爱</b>，对美好生活的<b>向往</b>，对知识海洋<b>探索历程</b>。 # 文案1
@@ -183,7 +183,7 @@ aside:
   history:
     enable: false
     title: #【选填】留空将默认显示为：那年今日
-    icon: 
+    icon:
   # 页面目录
   toc:
     post: true # 在文章页显示
@@ -196,7 +196,7 @@ aside:
     pv: false # 访问量
     uv: false # 访客数
     updatetime: false # 最后更新日期
-    runtimeenable: true # 建站时间
+    runtimeenable: false # 建站时间
     runtime: '2023-04-20 00:00:00' # 格式：yyyy-MM-dd hh-mm-ss
 
 # Footer Settings
@@ -205,41 +205,41 @@ footer:
   # 底部上方一排图标
   information:
     left: # 左侧显示图标
-#      Github:
-#        icon: scoicon sco-bilibili-line
-#        url: https://github.com/wleelw
-#      Mail:
-#        icon: scoicon sco-mail-line
-#        url: mailto:wleelw@wzsco.top
+    #      Github:
+    #        icon: scoicon sco-bilibili-line
+    #        url: https://github.com/wleelw
+    #      Mail:
+    #        icon: scoicon sco-mail-line
+    #        url: mailto:wleelw@wzsco.top
     right: # 右侧显示图标
-#      Bilibili:
-#        icon: scoicon sco-bilibili-line
-#        url: https://space.bilibili.com/1329819902
-#      抖音:
-#        icon: scoicon sco-douyin-fill
-#        url: https://v.douyin.com/iJsLc8jt/
+  #      Bilibili:
+  #        icon: scoicon sco-bilibili-line
+  #        url: https://space.bilibili.com/1329819902
+  #      抖音:
+  #        icon: scoicon sco-douyin-fill
+  #        url: https://v.douyin.com/iJsLc8jt/
   # 底部导航栏
   group: # 从左至右
-#    导航:
-#      归档: /archives/
-#      分类: /categories/
-#      标签: /tags/
-#    服务:
-#      阿里云: https://aliyun.com/
-#      51la统计: https://v6.51.la/
-#      百度统计: https://tongji.baidu.com/
-#    支持:
-#      打赏记录: /about/
-#    协议:
-#      Cookies: /cookies/
-#      用户协议: /privacy/
-#      版权协议: /copyright/
+  #    导航:
+  #      归档: /archives/
+  #      分类: /categories/
+  #      标签: /tags/
+  #    服务:
+  #      阿里云: https://aliyun.com/
+  #      51la统计: https://v6.51.la/
+  #      百度统计: https://tongji.baidu.com/
+  #    支持:
+  #      打赏记录: /about/
+  #    协议:
+  #      Cookies: /cookies/
+  #      用户协议: /privacy/
+  #      版权协议: /copyright/
 
   # 底部随机友链
   randomlink: false
   # rss
   rss:
-    enable: true
+    enable: false
     wechatOA: # 微信公众号链接
     emailOA:  # 邮箱链接
     rss:  # rss订阅链接
@@ -263,18 +263,18 @@ post:
     copyright: 原创
   # 顶部文章简介
   meta:
-    date: true # 发布日期
-    updated: true # 更新日期
-    locate: true # 位置
-    wordcount: true # 字数
-    readtime: true # 访问
-    pv: true # 浏览量
-    comment: true # 评论数
+    date: false # 发布日期
+    updated: false # 更新日期
+    locate: false # 位置
+    wordcount: false # 字数
+    readtime: false # 访问
+    pv: false # 浏览量
+    comment: false # 评论数
   # 打赏
   award:
     enable: false # 开启后文章底部显示打赏按钮
-    wechat: https://p.sondy.top/blog/img/20230913203219.png!cover # 微信收款码
-    alipay: https://p.sondy.top/blog/img/20230916173807.png!cover # 支付宝收款码
+    wechat: https://bu.dusays.com/2023/11/07/6549e79364fa3.png # 微信收款码
+    alipay: https://bu.dusays.com/2023/11/07/6549e79d02bd6.png # 支付宝收款码
     url: /about # 打赏统计页面链接
   # 文章颜色获取
   covercolor: #文章cover取色
@@ -282,7 +282,7 @@ post:
     local: true
 
 # 关于界面
-about: true
+about: false
 
 # 404 页面
 errorpage:
@@ -292,29 +292,29 @@ errorpage:
 
 # 懒加载
 lazyload:
-  enable: true
+  enable: false
   placeholder: /img/loading.gif # 加载中显示图片
   errorimg: /img/error_load.png # 加载失败显示图片
 
 # 图片灯箱
-lightbox: true
+lightbox: false
 
 #代码高亮增强
 hightlight:
-  enable: true
+  enable: false
   hightlimit: 200
 
 # 加载动画
 loading:
-  fullpage: true
-  pace: true
+  fullpage: false
+  pace: false
 
 # 第三方设置
 thirdparty:
-  wordcount: true # 字数统计
+  wordcount: false # 字数统计
   busuanzi:
-    enable: true
-    usecomment: true #当评论系统开启时文章页面使用评论系统的统计数据
+    enable: false
+    usecomment: false #当评论系统开启时文章页面使用评论系统的统计数据
   search: # 搜索
     algolia_search:
       enable: false
@@ -326,12 +326,34 @@ thirdparty:
       CDN:
 
   aplayer: # 播放器
-    enable: true
+    enable: false
     server: tencent # netease, tencent, kugou, xiami, baidu
     id: 8651639768 # 歌单ID
     api: "https://api.injahow.cn/meting/?server=:server&type=:type&id=:id&auth=:auth&r=:r" #自定义api
   #中控台拓展
-  consolePlus: true
+  consolePlus: false
+
+  ai: # 文章页面AI
+    enable: false
+    key: # 前往tianli-AI 购买
+    rec_method: # 推荐文章方式（all:匹配数据库所有文章、web:仅当前博客文章）默认：web
+
+  # 朋友圈配置
+  circle:
+    api: https://circle.sondy.top/  # api 地址
+    error_img: /img/theme/avatar.png # 头像加载失败显示错误图片
+    sort_rule: created # 排序规则
+    expire_days: 1 # 文章缓存天数
+    page_init_number: 12 # 默认加载文章数，默认10
+    page_turning_number: 12 # 加载更多文章数，默认10
+    angle: # 钓鱼
+      enable: false
+    appjs: '/lib/circle.min.js' # 主题appjs
+    bundlejs: '/lib/bundle.min.js' # 主题bundejs
+
+  # 文章统计
+  echarts:
+    js: https://cdn.bootcdn.net/ajax/libs/echarts/5.4.2/echarts.min.js
 
 # 评论
 comment:
@@ -340,28 +362,6 @@ comment:
     envId: https://twikoo.sondy.top
     lang: 'zh-CN'
     accessToken:  # accessToken
-
-ai: # 文章页面AI
-  enable: false
-  key: # 前往tianli-AI 购买
-  rec_method: # 推荐文章方式（all:匹配数据库所有文章、web:仅当前博客文章）默认：web
-
-# 朋友圈配置
-circle:
-  api: https://circle.sondy.top/  # api 地址
-  error_img: /img/theme/avatar.png # 头像加载失败显示错误图片
-  sort_rule: created # 排序规则
-  expire_days: 1 # 文章缓存天数
-  page_init_number: 12 # 默认加载文章数，默认10
-  page_turning_number: 12 # 加载更多文章数，默认10
-  angle: # 钓鱼
-    enable: false
-  appjs: '/lib/circle.min.js' # 主题appjs
-  bundlejs: '/lib/bundle.min.js' # 主题bundejs
-
-# 文章统计
-echarts:
-  js: https://cdn.bootcdn.net/ajax/libs/echarts/5.4.2/echarts.min.js
 
 # 插入代码到头部 </head> 之前 和 底部 </body> 之前
 # 插入额外代码 如：统计，广告等
