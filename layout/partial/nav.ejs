@@ -11,7 +11,7 @@
                     <% if (theme.site.name.class === 'i_class') { %>
                         <i class="<%= theme.site.name.custom %>" style="font-size: 16px;"></i>
                       <% } else if (theme.site.name.class === 'img') { %>
-                        <i style="background-image: url('<%= url_for(theme.site.name.custom) %>')"></i>
+                        <img src="<%= url_for(theme.site.name.custom) %>"></img>
                       <% } else if (theme.site.name.class === 'text') { %>
                         <span class="scoicon"><%= theme.site.name.custom %></span>
                     <% } %>
