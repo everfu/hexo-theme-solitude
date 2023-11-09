@@ -1,5 +1,5 @@
 /**
- * Butterfly
+ * Solitude
  * Related Posts
  * According the tag
  */
@@ -42,7 +42,7 @@ hexo.extend.helper.register('related_posts', function (currentPost, allPosts) {
     const dateType = config.related_post.date_type || 'created'
     const headlineLang = this._p('喜欢这篇的人也看了')
 
-    relatedPosts = relatedPosts.sort(compare('weight'))
+    relatedPosts = relatedPosts.sort(compare('weight', dateType))
 
     if (relatedPosts.length > 0) {
         result += '<div class="relatedPosts">'
@@ -82,10 +82,17 @@ function findItem(arrayToSearch, attr, val) {
     return -1
 }
 
-function compare(attr) {
+function compare(attr, dateType) {
     return function (a, b) {
         const val1 = a[attr]
         const val2 = b[attr]
+        if (val1 === val2) {
+            if (dateType === 'created') {
+                return b.created - a.created
+            } else if (dateType === 'updated') {
+                return b.updated - a.updated
+            }
+        }
         return val2 - val1
     }
 }

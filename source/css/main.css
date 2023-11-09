@@ -6443,6 +6443,7 @@ a.console_switchbutton {
     transition: .3s;
     display: flex;
     height: 35px;
+    min-width: 70px;
     justify-content: center;
     align-items: flex-end;
     text-shadow: none;

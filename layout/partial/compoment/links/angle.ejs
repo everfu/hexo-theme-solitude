@@ -18,9 +18,9 @@
 </div>
 <script>
     var fdata = {
-        apiurl: "<%= theme.circle.api %>",
+        apiurl: "<%= theme.thirdparty.circle.api %>",
         defaultFish: 100,
         hungryFish: 100,
     }
 </script>
-<script type="text/javascript" src="/lib/friends_post.js"></script>
+<%- js('/lib/friends_post') %>

@@ -334,7 +334,7 @@ thirdparty:
   consolePlus: false
 
   ai: # 文章页面AI
-    enable: true
+    enable: false
     key: # 前往tianli-AI 购买
     rec_method: # 推荐文章方式（all:匹配数据库所有文章、web:仅当前博客文章）默认：web
 
