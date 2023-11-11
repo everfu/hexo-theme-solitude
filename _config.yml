@@ -425,6 +425,15 @@ pwa:
   favicon_640_1136: /img/pwa/siteicon/splash-640x1136.png
   favicon_1136_640: /img/pwa/siteicon/splash-1136x640.png
 
+
+# CSS 前缀
+# 有些 CSS 并不是所有浏览器都支持，需要增加对应的前缀才会生效
+# 开启 css_prefix 后，会自动为一些 CSS 增加前缀。（会增加 20%的体积）
+# --------------------------------------
+
+css_prefix: true
+
+
 # 非必要勿动
 cdn:
   head:
