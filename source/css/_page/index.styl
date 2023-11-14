@@ -1,0 +1,46 @@
+// 即刻、categoriesBar 样式
+#bbTimeList,
+#category-bar
+  background var(--sco-card-bg)
+  width 100%
+  color var(--sco-fontcolor)
+  padding .5rem 1rem
+  border-radius 12px
+  box-shadow var(--sco-shadow-lightblack)
+  display flex
+  transition .3s
+  margin-bottom 1rem
+  border var(--style-border)
+  align-items center
+  height 50px
+  user-select none
+
+  +maxWidth1300()
+    margin-bottom 1rem
+    animation slide-in .6s 0s backwards
+
+  +minWidth1300()
+    &:hover
+      border var(--style-border-hover)
+      box-shadow var(--sco-shadow-main)
+
+  +maxWidth768()
+    margin-bottom 0
+    margin-top 0
+    border-radius 0
+    background var(--sco-background)
+    padding 0.5rem 20px
+    border none
+
+#category-bar
+  padding 0.4rem 1rem 0.4rem 0.7rem
+  white-space nowrap
+  overflow hidden
+  justify-content space-between
+
+  +minWidth1300()
+    margin-bottom 0.75rem
+    animation slide-in .6s .3s backwards
+
+    .category-in-bar-tips
+      margin-bottom .25rem

@@ -6,6 +6,7 @@ if hexo-config('css_prefix')
 // project
 @import '_global/animation.css'
 @import '_global/*'
+@import '_layout/*'
 @import '_page/*'
 
 // search
@@ -13,6 +14,16 @@ if hexo-config('thirdparty.search.algolia_search.enable')
     @import '_search/algolia-search'
 if hexo-config('thirdparty.search.local_search.enable')
     @import '_search/local-search'
+
+// commentBarrage
+if hexo-config('thirdparty.comment.enable')
+    @import '_post/commentBarrage.styl'
+
+// console
+@import '_extra/console.styl'
+
+// External tags
+@import '_post/externalTags.styl'
 
 // dark
 @import '_mode/*'
