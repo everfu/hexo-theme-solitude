@@ -28,8 +28,10 @@ var description = page.desc || page.excerpt || config.description
     <link rel="apple-touch-icon-precomposed" sizes="180x180" href="<%= url_for(theme.site.siteIcon) %>">
 <% } %>
 <link rel="stylesheet" href="/css/index.css">
-<link rel="stylesheet" href="/css/main.css">
 <link rel="stylesheet" href="/css/custom.css">
+<%- css('/css/index') %>
+<%- css('/css/main') %>
+<%- css('/css/custom') %>
 <%- partial('partial/compoment/inject/head', {cache: true}) %>
 <% if (theme.extends.head) for (const i of theme.extends.head){ %>
     <%- i %>
