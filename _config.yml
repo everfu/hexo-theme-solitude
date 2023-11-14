@@ -426,6 +426,11 @@ pwa:
   favicon_1136_640: /img/pwa/siteicon/splash-1136x640.png
 
 
+says:
+  enable: true
+  style: 1 # 1：张洪heo样式 / 2：Leonus样式
+
+
 # CSS 前缀
 # 有些 CSS 并不是所有浏览器都支持，需要增加对应的前缀才会生效
 # 开启 css_prefix 后，会自动为一些 CSS 增加前缀。（会增加 20%的体积）
