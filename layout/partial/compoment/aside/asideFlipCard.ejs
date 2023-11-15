@@ -19,11 +19,13 @@
         top: 0;
         background: url("<%- theme.aside.flip.favicon || 'https://img.meuicat.com/blog/14.webp' %>") center center no-repeat;
         content: '';
-        background-size: cover
+        background-size: cover;
+        transition: .2s cubic-bezier(.45,.04,.43,1.21)
     }
     #aside-content .card-widget.card-platform:hover:before {
-        filter: blur(12px) saturate(1.5);
-        transition: .3s
+        top: 100%;
+        opacity: 0;
+        transition: .3s ease-out
     }
     #aside-content .card-widget #flip-wrapper {
         perspective: 1000;
