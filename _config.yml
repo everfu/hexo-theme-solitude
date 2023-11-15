@@ -74,7 +74,6 @@ icon:
 
 # 首页顶部样式
 hometop:
-  bbtime: false # 即刻顶部是否开启
   banner:
     enable: false # 是否打开顶部banner
     title: 宁静致远<br>热爱生活 # 左上角显示文字
@@ -427,7 +426,8 @@ pwa:
 
 
 says:
-  enable: true
+  enable: false
+  home_mini: false # 主页的即刻轮播条
   style: 1 # 1：张洪heo样式 / 2：Leonus样式
 
 

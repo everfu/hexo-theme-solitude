@@ -1,43 +1,115 @@
-.author-content.author-content-item.essayPage
-	height 19rem
-	background-size cover
-	color var(--sco-white)
-	overflow hidden
-	margin-top 0
+if hexo-config('says.home_mini')
+	.bber-logo,
+	.bber-gotobb 
+		line-height 25px
+		transition .3s
+		cursor pointer
 
-#bber
-	margin-top 1rem
-	width 100%
+		&:hover
+			opacity .8
+			color var(--sco-theme)
 
-	div 
-		&.bber-content 
-			display flex
-			flex-direction initial
-			flex-wrap wrap
-			border-radius 12px
-			width 100%
-			height 100%
+	.bber-logo
+		margin-right 1rem
 
-	& > section
-		& > ul 
-			& > li 
-				&.item
-					margin-bottom 1rem
+	.bber-gotobb
+		margin-left 1rem
 
-				& > div 
-					.bber-info-time 
-						color var(--sco-fontcolor)
-						font-size .7rem
-						background-color var(--sco-gray-op)
-						padding 0 8px
-						border-radius 20px
-						cursor default
-						display flex
-						align-items center
+	i 
+		&.bber-gotobb 
+			font-size 16px
 
-						i 
-							margin-right 8px
-							font-size 16px
+if hexo-config('says.enable')
+	.author-content.author-content-item.essayPage
+		height 19rem
+		color var(--sco-white)
+		overflow hidden
+		margin-top 0
+
+	#bber
+		margin-top 1rem
+		width 100%
+
+		if hexo-config('says.style') == 2
+			.meta
+				display flex
+				align-items center
+				line-height 1.5
+				position relative
+				width 100%
+				margin-bottom 4px
+
+				.avatar
+					margin 0
+					width 50px
+					height 50px
+					border-radius 10px
+
+				.info
+					display flex
+					flex-direction column
+					margin-left 10px
+
+					span.bber_nick
+						color #6dbdc3
+						font-size .9rem
+
+					time.bber_date
+						font-size 14px
+						opacity .6
+
+				.goComment
+					position: absolute
+					top: 0
+					right: 0
+
+		div 
+			&.bber-content 
+				display flex
+				flex-direction initial
+				flex-wrap wrap
+				border-radius 12px
+				width 100%
+				height 100%
+
+		& > section
+			& > ul 
+				& > li 
+					&.item
+						margin-bottom 1rem
+
+		.bber-reply 
+			cursor pointer
+			margin 0 4px
+
+		if hexo-config('says.style') == 1
+			.bber-bottom 
+				display flex
+				justify-content space-between
+				width 100%
+				-webkit-user-select none
+				user-select none
+
+			.bber-info 
+				display flex
+				align-items center
+
+				.fa-rectangles-mixed 
+					margin-right 8px
+
+				.bber-info-time 
+					color var(--sco-fontcolor)
+					font-size .7rem
+					background-color var(--sco-gray-op)
+					padding 0 8px
+					border-radius 20px
+					cursor default
+					display flex
+					align-items center
+
+					i 
+						margin-right 8px
+						font-size 16px
 
 					.datafrom 
 						order 2
@@ -46,271 +118,236 @@
 						margin-left 8px
 						small 
 							font-size .7rem
-	.bber-info 
-		display flex
-		align-items center
 
-		.fa-rectangles-mixed 
-			margin-right 8px
-
-	.bber-content-link 
-		display flex
-		margin-left .5rem
-		color var(--sco-secondtext)
-		font-size .7rem
-		align-items center
-		background-color rgba(245, 108, 108, .13)
-		padding 0 8px
-		border-radius 20px
-
-		&:hover 
-			background-color var(--sco-main)
-			color var(--sco-white)
-
-		i 
-			margin-right 3px
-			font-size 16px
-
-	.bber-reply 
-		cursor pointer
-		margin 0 4px
-
-	.bber-bottom 
-		display flex
-		justify-content space-between
-		width 100%
-		-webkit-user-select none
-		user-select none
-
-	.count 
-		color var(--sco-secondtext)
-		font-size .8rem
-
-	p 
-		margin 0
-
-	.datafrom 
-		i 
-			margin-right 4px
-
-	.bber-music 
-		width 100%
-		height 90px
-		margin .5rem 0
-		border-radius 8px
-		overflow hidden
-		border var(--style-border-always)
-		background var(--sco-secondbg)
-
-		.aplayer-lrc 
-			display none
-
-	.aplayer 
-		margin 0
-
-		.aplayer-info 
-			.aplayer-music 
-				height 23px
-
-				.aplayer-title 
-					font-size .8rem
-					font-weight 700
-					margin 0
-					color var(--sco-black)
-
-			.aplayer-controller 
-				align-items center
-
-				.aplayer-bar-wrap 
-					padding 0
-
-					.aplayer-bar 
-						background var(--sco-gray)
-						height 8px
-						border-radius 12px
-						transition .3s
-						overflow hidden
-
-						.aplayer-played 
-							height 100%
-							border-radius 12px
-
-							.aplayer-thumb 
-								display none
-
-						.aplayer-loaded 
-							height 100%
-							border-radius 12px
-
-					&:hover 
-						.aplayer-bar 
-							height 12px
-
-				.aplayer-time 
-					position initial
-
-		&.aplayer-withlrc 
-			.aplayer-pic 
-				height 82px
-				width 82px
-				margin 4px
-				border-radius 4px
-
-	.bber-video 
-		position relative
-		padding 30% 50%
-		margin 0.5rem 0
-
-	.bber-content-img 
-		height 100px
-		margin .2rem auto .3rem 0
-		border-radius 12px
-		overflow hidden
-		display flex
-		position relative
-
-		img 
-			object-fit cover
-			max-height 100%
-			border-radius 12px
-			min-height 100px
-			height 100px
-
-	.bber-content 
-		.datacont 
-			order 0
-			font-size .8rem
-			font-weight 700
-			color var(--sco-fontcolor)
-			width 100%
-			line-height 1.38
-			border-radius 12px
-			margin-bottom .5rem
-			display flex
-			flex-direction column
-			text-align justify
-
-	.timeline 
-		#waterfall 
-			opacity 0
-			transition .3s
-
-			&.show 
-				opacity 1
-
-		ul 
-			li 
-				&.item 
-					position relative
-					width 32%
-					border var(--style-border-always)
-					border-radius 12px
-					padding 1rem 1rem .5rem
-					transition .3s
+				.bber-content-link 
 					display flex
-					flex-direction column
-					flex-wrap nowrap
-					justify-content space-between
-					align-items flex-start
-					background var(--sco-card-bg)
-					box-shadow var(--sco-shadow-border)
-					margin-right 2%
-
-					+maxWidth1300()
-						width 49%
-						margin-right 1%
-
-					+maxWidth768()
-						width 100%
-						margin-right 0
-						padding 16px 20px
-
-					hr 
-						display flex
-						position relative
-						margin 8px 0
-						border 1px dashed var(--sco-theme-op)
-						width 100%
+					margin-left .5rem
+					color var(--sco-secondtext)
+					font-size .7rem
+					align-items center
+					background-color rgba(245, 108, 108, .13)
+					padding 0 8px
+					border-radius 20px
 
 					&:hover 
-						border var(--style-border-hover)
-	ul 
-		&.list 
+						background-color var(--sco-main)
+						color var(--sco-white)
+
+					i 
+						margin-right 3px
+						font-size 16px
+
+		.count 
+			color var(--sco-secondtext)
+			font-size .8rem
+
+		p 
+			margin 0
+
+		.datafrom 
+			i 
+				margin-right 4px
+
+		.bber-music 
+			width 100%
+			height 90px
+			margin .5rem 0
+			border-radius 8px
+			overflow hidden
+			border var(--style-border-always)
+			background var(--sco-secondbg)
+
+			.aplayer-lrc 
+				display none
+
+		.aplayer 
+			margin 0
+
+			.aplayer-info 
+				.aplayer-music 
+					height 23px
+
+					.aplayer-title 
+						font-size .8rem
+						font-weight 700
+						margin 0
+						color var(--sco-black)
+
+				.aplayer-controller 
+					align-items center
+
+					.aplayer-bar-wrap 
+						padding 0
+
+						.aplayer-bar 
+							background var(--sco-gray)
+							height 8px
+							border-radius 12px
+							transition .3s
+							overflow hidden
+
+							.aplayer-played 
+								height 100%
+								border-radius 12px
+
+								.aplayer-thumb 
+									display none
+
+							.aplayer-loaded 
+								height 100%
+								border-radius 12px
+
+						&:hover 
+							.aplayer-bar 
+								height 12px
+
+					.aplayer-time 
+						position initial
+
+			&.aplayer-withlrc 
+				.aplayer-pic 
+					height 82px
+					width 82px
+					margin 4px
+					border-radius 4px
+
+		.bber-video 
+			position relative
+			padding 30% 50%
+			margin 0.5rem 0
+
+		.bber-content-img 
+			height 100px
+			margin .2rem auto .3rem 0
+			border-radius 12px
+			overflow hidden
 			display flex
-			flex-direction row
-			flex-wrap wrap
-			justify-content space-between
+			position relative
 
-	li 
-		&.item 
-			display flex
-			flex-direction column
-			flex-wrap nowrap
-			align-items flex-start
+			img 
+				object-fit cover
+				max-height 100%
+				border-radius 12px
+				min-height 100px
+				height 100px
 
-#bber .bber-video video,
-#bber .bber-video iframe 
-	position absolute
-	width 100%
-	height 100%
-	left 0
-	top 0
-	margin 0
-	border-radius 8px
-	border var(--style-border)
+		.bber-content 
+			.datacont 
+				order 0
+				font-size .8rem
+				font-weight 700
+				color var(--sco-fontcolor)
+				width 100%
+				line-height 1.38
+				border-radius 12px
+				margin-bottom .5rem
+				display flex
+				flex-direction column
+				text-align justify
 
-#bber-tips 
-	font-size 14px
-	display flex
-	justify-content center
-	margin-top 1rem
+		.timeline 
+			#waterfall 
+				opacity 0
+				transition .3s
 
-#bber-talk 
-	width 100%
-	height 25px
-	line-height 25px
-	display flex
-	flex-direction column
+				&.show 
+					opacity 1
 
-	.li-style 
-		width auto
-		max-width 100%
+			ul 
+				li 
+					&.item 
+						position relative
+						width 32%
+						border var(--style-border-always)
+						border-radius 12px
+						padding 1rem 1rem .5rem
+						transition .3s
+						display flex
+						flex-direction column
+						flex-wrap nowrap
+						justify-content space-between
+						align-items flex-start
+						background var(--sco-card-bg)
+						box-shadow var(--sco-shadow-border)
+						margin-right 2%
+
+						+maxWidth1300()
+							width 49%
+							margin-right 1%
+
+						+maxWidth768()
+							width 100%
+							margin-right 0
+							padding 16px 20px
+
+						hr 
+							display flex
+							position relative
+							margin 8px 0
+							border 1px dashed var(--sco-theme-op)
+							width 100%
+
+						&:hover 
+							border var(--style-border-hover)
+		ul 
+			&.list 
+				display flex
+				flex-direction row
+				flex-wrap wrap
+				justify-content space-between
+
+		li 
+			&.item 
+				display flex
+				flex-direction column
+				flex-wrap nowrap
+				align-items flex-start
+
+	#bber .bber-video video,
+	#bber .bber-video iframe 
+		position absolute
+		width 100%
+		height 100%
+		left 0
+		top 0
+		margin 0
+		border-radius 8px
+		border var(--style-border)
+
+	#bber-tips 
+		font-size 14px
+		display flex
+		justify-content center
+		margin-top 1rem
+
+	#bber-talk 
+		width 100%
 		height 25px
-		text-align center
+		line-height 25px
+		display flex
+		flex-direction column
+
+		.li-style 
+			width auto
+			max-width 100%
+			height 25px
+			text-align center
+			overflow hidden
+			text-overflow ellipsis
+			transition .3s
+			font-weight 700
+			margin auto
+			cursor pointer
+			white-space nowrap
+
+	#bbtalk 
 		overflow hidden
+		width 100%
 		text-overflow ellipsis
-		transition .3s
-		font-weight 700
-		margin auto
-		cursor pointer
 		white-space nowrap
 
-#bbtalk 
-	overflow hidden
-	width 100%
-	text-overflow ellipsis
-	white-space nowrap
-
-#bbTimeList
-	.li-style 
-		&:hover 
-			color var(--sco-theme)
-			transition .3s
-
-.bber-gotobb 
-	line-height 25px
-	margin-left 1rem
-	transition .3s
-	cursor pointer
-
-	&:hover 
-		opacity .8
-		color var(--sco-theme)
-
-i 
-	&.bber-gotobb 
-		font-size 16px
-
-a 
-	&.bber-reply 
-		cursor pointer
+	#bbTimeList
+		.li-style 
+			&:hover 
+				color var(--sco-theme)
+				transition .3s
