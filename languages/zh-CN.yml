@@ -14,12 +14,11 @@ time:
   runtime:  天
 
 sayhello:
-  morning: 早上好
-  noon: 中午好
-  afternoon: 下午好
-  night: 晚上好
-  goodnight: 晚安
-  iam: '!  我是'
+  morning: 一日之计在于晨
+  noon: 吃饱了才有力气干活
+  afternoon: 集中精力，攻克难关
+  night: 不要太劳累了，早睡更健康
+  goodnight: 睡个好觉，保证精力充沛
 
 page:
   tag: 标签

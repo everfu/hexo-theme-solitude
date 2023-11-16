@@ -36,7 +36,6 @@ hexo.extend.helper.register('export_config', function () {
                 afternoon: lang['sayhello.afternoon'],
                 night: lang['sayhello.night'],
                 goodnight: lang['sayhello.goodnight'],
-                iam: lang['sayhello.iam'],
             },
             search: {
                 empty: lang['search.empty'],

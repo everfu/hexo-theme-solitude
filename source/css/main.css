@@ -4881,7 +4881,8 @@ a.deal_link {
 
 a.deal_link:hover {
     color: var(--sco-white);
-    background: var(--sco-main)
+    background: var(--sco-main);
+    transform: scale(1.1);
 }
 
 img.footer_mini_logo {
