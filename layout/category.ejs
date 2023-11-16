@@ -1,18 +1,23 @@
 <main class="layout" id="content-inner">
     <div id="category">
         <div class="category-in-bar">
-            <div class="category-in-bar-tips">分类</div>
             <div id="category-bar">
                 <div class="category-bar-items" id="category-bar-items">
-                    <%- partial('partial/compoment/home/homeCategoryBar', {select:page.category}) %>
+                    <%- partial('partial/compoment/home/homeCategoryBar', {select: page.category}) %>
                 </div>
             </div>
         </div>
-        <div class="article-sort-title"><%= page.category %></div>
-        <div class="article-sort">
-            <%- partial('partial/compoment/mixins/articleSort') %>
+        <div class="recent-posts category_ui" id="recent-posts">
+            <% const currentCategory = page.category; %>
+            <% site.posts.each(post => { %>
+                <% post.categories.each(category => { %>
+                    <% if (category.name === currentCategory) { %>
+                        <%- partial('partial/compoment/home/postList', {post: post}) %>
+                    <% } %>
+                <% }); %>
+            <% }); %>
         </div>
         <%- partial('partial/compoment/mixins/pagination') %>
     </div>
-    <%- partial('partial/compoment/aside/aside') %> 
+    <%- partial('partial/compoment/aside/aside') %>
 </main> 

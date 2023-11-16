@@ -10,7 +10,7 @@
                 <% post.categories.data.forEach(categories => { %>
                     <span class="original"><%= categories.name %></span>
                 <% }) %>
-                <% if(post.prev == null){ %>
+                <% if(post.prev == null && is_home()){ %>
                     <span class="original">最新</span>
                 <% }%>
                     <a class="unvisited-post" href="<%= url_for(post.path) %>" title="<%= post.title %>" data-pjax-state>未读</a>

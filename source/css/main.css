@@ -911,20 +911,6 @@ blockquote footer cite::before {
     -webkit-mask-image: -webkit-radial-gradient(center, #fff, #000)
 }
 
-/*#recent-posts > .recent-post-item .post_cover .post_cover_tag {*/
-/*    position: absolute;*/
-/*    top: 10px;*/
-/*    left: 5px;*/
-/*    padding: 1px 6px;*/
-/*    background: var(--sco-black-op);*/
-/*    border-radius: 8px;*/
-/*    margin-left: 4px;*/
-/*    font-size: 12px;*/
-/*    font-weight: 700;*/
-/*    color: var(--sco-white);*/
-/*    z-index: 999;*/
-/*}*/
-
 #recent-posts > .recent-post-item .post_cover img.post_bg {
     width: 100%;
     height: 100%;
@@ -7196,16 +7182,8 @@ span.recent-post-top-text {
     -webkit-box-orient: horizontal;
     -webkit-box-align: center;
     align-items: center;
-    transition: all .3s ease 0s
-}
-
-#recent-posts > .recent-post-item:not(:first-child) {
-    margin-bottom: 1rem;
-    position: relative;
-    overflow: hidden;
-    margin-top: 1rem;
     animation: slide-in .6s .4s backwards;
-    will-change: transform
+    transition: all .3s ease 0s
 }
 
 @media screen and (min-width: 1300px) {
@@ -7220,6 +7198,23 @@ span.recent-post-top-text {
         box-shadow: var(--sco-shadow-border)
     }
 
+    #category #recent-posts .recent-post-item,#tag #recent-posts .recent-post-item {
+        position: relative;
+        overflow: hidden;
+        animation: slide-in .6s .4s backwards;
+        will-change: transform;
+        width: calc(100% / 2 - .5rem);
+        margin-top: .25rem;
+        margin-bottom: .75rem;
+        box-shadow: var(--sco-shadow-border)
+    }
+
+    #category-bar {
+        margin-bottom: .75rem;
+        box-shadow: var(--sco-shadow-border);
+        animation: slide-in .6s .3s backwards
+    }
+
     #category #category-bar {
         animation: none
     }
@@ -7231,6 +7226,16 @@ span.recent-post-top-text {
         align-items: flex-start;
         align-content: flex-start;
         -webkit-user-select: none
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    #category #recent-posts .recent-post-item,#tag #recent-posts .recent-post-item {
+        animation:slide-in .6s .4s backwards
+    }
+
+    #category-bar {
+        animation: slide-in .6s .3s backwards
     }
 }
 
@@ -7251,6 +7256,10 @@ span.recent-post-top-text {
         display: block;
         position: relative;
         clip-path: inset(0 0 0 0 round 12px)
+    }
+
+    #category #recent-posts,#tag #recent-posts {
+        padding: 0
     }
 
     #recent-posts .recent-post-item .post_cover {
@@ -11651,18 +11660,25 @@ a.bb-link-info:hover {
     font-size: .8rem;
     line-height: .8rem;
     color: var(--sco-fontcolor);
-    margin: 8px auto 8px 0;
+    margin-right: auto;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
     max-width: 120px;
     cursor: pointer;
-    padding: 2px 0
+    padding: 8px;
+    border-radius: 12px
 }
 
 #sco-footer .footer-item:hover {
-    color: var(--sco-theme)
+    color: var(--sco-theme);
+    background: var(--sco-main-op-light)
 }
+
+[data-theme=dark] #sco-footer .footer-item:hover {
+    background: var(--sco-theme-op)
+}
+
 
 #sco-footer .footer-group {
     min-width: 120px
