@@ -6777,19 +6777,6 @@ li, ul {
     padding: 0
 }
 
-.icon-bblogo {
-    font-size: 2rem;
-    line-height: 22px;
-    margin-right: 1rem;
-    transition: .3s;
-    cursor: pointer
-}
-
-.icon-bblogo:hover {
-    opacity: .8;
-    color: var(--sco-theme)
-}
-
 .recent-post-item .recent-post-info .recent-post-info-top {
     position: relative;
     transition: .3s;
