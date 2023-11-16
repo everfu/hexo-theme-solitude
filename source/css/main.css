@@ -11922,7 +11922,7 @@ a.bb-link-info:hover {
 
 .author-content-item {
     width: 49%;
-    border-radius: 24px;
+    border-radius: 12px;
     background: var(--sco-card-bg);
     border: var(--style-border-always);
     box-shadow: var(--sco-shadow-border);

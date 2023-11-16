@@ -161,10 +161,6 @@ aside:
       Bilibili:
         icon: scoicon sco-bilibili-line
         url: https://space.bilibili.com/1329819902
-    # 跳转按钮
-    button:
-      text: 了解更多
-      url: /about/
   # 公众号二维码
   flip:
     favicon: # 右下角头像
