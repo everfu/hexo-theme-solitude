@@ -294,7 +294,7 @@ table td, table th {
 }
 
 .fa-spin {
-    animation: heo-spin 1.2s linear infinite;
+    animation: sco-spin 1.2s linear infinite;
     opacity: .6
 }
 
@@ -4891,14 +4891,6 @@ img.footer_mini_logo:hover {
     align-self: center
 }
 
-#footer-wrap a#heoblog_footerlogo:hover {
-    background: var(--sco-none)
-}
-
-.heoblog_footerlogo_img {
-    filter: drop-shadow(0 12px 12px #ee7d7936)
-}
-
 #nav #menus {
     display: flex;
     justify-content: center;
@@ -6951,6 +6943,14 @@ li, ul {
         filter: brightness(.85)
     }
 
+    @media screen and (min-width: 1200px) {
+        #recent-posts>.recent-post-item:hover .post_cover img.post_bg {
+            transform:scale(1.03);
+            transition: .3s ease-in-out;
+            filter: brightness(.85)
+        }
+    }
+
     #recent-posts > .recent-post-item.post-card-large:hover .post_cover img.post_bg {
         transform: scale(1.03)
     }
@@ -7183,7 +7183,8 @@ span.recent-post-top-text {
     -webkit-box-align: center;
     align-items: center;
     animation: slide-in .6s .4s backwards;
-    transition: all .3s ease 0s
+    transition: all .3s ease 0s;
+    overflow: hidden;
 }
 
 @media screen and (min-width: 1300px) {
@@ -11251,8 +11252,9 @@ div#sco-footer-bar a.footer-bar-link {
 }
 
 div#sco-footer-bar a.footer-bar-link:hover {
-    background: var(--sco-main);
-    color: var(--sco-white)
+    color: var(--sco-white);
+    transform: scale(1.1);
+    border-color: var(--sco-main);
 }
 
 div#sco-footer-bar .footer-logo {
