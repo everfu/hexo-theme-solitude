@@ -21,10 +21,10 @@
                         <div class="author-content-item-title">寻找感兴趣的领域</div>
                     </div>
                     <div class="card-tag-cloud">
-                        <% site.tags.data.forEach(data => { %>
-                            <a href="<%= url_for(data.path) %>"
-                               style="font-size: 0.8rem; color: #d3d3d3"><%= data.name %>
-                                <sup><%= data.length %></sup></a>
+                        <% site.tags.each(function (tag) { %>
+                            <a href="<%= url_for(tag.path) %>"
+                               style="font-size: 0.8rem; color: #d3d3d3"><%= tag.name %>
+                                <sup><%= tag.length %></sup></a>
                         <% }) %>
                     </div>
                 </div>
@@ -38,13 +38,13 @@
     <div class="button-group">
         <div class="console-btn-item">
             <a class="darkmode_switchbutton" onclick="sco.switchDarkMode()" title="显示模式切换"
-               href="javascript:void(0);" rel="external nofollow" data-pjax-state="">
+               href="javascript:void(0);" rel="external nofollow" data-pjax-state>
                 <i class="scoicon sco-moon-clear-fill" style="font-size: 1rem;"></i>
             </a>
         </div>
         <div class="console-btn-item" id="consoleHideAside">
             <a class="asideSwitch" onclick="sco.switchHideAside()" title="边栏显示控制"
-               href="javascript:void(0);" rel="external nofollow" data-pjax-state="">
+               href="javascript:void(0);" rel="external nofollow" data-pjax-state>
                 <i class="scoicon sco-side-bar-fill" style="font-size: 1rem;"></i>
             </a>
         </div>
@@ -62,7 +62,7 @@
                     <i class="scoicon sco-chat-fill"></i>
                 </a>
             </div>
-        <% }%>
+        <% } %>
     </div>
     <div class="console-mask" onclick="sco.hideConsole()" href="javascript:void(0);" rel="external nofollow"></div>
 </div>

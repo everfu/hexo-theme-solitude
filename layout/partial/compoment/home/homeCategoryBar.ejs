@@ -2,10 +2,10 @@
     <div class="category-bar-item <%= is_home() ? 'select' : '' %>" id="category-bar-home">
         <a href="/">首页</a>
     </div>
-    <% for(const item of site.categories.data){ %>
-        <div class="category-bar-item <%= select ? (select === item.name ? 'select' : '') : '' %>">
-            <a href="<%= url_for(item.path) %>"><%= item.name %></a>
+    <% site.tags.each(function(tag){ %>
+        <div class="category-bar-item <%= select ? (select === tag.name ? 'select' : '') : '' %>">
+            <a href="<%= url_for(tag.path) %>"><%= tag.name %></a>
         </div>
-    <% } %>
+    <% }) %>
 </div>
 <a class="category-bar-more" href="/categories/">更多</a>
