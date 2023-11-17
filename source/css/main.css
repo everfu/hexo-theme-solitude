@@ -11248,10 +11248,13 @@ div#sco-footer-bar a.footer-bar-link {
     border-radius: 20px;
     cursor: pointer;
     margin-top: 8px;
-    font-size: 14px
+    font-size: 14px;
+    cursor: pointer;
+    border: var(--style-border-always);
 }
 
 div#sco-footer-bar a.footer-bar-link:hover {
+    background: var(--sco-main);
     color: var(--sco-white);
     transform: scale(1.1);
     border-color: var(--sco-main);
@@ -11668,7 +11671,7 @@ a.bb-link-info:hover {
     text-overflow: ellipsis;
     max-width: 120px;
     cursor: pointer;
-    padding: 8px;
+    padding: 8px 8px 8px 0;
     border-radius: 12px
 }
 
