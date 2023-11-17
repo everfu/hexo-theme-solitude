@@ -11670,7 +11670,7 @@ a.bb-link-info:hover {
     text-overflow: ellipsis;
     max-width: 120px;
     cursor: pointer;
-    padding: 8px 8px 8px 0;
+    padding: 8px;
     border-radius: 12px
 }
 
@@ -11721,7 +11721,8 @@ a.bb-link-info:hover {
 
 #sco-footer .footer-title {
     color: var(--sco-secondtext);
-    font-size: .8rem
+    font-size: .8rem;
+    margin-left: 8px;
 }
 
 #footer-bar {
