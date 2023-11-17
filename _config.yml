@@ -332,6 +332,17 @@ thirdparty:
     enable: false
     key: # 前往tianli-AI 购买
     rec_method: # 推荐文章方式（all:匹配数据库所有文章、web:仅当前博客文章）默认：web
+    ai_name: # 左上角AI名称
+    ai_tips: # 右上角GPT版本文字
+    ai_introduce: # AI自我介绍
+    hide_shuttle: false # 隐藏矩阵穿梭按钮
+    typewriter: true # 打字机效果
+    speed: 20 # 打字机速度，默认20ms
+    BlackWhite_List:
+      mode: false  # false：全部文章显示摘要AI / black：让指定页面、文章不显示摘要AI / white：只让指定文章（页面）显示摘要AI
+      List: 
+        # - 544ba770
+        # - /article/544ba770.html
 
   # 朋友圈配置
   circle:
