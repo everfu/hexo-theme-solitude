@@ -20,10 +20,10 @@
                 <span>标签</span>
             </div>
             <div class="card-tag-cloud">
-                <% site.tags.data.forEach(data => { %>
-                    <a href="<%= url_for(data.path) %>" style="font-size: 1em; color: #d3d3d3"><%= data.name %>
-                        <sup><%= data.length %></sup>
-                    </a>
+                <% site.tags.each(function (tag) { %>
+                    <a href="<%= url_for(tag.path) %>"
+                       style="font-size: 1rem; color: #d3d3d3"><%= tag.name %>
+                        <sup><%= tag.length %></sup></a>
                 <% }) %>
             </div>
         </div>

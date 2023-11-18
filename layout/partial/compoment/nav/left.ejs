@@ -9,7 +9,7 @@
           <% for(const y in groupData){ %>
             <% const data=groupData[y] %>
             <a class="back-menu-item" href="<%= url_for(data.url) %>" rel="external nofollow" title="<%= y %>">
-              <img class="back-menu-item-icon" src="<%= data.icon %>" loading="lazy">
+              <img class="back-menu-item-icon" src="<%= data.icon %>" loading="lazy" alt="<%= x %>">
               <span class="back-menu-item-text">
                 <%= y %>
               </span>
