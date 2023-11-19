@@ -30,6 +30,15 @@
     transition .3s
     max-width 1400px
 
+    +maxWidth1300()
+      justify-content center
+
+    +maxWidth768()
+      display none
+
+    +maxHeight800()
+      display none
+
   &.show
     .console-card-group
       transform translateY(0)
@@ -41,6 +50,9 @@
     width 40%
     height 100%
 
+    +maxWidth1300()
+      display none
+
   .console-card-group-right
     display flex
     flex-direction column
@@ -48,6 +60,10 @@
     height 100%
     width 60%
     overflow hidden
+
+    +maxWidth1300()
+      width 100%
+      margin 0
 
   .console-card
     background var(--sco-maskbg)
@@ -286,41 +302,22 @@
     i
       font-size 1rem
 
-+maxWidth1300()
-  #console
-    .console-card-group
-      justify-content center
-
-    .console-card-group-left
+  #consoleMusic
+    +maxWidth1300()
       display none
 
-    .console-card-group-right
-      width 100%
-      margin 0
-
-    #consoleMusic
+    +maxHeight800()
       display none
 
-    #consoleCommentBarrage
+  #consoleCommentBarrage
+    +maxWidth1300()
       display none
 
-+maxWidth768()
-  #console
-    .console-card-group
+    +maxHeight800()
       display none
 
-    #consoleHideAside
-      display none
-
-@media screen and (max-height: 800px)
-  #console
-    .console-card-group
-      display none
-
-    #consoleMusic
-      display none
-
-    #consoleCommentBarrage
+  #consoleHideAside
+    +maxWidth768()
       display none
 
 #card-newest-comments
