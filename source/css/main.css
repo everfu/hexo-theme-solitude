@@ -7114,6 +7114,17 @@ blockquote p {
     background: var(--sco-maskbg)
 }
 
+@media screen and (max-width: 768px) {
+    #sidebar #sidebar-menus .menus_items li .site-page:hover {
+      background: var(--sco-main);
+      color: var(--sco-white)
+    }
+  
+    #sidebar #sidebar-menus .menus_items li .site-page span:hover {
+      color: var(--sco-white)
+    }
+}
+
 #article-container img {
     border-radius: 12px;
     margin-bottom: .5rem;
