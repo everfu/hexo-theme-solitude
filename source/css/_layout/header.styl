@@ -435,6 +435,9 @@
 		padding .1rem 0 0 .3rem
 		vertical-align top
 
+		+maxWidth768()
+			display inline-block !important
+
 		&:hover 
 			color var(--sco-white)
 
@@ -479,7 +482,6 @@
 			padding 0 12px
 
 			+maxWidth768()
-				color var(--sco-white)
 				transition .1s
 
 			+minWidth900()
@@ -1437,3 +1439,7 @@ i
 a.console_switchbutton
 	padding 4px 8px!important
 	cursor pointer
+
+#nav-console
+	+maxWidth768()
+		display none
