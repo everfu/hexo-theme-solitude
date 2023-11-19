@@ -36,16 +36,30 @@
         <script data-pjax defer>
             // AI构造函数
             new ChucklePostAI({
-                /* 必须配置 */
-                // 文章内容所在的元素属性的选择器，也是AI挂载的容器，AI将会挂载到该容器的最前面
                 el: '#post #article-container',
-                // 驱动AI所必须的key，即是tianliGPT后端服务所必须的key
                 key: '<%= theme.thirdparty.ai.key %>',
-                /* 非必须配置，但最好根据自身需要进行配置 */
-                // 文章标题所在的元素属性的选择器，默认获取当前网页的标题
                 title_el: '.post-title',
-                // 文章推荐方式，all：匹配数据库内所有文章进行推荐，web：仅当前站内的文章，默认all
                 rec_method: '<%= theme.thirdparty.ai.rec_method || 'web' %>',
+                interface: {
+                    name: "<%= theme.thirdparty.ai.ai_name || 'Solitude-AI' %>",
+                    introduce: "<%= theme.thirdparty.ai.ai_introduce || '我是文章辅助AI生成工具: Solitude-AI。你可以点击下方的按钮，让我生成本文简介、推荐相关文章等。' %>",
+                    version: "<%= theme.thirdparty.ai.ai_tips || 'GPT-4' %>",
+                },
+                <% if(theme.thirdparty.ai.hide_shuttle) { %>
+                    hide_shuttle: true,
+                <% } %><% if(theme.thirdparty.ai.typewriter === false) { %>
+                    typewriter: false,
+                <% } %><% if(theme.thirdparty.ai.speed !== 20) { %>
+                    speed: <%= theme.thirdparty.ai.speed %>,
+                <% } %><% if(theme.thirdparty.ai.BlackWhite_List.mode === 'black') { %>
+                    eliminate: [<%- theme.thirdparty.ai.BlackWhite_List.List.map(item => `'${item}'`).join(', ') %>],
+                <% } else if(theme.thirdparty.ai.BlackWhite_List.mode === 'white') { %>
+                    whitelist: [<%- theme.thirdparty.ai.BlackWhite_List.List.map(item => `'${item}'`).join(', ') %>],
+                <% } %><% if(page.ai_total_length) { %>
+                    total_length: <%= page.total_length %>,
+                <% } %><% if(page.ai_ratio_string) { %>
+                    ratio_string: "<%= page.ratio_string %>",
+                <% } %>
             })
         </script>
     <% } %>
