@@ -1,0 +1,107 @@
+#error-wrap {
+  display: flex;
+  justify-content: center;
+  margin: 0 1rem;
+  width: 100%;
+  position: relative
+}
+
+#error-wrap .error-content {
+  display: flex;
+  -webkit-box-orient: horizontal;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  align-items: center;
+  margin: 0 1rem;
+  height: 18rem;
+  max-width: 800px;
+  border-radius: 5px;
+  background: var(--sco-card-bg);
+  box-shadow: var(--card-box-shadow);
+  transition: all .3s ease 0s;
+  border: var(--style-border-always);
+  position: relative;
+  width: 100%
+}
+
+#error-wrap .error-content:hover {
+  box-shadow: var(--card-hover-box-shadow)
+}
+
+@media screen and (max-width: 768px) {
+  #error-wrap .error-content {
+    -webkit-box-orient: vertical;
+    flex-direction: column;
+    margin: 0;
+    height: 25rem;
+    width: 100%
+  }
+}
+
+#error-wrap .error-content .error-img {
+  -webkit-box-flex: 1;
+  flex: 1 1 0;
+  height: 90%;
+  width: 600px;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+  background-color: #307af6;
+  background-position: center center;
+  background-size: cover
+}
+
+@media screen and (max-width: 768px) {
+  #error-wrap .error-content .error-img {
+    -webkit-box-flex: 1;
+    flex: 1 1 0;
+    width: 100%;
+    border-radius: 12px
+  }
+}
+
+#error-wrap .error-content .error-info {
+  -webkit-box-flex: 1;
+  flex: 1 1 0;
+  padding: .5rem;
+  text-align: center;
+  font-size: 14px;
+  font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif
+}
+
+#error-wrap .error-content .error-info .error_title {
+  font-size: 9em;
+  line-height: 1
+}
+
+@media screen and (max-width: 768px) {
+  #error-wrap .error-content .error-info {
+    -webkit-box-flex: 1.1;
+    flex: 1.1 1 0;
+    width: 100%;
+    padding-bottom: 2rem
+  }
+
+  #error-wrap .error-content .error-info .error_title {
+    font-size: 4rem
+  }
+}
+
+#error-wrap .error-content .error-info .error_subtitle {
+  word-break: break-word;
+  font-size: 1.6em;
+  -webkit-line-clamp: 2
+}
+
+#error-wrap .error-content .error-info a {
+  display: inline-block;
+  margin-top: .5rem;
+  padding: .3rem 1.5rem;
+  background: var(--btn-bg);
+  color: var(--btn-color)
+}
+
+#error-wrap .error-content .error-info a i {
+  padding-right: .3rem
+}

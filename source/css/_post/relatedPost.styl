@@ -1,0 +1,178 @@
+.relatedPosts {
+  margin-top: 2rem;
+  -webkit-user-select: none
+}
+
+.relatedPosts > .relatedPosts-list > div {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  margin: 3px;
+  width: calc(33.333% - 6px);
+  height: 200px;
+  background: var(--sco-main);
+  vertical-align: bottom
+}
+
+@media screen and (max-width: 768px) {
+  .relatedPosts > .relatedPosts-list > div {
+    margin: 2px;
+    width: calc(50% - 4px);
+    height: 150px
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .relatedPosts > .relatedPosts-list > div {
+    width: calc(100% - 4px)
+  }
+}
+
+.relatedPosts > .relatedPosts-list .cover {
+  width: 360px;
+  min-width: 45%;
+  height: 100%;
+  transition: all .6s ease 0s;
+  object-fit: cover;
+  filter: brightness(.9);
+  max-width: 45%
+}
+
+.relatedPosts > .relatedPosts-list .content {
+  padding: 0 1rem;
+  width: 100%
+}
+
+.relatedPosts > .relatedPosts-list .content .date {
+  color: var(--light-grey);
+  font-size: 90%
+}
+
+.relatedPosts > .relatedPosts-list .content .title {
+  color: var(--sco-white);
+  -webkit-line-clamp: 2;
+  margin-right: auto
+}
+
+.relatedPosts-link {
+  display: block;
+  justify-content: space-between;
+  margin-left: 8px;
+  font-size: 13px
+}
+
+.relatedPosts > .relatedPosts-list .cover::after {
+  content: ' ';
+  display: block;
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url(https://bu.dusays.com/2023/03/03/6401a79030db5.png) 50%;
+  background-size: cover
+}
+
+.relatedPosts > .relatedPosts-list a {
+  display: flex;
+  width: 100%;
+  height: 100%
+}
+
+@media screen and (min-width: 768px) {
+  #post > div.relatedPosts > div.relatedPosts-list > div {
+    -webkit-mask-image: -webkit-radial-gradient(center, #fff, #000)
+  }
+
+  #post > div.relatedPosts > div.relatedPosts-list > div {
+    border-radius: 12px
+  }
+
+  .relatedPosts > .headline {
+    font-size: .8em
+  }
+
+  @media screen and (max-width: 1300px) {
+    #post > div.relatedPosts > div.relatedPosts-list > div:nth-child(7) {
+      display: none
+    }
+
+    #post > div.relatedPosts > div.relatedPosts-list > div:nth-child(8) {
+      display: none
+    }
+  }
+}
+
+.relatedPosts > .headline {
+  margin-bottom: .8rem;
+  font-weight: 700;
+  font-size: 20px;
+  display: flex;
+  align-items: center
+}
+
+.relatedPosts > .headline span {
+  margin-right: auto;
+  margin-left: 8px
+}
+
+.relatedPosts > .headline a {
+  font-weight: 400
+}
+
+.relatedPosts-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  flex-direction: column
+}
+
+.relatedPosts > .relatedPosts-list > div {
+  background: var(--sco-secondbg);
+  border: var(--style-border);
+  transition: .3s;
+  cursor: pointer;
+  overflow: hidden;
+  width: 100%;
+  margin-bottom: 8px
+}
+
+.relatedPosts > .relatedPosts-list > div:hover {
+  background: var(--sco-main)
+}
+
+@media screen and (max-width: 768px) {
+  .relatedPosts {
+    display: none
+  }
+
+  .relatedPosts > .relatedPosts-list > div {
+    border-radius: 4px
+  }
+}
+
+.relatedPosts > .relatedPosts-list > div:hover a .title {
+  color: var(--sco-white)
+}
+
+.relatedPosts > .relatedPosts-list .content .title {
+  color: var(--sco-fontcolor);
+  font-weight: 700;
+  line-height: 1.5;
+  -webkit-line-clamp: 4;
+  font-size: .9rem;
+  text-align: left;
+  overflow: hidden
+}
+
+.relatedPosts > .relatedPosts-list .content .date {
+  color: var(--sco-fontcolor);
+  display: none
+}
+
+@media screen and (min-width: 768px) {
+  .relatedPosts {
+    margin-top: 1rem
+  }
+}

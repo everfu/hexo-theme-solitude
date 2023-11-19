@@ -1,3 +1,73 @@
+const adjustMenu = (change = false) => {
+    const $blogName = document.getElementById('site-name')
+    let blogNameWidth = $blogName && $blogName.offsetWidth
+    const $menusEle = document.querySelector('#menus .menus_items')
+    let menusWidth = $menusEle && $menusEle.offsetWidth
+    const $searchEle = document.querySelector('#search-button')
+    let searchWidth = $searchEle && $searchEle.offsetWidth
+    if (change) {
+        blogNameWidth = $blogName && $blogName.offsetWidth
+        menusWidth = $menusEle && $menusEle.offsetWidth
+        searchWidth = $searchEle && $searchEle.offsetWidth
+    }
+    const $nav = document.getElementById('nav')
+    let t
+    if (window.innerWidth < 768) t = true
+    else t = blogNameWidth + menusWidth + searchWidth > $nav.offsetWidth - 120
+
+    if (t) {
+        $nav.classList.add('hide-menu')
+    } else {
+        $nav.classList.remove('hide-menu')
+    }
+}
+
+// 初始化header
+const initAdjust = () => {
+    adjustMenu()
+    document.getElementById('nav').classList.add('show')
+}
+
+/**
+ * side menu
+ */
+const sidebarFn = () => {
+    const $toggleMenu = document.getElementById('toggle-menu')
+    const $mobileSidebarMenus = document.getElementById('sidebar-menus')
+    const $menuMask = document.getElementById('menu-mask')
+    const $body = document.body
+
+    const isOpen = () => $mobileSidebarMenus.classList.contains('open')
+
+    function openMobileSidebar() {
+        utils.sidebarPaddingR()
+        $body.style.overflow = 'hidden'
+        utils.fadeIn($menuMask, 0.5)
+        $mobileSidebarMenus.classList.add('open')
+    }
+
+    function closeMobileSidebar() {
+        $body.style.overflow = ''
+        $body.style.paddingRight = ''
+        utils.fadeOut($menuMask, 0.5)
+        $mobileSidebarMenus.classList.remove('open')
+    }
+
+    $toggleMenu.addEventListener('click', openMobileSidebar)
+
+    $menuMask.addEventListener('click', () => {
+        if (isOpen()) {
+            closeMobileSidebar()
+        }
+    })
+
+    window.addEventListener('resize', () => {
+        if (utils.isHidden($toggleMenu) && isOpen()) {
+            closeMobileSidebar()
+        }
+    })
+}
+
 /**
  * 滚动处理
  */
@@ -66,46 +136,6 @@ const percent = () => {
     window.onscroll = percent
 }
 
-
-/**
- * side menu
- */
-const sidebarFn = () => {
-    const $toggleMenu = document.getElementById('toggle-menu')
-    const $mobileSidebarMenus = document.getElementById('sidebar-menus')
-    const $menuMask = document.getElementById('menu-mask')
-    const $body = document.body
-
-    const isOpen = () => $mobileSidebarMenus.classList.contains('open')
-
-    function openMobileSidebar() {
-        utils.sidebarPaddingR()
-        $body.style.overflow = 'hidden'
-        utils.fadeIn($menuMask, 0.5)
-        $mobileSidebarMenus.classList.add('open')
-    }
-
-    function closeMobileSidebar() {
-        $body.style.overflow = ''
-        $body.style.paddingRight = ''
-        utils.fadeOut($menuMask, 0.5)
-        $mobileSidebarMenus.classList.remove('open')
-    }
-
-    $toggleMenu.addEventListener('click', openMobileSidebar)
-
-    $menuMask.addEventListener('click', () => {
-        if (isOpen()) {
-            closeMobileSidebar()
-        }
-    })
-
-    window.addEventListener('resize', () => {
-        if (utils.isHidden($toggleMenu) && isOpen()) {
-            closeMobileSidebar()
-        }
-    })
-}
 
 const showTodayCard = () => {
     const el = document.getElementById('todayCard')
@@ -280,6 +310,7 @@ let sco = {
                 let data = await response.json();
                 return data[getMonthDate];
             }
+
             function append(parent, text) {
                 let temp = document.createElement('div');
                 temp.innerHTML = text;
@@ -289,6 +320,7 @@ let sco = {
                 }
                 parent.appendChild(frag);
             }
+
             fetchHistoryData().then(data => {
                 let html_item = data.map(item => `
             <div class="swiper-slide history_slide">
@@ -648,7 +680,7 @@ let sco = {
     /**
      * 一些日子灰色页面
      */
-    setFest: function (){
+    setFest: function () {
         let date = new Date();
         let currentDate = (date.getMonth() + 1) + '.' + date.getDate();
 
@@ -674,18 +706,18 @@ let sco = {
     /**
      * 个人信息顶部文字更新
      */
-    setTimeState: function (){
+    setTimeState: function () {
         const el = document.getElementById('author-info__sayhi');
         if (el) {
             const timeNow = new Date();
             const hours = timeNow.getHours();
             const lang = GLOBALCONFIG.lang.sayhello;
             const greetings = [
-                { start: 0, end: 5, text: lang.goodnight },
-                { start: 6, end: 10, text: lang.morning },
-                { start: 11, end: 14, text: lang.noon },
-                { start: 15, end: 18, text: lang.afternoon },
-                { start: 19, end: 24, text: lang.night },
+                {start: 0, end: 5, text: lang.goodnight},
+                {start: 6, end: 10, text: lang.morning},
+                {start: 11, end: 14, text: lang.noon},
+                {start: 15, end: 18, text: lang.afternoon},
+                {start: 19, end: 24, text: lang.night},
             ];
             for (let greeting of greetings) {
                 if (hours >= greeting.start && hours <= greeting.end) {
@@ -694,7 +726,7 @@ let sco = {
                 }
             }
         }
-    }
+    },
 }
 
 /*
@@ -800,6 +832,7 @@ class tabs {
 }
 
 window.refreshFn = () => {
+    initAdjust()
     scrollFn()
     sidebarFn()
     GLOBALCONFIG.comment.enable && newestCommentInit()

@@ -364,6 +364,8 @@ thirdparty:
 # 评论
 comment:
   enable: false
+  type: 'twikoo'
+  # 评论系统
   twikoo:
     envId: https://twikoo.sondy.top
     lang: 'zh-CN'

@@ -8,16 +8,19 @@ if hexo-config('css_prefix')
 @import '_global/*'
 @import '_layout/*'
 @import '_page/*'
+@import '_post/*'
+
+// comment
+if hexo-config('comment.enable')
+	@import '_comment/index.styl'
+	@import '_comment/twikoo.styl' when hexo-config('comment.type') == 'twikoo'
 
 // commentBarrage
 if hexo-config('thirdparty.comment.enable')
 	@import '_post/commentBarrage.styl'
 
-// console
-@import '_extra/console.styl'
-
-// External tags
-@import '_post/externalTags.styl'
+// extra
+@import '_extra/*'
 
 // search
 if hexo-config('thirdparty.search.algolia_search.enable')

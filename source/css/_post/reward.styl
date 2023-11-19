@@ -1,0 +1,236 @@
+.reward-main {
+  animation: .3s ease .1s 1 normal both running donate_effcet
+}
+
+.post-reward {
+   position: relative;
+   margin-top: 4rem;
+   text-align: center
+ }
+
+.post-reward:hover > .reward-main {
+  display: block
+}
+
+.post-reward .reward-main {
+  position: absolute;
+  bottom: 40px;
+  left: -96px;
+  z-index: 100;
+  display: none;
+  padding: 0 0 15px;
+  width: fit-content
+}
+
+.post-reward .reward-main .reward-all {
+  display: inline-block;
+  margin: 0;
+  padding: 1rem .5rem;
+  border-radius: 4px;
+  background: var(--sco-maskbgdeep)
+}
+
+.post-reward .reward-main .reward-all::before {
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 100%;
+  height: 20px;
+  content: ""
+}
+
+.post-reward .reward-main .reward-all::after {
+  position: absolute;
+  right: 0;
+  bottom: 2px;
+  left: 0;
+  margin: 0 auto;
+  width: 0;
+  height: 0;
+  border-top: 13px solid var(--reward-pop);
+  border-right: 13px solid transparent;
+  border-left: 13px solid transparent;
+  content: ""
+}
+
+.post-reward .reward-main .reward-all .reward-item {
+  display: inline-block;
+  padding: 0 8px;
+  list-style-type: none;
+  vertical-align: top
+}
+
+.post-reward .reward-main .reward-all .reward-item img {
+  width: 130px;
+  height: 130px
+}
+
+.post-reward .reward-main .reward-all .reward-item .post-qr-code-desc {
+  padding-top: .4rem;
+  width: 130px;
+  color: #858585
+}
+
+.post-reward .reward-button {
+  background: var(--sco-red);
+  color: var(--sco-white);
+  padding: 0 16px;
+  height: 40px;
+  line-height: 39px;
+  box-shadow: var(--sco-shadow-red);
+  display: inline-block;
+  cursor: pointer;
+  transition: all .4s ease 0s
+}
+
+.post-reward:hover .reward-button {
+  color: var(--sco-white);
+  background: var(--sco-theme);
+  box-shadow: none
+}
+
+.post-reward .reward-main .reward-all .reward-item .post-qr-code-desc {
+  padding-top: 0;
+  margin-top: -8px;
+  margin-bottom: 8px
+}
+
+.post-reward .reward-main .reward-all {
+  border-radius: 12px;
+  background: var(--sco-card-bg);
+  border: var(--style-border-always);
+  padding: .8rem;
+  display: flex;
+  box-shadow: var(--sco-shadow-border);
+  flex-direction: column;
+  align-items: center
+}
+
+.reward-dec {
+  font-size: .6rem
+}
+
+.reward-text {
+  margin-bottom: 0;
+  font-weight: 700
+}
+
+a.reward-main-btn {
+  background: var(--sco-secondbg);
+  color: var(--sco-fontcolor);
+  display: flex;
+  flex-direction: column;
+  border-radius: 12px;
+  padding: 4px 0;
+  border: var(--style-border-always);
+  margin: 8px;
+  width: 100%
+}
+
+a.reward-main-btn:hover {
+  color: var(--sco-white);
+  background: var(--sco-red);
+  background-image: url(https://bu.dusays.com/2023/11/01/6541f7aeb5752.gif);
+  box-shadow: var(--sco-shadow-red)
+}
+
+.reward-title {
+  font-weight: 700;
+  color: var(--sco-red)
+}
+
+.reward-link.mode {
+  background: var(--sco-green);
+  color: var(--sco-white);
+  padding: 0 16px;
+  height: 40px;
+  line-height: 39px;
+  box-shadow: var(--sco-shadow-green);
+  border-radius: 8px;
+  margin-left: .5rem;
+  text-align: center;
+  transition: .3s
+}
+
+.reward-link.mode a {
+  color: var(--sco-white)
+}
+
+.reward-link.mode i {
+  margin-right: 4px
+}
+
+.reward-link.mode:hover {
+  background: var(--sco-theme);
+  box-shadow: none
+}
+
+.post-reward {
+  margin-top: 0;
+  display: flex;
+  justify-content: center
+}
+
+.post-reward:hover > .reward-main {
+  display: none
+}
+
+.post-reward .reward-main {
+  z-index: 1003
+}
+
+@media screen and (min-width: 768px) {
+  .post-reward:hover > .reward-main {
+    display: flex !important;
+    justify-content: left
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .post-reward .reward-main {
+    justify-content: center !important;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1003;
+    width: 100%;
+    margin: auto;
+    padding: 0
+  }
+
+  .post-reward .reward-main .reward-all {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 30px 0 60px 0;
+    border-radius: 12px 12px 0 0
+  }
+
+  #post .tag_share .post-meta__tags {
+    margin: 0 .5rem 0 0
+  }
+
+  a.reward-main-btn {
+    margin: 4px auto
+  }
+}
+
+.post-reward .reward-main .reward-all:after {
+  display: none
+}
+
+.reward-group {
+  display: flex;
+  margin-top: .5rem
+}
+
+.post-reward .reward-main .reward-all .reward-item:first-child img {
+  border-color: var(--sco-green)
+}
+
+.post-reward .reward-main .reward-all .reward-item:last-child img {
+  border-color: var(--sco-blue)
+}
+

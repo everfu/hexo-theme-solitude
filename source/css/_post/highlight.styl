@@ -1,0 +1,103 @@
+// 代码块
+figure
+  margin 1rem 0
+  padding 1rem
+  border-radius 12px
+  background var(--sco-card-bg)
+  border var(--style-border)
+  position relative
+  overflow hidden
+  animation slide-in .6s .1s backwards
+
+  &:hover
+    box-shadow var(--sco-shadow-border-hover)
+
+  .copy-btn
+    position absolute
+    top 1rem
+    right 1rem
+    z-index 10
+    color var(--sco-fontcolor)
+    cursor pointer
+    transition all .2s ease 0s
+
+    &:hover
+      color var(--sco-lighttext)
+
+  .copy-btn svg
+    width 1.5em
+    height 1.5em
+    vertical-align middle
+    fill currentColor
+    overflow hidden
+    padding-right 5px
+
+  .copy-btn svg:hover
+    color var(--sco-lighttext)
+
+  &.highlight
+    margin 0
+    padding 0
+    border 0
+    background none
+    font-size 1em
+    line-height 1.5
+    overflow auto
+    -webkit-overflow-scrolling touch
+
+    +maxWidth768()
+      .code pre .line
+        font-size 12px
+
+      .code pre .line span
+        font-size 8px
+
+    .line
+      &.marked
+        background-color: rgba(97, 97, 97, .314)
+
+    .deletion
+      color #bf42bf
+
+    .addition
+      color #105ede
+
+    .meta
+      color #c792ea
+
+    .comment
+      color #969896
+
+    .attribute, .css .class, .css .id, .css .pseudo, .html .doctype, .regexp, .ruby .constant, .tag .name, .variable, .xml .doctype, .xml .pi, .xml .tag .title
+      color var(--sco-red)
+
+    .tag
+      color var(--sco-pink)
+
+    .command, .constant, .literal, .number, .params, .preprocessor
+      color var(--sco-orange)
+
+    .built_in
+      color var(--sco-yellow)
+
+    .css .rules .attribute, .formula, .header, .inheritance, .number, .ruby .class .title, .ruby .symbol, .special, .string, .value, .xml .cdata
+      color var(--sco-green)
+
+    .css .hexcolor, .keyword, .title
+      color #3eb1df
+
+    .coffeescript .title, .function
+      color var(--sco-blue)
+
+    .javascript .function, .tag .attr
+      color #c792ea
+
+.highlight-tools .sco-copy-fill
+  position absolute
+  right .7rem
+  cursor pointer
+  transition color .2s
+  font-size 18px
+
+.highlight-tools .sco-copy-fill:hover
+  color var(--sco-main)
