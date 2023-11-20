@@ -1,42 +1,37 @@
-#tag #tag-page-tags {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  margin: 0 -.75rem .5rem;
-}
+#tag
+  #tag-page-tags
+    display flex
+    flex-direction row
+    flex-wrap wrap
+    margin 0 -.75rem .5rem
 
-#tag #tag-page-tags a {
-  padding: .1rem .5rem;
-  margin: .25rem .25rem;
-  line-height: 1.6;
-  border-radius: 8px;
-  color: var(--sco-fontcolor) !important;
-  border: var(--style-border-always);
-  display: flex;
-  align-items: center
-}
+    a
+      padding .1rem .5rem
+      margin .25rem .25rem
+      line-height 1.6
+      border-radius 8px
+      color var(--sco-fontcolor) !important
+      border var(--style-border-always)
+      display flex
+      align-items center
 
-#tag #tag-page-tags a.select {
-  color: var(--sco-card-bg) !important;
-  background: var(--sco-theme);
-  box-shadow: var(--sco-shadow-theme)
-}
+      &.select
+        color var(--sco-card-bg) !important
+        background var(--sco-theme)
+        box-shadow var(--sco-shadow-theme)
 
-#tag #tag-page-tags a:hover {
-  color: var(--sco-white) !important;
-  background: var(--sco-theme);
-  box-shadow: var(--sco-shadow-theme)
-}
+      &:hover
+        color var(--sco-white) !important
+        background var(--sco-theme)
+        box-shadow var(--sco-shadow-theme)
 
-#tag #tag-page-tags a.select .tagsPageCount {
-  background: var(--sco-card-bg);
-  color: var(--sco-lighttext)
-}
+      &.select .tagsPageCount
+        background var(--sco-card-bg)
+        color var(--sco-lighttext)
 
-span.tags-punctuation {
-  margin-right: 2px;
-  font-size: .7rem;
-  font-weight: 700;
-  display: flex;
-  align-items: center;
-}
+span.tags-punctuation
+  margin-right 2px
+  font-size .7rem
+  font-weight 700
+  display flex;
+  align-items center
