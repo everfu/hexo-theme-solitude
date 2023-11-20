@@ -381,3 +381,83 @@ img.footer_mini_logo:hover {
   -webkit-transform-style: preserve-3d;
   transform: scale(1.2)
 }
+
+#cookies-window {
+  min-width: 300px;
+  background: var(--sco-maskbgdeep);
+  color: var(--sco-fontcolor);
+  padding: 8px 16px;
+  display: flex;
+  flex-direction: column;
+  bottom: 20px;
+  right: 20px;
+  position: fixed;
+  border-radius: 12px;
+  transition: .3s;
+  z-index: 1002;
+  user-select: none;
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  transform: translateZ(0);
+  border: var(--style-border);
+  animation: barrageIn .6s cubic-bezier(.42, 0, .3, 1.11)
+}
+
+#cookies-window.cw-hide {
+  opacity: 0;
+  animation: barrageOut .6s cubic-bezier(.42, 0, .3, 1.11);
+  z-index: -1
+}
+
+#cookies-window .cookies-window-title {
+  padding-bottom: 4px;
+  border-bottom: var(--style-border);
+  font-size: 12px;
+  font-weight: 700
+}
+
+#cookies-window .cookies-window-content {
+  font-size: 14px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center
+}
+
+.cookie-to {
+  margin-right: 4px;
+  font-weight: 700
+}
+
+.cookies-link {
+  margin-left: auto;
+  font-size: 16px
+}
+
+.cookies-link i.scoicon {
+  font-size: 16px
+}
+
+@media screen and (max-width: 1300px) {
+  #cookies-window {
+    display: none
+  }
+}
+
+a.deal_link {
+  display: flex;
+  margin: 1rem 27px;
+  color: var(--sco-card-bg);
+  border-radius: 3rem;
+  width: 32px;
+  height: 32px;
+  background: var(--sco-fontcolor);
+  justify-content: center;
+  align-items: center;
+  transition: .3s
+}
+
+a.deal_link:hover {
+  color: var(--sco-white);
+  background: var(--sco-main);
+  transform: scale(1.1);
+}
