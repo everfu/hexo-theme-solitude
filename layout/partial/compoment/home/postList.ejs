@@ -24,8 +24,9 @@
                 <% post.tags.data.forEach(tags => { %>
                     <a class="article-meta__tags" href="<%= url_for(tags.path) %>"
                        onclick="window.event.cancelBubble=true;">
-                        <span class="tags-punctuation"></span>
-                        <%= tags.name %>
+                        <span class="tags-punctuation">
+                            <%=tags.name%>
+                        </span>
                     </a>
                 <% }) %>
             </span>

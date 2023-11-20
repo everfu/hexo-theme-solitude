@@ -1,149 +1,113 @@
-.article-sort-title:before {
-  display: none
-}
+.article-sort-title:before
+  display none
 
-.article-sort-title:after {
-  display: none
-}
+.article-sort-title:after
+  display none
 
-.article-sort-title {
-  margin-left: 0;
-  padding-bottom: 0;
-  padding-left: 0;
-  font-weight: 700;
-  font-size: 2em
-}
+.article-sort-title
+  margin-left 0
+  padding-bottom 0
+  padding-left 0
+  font-weight 700
+  font-size 2em
 
-.article-sort-title sup {
-  margin-left: 4px;
-  font-size: 16px;
-  font-weight: 700;
-  opacity: .4;
-  top: -1em
-}
+.article-sort-title sup
+  margin-left 4px
+  font-size 16px
+  font-weight 700
+  opacity .4
+  top -1em
 
-.article-sort-item-title {
-  line-height: 1.3;
-  -webkit-line-clamp: 1
-}
+.article-sort-item-title
+  line-height 1.3
+  -webkit-line-clamp 1
 
-@media screen and (max-width: 768px) {
-  .article-sort-item-title {
-    -webkit-line-clamp: 2
-  }
-}
+@media screen and (max-width: 768px)
+  .article-sort-item-title
+    -webkit-line-clamp 2
 
-.article-sort .article-sort-item .article-sort-item-img {
-  border-radius: 12px;
-  min-width: 151px;
-  min-height: 80px;
-  background: var(--sco-secondbg);
-  -webkit-mask-image: -webkit-radial-gradient(center, #fff, #000)
-}
+.article-sort .article-sort-item .article-sort-item-img
+  border-radius 12px
+  min-width 151px
+  min-height 80px
+  background var(--sco-secondbg)
+  -webkit-mask-image -webkit-radial-gradient(center, #fff, #000)
 
-@media screen and (max-width: 768px) {
-  .article-sort .article-sort-item .article-sort-item-img {
-    min-width: 80px
-  }
-}
+@media screen and (max-width: 768px)
+  .article-sort .article-sort-item .article-sort-item-img
+    min-width 80px
 
-.article-sort-item:before {
-  display: none
-}
+.article-sort-item:before
+  display none
 
-.article-sort {
-  border: none
-}
+.article-sort
+  border none
+  margin-left 0
+  padding-left 0
 
-.article-sort {
-  margin-left: 0;
-  padding-left: 0
-}
+.article-sort-item
+  margin 0 0 1rem 0
+  overflow hidden
+  border-radius 12px
 
-.article-sort-item {
-  margin: 0 0 1rem 0;
-  overflow: hidden;
-  border-radius: 12px
-}
+@media screen and (max-width: 768px)
+  .article-sort-item-info a
+    white-space inherit !important
 
-@media screen and (max-width: 768px) {
-  .article-sort-item-info a {
-    white-space: inherit !important
-  }
-}
+.article-sort-item.year
+  font-size .8rem
+  color var(--sco-secondtext)
+  margin-bottom .2rem
 
-.article-sort-item.year {
-  font-size: .8rem;
-  color: var(--sco-secondtext);
-  margin-bottom: .2rem
-}
+.article-sort-item-img img:hover
+  transform scale(1)
 
-.article-sort-item-img img:hover {
-  transform: scale(1)
-}
+.article-sort-item-info
+  padding 0 .8rem
+  display flex
+  flex-direction column
 
-.article-sort-item-info {
-  padding: 0 .8rem;
-  display: flex;
-  flex-direction: column
-}
+.article-sort-item-time
+  order 1
+  margin-top 4px
+  color var(--sco-secondtext)
+  display none
 
-.article-sort-item-time {
-  order: 1;
-  margin-top: 4px;
-  color: var(--sco-secondtext)
-}
+.article-sort-item-title
+  order 0
+  font-weight 700
 
-.article-sort-item-title {
-  order: 0;
-  font-weight: 700
-}
+.article-sort-item-title:hover
+  transform translateX(0)
+  color var(--sco-hovertext)
 
-.article-sort-item-title:hover {
-  transform: translateX(0);
-  color: var(--sco-hovertext)
-}
+.article-sort-item-info a
+  margin-right auto
+  overflow hidden
+  text-overflow ellipsis
 
-.article-sort-item-info a {
-  margin-right: auto;
-  overflow: hidden;
-  text-overflow: ellipsis
-}
+.article-sort-item-info-more
+  display flex
+  font-size .7rem
+  margin-right auto
 
-.article-sort-item-info-more {
-  display: flex;
-  font-size: .7rem;
-  margin-right: auto
-}
+.article-sort-item-tags
+  margin-top 8px
+  white-space nowrap
+  overflow hidden
+  display inline-block
+  text-overflow ellipsis
+  width 100%
+  font-size .7rem
 
-.article-sort-item-time {
-  display: none
-}
+.article-sort-item-tags a
+  color var(--sco-fontcolor)
+  transition .3s
 
-.article-sort-item-tags {
-  margin-top: 8px;
-  white-space: nowrap;
-  overflow: hidden;
-  display: inline-block;
-  text-overflow: ellipsis;
-  width: 100%;
-  font-size: .7rem
-}
+.article-sort-item-tags a:hover
+  color var(--sco-theme)
+  transition .3s
 
-.article-sort-item-tags a {
-  color: var(--sco-fontcolor);
-  transition: .3s
-}
-
-.article-sort-item-tags a:hover {
-  color: var(--sco-theme);
-  transition: .3s
-}
-
-.article-sort-item-tags a .tags-punctuation {
-  font-size: 12px;
-  margin-right: 1px
-}
-
-
-
+.article-sort-item-tags a .tags-punctuation
+  font-size 12px
+  margin-right 1px

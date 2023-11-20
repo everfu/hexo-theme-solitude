@@ -568,11 +568,11 @@ li.card-archive-list-item {
 }
 
 .webinfo-item-title i {
-  line-height: 2;
+  line-height: 2 !important;
   margin-right: 6px;
   width: 16px;
   text-align: center;
-  font-size: 16px
+  font-size: 16px !important;
 }
 
 @media screen and (min-width: 1300px) {
@@ -640,7 +640,7 @@ li.card-archive-list-item {
   -webkit-transform-style: preserve-3d
 }
 
-#aside-content .card-widget.card-power,#aside-content .card-widget.card-history,#aside-content .card-widget.card-welcome {
+#aside-content .card-widget.card-power, #aside-content .card-widget.card-history, #aside-content .card-widget.card-welcome {
   padding: .4rem .6rem !important
 }
 
@@ -679,14 +679,6 @@ li.card-archive-list-item {
   flex-wrap: wrap
 }
 
-#power-star-image {
-  width: 60px;
-  height: 60px;
-  border-radius: 8px;
-  background-size: contain;
-  margin-right: 12px
-}
-
 a#power-star {
   display: flex;
   padding: 8px;
@@ -696,12 +688,29 @@ a#power-star {
   flex-wrap: nowrap;
   justify-content: flex-start;
   position: relative;
-  margin: 12px 0
+  margin: 12px 0;
+  background: var(--sco-secondbg);
+  transition: .3s ease-out
 }
 
 a#power-star:hover {
   background: var(--sco-main);
-  color: var(--sco-white)
+  color: var(--sco-white);
+  box-shadow: var(--sco-shadow-theme);
+}
+
+a#power-star:hover #power-star-image {
+  transform: scale(.9);
+}
+
+#power-star-image {
+  width: 60px;
+  height: 60px;
+  border-radius: 60px;
+  background-size: cover;
+  margin-right: 12px;
+  border: var(--style-border-always);
+  transition: .3s ease-out;
 }
 
 div#power-star-title {
@@ -1242,7 +1251,8 @@ div#author-info__sayhi:hover {
   box-shadow: var(--sco-shadow-theme);
   border-radius: 8px;
   padding: .15rem .5rem;
-  border: var(--style-border-hover)
+  border: var(--style-border-hover);
+  cursor pointer
 }
 
 #aside-content #card-toc .toc-content:before {
