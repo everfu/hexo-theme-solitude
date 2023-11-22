@@ -96,7 +96,7 @@
       height: 25rem
 
     +maxWidth768()
-      height 18rem
+      height 30rem
       background-color var(--sco-main) !important
       transition 0s
       margin-bottom -12px
@@ -124,12 +124,10 @@
 
   #post-info
     position absolute
-    padding 0 8%
+    padding 0 3rem
     width 100%
     text-align center
     top 0
-    position absolute
-    padding 0 3rem
     margin 0 auto
     z-index 10
     color var(--sco-white)
@@ -152,13 +150,11 @@
       text-align left
 
     +maxWidth768()
-      bottom 1.1rem
-      padding 0 1.1rem
+      padding 0 6%
       justify-content normal
-      padding 18rem 6% 0
+      padding-top 18rem
 
   &.not-top-img
-    margin-bottom .5rem
     height 60px
     background 0 center
     margin-bottom 0
@@ -1419,19 +1415,6 @@ i
         background var(--sco-white-op)
         transition .3s;
         box-shadow var(--sco-shadow-main)
-
-.post-bg
-  #post-cover
-    +minWidth768()
-      min-height 15rem !important
-      height 70% !important
-      opacity 1 !important
-
-#post-info
-  .post-title
-    +minWidth1300()
-      width 1100px
-      font-size 2.6rem !important
 
 a.console_switchbutton
   padding 4px 8px !important

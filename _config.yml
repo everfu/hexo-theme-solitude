@@ -333,7 +333,7 @@ thirdparty:
     key: # 前往tianli-AI 购买
     rec_method: # 推荐文章方式（all:匹配数据库所有文章、web:仅当前博客文章）默认：web
     ai_name: # 左上角AI名称
-    ai_tips: # 右上角GPT版本文字
+    ai_tips:  # 右上角GPT版本文字
     ai_introduce: # AI自我介绍
     hide_shuttle: false # 隐藏矩阵穿梭按钮
     typewriter: true # 打字机效果

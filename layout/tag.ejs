@@ -2,7 +2,7 @@
     <div id="tag">
         <div id="tag-page-tags">
             <% site.tags.each(function (tag) { %>
-                <a href="<%= url_for(tag.path) %>" class="<%= tag.name === page.tag ? 'select' : '' %>">
+                <a href="<%= url_for(tag.path) %>" id="<%= tag.name %>" class="<%= tag.name === page.tag ? 'select' : '' %>">
                     <span class="tags-punctuation"></span>
                     <%= tag.name %>
                     <span class="tagsPageCount"><%= tag.length %></span>

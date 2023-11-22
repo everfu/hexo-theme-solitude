@@ -40,16 +40,6 @@
 .article-sort-item:before
   display none
 
-.article-sort
-  border none
-  margin-left 0
-  padding-left 0
-
-.article-sort-item
-  margin 0 0 1rem 0
-  overflow hidden
-  border-radius 12px
-
 @media screen and (max-width: 768px)
   .article-sort-item-info a
     white-space inherit !important
@@ -66,6 +56,8 @@
   padding 0 .8rem
   display flex
   flex-direction column
+  -webkit-box-flex 1
+  flex 1 1 0
 
 .article-sort-item-time
   order 1
@@ -76,10 +68,6 @@
 .article-sort-item-title
   order 0
   font-weight 700
-
-.article-sort-item-title:hover
-  transform translateX(0)
-  color var(--sco-hovertext)
 
 .article-sort-item-info a
   margin-right auto
@@ -111,3 +99,100 @@
 .article-sort-item-tags a .tags-punctuation
   font-size 12px
   margin-right 1px
+
+.article-sort
+  margin-left 0
+  padding-left 0
+
+.article-sort-title::before
+  position absolute
+  top calc((100% - 1.8rem) / 2)
+  left -.45rem
+  z-index 1
+  width .5rem
+  height .5rem
+  border .25rem solid #307af6
+  border-radius .5rem
+  background var(--sco-card-bg)
+  content ""
+  line-height .5rem
+  transition all .2s ease-in-out 0s
+
+.article-sort-title::after
+  position absolute
+  bottom 0
+  left 0
+  z-index 0
+  width .1rem
+  height 1.5em
+  background #92b9fa
+  content ""
+
+.article-sort-item
+  position relative
+  display flex
+  -webkit-box-align center
+  align-items center
+  margin 0 0 1rem .5rem
+  transition all .2s ease-in-out 0s
+  overflow hidden
+  border-radius 12px
+
+
+.article-sort-item:hover::before
+  border-color #ff7242
+
+.article-sort-item::before
+  position absolute
+  left calc(-1rem - 17px)
+  width .3rem
+  height .3rem
+  border .15rem solid #307af6
+  border-radius .3rem
+  background var(--sco-card-bg)
+  content ""
+  transition all .2s ease-in-out 0s
+
+.article-sort-item.no-article-cover
+  height 80px
+
+.article-sort-item.no-article-cover .article-sort-item-info
+  padding 0
+
+.article-sort-item.year:hover::before
+  border-color #307af6
+
+.article-sort-item.year::before
+  border-color #ff7242
+
+.article-sort-item-time
+  color #858585
+  font-size 95%
+
+.article-sort-item-time time
+  padding-left .3rem
+  cursor default
+
+.article-sort-item-title
+  color var(--sco-fontcolor)
+  font-size 1.1em
+  transition all .3s ease 0s
+  -webkit-line-clamp 2
+
+.article-sort-item-title:hover
+  color var(sco-main)
+  transform all .3s
+
+.article-sort-item-img
+  overflow hidden
+  width 80px
+  height 80px
+
+.article-sort-item-img img
+  width 100%
+  height 100%
+  transition all .6s ease 0s
+  object-fit cover
+
+.article-sort-item-img img:hover
+  transform scale(1.1)

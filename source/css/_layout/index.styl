@@ -130,148 +130,60 @@
       min-height 100%
       min-width 100%
 
-@media screen and (max-width: 768px) {
-  #recent-posts > .recent-post-item {
-    border-radius: 12px 12px 8px 8px
-  }
-}
-
-#post > #post-info {
-  margin-bottom: 1.5rem
-}
-
-#post > #post-info .post-title {
-  padding-bottom: .2rem;
-  border-bottom: 1px solid var(--light-grey);
-  color: var(--text-highlight-color)
-}
-
-#post > #post-info .post-title .post-edit-link {
-  float: right
-}
-
-#post > #post-info #post-meta, #post > #post-info #post-meta a {
-  color: #78818a
-}
-
-#post-info .post-title {
-  margin-bottom: .4rem;
-  color: var(--sco-white);
-  font-weight: 400;
-  font-size: 2.5em;
-  line-height: 1.5;
-  -webkit-line-clamp: 3
-}
-
-@media screen and (max-width: 768px) {
-  #post-info .post-title {
-    font-size: 1.72em
-  }
-}
-
-#post-info .post-title .post-edit-link {
-  padding-left: .5rem
-}
-
-#post-info #post-meta {
-  color: var(--light-grey);
-  font-size: 95%
-}
-
-@media screen and (min-width: 768px) {
-  #post-info #post-meta > .meta-secondline > span:first-child {
-    display: none
-  }
-}
-
-@media screen and (max-width: 768px) {
-  #post-info #post-meta {
-    font-size: 90%
-  }
-}
-
-#post-info #post-meta .post-meta-separator {
-  margin: 0 .25rem
-}
-
-#post-info #post-meta .post-meta-icon {
-  margin-right: .2rem
-}
-
-#post-info #post-meta .post-meta-label {
-  margin-right: .2rem
-}
-
-#post-info #post-meta a {
-  color: var(--light-grey);
-  transition: all .3s ease-out 0s
-}
-
-#post-info #post-meta a:hover {
-  color: #307af6;
-  text-decoration: underline
-}
++maxWidth768()
+  #recent-posts > .recent-post-item
+    border-radius 12px 12px 8px 8px
 
 // 分页按钮
-.toPageGroup {
-  display: flex;
-  position: relative;
-  margin: 0 .3rem
-}
+.toPageGroup
+  display flex
+  position relative
+  margin 0 .3rem
 
-a#toPageButton {
-  display: flex;
-  position: absolute;
-  width: 40px;
-  height: 40px;
-  right: 0;
-  top: 0;
-  border-radius: 8px;
-  justify-content: center;
-  align-items: center;
-  transition: .3s;
-  background: var(--sco-card-bg);
-  border: var(--style-border-always);
-  cursor: text;
-  pointer-events: none
-}
+  a#toPageButton
+    display flex
+    position absolute
+    width 40px
+    height 40px
+    right 0
+    top 0
+    border-radius 8px
+    justify-content center
+    align-items center
+    transition .3s
+    background var(--sco-card-bg)
+    border var(--style-border-always)
+    cursor text
+    pointer-events none
 
-.toPageGroup:focus-within a#toPageButton, .toPageGroup:hover a#toPageButton {
-  width: 30px;
-  height: 30px;
-  right: 4px;
-  top: 5px;
-  background: var(--sco-card-bg);
-  border: 1px solid var(--sco-none);
-  border-radius: 4px;
-  opacity: .2
-}
+  &:focus-within a#toPageButton, &:hover a#toPageButton
+    width 30px
+    height 30px
+    right 4px
+    top 5px
+    background var(--sco-card-bg)
+    border 1px solid var(--sco-none)
+    border-radius 4px
+    opacity .2
 
-.toPageGroup:focus-within a#toPageButton.haveValue {
-  opacity: 1;
-  cursor: pointer
-}
+  &:focus-within a#toPageButton.haveValue, &:hover a#toPageButton.haveValue
+    opacity 1
+    cursor pointer
 
-a#toPageButton.haveValue {
-  opacity: 1 !important;
-  cursor: pointer !important;
-  pointer-events: all
-}
+  a#toPageButton.haveValue
+    opacity 1 !important
+    cursor pointer !important
+    pointer-events all
 
-a#toPageButton.haveValue:hover {
-  background: var(--sco-theme);
-  color: var(--sco-white)
-}
+  a#toPageButton.haveValue:hover
+    background var(--sco-theme)
+    color var(--sco-white)
 
-@media screen and (max-width: 768px) {
-  .toPageGroup {
-    display: none
-  }
-}
++maxWidth768()
+  .toPageGroup
+    display none
 
-@media screen and (min-width: 768px) {
-  .needEndHide.hide {
-    bottom: -200px !important;
++minWidth768()
+  .needEndHide.hide
+    bottom: -200px !important
     opacity: 0
-  }
-}

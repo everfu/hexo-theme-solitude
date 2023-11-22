@@ -727,6 +727,66 @@ let sco = {
             }
         }
     },
+    /**
+     * tagPageActive
+     */
+    tagPageActive: function () {
+        const currentPath = window.location.pathname;
+        const decodedPath = decodeURIComponent(currentPath);
+
+        const isTagPage = /\/tags\/.*?\//.test(decodedPath);
+        if (isTagPage) {
+            const tag = decodedPath.split("/")[2];
+            console.log(tag);
+
+            const tagPageTagsElement = document.getElementById("#tag-page-tags");
+            if (tagPageTagsElement) {
+                const allLinks = document.querySelectorAll("a");
+                allLinks.forEach(link => {
+                    link.classList.remove("select");
+                });
+
+                const tagElement = document.getElementById(tag);
+                if (tagElement) {
+                    tagElement.classList.add("select");
+                    tagElement.style.order = "-1";
+                }
+            }
+        }
+    },
+    /**
+     * categoryBarActive
+     */
+    categoriesBarActive: function() {
+        const categoryBar = document.querySelector("#category-bar");
+        const currentPath = window.location.pathname;
+        const decodedPath = decodeURIComponent(currentPath);
+
+        if (categoryBar) {
+            const categoryBarItems = document.querySelectorAll(".category-bar-item");
+            categoryBarItems.forEach(item => {
+                item.classList.remove("select");
+            });
+        }
+
+        if (decodedPath === "/") {
+            if (categoryBar) {
+                const homeItem = document.getElementById("category-bar-home");
+                homeItem.classList.add("select");
+            }
+        } else {
+            if (/\/categories\/.*?\//.test(decodedPath)) {
+                const category = decodedPath.split("/")[2];
+                if (categoryBar) {
+                    const categoryItem = document.getElementById(category);
+                    if (categoryItem) {
+                        categoryItem.classList.add("select");
+                        categoryItem.style.order = "-1";
+                    }
+                }
+            }
+        }
+    }
 }
 
 /*
@@ -843,6 +903,8 @@ window.refreshFn = () => {
     sco.addPhotoFigcaption()
     sco.setFest()
     sco.setTimeState()
+    sco.tagPageActive()
+    sco.categoriesBarActive()
     addRightMenuClickEvent()
     GLOBALCONFIG.lazyload.enable && sco.lazyloadImg()
     GLOBALCONFIG.lightbox && sco.lightbox('')
