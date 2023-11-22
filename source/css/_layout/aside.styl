@@ -858,7 +858,7 @@ div#author-info__sayhi:hover {
 #aside-content .card-info .author-info__name {
   text-align: left;
   font-weight: 700;
-  color: var(--sco-white);
+  color: var(--sco-card-bg);
   font-size: 20px;
   line-height: 1;
   margin-bottom: 5px
@@ -866,7 +866,7 @@ div#author-info__sayhi:hover {
 
 .author-info__desc {
   font-size: 12px;
-  color: var(--sco-white);
+  color: var(--sco-card-bg);
   opacity: .6;
   line-height: 1.5;
   -webkit-line-clamp: 2;
@@ -1128,6 +1128,11 @@ div#author-info__sayhi:hover {
   box-shadow: none
 }
 
+[data-theme=dark] .page #aside-content .card-info .card-info-social-icons i:hover {
+  background: var(--sco-card-bg);
+  color: var(--sco-fontcolor);
+}
+
 #aside-content .card-info .banner-button {
   height: 40px;
   width: 118px;
@@ -1138,10 +1143,11 @@ div#author-info__sayhi:hover {
 @media screen and (min-width: 1300px) {
   #aside-content .card-info .card-info-social-icons i {
     color: var(--sco-white)
+    background: var(--sco-black-op)
   }
 
   [data-theme=dark] #aside-content .card-info .card-info-social-icons i {
-    color: var(--sco-white)
+    color: var(--sco-card-bg)
   }
 }
 
