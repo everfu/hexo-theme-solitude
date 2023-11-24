@@ -88,13 +88,17 @@
       align-items: center
 
       &:hover
-        background: var(--sco-main) !important
-        box-shadow: var(--sco-shadow-blue)
-        color: var(--sco-white) !important
-        border: var(--style-border-hover)
+        transform scale(1.1)
+        background var(--sco-main) !important
+        box-shadow var(--sco-shadow-blue)
+        color var(--sco-white) !important
+        border var(--style-border-hover)
 
       span.tagsPageCount
         color: var(--sco-lighttext)
+
+      +maxWidth768()
+        zoom .85
 
 .tags-name
   margin-left: 2px
@@ -118,3 +122,20 @@ span.tagsPageCount
   display: inline-block
   font-size: .6rem
   margin-left: 4px
+
+#category #category-bar
+  padding 0
+  border none
+  box-shadow none
+
+  +maxWidth768()
+    border-radius: 0;
+    background: var(--sco-background);
+    margin-bottom: 0;
+    position: -webkit-sticky;
+    position: sticky;
+    z-index: 1;
+    padding: 0;
+    height: 50px;
+    margin-top: 0;
+    align-items: center;

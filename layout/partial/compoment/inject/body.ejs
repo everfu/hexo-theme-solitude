@@ -12,7 +12,9 @@
 <% } %>
 <%- js('/js/utils') %>
 <div id="js-pjax">
-    <%- partial('partial/compoment/dorakika/rightmenu', {cache: true}) %>
+    <% if(theme.rightmenu.enable){ %>
+        <%- partial('partial/compoment/dorakika/rightmenu', {cache: true}) %>
+    <% } %>
     <% if(page.type === 'says' || page.type === 'album' || page.type === 'album_detail' ){ %>
         <%- js(cdn.waterfalljs) %>
         <script>
@@ -49,7 +51,10 @@
     <%- js('/js/extend/console/comment')
     %>
 <% } %>
-<%- js('/js/rightmenu') %>
+
+<% if(theme.rightmenu.enable){ %>
+    <%- js('/js/rightmenu') %>
+<% } %>
 
 <% if(theme.comment.enable){ %>
     <script data-pjax src="/js/commentBarrage.js"></script>

@@ -9,9 +9,8 @@
             </a>
             <% if (page.categories.data.length) { %>
                 <span class="post-meta-categories">
-                    <% page.categories.data.forEach(item => { %>
-                        <a class="post-meta-categories" href="<%= url_for(item.path) %>"><%= item.name %></a>
-                    <% }) %>
+                        <a class="post-meta-categories"
+                           href="<%= url_for(page.categories.data[0].path) %>"><%= page.categories.data[0].name %></a>
                 </span>
             <% } %>
             <div class="tag_share">

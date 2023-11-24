@@ -1,13 +1,11 @@
 <main class="layout" id="content-inner">
     <div id="category">
-        <div class="category-in-bar">
-            <div id="category-bar">
-                <div class="category-bar-items" id="category-bar-items">
-                    <%- partial('partial/compoment/home/homeCategoryBar', {select: page.category}) %>
-                </div>
+        <div id="category-bar">
+            <div class="category-bar-items" id="category-bar-items">
+                <%- partial('partial/compoment/home/homeCategoryBar', {select: page.category}) %>
             </div>
         </div>
-        <div class="recent-posts category_ui" id="recent-posts">
+        <div class="recent-posts" id="recent-posts">
             <% const currentCategory = page.category; %>
             <% site.posts.each(post => { %>
                 <% post.categories.each(category => { %>

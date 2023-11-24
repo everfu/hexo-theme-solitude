@@ -9,6 +9,7 @@ function initializeCommentBarrage() {
     };
     new class {
         commentInterval = null
+
         constructor(e) {
             this.config = {
                 ...e,
@@ -106,11 +107,11 @@ function initializeCommentBarrage() {
         async initCommentBarrage() {
             if (localStorage.getItem("commentBarrageSwitch") != null) {
                 document.querySelector(".comment-barrage").style.display = "flex";
-                document.querySelector(".menu-commentBarrage-text").textContent = "关闭热评";
+                GLOBALCONFIG.rightmenu.enable && (document.querySelector(".menu-commentBarrage-text").textContent = "关闭热评");
                 document.querySelector("#consoleCommentBarrage").classList.add("on");
             } else {
                 document.querySelector(".comment-barrage").style.display = "none";
-                document.querySelector(".menu-commentBarrage-text").textContent = "显示热评";
+                GLOBALCONFIG.rightmenu.enable && (document.querySelector(".menu-commentBarrage-text").textContent = "显示热评");
                 document.querySelector("#consoleCommentBarrage").classList.remove("on");
             }
             const comments = await this.fetchComments();

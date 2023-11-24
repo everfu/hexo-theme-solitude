@@ -123,11 +123,9 @@
         height 15rem
 
   #post-info
+    top 0
     position absolute
     padding 0 3rem
-    width 100%
-    text-align center
-    top 0
     margin 0 auto
     z-index 10
     color var(--sco-white)
@@ -138,6 +136,8 @@
     height calc(100% + 0px)
     justify-content center
     animation slide-in .6s 0s backwards
+    width 100%
+    text-align center
 
     +minWidth1300()
       height calc(100% + 0px)
@@ -407,14 +407,12 @@
   flex-wrap wrap
   -webkit-box-align center
   align-items center
-  padding 0 36px
   width 100%
   height 60px
   font-size 1.3em
   opacity 0
   transition all .5s ease 0s
   outline 1px solid var(--sco-none)
-  flex-wrap nowrap
   justify-content space-between
 
   +maxWidth768()
@@ -511,8 +509,8 @@
       color var(--sco-white)
 
       +maxWidth768()
-        background var(--sco-none) !important
-        box-shadow none !important
+        background var(--sco-none)
+        box-shadow none
         transition .3s
         color var(--sco-fontcolor)
 
@@ -624,26 +622,6 @@
         &.expand
           padding 4px
           transition transform .3s ease 0s
-
-      &:last-child
-        .menus_item_child
-          &::after
-            position absolute
-            top -60px
-            right 0
-            width 50%
-            height 60px
-            content ""
-
-      &:first-child
-        .menus_item_child
-          &::after
-            position absolute
-            top -60px
-            left 0
-            width 50%
-            height 60px
-            content ""
 
   &.hide-menu
     #toggle-menu
@@ -884,7 +862,7 @@
     #site-name
       &:hover
         +minWidth900()
-          background var(--sco-main)
+          background var(--sco-main) !important
 
       i
         color var(--sco-fontcolor)
@@ -896,7 +874,7 @@
 
   .back-home-button
     &:hover
-      background var(--sco-main)
+      background var(--sco-main) !important
       color var(--sco-white) !important
 
   .menus_item
@@ -1423,3 +1401,22 @@ a.console_switchbutton
 #nav-console
   +maxWidth768()
     display none
+
++minWidth768()
+  .menus_item:hover > a.site-page
+    color var(--sco-card-bg) !important;
+    background var(--sco-white-op);
+    transition .3s;
+    box-shadow var(--sco-shadow-main)
+
+  .page .menus_item:hover > a.site-page
+    color var(--sco-card-bg) !important
+    background var(--sco-main);
+    transition .3s;
+    box-shadow var(--sco-shadow-main)
+
+  .post .menus_item:hover > a.site-page
+    color var(--sco-white)
+
+  .nav-fixed .menus_item:hover > a.site-page
+    background-color var(--sco-lighttext)

@@ -1,6 +1,16 @@
 <div class="card-tag-cloud">
     <% site.tags.each(function (tag) { %>
-        <a href="<%= url_for(tag.path) %>" style="font-size: 0.8rem; color: #d3d3d3"><%= tag.name %>
+        <a href="<%= url_for(tag.path) %>" style="font-size: 0.8rem;"><%= tag.name %>
             <sup><%= tag.length %></sup></a>
     <% }) %>
 </div>
+<% if(site.tags.length > 50){ %>
+    <a id="more-tags-btn" href="javascript:void(0);" rel="external nofollow" onclick="sco.openAllTags();"
+       data-pjax-state="">查看全部</a>
+<% }else{ %>
+    <style>
+        .card-tag-cloud::after {
+            display: none !important;
+        }
+    </style>
+<% } %>

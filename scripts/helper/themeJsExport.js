@@ -49,6 +49,9 @@ hexo.extend.helper.register('export_config', function () {
             twikooUrl: theme.comment.twikoo.envId,
             twikooAccessToken: theme.comment.twikoo.accessToken
         },
+        rightmenu:{
+            enable: theme.rightmenu.enable
+        }
     }
 
     // 搜索数据

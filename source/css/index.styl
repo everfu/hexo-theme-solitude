@@ -1,7 +1,7 @@
 @charset "UTF-8"
 
 if hexo-config('css_prefix')
-	@import 'nib'
+  @import 'nib'
 
 // project
 @import '_global/animation.css'
@@ -12,21 +12,26 @@ if hexo-config('css_prefix')
 
 // comment
 if hexo-config('comment.enable')
-	@import '_comment/index.styl'
-	@import '_comment/twikoo.styl' when hexo-config('comment.type') == 'twikoo'
+  @import '_comment/index.styl'
+  @import '_comment/twikoo.styl' when hexo-config('comment.type') == 'twikoo'
 
 // commentBarrage
 if hexo-config('thirdparty.comment.enable')
-	@import '_post/commentBarrage.styl'
+  @import '_post/commentBarrage.styl'
 
 // extra
-@import '_extra/*'
+@import '_extra/console.styl'
+
+// rightmenu
+if hexo-config('rightmenu')
+  @import '_extra/rightmenu.styl'
 
 // search
 if hexo-config('thirdparty.search.algolia_search.enable')
-	@import '_search/algolia-search'
+  @import '_search/algolia-search'
+
 if hexo-config('thirdparty.search.local_search.enable')
-	@import '_search/local-search'
+  @import '_search/local-search'
 
 // dark
 @import '_mode/*'

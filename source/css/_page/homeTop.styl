@@ -201,14 +201,6 @@ a.categoryButton.shiyong
 a.categoryButton:hover
 	background-position: 100% 0
 
-#category #category-bar
-	padding: 0
-	border: none
-	box-shadow: none
-
-#category a.category-bar-item.select a
-	display: none
-
 .category-in-bar
 	display: flex
 	white-space: nowrap
@@ -248,10 +240,16 @@ a.categoryButton:hover
 	background: var(--sco-theme)
 	color: var(--sco-white)
 
+.category-bar-item.select
+	order -1
+
 .category-bar-item.select a
 	background: var(--sco-theme)
 	color: var(--sco-white)
 	border-radius: 8px
+
+#category a.category-bar-item.select a
+	display: none
 
 @media screen and (max-width: 768px)
 	.category-bar-item.select a
@@ -283,14 +281,16 @@ a.categoryButton:hover
 .category-bar-more:hover
 	color: var(--sco-lighttext)
 
-
-1300px = 1300px
-
 @media screen and (max-width: 768px)
 	#recent-posts .recent-post-item
-		-webkit-box-orient: vertical
-		flex-direction: column
-		height: auto !important
+		margin 1.5rem 0
+		border-radius 12px
+		margin-top 0.5rem
+		border var(--style-border-always)
+		box-shadow var(--heo-shadow-border)
+		display block
+		position relative
+		clip-path inset(0 0 0 0 round 12px)
 
 	#recent-posts .recent-post-item .post_cover
 		width: 100%
@@ -344,10 +344,6 @@ a.categoryButton:hover
 .recent-post-item .recent-post-info .recent-post-info-top .lastestpost
 	display: none
 	margin-right: 8px
-
-.recent-post-info-top-tips
-	display: flex
-	margin-top: 20px
 
 .recent-post-item .recent-post-info .recent-post-info-top a.unvisited-post
 	display: flex
@@ -520,8 +516,6 @@ a.categoryButton:hover
 		animation: slide-in .6s .3s backwards
 
 @media screen and (max-width: 768px)
-	#recent-posts > .recent-post-item
-		border-radius: 0
 
 	#recent-posts > .recent-post-item:not(:first-child)
 		border-radius: 12px

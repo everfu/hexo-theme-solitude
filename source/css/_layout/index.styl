@@ -54,6 +54,11 @@
       display inline-block
       overflow hidden
 
+      .recent-post-info-top-tips
+        display: flex
+        margin-top: 20px
+        user-select none
+
       &.no-cover
         width 100%
 
@@ -86,6 +91,19 @@
         white-space nowrap
         color var(--sco-fontcolor)
         font-size .7rem
+
+        > .article-meta
+          margin 0 8px 0 0
+          white-space nowrap
+          overflow hidden
+          text-overflow ellipsis
+          display flex
+
+          > .article-meta__tags
+            margin-right 8px
+            padding 0 0.2rem
+            padding-left 0
+            color var(--sco-fontcolor)
 
         > .post-meta-date
           right 0

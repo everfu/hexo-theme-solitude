@@ -3,7 +3,19 @@
     display flex
     flex-direction row
     flex-wrap wrap
-    margin 0 -.75rem .5rem
+    margin 0 -0.25rem
+    margin-bottom 0.5rem
+    position absolute
+    z-index 1
+    width 100%
+    padding 1rem 2rem
+    left 0
+    top 0
+    max-height 64px
+    overflow hidden
+    background var(--sco-card-bg)
+    backdrop-filter saturate(180%) blur(20px)
+    transition .1s ease-out
 
     a
       padding .1rem .5rem
@@ -16,6 +28,7 @@
       align-items center
 
       &.select
+        order -1
         color var(--sco-card-bg) !important
         background var(--sco-theme)
         box-shadow var(--sco-shadow-theme)
@@ -28,10 +41,15 @@
       &.select .tagsPageCount
         background var(--sco-card-bg)
         color var(--sco-lighttext)
-
+    +maxWidth768()
+      display none
 span.tags-punctuation
   margin-right 2px
   font-size .7rem
   font-weight 700
   display flex;
   align-items center
+
++minWidth1300()
+  #tag
+    padding: 4rem 2rem 1rem 2rem

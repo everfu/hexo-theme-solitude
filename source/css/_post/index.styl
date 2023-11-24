@@ -87,6 +87,10 @@
       > span:first-child
         margin-right .8rem
 
+  span.tags-punctuation::before
+    font-size 20px
+    line-height 32px
+
 .post-meta-date
   .far
     opacity .6
@@ -110,6 +114,7 @@
     &:hover
       color var(--sco-white)
       opacity 1
+      background var(--sco-white-op)
 
 span.post-meta-categories
   background-color var(--sco-white-op)
@@ -136,15 +141,19 @@ span.post-meta-categories:hover
   a.post-meta-categories
     color var(--sco-main)
 
-.meta-firstline
-  .tag_share
-    margin-left 1rem
-
 #post-firstinfo
   .meta-firstline
     display flex
     align-items center
     height 32px
+
+    .tag_share
+      margin-left 1rem
+
+      .post-meta__tag-list
+        display flex
+        flex-direction row
+        align-items center
 
 @media screen and (max-width: 768px)
   #post-firstinfo

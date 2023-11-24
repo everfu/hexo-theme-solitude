@@ -31,9 +31,23 @@
   color var(--sco-lighttext) !important
   cursor pointer
   -webkit-user-select none
+  padding 0 12px 0 12px
+  transition all .3s
+  border-radius 8px
+  background-color var(--sco-secondbg)
+  border var(--style-border-always)
+
+  &:hover
+    background-color var(--sco-lighttext)
+    color var(--sco-card-bg) !important
+
+    .tk-action-icon svg
+      fill var(--sco-card-bg) !important
+
 
 .tk-action-icon
   svg
+    transition all .3s
     fill var(--sco-lighttext) !important
 
 .tk-content
@@ -421,8 +435,10 @@ button.el-button.tk-cancel.el-button--default.el-button--small
     backdrop-filter saturate(180%) blur(10px)
     -webkit-backdrop-filter blur(10px)
     transform translateZ(0)
+
     .OwO-bar
       border-top none !important
+
     .OwO-items
       .OwO-item:hover
         box-shadow var(--sco-shadow-lightblack) !important
@@ -436,6 +452,7 @@ button.el-button.tk-cancel.el-button--default.el-button--small
   &.OwO-open
     .OwO-body
       animation .3s ease .1s 1 normal both running donate_effcet
+
   .OwO-body
     .OwO-bar
       .OwO-packages
@@ -443,6 +460,7 @@ button.el-button.tk-cancel.el-button--default.el-button--small
           margin-right 0 !important
           height 48px
           transition .3s
+
         li:hover
           transition .3s
 
@@ -456,9 +474,11 @@ button.el-button.tk-cancel.el-button--default.el-button--small
       .OwO-packages
         .OwO-package-active
           background var(--sco-secondbg) !important
+
     .OwO-items-show
       margin 12px 8px !important
       min-height 197px
+
     .OwO-bar
       .OwO-packages
         li
@@ -478,6 +498,7 @@ button.el-button.tk-cancel.el-button--default.el-button--small
   overflow hidden
   animation owoIn .3s cubic-bezier(.42, 0, .3, 1.11)
   padding 1rem
+
   img
     width 100%
 

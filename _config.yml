@@ -68,10 +68,6 @@ nav:
     random: false        # 随机文章跳转
     console: false       #控制台
 
-# 自定义icon
-icon:
-  customicon:
-
 # 首页顶部样式
 hometop:
   banner:
@@ -183,6 +179,15 @@ aside:
   toc:
     post: true # 在文章页显示
     page: false # 在任意页显示
+
+  tags:
+    enable: true # 是否显示标签
+    highlight: true # 高亮显示
+    list: # 高亮显示标签列表
+      - 'Solitude-使用'
+
+  archive:
+    enable: true # 是否显示归档
 
   # 建站信息
   siteinfo:
@@ -384,6 +389,9 @@ related_post:
   date_type: created # 根据创建日期（created）或是更新日期（updated）
 
 # rightmenu(右键菜单)
+
+rightmenu:
+  enable: false
 
 # 站点验证
 verify:

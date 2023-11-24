@@ -25,22 +25,20 @@
   > div:first-child
     width calc(100% - 300px)
 
-  > #post,#category,#tag
+  > div:first-child:not(.recent-posts)
     box-shadow var(--sco-shadow-border)
     padding 1rem 2rem
     border-radius 12px
-    background var(--sco-card-bg)
-    border var(--style-border)
     width calc(100% - 300px)
+    background: var(--sco-card-bg);
+    border: var(--style-border);
     align-self flex-start
     animation slide-in .6s .1s backwards
     position relative
     overflow hidden
 
-    &:hover
-      box-shadow var(--sco-shadow-border-hover)
   > #page
-    padding: 1rem 2rem;
+    padding: 0;
     width: calc(100% - 300px);
     align-self: flex-start;
     animation: slide-in 0.6s 0.1s backwards;
@@ -76,7 +74,7 @@
 +maxWidth768()
   .post
     .layout
-      > #post,#page
+      > #post, #page
         border-radius 12px 12px 0 0
 
       &#content-inner
@@ -84,7 +82,7 @@
 
   .page
     .layout
-      > #post,#page
+      > #post, #page
         border-radius: 12px 12px 0 0
 
       &#content-inner

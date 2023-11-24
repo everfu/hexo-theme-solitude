@@ -736,8 +736,8 @@ let sco = {
 
         const isTagPage = /\/tags\/.*?\//.test(decodedPath);
         if (isTagPage) {
-            const tag = decodedPath.split("/")[2];
-            console.log(tag);
+            const tag = decodedPath.split("/").slice(-2, -1)[0];
+            console.log(tag)
 
             const tagPageTagsElement = document.getElementById("#tag-page-tags");
             if (tagPageTagsElement) {
@@ -749,7 +749,6 @@ let sco = {
                 const tagElement = document.getElementById(tag);
                 if (tagElement) {
                     tagElement.classList.add("select");
-                    tagElement.style.order = "-1";
                 }
             }
         }
@@ -757,7 +756,7 @@ let sco = {
     /**
      * categoryBarActive
      */
-    categoriesBarActive: function() {
+    categoriesBarActive: function () {
         const categoryBar = document.querySelector("#category-bar");
         const currentPath = window.location.pathname;
         const decodedPath = decodeURIComponent(currentPath);
@@ -776,15 +775,88 @@ let sco = {
             }
         } else {
             if (/\/categories\/.*?\//.test(decodedPath)) {
-                const category = decodedPath.split("/")[2];
+                let category = decodedPath.split("/").slice(-2, -1)[0];
+                category = category.charAt(0).toUpperCase() + category.slice(1);
                 if (categoryBar) {
                     const categoryItem = document.getElementById(category);
                     if (categoryItem) {
                         categoryItem.classList.add("select");
-                        categoryItem.style.order = "-1";
                     }
                 }
             }
+        }
+    },
+    /**
+     * categoryBarRightButton
+     */
+    scrollCategoryBarToRight: function () {
+        // 定义一个变量用于存储 setTimeout 返回的 ID
+        let timeoutId;
+
+        // 获取滚动条元素和下一个元素
+        let scrollBar = document.getElementById("category-bar-items");
+        let nextElement = document.getElementById("category-bar-next");
+
+        // 获取滚动条元素的宽度
+        let scrollBarWidth = scrollBar.clientWidth;
+
+        // 检查滚动条是否存在
+        if (scrollBar) {
+            // 如果滚动条的滚动位置加上其宽度大于或等于其滚动宽度（减去8，可能是为了留出一些边距），
+            // 则将其滚动位置设置为0（即滚动到最左端）。
+            // 否则，将其滚动位置向右移动其宽度的距离（即滚动一个元素的宽度）。
+            if (scrollBar.scrollLeft + scrollBar.clientWidth >= scrollBar.scrollWidth - 8) {
+                scrollBar.scroll({
+                    left: 0,
+                    behavior: "smooth"
+                });
+            } else {
+                scrollBar.scrollBy({
+                    left: scrollBarWidth,
+                    behavior: "smooth"
+                });
+            }
+
+            // 为滚动条添加一个滚动事件监听器
+            scrollBar.addEventListener("scroll", function onScroll() {
+                // 清除之前的定时器
+                clearTimeout(timeoutId);
+
+                // 启动一个新的定时器，在150毫秒后执行以下操作：
+                timeoutId = setTimeout(function () {
+                    // 如果滚动条的滚动位置加上其宽度大于或等于其滚动宽度（减去8），
+                    // 则将下一个元素的 transform 样式设置为 "rotate(180deg)"（即旋转180度）。
+                    // 否则，清除下一个元素的 transform 样式。
+                    if (scrollBar.scrollLeft + scrollBar.clientWidth >= scrollBar.scrollWidth - 8) {
+                        nextElement.style.transform = "rotate(180deg)";
+                    } else {
+                        nextElement.style.transform = "";
+                    }
+
+                    // 移除滚动条的滚动事件监听器
+                    scrollBar.removeEventListener("scroll", onScroll);
+                }, 150);
+            });
+        }
+    },
+    /**
+     * 打开侧边栏标签隐藏
+     */
+    openAllTags: function () {
+        // 获取所有的 ".card-allinfo .card-tag-cloud" 元素
+        let tagCloudElements = document.querySelectorAll(".card-allinfo .card-tag-cloud");
+
+        // 遍历这些元素，为每个元素添加 "all-tags" 类
+        tagCloudElements.forEach(function (tagCloudElement) {
+            tagCloudElement.classList.add("all-tags");
+        });
+
+        // 获取 "more-tags-btn" 元素
+        let moreTagsButton = document.getElementById("more-tags-btn");
+
+        // 如果 "more-tags-btn" 元素存在，那么移除它
+        if (moreTagsButton) {
+            moreTagsButton.parentNode.removeChild(moreTagsButton);
         }
     }
 }
@@ -905,7 +977,7 @@ window.refreshFn = () => {
     sco.setTimeState()
     sco.tagPageActive()
     sco.categoriesBarActive()
-    addRightMenuClickEvent()
+    GLOBALCONFIG.rightmenu.enable && addRightMenuClickEvent()
     GLOBALCONFIG.lazyload.enable && sco.lazyloadImg()
     GLOBALCONFIG.lightbox && sco.lightbox('')
     GLOBALCONFIG.randomlinks && randomLinksList()
