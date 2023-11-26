@@ -9,6 +9,10 @@ if theme.verify.google
 if theme.loading.pace
     script(src=cdn.pace, data-pace-options='{ &quot;restartOnRequestAfter&quot;:false,&quot;eventLag&quot;:false}')
 
+// pwa
+if theme.pwa.enable
+    include ../head/pwa.pug
+
 link(rel="stylesheet", href=cdn.scoicon)
 link(rel="stylesheet", href=cdn.snackbarcss)
 
