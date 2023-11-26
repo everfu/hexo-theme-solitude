@@ -13,12 +13,6 @@ if theme.rightside.enable
     include ../widgets/rightside/index.pug
     script(src='/js/rightside.js')
 
-if theme.comment.enable
-    script(src='/js/extend/console/comment.js')
-
-    if theme.comment.type === 'twikoo'
-        script(src='/js/commentBarrage.js')
-
 div#js-pjax
     if page.type === 'says'
         script(src=url_for(cdn.waterfalljs))
@@ -57,6 +51,12 @@ if page.katex
 
 if theme.aside.welcome.enable
     script(src='/js/txmap.js')
+
+if theme.comment.enable
+    script(src='/js/extend/console/comment.js')
+
+    if theme.comment.type === 'twikoo'
+        script(src='/js/commentBarrage.js')
 
 // pjax
 include ../widgets/third-party/pjax.pug

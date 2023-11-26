@@ -1037,7 +1037,7 @@ window.refreshFn = () => {
     sco.initConsoleState()
     if (document.getElementById('history-baidu')) sco.card_history() // 那年今日
     if (document.getElementById('welcome-info')) sco.card_welcome() // 个性定位
-    if (GLOBAL_CONFIG.comment.type === "twikoo") initializeCommentBarrage() // 热评
+    if (GLOBAL_CONFIG.comment.type === "twikoo" && PAGE_CONFIG.comment) initializeCommentBarrage() // 热评
 }
 
 sco.initTheme()
