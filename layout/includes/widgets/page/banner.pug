@@ -1,0 +1,14 @@
+.author-content.author-content-item.single.nolazyload(style=`background: url(${page.cover}) no-repeat center; background-size: cover;`,class=`${pageClass}`)
+    .card-content
+        .author-content-item-tips= page.title
+        span.author-content-item-title= page.desc
+        .content-bottom
+            if (page.leftend)
+                .tips!= page.leftend
+            if(page.rightend)
+                .tips!= page.rightend
+        if page.rightbtn
+            .banner-button-group
+                a.banner-button(onclick="pjax.loadUrl(\"" + page.rightbtnlink + "\")", data-pjax-state)
+                    i.scoicon.sco-right-btn-fill
+                    span.banner-button-text= page.rightbtn

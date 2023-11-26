@@ -1,0 +1,16 @@
+extends includes/layout.pug
+
+block content
+  main.layout#content-inner
+    div#category
+      div#category-bar
+        div.category-bar-items#category-bar-items
+          include includes/widgets/home/categoryBar
+      div.recent-posts#recent-posts
+        - const currentCategory = page.category
+        each post in site.posts.data
+          each category in post.categories.data
+            if category.name === currentCategory
+              include includes/widgets/home/postList
+      include includes/mixins/pagination
+    include includes/widgets/aside/aside

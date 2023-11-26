@@ -23,15 +23,15 @@ if hexo-config('thirdparty.comment.enable')
 @import '_extra/console.styl'
 
 // rightmenu
-if hexo-config('rightmenu')
+if hexo-config('rightside.enable')
   @import '_extra/rightmenu.styl'
 
 // search
-if hexo-config('thirdparty.search.algolia_search.enable')
-  @import '_search/algolia-search'
-
-if hexo-config('thirdparty.search.local_search.enable')
-  @import '_search/local-search'
+if hexo-config('thirdparty.search.enable')
+  if hexo-config('thirdparty.search.type') == 'algolia'
+    @import '_search/algolia-search'
+  else if hexo-config('thirdparty.search.type') == 'local'
+    @import '_search/local-search'
 
 // dark
 @import '_mode/*'

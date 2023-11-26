@@ -1,0 +1,35 @@
+doctype html
+html(lang=config.language, data-theme="light")
+    head
+        include ./head.pug
+    body(id="body")
+        // loading
+        if theme.loading.fullpage
+            include ./loading.pug
+
+        // console
+        include ./console.pug
+
+        // sidebar
+        include ./sidebar.pug
+
+        if(page.type !== '404')
+            div(class = is_post() ? 'post' : 'page', id="body-wrap")
+                include ./header.pug
+
+                block content
+
+                footer#footer
+                    include ./footer.pug
+        else
+            div.error#body-wrap
+                block content
+
+        // inject body
+        include ./inject/body.pug
+
+        // search
+        include ./widgets/third-party/search/index.pug
+
+        // music
+        include ./widgets/third-party/music.pug

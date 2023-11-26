@@ -1,0 +1,22 @@
+if theme.says.enable === false
+    include not_configured
+else
+    - var pageClass = "essayPage"
+    include ../widgets/page/banner
+    #bber
+        section.timeline.page-1
+            ul.list#waterfall
+                - var limitedList = site.data.essay.essay_list.slice(0, 30)
+                each item in limitedList
+                    li.item
+                        if theme.says.style === 2
+                            include ../widgets/page/says/saysMeta
+                        include ../widgets/page/says/saysContent
+                        include ../widgets/page/says/saysFunction
+                        if theme.says.style === 1
+                            hr
+                            include ../widgets/page/says/saysBottom
+    #bber-tips(style="color: var(--sco-secondtext);") - 只展示最近30条短文 -
+
+script.
+    sco.reflashEssayWaterFall()

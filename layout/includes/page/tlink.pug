@@ -1,0 +1,9 @@
+- var pageClass = "essayPage"
+include ../widgets/page/banner
+.flink#article-container
+    each data in site.data.tlink.links
+        h2= data.class_name
+        .flink-desc= data.descr
+        include ../widgets/page/links/linksItem
+
+    != page.content

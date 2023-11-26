@@ -44,7 +44,7 @@ class search{
   }
 
   static search(){
-    if (!GLOBALCONFIG.localsearch.preload && dataObj === null) dataObj = this.fetchData(GLOBALCONFIG.localsearch.path)
+    if (!GLOBAL_CONFIG.localsearch.preload && dataObj === null) dataObj = this.fetchData(GLOBAL_CONFIG.localsearch.path)
     $input.addEventListener('input', function type() {
       const keywords = this.value.trim().toLowerCase().split(/[\s]+/)
       if (keywords[0] !== '') $loadingStatus.innerHTML = '<i class="scoicon sco-loading-line"></i><span>加载中</span>'
@@ -61,7 +61,7 @@ class search{
           let isMatch = true
           let dataTitle = data.title ? data.title.trim().toLowerCase() : ''
           const dataContent = data.content ? data.content.trim().replace(/<[^>]+>/g, '').toLowerCase() : ''
-          const dataUrl = data.url.startsWith('/') ? data.url : GLOBALCONFIG.root + data.url
+          const dataUrl = data.url.startsWith('/') ? data.url : GLOBAL_CONFIG.root + data.url
           let indexTitle = -1
           let indexContent = -1
           let firstOccur = -1
@@ -128,9 +128,9 @@ class search{
           }
         })
         if (count === 0) {
-          str += `<div id="search__hits-empty">${GLOBALCONFIG.lang.search.empty}</div>`
+          str += `<div id="search__hits-empty">${GLOBAL_CONFIG.lang.search.empty}</div>`
         }else{
-          str += `<div class="search__hits-count">${GLOBALCONFIG.lang.search.hit.replace('${query}', '<span class="search-keyword">' + count + '</span>')}</div>`
+          str += `<div class="search__hits-count">${GLOBAL_CONFIG.lang.search.hit.replace('${query}', '<span class="search-keyword">' + count + '</span>')}</div>`
         }
         str += '</div>'
         $resultContent.innerHTML = str
@@ -141,8 +141,8 @@ class search{
 }
 
 const searchClickFn = () => {
-  document.querySelector('#search-button > .search').addEventListener('click', search.openSearch)
-  GLOBALCONFIG.rightmenu.enable && document.getElementById('menu-search').addEventListener('click', function() {
+  if (PAGE_CONFIG.page !== "404") document.querySelector('#search-button > .search').addEventListener('click', search.openSearch)
+  GLOBAL_CONFIG.rightmenu.enable && document.getElementById('menu-search').addEventListener('click', function() {
     rm.hideRightMenu();
     search.openSearch();
     let t = document.getElementsByClassName('search-box-input')[0];
@@ -158,7 +158,7 @@ const searchClickFn = () => {
 const searchClickFnOnce = () => {
   document.querySelector('#local-search .search-close-button').addEventListener('click', search.closeSearch)
   $searchMask.addEventListener('click', search.closeSearch)
-  if (GLOBALCONFIG.localsearch.preload) dataObj = search.fetchData(GLOBALCONFIG.localsearch.path)
+  if (GLOBAL_CONFIG.localsearch.preload) dataObj = search.fetchData(GLOBAL_CONFIG.localsearch.path)
 }
 
 window.addEventListener('load', () => {

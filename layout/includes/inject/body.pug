@@ -1,0 +1,67 @@
+- cdn = theme.cdn.body
+
+script(src=url_for(cdn.pjaxjs))
+if theme.lazyload.enable
+    script(src=url_for(cdn.lazyloadjs))
+script(src=url_for(cdn.snackbarjs))
+if theme.lightbox
+    script(src=url_for(cdn.viewimagejs))
+if theme.says.home_mini || theme.aside.history.enable
+    script(src=url_for(cdn.swiperjs))
+
+if theme.rightside.enable
+    include ../widgets/rightside/index.pug
+    script(src='/js/rightside.js')
+
+if theme.comment.enable
+    script(src='/js/extend/console/comment.js')
+
+    if theme.comment.type === 'twikoo'
+        script(src='/js/commentBarrage.js')
+
+div#js-pjax
+    if page.type === 'says'
+        script(src=url_for(cdn.waterfalljs))
+        script.
+            window.addEventListener('resize', utils.throttle(function () {
+                if (document.getElementById('waterfall')) {
+                    sco.reflashEssayWaterFall();
+                }
+            }), 500);
+    if theme.thirdparty.busuanzi && (theme.aside.siteinfo.uv || theme.aside.siteinfo.pv || theme.thirdparty.busuanzi.usecomment === false)
+        script(async src=url_for(cdn.busuanzijs))
+
+    script#config-diff.
+        var PAGE_CONFIG = {
+            is_post: !{is_post()},
+            is_page: !{is_page()},
+            is_home: !{is_home()},
+            page: '!{page.type || 'default'}',
+            toc: !{!!page.toc},
+            comment: !{!!page.comment},
+        }
+if theme.thirdparty.aplayer.enable
+    script(src=url_for(cdn.aplayerjs))
+    script(src=url_for(cdn.metingjs))
+    script.
+        const meting_api = '!{theme.thirdparty.aplayer.api}';
+
+if theme.post.covercolor
+    script(src='/js/extend/covercolor/local.js')
+
+include ../widgets/randomlink.pug
+
+if page.katex
+    link(rel="stylesheet", href=url_for(cdn.katexcss))
+    script(src=url_for(cdn.katexjs))
+
+if theme.aside.welcome.enable
+    script(src='/js/txmap.js')
+
+// pjax
+include ../widgets/third-party/pjax.pug
+
+// inject custom body
+if theme.extends.body
+    each item in theme.extends.body
+        item

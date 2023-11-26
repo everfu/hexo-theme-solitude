@@ -19,7 +19,7 @@ const getComment = () => {
 
     const runTwikoo = () => {
         twikoo.getRecentComments({
-            envId: GLOBALCONFIG.comment.twikooUrl,
+            envId: GLOBAL_CONFIG.comment.twikoo.url,
             region: '',
             pageSize: 6,
             includeReply: true

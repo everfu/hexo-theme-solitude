@@ -152,7 +152,7 @@ const showTodayCard = () => {
  * 修改时间格式
  */
 const changeTimeFormat = () => {
-    const timeElements = document.getElementsByTagName("time"), lang = GLOBALCONFIG.lang.time
+    const timeElements = document.getElementsByTagName("time"), lang = GLOBAL_CONFIG.lang.time
     for (let i = 0; i < timeElements.length; i++) {
         const datetime = timeElements[i].getAttribute("datetime"), timeObj = new Date(datetime),
             daysDiff = utils.timeDiff(timeObj, new Date())
@@ -444,12 +444,12 @@ let sco = {
         if (nowMode === 'light') {
             document.documentElement.setAttribute('data-theme', 'dark')
             saveToLocal.set('theme', 'dark', 0.04);
-            utils.snackbarShow(GLOBALCONFIG.lang.theme.dark, false, 2000)
+            utils.snackbarShow(GLOBAL_CONFIG.lang.theme.dark, false, 2000)
             document.querySelector(".menu-darkmode-text").textContent = "深色模式";
         } else {
             document.documentElement.setAttribute('data-theme', 'light')
             saveToLocal.set('theme', 'light', 0.04);
-            utils.snackbarShow(GLOBALCONFIG.lang.theme.light, false, 2000)
+            utils.snackbarShow(GLOBAL_CONFIG.lang.theme.light, false, 2000)
             document.querySelector(".menu-darkmode-text").textContent = "浅色模式";
         }
     },
@@ -525,8 +525,8 @@ let sco = {
      */
     addRuntime: function () {
         let el = document.getElementById('runtimeshow')
-        if (el && GLOBALCONFIG.runtime) {
-            el.innerText = utils.timeDiff(new Date(GLOBALCONFIG.runtime), new Date()) + GLOBALCONFIG.lang.time.runtime
+        if (el && GLOBAL_CONFIG.runtime) {
+            el.innerText = utils.timeDiff(new Date(GLOBAL_CONFIG.runtime), new Date()) + GLOBAL_CONFIG.lang.time.runtime
         }
     },
     /**
@@ -538,7 +538,7 @@ let sco = {
             threshold: 0,
             data_src: 'lazy-src',
             callback_error: (img) => {
-                img.setAttribute("src", GLOBALCONFIG.lazyload.error);
+                img.setAttribute("src", GLOBAL_CONFIG.lazyload.error);
             }
         })
     },
@@ -711,7 +711,7 @@ let sco = {
         if (el) {
             const timeNow = new Date();
             const hours = timeNow.getHours();
-            const lang = GLOBALCONFIG.lang.sayhello;
+            const lang = GLOBAL_CONFIG.lang.sayhello;
             const greetings = [
                 {start: 0, end: 5, text: lang.goodnight},
                 {start: 6, end: 10, text: lang.morning},
@@ -737,7 +737,6 @@ let sco = {
         const isTagPage = /\/tags\/.*?\//.test(decodedPath);
         if (isTagPage) {
             const tag = decodedPath.split("/").slice(-2, -1)[0];
-            console.log(tag)
 
             const tagPageTagsElement = document.getElementById("#tag-page-tags");
             if (tagPageTagsElement) {
@@ -858,6 +857,45 @@ let sco = {
         if (moreTagsButton) {
             moreTagsButton.parentNode.removeChild(moreTagsButton);
         }
+    },
+    /**
+     * 监听底部分页输入框
+     */
+    listenToPageInputPress: function () {
+        const pageText = document.getElementById("toPageText");
+        const pageButton = document.getElementById("toPageButton");
+
+        if (!pageText) return;
+
+        const pageNumbers = document.querySelectorAll(".page-number");
+        const lastPageNumber = +pageNumbers[pageNumbers.length - 1].textContent;
+
+        if (lastPageNumber === 1) {
+            const toPageGroup = document.querySelector(".toPageGroup");
+            if (toPageGroup) toPageGroup.remove();
+        }
+
+        pageText.addEventListener("keydown", (event) => {
+            if (event.keyCode === 13) {
+                heo.toPage();
+                pjax.loadUrl(pageButton.href);
+            }
+        });
+
+        pageText.addEventListener("input", () => {
+            if (pageText.value === "" || pageText.value === "0") {
+                pageButton.classList.remove("haveValue");
+            } else {
+                pageButton.classList.add("haveValue");
+            }
+
+            const pageNumbers = document.querySelectorAll(".page-number");
+            const lastPageNumber = +pageNumbers[pageNumbers.length - 1].textContent;
+
+            if (+pageText.value > lastPageNumber) {
+                pageText.value = lastPageNumber;
+            }
+        });
     }
 }
 
@@ -903,8 +941,8 @@ class hightlight {
         fragment.appendChild(hlTools)
         const itemHeight = item.clientHeight, $table = item.querySelector('table'),
             $expand = item.getElementsByClassName('code-expand-btn')
-        if (GLOBALCONFIG.hightlight.limit && itemHeight > GLOBALCONFIG.hightlight.limit + 30) {
-            $table.setAttribute('style', `height: ${GLOBALCONFIG.hightlight.limit}px`)
+        if (GLOBAL_CONFIG.hightlight.limit && itemHeight > GLOBAL_CONFIG.hightlight.limit + 30) {
+            $table.setAttribute('style', `height: ${GLOBAL_CONFIG.hightlight.limit}px`)
             ele.className = 'code-expand-btn'
             ele.innerHTML = '<i class="scoicon sco-show-line" style="font-size: 1.2rem"></i>'
             ele.addEventListener('click', (e) => {
@@ -964,10 +1002,10 @@ class tabs {
 }
 
 window.refreshFn = () => {
+    if (PAGE_CONFIG.page === "404") return;
     initAdjust()
     scrollFn()
     sidebarFn()
-    GLOBALCONFIG.comment.enable && newestCommentInit()
     changeTimeFormat()
     initObserver()
     sco.addRuntime()
@@ -977,29 +1015,29 @@ window.refreshFn = () => {
     sco.setTimeState()
     sco.tagPageActive()
     sco.categoriesBarActive()
-    GLOBALCONFIG.rightmenu.enable && addRightMenuClickEvent()
-    GLOBALCONFIG.lazyload.enable && sco.lazyloadImg()
-    GLOBALCONFIG.lightbox && sco.lightbox('')
-    GLOBALCONFIG.randomlinks && randomLinksList()
-    PAGECONFIG.toc && toc.init()
-    if (PAGECONFIG.is_post || PAGECONFIG.is_page) {
-        GLOBALCONFIG.hightlight.enable && hightlight.init()
+    sco.listenToPageInputPress()
+    GLOBAL_CONFIG.rightside.enable && addRightMenuClickEvent()
+    GLOBAL_CONFIG.lazyload.enable && sco.lazyloadImg()
+    GLOBAL_CONFIG.lightbox && sco.lightbox('')
+    GLOBAL_CONFIG.randomlinks && randomLinksList()
+    if (PAGE_CONFIG.comment) {
+        newestCommentInit()
+        initComment()
+    }
+    PAGE_CONFIG.toc && toc.init()
+    if (PAGE_CONFIG.is_post || PAGE_CONFIG.is_page) {
+        GLOBAL_CONFIG.hightlight.enable && hightlight.init()
         tabs.init()
     }
-    PAGECONFIG.comment && initComment()
-    if (PAGECONFIG.is_home) {
+    if (PAGE_CONFIG.is_home) {
         showTodayCard()
         sco.initbbtalk()
     }
-    if (PAGECONFIG.is_page && PAGECONFIG.page === 'says') sco.reflashEssayWaterFall()
-    if (PAGECONFIG.is_page) {
-        if (document.getElementById('album_detail')) sco.reflashEssayWaterFall()
-    }
-    GLOBALCONFIG.covercolor && coverColor();
+    GLOBAL_CONFIG.covercolor && coverColor();
     sco.initConsoleState()
     if (document.getElementById('history-baidu')) sco.card_history() // 那年今日
     if (document.getElementById('welcome-info')) sco.card_welcome() // 个性定位
-    if (GLOBALCONFIG.comment.enable) initializeCommentBarrage() // 热评
+    if (GLOBAL_CONFIG.comment.type === "twikoo") initializeCommentBarrage() // 热评
 }
 
 sco.initTheme()

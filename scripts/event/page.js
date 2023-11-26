@@ -38,3 +38,17 @@ hexo.extend.generator.register('categories', function(locals) {
     }
   };
 });
+
+// generate echarts Page
+hexo.extend.generator.register('echarts', function(locals) {
+  if(!this.theme.config.about.echarts && !this.theme.config.about.enable)return
+  return {
+    path: 'echart/index.html',
+    layout: ['page'],
+    data: {
+      title: '博客统计',
+      type: 'echarts',
+      comment: false
+    }
+  };
+});

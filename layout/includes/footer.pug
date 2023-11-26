@@ -1,0 +1,71 @@
+div#sco-footer-bar
+    div.footer-logo
+        if theme.site.name.class === 'i_class'
+            i.scoicon(class=theme.site.name.custom, style="font-size: 1rem")
+        else if theme.site.name.class === 'img'
+            i.scoicon(style="background-image: url(" + url_for(theme.site.name.custom) + ")")
+        else if theme.site.name.class === 'text'
+            span.scoicon= theme.site.name.custom
+    div.footer-bar-description= "来自" + config.title + " - " + config.subtitle + "的文章"
+    a.footer-bar-link(href="/", data-pjax-state)= "了解更多"
+div#footer_deal
+    - var leftInfo = theme.footer && theme.footer.information && theme.footer.information.left ? theme.footer.information.left : {}
+    - var rightInfo = theme.footer && theme.footer.information && theme.footer.information.right ? theme.footer.information.right : {}
+
+    each value, i in leftInfo
+        a.deal_link(href=url_for(value.url), rel="external nofollow", title=i)
+            i(class=value.icon)
+
+    img.footer_mini_logo(src=theme.site.icon, title="返回顶部", onclick="sco.toTop()")
+
+    each value, i in rightInfo
+        a.deal_link(href=url_for(value.url), rel="external nofollow", title=i)
+            i(class=value.icon)
+div#sco-footer
+    - var group = theme.footer && theme.footer.group ? theme.footer.group : {}
+
+    each value, x in group
+        div.footer-group
+            h3.footer-title= x
+            div.footer-links
+                each url, y in value
+                    a.footer-item(href=url_for(url), title=y, rel="noopener external nofollow noreferrer")= y
+
+    if theme.footer && theme.footer.randomlink
+        div.footer-group
+            div.footer-title-group
+                h3.footer-title 友链
+                a.random-friends-btn(href="javascript:randomLinksList();", rel="external nofollow")
+                    i.scoicon.sco-refresh-line
+            div.footer-links#friend-links-in-footer
+div#footer-bar
+    div.footer-bar-links
+        div.footer-bar-left
+            div#footer-bar-tips
+                if moment(theme.aside.siteinfo.runtime).year() === new Date().getFullYear()
+                    div.copyright © #{moment(theme.aside.siteinfo.runtime).year()} By&nbsp;
+                        a.footer-bar-link(href="/", rel="external nofollow")= config.author
+                else
+                    div.copyright © #{moment(theme.aside.siteinfo.runtime).year()} - #{new Date().getFullYear()} By&nbsp;
+                        a.footer-bar-link(href="/", rel="external nofollow")= config.author
+        div.footer-bar-right
+            if theme.footer && theme.footer.rss && theme.footer.rss.enable
+                a.footer-bar-link(href="/rss/", rel="external nofollow", target="_self") 订阅
+            a.footer-bar-link(href="https://github.com/DuoSco/hexo-theme-solitude", rel="external nofollow", target="_self") 主题
+            if theme.site && theme.site.icp
+                a.footer-bar-link(href="https://beian.miit.gov.cn/#/Integrated/index", target="_blank", rel="noopener external nofollow noreferrer noopener")= theme.site.icp
+            a.footer-bar-link.cc(href=theme.footer.license.url, target="_self", rel="external nofollow")
+                i.scoicon.sco-copyright-line
+                i.scoicon.sco-creative-commons-by-line
+                i.scoicon.sco-creative-commons-nc-line
+                i.scoicon.sco-creative-commons-nd-line
+div.needEndHide#cookies-window
+    div.cookies-window-title 协议提醒助手
+    div.cookies-window-content
+        span.cookies-tip 查看本站为你的个人隐私做出的努力
+        a.cookies-link(href="/privacy/", title="本站如何保护你的隐私", data-pjax-state="")
+            i.scoicon.sco-arrow-right-circle-fill
+if theme.post.award.enable
+    div#quit-box(onclick="RemoveRewardMask()", style="display=none")
+if theme.comment.enable
+    div.comment-barrage

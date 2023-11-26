@@ -1,0 +1,8 @@
+nav#pagination
+    div.pagination
+        - var options = {mid_size: 1,escape: false,next_text: '<div class="pagination_tips_next">下页</div> <i class="scoicon sco-arrow-right-bold"></i>',prev_text: '<i class="scoicon sco-arrow-left-bold"></i> <div class="pagination_tips_prev">上页</div>'}
+        !=paginator(options)
+        div.toPageGroup
+            input#toPageText(oninput="value=value.replace(/[^0-9]/g,'')", maxlength="3", title="跳转到指定页面", onkeyup="if (this.value === '0') this.value = ''")
+            a#toPageButton(onclick="sco.toPage()", data-pjax-state="")
+                i.scoicon.sco-show-right-line

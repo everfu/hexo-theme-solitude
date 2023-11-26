@@ -1,0 +1,6 @@
+#bber-content
+    p.datacont= item.content
+    if item.image
+        .bber-content-img
+            each img in item.image
+                img(src=img title="即刻短文配图")

@@ -1,0 +1,28 @@
+if theme.aside.welcome.enable
+    style.
+        #welcome-info {
+            overflow: hidden;
+            margin-top: 4px;
+        }
+        #welcome-info .welcome-time {
+            width: 100%;
+            margin: 12px 0 0;
+            display: inline-flex;
+        }
+        #welcome-info .welcome-message {
+            width: 100%;
+            margin-bottom: 8px;
+            display: inline-flex;
+        }
+
+    .card-widget.card-welcome
+        .item-headline
+            i(class=theme.aside.welcome.icon || 'scoicon sco-map-pin-fill')
+            span= theme.aside.welcome.title || '来访者'
+        #welcome-info
+
+    script(data-pjax).
+        var longitude = '#{theme.aside.welcome.longitude}';
+        var Latitude = '#{theme.aside.welcome.Latitude}';
+        var txkey = '#{theme.aside.welcome.key}';
+        var ipLoacation;

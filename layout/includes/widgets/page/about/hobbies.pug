@@ -1,0 +1,33 @@
+.author-content
+    if site.data.about.game1
+        .author-content-item.game-apex(style=`background: url(${site.data.about.game1.img}) no-repeat top; background-size: cover;`)
+            .card-content
+                .author-content-item-tips= site.data.about.game1.title
+                span.author-content-item-title= site.data.about.game1.subtitle
+                .content-bottom
+                    .tips= site.data.about.game1.tips_left
+                    .tips= site.data.about.game1.tips_right
+    if site.data.about.game2
+        .author-content-item.game-jl(style=`background: url(${site.data.about.game2.img}) no-repeat top; background-size: cover;`)
+            .card-content
+                .author-content-item-tips= site.data.about.game2.title
+                span.author-content-item-title= site.data.about.game2.subtitle
+                .content-bottom
+                    .tips= site.data.about.game2.tips_left
+                    .tips= site.data.about.game2.tips_right
+
+if site.data.about.likes
+    - const likes = site.data.about.likes
+    .author-content
+        each like in likes
+            .author-content-item(class=like.type, style=`background: url(${like.bg}) no-repeat center;`)
+                .card-content
+                    .author-content-item-tips= like.tips
+                    span.author-content-item-title= like.title
+                    .content-bottom
+                        .tips= like.subtips
+                        if like.button
+                            .banner-button-group
+                                a.banner-button(href=like.button_link, target="_blank", rel="noopener nofollow")
+                                    i.scoicon.sco-right-btn-fill
+                                    span.banner-button-text= like.button_text

@@ -1,0 +1,20 @@
+extends includes/layout.pug
+
+block content
+    div#home_top
+        if(theme.says.home_mini)
+            include ./includes/widgets/home/bbTimeList.pug
+        if(theme.hometop.banner.enable)
+            include ./includes/widgets/home/hometop.pug
+    main(class="layout", id="content-inner")
+        div(class="recent-posts", id="recent-posts")
+            div#category-bar
+                include ./includes/widgets/home/categoryBar.pug
+
+            include ./includes/widgets/home/postList.pug
+
+            // pageination
+            include ./includes/mixins/pagination.pug
+
+        // aside
+        include ./includes/widgets/aside/aside.pug

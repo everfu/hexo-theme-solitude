@@ -1,0 +1,29 @@
+script.
+    async function initComment(){
+        var initOptions = Object.assign(
+            !{JSON.stringify(theme.comment.twikoo || {})},
+            {
+                el: '#comment',
+                onCommentLoaded: function() {
+                    GLOBAL_CONFIG.lightbox && sco.lightbox('#article-container img, #twikoo .tk-content img:not(.tk-owo-emotion)')
+                },
+                lang: '#{theme.comment.twikoo.lang}',
+            }
+        )
+        await twikoo.init(initOptions)
+        if (#{theme.post.meta.comment && is_post()}) {
+            var countOptions = Object.assign(
+                !{JSON.stringify(theme.comment.twikoo || {})},
+                {
+                    urls: [window.location.pathname],
+                    includeReply: false
+                }
+            )
+            const res = await twikoo.getCommentsCount(countOptions)
+            try{
+                document.getElementById('twikoo-count').innerText = res[0].count
+            }catch (e) {
+                document.getElementById('twikoo-count').innerText = '加载错误'
+            }
+        }
+    }

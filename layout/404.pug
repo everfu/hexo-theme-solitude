@@ -1,0 +1,24 @@
+extends includes/layout.pug
+
+block content
+    #error-wrap
+        .error-content
+            .error-img(style='background-image: url(' + url_for(theme.errorpage.img) + ')')
+            .error-info
+                h1.error_title 404
+                .error_subtitle= theme.errorpage.text
+                a.button--animated(href="/")
+                    i.scoicon.sco-external-link
+                    | 回到主页
+
+    if theme.errorpage.recommendList
+        .aside-list
+            .aside-list-group
+                each post, index in site.posts.sort('-date').data
+                    if index >= 5
+                        break
+                    .aside-list-item
+                        a.thumbnail(href=url_for(post.path), title=post.title)
+                            img(src=post.cover, alt=post.title)
+                        .content
+                            a.title(href=url_for(post.path), title=post.title)= post.title

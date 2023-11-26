@@ -1,0 +1,41 @@
+extends includes/layout.pug
+
+block content
+  main.layout#content-inner
+    #post
+      article.post-content#article-container!= page.content
+      include includes/widgets/post/copyright
+      .post-tools-right
+        .tag_share
+          .post-meta__tag-list
+            each data in page.tags.data
+              a(href=url_for(data.path)).post-meta__tags
+                span.tags-punctuation
+                | #{data.name}
+                span.tagsPageCount #{data.length}
+      if site.posts.length > 1
+        include includes/widgets/post/postNav
+      != related_posts(page, site.posts)
+      if page.comment
+        include includes/widgets/third-party/comments/comment
+    include includes/widgets/aside/aside
+    if theme.thirdparty.ai.enable
+      script(data-pjax, defer).
+        new ChucklePostAI({
+          el: '#post #article-container',
+          key: '#{theme.thirdparty.ai.key}',
+          title_el: '.post-title',
+          rec_method: '#{theme.thirdparty.ai.rec_method || 'web'}',
+          interface: {
+            name: "#{theme.thirdparty.ai.ai_name || 'Solitude-AI'}",
+            introduce: "#{theme.thirdparty.ai.ai_introduce || '我是文章辅助AI生成工具: Solitude-AI。你可以点击下方的按钮，让我生成本文简介、推荐相关文章等。'}",
+            version: "#{theme.thirdparty.ai.ai_tips || 'GPT-4'}",
+          },
+          #{theme.thirdparty.ai.hide_shuttle ? 'hide_shuttle: true,' : ''},
+          #{theme.thirdparty.ai.typewriter === false ? 'typewriter: false,' : ''},
+          #{theme.thirdparty.ai.speed !== 20 ? `speed: ${theme.thirdparty.ai.speed},` : ''},
+          #{theme.thirdparty.ai.BlackWhite_List.mode === 'black' ? `eliminate: [${theme.thirdparty.ai.BlackWhite_List.List.map(item => `'${item}'`).join(', ')}],` : ''},
+          #{theme.thirdparty.ai.BlackWhite_List.mode === 'white' ? `whitelist: [${theme.thirdparty.ai.BlackWhite_List.List.map(item => `'${item}'`).join(', ')}],` : ''},
+          #{page.ai_total_length ? `total_length: ${page.total_length},` : ''},
+          #{page.ai_ratio_string ? `ratio_string: "${page.ratio_string}",` : ''}
+        })

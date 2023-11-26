@@ -1,0 +1,54 @@
+div.coverdiv#coverdiv
+    img#post-cover.nolazyload(src=url_for(page.cover), alt=page.title)
+div#post-info
+    div#post-firstinfo
+        div.meta-firstline
+            a.post-meta-original(title="该文章为"+page.cc+"文章，注意版权协议")= page.cc
+            if page.categories.data.length > 0
+                span.post-meta-categories
+                    a.post-meta-categories(href=page.categories.data[0].path)= page.categories.data[0].name
+            div.tag_share
+                div.post-meta__tag-list
+                    each tag in page.tags.data
+                        a.post-meta__tags(href=url_for(tag.path))
+                            span.tags-name.tags-punctuation= tag.name
+    h1.post-title= page.title
+    div#post-meta
+        div.meta-secondline
+            if theme.post.meta.date
+                span.post-meta-date(title="发布于")
+                    i.post-meta-icon.scoicon.sco-calendar-todo-fill
+                    time.datetime=moment(page.date).format()
+            if theme.post.meta.updated
+                span.post-meta-date(title="最后更新于")
+                    i.post-meta-icon.scoicon.sco-refresh-fill
+                    time.datetime=moment(page.updated).format()
+            if theme.thirdparty.wordcount
+                span.post-meta-wordcount
+                    if theme.post.meta.wordcount
+                        i.post-meta-icon.scoicon.sco-word-fill(title="文章字数")
+                        span.word-count= wordcount(page.content)
+                    span.post-meta-separator
+                    if theme.post.meta.readtime
+                        i.post-meta-icon.scoicon.sco-clock-fill(title="阅读耗时")
+                        span= min2read(page.content) + " min"
+            if theme.post.meta.locate
+                span.post-meta-position(title="作者IP归属地为"+page.locate)
+                    i.post-meta-icon.scoicon.sco-map-pin-fill
+                    span= page.locate
+            if theme.thirdparty.busuanzi.enable && theme.post.meta.pv
+                a.post-meta-pv(href=url_for(page.path), title="文章热度")
+                    i.post-meta-icon.scoicon.sco-fire-fill
+                    if theme.thirdparty.busuanzi.usecomment
+                        span#twikoo_visitors
+                            i.scoicon.sco-loading-line
+                    else
+                        span#busuanzi_value_page_pv
+                            i.scoicon.sco-loading-line
+            if theme.post.meta.comment && page.comment
+                span.post-meta-commentcount(title="评论数", onclick="sco.scrollTo('post-comment')")
+                  i.scoicon.sco-chat-fill
+                  a(href=url_for(page.path) + "#post-comment")
+                    span#twikoo-count
+                      i.scoicon.sco-loading-line
+include ./wave

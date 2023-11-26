@@ -1,0 +1,16 @@
+div.banners-title
+    div.banners-title-big!= theme.hometop.banner.title
+    div.banners-title-small= theme.hometop.banner.url
+div.tags-group-all
+    .tags-group-wrapper
+        each i in [1,2]
+            - var keys = Object.keys(theme.hometop.banner.icon)
+            - var pairs = keys.map((val, i) => i % 2 ? [keys[i - 1], val] : []).filter(x => x.length)
+            each pair in pairs
+                .tags-group-icon-pair
+                    each key in pair
+                        .tags-group-icon(style=`background: ${theme.hometop.banner.icon[key].color}`)
+                            img(src=theme.hometop.banner.icon[key].img, title=key)
+a#banner-hover(onclick="toRandomPost()" data-pjax-state="")
+    span.bannerText 随便逛逛
+    i.scoicon.sco-arrow-2-right-line.banner-righticon

@@ -1,0 +1,42 @@
+div#console(style="zoom: 1")
+    div.close-btn(onclick="sco.hideConsole(()", href="javascript:void(0);")
+        i.scoicon.sco-close-fill
+    if theme.thirdparty.consolePlus
+        div.console-card-group
+            div.console-card-group-left
+                div.console-card#card-newest-comments(onclick="sco.hideConsole()")
+                    div.card-content
+                        div.author-content-item-tips= "互动"
+                        div.author-content-item-title= "最新评论"
+                    div.aside-list
+
+            div.console-card-group-right
+                div.console-card.tags(onclick="sco.hideConsole()")
+                    div.card-content
+                        div.author-content-item-tips= "标签"
+                        div.author-content-item-title= "寻找感兴趣的领域"
+                    div.card-tag-cloud
+                        each tag in site.tags.data
+                            a(href=url_for(tag.path), style="font-size: 0.8rem; color: #d3d3d3")= tag.name
+                                sup= tag.length
+
+                div.console-card.history(onclick="sco.hideConsole()")
+                    include ./widgets/aside/asideArchive.pug
+
+    div.button-group
+        div.console-btn-item
+            a.darkmode_switchbutton(onclick="sco.switchDarkMode()", title="昼夜切换", href="javascript:void(0);" rel="nofollow" data-pjax-state)
+                i.scoicon.sco-moon-clear-fill(style="font-size: 1rem;")
+        div.console-btn-item#consoleHideAside
+            a.asideSwitch(onclick="sco.switchHideAside()", title="边栏显示控制", href="javascript:void(0);" rel="nofollow" data-pjax-state)
+                i.scoicon.sco-side-bar-fill(style="font-size: 1rem;")
+        if theme.thirdparty.aplayer.enable
+            div.console-btn-item#consoleMusic(onclick="sco.musicToggle()")
+                a.music-switch(title="音乐开关")
+                    i.scoicon.sco-disc-fill(style="font-size: 1rem;")
+
+        if theme.comment.enable
+            div.console-btn-item.on#consoleCommentBarrage(onclick="sco.switchCommentBarrage()")
+                a.commentBarrage
+                    i.scoicon.sco-chat-fill(style="font-size: 1rem;")
+    div.console-mask(onclick="sco.hideConsole()")

@@ -46,7 +46,7 @@ class search {
     }
 
     static search() {
-        const algolia = GLOBALCONFIG.algolia, that = this
+        const algolia = GLOBAL_CONFIG.algolia, that = this
         const isAlgoliaValid = algolia.appId && algolia.apiKey && algolia.indexName
         if (!isAlgoliaValid) {
             return console.error('Algolia setting is invalid!')
@@ -65,7 +65,7 @@ class search {
             showReset: false,
             showSubmit: false,
             autofocus: true,
-            placeholder: GLOBALCONFIG.lang.search.placeholder,
+            placeholder: GLOBAL_CONFIG.lang.search.placeholder,
             showLoadingIndicator: false
         })
 
@@ -73,7 +73,7 @@ class search {
             container: '#algolia-hits',
             templates: {
                 item(data) {
-                    const link = '/posts/' + data.permalink.split('/')[4]
+                    const link = data.permalink
                     const result = data._highlightResult
                     const content = result.contentStripTruncate
                         ? that.cutContent(result.contentStripTruncate.value)
@@ -90,7 +90,7 @@ class search {
                 },
                 empty: function (data) {
                     return (
-                        `<div id="algolia-hits-empty">${GLOBALCONFIG.lang.search.empty}</div>`
+                        `<div id="algolia-hits-empty">${GLOBAL_CONFIG.lang.search.empty}</div>`
                     )
                 }
             }
@@ -100,7 +100,7 @@ class search {
             container: '.algolia-stats',
             templates: {
                 text: function (data) {
-                    const stats = GLOBALCONFIG.lang.search.hit.replace('${query}', `<mark>${data.nbHits}</mark>`)
+                    const stats = GLOBAL_CONFIG.lang.search.hit.replace('${query}', `<mark>${data.nbHits}</mark>`)
                     return (
                         stats
                     )
@@ -117,8 +117,8 @@ class search {
 }
 
 const searchClickFn = () => {
-    document.querySelector('#search-button > .search').addEventListener('click', search.openSearch)
-    GLOBALCONFIG.rightmenu.enable && document.getElementById('menu-search').addEventListener('click', function() {
+    if (PAGE_CONFIG.page !== "404") document.querySelector('#search-button > .search').addEventListener('click', search.openSearch)
+    GLOBAL_CONFIG.rightside.enable && document.getElementById('menu-search').addEventListener('click', function() {
         rm.hideRightMenu();
         search.openSearch();
         let t = document.getElementsByClassName('ais-search-box--input')[0];

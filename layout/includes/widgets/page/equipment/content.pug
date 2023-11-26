@@ -1,0 +1,23 @@
+#equipment
+    if site.data.equipment
+        each i in site.data.equipment
+            .equipment-item
+                h2.equipment-item-title= i.class_name
+                .equipment-item-description= i.description
+                .equipment-item-content
+                    each item in i.equipment_list
+                        .equipment-item-content-item
+                            .equipment-item-content-item-cover
+                                img.equipment-item-content-item-image(src=item.image, alt=item.name)
+                            .equipment-item-content-item-info
+                                .equipment-item-content-item-name= item.name
+                                .equipment-item-content-item-specification= item.specification
+                                .equipment-item-content-item-description= item.description
+                                if item.link
+                                    .equipment-item-content-item-toolbar
+                                        if item.link.includes('https://') || item.link.includes('http://')
+                                            a.equipment-item-content-item-link(href=item.link, target="_blank") 详情
+                                        else
+                                            a.equipment-item-content-item-link(href=item.link, target="_blank") 查看文章
+                                        a.bber-reply(onclick=`sco.toTalk('${item.description}')`)
+                                            i.scoicon.sco-chat-fill(style="font-size: 1rem;")

@@ -1,0 +1,9 @@
+- var groupNames = ['G1', 'G2', 'G3'];
+- var styles = ['--sco-shadow-blue', '--sco-shadow-red', '--sco-shadow-green'];
+- var classes = ['CB1 bikan', 'remen', 'shiyong'];
+
+each groupName, index in groupNames
+    .categoryItem(style=`box-shadow: var(${styles[index]});`)
+        a.categoryButton(class=classes[index], href=url_for(theme.hometop.categoryGroup[groupName].url))
+            span.categoryButtonText= theme.hometop.categoryGroup[groupName].name
+            i(class=theme.hometop.categoryGroup[groupName].icon)

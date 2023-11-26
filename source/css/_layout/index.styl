@@ -205,3 +205,104 @@
   .needEndHide.hide
     bottom: -200px !important
     opacity: 0
+
+.layout
+  display flex
+  margin 0 auto
+  padding 1rem 1.5rem
+  max-width 1200px
+
+  &#content-inner
+    max-width 1400px
+
+  &.hide-aside
+    max-width 1400px
+
+    > div
+      width 100% !important
+
+  #aside-content
+    +maxWidth768()
+      z-index 2
+      background var(--sco-background)
+      padding 0 1rem
+      display flex
+      flex-direction column
+      width 100%
+
+  > div:first-child
+    width calc(100% - 300px)
+
+  > div:first-child:not(.recent-posts)
+    box-shadow var(--sco-shadow-border)
+    padding 1rem 2rem
+    border-radius 12px
+    width calc(100% - 300px)
+    background: var(--sco-card-bg);
+    border: var(--style-border);
+    align-self flex-start
+    animation slide-in .6s .1s backwards
+    position relative
+    overflow hidden
+
+  > #page
+    padding: 0;
+    width: calc(100% - 300px);
+    align-self: flex-start;
+    animation: slide-in 0.6s 0.1s backwards;
+    position: relative;
+    overflow: hidden;
+
+  +maxWidth768()
+    padding: 0
+
+    > div:first-child:not(.recent-posts)
+      border-radius: 0;
+      padding: 0 1rem !important;
+      box-shadow: none !important;
+      background: var(--sco-background)
+      z-index: 10
+
+  +maxWidth900()
+    flex-direction: column
+
+  +maxWidth1200()
+    > div:first-child
+      width 100% !important
+
+  +minWidth1300()
+    justify-content space-between
+
+  +minWidth2000()
+    max-width 1500px
+
+    &.hide-aside
+      max-width 1300px
+
++maxWidth768()
+  .post
+    .layout
+      > #post, #page
+        border-radius 12px 12px 0 0
+
+      &#content-inner
+        background: var(--sco-main)
+
+  .page
+    .layout
+      > #post, #page
+        border-radius: 12px 12px 0 0
+
+      &#content-inner
+        background: var(--sco-background)
+
++minWidth900()
+  html.hide-aside .layout
+    -webkit-box-pack: center
+    justify-content: center
+
+  html.hide-aside .layout > .aside-content
+    display: none
+
+  html.hide-aside .layout > div:first-child
+    width: 100%

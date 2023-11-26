@@ -144,7 +144,7 @@ function initThemeColor() {
     let themeColor;
     if (currentTop > 0) {
         themeColor = getComputedStyle(document.documentElement).getPropertyValue('--sco-card-bg');
-    } else if (PAGECONFIG.is_post) {
+    } else if (PAGE_CONFIG.is_post) {
         themeColor = getComputedStyle(document.documentElement).getPropertyValue('--sco-main');
     } else {
         themeColor = getComputedStyle(document.documentElement).getPropertyValue('--sco-background');

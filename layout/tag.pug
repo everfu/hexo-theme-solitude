@@ -1,0 +1,19 @@
+extends includes/layout.pug
+
+block content
+  main.layout#content-inner
+    div#tag
+      div#tag-page-tags
+        each tag in site.tags.data
+          a(id=tag.name class=(tag.name === page.tag ? 'select' : '') href=url_for(tag.path))
+            span.tags-punctuation
+            | #{tag.name}
+            span.tagsPageCount #{tag.length}
+      div.recent-posts#recent-posts
+        - const currentTag = page.tag
+        each post in site.posts.data
+          each tag in post.tags.data
+            if tag.name === currentTag
+              include includes/widgets/home/postList
+      include includes/mixins/pagination
+    include includes/widgets/aside/aside

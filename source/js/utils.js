@@ -85,21 +85,18 @@ const utils = {
     copy: async (text) => {
         try {
             await navigator.clipboard.writeText(text)
-            utils.snackbarShow(GLOBALCONFIG.lang.copy.success, false, 2000)
+            utils.snackbarShow(GLOBAL_CONFIG.lang.copy.success, false, 2000)
         } catch (err) {
-            utils.snackbarShow(GLOBALCONFIG.lang.copy.error, false, 2000)
+            utils.snackbarShow(GLOBAL_CONFIG.lang.copy.error, false, 2000)
         }
     },
 
     getEleTop: ele => {
-        let actualTop = ele.offsetTop
-        let current = ele.offsetParent
-
-        while (current !== null) {
-            actualTop += current.offsetTop
-            current = current.offsetParent
+        let actualTop = 0
+        while (ele) {
+            actualTop += ele.offsetTop
+            ele = ele.offsetParent
         }
-
         return actualTop
     },
 
@@ -124,16 +121,12 @@ const utils = {
             return
         }
         let start = null
-        pos = +pos
+        const distance = pos - currentPos
         window.requestAnimationFrame(function step(currentTime) {
             start = !start ? currentTime : start
             const progress = currentTime - start
-            if (currentPos < pos) {
-                window.scrollTo(0, ((pos - currentPos) * progress / time) + currentPos)
-            } else {
-                window.scrollTo(0, currentPos - ((currentPos - pos) * progress / time))
-            }
             if (progress < time) {
+                window.scrollTo(0, currentPos + distance * progress / time)
                 window.requestAnimationFrame(step)
             } else {
                 window.scrollTo(0, pos)
