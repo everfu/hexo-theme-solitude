@@ -19,7 +19,8 @@ for post in page.posts.sort('-date').data
             div.article-meta-wrap
                 span.article-meta.tags
                    each tag in post.tags.data
-                       a(class="article-meta__tags" href=url_for(tag.path), data-pjax-state, onclick="window.event.cancelable=true")= tag.name
+                       a(class="article-meta__tags" href=url_for(tag.path), data-pjax-state, onclick="window.event.cancelable=true")
+                         span.tags-punctuation=tag.name
 
                 span.post-meta-date
                    time(datetime=moment(post.date))
