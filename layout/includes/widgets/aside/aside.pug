@@ -1,14 +1,14 @@
 .aside-content#aside-content
     - var noSticky, Sticky;
-    - if(is_home())
-    -     noSticky = theme.aside.home.noSticky.split(',')
-    -     Sticky = theme.aside.home.Sticky.split(',')
-    - if(is_post())
-    -     noSticky = theme.aside.post.noSticky.split(',')
-    -     Sticky = theme.aside.post.Sticky.split(',')
-    - if(is_page() || is_archive() || is_tag() || is_category())
-    -     noSticky = theme.aside.page.noSticky.split(',')
-    -     Sticky = theme.aside.page.Sticky.split(',')
+    if(is_home())
+        - noSticky = theme.aside.home.noSticky.split(',')
+        - Sticky = theme.aside.home.Sticky.split(',')
+    else if(is_post())
+        - noSticky = theme.aside.post.noSticky.split(',')
+        - Sticky = theme.aside.post.Sticky.split(',')
+    else if(is_page() || is_archive() || is_tag() || is_category())
+        - noSticky = theme.aside.page.noSticky.split(',')
+        - Sticky = theme.aside.page.Sticky.split(',')
     each item in noSticky
         include ./asideSwitch.pug
     .sticky_layout
