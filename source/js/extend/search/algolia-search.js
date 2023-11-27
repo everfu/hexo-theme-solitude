@@ -1,10 +1,10 @@
-const $searchMask = document.getElementById('search-mask'),
-    $searchDialog = document.querySelector('#algolia-search .search-dialog')
-
-class search {
-    static openSearch() {
-        utils.fadeIn($searchMask, '0.5')
-        utils.fadeIn($searchDialog, '0.5')
+window.addEventListener('load', () => {
+    const openSearch = () => {
+        document.body.style.cssText = 'width: 100%;overflow: hidden'
+        document.querySelector('#algolia-search .search-dialog').style.display = 'block'
+        document.querySelector('#algolia-search .ais-SearchBox-input').focus()
+        utils.fadeIn(document.getElementById('search-mask'), 0.5)
+        // shortcut: ESC
         document.addEventListener('keydown', function f(event) {
             if (event.code === 'Escape') {
                 closeSearch()
@@ -13,135 +13,128 @@ class search {
         })
     }
 
-    static closeSearch() {
-        utils.fadeOut($searchDialog, '0.5')
-        utils.fadeOut($searchMask, '0.5')
+    const closeSearch = () => {
+        document.body.style.cssText = "width: '';overflow: ''"
+        const $searchDialog = document.querySelector('#algolia-search .search-dialog')
+        $searchDialog.style.animation = 'search_close .5s'
+        setTimeout(() => {
+            $searchDialog.style.cssText = "display: none; animation: ''"
+        }, 500)
+        utils.fadeOut(document.getElementById('search-mask'), 0.5)
     }
 
-    static cutContent(content) {
-        if (content === '') return ''
-
-        const firstOccur = content.indexOf('<mark>')
-
-        let start = firstOccur - 30
-        let end = firstOccur + 120
-        let pre = ''
-        let post = ''
-
-        if (start <= 0) {
-            start = 0
-            end = 140
-        } else {
-            pre = '...'
-        }
-
-        if (end > content.length) {
-            end = content.length
-        } else {
-            post = '...'
-        }
-
-        const matchContent = pre + content.substring(start, end) + post
-        return matchContent
+    const searchClickFn = () => {
+        document.querySelector('#search-button > .search').addEventListener('click', openSearch)
+        document.getElementById('search-mask').addEventListener('click', closeSearch)
+        document.querySelector('#algolia-search .search-close-button').addEventListener('click', closeSearch)
+        document.getElementById('menu-search').addEventListener('click', function () {
+            rm.hideRightMenu();
+            openSearch();
+            let t = document.querySelector('.ais-search-box--input');
+            let evt = new Event('input', {bubbles: true, cancelable: true});
+            t.value = selectTextNow;
+            t.dispatchEvent(evt);
+        });
     }
 
-    static search() {
-        const algolia = GLOBAL_CONFIG.algolia, that = this
-        const isAlgoliaValid = algolia.appId && algolia.apiKey && algolia.indexName
-        if (!isAlgoliaValid) {
-            return console.error('Algolia setting is invalid!')
-        }
+    searchClickFn()
 
-        const init = instantsearch({
-            indexName: algolia.indexName,
-            searchClient: algoliasearch(algolia.appId, algolia.apiKey),
-            searchFunction(helper) {
-                helper.state.query && helper.search()
+    window.addEventListener('pjax:complete', function () {
+        getComputedStyle(document.querySelector('#algolia-search .search-dialog')).display === 'block' && closeSearch()
+        searchClickFn()
+    })
+
+    const algolia = GLOBAL_CONFIG.algolia
+    const isAlgoliaValid = algolia.appId && algolia.apiKey && algolia.indexName
+    if (!isAlgoliaValid) {
+        return console.error('Algolia setting is invalid!')
+    }
+
+    const searchClient = algoliasearch(
+        algolia.appId,
+        algolia.apiKey
+    );
+
+    const search = instantsearch({
+        indexName: algolia.indexName,
+        searchClient,
+        searchParameters: {
+            hitsPerPage: algolia.hits.per_page || 10
+        }
+    })
+
+    search.addWidget(
+        instantsearch.widgets.searchBox({
+            container: '#algolia-search-input',
+            showReset: false,
+            placeholder: GLOBAL_CONFIG.lang.search.placeholder,
+            showSubmit: false,
+            showLoadingIndicator: true,
+            templates: {
+                loadingIndicator: '<i class="scoicon sco-loading-line search-icon"></i>'
+            },
+            onStateChange({uiState, setUiState}) {
+                const searchInput = document.querySelector('#algolia-search-input input')
+                if (searchInput.value) {
+                    setUiState(uiState);
+                }
             }
         })
-
-        const searchBox = instantsearch.widgets.searchBox({
-            container: '#search-input',
-            showReset: false,
-            showSubmit: false,
-            autofocus: true,
-            placeholder: GLOBAL_CONFIG.lang.search.placeholder,
-            showLoadingIndicator: false
-        })
-
-        const hits = instantsearch.widgets.hits({
+    )
+    search.addWidget(
+        instantsearch.widgets.hits({
             container: '#algolia-hits',
             templates: {
-                item(data) {
-                    const link = data.permalink
-                    const result = data._highlightResult
-                    const content = result.contentStripTruncate
-                        ? that.cutContent(result.contentStripTruncate.value)
-                        : result.contentStrip
-                            ? that.cutContent(result.contentStrip.value)
-                            : result.content
-                                ? that.cutContent(result.content.value)
-                                : ''
-                    return `
-                <a href="${link}" class="algolia-hit-item-link">
-                ${result.title.value}
-                </a>
-                <p class="algolia-hit-item-content">${content}</p>`
+                item(hit) {
+                    const link = hit.permalink ? hit.permalink : (GLOBAL_CONFIG.root + hit.path)
+                    return (
+                        `<a href="${link}" class="algolia-hit-item-link">${hit._highlightResult.title.value}</a>`
+                    )
                 },
-                empty: function (data) {
+                empty(data) {
                     return (
-                        `<div id="algolia-hits-empty">${GLOBAL_CONFIG.lang.search.empty}</div>`
+                        '<div id="algolia-hits-empty">' +
+                        GLOBAL_CONFIG.lang.search.empty.replace(/\$\{query}/, data.query) +
+                        '</div>'
                     )
                 }
+            },
+            cssClasses: {
+                item: 'algolia-hit-item'
             }
         })
+    )
 
-        const stats = instantsearch.widgets.stats({
-            container: '.algolia-stats',
+    search.addWidget(
+        instantsearch.widgets.stats({
+            container: '#algolia-stats',
             templates: {
-                text: function (data) {
-                    const stats = GLOBAL_CONFIG.lang.search.hit.replace('${query}', `<mark>${data.nbHits}</mark>`)
-                    return (
-                        stats
-                    )
+                text(data) {
+                    const stats = GLOBAL_CONFIG.lang.search.hit.replace(/\$\{hits}/, data.nbHits).replace(/\$\{time}/, data.processingTimeMS);
+                    return `${stats}`;
                 }
             }
         })
+    )
 
-        init.addWidgets([searchBox, hits, stats]) // add the widgets to the instantsearch instance
-        init.start()
-        init.on('render', () => {
-            pjax.refresh(document.getElementById('algolia-hits'))
+    search.addWidget(
+        instantsearch.widgets.pagination({
+            container: '#algolia-pagination',
+            scrollTo: false,
+            showFirst: false,
+            showPrevious: false,
+            showNext: false,
+            showLast: false,
+            cssClasses: {
+                list: 'pagination',
+                pageItem: 'pagination-item',
+                link: 'page-number',
+            },
         })
-    }
-}
+    )
+    search.start()
 
-const searchClickFn = () => {
-    if (PAGE_CONFIG.page !== "404") document.querySelector('#search-button > .search').addEventListener('click', search.openSearch)
-    GLOBAL_CONFIG.rightside.enable && document.getElementById('menu-search').addEventListener('click', function() {
-        rm.hideRightMenu();
-        search.openSearch();
-        let t = document.getElementsByClassName('ais-search-box--input')[0];
-        let evt = new Event('input', {
-            bubbles: true,
-            cancelable: true
-        });
-        t.value = selectTextNow;
-        t.dispatchEvent(evt);
-    });
-}
-
-const searchClickFnOnce = () => {
-    document.querySelector('#algolia-search .search-close-button').addEventListener('click', search.closeSearch)
-    $searchMask.addEventListener('click', search.closeSearch)
-}
-
-window.addEventListener('load', () => {
-    searchClickFn()
-    searchClickFnOnce()
-    search.search()
-})
-
-window.addEventListener('pjax:complete', () => {
-    searchClickFn()
+    window.pjax && search.on('render', () => {
+        window.pjax.refresh(document.getElementById('algolia-hits'))
+    })
 })

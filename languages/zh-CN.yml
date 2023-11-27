@@ -33,6 +33,6 @@ nav:
   console: 中控台
 
 search:
-  empty: 搜索结果为空
-  hit: 已为您找到 ${query} 条结果
+  empty: 找不到你查询的内容：${query}
+  hit: 找到 ${hits} 条结果，用时 ${time} 毫秒
   placeholder: 输入关键词快速查找
