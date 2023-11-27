@@ -1,0 +1,79 @@
+#aside-content
+  width 300px
+
+  +minWidth900()
+    padding-left 15px
+
+  +maxWidth1200()
+    display none
+
+  +minWidth1300()
+    padding-left 1rem
+    animation slide-in .6s .3s backwards
+
+  .card-widget
+    box-shadow var(--sco-shadow-border)
+    background var(--sco-card-bg)
+    border var(--style-border)
+    transition 0.3
+    border-radius 12px
+    position relative
+    overflow hidden
+    margin-top 1rem
+    padding 1rem 1.2rem
+
+    &.card-info
+      padding 0 !important
+      background var(--sco-card-bg)
+      box-shadow var(--sco-shadow-black)
+      position relative
+
+      > div.card-content
+        padding 1rem 1.2rem
+        min-height 320px
+        position relative
+
+    > .card-widget
+      &:first-child
+        transition 0.3s
+        border none
+        margin-top 0
+
+
+  .sticky_layout
+    top 80px
+    transition top 0s
+
+    +minWidth900()
+      position sticky
+
+    +minWidth1300()
+      top calc(60px + 1rem)
+
+.page
+  .sticky_layout
+    display: flex
+    -webkit-box-orient: vertical
+    flex-direction: column
+
+
+#page-header.nav-visible + .layout > .aside-content > .sticky_layout
+  top 70px
+  transition top .5s ease 0s
+
+  +minWidth900()
+    position sticky
+
+  +minWidth1300()
+    top calc(60px + 1rem)
+
++minWidth900()
+  html.hide-aside .layout
+    -webkit-box-pack: center
+    justify-content: center
+
+  html.hide-aside .layout > .aside-content
+    display: none
+
+[data-theme=dark] #aside-content > .card-widget.card-info
+  border: var(--style-border-always)

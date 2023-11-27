@@ -344,9 +344,6 @@
     margin-bottom: 1rem
     min-height: 260px
 
-  #page-header.nav-visible + .layout > .aside-content > .sticky_layout
-    top: 80px
-
   width: 300px
 
   @media screen and (max-width: 1300px)
@@ -490,19 +487,6 @@ li.card-archive-list-item
   font-size: 16px !important
 
 @media screen and (min-width: 1300px)
-  #aside-content
-    padding-left: 1rem
-    animation: slide-in .6s .3s backwards
-
-  #aside-content .sticky_layout
-    top: calc(60px + 1rem)
-
-  #page-header.nav-visible + .layout > .aside-content > .sticky_layout
-    top: calc(60px + 1rem)
-
-  [data-theme=dark] #aside-content > .card-widget.card-info
-    border: var(--style-border-always)
-
   .coverdiv
     height: 130%
 
@@ -587,6 +571,7 @@ a#power-star
   margin: 12px 0
   background: var(--sco-secondbg)
   transition: .3s ease-out
+  cursor pointer
 
 a#power-star:hover
   background: var(--sco-main)
@@ -651,17 +636,6 @@ div#power-star-title
   background: var(--sco-black-op)
   border-radius: 8px
   color: var(--sco-white)
-
-#aside-content .card-widget
-  box-shadow: var(--sco-shadow-border)
-  background: var(--sco-card-bg)
-  border: var(--style-border)
-  transition: .3s
-  border-radius: 12px
-  position: relative
-  overflow: hidden
-  margin-top: 1rem
-  padding: 1rem 1.2rem
 
 #aside-content
   #card-toc
@@ -967,10 +941,6 @@ div#author-info__sayhi
 #card-toc
   padding: .5rem .5rem !important
 
-@media screen and (max-width: 1300px)
-  #aside-content > .card-widget:first-child
-    min-height: 329px
-
 @media screen and (max-width: 900px)
   #aside-content
     .card-announcement
@@ -988,14 +958,6 @@ div#author-info__sayhi
 
     [data-theme=dark] .card-info .card-info-social-icons i
       color: var(--sco-card-bg)
-
-@media screen and (max-width: 768px)
-  #aside-content .card-widget
-    border-radius: 12px
-
-@media screen and (min-width: 1300px)
-  #aside-content .card-widget
-    margin-top: 1rem
 
 .author-info__description
   line-height: 1.38

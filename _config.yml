@@ -138,13 +138,17 @@ aside:
     Sticky: "newestPost,allInfo"
   # 爱发电
   power:
-    link: https://afdian.net/a/wleelw0u0
-    post: true
-    page: false
+    link: https://afdian.net/a/wleelw0u0 # 爱发电链接
+#    list:
+#      - name: 王卓Sco
+#        avatar: https://bu.dusays.com/2023/11/04/6545e8a57f97b.jpg
+#        descr: 宁静致远，热爱生活。
+#        link: https://afdian.net/u/wleelw0u0
   # 侧边栏个人信息卡片
   card:
+    # 头像信息
     author:
-      img: https://bu.dusays.com/2023/11/08/654af68b25bb8.jpg # 头像
+      img: https://bu.dusays.com/2023/11/08/654af68b25bb8.jpg # 头像图片
       js: https://cdn3.codesign.qq.com/icons/XgRxnjPG4VZLmqr/latest/iconfont.js # 自定义图标js（用于显示带颜色的状态表情）
       state: "#sco-smile" # 状态表情（使用symbol）
     content: 分享自己对编程的<b>热爱</b>，对美好生活的<b>向往</b>，对知识海洋<b>探索历程</b>。 # 文案1
@@ -166,7 +170,7 @@ aside:
   welcome:
     enable: false
     title: #【选填】留空将默认显示为：来访者
-    icon:
+    icon: #【选填】留空将默认显示为：scoicon sco-map-pin-line
     key: # 腾讯key
     longitude: 112.8455033596802 # 经度
     Latitude: 26.430308353457896 # 纬度
@@ -174,20 +178,22 @@ aside:
   history:
     enable: false
     title: #【选填】留空将默认显示为：那年今日
-    icon:
+    icon: #【选填】留空将默认显示为：scoicon sco-calendar-line
   # 页面目录
   toc:
     post: true # 在文章页显示
     page: false # 在任意页显示
 
+  # 侧边栏文章列表
   tags:
     enable: false # 是否显示标签
     highlight: false # 高亮显示
     list: # 高亮显示标签列表
       - 'Solitude-使用'
 
+  # 侧边栏归档
   archive:
-    enable: false # 是否显示归档
+    enable: false # 是否显示
 
   # 建站信息
   siteinfo:
@@ -236,22 +242,22 @@ footer:
 #        版权协议: /copyright/
 
   # 底部随机友链
-  randomlink: false
+  randomlink: false # 是否开启
   # rss
   rss:
-    enable: false
+    enable: false # 是否显示
     wechatOA: # 微信公众号链接
     emailOA:  # 邮箱链接
     rss:  # rss订阅链接
   # 版权
   license:
-    url: /copyright/
+    url: /copyright/ # 点击跳转链接
 
 # 页面页默认设置
 page:
-  error: true #
-  tags: true # 标签
-  categories: true # 分类
+  error: true  # 404页面
+  tags: true # 标签页
+  categories: true # 分类页
   default: # 默认值
     cover: /img/default.png # 默认图片
 
@@ -278,42 +284,42 @@ post:
     url: /about # 打赏统计页面链接
   # 文章颜色获取
   covercolor: #文章cover取色
-    enable: false
-    local: true
+    enable: false # 是否开启
+    local: true # 本地取色
 
 # 关于界面
 about:
-  enable: false
+  enable: false # 是否开启
   echarts: # 文章统计
-    enable: false
+    enable: false # 是否开启
     startDate: "2023-04-20 00:00:00" # 统计开始日期 格式：yyyy-MM-dd hh-mm-ss
     tagLength: 10 # 标签显示数量
     categoryParent: true # 显示父分类
 
 # 404 页面
 errorpage:
-  img: https://npm.elemecdn.com/wzheo-absolute@1.0.3/image/source/404.png
-  text: =awa= 页面走丢了
-  recommendList: true # 显示随机文章
+  img: https://npm.elemecdn.com/wzheo-absolute@1.0.3/image/source/404.png # 图片
+  text: =awa= 页面走丢了 # 文字
+  recommendList: true # 推荐文章列表
 
 # 懒加载
 lazyload:
-  enable: false
+  enable: false # 是否开启
   placeholder: /img/loading.gif # 加载中显示图片
   errorimg: /img/error_load.png # 加载失败显示图片
 
 # 图片灯箱
-lightbox: false
+lightbox: false # 是否开启
 
 #代码高亮增强
 hightlight:
-  enable: false
-  hightlimit: 200
+  enable: false # 是否开启
+  hightlimit: 200 # 代码高亮字数限制
 
 # 加载动画
 loading:
-  fullpage: false
-  pace: false
+  fullpage: false # 全局加载动画
+  pace: false # 顶部加载动画
 
 # 第三方设置
 thirdparty:
@@ -359,31 +365,32 @@ thirdparty:
 
   # 朋友圈配置
   circle:
-    api: https://circle.sondy.top/  # api 地址
-    error_img: /img/theme/avatar.png # 头像加载失败显示错误图片
-    sort_rule: created # 排序规则
-    expire_days: 1 # 文章缓存天数
-    page_init_number: 12 # 默认加载文章数，默认10
-    page_turning_number: 12 # 加载更多文章数，默认10
-    angle: # 钓鱼
-      enable: true
+    api: https://circle.sondy.top/ # 朋友圈api
+    error_img: /img/theme/avatar.png # 加载失败显示图片
+    sort_rule: created # 排序规则（created:创建时间、updated:更新时间）
+    expire_days: 1 # 缓存过期时间（天）
+    page_init_number: 12 # 首次加载文章数，默认10
+    page_turning_number: 12 # 翻页加载文章数，默认10
+    angle: # 🎣钓鱼
+      enable: true # 是否开启
     appjs: '/lib/circle.min.js' # 主题appjs
-    bundlejs: '/lib/bundle.min.js' # 主题bundejs
+    bundlejs: '/lib/bundle.min.js' # 主题bundlejs
 
 # 评论
 comment:
-  enable: false
-  type: 'twikoo'
+  enable: false # 是否开启评论
+  type: 'twikoo' # valine, twikoo
   # 评论系统
   twikoo:
-    envId: https://twikoo.sondy.top
-    lang: 'zh-CN'
+    envId: # url: https://twikoo.sondy.top/
+    lang: 'zh-CN' # 语言
     accessToken:  # accessToken
 
 # 插入代码到头部 </head> 之前 和 底部 </body> 之前
 # 插入额外代码 如：统计，广告等
 extends:
   head: # 在head中插入
+  # - <script src="https://cdn.bootcdn.net/ajax/libs/pace/1.2.4/pace.min.js"></script>
   body: # 在body中插入
 
 # 文章底部推荐文章
@@ -397,52 +404,56 @@ rightside:
   enable: false
 
 # 站点验证
+# 仅需要填写验证代码即可
 verify:
   # 百度
   baidu:
+  # 谷歌
+  google:
 
 # PWA
+# 图标信息非必选，填了就显示，不想添加的可以进行注释
 # https://github.com/JLHwung/hexo-offline
 pwa:
-  enable: false
-  startup_image_enable: false
-  manifest: /manifest.json
-  theme_color: '#ffffff'
-  mask_icon: /img/pwa/180.png
-  apple_touch_icon: /img/pwa/180.png
-  bookmark_icon: /img/pwa/180.png
-  favicon_32_32: /img/pwa/32.png
-  favicon_16_16: /img/pwa/16.png
-  favicon_2048_2732: /img/pwa/siteicon/splash-2048x2732.png
-  favicon_2732_2048: /img/pwa/siteicon/splash-2732x2048.png
-  favicon_1668_2388: /img/pwa/siteicon/splash-1668x2388.png
-  favicon_2388_1668: /img/pwa/siteicon/splash-2388x1668.png
-  favicon_1536_2048: /img/pwa/siteicon/splash-1536x2048.png
-  favicon_2048_1536: /img/pwa/siteicon/splash-2048x1536.png
-  favicon_1668_2224: /img/pwa/siteicon/splash-1668x2224.png
-  favicon_2224_1668: /img/pwa/siteicon/splash-2224x1668.png
-  favicon_1620_2160: /img/pwa/siteicon/splash-1620x2160.png
-  favicon_2160_1620: /img/pwa/siteicon/splash-2160x1620.png
-  favicon_1290_2796: /img/pwa/siteicon/splash-1290x2796.png
-  favicon_2796_1290: /img/pwa/siteicon/splash-2796x1290.png
-  favicon_1179_2556: /img/pwa/siteicon/splash-1179x2556.png
-  favicon_2556_1179: /img/pwa/siteicon/splash-2556x1179.png
-  favicon_1248_2778: /img/pwa/siteicon/splash-1248x2778.png
-  favicon_2778_1248: /img/pwa/siteicon/splash-2778x1248.png
-  favicon_1170_2532: /img/pwa/siteicon/splash-1170x2532.png
-  favicon_2532_1170: /img/pwa/siteicon/splash-2532x1170.png
-  favicon_1125_2436: /img/pwa/siteicon/splash-1125x2436.png
-  favicon_2436_1125: /img/pwa/siteicon/splash-2436x1125.png
-  favicon_1242_2688: /img/pwa/siteicon/splash-1242x2688.png
-  favicon_2688_1242: /img/pwa/siteicon/splash-2688x1242.png
-  favicon_828_1792: /img/pwa/siteicon/splash-828x1792.png
-  favicon_1792_828: /img/pwa/siteicon/splash-1792x828.png
-  favicon_1242_2208: /img/pwa/siteicon/splash-1242x2208.png
-  favicon_2208_1242: /img/pwa/siteicon/splash-2208x1242.png
-  favicon_750_1334: /img/pwa/siteicon/splash-750x1334.png
-  favicon_1334_750: /img/pwa/siteicon/splash-1334x750.png
-  favicon_640_1136: /img/pwa/siteicon/splash-640x1136.png
-  favicon_1136_640: /img/pwa/siteicon/splash-1136x640.png
+  enable: false # 是否开启
+  startup_image_enable: false # 是否开启启动画面
+  manifest: /manifest.json # manifest.json 文件路径
+  theme_color: '#ffffff' # 主题颜色
+  mask_icon: /img/pwa/180.png # 遮罩图标
+  apple_touch_icon: /img/pwa/180.png # 苹果触摸图标
+  bookmark_icon: /img/pwa/180.png # 书签图标
+  favicon_32_32: /img/pwa/32.png # 32x32图标
+  favicon_16_16: /img/pwa/16.png # 16x16图标
+  favicon_2048_2732: /img/pwa/siteicon/splash-2048x2732.png # 2048x2732图标
+  favicon_2732_2048: /img/pwa/siteicon/splash-2732x2048.png # 2732x2048图标
+  favicon_1668_2388: /img/pwa/siteicon/splash-1668x2388.png # 1668x2388图标
+  favicon_2388_1668: /img/pwa/siteicon/splash-2388x1668.png # 2388x1668图标
+  favicon_1536_2048: /img/pwa/siteicon/splash-1536x2048.png # 1536x2048图标
+  favicon_2048_1536: /img/pwa/siteicon/splash-2048x1536.png # 2048x1536图标
+  favicon_1668_2224: /img/pwa/siteicon/splash-1668x2224.png # 1668x2224图标
+  favicon_2224_1668: /img/pwa/siteicon/splash-2224x1668.png # 2224x1668图标
+  favicon_1620_2160: /img/pwa/siteicon/splash-1620x2160.png # 1620x2160图标
+  favicon_2160_1620: /img/pwa/siteicon/splash-2160x1620.png # 2160x1620图标
+  favicon_1290_2796: /img/pwa/siteicon/splash-1290x2796.png # 1290x2796图标
+  favicon_2796_1290: /img/pwa/siteicon/splash-2796x1290.png # 2796x1290图标
+  favicon_1179_2556: /img/pwa/siteicon/splash-1179x2556.png # 1179x2556图标
+  favicon_2556_1179: /img/pwa/siteicon/splash-2556x1179.png # 2556x1179图标
+  favicon_1248_2778: /img/pwa/siteicon/splash-1248x2778.png # 1248x2778图标
+  favicon_2778_1248: /img/pwa/siteicon/splash-2778x1248.png # 2778x1248图标
+  favicon_1170_2532: /img/pwa/siteicon/splash-1170x2532.png # 1170x2532图标
+  favicon_2532_1170: /img/pwa/siteicon/splash-2532x1170.png # 2532x1170图标
+  favicon_1125_2436: /img/pwa/siteicon/splash-1125x2436.png # 1125x2436图标
+  favicon_2436_1125: /img/pwa/siteicon/splash-2436x1125.png # 2436x1125图标
+  favicon_1242_2688: /img/pwa/siteicon/splash-1242x2688.png # 1242x2688图标
+  favicon_2688_1242: /img/pwa/siteicon/splash-2688x1242.png # 2688x1242图标
+  favicon_828_1792: /img/pwa/siteicon/splash-828x1792.png # 828x1792图标
+  favicon_1792_828: /img/pwa/siteicon/splash-1792x828.png # 1792x828图标
+  favicon_1242_2208: /img/pwa/siteicon/splash-1242x2208.png # 1242x2208图标
+  favicon_2208_1242: /img/pwa/siteicon/splash-2208x1242.png # 2208x1242图标
+  favicon_750_1334: /img/pwa/siteicon/splash-750x1334.png # 750x1334图标
+  favicon_1334_750: /img/pwa/siteicon/splash-1334x750.png # 1334x750图标
+  favicon_640_1136: /img/pwa/siteicon/splash-640x1136.png # 640x1136图标
+  favicon_1136_640: /img/pwa/siteicon/splash-1136x640.png # 1136x640图标
 
 says:
   enable: false

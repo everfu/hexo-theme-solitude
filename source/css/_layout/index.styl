@@ -221,15 +221,6 @@
     > div
       width 100% !important
 
-  #aside-content
-    +maxWidth768()
-      z-index 2
-      background var(--sco-background)
-      padding 0 1rem
-      display flex
-      flex-direction column
-      width 100%
-
   > div:first-child
     width calc(100% - 300px)
 
@@ -297,12 +288,6 @@
         background: var(--sco-background)
 
 +minWidth900()
-  html.hide-aside .layout
-    -webkit-box-pack: center
-    justify-content: center
-
-  html.hide-aside .layout > .aside-content
-    display: none
 
   html.hide-aside .layout > div:first-child
     width: 100%
