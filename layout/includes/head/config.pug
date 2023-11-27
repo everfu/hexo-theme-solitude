@@ -21,8 +21,8 @@
 script.
     const GLOBAL_CONFIG = {
         root: '!{config.root}',
-        algolia: !{algolia},
-        localsearch: !{localSearch},
+        algolia: !{algolia ? algolia : 'undefined'},
+        localsearch: !{localSearch ? localSearch : 'undefined'},
         runtime: '!{theme.aside.siteinfo.runtimeenable ? theme.aside.siteinfo.runtime : false}',
         lazyload: {
             enable: !{theme.lazyload.enable},
