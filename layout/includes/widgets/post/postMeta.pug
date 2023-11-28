@@ -18,11 +18,11 @@ div#post-info
             if theme.post.meta.date
                 span.post-meta-date(title="发布于")
                     i.post-meta-icon.scoicon.sco-calendar-todo-fill
-                    time.datetime=moment(page.date).format()
+                    time(datetime=date_xml(page.date))= date_xml(page.date)
             if theme.post.meta.updated
                 span.post-meta-date(title="最后更新于")
                     i.post-meta-icon.scoicon.sco-refresh-line
-                    time.datetime=moment(page.updated).format()
+                    time(datetime=date_xml(page.updated))= date_xml(page.updated)
             if theme.thirdparty.wordcount
                 span.post-meta-wordcount
                     if theme.post.meta.wordcount

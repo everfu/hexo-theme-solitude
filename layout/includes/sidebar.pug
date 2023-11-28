@@ -11,9 +11,6 @@ div#sidebar(style="zoom: 1;")
         include ./widgets/nav/menu.pug
         span.sidebar-menu-item-title= "标签"
         div.card-widget.card-tags.card-archives.card-webinfo.card-allinfo
-            div.item-headline
-                i.scoicon.sco-price-tag-fill
-                span= "标签"
             div.card-tag-cloud
                 each tag in site.tags.data
                     a(href=url_for(tag.path), style="font-size: 1rem; color: #d3d3d3")= tag.name
