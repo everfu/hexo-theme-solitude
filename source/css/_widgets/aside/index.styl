@@ -1,6 +1,48 @@
 #aside-content
   width 300px
 
+  > .card-widget:first-child
+    transition: .3s
+    border: none
+    box-shadow: none
+    background: var(--sco-main)
+    margin-top: 0
+
+  .card-archives ul.card-archive-list > .card-archive-list-item a span,
+  .card-categories ul.card-category-list > .card-category-list-item a span,
+  .card-info .card-info-data > .card-info-data-item a .headline,
+  #pagination .next_info,
+  #pagination .prev_info,
+  #sidebar #sidebar-menus .menus_items .site-page,
+  #sidebar #sidebar-menus .site-data .data-item .data-item-link > a > div,
+  .flink#article-container .flink-list > .flink-list-item a .flink-item-desc,
+  .flink#article-container .flink-list > .flink-list-item a .flink-item-name,
+  .limit-one-line
+    text-overflow ellipsis
+    white-space nowrap
+
+  .aside-list > .aside-list-item .content > .comment,
+  .aside-list > .aside-list-item .content > .name,
+  .aside-list > .aside-list-item .content > .title,
+  #error-wrap .error-content .error-info .error_subtitle,
+  #post-info .post-title,
+  #recent-posts > .recent-post-item > .recent-post-info > .article-title,
+  #recent-posts > .recent-post-item > .recent-post-info > .content,
+  .article-sort-item-title,
+  .limit-more-line,
+  .relatedPosts > .relatedPosts-list .content .title,
+  figure.gallery-group .gallery-group-name,
+  figure.gallery-group p
+    display -webkit-box
+    -webkit-box-orient vertical
+
+  .author-info__description,
+  .author-info__name,
+  #site-name,
+  #site-subtitle,
+  #site-title
+    font-family "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif
+
   +minWidth900()
     padding-left 15px
 
@@ -11,27 +53,41 @@
     padding-left 1rem
     animation slide-in .6s .3s backwards
 
+  .card-widget.card-power, .card-widget.card-history, .card-widget.card-welcome
+    padding: .4rem .6rem !important
+
+  .item-headline
+    padding-bottom
+    margin-left 8px
+    font-size 1rem
+    font-weight 700
+    display flex
+    align-items center
+
+    i
+      font-size 18px
+      max-width 20px
+
+    span
+      margin-left 4px
+
+    + div, + ul
+      padding 0
+      -webkit-user-select none
+
   .card-widget
     box-shadow var(--sco-shadow-border)
     background var(--sco-card-bg)
     border var(--style-border)
-    transition 0.3
+    transition 0.3s
     border-radius 12px
     position relative
     overflow hidden
     margin-top 1rem
     padding 1rem 1.2rem
 
-    &.card-info
-      padding 0 !important
-      background var(--sco-card-bg)
-      box-shadow var(--sco-shadow-black)
-      position relative
-
-      > div.card-content
-        padding 1rem 1.2rem
-        min-height 320px
-        position relative
+    &:hover
+      box-shadow var(--sco-shadow-border)
 
     > .card-widget
       &:first-child
@@ -39,22 +95,23 @@
         border none
         margin-top 0
 
-
   .sticky_layout
     top 80px
     transition top 0s
 
     +minWidth900()
       position sticky
+      top: 20px
+      transition: top .3s ease 0s
 
     +minWidth1300()
       top calc(60px + 1rem)
 
 .page
   .sticky_layout
-    display: flex
-    -webkit-box-orient: vertical
-    flex-direction: column
+    display flex
+    -webkit-box-orient vertical
+    flex-direction column
 
 
 #page-header.nav-visible + .layout > .aside-content > .sticky_layout
@@ -75,5 +132,14 @@
   html.hide-aside .layout > .aside-content
     display: none
 
-[data-theme=dark] #aside-content > .card-widget.card-info
-  border: var(--style-border-always)
+@import "toc.styl"
+
+@import "info.styl"
+
+@import "allinfo.styl"
+
+@import "welcome.styl"
+
+@import "history.styl"
+
+@import "power.styl"

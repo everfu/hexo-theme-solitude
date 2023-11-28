@@ -1020,8 +1020,8 @@ window.refreshFn = () => {
     GLOBAL_CONFIG.lazyload.enable && sco.lazyloadImg()
     GLOBAL_CONFIG.lightbox && sco.lightbox('')
     GLOBAL_CONFIG.randomlinks && randomLinksList()
+    GLOBAL_CONFIG.comment.enable && newestCommentInit()
     if (PAGE_CONFIG.comment) {
-        newestCommentInit()
         initComment()
     }
     PAGE_CONFIG.toc && toc.init()
