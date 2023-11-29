@@ -1,0 +1,40 @@
+.webinfo
+    if theme.aside.siteinfo.postcount
+        .webinfo-item
+            .webinfo-item-title
+                i.item-icon.scoicon.sco-folder-fill
+                .item-name 文章总数 :
+            .item-count= site.posts.length
+    if theme.thirdparty.busuanzi
+        if theme.aside.siteinfo.pv
+            .webinfo-item
+                .webinfo-item-title
+                    i.item-icon.scoicon.sco-visitor-line
+                    .item-name 总访问数 :
+                span#busuanzi_value_site_pv
+                    i.scoicon.sco-loading-line
+        if theme.aside.siteinfo.uv
+            .webinfo-item
+                .webinfo-item-title
+                    i.item-icon.scoicon.sco-team-fill
+                    .item-name 总访客数 :
+                span#busuanzi_value_site_uv
+                    i.scoicon.sco-loading-line
+    if theme.aside.siteinfo.runtimeenable
+        .webinfo-item
+            .webinfo-item-title
+                i.item-icon.scoicon.sco-calendar-todo-fill
+                .item-name 建站天数 :
+            .item-count#runtimeshow
+    if theme.aside.siteinfo.updatetime
+        .webinfo-item
+            .webinfo-item-title
+                i.item-icon.scoicon.sco-loop-left-fill
+                .item-name 最后更新 :
+            time.item-count(datetime=new Date())
+    if theme.thirdparty.wordcount && theme.aside.siteinfo.wordcount
+        .webinfo-item
+            .webinfo-item-title
+                i.item-icon.scoicon.sco-word-fill
+                .item-name 全站字数 :
+            .item-count= totalcount(site)

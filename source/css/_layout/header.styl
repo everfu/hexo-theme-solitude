@@ -1,0 +1,1331 @@
+#page-header
+  position relative
+  width 100%
+  background-position center center
+  background-size cover
+  background-repeat no-repeat
+  transition all .5s ease 0s
+  background-image none !important
+  display flex
+  justify-content center
+
+  +minWidth1300()
+    height: 25rem
+
+  &.full_page
+    height 20rem
+    background-attachment fixed
+    height 2rem
+    background-image none !important
+    background-color var(--sco-none)
+
+    #site-info
+      position absolute
+      top 7.8rem
+      padding 0 .5rem
+      width 100%
+      display none
+
+  #site-title
+    margin 0
+    color var(--sco-white)
+    font-size 1.85em
+
+    +minWidth768()
+      font-size 2.85em
+
+  #site-subtitle
+    color var(--light-grey)
+    font-size 1.15em
+
+    +minWidth768()
+      font-size 1.72em
+
+  #site_social_icons
+    display none
+    margin 0 auto
+    width 15rem
+    text-align center
+
+    +maxWidth768()
+      display block
+
+    .social-icon
+      margin 0 .5rem
+      color var(--light-grey)
+      text-shadow rgba(0, 0, 0, .15) .1rem .1rem .2rem
+      font-size 1.43em
+      cursor pointer
+
+  #scroll-down
+    position absolute
+    bottom 0
+    width 100%
+    cursor pointer
+    display none
+
+    .scroll-down-effects
+      animation: 1.5s ease 0s infinite normal none running scroll-down-effect
+      position relative
+      width 100%
+      color var(--light-grey)
+      font-size 30px
+
+  &.not-home-page
+    height 20rem
+
+    +maxWidth768()
+      height 14rem
+
+  #page-site-info
+    position absolute
+    top 10rem
+    padding 0 .5rem
+    width 100%
+
+    +maxWidth768()
+      top 7rem
+
+  &.post-bg
+    height 20rem
+    background-color var(--sco-background)
+    transition .6s
+    overflow hidden
+
+    +minWidth1300()
+      height: 25rem
+
+    +maxWidth768()
+      height 30rem
+      background-color var(--sco-main) !important
+      transition 0s
+      margin-bottom -12px
+
+    &::before
+      transition .3s
+      height 20rem
+      background-color var(--sco-main)
+      opacity 1
+      position absolute
+      top 0
+      left 0
+      display block
+      width 100%
+      content ""
+
+      +minWidth1300()
+        height 25rem
+        opacity 0
+        background-color var(--sco-main)
+        animation slide-in-op .6s 0s forwards
+
+      +maxWidth768()
+        height 15rem
+
+  #post-info
+    top 0
+    position absolute
+    padding 0 3rem
+    margin 0 auto
+    z-index 10
+    color var(--sco-white)
+    max-width 1400px
+    display flex
+    flex-direction column
+    align-items flex-start
+    height calc(100% + 0px)
+    justify-content center
+    animation slide-in .6s 0s backwards
+    width 100%
+    text-align center
+
+    +minWidth1300()
+      height calc(100% + 0px)
+      top 0
+      display flex
+      justify-content center
+
+    +maxWidth900()
+      bottom 1.5rem
+      text-align left
+
+    +maxWidth768()
+      padding 0 6%
+      justify-content normal
+      padding-top 18rem
+
+  &.not-top-img
+    height 60px
+    background 0 center
+    margin-bottom 0
+
+    #nav
+      z-index 500
+      transition .3s
+      background var(--sco-card-bg)
+
+      a
+        color var(--sco-fontcolor)
+        text-shadow none
+
+        &:hover
+          color var(--sco-white)
+          text-shadow none
+          align-items center
+
+          +maxWidth768()
+            align-items flex-end !important
+            color var(--sco-fontcolor)
+
+      .back-home-button
+        color var(--sco-fontcolor)
+
+        i
+          font-size 20px
+
+    &:not(.nav-fixed)
+      #nav
+        background var(--sco-none)
+        transition .3s
+
+        +maxWidth768()
+          transition 0s
+
+  #nav
+    box-shadow none
+    transition 0.3s
+    display flex
+    justify-content center
+    -webkit-user-select none
+
+    +maxWidth768()
+      background linear-gradient(to top, var(--sco-main-none) 0, var(--sco-main) 100%)
+      transition 0s
+
+    +maxWidth1400()
+      padding 0
+
+    a
+      &:hover
+        span
+          &.scoicon
+            opacity 0
+
+            +maxWidth768()
+              opacity 1 !important
+
+    #nav-group
+      max-width 1400px
+      width 100%
+      display flex
+      position relative
+      padding 0 1.5rem
+      align-items center
+
+      +maxWidth768()
+        width 100%
+        display flex
+        position relative
+        padding 0 12px
+
+    #nav-right
+      position absolute
+      right 0
+      z-index 102
+      display flex
+      flex-direction row
+      height 100%
+      align-items center
+      margin-right 1.5rem
+      overflow hidden
+
+      +maxWidth768()
+        margin-right 12px
+
+      div
+        margin-left .5rem
+        padding 0
+
+      .nav-button
+        a
+          &.totopbtn
+            width 25px
+            height 25px
+            border-radius 40px
+            background var(--sco-fontcolor)
+            color var(--sco-card-bg)
+            position absolute
+            top 5px
+            right 5px
+            transition .3s
+
+        &.long
+          a
+            &.totopbtn
+              width 70px
+
+        &:hover
+          a
+            &.totopbtn
+              background var(--sco-main)
+
+        &:not(.long):hover
+          a
+            &.totopbtn
+              width 35px
+              height 35px
+              top 0
+              right 0
+
+    #nav-left
+      z-index 102
+      display flex
+      flex-direction row
+      height 100%
+      align-items center
+      margin-right 1.5rem
+      overflow hidden
+
+  &.nav-fixed
+    #nav
+      position fixed
+      top 0
+      z-index 103
+      transition .3s
+      box-shadow none
+      background var(--sco-card-bg)
+      outline 1px solid var(--sco-card-border)
+
+      #menus
+        +minWidth900()
+          z-index 100
+
+        & > div
+          &.menus_items
+            transition .3s
+            height 40px
+            margin auto 0
+
+      #menus[style*="padding-right: 300px;"]
+        .menus_items
+          transform translateX(-150px)
+
+      #page-name
+        +minWidth900()
+          z-index 101
+          transition .3s
+          top 10px
+
+        &-text
+          +minWidth900()
+            display inline
+            opacity 1
+            transition .3s
+            line-height 1
+
+          &:hover
+            &:after
+              +minWidth900()
+                opacity 1
+                line-height 36px
+
+      div.menus_items
+        +minWidth900()
+          transition .15s
+          position relative
+          top -60px
+
+    &.nav-visible
+      #nav
+        #page-name
+          +minWidth900()
+            z-index 100
+            top 60px
+            transition .3s
+
+          &-text
+            +minWidth900()
+              display inline
+              transition .15s
+
+        div.menus_items
+          +minWidth900()
+            opacity 1
+            transition .15s
+            position relative
+            top: 0
+
+        #menus
+          +minWidth900()
+            z-index 101
+
+    #travellings_button
+      +maxWidth768()
+        opacity 0
+
+  &.no-top-img
+    margin-bottom 0
+
+  &:not(.nav-fixed)
+    #percent
+      transition .3s
+
+    #nav-totop
+      width 0
+      transform scale(0)
+      margin-left 0 !important
+      overflow hidden
+      transition .3s ease-in
+
+#page-header #scroll-down .scroll-down-effects,
+#page-header #site-subtitle, #page-header #site-title
+  text-align center
+  line-height 1.5
+
+#page-header.nav-fixed #nav #site-name,
+#page-header.nav-fixed #nav #toggle-menu,
+#page-header.nav-fixed #nav a
+  text-shadow none
+
+#page-header.nav-fixed > #nav,
+#page-header.not-top-img > #nav
+  box-shadow none
+
+#nav
+  padding 0
+  position absolute
+  top 0
+  z-index 90
+  display flex
+  flex-wrap wrap
+  -webkit-box-align center
+  align-items center
+  width 100%
+  height 60px
+  font-size 1.3em
+  opacity 0
+  transition all .5s ease 0s
+  outline 1px solid var(--sco-none)
+  justify-content space-between
+
+  +maxWidth768()
+    padding 0
+
+  &.show
+    top 0
+    transition .2s
+    position fixed
+    z-index 91
+    opacity 1
+    filter none
+
+  #toggle-menu
+    padding 0 .4rem
+    display none
+    padding .1rem 0 0 .3rem
+    vertical-align top
+
+    +maxWidth768()
+      display inline-block !important
+
+    &:hover
+      color var(--sco-white)
+
+  #site-name
+    padding 0
+    transition .3s
+    display flex
+    height 35px
+    min-width 70px
+    justify-content center
+    align-items flex-end
+    text-shadow none
+    border-radius 40px
+    cursor pointer
+
+    &:hover
+      i
+        +minWidth900()
+          opacity 0
+
+      &:after
+        +minWidth900()
+          opacity: 1
+
+    &:after
+      +minWidth900()
+        opacity 0
+        position absolute
+        display flex
+        z-index 1
+        content "\e008"
+        font-family scoicon, serif !important
+        align-items center
+        justify-content center
+        font-size 22px
+        line-height 1
+        color var(--sco-white)
+
+    i
+      font-size 16px
+      line-height 35px
+      padding 0 12px
+
+      +maxWidth768()
+        transition .1s
+
+      +minWidth900()
+        opacity 1
+        transition all .3s, color 0s, opacity .3s
+
+    span
+      +maxWidth768()
+        padding-left 8px
+
+  #blog_name
+    flex-wrap nowrap
+    height 60px
+    display flex
+    align-items center
+    z-index 102
+    transition .3s
+
+  a
+    transition .3s
+    color var(--sco-white)
+    padding .3rem .4rem 0
+    border-radius 8px
+
+    &:hover
+      background var(--sco-white-op)
+      transition .3s
+      color var(--sco-white)
+
+      +maxWidth768()
+        background var(--sco-none)
+        box-shadow none
+        transition .3s
+        color var(--sco-fontcolor)
+
+  #menus
+    display flex
+    justify-content center
+    width 100%
+    position absolute
+    height 60px
+    left 0
+    margin 0
+    transform translateZ(0)
+
+    +maxWidth768()
+      display none !important
+
+  .menus_items
+    position relative
+    width fit-content
+    text-align center
+    left 0
+    right 0
+    top 0
+    display flex
+    flex-direction row
+    justify-content center
+
+    .menus_item
+      padding 0 .4rem
+      display flex
+      flex-direction column
+      align-items center
+      margin auto
+      position relative
+
+      .menus_item_child
+        position absolute
+        display none
+        margin-top 8px
+        padding 0
+        background-color var(--sidebar-bg)
+        box-shadow rgba(0, 0, 0, .5) 0 5px 20px -4px
+        animation .3s ease .1s 1 normal both running sub_menus
+        border-radius 5px
+        white-space nowrap
+        padding 6px 4px 8px 4px
+        border-radius 100px
+        background-color var(--sco-maskbgdeep)
+        box-shadow var(--sco-shadow-black)
+        border var(--style-border)
+        transition .3s
+        backdrop-filter blur(20px)
+        -webkit-backdrop-filter blur(20px)
+        transform translateZ(0)
+        top 35px
+
+        li
+          display inline-flex
+          list-style none
+          border-radius 5px
+          margin 0 4px
+
+          a
+            letter-spacing 0
+            display flex
+            align-items center
+            border-radius 100px
+            padding .3rem .8rem
+            width 100%
+            color var(--sco-fontcolor) !important
+            text-shadow none !important
+
+            &:hover
+              background var(--sco-main) !important
+              color var(--sco-white) !important
+              box-shadow var(--sco-shadow-main)
+              margin 0 auto
+              transform scale(1) !important
+              padding .3rem 1rem
+
+            i
+              &:not(.fa-brands)
+                font-size 22px
+                margin-right 8px
+                line-height 1
+
+        &::before
+          position absolute
+          top -8px
+          left 0
+          width 100%
+          height 20px
+          content ""
+
+        &:before
+          top -10px
+
+      &:hover
+        .menus_item_child
+          display block
+          border var(--style-border-hover)
+          box-shadow var(--sco-shadow-main)
+
+        i
+          &.expand
+            transform rotate(180deg) !important
+
+      i
+        &.expand
+          padding 4px
+          transition transform .3s ease 0s
+
+  &.hide-menu
+    #toggle-menu
+      display inline-block
+
+      +minWidth768()
+        display none
+
+      .site-page
+        font-size inherit
+
+        +maxWidth768()
+          width 35px
+          height 35px
+          display flex
+          align-items center
+          justify-content center
+
+    .menus_items
+      position absolute
+      left 0
+      visibility hidden
+      opacity 0
+
+    #search-button
+      span
+        display none !important
+
+  #search-button
+    display inline
+    padding 0 .4rem
+
+  .site-page
+    position relative
+    padding-bottom .3rem
+    text-shadow rgba(0, 0, 0, .3) .05rem .05rem .1rem
+    font-size .78em
+    cursor pointer
+
+  .back-home-button
+    &:hover
+      +minWidth900()
+        box-shadow var(--sco-shadow-main)
+        cursor pointer
+
+  #page-name
+    &-text
+      +minWidth900()
+        display inline
+        font-weight 700
+        padding 4px 8px
+        opacity 0
+        transition .1s
+        text-overflow ellipsis
+        overflow hidden
+        white-space nowrap
+        position relative
+        text-align center
+        cursor pointer
+        top 0
+        font-size .9rem
+        animation-timing-function ease-in
+        -webkit-animation-timing-function ease-in
+
+      &:hover
+        +minWidth900()
+          color var(--sco-main) !important
+          background var(--sco-none)
+          box-shadow none
+
+    &-mask
+      +maxWidth899()
+        display none !important
+
+.nav-button
+  cursor pointer
+
+#page-header #nav #nav-left .nav-button a,
+#page-header #nav #nav-right .nav-button a
+  height 35px
+  width 35px
+  display flex
+  align-items center
+  justify-content center
+  border-radius 40px
+
+#page-header #nav #nav-left .nav-button a i,
+#page-header #nav #nav-right .nav-button a i
+  line-height 1
+  font-size 22px
+
+#site-name
+  .iconfont
+    font-size 20px
+    font-weight 400
+    line-height 48px
+
+#site-logo
+  width 121px
+
+#nav-totop
+  position relative
+  width 35px
+  height 35px
+  display flex
+  border-radius 40px
+  transition all .3s ease-in-out
+  align-items center
+
+  &.long
+    width 80px
+
+  .totopbtn
+    padding-top 0
+
+    i
+      position absolute
+      display flex
+      font-size .8rem
+      opacity 0
+
+  &:hover
+    .totopbtn
+      i
+        opacity 1
+        color var(--sco-white)
+        transition .3s
+
+    #percent
+      opacity 0
+      font-weight 700
+
+  #percent
+    font-size 12px
+    border-radius 35px
+    display flex
+    justify-content center
+    align-items center
+    transition .3s
+    white-space nowrap
+
+.nav-fixed #nav-totop #percent,
+.page #nav-totop #percent
+  font-size 12px
+  border-radius 35px
+  display flex
+  justify-content center
+  align-items center
+  transition .3s
+  white-space nowrap
+
+.back-home-button
+  display flex
+  width 35px
+  height 35px
+  padding 0 !important
+  align-items center
+  justify-content center
+  margin-right 4px
+  transition .3s
+  color var(--sco-white)
+  border-radius 40px
+
+  +maxWidth768()
+    display: none
+
+  i
+    font-size 22px
+
+  &:hover
+    background var(--sco-main)
+    color var(--sco-white) !important
+
+    .back-menu-list-groups
+      display flex
+      opacity 1
+      transition .3s
+      top 55px
+      pointer-events auto
+      left 1.5rem
+
+      +maxWidth768()
+        padding-bottom 8px
+        box-shadow var(--sco-shadow-border)
+        left: 0
+
+  .back-menu-list-group
+    display flex
+    flex-direction column
+
+    .back-menu-list-title
+      margin 8px 0 0 16px
+      transition .3s
+
+    &:hover
+      .back-menu-list-title
+        color var(--sco-main)
+
+  .back-menu-list-groups
+    position absolute
+    top 65px
+    left 1.5rem
+    background var(--sco-card-bg)
+    border-radius 12px
+    border var(--style-border)
+    flex-direction column
+    font-size 12px
+    color var(--sco-secondtext)
+    box-shadow var(--sco-shadow-border)
+    transition 0s
+    opacity 0
+    pointer-events none
+
+    +maxWidth768()
+      left 0
+
+    &:hover
+      border var(--style-border-hover)
+
+  .back-menu-list
+    .back-menu-item
+      width 150px
+
+.nav-fixed
+  #nav
+    .back-home-button
+      color var(--sco-fontcolor)
+
+    a
+      color var(--sco-fontcolor)
+      transition .3s
+
+      &:hover
+        background var(--sco-main)
+        color var(--sco-white)
+        transition .3s
+
+    #site-name
+      &:hover
+        +minWidth900()
+          background var(--sco-main) !important
+
+      i
+        color var(--sco-fontcolor)
+        transition .3s
+
+        +maxWidth768()
+          color var(--sco-fontcolor)
+          transition .3s
+
+  .back-home-button
+    &:hover
+      background var(--sco-main) !important
+      color var(--sco-white) !important
+
+  .menus_item
+    &:hover
+      & >
+      a.site-page
+        +minWidth768()
+          background-color var(--sco-main)
+
+.post
+  .back-home-button
+    &:hover
+      background var(--sco-white-op)
+      color var(--sco-white) !important
+      cursor pointer
+
+  #nav
+    #site-name
+      &:hover
+        +minWidth900()
+          background var(--sco-white-op)
+          align-items center
+
+.back-menu-list-groups
+  .back-menu-list
+    display flex
+    flex-direction row
+    flex-wrap wrap
+    width 340px
+    justify-content space-between
+
+    &::before
+      position absolute
+      top -15px
+      left 0
+      width 100%
+      height 20px
+      content ''
+
+    .back-menu-item
+      display flex
+      align-items center
+      margin 4px 8px
+      padding 4px 8px !important
+      transition .3s
+      border-radius 8px
+
+      &:hover
+        background var(--sco-main) !important
+        transform scale(1) !important
+
+        .back-menu-item-text
+          color var(--sco-white)
+
+      .back-menu-item-icon
+        width 24px
+        height 24px
+        border-radius 8px
+        background var(--sco-none)
+
+      .back-menu-item-text
+        font-size 16px
+        margin-left .5rem
+        color var(--sco-fontcolor)
+
+        +maxWidth768()
+          font-size 14px
+
+#nav-music
+  display flex
+  align-items center
+  z-index 1001
+  position fixed
+  bottom 20px
+  left 20px
+  cursor pointer
+  transition .3s
+  transform-origin left bottom
+  box-shadow var(--sco-shadow-border)
+  border-radius 40px
+  overflow hidden
+  user-select none
+
+  +maxWidth798()
+    display none !important
+
+  span
+    user-select none
+
+  div
+    user-select none
+
+  &.playing
+    box-shadow 0 0 12px -3px var(--sco-none)
+    -webkit-animation playingShadow 5s linear infinite
+
+    .aplayer
+      background var(--sco-main-op-deep)
+      border var(--style-border-hover)
+      backdrop-filter saturate(180%) blur(20px)
+      -webkit-backdrop-filter blur(20px)
+      transform translateZ(0)
+
+      &.aplayer-withlrc
+        .aplayer-pic
+          box-shadow 0 0 14px #ffffffa6
+          -webkit-transform rotate(0) scale(1.1)
+          border-color var(--sco-white)
+          animation-play-state running
+
+        .aplayer-info
+          color var(--sco-white)
+
+        .aplayer-lrc
+          width 200px
+          margin-bottom 0
+          opacity 1
+
+      .aplayer-info
+        .aplayer-controller
+          .aplayer-bar-wrap
+            .aplayer-bar
+              opacity 1
+
+              .aplayer-played
+                animation-play-state running
+
+    #nav-music-hoverTips
+      opacity 0
+
+  .aplayer
+    background var(--sco-card-bg)
+    border-radius 60px
+    height 41px
+    display flex
+    margin 0
+    pointer-events none
+    transition .3s
+    border var(--style-border)
+    box-shadow none
+
+    &.aplayer-withlrc
+      .aplayer-pic
+        height 25px
+        width 25px
+        border-radius 40px
+        z-index 1
+        transition .3s
+        -webkit-transform rotate(0) scale(1)
+        border var(--style-border-always)
+        -webkit-animation changeright 24s linear infinite
+        animation-play-state paused
+
+      .aplayer-info
+        height 100%
+        color var(--sco-fontcolor)
+        margin-left 8px
+        padding 0
+        display flex
+        align-items center
+
+      .aplayer-lrc
+        width 0
+        opacity 0
+        transition .3s
+        margin-left 8px
+        margin-top -2px
+
+    .aplayer-notice
+      display none
+
+    .aplayer-miniswitcher
+      display none
+
+    .aplayer-body
+      position relative
+      display flex
+      align-items center
+      padding 0 12px 0 8px
+
+    .aplayer-pic
+      .aplayer-play
+        opacity 0
+
+      div
+        display none
+
+    .aplayer-info
+      .aplayer-music
+        margin 0
+        display flex
+        align-items center
+        padding 0
+        z-index 1
+
+        .aplayer-author
+          display none
+
+        .aplayer-title
+          cursor pointer
+          line-height 1
+          display inline-block
+          white-space nowrap
+          max-width 120px
+          overflow hidden
+          text-overflow ellipsis
+          transition .3s
+
+      .aplayer-controller
+        position absolute
+        width 100%
+        height 100%
+        top 0
+        left 0
+
+        .aplayer-time
+          display none
+
+        .aplayer-bar-wrap
+          margin 0
+          padding 0
+
+          .aplayer-bar
+            height 100%
+            background 0 0
+            opacity 0
+
+            .aplayer-loaded
+              display none
+
+            .aplayer-played
+              height 100%
+              opacity .1
+              background-color var(--sco-white) !important
+              -webkit-animation lightBar 5s ease infinite
+              animation-play-state paused
+
+    &.aplayer-withlist
+      .aplayer-info
+        border none
+
+    .aplayer-lrc
+      p
+        color #ffffffb3
+        filter blur(1px)
+
+        &.aplayer-lrc-current
+          color var(--sco-white)
+          border none
+          filter blur(0)
+
+  #nav-music-hoverTips
+    color var(--sco-white)
+    background var(--sco-main)
+    width 100%
+    height 100%
+    position absolute
+    top 0
+    left 0
+    align-items center
+    justify-content center
+    display flex
+    border-radius 40px
+    opacity 0
+    font-size 12px
+    z-index 2
+    pointer-events none
+    transition .3s
+
+  &:hover
+    &:not(.playing)
+      #nav-music-hoverTips
+        opacity 1
+
+  .aplayer-list
+    display none
+
+#nav-music .aplayer .aplayer-lrc:after,
+#nav-music .aplayer .aplayer-lrc:before
+  display none
+
+i
+  &.fab
+    font-size 20px
+    vertical-align middle
+    margin-bottom 4px
+
+#body-wrap
+  .full_page
+    &:before
+      background-color var(--sco-none) !important
+      transition 0s !important
+
+.full_page
+  #page-header
+    &:before
+      display none !important
+
+.snackbar-container
+  background var(--sco-main) !important
+  color var(--sco-white) !important
+  border-radius 0 !important
+  display flex
+  justify-content center !important
+  max-width none !important
+  min-width 100% !important
+  margin 0 !important
+  left 0 !important
+  height 60px !important
+  transform none !important
+
+  p
+    font-weight 700 !important
+    text-align center !important
+    font-size .8rem !important
+    display flex !important
+    justify-content center !important
+
+  .action
+    color var(--sco-white) !important
+    padding 4px 6px !important
+    font-weight 700
+    border-radius 8px !important
+    transition .3s
+    border var(--style-border) !important
+
+    &:hover
+      color var(--sco-main) !important
+      background var(--sco-white) !important
+
+  &::after
+    position absolute
+    width 0
+    height 100%
+    left 0
+    top 0
+    background var(--sco-white)
+    opacity .1
+    content ""
+    animation snackbar-progress var(--sco-snackbar-time) linear forwards
+    pointer-events none
+
+.page
+  #nav
+    a
+      &:hover
+        color var(--sco-white)
+        background var(--sco-main)
+        transition .3s
+        box-shadow var(--sco-shadow-main)
+
+  .menus_item
+    &:hover
+      & >
+      a.site-page
+        +minWidth768()
+          color var(--sco-white) !important
+          background var(--sco-main)
+          transition .3s
+          box-shadow var(--sco-shadow-main)
+
+  #site-name
+    i
+      +maxWidth768()
+        color var(--sco-fontcolor)
+
+.error
+  #nav
+    a
+      &:hover
+        background var(--sco-main)
+
+    #site-name
+      i
+        +maxWidth768()
+          color var(--sco-fontcolor)
+
+#weblogo
+  align-self center
+
+#menus
+  & > div
+    &.menus_items
+      & > div
+        & > a
+          letter-spacing .3rem
+          padding-left .7rem
+          font-weight 700
+          padding-top 0
+          padding-bottom 0
+          height 35px
+          line-height 35px
+          border-radius 40px
+
+#travellings_button
+  display inline
+  padding 0 .4rem
+  transition .3s
+
+  +maxWidth1200()
+    display none
+
+#page-name
+  +minWidth900()
+    align-items center
+    display flex
+    border-radius 12px
+    height 40px
+    position absolute
+    top 62px
+    left 0
+    right 0
+    margin auto
+    justify-content center
+    animation-timing-function ease-out
+    -webkit-animation-timing-function ease-out
+
+#page-name-mask
+  +minWidth900()
+    width 100%
+    height 100%
+    position absolute
+    overflow hidden
+    left 0
+
+.menus_item
+  &:hover
+    & >
+    a.site-page
+      +minWidth768()
+        color var(--sco-white) !important
+        background var(--sco-white-op)
+        transition .3s;
+        box-shadow var(--sco-shadow-main)
+
+a.console_switchbutton
+  padding 4px 8px !important
+  cursor pointer
+
+#nav-console
+  +maxWidth768()
+    display none
+
++minWidth768()
+  .menus_item:hover > a.site-page
+    color var(--sco-card-bg) !important;
+    background var(--sco-white-op);
+    transition .3s;
+    box-shadow var(--sco-shadow-main)
+
+  .page .menus_item:hover > a.site-page
+    color var(--sco-card-bg) !important
+    background var(--sco-main);
+    transition .3s;
+    box-shadow var(--sco-shadow-main)
+
+  .post .menus_item:hover > a.site-page
+    color var(--sco-white)
+
+  .nav-fixed .menus_item:hover > a.site-page
+    background-color var(--sco-lighttext)

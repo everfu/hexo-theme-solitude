@@ -1,0 +1,359 @@
+#footer
+  position: relative
+  background: linear-gradient(180deg, var(--sco-card-bg-none) 0, var(--sco-card-bg) 25%)
+  display: flex
+  flex-direction: column
+  margin-top: .5rem
+
+  &:before
+    position: absolute !important
+    width: 100% !important
+    height: 100% !important
+    content: '' !important
+    z-index: -1
+
+#footer-wrap
+  position: relative
+  color: var(--sco-fontcolor)
+  display: flex
+  flex-wrap: wrap
+  justify-content: space-around
+  padding: 20px 50px 0 50px
+  text-align: left
+  max-width: 1200px
+  margin: 0 auto
+  margin-top: 1rem
+
+  a
+    padding: 4px 12px
+    border-radius: 5px
+    color: var(--sco-fontcolor)
+    height: 44px
+    line-height: 36px
+
+    &:hover
+      cursor: pointer
+      border-radius: 5px
+      color: var(--sco-hovertext)
+      background-color: var(--sco-none)
+
+  .footer-separator
+    margin: 0 .2rem
+
+  .icp-icon
+    padding: 0 4px
+    vertical-align: text-bottom
+    max-height: 1.4em
+    width: auto
+
+  h1
+    font-size: 1.5rem
+    margin: 0
+
+  h3
+    padding: 0 12px
+
+  p
+    margin: 0 0 0 .2rem
+    font-size: .8rem
+    opacity: .8
+
+  i
+    margin-right: .5rem
+    width: 22px
+    font-size: 18px
+    display: inline-block
+
+  #letlogo
+    display: flex
+    flex-direction: column
+    align-self: center
+    margin: auto 0
+    max-width: 200px
+
+  #letlink
+    display: flex
+    flex-direction: row
+    justify-content: space-around
+    margin: 0 0 1rem 0
+
+    .link_group
+      display: flex
+      flex-direction: column
+      margin-right: 20px
+      min-width: 180px
+
+#weblogo i
+  font-size: 2rem
+  line-height: 2rem
+  letter-spacing: -10px
+
+div#footer_deal
+  justify-content: center
+  display: flex
+  padding-top: 2rem
+  align-items: center
+
+div#sco-footer-bar
+  display: none
+
+  a.footer-bar-link
+    padding: 4px 16px
+    background: var(--sco-secondbg)
+    border-radius: 20px
+    margin-top: 8px
+    font-size: 14px
+    cursor: pointer
+    border: var(--style-border-always)
+
+    &:hover
+      background: var(--sco-main)
+      color: var(--sco-white)
+      transform: scale(1.1)
+      border-color: var(--sco-main)
+
+  .footer-logo
+    font-size: 24px
+
+  .footer-bar-description
+    color: var(--sco-secondtext)
+    font-weight: 700
+
+.post div#sco-footer-bar
+  display: flex
+  flex-direction: column
+  align-items: center
+  margin-top: 16px
+
+#sco-footer
+  display: flex
+  flex-direction: row
+  width: 100%
+  max-width: 1200px
+  justify-content: space-between
+  flex-wrap: wrap
+  margin: 1rem auto 3rem
+  padding: 0 1rem
+
+  .footer-links
+    display: flex
+    flex-direction: column
+
+  .footer-item
+    font-size: .8rem
+    line-height: .8rem
+    color: var(--sco-fontcolor)
+    margin-right: auto
+    overflow: hidden
+    white-space: nowrap
+    text-overflow: ellipsis
+    max-width: 120px
+    cursor: pointer
+    padding: 8px
+    border-radius: 12px
+
+    &:hover
+      color: var(--sco-theme)
+      background: var(--sco-main-op-light)
+
+  .footer-group
+    min-width: 120px
+
+  .footer-title-group
+    display: flex
+    align-items: center
+    margin: 1rem 0 .7rem 0
+
+    a
+      margin-left: 8px
+
+      &:hover i
+        color: var(--sco-main)
+        opacity: 1
+
+    i
+      line-height: 1
+      color: var(--sco-secondtext)
+      transition: .3s
+      font-size: 16px
+      opacity: .6
+
+    .footer-title
+      margin 0
+
+  .footer-title
+    color: var(--sco-secondtext)
+    font-size: .8rem
+    margin-left: 8px !important
+
+  .random-friends-btn
+    display: flex
+
+#footer-bar
+  padding: 1rem
+  color: var(--sco-fontcolor)
+  margin-top: 1rem
+  background: var(--sco-secondbg)
+  display: flex
+  overflow: hidden
+  z-index: 1002
+  transition: .3s
+  border-top: var(--style-border-always)
+
+  .footer-bar-links
+    display: flex
+    justify-content: space-between
+    max-width: 1400px
+    width: 100%
+    margin: 0 auto
+    flex-wrap: wrap
+    align-items: center
+    line-height: 1
+
+  .footer-bar-left
+    display: flex
+    flex-wrap: wrap
+    min-height: 32px
+    align-items: center
+
+  .footer-bar-link
+    margin-top: 8px
+    margin-bottom: 8px
+    margin-right: 1rem
+    color: var(--sco-fontcolor)
+    font-size: .8rem
+    font-weight: 700
+    white-space: nowrap
+
+    &:hover
+      color: var(--sco-theme)
+
+  .footer-bar-right
+    display: flex
+    flex-direction: row
+    flex-wrap: wrap
+    align-items: center
+
+  > div > div.footer-bar-left > span
+    margin-right: 1rem
+
+#cookies-window
+  min-width: 300px
+  background: var(--sco-maskbgdeep)
+  color: var(--sco-fontcolor)
+  padding: 8px 16px
+  display: flex
+  flex-direction: column
+  bottom: 20px
+  right: 20px
+  position: fixed
+  border-radius: 12px
+  transition: .3s
+  z-index: 1002
+  user-select: none
+  backdrop-filter: saturate(180%) blur(20px)
+  -webkit-backdrop-filter: saturate(180%) blur(20px)
+  transform: translateZ(0)
+  border: var(--style-border)
+  animation: barrageIn .6s cubic-bezier(.42, 0, .3, 1.11)
+
+  &.cw-hide
+    opacity: 0
+    animation: barrageOut .6s cubic-bezier(.42, 0, .3, 1.11)
+    z-index: -1
+
+  .cookies-window-title
+    padding-bottom: 4px
+    border-bottom: var(--style-border)
+    font-size: 12px
+    font-weight: 700
+
+  .cookies-window-content
+    font-size: 14px
+    display: flex
+    justify-content: space-around
+    align-items: center
+
+.cookie-to
+  margin-right: 4px
+  font-weight: 700
+
+.cookies-link
+  margin-left: auto
+  font-size: 16px
+
+.cookies-link i.scoicon
+  font-size: 16px
+
+a.deal_link
+  display: flex
+  margin: 1rem 27px
+  color: var(--sco-card-bg)
+  border-radius: 3rem
+  width: 32px
+  height: 32px
+  background: var(--sco-fontcolor)
+  justify-content: center
+  align-items: center
+  transition: .3s
+
+  &:hover
+    color: var(--sco-white)
+    background: var(--sco-main)
+    transform: scale(1.1)
+
+blockquote footer
+  padding: 0 0 .5rem
+
+blockquote footer cite::before
+  padding: 0 .3em
+  content: "—"
+
+img.footer_mini_logo
+  width: 50px
+  height: 50px
+  margin: 0 1rem
+  cursor: pointer
+  transition: cubic-bezier(0, 0, 0, 1.29) .5s
+  -webkit-user-select: none
+  border-radius: 50px
+
+  &:hover
+    -webkit-backface-visibility: hidden
+    -webkit-transform-style: preserve-3d
+    transform: scale(1.2)
+
+#footer_deal i
+  font-size: .9rem
+  line-height: .9rem
+  height: .9rem
+
+@media screen and (max-width: 768px)
+  img.footer_mini_logo
+    display: none
+
+  div#footer_deal
+    flex-wrap: wrap
+    flex-direction: row
+
+  #footer
+    background: linear-gradient(180deg, var(--sco-background) 0, var(--sco-card-bg) 25%)
+    margin-top: 0
+    z-index: 999
+
+  #letlink
+    flex-direction: column !important
+    text-align: center !important
+
+  #letlogo
+    display: none !important
+
+  #footer-wrap
+    margin-top: 1rem !important
+
+@media screen and (max-width: 1300px)
+  #cookies-window
+    display: none
+
+[data-theme=dark] #sco-footer .footer-item:hover
+  background: var(--sco-theme-op)

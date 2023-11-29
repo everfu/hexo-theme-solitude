@@ -14,17 +14,17 @@ time:
   runtime:  天
 
 sayhello:
-  morning: 早上好
-  noon: 中午好
-  afternoon: 下午好
-  night: 晚上好
-  goodnight: 晚安
-  iam: '!  我是'
+  morning: 一日之计在于晨
+  noon: 吃饱了才有力气干活
+  afternoon: 集中精力，攻克难关
+  night: 不要太劳累了，早睡更健康
+  goodnight: 睡个好觉，保证精力充沛
 
 page:
   tag: 标签
   category: 分类
   archives: 文章
+  echarts: 博客统计
 
 nav:
   backtop: 返回顶部
@@ -34,6 +34,6 @@ nav:
   console: 中控台
 
 search:
-  empty: 搜索结果为空
-  hit: 已为您找到 ${query} 条结果
+  empty: 找不到你查询的内容：${query}
+  hit: 找到 ${hits} 条结果，用时 ${time} 毫秒
   placeholder: 输入关键词快速查找

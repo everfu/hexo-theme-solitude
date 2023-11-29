@@ -1,0 +1,27 @@
+- var filteredPosts = site.posts.data.filter(item => item.recommend === true).slice(0,6)
+each post in filteredPosts
+    .recent-post-item
+        .post_cover.left_radius
+            a(href=url_for(post.path), title=post.title)
+                span.recent-post-top-text 荐
+                img.post_bg(alt=post.title, src=post.cover, loading="lazy")
+        .recent-post-info
+            a.article-title(href=url_for(post.path), title=post.title)= post.title
+
+if theme.hometop.recommendList.url.startsWith('/') && theme.hometop.recommendList.url.endsWith('/')
+    .todayCard#todayCard(onclick=`pjax.loadUrl('${theme.hometop.recommendList.url}')`, style="z-index: 1;")
+else
+    script.
+        function GoTodayCard() {
+            window.open("#{theme.hometop.recommendList.url}", "_blank");
+        }
+    .todayCard#todayCard(onclick="GoTodayCard()", style="z-index: 1;")
+
+    .todayCard-info
+        .todayCard-tips= theme.hometop.recommendList.sup
+        .todayCard-title= theme.hometop.recommendList.title
+    .todayCard-cover.nolazyload(style=`background: url('${theme.hometop.recommendList.img}') no-repeat center /cover`)
+    .banner-button-group
+        a.banner-button(onclick="window.event.cancelBubble=true;sco.hideTodayCard();")
+            i.scoicon.sco-add-fill
+            span.banner-button-text 更多推荐

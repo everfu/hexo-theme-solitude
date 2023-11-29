@@ -1,0 +1,107 @@
+- var cdn = theme.cdn.head
+
+if theme.verify.baidu
+    meta(name="baidu-site-verification", content=theme.verify.baidu)
+
+if theme.verify.google
+    meta(name="google-site-verification", content=theme.verify.google)
+
+if theme.loading.pace
+    script(src=cdn.pace, data-pace-options='{ &quot;restartOnRequestAfter&quot;:false,&quot;eventLag&quot;:false}')
+
+// pwa
+if theme.pwa.enable
+    include ../head/pwa.pug
+
+link(rel="stylesheet", href=cdn.scoicon)
+link(rel="stylesheet", href=cdn.snackbarcss)
+
+// comment
+if theme.comment.enable
+    if theme.comment.type === 'twikoo'
+        script(src=cdn.twikoojs)
+
+// search
+if theme.thirdparty.search.enable
+    if theme.thirdparty.search.type === 'algolia'
+        script(src=url_for(cdn.instantsearch))
+        script(src=url_for(cdn.algoliajs))
+
+// aplayer
+if theme.thirdparty.aplayer.enable
+    link(rel="stylesheet", href=cdn.aplayercss)
+
+// swiper
+if theme.says.home_mini || theme.aside.history.enable
+    link(rel="stylesheet", href=cdn.swipercss)
+
+// custom inject
+if theme.extends.head
+    each item in theme.extends.head
+        item
+
+// post-ai
+if theme.thirdparty.ai.enable
+    script(src='/lib/chuckle-post-ai.js')
+
+// echarts
+if theme.about.echarts.enable && theme.about.enable
+    script(src=url_for(cdn.echartsjs))
+
+script.
+    (win => {
+            win.saveToLocal = {
+                set: function setWithExpiry(key, value, ttl) {
+                    if (ttl === 0)
+                        return
+                    const now = new Date()
+                    const expiryDay = ttl * 86400000
+                    const item = {
+                        value: value,
+                        expiry: now.getTime() + expiryDay,
+                    }
+                    localStorage.setItem(key, JSON.stringify(item))
+                },
+
+                get: function getWithExpiry(key) {
+                    const itemStr = localStorage.getItem(key)
+
+                    if (!itemStr) {
+                        return undefined
+                    }
+                    const item = JSON.parse(itemStr)
+                    const now = new Date()
+
+                    if (now.getTime() > item.expiry) {
+                        localStorage.removeItem(key)
+                        return undefined
+                    }
+                    return item.value
+                }
+            }
+
+            const DarkModeStatus = localStorage.getItem('theme')
+            if (DarkModeStatus !== null) {
+                if (DarkModeStatus === 'dark') {
+                    document.documentElement.setAttribute('data-theme', 'dark')
+                } else {
+                    document.documentElement.setAttribute('data-theme', 'light')
+                }
+            }
+
+            const asideStatus = saveToLocal.get('aside-status')
+            if (asideStatus !== undefined) {
+                if (asideStatus === 'hide') {
+                    document.documentElement.classList.add('hide-aside')
+                } else {
+                    document.documentElement.classList.remove('hide-aside')
+                }
+            }
+        }
+    )(window)
+
+    console.log("%c🔥 程序：Hexo | 主题：Hexo-Theme-Solitude | 作者：DuoSco团队 | 官网：https://github.com/DuoSco/Hexo-theme-solitude 😋", "color:#fff; background: linear-gradient(270deg, #18d7d3, #68b7dd, #8695e6, #986fee); padding: 8px 15px; border-radius: 8px");
+
+div
+    script(src="/js/utils.js")
+    script(src="/js/main.js")

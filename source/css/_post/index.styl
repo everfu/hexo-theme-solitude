@@ -1,0 +1,935 @@
+#post
+  .tag_share
+    .post-meta__tags
+      span.tags-punctuation
+        font-size 12px
+        margin-right 1px
+        display flex
+        align-items center
+
+    .post_share
+      display inline-block
+      float right
+      margin .4rem 0
+      width fit-content
+
+      .social-share
+        font-size .85em
+
+        .social-share-icon
+          margin 0 4px
+          width 1.85em
+          height 1.85em
+          font-size 1.2em
+          line-height 1.85em
+
+  .post-copyright
+    &:before
+      position absolute
+      top .1rem
+      right .6rem
+      color #307af6
+      content ""
+      font-size 1rem
+
+    .post-copyright__notice
+      font-size: 12px;
+      margin: 0.5rem 0;
+
+    .post-copyright-meta
+      color #307af6
+      font-weight 700
+
+    .post-copyright-info
+      padding-left 0
+
+      a
+        text-decoration none
+        word-break break-word
+        padding 0 4px
+        border-radius 4px
+
+        &:hover
+          text-decoration none
+          background-color var(--sco-main)
+          color var(--sco-white)
+          cursor pointer
+          border-radius 4px
+
+  .post-outdate-notice
+    position relative
+    margin 0 0 1rem
+    border-radius 3px
+    background-color #ffe6e6
+    color #f66
+    padding .5em 1em .5em 2.6em
+    border-left 5px solid #ff8080
+
+    &:before
+      position absolute
+      top 50%
+      left .9em
+      color #ff8080
+      content ""
+      transform translateY(-50%)
+
+  .ads-wrap
+    margin 2rem 0
+
+// post-meta
+#post-meta
+  .post-meta-date
+    opacity .6
+
+#post-info
+  #post-meta
+    > .meta-secondline
+      > span:first-child
+        margin-right .8rem
+
+  span.tags-punctuation::before
+    font-size 15px
+    line-height 32px
+
+.post-meta-date
+  .far
+    opacity .6
+
+  .article-meta-label
+    display none
+
+  margin-right .8rem
+
+#post-firstinfo
+  .post-meta__tags
+    color var(--sco-white)
+    opacity .8
+    margin-right 8px
+    padding 0 8px 0 4px
+    border-radius 12px
+    display flex
+    align-items center
+    flex-direction row
+
+    &:hover
+      color var(--sco-white)
+      opacity 1
+      background var(--sco-white-op)
+
+span.post-meta-categories
+  background-color var(--sco-white-op)
+  padding 0 .5rem
+  border-radius 8px
+  line-height 32px
+  height 32px
+  transition .3s
+
+  &:not(:first-child)
+    margin-left 8px
+
+  &:hover
+    background-color var(--sco-white)
+
+a.post-meta-categories
+  color var(--sco-white)
+  font-size .7rem
+  width 100%
+  height 100%
+  display flex
+
+span.post-meta-categories:hover
+  a.post-meta-categories
+    color var(--sco-main)
+
+#post-firstinfo
+  .meta-firstline
+    display flex
+    align-items center
+    height 32px
+
+    .tag_share
+      margin-left 1rem
+
+      .post-meta__tag-list
+        display flex
+        flex-direction row
+        align-items center
+
+@media screen and (max-width: 768px)
+  #post-firstinfo
+    .meta-firstline
+      margin-bottom .4rem
+
+.meta-avatar
+  img
+    width 30px
+    border-radius 30px
+    height 30px
+
+    &:hover
+      transform rotate(360deg)
+
+a.post-meta-original
+  background var(--sco-white-op) !important
+  color var(--sco-white) !important
+  padding 0 .5rem
+  font-size .7rem
+  margin auto
+  border-radius 8px
+  font-weight 700
+  line-height 32px
+  width 100%
+  height 100%
+  display flex
+
+  &:hover
+    color var(--sco-main) !important
+    background var(--sco-white) !important
+    border-radius 8px !important
+
+@media screen and (max-width: 768px)
+  .meta-share-time
+    display none !important
+
+  #post-info
+    #post-meta
+      z-index 1
+
+    &:after
+      position absolute
+      content ''
+      width 100%
+      height 100%
+      bottom 0
+      left 0
+      box-shadow 0 -214px 287px 45px var(--sco-main) inset
+      z-index 0
+
+  .meta-secondline
+    justify-content center !important
+
+  .post-meta__tag-list
+    display none
+
+  .typed-cursor
+    display none
+
+  .meta-avatar
+    display none !important
+
+  #post-firstinfo
+    white-space nowrap
+    margin 0 auto
+    z-index 1
+
+  .meta-firstline
+    .tag_share
+      display none
+
+.post-meta__tag-list::-webkit-scrollbar
+  display none
+
+.meta-share-time
+  a:hover
+    background 0 0 !important
+
+  .meta-avatar-name
+    opacity 1
+    color var(--sco-white) !important
+    font-weight 700
+
+  display flex
+
+  .meta-info
+    margin 0 .5rem
+
+.meta-secondline
+  display flex
+  flex-direction row
+  flex-wrap wrap
+  justify-content flex-start
+  align-items center
+
+.meta-avatar
+  display flex
+
+  .meta-avatar-name
+    margin 0 .5rem
+
+#post-info
+  #post-meta
+    i
+      font-size 16px
+      margin-right 4px
+
+span.post-meta-pv-cv
+  margin-left .8rem
+
+span.post-meta-wechat
+  margin-right .8rem
+  opacity .6
+  transition .3s
+  cursor pointer
+
+  &:hover
+    opacity 1
+    background var(--sco-white-op);
+
+span.post-meta-position
+  margin-right 12px
+  opacity .6
+
+#post-info
+  #post-meta
+    .post-meta-label
+      display none
+
+    .post-meta-icon
+      margin-right .4rem
+
+    .post-meta-separator
+      margin 0 .4rem
+
+.post-meta-pv-cv
+  #busuanzi_value_page_pv
+    font-weight 800
+
+#post-meta
+  > div
+    > span.post-meta-wordcount
+      > span.word-count
+        font-weight 800
+
+      > span:nth-child(7)
+        font-weight 800
+
+#post-firstinfo
+  > div
+    > span.post-meta-categories
+      > a
+        font-weight 800
+
+.post-meta-wordcount
+  opacity .6
+  margin-right 20px
+
+@media screen and (max-width: 768px)
+  .post-meta-wordcount
+    margin-left 0
+
+.post-meta-pv-cv
+  opacity .6
+
+.post-meta-pv
+  opacity .6
+  margin-right 8px
+  padding 8px
+  display flex
+  align-items center
+  border-radius 12px
+
+  &:hover
+    opacity 1
+    background var(--sco-white-op)
+    text-decoration none
+    color var(--sco-white)
+
+.post-meta-commentcount
+  opacity .6
+  cursor pointer
+  transition .3s
+  border-radius 12px
+  padding 8px
+
+  &:hover
+    opacity 1
+    background var(--sco-white-op)
+
+#twikoo-count
+  font-weight 800
+  color var(--sco-white)
+
+.post-meta-commentcount
+  i
+    margin-right .5rem
+
+#post-meta
+  > div
+    text-align left
+
+#post-info
+  #post-meta
+    margin-top .4rem
+    transition .3s
+    display flex
+    -webkit-user-select none
+
+    a
+      text-decoration none
+      color var(--sco-fontcolor)
+      line-height 1
+
+      &:hover
+        text-decoration none
+
+.hide-aside
+  #page
+    span.tags-punctuation::before
+      font-size 22px
+
+span.tags-punctuation::before
+  content "\e071"
+  font-family scoicon, serif !important
+  font-size 14px
+  opacity .4
+
+#post
+  > hr
+    display none
+
+.img-alt
+  font-size 12px
+  margin 0
+  color var(--sco-secondtext)
+
+.long-img
+  .img-alt
+    display none
+
+  img
+    border-radius 0 !important
+    margin 0 !important
+
+.meta-secondline
+  > span
+    display: flex
+    align-items center
+    line-height 1
+
+@media screen and (max-width: 768px)
+  .meta-secondline
+    span
+      line-height 1.5
+
+#post-firstinfo
+  text-align left
+  display flex
+  white-space nowrap
+  -webkit-user-select none
+
+.inline-image
+  display flex
+  margin 8px auto
+  width fit-content
+  justify-content center
+
+  a:hover
+    background 0 0 !important
+    box-shadow none !important
+
+  img
+    margin 0 !important
+    display inline-flex
+
+.post-bg
+  #post-cover
+    width 100%
+    height 100%
+    object-fit cover
+    min-width 50vw
+    min-height 20rem
+    opacity .8
+
+#post
+  h2
+    margin-top 1.5rem
+
+// 文章底部
+#post
+  .tag_share
+    .post-meta__tags
+      background var(--sco-card-bg)
+      border var(--style-border-always)
+      color var(--sco-fontcolor)
+      border-radius 8px
+      margin 0
+      display flex
+      align-items center
+      white-space nowrap
+      height 40px
+      padding 0 .6rem
+      width fit-content
+      font-size .85em
+      transition all .2s ease-in-out 0s
+
+      &:hover
+        background var(--sco-lighttext)
+        box-shadow var(--sco-shadow-main)
+        color var(--sco-white)
+
+  .post-copyright
+    background var(--sco-secondbg)
+    border-width 1px
+    transition .3s
+    position relative
+    margin 80px 0 30px
+    border-radius 12px
+    padding 34px 0 20px 0
+    border var(--style-border-always)
+
+    &__author_img
+      width 66px
+      height 66px
+      margin auto
+      border-radius 66px
+      overflow hidden
+      position absolute
+      left calc(50% - 33px)
+      top -33px
+      border var(--style-border-always)
+      box-shadow var(--sco-shadow-main)
+
+      &:hover
+        img.post-copyright__author_img_front
+          transform scale(1) translateY(3px)
+
+        img.post-copyright__author_img_back
+          transform scale(.8)
+
+      img
+        position absolute
+        bottom 0
+        left 0
+
+    &__author_img img
+      position absolute
+      bottom 0
+      left 0
+
+    &__author_img_back
+      border-radius 66px
+      z-index 10
+
+    &__author_img_front
+      z-index 20
+      transform scale(1.2) translateY(6px)
+
+    &__author_img:hover
+      &__author_img_front
+        transform scale(1) translateY(3px)
+
+      &__author_img_back
+        transform scale(.8)
+
+    &__author_name
+      text-align center
+      font-size 20px
+      font-weight 700
+      margin-top 16px
+      color var(--sco-fontcolor)
+      line-height 1
+
+    &__author_desc
+      text-align center
+      font-size 14px
+      color var(--sco-secondtext)
+      margin-top 4px
+
+    &__author
+      display flex
+      align-items center
+
+    &__original
+      background var(--sco-fontcolor)
+      color var(--sco-card-bg)
+      padding .2rem .5rem
+      font-size .7rem
+      border-radius 8px
+      margin-right .5rem
+      font-weight 700
+      line-height 1.5
+      white-space nowrap
+      -webkit-user-select none
+
+      &:hover
+        background var(--sco-main)
+        color var(--sco-white)
+
+    &-copybtn
+      margin-left .5rem
+      color var(--sco-fontcolor)
+      opacity .4
+      transition .3s
+
+      &:hover
+        opacity 1
+        transition .3s
+
+    &-copybtn i
+      font-size 16px
+
+    &-info a
+      padding 0
+      color var(--sco-fontcolor)
+      font-weight 700
+
+    &-info
+      padding-left 0
+      color var(--sco-secondtext)
+      overflow hidden
+      display -webkit-box
+      -webkit-line-clamp 1
+      -webkit-box-orient vertical
+      text-align center
+
+    &-title
+      padding-left 0
+      color var(--sco-fontcolor)
+      overflow hidden
+      display -webkit-box
+      -webkit-line-clamp 1
+      -webkit-box-orient vertical
+      font-size 1rem
+      font-weight 700
+
+      &:hover
+        color var(--sco-lighttext)
+
+    & > div
+      &__author > span > span
+        padding 0
+        color var(--sco-fontcolor)
+        font-weight 700
+        font-size 1rem
+        line-height 1.38
+        overflow hidden
+        display -webkit-box
+        -webkit-line-clamp 1
+        -webkit-box-orient vertical
+
+      &__type
+        line-height 16px
+        display flex
+        align-items center
+        margin-top 4px
+
+      &__type > span > a
+        font-size 14px
+        opacity .6
+        line-height 16px
+
+        &:hover
+          opacity 1
+          background 0 0
+
+    &-url a
+      overflow hidden
+      display -webkit-box
+      -webkit-line-clamp 1
+      -webkit-box-orient vertical
+
+    & > div
+      &__notice
+        font-size 12px
+        margin .5rem 0
+
+    &:before
+      display none
+
+  .tag_share
+    .post-meta__tags
+      span.tagsPageCount, #tag-page-tags .tagsPageCount
+        padding 2px
+        background var(--sco-card-bg)
+        border var(--style-border-always)
+        min-width 23px
+        display inline-block
+        border-radius 4px
+        text-align center
+        font-size .6rem
+        color var(--sco-fontcolor)
+        margin-left 4px
+
+    .post-meta__tag-list
+      display flex
+      padding 0
+      width 100%
+      flex-wrap wrap
+      flex-direction row
+
+      a
+        margin-bottom 8px
+        margin-right 8px
+
+.post-tools
+  display flex
+  width 100%
+  justify-content center
+  margin-top 8px
+  flex-wrap wrap
+  -webkit-user-select none
+
+  &-left
+    white-space nowrap
+    display flex
+    text-overflow ellipsis
+    justify-content center
+    flex-wrap wrap
+
+  &-right
+    padding-right 0
+    display flex
+    align-items center
+    flex-direction row
+    flex-wrap wrap
+
+#qrcode
+  width 150px
+  height 150px
+  min-width 150px
+  min-height 150px
+  background var(--sco-white)
+  padding 8px
+  border-radius 8px
+  margin-bottom 8px
+  border var(--style-border-always)
+
+.post-qr-code-img
+  box-shadow var(--sco-shadow-lightblack)
+  border-radius 12px
+  border var(--style-border-always)
+
+#quit-box
+  position fixed
+  width 100vw
+  height 100vh
+  background rgba(0, 0, 0, .2)
+  top 0
+  left 0
+  display none
+  z-index 101
+  margin 0 !important
+
+.post-tools-left
+  #quit-box
+    display none
+
+@media screen and (min-width: 1300px)
+  #post
+    .tag_share
+      .post-meta__tags
+        background var(--sco-card-bg)
+        border var(--style-border)
+
+        &:hover
+          border var(--style-border-hover)
+
+@media screen and (max-width: 768px)
+  #post
+    .post-copyright
+      background var(--sco-card-bg)
+      box-shadow var(--sco-shadow-border)
+      padding 1rem 1.3rem
+
+    .post-copyright
+      .post-meta-original
+        display none
+
+    .post-copyright__original
+      display none
+
+    > div
+      .post-copyright__author > span > span
+        -webkit-line-clamp 3
+
+    .post-copyright
+      .post-copyright-info
+        -webkit-line-clamp 2
+
+    .post-copyright
+      .post-copyright-title
+        -webkit-line-clamp 3
+        line-height 1.2
+
+  #quit-box
+    z-index 109
+    height calc(100vh - 380px)
+
+  .post-tools-left
+    > div
+      margin 8px
+
+    .post-tools-left
+      white-space nowrap
+      display flex
+      text-overflow ellipsis
+      justify-content center
+      width 100%
+
+// 文章顶部图片
+
+.coverdiv
+  width 70%
+  height 100%
+  position relative
+  overflow hidden
+  margin 0 -20% 0 auto
+  transform rotate(10deg) translateY(-10%) scale(2)
+  filter blur(10px)
+
+.coverdiv.loaded
+  display block
+
+.coverdiv:after
+  position absolute
+  content ''
+  width 100%
+  height 100%
+  top 0
+  left 0
+  box-shadow 110px -130px 300px 60px var(--sco-main) inset
+
+@media screen and (max-width: 768px)
+  .coverdiv
+    margin 0 0 0 auto
+    transform rotate(0) translateY(0) scale(1)
+    filter blur(0)
+    width 100%
+    position fixed
+    height 30rem
+    z-index 1
+
+  .coverdiv:after
+    box-shadow 0 0 205px 59px var(--sco-main) inset
+
+@media screen and (min-width: 1300px)
+  .coverdiv
+    width 70%
+    height 100%
+    position relative
+    overflow hidden
+    margin 0 -20% 0 auto
+    transform rotate(10deg) translateY(-8%) scale(1.8)
+    filter blur(10px)
+    opacity 0
+
+  .coverdiv.loaded
+    display block
+    opacity .5
+    animation showCover 1s .3s backwards
+    transform rotate(10deg) translateY(-10%) scale(2)
+
+@media screen and (min-width: 768px)
+  .coverdiv
+    width 70%
+    height 100%
+    position relative
+    overflow hidden
+    margin 0 -20% 0 auto
+    transform rotate(10deg) translateY(-8%) scale(1.8)
+    filter blur(10px)
+    opacity 0
+
+  .coverdiv.loaded
+    display block
+    opacity .5
+    animation showCover 1s .3s backwards
+    transform rotate(10deg) translateY(-10%) scale(2)
+
+  @keyframes showCover
+    from
+      opacity 0
+      transform rotate(10deg) translateY(-8%) scale(1.8)
+    to
+      opacity .5
+      transform rotate(10deg) translateY(-10%) scale(2)
+
+// 文章顶部内容
+
+#post > #post-info
+  margin-bottom 1.5rem
+
+#post > #post-info .post-title
+  padding-bottom .2rem
+  border-bottom 1px solid var(--light-grey)
+  color var(--text-highlight-color)
+
+#post > #post-info .post-title .post-edit-link
+  float right
+
+#post > #post-info #post-meta, #post > #post-info #post-meta a
+  color #78818a
+  border-radius 12px
+
+#post-info .post-title
+  margin-bottom .4rem
+  color var(--sco-white)
+  font-weight 400
+  font-size 2.5em
+  line-height 1.5
+  -webkit-line-clamp 3
+
+@media screen and (max-width: 768px)
+  #post-info .post-title
+    font-size 1.72em
+
+#post-info .post-title .post-edit-link
+  padding-left .5rem
+
+#post-info #post-meta
+  color var(--light-grey)
+  font-size 95%
+
+@media screen and (min-width: 768px)
+  #post-info #post-meta > .meta-secondline > span:first-child
+    display none
+
+@media screen and (max-width: 768px)
+  #post-info #post-meta
+    font-size 90%
+    padding 0 2rem
+
+#post-info #post-meta .post-meta-separator
+  margin 0 10px
+
+#post-info #post-meta .post-meta-icon
+  margin-right .2rem
+
+#post-info #post-meta .post-meta-label
+  margin-right .2rem
+
+#post-info #post-meta a
+  color var(--light-grey)
+  transition all .3s ease-out 0s
+
+#post-info .post-title
+  color var(--sco-white)
+  font-weight 700
+  font-size 2.3rem
+  line-height 1.2
+  text-align left
+  margin 1rem 0 1rem 0 !important
+  -webkit-line-clamp 2
+  padding 0
+  overflow hidden
+
+@media screen and (max-width: 768px)
+  #post-info .post-title
+    font-size 1.2rem
+    -webkit-line-clamp 3
+    margin .2rem auto !important
+    text-align center
+    z-index 1
+
+.post-bg
+  #post-cover
+    +minWidth768()
+      min-height 15rem !important
+      height 70% !important
+      opacity 1 !important
+
+#post-info
+  .post-title
+    +minWidth1300()
+      width 1100px
+      font-size 2.6rem !important

@@ -25,6 +25,7 @@ page:
   tag: Tags
   category: Categories
   archives: Archives
+  echarts: Echarts
 
 nav:
   backtop: Back to top

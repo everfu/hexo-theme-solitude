@@ -1,0 +1,7 @@
+if theme.thirdparty.search.enable
+    if theme.thirdparty.search.type==="algolia"
+        include ./algolia-search.pug
+        script(src="/js/extend/search/algolia-search.js")
+    else if theme.thirdparty.search.type === "local"
+        include ./local-search.pug
+        script(src="/js/extend/search/local-search.js")

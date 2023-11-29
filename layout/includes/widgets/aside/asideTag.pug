@@ -1,0 +1,11 @@
+.card-tag-cloud
+    each tag in site.tags.data
+        a(href=url_for(tag.path), style="font-size: 0.8rem;")= tag.name
+            sup= tag.length
+if site.tags.length > 50
+    a#more-tags-btn(href="javascript:void(0);", rel="external nofollow", onclick="sco.openAllTags();", data-pjax-state="") 查看全部
+else
+    style.
+        .card-tag-cloud::after {
+            display: none !important;
+        }

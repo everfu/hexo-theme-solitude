@@ -1,0 +1,30 @@
+.banners-title
+    .banners-title-small= page.title
+    .banners-title-big= page.desc
+
+.banner-button-group
+    if theme.footer.randomlink
+        a.banner-button.secondary(onclick="travelling()")
+            i.scoicon.sco-signal-tower-fill
+            span.banner-button-text 随机访问
+    a.banner-button(onclick="sco.scrollToComment()")
+        i.scoicon.sco-right-btn-fill
+        span.scoicon.banner-button-text 申请友链
+
+.tags-group-all.nowrapMove
+    .tags-group-wrapper
+        - const data = site.data.links.links
+        - for (let i = 0; i < 2; i++)
+        each x in data
+            if x.type === "item"
+                - var pairs = []
+                each y, index in x.link_list
+                    if (index % 2 === 0)
+                        - pairs.push([y])
+                    else
+                        - pairs[pairs.length - 1].push(y)
+                each pair in pairs
+                    .tags-group-icon-pair
+                        each y in pair
+                            a.tags-group-icon(href=url_for(y.link), title=y.name)
+                                img(src=y.avatar, title=y.name)

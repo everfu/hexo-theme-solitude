@@ -1,0 +1,7 @@
+.meta
+    img.no-lightbox.no-lazyload.avatar(src=theme.aside.card.author.img)
+    .info
+        span.bber_nick= config.author
+        time.datetime.bber_date(datetime=moment(item.date).format())
+    a.bber-reply.goComment(onclick=`sco.toTalk('${item.content}')`)
+        i.scoicon.sco-chat-fill(style="font-size: 1rem;")

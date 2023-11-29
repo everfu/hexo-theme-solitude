@@ -1,0 +1,38 @@
+- const contentinfo = site.data.about.contentinfo
+
+.author-content
+    .author-content-item.myInfoAndSayHello
+        .title1 你好，很高兴认识你👋
+        .title2 我叫
+            span.inline-word= contentinfo.name
+        .title1 是一名 #{contentinfo.title}
+    .aboutsiteTips.author-content-item
+        .author-content-item-tips 追求
+        h2
+            | 源于
+            br
+            | 热爱而去
+            span.inline-word 创造
+            .mask
+                span.first-tips(data-show='')= contentinfo.product
+                span= contentinfo.design
+                span= contentinfo.program
+                span(data-up='')= contentinfo.user_experience
+
+script.
+    var pursuitInterval = null;
+    pursuitInterval = setInterval(function () {
+        const show = document.querySelector('span[data-show]')
+        const next = show.nextElementSibling || document.querySelector('.first-tips')
+        const up = document.querySelector('span[data-up]')
+        if (up) {
+            up.removeAttribute('data-up')
+        }
+        show.removeAttribute('data-show')
+        show.setAttribute('data-up', '')
+        next.setAttribute('data-show', '')
+    }, 2000)
+
+    document.addEventListener('pjax:send', function(){
+        clearInterval(pursuitInterval);
+    });

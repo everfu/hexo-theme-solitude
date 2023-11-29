@@ -1,0 +1,4 @@
+header(class=is_post() ? 'post-bg' : 'not-top-img', id="page-header")
+    include ./nav.pug
+    if is_post()
+        include ./widgets/post/postMeta.pug

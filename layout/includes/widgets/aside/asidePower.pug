@@ -1,0 +1,19 @@
+- const data = theme.aside.power.list
+- const vip = data[Math.floor(Math.random() * data.length)]
+.card-widget.card-power
+    .item-headline
+        i.scoicon.sco-afdian-line
+        span 爱发电赞助
+        a.power-charge(href=theme.aside.power.link, rel="external nofollow", target="_blank", title="赞助博主") 赞助
+    a#power-star(data-pjax-state="", href=vip.link)
+        #power-star-image(style=`background-image: url('${vip.avatar}');`)
+        .power-star-body
+            #power-star-title= vip.name
+            #power-star-desc= vip.descr
+    .power-list
+        .power-item
+            .power-item-body
+                each item in data
+                    if item.name !== vip.name
+                        .power-item-link
+                            a(target="_blank", href=item.link, rel="external nofollow")= item.name

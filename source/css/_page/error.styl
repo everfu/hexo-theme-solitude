@@ -1,0 +1,161 @@
+#error-wrap
+  display: flex
+  justify-content: center
+  margin: 0 1rem
+  width: 100%
+  position: relative
+
+  .error-content
+    display: flex
+    flex-direction: row
+    justify-content: center
+    align-items: center
+    margin: 0 1rem
+    height: 18rem
+    max-width: 800px
+    border-radius: 5px
+    background: var(--sco-card-bg)
+    box-shadow: var(--card-box-shadow)
+    transition: all .3s ease 0s
+    border: var(--style-border-always)
+    position: relative
+    width: 100%
+
+    &:hover
+      box-shadow: var(--card-hover-box-shadow)
+
+    .error-img
+      flex: 1 1 0
+      height: 100%
+      width: 600px
+      border-top-left-radius: 8px
+      border-bottom-left-radius: 8px
+      background-color: #307af6
+      background-position: center center
+      background-size: cover
+
+    .error-info
+      flex: 1 1 0
+      padding: .5rem
+      text-align: center
+      font-size: 14px
+      font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif
+
+      .error_title
+        font-size: 9em
+        line-height: 1
+
+      .error_subtitle
+        word-break: break-word
+        font-size: 1.6em
+        -webkit-line-clamp: 2
+
+      a
+        display: inline-block
+        margin-top: .5rem
+        padding: .3rem 1.5rem
+        background: var(--btn-bg)
+        color: var(--btn-color)
+
+        i
+          padding-right: .3rem
+
+    box-shadow: none !important
+    border-radius: 12px
+    background: var(--sco-card-bg) !important
+
+#body-wrap.error
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: center
+  padding: 50px 1rem 1rem
+  position: relative
+
+  .aside-list
+    display: flex
+    flex-direction: row
+    flex-wrap: nowrap
+    margin: 1rem
+    max-width: 100%
+
+    .aside-list-group
+      display: flex
+      flex-direction: row
+      flex-wrap: wrap
+      max-width: 800px
+      margin: 0 auto
+      justify-content: space-between
+
+    .aside-list-item
+      padding: .5rem 0
+      width: 49%
+
+      img
+        width: 100%
+        object-fit: cover
+        border-radius: 12px
+
+      .thumbnail
+        overflow: hidden
+        width: 100%
+        height: 200px
+        background: var(--sco-card-bg)
+        display: flex
+
+      .content .title
+        -webkit-line-clamp: 2
+        overflow: hidden
+        display: -webkit-box
+        -webkit-box-orient: vertical
+        line-height: 1.5
+        justify-content: center
+        align-items: flex-end
+        align-content: center
+        padding-top: .5rem
+        font-size: 16px
+        font-weight: 700
+
+      .content time
+        display: none
+
+.button--animated
+  border-radius: 8px !important
+  transition: .3s
+
+  &:before
+    display: none
+
+@media screen and (max-width: 768px)
+  #error-wrap .error-content
+    flex-direction: column
+    margin: 0
+    height: 25rem
+    width: 100%
+
+    .error-img
+      flex: 1 1 0
+      width: 100%
+      border-radius: 12px
+
+    .error-info
+      flex: 1.1 1 0
+      width: 100%
+      padding-bottom: 2rem
+
+      .error_title
+        font-size: 4rem
+
+  #body-wrap.error
+    padding-top: 0
+
+    .aside-list
+      margin: 0
+
+    .aside-list .aside-list-item .thumbnail
+      height: 100px
+
+  #error-wrap .error-content .error-info a:hover
+    background-color: var(--sco-blue)
+    transition: .3s
+    box-shadow: var(--sco-shadow-blue)

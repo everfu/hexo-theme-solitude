@@ -1,0 +1,392 @@
+*
+  box-sizing border-box
+
+html
+  line-height 1.15
+  -webkit-text-size-adjust 100%
+  text-size-adjust 100%
+  height: 100%;
+  font-size: 20px
+  overflow-y: overlay
+
+main
+  display block
+
+body
+  position relative
+  min-height 100%
+  background var(--sco-background)
+  color var(--sco-fontcolor)
+  font-size 16px
+  font-family "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei"
+  line-height 2
+  -webkit-tap-highlight-color transparent
+  margin 0
+
+::selection
+  background var(--sco-fontcolor)
+  color var(--sco-background)
+
+i.scoicon
+  font-size 22px
+  line-height 1
+
+svg.scoicon
+  width 1em
+  height 1em
+  vertical-align -0.15em
+  fill currentColor
+  overflow hidden
+
+svg.scoicon.tab
+  width 1.5em
+  height 1.5em
+  vertical-align -0.15em
+  fill currentColor
+  overflow hidden
+  padding-right 5px
+
+#page img
+  border-radius 12px
+
+#page p a:not(.headerlink)
+  text-decoration none
+  border-bottom 2px solid var(--sco-lighttext)
+  color var(--sco-fontcolor)
+  font-weight 700
+  padding 0 4px
+  border-radius 4px 4px 0 0
+
+#page p a:hover
+  text-decoration none
+
+h1
+  font-size 2em
+  margin .67em 0
+
+h1, h2, h3, h4, h5, h6
+  position relative
+  margin 1rem 0 .7rem
+  color var(--sco-fontcolor)
+  font-weight 700
+
+h1 code, h2 code, h3 code, h4 code, h5 code, h6 code
+  font-size inherit !important
+
+hr
+  box-sizing content-box
+  height 0
+  overflow visible
+  display: none
+
+pre
+  font-family monospace, monospace
+
+a
+  color var(--sco-fontcolor)
+  text-decoration none
+  transition all .2s ease 0s
+  overflow-wrap break-word
+  -webkit-user-drag none
+
+abbr[title]
+  border-bottom none
+  text-decoration underline dotted
+
+b, strong
+  font-weight bolder
+
+code, kbd, samp
+  font-family monospace, monospace
+  font-size 1em
+
+small
+  font-size 80%
+
+sub, sup
+  font-size 75%
+  line-height 0
+  position relative
+  vertical-align baseline
+
+sub
+  bottom -.25em
+
+sup
+  top -.5em
+
+button, input, optgroup, select, textarea
+  font-family inherit
+  font-size 100%
+  line-height 1.15
+  margin 0
+
+button, input
+  overflow visible
+
+input::placeholder
+  color var(--sco-gray)!important
+
+button, select
+  text-transform none
+
+[type=button], [type=reset], [type=submit], button
+  appearance button
+
+fieldset
+  padding .35em .75em .625em
+
+legend
+  box-sizing border-box
+  color inherit
+  display table
+  max-width 100%
+  padding 0
+  white-space normal
+
+progress
+  vertical-align baseline
+
+textarea
+  overflow auto
+
+[type=checkbox], [type=radio]
+  box-sizing border-box
+  padding 0
+
+[type=number]::-webkit-inner-spin-button, [type=number]::-webkit-outer-spin-button
+  height auto
+
+[type=search]
+  appearance textfield
+  outline-offset -2px
+
+[type=search]::-webkit-search-decoration
+  appearance none
+
+input[type=checkbox] + label::before, input[type=radio] + label::before
+  content ''
+  display inline-block
+  width 16px
+  height 16px
+  border 1px solid #999
+  background-color #fff
+  margin-right 5px
+  vertical-align middle
+
+::-webkit-file-upload-button
+  appearance button
+  font inherit
+
+summary
+  display list-item
+
+template
+  display none
+
+[hidden]
+  display none
+
+input::placeholder
+  color var(--sco-fontcolor)
+
+.table-wrap
+  overflow-x scroll
+  margin 0 0 1rem
+
+table
+  display table
+  width 100%
+  border-spacing 0
+  border-collapse collapse
+  empty-cells show
+
+table thead
+  background rgba(153, 169, 191, .1)
+
+table td, table th
+  padding .3rem .6rem
+  border 1px solid var(--light-grey)
+  vertical-align middle
+
+::selection
+  background #0079ff
+  color #f7f7f7
+
+button
+  padding 0
+  outline 0
+  border none
+  background 0 0
+  cursor pointer
+
+a:hover
+  color var(--sco-lighttext)
+
+img
+  max-width 100%
+  transition all .2s ease 0s;
+  border-style none
+
+img:not([src]), img[src=""]
+  opacity 0
+
+.img-alt
+  margin -.5rem 0 .5rem
+  color #858585
+
+.img-alt:hover
+  text-decoration none !important
+
+.is-center
+  text-align center
+  display flex
+  flex-wrap wrap
+  justify-content center
+  flex-direction row
+  align-items center
+
+.copy-true
+  user-select all
+
+.pull-left
+  float left
+
+.pull-right
+  float right
+
+.button--animated
+  position relative
+  z-index 1
+  transition color 1s ease 0s
+
+.button--animated::before
+  position absolute
+  inset 0
+  z-index -1
+  background var(--btn-hover-color)
+  content ""
+  transition transform .5s ease-out 0s
+  transform scaleX(0)
+  transform-origin 0 50%
+
+.button--animated:hover::before
+  transition-timing-function cubic-bezier(.45, 1.64, .47, .66)
+  transform scaleX(1)
+
+blockquote
+  border-left .2rem solid #49b1f5
+  border: var(--style-border-always);
+  background-color: var(--sco-secondbg);
+  color: var(--sco-secondtext);
+  border-radius: 8px;
+  margin: 1rem 0;
+  padding: .5rem .8rem
+
+  .pullquote
+    position relative
+    max-width 45%
+    font-size 110%
+
+    .left
+      left 0
+      margin 1em .5em 0 0
+
+    .right
+      right 0
+      margin 1em 0 0 .5em
+
+
+blockquote a
+  color var(--blockquote-color)
+
+blockquote p
+  margin 0 !important
+  padding: 0
+
+li, ul
+  list-style none
+  display block
+  margin 0
+  padding 0
+
+.li-style
+  width 100%
+  height 25px
+  text-align center
+
+.fireworks
+  position fixed
+  top 0
+  left 0
+  z-index 9999
+  pointer-events none
+
+.katex-wrap
+  overflow auto
+
+.katex-wrap::-webkit-scrollbar
+  display none
+
+.video-container
+  position relative
+  overflow hidden
+  margin-bottom .8rem
+  padding-top 56.25%
+  height 0
+
+.video-container iframe
+  position absolute
+  top 0
+  left 0
+  margin-top 0
+  width 100%
+  height 100%
+
+::-webkit-scrollbar
+  width 6px
+  height 6px
+
+::-webkit-scrollbar-thumb
+  background var(--sco-scrollbar)
+  border-radius 8px
+  cursor pointer
+
+::-webkit-scrollbar-thumb:hover
+  background var(--sco-main)
+  opacity 1
+  display block !important
+
+::-webkit-scrollbar-track
+  background-color var(--sco-none)
+
+[data-theme=dark] img
+  filter brightness(1)
+
+a.extend.next
+  right 0
+
+a.extend.prev
+  left 0
+
+.table-wrap
+  margin 1rem 0
+  border-radius 8px
+
+table td, table th
+  border var(--style-border-always)
+
+table thead
+  background var(--sco-secondbg)
+
+b, strong
+  color var(--sco-lighttext)
+
+h1, h2, h3, h4, h5, h6
+  margin-top 1rem
+  padding-top 0
+  padding-left 0 !important
+  font-weight 700
+
+figure
+  margin-top .5rem !important

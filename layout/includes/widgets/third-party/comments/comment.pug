@@ -1,0 +1,14 @@
+div#post-comment(view-image)
+    .comment-head
+        .comment-headline
+            i.scoicon.sco-chat-fill
+            span  评论
+    .comment-wrap
+        #comment
+        case theme.comment.type
+            when 'twikoo'
+                include ./twikoo.pug
+            when 'gitalk'
+                include ./gitalk.pug
+            when 'valine'
+                include ./valine.pug

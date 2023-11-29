@@ -1,0 +1,25 @@
+nav.needEndHide.pagination-post#pagination
+    if page.prev && page.next
+        div.prev-post.pull-left
+            a(href=url_for(page.prev.path))
+                div.pagination-info
+                    div.label 上一篇
+                    div.prev_info= page.prev.title
+        div.next-post.pull-right
+            a(href=url_for(page.next.path))
+                div.pagination-info
+                    div.label 下一篇
+                    div.next_info= page.next.title
+    else
+        if !page.prev && page.next
+            div.next-post.pull-full
+                a(href=url_for(page.next.path))
+                    div.pagination-info
+                        div.label 下一篇
+                        div.next_info= page.next.title
+        if !page.next && page.prev
+            div.prev-post.pull-full
+                a(href=url_for(page.prev.path))
+                    div.pagination-info
+                        div.label 上一篇
+                        div.prev_info= page.prev.title

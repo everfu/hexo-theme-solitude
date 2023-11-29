@@ -14,52 +14,52 @@ nav:
   left:
     enable: false
     menu:
-  #      项目:
-  #        Solitude:
-  #          icon: https://bu.dusays.com/2023/11/08/654af68b25bb8.jpg
-  #          url: https://github.com/DuoSco/Hexo-Theme-solitude
+#        项目:
+#          Solitude:
+#            icon: https://bu.dusays.com/2023/11/08/654af68b25bb8.jpg
+#            url: https://github.com/DuoSco/Hexo-Theme-solitude
 
   # 导航栏内容
   menu:
-  #    文库:
-  #      url: false
-  #      child:
-  #        文章列表:
-  #          url: /archives/
-  #          icon: scoicon sco-folder-fill
-  #        全部分类:
-  #          url: /categories/
-  #          icon: scoicon sco-checkbox-multiple-blank-fill
-  #        全部标签:
-  #          url: /tags/
-  #          icon: scoicon sco-price-tag-fill
-  #    友链:
-  #      url: false
-  #      child:
-  #        鱼塘:
-  #          url: /moments/
-  #          icon: scoicon sco-wifi-fill
-  #        友情链接:
-  #          url: /links/
-  #          icon: scoicon sco-group-fill
-  #        宝藏博主:
-  #          url: javascript:travelling()
-  #          icon: scoicon sco-gift-fill
-  #    我的:
-  #      url: false
-  #      child:
-  #        装备:
-  #          url: /equipment/
-  #          icon: scoicon sco-laptop-line
-  #        工具箱:
-  #          url: /tlink/
-  #          icon: scoicon sco-tools-fill
-  #    关于:
-  #      url: false
-  #      child:
-  #        关于本站:
-  #          url: /about/
-  #          icon: scoicon sco-contacts-fill
+      文库:
+        url: false
+        child:
+          文章列表:
+            url: /archives/
+            icon: scoicon sco-folder-fill
+          全部分类:
+            url: /categories/
+            icon: scoicon sco-checkbox-multiple-blank-fill
+          全部标签:
+            url: /tags/
+            icon: scoicon sco-price-tag-fill
+#      友链:
+#        url: false
+#        child:
+#          鱼塘:
+#            url: /moments/
+#            icon: scoicon sco-wifi-fill
+#          友情链接:
+#            url: /links/
+#            icon: scoicon sco-group-fill
+#          宝藏博主:
+#            url: javascript:travelling()
+#            icon: scoicon sco-gift-fill
+#      我的:
+#        url: false
+#        child:
+#          装备:
+#            url: /equipment/
+#            icon: scoicon sco-laptop-line
+#          工具箱:
+#            url: /tlink/
+#            icon: scoicon sco-tools-fill
+#      关于:
+#        url: false
+#        child:
+#          关于本站:
+#            url: /about/
+#            icon: scoicon sco-contacts-fill
 
 
   # 导航栏右侧快捷菜单 (true,false)
@@ -68,43 +68,38 @@ nav:
     random: false        # 随机文章跳转
     console: false       #控制台
 
-# 自定义icon
-icon:
-  customicon:
-
 # 首页顶部样式
 hometop:
-  bbtime: false # 即刻顶部是否开启
   banner:
     enable: false # 是否打开顶部banner
     title: 宁静致远<br>热爱生活 # 左上角显示文字
     url: Hexo-Theme-Solitude # title下方小字
     # 轮播icon
     icon:
-      HTML:
-        img: https://npm.elemecdn.com/wleelw-blog-abs@1.0.0/img/icon/HTML.png
-        color: '#e9572b'
-      JS:
-        img: https://npm.elemecdn.com/wleelw-blog-abs@1.0.0/img/icon/JS.png
-        color: '#f7cb4f'
-      Kotlin:
-        img: https://npm.elemecdn.com/wleelw-blog-abs@1.0.0/img/icon/kotlin-logo.svg
-        color: '#ffffff'
-      Docker:
-        img: https://npm.elemecdn.com/wleelw-blog-abs@1.0.0/img/icon/docker.png
-        color: '#57b6e6'
-      Flutter:
-        img: https://npm.elemecdn.com/wleelw-blog-abs@1.0.0/img/icon/flutter.png
-        color: '#ffffff'
-      WebPack:
-        img: https://npm.elemecdn.com/wleelw-blog-abs@1.0.0/img/icon/webpack.png
-        color: '#2e3a41'
-      Git:
-        img: https://npm.elemecdn.com/wleelw-blog-abs@1.0.0/img/icon/git.png
-        color: '#df5b40'
-      VS:
-        img: https://npm.elemecdn.com/wleelw-blog-abs@1.0.0/img/icon/vs-logo.svg
-        color: '#ffffff'
+#      HTML:
+#        img: https://npm.elemecdn.com/wleelw-blog-abs@1.0.0/img/icon/HTML.png
+#        color: '#e9572b'
+#      JS:
+#        img: https://npm.elemecdn.com/wleelw-blog-abs@1.0.0/img/icon/JS.png
+#        color: '#f7cb4f'
+#      Kotlin:
+#        img: https://npm.elemecdn.com/wleelw-blog-abs@1.0.0/img/icon/kotlin-logo.svg
+#        color: '#ffffff'
+#      Docker:
+#        img: https://npm.elemecdn.com/wleelw-blog-abs@1.0.0/img/icon/docker.png
+#        color: '#57b6e6'
+#      Flutter:
+#        img: https://npm.elemecdn.com/wleelw-blog-abs@1.0.0/img/icon/flutter.png
+#        color: '#ffffff'
+#      WebPack:
+#        img: https://npm.elemecdn.com/wleelw-blog-abs@1.0.0/img/icon/webpack.png
+#        color: '#2e3a41'
+#      Git:
+#        img: https://npm.elemecdn.com/wleelw-blog-abs@1.0.0/img/icon/git.png
+#        color: '#df5b40'
+#      VS:
+#        img: https://npm.elemecdn.com/wleelw-blog-abs@1.0.0/img/icon/vs-logo.svg
+#        color: '#ffffff'
 
   # 顶部三大分类
   categoryGroup:
@@ -143,13 +138,17 @@ aside:
     Sticky: "newestPost,allInfo"
   # 爱发电
   power:
-    link: https://afdian.net/a/wleelw0u0
-    post: true
-    page: false
+    link: https://afdian.net/a/wleelw0u0 # 爱发电链接
+#    list:
+#      - name: 王卓Sco
+#        avatar: https://bu.dusays.com/2023/11/04/6545e8a57f97b.jpg
+#        descr: 宁静致远，热爱生活。
+#        link: https://afdian.net/u/wleelw0u0
   # 侧边栏个人信息卡片
   card:
+    # 头像信息
     author:
-      img: https://bu.dusays.com/2023/11/08/654af68b25bb8.jpg # 头像
+      img: https://bu.dusays.com/2023/11/08/654af68b25bb8.jpg # 头像图片
       js: https://cdn3.codesign.qq.com/icons/XgRxnjPG4VZLmqr/latest/iconfont.js # 自定义图标js（用于显示带颜色的状态表情）
       state: "#sco-smile" # 状态表情（使用symbol）
     content: 分享自己对编程的<b>热爱</b>，对美好生活的<b>向往</b>，对知识海洋<b>探索历程</b>。 # 文案1
@@ -162,10 +161,6 @@ aside:
       Bilibili:
         icon: scoicon sco-bilibili-line
         url: https://space.bilibili.com/1329819902
-    # 跳转按钮
-    button:
-      text: 了解更多
-      url: /about/
   # 公众号二维码
   flip:
     favicon: # 右下角头像
@@ -175,7 +170,7 @@ aside:
   welcome:
     enable: false
     title: #【选填】留空将默认显示为：来访者
-    icon:
+    icon: #【选填】留空将默认显示为：scoicon sco-map-pin-line
     key: # 腾讯key
     longitude: 112.8455033596802 # 经度
     Latitude: 26.430308353457896 # 纬度
@@ -183,20 +178,31 @@ aside:
   history:
     enable: false
     title: #【选填】留空将默认显示为：那年今日
-    icon:
+    icon: #【选填】留空将默认显示为：scoicon sco-calendar-line
   # 页面目录
   toc:
     post: true # 在文章页显示
     page: false # 在任意页显示
 
+  # 侧边栏文章列表
+  tags:
+    enable: false # 是否显示标签
+    highlight: false # 高亮显示
+    list: # 高亮显示标签列表
+      - 'Solitude-使用'
+
+  # 侧边栏归档
+  archive:
+    enable: false # 是否显示
+
   # 建站信息
   siteinfo:
-    postcount: false # 文章数
-    wordcount: false # 总字数
-    pv: false # 访问量
-    uv: false # 访客数
-    updatetime: false # 最后更新日期
-    runtimeenable: false # 建站时间
+    postcount: true # 文章数
+    wordcount: true # 总字数
+    pv: true # 访问量
+    uv: true # 访客数
+    updatetime: true # 最后更新日期
+    runtimeenable: true # 建站时间
     runtime: '2023-04-20 00:00:00' # 格式：yyyy-MM-dd hh-mm-ss
 
 # Footer Settings
@@ -205,53 +211,53 @@ footer:
   # 底部上方一排图标
   information:
     left: # 左侧显示图标
-    #      Github:
-    #        icon: scoicon sco-bilibili-line
-    #        url: https://github.com/wleelw
-    #      Mail:
-    #        icon: scoicon sco-mail-line
-    #        url: mailto:wleelw@wzsco.top
+#          Github:
+#            icon: scoicon sco-bilibili-line
+#            url: https://github.com/wleelw
+#          Mail:
+#            icon: scoicon sco-mail-line
+#            url: mailto:wleelw@wzsco.top
     right: # 右侧显示图标
-  #      Bilibili:
-  #        icon: scoicon sco-bilibili-line
-  #        url: https://space.bilibili.com/1329819902
-  #      抖音:
-  #        icon: scoicon sco-douyin-fill
-  #        url: https://v.douyin.com/iJsLc8jt/
+#        Bilibili:
+#          icon: scoicon sco-bilibili-line
+#          url: https://space.bilibili.com/1329819902
+#        抖音:
+#          icon: scoicon sco-douyin-fill
+#          url: https://v.douyin.com/iJsLc8jt/
   # 底部导航栏
   group: # 从左至右
-  #    导航:
-  #      归档: /archives/
-  #      分类: /categories/
-  #      标签: /tags/
-  #    服务:
-  #      阿里云: https://aliyun.com/
-  #      51la统计: https://v6.51.la/
-  #      百度统计: https://tongji.baidu.com/
-  #    支持:
-  #      打赏记录: /about/
-  #    协议:
-  #      Cookies: /cookies/
-  #      用户协议: /privacy/
-  #      版权协议: /copyright/
+#      导航:
+#        归档: /archives/
+#        分类: /categories/
+#        标签: /tags/
+#      服务:
+#        阿里云: https://aliyun.com/
+#        51la统计: https://v6.51.la/
+#        百度统计: https://tongji.baidu.com/
+#      支持:
+#        打赏记录: /about/
+#      协议:
+#        Cookies: /cookies/
+#        用户协议: /privacy/
+#        版权协议: /copyright/
 
   # 底部随机友链
-  randomlink: false
+  randomlink: false # 是否开启
   # rss
   rss:
-    enable: false
+    enable: false # 是否显示
     wechatOA: # 微信公众号链接
     emailOA:  # 邮箱链接
     rss:  # rss订阅链接
   # 版权
   license:
-    url: /copyright/
+    url: /copyright/ # 点击跳转链接
 
 # 页面页默认设置
 page:
-  error: true #
-  tags: true # 标签
-  categories: true # 分类
+  error: true  # 404页面
+  tags: true # 标签页
+  categories: true # 分类页
   default: # 默认值
     cover: /img/default.png # 默认图片
 
@@ -260,7 +266,10 @@ post:
   default:
     cover: /img/default.png
     locate: 衡阳
-    copyright: 原创
+    copyright:
+      enable: true
+      license: CC BY-NC-SA 4.0
+      licenurl: https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh
   # 顶部文章简介
   meta:
     date: false # 发布日期
@@ -278,36 +287,52 @@ post:
     url: /about # 打赏统计页面链接
   # 文章颜色获取
   covercolor: #文章cover取色
-    enable: true
-    local: true
+    enable: false # 是否开启
+    local: true # 本地取色
+  # 底部头像背景
+  author_back: https://bu.dusays.com/2023/11/01/6541f6d4b2573.png
 
 # 关于界面
-about: false
+about:
+  enable: false # 是否开启
+  echarts: # 文章统计
+    enable: false # 是否开启
+    startDate: "2023-04-20 00:00:00" # 统计开始日期 格式：yyyy-MM-dd hh-mm-ss
+    tagLength: 10 # 标签显示数量
+    categoryParent: true # 显示父分类
+
+# 即刻说说界面
+# 前置要求：需配置即刻说说页面
+# 开启后将显示即刻页面
+says:
+  enable: false
+  home_mini: false # 主页的即刻轮播条
+  style: 1 # 1：张洪heo样式 / 2：Leonus样式
 
 # 404 页面
 errorpage:
-  img: https://npm.elemecdn.com/wzheo-absolute@1.0.3/image/source/404.png
-  text: =awa= 页面走丢了
-  recommendList: true # 显示随机文章
+  img: https://npm.elemecdn.com/wzheo-absolute@1.0.3/image/source/404.png # 图片
+  text: =awa= 页面走丢了 # 文字
+  recommendList: true # 推荐文章列表
 
 # 懒加载
 lazyload:
-  enable: false
+  enable: false # 是否开启
   placeholder: /img/loading.gif # 加载中显示图片
   errorimg: /img/error_load.png # 加载失败显示图片
 
 # 图片灯箱
-lightbox: false
+lightbox: false # 是否开启
 
 #代码高亮增强
 hightlight:
-  enable: false
-  hightlimit: 200
+  enable: false # 是否开启
+  hightlimit: 200 # 代码高亮字数限制
 
 # 加载动画
 loading:
-  fullpage: false
-  pace: false
+  fullpage: false # 全局加载动画
+  pace: false # 顶部加载动画
 
 # 第三方设置
 thirdparty:
@@ -316,6 +341,8 @@ thirdparty:
     enable: false
     usecomment: false #当评论系统开启时文章页面使用评论系统的统计数据
   search: # 搜索
+    enable: false
+    type: algolia # algolia, local
     algolia_search:
       enable: false
       # hits:
@@ -327,8 +354,8 @@ thirdparty:
 
   aplayer: # 播放器
     enable: false
-    server: tencent # netease, tencent, kugou, xiami, baidu
-    id: 8651639768 # 歌单ID
+    server: netease # netease, tencent, kugou, xiami, baidu
+    id: 8407304077 # 歌单ID
     api: "https://api.injahow.cn/meting/?server=:server&type=:type&id=:id&auth=:auth&r=:r" #自定义api
   #中控台拓展
   consolePlus: false
@@ -337,93 +364,115 @@ thirdparty:
     enable: false
     key: # 前往tianli-AI 购买
     rec_method: # 推荐文章方式（all:匹配数据库所有文章、web:仅当前博客文章）默认：web
+    ai_name: # 左上角AI名称
+    ai_tips:  # 右上角GPT版本文字
+    ai_introduce: # AI自我介绍
+    hide_shuttle: false # 隐藏矩阵穿梭按钮
+    typewriter: true # 打字机效果
+    speed: 20 # 打字机速度，默认20ms
+    BlackWhite_List:
+      mode: false  # false：全部文章显示摘要AI / black：让指定页面、文章不显示摘要AI / white：只让指定文章（页面）显示摘要AI
+      List:
+      # - 544ba770
+      # - /article/544ba770.html
 
   # 朋友圈配置
   circle:
-    api: https://circle.sondy.top/  # api 地址
-    error_img: /img/theme/avatar.png # 头像加载失败显示错误图片
-    sort_rule: created # 排序规则
-    expire_days: 1 # 文章缓存天数
-    page_init_number: 12 # 默认加载文章数，默认10
-    page_turning_number: 12 # 加载更多文章数，默认10
-    angle: # 钓鱼
-      enable: false
+    api: https://circle.sondy.top/ # 朋友圈api
+    error_img: /img/theme/avatar.png # 加载失败显示图片
+    sort_rule: created # 排序规则（created:创建时间、updated:更新时间）
+    expire_days: 1 # 缓存过期时间（天）
+    page_init_number: 12 # 首次加载文章数，默认10
+    page_turning_number: 12 # 翻页加载文章数，默认10
+    angle: # 🎣钓鱼
+      enable: true # 是否开启
     appjs: '/lib/circle.min.js' # 主题appjs
-    bundlejs: '/lib/bundle.min.js' # 主题bundejs
-
-  # 文章统计
-  echarts:
-    js: https://cdn.bootcdn.net/ajax/libs/echarts/5.4.2/echarts.min.js
+    bundlejs: '/lib/bundle.min.js' # 主题bundlejs
 
 # 评论
 comment:
-  enable: false
+  enable: false # 是否开启评论
+  type: 'twikoo' # valine, twikoo
+  # 评论系统
   twikoo:
-    envId: https://twikoo.sondy.top
-    lang: 'zh-CN'
+    envId: # url: https://twikoo.sondy.top/
+    lang: 'zh-CN' # 语言
     accessToken:  # accessToken
 
 # 插入代码到头部 </head> 之前 和 底部 </body> 之前
 # 插入额外代码 如：统计，广告等
 extends:
   head: # 在head中插入
+  # - <script src="https://cdn.bootcdn.net/ajax/libs/pace/1.2.4/pace.min.js"></script>
   body: # 在body中插入
 
 # 文章底部推荐文章
 related_post:
-  enable: true
+  enable: false
   limit: 2 # 推荐文章数量
   date_type: created # 根据创建日期（created）或是更新日期（updated）
 
-# rightmenu(右键菜单)
+# rightside(右键菜单)
+rightside:
+  enable: false
 
 # 站点验证
+# 仅需要填写验证代码即可
 verify:
   # 百度
   baidu:
+  # 谷歌
+  google:
 
 # PWA
+# 图标信息非必选，填了就显示，不想添加的可以进行注释
 # https://github.com/JLHwung/hexo-offline
 pwa:
-  enable: false
-  startup_image_enable: false
-  manifest: /manifest.json
-  theme_color: '#ffffff'
-  mask_icon: /img/pwa/180.png
-  apple_touch_icon: /img/pwa/180.png
-  bookmark_icon: /img/pwa/180.png
-  favicon_32_32: /img/pwa/32.png
-  favicon_16_16: /img/pwa/16.png
-  favicon_2048_2732: /img/pwa/siteicon/splash-2048x2732.png
-  favicon_2732_2048: /img/pwa/siteicon/splash-2732x2048.png
-  favicon_1668_2388: /img/pwa/siteicon/splash-1668x2388.png
-  favicon_2388_1668: /img/pwa/siteicon/splash-2388x1668.png
-  favicon_1536_2048: /img/pwa/siteicon/splash-1536x2048.png
-  favicon_2048_1536: /img/pwa/siteicon/splash-2048x1536.png
-  favicon_1668_2224: /img/pwa/siteicon/splash-1668x2224.png
-  favicon_2224_1668: /img/pwa/siteicon/splash-2224x1668.png
-  favicon_1620_2160: /img/pwa/siteicon/splash-1620x2160.png
-  favicon_2160_1620: /img/pwa/siteicon/splash-2160x1620.png
-  favicon_1290_2796: /img/pwa/siteicon/splash-1290x2796.png
-  favicon_2796_1290: /img/pwa/siteicon/splash-2796x1290.png
-  favicon_1179_2556: /img/pwa/siteicon/splash-1179x2556.png
-  favicon_2556_1179: /img/pwa/siteicon/splash-2556x1179.png
-  favicon_1248_2778: /img/pwa/siteicon/splash-1248x2778.png
-  favicon_2778_1248: /img/pwa/siteicon/splash-2778x1248.png
-  favicon_1170_2532: /img/pwa/siteicon/splash-1170x2532.png
-  favicon_2532_1170: /img/pwa/siteicon/splash-2532x1170.png
-  favicon_1125_2436: /img/pwa/siteicon/splash-1125x2436.png
-  favicon_2436_1125: /img/pwa/siteicon/splash-2436x1125.png
-  favicon_1242_2688: /img/pwa/siteicon/splash-1242x2688.png
-  favicon_2688_1242: /img/pwa/siteicon/splash-2688x1242.png
-  favicon_828_1792: /img/pwa/siteicon/splash-828x1792.png
-  favicon_1792_828: /img/pwa/siteicon/splash-1792x828.png
-  favicon_1242_2208: /img/pwa/siteicon/splash-1242x2208.png
-  favicon_2208_1242: /img/pwa/siteicon/splash-2208x1242.png
-  favicon_750_1334: /img/pwa/siteicon/splash-750x1334.png
-  favicon_1334_750: /img/pwa/siteicon/splash-1334x750.png
-  favicon_640_1136: /img/pwa/siteicon/splash-640x1136.png
-  favicon_1136_640: /img/pwa/siteicon/splash-1136x640.png
+  enable: false # 是否开启
+  startup_image_enable: false # 是否开启启动画面
+  manifest: /manifest.json # manifest.json 文件路径
+  theme_color: '#ffffff' # 主题颜色
+  mask_icon: /img/pwa/180.png # 遮罩图标
+  apple_touch_icon: /img/pwa/180.png # 苹果触摸图标
+  bookmark_icon: /img/pwa/180.png # 书签图标
+  favicon_32_32: /img/pwa/32.png # 32x32图标
+  favicon_16_16: /img/pwa/16.png # 16x16图标
+  favicon_2048_2732: /img/pwa/siteicon/splash-2048x2732.png # 2048x2732图标
+  favicon_2732_2048: /img/pwa/siteicon/splash-2732x2048.png # 2732x2048图标
+  favicon_1668_2388: /img/pwa/siteicon/splash-1668x2388.png # 1668x2388图标
+  favicon_2388_1668: /img/pwa/siteicon/splash-2388x1668.png # 2388x1668图标
+  favicon_1536_2048: /img/pwa/siteicon/splash-1536x2048.png # 1536x2048图标
+  favicon_2048_1536: /img/pwa/siteicon/splash-2048x1536.png # 2048x1536图标
+  favicon_1668_2224: /img/pwa/siteicon/splash-1668x2224.png # 1668x2224图标
+  favicon_2224_1668: /img/pwa/siteicon/splash-2224x1668.png # 2224x1668图标
+  favicon_1620_2160: /img/pwa/siteicon/splash-1620x2160.png # 1620x2160图标
+  favicon_2160_1620: /img/pwa/siteicon/splash-2160x1620.png # 2160x1620图标
+  favicon_1290_2796: /img/pwa/siteicon/splash-1290x2796.png # 1290x2796图标
+  favicon_2796_1290: /img/pwa/siteicon/splash-2796x1290.png # 2796x1290图标
+  favicon_1179_2556: /img/pwa/siteicon/splash-1179x2556.png # 1179x2556图标
+  favicon_2556_1179: /img/pwa/siteicon/splash-2556x1179.png # 2556x1179图标
+  favicon_1248_2778: /img/pwa/siteicon/splash-1248x2778.png # 1248x2778图标
+  favicon_2778_1248: /img/pwa/siteicon/splash-2778x1248.png # 2778x1248图标
+  favicon_1170_2532: /img/pwa/siteicon/splash-1170x2532.png # 1170x2532图标
+  favicon_2532_1170: /img/pwa/siteicon/splash-2532x1170.png # 2532x1170图标
+  favicon_1125_2436: /img/pwa/siteicon/splash-1125x2436.png # 1125x2436图标
+  favicon_2436_1125: /img/pwa/siteicon/splash-2436x1125.png # 2436x1125图标
+  favicon_1242_2688: /img/pwa/siteicon/splash-1242x2688.png # 1242x2688图标
+  favicon_2688_1242: /img/pwa/siteicon/splash-2688x1242.png # 2688x1242图标
+  favicon_828_1792: /img/pwa/siteicon/splash-828x1792.png # 828x1792图标
+  favicon_1792_828: /img/pwa/siteicon/splash-1792x828.png # 1792x828图标
+  favicon_1242_2208: /img/pwa/siteicon/splash-1242x2208.png # 1242x2208图标
+  favicon_2208_1242: /img/pwa/siteicon/splash-2208x1242.png # 2208x1242图标
+  favicon_750_1334: /img/pwa/siteicon/splash-750x1334.png # 750x1334图标
+  favicon_1334_750: /img/pwa/siteicon/splash-1334x750.png # 1334x750图标
+  favicon_640_1136: /img/pwa/siteicon/splash-640x1136.png # 640x1136图标
+  favicon_1136_640: /img/pwa/siteicon/splash-1136x640.png # 1136x640图标
+
+# CSS 前缀
+# 有些 CSS 并不是所有浏览器都支持，需要增加对应的前缀才会生效
+# 开启 css_prefix 后，会自动为一些 CSS 增加前缀。（会增加 20%的体积）
+# --------------------------------------
+css_prefix: false
 
 # 非必要勿动
 cdn:
@@ -434,8 +483,9 @@ cdn:
     swipercss: https://cdn.bootcdn.net/ajax/libs/Swiper/9.2.4/swiper-bundle.min.css
     twikoojs: https://cdn.bootcdn.net/ajax/libs/twikoo/1.6.20/twikoo.all.min.js
     instantsearch: https://cdn.bootcdn.net/ajax/libs/instantsearch.js/4.9.1/instantsearch.production.min.js
-    algolia: https://cdn.bootcdn.net/ajax/libs/algoliasearch/4.9.3/algoliasearch-lite.umd.min.js
+    algoliajs: https://cdn.bootcdn.net/ajax/libs/algoliasearch/4.9.3/algoliasearch-lite.umd.min.js
     pacejs: https://cdn.bootcdn.net/ajax/libs/pace/1.2.4/pace.min.js
+    echartsjs: https://cdn.bootcdn.net/ajax/libs/echarts/5.4.2/echarts.min.js
   body:
     viewimagejs: /lib/view-image.min.js
     waterfalljs: /lib/waterfall.min.js

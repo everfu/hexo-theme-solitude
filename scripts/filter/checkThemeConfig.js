@@ -1,7 +1,6 @@
 'use strict';
 
 hexo.extend.filter.register('before_post_render', () => {
-
     const logger = hexo.log;
     const theme = hexo.theme.config;
     const config = hexo.config;

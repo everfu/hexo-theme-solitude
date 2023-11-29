@@ -1,0 +1,515 @@
+#twikoo
+  .tk-row
+    .tk-col
+      flex-direction column-reverse !important
+
+  > div.tk-comments
+    > div.tk-comments-container
+      > div.tk-comments-title
+        > span:nth-child(1)
+          display none !important
+
+    > div.tk-submit
+      > div.tk-row.actions
+        > a
+          display none !important
+
+  z-index 102
+
+.tk-meta
+  display flex
+  align-items center
+
+.twikoo-info
+  color var(--sco-secondtext)
+
+.tk-action
+  .tk-action-link:first-child
+    display none
+
+.tk-action-link
+  color var(--sco-lighttext) !important
+  cursor pointer
+  -webkit-user-select none
+  padding 0 12px 0 12px
+  transition all .3s
+  border-radius 8px
+  background-color var(--sco-secondbg)
+  border var(--style-border-always)
+
+  &:hover
+    background-color var(--sco-lighttext)
+    color var(--sco-card-bg) !important
+
+    .tk-action-icon svg
+      fill var(--sco-card-bg) !important
+
+
+.tk-action-icon
+  svg
+    transition all .3s
+    fill var(--sco-lighttext) !important
+
+.tk-content
+  img
+    max-height 1100px !important
+    max-width 100% !important
+    border-radius 12px
+
+.tk-avatar
+  width 32px !important
+  height 32px !important
+  box-shadow var(--sco-shadow-border)
+  margin-right 16px !important
+
+  &.tk-has-avatar
+    width 32px !important
+    height 32px !important
+    border-radius 32px !important
+
+.tk-row
+  .tk-avatar
+    display none
+
+.tk-avatar
+  .tk-avatar-img:hover
+    transform rotate(360deg)
+
+.tk-nick
+  font-size 1rem !important
+  line-height 32px
+
+#page
+  .tk-meta-input
+    .el-input
+      box-shadow var(--sco-shadow-border)
+
+.el-loading-mask
+  background-color none !important
+
+.tk-tag
+  margin-left 4px
+
+.tk-tag-green
+  border-radius 4px !important
+  border 0 solid #e1f3d8 !important
+  font-size .5rem !important
+
+[data-theme=dark]
+  .tk-tag-green
+    background-color #67c23a21 !important
+
+.tk-tag-yellow
+  border-radius 4px !important
+  border 0 solid #e1f3d8 !important
+  font-size .5rem !important
+
+[data-theme=dark]
+  .tk-tag-green
+    background-color #c0c23a21 !important
+
+.tk-tag-red
+  border-radius 4px !important
+  border 0 solid #f3d8d8 !important
+  font-size .5rem !important
+
+[data-theme=dark]
+  .tk-tag-red
+    background-color #c23a3a21 !important
+
+.tk-submit-action-icon.__markdown
+  display none
+
+.tk-comments
+  .el-button--primary
+    border-color var(--sco-fontcolor) !important
+    color var(--sco-card-bg) !important
+    border-radius 4px !important
+    box-shadow var(--sco-shadow-black)
+    transition .3s
+    width 5rem
+    position absolute
+    top -53px
+    right 0
+    margin-left .5rem !important
+    height 32px
+
+  .el-button--primary.is-disabled,
+  .el-button--primary.is-disabled:active,
+  .el-button--primary.is-disabled:focus,
+  .el-button--primary.is-disabled:hover
+    opacity .2
+
+.tk-row-actions-start
+  position absolute
+  top -100px
+  left 17px
+
+@media screen and (max-width: 768px)
+  .tk-submit
+    .el-button--primary
+      width 5rem
+      height 132px
+      top -161px
+
+  .tk-row-actions-start
+    top -210px
+
+.tk-comments-title
+  position absolute
+  bottom 0
+  left 0
+
+.tk-extras
+  margin-top .5rem
+  padding-bottom .5rem
+
+.tk-icon.__comments:first-child
+  display none
+
+.tk-icon.__comments
+  margin-left 0 !important
+
+.tk-row.actions
+  margin-bottom .5rem !important
+  margin-left 0 !important
+  margin-top .5rem !important
+  justify-content space-around !important
+
+.tk-meta-input
+  position relative !important
+  margin-top .8rem
+  width calc(100% - 5.5rem)
+
+.tk-content
+  .tk-owo-emotion
+    width 3em
+    margin 0 2px 0 2px
+
+.tk-owo-emotion,
+.twikoo
+  .OwO-item
+    img
+      pointer-events none
+
+.tk-extra
+  background var(--sco-card-bg)
+  border var(--style-border-always)
+  padding 1px 5px 1px 2px
+  border-radius 8px
+  margin-right 4px !important
+  color var(--sco-secondtext) !important
+  display inline !important
+  margin-top 6px !important
+  font-size .5rem
+
+.tk-extra
+  .tk-icon
+    display none
+
+.tk-expand
+  background var(--sco-card-bg) !important
+  color var(--sco-fontcolor) !important
+  border var(--style-border-always)
+  box-shadow var(--sco-shadow-border)
+  border-radius 12px
+  -webkit-user-select none
+
+  &:hover
+    background var(--sco-theme) !important
+    color var(--sco-white) !important
+
+.tk-time
+  color var(--sco-secondtext) !important
+  font-size .6rem
+  margin-left .5rem
+
+.tk-comments-container
+  > .tk-comment
+    margin-top 0 !important
+    margin-bottom .5rem !important
+    background var(--sco-card-bg)
+    transition .3s
+    border-radius 12px
+    padding .5rem 0 0
+    border none
+    border-top var(--style-border-dashed)
+
+#page
+  .tk-comments-container
+    > .tk-comment
+      padding 1rem 1rem 1.5rem
+      border var(--style-border)
+      border-top var(--style-border)
+      box-shadow var(--sco-shadow-border)
+
+@media screen and (max-width: 768px)
+  .tk-comments-container
+    > .tk-comment
+      padding 1rem
+      border var(--style-border-always)
+      box-shadow var(--sco-shadow-border)
+
+  .tk-icon.__comments
+    left .5rem
+
+.tk-icon
+  position absolute
+
+.tk-comments-no
+  display none !important
+
+.tk-comments-container
+  min-height 0 !important
+  margin-top .5rem
+
+.tk-replies
+  > .tk-comment
+    background var(--sco-card-bg)
+    border-top var(--style-border-dashed)
+    border-radius 12px
+    transition .3s
+    padding 1rem 0 0
+    margin-top 0
+
+.tk-content
+  p
+    margin 0 !important
+
+.tk-replies
+  .tk-content
+    span:first-child
+      font-size .5rem
+      color var(--sco-secondtext)
+
+.tk-meta-input
+  .el-input
+    .el-input-group__prepend
+      -webkit-user-select none
+
+@media screen and (max-width: 768px)
+  .tk-meta-input
+    .el-input
+      .el-input-group__prepend
+        padding 0 .3rem !important
+
+  .tk-meta-input
+    display flex
+    flex-direction column
+    top 0
+    position inherit !important
+
+  .tk-meta-input
+    .el-input
+      margin-left 0 !important
+      width 100% !important
+      margin-bottom 8px
+
+  .tk-icon
+    position absolute
+    right 0
+
+img.tk-avatar-img
+  height 32px !important
+  border-radius 32px
+  border var(--style-border-always)
+
+.el-input--small
+  .el-input__inner
+    padding 8px
+
+.el-input.el-input--small.el-input-group.el-input-group--prepend
+  border-radius 12px
+  background var(--sco-secondbg)
+  border var(--style-border-always)
+
+.el-input.el-input--small.el-input-group.el-input-group--prepend:nth-child(1):before
+  content '输入QQ号会自动获取昵称和头像'
+
+.el-input.el-input--small.el-input-group.el-input-group--prepend:nth-child(2):before
+  content '收到回复将会发送到你的邮箱'
+
+.el-input.el-input--small.el-input-group.el-input-group--prepend:nth-child(3):before
+  content '可以通过昵称访问你的网站'
+
+.el-input.el-input--small.el-input-group.el-input-group--prepend:focus-within::before
+  display block
+  animation commonTipsIn .3s
+
+.el-input.el-input--small.el-input-group.el-input-group--prepend:focus-within::after
+  display block
+  animation commonTriangleIn .3s
+
+.el-input.el-input--small.el-input-group.el-input-group--prepend::before
+  display none
+  position absolute
+  top -60px
+  white-space nowrap
+  border-radius 10px
+  left 50%
+  transform translate(-50%)
+  padding 14px 18px
+  background #444
+  color #fff
+  z-index 100
+
+.el-input.el-input--small.el-input-group.el-input-group--prepend::after
+  display none
+  content ''
+  position absolute
+  border 12px solid transparent
+  border-top-color #444
+  left 50%
+  transform translate(-50%, -46px)
+
+.el-input-group__append, .el-input-group__prepend
+  background-color var(--sco-card-bg) !important
+  color var(--sco-fontcolor) !important
+  border-color var(--sco-card-border) !important
+  border var(--style-border-always) !important
+  font-weight 700
+
+.el-input__inner
+  background var(--sco-secondbg) !important
+  border 1px solid var(--sco-card-border) !important
+  color var(--sco-fontcolor) !important
+  padding-left 8px
+
+.page
+  .el-input__inner
+    background var(--sco-card-bg) !important
+
+.el-input__inner:focus
+  border 1px solid var(--sco-main) !important
+
+.el-textarea__inner
+  background var(--sco-secondbg) !important
+  color var(--sco-fontcolor) !important
+  border-radius 12px !important
+  min-height 100px !important
+  padding 16px 16px 40px 16px !important
+  border var(--style-border-always) !important
+  box-shadow none !important
+
+@media screen and (max-width: 768px)
+  .el-textarea__inner
+    background var(--sco-card-bg) !important
+
+#page
+  .el-textarea__inner
+    background var(--sco-card-bg) !important
+    box-shadow var(--sco-shadow-border)
+
+.el-textarea__inner:focus
+  border var(--style-border-hover-always) !important
+  box-shadow var(--sco-shadow-main)
+
+.el-button
+  background-color var(--sco-fontcolor) !important
+  border 0 solid var(--sco-main) !important
+  color var(--sco-background) !important
+  border-radius 8px !important
+
+.el-button:hover
+  background var(--sco-main) !important
+  color var(--sco-white) !important
+
+.el-button.tk-preview
+  display none !important
+
+button.el-button.tk-cancel.el-button--default.el-button--small
+  background var(--sco-secondbg) !important
+  border-radius 8px !important
+  color var(--sco-fontcolor) !important
+
+@media screen and (max-width: 768px)
+  .OwO .OwO-body
+    width 300px
+
+.OwO
+  .OwO-body
+    border var(--style-border-always) !important
+    border-radius 8px !important
+    overflow hidden
+    background-color var(--sco-maskbg) !important
+    backdrop-filter saturate(180%) blur(10px)
+    -webkit-backdrop-filter blur(10px)
+    transform translateZ(0)
+
+    .OwO-bar
+      border-top none !important
+
+    .OwO-items
+      .OwO-item:hover
+        box-shadow var(--sco-shadow-lightblack) !important
+        border-radius 8px
+
+#twikoo > div.tk-comments > div.tk-submit > div.tk-row.actions > div > div.tk-action-icon.OwO.OwO-open > div.OwO-body > div > ul > li > span
+  line-height 48px
+  font-size 28px
+
+.OwO
+  &.OwO-open
+    .OwO-body
+      animation .3s ease .1s 1 normal both running donate_effcet
+
+  .OwO-body
+    .OwO-bar
+      .OwO-packages
+        li
+          margin-right 0 !important
+          height 48px
+          transition .3s
+
+        li:hover
+          transition .3s
+
+.OwO-packages
+  background var(--sco-background)
+  padding-left 8px !important
+
+.OwO
+  .OwO-body
+    .OwO-bar
+      .OwO-packages
+        .OwO-package-active
+          background var(--sco-secondbg) !important
+
+    .OwO-items-show
+      margin 12px 8px !important
+      min-height 197px
+
+    .OwO-bar
+      .OwO-packages
+        li
+          line-height 45px !important
+    z-index 102
+    width 500px
+
+#owo-big
+  position fixed
+  align-items center
+  background-color var(--sco-card-bg)
+  border var(--style-border-always)
+  border-radius 10px
+  z-index 9999
+  display none
+  transform translate(0, -105%)
+  overflow hidden
+  animation owoIn .3s cubic-bezier(.42, 0, .3, 1.11)
+  padding 1rem
+
+  img
+    width 100%
+
+.tk-replies
+  .tk-content
+    margin-top 0 !important
+
+.el-input-group--prepend
+  .el-input__inner, .el-input-group__append
+    border-left-width 0 !important
+
+.el-textarea .el-input__count
+  color var(--sco-secondtext) !important
+  -webkit-user-select none

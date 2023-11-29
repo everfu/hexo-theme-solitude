@@ -3,12 +3,13 @@ function initializeCommentBarrage() {
     let e = {
         maxBarrage: 1,
         barrageTime: 8e3,
-        twikooUrl: GLOBALCONFIG.comment.twikooUrl,
+        twikooUrl: GLOBAL_CONFIG.comment.twikoo.url,
         pageUrl: window.location.pathname,
-        accessToken: GLOBALCONFIG.comment.twikooAccessToken,
+        accessToken: GLOBAL_CONFIG.comment.twikoo.accessToken,
     };
     new class {
         commentInterval = null
+
         constructor(e) {
             this.config = {
                 ...e,
@@ -106,11 +107,11 @@ function initializeCommentBarrage() {
         async initCommentBarrage() {
             if (localStorage.getItem("commentBarrageSwitch") != null) {
                 document.querySelector(".comment-barrage").style.display = "flex";
-                document.querySelector(".menu-commentBarrage-text").textContent = "关闭热评";
+                GLOBAL_CONFIG.rightside.enable && (document.querySelector(".menu-commentBarrage-text").textContent = "关闭热评");
                 document.querySelector("#consoleCommentBarrage").classList.add("on");
             } else {
                 document.querySelector(".comment-barrage").style.display = "none";
-                document.querySelector(".menu-commentBarrage-text").textContent = "显示热评";
+                GLOBAL_CONFIG.rightside.enable && (document.querySelector(".menu-commentBarrage-text").textContent = "显示热评");
                 document.querySelector("#consoleCommentBarrage").classList.remove("on");
             }
             const comments = await this.fetchComments();
@@ -154,4 +155,6 @@ function initializeCommentBarrage() {
     (e)
 }
 
-initializeCommentBarrage();
+if(PAGE_CONFIG.comment){
+    initializeCommentBarrage();
+}
