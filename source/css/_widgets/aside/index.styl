@@ -134,16 +134,23 @@
 
 @import "toc.styl"
 
-@import "info.styl"
+if "about" in aside
+  @import "info.styl"
 
-@import "allinfo.styl"
+if "allInfo" in aside
+  @import "allinfo.styl"
 
-@import "welcome.styl"
+if "wlcome" in aside
+  @import "welcome.styl"
 
-@import "history.styl"
+if "history" in aside
+  @import "history.styl"
 
-@import "power.styl"
+if "power" in aside
+  @import "power.styl"
 
-@import "newPost.styl"
+if "newestPost" in aside
+  @import "newPost.styl"
 
-@import "flip.styl"
+if "flip" in aside
+  @import "flip.styl"

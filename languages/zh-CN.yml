@@ -24,6 +24,7 @@ page:
   tag: 标签
   category: 分类
   archives: 文章
+  echarts: 博客统计
 
 nav:
   backtop: 返回顶部

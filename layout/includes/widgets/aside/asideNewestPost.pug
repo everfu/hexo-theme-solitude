@@ -11,5 +11,6 @@
                         img(alt=post.title src=post.cover)
                     .content
                         a.title(href=url_for(post.path) title=post.title)= post.title
-                        a.article-recent_post_categories(href=url_for(post.path))= post.categories.data[0].name
+                        if post.categories.data[0]
+                            a.article-recent_post_categories(href=url_for(post.path))= post.categories.data[0].name
                 - index++

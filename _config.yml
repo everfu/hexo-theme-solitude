@@ -21,18 +21,18 @@ nav:
 
   # 导航栏内容
   menu:
-#      文库:
-#        url: false
-#        child:
-#          文章列表:
-#            url: /archives/
-#            icon: scoicon sco-folder-fill
-#          全部分类:
-#            url: /categories/
-#            icon: scoicon sco-checkbox-multiple-blank-fill
-#          全部标签:
-#            url: /tags/
-#            icon: scoicon sco-price-tag-fill
+      文库:
+        url: false
+        child:
+          文章列表:
+            url: /archives/
+            icon: scoicon sco-folder-fill
+          全部分类:
+            url: /categories/
+            icon: scoicon sco-checkbox-multiple-blank-fill
+          全部标签:
+            url: /tags/
+            icon: scoicon sco-price-tag-fill
 #      友链:
 #        url: false
 #        child:
@@ -197,12 +197,12 @@ aside:
 
   # 建站信息
   siteinfo:
-    postcount: false # 文章数
-    wordcount: false # 总字数
-    pv: false # 访问量
-    uv: false # 访客数
-    updatetime: false # 最后更新日期
-    runtimeenable: false # 建站时间
+    postcount: true # 文章数
+    wordcount: true # 总字数
+    pv: true # 访问量
+    uv: true # 访客数
+    updatetime: true # 最后更新日期
+    runtimeenable: true # 建站时间
     runtime: '2023-04-20 00:00:00' # 格式：yyyy-MM-dd hh-mm-ss
 
 # Footer Settings
@@ -266,7 +266,10 @@ post:
   default:
     cover: /img/default.png
     locate: 衡阳
-    copyright: 原创
+    copyright:
+      enable: true
+      license: CC BY-NC-SA 4.0
+      licenurl: https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh
   # 顶部文章简介
   meta:
     date: false # 发布日期
@@ -286,6 +289,8 @@ post:
   covercolor: #文章cover取色
     enable: false # 是否开启
     local: true # 本地取色
+  # 底部头像背景
+  author_back: https://bu.dusays.com/2023/11/01/6541f6d4b2573.png
 
 # 关于界面
 about:
@@ -295,6 +300,14 @@ about:
     startDate: "2023-04-20 00:00:00" # 统计开始日期 格式：yyyy-MM-dd hh-mm-ss
     tagLength: 10 # 标签显示数量
     categoryParent: true # 显示父分类
+
+# 即刻说说界面
+# 前置要求：需配置即刻说说页面
+# 开启后将显示即刻页面
+says:
+  enable: false
+  home_mini: false # 主页的即刻轮播条
+  style: 1 # 1：张洪heo样式 / 2：Leonus样式
 
 # 404 页面
 errorpage:
@@ -455,16 +468,10 @@ pwa:
   favicon_640_1136: /img/pwa/siteicon/splash-640x1136.png # 640x1136图标
   favicon_1136_640: /img/pwa/siteicon/splash-1136x640.png # 1136x640图标
 
-says:
-  enable: false
-  home_mini: false # 主页的即刻轮播条
-  style: 1 # 1：张洪heo样式 / 2：Leonus样式
-
 # CSS 前缀
 # 有些 CSS 并不是所有浏览器都支持，需要增加对应的前缀才会生效
 # 开启 css_prefix 后，会自动为一些 CSS 增加前缀。（会增加 20%的体积）
 # --------------------------------------
-
 css_prefix: false
 
 # 非必要勿动

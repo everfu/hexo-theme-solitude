@@ -88,7 +88,7 @@
         margin-right .8rem
 
   span.tags-punctuation::before
-    font-size 20px
+    font-size 15px
     line-height 32px
 
 .post-meta-date
@@ -488,6 +488,13 @@ span.tags-punctuation::before
       top -33px
       border var(--style-border-always)
       box-shadow var(--sco-shadow-main)
+
+      &:hover
+        img.post-copyright__author_img_front
+          transform scale(1) translateY(3px)
+
+        img.post-copyright__author_img_back
+          transform scale(.8)
 
       img
         position absolute

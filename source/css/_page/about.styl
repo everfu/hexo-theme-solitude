@@ -131,12 +131,12 @@
     max-height 400px
     position relative
     overflow hidden
-    margin-bottom .5rem
+    margin-bottom 0.5rem
     height 60%
     background-size 100%
     transition 1s ease-in-out
 
-    &[data-theme=dark]
+    [data-theme=dark] &
       background var(--site-about-oneself-map--dark) no-repeat center
       background-size 100%
 
@@ -150,17 +150,17 @@
         bottom -100%
 
     .map-title
-      position absolute
+      position: absolute
       bottom 0
       left 0
       width 100%
-      background var(--sco-maskbg)
-      padding .5rem 2rem
-      backdrop-filter saturate(180%) blur(20px)
-      -webkit-backdrop-filter blur(20px)
-      transition 1s ease-in-out
-      font-size 20px
+      color var(--font-color)
+      padding 0.5rem 2rem
       transform translateZ(0)
+      transition all 1s,color 0s ease-in-out
+      font-size 20px
+      background var(--sco-maskbg)
+      backdrop-filter saturate(180%) blur(20px)
 
       b
         color var(--sco-fontcolor)
@@ -942,44 +942,3 @@ video.author-content-video
 .inline-word
   word-break keep-all
   white-space nowrap
-
-.main-hero-waves-area
-  width 100%
-  position absolute
-  left 0
-  bottom -11px
-  z-index 5
-
-.waves-area .waves-svg
-  width 100%
-  height 60px
-
-.parallax > use
-  animation move-forever 30s cubic-bezier(.55, .5, .45, .5) infinite
-
-.parallax > use:nth-child(1)
-  animation-delay -2s
-  animation-duration 7s
-  fill var(--sco-background)
-  opacity .5
-
-.parallax > use:nth-child(2)
-  animation-delay -3s
-  animation-duration 10s
-  fill var(--sco-background)
-  opacity .6
-
-.parallax > use:nth-child(3)
-  animation-delay -4s
-  animation-duration 13s
-  fill var(--sco-background)
-  opacity .7
-
-.parallax > use:nth-child(4)
-  animation-delay -5s
-  animation-duration 20s
-  fill var(--sco-background)
-
-@media (max-width: 768px)
-  .main-hero-waves-area
-    display none

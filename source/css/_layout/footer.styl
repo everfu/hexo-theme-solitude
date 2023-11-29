@@ -1,6 +1,9 @@
 #footer
   position: relative
-  background: center bottom / cover local #307af6
+  background: linear-gradient(180deg, var(--sco-card-bg-none) 0, var(--sco-card-bg) 25%)
+  display: flex
+  flex-direction: column
+  margin-top: .5rem
 
   &:before
     position: absolute !important
@@ -9,28 +12,19 @@
     content: '' !important
     z-index: -1
 
-  background: linear-gradient(180deg, var(--sco-card-bg-none) 0, var(--sco-card-bg) 25%)
-  margin-top: .5rem
-  display: flex
-  flex-direction: column
-
 #footer-wrap
   position: relative
-  padding: 2rem 1rem
-  color: var(--light-grey)
-  text-align: center
   color: var(--sco-fontcolor)
   display: flex
   flex-wrap: wrap
   justify-content: space-around
   padding: 20px 50px 0 50px
-  text-align: left !important
+  text-align: left
   max-width: 1200px
   margin: 0 auto
-  margin-top: 1rem !important
+  margin-top: 1rem
 
   a
-    color: var(--light-grey)
     padding: 4px 12px
     border-radius: 5px
     color: var(--sco-fontcolor)
@@ -38,8 +32,6 @@
     line-height: 36px
 
     &:hover
-      background-color: #fff
-      color: #3b82ff
       cursor: pointer
       border-radius: 5px
       color: var(--sco-hovertext)
@@ -170,7 +162,7 @@ div#sco-footer-bar
   .footer-title-group
     display: flex
     align-items: center
-    margin: 1rem 0 .7rem 8px
+    margin: 1rem 0 .7rem 0
 
     a
       margin-left: 8px

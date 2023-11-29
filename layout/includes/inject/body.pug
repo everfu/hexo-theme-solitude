@@ -43,7 +43,8 @@ if theme.thirdparty.aplayer.enable
 if theme.post.covercolor
     script(src='/js/extend/covercolor/local.js')
 
-include ../widgets/randomlink.pug
+if theme.footer.randomlink
+    include ../widgets/randomlink.pug
 
 if page.katex
     link(rel="stylesheet", href=url_for(cdn.katexcss))

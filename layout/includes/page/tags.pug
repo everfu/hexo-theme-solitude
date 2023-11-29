@@ -1,7 +1,7 @@
 h1.page-title(style='display: inline-block')= __('page.tag')
 div.category-lists
     div.tag-cloud-list.is-center
-        each tag in site.tags.data
+        each tag in site.tags.find({ parent: { $exists: false } }).data
             a(href=url_for(tag.path))
                 span.tags-punctuation
                 = tag.name

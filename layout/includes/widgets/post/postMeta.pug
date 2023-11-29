@@ -3,7 +3,8 @@ div.coverdiv#coverdiv
 div#post-info
     div#post-firstinfo
         div.meta-firstline
-            a.post-meta-original(title="该文章为"+page.cc+"文章，注意版权协议")= page.cc
+            - var cc = reprint ? '转载或翻译' : '原创'
+            a.post-meta-original(title="该文章为" + cc + "文章，注意版权协议")= cc
             if page.categories.data.length > 0
                 span.post-meta-categories
                     a.post-meta-categories(href=page.categories.data[0].path)= page.categories.data[0].name
@@ -33,7 +34,7 @@ div#post-info
                         i.post-meta-icon.scoicon.sco-clock-fill(title="阅读耗时")
                         span= min2read(page.content) + " min"
             if theme.post.meta.locate
-                span.post-meta-position(title="作者IP归属地为"+page.locate)
+                span.post-meta-position(title="作者IP归属地为" + page.locate)
                     i.post-meta-icon.scoicon.sco-map-pin-fill
                     span= page.locate
             if theme.thirdparty.busuanzi.enable && theme.post.meta.pv
@@ -47,8 +48,8 @@ div#post-info
                             i.scoicon.sco-loading-line
             if theme.post.meta.comment && page.comment
                 span.post-meta-commentcount(title="评论数", onclick="sco.scrollTo('post-comment')")
-                  i.scoicon.sco-chat-fill
-                  a(href=url_for(page.path) + "#post-comment")
-                    span#twikoo-count
-                      i.scoicon.sco-loading-line
+                    i.scoicon.sco-chat-fill
+                    a(href=url_for(page.path) + "#post-comment")
+                        span#twikoo-count
+                            i.scoicon.sco-loading-line
 include ./wave

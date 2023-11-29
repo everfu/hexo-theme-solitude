@@ -658,10 +658,9 @@
 }
 
 #article-container.post-content h1, #article-container.post-content h2, #article-container.post-content h3, #article-container.post-content h4 {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-direction: row-reverse;
+  border-top 1px dashed var(--sco-theme-op)
+  padding-top 1.5rem
+  margin-top 1.5rem
 }
 
 #article-container.post-content h1 {
@@ -708,7 +707,7 @@
   padding: 0;
   border-style: none;
   border-radius: 8px !important;
-  line-height: 1;
+  line-height: 2;
   font-size: 1rem
 }
 
@@ -729,7 +728,7 @@
 }
 
 #article-container img.error {
-  content: url(https://bu.dusays.com/2023/03/03/6401a79030db5.png)
+  content: url(error_img)
 }
 
 .doge-inner-player {
@@ -915,3 +914,44 @@
     display: none
   }
 }
+
+.main-hero-waves-area
+  width 100%
+  position absolute
+  left 0
+  bottom -11px
+  z-index 5
+
+.waves-area .waves-svg
+  width 100%
+  height 60px
+
+.parallax > use
+  animation move-forever 30s cubic-bezier(.55, .5, .45, .5) infinite
+
+.parallax > use:nth-child(1)
+  animation-delay -2s
+  animation-duration 7s
+  fill var(--sco-background)
+  opacity .5
+
+.parallax > use:nth-child(2)
+  animation-delay -3s
+  animation-duration 10s
+  fill var(--sco-background)
+  opacity .6
+
+.parallax > use:nth-child(3)
+  animation-delay -4s
+  animation-duration 13s
+  fill var(--sco-background)
+  opacity .7
+
+.parallax > use:nth-child(4)
+  animation-delay -5s
+  animation-duration 20s
+  fill var(--sco-background)
+
+@media (max-width: 768px)
+  .main-hero-waves-area
+    display none

@@ -1,9 +1,9 @@
-- let title = '', subtitle =''
+- let title = page.title, subtitle =''
 - if (is_home()) title = config.title
-- else if (is_archive()) title = '归档 ' + (page.year || "")
-- else if (is_tag()) title = '标签 ' + page.tag
-- else if (is_category()) title = '分类 ' + page.category
-- else if (page.type === '404') title = '404' + theme.errorpage.text
+- else if (is_archive()) title = _p('page.archives') + (page.year || "")
+- else if (is_tag()) title = _p('page.tag')+': '  + page.tag
+- else if (is_category()) title = _p('page.category') +': ' + page.category
+- else if (page.type === '404') title = '404'+': '  + theme.errorpage.text
 - else if (is_post() || is_page()) title = page.title
 
 - if (is_home()) subtitle = config.subtitle ? ' - ' + config.subtitle : ''

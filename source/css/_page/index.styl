@@ -1,59 +1,22 @@
-// 即刻、categoriesBar 样式
-#bbTimeList,
-#category-bar
-  padding 0.4rem 1rem 0.4rem 0.7rem
-  background var(--sco-card-bg)
-  border-radius 12px
-  display flex
-  white-space nowrap
-  overflow hidden
-  margin-bottom 1rem
-  border var(--style-border)
-  transition .3s
-  width 100%
-  justify-content space-between
-  -webkit-user-select none
-  align-items center
+@import "category.styl"
 
-  +maxWidth1300()
-    margin-bottom 1rem
-    animation slide-in .6s 0s backwards
+@import "equipment.styl"
 
-  +minWidth1300()
-    &:hover
-      border var(--style-border-hover)
-      box-shadow var(--sco-shadow-main)
+@import "error.styl"
 
-  +maxWidth768()
-    margin-bottom 0
-    margin-top 0
-    border-radius 0
-    background var(--sco-background)
-    padding 0.5rem 20px
-    border none
+@import "home.styl"
+@import "homeTop.styl"
 
-#category-bar
-  padding 0.4rem 1rem 0.4rem 0.7rem
-  white-space nowrap
-  overflow hidden
-  justify-content space-between
+@import "link.styl"
 
-  +minWidth1300()
-    margin-bottom 0.75rem
-    animation slide-in .6s .3s backwards
+@import "rss.styl"
 
-    .category-in-bar-tips
-      margin-bottom .25rem
+@import "moment.styl"
 
-.page-title
-  display none
+if hexo-config('says.enable')
+  @import "says.styl"
 
-#page h1.page-title
-  margin .4rem 0 1rem
+@import "tag.styl"
 
-#page
-  background 0 0
-  border none
-  padding 0
-  box-shadow none
-  min-height calc(100vh - 464px)
+if hexo-config('about.enable')
+  @import "about.styl"
