@@ -1,112 +1,131 @@
-.search-dialog 
-	position fixed
-	top 5rem
-	left 50%
-	z-index 1001
-	display none
-	margin-left -15rem
-	padding 1rem
-	width 30rem
-	box-shadow var(--sco-shadow-lightblack)
-	background var(--sco-card-bg)
-	border var(--style-border)
-	transition 0.3s
-	border-radius 12px
+.search-dialog
+  position fixed
+  top 5rem
+  left 50%
+  z-index 1001
+  display none
+  margin-left -15rem
+  padding 1rem
+  width 30rem
+  box-shadow var(--sco-shadow-lightblack)
+  background var(--sco-card-bg)
+  border var(--style-border)
+  transition 0.3s
+  border-radius 8px
 
-	+maxWidth768()
-		top 0px
-		left 0px
-		margin 0px
-		width 100%
-		height 100%
+  &:hover
+    border var(--style-border-hover)
+    box-shadow var(--sco-shadow-theme)
 
-	.search-close-button 
-		color var(--sco-main)
-		font-size 1.2em
-		line-height 1
-		cursor pointer
-		transition color 0.2s ease-in-out 0s
+  +maxWidth768()
+    top 0
+    left 0
+    margin 0
+    width 100%
+    height 100%
 
-		&:hover 
-			color rgb(48, 122, 246)
+  .search-dialog-title
+    font-weight 700
+    color var(--sco-main)
+    padding 0 0 0.7rem
+    font-size 1.4em
+    line-height 1
 
-	.search-box 
-		padding-top 8px
-		max-width 100%
+  .search-close-button
+    position absolute
+    top 0.8rem
+    right 1rem
+    color var(--sco-gray)
+    font-size 1.4em
+    line-height 1
+    cursor pointer
+    transition color .2s ease-in-out 0s
 
-		input 
-			height 100%
-			width 100%
-			padding 0.25rem 0.7rem
-			outline 0px
-			border var(--style-border)
-			border-radius 8px
-			background var(--sco-secondbg)
-			color var(--sco-fontcolor)
+    &:hover
+      color var(--sco-main)
 
-			&:focus 
-				border var(--style-border-hover)
+  #search-results
+    max-height calc(80vh - 130px)
+    overflow-y auto
+    margin-top 8px
 
-#search-mask 
-	position fixed
-	inset 0px
-	z-index 1000
-	display none
-	background rgba(0, 0, 0, 0.6)
-	backdrop-filter blur(12px)
-	-webkit-backdrop-filter blur(12px)
-	transform translateZ(0)
-	background var(--sco-maskbgdeep)
+    .search-result-list
+      .search-result-title
+        padding-left 0
+        font-weight 700
+        position relative
+        transition color .2s ease-in-out 0s
 
-.search-wrap 
-	display none
+        &:hover
+          color var(--sco-main)
 
-#loading-database,
-#loading-status 
-	text-align center
-	padding-top 10px
+    +maxWidth768()
+      max-height 80vh !important
 
-.search-nav 
-	display flex
-	align-items center
-	justify-content space-between
-	padding 0 0.2rem 0.7rem 0.2rem
+  #search-pagination
+    .pagination-list
+      margin 0.2rem 0 0
+      padding 0
+      text-align center
 
-.search-dialog-title 
-	font-weight bold
-	color var(--sco-main)
-	font-size 1.4em
-	line-height 1
+      .pagination-item
+        color var(--sco-fontcolor)
+        display inline-block
+        min-width 1.2rem
+        height 1.2rem
+        text-align center
+        line-height 1.2rem
+        cursor pointer
 
-#search-results 
-	max-height calc(80vh - 130px)
-	overflow-y auto
+        &:hover
+          color var(--sco-main)
 
-	+maxWidth768()
-		max-height 80vh !important
+        &.select
+          border-radius 4px
+          background var(--sco-main)
+          color var(--sco-white)
+          cursor default
 
-	.search__hit-item 
-		font-weight bold
-		margin 10px 0
+          &:hover
+            color var(--sco-white)
 
-	.search-result 
-		margin 0
-		font-weight 500
+  #search-tips
+    padding-top 12px
+    color var(--sco-secondtext)
+    right 0
+    margin auto
 
-	.search-keyword 
-		color var(--sco-theme)
-		font-style normal
+    .search-result-count
+      color var(--sco-gray)
 
-#search__hits-empty 
-	text-align center
-	font-weight 600
+      b
+        color var(--sco-main)
 
-.search__hits-count 
-	color var(--sco-gray)
-	font-size .8rem
-	font-weight bold
+  .search-box
+    position relative
+    margin 0 auto
+    max-width 100%
+    width 100%
+    padding-top 8px
+    margin-bottom 8px
 
-.search-box 
-	input 
-		&::placeholder 
-			color var(--sco-gray)
+    input
+      height 100%
+      width 100%
+      border-radius 8px
+      border var(--style-border)
+      padding 0.25rem 0.7rem;
+      outline 0
+      background var(--sco-secondbg)
+      color var(--search-input-color)
+
+#search-mask
+  position fixed
+  inset 0
+  z-index 1000
+  display none
+  background rgba(0, 0, 0, 0.6)
+  backdrop-filter blur(12px)
+  -webkit-backdrop-filter blur(12px)
+  transform translateZ(0)
+  background var(--sco-maskbgdeep)

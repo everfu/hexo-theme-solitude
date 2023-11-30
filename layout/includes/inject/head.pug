@@ -26,6 +26,8 @@ if theme.thirdparty.search.enable
     if theme.thirdparty.search.type === 'algolia'
         script(src=url_for(cdn.instantsearch))
         script(src=url_for(cdn.algoliajs))
+    else if theme.thirdparty.search.type === 'local'
+        script(src=url_for(cdn.lunrjs))
 
 // aplayer
 if theme.thirdparty.aplayer.enable

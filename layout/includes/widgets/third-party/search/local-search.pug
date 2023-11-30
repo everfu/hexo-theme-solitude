@@ -4,12 +4,10 @@ div#local-search
             span.search-dialog-title 搜索
             button.search-close-button
                 i.scoicon.sco-close-fill
-        div#loading-database
-            i.scoicon.sco-loading-line
-            span 加载中
         div.search-wrap
             div.search-box
                 input.search-box-input(type="text", id="search-input", autocomplete="off", spellcheck="false", autocorrect="off", autocapitalize="off", placeholder=__('search.placeholder'))
-            div#loading-status
             div#search-results
+            div#search-pagination
+            div#search-tips
     div#search-mask
