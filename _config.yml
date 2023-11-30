@@ -486,6 +486,7 @@ cdn:
     algoliajs: https://cdn.bootcdn.net/ajax/libs/algoliasearch/4.9.3/algoliasearch-lite.umd.min.js
     pacejs: https://cdn.bootcdn.net/ajax/libs/pace/1.2.4/pace.min.js
     echartsjs: https://cdn.bootcdn.net/ajax/libs/echarts/5.4.2/echarts.min.js
+    lunrjs: https://cdn.bootcdn.net/ajax/libs/lunr.js/2.3.9/lunr.min.js
   body:
     viewimagejs: /lib/view-image.min.js
     waterfalljs: /lib/waterfall.min.js

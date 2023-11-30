@@ -1,171 +1,146 @@
-const $searchMask = document.getElementById('search-mask'), 
-$searchDialog = document.querySelector('#local-search .search-dialog'),
-$input = document.querySelector('#search-input'),
-$resultContent = document.getElementById('search-results'),
-$loadingStatus = document.getElementById('loading-status')
-let dataObj = null
-
-class search{
-  static openSearch(){
-    utils.fadeIn($searchMask, '0.5')
-    utils.fadeIn($searchDialog, '0.5')
-    setTimeout(() => { document.querySelector('#search-input').focus() }, 100)
-    search.search()
-    document.addEventListener('keydown', function f (event) {
-      if (event.code === 'Escape') {
-        closeSearch()
-        document.removeEventListener('keydown', f)
-      }
-    })
-  }
-
-  static closeSearch(){
-    utils.fadeOut($searchDialog, '0.5')
-    utils.fadeOut($searchMask, '0.5')
-  }
-
-  static async fetchData(path){
-    let data = []
-    const response = await fetch(path)
-    const res = await new window.DOMParser().parseFromString(await response.text(), 'text/xml')
-    data = [...res.querySelectorAll('entry')].map(item => {
-      return {
-        title: item.querySelector('title').textContent,
-        content: item.querySelector('content') && item.querySelector('content').textContent,
-        url: item.querySelector('url').textContent
-      }
-    })
-    if (response.ok) {
-      const $loadDataItem = document.getElementById('loading-database')
-      $loadDataItem.nextElementSibling.style.display = 'block'
-      $loadDataItem.remove()
-    }
-    return data
-  }
-
-  static search(){
-    if (!GLOBAL_CONFIG.localsearch.preload && dataObj === null) dataObj = this.fetchData(GLOBAL_CONFIG.localsearch.path)
-    $input.addEventListener('input', function type() {
-      const keywords = this.value.trim().toLowerCase().split(/[\s]+/)
-      if (keywords[0] !== '') $loadingStatus.innerHTML = '<i class="scoicon sco-loading-line"></i><span>加载中</span>'
-      else {
-        $resultContent.innerHTML = ''
-        return
-      }
-
-      if (keywords.length <= 0) return
-      let count = 0, str = '<div class="search-result-list">'
-      // perform local searching
-      dataObj.then(data => {
-        data.forEach(data => {
-          let isMatch = true
-          let dataTitle = data.title ? data.title.trim().toLowerCase() : ''
-          const dataContent = data.content ? data.content.trim().replace(/<[^>]+>/g, '').toLowerCase() : ''
-          const dataUrl = data.url.startsWith('/') ? data.url : GLOBAL_CONFIG.root + data.url
-          let indexTitle = -1
-          let indexContent = -1
-          let firstOccur = -1
-          // only match articles with not empty titles and contents
-          if (dataTitle !== '' || dataContent !== '') {
-            keywords.forEach((keyword, i) => {
-              indexTitle = dataTitle.indexOf(keyword)
-              indexContent = dataContent.indexOf(keyword)
-              if (indexTitle < 0 && indexContent < 0) {
-                isMatch = false
-              } else {
-                if (indexContent < 0) {
-                  indexContent = 0
-                }
-                if (i === 0) {
-                  firstOccur = indexContent
-                }
-              }
-            })
-          } else {
-            isMatch = false
-          }
-
-          // show search results
-          if (isMatch) {
-            if (firstOccur >= 0) {
-              // cut out 130 characters
-              let start = firstOccur - 30
-              let end = firstOccur + 100
-              let pre = ''
-              let post = ''
-
-              if (start < 0) {
-                start = 0
-              }
-
-              if (start === 0) {
-                end = 100
-              } else {
-                pre = '...'
-              }
-
-              if (end > dataContent.length) {
-                end = dataContent.length
-              } else {
-                post = '...'
-              }
-
-              let matchContent = dataContent.substring(start, end)
-              // highlight all keywords
-              keywords.forEach(keyword => {
-                const regex = new RegExp(`(?!<[^>]*?)(${keyword})(?![^<]*?>)`, 'gi')
-                matchContent = matchContent.replaceAll(regex, '<span class="search-keyword">$1</span>')
-                dataTitle = dataTitle.replaceAll(regex, '<span class="search-keyword">$1</span>')
-              })
-
-              str += '<div class="search__hit-item"><a href="' + dataUrl + '"><span class="search-result-title">' + dataTitle + '</span>'
-              count += 1
-              if (dataContent !== '') {
-                str += '<div class="search-result">' + pre + matchContent + post + '</div>'
-              }
+window.onload = () => {
+    let idx, store = [];
+    const $searchMask = document.getElementById("search-mask");
+    const $searchDialog = document.querySelector("#local-search .search-dialog");
+    const openSearch = () => {
+        utils.animateIn($searchMask, "to_show 0.5s");
+        $searchDialog.style.display = "block";
+        setTimeout(() => {
+            document.querySelector("#local-search .search-box-input").focus();
+        }, 100);
+        document.addEventListener("keydown", function f(event) {
+            if (event.code === "Escape") {
+                closeSearch();
+                document.removeEventListener("keydown", f);
             }
-            str += '</a></div>'
-          }
-        })
-        if (count === 0) {
-          str += `<div id="search__hits-empty">${GLOBAL_CONFIG.lang.search.empty}</div>`
-        }else{
-          str += `<div class="search__hits-count">${GLOBAL_CONFIG.lang.search.hit.replace('${query}', '<span class="search-keyword">' + count + '</span>')}</div>`
+        });
+        fixSafariHeight();
+        window.addEventListener("resize", fixSafariHeight);
+    };
+    const fixSafariHeight = () => {
+        if (window.innerWidth < 768) {
+            $searchDialog.style.setProperty("--search-height", window.innerHeight + "px");
         }
-        str += '</div>'
-        $resultContent.innerHTML = str
-        if (keywords[0] !== '') $loadingStatus.innerHTML = ''
-      })
-    })
-  }
-}
+    };
+    const closeSearch = () => {
+        utils.animateOut($searchDialog, "search_close .5s");
+        utils.animateOut($searchMask, "to_hide 0.5s");
+        window.removeEventListener("resize", fixSafariHeight);
+    };
+    utils.addEventListenerPjax(document.querySelector("#search-button > .search"), "click", openSearch);
+    utils.addEventListenerPjax(document.querySelector("#local-search .search-close-button"), "click", closeSearch);
+    function initLunr() {
+        fetch("/search.xml")
+            .then(response => response.text())
+            .then(data => {
+                let parser = new DOMParser();
+                let xmlDoc = parser.parseFromString(data, "text/xml");
+                let entries = xmlDoc.getElementsByTagName("entry");
+                for (let i = 0; i < entries.length; i++) {
+                    let entry = entries[i];
+                    let title = entry.getElementsByTagName("title")[0].textContent;
+                    let link = entry.getElementsByTagName("url")[0].textContent;
+                    let content = entry.getElementsByTagName("content")[0].textContent;
+                    store.push({
+                        'title': title,
+                        'link': link,
+                        'content': content
+                    });
+                }
 
-const searchClickFn = () => {
-  if (PAGE_CONFIG.page !== "404") document.querySelector('#search-button > .search').addEventListener('click', search.openSearch)
-  GLOBAL_CONFIG.rightmenu.enable && document.getElementById('menu-search').addEventListener('click', function() {
-    rm.hideRightMenu();
-    search.openSearch();
-    let t = document.getElementsByClassName('search-box-input')[0];
-    let evt = new Event('input', {
-      bubbles: true,
-      cancelable: true
+                idx = lunr(function () {
+                    this.ref('link');
+                    this.field('title', {boost: 10});
+                    this.field('content');
+
+                    store.forEach(function (doc) {
+                        this.add(doc);
+                    }, this);
+                });
+            })
+            .catch(err => console.error("Error loading search data:", err));
+    }
+    let query = ''
+    let currentPage = 0;
+    const resultsPerPage = 10;
+    let results = [];
+
+    function initUI() {
+        const $results = document.getElementById("search-results");
+        const $search = document.getElementById("search-input");
+        $search.addEventListener('keydown', function (e) {
+                if (e.keyCode === 13) {
+                    $results.innerHTML = '';
+                    query = this.value;
+                    results = search(query);
+                    renderResults(results, currentPage);
+                    renderPagination(results.length);
+                }
+            }
+        )
+        ;
+    }
+    function search(query) {
+        return idx.search(query).map(result => {
+            return store.filter(page => {
+                return page.link === result.ref;
+            })[0];
+        });
+    }
+    function renderResults(results, page) {
+        const $search_results = document.getElementById("search-results");
+        $search_results.innerHTML = '';
+        const $tips = document.getElementById("search-tips")
+        $tips.innerHTML = '';
+        const start = page * resultsPerPage;
+        const end = start + resultsPerPage;
+        if (!results.length) {
+            const $empty = document.createElement("span");
+            $empty.className = "search-result-empty";
+            $empty.textContent = GLOBAL_CONFIG.lang.search.empty.replace(/\$\{query}/, query);
+            $search_results.appendChild($empty);
+            return;
+        }
+        results.slice(start, end).forEach(function (result) {
+            const $result = document.createElement("li");
+            $result.className = "search-result-item";
+            const $link = document.createElement("a");
+            $link.className = "search-result-title";
+            $link.href = result.link;
+            $link.textContent = result.title;
+            $result.appendChild($link);
+            $search_results.appendChild($result);
+        });
+        const count = document.createElement("span");
+        count.className = "search-result-count";
+        count.innerHTML = `共 <b>${results.length}</b> 条结果`;
+        $tips.appendChild(count);
+    }
+    function renderPagination(totalResults) {
+        const totalPages = Math.ceil(totalResults / resultsPerPage);
+        const paginationContainer = document.getElementById("search-pagination");
+        paginationContainer.innerHTML = '';
+        const paginationList = document.createElement("ul");
+        paginationList.className = "pagination-list";
+
+        for (let i = 0; i < totalPages; i++) {
+            const button = document.createElement("li");
+            button.className = "pagination-item";
+            button.textContent = i + 1;
+            if (i === currentPage) {
+                button.classList.add('select');
+            }
+            button.addEventListener('click', function () {
+                currentPage = i;
+                renderResults(results, i);
+            });
+            paginationList.appendChild(button);
+        }
+        paginationContainer.appendChild(paginationList);
+    }
+    initLunr();
+    initUI();
+    window.addEventListener('DOMContentLoaded', (event) => {
+        initUI();
     });
-    t.value = selectTextNow;
-    t.dispatchEvent(evt);
-  })
 }
-
-const searchClickFnOnce = () => {
-  document.querySelector('#local-search .search-close-button').addEventListener('click', search.closeSearch)
-  $searchMask.addEventListener('click', search.closeSearch)
-  if (GLOBAL_CONFIG.localsearch.preload) dataObj = search.fetchData(GLOBAL_CONFIG.localsearch.path)
-}
-
-window.addEventListener('load', () => {
-  searchClickFn()
-  searchClickFnOnce()
-})
-
-window.addEventListener('pjax:complete', () => {
-  searchClickFn()
-})

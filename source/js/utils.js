@@ -143,5 +143,34 @@ const utils = {
         })
     },
     isMobile: () => /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent),
-    isHidden: e => 0 === e.offsetHeight && 0 === e.offsetWidth
+    isHidden: e => 0 === e.offsetHeight && 0 === e.offsetWidth,
+    addEventListenerPjax: function (element, eventType, callback, useCapture = false) {
+        element.addEventListener(eventType, callback, useCapture);
+        utils.addGlobalFn("pjax", function () {
+            element.removeEventListener(eventType, callback, useCapture);
+        });
+    },
+    addGlobalFn: (key, fn, name = false, parent = window) => {
+        const globalFn = parent.globalFn || {}
+        const keyObj = globalFn[key] || {}
+
+        if (name && keyObj[name]) return
+
+        name = name || Object.keys(keyObj).length
+        keyObj[name] = fn
+        globalFn[key] = keyObj
+        parent.globalFn = globalFn
+    },
+    animateIn: (ele, text) => {
+        ele.style.display = 'block'
+        ele.style.animation = text
+    },
+    animateOut: (ele, text) => {
+        ele.addEventListener('animationend', function f() {
+            ele.style.display = ''
+            ele.style.animation = ''
+            ele.removeEventListener('animationend', f)
+        })
+        ele.style.animation = text
+    }
 }
