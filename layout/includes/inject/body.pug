@@ -54,9 +54,8 @@ if theme.aside.welcome.enable
     script(src='/js/txmap.js')
 
 if theme.comment.enable
-    script(src='/js/extend/console/comment.js')
-
     if theme.comment.type === 'twikoo'
+        script(src='/js/extend/comment/twikoo.js')
         script(src='/js/commentBarrage.js')
 
 // pjax
@@ -65,4 +64,4 @@ include ../widgets/third-party/pjax.pug
 // inject custom body
 if theme.extends.body
     each item in theme.extends.body
-        item
+       != item
