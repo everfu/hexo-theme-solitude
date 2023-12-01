@@ -18,8 +18,12 @@ link(rel="stylesheet", href=cdn.snackbarcss)
 
 // comment
 if theme.comment.enable
-    if theme.comment.type === 'twikoo'
-        script(src=cdn.twikoojs)
+    case theme.comment.type
+        when 'twikoo'
+            script(src=cdn.twikoojs)
+        when 'waline'
+            script(src=cdn.walinejs)
+            link(rel="stylesheet", href=cdn.walinecss)
 
 // search
 if theme.thirdparty.search.enable

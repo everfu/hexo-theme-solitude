@@ -408,11 +408,22 @@ thirdparty:
 comment:
   enable: false # 是否开启评论
   type: 'twikoo' # valine, twikoo
+  lazyload: true # 是否开启懒加载
+  count: true  # 是否显示评论数
   # 评论系统
   twikoo:
     envId: # url: https://twikoo.sondy.top/
     lang: 'zh-CN' # 语言
     accessToken:  # accessToken
+  waline:
+    envId: https://waline.wzsco.top # url: https://waline.js.org/
+    pageview: true # 是否开启页面访问量统计
+    option: # waline配置项
+      visitor: true # 是否开启访客统计
+      highlight: true # 是否开启代码高亮
+      emojiCDN: 'https://cdn.jsdelivr.net/npm/emoji-datasource-apple@latest/img/apple/64/' # emoji CDN
+      admin: # 管理员邮箱
+        -
 
 # 插入代码到头部 </head> 之前 和 底部 </body> 之前
 # 插入额外代码 如：统计，广告等
@@ -502,6 +513,8 @@ cdn:
     pacejs: https://cdn.bootcdn.net/ajax/libs/pace/1.2.4/pace.min.js
     echartsjs: https://cdn.bootcdn.net/ajax/libs/echarts/5.4.2/echarts.min.js
     lunrjs: https://cdn.bootcdn.net/ajax/libs/lunr.js/2.3.9/lunr.min.js
+    walinecss: https://cdn.bootcdn.net/ajax/libs/waline/2.15.7/waline.min.css
+    walinejs: https://cdn.bootcdn.net/ajax/libs/waline/2.15.7/waline.min.js
   body:
     viewimagejs: /lib/view-image.min.js
     waterfalljs: /lib/waterfall.min.js

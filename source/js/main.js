@@ -846,7 +846,7 @@ let sco = {
 
         pageText.addEventListener("keydown", (event) => {
             if (event.keyCode === 13) {
-                heo.toPage();
+                sco.toPage();
                 pjax.loadUrl(pageButton.href);
             }
         });
@@ -885,7 +885,7 @@ let sco = {
     /**
      * 首页分页跳转
      */
-    toPage: function() {
+    toPage: function () {
         const pageNumbers = document.querySelectorAll(".page-number");
         const maxPageNumber = parseInt(pageNumbers[pageNumbers.length - 1].innerHTML);
         const inputElement = document.getElementById("toPageText");
@@ -1027,7 +1027,6 @@ window.refreshFn = () => {
     GLOBAL_CONFIG.lazyload.enable && sco.lazyloadImg()
     GLOBAL_CONFIG.lightbox && sco.lightbox('')
     GLOBAL_CONFIG.randomlinks && randomLinksList()
-    GLOBAL_CONFIG.comment.enable && newestCommentInit()
     if (PAGE_CONFIG.comment) {
         initComment()
     }
@@ -1044,7 +1043,10 @@ window.refreshFn = () => {
     sco.initConsoleState()
     if (document.getElementById('history-baidu')) sco.card_history() // 那年今日
     if (document.getElementById('welcome-info')) sco.card_welcome() // 个性定位
-    if (GLOBAL_CONFIG.comment.type === "twikoo" && PAGE_CONFIG.comment) initializeCommentBarrage() // 热评
+    if (GLOBAL_CONFIG.comment.type === "twikoo" && PAGE_CONFIG.comment) {
+        initializeCommentBarrage() // 热评
+        GLOBAL_CONFIG.comment.enable && newestCommentInit()
+    }
 }
 
 sco.initTheme()
