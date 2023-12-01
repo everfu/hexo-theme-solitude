@@ -881,7 +881,29 @@ let sco = {
                 cookiesWindow.style.display = 'none';
             }
         }
-    }
+    },
+    /**
+     * 首页分页跳转
+     */
+    toPage: function() {
+        const pageNumbers = document.querySelectorAll(".page-number");
+        const maxPageNumber = parseInt(pageNumbers[pageNumbers.length - 1].innerHTML);
+        const inputElement = document.getElementById("toPageText");
+        const inputPageNumber = parseInt(inputElement.value);
+
+        if (!isNaN(inputPageNumber) && inputPageNumber > 0 && inputPageNumber <= maxPageNumber) {
+            const currentPageUrl = window.location.href.replace(/\/page\/\d+\/$/, "/");
+            let targetPageUrl;
+
+            if (inputPageNumber === 1) {
+                targetPageUrl = currentPageUrl;
+            } else {
+                targetPageUrl = currentPageUrl + (currentPageUrl.endsWith("/") ? "" : "/") + "page/" + inputPageNumber + "/";
+            }
+
+            document.getElementById("toPageButton").href = targetPageUrl;
+        }
+    },
 }
 
 /*
