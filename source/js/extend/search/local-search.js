@@ -81,13 +81,9 @@ window.onload = () => {
         ;
     }
     function search(query) {
-        return idx.search(query).map(result => {
-            console.log(result)
-            return store.filter(page => {
-                return page.link === result.ref;
-            })[0];
-        });
-    }
+        const regex = new RegExp(query.split('').join('.*'), 'i');
+        return store.filter(page => regex.test(page.title) || regex.test(page.content));
+    }    
     function renderResults(results, page) {
         const $search_results = document.getElementById("search-results");
         $search_results.innerHTML = '';
