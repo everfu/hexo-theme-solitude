@@ -1,8 +1,8 @@
 - let year
-each post in page.posts.data
-    - if(year !== moment(post.date).year())
-    - year = moment(post.date).year()
-    div.article-sort-item.year #{year}
+each post in page.posts.find({ parent: { $exists: false } }).data
+    if(year !== post.date.year())
+        - year = post.date.year()
+        div.article-sort-item.year #{year}
     div.article-sort-item
         a.article-sort-item-img(href=url_for(post.path) title=post.title)
             img(src=post.cover alt=post.title)
