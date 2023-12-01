@@ -911,63 +911,64 @@ let sco = {
  */
 class hightlight {
     static createEle(langEl, item) {
-        const fragment = document.createDocumentFragment();
-        const highlightCopyEle = '<i class="scoicon sco-copy-fill"></i>';
-        const highlightExpandEle = '<i class="scoicon sco-arrow-down expand" style="font-size: 16px"></i>';
+        const fragment = document.createDocumentFragment()
+        const highlightCopyEle = '<i class="scoicon sco-copy-fill"></i>'
+        const highlightExpandEle = '<i class="scoicon sco-arrow-down expand" style="font-size: 16px"></i>'
 
-        const hlTools = document.createElement('div');
-        hlTools.className = 'highlight-tools';
-        hlTools.innerHTML = `${highlightExpandEle}${langEl}${highlightCopyEle}`;
-
-        const itemHeight = item.clientHeight;
-        const $table = item.querySelector('table');
-        const $expand = item.getElementsByClassName('code-expand-btn');
-
-        let expand = true;
-        hlTools.children[0].addEventListener('click', () => {
-            expand = !expand;
-            hlTools.children[0].classList.toggle('closed');
-            $table.style.display = expand ? 'none' : 'block';
-            if ($expand.length !== 0) {
-                $expand[0].style.display = expand ? 'none' : 'block';
-            }
-            if (!expand) {
-                $table.style.height = itemHeight < 200 ? 'auto' : '200px';
-                if (itemHeight >= 200) {
-                    item.classList.remove("expand-done");
+        const hlTools = document.createElement('div')
+        hlTools.className = `highlight-tools`
+        hlTools.innerHTML = highlightExpandEle + langEl + highlightCopyEle
+        let expand = true
+        hlTools.children[0].addEventListener('click', (e) => {
+            if (expand) {
+                hlTools.children[0].classList.add('closed')
+                $table.setAttribute('style', 'display:none')
+                if ($expand.length !== 0) {
+                    $expand[0].setAttribute('style', 'display:none')
+                }
+            } else {
+                hlTools.children[0].classList.remove('closed')
+                $table.setAttribute('style', 'display:block')
+                if ($expand.length !== 0) {
+                    $expand[0].setAttribute('style', 'display:block')
+                }
+                if (itemHeight < 200) {
+                    $table.setAttribute('style', 'height: auto')
+                } else {
+                    $table.setAttribute('style', 'height:200px')
+                    ele.classList.remove("expand-done")
                 }
             }
-        });
-
-        hlTools.children[2].addEventListener('click', () => {
-            utils.copy($table.querySelector('.code').innerText);
-        });
-
-        fragment.appendChild(hlTools);
-
+            expand = !expand
+        })
+        hlTools.children[2].addEventListener('click', (e) => {
+            utils.copy($table.querySelector('.code').innerText)
+        })
+        const ele = document.createElement('div')
+        fragment.appendChild(hlTools)
+        const itemHeight = item.clientHeight, $table = item.querySelector('table'),
+            $expand = item.getElementsByClassName('code-expand-btn')
         if (GLOBAL_CONFIG.hightlight.limit && itemHeight > GLOBAL_CONFIG.hightlight.limit + 30) {
-            $table.style.height = `${GLOBAL_CONFIG.hightlight.limit}px`;
-            const ele = document.createElement('div');
-            ele.className = 'code-expand-btn';
-            ele.innerHTML = '<i class="scoicon sco-show-line" style="font-size: 1.2rem"></i>';
+            $table.setAttribute('style', `height: ${GLOBAL_CONFIG.hightlight.limit}px`)
+            ele.className = 'code-expand-btn'
+            ele.innerHTML = '<i class="scoicon sco-show-line" style="font-size: 1.2rem"></i>'
             ele.addEventListener('click', (e) => {
-                $table.style.height = `${itemHeight}px`;
-                const target = e.target.className !== 'code-expand-btn' ? e.target.parentNode : e.target;
-                target.classList.add('expand-done');
-            });
-            fragment.appendChild(ele);
+                $table.setAttribute('style', `height: ${itemHeight}px`)
+                e.target.className !== 'code-expand-btn' ? e.target.parentNode.classList.add('expand-done') : e.target.classList.add('expand-done')
+            })
+            fragment.appendChild(ele)
         }
-        item.insertBefore(fragment, item.firstChild);
+        item.insertBefore(fragment, item.firstChild)
     }
 
     static init() {
-        const $figureHighlight = document.querySelectorAll('figure.highlight');
-        $figureHighlight.forEach(item => {
-            let langName = item.classList[1] || 'Code';
-            if (langName === 'plaintext') langName = 'Code';
-            const highlightLangEle = `<div class="code-lang">${langName.toUpperCase()}</div>`;
-            this.createEle(highlightLangEle, item);
-        });
+        const $figureHighlight = document.querySelectorAll('figure.highlight'), that = this
+        $figureHighlight.forEach(function (item) {
+            let langName = item.getAttribute('class').split(' ')[1]
+            if (langName === 'plaintext' || langName === undefined) langName = 'Code'
+            const highlightLangEle = `<div class="code-lang">${langName.toUpperCase()}</div>`
+            that.createEle(highlightLangEle, item)
+        })
     }
 }
 
@@ -1043,9 +1044,9 @@ window.refreshFn = () => {
     sco.initConsoleState()
     if (document.getElementById('history-baidu')) sco.card_history() // 那年今日
     if (document.getElementById('welcome-info')) sco.card_welcome() // 个性定位
+    GLOBAL_CONFIG.comment.enable && newestCommentInit() // 最新评论
     if (GLOBAL_CONFIG.comment.type === "twikoo" && PAGE_CONFIG.comment) {
         initializeCommentBarrage() // 热评
-        GLOBAL_CONFIG.comment.enable && newestCommentInit()
     }
 }
 

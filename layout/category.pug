@@ -7,7 +7,7 @@ block content
                 div.category-bar-items#category-bar-items
                     include includes/widgets/home/categoryBar
             div.recent-posts#recent-posts
-                each post in site.posts.find({ parent: { $exists: false } }).data
+                each post in page.posts.find({ parent: { $exists: false } }).data
                     include includes/widgets/home/postList
             include includes/mixins/pagination
         include includes/widgets/aside/aside
