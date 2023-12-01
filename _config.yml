@@ -334,7 +334,7 @@ hightlight:
 # 加载动画
 loading:
   fullpage: false # 全局加载动画
-  pace: false # 顶部加载动画
+  pace: true # 顶部加载动画
 
 # 用于自定义的主题颜色
 # 注意：颜色值必须使用引号，如“#000”，否则可能会导致错误！
