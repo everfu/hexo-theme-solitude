@@ -11,7 +11,8 @@ block content
             div#category-bar
                 include ./includes/widgets/home/categoryBar.pug
 
-            include ./includes/widgets/home/postList.pug
+            for post in page.posts.sort('-date').data
+                include ./includes/widgets/home/postList.pug
 
             // pageination
             include ./includes/mixins/pagination.pug
