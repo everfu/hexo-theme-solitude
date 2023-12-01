@@ -15,8 +15,9 @@ if hexo-config('css_prefix')
 
 // comment
 if hexo-config('comment.enable')
-  @import '_comment/index.styl'
-  @import '_comment/twikoo.styl' when hexo-config('comment.type') == 'twikoo'
+  @import '_widgets/comment/index.styl'
+  @import '_widgets/comment/twikoo.styl' when hexo-config('comment.type') == 'twikoo'
+  @import '_widgets/comment/waline.styl' when hexo-config('comment.type') == 'waline'
 
 // commentBarrage
 if hexo-config('thirdparty.comment.enable')
