@@ -1,0 +1,91 @@
+#article-container
+  .hexo-douban-items
+    display flex
+    flex-wrap wrap
+    gap 12px
+
+    .hexo-douban-item
+      width calc(100% / 4 - 9px)
+      border-radius 12px
+      border var(--style-border)
+      box-shadow var(--sco-shadow-border)
+      background var(--sco-card-bg)
+      transition .3s
+      animation slide-in 0.6s 0.3s backwards
+
+      &:hover
+        border-color var(--sco-main)
+
+      .hexo-douban-picture
+        width 120px
+        height 100%
+        top 0
+        padding 10px
+
+        img
+          margin 0
+          height 100%
+          max-width 100%
+          border-radius 6px
+
+      .hexo-douban-info
+        display flex
+        flex-wrap wrap
+        align-content flex-end
+        height 100%
+        position relative
+
+        .hexo-douban-title
+          position absolute
+          transition all .2s ease 0s
+
+          a
+            border-bottom 0
+
+            &:hover
+              background none
+              color var(--sco-main)
+
+  .hexo-douban-pagination
+    margin-top 1.25rem
+    animation slide-in 0.6s 0.3s backwards
+
+    .hexo-douban-button
+      background var(--sco-card-bg)
+      height 2rem
+      line-height calc(2rem - 2px)
+      border-radius 8px !important
+      margin 0 0.3rem
+      padding 6px 12px
+      box-shadow var(--sco-shadow-border)
+      border var(--style-border)
+      transition 0.3s
+      display inline-flex
+      align-items center
+
+      &:hover
+        background var(--sco-main)
+
+  .hexo-douban-tabs
+    white-space nowrap
+    overflow hidden
+    display flex
+    padding 0.4rem 1rem 0.4rem 1rem
+    background var(--sco-card-bg)
+    border-radius 12px
+    border var(--style-border)
+    animation slide-in 0.6s 0.3s backwards
+
+    &:hover
+      border-color var(--sco-main)
+
+    a
+      padding 0.1rem 0.5rem
+      margin-right 6px
+      font-weight 700
+      border-radius 8px !important
+      border-bottom 0
+
+    .hexo-douban-tab-active
+      background var(--sco-main)
+      order -1
