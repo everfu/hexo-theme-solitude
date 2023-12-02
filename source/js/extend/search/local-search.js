@@ -69,16 +69,28 @@ window.onload = () => {
         const $results = document.getElementById("search-results");
         const $search = document.getElementById("search-input");
         $search.addEventListener('keydown', function (e) {
-                if (e.keyCode === 13) {
-                    $results.innerHTML = '';
-                    query = this.value.trim();
+            if (e.keyCode === 13) {
+                e.preventDefault();
+                $results.innerHTML = '';
+                query = this.value.trim();
+                if (query !== '') {
                     results = search(query);
                     renderResults(results, currentPage);
                     renderPagination(results.length);
+                } else {
+                    clearSearchResults();
                 }
             }
-        )
-        ;
+        });
+    }
+    function clearSearchResults() {
+        const $results = document.getElementById("search-results");
+        const $pagination = document.getElementById("search-pagination");
+        const $tips = document.getElementById("search-tips");
+    
+        $results.innerHTML = '';
+        $pagination.innerHTML = '';
+        $tips.innerHTML = '';
     }
     function search(query) {
         const regex = new RegExp(query.split('').join('.*'), 'i');
