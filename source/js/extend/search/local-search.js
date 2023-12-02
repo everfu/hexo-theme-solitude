@@ -81,17 +81,13 @@ window.onload = () => {
         ;
     }
     function search(query) {
-        return idx.search(query).map(result => {
-            console.log(result)
-            return store.filter(page => {
-                return page.link === result.ref;
-            })[0];
-        });
-    }
+        const regex = new RegExp(query.split('').join('.*'), 'i');
+        return store.filter(page => regex.test(page.title) || regex.test(page.content));
+    }    
     function renderResults(results, page) {
         const $search_results = document.getElementById("search-results");
         $search_results.innerHTML = '';
-        const $tips = document.getElementById("search-tips")
+        const $tips = document.getElementById("search-tips");
         $tips.innerHTML = '';
         const start = page * resultsPerPage;
         const end = start + resultsPerPage;
@@ -108,7 +104,8 @@ window.onload = () => {
             const $link = document.createElement("a");
             $link.className = "search-result-title";
             $link.href = result.link;
-            $link.textContent = result.title;
+            const title = highlightSearchKeyword(result.title, query);
+            $link.innerHTML = title;
             $result.appendChild($link);
             $search_results.appendChild($result);
         });
@@ -117,6 +114,12 @@ window.onload = () => {
         count.innerHTML = `共 <b>${results.length}</b> 条结果`;
         $tips.appendChild(count);
     }
+    
+    function highlightSearchKeyword(text, keyword) {
+        const regex = new RegExp(`(${keyword.split(' ').join('|')})`, 'gi');
+        return text.replace(regex, '<em>$1</em>');
+    }
+    
     function renderPagination(totalResults) {
         const totalPages = Math.ceil(totalResults / resultsPerPage);
         const paginationContainer = document.getElementById("search-pagination");
@@ -134,6 +137,10 @@ window.onload = () => {
             button.addEventListener('click', function () {
                 currentPage = i;
                 renderResults(results, i);
+                document.querySelectorAll(".pagination-item").forEach(function (btn) {
+                    btn.classList.remove('select');
+                });
+                button.classList.add('select');
             });
             paginationList.appendChild(button);
         }

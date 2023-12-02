@@ -49,15 +49,24 @@
     overflow-y auto
     margin-top 8px
 
-    .search-result-list
+    .search-result-item
+      padding-left 0
+      font-weight 700
+
       .search-result-title
-        padding-left 0
-        font-weight 700
         position relative
         transition color .2s ease-in-out 0s
+        white-space nowrap
+        text-overflow ellipsis
+        overflow hidden
+        display block
 
         &:hover
-          color var(--sco-main)
+          color var(--sco-hovertext)
+
+        em
+          color var(--sco-theme)
+          font-style normal
 
     +maxWidth768()
       max-height 80vh !important
@@ -117,7 +126,8 @@
       padding 0.25rem 0.7rem;
       outline 0
       background var(--sco-secondbg)
-      color var(--search-input-color)
+      color var(--sco-fontcolor)
+      caret-color var(--sco-theme)
 
 #search-mask
   position fixed
