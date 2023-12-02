@@ -4,7 +4,7 @@
         if (theme.thirdparty.search.local_search.enable)
             localSearch = JSON.stringify({
                 preload: theme.thirdparty.search.local_search.preload,
-                path: theme.thirdparty.search.local_search.path || '/search.xml'
+                path: theme.thirdparty.search.local_search.CDN || '/search.xml'
             })
         var algolia = 'undefined';
         if (theme.thirdparty.search.algolia_search.enable)
