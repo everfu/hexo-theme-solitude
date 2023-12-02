@@ -38,6 +38,10 @@
         .hexo-douban-title
           position absolute
           transition all .2s ease 0s
+          white-space nowrap
+          overflow hidden
+          text-overflow ellipsis
+          width 200px
 
           a
             border-bottom 0
@@ -88,4 +92,3 @@
 
     .hexo-douban-tab-active
       background var(--sco-main)
-      order -1
