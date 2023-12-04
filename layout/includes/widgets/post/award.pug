@@ -1,5 +1,5 @@
-div.post-reward
-    div.reward-button.button--animated(onclick="AddRewardMask()" title="赞赏作者")
+div.post-reward(onclick="AddRewardMask()")
+    div.reward-button.button--animated(title="赞赏作者")
         i.scoicon.sco-hand-heart-fill
         | 打赏作者
     div.reward-main
@@ -25,6 +25,8 @@ script.
         let rewardMainElements = document.querySelectorAll(".reward-main");
         let quitBoxElement = document.querySelector("#quit-box");
 
+        console.log("RemoveRewardMask")
+
         rewardMainElements.forEach(element => {
             element.style.display = "none";
         });
@@ -37,6 +39,8 @@ script.
     function AddRewardMask() {
         let rewardMainElements = document.querySelectorAll(".reward-main");
         let quitBoxElement = document.querySelector("#quit-box");
+
+        console.log("AddRewardMask")
 
         rewardMainElements.forEach(element => {
             element.style.display = "flex";

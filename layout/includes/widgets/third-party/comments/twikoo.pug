@@ -1,10 +1,10 @@
 script.
-    async function initComment(){
+    async function initComment() {
         var initOptions = Object.assign(
             !{JSON.stringify(theme.comment.twikoo || {})},
             {
                 el: '#comment',
-                onCommentLoaded: function() {
+                onCommentLoaded: function () {
                     GLOBAL_CONFIG.lightbox && sco.lightbox('#article-container img, #twikoo .tk-content img:not(.tk-owo-emotion)')
                 },
                 lang: '#{theme.comment.twikoo.lang}',
@@ -20,10 +20,31 @@ script.
                 }
             )
             const res = await twikoo.getCommentsCount(countOptions)
-            try{
+            try {
                 document.getElementById('twikoo-count').innerText = res[0].count
-            }catch (e) {
+            } catch (e) {
                 document.getElementById('twikoo-count').innerText = '加载错误'
             }
         }
     }
+- if (page.type === 'links')
+    script.
+        checkForm = function () {
+            const comment = document.getElementsByClassName('tk-submit')[0];
+            const checkboxes = document.querySelectorAll('input[onclick="checkForm()"]');
+            let allChecked = true;
+
+            checkboxes.forEach(checkbox => {
+                if (!checkbox.checked) {
+                    allChecked = false;
+                }
+            });
+
+            if (allChecked) {
+                comment.style.display = 'block';
+            } else {
+                comment.style.display = 'none';
+            }
+        };
+
+        checkForm()

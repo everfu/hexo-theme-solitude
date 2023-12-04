@@ -20,8 +20,8 @@ block content
                 include includes/widgets/third-party/comments/comment
         include includes/widgets/aside/aside
         if theme.thirdparty.ai.enable
-            -  let ai_black_list = theme.thirdparty.ai.BlackWhite_List.mode === 'black' ? theme.thirdparty.ai.BlackWhite_List.List.map(item => `'${item}'`).join(', ') : '';
-            -  let ai_white_list = theme.thirdparty.ai.BlackWhite_List.mode === 'white' ? theme.thirdparty.ai.BlackWhite_List.List.map(item => `'${item}'`).join(', ') : '';
+            -  let ai_black_list = theme.thirdparty.ai.BlackWhite_List.mode === 'black' ? theme.thirdparty.ai.BlackWhite_List.List?.map(item => `'${item}'`).join(', ') : '';
+            -  let ai_white_list = theme.thirdparty.ai.BlackWhite_List.mode === 'white' ? theme.thirdparty.ai.BlackWhite_List.List?.map(item => `'${item}'`).join(', ') : '';
             script(data-pjax, defer).
                 new ChucklePostAI({
                     el: '#post #article-container',

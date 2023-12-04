@@ -33,31 +33,12 @@ const getComment = () => {
             }))
 
             if (window.location.pathname === "/links/" || window.location.pathname === "/links") {
-                let submit = document.getElementsByClassName('tk-submit ')
                 let text = document.getElementsByClassName("el-textarea__inner");
                 text[0].value += `昵称（请勿包含博客等字样）：
 网站地址（要求博客地址，请勿提交个人主页）：
 头像图片url（请提供尽可能清晰的图片，我会上传到我的图床）：
 描述：`;
                 text[0].style.height = "142px"
-                submit.item(0).style.display = "none";
-
-                window.checkForm = function () {
-                    const checkboxes = document.querySelectorAll('input[onclick="checkForm()"]');
-                    let allChecked = true;
-
-                    checkboxes.forEach(checkbox => {
-                        if (!checkbox.checked) {
-                            allChecked = false;
-                        }
-                    });
-
-                    if (allChecked) {
-                        submit.item(0).style.display = "block";
-                    } else {
-                        submit.item(0).style.display = "none";
-                    }
-                }
             }
 
             generateHtml(twikooArray)

@@ -72,7 +72,7 @@
 
     .author-info__desc
       font-size 12px
-      color var(--sco-card-bg)
+      color var(--sco-white)
       opacity .6
       line-height 1.5
       -webkit-line-clamp 2
@@ -113,7 +113,7 @@
       position: absolute
       transition: cubic-bezier(.69, .39, 0, 1.21) .3s
       transform-origin: bottom
-      border: 5px solid var(--sco-card-bg)
+      border: 5px solid var(--sco-white)
 
       ../:hover .avatar-img-group
         opacity: 0
@@ -122,7 +122,7 @@
     .author-info__name
       text-align left
       font-weight 700
-      color var(--sco-card-bg)
+      color var(--sco-white)
       font-size 20px
       line-height 1
       margin-bottom 5px
@@ -252,12 +252,3 @@
 [data-theme=dark] #aside-content
   > .card-widget.card-info
     border: var(--style-border-always)
-
-  .card-info
-    .card-info-social-icons
-      i
-        color: var(--sco-card-bg)
-
-        &:hover
-          background var(--sco-card-bg)
-          color var(--sco-fontcolor)

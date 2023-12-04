@@ -1,0 +1,30 @@
+#post
+  #pagination
+    +maxWidth768()
+      border-radius 12px
+      border var(--style-border-always)
+      box-shadow var(--sco-shadow-border)
+
+    +minWidth1300()
+      position fixed
+      width 300px
+      bottom -100px
+      right 20px
+      height fit-content
+      transition cubic-bezier(0.42, 0, 0.3, 1.11) 0.3s
+      border var(--style-border)
+      border-radius 12px
+      overflow hidden
+      cursor pointer
+      opacity 0
+      z-index 1002
+      background 0 0
+
+      &:hover
+        border var(--style-border-hover)
+
+    &.show-window
+      +minWidth1300()
+        bottom 20px
+        opacity 1
+        background 0 0

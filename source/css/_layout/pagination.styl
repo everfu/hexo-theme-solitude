@@ -193,30 +193,6 @@
 }
 
 @media screen and (min-width: 1300px) {
-  #post #pagination {
-    position: fixed;
-    width: 300px;
-    bottom: -100px;
-    right: 20px;
-    height: fit-content;
-    transition: cubic-bezier(.42, 0, .3, 1.11) .3s;
-    border: var(--style-border);
-    border-radius: 12px;
-    overflow: hidden;
-    cursor: pointer;
-    opacity: 0;
-    z-index: 1002
-  }
-
-  #post #pagination.show-window {
-    bottom: 20px;
-    opacity: 1
-  }
-
-  #post #pagination:hover {
-    border: var(--style-border-hover)
-  }
-
   #pagination .next-post a {
     border: none;
     height: fit-content;
@@ -236,10 +212,6 @@
   #pagination .pagination-info {
     padding: .5rem 1rem;
     transform: none
-  }
-
-  #post #pagination {
-    background: 0 0
   }
 
   #pagination .next-post, #pagination .prev-post, .next-post.pull-right, .prev-post.pull-left {
@@ -276,12 +248,6 @@
 @media screen and (max-width: 768px) {
   .prev-post.pull-left {
     border-bottom: var(--style-border-always)
-  }
-
-  #post #pagination {
-    border-radius: 12px;
-    border: var(--style-border-always);
-    box-shadow: var(--sco-shadow-border)
   }
 
   #pagination .next-post .label, #post #pagination .prev-post .label {

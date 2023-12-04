@@ -154,7 +154,3 @@ function initializeCommentBarrage() {
     }
     (e)
 }
-
-if(PAGE_CONFIG.comment){
-    initializeCommentBarrage();
-}
