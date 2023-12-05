@@ -24,7 +24,7 @@ if site.data.about.rewardList
                             ul.reward-all
                                 span.reward-title 感谢你赐予我前进的力量
                                 ul.reward-group
-                                    - var rewards = [{image: theme?.post?.award?.wechat, description: '微信'}, {image: theme?.post?.award?.alipay, description: '支付宝'}]
+                                    - var rewards = [{image: theme.post.award.wechat, description: '微信'}, {image: theme.post.award.alipay, description: '支付宝'}]
                                     each reward in rewards
                                         li.reward-item
                                             a(href=reward.image, target="_blank")

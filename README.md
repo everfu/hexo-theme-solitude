@@ -4,10 +4,10 @@
   <a title="English" href="/README_EN.md">English</a>
 </div>
 
-<p align="center"><img width="400" src="/source/img/logo-horizontal_version.png"></p>
+<p align="center"><img width="400" src="./source/img/logo-horizontal_version.png"></p>
 
 <p align="center">一款优雅的 Hexo 主题</p>
-<p align="center">"在宁静的孤独中心探索内心，我们以简约之美引领优雅生活"</p>
+<p align="center">"在宁静的孤独中心探索，我们以简约之美引领优雅生活"</p>
 
 <p align="center">
   <a title="Hexo Version" target="_blank" href="https://hexo.io/zh-cn/"><img alt="Hexo Version" src="https://img.shields.io/badge/Hexo-%3E%3D%205.3.0-orange?style=flat"></a>
@@ -20,9 +20,9 @@
 
 ![](/source/img/solitude-show.jpg)
 
-主题预览: 👋[Demo](https://solitude.wzsco.top/) | [王卓Sco](https://blog.wzsco.top/)
+主题预览: 👋 [王卓Sco](https://blog.wzsco.top/) ｜ 🎆 [糕小菜](https://blog.kaixed.com/)
 
-主题文档: 📖[Solidude 文档](https://docs.wzsco.top/)
+主题文档:  [📖 Solidude 文档](https://docs.wzsco.top/)
 
 主题交流群：`文档内有群二维码和链接`
 
@@ -72,9 +72,9 @@ cp -rf ./themes/solitude/_config.yml ./_config.solitude.yml
 
 ## 🎁 赞助我们
 
-由于我们是为爱发电，域名和一些零零散散的支出都是由开发者在承担费用，如果可以，希望能够得到你的赞赏，非常感谢！🙏 当然了，即使没有赞助我们也会用心开发。
+非常感谢你的支持和赞赏！我们非常欣赏你为爱发电的精神和对开发者的理解。我们将继续用心开发和提供帮助，尽最大努力满足你的需求。如有任何其他问题或需求，请随时告诉我们，我们将尽力为你提供支持。谢谢！🙏
 
-[王卓Sco](https://afdian.net/a/wleelw0u0) &nbsp;  [亦小封](https://afdian.net/a/yife68)
+[@王卓Sco](https://afdian.net/a/wleelw0u0) &nbsp;  [@亦小封](https://afdian.net/a/yife68)
 
 ## ✨ 贡献者
 
