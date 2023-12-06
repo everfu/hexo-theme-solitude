@@ -1031,6 +1031,8 @@ window.refreshFn = () => {
     GLOBAL_CONFIG.randomlinks && randomLinksList()
     if (PAGE_CONFIG.comment) {
         initComment()
+
+        PAGE_CONFIG.page === "links" && checkForm()
     }
     PAGE_CONFIG.toc && toc.init()
     if (PAGE_CONFIG.is_post || PAGE_CONFIG.is_page) {

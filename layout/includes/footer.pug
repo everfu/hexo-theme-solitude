@@ -16,7 +16,8 @@ div#footer_deal
         a.deal_link(href=url_for(value.url), title=i)
             i(class=value.icon)
 
-    img.footer_mini_logo(src=theme.site.icon, title="返回顶部", onclick="sco.toTop()")
+    div#footer_mini_logo.footer_mini_logo(title="返回顶部", onclick="sco.toTop()")
+        img(src=theme.site.icon, alt="返回顶部")
 
     each value, i in rightInfo
         a.deal_link(href=url_for(value.url), title=i)

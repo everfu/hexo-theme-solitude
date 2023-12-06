@@ -1,6 +1,8 @@
 // 文章列表
 #recent-posts
   position relative
+  +maxWidth768()
+    padding 0 1rem
 
   > .recent-post-item
     box-shadow var(--sco-shadow-light2black)
@@ -213,6 +215,9 @@
   padding 1rem 1.5rem
   max-width 1200px
 
+  +maxWidth768()
+    padding 0
+
   &#content-inner
     max-width 1400px
 
@@ -245,11 +250,7 @@
     position: relative;
     overflow: hidden;
 
-  +maxWidth768()
-    padding: 0
-
     > div:first-child:not(.recent-posts)
-      border-radius: 0;
       padding: 0 1rem !important;
       box-shadow: none !important;
       background: var(--sco-background)

@@ -4,7 +4,7 @@
         if (theme.thirdparty.search.local_search.enable)
             localSearch = JSON.stringify({
                 preload: theme.thirdparty.search.local_search.preload,
-                path: theme.thirdparty.search.local_search.CDN || '/search.xml'
+                path: theme?.thirdparty?.search?.local_search?.CDN || '/search.xml'
             })
         var algolia = 'undefined';
         if (theme.thirdparty.search.algolia_search.enable)
@@ -13,7 +13,7 @@
                 apiKey: config.algolia.apiKey,
                 indexName: config.algolia.indexName,
                 hits: {
-                    per_page: theme.thirdparty.search.algolia_search.hits.per_page || 10
+                    per_page: theme.thirdparty?.search?.algolia_search?.hits?.per_page || 10
                 }
             })
     }
