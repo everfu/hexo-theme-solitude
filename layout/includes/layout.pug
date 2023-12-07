@@ -13,10 +13,10 @@ html(lang=config.language, data-theme="light")
         // sidebar
         include ./sidebar.pug
 
-        if(page.type !== '404')
-            div(class = is_post() ? 'post' : 'page', id="body-wrap")
-                include ./header.pug
+        div(class = is_post() ? 'post' : 'page', id="body-wrap")
+            include ./header.pug
 
+        if(page.type !== '404')
                 block content
 
                 footer#footer

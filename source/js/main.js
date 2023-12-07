@@ -37,16 +37,14 @@ const sidebarFn = () => {
     const $menuMask = document.getElementById('menu-mask')
     const $body = document.body
 
-    const isOpen = () => $mobileSidebarMenus.classList.contains('open')
-
-    function openMobileSidebar() {
+    function openMobileSidebar () {
         utils.sidebarPaddingR()
         $body.style.overflow = 'hidden'
         utils.fadeIn($menuMask, 0.5)
         $mobileSidebarMenus.classList.add('open')
     }
 
-    function closeMobileSidebar() {
+    function closeMobileSidebar () {
         $body.style.overflow = ''
         $body.style.paddingRight = ''
         utils.fadeOut($menuMask, 0.5)
@@ -55,15 +53,15 @@ const sidebarFn = () => {
 
     $toggleMenu.addEventListener('click', openMobileSidebar)
 
-    $menuMask.addEventListener('click', () => {
-        if (isOpen()) {
+    $menuMask.addEventListener('click', e => {
+        if ($mobileSidebarMenus.classList.contains('open')) {
             closeMobileSidebar()
         }
     })
 
-    window.addEventListener('resize', () => {
-        if (utils.isHidden($toggleMenu) && isOpen()) {
-            closeMobileSidebar()
+    window.addEventListener('resize', e => {
+        if (utils.isHidden($toggleMenu)) {
+            if ($mobileSidebarMenus.classList.contains('open')) closeMobileSidebar()
         }
     })
 }
@@ -1010,7 +1008,6 @@ class tabs {
 }
 
 window.refreshFn = () => {
-    if (PAGE_CONFIG.page === "404") return;
     initAdjust()
     scrollFn()
     sidebarFn()

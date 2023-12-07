@@ -145,6 +145,7 @@ const utils = {
     isMobile: () => /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent),
     isHidden: e => 0 === e.offsetHeight && 0 === e.offsetWidth,
     addEventListenerPjax: function (element, eventType, callback, useCapture = false) {
+        if (element == null) return
         element.addEventListener(eventType, callback, useCapture);
         utils.addGlobalFn("pjax", function () {
             element.removeEventListener(eventType, callback, useCapture);
