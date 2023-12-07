@@ -13,19 +13,19 @@ const adjustMenu = (change = false) => {
     const $nav = document.getElementById('nav')
     let t
     if (window.innerWidth < 768) t = true
-    else t = blogNameWidth + menusWidth + searchWidth > $nav.offsetWidth - 120
+    else t = blogNameWidth + menusWidth + searchWidth > $nav?.offsetWidth - 120
 
     if (t) {
-        $nav.classList.add('hide-menu')
+        $nav?.classList.add('hide-menu')
     } else {
-        $nav.classList.remove('hide-menu')
+        $nav?.classList.remove('hide-menu')
     }
 }
 
 // 初始化header
 const initAdjust = () => {
     adjustMenu()
-    document.getElementById('nav').classList.add('show')
+    document.getElementById('nav')?.classList.add('show')
 }
 
 /**

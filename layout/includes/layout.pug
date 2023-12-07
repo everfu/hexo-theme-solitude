@@ -13,17 +13,17 @@ html(lang=config.language, data-theme="light")
         // sidebar
         include ./sidebar.pug
 
-        div(class = is_post() ? 'post' : 'page', id="body-wrap")
+        div#body-wrap(class = is_post() ? 'post' : 'page')
             include ./header.pug
 
-        if(page.type !== '404')
+            if(page.type !== '404')
                 block content
 
                 footer#footer
                     include ./footer.pug
-        else
-            div.error#body-wrap
-                block content
+            else
+                div.error#body-wrap
+                    block content
 
         // inject body
         include ./inject/body.pug
