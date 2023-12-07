@@ -629,7 +629,6 @@ div.timenode
   .meta
     position relative
     color var(--tab-botton-color)
-    font-size 1.2em
     line-height 32px
     height 32px
     left 27px
@@ -649,7 +648,7 @@ div.timenode
       border-radius 8px
 
     &:after
-      background var(--sco-theme)
+      background var(--sco-card-bg)
       margin-left 2px
       margin-top 2px
       width 12px
@@ -662,7 +661,7 @@ div.timenode
       -o-transition all 0.28s ease
 
     p
-      font-weight bold
+      font-weight 500
       margin 0 0 0 24px
 
   .body
@@ -679,10 +678,8 @@ div.timenode
 
   &:hover
     .meta
-      color var(--sco-theme)
-
       &:before
-        background rgba(255, 87, 34, 0.5)
+        background var(--sco-theme)
 
       &:after
         background var(--sco-theme-op)

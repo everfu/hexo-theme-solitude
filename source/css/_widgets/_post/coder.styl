@@ -1,193 +1,192 @@
-#post
-  figure
+figure
+  &:hover
+    box-shadow var(--sco-shadow-border-hover)
+
+  .copy-btn
+    position absolute
+    top 1rem
+    right 1rem
+    z-index 10
+    color var(--sco-fontcolor)
+    cursor pointer
+    transition all .2s ease 0s
+
     &:hover
-      box-shadow var(--sco-shadow-border-hover)
-
-    .copy-btn
-      position absolute
-      top 1rem
-      right 1rem
-      z-index 10
-      color var(--sco-fontcolor)
-      cursor pointer
-      transition all .2s ease 0s
-
-      &:hover
-        color var(--sco-lighttext)
-
-    .copy-btn svg
-      width 1.5em
-      height 1.5em
-      vertical-align middle
-      fill currentColor
-      overflow hidden
-      padding-right 5px
-
-    .copy-btn svg:hover
       color var(--sco-lighttext)
 
-    &.highlight
-      background-color var(--sco-card-bg)
-      color var(--sco-fontcolor)
-      border var(--style-border-always)
-      overflow hidden
-      border-radius 8px 8px 4px 4px
+  .copy-btn svg
+    width 1.5em
+    height 1.5em
+    vertical-align middle
+    fill currentColor
+    overflow hidden
+    padding-right 5px
+
+  .copy-btn svg:hover
+    color var(--sco-lighttext)
+
+  &.highlight
+    background-color var(--sco-card-bg)
+    color var(--sco-fontcolor)
+    border var(--style-border-always)
+    overflow hidden
+    border-radius 8px 8px 4px 4px
+    position relative
+    margin 0 0 1rem
+    padding 0
+    line-height 1.6
+
+    pre
+      margin 0
+      padding 8px 0
+      border none
+
+    .highlight-tools
       position relative
-      margin 0 0 1rem
-      padding 0
-      line-height 1.6
+      display flex
+      -webkit-box-align center
+      align-items center
+      overflow hidden
+      min-height 1.2rem
+      height 2.15em
+      font-size 16px
+      background var(--sco-secondbg)
+      border-bottom var(--style-border-always)
+      color var(--sco-fontcolor)
 
-      pre
-        margin 0
-        padding 8px 0
-        border none
-
-      .highlight-tools
-        position relative
-        display flex
-        -webkit-box-align center
-        align-items center
-        overflow hidden
-        min-height 1.2rem
-        height 2.15em
-        font-size 16px
-        background var(--sco-secondbg)
-        border-bottom var(--style-border-always)
-        color var(--sco-fontcolor)
-
-        .sco-copy-fill
-          position absolute
-          right .7rem
-          cursor pointer
-          transition color .2s
-          font-size 18px
-
-        .sco-copy-fill:hover
-          color var(--sco-main)
-
-        .expand
-          position absolute
-          padding 0.4rem 0.3rem
-          cursor pointer
-          transition transform .3s ease 0s
-
-          & + .code-lang
-            left 1.7rem
-
-          &.closed
-            transition all .3s ease 0s
-            transform rotate(-90deg)
-
-        .code-lang
-          text-transform capitalize
-          position absolute
-          font-weight 700
-          font-size 1.15em
-          user-select none
-
-      .code-expand-btn
-        background: var(--sco-secondbg)
-        transition: .3s
-        backdrop-filter: saturate(180%) blur(20px)
-        -webkit-backdrop-filter: blur(20px)
-        transform: translateZ(0)
-        border-top: var(--style-border-always)
-        position: absolute
-        bottom 0
-        z-index 10
-        width 100%
-        text-align center
-        font-size 16px
+      .sco-copy-fill
+        position absolute
+        right .7rem
         cursor pointer
-        display flex
-        align-items center
-        justify-content center
-        height 32px
+        transition color .2s
+        font-size 18px
+
+      .sco-copy-fill:hover
+        color var(--sco-main)
+
+      .expand
+        position absolute
+        padding 0.4rem 0.3rem
+        cursor pointer
+        transition transform .3s ease 0s
+
+        & + .code-lang
+          left 1.7rem
+
+        &.closed
+          transition all .3s ease 0s
+          transform rotate(-90deg)
+
+      .code-lang
+        text-transform capitalize
+        position absolute
+        font-weight 700
+        font-size 1.15em
+        user-select none
+
+    .code-expand-btn
+      background: var(--sco-secondbg)
+      transition: .3s
+      backdrop-filter: saturate(180%) blur(20px)
+      -webkit-backdrop-filter: blur(20px)
+      transform: translateZ(0)
+      border-top: var(--style-border-always)
+      position: absolute
+      bottom 0
+      z-index 10
+      width 100%
+      text-align center
+      font-size 16px
+      cursor pointer
+      display flex
+      align-items center
+      justify-content center
+      height 32px
+
+      i
+        color var(--sco-fontcolor)
+        font-size 14px
+        line-height 1
+        animation 1.2s ease 0s infinite normal none running code-expand-key
+
+      &:hover
+        background var(--sco-main)
 
         i
-          color var(--sco-fontcolor)
-          font-size 14px
-          line-height 1
-          animation 1.2s ease 0s infinite normal none running code-expand-key
+          color var(--sco-white)
 
-        &:hover
-          background var(--sco-main)
+    table
+      display block
+      border none
+      overflow-y hidden
+      overflow-x auto
 
-          i
-            color var(--sco-white)
-
-      table
-        display block
+      td
+        padding 0
         border none
-        overflow-y hidden
-        overflow-x auto
+        height 100%
 
-        td
-          padding 0
-          border none
-          height 100%
+        &.gutter
+          opacity .6
+          user-select none
 
-          &.gutter
-            opacity .6
-            user-select none
+          pre
+            overflow auto
+            line-height 1.6
+            margin 0
+            padding 8px .5rem
+            border none
+            color var(--sco-secondtext)
+            background var(--sco-secondbg)
+            border-right var(--style-border-always)
+            text-align right
 
-            pre
-              overflow auto
-              line-height 1.6
-              margin 0
-              padding 8px .5rem
-              border none
-              color var(--sco-secondtext)
-              background var(--sco-secondbg)
-              border-right var(--style-border-always)
-              text-align right
+        &.code
+          width 100%
+          display flex
+          position relative
 
-          &.code
+          pre
+            padding-right .5rem
+            padding-left .5rem
             width 100%
-            display flex
-            position relative
 
-            pre
-              padding-right .5rem
-              padding-left .5rem
-              width 100%
+    .line
+      &.marked
+        background-color: rgba(97, 97, 97, .314)
 
-      .line
-        &.marked
-          background-color: rgba(97, 97, 97, .314)
+    .deletion
+      color #bf42bf
 
-      .deletion
-        color #bf42bf
+    .addition
+      color #105ede
 
-      .addition
-        color #105ede
+    .meta
+      color #c792ea
 
-      .meta
-        color #c792ea
+    .comment
+      color #969896
 
-      .comment
-        color #969896
+    .attribute, .css .class, .css .id, .css .pseudo, .html .doctype, .regexp, .ruby .constant, .tag .name, .variable, .xml .doctype, .xml .pi, .xml .tag .title
+      color var(--sco-red)
 
-      .attribute, .css .class, .css .id, .css .pseudo, .html .doctype, .regexp, .ruby .constant, .tag .name, .variable, .xml .doctype, .xml .pi, .xml .tag .title
-        color var(--sco-red)
+    .tag
+      color var(--sco-pink)
 
-      .tag
-        color var(--sco-pink)
+    .command, .constant, .literal, .number, .params, .preprocessor
+      color var(--sco-orange)
 
-      .command, .constant, .literal, .number, .params, .preprocessor
-        color var(--sco-orange)
+    .built_in
+      color var(--sco-yellow)
 
-      .built_in
-        color var(--sco-yellow)
+    .css .rules .attribute, .formula, .header, .inheritance, .number, .ruby .class .title, .ruby .symbol, .special, .string, .value, .xml .cdata
+      color var(--sco-green)
 
-      .css .rules .attribute, .formula, .header, .inheritance, .number, .ruby .class .title, .ruby .symbol, .special, .string, .value, .xml .cdata
-        color var(--sco-green)
+    .css .hexcolor, .keyword, .title
+      color #3eb1df
 
-      .css .hexcolor, .keyword, .title
-        color #3eb1df
+    .coffeescript .title, .function
+      color var(--sco-blue)
 
-      .coffeescript .title, .function
-        color var(--sco-blue)
-
-      .javascript .function, .tag .attr
-        color #c792ea
+    .javascript .function, .tag .attr
+      color #c792ea
