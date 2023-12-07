@@ -7,8 +7,6 @@
 @import "home.styl"
 @import "homeTop.styl"
 
-@import "link.styl"
-
 @import "rss.styl"
 
 @import "moment.styl"
@@ -19,6 +17,8 @@ if hexo-config('says.enable')
 @import "tag.styl"
 
 @import "douban.styl"
+
+@import "links.styl"
 
 if hexo-config('about.enable')
   @import "about.styl"
@@ -125,10 +125,11 @@ if hexo-config('about.enable')
 
       .banner-button-group
         .banner-button
-          background 0 0 !important
+          background 0 0
           color var(--sco-white)
           padding 0
-          width fit-content
+          width 30px
+          height 30px
 
           i
             margin-right 0

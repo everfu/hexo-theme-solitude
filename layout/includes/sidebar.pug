@@ -3,8 +3,8 @@ div#sidebar(style="zoom: 1;")
     div#sidebar-menus
         span.sidebar-menu-item-title= "功能"
         div.sidebar-menu-item
-            a.darkmode_switchbutton.menu-child(onclick="sco.switchDarkMode()", title="显示模式切换", href="javascript:void(0);" rel="nofollow" data-pjax-state)
-                i.scoicon.sco-moon-clear-fill(style="font-size: 1rem;")
+            a.darkmode_switchbutton.menu-child(onclick="sco.switchDarkMode()", title="显示模式切换", href="javascript:void(0);")
+                i.scoicon.sco-moon-clear-fill
                 span= "显示模式"
         if theme.nav.left.enable
             include ./widgets/nav/left.pug
