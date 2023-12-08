@@ -41,8 +41,13 @@ div#post-info
                 a.post-meta-pv(href=url_for(page.path), title="文章热度")
                     i.post-meta-icon.scoicon.sco-fire-fill
                     if theme.thirdparty.busuanzi.usecomment
-                        span#twikoo_visitors
-                            i.scoicon.sco-loading-line
+                        case theme.comment.type
+                            when "twikoo"
+                                span#twikoo_visitors
+                                    i.scoicon.sco-loading-line
+                            when "waline"
+                                span.waline-pageview-count
+                                    i.scoicon.sco-loading-line
                     else
                         span#busuanzi_value_page_pv
                             i.scoicon.sco-loading-line
@@ -50,6 +55,12 @@ div#post-info
                 span.post-meta-commentcount(title="评论数", onclick="sco.scrollTo('post-comment')")
                     i.scoicon.sco-chat-fill
                     a(href=url_for(page.path) + "#post-comment")
-                        span#twikoo-count
-                            i.scoicon.sco-loading-line
+                        case theme.comment.type
+                            when "twikoo"
+                                span#twikoo-count
+                                    i.scoicon.sco-loading-line
+                            when "waline"
+                                span.waline-comment-count
+                                    i.scoicon.sco-loading-line
+
 include ./wave

@@ -26,17 +26,16 @@ div#console(style="zoom: 1")
     div.button-group
         div.console-btn-item
             a.darkmode_switchbutton(onclick="sco.switchDarkMode()", title="昼夜切换", href="javascript:void(0);" rel="nofollow" data-pjax-state)
-                i.scoicon.sco-moon-clear-fill(style="font-size: 1rem;")
+                i.scoicon.sco-moon-clear-fill
         div.console-btn-item#consoleHideAside
             a.asideSwitch(onclick="sco.switchHideAside()", title="边栏显示控制", href="javascript:void(0);" rel="nofollow" data-pjax-state)
-                i.scoicon.sco-side-bar-fill(style="font-size: 1rem;")
+                i.scoicon.sco-side-bar-fill
         if theme.thirdparty.aplayer.enable
             div.console-btn-item#consoleMusic(onclick="sco.musicToggle()")
                 a.music-switch(title="音乐开关")
-                    i.scoicon.sco-disc-fill(style="font-size: 1rem;")
-
-        if theme.comment.enable
+                    i.scoicon.sco-disc-fill
+        if theme.comment.commentBarrage
             div.console-btn-item.on#consoleCommentBarrage(onclick="sco.switchCommentBarrage()")
                 a.commentBarrage
-                    i.scoicon.sco-chat-fill(style="font-size: 1rem;")
+                    i.scoicon.sco-chat-fill
     div.console-mask(onclick="sco.hideConsole()")

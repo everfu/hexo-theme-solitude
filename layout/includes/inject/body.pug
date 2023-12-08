@@ -56,10 +56,11 @@ if theme.aside.welcome.enable
 if theme.comment.enable
     case theme.comment.type
         when 'twikoo'
-            script(src='/js/extend/comment/twikoo.js')
-            script(src='/js/commentBarrage.js')
+            script(src='/js/extend/comment/twikoo/twikoo.js')
+            script(src='/js/extend/comment/twikoo/commentBarrage.js')
         when 'waline'
-            script(src='/js/extend/comment/waline.js')
+            script(src='/js/extend/comment/waline/waline.js')
+            script(src='/js/extend/comment/waline/commentBarrage.js')
 
 
 // pjax

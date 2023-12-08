@@ -408,8 +408,7 @@ thirdparty:
 comment:
   enable: false # 是否开启评论
   type:  # valine, twikoo
-  lazyload: false # 是否开启懒加载
-  count: false  # 是否显示评论数
+  commentBarrage: true # 热评开关
   # 评论系统
   twikoo:
     envId: # url: https://twikoo.sondy.top/

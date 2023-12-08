@@ -204,7 +204,7 @@ rm.writeClipImg = function (e) {
     utils.snackbarShow("正在下载中，请稍后", !1, n);
     if (0 == rm.downloadimging) {
         rm.downloadimging = !0;
-        setTimeout(async function() {
+        setTimeout(async function () {
             await copyImage(e);
             utils.snackbarShow("复制成功！图片已添加盲水印，请遵守版权协议");
             rm.downloadimging = !1;
@@ -293,9 +293,11 @@ function addRightMenuClickEvent() {
         toRandomPost();
     });
 
-    var menuCommentBarrage = document.getElementById('menu-commentBarrage');
-    menuCommentBarrage.onclick = null;
-    menuCommentBarrage.addEventListener('click', sco.switchCommentBarrage);
+    if (GLOBAL_CONFIG.comment.commentBarrage) {
+        const menuCommentBarrage = document.getElementById('menu-commentBarrage');
+        menuCommentBarrage.onclick = null;
+        menuCommentBarrage.addEventListener('click', sco.switchCommentBarrage);
+    }
 
     var rightmenuMask = document.getElementById('rightmenu-mask');
     rightmenuMask.addEventListener('click', rm.hideRightMenu);

@@ -185,10 +185,10 @@ const initObserver = () => {
         entries.forEach(function (entry) {
             if (entry.isIntersecting) {
                 paginationElement.classList.add("show-window");
-                document.querySelector(".comment-barrage").style.bottom = "-200px";
+                GLOBAL_CONFIG.comment.commentBarrage && (document.querySelector(".comment-barrage").style.bottom = "-200px");
             } else {
                 paginationElement.classList.remove("show-window");
-                document.querySelector(".comment-barrage").style.bottom = "0px";
+                GLOBAL_CONFIG.comment.commentBarrage && (document.querySelector(".comment-barrage").style.bottom = "0px");
             }
         });
     }
@@ -1028,7 +1028,6 @@ window.refreshFn = () => {
     GLOBAL_CONFIG.randomlinks && randomLinksList()
     if (PAGE_CONFIG.comment) {
         initComment()
-
         PAGE_CONFIG.page === "links" && checkForm()
     }
     PAGE_CONFIG.toc && toc.init()
@@ -1042,12 +1041,10 @@ window.refreshFn = () => {
     }
     GLOBAL_CONFIG.covercolor && coverColor();
     sco.initConsoleState()
-    if (document.getElementById('history-baidu')) sco.card_history() // 那年今日
-    if (document.getElementById('welcome-info')) sco.card_welcome() // 个性定位
+    document.getElementById('history-baidu') && sco.card_history() // 那年今日
+    document.getElementById('welcome-info') && sco.card_welcome() // 个性定位
     GLOBAL_CONFIG.comment.enable && newestCommentInit() // 最新评论
-    if (GLOBAL_CONFIG.comment.type === "twikoo" && PAGE_CONFIG.comment) {
-        initializeCommentBarrage() // 热评
-    }
+    GLOBAL_CONFIG.comment.commentBarrage && initializeCommentBarrage() // 热评
 }
 
 sco.initTheme()
