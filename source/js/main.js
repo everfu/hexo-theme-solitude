@@ -1044,7 +1044,7 @@ window.refreshFn = () => {
     document.getElementById('history-baidu') && sco.card_history() // 那年今日
     document.getElementById('welcome-info') && sco.card_welcome() // 个性定位
     GLOBAL_CONFIG.comment.enable && newestCommentInit() // 最新评论
-    GLOBAL_CONFIG.comment.commentBarrage && initializeCommentBarrage() // 热评
+    GLOBAL_CONFIG.comment.commentBarrage && PAGE_CONFIG.comment && initializeCommentBarrage() // 热评
 }
 
 sco.initTheme()
