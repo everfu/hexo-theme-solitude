@@ -1,5 +1,5 @@
-div#console(style="zoom: 1")
-    div.close-btn(onclick="sco.hideConsole()", href="javascript:void(0);")
+div#console
+    div.close-btn(onclick="sco.hideConsole()")
         i.scoicon.sco-close-fill
     if theme.thirdparty.consolePlus
         div.console-card-group
@@ -17,7 +17,7 @@ div#console(style="zoom: 1")
                         div.author-content-item-title= "寻找感兴趣的领域"
                     div.card-tag-cloud
                         each tag in site.tags.find({ parent: { $exists: false } }).data
-                            a(href=url_for(tag.path), style="font-size: 0.8rem; color: #d3d3d3")= tag.name
+                            a(href=url_for(tag.path))= tag.name
                                 sup= tag.length
 
                 div.console-card.history(onclick="sco.hideConsole()")

@@ -1,19 +1,19 @@
 if theme.nav.right.travellings
     div.nav-button.only-home#travellings_button
-        a.site-page(traget="_blank", href="https://www.travellings.cn/go.html", rel="noopener noreferrer", title="开往-友链接力", width="120")
-            i.scoicon.sco-train-line(style="font-size: 1rem;")
+        a.site-page(href="https://www.travellings.cn/go.html", title="开往-友链接力")
+            i.scoicon.sco-train-line
 if theme.nav.right.random
     div.nav-button#randomPost_button
         a.site-page(onclick="toRandomPost()", title="随机前往一个文章")
-            i.scoicon.sco-signal-tower-fill(style="font-size: 1rem;")
+            i.scoicon.sco-signal-tower-fill
 if theme.thirdparty.search.enable
     div.nav-button#search-button
-        a.site-page.social-icon.search(href="javascript:void(0);", rel= "external nofollow", title="搜索")
-            i.scoicon.sco-search-line(style="font-size: 1rem;")
+        a.site-page.social-icon.search(href="javascript:void(0);", title="搜索")
+            i.scoicon.sco-search-line
 if theme.nav.right.console
     div.nav-button#nav-console
-        a.console_switchbutton(onclick="sco.showConsole()", title="显示中控台", rel="external nofollow", href="javascript:void(0);")
-            i.scoicon.sco-dashboard-fill(style="font-size: 1rem;")
+        a.console_switchbutton(onclick="sco.showConsole()", title="显示中控台", href="javascript:void(0);")
+            i.scoicon.sco-dashboard-fill
 div.nav-button#nav-totop(onclick="sco.toTop()")
     a.totopbtn
         i.scoicon.sco-arrow-up-line

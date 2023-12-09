@@ -1,6 +1,6 @@
 if hexo-config('says.home_mini')
-	.bber-logo,
-	.bber-gotobb 
+	i.bber-logo,
+	i.bber-gotobb
 		line-height 25px
 		transition .3s
 		cursor pointer
@@ -9,15 +9,13 @@ if hexo-config('says.home_mini')
 			opacity .8
 			color var(--sco-theme)
 
-	.bber-logo
+	i.bber-logo
+		font-size .8rem
 		margin-right 1rem
 
-	.bber-gotobb
+	i.bber-gotobb
+		font-size 1rem
 		margin-left 1rem
-
-	i 
-		&.bber-gotobb 
-			font-size 16px
 
 if hexo-config('says.enable')
 	#bber
@@ -313,6 +311,7 @@ if hexo-config('says.enable')
 		display flex
 		justify-content center
 		margin-top 1rem
+		color var(--sco-secondtext)
 
 	#bber-talk 
 		width 100%

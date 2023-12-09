@@ -29,7 +29,7 @@ if theme.footer.randomlink
             for (let i = 0; i < count; i++) {
                 let index = utils.randomNum(linksCopy.length);
                 const {link, name} = linksCopy[index];
-                data += `<a class="footer-item" href="${link}" target="_blank" rel="noopener nofollow">${name}</a>`;
+                data += `<a class="footer-item" href="${link}">${name}</a>`;
                 linksCopy.splice(index, 1);
             }
 

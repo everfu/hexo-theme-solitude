@@ -14,26 +14,3 @@ script.
             }, !{JSON.stringify(option)}))
         })()
     }
-
-- if (page.type === 'links')
-    script.
-        checkForm = function () {
-            const comment = document.getElementsByClassName('wl-panel')[0];
-            const info = document.getElementsByClassName('wl-login-info')[0];
-            const checkboxes = document.querySelectorAll('input[onclick="checkForm()"]');
-            let allChecked = true;
-
-            checkboxes.forEach(checkbox => {
-                if (!checkbox.checked) {
-                    allChecked = false;
-                }
-            });
-
-            if (allChecked) {
-                info ? info.style.display = 'block' : '';
-                comment.style.display = 'block';
-            } else {
-                comment.style.display = 'none';
-                info ? info.style.display = 'none' : '';
-            }
-        };

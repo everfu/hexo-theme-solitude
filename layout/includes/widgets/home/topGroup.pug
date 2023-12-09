@@ -4,18 +4,18 @@ each post in filteredPosts
         .post_cover.left_radius
             a(href=url_for(post.path), title=post.title)
                 span.recent-post-top-text 荐
-                img.post_bg(alt=post.title, src=post.cover, loading="lazy")
+                img.post_bg(alt=post.title, src=post.cover)
         .recent-post-info
             a.article-title(href=url_for(post.path), title=post.title)= post.title
 
 if theme.hometop.recommendList.url.startsWith('/') && theme.hometop.recommendList.url.endsWith('/')
-    .todayCard#todayCard(onclick=`pjax.loadUrl('${theme.hometop.recommendList.url}')`, style="z-index: 1;")
+    .todayCard#todayCard(onclick=`pjax.loadUrl('${theme.hometop.recommendList.url}')`)
 else
     script.
         function GoTodayCard() {
             window.open("#{theme.hometop.recommendList.url}", "_blank");
         }
-    .todayCard#todayCard(onclick="GoTodayCard()", style="z-index: 1;")
+    .todayCard#todayCard(onclick="GoTodayCard()")
 
     .todayCard-info
         .todayCard-tips= theme.hometop.recommendList.sup

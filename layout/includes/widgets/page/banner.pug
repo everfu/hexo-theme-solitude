@@ -1,4 +1,4 @@
-.author-content.author-content-item.single.nolazyload(style=`background: url(${page.cover}) no-repeat center; background-size: cover;`,class=`${pageClass}`)
+.author-content.author-content-item.single.sharePage(style=`background: url(${page.cover}) no-repeat center; background-size: cover;`)
     .card-content
         .author-content-item-tips= page.title
         span.author-content-item-title= page.desc
@@ -9,6 +9,6 @@
                 .tips!= page.rightend
         if page.rightbtn
             .banner-button-group
-                a.banner-button(onclick="pjax.loadUrl(\"" + page.rightbtnlink + "\")", data-pjax-state)
+                a.banner-button(onclick="pjax.loadUrl(\"" + page.rightbtnlink + "\")")
                     i.scoicon.sco-right-btn-fill
                     span.banner-button-text= page.rightbtn

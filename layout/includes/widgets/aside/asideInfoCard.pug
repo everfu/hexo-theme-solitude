@@ -4,16 +4,16 @@
             .author-info__top-group
                 .author-info__sayhi#author-info__sayhi(onclick="sco.changeSayHelloText()") 一日之计在于晨
         .avatar-img-group
-            img.avatar-img(alt="avatar", src=theme.aside.card.author.img)
+            img.avatar-img(alt="头像", src=theme.aside.card.author.img)
             .avatar-sticker
-                svg.avatar-sticker-img(alt="avatar", aria-hidden="true")
+                svg.avatar-sticker-img(alt="情绪", aria-hidden="true")
                     use(xlink:href=theme.aside.card.author.state)
                 script(src=url_for(theme.aside.card.author.js))
         .author-info__description_group
             .author-info__description!= theme.aside.card.content
             .author-info__description2!= theme.aside.card.content2
         .author-info__bottom-group
-            a.author-info__bottom-group-left(href=theme.about ? "/about" : "/", data-pjax-state)
+            a.author-info__bottom-group-left(href=theme.about ? "/about" : "/")
                 .author-info__name= config.author
                 .author-info__desc!= config.subtitle
             .card-info-social-icons.is-center

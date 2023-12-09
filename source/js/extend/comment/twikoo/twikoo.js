@@ -30,16 +30,6 @@ const getComment = () => {
                 'url': `${e.url}#${e.id}`,
                 'date': new Date(e.created).toISOString()
             }))
-
-            if (window.location.pathname === "/links/" || window.location.pathname === "/links") {
-                let text = document.getElementsByClassName("el-textarea__inner");
-                text[0].value += `昵称（请勿包含博客等字样）：
-网站地址（要求博客地址，请勿提交个人主页）：
-头像图片url（请提供尽可能清晰的图片，我会上传到我的图床）：
-描述：`;
-                text[0].style.height = "142px"
-            }
-
             generateHtml(twikooArray)
         }).catch(function (err) {
             $dom.innerHTML = "无法获取评论，请确认相关配置是否正确"
@@ -73,3 +63,5 @@ const newestCommentInit = () => {
         getComment()
     }
 }
+
+newestCommentInit()

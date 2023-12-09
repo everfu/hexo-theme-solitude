@@ -22,12 +22,11 @@ const utils = {
 
         const later = function () {
             previous = options.leading === false ? 0 : new Date().getTime()
-            timeout = null
             func.apply(context, args)
-            if (!timeout) context = args = null
+            context = args = null
         }
 
-        const throttled = function () {
+        return function () {
             const now = new Date().getTime()
             if (!previous && options.leading === false) previous = now
             const remaining = wait - (now - previous)
@@ -45,8 +44,6 @@ const utils = {
                 timeout = setTimeout(later, remaining)
             }
         }
-
-        return throttled
     },
 
     fadeIn: (ele, time) => {
@@ -105,7 +102,7 @@ const utils = {
     },
 
     timeDiff: (timeObj, today) => {
-        var timeDiff = today.getTime() - timeObj.getTime();
+        const timeDiff = today.getTime() - timeObj.getTime();
         return Math.floor(timeDiff / (1000 * 3600 * 24));
     },
 
@@ -133,7 +130,6 @@ const utils = {
             }
         })
     },
-
     siblings: (ele, selector) => {
         return [...ele.parentNode.children].filter((child) => {
             if (selector) {

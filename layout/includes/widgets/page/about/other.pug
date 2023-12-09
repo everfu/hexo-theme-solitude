@@ -7,10 +7,10 @@
                 #statistic
                 .post-tips
                     | 统计信息来自
-                    a(href="https://invite.51.la/1NzKqTeb?target=V6", target="_blank", rel="noopener nofollow") 51la网站统计
+                    a(href="https://invite.51.la/1NzKqTeb?target=V6") 51la网站统计
                 if theme.about.echarts.enable
                     .banner-button-group
-                        a.banner-button(onclick="pjax.loadUrl('/echart/');", data-pjax-state="")
+                        a.banner-button(onclick="pjax.loadUrl('/echart/');")
                             i.scoicon.sco-right-btn-fill
                             span.banner-button-text 文章统计
             script.
@@ -21,13 +21,12 @@
                         let num = data.match(/(<\/span><span>).*?(\/span><\/p>)/g);
                         num = num.map(el => {
                             let val = el.replace(/(<\/span><span>)/g, "");
-                            let str = val.replace(/(<\/span><\/p>)/g, "");
-                            return str;
+                            return val.replace(/(<\/span><\/p>)/g, "");
                         });
                         let s = document.getElementById("statistic");
                         let statistic = [];
                         for (let i = 0; i < num.length; i++) {
-                            if (i == 0 || i == num.length - 1) continue;
+                            if (i === 0 || i === num.length - 1) continue;
                             s.innerHTML += "<div><span>" + title[i] + "</span><span id=" + title[i] + ">" + num[i] + "</span></div>";
                         }
                     });

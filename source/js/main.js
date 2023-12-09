@@ -37,14 +37,14 @@ const sidebarFn = () => {
     const $menuMask = document.getElementById('menu-mask')
     const $body = document.body
 
-    function openMobileSidebar () {
+    function openMobileSidebar() {
         utils.sidebarPaddingR()
         $body.style.overflow = 'hidden'
         utils.fadeIn($menuMask, 0.5)
         $mobileSidebarMenus.classList.add('open')
     }
 
-    function closeMobileSidebar () {
+    function closeMobileSidebar() {
         $body.style.overflow = ''
         $body.style.paddingRight = ''
         utils.fadeOut($menuMask, 0.5)
@@ -441,12 +441,12 @@ let sco = {
             'light'
         if (nowMode === 'light') {
             document.documentElement.setAttribute('data-theme', 'dark')
-            saveToLocal.set('theme', 'dark', 0.04);
+            saveToLocal.set('theme', 'dark', 0.02);
             utils.snackbarShow(GLOBAL_CONFIG.lang.theme.dark, false, 2000)
             document.querySelector(".menu-darkmode-text").textContent = "深色模式";
         } else {
             document.documentElement.setAttribute('data-theme', 'light')
-            saveToLocal.set('theme', 'light', 0.04);
+            saveToLocal.set('theme', 'light', 0.02);
             utils.snackbarShow(GLOBAL_CONFIG.lang.theme.light, false, 2000)
             document.querySelector(".menu-darkmode-text").textContent = "浅色模式";
         }
@@ -488,23 +488,15 @@ let sco = {
      * 初始化
      */
     initTheme: function () {
-        let isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        try {
-            const cachedMode = saveToLocal.get('theme');
-            if (cachedMode === undefined) {
-                const nowMode =
-                    isDarkMode ? 'dark' : 'light'
-                document.documentElement.setAttribute('data-theme', nowMode);
-                saveToLocal.set('theme', nowMode, 0.5);
-            } else {
-                document.documentElement.setAttribute('data-theme', cachedMode);
-            }
-        } catch (e) {
-            if (isDarkMode) {
-                saveToLocal.set('theme', 'dark', 0.5)
-            } else {
-                saveToLocal.set('theme', 'light', 0.5)
-            }
+        let isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+        const cachedMode = saveToLocal.get('theme');
+        if (cachedMode === undefined) {
+            const nowMode =
+                isDarkMode ? 'dark' : 'light'
+            document.documentElement.setAttribute('data-theme', nowMode);
+            saveToLocal.set('theme', nowMode, 0.5);
+        } else {
+            document.documentElement.setAttribute('data-theme', cachedMode);
         }
     },
     /**
@@ -1026,25 +1018,15 @@ window.refreshFn = () => {
     GLOBAL_CONFIG.lazyload.enable && sco.lazyloadImg()
     GLOBAL_CONFIG.lightbox && sco.lightbox('')
     GLOBAL_CONFIG.randomlinks && randomLinksList()
-    if (PAGE_CONFIG.comment) {
-        initComment()
-        PAGE_CONFIG.page === "links" && checkForm()
-    }
+    PAGE_CONFIG.comment && initComment()
     PAGE_CONFIG.toc && toc.init()
-    if (PAGE_CONFIG.is_post || PAGE_CONFIG.is_page) {
-        GLOBAL_CONFIG.hightlight.enable && hightlight.init()
-        tabs.init()
-    }
-    if (PAGE_CONFIG.is_home) {
-        showTodayCard()
-        sco.initbbtalk()
-    }
-    GLOBAL_CONFIG.covercolor && coverColor();
+    PAGE_CONFIG.is_post || PAGE_CONFIG.is_page && tabs.init() && (GLOBAL_CONFIG.hightlight.enable && hightlight.init())
+    PAGE_CONFIG.is_home && (showTodayCard() || sco.initbbtalk())
+    GLOBAL_CONFIG.covercolor && coverColor()
     sco.initConsoleState()
-    document.getElementById('history-baidu') && sco.card_history() // 那年今日
-    document.getElementById('welcome-info') && sco.card_welcome() // 个性定位
-    GLOBAL_CONFIG.comment.enable && newestCommentInit() // 最新评论
-    GLOBAL_CONFIG.comment.commentBarrage && PAGE_CONFIG.comment && initializeCommentBarrage() // 热评
+    document.getElementById('history-baidu') && sco.card_history()
+    document.getElementById('welcome-info') && sco.card_welcome()
+    GLOBAL_CONFIG.comment.commentBarrage && PAGE_CONFIG.comment && initializeCommentBarrage()
 }
 
 sco.initTheme()
@@ -1059,4 +1041,4 @@ document.addEventListener('pjax:complete', () => {
 
 window.onkeydown = function (e) {
     123 === e.keyCode && utils.snackbarShow("开发者模式已打开，请遵循GPL协议", !1, 3e3)
-};
+}

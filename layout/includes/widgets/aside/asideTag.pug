@@ -1,9 +1,9 @@
 .card-tag-cloud
     each tag in site.tags.find({ parent: { $exists: false } }).data
-        a(href=url_for(tag.path), style="font-size: 0.8rem;")= tag.name
+        a(href=url_for(tag.path))= tag.name
             sup= tag.length
 if site.tags.length > 50
-    a#more-tags-btn(href="javascript:void(0);", rel="external nofollow", onclick="sco.openAllTags();", data-pjax-state="") 查看全部
+    a#more-tags-btn(href="javascript:void(0);", onclick="sco.openAllTags();") 查看全部
 else
     style.
         .card-tag-cloud::after {

@@ -1,7 +1,7 @@
 div(class="recent-post-item" onclick="pjax.loadUrl('/" + post.path + "')")
     div.post_cover.left_radius
         a(href=url_for(post.path), title=post.title)
-            img(src=url_for(post.cover), alt=post.title, class="post_bg")
+            img.post_bg(src=url_for(post.cover), alt=post.title)
     div.recent-post-info
         div.recent-post-info-top
             div.recent-post-info-top-tips
@@ -11,14 +11,14 @@ div(class="recent-post-item" onclick="pjax.loadUrl('/" + post.path + "')")
                 if post.prev == null && is_home()
                     span(class="original")="最新"
 
-                a(class="unvisited-post" href=url_for(post.path), data-pjax-state)= "未读"
+                a(class="unvisited-post" href=url_for(post.path))= "未读"
 
-            a(class="article-title" href=url_for(post.path), data-pjax-state, title=post.title)= post.title
+            a(class="article-title" href=url_for(post.path), title=post.title)= post.title
 
         div.article-meta-wrap
             span.article-meta.tags
                 each tag in post.tags.data
-                    a(class="article-meta__tags" href=url_for(tag.path), data-pjax-state, onclick="window.event.cancelable=true")
+                    a(class="article-meta__tags" href=url_for(tag.path), onclick="window.event.cancelable=true")
                         span.tags-punctuation=tag.name
 
             span.post-meta-date

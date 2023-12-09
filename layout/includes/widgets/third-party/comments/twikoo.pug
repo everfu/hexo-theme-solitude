@@ -27,22 +27,3 @@ script.
             }
         }
     }
-- if (page.type === 'links')
-    script.
-        checkForm = function () {
-            const comment = document.getElementsByClassName('tk-submit')[0];
-            const checkboxes = document.querySelectorAll('input[onclick="checkForm()"]');
-            let allChecked = true;
-
-            checkboxes.forEach(checkbox => {
-                if (!checkbox.checked) {
-                    allChecked = false;
-                }
-            });
-
-            if (allChecked) {
-                comment.style.display = 'block';
-            } else {
-                comment.style.display = 'none';
-            }
-        }

@@ -213,18 +213,18 @@
       flex-wrap wrap
 
       a
-        color var(--sco-fontcolor) !important
+        color var(--sco-fontcolor)
         margin 6px 4px
         padding 2px 8px
         border-radius 8px
         background var(--sco-card-bg)
         border var(--style-border)
-        font-size 14px !important
+        font-size 14px
         font-weight 700
 
         &:hover
           background var(--sco-main)
-          color var(--sco-white) !important
+          color var(--sco-white)
 
         sup
           opacity .6
@@ -295,6 +295,27 @@
           background var(--sco-main)
           color var(--sco-white)
           cursor pointer
+
+        .card-archive-list-date
+          font-size 14px
+          opacity .6
+
+        .card-archive-list-count-group
+          display flex
+          flex-direction row
+
+          .card-archive-list-count
+            width auto
+            text-align left
+            font-size 1.1rem
+            line-height .9
+            font-weight 700
+
+          .card-archive-list-count-unit
+            width auto
+            text-align left
+            font-size 14px
+            font-weight 700
 
   #card-newest-comments
     height 100%

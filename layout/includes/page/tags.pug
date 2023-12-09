@@ -1,4 +1,4 @@
-h1.page-title(style='display: inline-block')= __('page.tag')
+h1.page-title= __('page.tag')
 div.category-lists
     div.tag-cloud-list.is-center
         each tag in site.tags.find({ parent: { $exists: false } }).data

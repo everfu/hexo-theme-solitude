@@ -11,24 +11,3 @@ div.flink#article-container
                 include ../widgets/page/links/linksCard
             when 'item'
                 include ../widgets/page/links/linksItem
-    if theme.comment.enable
-        h2(id="友情链接申请")= "友情链接申请"
-        div#article-container!= page.content
-        p 请<b>勾选</b>你符合的条件：
-        div#friendlink_checkboxs
-            p
-                label
-                    input(type='checkbox', onclick='checkForm()')
-                    | 我已添加 <b>#{config.title}</b> 博客的友情链接
-            p
-                label
-                    input(type='checkbox', onclick='checkForm()')
-                    | 我的链接主体为 <b>个人</b>，网站类型为<b>博客</b>
-            p
-                label
-                    input(type='checkbox', onclick='checkForm()')
-                    | 我的网站现在可以在中国大陆区域正常访问
-            p
-                label
-                    input(type='checkbox', onclick='checkForm()')
-                    | 网站内容符合中国大陆法律法规
