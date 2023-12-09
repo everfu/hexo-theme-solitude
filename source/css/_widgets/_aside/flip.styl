@@ -31,15 +31,16 @@ faceback = hexo-config('aside.flip.backface')
       opacity 0
       transition .3s ease-out
 
+    &:hover
+      #flip-content
+        transform rotateY(180deg)
+
     #flip-wrapper
       perspective 1000
       position relative
       width 235px
       height 110px
       z-index 1
-
-    #flip-wrapper:hover #flip-content
-      transform rotateY(180deg)
 
     #flip-wrapper #flip-content
       width 100%

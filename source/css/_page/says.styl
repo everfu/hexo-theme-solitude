@@ -208,8 +208,8 @@ if hexo-config('says.enable')
 			padding 30% 50%
 			margin 0.5rem 0
 
-		.bber-content-img 
-			height 100px
+		.bber-content-img
+			flex-direction column
 			margin .2rem auto .3rem 0
 			border-radius 12px
 			overflow hidden
@@ -218,10 +218,11 @@ if hexo-config('says.enable')
 
 			img 
 				object-fit cover
-				max-height 100%
 				border-radius 12px
 				min-height 100px
-				height 100px
+				height 100%
+				max-height 200px
+				margin-bottom 10px
 
 		.bber-content 
 			.datacont 
@@ -261,7 +262,7 @@ if hexo-config('says.enable')
 						align-items flex-start
 						background var(--sco-card-bg)
 						box-shadow var(--sco-shadow-border)
-						margin-right 2.15%
+						margin-right 2%
 
 						+maxWidth1300()
 							width 49%
