@@ -28,9 +28,6 @@
 .random-post-start:hover
   color var(--sco-hovertext)
 
-.title-h2-a a.random-post-start
-  opacity .6
-
 .moments-list
   display: flex
   flex-direction: column
@@ -152,28 +149,31 @@
   a
     width: fit-content
 
-.title-h2-a
-  display: flex
-  align-items: center
-  justify-content: space-between
-  margin-top: .5rem
+.cf-article .cf-img-avatar
+  border-radius 50% !important
 
-  a
-    margin-left: .5rem
-    color: var(--sco-secondtext)
-    font-weight: 700
-
-    &:hover
-      color: var(--sco-hovertext)
-
-  .title-h2-a-left
+#page
+  .title-h2-a
     display: flex
     align-items: center
+    justify-content: space-between
+    margin-top: .5rem
 
-    h2
-      margin-top: 0 !important
-      margin-bottom: 0 !important
+    a
+      margin-left: .5rem
+      color: var(--sco-secondtext)
+      font-weight: 700
 
-  .title-h2-a-right
-    font-size: 14px
-    color: var(--sco-secondtext)
+      &:hover
+        color: var(--sco-hovertext)
+
+    .title-h2-a-left
+      display: flex
+      align-items: center
+
+      h2
+        margin: 0
+
+    .title-h2-a-right
+      font-size: 14px
+      color: var(--sco-secondtext)

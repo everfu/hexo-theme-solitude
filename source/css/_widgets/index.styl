@@ -6,3 +6,12 @@
 
 // 手机端侧边栏
 @import "sidebar.styl"
+
+// comment
+if hexo-config('comment.enable')
+  @import '_widgets/_comment/index.styl'
+  @import '_widgets/_comment/twikoo.styl' when hexo-config('comment.type') == 'twikoo'
+  @import '_widgets/_comment/waline.styl' when hexo-config('comment.type') == 'waline'
+
+// post
+@import "_post/index.styl"

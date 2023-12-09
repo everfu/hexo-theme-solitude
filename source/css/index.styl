@@ -8,20 +8,9 @@ if hexo-config('css_prefix')
 @import '_global/*'
 @import '_layout/*'
 @import '_page/index.styl'
-@import '_widgets/_post/*'
 
 // widgets
 @import '_widgets/index.styl'
-
-// comment
-if hexo-config('comment.enable')
-  @import '_widgets/_comment/index.styl'
-  @import '_widgets/_comment/twikoo.styl' when hexo-config('comment.type') == 'twikoo'
-  @import '_widgets/_comment/waline.styl' when hexo-config('comment.type') == 'waline'
-
-// commentBarrage
-if hexo-config('thirdparty.comment.enable')
-  @import '_post/commentBarrage.styl'
 
 // extra
 @import '_extra/console.styl'

@@ -1,17 +1,16 @@
 const changeContent = (content) => {
-    if (content === '') return content
+    if (content === '') return content;
 
-    content = content.replace(/<img.*?src="(.*?)"?[^\>]+>|<a[^>]+?href=["']?([^"']+)["']?[^>]*>([^<]+)<\/a>|<pre><code>.*?<\/pre>|<[^>]+>/g, (match, img, link, code) => {
-        if (img) return '[图片]';
-        if (link) return '[链接]';
-        if (code) return '[代码]';
-        return '';
-    })
+    const replacements = [
+        { regex: /<img.*?src="(.*?)"?[^\>]+>/ig, replacement: '[图片]' },
+        { regex: /<a[^>]+?href=["']?([^"']+)["']?[^>]*>([^<]+)<\/a>/gi, replacement: '[链接]' },
+        { regex: /<pre><code>.*?<\/pre>/gi, replacement: '[代码]' },
+        { regex: /<[^>]+>/g, replacement: "" }
+    ];
 
-    if (content.length > 150) {
-        content = content.substring(0, 150) + '...'
-    }
-    return content
+    content = replacements.reduce((str, { regex, replacement }) => str.replace(regex, replacement), content);
+
+    return content.length > 150 ? content.substring(0, 150) + '...' : content;
 }
 
 const $asideList = document.querySelector('#card-newest-comments .aside-list')
