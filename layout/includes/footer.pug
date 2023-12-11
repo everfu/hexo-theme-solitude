@@ -42,13 +42,12 @@ div#sco-footer
 div#footer-bar
     div.footer-bar-links
         div.footer-bar-left
-            div#footer-bar-tips
-                if moment(theme.aside.siteinfo.runtime).year() === new Date().getFullYear()
-                    div.copyright © #{moment(theme.aside.siteinfo.runtime).year()} By&nbsp;
-                        a.footer-bar-link(href="/")= config.author
-                else
-                    div.copyright © #{moment(theme.aside.siteinfo.runtime).year()} - #{new Date().getFullYear()} By&nbsp;
-                        a.footer-bar-link(href="/")= config.author
+            if moment(theme.aside.siteinfo.runtime).year() === new Date().getFullYear()
+                div.copyright © #{moment(theme.aside.siteinfo.runtime).year()} By&nbsp;
+                    a.footer-bar-link(href="/")= config.author
+            else
+                div.copyright © #{moment(theme.aside.siteinfo.runtime).year()} - #{new Date().getFullYear()} By&nbsp;
+                    a.footer-bar-link(href="/")= config.author
         div.footer-bar-right
             if theme.footer && theme.footer.rss && theme.footer.rss.enable
                 a.footer-bar-link(href="/rss/", target="_self") 订阅
