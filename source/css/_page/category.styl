@@ -73,19 +73,20 @@
 
   .tag-cloud-list
     a
-      display: flex
-      width: fit-content
-      color: var(--sco-fontcolor) !important
-      font-size: 1.4em !important
-      padding: .2em .5em
-      background: var(--sco-card-bg)
-      margin: .5em .5em
-      border-radius: 12px
-      -webkit-backface-visibility: hidden
-      -webkit-transform-style: preserve-3d
-      border: var(--style-border-always)
-      box-shadow: var(--sco-shadow-border)
-      align-items: center
+      display flex
+      width fit-content
+      color var(--sco-fontcolor)
+      font-size 1.4em
+      padding 0.2em 0.5em
+      background var(--sco-card-bg)
+      margin 0.5em 0.5em
+      border-radius 12px
+      -webkit-backface-visibility hidden
+      -webkit-transform-style preserve-3d
+      border var(--style-border-always)
+      box-shadow var(--sco-shadow-border)
+      align-items center
+      transition all .3s ease 0s
 
       &:hover
         transform scale(1.1)
@@ -94,11 +95,15 @@
         color var(--sco-white) !important
         border var(--style-border-hover)
 
-      span.tagsPageCount
-        color: var(--sco-lighttext)
+        span.tagsPageCount
+          color: var(--sco-lighttext)
 
-      +maxWidth768()
-        zoom .85
+        span.tags-punctuation
+          color inherit
+.hide-aside
+  #page
+    span.tags-punctuation::before
+      font-size 16px
 
 .tags-name
   margin-left: 2px
@@ -114,13 +119,13 @@
 span.tagsPageCount
   background: var(--sco-secondbg)
   padding: 4px 4px
-  border-radius: 4px
+  border-radius: 8px
   color: var(--sco-secondtext)
   line-height: 1
   text-align: center
-  min-width: 22.5px
+  min-width: 35px
   display: inline-block
-  font-size: .6rem
+  font-size: 1rem
   margin-left: 4px
 
 #category #category-bar

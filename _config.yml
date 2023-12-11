@@ -340,14 +340,14 @@ loading:
 # 注意：颜色值必须使用引号，如“#000”，否则可能会导致错误！
 # --------------------------------------
 theme_color:
-  dark: "#f2b94b" # 暗色模式
+  dark: "#ffc848" # 暗色模式
   dark_op: '#f2b94b23' # 暗色模式透明
   dark_op_deep: '#f2b94bdd' # 暗色模式透明深色
   dark_none: '#f2b94b00' # 暗色模式透明无色
-  light: "#A767FF" # 亮色模式
-  light_op: '#A767FF23' # 亮色模式透明
-  light_op_deep: '#2447FFdd' # 亮色模式透明深色
-  light_none: '#FD87FF01' # 亮色模式透明无色
+  light: "#425AEF" # 亮色模式
+  light_op: '#4259ef23' # 亮色模式透明
+  light_op_deep: '#4259efdd' # 亮色模式透明深色
+  light_none: '#4259ef01' # 亮色模式透明无色
 
 # 第三方设置
 thirdparty:
