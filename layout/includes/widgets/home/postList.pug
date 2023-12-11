@@ -5,6 +5,10 @@ div(class="recent-post-item" onclick="pjax.loadUrl('/" + post.path + "')")
     div.recent-post-info
         div.recent-post-info-top
             div.recent-post-info-top-tips
+                if post.sticky && is_home()
+                    span.article-meta.sticky-warp
+                        i.scoicon.sco-thumbtack-solid.sticky
+                        span.sticky= "置顶"
                 each category in post.categories.data
                     span(class="original")= category.name
 

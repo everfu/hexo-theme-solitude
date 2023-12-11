@@ -344,10 +344,10 @@ theme_color:
   dark_op: '#f2b94b23' # 暗色模式透明
   dark_op_deep: '#f2b94bdd' # 暗色模式透明深色
   dark_none: '#f2b94b00' # 暗色模式透明无色
-  light: "#bdbdf0" # 亮色模式
-  light_op: '#4259ef23' # 亮色模式透明
-  light_op_deep: '#bdbdf0dd' # 亮色模式透明深色
-  light_none: '#4259ef01' # 亮色模式透明无色
+  light: "#A767FF" # 亮色模式
+  light_op: '#A767FF23' # 亮色模式透明
+  light_op_deep: '#2447FFdd' # 亮色模式透明深色
+  light_none: '#FD87FF01' # 亮色模式透明无色
 
 # 第三方设置
 thirdparty:

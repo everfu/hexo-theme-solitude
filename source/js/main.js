@@ -494,7 +494,7 @@ let sco = {
             const nowMode =
                 isDarkMode ? 'dark' : 'light'
             document.documentElement.setAttribute('data-theme', nowMode);
-            saveToLocal.set('theme', nowMode, 0.5);
+            saveToLocal.set('theme', nowMode, 0.2);
         } else {
             document.documentElement.setAttribute('data-theme', cachedMode);
         }
@@ -913,7 +913,6 @@ class hightlight {
             if (expand) {
                 hlTools.children[0].classList.add('closed')
                 $table.setAttribute('style', 'display:none')
-                console.log($expand.length)
                 if ($expand.length !== 0) {
                     $expand[0].setAttribute('style', 'display:none')
                 }
@@ -1019,8 +1018,8 @@ window.refreshFn = () => {
     GLOBAL_CONFIG.lightbox && sco.lightbox('')
     GLOBAL_CONFIG.randomlinks && randomLinksList()
     PAGE_CONFIG.comment && initComment()
-    PAGE_CONFIG.toc && toc.init()
-    PAGE_CONFIG.is_post || PAGE_CONFIG.is_page && tabs.init() && (GLOBAL_CONFIG.hightlight.enable && hightlight.init())
+    PAGE_CONFIG.toc && toc.init();
+    (PAGE_CONFIG.is_post || PAGE_CONFIG.is_page) && ((GLOBAL_CONFIG.hightlight.enable && hightlight.init()) || tabs.init())
     PAGE_CONFIG.is_home && (showTodayCard() || sco.initbbtalk())
     GLOBAL_CONFIG.covercolor && coverColor()
     sco.initConsoleState()
