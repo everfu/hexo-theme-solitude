@@ -311,6 +311,15 @@ says:
   home_mini: false # 主页的即刻轮播条
   style: 1 # 1：张洪heo样式 / 2：Leonus样式
 
+# 音乐馆界面
+music:
+  enable: false
+  id: 1994908354
+  server: netease # 播放列表的服务商。netease：网易云 / tencent：腾讯 / kugou：酷狗 / xiami：小米 / baidu：百度
+  type: playlist # 播放列表的类型。song：单曲 / playlist：歌单 / album：专辑 / artist：歌手
+  volume: 0.8 # 初始音量。0.8 = 80%，范围 0 到 1
+  mutex: true # 是否开启互斥模式，即同时只能有一个播放器播放
+
 # 404 页面
 errorpage:
   img: https://npm.elemecdn.com/wzheo-absolute@1.0.3/image/source/404.png # 图片

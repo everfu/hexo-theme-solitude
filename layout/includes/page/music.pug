@@ -1,0 +1,17 @@
+if theme.music.enable
+    #Music-bg
+    #Music-page
+    .Music-loading
+        div APlayer加载中...
+
+    script.
+        var userId = '#{theme.music.id}';
+            userServer = "#{theme.music.server}";
+            userType = "#{theme.music.type}";
+            volume = #{theme.music.volume};
+            mutex = #{theme.music.mutex};
+
+    script(async data-pjax src="/js/music.js")
+
+else
+    include not_configured
