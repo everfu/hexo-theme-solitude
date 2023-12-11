@@ -34,7 +34,7 @@ div#js-pjax
             toc: !{!!page.toc},
             comment: !{!!page.comment},
         }
-if theme.thirdparty.aplayer.enable
+if theme.thirdparty.aplayer.enable || theme.music.enable
     script(src=url_for(cdn.aplayerjs))
     script(src=url_for(cdn.metingjs))
     script.

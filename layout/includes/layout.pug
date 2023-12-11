@@ -1,8 +1,11 @@
+if page.type === 'music'
+    - var type = 'music'
+
 doctype html
 html(lang=config.language, data-theme="light")
     head
         include ./head.pug
-    body(id="body")
+    body(id="body" data-type=type)
         // loading
         if theme.loading.fullpage
             include ./loading.pug
