@@ -586,42 +586,39 @@ let sco = {
     /**
      * 下载图片并添加水印
      */
-    downloadImage: async function (url, filename) {
-        rm.hideRightMenu();
+    downloadImage: function (imageUrl, filename = 'photo') {
         if (rm.downloadimging) {
             utils.snackbarShow("有正在进行中的下载，请稍后再试");
             return;
         }
-        try {
-            rm.downloadimging = true;
-            utils.snackbarShow("正在下载中，请稍后", false, 10000);
-            await new Promise(resolve => setTimeout(resolve, 10000));
-            const img = new Image();
-            img.setAttribute("crossOrigin", "anonymous");
-            img.onload = function () {
-                const canvas = document.createElement("canvas");
-                const ctx = canvas.getContext("2d");
-                canvas.width = img.width;
-                canvas.height = img.height;
-                ctx.drawImage(img, 0, 0, img.width, img.height);
-                ctx.font = "30px Arial";
-                ctx.fillText(window.location.href, 10, img.height - 10);
-                const dataUrl = canvas.toDataURL("image/png");
-                const link = document.createElement("a");
-                const event = new MouseEvent("click");
-                link.download = filename || "photo";
-                link.href = dataUrl;
-                link.dispatchEvent(event);
-                utils.snackbarShow("图片已添加盲水印，请遵守版权协议");
-                rm.downloadimging = false;
-            };
-            img.src = url;
-        } catch (error) {
-            console.error(error);
-            utils.snackbarShow("下载图片时出错");
+
+        rm.hideRightMenu();
+        rm.downloadimging = true;
+        utils.snackbarShow("正在下载中，请稍后", false, 10000);
+
+        let img = new Image();
+        img.setAttribute("crossOrigin", "anonymous");
+        img.onload = function () {
+            let canvas = document.createElement("canvas");
+            canvas.width = img.width;
+            canvas.height = img.height;
+            let ctx = canvas.getContext("2d");
+            ctx.drawImage(img, 0, 0, img.width, img.height);
+
+            let dataUrl = canvas.toDataURL("image/png");
+            let link = document.createElement("a");
+            link.download = filename;
+            link.href = dataUrl;
+
+            let clickEvent = new MouseEvent("click");
+            link.dispatchEvent(clickEvent);
+
+            utils.snackbarShow("图片已添加盲水印，请遵守版权协议");
             rm.downloadimging = false;
-        }
+        };
+        img.src = imageUrl;
     },
+
     /**
      * 音乐播放暂停
      */

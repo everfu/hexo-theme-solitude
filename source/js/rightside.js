@@ -326,7 +326,7 @@ function addRightMenuClickEvent() {
     document.getElementById('menu-copylink').addEventListener('click', rm.copyLink);
 
     document.getElementById('menu-downloadimg').addEventListener('click', function () {
-        sco.downloadImage(domImgSrc, "sco");
+        sco.downloadImage(domImgSrc);
     });
 
     document.getElementById('menu-copyimg').addEventListener('click', function () {
@@ -382,7 +382,7 @@ rm.rightMenuCommentText = function (e) {
     let o = replaceAll(e, "\n", "\n> ");
     n.value = "> " + o + "\n\n",
         n.dispatchEvent(t);
-    var i = document.querySelector("#post-comment").offsetTop;
+    const i = document.querySelector("#post-comment").offsetTop;
     window.scrollTo(0, i - 80),
         n.focus(),
         n.setSelectionRange(-1, -1),
@@ -390,15 +390,15 @@ rm.rightMenuCommentText = function (e) {
 }
 
 rm.searchBaidu = function () {
-    utils.snackbarShow("即将跳转到百度搜索", !1, 2e3),
-        setTimeout((function () {
-                window.open("https://www.baidu.com/s?wd=" + selectTextNow)
-            }
-        ), "2000"),
-        rm.hideRightMenu()
+    utils.snackbarShow("即将跳转到百度搜索", !1, 2e3);
+    setTimeout((function () {
+            window.open("https://www.baidu.com/s?wd=" + selectTextNow)
+        }
+    ), 2000);
+    rm.hideRightMenu()
 }
 
 rm.copyLink = function () {
-    rm.rightmenuCopyText(domhref),
-        utils.snackbarShow("已复制链接地址")
+    rm.rightmenuCopyText(domhref)
+    utils.snackbarShow("已复制链接地址")
 }
