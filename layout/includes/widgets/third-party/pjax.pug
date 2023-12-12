@@ -4,7 +4,7 @@ script.
         '#body-wrap',
         '#site-config',
         'meta[name="description"]',
-        '#js-pjax'
+        '#js-pjax',
     ]
 
     const pjax = new Pjax({
@@ -21,6 +21,10 @@ script.
         Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
         newScript.appendChild(document.createTextNode(content))
         item.parentNode.replaceChild(newScript, item)
+    })
+
+    document.addEventListener('pjax:complete', () => {
+        window.refreshFn()
     })
 
     document.addEventListener('pjax:error', (e) => {

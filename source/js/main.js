@@ -1023,15 +1023,13 @@ window.refreshFn = () => {
     document.getElementById('history-baidu') && sco.card_history()
     document.getElementById('welcome-info') && sco.card_welcome()
     GLOBAL_CONFIG.comment.commentBarrage && PAGE_CONFIG.comment && initializeCommentBarrage()
+    document.body.setAttribute('data-type', PAGE_CONFIG.page)
+    PAGE_CONFIG.page === "music" && scoMusic.init()
 }
 
 sco.initTheme()
 
 document.addEventListener('DOMContentLoaded', function () {
-    window.refreshFn()
-})
-
-document.addEventListener('pjax:complete', () => {
     window.refreshFn()
 })
 

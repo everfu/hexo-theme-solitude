@@ -1,11 +1,10 @@
-if page.type === 'music'
-    - var type = 'music'
+- page.type = is_home() ? 'solitude' : page.type
 
 doctype html
 html(lang=config.language, data-theme="light")
     head
         include ./head.pug
-    body(id="body" data-type=type)
+    body#body(data-type=page.type)
         // loading
         if theme.loading.fullpage
             include ./loading.pug

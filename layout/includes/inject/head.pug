@@ -54,6 +54,10 @@ if theme.thirdparty.ai.enable
 if theme.about.echarts.enable && theme.about.enable
     script(src=url_for(cdn.echartsjs))
 
+// music
+if theme.music.enable
+    script(src="/js/music.js")
+
 script.
     (win => {
             win.saveToLocal = {

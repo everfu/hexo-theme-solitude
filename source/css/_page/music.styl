@@ -1,4 +1,8 @@
 body[data-type=music]
+  #page-header.not-top-img #nav a
+    color var(--sco-white)
+  #page-header.not-top-img #nav .back-home-button
+    color var(--sco-white)
   .page
     .layout#content-inner
       background none
@@ -274,6 +278,8 @@ body[data-type=music]
       left 0
       right 0
       bottom 38px
+      display flex
+      justify-content center
       align-items center
 
       +maxWidth798()
@@ -466,6 +472,7 @@ body[data-type=music]
 
           .aplayer-volume-bar-wrap
             width 30px
+            right 6px
 
             .aplayer-volume-bar
               width 100%
@@ -484,7 +491,7 @@ body[data-type=music]
 
   .aplayer-volume-bar-wrap
     +maxWidth798()
-      bottom 0px
+      bottom 0
       right 7px
 
 .Music-loading
