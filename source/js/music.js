@@ -1,5 +1,4 @@
 var vh = window.innerHeight * 1;
-var volume = 0.8;
 var scoMusic = {
     // 获取地址栏参数
     // 创建URLSearchParams对象并传入URL中的查询字符串
@@ -79,9 +78,40 @@ var scoMusic = {
             var server = scoMusic.params.get("server")
             MusicPage.innerHTML = `<meting-js id="${id}" server="${server}" type="${playlistType}" preload="auto" order="random"></meting-js>`;
         } else {
-            MusicPage.innerHTML = `<meting-js id="${userId}" server="${userServer}" type="${userType}" preload="auto" order="random"></meting-js>`;
+            MusicPage.innerHTML = `<meting-js id="${musicConfig.userId}" server="${musicConfig.userServer}" type="${musicConfig.userType}" preload="auto" order="random"></meting-js>`;
         }
         scoMusic.changeMusicBg(false);
+    },
+    /**
+     * 绑定键盘事件
+     * @param event
+     */
+    setKeydown: function (event) {
+        const aplayer = document.querySelector('meting-js').aplayer
+        if (event.code === "Space") {
+            event.preventDefault();
+            aplayer.toggle();
+        }
+        if (event.keyCode === 39) {
+            event.preventDefault();
+            aplayer.skipForward();
+        }
+        if (event.keyCode === 37) {
+            event.preventDefault();
+            aplayer.skipBack();
+        }
+        if (event.keyCode === 38) {
+            if (musicConfig.volume <= 1) {
+                musicConfig.volume += 0.1;
+                aplayer.volume(musicConfig.volume, true);
+            }
+        }
+        if (event.keyCode === 40) {
+            if (musicConfig.volume >= 0) {
+                musicConfig.volume += -0.1;
+                aplayer.volume(musicConfig.volume, true);
+            }
+        }
     },
 
     init: function () {
@@ -90,33 +120,7 @@ var scoMusic = {
         this.getCustomPlayList();
 
         //热键控制音乐
-        document.addEventListener("keydown", function (event) {
-            const aplayer = document.querySelector('meting-js').aplayer
-            if (event.code === "Space") {
-                event.preventDefault();
-                aplayer.toggle();
-            }
-            if (event.keyCode === 39) {
-                event.preventDefault();
-                aplayer.skipForward();
-            }
-            if (event.keyCode === 37) {
-                event.preventDefault();
-                aplayer.skipBack();
-            }
-            if (event.keyCode === 38) {
-                if (volume <= 1) {
-                    volume += 0.1;
-                    aplayer.volume(volume, true);
-                }
-            }
-            if (event.keyCode === 40) {
-                if (volume >= 0) {
-                    volume += -0.1;
-                    aplayer.volume(volume, true);
-                }
-            }
-        });
+        document.addEventListener("keydown", scoMusic.setKeydown);
     }
 }
 

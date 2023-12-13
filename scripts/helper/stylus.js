@@ -20,4 +20,14 @@ hexo.extend.filter.register('stylus:renderer', function (style) {
     if (uniqueArr.length > 0) { // 是否为空
         style.define('aside', uniqueArr);
     }
+
+    // 纪念日灰色日期
+    if (theme.config.fest.enable) {
+        const date = new Date();
+        const specialDates = theme.config.fest.list || {}
+        const currentDate = `${date.getMonth() + 1}.${date.getDate()}`
+        if (specialDates.includes(currentDate)) {
+            style.define('fest', true);
+        }
+    }
 });

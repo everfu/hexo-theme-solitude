@@ -5,11 +5,13 @@ if theme.music.enable
         div APlayer加载中...
 
     script.
-        var userId = '#{theme.music.id}';
-            userServer = "#{theme.music.server}";
-            userType = "#{theme.music.type}";
-            volume = #{theme.music.volume};
-            mutex = #{theme.music.mutex};
+        const musicConfig = {
+            userId: '#{theme.music.id}',
+            userServer: "#{theme.music.server}",
+            userType: "#{theme.music.type}",
+            volume: #{theme.music.volume},
+            mutex: #{theme.music.mutex}
+        }
 
 else
     include not_configured

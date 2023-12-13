@@ -22,7 +22,7 @@ script.
             const res = await twikoo.getCommentsCount(countOptions)
             try {
                 document.getElementById('twikoo-count').innerText = res[0].count
-                document.querySelector('.comment-headline span:last-child').innerText = `(${res[0].count})`
+                document.querySelector('.comment-headline span:last-child').innerText = ` (${res[0].count})`
             } catch (e) {
                 document.getElementById('twikoo-count').innerText = '加载错误'
             }
