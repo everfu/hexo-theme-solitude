@@ -1,33 +1,3 @@
-const adjustMenu = (change = false) => {
-    const $blogName = document.getElementById('site-name')
-    let blogNameWidth = $blogName && $blogName.offsetWidth
-    const $menusEle = document.querySelector('#menus .menus_items')
-    let menusWidth = $menusEle && $menusEle.offsetWidth
-    const $searchEle = document.querySelector('#search-button')
-    let searchWidth = $searchEle && $searchEle.offsetWidth
-    if (change) {
-        blogNameWidth = $blogName && $blogName.offsetWidth
-        menusWidth = $menusEle && $menusEle.offsetWidth
-        searchWidth = $searchEle && $searchEle.offsetWidth
-    }
-    const $nav = document.getElementById('nav')
-    let t
-    if (window.innerWidth < 768) t = true
-    else t = blogNameWidth + menusWidth + searchWidth > $nav?.offsetWidth - 120
-
-    if (t) {
-        $nav?.classList.add('hide-menu')
-    } else {
-        $nav?.classList.remove('hide-menu')
-    }
-}
-
-// 初始化header
-const initAdjust = () => {
-    adjustMenu()
-    document.getElementById('nav')?.classList.add('show')
-}
-
 /**
  * side menu
  */
@@ -116,7 +86,7 @@ const percent = () => {
     } else {
         document.querySelector("#nav-totop").classList.remove("long")
         if (scrollPercent >= 0) {
-            percentElement.innerHTML = scrollPercent
+            percentElement.innerHTML = scrollPercent + ""
         }
     }
 
@@ -667,27 +637,6 @@ let sco = {
         utils.scrollToDest(utils.getEleTop(document.getElementById('post-comment')), 300)
     },
     /**
-     * 一些日子灰色页面
-     */
-    setFest: function () {
-        const date = new Date();
-        const currentDate = `${date.getMonth() + 1}.${date.getDate()}`;
-
-        const specialDates = ['1.8', '9.9', '7.7', '9.18', '12.13'];
-
-        if (specialDates.includes(currentDate)) {
-            const css = `
-        html {
-            filter: grayscale(100%);
-        }
-        `;
-
-            const styleElement = document.createElement('style');
-            styleElement.textContent = css;
-            document.head.appendChild(styleElement);
-        }
-    },
-    /**
      * 个人信息顶部文字更新
      */
     setTimeState: function () {
@@ -870,6 +819,35 @@ let sco = {
         }
     },
     /**
+     * 初始化Header
+     * @param change
+     */
+    initAdjust: function (change = false) {
+        const $blogName = document.getElementById('site-name')
+        let blogNameWidth = $blogName && $blogName.offsetWidth
+        const $menusEle = document.querySelector('#menus .menus_items')
+        let menusWidth = $menusEle && $menusEle.offsetWidth
+        const $searchEle = document.querySelector('#search-button')
+        let searchWidth = $searchEle && $searchEle.offsetWidth
+        if (change) {
+            blogNameWidth = $blogName && $blogName.offsetWidth
+            menusWidth = $menusEle && $menusEle.offsetWidth
+            searchWidth = $searchEle && $searchEle.offsetWidth
+        }
+        const $nav = document.getElementById('nav')
+        let t
+        if (window.innerWidth < 768) t = true
+        else t = blogNameWidth + menusWidth + searchWidth > $nav?.offsetWidth - 120
+
+        if (t) {
+            $nav?.classList.add('hide-menu')
+        } else {
+            $nav?.classList.remove('hide-menu')
+        }
+
+        document.getElementById('nav')?.classList.add('show')
+    },
+    /**
      * 首页分页跳转
      */
     toPage: function () {
@@ -996,7 +974,7 @@ class tabs {
 }
 
 window.refreshFn = () => {
-    initAdjust()
+    sco.initAdjust()
     scrollFn()
     sidebarFn()
     changeTimeFormat()
@@ -1004,7 +982,6 @@ window.refreshFn = () => {
     sco.addRuntime()
     sco.hideCookie()
     sco.addPhotoFigcaption()
-    sco.setFest()
     sco.setTimeState()
     sco.tagPageActive()
     sco.categoriesBarActive()
@@ -1025,6 +1002,7 @@ window.refreshFn = () => {
     GLOBAL_CONFIG.comment.commentBarrage && PAGE_CONFIG.comment && initializeCommentBarrage()
     document.body.setAttribute('data-type', PAGE_CONFIG.page)
     PAGE_CONFIG.page === "music" && scoMusic.init()
+    scoMusic && document.removeEventListener('keydown', scoMusic.setKeydown)
 }
 
 sco.initTheme()

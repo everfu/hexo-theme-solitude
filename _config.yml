@@ -380,7 +380,7 @@ thirdparty:
     enable: false
     server: netease # netease, tencent, kugou, xiami, baidu
     id: 8407304077 # 歌单ID
-    api: "https://api.injahow.cn/meting/?server=:server&type=:type&id=:id&auth=:auth&r=:r" #自定义api
+    api: "https://api.injahow.cn/meting/?server=:server&type=:type&id=:id&auth=:auth&r=:r" #自定义api，参照格式写
   #中控台拓展
   consolePlus: false
 
@@ -414,17 +414,18 @@ thirdparty:
     bundlejs: '/lib/bundle.min.js' # 主题bundlejs
 
 # 评论
+# --------------------------------------
 comment:
   enable: false # 是否开启评论
-  type:  # valine, twikoo
+  type:  # waline, twikoo
   commentBarrage: true # 热评开关
   # 评论系统
-  twikoo:
+  twikoo: # https://twikoo.js.org/
     envId: # url: https://twikoo.sondy.top/
     lang: 'zh-CN' # 语言
     accessToken:  # accessToken
-  waline:
-    envId:  # url: https://waline.js.org/
+  waline: # https://waline.js.org/
+    envId:  # url:
     pageview: false # 是否开启页面访问量统计
     option: # waline配置项
 
@@ -446,12 +447,23 @@ rightside:
   enable: false
 
 # 站点验证
-# 仅需要填写验证代码即可
+# 仅需要填写验证代码即可，譬如：codeva-KReTIJu5us
 verify:
-  # 百度
   baidu:
-  # 谷歌
   google:
+
+# CSS 前缀
+# 有些 CSS 并不是所有浏览器都支持，需要增加对应的前缀才会生效
+# 开启 css_prefix 后，会自动为一些 CSS 增加前缀。（会增加 20%的体积）
+# --------------------------------------
+css_prefix: false
+
+# Fest (纪念日灰色)
+# 譬如一些国家公祭日
+fest:
+  enable: false # 开启
+  list: # 纪念日列表
+    - '12.13' # 国家公祭日
 
 # PWA
 # 图标信息非必选，填了就显示，不想添加的可以进行注释
@@ -496,12 +508,6 @@ pwa:
   favicon_1334_750: /img/pwa/siteicon/splash-1334x750.png # 1334x750图标
   favicon_640_1136: /img/pwa/siteicon/splash-640x1136.png # 640x1136图标
   favicon_1136_640: /img/pwa/siteicon/splash-1136x640.png # 1136x640图标
-
-# CSS 前缀
-# 有些 CSS 并不是所有浏览器都支持，需要增加对应的前缀才会生效
-# 开启 css_prefix 后，会自动为一些 CSS 增加前缀。（会增加 20%的体积）
-# --------------------------------------
-css_prefix: false
 
 # 非必要勿动
 cdn:
