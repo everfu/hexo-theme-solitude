@@ -50,15 +50,16 @@ const scrollFn = function () {
         const isDown = scrollDirection(currentTop);
 
         if (currentTop > 0) {
-            $header.classList.add('nav-fixed');
             if (isDown) {
                 if ($header.classList.contains('nav-visible')) $header.classList.remove('nav-visible');
             } else {
                 if (!$header.classList.contains('nav-visible')) $header.classList.add('nav-visible');
             }
+            $header.classList.add('nav-fixed');
         } else {
             $header.classList.remove('nav-fixed', 'nav-visible');
         }
+
         percent();
     }, 200));
 
@@ -507,14 +508,17 @@ let sco = {
      * @param txt
      */
     toTalk: function (txt) {
-        const input = document.querySelector('.el-textarea__inner');
-        const evt = new Event('input', {bubbles: true, cancelable: true});
-        const inputValue = txt.replace(/\n/g, '\n> ');
-        input.value = '> ' + inputValue + '\n\n';
-        input.dispatchEvent(evt);
-        utils.scrollToDest(utils.getEleTop(document.getElementById('post-comment')), 300)
-        input.focus();
-        input.setSelectionRange(-1, -1);
+        const inputs = ["#wl-edit", ".el-textarea__inner"]
+        for (let i = 0; i < inputs.length; i++) {
+            let el = document.querySelector(inputs[i])
+            if (el != null) {
+                el.dispatchEvent(new Event('input', {bubble: true, cancelable: true}))
+                el.value = '> ' + txt.replace(/\n/g, '\n> ') + '\n\n'
+                utils.scrollToDest(utils.getEleTop(document.getElementById('post-comment')), 300)
+                el.focus()
+                el.setSelectionRange(-1, -1)
+            }
+        }
         const commentTips = document.querySelector("#comment-tips");
         if (commentTips) {
             commentTips.classList.add("show");
@@ -869,7 +873,34 @@ let sco = {
             document.getElementById("toPageButton").href = targetPageUrl;
         }
     },
+    addRandomCommentInfo: function () {
+        const e = `${adjectives[Math.floor(Math.random() * adjectives.length)]}${vegetablesAndFruits[Math.floor(Math.random() * vegetablesAndFruits.length)]}`;
+        !function () {
+            for (var t = ["#author", "input[name='comname']", "#inpName", "input[name='author']", "#ds-dialog-name", "#name", "input[name='nick']", "#comment_author"], o = ["#mail", "#email", "input[name='commail']", "#inpEmail", "input[name='email']", "#ds-dialog-email", "input[name='mail']", "#comment_email"], n = 0; n < t.length; n++) {
+                var a = document.querySelector(t[n]);
+                if (null != a) {
+                    a.value = e,
+                        a.dispatchEvent(new Event("input")),
+                        a.dispatchEvent(new Event("change"));
+                    break
+                }
+            }
+            for (var l = 0; l < o.length; l++) {
+                var i = document.querySelector(o[l]);
+                if (null != i) {
+                    i.value = "donotreply@examp.com",
+                        i.dispatchEvent(new Event("input")),
+                        i.dispatchEvent(new Event("change"));
+                    break
+                }
+            }
+        }();
+    },
 }
+
+const adjectives = ["美丽的", "英俊的", "聪明的", "勇敢的", "可爱的", "慷慨的", "善良的", "可靠的", "开朗的", "成熟的", "稳重的", "真诚的", "幽默的", "豁达的", "有趣的", "活泼的", "优雅的", "敏捷的", "温柔的", "温暖的", "敬业的", "细心的", "耐心的", "深沉的", "朴素的", "含蓄的", "率直的", "开放的", "务实的", "坚强的", "自信的", "谦虚的", "文静的", "深刻的", "纯真的", "朝气蓬勃的", "慎重的", "大方的", "顽强的", "迷人的", "机智的", "善解人意的", "富有想象力的", "有魅力的", "独立的", "好奇的", "干净的", "宽容的", "尊重他人的", "体贴的", "守信的", "有耐性的", "有责任心的", "有担当的", "有远见的", "有智慧的", "有眼光的", "有冒险精神的", "有爱心的", "有同情心的", "喜欢思考的", "喜欢学习的", "具有批判性思维的", "善于表达的", "善于沟通的", "善于合作的", "善于领导的", "有激情的", "有幽默感的", "有思想的", "有个性的", "有正义感的", "有责任感的", "有创造力的", "有想象力的", "有艺术细胞的", "有团队精神的", "有协调能力的", "有决策能力的", "有组织能力的", "有学习能力的", "有执行能力的", "有分析能力的", "有逻辑思维的", "有创新能力的", "有专业素养的", "有商业头脑的"]
+    ,
+    vegetablesAndFruits = ["萝卜", "白菜", "芹菜", "生菜", "青椒", "辣椒", "茄子", "豆角", "黄瓜", "西红柿", "洋葱", "大蒜", "土豆", "南瓜", "豆腐", "韭菜", "花菜", "西兰花", "蘑菇", "金针菇", "苹果", "香蕉", "橙子", "柠檬", "猕猴桃", "草莓", "葡萄", "桃子", "杏子", "李子", "石榴", "西瓜", "哈密瓜", "蜜瓜", "樱桃", "蓝莓", "柿子", "橄榄", "柚子", "火龙果"];
 
 /*
  * 代码高亮显示
@@ -968,6 +999,7 @@ class tabs {
         document.querySelectorAll('#article-container .tabs .tab-to-top').forEach(function (item) {
             item.addEventListener('click', function () {
                 utils.scrollToDest(utils.getEleTop(item.parentElement.parentElement.parentNode), 300)
+
             })
         })
     }

@@ -4,6 +4,10 @@ div#post-comment(view-image)
             i.scoicon.sco-chat-fill
             span  评论
             span
+        .comment-randomInfo
+            a(onclick="sco.addRandomCommentInfo()", href="javascript:void(0)") 匿名评论
+        .comment-tips#comment-tips
+            span ✅ 你无需删除空行，直接评论以获取最佳展示效果
     .comment-wrap
         #comment
         case theme.comment.type

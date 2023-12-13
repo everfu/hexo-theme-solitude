@@ -459,7 +459,7 @@ verify:
 css_prefix: false
 
 # Fest (纪念日灰色)
-# 譬如一些国家公祭日
+# 譬如国家公祭日
 fest:
   enable: false # 开启
   list: # 纪念日列表
@@ -522,8 +522,8 @@ cdn:
     pacejs: https://cdn.bootcdn.net/ajax/libs/pace/1.2.4/pace.min.js
     echartsjs: https://cdn.bootcdn.net/ajax/libs/echarts/5.4.2/echarts.min.js
     lunrjs: https://cdn.bootcdn.net/ajax/libs/lunr.js/2.3.9/lunr.min.js
-    walinecss: https://cdn.bootcdn.net/ajax/libs/waline/2.15.7/waline.min.css
-    walinejs: https://cdn.bootcdn.net/ajax/libs/waline/2.15.7/waline.min.js
+    walinecss: https://cdn.staticfile.org/waline/2.15.8/waline.min.css
+    walinejs: https://cdn.staticfile.org/waline/2.15.8/waline.min.js
   body:
     viewimagejs: /lib/view-image.min.js
     waterfalljs: /lib/waterfall.min.js
