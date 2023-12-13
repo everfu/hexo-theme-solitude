@@ -10,7 +10,6 @@ block content
         div(class="recent-posts", id="recent-posts")
             div#category-bar
                 include ./includes/widgets/home/categoryBar.pug
-
             for post in page.posts.sort("-sticky" || "-date").data
                 include ./includes/widgets/home/postList.pug
 

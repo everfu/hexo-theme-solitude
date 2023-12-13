@@ -50,15 +50,16 @@ const scrollFn = function () {
         const isDown = scrollDirection(currentTop);
 
         if (currentTop > 0) {
-            $header.classList.add('nav-fixed');
             if (isDown) {
                 if ($header.classList.contains('nav-visible')) $header.classList.remove('nav-visible');
             } else {
                 if (!$header.classList.contains('nav-visible')) $header.classList.add('nav-visible');
             }
+            $header.classList.add('nav-fixed');
         } else {
             $header.classList.remove('nav-fixed', 'nav-visible');
         }
+
         percent();
     }, 200));
 
@@ -507,14 +508,17 @@ let sco = {
      * @param txt
      */
     toTalk: function (txt) {
-        const input = document.querySelector('.el-textarea__inner');
-        const evt = new Event('input', {bubbles: true, cancelable: true});
-        const inputValue = txt.replace(/\n/g, '\n> ');
-        input.value = '> ' + inputValue + '\n\n';
-        input.dispatchEvent(evt);
-        utils.scrollToDest(utils.getEleTop(document.getElementById('post-comment')), 300)
-        input.focus();
-        input.setSelectionRange(-1, -1);
+        const inputs = ["#wl-edit", ".el-textarea__inner"]
+        for (let i = 0; i < inputs.length; i++) {
+            let el = document.querySelector(inputs[i])
+            if (el != null) {
+                el.dispatchEvent(new Event('input', {bubble: true, cancelable: true}))
+                el.value = '> ' + txt.replace(/\n/g, '\n> ') + '\n\n'
+                utils.scrollToDest(utils.getEleTop(document.getElementById('post-comment')), 300)
+                el.focus()
+                el.setSelectionRange(-1, -1)
+            }
+        }
         const commentTips = document.querySelector("#comment-tips");
         if (commentTips) {
             commentTips.classList.add("show");
@@ -869,6 +873,25 @@ let sco = {
             document.getElementById("toPageButton").href = targetPageUrl;
         }
     },
+    addRandomCommentInfo: function () {
+        const e = `${GLOBAL_CONFIG.comment.randomInfoStart[Math.floor(Math.random() * GLOBAL_CONFIG.comment.randomInfoStart.length)]}${GLOBAL_CONFIG.comment.randomInfoEnd[Math.floor(Math.random() * GLOBAL_CONFIG.comment.randomInfoEnd.length)]}`;
+
+        const nameSelectors = ["#author", "input[name='comname']", "#inpName", "input[name='author']", "#ds-dialog-name", "#name", "input[name='nick']", "#comment_author"];
+        const emailSelectors = ["#mail", "#email", "input[name='commail']", "#inpEmail", "input[name='email']", "#ds-dialog-email", "input[name='mail']", "#comment_email"];
+
+        const nameElements = nameSelectors.map(selector => document.querySelector(selector)).filter(Boolean);
+        const emailElements = emailSelectors.map(selector => document.querySelector(selector)).filter(Boolean);
+
+        nameElements.forEach(element => {
+            element.value = e;
+            element.dispatchEvent(new Event("input"));
+        });
+
+        emailElements.forEach(element => {
+            element.value = "donotreply@examp.com";
+            element.dispatchEvent(new Event("input"));
+        });
+    }
 }
 
 /*
@@ -968,6 +991,7 @@ class tabs {
         document.querySelectorAll('#article-container .tabs .tab-to-top').forEach(function (item) {
             item.addEventListener('click', function () {
                 utils.scrollToDest(utils.getEleTop(item.parentElement.parentElement.parentNode), 300)
+
             })
         })
     }
