@@ -92,7 +92,7 @@ Special thanks to：
 
 **This theme is a derivative theme of [Heo](https://blog.zhheo.com/), designed and authorized by the author [张洪Heo](https://github.com/zhheo)!**
 
-> Welcome to contribute to this theme!  [Contribution Guide](https://opensource.guide/zh-hans/how-to-contribute/#%E5%A6%82%E4%BD%95%E6%8F%90%E4%BA%A4%E8%B4%A1%E7%8C%AE)
+> Welcome to contribute to this theme!  [Contribution Guide](/CONTRIBUTING.md)
 
 ## 📊 Repository Statistics
 ![Repository Statistics](https://repobeats.axiom.co/api/embed/75ec216f1d0b289e1b6a92f585342f3eeeeb0fdd.svg "Repobeats analytics image")
