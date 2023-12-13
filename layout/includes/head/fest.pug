@@ -1,0 +1,22 @@
+- var fests = theme.fest.list || {}
+
+script.
+    function setFest() {
+        const date = new Date();
+        const currentDate = `${date.getMonth() + 1}.${date.getDate()}`;
+
+        const specialDates = [!{fests}].map(String);
+
+        if (specialDates.includes(currentDate)) {
+            const css = `
+            html {
+                filter: grayscale(100%);
+            }
+            `;
+
+            const styleElement = document.createElement('style');
+            styleElement.textContent = css;
+            document.head.appendChild(styleElement);
+        }
+    }
+    setFest()
