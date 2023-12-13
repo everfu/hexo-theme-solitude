@@ -419,6 +419,14 @@ comment:
   enable: false # 是否开启评论
   type:  # waline, twikoo
   commentBarrage: true # 热评开关
+  randomInfoStart:
+    - '聪敏的'
+    - '可爱的'
+    - '美丽的'
+  randomInfoEnd:
+    - '白菜'
+    - '小可爱'
+    - '小仙女'
   # 评论系统
   twikoo: # https://twikoo.js.org/
     envId: # url: https://twikoo.sondy.top/

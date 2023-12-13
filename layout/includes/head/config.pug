@@ -18,6 +18,9 @@
             })
     }
 
+    const commentInfoStart = theme.comment.randomInfoStart.map(item => `"${item}"`) || ""
+    const commentInfoEnd = theme.comment.randomInfoEnd.map(item => `"${item}"`) || ""
+
 script.
     const GLOBAL_CONFIG = {
         root: '!{config.root}',
@@ -69,6 +72,8 @@ script.
             enable: !{theme.comment.enable},
             type: '!{theme.comment.type}',
             commentBarrage: !{theme.comment.commentBarrage},
+            randomInfoStart: [!{commentInfoStart}],
+            randomInfoEnd: [!{commentInfoEnd}],
             twikoo: {
                 url: '!{theme.comment.twikoo.envId}',
                 accessToken: '!{theme.comment.twikoo.accessToken}'
