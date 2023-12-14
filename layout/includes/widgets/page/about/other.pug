@@ -17,19 +17,20 @@
                 fetch("#{site.data.about.tj.url}")
                     .then(res => res.text())
                     .then(data => {
-                        let title = ["最近活跃", "今日人数", "今日访问", "昨日人数", "昨日访问", "本月访问", "总访问量"];
+                        const title = ["最近活跃", "今日人数", "今日访问", "昨日人数", "昨日访问", "本月访问", "总访问量"];
                         let num = data.match(/(<\/span><span>).*?(\/span><\/p>)/g);
                         num = num.map(el => {
                             let val = el.replace(/(<\/span><span>)/g, "");
                             return val.replace(/(<\/span><\/p>)/g, "");
                         });
-                        let s = document.getElementById("statistic");
-                        let statistic = [];
+                        const s = document.getElementById("statistic");
+                        let html = '';
                         for (let i = 0; i < num.length; i++) {
-                            if (i === 0 || i === num.length - 1) continue;
-                            s.innerHTML += "<div><span>" + title[i] + "</span><span id=" + title[i] + ">" + num[i] + "</span></div>";
+                            html += `<div><span>${title[i]}</span><span id="${title[i]}">${num[i]}</span></div>`;
                         }
+                        s.innerHTML = html;
                     });
+
 
     if site.data.about.oneself
         style.
