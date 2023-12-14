@@ -3,7 +3,7 @@ div.coverdiv#coverdiv
 div#post-info
     div#post-firstinfo
         div.meta-firstline
-            - var cc = reprint ? '转载或翻译' : '原创'
+            - var cc = page.reprint ? '转载或翻译' : '原创'
             a.post-meta-original(title="该文章为" + cc + "文章，注意版权协议")= cc
             if page.categories.data.length > 0
                 span.post-meta-categories

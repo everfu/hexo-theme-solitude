@@ -11,25 +11,17 @@ function coverColor() {
             var ctx = canvas.getContext("2d");
             ctx.drawImage(this, 0, 0);
             var data = ctx.getImageData(0, 0, this.width, this.height).data;
-            var colorCounts = {};
-            var dominantColor = '';
-            var maxCount = 0;
+            var r = 0, g = 0, b = 0;
             var step = 5;
             for (var i = 0; i < data.length; i += 4 * step) {
-                var r = data[i];
-                var g = data[i + 1];
-                var b = data[i + 2];
-                var color = `${r},${g},${b}`;
-
-                colorCounts[color] = (colorCounts[color] || 0) + 1;
-
-                if (colorCounts[color] > maxCount) {
-                    maxCount = colorCounts[color];
-                    dominantColor = color;
-                }
+                r += data[i];
+                g += data[i + 1];
+                b += data[i + 2];
             }
-            var rgb = dominantColor.split(',').map(c => parseInt(c, 10));
-            var value = "#" + rgb[0].toString(16) + rgb[1].toString(16) + rgb[2].toString(16);
+            r = Math.floor(r / (data.length / 4 / step));
+            g = Math.floor(g / (data.length / 4 / step));
+            b = Math.floor(b / (data.length / 4 / step));
+            var value = "#" + r.toString(16) + g.toString(16) + b.toString(16);
             if (getContrastYIQ(value) == "light") {
                 value = LightenDarkenColor(colorHex(value), -50)
             }
@@ -49,6 +41,7 @@ function coverColor() {
         initThemeColor()
     }
 }
+
 
 function colorHex(colorString) {
     const hexRegex = /^#([0-9a-fA-f]{3}|[0-9a-fA-f]{6})$/;
@@ -72,6 +65,7 @@ function colorHex(colorString) {
     }
     return color;
 }
+
 
 
 function colorRgb(str) {
@@ -122,9 +116,6 @@ function LightenDarkenColor(col, amt) {
 function getContrastYIQ(hexcolor) {
     var colorrgb = colorRgb(hexcolor);
     var colors = colorrgb.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/);
-    if (!colors) {
-        return "light";  // or "dark", depending on your preference
-    }
     var red = colors[1];
     var green = colors[2];
     var blue = colors[3];
@@ -137,7 +128,6 @@ function getContrastYIQ(hexcolor) {
         return "dark";
     }
 }
-
 
 function initThemeColor() {
     const currentTop = window.scrollY || document.documentElement.scrollTop;

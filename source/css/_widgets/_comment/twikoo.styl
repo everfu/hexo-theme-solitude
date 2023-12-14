@@ -285,6 +285,7 @@
 .tk-meta-input
   .el-input
     .el-input-group__prepend
+      border-radius 12px 0 0 12px
       -webkit-user-select none
 
 @media screen and (max-width: 768px)
@@ -317,11 +318,12 @@ img.tk-avatar-img
 .el-input--small
   .el-input__inner
     padding 8px
+  .el-input__inner, .el-textarea__inner
+   border-radius 12px
 
 .el-input.el-input--small.el-input-group.el-input-group--prepend
   border-radius 12px
   background var(--sco-secondbg)
-  border var(--style-border-always)
 
 .el-input.el-input--small.el-input-group.el-input-group--prepend:nth-child(1):before
   content '输入QQ号会自动获取昵称和头像'
@@ -374,13 +376,14 @@ img.tk-avatar-img
   border 1px solid var(--sco-card-border) !important
   color var(--sco-fontcolor) !important
   padding-left 8px
+  border-radius 12px
 
 .page
   .el-input__inner
     background var(--sco-card-bg) !important
 
 .el-input__inner:focus
-  border 1px solid var(--sco-main) !important
+  border none
 
 .el-textarea__inner
   background var(--sco-secondbg) !important
