@@ -361,9 +361,7 @@ theme_color:
 # 第三方设置
 thirdparty:
   wordcount: false # 字数统计
-  busuanzi:
-    enable: false
-    usecomment: false #当评论系统开启时文章页面使用评论系统的统计数据
+  busuanzi: true # 访问统计
   search: # 搜索
     enable: false
     type: algolia # algolia, local

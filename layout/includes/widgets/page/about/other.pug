@@ -26,6 +26,7 @@
                         const s = document.getElementById("statistic");
                         let html = '';
                         for (let i = 0; i < num.length; i++) {
+                            if (i === 0 || i === num.length - 1) continue;
                             html += `<div><span>${title[i]}</span><span id="${title[i]}">${num[i]}</span></div>`;
                         }
                         s.innerHTML = html;

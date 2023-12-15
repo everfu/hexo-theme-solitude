@@ -40,7 +40,7 @@ div#post-info
             if theme.thirdparty.busuanzi.enable && theme.post.meta.pv
                 a.post-meta-pv(href=url_for(page.path), title="文章热度")
                     i.post-meta-icon.scoicon.sco-fire-fill
-                    if theme.thirdparty.busuanzi.usecomment
+                    if theme.comment.enable
                         case theme.comment.type
                             when "twikoo"
                                 span#twikoo_visitors
@@ -48,7 +48,7 @@ div#post-info
                             when "waline"
                                 span.waline-pageview-count
                                     i.scoicon.sco-loading-line
-                    else
+                    else if theme.thirdparty.busuanzi
                         span#busuanzi_value_page_pv
                             i.scoicon.sco-loading-line
             if theme.post.meta.comment && page.comment
