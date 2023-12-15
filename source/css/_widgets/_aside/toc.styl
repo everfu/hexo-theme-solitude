@@ -1,6 +1,6 @@
 #aside-content
   .card-toc
-    padding .5rem .5rem !important
+    padding .5rem .5rem
 
     &:hover
       box-shadow var(--sco-shadow-border)
@@ -28,17 +28,38 @@
 
   #card-toc
     +minWidth901()
-      right 0 !important
+      right 0
 
     .toc-content
       overflow-y: auto
       max-height: calc(100vh - 300px)
+
+      * > .toc-item > .toc-child
+        margin-left: 10px;
+        transition display .3s ease-in-out 0s
+        padding-left: 10px;
+
       ol
         margin 0
-        padding 0
+        padding-left .4rem
 
         &ul
           list-style: none
+
+      > ol
+        padding-left 0
+
+      .toc-child
+        display none
+
+      .toc-child .toc-child
+        display none
+
+        &.active
+          display block
+
+      .toc-item.active > .toc-child
+            display block
 
       &:hover
       .toc-content

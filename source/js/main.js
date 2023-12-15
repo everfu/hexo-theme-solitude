@@ -192,7 +192,7 @@ class toc {
         const $tocContent = document.getElementById('toc-content')
         const list = $article.querySelectorAll('h1,h2,h3,h4,h5,h6')
         let detectItem = ''
-        const autoScroll = (el) => {
+        function autoScroll(el) {
             const activePosition = el.getBoundingClientRect().top
             const sidebarScrollTop = $tocContent.scrollTop
             if (activePosition > (document.documentElement.clientHeight - 100)) {
@@ -202,16 +202,19 @@ class toc {
                 $tocContent.scrollTop = sidebarScrollTop - 150
             }
         }
-        const findHeadPosition = (top) => {
+        function findHeadPosition(top) {
             if (top === 0) {
                 return false
             }
+
             let currentIndex = ''
-            list.forEach((ele, index) => {
+
+            list.forEach(function (ele, index) {
                 if (top > utils.getEleTop(ele) - 80) {
                     currentIndex = index
                 }
             })
+
             if (detectItem === currentIndex) return
             detectItem = currentIndex
             document.querySelectorAll('.toc .active').forEach((i) => {
@@ -219,19 +222,19 @@ class toc {
             })
             const activeitem = toc[detectItem]
             if (activeitem) {
+                let parent = toc[detectItem].parentNode
                 activeitem.classList.add('active')
                 autoScroll(activeitem)
-                let parent = activeitem.parentNode
-                while (!parent.matches('.toc')) {
+                for (; !parent.matches('.toc'); parent = parent.parentNode) {
                     if (parent.matches('li')) parent.classList.add('active')
-                    parent = parent.parentNode
                 }
             }
         }
-        window.tocScrollFn = utils.throttle(() => {
+        window.tocScrollFn = utils.throttle(function () {
             const currentTop = window.scrollY || document.documentElement.scrollTop
             findHeadPosition(currentTop)
         }, 100)
+
         window.addEventListener('scroll', tocScrollFn)
     }
 }
@@ -540,7 +543,7 @@ let sco = {
         }
     },
     /**
-     * 图片添加水印
+     * 图片添加底部展示信息
      */
     addPhotoFigcaption: function () {
         let images = document.querySelectorAll('#article-container img');
@@ -1027,6 +1030,7 @@ window.refreshFn = () => {
     document.body.setAttribute('data-type', PAGE_CONFIG.page)
     PAGE_CONFIG.page === "music" && scoMusic.init()
     scoMusic && document.removeEventListener('keydown', scoMusic.setKeydown)
+    GLOBAL_CONFIG.ai.enable && PAGE_CONFIG.page === "post" && ScoAI.init()
 }
 
 sco.initTheme()

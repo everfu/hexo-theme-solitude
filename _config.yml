@@ -361,9 +361,7 @@ theme_color:
 # 第三方设置
 thirdparty:
   wordcount: false # 字数统计
-  busuanzi:
-    enable: false
-    usecomment: false #当评论系统开启时文章页面使用评论系统的统计数据
+  busuanzi: true # 访问统计
   search: # 搜索
     enable: false
     type: algolia # algolia, local
@@ -385,20 +383,13 @@ thirdparty:
   consolePlus: false
 
   ai: # 文章页面AI
-    enable: false
-    key: # 前往tianli-AI 购买
-    rec_method: # 推荐文章方式（all:匹配数据库所有文章、web:仅当前博客文章）默认：web
-    ai_name: # 左上角AI名称
-    ai_tips:  # 右上角GPT版本文字
-    ai_introduce: # AI自我介绍
-    hide_shuttle: false # 隐藏矩阵穿梭按钮
-    typewriter: true # 打字机效果
-    speed: 20 # 打字机速度，默认20ms
-    BlackWhite_List:
-      mode: false  # false：全部文章显示摘要AI / black：让指定页面、文章不显示摘要AI / white：只让指定文章（页面）显示摘要AI
-      List:
-      # - 544ba770
-      # - /article/544ba770.html
+    enable: false # 是否开启
+    modelName:  # 右侧显示的模型名称
+    key:  # key
+    talk: 我是王卓Sco开发的摘要生成助理ScoGPT，ScoGPT在静态部署时进行摘要的撰写，并且在访客访问时通过ScoCorrection转译后的文本摘要实现工具。我在这里只负责已经生成的摘要显示，你无法与我直接沟通，但我可以回答一些预设的问题。你也可以使用Tianli开发的TianliGPT来更简单地实现和我类似的效果。 # 自介
+    randomPost: false # 随机文章按钮
+    report: https://blog.wzsco.top/about/ # 举报链接，不填不显示
+    tips: 此内容根据文章生成，并经过人工审核，仅用于文章内容的解释与总结 # 底部提示
 
   # 朋友圈配置
   circle:

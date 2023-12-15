@@ -46,10 +46,6 @@ if theme.extends.head
     each item in theme.extends.head
         != item
 
-// post-ai
-if theme.thirdparty.ai.enable
-    script(src='/lib/chuckle-post-ai.js')
-
 // echarts
 if theme.about.echarts.enable && theme.about.enable
     script(src=url_for(cdn.echartsjs))
