@@ -1,8 +1,8 @@
-div.post-reward(onclick="AddRewardMask()")
-    div.reward-button.button--animated(title="赞赏作者")
+.post-reward(onclick="AddRewardMask()")
+    .reward-button.button--animated(title="赞赏作者")
         i.scoicon.sco-hand-heart-fill
         | 打赏作者
-    div.reward-main
+    .reward-main
         ul.reward-all
             span.reward-title 感谢你赐予我前进的力量
             ul.reward-group
@@ -10,15 +10,15 @@ div.post-reward(onclick="AddRewardMask()")
                     li.reward-item
                         a(href=theme.post.award.wechat target="_blank")
                             img.post-qr-code-img(src=theme.post.award.wechat alt="微信")
-                        div.post-qr-code-desc 微信
+                        .post-qr-code-desc 微信
                 if theme.post.award.alipay
                     li.reward-item
                         a(href=theme.post.award.alipay target="_blank")
                             img.post-qr-code-img(src=theme.post.award.alipay alt="支付宝")
-                        div.post-qr-code-desc 支付宝
+                        .post-qr-code-desc 支付宝
             a.reward-main-btn(href=url_for(theme.post.award.url))
-                div.reward-text 赞赏者名单
-                div.reward-dec 因为你们的支持让我意识到写文章的价值🙏
+                .reward-text 赞赏者名单
+                .reward-dec 因为你们的支持让我意识到写文章的价值🙏
 
 script.
     function RemoveRewardMask() {

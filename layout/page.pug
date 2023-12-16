@@ -1,8 +1,8 @@
 extends includes/layout.pug
 
 block content
-    main.layout(class=page.aside ? '' : 'hide-aside', id='content-inner')
-        div#page
+    main.layout#content-inner(class=page.aside ? '' : 'hide-aside')
+        #page
             case page.type
                 when 'categories'
                     include includes/page/categories

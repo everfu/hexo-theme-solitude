@@ -1,7 +1,7 @@
-div.menus_items
+.menus_items
     - var menu = theme.nav && theme.nav.menu ? theme.nav.menu : {}
     each value, x in menu
-        div.menus_item
+        .menus_item
             if !value.url
                 a.site-page(href="javascript:void(0);")
                     span= x
