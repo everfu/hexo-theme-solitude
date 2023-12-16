@@ -113,7 +113,6 @@ var scoMusic = {
             }
         }
     },
-
     init: function () {
         document.documentElement.style.setProperty('--vh', `${vh}px`);
         // 初始化
