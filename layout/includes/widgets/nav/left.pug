@@ -1,9 +1,9 @@
-div.back-menu-list-groups
+.back-menu-list-groups
     - var menu = theme.nav && theme.nav.left && theme.nav.left.menu ? theme.nav.left.menu : {}
     each groupData, x in menu
-        div.back-menu-list-group
-            div.back-menu-list-title= x
-            div.back-menu-list
+        .back-menu-list-group
+            .back-menu-list-title= x
+            .back-menu-list
                 each data, y in groupData
                     a.back-menu-item(href=url_for(data.url), title=y)
                         img.back-menu-item-icon(src=data.icon, alt=x)

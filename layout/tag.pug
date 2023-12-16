@@ -2,14 +2,14 @@ extends includes/layout.pug
 
 block content
     main.layout#content-inner
-        div#tag
-            div#tag-page-tags
+        #tag
+            #tag-page-tags
                 each tag in site.tags.find({ parent: { $exists: false } }).data
                     a(id=tag.name class=(tag.name === page.tag ? 'select' : '') href=url_for(tag.path))
                         span.tags-punctuation
                         | #{tag.name}
                         span.tagsPageCount #{tag.length}
-            div.recent-posts#recent-posts
+            .recent-posts#recent-posts
                 each post in page.posts.find({ parent: { $exists: false } }).data
                     include includes/widgets/home/postList
             include includes/mixins/pagination

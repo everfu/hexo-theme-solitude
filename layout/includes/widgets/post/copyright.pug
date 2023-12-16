@@ -1,22 +1,22 @@
-div.post-copyright
-    div.post-copyright__author_group
+.post-copyright
+    .post-copyright__author_group
         a.post-copyright__author_img(href="/about/", data-pjax-state="")
             img.post-copyright__author_img_back(src=theme.post.author_back)
             img.post-copyright__author_img_front(src=theme.site.icon)
-        div.post-copyright__author_name= config.title
-        div.post-copyright__author_desc= config.subtitle
-    div.post-tools#post-tools
-        div.post-tools-left
-            div#quit-box(onclick="RemoveRewardMask()")
+        .post-copyright__author_name= config.title
+        .post-copyright__author_desc= config.subtitle
+    .post-tools#post-tools
+        .post-tools-left
+            #quit-box(onclick="RemoveRewardMask()")
             if theme.post.award.enable
                 include ./award
             if theme.footer.rss.enable
-                div.reward-link.mode
+                .reward-link.mode
                     a.reward-link-button(href=url_for(theme.footer.rss.url))
                         i.scoicon.sco-plant-fill
                         | 订阅
     if theme.post.default.copyright.enable || page.copyright
-        div.post-copyright__notice
+        .post-copyright__notice
             span.post-copyright-info
                 if page.reprint
                     | 本文是转载或翻译文章，版权归原作者所有。转载本文请联系原作者。

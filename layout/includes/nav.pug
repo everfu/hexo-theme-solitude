@@ -1,8 +1,8 @@
 nav#nav.show
-    div#nav-group
-        div#blog_name
+    #nav-group
+        #blog_name
             if theme.nav.left.enable
-                div.back-home-button(tabindex="-1")
+                .back-home-button(tabindex="-1")
                     i.back-home-button-icon.scoicon.sco-more-fill
                     include ./widgets/nav/left.pug
             a#site-name(href="/", title="返回博客主页", traget="_self")
@@ -12,11 +12,11 @@ nav#nav.show
                     img(src=theme.site.name.custom, alt=config.title)
                 else if theme.site.name.class === 'text'
                     span.scoicon= theme.site.name.custom
-        div#page-name-mask
-            div#page-name
+        #page-name-mask
+            #page-name
                 a#page-name-text(onclick="sco.toTop()")= page.title || config.title
-        div#menus
+        #menus
             include ./widgets/nav/menu.pug
-        div#nav-left
-        div#nav-right
+        #nav-left
+        #nav-right
             include ./widgets/nav/right.pug

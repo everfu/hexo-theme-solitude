@@ -1,14 +1,14 @@
 extends includes/layout.pug
 
 block content
-    div#home_top
+    #home_top
         if(theme.says.home_mini)
             include ./includes/widgets/home/bbTimeList.pug
         if(theme.hometop.banner.enable)
             include ./includes/widgets/home/hometop.pug
-    main(class="layout", id="content-inner")
-        div(class="recent-posts", id="recent-posts")
-            div#category-bar
+    main.layout#content-inner
+        .recent-posts#recent-posts
+            #category-bar
                 include ./includes/widgets/home/categoryBar.pug
             for post in page.posts.sort("-sticky" || "-date").data
                 include ./includes/widgets/home/postList.pug

@@ -15,7 +15,7 @@ html(lang=config.language, data-theme="light")
         // sidebar
         include ./sidebar.pug
 
-        div#body-wrap(class = is_post() ? 'post' : 'page')
+        #body-wrap(class = is_post() ? 'post' : 'page')
             include ./header.pug
 
             if(page.type !== '404')
@@ -24,7 +24,7 @@ html(lang=config.language, data-theme="light")
                 footer#footer
                     include ./footer.pug
             else
-                div.error#body-wrap
+                .error#body-wrap
                     block content
 
         // inject body

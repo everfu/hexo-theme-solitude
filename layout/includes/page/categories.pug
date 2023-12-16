@@ -1,6 +1,6 @@
 h1.page-title= _p('page.category')
-div.category-lists
-    div.tag-cloud-list.is-center
+.category-lists
+    .tag-cloud-list.is-center
         each item in site.categories.find({ parent: { $exists: false } }).data
             a(href=url_for(item.path))
                 span.tags-punctuation
