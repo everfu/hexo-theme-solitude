@@ -11,7 +11,6 @@
 
     ul
       display: flex
-      padding: 0
       flex-wrap: wrap
       flex-direction: row
       margin-top: .4rem
@@ -23,10 +22,13 @@
         padding-left: .2rem
 
       li
-        margin: 0 8px 8px 0
         position: relative
         margin: .3rem 0
-        padding: .12em .4em .12em 1.4em
+        padding: 4px 16px
+        width: 200px
+        border-radius: 12px
+        background: var(--sco-card-bg)
+        border: var(--style-border-always)
 
         &::before
           display: none
@@ -44,12 +46,6 @@
 
         &:hover::before
           border-color: #ff7242
-
-        padding: 4px 16px
-        width: 200px
-        border-radius: 12px
-        background: var(--sco-card-bg)
-        border: var(--style-border-always)
 
     .category-title
       font-size: 2.57em

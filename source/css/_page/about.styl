@@ -9,87 +9,84 @@
     align-items center
     margin 0 0 16px 0
 
-  .author-tag-left
-    display flex
-    flex-direction column
-    align-items flex-end
-
-  .author-tag-right
-    display flex
-    flex-direction column
-    align-items flex-start
-
-  @media screen and (max-width: 768px)
     .author-tag-left, .author-tag-right
-      display none
+      .author-tag:first-child, .author-tag:last-child
+        margin-left -16px
 
-  .author-tag-left .author-tag:first-child, .author-tag-left .author-tag:last-child
-    margin-right -16px
+    .author-tag-left
+      display flex
+      flex-direction column
+      align-items flex-end
 
-  .author-tag-right .author-tag:first-child, .author-tag-right .author-tag:last-child
-    margin-left -16px
+    .author-tag-right
+      display flex
+      flex-direction column
+      align-items flex-start
 
-  .author-tag
-    transform translate(0, -4px)
-    padding 1px 8px
-    background var(--sco-card-bg)
-    border var(--style-border-always)
-    border-radius 40px
-    margin-top 6px
-    font-size 14px
-    font-weight 700
-    box-shadow var(--sco-shadow-lightblack)
-    animation 6s ease-in-out 0s infinite normal none running floating
+    +maxWidth768()
+      .author-tag-left, .author-tag-right
+        display none
 
-    &:nth-child(1)
-      animation-delay 0s
+    .author-tag
+      transform translate(0, -4px)
+      padding 1px 8px
+      background var(--sco-card-bg)
+      border var(--style-border-always)
+      border-radius 40px
+      margin-top 6px
+      font-size 14px
+      font-weight 700
+      box-shadow var(--sco-shadow-lightblack)
+      animation 6s ease-in-out 0s infinite normal none running floating
 
-    &:nth-child(2)
-      animation-delay .6s
+      &:nth-child(1)
+        animation-delay 0s
 
-    &:nth-child(3)
-      animation-delay 1.2s
+      &:nth-child(2)
+        animation-delay .6s
 
-    &:nth-child(4)
-      animation-delay 1.8s
+      &:nth-child(3)
+        animation-delay 1.2s
 
-  .author-img
-    margin 0 30px
-    border-radius 50%
-    width 180px
-    height 180px
-    position relative
-    background var(--sco-secondbg)
-    user-select none
+      &:nth-child(4)
+        animation-delay 1.8s
 
-    img
-      border-radius 200px
-
-    &::before
-      content ''
-      -webkit-transition 1s
-      -moz-transition 1s
-      -o-transition 1s
-      -ms-transition 1s
-      transition 1s
-      width 30px
-      height 30px
-      background var(--sco-green)
-      position absolute
-      border-radius 50%
-      border 5px solid var(--sco-background)
-      bottom 5px
-      right 10px
-      z-index 2
-
-  @media screen and (max-width: 768px)
     .author-img
-      width 120px
-      height 120px
+      margin 0 30px
+      border-radius 50%
+      width 180px
+      height 180px
+      position relative
+      background var(--sco-secondbg)
+      user-select none
+
+      +maxWidth768()
+        width 120px
+        height 120px
+
+        &::before
+          bottom -5px
+          right -5px
+
+      img
+        border-radius 200px
 
       &::before
-        bottom -5px
-        right -5px
+        content ''
+        -webkit-transition 1s
+        -moz-transition 1s
+        -o-transition 1s
+        -ms-transition 1s
+        transition 1s
+        width 30px
+        height 30px
+        background var(--sco-green)
+        position absolute
+        border-radius 50%
+        border 5px solid var(--sco-background)
+        bottom 5px
+        right 10px
+        z-index 2
 
   .author-title
     font-size 2rem
@@ -117,321 +114,17 @@
       line-height 1.1
       margin .5rem 0
 
-.author-content-item
-  &:hover
-    .card-background-icon
-      transform rotate(20deg)
+    .inline-word
+      word-break keep-all
+      white-space nowrap
 
-  &-group.column.mapAndInfo
-    width 59%
-
-  &.map
-    background var(--site-about-oneself-map--light) no-repeat center
-    min-height 160px
-    max-height 400px
-    position relative
-    overflow hidden
-    margin-bottom 0.5rem
-    height 60%
-    background-size 100%
-    transition 1s ease-in-out
-
-    [data-theme=dark] &
-      background var(--site-about-oneself-map--dark) no-repeat center
-      background-size 100%
-
-    &:hover
-      background-size 120%
-      transition 4s ease-in-out
-      background-position-x 0
-      background-position-y 36%
-
-      .map-title
-        bottom -100%
-
-    .map-title
-      position: absolute
-      bottom 0
-      left 0
-      width 100%
-      color var(--font-color)
-      padding 0.5rem 2rem
-      transform translateZ(0)
-      transition all 1s,color 0s ease-in-out
-      font-size 20px
-      background var(--sco-maskbg)
-      backdrop-filter saturate(180%) blur(20px)
-
-      b
-        color var(--sco-fontcolor)
-
-@media screen and (max-width: 768px)
-  .author-content-item.map.myphoto
-    background-size cover !important
-
-  .author-content-item.map .map-title
-    padding 1rem
-
-.author-content-item.selfInfo
-  display flex
-  min-height 100px
-  max-height 400px
-  justify-content space-between
-  align-items center
-  flex-wrap wrap
-  height -webkit-fill-available
-  height 40%
-
-@media screen and (max-width: 1300px)
-  .author-content-item.selfInfo
-    height 70%
-
-.author-content-item.selfInfo div
-  display flex
-  flex-direction column
-  margin .5rem 2rem .5rem 0
-
-.author-content-item.selfInfo .selfInfo-title
-  opacity .8
-  font-size .6rem
-  line-height 1
-  margin-bottom 8px
-
-.author-content-item.selfInfo .selfInfo-content
-  font-weight 700
-  font-size 34px
-  line-height 1
-
-.author-content-item.myphoto
-  height 60%
-  min-height 240px
-  position relative
-  overflow hidden
-  width 39%
-  display flex
-  align-items center
-  justify-content center
-
-  img
-    position absolute
-    height 100%
-    min-width 100%
-    object-fit cover
-    transition .6s
-    user-select none
-
-  &:hover
-    img
-      min-width 105%
-      transition 2s
-
-  .myphoto-title
-    position absolute
-    bottom 0
-    left 0
-    width 100%
-    background var(--sco-maskbgdeep)
-    padding .5rem 2rem
-    backdrop-filter saturate(180%) blur(20px)
-    -webkit-backdrop-filter blur(20px)
-    transform translateZ(0)
-
-.author-content-item.careers
-  min-height 400px
-
-  img
-    position absolute
-    left 0
-    bottom 20px
-    width 100%
-    transition .6s
-    user-select none
-
-  .careers-group
-    margin-top 12px
-
-  .careers-item
-    display flex
-    align-items center
-
-    .circle
-      width 16px
-      height 16px
-      margin-right 8px
-      border-radius 16px
-
-    .name
-      color var(--sco-secondtext)
-
-.author-content-item.personalities
-  overflow hidden
-  position relative
-  width 59%
-
-  .title2
-    font-size 36px
-    font-weight 700
-    line-height 1.1
-
-  .image
-    position absolute
-    right -40px
-    bottom -10rem
-    transition transform 2s cubic-bezier(.13, .45, .21, 1.02)
-    user-select none
-
-  &:hover
-    .image
-      transform rotate(-10deg)
-
-@media screen and (max-width: 768px)
-  .author-content-item.personalities
-    min-height 360px
-
-  .author-content-item.personalities .image
-    right -70px
-
-.author-content-item.maxim
-  font-size 36px
-  font-weight 700
-  line-height 1.1
-  display flex
-  align-items flex-start
-  flex-direction column
-  justify-content center
-  width 39%
-
-  .maxim-title
-    display flex
-    flex-direction column
-
-    span:first-child
-      opacity 0.6
-      margin-bottom 8px
-
-  .title1
-    opacity .8
-    font-size .6rem
-    margin-bottom .5rem
-
-.author-content-item.buff
-  font-size 36px
-  font-weight 700
-  line-height 1.1
-  display flex
-  align-items flex-start
-  flex-direction column
-  justify-content center
-  background linear-gradient(120deg, #ff27e8 0, #ff8000 100%)
-  color var(--sco-white)
-  background-size 200%
-  animation gradient 15s ease infinite
-  min-height 200px
-  height fit-content
-  width 59%
-
-  .card-content
-    display flex
-    flex-direction column
-    justify-content center
-
-  .buff-title
-    display flex
-    flex-direction column
-
-    span:first-child
-      opacity 0.6
-      margin-bottom 8px
-
-  .title1
-    opacity .8
-    font-size .6rem
-    margin-bottom .5rem
-
-.author-content-item.skills
-  display flex
-  justify-content center
-  align-items flex-start
-  flex-direction column
-  width 49%
-  min-height 450px
-
-  .tags-group-all
-    display flex
-    transform rotate(0)
-    transition .3s
-
-  .tags-group-wrapper
-    margin-top 20px
-    display flex
-    flex-wrap nowrap
-    animation rowup 60s linear infinite
-
-  .skills-style-group
-    position relative
-
-  .skills-list
-    display flex
-    opacity 0
-    transition .3s
-    position absolute
-    width 100%
-    top 0
-    left 0
-    flex-wrap wrap
-    flex-direction row
-    margin-top 10px
-
-  &:hover
-    .skills-style-group
-      .tags-group-all
-        opacity 0
-
-      .skills-list
-        opacity 1
-
-  .skill-info
-    display flex
-    align-items center
-    margin-right 10px
-    margin-top 10px
-    background var(--sco-background)
-    border-radius 40px
-    padding 4px 12px 4px 8px
-    border var(--style-border)
-    box-shadow var(--sco-shadow-border)
-
-  .etc
-    margin-right 10px
-    margin-top 10px
-
-  .skill-icon
-    width 32px
-    height 32px
-    border-radius 32px
-    display flex
-    align-items center
-    justify-content center
-    margin-right 8px
-    user-select none
-
-    img
-      width 18px
-      height 18px
-
-  .skill-name
-    font-weight 700
-    line-height 1
-
-.author-content-item
-  &.aboutsiteTips
+  .aboutsiteTips
     display flex
     justify-content center
     align-items flex-start
     flex-direction column
     width 39%
 
-  &.aboutsiteTips
     h2
       margin-right auto
       font-size 36px
@@ -479,21 +172,233 @@
       span:nth-child(4)
         background-image linear-gradient(45deg, #fa7671 50%, #f45f7f)
 
-@media screen and (max-width: 768px)
-  .author-content-item.map
-    margin-bottom 0
+  .author-content-item.skills
+    display flex
+    justify-content center
+    align-items flex-start
+    flex-direction column
+    width 49%
+    min-height 450px
 
-#about-page
-  .about-statistic
-    min-height 380px
-    width 39%
-    background url(https://bu.dusays.com/2023/03/12/640dc8c72f623.webp) no-repeat top
-    background-size cover
-    color var(--sco-white)
+    .tags-group-all
+      display flex
+      transform rotate(0)
+      transition .3s
+
+    .tags-group-wrapper
+      margin-top 20px
+      display flex
+      flex-wrap nowrap
+      animation rowup 60s linear infinite
+
+    .skills-style-group
+      position relative
+
+    .skills-list
+      display flex
+      opacity 0
+      transition .3s
+      position absolute
+      width 100%
+      top 0
+      left 0
+      flex-wrap wrap
+      flex-direction row
+      margin-top 10px
+
+    &:hover
+      .skills-style-group
+        .tags-group-all
+          opacity 0
+
+        .skills-list
+          opacity 1
+
+    .skill-info
+      display flex
+      align-items center
+      margin-right 10px
+      margin-top 10px
+      background var(--sco-background)
+      border-radius 40px
+      padding 4px 12px 4px 8px
+      border var(--style-border)
+      box-shadow var(--sco-shadow-border)
+
+    .etc
+      margin-right 10px
+      margin-top 10px
+
+    .skill-icon
+      width 32px
+      height 32px
+      border-radius 32px
+      display flex
+      align-items center
+      justify-content center
+      margin-right 8px
+      user-select none
+
+      img
+        width 18px
+        height 18px
+
+    .skill-name
+      font-weight 700
+      line-height 1
+
+  .author-content-item.careers
+    min-height 400px
+
+    img
+      position absolute
+      left 0
+      bottom 20px
+      width 100%
+      transition .6s
+      user-select none
+
+    .careers-group
+      margin-top 12px
+
+    .careers-item
+      display flex
+      align-items center
+
+      .circle
+        width 16px
+        height 16px
+        margin-right 8px
+        border-radius 16px
+
+      .name
+        color var(--sco-secondtext)
+
+  .author-content-item.myphoto
+    height 60%
+    min-height 240px
+    position relative
     overflow hidden
+    width 39%
+    display flex
+    align-items center
+    justify-content center
+
+    img
+      position absolute
+      height 100%
+      min-width 100%
+      object-fit cover
+      transition .6s
+      user-select none
+
+    &:hover
+      img
+        min-width 105%
+        transition 2s
+
+    .myphoto-title
+      position absolute
+      bottom 0
+      left 0
+      width 100%
+      background var(--sco-maskbgdeep)
+      padding .5rem 2rem
+      backdrop-filter saturate(180%) blur(20px)
+      -webkit-backdrop-filter blur(20px)
+      transform translateZ(0)
+
+  .author-content-item.personalities
+    overflow hidden
+    position relative
+    width 59%
+    +maxWidth768()
+      min-height 360px
+
+    .title2
+      font-size 36px
+      font-weight 700
+      line-height 1.1
+
+    .image
+      position absolute
+      right -40px
+      bottom -10rem
+      transition transform 2s cubic-bezier(.13, .45, .21, 1.02)
+      user-select none
+
+      +maxWidth768()
+        right -70px
+
+    &:hover
+      .image
+        transform rotate(-10deg)
+
+  .author-content-item.maxim
+    font-size 36px
+    font-weight 700
+    line-height 1.1
+    display flex
+    align-items flex-start
+    flex-direction column
+    justify-content center
+    width 39%
+
+    .maxim-title
+      display flex
+      flex-direction column
+
+      span:first-child
+        opacity 0.6
+        margin-bottom 8px
+
+    .title1
+      opacity .8
+      font-size .6rem
+      margin-bottom .5rem
+
+  .author-content-item.buff
+    font-size 36px
+    font-weight 700
+    line-height 1.1
+    display flex
+    align-items flex-start
+    flex-direction column
+    justify-content center
+    background linear-gradient(120deg, #ff27e8 0, #ff8000 100%)
+    color var(--sco-white)
+    background-size 200%
+    animation gradient 15s ease infinite
+    min-height 200px
+    height fit-content
+    width 59%
+
+    .card-content
+      display flex
+      flex-direction column
+      justify-content center
+
+    .buff-title
+      display flex
+      flex-direction column
+
+      span:first-child
+        opacity 0.6
+        margin-bottom 8px
+
+    .title1
+      opacity .8
+      font-size .6rem
+      margin-bottom .5rem
+
+  .author-content-item.game-apex
+    min-height 300px
+    overflow hidden
+    color var(--sco-white)
+    width 59%
 
     &::after
-      box-shadow 0 -159px 173px 71px #0f1114 inset
+      box-shadow 0 -69px 203px 11px #04120f inset
       position absolute
       content ''
       width 100%
@@ -501,218 +406,18 @@
       top 0
       left 0
 
-    .banner-button
-      background var(--sco-white-op)
-
-    .banner-button:hover
-      background var(--sco-theme)
-
-#statistic
-  font-size 16px
-  border-radius 15px
-  width 100%
-  color var(--sco-white)
-  display flex
-  justify-content space-between
-  flex-direction row
-  flex-wrap wrap
-  margin-top 1rem
-  margin-bottom 2rem
-
-  div
-    display flex
-    justify-content space-between
-    flex-direction column
-    width 50%
-    margin-bottom .5rem
-
-    span:first-child
-      opacity .8
-      font-size .6rem
-
-    span:last-child
-      font-weight 700
-      font-size 34px
-      line-height 1
-      white-space nowrap
-
-.author-content-item
-  &.about-statistic
     .card-content
-      .banner-button-group
-        .banner-button:hover
-          background #998c5a
-          color var(--sco-white)
-
-  &.single.reward
-    .author-content-item
-      .author-content-item-title
-        color var(--sco-red)
-
-    .reward-list-all
+      position absolute
+      width 100%
+      height 100%
+      top 0
+      left 0
+      z-index 2
       display flex
-      flex-wrap wrap
-      flex-direction row
-      margin 1rem -.25rem .5rem
+      flex-direction column
+      padding 1rem 2rem
 
-      .reward-list-item
-        padding 1rem
-        border-radius 12px
-        border var(--style-border-always)
-        width calc((100% / 6) - .5rem)
-        margin 0 .25rem .5rem .25rem
-        box-shadow var(--sco-shadow-border)
-        flex-direction column
-        justify-content space-between
-
-.reward-list-tips
-  p
-    font-size 12px
-    color var(--sco-secondtext)
-
-@media screen and (max-width: 1200px)
-  .author-content-item.single.reward
-    .reward-list-all
-      .reward-list-item
-        width calc((100% / 4) - .5rem)
-
-@media screen and (max-width: 900px)
-  .author-content-item.single.reward
-    .reward-list-all
-      .reward-list-item
-        width calc((100% / 2) - .5rem)
-
-@media screen and (max-width: 768px)
-  .author-content-item.single.reward
-    .reward-list-all
-      .reward-list-item
-        width 100%
-
-.author-content-item.single.reward
-  .author-content-item-description
-    font-size 16px
-    margin-top .5rem
-
-  .reward-list-all
-    .reward-list-item
-      .reward-list-item-name
-        font-size 1rem
-        font-weight 700
-        line-height 1
-        margin-bottom .5rem
-        white-space nowrap
-        overflow hidden
-        text-overflow ellipsis
-
-      .reward-list-bottom-group
-        display flex
-        align-items center
-        justify-content space-between
-
-      .reward-list-item-money
-        padding 4px
-        background var(--sco-fontcolor)
-        color var(--sco-card-bg)
-        font-size 12px
-        line-height 1
-        border-radius 4px
-        margin-right 4px
-        white-space nowrap
-
-      .reward-list-item-time
-        font-size 12px
-        color var(--sco-secondtext)
-        white-space nowrap
-
-  .reward-list-updateDate
-    color var(--sco-gray)
-    font-size 14px
-
-  .post-reward
-    position absolute
-    right 2rem
-    top 2rem
-
-    .reward-button
-      padding 8px 12px
-      background var(--sco-red)
-      border-radius 12px
-      color var(--sco-white)
-      display flex
-      align-items center
-      z-index 1
-      transition .3s
-      cursor pointer
-      box-shadow none
-      width fit-content
-      height fit-content
-      line-height 2
-      user-select none
-
-    &:hover
-      .reward-button
-        filter brightness(1.1)
-
-@media screen and (max-width: 768px)
-  .author-content-item.single.reward
-    .post-reward
-      .reward-button
-        display none
-
-.author-content-item.single.reward
-  .post-reward
-    .reward-main
-      top 60px
-      right 0
-      left auto
-      bottom auto
-      width fit-content
-      box-shadow var(--sco-shadow-border)
-
-    .reward-all::before
-      bottom auto
-      top -16px
-
-  a.reward-main-btn
-    display none
-
-.author-content-item.game-apex
-  min-height 300px
-  overflow hidden
-  color var(--sco-white)
-  width 59%
-
-  &::after
-    box-shadow 0 -69px 203px 11px #04120f inset
-    position absolute
-    content ''
-    width 100%
-    height 100%
-    top 0
-    left 0
-
-  .card-content
-    position absolute
-    width 100%
-    height 100%
-    top 0
-    left 0
-    z-index 2
-    display flex
-    flex-direction column
-    padding 1rem 2rem
-
-@media screen and (max-width: 768px)
-  .author-content-item
-    .card-content
-      padding 1rem
-
-@media screen and (min-width: 1300px)
-  .author-content-item
-    animation slide-in .6s 0s backwards
-
-.author-content-item
-  &.game-jl
+  .author-content-item.game-jl
     width 39%
     min-height 300px
     overflow hidden
@@ -727,7 +432,7 @@
       top 0
       left 0
 
-  &.like-technology
+  .author-content-item.like-technology
     background-size cover
     min-height 230px
     color var(--sco-white)
@@ -741,7 +446,7 @@
       top 0
       left 0
 
-  &.like-music
+  .author-content-item.like-music
     background-size cover
     min-height 400px
     color var(--sco-white)
@@ -756,15 +461,15 @@
       top 0
       left 0
 
-.author-content-item
-  &.single.like-movie
-    height 19rem
+  .about-statistic
+    min-height 380px
+    width 39%
     background-size cover
     color var(--sco-white)
     overflow hidden
 
     &::after
-      box-shadow 0 21px 133px 81px #1c1c1c inset
+      box-shadow 0 -159px 173px 71px #0f1114 inset
       position absolute
       content ''
       width 100%
@@ -772,19 +477,273 @@
       top 0
       left 0
 
-  &.single.toolPage
-    height 19rem
-    background-size cover
-    color var(--sco-white)
-    overflow hidden
-    margin-top 0
+    #statistic
+      font-size 16px
+      border-radius 15px
+      width 100%
+      color var(--sco-white)
+      display flex
+      justify-content space-between
+      flex-direction row
+      flex-wrap wrap
+      margin-top 1rem
+      margin-bottom 2rem
 
-video.author-content-video
-  position absolute
-  width 100%
-  top 0
-  left 0
-  z-index -1
+      div
+        display flex
+        justify-content space-between
+        flex-direction column
+        width 50%
+        margin-bottom .5rem
+
+        span:first-child
+          opacity .8
+          font-size .6rem
+
+        span:last-child
+          font-weight 700
+          font-size 34px
+          line-height 1
+          white-space nowrap
+
+    .banner-button
+      background var(--sco-white-op)
+
+    .banner-button:hover
+      background var(--sco-theme)
+
+  .author-content-item-group
+    &.column
+      display flex
+      flex-direction column
+      width 49%
+      justify-content space-between
+
+      +maxWidth768()
+        width 100%
+
+    &.mapAndInfo
+      width 59%
+
+  .author-content-item.map
+    background var(--site-about-oneself-map--light) no-repeat center
+    min-height 160px
+    max-height 400px
+    position relative
+    overflow hidden
+    margin-bottom 0.5rem
+    height 60%
+    background-size 100%
+    transition 1s ease-in-out
+
+    +maxWidth768()
+      margin-bottom 0
+
+    [data-theme=dark] &
+      background var(--site-about-oneself-map--dark) no-repeat center
+      background-size 100%
+
+    &:hover
+      background-size 120%
+      transition 4s ease-in-out
+      background-position-x 0
+      background-position-y 36%
+
+      .map-title
+        bottom -100%
+
+    .map-title
+      position: absolute
+      bottom 0
+      left 0
+      width 100%
+      color var(--font-color)
+      padding 0.5rem 2rem
+      transform translateZ(0)
+      transition all 1s, color 0s ease-in-out
+      font-size 20px
+      background var(--sco-maskbg)
+      backdrop-filter saturate(180%) blur(20px)
+
+      +maxWidth768()
+        padding 1rem
+
+      b
+        color var(--sco-fontcolor)
+
+  .author-content-item.selfInfo
+    display flex
+    min-height 100px
+    max-height 400px
+    justify-content space-between
+    align-items center
+    flex-wrap wrap
+    height -webkit-fill-available
+    height 40%
+
+    +maxWidth768()
+      height 70%
+
+    div
+      display flex
+      flex-direction column
+      margin .5rem 2rem .5rem 0
+
+    .selfInfo-title
+      opacity .8
+      font-size .6rem
+      line-height 1
+      margin-bottom 8px
+
+    .selfInfo-content
+      font-weight 700
+      font-size 34px
+      line-height 1
+
+  .author-content-item
+    &.single.like-movie
+      height 19rem
+      background-size cover
+      color var(--sco-white)
+      overflow hidden
+
+      &::after
+        box-shadow 0 21px 133px 81px #1c1c1c inset
+        position absolute
+        content ''
+        width 100%
+        height 100%
+        top 0
+        left 0
+
+    &.single.toolPage
+      height 19rem
+      background-size cover
+      color var(--sco-white)
+      overflow hidden
+      margin-top 0
+
+  .author-content-item
+    &.single.reward
+      .author-content-item
+        .author-content-item-title
+          color var(--sco-red)
+
+      .reward-list-updateDate
+        color var(--sco-gray)
+        font-size 14px
+
+      .author-content-item-description
+        font-size 16px
+        margin-top .5rem
+
+      .reward-list-all
+        display flex
+        flex-wrap wrap
+        flex-direction row
+        margin 1rem -.25rem .5rem
+
+        .post-reward
+          position absolute
+          right 2rem
+          top 2rem
+
+          .reward-main
+            top 60px
+            right 0
+            left auto
+            bottom auto
+            width fit-content
+            box-shadow var(--sco-shadow-border)
+
+            .reward-all::before
+              bottom auto
+              top -16px
+
+          .reward-button
+            padding 8px 12px
+            background var(--sco-red)
+            border-radius 12px
+            color var(--sco-white)
+            display flex
+            align-items center
+            z-index 1
+            transition .3s
+            cursor pointer
+            box-shadow none
+            width fit-content
+            height fit-content
+            line-height 2
+            user-select none
+
+            +maxWidth768()
+              display none
+
+          &:hover
+            .reward-button
+              filter brightness(1.1)
+
+        .reward-list-item
+          padding 1rem
+          border-radius 12px
+          border var(--style-border-always)
+          width calc((100% / 6) - .5rem)
+          margin 0 .25rem .5rem .25rem
+          box-shadow var(--sco-shadow-border)
+          flex-direction column
+          justify-content space-between
+
+          +maxWidth1200()
+            width calc((100% / 4) - .5rem)
+
+          +maxWidth900()
+            width calc((100% / 2) - .5rem)
+
+          +maxWidth768()
+            width 100%
+
+          .reward-list-item-name
+            font-size 1rem
+            font-weight 700
+            line-height 1
+            margin-bottom .5rem
+            white-space nowrap
+            overflow hidden
+            text-overflow ellipsis
+
+          .reward-list-bottom-group
+            display flex
+            align-items center
+            justify-content space-between
+
+          .reward-list-item-money
+            padding 4px
+            background var(--sco-fontcolor)
+            color var(--sco-card-bg)
+            font-size 12px
+            line-height 1
+            border-radius 4px
+            margin-right 4px
+            white-space nowrap
+
+          .reward-list-item-time
+            font-size 12px
+            color var(--sco-secondtext)
+            white-space nowrap
+
+    .reward-list-tips
+      p
+        font-size 12px
+        color var(--sco-secondtext)
+
++maxWidth768()
+  .author-content-item
+    .card-content
+      padding 1rem
+
++maxWidth1300()
+  .author-content-item
+    animation slide-in .6s 0s backwards
 
 .author-content
   display flex
@@ -792,33 +751,14 @@ video.author-content-video
   justify-content space-between
   width 100%
   margin-top 1rem
-
-.author-content-item-group.column
-  display flex
-  flex-direction column
-  width 49%
-  justify-content space-between
-
-@media screen and (max-width: 768px)
-  .author-content-item
-    width 100% !important
-    margin-top 1rem
-    padding 1rem
-
-  .author-content-item-group.column
-    width 100% !important
-
-  .author-content
+  +maxWidth768()
     margin-top 0
 
-.card-background-icon
-  font-size 12rem
-  opacity .2
-  position absolute
-  right 0
-  bottom -40%
-  transform rotate(30deg)
-  transition 2s ease-in-out
+  .author-content-item
+    +maxWidth768()
+      width 100%
+      margin-top 1rem
+      padding 1rem
 
 .post-tips
   color var(--sco-gray)
@@ -827,17 +767,12 @@ video.author-content-video
   bottom 1rem
   left 2rem
 
+  +maxWidth768()
+    left 1rem
+
   a
-    color var(--sco-gray) !important
+    color var(--sco-gray)
     border none !important
 
     &:hover
-      color var(--sco-main) !important
-
-@media screen and (max-width: 768px)
-  .post-tips
-    left 1rem
-
-.inline-word
-  word-break keep-all
-  white-space nowrap
+      color var(--sco-main)

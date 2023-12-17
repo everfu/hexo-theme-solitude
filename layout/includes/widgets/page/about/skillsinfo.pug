@@ -19,14 +19,14 @@
                                             .tags-group-icon(style=`background:${item.color}`)
                                                 img(src=item.icon, title=item.title)
                                     - pair = []
-            .skills-list
-                each tag in skills.tags
-                    .skill-info
-                        .skill-icon(style=`background:${tag.color}`)
-                            img(src=tag.icon, title=tag.title)
-                        .skill-name
-                            span= tag.title
-                .etc ...
+                .skills-list
+                    each tag in skills.tags
+                        .skill-info
+                            .skill-icon(style=`background:${tag.color}`)
+                                img(src=tag.icon, title=tag.title)
+                            .skill-name
+                                span= tag.title
+                    .etc ...
     .author-content-item.careers
         .card-content
             .author-content-item-tips= careers.title
