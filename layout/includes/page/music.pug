@@ -5,12 +5,15 @@ if theme.music.enable
         div APlayer加载中...
 
     script.
-        const musicConfig = {
-            userId: '#{theme.music.id}',
-            userServer: "#{theme.music.server}",
-            userType: "#{theme.music.type}",
-            volume: #{theme.music.volume},
-            mutex: #{theme.music.mutex}
+        if (!window.musicConfig) {
+            const musicConfig = {
+                userId: '#{theme.music.id}',
+                userServer: "#{theme.music.server}",
+                userType: "#{theme.music.type}",
+                volume: #{theme.music.volume},
+                mutex: #{theme.music.mutex}
+            }
+            window.musicConfig = musicConfig;
         }
 
 else

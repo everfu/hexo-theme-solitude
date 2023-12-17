@@ -92,7 +92,7 @@ cp -rf ./themes/solitude/_config.yml ./_config.solitude.yml
 
 **本主题为 [Heo](https://blog.zhheo.com/) 的衍生主题，由 [@张洪Heo](https://github.com/zhheo) 作者全权授权、设计！**
 
-> 欢迎你对本主题做出贡献！ [贡献指南](https://opensource.guide/zh-hans/how-to-contribute/#%E5%A6%82%E4%BD%95%E6%8F%90%E4%BA%A4%E8%B4%A1%E7%8C%AE)
+> 欢迎你对本主题做出贡献！[贡献指南](/CONTRIBUTING.md)
 
 ## 📊 仓库统计
 ![仓库统计](https://repobeats.axiom.co/api/embed/75ec216f1d0b289e1b6a92f585342f3eeeeb0fdd.svg "Repobeats analytics image")

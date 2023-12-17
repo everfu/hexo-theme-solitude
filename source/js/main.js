@@ -1029,7 +1029,9 @@ window.refreshFn = () => {
     GLOBAL_CONFIG.comment.commentBarrage && PAGE_CONFIG.comment && initializeCommentBarrage()
     document.body.setAttribute('data-type', PAGE_CONFIG.page)
     PAGE_CONFIG.page === "music" && scoMusic.init()
-    scoMusic && document.removeEventListener('keydown', scoMusic.setKeydown)
+    if (!document.querySelector('#Music-page')) {
+        document.removeEventListener('keydown', scoMusic.setKeydown)
+    }
     GLOBAL_CONFIG.ai.enable && PAGE_CONFIG.page === "post" && ScoAI.init()
 }
 
