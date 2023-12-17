@@ -1,8 +1,4 @@
-/**
- * timeline.js | https://volantis.js.org/v3/tag-plugins/#Timeline
- */
-
-"use strict";
+"use strict"
 
 function postTimeline(args, content) {
     if (args.length > 0) {

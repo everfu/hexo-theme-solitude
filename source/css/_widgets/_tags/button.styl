@@ -1,0 +1,52 @@
+#article-container
+  .btn-center
+    margin: 0 0 20px
+    text-align: center
+
+  .btn-sco
+    padding 4px 10px
+    border-radius 30em
+    font-size 15px
+    font-family inherit
+    border none
+    position relative
+    z-index 1
+    overflow hidden
+    margin-bottom 10px
+    border var(--style-border-always)
+    box-shadow var(--sco-shadow-main)
+    transition .5s ease
+
+    &.larger
+      padding 8px 20px
+      font-size 16px
+
+    &.block
+      display block
+      margin 0 0 20px
+      width fit-content
+
+    &.center
+      margin 0 auto 20px
+
+    &.right
+      margin 0 0 20px auto
+
+    &::before
+      content ''
+      width 0
+      height 100%
+      border-radius 30em
+      position absolute
+      top 0
+      left 0
+      background-image linear-gradient(to right, var(--sco-theme) 0%, var(--sco-main) 100%)
+      transition .5s ease
+      display block
+      z-index -1
+
+    &:hover
+      color var(--sco-white)
+
+    &:hover::before
+      width 100%

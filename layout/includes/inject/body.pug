@@ -12,7 +12,7 @@ if theme.says.home_mini || theme.aside.history.enable
 
 if theme.rightside.enable
     include ../widgets/rightside/index.pug
-    script(src='/js/rightside.js')
+    script(src='/lib/rightside.min.js')
 
 div#js-pjax
     if page.type === 'says'
@@ -52,7 +52,7 @@ if page.katex
     script(src=url_for(cdn.katexjs))
 
 if theme.aside.welcome.enable
-    script(src='/js/txmap.js')
+    script(src='/lib/txmap.min.js')
 
 if theme.comment.enable
     case theme.comment.type
@@ -70,6 +70,10 @@ include ../widgets/third-party/pjax.pug
 // post-ai)
 if theme.thirdparty.ai.enable
     script(src='/lib/scoAI.min.js')
+
+// music
+if theme.music.enable
+    script(src="/js/music.js")
 
 // inject custom body
 if theme.extends.body

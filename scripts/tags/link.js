@@ -1,3 +1,5 @@
+'use strict'
+
 function link(args) {
     let urlNoProtocol = args[2].replace(/^https?\:\/\//i, "");
     let imgUrl = "https://api.iowen.cn/favicon/" + urlNoProtocol + ".png";
