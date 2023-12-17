@@ -1,96 +1,102 @@
-[data-theme=dark] 
-	--sco-theme $dark_theme
-	--sco-theme-op $dark_theme_op
-	--sco-theme-op-deep $dark_theme_op_deep
-	--sco-theme-none $dark_theme_none
-	--sco-blue #0084ff
-	--sco-red #ff3842
-	--sco-pink #d44040
-	--sco-green #3e9f50
-	--sco-purple #7a60d2
-	--sco-yellow #ffc93e
-	--sco-yellow-op #ffc93e30
-	--sco-orange #ff953e
-	--sco-fontcolor #f7f7fa
-	--sco-background #18171d
-	--sco-reverse #fff
-	--sco-maskbg rgba(0, 0, 0, 0.6)
-	--sco-maskbgdeep rgba(0, 0, 0, 0.85)
-	--sco-hovertext #0a84ff
-	--sco-ahoverbg #fff
-	--sco-lighttext var(--sco-theme)
-	--sco-secondtext #a1a2b8
-	--sco-scrollbar rgba(200, 200, 223, 0.4)
-	--sco-card-btn-bg #30343f
-	--sco-post-blockquote-bg #000
-	--sco-post-tabs-bg #121212
-	--sco-secondbg #30343f
-	--sco-shadow-nav 0 5px 20px 0px rgba(28, 28, 28, 0.4)
-	--sco-card-bg #1b1c20
-	--sco-card-bg-op var(--sco-white-op)
-	--sco-card-bg-none #1d1b2600
-	--sco-shadow-lightblack 0 5px 12px -5px rgba(102, 68, 68, 0.0)
-	--sco-shadow-light2black 0 5px 12px -5px rgba(102, 68, 68, 0.0)
-	--sco-card-border #3d3d3f
-	--sco-shadow-border 0 8px 16px -4px #00000050
-	--style-border 1px solid var(--sco-card-border)
-	--style-border-always 1px solid var(--sco-card-border)
-	--style-border-hover 1px solid var(--sco-theme)
-	--style-border-hover-always 1px solid var(--sco-theme)
-	--style-border-dashed 1px dashed var(--sco-theme-op)
-	--style-border-forever 2px solid var(--sco-lighttext)
+[data-theme=dark]
+  --sco-theme $dark_theme
+  --sco-theme-op $dark_theme_op
+  --sco-theme-op-deep $dark_theme_op_deep
+  --sco-theme-none $dark_theme_none
+  --sco-blue #0084ff
+  --sco-red #ff3842
+  --sco-pink #d44040
+  --sco-green #3e9f50
+  --sco-purple #7a60d2
+  --sco-yellow #ffc93e
+  --sco-yellow-op #ffc93e30
+  --sco-orange #ff953e
+  --sco-fontcolor #f7f7fa
+  --sco-background #18171d
+  --sco-reverse #fff
+  --sco-maskbg rgba(0, 0, 0, 0.6)
+  --sco-maskbgdeep rgba(0, 0, 0, 0.85)
+  --sco-hovertext #0a84ff
+  --sco-ahoverbg #fff
+  --sco-lighttext var(--sco-theme)
+  --sco-secondtext #a1a2b8
+  --sco-scrollbar rgba(200, 200, 223, 0.4)
+  --sco-card-btn-bg #30343f
+  --sco-post-blockquote-bg #000
+  --sco-post-tabs-bg #121212
+  --sco-secondbg #30343f
+  --sco-shadow-nav 0 5px 20px 0px rgba(28, 28, 28, 0.4)
+  --sco-card-bg #1b1c20
+  --sco-card-bg-op var(--sco-white-op)
+  --sco-card-bg-none #1d1b2600
+  --sco-shadow-lightblack 0 5px 12px -5px rgba(102, 68, 68, 0.0)
+  --sco-shadow-light2black 0 5px 12px -5px rgba(102, 68, 68, 0.0)
+  --sco-card-border #3d3d3f
+  --sco-shadow-border 0 8px 16px -4px #00000050
+  --style-border 1px solid var(--sco-card-border)
+  --style-border-always 1px solid var(--sco-card-border)
+  --style-border-hover 1px solid var(--sco-theme)
+  --style-border-hover-always 1px solid var(--sco-theme)
+  --style-border-dashed 1px dashed var(--sco-theme-op)
+  --style-border-forever 2px solid var(--sco-lighttext)
 
-	#page-header
-		&.not-top-img
-			#nav
-				.darkmode_switchbutton
-					color var(--sco-yellow)
+  #page-header
+    &.not-top-img
+      #nav
+        .darkmode_switchbutton
+          color var(--sco-yellow)
 
-	a
-		&.darkmode_switchbutton
-			background var(--sco-orange) !important
-			color var(--sco-white) !important
+  a.darkmode_switchbutton
+    background var(--sco-orange) !important
+    color var(--sco-white) !important
+
+a.darkmode_switchbutton
+  padding 4px 8px
+  cursor pointer
+  margin 0
+  font-size .9rem
+  color var(--sco-fontcolor)
 
 [data-theme=light]
-	--sco-theme $light_theme
-	--sco-theme-op $light_theme_op
-	--sco-theme-op-deep $light_theme_op_deep
-	--sco-theme-op-light #4259ef0d
-	--sco-theme-none $light_theme_none
-	--sco-blue #425aef
-	--sco-red #f04a63
-	--sco-pink #ff7c7c
-	--sco-green #57bd6a
-	--sco-yellow #c28b00
-	--sco-yellow-op #d99c001a
-	--sco-orange #e38100
-	--sco-purple #7a60d2
-	--sco-fontcolor #363636
-	--sco-background #f7f9fe
-	--sco-reverse #000
-	--sco-maskbg rgba(255, 255, 255, 0.6)
-	--sco-maskbgdeep rgba(255, 255, 255, 0.85)
-	--sco-hovertext var(--sco-main)
-	--sco-ahoverbg #f7f7fa
-	--sco-lighttext var(--sco-main)
-	--sco-secondtext rgba(60, 60, 67, 0.8)
-	--sco-scrollbar rgba(60, 60, 67, 0.4)
-	--sco-card-btn-bg #edf0f7
-	--sco-post-blockquote-bg #fafcff
-	--sco-post-tabs-bg #f2f5f8
-	--sco-secondbg #f7f7f9
-	--sco-shadow-nav 0 5px 12px -5px rgba(102, 68, 68, 0.05)
-	--sco-card-bg #fff
-	--sco-card-bg-op var(--sco-black-op)
-	--sco-card-bg-none rgba(255, 255, 255, 0)
-	--sco-shadow-lightblack 0 5px 12px -5px rgba(102, 68, 68, 0.00)
-	--sco-shadow-light2black 0 5px 12px -5px rgba(102, 68, 68, 0.00)
-	--sco-card-border #e3e8f7
-	--sco-shadow-border 0 8px 16px -4px #2c2d300c
-	--style-border 1px solid var(--sco-card-border)
-	--style-border-always 1px solid var(--sco-card-border)
-	--style-border-hover 1px solid var(--sco-main)
-	--style-border-hover-always 1px solid var(--sco-main)
-	--style-border-dashed 1px dashed var(--sco-theme-op)
-	--style-border-forever 2px solid var(--sco-main)
-	--sco-navbg var(--sco-theme-op)
+  --sco-theme $light_theme
+  --sco-theme-op $light_theme_op
+  --sco-theme-op-deep $light_theme_op_deep
+  --sco-theme-op-light #4259ef0d
+  --sco-theme-none $light_theme_none
+  --sco-blue #425aef
+  --sco-red #f04a63
+  --sco-pink #ff7c7c
+  --sco-green #57bd6a
+  --sco-yellow #c28b00
+  --sco-yellow-op #d99c001a
+  --sco-orange #e38100
+  --sco-purple #7a60d2
+  --sco-fontcolor #363636
+  --sco-background #f7f9fe
+  --sco-reverse #000
+  --sco-maskbg rgba(255, 255, 255, 0.6)
+  --sco-maskbgdeep rgba(255, 255, 255, 0.85)
+  --sco-hovertext var(--sco-main)
+  --sco-ahoverbg #f7f7fa
+  --sco-lighttext var(--sco-main)
+  --sco-secondtext rgba(60, 60, 67, 0.8)
+  --sco-scrollbar rgba(60, 60, 67, 0.4)
+  --sco-card-btn-bg #edf0f7
+  --sco-post-blockquote-bg #fafcff
+  --sco-post-tabs-bg #f2f5f8
+  --sco-secondbg #f7f7f9
+  --sco-shadow-nav 0 5px 12px -5px rgba(102, 68, 68, 0.05)
+  --sco-card-bg #fff
+  --sco-card-bg-op var(--sco-black-op)
+  --sco-card-bg-none rgba(255, 255, 255, 0)
+  --sco-shadow-lightblack 0 5px 12px -5px rgba(102, 68, 68, 0.00)
+  --sco-shadow-light2black 0 5px 12px -5px rgba(102, 68, 68, 0.00)
+  --sco-card-border #e3e8f7
+  --sco-shadow-border 0 8px 16px -4px #2c2d300c
+  --style-border 1px solid var(--sco-card-border)
+  --style-border-always 1px solid var(--sco-card-border)
+  --style-border-hover 1px solid var(--sco-main)
+  --style-border-hover-always 1px solid var(--sco-main)
+  --style-border-dashed 1px dashed var(--sco-theme-op)
+  --style-border-forever 2px solid var(--sco-main)
+  --sco-navbg var(--sco-theme-op)

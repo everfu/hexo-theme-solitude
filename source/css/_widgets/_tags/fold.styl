@@ -1,0 +1,79 @@
+details:not(.tk-admin-config-group)
+  display block
+  position relative
+  margin-bottom 1rem
+  min-height 54px
+  overflow hidden
+  border-radius 12px
+  border var(--style-border)
+  transition border .3s
+
+  &:hover
+    border var(--style-border-hover-always)
+
+  summary
+    position absolute
+    padding .5rem 1rem
+    background var(--sco-card-bg)
+    margin 0
+    transition .3s
+    box-shadow var(--sco-shadow-border)
+    left 0
+    width 100%
+    font-weight 700
+    white-space nowrap
+    overflow hidden
+    text-overflow ellipsis
+
+    &::before
+      content ''
+      padding 4px
+
+    &:hover
+      cursor pointer
+      background var(--sco-main)
+      color var(--sco-white)
+      transition .3s
+      box-shadow var(--sco-shadow-main)
+
+    &:focus
+      outline 0
+
+    &::marker
+      color var(--sco-main)
+      transition .3s
+
+    &:hover::marker
+      color var(--sco-white)
+
+    &:hover:after
+      position absolute
+      content '+'
+      text-align center
+      top calc(50% - 2px)
+      transform translateY(-50%)
+      right 16px
+      line-height 1
+
+  > :nth-child(2)
+    margin-top calc(54px + 1rem) !important
+
+  &[open]
+    border-radius 12px
+    border var(--style-border-hover-always)
+    padding 0 1.5rem
+    background var(--sco-card-bg)
+
+    summary
+      background var(--sco-main)
+      color var(--sco-white)
+
+      &::marker
+        color var(--sco-white)
+
+      &:hover:after
+        content '-'
+
++maxWidth768()
+  details[open]:not(.tk-admin-config-group)
+    padding 0 16px

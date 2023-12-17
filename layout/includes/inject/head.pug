@@ -50,10 +50,6 @@ if theme.extends.head
 if theme.about.echarts.enable && theme.about.enable
     script(src=url_for(cdn.echartsjs))
 
-// music
-if theme.music.enable
-    script(data-pjax src="/js/music.js")
-
 if theme.fest.enable
     include ../head/fest.pug
 
