@@ -401,8 +401,8 @@ thirdparty:
     page_turning_number: 12 # 翻页加载文章数，默认10
     angle: # 🎣钓鱼
       enable: true # 是否开启
-    appjs: '/lib/circle.min.js' # 主题appjs
-    bundlejs: '/lib/bundle.min.js' # 主题bundlejs
+    appjs: 'https://npm.elemecdn.com/solitude-source/lib/circle.min.js' # 主题appjs
+    bundlejs: 'https://npm.elemecdn.com/solitude-source/lib/bundle.min.js' # 主题bundlejs
 
 # 评论
 # --------------------------------------
@@ -511,7 +511,7 @@ pwa:
 # 非必要勿动
 cdn:
   head:
-    snackbarcss: /lib/snackbar.min.css
+    snackbarcss: https://npm.elemecdn.com/solitude-source/lib/snackbar.min.css
     scoicon: https://cdn3.codesign.qq.com/icons/7pOrz0WXB5ZWJPX/latest/iconfont.css
     aplayercss: https://cdn.bootcdn.net/ajax/libs/aplayer/1.10.1/APlayer.min.css
     swipercss: https://cdn.bootcdn.net/ajax/libs/Swiper/9.2.4/swiper-bundle.min.css
@@ -524,10 +524,10 @@ cdn:
     walinecss: https://cdn.staticfile.org/waline/2.15.8/waline.min.css
     walinejs: https://cdn.staticfile.org/waline/2.15.8/waline.min.js
   body:
-    viewimagejs: /lib/view-image.min.js
-    waterfalljs: /lib/waterfall.min.js
-    lazyloadjs: /lib/lazyload.min.js
-    snackbarjs: /lib/snackbar.min.js
+    viewimagejs: https://npm.elemecdn.com/solitude-source/lib/view-image.min.js
+    waterfalljs: https://npm.elemecdn.com/solitude-source/lib/waterfall.min.js
+    lazyloadjs: https://npm.elemecdn.com/solitude-source/lib/lazyload.min.js
+    snackbarjs: https://npm.elemecdn.com/solitude-source/lib/snackbar.min.js
     swiperjs: https://cdn.bootcdn.net/ajax/libs/Swiper/9.2.4/swiper-bundle.min.js
     busuanzijs: https://cdn.bootcdn.net/ajax/libs/busuanzi/2.3.0/bsz.pure.mini.min.js
     pjaxjs: https://cdn.bootcdn.net/ajax/libs/pjax/0.2.8/pjax.min.js

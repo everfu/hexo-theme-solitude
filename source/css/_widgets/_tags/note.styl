@@ -1,8 +1,38 @@
+$colors = {
+  info: #428bca,
+  danger: #d9534f,
+  primary: #6f42c1,
+  warning: #ff8c00,
+  success: #5cb85c,
+  default: #777
+}
+
 .note
   position relative
   margin 0 0 1rem
   padding 15px
   border-radius 3px
+
+  &.default:not(.no-icon)::before
+    content: '\e0a9'
+
+  &.info:not(.no-icon)::before
+    content: '\e0a7'
+
+  &.danger:not(.no-icon)::before
+    content: '\e0aa'
+
+  &.primary:not(.no-icon)::before
+    content: '\e0a8'
+
+  &.warning:not(.no-icon)::before
+    content: '\e0a5'
+
+  &.success:not(.no-icon)::before
+    content: '\e0a4'
+
+  &::before
+    font-family 'scoicon'
 
   &.icon
     padding-left 2.25rem
@@ -13,83 +43,21 @@
     left .7rem
     font-size larger
 
-  &.blue:not(.disabled)
-    border-left-color #428bca !important
+  for $color, $value in $colors
+    &.{$color}:not(.no-icon)::before
+      color $value
+    &.{$color}:not(.disabled)
+      border-left-color $value !important
 
-    &.modern
-      color #428bca
-      border-left-color transparent !important
+      &.modern
+        color $value
+        border-left-color transparent !important
 
-    &:not(.simple)
-      background #e3eef7 !important
+      &:not(.simple)
+        background lighten($value, 75%)
 
-  > .note-icon
-    color #428bca
-
-  &.pink:not(.disabled)
-    border-left-color #ff69b4 !important
-
-    &.modern
-      color #ff69b4
-      border-left-color transparent !important
-
-    &:not(.simple)
-      background #ffe9f4 !important
-
-  > .note-icon
-    color #ff69b4
-
-  &.red:not(.disabled)
-    border-left-color red !important
-
-    &.modern
-      color red
-      border-left-color transparent !important
-
-    &:not(.simple)
-      background #ffd9d9 !important
-
-  > .note-icon
-    color red
-
-  &.purple:not(.disabled)
-    border-left-color #6f42c1 !important
-
-    &.modern
-      color #6f42c1
-      border-left-color transparent !important
-
-    &:not(.simple)
-      background #e9e3f6 !important
-
-  > .note-icon
-    color #6f42c1
-
-  &.orange:not(.disabled)
-    border-left-color #ff8c00 !important
-
-    &.modern
-      color #ff8c00
-      border-left-color transparent !important
-
-    &:not(.simple)
-      background #ffeed9 !important
-
-  > .note-icon
-    color #ff8c00
-
-  &.green:not(.disabled)
-    border-left-color #5cb85c !important
-
-    &.modern
-      color #5cb85c
-      border-left-color transparent !important
-
-    &:not(.simple)
-      background #e7f4e7 !important
-
-  > .note-icon
-    color #5cb85c
+      > .note-icon
+        color $value
 
   &.simple
     border-width 1px 1px 1px 5px
@@ -115,7 +83,7 @@
     margin-top 3px
     margin-bottom 0
     border-bottom initial
-    padding-top 0 !important
+    padding-top 0
 
   blockquote:first-child, img:first-child, ol:first-child, p:first-child, pre:first-child, table:first-child, ul:first-child
     margin-top 0 !important
@@ -127,177 +95,8 @@
   &:not(.no-icon)
     padding-left 2.25rem
 
-  &:not(.no-icon)::before
-    position absolute
-    top calc(50% - 19px)
-    left .7rem
-    font-size larger
-
-  &.default.flat
-    background #f7f7f7
-
-  &.default.modern
-    border-color #e1e1e1
-    background #f3f3f3
-    color #666
-
-  &.default.modern a:not(.btn)
-    color #666
-
-  &.default.modern a:not(.btn):hover
-    color #454545
-
-  &.default:not(.modern)
-    border-left-color #777
-
-  &.default:not(.modern) h2, &.default:not(.modern) h3, &.default:not(.modern) h4, &.default:not(.modern) h5, &.default:not(.modern) h6
-    color #777
-
-  &.default:not(.no-icon)::before
-    content "\e0a9"
-
-  &.default:not(.no-icon):not(.modern)::before
-    color #777
-
-  &.primary.flat
-    background #f5f0fa
-
-  &.primary.modern
-    border-color #e1c2ff
-    background #f3daff
-    color #6f42c1
-
-  &.primary.modern a:not(.btn)
-    color #6f42c1
-
-  &.primary.modern a:not(.btn):hover
-    color #453298
-
-  &.primary:not(.modern)
-    border-left-color #6f42c1
-
-  &.primary:not(.modern) h2, &.primary:not(.modern) h3, &.primary:not(.modern) h4, &.primary:not(.modern) h5, &.primary:not(.modern) h6
-    color #6f42c1
-
-  &.primary:not(.no-icon)::before
-    content "\e0a8"
-
-  &.primary:not(.no-icon):not(.modern)::before
-    color #6f42c1
-
-  &.info.flat
-    background #eef7fa
-
-  &.info.modern
-    border-color #b3e5ef
-    background #d9edf7
-    color #31708f
-
-  &.info.modern a:not(.btn)
-    color #31708f
-
-  &.info.modern a:not(.btn):hover
-    color #215761
-
-  &.info:not(.modern)
-    border-left-color #428bca
-
-  &.info:not(.modern) h2, &.info:not(.modern) h3, &.info:not(.modern) h4, &.info:not(.modern) h5, &.info:not(.modern) h6
-    color #428bca
-
-  &.info:not(.no-icon)::before
-    content "\e0a5"
-
-  &.info:not(.no-icon):not(.modern)::before
-    color #428bca
-
-  &.success.flat
-    background #eff8f0
-
-  &.success.modern
-    border-color #d0e6be
-    background #dff0d8
-    color #3c763d
-
-  &.success.modern a:not(.btn)
-    color #3c763d
-
-  &.success.modern a:not(.btn):hover
-    color #32562c
-
-  &.success:not(.modern)
-    border-left-color #5cb85c
-
-  &.success:not(.modern) h2, &.success:not(.modern) h3, &.success:not(.modern) h4, &.success:not(.modern) h5, &.success:not(.modern) h6
-    color #5cb85c
-
-  &.success:not(.no-icon)::before
-    content "\e0a4"
-
-  &.success:not(.no-icon):not(.modern)::before
-    color #5cb85c
-
-  &.warning.flat
-    background #fdf8ea
-
-  &.warning.modern
-    border-color #fae4cd
-    background #fcf4e3
-    color #8a6d3b
-
-  &.warning.modern a:not(.btn)
-    color #8a6d3b
-
-  &.warning.modern a:not(.btn):hover
-    color #714f30
-
-  &.warning:not(.modern)
-    border-left-color var(--sco-orange)
-
-  &.warning:not(.modern) h2, &.warning:not(.modern) h3, &.warning:not(.modern) h4, &.warning:not(.modern) h5, &.warning:not(.modern) h6
-    color var(--sco-orange)
-
-  &.warning:not(.no-icon)::before
-    content "\e0a5"
-
-  &.warning:not(.no-icon):not(.modern)::before
-    color var(--sco-orange)
-
-  &.danger.flat
-    background #fcf1f2
-
-  &.danger.modern
-    border-color #ebcdd2
-    background #f2dfdf
-    color #a94442
-
-  &.danger.modern a:not(.btn)
-    color #a94442
-
-  &.danger.modern a:not(.btn):hover
-    color #84333f
-
-  &.danger:not(.modern)
-    border-left-color #d9534f
-
-  &.danger:not(.modern) h2, &.danger:not(.modern) h3, &.danger:not(.modern) h4, &.danger:not(.modern) h5, &.danger:not(.modern) h6
-    color #d9534f
-
-  &.danger:not(.no-icon)::before
-    content "\e0aa"
-
-  &.danger:not(.no-icon):not(.modern)::before
-    color #d9534f
-
-  &.warning:not(.no-icon):not(.modern)::before
-    display inline-block
-    align-items center
-    height 30px
-    color var(--sco-yellow)
-
-  &.warning:class(.modern)
-    border-radius 8px
-    border-width 1px
-    border-color var(--sco-yellow)
-    box-shadow var(--sco-shadow-border)
-    background var(--sco-card-bg)
+    &::before
+      position absolute
+      top calc(50% - 19px)
+      left .7rem
+      font-size larger

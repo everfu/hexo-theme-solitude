@@ -1,5 +1,5 @@
 .post-reward(onclick="AddRewardMask()")
-    .reward-button.button--animated(title="赞赏作者")
+    .reward-button(title="赞赏作者")
         i.scoicon.sco-hand-heart-fill
         | 打赏作者
     .reward-main
@@ -8,7 +8,7 @@
             ul.reward-group
                 if theme.post.award.wechat
                     li.reward-item
-                        a(href=theme.post.award.wechat target="_blank")
+                        a(href=theme.post.award.wechat)
                             img.post-qr-code-img(src=theme.post.award.wechat alt="微信")
                         .post-qr-code-desc 微信
                 if theme.post.award.alipay
