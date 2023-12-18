@@ -9,7 +9,7 @@ $colors = {
 
 .note
   position relative
-  margin 0 0 1rem
+  margin 1rem 0
   padding 15px
   border-radius 3px
 
@@ -47,11 +47,10 @@ $colors = {
     &.{$color}:not(.no-icon)::before
       color $value
     &.{$color}:not(.disabled)
-      border-left-color $value !important
+      border-color $value
 
       &.modern
         color $value
-        border-left-color transparent !important
 
       &:not(.simple)
         background lighten($value, 75%)
