@@ -1,6 +1,10 @@
 // 首页文章样式
 #recent-posts
   position: relative
+
+  +maxWidth768()
+    padding 0 1rem
+
   > .recent-post-item
     box-shadow: var(--sco-shadow-light2black)
     display: flex
@@ -156,6 +160,8 @@
   margin: 0 auto
   padding: 1rem 1.5rem
   max-width: 1200px
+  +maxWidth768()
+    padding 0
 
   &#content-inner
     max-width: 1400px
@@ -169,8 +175,8 @@
   > div:first-child
     width calc(100% - 300px)
 
-    +maxWidth768()
-      width 100%
+    +maxWidth1200()
+      width 100% !important
 
   > div:first-child:not(.recent-posts)
     box-shadow var(--sco-shadow-border)
@@ -183,47 +189,6 @@
     animation slide-in .6s .1s backwards
     position relative
     overflow hidden
-
-// 加载胶囊
-.pace
-  pointer-events: none
-  user-select: none
-  z-index: 2000
-  position: fixed
-  margin: auto
-  top: 4px
-  left: 0
-  right: 0
-  height: 8px
-  border-radius: 8px
-  width: 4rem
-  background: var(--sco-secondbg)
-  border: var(--style-border)
-  overflow: hidden
-
-  &.pace-inactive
-    opacity: 0
-    transition: .3s
-    top: -8px
-
-    .pace-progress
-      opacity: 0
-      transition: .3s ease-in
-
-  .pace-progress
-    box-sizing: border-box
-    transform: translate3d(0,0,0)
-    max-width: 200px
-    z-index: 2000
-    display: block
-    position: absolute
-    top: 0
-    right: 100%
-    height: 100%
-    width: 100%
-    background: var(--sco-logo-color)
-    animation: gradient 2s ease infinite
-    background-size: 200%
 
 span.tags-punctuation::before
   content: "\e071"

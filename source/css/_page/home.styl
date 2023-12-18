@@ -66,36 +66,18 @@
   box-shadow none
   min-height calc(100vh - 464px)
 
+  +maxWidth768()
+    padding 0 1rem
+
 a
   &.bber-reply
     cursor pointer
 
-#home_top
-  max-width: 1400px
-  margin: .5rem auto auto
-  padding: 0 1.5rem
-
-  @media screen and (max-width: 768px)
-    padding: 0
-    margin-top: 0
-
 .recent-top-post-group
-  border-radius: 12px
-  overflow: hidden
-  overflow-x: auto
-  width: 100%
-  margin-bottom: 0
-  -webkit-user-select: none
-
   @media screen and (min-width: 1300px)
     .recent-post-top .recent-post-item
       margin-right: 0
       margin-bottom: .5rem
-
-    .recent-post-top
-      overflow-x: visible
-
-    overflow: visible
 
   @media screen and (max-width: 768px)
     border-radius: 0
@@ -110,25 +92,7 @@ a
   @media screen and (max-width: 768px)
     a.categoryButton i
       display: none
-
-    .recent-post-top .categoryGroup
-      min-width: 130px !important
-      margin-bottom: .5rem
-      margin-left: 1rem
-      max-height: 164px
-      overflow: hidden
-      position: relative
-
 .recent-post-top
-  display: flex
-  flex-direction: row
-  flex-wrap: nowrap
-  width: 100%
-  overflow-x: scroll
-
-  &::-webkit-scrollbar
-    display: none
-
   .recent-post-item
     display: flex
     width: 200px
@@ -216,59 +180,6 @@ a
     font-weight: 700
     font-size: .8rem !important
     padding: 0 !important
-
-.recent-post-top .categoryGroup
-  display: flex
-  flex-direction: column
-  justify-content: space-between
-  min-width: 200px
-
-.categoryGroup .categoryItem:nth-child(3)
-  display: none
-
-@media screen and (min-width: 1200px)
-  .recent-post-top .categoryGroup
-    flex-direction: row
-    height: 24%
-    animation: slide-in .6s .2s backwards
-
-  .categoryItem
-    width: calc(100% / 3 - .33rem)
-    height: 100% !important
-    margin-right: .5rem
-
-  .categoryItem:last-child
-    margin-right: 0
-
-  .categoryItem:hover
-    width: 50%
-
-  .categoryGroup .categoryItem:nth-child(3)
-    display: flex
-
-a.categoryButton.bikan
-  background: linear-gradient(to right, #358bff, #15c6ff)
-  background-size: 200%
-
-a.categoryButton.remen
-  background: linear-gradient(to right, #f65, #ffbf37)
-  background-size: 200%
-
-a.categoryButton.shiyong
-  background: linear-gradient(to right, #18e7ae, #1eebeb)
-  background-size: 200%
-
-[data-theme=dark] a.categoryButton.bikan
-  background: linear-gradient(to right, #0653b8, #2fcbff)
-  background-size: 200%
-
-[data-theme=dark] a.categoryButton.remen
-  background: linear-gradient(to right, #e22a16, #da980c)
-  background-size: 200%
-
-[data-theme=dark] a.categoryButton.shiyong
-  background: linear-gradient(to right, #099e74, #0ea4a4)
-  background-size: 200%
 
 a.categoryButton:hover
   background-position: 100% 0
@@ -651,13 +562,6 @@ div#categoryList
   width: 100%
   justify-content: space-between
 
-.categoryItem
-  overflow: hidden
-  transform: scale(1)
-  transition: all .8s cubic-bezier(.65, .15, .37, 1.19)
-  height: 48%
-  border-radius: 12px
-
 a.categoryButton
   height: 100%
   width: 100%
@@ -696,28 +600,8 @@ a.categoryButton:after
   border-radius: 1px
   position: absolute
 
-.categoryButtonText
-  padding-left: 21px
-
-a.categoryButton i
-  font-size: 5rem
-  opacity: .2
-  position: absolute
-  right: 0
-  top: 20%
-  transition: .3s
-  width: 100px
-  text-align: center
-  filter: blur(2px)
-
 .topGroup
   display: flex
-
-#bannerGroup
-  display: flex
-
-div#banners
-  display: none
 
 .todayCard
   display: none
@@ -833,132 +717,6 @@ div#banners
         .banner-button-group
           bottom: 1rem
 
-  div#bannerGroup
-    width: calc(50% - .25rem)
-    margin-right: .5rem
-    height: calc(328px + .5rem)
-    display: flex
-    flex-direction: column
-    justify-content: space-between
-
-  div#banners
-    display: flex
-    width: 100%
-    height: 76%
-    background: var(--sco-card-bg)
-    margin-bottom: .5rem
-    border: var(--style-border)
-    border-radius: 12px
-    overflow: hidden
-    position: relative
-    box-shadow: var(--sco-shadow-border)
-    flex-direction: column
-    transition: .3s
-    will-change: transform
-    animation: slide-in .6s .1s backwards
-
-    &:hover
-      box-shadow: var(--sco-shadow-main)
-
-    .banner-button-group
-      position: absolute
-      right: 2rem
-      top: 2rem
-      display: flex
-
-    .banner-button
-      padding: 8px 12px
-      background: var(--sco-fontcolor)
-      border-radius: 12px
-      color: var(--sco-card-bg)
-      display: flex
-      align-items: center
-      z-index: 1
-      transition: .3s
-      cursor: pointer
-      box-shadow: var(--sco-shadow-black)
-
-      &.secondary
-        background: var(--sco-secondbg)
-        border: var(--style-border-always)
-        color: var(--sco-lighttext)
-        margin-right: 1rem
-        box-shadow: var(--sco-shadow-border)
-
-      &:hover
-        background: var(--sco-theme)
-        color: var(--sco-white)
-
-      i
-        margin-right: 8px
-        font-size: 1rem
-
-    .banners-title
-      top: 2rem
-      left: 1.5rem
-      position: absolute
-      display: flex
-      flex-direction: column
-
-      &-big
-        font-size: 36px
-        line-height: 1
-        font-weight: 700
-        margin-bottom: 8px
-
-      &-small
-        font-size: 12px
-        line-height: 1
-        color: var(--sco-secondtext)
-        margin-top: 8px
-        margin-bottom: .5rem
-
-    #banner-hover
-      position: absolute
-      width: 100%
-      height: 100%
-      top: 0
-      left: 0
-      background: var(--sco-theme)
-      color: var(--sco-white)
-      padding-left: .5rem
-      display: flex
-      flex-direction: column
-      justify-content: center
-      opacity: 0
-      transition: cubic-bezier(.71, .15, .16, 1.15) .6s
-
-      i
-        font-size: 80px
-        opacity: .4
-
-    &:hover
-      #banner-hover
-        opacity: 1
-        padding-left: 2rem
-        background: var(--sco-theme-op-deep)
-        backdrop-filter: blur(15px)
-        -webkit-backdrop-filter: blur(15px)
-        transform: translateZ(0)
-        -webkit-backface-visibility: hidden
-        -webkit-transform-style: preserve-3d
-        transition: .3s
-        background-size: 200%
-        cursor: pointer
-
-    .flink
-      .banners-title
-        top: 1.5rem
-
-    .bannerText
-      font-size: 4rem
-      line-height: 4rem
-      font-weight: 700
-
-    .banner-righticon
-      font-size: 4rem
-      opacity: .6
-
 .tags-group-icon
   width: 120px
   height: 120px
@@ -1025,17 +783,6 @@ div#banners
 
   > a:nth-child(0) > i
     padding-right: 8px
-
-.categoryItem:hover i
-  opacity: .8
-  transition: .8s
-  transition-delay: .15s
-  transform: scale(1.03) rotate(0)
-  font-size: 2.5rem
-  filter: blur(0)
-
-  @media screen and (min-width: 1300px)
-    transform: scale(1.03) rotate(0)
 
 .cate-button-text
   box-shadow: var(--sco-shadow-black)
