@@ -146,6 +146,10 @@ a
     position: relative
     box-shadow: var(--sco-shadow-border)
 
+    +minWidth1300()
+      width calc(100% / 3 - 0.25rem)
+      margin-left 0
+
     @media screen and (max-width: 768px)
       border-radius: 8px
       box-shadow: none
@@ -579,9 +583,6 @@ a.categoryButton:hover
   #recent-posts > .recent-post-item .post_cover img.post_bg
     border-radius: 12px 12px 0 0 !important
 
-  #recent-posts > .recent-post-item .post_cover img.post_bg:hover
-    transform: scale(1)
-
   #recent-posts > .recent-post-item:hover img.post_bg
     transform: scale(1)
 
@@ -726,28 +727,28 @@ div#banners
     display: flex
     flex-direction: row
     flex-wrap: wrap
-    justify-content: flex-end
+    justify-content: space-between
     height: calc(328px + .5rem)
     align-content: space-between
-    width: calc(600px + 1.5rem)
+    width: calc(50% - 0.25rem)
     position: relative
     animation: slide-in .6s .1s backwards
 
     .todayCard
-      position: absolute
-      width: calc(600px + 1rem)
-      height: 100%
-      z-index: 1
-      top: 0
-      left: 0
-      background: var(--sco-card-bg)
-      border-radius: 12px
-      margin-left: .5rem
-      overflow: hidden
-      transition: .3s
-      display: flex
-      cursor: pointer
-      pointer-events: all
+      position absolute
+      width 100%
+      z-index 3
+      height 100%
+      top 0
+      right 0
+      background var(--sco-card-bg)
+      border-radius 12px
+      margin-left 0.5rem
+      overflow hidden
+      transition .3s
+      display flex
+      cursor pointer
+      pointer-events all
 
       &::after
         position: absolute
@@ -833,7 +834,7 @@ div#banners
           bottom: 1rem
 
   div#bannerGroup
-    width: calc(100% - 600px - 2rem)
+    width: calc(50% - .25rem)
     margin-right: .5rem
     height: calc(328px + .5rem)
     display: flex

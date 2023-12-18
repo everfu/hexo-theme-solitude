@@ -3,41 +3,41 @@
 }
 
 #pagination .page-number {
-  display: inline-block;
-  margin: 0 .2rem;
-  min-width: 1.2rem;
-  height: 1.2rem;
-  text-align: center;
-  line-height: 1.2rem;
+  display: inline-block
+  margin: 0 .2rem
+  min-width: 1.2rem
+  height: 1.2rem
+  text-align: center
+  line-height: 1.2rem
   cursor: pointer
 }
 
 #pagination .page-number.current {
-  background: #0079ff;
-  color: var(--sco-white);
-  cursor: default;
+  background: var(--sco-theme)
+  color: var(--sco-white)
+  cursor: default
   border-radius: 5px
 }
 
 #pagination img.next-cover, #pagination img.prev-cover {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  opacity: .4;
-  transition: all .6s ease 0s;
+  position: absolute
+  width: 100%
+  height: 100%
+  opacity: .4
+  transition: all .6s ease 0s
   object-fit: cover
 }
 
 #pagination .pagination-info {
-  position: absolute;
-  top: 50%;
-  padding: 1rem 2rem;
-  width: 100%;
+  position: absolute
+  top: 50%
+  padding: 1rem 2rem
+  width: 100%
   transform: translate(0, -50%)
 }
 
 #pagination .next_info, #pagination .prev_info {
-  color: var(--sco-white);
+  color: var(--sco-white)
   font-weight: 500
 }
 
@@ -50,8 +50,8 @@
 }
 
 #pagination .next-post .label, #pagination .prev-post .label {
-  color: var(--light-grey);
-  text-transform: uppercase;
+  color: var(--light-grey)
+  text-transform: uppercase
   font-size: 90%
 }
 
@@ -66,19 +66,19 @@
 }
 
 #pagination .next-post a, #pagination .prev-post a {
-  position: relative;
-  display: block;
-  overflow: hidden;
+  position: relative
+  display: block
+  overflow: hidden
   height: 150px
 }
 
 #pagination .next-post:hover img.next-cover, #pagination .next-post:hover img.prev-cover, #pagination .prev-post:hover img.next-cover, #pagination .prev-post:hover img.prev-cover {
-  opacity: .8;
+  opacity: .8
   transform: scale(1.1)
 }
 
 #pagination.pagination-post {
-  margin-top: 1.5rem;
+  margin-top: 1.5rem
   background: #000
 }
 
@@ -88,7 +88,7 @@
 
 @media screen and (max-width: 768px) {
   #pagination {
-    margin-bottom: 0;
+    margin-bottom: 0
     margin-top: 0
   }
 }
@@ -105,11 +105,11 @@
 
 @media screen and (min-width: 768px) {
   #pagination .next-post a {
-    border-left: var(--sco-main-op);
-    border-left-width: 1px;
-    border-left-style: solid;
-    display: flex;
-    align-items: flex-start;
+    border-left: var(--sco-main-op)
+    border-left-width: 1px
+    border-left-style: solid
+    display: flex
+    align-items: flex-start
     height: 150px
   }
 
@@ -118,20 +118,20 @@
   }
 
   #pagination .prev-post a {
-    border-right: var(--sco-main-op);
-    border-right-width: 1px;
+    border-right: var(--sco-main-op)
+    border-right-width: 1px
     border-right-style: solid
   }
 
   #pagination .pagination-info {
-    padding: 1rem 1.5rem 1rem 1.5rem;
-    position: relative;
-    display: flex;
-    top: 0;
-    transform: none;
-    flex-direction: column;
-    justify-content: center;
-    margin: auto;
+    padding: 1rem 1.5rem 1rem 1.5rem
+    position: relative
+    display: flex
+    top: 0
+    transform: none
+    flex-direction: column
+    justify-content: center
+    margin: auto
     height: 100%
   }
 
@@ -151,17 +151,17 @@
 }
 
 #pagination img.next-cover, #pagination img.prev-cover {
-  opacity: .15;
-  transform: scale(1.03);
-  transition: .3s;
-  filter: blur(0);
-  -webkit-backface-visibility: hidden;
+  opacity: .15
+  transform: scale(1.03)
+  transition: .3s
+  filter: blur(0)
+  -webkit-backface-visibility: hidden
   -webkit-transform-style: preserve-3d
 }
 
 #pagination .next-post:hover img.next-cover, #pagination .next-post:hover img.prev-cover, #pagination .prev-post:hover img.next-cover, #pagination .prev-post:hover img.prev-cover {
-  opacity: .25;
-  transform: scale(1.03);
+  opacity: .25
+  transform: scale(1.03)
   filter: blur(5px)
 }
 
@@ -170,21 +170,21 @@
 }
 
 #pagination .next_info, #post #pagination .prev_info {
-  color: var(--sco-fontcolor);
-  font-weight: 700;
-  -webkit-line-clamp: 2;
-  white-space: normal;
-  line-height: 1.3;
-  font-size: .9rem;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
+  color: var(--sco-fontcolor)
+  font-weight: 700
+  -webkit-line-clamp: 2
+  white-space: normal
+  line-height: 1.3
+  font-size: .9rem
+  display: -webkit-box
+  -webkit-box-orient: vertical
+  overflow: hidden
   margin-bottom: 10px
 }
 
 #post #pagination {
-  overflow: hidden;
-  position: inherit;
+  overflow: hidden
+  position: inherit
   border: var(--style-border-always)
 }
 
@@ -194,8 +194,8 @@
 
 @media screen and (min-width: 1300px) {
   #pagination .next-post a {
-    border: none;
-    height: fit-content;
+    border: none
+    height: fit-content
     padding: .5rem 0
   }
 
@@ -204,20 +204,20 @@
   }
 
   #pagination .next_info, #post #pagination .prev_info {
-    font-size: 14px;
-    font-weight: 400;
+    font-size: 14px
+    font-weight: 400
     margin-bottom: 0
   }
 
   #pagination .pagination-info {
-    padding: .5rem 1rem;
+    padding: .5rem 1rem
     transform: none
   }
 
   #pagination .next-post, #pagination .prev-post, .next-post.pull-right, .prev-post.pull-left {
-    background: var(--sco-maskbgdeep);
-    -webkit-backdrop-filter: blur(5px);
-    backdrop-filter: blur(5px);
+    background: var(--sco-maskbgdeep)
+    -webkit-backdrop-filter: blur(5px)
+    backdrop-filter: blur(5px)
     transform: translateZ(0)
   }
 
@@ -230,17 +230,17 @@
   }
 
   #pagination .next-post .pagination-info {
-    text-align: left;
+    text-align: left
     position: relative
   }
 
   #pagination .next-post .label, #post #pagination .prev-post .label {
-    color: var(--sco-fontcolor);
-    font-weight: 700;
-    font-size: 12px;
-    margin-bottom: .5rem;
-    border-bottom: var(--style-border);
-    line-height: 1;
+    color: var(--sco-fontcolor)
+    font-weight: 700
+    font-size: 12px
+    margin-bottom: .5rem
+    border-bottom: var(--style-border)
+    line-height: 1
     padding-bottom: .5rem
   }
 }
@@ -273,13 +273,13 @@
   }
 
   #pagination .pagination .extend {
-    width: 100%;
-    height: 2.5rem;
-    margin: .2rem 1rem 1rem 1rem;
-    border-radius: 12px;
-    line-height: 2.5rem;
-    background: var(--sco-card-bg);
-    border: var(--style-border-always);
+    width: 100%
+    height: 2.5rem
+    margin: .2rem 1rem 1rem 1rem
+    border-radius: 12px
+    line-height: 2.5rem
+    background: var(--sco-card-bg)
+    border: var(--style-border-always)
     box-shadow: var(--sco-shadow-border)
   }
 
@@ -288,51 +288,51 @@
   }
 
   #pagination .pagination .extend:hover {
-    background: var(--sco-theme);
+    background: var(--sco-theme)
     color: var(--sco-white)
   }
 
   #pagination .pagination {
-    background: var(--sco-background);
-    transition: .3s;
+    background: var(--sco-background)
+    transition: .3s
     display: flex
   }
 }
 
 @media screen and (min-width: 768px) {
   #pagination .page-number {
-    width: 2rem;
-    background: var(--sco-card-bg);
-    height: 2rem;
-    line-height: calc(2rem - 2px);
-    border-radius: 8px !important;
-    margin: 0 .3rem;
-    box-shadow: var(--sco-shadow-border);
-    border: var(--style-border);
+    width: 2rem
+    background: var(--sco-card-bg)
+    height: 2rem
+    line-height: calc(2rem - 2px)
+    border-radius: 8px !important
+    margin: 0 .3rem
+    box-shadow: var(--sco-shadow-border)
+    border: var(--style-border)
     transition: .3s
   }
 
   #pagination .page-number.current {
-    background: var(--sco-theme);
-    border: var(--style-border-hover);
+    background: var(--sco-theme)
+    border: var(--style-border-hover)
     box-shadow: var(--sco-shadow-theme)
   }
 
   #pagination .page-number.current:hover {
-    background: var(--sco-theme);
-    box-shadow: var(--sco-shadow-theme);
+    background: var(--sco-theme)
+    box-shadow: var(--sco-shadow-theme)
     color: var(--sco-white)
   }
 
   #pagination .page-number:hover {
-    color: var(--sco-theme);
-    border: var(--style-border-hover);
+    color: var(--sco-theme)
+    border: var(--style-border-hover)
     box-shadow: var(--sco-shadow-main)
   }
 
   #pagination a.extend.next:hover, #pagination a.extend.prev:hover {
-    color: var(--sco-theme);
-    border: var(--style-border-hover);
+    color: var(--sco-theme)
+    border: var(--style-border-hover)
     box-shadow: var(--sco-shadow-main)
   }
 
@@ -341,18 +341,18 @@
   }
 
   #pagination a.extend.next, #pagination a.extend.prev {
-    width: 4rem;
-    height: 2rem;
-    line-height: 1.9rem;
-    border-radius: 8px !important;
-    background: var(--sco-card-bg);
-    box-shadow: var(--sco-shadow-border);
-    position: absolute;
-    border: var(--style-border);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
+    width: 4rem
+    height: 2rem
+    line-height: 1.9rem
+    border-radius: 8px !important
+    background: var(--sco-card-bg)
+    box-shadow: var(--sco-shadow-border)
+    position: absolute
+    border: var(--style-border)
+    display: flex
+    align-items: center
+    justify-content: center
+    overflow: hidden
     transition: .3s
   }
 
@@ -365,26 +365,26 @@
   }
 
   #pagination a.extend.next .pagination_tips_next {
-    margin-left: -32px;
-    transition: .3s;
+    margin-left: -32px
+    transition: .3s
     opacity: 0
   }
 
   #pagination a.extend.next:hover .pagination_tips_next {
-    margin-left: 2px;
-    opacity: 1;
+    margin-left: 2px
+    opacity: 1
     white-space: nowrap
   }
 
   #pagination a.extend.prev .pagination_tips_prev {
-    margin-right: -32px;
-    transition: .3s;
+    margin-right: -32px
+    transition: .3s
     opacity: 0
   }
 
   #pagination a.extend.prev:hover .pagination_tips_prev {
-    margin-right: 2px;
-    opacity: 1;
+    margin-right: 2px
+    opacity: 1
     white-space: nowrap
   }
 
@@ -393,41 +393,73 @@
   }
 
   #pagination .pagination {
-    position: relative;
-    display: flex;
+    position: relative
+    display: flex
     justify-content: center
   }
 }
 
 @media screen and (min-width: 768px) {
   #pagination.pagination-post {
-    border-radius: 12px;
+    border-radius: 12px
     margin-top: 1rem
   }
 }
 
 @media screen and (min-width: 1300px) {
   #pagination.pagination-post {
-    border-radius: 0;
+    border-radius: 0
     margin-top: 0
   }
 }
 
 .pagination input {
-  width: 40px;
-  height: 40px;
-  border-radius: 8px;
-  border: var(--style-border-always);
-  transition: .3s;
-  outline-style: none;
-  font-size: 16px;
-  padding-left: 12px;
-  background: var(--sco-secondbg);
+  width: 40px
+  height: 40px
+  border-radius: 8px
+  border: var(--style-border-always)
+  transition: .3s
+  outline-style: none
+  font-size: 16px
+  padding-left: 12px
+  background: var(--sco-secondbg)
   color: var(--sco-fontcolor)
 }
 
 .pagination .toPageGroup input:focus, .pagination .toPageGroup:hover input {
-  border: var(--style-border-hover-always);
-  outline-style: none;
+  border: var(--style-border-hover-always)
+  outline-style: none
   width: 100px
 }
+
+// 页码跳转输入框+按钮
+.toPageGroup
+  display: flex
+  position: relative
+  margin: 0 .3rem
+
+  a#toPageButton
+    display: flex
+    position: absolute
+    width: 40px
+    height: 40px
+    right: 0
+    top: 0
+    border-radius: 8px
+    justify-content: center
+    align-items: center
+    transition: .3s
+    background: var(--sco-card-bg)
+    border: var(--style-border-always)
+    cursor: text
+    pointer-events: none
+
+  &:focus-within a#toPageButton, &:hover a#toPageButton
+    width: 30px
+    height: 30px
+    right: 4px
+    top: 5px
+    background: var(--sco-card-bg)
+    border: 1px solid var(--sco-none)
+    border-radius: 4px
+    opacity: .2
