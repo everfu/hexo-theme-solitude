@@ -471,15 +471,6 @@
       position relative
 
       .menus_item_child
-        position absolute
-        display none
-        margin-top 8px
-        padding 0
-        background-color var(--sidebar-bg)
-        box-shadow rgba(0, 0, 0, .5) 0 5px 20px -4px
-        animation .3s ease .1s 1 normal both running sub_menus
-        border-radius 5px
-        white-space nowrap
         padding 6px 4px 8px 4px
         border-radius 100px
         background-color var(--sco-maskbgdeep)
@@ -487,9 +478,13 @@
         border var(--style-border)
         transition .3s
         backdrop-filter blur(20px)
-        -webkit-backdrop-filter blur(20px)
-        transform translateZ(0)
         top 35px
+        position absolute
+        margin-top 8px
+        white-space nowrap
+        opacity 0
+        pointer-events none
+        transform translateY(-10px) scale(.8)
 
         li
           display inline-flex
@@ -537,6 +532,9 @@
           display block
           border var(--style-border-hover)
           box-shadow var(--sco-shadow-main)
+          opacity 1
+          pointer-events all
+          transform translateY(0) scale(1)
 
         i
           &.expand
@@ -721,6 +719,8 @@
       top 55px
       pointer-events auto
       left 1.5rem
+      transform scale(1)
+      border var(--style-border-hover)
 
       +maxWidth768()
         padding-bottom 8px
@@ -741,18 +741,21 @@
 
   .back-menu-list-groups
     position absolute
-    top 65px
+    top 45px
+    transform scale(.8)
+    transform-origin top left
     left 1.5rem
-    background var(--sco-card-bg)
+    background-color var(--sco-maskbgdeep)
     border-radius 12px
     border var(--style-border)
     flex-direction column
     font-size 12px
     color var(--sco-secondtext)
     box-shadow var(--sco-shadow-border)
-    transition 0s
+    transition .1s
     opacity 0
     pointer-events none
+    backdrop-filter blur(20px)
 
     +maxWidth768()
       left 0

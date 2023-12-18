@@ -167,7 +167,10 @@
       width: 100% !important
 
   > div:first-child
-    width: calc(100% - 300px)
+    width calc(100% - 300px)
+
+    +maxWidth768()
+      width 100%
 
   > div:first-child:not(.recent-posts)
     box-shadow var(--sco-shadow-border)
