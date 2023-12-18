@@ -394,15 +394,15 @@ thirdparty:
   # 朋友圈配置
   circle:
     api: https://circle.sondy.top/ # 朋友圈api
-    error_img: /img/theme/avatar.png # 加载失败显示图片
+    error_img: /img/avatar.png # 加载失败显示图片
     sort_rule: created # 排序规则（created:创建时间、updated:更新时间）
     expire_days: 1 # 缓存过期时间（天）
     page_init_number: 12 # 首次加载文章数，默认10
     page_turning_number: 12 # 翻页加载文章数，默认10
     angle: # 🎣钓鱼
       enable: true # 是否开启
-    appjs: 'https://npm.elemecdn.com/solitude-source/lib/circle.min.js' # 主题appjs
-    bundlejs: 'https://npm.elemecdn.com/solitude-source/lib/bundle.min.js' # 主题bundlejs
+    appjs: 'https://fastly.jsdelivr.net/npm/solitude-source@1.0.0/lib/circle.min.js' # 主题appjs
+    bundlejs: 'https://fastly.jsdelivr.net/npm/solitude-source@1.0.0/lib/bundle.min.js' # 主题bundlejs
 
 # 评论
 # --------------------------------------
@@ -472,46 +472,46 @@ pwa:
   startup_image_enable: false # 是否开启启动画面
   manifest: /manifest.json # manifest.json 文件路径
   theme_color: '#ffffff' # 主题颜色
-  mask_icon: /img/pwa/180.png # 遮罩图标
-  apple_touch_icon: /img/pwa/180.png # 苹果触摸图标
-  bookmark_icon: /img/pwa/180.png # 书签图标
-  favicon_32_32: /img/pwa/32.png # 32x32图标
-  favicon_16_16: /img/pwa/16.png # 16x16图标
-  favicon_2048_2732: /img/pwa/siteicon/splash-2048x2732.png # 2048x2732图标
-  favicon_2732_2048: /img/pwa/siteicon/splash-2732x2048.png # 2732x2048图标
-  favicon_1668_2388: /img/pwa/siteicon/splash-1668x2388.png # 1668x2388图标
-  favicon_2388_1668: /img/pwa/siteicon/splash-2388x1668.png # 2388x1668图标
-  favicon_1536_2048: /img/pwa/siteicon/splash-1536x2048.png # 1536x2048图标
-  favicon_2048_1536: /img/pwa/siteicon/splash-2048x1536.png # 2048x1536图标
-  favicon_1668_2224: /img/pwa/siteicon/splash-1668x2224.png # 1668x2224图标
-  favicon_2224_1668: /img/pwa/siteicon/splash-2224x1668.png # 2224x1668图标
-  favicon_1620_2160: /img/pwa/siteicon/splash-1620x2160.png # 1620x2160图标
-  favicon_2160_1620: /img/pwa/siteicon/splash-2160x1620.png # 2160x1620图标
-  favicon_1290_2796: /img/pwa/siteicon/splash-1290x2796.png # 1290x2796图标
-  favicon_2796_1290: /img/pwa/siteicon/splash-2796x1290.png # 2796x1290图标
-  favicon_1179_2556: /img/pwa/siteicon/splash-1179x2556.png # 1179x2556图标
-  favicon_2556_1179: /img/pwa/siteicon/splash-2556x1179.png # 2556x1179图标
-  favicon_1248_2778: /img/pwa/siteicon/splash-1248x2778.png # 1248x2778图标
-  favicon_2778_1248: /img/pwa/siteicon/splash-2778x1248.png # 2778x1248图标
-  favicon_1170_2532: /img/pwa/siteicon/splash-1170x2532.png # 1170x2532图标
-  favicon_2532_1170: /img/pwa/siteicon/splash-2532x1170.png # 2532x1170图标
-  favicon_1125_2436: /img/pwa/siteicon/splash-1125x2436.png # 1125x2436图标
-  favicon_2436_1125: /img/pwa/siteicon/splash-2436x1125.png # 2436x1125图标
-  favicon_1242_2688: /img/pwa/siteicon/splash-1242x2688.png # 1242x2688图标
-  favicon_2688_1242: /img/pwa/siteicon/splash-2688x1242.png # 2688x1242图标
-  favicon_828_1792: /img/pwa/siteicon/splash-828x1792.png # 828x1792图标
-  favicon_1792_828: /img/pwa/siteicon/splash-1792x828.png # 1792x828图标
-  favicon_1242_2208: /img/pwa/siteicon/splash-1242x2208.png # 1242x2208图标
-  favicon_2208_1242: /img/pwa/siteicon/splash-2208x1242.png # 2208x1242图标
-  favicon_750_1334: /img/pwa/siteicon/splash-750x1334.png # 750x1334图标
-  favicon_1334_750: /img/pwa/siteicon/splash-1334x750.png # 1334x750图标
-  favicon_640_1136: /img/pwa/siteicon/splash-640x1136.png # 640x1136图标
-  favicon_1136_640: /img/pwa/siteicon/splash-1136x640.png # 1136x640图标
+  mask_icon: https://fastly.jsdelivr.net/npm/solitude-source@1.0.0/img/pwa/180.png # 遮罩图标
+  apple_touch_icon: https://fastly.jsdelivr.net/npm/solitude-source@1.0.0/img/pwa/180.png # 苹果触摸图标
+  bookmark_icon: https://fastly.jsdelivr.net/npm/solitude-source@1.0.0/img/pwa/180.png # 书签图标
+  favicon_32_32: https://fastly.jsdelivr.net/npm/solitude-source@1.0.0/img/pwa/32.png # 32x32图标
+  favicon_16_16: https://fastly.jsdelivr.net/npm/solitude-source@1.0.0/img/pwa/16.png # 16x16图标
+  favicon_2048_2732: https://fastly.jsdelivr.net/npm/solitude-source@1.0.0/img/pwa/siteicon/splash-2048x2732.png # 2048x2732图标
+  favicon_2732_2048: https://fastly.jsdelivr.net/npm/solitude-source@1.0.0/img/pwa/siteicon/splash-2732x2048.png # 2732x2048图标
+  favicon_1668_2388: https://fastly.jsdelivr.net/npm/solitude-source@1.0.0/img/pwa/siteicon/splash-1668x2388.png # 1668x2388图标
+  favicon_2388_1668: https://fastly.jsdelivr.net/npm/solitude-source@1.0.0/img/pwa/siteicon/splash-2388x1668.png # 2388x1668图标
+  favicon_1536_2048: https://fastly.jsdelivr.net/npm/solitude-source@1.0.0/img/pwa/siteicon/splash-1536x2048.png # 1536x2048图标
+  favicon_2048_1536: https://fastly.jsdelivr.net/npm/solitude-source@1.0.0/img/pwa/siteicon/splash-2048x1536.png # 2048x1536图标
+  favicon_1668_2224: https://fastly.jsdelivr.net/npm/solitude-source@1.0.0/img/pwa/siteicon/splash-1668x2224.png # 1668x2224图标
+  favicon_2224_1668: https://fastly.jsdelivr.net/npm/solitude-source@1.0.0/img/pwa/siteicon/splash-2224x1668.png # 2224x1668图标
+  favicon_1620_2160: https://fastly.jsdelivr.net/npm/solitude-source@1.0.0/img/pwa/siteicon/splash-1620x2160.png # 1620x2160图标
+  favicon_2160_1620: https://fastly.jsdelivr.net/npm/solitude-source@1.0.0/img/pwa/siteicon/splash-2160x1620.png # 2160x1620图标
+  favicon_1290_2796: https://fastly.jsdelivr.net/npm/solitude-source@1.0.0/img/pwa/siteicon/splash-1290x2796.png # 1290x2796图标
+  favicon_2796_1290: https://fastly.jsdelivr.net/npm/solitude-source@1.0.0/img/pwa/siteicon/splash-2796x1290.png # 2796x1290图标
+  favicon_1179_2556: https://fastly.jsdelivr.net/npm/solitude-source@1.0.0/img/pwa/siteicon/splash-1179x2556.png # 1179x2556图标
+  favicon_2556_1179: https://fastly.jsdelivr.net/npm/solitude-source@1.0.0/img/pwa/siteicon/splash-2556x1179.png # 2556x1179图标
+  favicon_1248_2778: https://fastly.jsdelivr.net/npm/solitude-source@1.0.0/img/pwa/siteicon/splash-1248x2778.png # 1248x2778图标
+  favicon_2778_1248: https://fastly.jsdelivr.net/npm/solitude-source@1.0.0/img/pwa/siteicon/splash-2778x1248.png # 2778x1248图标
+  favicon_1170_2532: https://fastly.jsdelivr.net/npm/solitude-source@1.0.0/img/pwa/siteicon/splash-1170x2532.png # 1170x2532图标
+  favicon_2532_1170: https://fastly.jsdelivr.net/npm/solitude-source@1.0.0/img/pwa/siteicon/splash-2532x1170.png # 2532x1170图标
+  favicon_1125_2436: https://fastly.jsdelivr.net/npm/solitude-source@1.0.0/img/pwa/siteicon/splash-1125x2436.png # 1125x2436图标
+  favicon_2436_1125: https://fastly.jsdelivr.net/npm/solitude-source@1.0.0/img/pwa/siteicon/splash-2436x1125.png # 2436x1125图标
+  favicon_1242_2688: https://fastly.jsdelivr.net/npm/solitude-source@1.0.0/img/pwa/siteicon/splash-1242x2688.png # 1242x2688图标
+  favicon_2688_1242: https://fastly.jsdelivr.net/npm/solitude-source@1.0.0/img/pwa/siteicon/splash-2688x1242.png # 2688x1242图标
+  favicon_828_1792: https://fastly.jsdelivr.net/npm/solitude-source@1.0.0/img/pwa/siteicon/splash-828x1792.png # 828x1792图标
+  favicon_1792_828: https://fastly.jsdelivr.net/npm/solitude-source@1.0.0/img/pwa/siteicon/splash-1792x828.png # 1792x828图标
+  favicon_1242_2208: https://fastly.jsdelivr.net/npm/solitude-source@1.0.0/img/pwa/siteicon/splash-1242x2208.png # 1242x2208图标
+  favicon_2208_1242: https://fastly.jsdelivr.net/npm/solitude-source@1.0.0/img/pwa/siteicon/splash-2208x1242.png # 2208x1242图标
+  favicon_750_1334: https://fastly.jsdelivr.net/npm/solitude-source@1.0.0/img/pwa/siteicon/splash-750x1334.png # 750x1334图标
+  favicon_1334_750: https://fastly.jsdelivr.net/npm/solitude-source@1.0.0/img/pwa/siteicon/splash-1334x750.png # 1334x750图标
+  favicon_640_1136: https://fastly.jsdelivr.net/npm/solitude-source@1.0.0/img/pwa/siteicon/splash-640x1136.png # 640x1136图标
+  favicon_1136_640: https://fastly.jsdelivr.net/npm/solitude-source@1.0.0/img/pwa/siteicon/splash-1136x640.png # 1136x640图标
 
 # 非必要勿动
 cdn:
   head:
-    snackbarcss: https://npm.elemecdn.com/solitude-source/lib/snackbar.min.css
+    snackbarcss: https://fastly.jsdelivr.net/npm/solitude-source@1.0.0/lib/snackbar.min.css
     scoicon: https://cdn3.codesign.qq.com/icons/7pOrz0WXB5ZWJPX/latest/iconfont.css
     aplayercss: https://cdn.bootcdn.net/ajax/libs/aplayer/1.10.1/APlayer.min.css
     swipercss: https://cdn.bootcdn.net/ajax/libs/Swiper/9.2.4/swiper-bundle.min.css
@@ -524,10 +524,10 @@ cdn:
     walinecss: https://cdn.staticfile.org/waline/2.15.8/waline.min.css
     walinejs: https://cdn.staticfile.org/waline/2.15.8/waline.min.js
   body:
-    viewimagejs: https://npm.elemecdn.com/solitude-source/lib/view-image.min.js
-    waterfalljs: https://npm.elemecdn.com/solitude-source/lib/waterfall.min.js
-    lazyloadjs: https://npm.elemecdn.com/solitude-source/lib/lazyload.min.js
-    snackbarjs: https://npm.elemecdn.com/solitude-source/lib/snackbar.min.js
+    viewimagejs: https://fastly.jsdelivr.net/npm/solitude-source@1.0.0/lib/view-image.min.js
+    waterfalljs: https://fastly.jsdelivr.net/npm/solitude-source@1.0.0/lib/waterfall.min.js
+    lazyloadjs: https://fastly.jsdelivr.net/npm/solitude-source@1.0.0/lib/lazyload.min.js
+    snackbarjs: https://fastly.jsdelivr.net/npm/solitude-source@1.0.0/lib/snackbar.min.js
     swiperjs: https://cdn.bootcdn.net/ajax/libs/Swiper/9.2.4/swiper-bundle.min.js
     busuanzijs: https://cdn.bootcdn.net/ajax/libs/busuanzi/2.3.0/bsz.pure.mini.min.js
     pjaxjs: https://cdn.bootcdn.net/ajax/libs/pjax/0.2.8/pjax.min.js
