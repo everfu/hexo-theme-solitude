@@ -49,12 +49,12 @@ div#footer-bar
                 div.copyright © #{moment(theme.aside.siteinfo.runtime).year()} - #{new Date().getFullYear()} By&nbsp;
                     a.footer-bar-link(href="/")= config.author
         div.footer-bar-right
-            if theme.footer && theme.footer.rss && theme.footer.rss.enable
+            if theme.footer.rss.enable
                 a.footer-bar-link(href="/rss/", target="_self") 订阅
-            a.footer-bar-link(href="https://github.com/DuoSco/hexo-theme-solitude", target="_blank") 主题
+            a.footer-bar-link(href="https://github.com/DuoSco/hexo-theme-solitude") 主题
             if theme.site && theme.site.icp
-                a.footer-bar-link(href="https://beian.miit.gov.cn/#/Integrated/index", target="_blank")= theme.site.icp
-            a.footer-bar-link.cc(href=theme.footer.license.url, target="_blank")
+                a.footer-bar-link(href="https://beian.miit.gov.cn/#/Integrated/index")= theme.site.icp
+            a.footer-bar-link.cc(href=theme.footer.license.url)
                 i.scoicon.sco-copyright-line
                 i.scoicon.sco-creative-commons-by-line
                 i.scoicon.sco-creative-commons-nc-line
@@ -63,7 +63,7 @@ div.needEndHide#cookies-window
     div.cookies-window-title 协议提醒助手
     div.cookies-window-content
         span.cookies-tip 查看本站为你的个人隐私做出的努力
-        a.cookies-link(href="/privacy/", title="本站如何保护你的隐私", data-pjax-state="")
+        a.cookies-link(href="/privacy/", title="本站如何保护你的隐私")
             i.scoicon.sco-arrow-right-circle-fill
 if theme.comment.commentBarrage
     div.comment-barrage.needEndHide
