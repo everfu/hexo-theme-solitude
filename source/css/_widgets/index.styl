@@ -15,5 +15,25 @@ if hexo-config('comment.enable')
   @import '_widgets/_comment/twikoo.styl' when hexo-config('comment.type') == 'twikoo'
   @import '_widgets/_comment/waline.styl' when hexo-config('comment.type') == 'waline'
 
+// search
+if hexo-config('thirdparty.search.enable')
+  if hexo-config('thirdparty.search.type') == 'algolia'
+    @import '_search/algolia-search'
+  else if hexo-config('thirdparty.search.type') == 'local'
+    @import '_search/local-search'
+
+/**
+  * extra
+ */
+@import '_extra/console.styl'
+
+// rightmenu
+if hexo-config('rightside.enable')
+  @import '_extra/rightmenu.styl'
+
+// pace
+if hexo-config('loading.pace')
+  @import "_extra/pace.styl"
+
 // post
 @import "_post/index.styl"

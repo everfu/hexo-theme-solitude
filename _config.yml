@@ -386,7 +386,7 @@ thirdparty:
     enable: false # 是否开启
     modelName:  # 右侧显示的模型名称
     key:  # key
-    talk: 我是王卓Sco开发的摘要生成助理ScoGPT，ScoGPT在静态部署时进行摘要的撰写，并且在访客访问时通过ScoCorrection转译后的文本摘要实现工具。我在这里只负责已经生成的摘要显示，你无法与我直接沟通，但我可以回答一些预设的问题。你也可以使用Tianli开发的TianliGPT来更简单地实现和我类似的效果。 # 自介
+    talk: 我是王卓Sco开发的摘要生成助理ScoGPT，ScoGPT在静态部署时进行摘要的撰写，并且在访客访问时通过ScoCorrection转译后的文本摘要实现工具。我在这里只负责已经生成的摘要显示，你无法与我直接沟通，但我可以回答一些预设的问题。 # 自介
     randomPost: false # 随机文章按钮
     report: https://blog.wzsco.top/about/ # 举报链接，不填不显示
     tips: 此内容根据文章生成，并经过人工审核，仅用于文章内容的解释与总结 # 底部提示
