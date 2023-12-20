@@ -4,7 +4,7 @@
   <a title="English" href="/README.md">中文</a>
 </div>
 
-<p align="center"><img width="400" src="./source/img/logo-horizontal_version.png"></p>
+<p align="center"><img width="400" src="https://bu.dusays.com/2023/12/20/6582bf58c64cf.png"></p>
 
 <p align="center">An elegant Hexo theme</p>
 <p align="center">"Explore the inner self in peaceful solitude, leading a life of simplicity and elegance."</p>
@@ -18,7 +18,7 @@
   <a title="GitHub Commits" target="_blank" href="https://github.com/DuoSco/Hexo-Theme-solitude/commits/master"><img alt="GitHub Commits" src="https://img.shields.io/github/commit-activity/m/DuoSco/Hexo-Theme-solitude.svg?style=flat&color=brightgreen&label=commits"></a>
 </p>
 
-![](/source/img/solitude-show.jpg)
+![](https://bu.dusays.com/2023/12/20/6582bf81b4641.png)
 
 Theme Preview: 👋 [王卓Sco](https://blog.wzsco.top/) ｜ 🎆 [糕小菜](https://blog.kaixed.com/)
 
