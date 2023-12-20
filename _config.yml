@@ -450,6 +450,7 @@ rightside:
 verify:
   baidu:
   google:
+  sougou:
 
 # CSS 前缀
 # 有些 CSS 并不是所有浏览器都支持，需要增加对应的前缀才会生效
