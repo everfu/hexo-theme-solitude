@@ -116,6 +116,59 @@ div#banners
       font-size 4rem
       opacity .6
 
+  .tags-group-all
+    display flex
+    transform rotate(-30deg)
+
+    &.nowrapMove
+      transform rotate(0)
+      padding-bottom 2rem
+
+      .tags-group-wrapper
+        margin-top: 7rem
+        animation: rowup 120s linear infinite
+
+      .tags-group-icon
+        border-radius 50%
+
+        img
+          min-width 100%
+          min-height 100%
+          border-radius 50%
+          object-fit cover
+
+    .tags-group-wrapper
+      margin-top: 5rem
+      display: flex
+      flex-wrap: nowrap
+      animation: rowup 60s linear infinite
+
+      .tags-group-icon-pair
+        margin-left 1rem
+        user-select none
+
+        a img
+          border-radius 50%
+
+        .tags-group-icon
+          width 120px
+          height 120px
+          border-radius 30px
+          display flex
+          align-items center
+          justify-content center
+          color #fff
+          font-size 66px
+          font-weight 700
+          box-shadow var(--sco-shadow-blackdeep)
+
+          &:nth-child(even)
+            margin-top 1rem
+            transform translate(-60px)
+
+          img
+            width 60%
+
 #home_top
   max-width 1400px
   margin .5rem auto auto
@@ -148,11 +201,23 @@ div#banners
         / #bannerGroup
           display flex
 
+          +minWidth1200()
+            width calc(50% - .25rem)
+            margin-right .5rem
+            height calc(328px + .5rem)
+            display flex
+            flex-direction column
+            justify-content space-between
+
           .categoryGroup
             display flex
             flex-direction column
             justify-content space-between
             min-width 200px
+            +minWidth1200()
+              flex-direction row
+              height 24%
+              animation slide-in .6s .2s backwards
             +maxWidth768()
               min-width 130px
               margin-bottom .5rem
@@ -167,6 +232,10 @@ div#banners
               transition all .8s cubic-bezier(.65, .15, .37, 1.19)
               height 48%
               border-radius 12px
+              +maxWidth768()
+                border-radius 0
+                height 47%
+                box-shadow none
 
               &:nth-child(3)
                 display none
@@ -184,30 +253,44 @@ div#banners
                 &:nth-child(3)
                   display flex
 
-              i
-                font-size 5rem
-                opacity .2
-                position absolute
-                right 0
-                top 20%
-                transition .3s
-                width 100px
-                text-align center
-                filter blur(2px)
-
-              &:hover
-                i
-                  opacity .8
-                  transition .8s
-                  transition-delay .15s
-                  transform scale(1.03) rotate(0)
-                  font-size 2.5rem
-                  filter blur(0)
-
-                  +minWidth1300()
-                    transform scale(1.03) rotate(0)
-
               a.categoryButton
+                height 100%
+                width 100%
+                background var(--sco-card-bg)
+                border-radius 12px
+                display inline-block
+                text-align left
+                line-height 4em
+                font-weight 700
+                font-size .9rem
+                color var(--sco-white)
+                transition all .8s cubic-bezier(.39, .575, .565, 1)
+                transform scale(1)
+                overflow hidden
+                +maxWidth768()
+                  border-radius 8px
+
+                i
+                  font-size 5rem
+                  opacity .2
+                  position absolute
+                  right 0
+                  top 20%
+                  transition .3s
+                  width 100px
+                  text-align center
+                  filter blur(2px)
+                  transform scale(1) rotate(15deg)
+
+                &:hover
+                  i
+                    opacity .8
+                    transition .8s
+                    transition-delay .15s
+                    transform scale(1.03) rotate(0)
+                    font-size 2.5rem
+                    filter blur(0)
+
                 .categoryButtonText
                   padding-left 21px
 
@@ -235,107 +318,213 @@ div#banners
                     background linear-gradient(to right, #099e74, #0ea4a4)
                     background-size 200%
 
+  /.topGroup
+    display: flex
 
-  +minWidth1200()
-    overflow-x visible
-
-    / #bannerGroup
-      width calc(50% - .25rem)
-      margin-right .5rem
-      height calc(328px + .5rem)
+    +minWidth1200()
       display flex
-      flex-direction column
+      flex-direction row
+      flex-wrap wrap
       justify-content space-between
+      height calc(328px + .5rem)
+      align-content space-between
+      width calc(50% - 0.25rem)
+      position relative
+      animation slide-in .6s .1s backwards
+      overflow-x visible
 
-      .categoryGroup
-        flex-direction row
-        height 24%
-        animation slide-in .6s .2s backwards
+    .recent-post-item
+      display flex
+      width 200px
+      flex-direction column
+      align-items flex-start
+      margin-left .5rem
+      background var(--sco-card-bg)
+      border-radius 12px
+      overflow hidden
+      min-width 200px
+      height 164px
+      max-height 164px
+      border var(--style-border-always)
+      transition .3s
+      position relative
+      box-shadow var(--sco-shadow-border)
+      +minWidth1300()
+        width calc(100% / 3 - 0.25rem)
+        margin-left 0
 
-  .recent-post-item
-    display flex
-    width 200px
-    flex-direction column
-    align-items flex-start
-    margin-left .5rem
-    background var(--sco-card-bg)
-    border-radius 12px
-    overflow hidden
-    min-width 200px
-    height 164px
-    max-height 164px
-    border var(--style-border-always)
-    transition .3s
-    position relative
-    box-shadow var(--sco-shadow-border)
+      +minWidth1200()
+        display flex
+        width calc(100% / 3 - 0.25rem)
+        flex-direction column
+        align-items flex-start
+        margin-left 0
+        background var(--sco-card-bg)
+        border-radius 12px
+        overflow hidden
+        min-width 200px
+        height 164px
+        max-height 164px
+        border var(--style-border-always)
+        transition .3s
+        position relative
+        box-shadow var(--sco-shadow-border)
 
-    +minWidth1300()
-      width calc(100% / 3 - 0.25rem)
-      margin-left 0
+      +maxWidth768()
+        border-radius 8px
+        box-shadow none
+        clip-path inset(0 0 0 0 round 8px)
 
-    +maxWidth768()
-      border-radius 8px
-      box-shadow none
-      clip-path inset(0 0 0 0 round 8px)
+        &:last-child
+          margin-right 1rem
 
-      &last-child
-        margin-right 1rem
+      &:hover .post_cover a .recent-post-top-text
+        left 0
 
-  span.recent-post-top-text
-    position absolute
-    top 0
-    left -40px
-    display flex
-    z-index 1
-    background var(--sco-theme)
-    color var(--sco-white)
-    padding 2px 8px
-    font-size .6rem
-    border-radius 12px 0 12px 0
-    transition .3s
-    cursor pointer
+      .post_cover
+        width 100%
+        -webkit-mask-image -webkit-radial-gradient(center, #fff, #000)
 
-  .recent-post-itemhover .recent-post-top-text
-    left 0
+        a
+          height 100px
+          overflow hidden
+          display flex
 
-  .recent-post-item .post_cover a
-    height 100px
-    overflow hidden
-    display flex
+          img
+            object-fit cover
+            width 100%
+            background var(--sco-secondbg)
+            border-radius 12px 12px 0 0
 
-  .recent-post-item .post_cover img
-    object-fit cover
-    width 100%
-    background var(--sco-secondbg)
-    border-radius 12px 12px 0 0
+          .recent-post-top-text
+            position absolute
+            top 0
+            left -40px
+            display flex
+            z-index 1
+            background var(--sco-theme)
+            color var(--sco-white)
+            padding 2px 8px
+            font-size .6rem
+            border-radius 12px 0 12px 0
+            transition .3s
+            cursor pointer
 
-  .recent-post-itemhover .post_cover img
-    transform scale(1)
-
-  .recent-post-item .post_cover
-    -webkit-mask-image -webkit-radial-gradient(center, #fff, #000)
-
-  .recent-post-item .recent-post-info
-    padding .3rem .5rem .3rem .5rem !important
-    transition .3s
-
-  .recent-post-itemhover .recent-post-info a
-    color var(--sco-fontcolor)
-
-    +maxWidth1300()
-      .recent-post-itemhover .recent-post-info a
-        color var(--sco-theme)
+      .recent-post-info
+        padding .3rem .5rem .3rem .5rem
         transition .3s
 
-  .recent-post-item .recent-post-info .article-title
-    -webkit-line-clamp 2
-    overflow hidden
-    display -webkit-box
-    -webkit-box-orient vertical
-    line-height 1.5
-    justify-content center
-    align-items flex-end
-    align-content center
-    font-weight 700
-    font-size .8rem !important
-    padding 0 !important
+        .article-title
+          -webkit-line-clamp 2
+          overflow hidden
+          display -webkit-box
+          -webkit-box-orient vertical
+          line-height 1.5
+          justify-content center
+          align-items flex-end
+          align-content center
+          font-weight 700
+          font-size .8rem
+          padding 0
+
+
+    .todayCard
+      display none
+
+      +minWidth1200()
+        position absolute
+        width 100%
+        z-index 3
+        height 100%
+        top 0
+        right 0
+        background var(--sco-card-bg)
+        border-radius 12px
+        margin-left 0.5rem
+        overflow hidden
+        transition .3s
+        display flex
+        cursor pointer
+        pointer-events all
+
+        &::after
+          position: absolute
+          content: ''
+          width: 100%
+          height: 100%
+          top: 0
+          left: 0
+          box-shadow 0 -109px 133px -9px $todayCardColor inset
+
+        &.hide
+          opacity: 0
+          pointer-events: none
+
+        .todayCard-info
+          position: absolute
+          bottom: 2rem
+          left: 2rem
+          z-index: 2
+          color: var(--sco-white)
+          max-width: 60%
+          transition: .3s
+
+          .todayCard-tips
+            opacity: .8
+            font-size: .6rem
+
+          .todayCard-title
+            font-size: 28px
+            font-weight: 700
+            line-height: 36px
+
+        .todayCard-cover
+          position: absolute
+          min-width: 100%
+          min-height: 100%
+          top: 0
+          left: 0
+          background-size: cover
+          z-index: -1
+          transition: .3s
+
+        .banner-button-group
+          position: absolute
+          right: 2rem
+          bottom: 2rem
+          display: flex
+          transition: .3s
+
+        .banner-button
+          background: var(--sco-white-op)
+          border-radius: 20px
+          color: var(--sco-white)
+          display: flex
+          align-items: center
+          z-index: 1
+          transition: .3s
+          cursor: pointer
+          backdrop-filter: saturate(180%) blur(20px)
+          transform: translateZ(0)
+          height: 40px
+          width: 118px
+          justify-content: center
+
+          i
+            margin-right: 8px
+            font-size: 22px
+
+          &:hover
+            background: var(--sco-theme)
+            color: var(--sco-white)
+
+        &.hide
+          .todayCard-info
+            bottom: 1rem
+            opacity: 0
+
+          .todayCard-cover
+            transform: scale(1.2)
+
+          .banner-button-group
+            bottom: 1rem

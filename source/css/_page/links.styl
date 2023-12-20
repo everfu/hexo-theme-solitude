@@ -139,11 +139,17 @@
             -webkit-line-clamp 2
 
       &:hover
+        border var(--style-border-hover)
+        box-shadow var(--sco-shadow-main)
         .site-card-tag
           left: -80px
 
         .img
           height 80px
+
+          img
+            transform scale(1.1)
+            filter brightness(.3)
 
         a
           border-bottom 2px solid var(--sco-none)
@@ -287,9 +293,9 @@
           min-width calc(100% - 20px)
 
           .flink-item-name
-            color var(--sco-white)
+            color var(--sco-card-bg)
 
           .flink-item-desc
-            color var(--sco-white)
+            color var(--sco-card-bg)
             overflow hidden
             width 100%

@@ -74,10 +74,6 @@ a
     cursor pointer
 
 .recent-top-post-group
-  @media screen and (min-width: 1300px)
-    .recent-post-top .recent-post-item
-      margin-right: 0
-      margin-bottom: .5rem
 
   @media screen and (max-width: 768px)
     border-radius: 0
@@ -86,104 +82,9 @@ a
     .recent-post-top-text
       display: none !important
 
-    .recent-post-top .recent-post-item .post_cover img
-      border-radius: 8px 8px 0 0 !important
-
   @media screen and (max-width: 768px)
     a.categoryButton i
       display: none
-.recent-post-top
-  .recent-post-item
-    display: flex
-    width: 200px
-    flex-direction: column
-    align-items: flex-start
-    margin-left: .5rem
-    background: var(--sco-card-bg)
-    border-radius: 12px
-    overflow: hidden
-    min-width: 200px
-    height: 164px
-    max-height: 164px
-    border: var(--style-border-always)
-    transition: .3s
-    position: relative
-    box-shadow: var(--sco-shadow-border)
-
-    +minWidth1300()
-      width calc(100% / 3 - 0.25rem)
-      margin-left 0
-
-    @media screen and (max-width: 768px)
-      border-radius: 8px
-      box-shadow: none
-      clip-path: inset(0 0 0 0 round 8px)
-
-      &:last-child
-        margin-right: 1rem
-
-  span.recent-post-top-text
-    position: absolute
-    top: 0
-    left: -40px
-    display: flex
-    z-index: 1
-    background: var(--sco-theme)
-    color: var(--sco-white)
-    padding: 2px 8px
-    font-size: .6rem
-    border-radius: 12px 0 12px 0
-    transition: .3s
-    cursor: pointer
-
-  .recent-post-item:hover .recent-post-top-text
-    left: 0
-
-  .recent-post-item .post_cover a
-    height: 100px
-    overflow: hidden
-    display: flex
-
-  .recent-post-item .post_cover img
-    object-fit: cover
-    width: 100%
-    background: var(--sco-secondbg)
-    border-radius: 12px 12px 0 0
-
-  .recent-post-item:hover .post_cover img
-    transform: scale(1)
-
-  .recent-post-item .post_cover
-    -webkit-mask-image: -webkit-radial-gradient(center, #fff, #000)
-
-  .recent-post-item .recent-post-info
-    padding: .3rem .5rem .3rem .5rem !important
-    transition: .3s
-
-  .recent-post-item:hover .recent-post-info a
-    color: var(--sco-fontcolor)
-
-    @media screen and (max-width: 1300px)
-      .recent-post-item:hover .recent-post-info a
-        color: var(--sco-theme)
-        transition: .3s
-
-  .recent-post-item .recent-post-info .article-title
-    -webkit-line-clamp: 2
-    overflow: hidden
-    display: -webkit-box
-    -webkit-box-orient: vertical
-    line-height: 1.5
-    justify-content: center
-    align-items: flex-end
-    align-content: center
-    font-weight: 700
-    font-size: .8rem !important
-    padding: 0 !important
-
-a.categoryButton:hover
-  background-position: 100% 0
-
 .category-in-bar
   display: flex
   white-space: nowrap
@@ -365,8 +266,474 @@ a.categoryButton:hover
   #recent-posts .recent-post-item .recent-post-info .article-title
     font-size: 19px
 
-#recent-post-top .recent-post-item .post_cover
+@media screen and (max-width: 768px)
+  #recent-posts .recent-post-item:hover
+    border: none
+    box-shadow: none
+
+@media screen and (max-width: 1300px)
+  #recent-posts > .recent-post-item .left_radius, #recent-posts > .recent-post-item .right_radius
+    width: 75%
+    display: flex
+    height: 200px
+
+  #recent-posts > .recent-post-item:hover .post_cover img.post_bg
+    transform: scale(1.03)
+    transition: .3s ease-in-out
+    filter: brightness(.85)
+
+  @media screen and (min-width: 1200px)
+    #recent-posts > .recent-post-item:hover .post_cover img.post_bg
+      transform: scale(1.03)
+      transition: .3s ease-in-out
+      filter: brightness(.85)
+
+  #recent-posts > .recent-post-item.post-card-large:hover .post_cover img.post_bg
+    transform: scale(1.03)
+
+  #recent-posts > .recent-post-item .post_cover img.post_bg
+    min-width: 100%
+    -webkit-backface-visibility: hidden
+    -webkit-transform-style: preserve-3d
+    transition: .3s ease-in-out
+    min-height: 100%
+    user-select: none
+
+  #recent-posts > .recent-post-item:hover > .recent-post-info
+    transition: all .3s
+    position: relative
+
+  #recent-posts > .recent-post-item > .recent-post-info
+    transition: all .3s
+
+@media screen and (min-width: 1300px)
+  #recent-posts > .recent-post-item .left_radius, #recent-posts > .recent-post-item .right_radius
+    width: 100%
+    display: flex
+
+@media screen and (min-width: 1300px)
+  #recent-posts > .recent-post-item
+    flex-direction: column
+
+  #recent-posts > .recent-post-item:not(:first-child)
+    width: calc(100% / 2 - .5rem)
+    margin-top: .25rem
+    margin-bottom: .75rem
+    box-shadow: var(--sco-shadow-border)
+
+  #category #recent-posts .recent-post-item, #tag #recent-posts .recent-post-item
+    position: relative
+    overflow: hidden
+    animation: slide-in .6s .4s backwards
+    will-change: transform
+    width: calc(100% / 2 - .5rem)
+    margin-top: .25rem
+    margin-bottom: .75rem
+    box-shadow: var(--sco-shadow-border)
+
+  #category-bar
+    margin-bottom: .75rem
+    box-shadow: var(--sco-shadow-border)
+    animation: slide-in .6s .3s backwards
+
+  #category #category-bar
+    animation: none
+
+  #recent-posts
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-between
+    align-items: flex-start
+    align-content: flex-start
+    -webkit-user-select: none
+    transition width .3s
+
+@media screen and (min-width: 1200px)
+  #category #recent-posts .recent-post-item, #tag #recent-posts .recent-post-item
+    animation: slide-in .6s .4s backwards
+
+  #category-bar
+    animation: slide-in .6s .3s backwards
+
+@media screen and (max-width: 768px)
+
+  #category #recent-posts, #tag #recent-posts
+    padding: 0
+
+  #recent-posts .recent-post-item .post_cover
+    border-radius: 0 !important
+    width: 100%
+
+  a.article-meta__categories
+    left: 12px !important
+    top: 12px !important
+    border-radius: 4px !important
+    padding: 2px 9px !important
+    font-size: 12px
+
+@media screen and (min-width: 1300px)
+  .topGroup .recent-post-item:nth-child(7)
+    display: none
+
+@media screen and (max-width: 768px)
+  #sidebar-menus > div.author-avatar
+    display: none
+
+  #recent-posts > .recent-post-item > .recent-post-info > .article-meta-wrap
+    bottom: .5rem !important
+
+  #recent-posts > .recent-post-item > .recent-post-info > .article-meta-wrap time
+    display: absolute
+    right: 0
+
+  #web_bg
+    background: 0 0 !important
+
+  #recent-posts > .recent-post-item .post_cover img.post_bg
+    border-radius: 12px 12px 0 0 !important
+
+  #recent-posts > .recent-post-item:hover img.post_bg
+    transform: scale(1)
+
+  #recent-posts > .recent-post-item > .recent-post-info > .article-meta-wrap, #recent-posts > .recent-post-item > .recent-post-info > .article-title, #recent-posts > .recent-post-item > .recent-post-info > .content
+    padding: 0 20px !important
+
+@media screen and (min-width: 768px)
+  #recent-posts > .recent-post-item > .recent-post-info > .article-title
+    top: 40px
+
+  #recent-posts > .recent-post-item:hover > .recent-post-info > .article-title
+    top: 20px
+
+  #recent-posts > .recent-post-item.post-card-large:hover > .recent-post-info > .article-title
+    top: 30px
+
+  #recent-posts .recent-post-item:hover .recent-post-info .article-title
+    color: var(--sco-theme)
+
+@media screen and (max-width: 768px)
+  #recent-posts .recent-post-item .recent-post-info
+    height: 7rem
+
+@media screen and (min-width: 768px)
+  #recent-posts > .recent-post-item > .recent-post-info > .content
+    opacity: 0
+    top: 120px
+
+  #recent-posts > .recent-post-item:hover > .recent-post-info > .content
+    opacity: 1
+    top: 90px
+
+  @media screen and (max-width: 1300px)
+    #recent-posts > .post-card-large > .recent-post-info > .content
+      opacity: 1 !important
+
+    #recent-posts > .post-card-large:hover > .recent-post-info > .content
+      top: 110px
+
+    #recent-posts > .post-card-large > .recent-post-info > .content
+      -webkit-line-clamp: 3 !important
+
+    #recent-posts > .post-card-large:hover > .recent-post-info > .content
+      -webkit-line-clamp: 5 !important
+
+    #recent-posts > .post-card-large
+      height: 20em !important
+
+@media screen and (max-width: 768px)
+  #recent-posts > .recent-post-item > .recent-post-info > .content
+    top: 5rem
+
+.recent-post-item span.tags-punctuation
+  margin-right: 0
+  font-size: 13px
+
+  &:hover
+    color var(--sco-theme)
+
+// category bar
+
+.tags-group-icon
+  width: 120px
+  height: 120px
+  border-radius: 30px
+  display: flex
+  align-items: center
+  justify-content: center
+  color: #fff
+  font-size: 66px
+  font-weight: 700
+  box-shadow: var(--sco-shadow-blackdeep)
+
+  img
+    width: 60%
+
+#cate#bbTimeList,
+#category-bar
+  padding .4rem 1rem .4rem .7rem
+  background var(--sco-card-bg)
+  border-radius 12px
+  display flex
+  white-space nowrap
+  overflow hidden
+  margin-bottom 1rem
+  border var(--style-border)
+  transition .3s
+  height 50px
+  width 100%
+  justify-content space-between
+  -webkit-user-select none
+  align-items center
+
+  +maxWidth1300()
+    margin-bottom 1rem
+    animation slide-in .6s 0s backwards
+
+  +minWidth1300()
+    &:hover
+      border var(--style-border-hover)
+      box-shadow var(--sco-shadow-main)
+
+  +maxWidth768()
+    margin-bottom 0
+    margin-top 0
+    border-radius 0
+    background var(--sco-background)
+    padding 0.5rem 0
+    border none
+
+#bbTimeList
+  padding .5rem 1rem
+
+  +minWidth1300()
+    margin-bottom .5rem
+    animation slide-in .6s 0s backwards
+
+#category-bar
+  white-space nowrap
+  overflow hidden
+  justify-content space-between
+
+  +minWidth1300()
+    margin-bottom 0.75rem
+    animation slide-in .6s .3s backwards
+
+    .category-in-bar-tips
+      margin-bottom .25rem
+
+.page-title
+  display none
+
+#page h1.page-title
+  display inline
+  margin .4rem 0 1rem
+
+#page
+  background 0 0
+  border none
+  padding 0
+  box-shadow none
+  min-height calc(100vh - 464px)
+
+  +maxWidth768()
+    padding 0 1rem
+
+a
+  &.bber-reply
+    cursor pointer
+
+.recent-top-post-group
+
+  @media screen and (max-width: 768px)
+    border-radius: 0
+    background: var(--sco-background)
+
+    .recent-post-top-text
+      display: none !important
+
+  @media screen and (max-width: 768px)
+    a.categoryButton i
+      display: none
+.category-in-bar
+  display: flex
+  white-space: nowrap
+  align-items: center
+
+.category-in-bar-tips
+  margin-right: 1rem
+
+.category-bar-items
+  white-space: nowrap
+  overflow-x: scroll
+  overflow-y: hidden
+  display: flex
+  border-radius: 8px
+  align-items: center
+  height: 30px
+
+.category-in-bar .category-in-bar-tips
+  margin-bottom: 0
+
+.category-in-bar #category-bar
+  margin-bottom: 0
+
+.category-bar-items::-webkit-scrollbar
+  display: none
+
+.category-bar-item a
+  padding: .1rem .5rem
+  margin-right: 6px
+  font-weight: 700
+  border-radius: 8px
+  display: flex
+  align-items: center
+  height: 30px
+
+.category-bar-item:hover a
+  background: var(--sco-theme)
+  color: var(--sco-white)
+
+.category-bar-item.select
+  order -1
+
+.category-bar-item.select a
+  background: var(--sco-theme)
+  color: var(--sco-white)
+  border-radius: 8px
+
+#category a.category-bar-item.select a
+  display: none
+
+@media screen and (max-width: 768px)
+  .category-bar-item.select a
+    border-radius: 8px
+
+  .category-bar-item a
+    border-radius: 8px
+
+  .category-in-bar
+    position: -webkit-sticky
+    position: sticky
+    top: 60px
+    background: var(--sco-background)
+    z-index: 1002
+
+.category-bar-next
+  margin-left: 16px
+  cursor: pointer
+  height: 22px
+  display: flex
+
+.category-bar-next:hover
+  color: var(--sco-lighttext)
+
+.category-bar-more
+  margin-left: 14px
+  font-weight: 700
+
+.category-bar-more:hover
+  color: var(--sco-lighttext)
+
+@media screen and (max-width: 768px)
+  #recent-posts .recent-post-item
+    margin 1.5rem 0
+    border-radius 12px
+    margin-top 0.5rem
+    border var(--style-border-always)
+    box-shadow var(--heo-shadow-border)
+    display block
+    position relative
+    clip-path inset(0 0 0 0 round 12px)
+
+  #recent-posts .recent-post-item .post_cover
+    width: 100%
+    height: 230px
+    border-radius: 5px 8px 0 0
+    -webkit-box-ordinal-group: 1 !important
+    order: 1 !important
+
+  #recent-posts .recent-post-item .recent-post-info
+    -webkit-box-ordinal-group: 2 !important
+    order: 2 !important
+
+  #recent-posts .recent-post-item .recent-post-info.no-cover
+    padding: 1.5rem 1rem
+
+  #recent-posts .recent-post-item .recent-post-info .article-title
+    font-size: 1.43em
+
+  #recent-posts .recent-post-item .recent-post-info .content
+    height: auto
+
+.recent-post-item .recent-post-info .recent-post-info-top
+  position: relative
+  transition: .3s
+  padding: 0 32px
   width: 100%
+
+.recent-post-item .recent-post-info .recent-post-info-top .article-title
+  line-height: 30px
+  margin-top: 0
+  font-weight: 700
+  color: var(--sco-fontcolor)
+  margin-bottom: 0
+  width: 100%
+  transition: .3s
+  font-size: 1rem
+  -webkit-line-clamp: 2
+  display: -webkit-box
+  overflow: hidden
+  -webkit-box-orient: vertical
+
+.recent-post-item .recent-post-info .recent-post-info-top .original
+  display: flex
+  color: var(--sco-secondtext)
+  font-size: .5rem
+  position: relative
+  margin-right: 8px
+
+.recent-post-item .recent-post-info .recent-post-info-top .lastestpost
+  display: none
+  margin-right: 8px
+
+.recent-post-item .recent-post-info .recent-post-info-top a.unvisited-post
+  display: flex
+  color: var(--sco-secondtext)
+  font-size: .5rem
+  position: relative
+
+.recent-post-item .recent-post-info .recent-post-info-top a.unvisited-post:visited
+  color: var(--sco-card-bg)
+
+@media screen and (max-width: 768px)
+  .recent-post-info-top-tips
+    display: none
+
+@media screen and (min-width: 1300px)
+  #recent-posts > .recent-post-item:nth-child(2) .lastestpost
+    display: flex
+    color: var(--sco-secondtext)
+    font-size: .5rem
+    position: relative
+
+  .recent-post-item .recent-post-info .recent-post-info-top .article-title
+    font-size: 20px
+    -webkit-line-clamp: 2
+
+  .recent-post-item:hover .recent-post-info .recent-post-info-top .article-title
+    -webkit-line-clamp: 2
+
+  #recent-posts > .recent-post-item .post_cover
+    transition: 1s !important
+    height: 225px
+    width: 100%
+
+@media screen and (max-width: 768px)
+  .recent-post-item .recent-post-info .recent-post-info-top
+    padding: 0 20px
+
+  #recent-posts .recent-post-item .recent-post-info .article-title
+    font-size: 19px
 
 @media screen and (max-width: 768px)
   #recent-posts .recent-post-item:hover
@@ -497,9 +864,6 @@ a.categoryButton:hover
   #recent-posts > .recent-post-item:hover img.post_bg
     transform: scale(1)
 
-  .recent-post-top .recent-post-item:hover .post_cover img
-    transform: scale(1)
-
   #recent-posts > .recent-post-item > .recent-post-info > .article-meta-wrap, #recent-posts > .recent-post-item > .recent-post-info > .article-title, #recent-posts > .recent-post-item > .recent-post-info > .content
     padding: 0 20px !important
 
@@ -556,222 +920,10 @@ a.categoryButton:hover
   &:hover
     color var(--sco-theme)
 
-// category bar
-div#categoryList
-  display: flex
-  width: 100%
-  justify-content: space-between
-
-a.categoryButton
-  height: 100%
-  width: 100%
-  background: var(--sco-card-bg)
-  border-radius: 12px
-  display: inline-block
-  text-align: left
-  line-height: 4em
-  font-weight: 700
-  font-size: .9rem
-  color: var(--sco-white)
-  transition: all .8s cubic-bezier(.39, .575, .565, 1)
-  transform: scale(1)
-  overflow: hidden
-  font-family: PingFang SC, Hiragino Sans GB, Microsoft YaHei
-
-a.categoryButton i
-  transform: scale(1) rotate(15deg)
-
-@media screen and (max-width: 768px)
-  a.categoryButton
-    border-radius: 8px
-
-  .categoryItem
-    border-radius: 0
-    height: 47%
-    box-shadow: none !important
-
-a.categoryButton:after
-  top: 50px
-  width: 1rem
-  left: 21px
-  height: 2px
-  background: var(--sco-white)
-  content: ""
-  border-radius: 1px
-  position: absolute
-
-.topGroup
-  display: flex
-
-.todayCard
-  display: none
-
-@media screen and (min-width: 1200px)
-  .topGroup
-    display: flex
-    flex-direction: row
-    flex-wrap: wrap
-    justify-content: space-between
-    height: calc(328px + .5rem)
-    align-content: space-between
-    width: calc(50% - 0.25rem)
-    position: relative
-    animation: slide-in .6s .1s backwards
-
-    .todayCard
-      position absolute
-      width 100%
-      z-index 3
-      height 100%
-      top 0
-      right 0
-      background var(--sco-card-bg)
-      border-radius 12px
-      margin-left 0.5rem
-      overflow hidden
-      transition .3s
-      display flex
-      cursor pointer
-      pointer-events all
-
-      &::after
-        position: absolute
-        content: ''
-        width: 100%
-        height: 100%
-        top: 0
-        left: 0
-        box-shadow  0 -109px 133px -9px $todayCardColor inset
-
-      &.hide
-        opacity: 0
-        pointer-events: none
-
-      .todayCard-info
-        position: absolute
-        bottom: 2rem
-        left: 2rem
-        z-index: 2
-        color: var(--sco-white)
-        max-width: 60%
-        transition: .3s
-
-        .todayCard-tips
-          opacity: .8
-          font-size: .6rem
-
-        .todayCard-title
-          font-size: 28px
-          font-weight: 700
-          line-height: 36px
-
-      .todayCard-cover
-        position: absolute
-        min-width: 100%
-        min-height: 100%
-        top: 0
-        left: 0
-        background-size: cover
-        z-index: -1
-        transition: .3s
-
-      .banner-button-group
-        position: absolute
-        right: 2rem
-        bottom: 2rem
-        display: flex
-        transition: .3s
-
-      .banner-button
-        background: var(--sco-white-op)
-        border-radius: 20px
-        color: var(--sco-white)
-        display: flex
-        align-items: center
-        z-index: 1
-        transition: .3s
-        cursor: pointer
-        backdrop-filter: saturate(180%) blur(20px)
-        -webkit-backdrop-filter: blur(20px)
-        transform: translateZ(0)
-        height: 40px
-        width: 118px
-        justify-content: center
-
-        i
-          margin-right: 8px
-          font-size: 22px
-
-        &:hover
-          background: var(--sco-theme)
-          color: var(--sco-white)
-
-      &.hide
-        .todayCard-info
-          bottom: 1rem
-          opacity: 0
-
-        .todayCard-cover
-          transform: scale(1.2)
-
-        .banner-button-group
-          bottom: 1rem
-
-.tags-group-icon
-  width: 120px
-  height: 120px
-  border-radius: 30px
-  display: flex
-  align-items: center
-  justify-content: center
-  color: #fff
-  font-size: 66px
-  font-weight: 700
-  box-shadow: var(--sco-shadow-blackdeep)
-
-  img
-    width: 60%
-
-.tags-group-all
-  display: flex
-  transform: rotate(-30deg)
-
-  &.nowrapMove
-    transform: rotate(0)
-    padding-bottom: 2rem
-
-.tags-group-wrapper
-  margin-top: 5rem
-  display: flex
-  flex-wrap: nowrap
-  animation: rowup 60s linear infinite
-
-  .nowrapMove &
-    margin-top: 7rem
-    animation: rowup 120s linear infinite
-
-.tags-group-icon-pair
-  margin-left: 1rem
-  user-select: none
-
-  .tags-group-icon:nth-child(even)
-    margin-top: 1rem
-    transform: translate(-60px)
-
-  a img
-    border-radius: 50% !important
-
-.nowrapMove
-  .tags-group-icon
-    border-radius: 50%
-
-    img
-      min-width: 100%
-      min-height: 100%
-      border-radius: 50%
-      object-fit: cover
-
-#categoryList
++minWidth768()
+  .needEndHide.hide
+    bottom -200px
+    opacity 0goryList
   > div:nth-child(1) > a::before
     height: 24px
     width: 44px
