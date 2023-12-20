@@ -1,9 +1,10 @@
+- var randomstart = page.type === "moments" ? '' : 'display: none;'
 .title-h2-a
     .title-h2-a-left
         h2 🎣 钓鱼
-        a#random-post-start(href="javascript:fetchRandomPost();" style="transition-duration: 0.3s; transform: rotate(7560deg); opacity: 1;")
+        a#random-post-start(href="javascript:fetchRandomPost();" style="transition-duration: 0.3s; transform: rotate(7560deg); opacity: 1;"+randomstart)
             i.scoicon.sco-refresh-line
-    .title-h2-a-right
+    .title-h2-a-right(style=randomstart)
         a.random-post-all(href="/links/") 全部友链
 
 #random-post
