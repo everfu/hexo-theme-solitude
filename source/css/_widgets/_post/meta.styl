@@ -101,6 +101,31 @@
       transform rotate(10deg) translateY(-10%) scale(2)
       filter blur(10px)
 
+      &:after
+        position absolute
+        content ''
+        width 100%
+        height 100%
+        top 0
+        left 0
+        box-shadow 110px -130px 300px 60px var(--sco-main) inset
+
+      +minWidth1300()
+        width 70%
+        height 100%
+        position relative
+        overflow hidden
+        margin 0 -20% 0 auto
+        transform rotate(10deg) translateY(-8%) scale(1.8)
+        filter blur(10px)
+        opacity 0
+
+        &.loaded
+          display block
+          opacity .5
+          animation showCover 1s .3s backwards
+          transform rotate(10deg) translateY(-10%) scale(2)
+
       +minWidth768()
         width 70%
         height 100%
@@ -127,33 +152,8 @@
         &:after
           box-shadow 0 0 205px 59px var(--sco-main) inset
 
-      +minWidth1300()
-        width 70%
-        height 100%
-        position relative
-        overflow hidden
-        margin 0 -20% 0 auto
-        transform rotate(10deg) translateY(-8%) scale(1.8)
-        filter blur(10px)
-        opacity 0
-
-        &.loaded
-          display block
-          opacity .5
-          animation showCover 1s .3s backwards
-          transform rotate(10deg) translateY(-10%) scale(2)
-
       &.loaded
         display block
-
-      &:after
-        position absolute
-        content ''
-        width 100%
-        height 100%
-        top 0
-        left 0
-        box-shadow 110px -130px 300px 60px var(--sco-main) inset
 
     /*** 顶部背景 end ***/
 
