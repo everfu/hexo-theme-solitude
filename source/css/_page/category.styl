@@ -80,12 +80,13 @@
         background var(--sco-card-bg)
         margin 0.5em 0.5em
         border-radius 12px
-        -webkit-backface-visibility hidden
-        -webkit-transform-style preserve-3d
         border var(--style-border-always)
         box-shadow var(--sco-shadow-border)
         align-items center
         transition all .3s ease 0s
+
+        +maxWidth768()
+          zoom .85
 
         &:hover
           transform scale(1.1)
