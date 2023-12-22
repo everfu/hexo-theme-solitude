@@ -34,13 +34,13 @@ nav:
     # 导航栏显示的内容
     menu:
       # 显示分类名
-      项目:
-        # 显示子类
-        Solitude:
-          # 显示的图标
-          icon: https://bu.dusays.com/2023/11/08/654af68b25bb8.jpg
-          # 点击的跳转链接
-          url: https://github.com/DuoSco/Hexo-Theme-solitude
+#      项目:
+#        # 显示子类
+#        Solitude:
+#          # 显示的图标
+#          icon: https://bu.dusays.com/2023/11/08/654af68b25bb8.jpg
+#          # 点击的跳转链接
+#          url: https://github.com/DuoSco/Hexo-Theme-solitude
         # ...
 
   # 导航栏内容

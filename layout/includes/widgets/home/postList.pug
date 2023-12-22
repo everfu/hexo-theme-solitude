@@ -22,7 +22,7 @@ div.recent-post-item(onclick="pjax.loadUrl('/" + post.path + "')")
         div.article-meta-wrap
             span.article-meta.tags
                 each tag in post.tags.data
-                    a.article-meta__tags(href=url_for(tag.path), onclick="sco.aClickHandler(event)")
+                    a.article-meta__tags(href=url_for(tag.path), onclick="event.stopPropagation();")
                         span.tags-punctuation=tag.name
 
             span.post-meta-date
