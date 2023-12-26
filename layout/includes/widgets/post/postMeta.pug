@@ -7,7 +7,7 @@
             a.post-meta-original(title="该文章为" + cc + "文章，注意版权协议")= cc
             if page.categories.data.length > 0
                 span.post-meta-categories
-                    a.post-meta-categories(href=page.categories.data[0].path)= page.categories.data[0].name
+                    a.post-meta-categories(href='/' + page.categories.data[0].path)= page.categories.data[0].name
             .tag_share
                 .post-meta__tag-list
                     each tag in page.tags.data
