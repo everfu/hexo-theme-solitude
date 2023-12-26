@@ -198,7 +198,7 @@
         &:hover
           a
             &.totopbtn
-              background var(--sco-main)
+              background var(--sco-lighttext)
 
         &:not(.long):hover
           a
@@ -499,12 +499,12 @@
             border-radius 100px
             padding .3rem .8rem
             width 100%
-            color var(--sco-fontcolor) !important
+            color var(--sco-fontcolor)
             text-shadow none !important
 
             &:hover
-              background var(--sco-main) !important
-              color var(--sco-white) !important
+              background var(--sco-lighttext)
+              color var(--sco-card-bg)
               box-shadow var(--sco-shadow-main)
               margin 0 auto
               transform scale(1) !important
@@ -610,7 +610,7 @@
 
       &:hover
         +minWidth900()
-          color var(--sco-main) !important
+          color var(--sco-lighttext) !important
           background var(--sco-none)
           box-shadow none
 
@@ -666,6 +666,8 @@
         opacity 1
         color var(--sco-white)
         transition .3s
+        line-height 1
+        font-size 22px
 
     #percent
       opacity 0
@@ -777,17 +779,17 @@
       transition .3s
 
       &:hover
-        background var(--sco-main)
-        color var(--sco-white)
+        background var(--sco-lighttext)
+        color var(--sco-card-bg)
         transition .3s
 
     #site-name
       &:hover
         +minWidth900()
-          background var(--sco-main) !important
+          background var(--sco-lighttext)
 
       i
-        color var(--sco-fontcolor)
+        color var(--sco-card-bg)
         transition .3s
 
         +maxWidth768()
@@ -817,7 +819,6 @@
     #site-name
       &:hover
         +minWidth900()
-          background var(--sco-white-op)
           align-items center
 
 .back-menu-list-groups
@@ -1237,7 +1238,7 @@ a.console_switchbutton
 
 +minWidth768()
   .menus_item:hover > a.site-page
-    color var(--sco-card-bg) !important;
+    color var(--sco-card-bg);
     background var(--sco-white-op);
     transition .3s;
     box-shadow var(--sco-shadow-main)
@@ -1253,3 +1254,8 @@ a.console_switchbutton
 
   .nav-fixed .menus_item:hover > a.site-page
     background-color var(--sco-lighttext)
+
+[data-theme='dark']
+  .nav-fixed #nav #site-name:hover
+    &:after
+      color var(--sco-card-bg)
