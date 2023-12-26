@@ -47,24 +47,24 @@ nav:
   # tip：此部分内容是顶部导航栏中间菜单区域
   menu:
     # 显示的大分类名称
-    文库:
-      # 点击跳转链接
-      # tip：如果没有子类就填跳转链接，例如：/archives，否则填false
-      url: false
-      # 子类数组
-      child:
-        # 子类名称
-        文章列表:
-          # 点击跳转链接
-          url: /archives/
-          # 子类名称左侧图标
-          icon: scoicon sco-folder-fill
-        全部分类:
-          url: /categories/
-          icon: scoicon sco-checkbox-multiple-blank-fill
-        全部标签:
-          url: /tags/
-          icon: scoicon sco-price-tag-fill
+    # 文库:
+    #   # 点击跳转链接
+    #   # tip：如果没有子类就填跳转链接，例如：/archives，否则填false
+    #   url: false
+    #   # 子类数组
+    #   child:
+    #     # 子类名称
+    #     文章列表:
+    #       # 点击跳转链接
+    #       url: /archives/
+    #       # 子类名称左侧图标
+    #       icon: scoicon sco-folder-fill
+    #     全部分类:
+    #       url: /categories/
+    #       icon: scoicon sco-checkbox-multiple-blank-fill
+    #     全部标签:
+    #       url: /tags/
+    #       icon: scoicon sco-price-tag-fill
   #      友链:
   #        url: false
   #        child:
@@ -204,6 +204,8 @@ aside:
   card:
     # 头像信息
     author:
+      # 头像
+      img: https://bu.dusays.com/2023/11/08/654af68b25bb8.jpg
       # 自定义图标js（用于显示带颜色的状态表情）
       js: https://cdn3.codesign.qq.com/icons/XgRxnjPG4VZLmqr/latest/iconfont.js
       # 状态表情（使用symbol）

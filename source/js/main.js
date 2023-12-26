@@ -515,7 +515,7 @@ let sco = {
         for (let i = 0; i < inputs.length; i++) {
             let el = document.querySelector(inputs[i])
             if (el != null) {
-                el.dispatchEvent(new Event('input', {bubble: true, cancelable: true}))
+                el.dispatchEvent(new Event('input', { bubble: true, cancelable: true }))
                 el.value = '> ' + txt.replace(/\n/g, '\n> ') + '\n\n'
                 utils.scrollToDest(utils.getEleTop(document.getElementById('post-comment')), 300)
                 el.focus()
@@ -653,11 +653,11 @@ let sco = {
             const hours = timeNow.getHours();
             const lang = GLOBAL_CONFIG.lang.sayhello;
             const greetings = [
-                {start: 0, end: 5, text: lang.goodnight},
-                {start: 6, end: 10, text: lang.morning},
-                {start: 11, end: 14, text: lang.noon},
-                {start: 15, end: 18, text: lang.afternoon},
-                {start: 19, end: 24, text: lang.night},
+                { start: 0, end: 5, text: lang.goodnight },
+                { start: 6, end: 10, text: lang.morning },
+                { start: 11, end: 14, text: lang.noon },
+                { start: 15, end: 18, text: lang.afternoon },
+                { start: 19, end: 24, text: lang.night },
             ];
             for (let greeting of greetings) {
                 if (hours >= greeting.start && hours <= greeting.end) {
@@ -1029,9 +1029,12 @@ window.refreshFn = () => {
     GLOBAL_CONFIG.comment.commentBarrage && PAGE_CONFIG.comment && initializeCommentBarrage()
     document.body.setAttribute('data-type', PAGE_CONFIG.page)
     PAGE_CONFIG.page === "music" && scoMusic.init()
-    if (!document.querySelector('#Music-page')) {
-        document.removeEventListener('keydown', scoMusic.setKeydown)
-    }
+    // Todo: 优化音乐播放器快捷键绑定
+    // if (!document.querySelector('#Music-page')) {
+    //     document.removeEventListener('keydown', scoMusic.setKeydown)
+    // }
+    // 暂时添加一个变量来判断是否在音乐页面
+    GLOBAL_CONFIG.music.enable && !document.querySelector('#Music-page') && document.removeEventListener('keydown', scoMusic.setKeydown)
     GLOBAL_CONFIG.ai.enable && PAGE_CONFIG.page === "post" && ScoAI.init()
 }
 
