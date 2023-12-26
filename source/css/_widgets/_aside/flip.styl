@@ -65,5 +65,6 @@ faceback = hexo-config('aside.flip.backface')
       background url(faceback) center center no-repeat
       background-size 100%
 
-    [data-theme='dark'] #aside-content .card-widget.card-platform
-      background var(--sco-card-bg)
+if !hexo-config('aside.flip.darkcolor')
+  [data-theme='dark'] #aside-content .card-widget.card-platform
+    background var(--sco-card-bg)
