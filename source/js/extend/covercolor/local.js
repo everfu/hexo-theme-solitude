@@ -35,7 +35,7 @@ function coverColor() {
             if (brightness < 125) {
                 var cardContents = document.getElementsByClassName('card-content');
                 for (var i = 0; i < cardContents.length; i++) {
-                    cardContents[i].style.setProperty('--sco-card-bg', 'var(--sco-fontcolor)');
+                    cardContents[i].style.setProperty('--sco-card-bg', 'var(--sco-white)');
                 }
             }
 
