@@ -325,13 +325,13 @@ div#banners
       display flex
       flex-direction row
       flex-wrap wrap
-      justify-content space-between
       height calc(328px + .5rem)
       align-content space-between
       width calc(50% - 0.25rem)
       position relative
       animation slide-in .6s .1s backwards
       overflow-x visible
+      gap 0.5rem
 
     .recent-post-item
       display flex
@@ -350,12 +350,12 @@ div#banners
       position relative
       box-shadow var(--sco-shadow-border)
       +minWidth1300()
-        width calc(100% / 3 - 0.25rem)
+        width calc(100% / 3 - 0.35rem)
         margin-left 0
 
       +minWidth1200()
         display flex
-        width calc(100% / 3 - 0.25rem)
+        width calc(100% / 3 - 0.35rem)
         flex-direction column
         align-items flex-start
         margin-left 0
