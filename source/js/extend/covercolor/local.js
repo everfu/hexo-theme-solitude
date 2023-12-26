@@ -37,6 +37,12 @@ function coverColor() {
                 for (var i = 0; i < cardContents.length; i++) {
                     cardContents[i].style.setProperty('--sco-card-bg', 'var(--sco-white)');
                 }
+
+                var authorInfo = document.getElementsByClassName('author-info__sayhi');
+                for (var i = 0; i < authorInfo.length; i++) {
+                    authorInfo[i].style.setProperty('background', 'var(--sco-white-op)');
+                    authorInfo[i].style.setProperty('color', 'var(--sco-white)');
+                }
             }
 
             initThemeColor()
