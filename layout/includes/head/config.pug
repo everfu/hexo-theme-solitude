@@ -67,7 +67,12 @@ script.
                 placeholder: '!{_p('search.placeholder')}',
             }
         },
-        covercolor: !{theme.post.covercolor.enable},
+        covercolor: {
+            enable: !{theme.post.covercolor.enable},
+            mode: '!{theme.post.covercolor.mode}',
+            api: '!{theme.post.covercolor.api}',
+            time: !{theme.post.covercolor.time}
+        },
         comment: {
             enable: !{theme.comment.enable},
             type: '!{theme.comment.type}',
