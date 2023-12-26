@@ -235,6 +235,8 @@ aside:
     face:
     # 鼠标悬停翻转图片
     backface:
+    # 夜间模式下是否开启卡片背景颜色 true：使用背景颜色 / false：不使用背景颜色
+    darkcolor: false
   # 个性定位
   welcome:
     enable: false
