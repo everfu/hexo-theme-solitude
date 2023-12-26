@@ -21,7 +21,7 @@ function coverColor() {
             r = Math.floor(r / (data.length / 4 / step));
             g = Math.floor(g / (data.length / 4 / step));
             b = Math.floor(b / (data.length / 4 / step));
-            var value = "#" + r.toString(16) + g.toString(16) + b.toString(16);
+            var value = "#" + r.toString(16).padStart(2, '0') + g.toString(16).padStart(2, '0') + b.toString(16).padStart(2, '0');
             if (getContrastYIQ(value) == "light") {
                 value = LightenDarkenColor(colorHex(value), -50)
             }
@@ -30,6 +30,15 @@ function coverColor() {
             document.documentElement.style.setProperty('--sco-main-op', value + '23');
             document.documentElement.style.setProperty('--sco-main-op-deep', value + 'dd');
             document.documentElement.style.setProperty('--sco-main-none', value + '00');
+
+            var brightness = Math.round(((parseInt(r) * 299) + (parseInt(g) * 587) + (parseInt(b) * 114)) / 1000);
+            if (brightness < 125) {
+                var cardContents = document.getElementsByClassName('card-content');
+                for (var i = 0; i < cardContents.length; i++) {
+                    cardContents[i].style.setProperty('--sco-card-bg', 'var(--sco-fontcolor)');
+                }
+            }
+
             initThemeColor()
             document.getElementById("coverdiv").classList.add("loaded");
         }
