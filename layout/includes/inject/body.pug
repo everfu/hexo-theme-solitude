@@ -41,8 +41,8 @@ if theme.thirdparty.aplayer.enable || theme.music.enable
     script.
         const meting_api = '!{theme.thirdparty.aplayer.api}';
 
-if theme.post.covercolor
-    script(src='/js/extend/covercolor/local.js')
+if theme.post.covercolor.enable
+    script(src='/js/covercolor.js')
 
 if theme.footer.randomlink
     include ../widgets/randomlink.pug

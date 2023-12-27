@@ -1022,7 +1022,7 @@ window.refreshFn = () => {
     PAGE_CONFIG.toc && toc.init();
     (PAGE_CONFIG.is_post || PAGE_CONFIG.is_page) && ((GLOBAL_CONFIG.hightlight.enable && hightlight.init()) || tabs.init())
     PAGE_CONFIG.is_home && (showTodayCard() || sco.initbbtalk())
-    GLOBAL_CONFIG.covercolor && coverColor()
+    GLOBAL_CONFIG.covercolor.enable && coverColor()
     sco.initConsoleState()
     document.getElementById('history-baidu') && sco.card_history()
     document.getElementById('welcome-info') && sco.card_welcome()
