@@ -1,14 +1,16 @@
+const ColorMode = GLOBAL_CONFIG.covercolor.mode;
+
 function coverColor() {
     var path = document.getElementById("post-cover")?.src;
     
-    if (path !== undefined) {
-        if (GLOBAL_CONFIG.covercolor.mode === 'local') {
+    if (path) {
+        if (ColorMode === 'local') {
             localColor(path);
-        } else if (GLOBAL_CONFIG.covercolor.mode === 'api' || GLOBAL_CONFIG.covercolor.mode === 'api_redis') {
-            if (GLOBAL_CONFIG.covercolor.mode === 'api') {
-                const cacheGroup = JSON.parse(localStorage.getItem('CACHE_POST_COVER')) || {};
-                if (cacheGroup[path] && cacheGroup[path].expiration >= Date.now()) {
-                    const color = cacheGroup[path].color;
+        } else if (ColorMode === 'api' || ColorMode === 'api_redis') {
+            if (ColorMode === 'api') {
+                const cacheGroup = JSON.parse(localStorage.getItem('Solitude')) || {};
+                if (cacheGroup.postcolor && cacheGroup.postcolor[path] && cacheGroup.postcolor[path].expiration >= Date.now()) {
+                    const color = cacheGroup.postcolor[path].color;
                     const [r, g, b] = color.match(/\w\w/g).map(x => parseInt(x, 16));
                     setThemeColors(color,r,g,b);
                 } else {
@@ -148,11 +150,12 @@ function img2color(src) {
                 const [r, g, b] = color.match(/\w\w/g).map(x => parseInt(x, 16));
                 setThemeColors(color, r, g, b);
 
-                if (GLOBAL_CONFIG.covercolor.mode === 'api') {
+                if (ColorMode === 'api') {
                     const expirationTime = Date.now() + GLOBAL_CONFIG.covercolor.time;
-                    const cacheGroup = JSON.parse(localStorage.getItem('CACHE_POST_COVER')) || {};
-                    cacheGroup[src] = { color, expiration: expirationTime };
-                    localStorage.setItem('CACHE_POST_COVER', JSON.stringify(cacheGroup));
+                    const cacheGroup = JSON.parse(localStorage.getItem('Solitude')) || {};
+                    cacheGroup.postcolor = cacheGroup.postcolor || {};
+                    cacheGroup.postcolor[src] = { color, expiration: expirationTime };
+                    localStorage.setItem('Solitude', JSON.stringify(cacheGroup));
                 }
             })
             .catch(error => {
