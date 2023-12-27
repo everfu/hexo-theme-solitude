@@ -1,3 +1,5 @@
+// header
+
 #page-header
   position relative
   width 100%
@@ -9,22 +11,44 @@
   display flex
   justify-content center
 
-  +minWidth1300()
-    height: 25rem
+  &.not-top-img
+    height 60px
+    background 0 center
+    margin-bottom 0
 
-  &.full_page
-    background-attachment fixed
-    height 2rem
-    background-image none
-    background-color var(--sco-none)
+    #nav
+      z-index 500
+      transition .3s
+      background var(--sco-card-bg)
 
-    #site-info
-      position absolute
-      top 7.8rem
-      padding 0 .5rem
-      width 100%
-      display none
+      a
+        color var(--sco-fontcolor)
+        text-shadow none
 
+        &:hover
+          color var(--sco-white)
+          text-shadow none
+          align-items center
+
+          +maxWidth768()
+            align-items flex-end !important
+            color var(--sco-fontcolor)
+
+      .back-home-button
+        color var(--sco-fontcolor)
+
+        i
+          font-size 20px
+
+    &:not(.nav-fixed)
+      #nav
+        background var(--sco-none)
+        transition .3s
+
+        +maxWidth768()
+          transition 0s
+
+#page-header
   #site-title
     margin 0
     color var(--sco-white)
@@ -84,43 +108,6 @@
 
     +maxWidth768()
       top 7rem
-
-  &.not-top-img
-    height 60px
-    background 0 center
-    margin-bottom 0
-
-    #nav
-      z-index 500
-      transition .3s
-      background var(--sco-card-bg)
-
-      a
-        color var(--sco-fontcolor)
-        text-shadow none
-
-        &:hover
-          color var(--sco-white)
-          text-shadow none
-          align-items center
-
-          +maxWidth768()
-            align-items flex-end !important
-            color var(--sco-fontcolor)
-
-      .back-home-button
-        color var(--sco-fontcolor)
-
-        i
-          font-size 20px
-
-    &:not(.nav-fixed)
-      #nav
-        background var(--sco-none)
-        transition .3s
-
-        +maxWidth768()
-          transition 0s
 
   #nav
     box-shadow none
@@ -312,11 +299,6 @@
 #page-header #site-subtitle, #page-header #site-title
   text-align center
   line-height 1.5
-
-#page-header.nav-fixed #nav #site-name,
-#page-header.nav-fixed #nav #toggle-menu,
-#page-header.nav-fixed #nav a
-  text-shadow none
 
 #page-header.nav-fixed > #nav,
 #page-header.not-top-img > #nav
@@ -788,14 +770,6 @@
         +minWidth900()
           background var(--sco-lighttext)
 
-      i
-        color var(--sco-card-bg)
-        transition .3s
-
-        +maxWidth768()
-          color var(--sco-fontcolor)
-          transition .3s
-
   .back-home-button
     &:hover
       background var(--sco-main) !important
@@ -1084,17 +1058,6 @@ i
     font-size 20px
     vertical-align middle
     margin-bottom 4px
-
-#body-wrap
-  .full_page
-    &:before
-      background-color var(--sco-none) !important
-      transition 0s !important
-
-.full_page
-  #page-header
-    &:before
-      display none !important
 
 .snackbar-container
   background var(--sco-main) !important

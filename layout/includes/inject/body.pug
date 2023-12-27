@@ -35,6 +35,11 @@ div#js-pjax
             toc: !{!!page.toc},
             comment: !{!!page.comment},
         }
+
+// post-ai)
+if theme.thirdparty.ai.enable
+    script(src='/lib/sco-ai.min.js')
+
 if theme.thirdparty.aplayer.enable || theme.music.enable
     script(src=url_for(cdn.aplayerjs))
     script(src=url_for(cdn.metingjs))
@@ -42,7 +47,13 @@ if theme.thirdparty.aplayer.enable || theme.music.enable
         const meting_api = '!{theme.thirdparty.aplayer.api}';
 
 if theme.post.covercolor.enable
-    script(src='/js/covercolor.js')
+    script.
+        const coverColorConfig = {
+            mode: '!{theme.post.covercolor.mode}',
+            api: '!{theme.post.covercolor.api}',
+            time: !{theme.post.covercolor.time},
+        }
+    script(src=url_for(cdn.covercolorjs))
 
 if theme.footer.randomlink
     include ../widgets/randomlink.pug
@@ -66,10 +77,6 @@ if theme.comment.enable
 
 // pjax
 include ../widgets/third-party/pjax.pug
-
-// post-ai)
-if theme.thirdparty.ai.enable
-    script(src='/lib/sco-ai.min.js')
 
 // music
 if theme.music.enable

@@ -65,33 +65,33 @@ nav:
     #     全部标签:
     #       url: /tags/
     #       icon: scoicon sco-price-tag-fill
-  #      友链:
-  #        url: false
-  #        child:
-  #          鱼塘:
-  #            url: /moments/
-  #            icon: scoicon sco-wifi-fill
-  #          友情链接:
-  #            url: /links/
-  #            icon: scoicon sco-group-fill
-  #          宝藏博主:
-  #            url: javascript:travelling()
-  #            icon: scoicon sco-gift-fill
-  #      我的:
-  #        url: false
-  #        child:
-  #          装备:
-  #            url: /equipment/
-  #            icon: scoicon sco-laptop-line
-  #          工具箱:
-  #            url: /tlink/
-  #            icon: scoicon sco-tools-fill
-  #      关于:
-  #        url: false
-  #        child:
-  #          关于本站:
-  #            url: /about/
-  #            icon: scoicon sco-contacts-fill
+    #      友链:
+    #        url: false
+    #        child:
+    #          鱼塘:
+    #            url: /moments/
+    #            icon: scoicon sco-wifi-fill
+    #          友情链接:
+    #            url: /links/
+    #            icon: scoicon sco-group-fill
+    #          宝藏博主:
+    #            url: javascript:travelling()
+    #            icon: scoicon sco-gift-fill
+    #      我的:
+    #        url: false
+    #        child:
+    #          装备:
+    #            url: /equipment/
+    #            icon: scoicon sco-laptop-line
+    #          工具箱:
+    #            url: /tlink/
+    #            icon: scoicon sco-tools-fill
+    #      关于:
+    #        url: false
+    #        child:
+    #          关于本站:
+    #            url: /about/
+    #            icon: scoicon sco-contacts-fill
 
 
   # 导航栏右侧快捷菜单
@@ -310,12 +310,12 @@ footer:
     #            icon: scoicon sco-mail-line
     #            url: mailto:wleelw@wzsco.top
     right: # 右侧显示图标
-  #        Bilibili:
-  #          icon: scoicon sco-bilibili-line
-  #          url: https://space.bilibili.com/1329819902
-  #        抖音:
-  #          icon: scoicon sco-douyin-fill
-  #          url: https://v.douyin.com/iJsLc8jt/
+    #        Bilibili:
+    #          icon: scoicon sco-bilibili-line
+    #          url: https://space.bilibili.com/1329819902
+    #        抖音:
+    #          icon: scoicon sco-douyin-fill
+    #          url: https://v.douyin.com/iJsLc8jt/
   # 底部导航栏
   group: # 从左至右
   #      导航:
@@ -403,7 +403,7 @@ post:
   # 文章颜色获取
   covercolor: #文章cover取色
     enable: false # 是否开启
-    mode: api #local：本地取色 / api：img2color取色（无存缓） / api_redis：img2color取色（有存缓）
+    mode: local #local：本地取色 / api：img2color取色（无存缓） / api_redis：img2color取色（有存缓）
     api: https://img2color.meuicat.com/api?img=
     time: 43200000 # api取色间隔（毫秒），默认为12小时
   # 底部头像背景
@@ -687,6 +687,8 @@ pwa:
 # 非必要勿动
 cdn:
   head:
+    utilsjs: /js/utils.js
+    mainjs: /js/main.js
     snackbarcss: https://fastly.jsdelivr.net/npm/solitude-source@1.0.0/lib/snackbar.min.css
     scoicon: https://cdn3.codesign.qq.com/icons/7pOrz0WXB5ZWJPX/latest/iconfont.css
     aplayercss: https://cdn.bootcdn.net/ajax/libs/aplayer/1.10.1/APlayer.min.css
@@ -700,6 +702,7 @@ cdn:
     walinecss: https://cdn.staticfile.org/waline/2.15.8/waline.min.css
     walinejs: https://cdn.staticfile.org/waline/2.15.8/waline.min.js
   body:
+    covercolorjs: /lib/cover-color.min.js
     viewimagejs: https://fastly.jsdelivr.net/npm/solitude-source@1.0.0/lib/view-image.min.js
     waterfalljs: https://fastly.jsdelivr.net/npm/solitude-source@1.0.0/lib/waterfall.min.js
     lazyloadjs: https://fastly.jsdelivr.net/npm/solitude-source@1.0.0/lib/lazyload.min.js
