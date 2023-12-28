@@ -161,7 +161,7 @@
     .random-friends-btn
       display flex
 
-  #footer-bar
+  /#footer-bar
     padding 1rem
     color var(--sco-fontcolor)
     margin-top 1rem
@@ -188,17 +188,34 @@
       min-height 32px
       align-items center
 
+      .copyright
+        display flex
+        flex-direction row
+        align-items center
+        padding 0 8px
+        margin 0 4px
+
     .footer-bar-link
-      margin-top 8px
-      margin-bottom 8px
-      margin-right 1rem
+      margin 0 4px
       color var(--sco-fontcolor)
       font-size .8rem
+      padding 8px
+      border-radius 12px
       font-weight 700
       white-space nowrap
 
+      &.cc
+        margin-right 0
+
+        i
+          font-size 18px
+
+          &:not(:last-child)
+            margin-right .5rem
+
       &:hover
         color var(--sco-theme)
+        background var(--sco-main-op)
 
     .footer-bar-right
       display flex
