@@ -567,10 +567,6 @@ thirdparty:
     # 开启后友链页面也会显示朋友圈钓鱼
     angle:
       enable: true # 是否开启
-    # appjs
-    appjs: 'https://fastly.jsdelivr.net/npm/solitude-source@1.0.0/lib/circle.min.js'
-    # bundlejs
-    bundlejs: 'https://fastly.jsdelivr.net/npm/solitude-source@1.0.0/lib/bundle.min.js'
 
 # 评论
 # --------------------------------------
@@ -686,10 +682,10 @@ pwa:
 
 # 非必要勿动
 cdn:
+  # 如果没有请留空
+  # tip：目前主题还在更新，请注意群内通知。
+  prefix: # cdn前缀 https://cdn.jsdelivr.net/gh/用户名/仓库名@版本号/
   head:
-    utilsjs: /js/utils.js
-    mainjs: /js/main.js
-    snackbarcss: https://fastly.jsdelivr.net/npm/solitude-source@1.0.0/lib/snackbar.min.css
     scoicon: https://cdn3.codesign.qq.com/icons/7pOrz0WXB5ZWJPX/latest/iconfont.css
     aplayercss: https://cdn.bootcdn.net/ajax/libs/aplayer/1.10.1/APlayer.min.css
     swipercss: https://cdn.bootcdn.net/ajax/libs/Swiper/9.2.4/swiper-bundle.min.css
@@ -702,11 +698,6 @@ cdn:
     walinecss: https://cdn.staticfile.org/waline/2.15.8/waline.min.css
     walinejs: https://cdn.staticfile.org/waline/2.15.8/waline.min.js
   body:
-    covercolorjs: /lib/cover-color.min.js
-    viewimagejs: https://fastly.jsdelivr.net/npm/solitude-source@1.0.0/lib/view-image.min.js
-    waterfalljs: https://fastly.jsdelivr.net/npm/solitude-source@1.0.0/lib/waterfall.min.js
-    lazyloadjs: https://fastly.jsdelivr.net/npm/solitude-source@1.0.0/lib/lazyload.min.js
-    snackbarjs: https://fastly.jsdelivr.net/npm/solitude-source@1.0.0/lib/snackbar.min.js
     swiperjs: https://cdn.bootcdn.net/ajax/libs/Swiper/9.2.4/swiper-bundle.min.js
     busuanzijs: https://cdn.bootcdn.net/ajax/libs/busuanzi/2.3.0/bsz.pure.mini.min.js
     pjaxjs: https://cdn.bootcdn.net/ajax/libs/pjax/0.2.8/pjax.min.js

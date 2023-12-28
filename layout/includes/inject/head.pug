@@ -14,7 +14,7 @@ if theme.pwa.enable
     include ../head/pwa.pug
 
 link(rel="stylesheet", href=cdn.scoicon)
-link(rel="stylesheet", href=cdn.snackbarcss)
+link(rel="stylesheet", href=cdn_url_for("/lib/snackbar.min.css"))
 
 // comment
 if theme.comment.enable
@@ -110,8 +110,8 @@ script.
     );
 
 div
-    script(src=url_for(cdn.utilsjs))
-    script(src=url_for(cdn.mainjs))
+    script(src=cdn_url_for("/js/utils.js"))
+    script(src=cdn_url_for("/js/main.js"))
 
 // custom inject
 if theme.extends.head

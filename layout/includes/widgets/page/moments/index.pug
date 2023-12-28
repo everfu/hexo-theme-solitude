@@ -14,5 +14,5 @@ script.
         // 本地文章缓存数据过期时间（天）
         expire_days: !{theme.thirdparty.circle.expire_days},
     }
-script(src=url_for(theme.thirdparty.circle.appjs))
-script(src=url_for(theme.thirdparty.circle.bundlejs))
+script(src=cdn_url_for("/lib/circle.min.js"))
+script(src=cdn_url_for("/lib/bundle.min.js"))
