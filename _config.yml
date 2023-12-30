@@ -206,10 +206,9 @@ aside:
     author:
       # 头像
       img: https://bu.dusays.com/2023/11/08/654af68b25bb8.jpg
-      # 自定义图标js（用于显示带颜色的状态表情）
-      js: https://cdn3.codesign.qq.com/icons/XgRxnjPG4VZLmqr/latest/iconfont.js
-      # 状态表情（使用symbol）
-      state: "#sco-smile"
+      # 表情图片链接
+      # tip: 推荐尺寸 26x26
+      sticker: https://bu.dusays.com/2023/12/30/659011053e246.png
     # 文案1
     # tip：可使用html标签
     content: 分享自己对编程的<b>热爱</b>，对美好生活的<b>向往</b>，对知识海洋<b>探索历程</b>。
