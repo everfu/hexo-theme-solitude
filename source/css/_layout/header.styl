@@ -26,19 +26,13 @@
         text-shadow none
 
         &:hover
-          color var(--sco-white)
+          color var(--sco-card-bg)
           text-shadow none
           align-items center
 
           +maxWidth768()
             align-items flex-end !important
             color var(--sco-fontcolor)
-
-      .back-home-button
-        color var(--sco-fontcolor)
-
-        i
-          font-size 20px
 
     &:not(.nav-fixed)
       #nav
@@ -377,7 +371,7 @@
         justify-content center
         font-size 22px
         line-height 1
-        color var(--sco-white)
+        color var(--sco-card-bg)
 
     i
       font-size 16px
@@ -646,7 +640,7 @@
     .totopbtn
       i
         opacity 1
-        color var(--sco-white)
+        color var(--sco-card-bg)
         transition .3s
         line-height 1
         font-size 22px
@@ -690,11 +684,11 @@
     display: none
 
   i
-    font-size 22px
+    font-size 20px
 
   &:hover
     background var(--sco-main)
-    color var(--sco-white) !important
+    color var(--sco-card-bg)
 
     .back-menu-list-groups
       display flex
@@ -721,7 +715,7 @@
 
     &:hover
       .back-menu-list-title
-        color var(--sco-main)
+        color var(--sco-lighttext)
 
   .back-menu-list-groups
     position absolute
@@ -753,9 +747,6 @@
 
 .nav-fixed
   #nav
-    .back-home-button
-      color var(--sco-fontcolor)
-
     a
       color var(--sco-fontcolor)
       transition .3s
@@ -772,8 +763,8 @@
 
   .back-home-button
     &:hover
-      background var(--sco-main) !important
-      color var(--sco-white) !important
+      background var(--sco-lighttext) !important
+      color var(--sco-card-bg) !important
 
   .menus_item
     &:hover
@@ -786,7 +777,7 @@
   .back-home-button
     &:hover
       background var(--sco-white-op)
-      color var(--sco-white) !important
+      color var(--sco-white)
       cursor pointer
 
   #nav
@@ -794,6 +785,9 @@
       &:hover
         +minWidth900()
           align-items center
+
+      &:after
+        color var(--sco-white)
 
 .back-menu-list-groups
   .back-menu-list
@@ -820,7 +814,7 @@
       border-radius 8px
 
       &:hover
-        background var(--sco-main) !important
+        background var(--sco-lighttext) !important
         transform scale(1) !important
 
         .back-menu-item-text
@@ -1107,7 +1101,7 @@ i
   #nav
     a
       &:hover
-        color var(--sco-white)
+        color var(--sco-card-bg)
         background var(--sco-main)
         transition .3s
         box-shadow var(--sco-shadow-main)
