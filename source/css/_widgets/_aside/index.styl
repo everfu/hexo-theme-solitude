@@ -8,34 +8,6 @@
     background: var(--sco-main)
     margin-top: 0
 
-  .card-archives ul.card-archive-list > .card-archive-list-item a span,
-  .card-categories ul.card-category-list > .card-category-list-item a span,
-  .card-info .card-info-data > .card-info-data-item a .headline,
-  #pagination .next_info,
-  #pagination .prev_info,
-  #sidebar #sidebar-menus .menus_items .site-page,
-  #sidebar #sidebar-menus .site-data .data-item .data-item-link > a > div,
-  .flink#article-container .flink-list > .flink-list-item a .flink-item-desc,
-  .flink#article-container .flink-list > .flink-list-item a .flink-item-name,
-  .limit-one-line
-    text-overflow ellipsis
-    white-space nowrap
-
-  .aside-list > .aside-list-item .content > .comment,
-  .aside-list > .aside-list-item .content > .name,
-  .aside-list > .aside-list-item .content > .title,
-  #error-wrap .error-content .error-info .error_subtitle,
-  #post-info .post-title,
-  #recent-posts > .recent-post-item > .recent-post-info > .article-title,
-  #recent-posts > .recent-post-item > .recent-post-info > .content,
-  .article-sort-item-title,
-  .limit-more-line,
-  .relatedPosts > .relatedPosts-list .content .title,
-  figure.gallery-group .gallery-group-name,
-  figure.gallery-group p
-    display -webkit-box
-    -webkit-box-orient vertical
-
   +minWidth900()
     padding-left 15px
 
@@ -89,33 +61,9 @@
         margin-top 0
 
   .sticky_layout
-    top 80px
-    transition top 0s
-
-    +minWidth900()
-      position sticky
-      top: 20px
-      transition: top .3s ease 0s
-
-    +minWidth1300()
-      top calc(60px + 1rem)
-
-.page
-  .sticky_layout
-    display flex
-    -webkit-box-orient vertical
-    flex-direction column
-
-
-#page-header.nav-visible + .layout > .aside-content > .sticky_layout
-  top 70px
-  transition top .5s ease 0s
-
-  +minWidth900()
-    position sticky
-
-  +minWidth1300()
     top calc(60px + 1rem)
+    position sticky
+    transition: top .3s ease 0s
 
 +minWidth900()
   html.hide-aside .layout

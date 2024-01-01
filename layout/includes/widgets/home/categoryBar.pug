@@ -4,7 +4,7 @@
     each item in site.categories.find({ parent: { $exists: false } }).data
         .category-bar-item(class=select ? (select === item.name ? 'select' : '') : '', id=item.name)
             a(href=url_for(item.path))= item.name
-if site.categories.length > 10
+if site.categories.length > 13
     .category-bar-next#category-bar-next(onclick="sco.scrollCategoryBarToRight()")
         i.scoicon.sco-show-right-line
 a.category-bar-more(href="/categories/") 更多

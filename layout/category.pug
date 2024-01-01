@@ -4,8 +4,7 @@ block content
     main.layout#content-inner
         #category
             #category-bar
-                .category-bar-items#category-bar-items
-                    include includes/widgets/home/categoryBar
+                include includes/widgets/home/categoryBar
             .recent-posts#recent-posts
                 each post in page.posts.find({ parent: { $exists: false } }).data
                     include includes/widgets/home/postList
