@@ -3,18 +3,18 @@
     if(is_home())
         - noSticky = theme.aside.home.noSticky.split(',')
         - Sticky = theme.aside.home.Sticky.split(',')
-        - customNoSticky = site.data.aside.home?.noSticky
-        - customSticky = site.data.aside.home?.Sticky
+        - customNoSticky = site.data.aside?.home?.noSticky
+        - customSticky = site.data.aside?.home?.Sticky
     else if(is_post())
         - noSticky = theme.aside.post.noSticky.split(',')
         - Sticky = theme.aside.post.Sticky.split(',')
-        - customNoSticky = site.data.aside.post?.noSticky
-        - customSticky = site.data.aside.post?.Sticky
+        - customNoSticky = site.data.aside?.post?.noSticky
+        - customSticky = site.data.aside?.post?.Sticky
     else if(is_page() || is_archive() || is_tag() || is_category())
         - noSticky = theme.aside.page.noSticky.split(',')
         - Sticky = theme.aside.page.Sticky.split(',')
-        - customNoSticky = site.data.aside.page?.noSticky
-        - customSticky = site.data.aside.page?.Sticky
+        - customNoSticky = site.data.aside?.page?.noSticky
+        - customSticky = site.data.aside?.page?.Sticky
     each item in noSticky
         include ./asideSwitch.pug
     if customNoSticky
