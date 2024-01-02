@@ -1,658 +1,645 @@
 #page-header
-    position relative
-    width 100%
-    background-position center center
-    background-size cover
-    background-repeat no-repeat
-    transition all .5s ease 0s
-    background-image none !important
-    display flex
-    justify-content center
+  position relative
+  width 100%
+  transition all .5s ease 0s
+  display flex
+  justify-content center
 
-    &.not-top-img
-        height 60px
-        background 0 center
-
-        #nav
-            z-index 998
-            transition .3s
-            background var(--sco-card-bg)
-
-            a
-                color var(--sco-fontcolor)
-                text-shadow none
-
-                &:hover
-                    color var(--sco-card-bg)
-                    text-shadow none
-
-                    +maxWidth768()
-                        align-items flex-end !important
-                        color var(--sco-fontcolor)
-
-        &:not(.nav-fixed)
-            #nav
-                background var(--sco-none)
-                transition .3s
-
-                +maxWidth768()
-                    transition 0s
-
-#page-header
-    #site-title
-        margin 0
-        color var(--sco-white)
-        font-size 1.85em
-
-        +minWidth768()
-            font-size 2.85em
-
-    #site-subtitle
-        color var(--light-grey)
-        font-size 1.15em
-
-        +minWidth768()
-            font-size 1.72em
-
-    #site_social_icons
-        display none
-        margin 0 auto
-        width 15rem
-        text-align center
-
-        +maxWidth768()
-            display block
-
-        .social-icon
-            margin 0 .5rem
-            color var(--light-grey)
-            text-shadow rgba(0, 0, 0, .15) .1rem .1rem .2rem
-            font-size 1.43em
-            cursor pointer
-
-    #scroll-down
-        position absolute
-        bottom 0
-        width 100%
-        cursor pointer
-        display none
-
-        .scroll-down-effects
-            animation: 1.5s ease 0s infinite normal none running scroll-down-effect
-            position relative
-            width 100%
-            color var(--light-grey)
-            font-size 30px
-
-    &.not-home-page
-        height 20rem
-
-        +maxWidth768()
-            height 14rem
-
-    #page-site-info
-        position absolute
-        top 10rem
-        padding 0 .5rem
-        width 100%
-
-        +maxWidth768()
-            top 7rem
+  &.not-top-img
+    height 60px
+    background 0 center
 
     #nav
-        box-shadow none
-        transition 0.3s
-        display flex
-        justify-content center
-        -webkit-user-select none
+      z-index 998
+      transition .3s
+      background var(--sco-card-bg)
 
-        +maxWidth768()
-            background linear-gradient(to top, var(--sco-main-none) 0, var(--sco-main) 100%)
-            transition 0s
+      a
+        color var(--sco-fontcolor)
+        text-shadow none
 
-        +maxWidth1400()
-            padding 0
+        &:hover
+          color var(--sco-card-bg)
+          text-shadow none
 
-        a
-            &:hover
-                span
-                    &.scoicon
-                        opacity 0
-
-                        +maxWidth768()
-                            opacity 1 !important
-
-        #nav-group
-            max-width 1400px
-            width 100%
-            display flex
-            position relative
-            padding 0 1.5rem
-            align-items center
-
-            +maxWidth768()
-                width 100%
-                display flex
-                position relative
-                padding 0 12px
-
-        #nav-right
-            position absolute
-            right 0
-            z-index 102
-            display flex
-            flex-direction row
-            height 100%
-            align-items center
-            margin-right 1.5rem
-            overflow hidden
-
-            +maxWidth768()
-                margin-right 12px
-
-            div
-                margin-left .5rem
-                padding 0
-
-            .nav-button
-                a
-                    height 35px
-                    width 35px
-                    display flex
-                    align-items center
-                    justify-content center
-                    border-radius 40px
-
-                    &.totopbtn
-                        width 25px
-                        height 25px
-                        border-radius 40px
-                        background var(--sco-fontcolor)
-                        color var(--sco-card-bg)
-                        position absolute
-                        top 5px
-                        right 5px
-                        transition .3s
-
-                &.long
-                    a
-                        &.totopbtn
-                            width 70px
-
-                &:hover
-                    a
-                        &.totopbtn
-                            background var(--sco-lighttext)
-
-                &:not(.long):hover
-                    a
-                        &.totopbtn
-                            width 35px
-                            height 35px
-                            top 0
-                            right 0
-
-    &.nav-fixed
-        #nav
-            position fixed
-            top 0
-            z-index 103
-            transition .3s
-            box-shadow none
-            background var(--sco-card-bg)
-            outline 1px solid var(--sco-card-border)
-
-            #menus
-                +minWidth900()
-                    z-index 100
-
-                & > div
-                    &.menus_items
-                        transition .3s
-                        height 40px
-                        margin auto 0
-
-            #menus[style*="padding-right: 300px;"]
-                .menus_items
-                    transform translateX(-150px)
-
-            #page-name
-                +minWidth900()
-                    z-index 101
-                    transition .3s
-                    top 10px
-
-                &-text
-                    +minWidth900()
-                        display inline
-                        opacity 1
-                        transition .3s
-                        line-height 1
-
-                    &:hover
-                        &:after
-                            +minWidth900()
-                                opacity 1
-                                line-height 36px
-
-            div.menus_items
-                +minWidth900()
-                    transition .15s
-                    position relative
-                    top -60px
-
-        &.nav-visible
-            #nav
-                #page-name
-                    +minWidth900()
-                        z-index 100
-                        top 60px
-                        transition .3s
-
-                    &-text
-                        +minWidth900()
-                            display inline
-                            transition .15s
-
-                div.menus_items
-                    +minWidth900()
-                        opacity 1
-                        transition .15s
-                        position relative
-                        top: 0
-
-                #menus
-                    +minWidth900()
-                        z-index 101
-
-        #travellings_button
-            +maxWidth768()
-                opacity 0
-
-    &.no-top-img
-        margin-bottom 0
+          +maxWidth768()
+            align-items flex-end
+            color var(--sco-fontcolor)
 
     &:not(.nav-fixed)
-        #percent
+      #nav
+        background var(--sco-none)
+        transition .3s
+
+        +maxWidth768()
+          transition 0s
+
+#page-header
+  #site-title
+    margin 0
+    color var(--sco-white)
+    font-size 1.85em
+
+    +minWidth768()
+      font-size 2.85em
+
+  #site-subtitle
+    color var(--light-grey)
+    font-size 1.15em
+
+    +minWidth768()
+      font-size 1.72em
+
+  #site_social_icons
+    display none
+    margin 0 auto
+    width 15rem
+    text-align center
+
+    +maxWidth768()
+      display block
+
+    .social-icon
+      margin 0 .5rem
+      color var(--light-grey)
+      text-shadow rgba(0, 0, 0, .15) .1rem .1rem .2rem
+      font-size 1.43em
+      cursor pointer
+
+  #scroll-down
+    position absolute
+    bottom 0
+    width 100%
+    cursor pointer
+    display none
+
+    .scroll-down-effects
+      animation: 1.5s ease 0s infinite normal none running scroll-down-effect
+      position relative
+      width 100%
+      color var(--light-grey)
+      font-size 30px
+
+  &.not-home-page
+    height 20rem
+
+    +maxWidth768()
+      height 14rem
+
+  #page-site-info
+    position absolute
+    top 10rem
+    padding 0 .5rem
+    width 100%
+
+    +maxWidth768()
+      top 7rem
+
+  #nav
+    box-shadow none
+    transition 0.3s
+    display flex
+    justify-content center
+    -webkit-user-select none
+
+    +maxWidth768()
+      background linear-gradient(to top, var(--sco-main-none) 0, var(--sco-main) 100%)
+      transition 0s
+
+    +maxWidth1400()
+      padding 0
+
+    a
+      &:hover
+        span
+          &.scoicon
+            opacity 0
+
+            +maxWidth768()
+              opacity 1
+
+    #nav-group
+      max-width 1400px
+      width 100%
+      display flex
+      position relative
+      padding 0 1.5rem
+      align-items center
+
+      +maxWidth768()
+        width 100%
+        display flex
+        position relative
+        padding 0 12px
+
+    #nav-right
+      position absolute
+      right 0
+      z-index 102
+      display flex
+      flex-direction row
+      height 100%
+      align-items center
+      margin-right 1.5rem
+      overflow hidden
+
+      +maxWidth768()
+        margin-right 12px
+
+      div
+        margin-left .5rem
+        padding 0
+
+      .nav-button
+        a
+          height 35px
+          width 35px
+          display flex
+          align-items center
+          justify-content center
+          border-radius 40px
+
+          &.totopbtn
+            width 25px
+            height 25px
+            border-radius 40px
+            background var(--sco-fontcolor)
+            color var(--sco-card-bg)
+            position absolute
+            top 5px
+            right 5px
             transition .3s
 
-        #nav-totop
-            width 0
-            transform scale(0)
-            margin-left 0 !important
-            overflow hidden
-            transition .3s ease-in
+          &.console_switchbutton
+            padding 4px 8px
+
+        &.long
+          a
+            &.totopbtn
+              width 70px
+
+        &:hover
+          a
+            &.totopbtn
+              background var(--sco-lighttext)
+
+        &:not(.long):hover
+          a
+            &.totopbtn
+              width 35px
+              height 35px
+              top 0
+              right 0
+
+  &.nav-fixed
+    #nav
+      position fixed
+      top 0
+      z-index 103
+      transition .3s
+      box-shadow none
+      background var(--sco-card-bg)
+      outline 1px solid var(--sco-card-border)
+
+      #menus
+        +minWidth900()
+          z-index 100
+
+        & > div
+          &.menus_items
+            transition .3s
+            height 40px
+            margin auto 0
+
+      #menus[style*="padding-right: 300px;"]
+        .menus_items
+          transform translateX(-150px)
+
+      #page-name
+        +minWidth900()
+          z-index 101
+          transition .3s
+          top 10px
+
+        &-text
+          +minWidth900()
+            display inline
+            opacity 1
+            transition .3s
+            line-height 1
+
+          &:hover
+            &:after
+              +minWidth900()
+                opacity 1
+                line-height 36px
+
+      div.menus_items
+        +minWidth900()
+          transition .15s
+          position relative
+          top -60px
+
+    &.nav-visible
+      #nav
+        #page-name
+          +minWidth900()
+            z-index 100
+            top 60px
+            transition .3s
+
+          &-text
+            +minWidth900()
+              display inline
+              transition .15s
+
+        div.menus_items
+          +minWidth900()
+            opacity 1
+            transition .15s
+            position relative
+            top: 0
+
+        #menus
+          +minWidth900()
+            z-index 101
+
+    #travellings_button
+      +maxWidth768()
+        opacity 0
+
+  &.no-top-img
+    margin-bottom 0
+
+  &:not(.nav-fixed)
+    #percent
+      transition .3s
+
+    #nav-right #nav-totop
+      width 0
+      transform scale(0)
+      margin-left 0
+      overflow hidden
+      transition .3s ease-in
 
 #page-header #scroll-down .scroll-down-effects,
 #page-header #site-subtitle, #page-header #site-title
-    text-align center
-    line-height 1.5
+  text-align center
+  line-height 1.5
 
 #page-header.nav-fixed > #nav,
 #page-header.not-top-img > #nav
-    box-shadow none
+  box-shadow none
 
 #nav
+  padding 0
+  position absolute
+  top 0
+  z-index 90
+  display flex
+  flex-wrap wrap
+  -webkit-box-align center
+  align-items center
+  width 100%
+  height 60px
+  font-size 1.3em
+  opacity 0
+  transition all .5s ease 0s
+  outline 1px solid var(--sco-none)
+  justify-content space-between
+
+  +maxWidth768()
     padding 0
-    position absolute
+
+  &.show
     top 0
-    z-index 90
-    display flex
-    flex-wrap wrap
-    -webkit-box-align center
-    align-items center
-    width 100%
-    height 60px
-    font-size 1.3em
-    opacity 0
-    transition all .5s ease 0s
-    outline 1px solid var(--sco-none)
-    justify-content space-between
+    transition .2s
+    position fixed
+    z-index 91
+    opacity 1
+    filter none
+
+  #toggle-menu
+    display none
+    padding .1rem 0 0 .3rem
+    vertical-align top
 
     +maxWidth768()
-        padding 0
-
-    &.show
-        top 0
-        transition .2s
-        position fixed
-        z-index 91
-        opacity 1
-        filter none
-
-    #toggle-menu
-        padding 0 .4rem
-        display none
-        padding .1rem 0 0 .3rem
-        vertical-align top
-
-        +maxWidth768()
-            display inline-block !important
-
-        &:hover
-            color var(--sco-white)
-
-    #site-name
-        padding 0
-        transition .3s
-        display flex
-        height 35px
-        min-width 70px
-        justify-content center
-        align-items center
-        text-shadow none
-        border-radius 40px
-        cursor pointer
-
-        &:hover
-            i,span,img
-                +minWidth900()
-                    opacity 0
-
-            &:after
-                +minWidth900()
-                    opacity: 1
-
-        &:after
-            +minWidth900()
-                opacity 0
-                position absolute
-                display flex
-                z-index 1
-                content "\e008"
-                font-family scoicon, serif !important
-                align-items center
-                justify-content center
-                font-size 22px
-                line-height 1
-                color var(--sco-card-bg)
-
-        if hexo-config('site.name.class') == i_class
-            i
-                font-size 16px
-                line-height 35px
-                padding 0 12px
-
-                +maxWidth768()
-                    transition .1s
-
-                +minWidth900()
-                    opacity 1
-                    transition all .3s, color 0s, opacity .3s
-
-        if hexo-config('site.name.class') == text
-            span
-                +maxWidth768()
-                    padding-left 8px
-
-        if hexo-config('site.name.class') == img
-            img
-                max-width 120px
-                max-height 35px
-                padding 4px 8px
-
-    #blog_name
-        flex-wrap nowrap
-        height 60px
-        display flex
-        align-items center
-        z-index 102
-        transition .3s
-
-    a
-        transition .3s
-        color var(--sco-white)
-        padding .3rem .4rem 0
-        border-radius 8px
-
-        &:hover
-            background var(--sco-white-op)
-            transition .3s
-            color var(--sco-white)
-
-            +maxWidth768()
-                background var(--sco-none)
-                box-shadow none
-                transition .3s
-                color var(--sco-fontcolor)
-
-    #menus
-        display flex
-        justify-content center
-        width 100%
-        position absolute
-        height 60px
-        left 0
-        margin 0
-        transform translateZ(0)
-
-        +maxWidth768()
-            display none !important
-
-    .menus_items
-        position relative
-        width fit-content
-        text-align center
-        left 0
-        right 0
-        top 0
-        display flex
-        flex-direction row
-        justify-content center
-
-        .menus_item
-            padding 0 .4rem
-            display flex
-            flex-direction column
-            align-items center
-            margin auto
-            position relative
-
-            .menus_item_child
-                padding 6px 4px 8px 4px
-                border-radius 100px
-                background-color var(--sco-maskbgdeep)
-                box-shadow var(--sco-shadow-black)
-                border var(--style-border)
-                transition .3s
-                backdrop-filter blur(20px)
-                top 35px
-                position absolute
-                margin-top 8px
-                white-space nowrap
-                opacity 0
-                pointer-events none
-                transform translateY(-10px) scale(.8)
-
-                li
-                    display inline-flex
-                    list-style none
-                    border-radius 5px
-                    margin 0 4px
-
-                    a
-                        letter-spacing 0
-                        display flex
-                        align-items center
-                        border-radius 100px
-                        padding .3rem .8rem
-                        width 100%
-                        color var(--sco-fontcolor)
-                        text-shadow none !important
-
-                        &:hover
-                            background var(--sco-lighttext)
-                            color var(--sco-card-bg)
-                            box-shadow var(--sco-shadow-main)
-                            margin 0 auto
-                            transform scale(1) !important
-                            padding .3rem 1rem
-
-                        i
-                            &:not(.fa-brands)
-                                font-size 22px
-                                margin-right 8px
-                                line-height 1
-
-                &::before
-                    position absolute
-                    top -8px
-                    left 0
-                    width 100%
-                    height 20px
-                    content ""
-
-                &:before
-                    top -10px
-
-            &:hover
-                .menus_item_child
-                    display block
-                    border var(--style-border-hover)
-                    box-shadow var(--sco-shadow-main)
-                    opacity 1
-                    pointer-events all
-                    transform translateY(0) scale(1)
-
-                i
-                    &.expand
-                        transform rotate(180deg) !important
-
-            i
-                &.expand
-                    padding 4px
-                    transition transform .3s ease 0s
-
-    &.hide-menu
-        #toggle-menu
-            display inline-block
-
-            +minWidth768()
-                display none
-
-            .site-page
-                font-size inherit
-
-                +maxWidth768()
-                    width 35px
-                    height 35px
-                    display flex
-                    align-items center
-                    justify-content center
-
-        .menus_items
-            position absolute
-            left 0
-            visibility hidden
-            opacity 0
-
-        #search-button
-            span
-                display none !important
-
-    #search-button
-        display inline
-        padding 0 .4rem
-
-    .site-page
-        position relative
-        padding-bottom .3rem
-        text-shadow rgba(0, 0, 0, .3) .05rem .05rem .1rem
-        font-size .78em
-        cursor pointer
-
-    if hexo-config('nav.left.enable')
-        .back-home-button
-            &:hover
-                +minWidth900()
-                    box-shadow var(--sco-shadow-main)
-                    cursor pointer
-
-    #page-name
-        &-text
-            +minWidth900()
-                display inline
-                font-weight 700
-                padding 4px 8px
-                opacity 0
-                transition .1s
-                text-overflow ellipsis
-                overflow hidden
-                white-space nowrap
-                position relative
-                text-align center
-                cursor pointer
-                top 0
-                font-size .9rem
-                animation-timing-function ease-in
-                -webkit-animation-timing-function ease-in
-
-            &:hover
-                +minWidth900()
-                    color var(--sco-lighttext) !important
-                    background var(--sco-none)
-                    box-shadow none
-
-        &-mask
-            +maxWidth899()
-                display none !important
-
-.nav-button
-    cursor pointer
-
-#site-name
-    .iconfont
-        font-size 20px
-        font-weight 400
-        line-height 48px
-
-#site-logo
-    width 121px
-
-#nav-totop
-    position relative
-    width 35px
-    height 35px
-    display flex
-    border-radius 40px
-    transition all .3s ease-in-out
-    align-items center
-
-    &.long
-        width 80px
-
-    .totopbtn
-        padding-top 0
-
-        i
-            position absolute
-            display flex
-            font-size 22px
-            opacity 0
-            line-height 1
+      display inline-block
 
     &:hover
-        .totopbtn
-            i
-                opacity 1
-                color var(--sco-card-bg)
-                transition .3s
+      color var(--sco-white)
 
-        #percent
-            opacity 0
-            font-weight 700
+  #site-name
+    padding 0
+    transition .3s
+    display flex
+    height 35px
+    min-width 70px
+    justify-content center
+    align-items center
+    text-shadow none
+    border-radius 40px
+    cursor pointer
+
+    &:hover
+      i, span, img
+        +minWidth900()
+          opacity 0
+
+      &:after
+        +minWidth900()
+          opacity: 1
+
+    &:after
+      +minWidth900()
+        opacity 0
+        position absolute
+        display flex
+        z-index 1
+        content "\e008"
+        font-family scoicon, serif
+        align-items center
+        justify-content center
+        font-size 22px
+        line-height 1
+        color var(--sco-card-bg)
+
+    if hexo-config('site.name.class') == i_class
+      i
+        font-size 16px
+        line-height 35px
+        padding 0 12px
+
+        +maxWidth768()
+          transition .1s
+
+        +minWidth900()
+          opacity 1
+          transition all .3s, color 0s, opacity .3s
+
+    if hexo-config('site.name.class') == text
+      span
+        +maxWidth768()
+          padding-left 8px
+
+    if hexo-config('site.name.class') == img
+      img
+        max-width 120px
+        max-height 35px
+        padding 4px 8px
+
+  #blog_name
+    flex-wrap nowrap
+    height 60px
+    display flex
+    align-items center
+    z-index 102
+    transition .3s
+
+  a
+    transition .3s
+    color var(--sco-white)
+    padding .3rem .4rem 0
+    border-radius 8px
+
+    &:hover
+      background var(--sco-white-op)
+      transition .3s
+      color var(--sco-white)
+
+      +maxWidth768()
+        background var(--sco-none)
+        box-shadow none
+        transition .3s
+        color var(--sco-fontcolor)
+
+  #menus
+    display flex
+    justify-content center
+    width 100%
+    position absolute
+    height 60px
+    left 0
+    margin 0
+    transform translateZ(0)
+
+    +maxWidth768()
+      display none
+
+  .menus_items
+    position relative
+    width fit-content
+    text-align center
+    left 0
+    right 0
+    top 0
+    display flex
+    flex-direction row
+    justify-content center
+
+    .menus_item
+      padding 0 .4rem
+      display flex
+      flex-direction column
+      align-items center
+      margin auto
+      position relative
+
+      .menus_item_child
+        padding 6px 4px 8px 4px
+        border-radius 100px
+        background-color var(--sco-maskbgdeep)
+        box-shadow var(--sco-shadow-black)
+        border var(--style-border)
+        transition .3s
+        backdrop-filter blur(20px)
+        top 35px
+        position absolute
+        margin-top 8px
+        white-space nowrap
+        opacity 0
+        pointer-events none
+        transform translateY(-10px) scale(.8)
+
+        li
+          display inline-flex
+          list-style none
+          border-radius 5px
+          margin 0 4px
+
+          a
+            letter-spacing 0
+            display flex
+            align-items center
+            border-radius 100px
+            padding .3rem .8rem
+            width 100%
+            color var(--sco-fontcolor)
+            text-shadow none !important
+
+            &:hover
+              background var(--sco-lighttext)
+              color var(--sco-card-bg)
+              box-shadow var(--sco-shadow-main)
+              margin 0 auto
+              transform scale(1) !important
+              padding .3rem 1rem
+
+            i
+              &:not(.fa-brands)
+                font-size 22px
+                margin-right 8px
+                line-height 1
+
+        &::before
+          position absolute
+          top -8px
+          left 0
+          width 100%
+          height 20px
+          content ""
+
+        &:before
+          top -10px
+
+      &:hover
+        .menus_item_child
+          display block
+          border var(--style-border-hover)
+          box-shadow var(--sco-shadow-main)
+          opacity 1
+          pointer-events all
+          transform translateY(0) scale(1)
+
+        i
+          &.expand
+            transform rotate(180deg) !important
+
+      i
+        &.expand
+          padding 4px
+          transition transform .3s ease 0s
+
+  &.hide-menu
+    #toggle-menu
+      display inline-block
+
+      +minWidth768()
+        display none
+
+      .site-page
+        font-size inherit
+
+        +maxWidth768()
+          width 35px
+          height 35px
+          display flex
+          align-items center
+          justify-content center
+
+    .menus_items
+      position absolute
+      left 0
+      visibility hidden
+      opacity 0
+
+    #search-button
+      span
+        display none !important
+
+  #search-button
+    display inline
+    padding 0 .4rem
+
+  .site-page
+    position relative
+    padding-bottom .3rem
+    font-size .78em
+    cursor pointer
+
+  if hexo-config('nav.left.enable')
+    .back-home-button
+      &:hover
+        +minWidth900()
+          box-shadow var(--sco-shadow-main)
+          cursor pointer
+
+  #page-name
+    &-text
+      +minWidth900()
+        display inline
+        font-weight 700
+        padding 4px 8px
+        opacity 0
+        transition .1s
+        text-overflow ellipsis
+        overflow hidden
+        white-space nowrap
+        position relative
+        text-align center
+        cursor pointer
+        top 0
+        font-size .9rem
+        animation-timing-function ease-in
+        -webkit-animation-timing-function ease-in
+
+      &:hover
+        +minWidth900()
+          color var(--sco-lighttext) !important
+          background var(--sco-none)
+          box-shadow none
+
+    &-mask
+      +maxWidth899()
+        display none !important
+
+.nav-button
+  cursor pointer
+
+#site-name
+  .iconfont
+    font-size 20px
+    font-weight 400
+    line-height 48px
+
+#site-logo
+  width 121px
+
+#nav-totop
+  position relative
+  width 35px
+  height 35px
+  display flex
+  border-radius 40px
+  transition all .3s ease-in-out
+  align-items center
+
+  &.long
+    width 80px
+
+  .totopbtn
+    padding-top 0
+
+    i
+      position absolute
+      display flex
+      font-size 22px
+      opacity 0
+      line-height 1
+
+  &:hover
+    .totopbtn
+      i
+        opacity 1
+        color var(--sco-card-bg)
+        transition .3s
 
     #percent
-        font-size 12px
-        border-radius 35px
-        display flex
-        justify-content center
-        align-items center
-        transition .3s
-        white-space nowrap
+      opacity 0
+      font-weight 700
 
-.nav-fixed #nav-totop #percent,
-.page #nav-totop #percent
+  #percent
     font-size 12px
     border-radius 35px
     display flex
@@ -661,273 +648,273 @@
     transition .3s
     white-space nowrap
 
+.nav-fixed #nav-totop #percent,
+.page #nav-totop #percent
+  font-size 12px
+  border-radius 35px
+  display flex
+  justify-content center
+  align-items center
+  transition .3s
+  white-space nowrap
+
 if hexo-config('nav.left.enable')
-    .back-home-button
+  .back-home-button
+    display flex
+    width 35px
+    height 35px
+    padding 0 !important
+    align-items center
+    justify-content center
+    margin-right 4px
+    transition .3s
+    border-radius 40px
+
+    +maxWidth768()
+      display: none
+
+    i
+      font-size 20px
+
+    &:hover
+      background var(--sco-main)
+      color var(--sco-card-bg)
+
+      .back-menu-list-groups
         display flex
-        width 35px
-        height 35px
-        padding 0 !important
-        align-items center
-        justify-content center
-        margin-right 4px
-        transition .3s
-        color var(--sco-white)
-        border-radius 40px
+        opacity 1
+        top 55px
+        pointer-events auto
+        left 1.5rem
+        transform scale(1)
 
         +maxWidth768()
-            display: none
+          padding-bottom 8px
+          box-shadow var(--sco-shadow-border)
+          left: 0
 
-        i
-            font-size 20px
+    .back-menu-list-group
+      display flex
+      flex-direction column
 
-        &:hover
-            background var(--sco-main)
-            color var(--sco-card-bg)
+      .back-menu-list-title
+        margin 8px 0 0 16px
+        transition .3s
 
-            .back-menu-list-groups
-                display flex
-                opacity 1
-                transition .3s
-                top 55px
-                pointer-events auto
-                left 1.5rem
-                transform scale(1)
-                border var(--style-border-hover)
+      &:hover
+        .back-menu-list-title
+          color var(--sco-lighttext)
 
-                +maxWidth768()
-                    padding-bottom 8px
-                    box-shadow var(--sco-shadow-border)
-                    left: 0
+    .back-menu-list-groups
+      position absolute
+      top 45px
+      transform scale(.8)
+      transform-origin top left
+      left 1.5rem
+      background-color var(--sco-maskbgdeep)
+      border-radius 12px
+      border var(--style-border)
+      flex-direction column
+      font-size 12px
+      color var(--sco-secondtext)
+      box-shadow var(--sco-shadow-border)
+      transition .3s
+      opacity 0
+      pointer-events none
+      backdrop-filter blur(20px)
 
-        .back-menu-list-group
-            display flex
-            flex-direction column
+      +maxWidth768()
+        left 0
 
-            .back-menu-list-title
-                margin 8px 0 0 16px
-                transition .3s
+      &:hover
+        border var(--style-border-hover)
 
-            &:hover
-                .back-menu-list-title
-                    color var(--sco-lighttext)
-
-        .back-menu-list-groups
-            position absolute
-            top 45px
-            transform scale(.8)
-            transform-origin top left
-            left 1.5rem
-            background-color var(--sco-maskbgdeep)
-            border-radius 12px
-            border var(--style-border)
-            flex-direction column
-            font-size 12px
-            color var(--sco-secondtext)
-            box-shadow var(--sco-shadow-border)
-            transition .1s
-            opacity 0
-            pointer-events none
-            backdrop-filter blur(20px)
-
-            +maxWidth768()
-                left 0
-
-            &:hover
-                border var(--style-border-hover)
-
-        .back-menu-list
-            .back-menu-item
-                width 150px
+    .back-menu-list
+      .back-menu-item
+        width 150px
 
 .nav-fixed
-    #nav
-        a
-            color var(--sco-fontcolor)
-            transition .3s
+  #nav
+    a
+      color var(--sco-fontcolor)
+      transition .3s
 
-            &:hover
-                background var(--sco-lighttext)
-                color var(--sco-card-bg)
-                transition .3s
+      &:hover
+        background var(--sco-lighttext)
+        color var(--sco-card-bg)
+        transition .3s
 
-        #site-name
-            &:hover
-                +minWidth900()
-                    background var(--sco-lighttext)
+    #site-name
+      &:hover
+        +minWidth900()
+          background var(--sco-lighttext)
 
     if hexo-config('nav.left.enable')
-        .back-home-button
-            &:hover
-                background var(--sco-lighttext) !important
-                color var(--sco-card-bg) !important
+      .back-home-button
+        color var(--sco-fontcolor)
+
+        &:hover
+          background var(--sco-lighttext)
+          color var(--sco-card-bg)
 
     .menus_item
-        &:hover
-            & >
-            a.site-page
-                background-color var(--sco-lighttext)
+      &:hover
+        & >
+        a.site-page
+          background-color var(--sco-lighttext)
 
-                +minWidth768()
-                    background-color var(--sco-main)
+          +minWidth768()
+            background-color var(--sco-main)
 
 .post
-    if hexo-config('nav.left.enable')
-        .back-home-button
-            &:hover
-                background var(--sco-white-op)
-                color var(--sco-white)
-                cursor pointer
+  if hexo-config('nav.left.enable')
+    .back-home-button
+      color var(--sco-white)
 
+      &:hover
+        background var(--sco-white-op)
+        color var(--sco-white)
+        cursor pointer
+
+  #nav
+    #site-name
+      &:hover
+        +minWidth900()
+          align-items center
+
+      &:after
+        color var(--sco-white)
+
+  .nav-fixed
     #nav
-        #site-name
-            &:hover
-                +minWidth900()
-                    align-items center
-
-            &:after
-                color var(--sco-white)
-
-    .nav-fixed
-        #nav
-            #site-name
-                &:after
-                    color var(--sco-card-bg)
+      #site-name
+        &:after
+          color var(--sco-card-bg)
 
 .back-menu-list-groups
-    .back-menu-list
-        display flex
-        flex-direction row
-        flex-wrap wrap
-        width 340px
-        justify-content space-between
+  .back-menu-list
+    display flex
+    flex-direction row
+    flex-wrap wrap
+    width 340px
+    justify-content space-between
 
-        &::before
-            position absolute
-            top -15px
-            left 0
-            width 100%
-            height 20px
-            content ''
+    &::before
+      position absolute
+      top -15px
+      left 0
+      width 100%
+      height 20px
+      content ''
 
-        .back-menu-item
-            display flex
-            align-items center
-            margin 4px 8px
-            padding 4px 8px !important
-            transition .3s
-            border-radius 8px
+    .back-menu-item
+      display flex
+      align-items center
+      margin 4px 8px
+      padding 4px 8px
 
-            &:hover
-                background var(--sco-lighttext) !important
-                transform scale(1) !important
+      #nav &
+        padding 4px 8px
 
-                .back-menu-item-text
-                    color var(--sco-white)
+      &:hover
+        background var(--sco-lighttext)
+        transform scale(1)
 
-            .back-menu-item-icon
-                width 24px
-                height 24px
-                border-radius 8px
-                background var(--sco-none)
+        .back-menu-item-text
+          color var(--sco-card-bg)
 
-            .back-menu-item-text
-                font-size 16px
-                margin-left .5rem
-                color var(--sco-fontcolor)
+      .back-menu-item-icon
+        width 24px
+        height 24px
+        border-radius 8px
+        background var(--sco-none)
 
-                +maxWidth768()
-                    font-size 14px
+      .back-menu-item-text
+        font-size 16px
+        transition .3s
+        margin-left .5rem
+        color var(--sco-fontcolor)
+
+        +maxWidth768()
+          font-size 14px
 
 .page
-    #nav
-        a
-            &:hover
-                color var(--sco-card-bg)
-                background var(--sco-main)
-                transition .3s
-                box-shadow var(--sco-shadow-main)
+  #nav
+    a
+      &:hover
+        color var(--sco-card-bg)
+        background var(--sco-main)
+        transition .3s
+        box-shadow var(--sco-shadow-main)
 
-    .menus_item
-        &:hover
-            & > a.site-page
-                +minWidth768()
-                    color var(--sco-card-bg) !important
-                    background var(--sco-main)
-                    box-shadow var(--sco-shadow-main)
+  .menus_item
+    &:hover
+      & > a.site-page
+        +minWidth768()
+          color var(--sco-card-bg) !important
+          background var(--sco-main)
+          box-shadow var(--sco-shadow-main)
 
 .error
-    #nav
-        a
-            &:hover
-                background var(--sco-main)
+  #nav
+    a
+      &:hover
+        background var(--sco-main)
 
-        #site-name
-            i
-                +maxWidth768()
-                    color var(--sco-fontcolor)
+    #site-name
+      i
+        +maxWidth768()
+          color var(--sco-fontcolor)
 
 #weblogo
-    align-self center
+  align-self center
 
 #menus
-    & > div
-        &.menus_items
-            & > div
-                & > a
-                    letter-spacing .3rem
-                    padding-left .7rem
-                    font-weight 700
-                    padding-top 0
-                    padding-bottom 0
-                    height 35px
-                    line-height 35px
-                    border-radius 40px
+  & > div
+    &.menus_items
+      & > div
+        & > a
+          letter-spacing .3rem
+          padding-left .7rem
+          font-weight 700
+          padding-top 0
+          padding-bottom 0
+          height 35px
+          line-height 35px
+          border-radius 40px
 
 #travellings_button
-    display inline
-    padding 0 .4rem
-    transition .3s
+  display inline
+  padding 0 .4rem
+  transition .3s
 
-    +maxWidth1200()
-        display none
+  +maxWidth1200()
+    display none
 
 #page-name
-    +minWidth900()
-        align-items center
-        display flex
-        border-radius 12px
-        height 40px
-        position absolute
-        top 62px
-        left 0
-        right 0
-        margin auto
-        justify-content center
-        animation-timing-function ease-out
-        -webkit-animation-timing-function ease-out
+  +minWidth900()
+    align-items center
+    display flex
+    border-radius 12px
+    height 40px
+    position absolute
+    top 62px
+    left 0
+    right 0
+    margin auto
+    justify-content center
+    animation-timing-function ease-out
+    -webkit-animation-timing-function ease-out
 
 #page-name-mask
-    +minWidth900()
-        width 100%
-        height 100%
-        position absolute
-        overflow hidden
-        left 0
-
-.menus_item
-    &:hover
-        & > a.site-page
-            +minWidth768()
-                color var(--sco-white) !important
-                background var(--sco-white-op)
-                transition .3s
-                box-shadow var(--sco-shadow-main)
-
-a.console_switchbutton
-    padding 4px 8px !important
-    cursor pointer
+  +minWidth900()
+    width 100%
+    height 100%
+    position absolute
+    overflow hidden
+    left 0
 
 if hexo-config('nav.right.console')
-    #nav-console
-        +maxWidth768()
-            display none
+  #nav-console
+    +maxWidth768()
+      display none

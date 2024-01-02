@@ -169,6 +169,11 @@
       height 60px
       transition .3s
       cursor pointer
+
+      a.darkmode_switchbutton
+        [data-theme="dark"] &
+          background var(--sco-orange)
+          color var(--sco-white)
   .button-group
     .console-btn-item
       &:not(:last-child)
@@ -200,7 +205,7 @@
 
       &:not(.on)
         a:hover
-          background var(--sco-main) !important
+          background var(--sco-main)
 
       &:hover
         a
