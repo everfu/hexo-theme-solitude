@@ -375,6 +375,10 @@ post:
       enable: true
       license: CC BY-NC-SA 4.0
       licenurl: https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh
+      # 是否使用移轴动画头像
+      author:
+        enable: false
+        author_back: https://bu.dusays.com/2023/11/01/6541f6d4b2573.png # 底部头像背景
   # 顶部文章简介
   meta:
     date: false # 发布日期
@@ -405,8 +409,6 @@ post:
     mode: local #local：本地取色 / api：img2color取色（无存缓） / api_redis：img2color取色（有存缓）
     api: https://img2color.meuicat.com/api?img=
     time: 43200000 # api取色间隔（毫秒），默认为12小时
-  # 底部头像背景
-  author_back: https://bu.dusays.com/2023/11/01/6541f6d4b2573.png
 
 # 关于界面
 about:
