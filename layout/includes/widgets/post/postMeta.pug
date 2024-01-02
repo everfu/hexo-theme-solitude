@@ -37,7 +37,7 @@
                 span.post-meta-position(title="作者IP归属地为" + page.locate)
                     i.post-meta-icon.scoicon.sco-map-pin-fill
                     span= page.locate
-            if theme.thirdparty.busuanzi.enable && theme.post.meta.pv
+            if theme.post.meta.pv
                 a.post-meta-pv(href=url_for(page.path), title="文章热度")
                     i.post-meta-icon.scoicon.sco-fire-fill
                     if theme.comment.enable
