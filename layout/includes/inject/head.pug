@@ -9,10 +9,6 @@ if theme.verify.google
 if theme.verify.sougou
     meta(name="sogou_site_verification", content=theme.verify.sougou)
 
-// pwa
-if theme.pwa.enable
-    include ../head/pwa.pug
-
 link(rel="stylesheet", href=cdn.scoicon)
 link(rel="stylesheet", href=cdn_url_for("/lib/snackbar.min.css"))
 
@@ -49,8 +45,16 @@ if theme.says.home_mini || theme.aside.history.enable
 if theme.about.echarts.enable && theme.about.enable
     script(src=url_for(cdn.echartsjs))
 
+// 纪念日
 if theme.fest.enable
     include ../head/fest.pug
+
+// Open Graph
+include ../head/opengraph.pug
+
+// pwa
+if theme.pwa.enable
+    include ../head/pwa.pug
 
 script.
     (win => {

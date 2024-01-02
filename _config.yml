@@ -596,6 +596,22 @@ comment:
     pageview: false # 是否开启页面访问量统计
     option: # waline配置项
 
+# Open Graph
+# --------------------------------------
+# https://ogp.me/
+# https://developers.facebook.com/docs/sharing/webmasters/
+# tip: 开启后，将会在页面中插入 Open Graph 标签，用于社交分享。
+opengraph:
+  enable: false
+  options:
+    # twitter_card:
+    # twitter_image:
+    # twitter_id:
+    # twitter_site:
+    # google_plus:
+    # fb_admins:
+    # fb_app_id:
+
 # 插入代码到头部 </head> 之前 和 底部 </body> 之前
 # 插入额外代码 如：统计，广告等
 extends:

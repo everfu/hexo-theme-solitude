@@ -8,7 +8,6 @@
 
 - if (is_home()) subtitle = config.subtitle ? ' - ' + config.subtitle : ''
 - else subtitle = title ? ' | ' + config.title : config.title
-- var description = page.desc || page.excerpt || config.description
 
 meta(charset="utf-8")
 meta(http-equiv="X-UA-Compatible", content="IE=edge")
@@ -17,7 +16,6 @@ meta(name="viewport" content="width=device-width, initial-scale=1")
 title= title + subtitle
 noscript 开启JavaScript才能访问本站哦
 link(rel="icon", href=theme.site.siteIcon)
-meta(name="description", content=description)
 
 // index.css
 link(rel="stylesheet", href="/css/index.css")
