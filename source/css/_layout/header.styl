@@ -16,11 +16,9 @@
 
       a
         color var(--sco-fontcolor)
-        text-shadow none
 
         &:hover
           color var(--sco-card-bg)
-          text-shadow none
 
           +maxWidth768()
             align-items flex-end
@@ -62,7 +60,6 @@
     .social-icon
       margin 0 .5rem
       color var(--light-grey)
-      text-shadow rgba(0, 0, 0, .15) .1rem .1rem .2rem
       font-size 1.43em
       cursor pointer
 
@@ -338,7 +335,6 @@
     min-width 70px
     justify-content center
     align-items center
-    text-shadow none
     border-radius 40px
     cursor pointer
 
@@ -476,14 +472,13 @@
             padding .3rem .8rem
             width 100%
             color var(--sco-fontcolor)
-            text-shadow none !important
 
             &:hover
               background var(--sco-lighttext)
               color var(--sco-card-bg)
               box-shadow var(--sco-shadow-main)
               margin 0 auto
-              transform scale(1) !important
+              transform scale(1)
               padding .3rem 1rem
 
             i
@@ -514,7 +509,7 @@
 
         i
           &.expand
-            transform rotate(180deg) !important
+            transform rotate(180deg)
 
       i
         &.expand
@@ -546,7 +541,7 @@
 
     #search-button
       span
-        display none !important
+        display none
 
   #search-button
     display inline
@@ -846,6 +841,10 @@ if hexo-config('nav.left.enable')
         background var(--sco-main)
         transition .3s
         box-shadow var(--sco-shadow-main)
+    #site-name
+      &:hover
+        i
+          color var(--sco-card-bg)
 
   .menus_item
     &:hover
