@@ -25,7 +25,7 @@
         border var(--style-border-always)
         box-shadow var(--sco-shadow-main)
 
-        if hexo-config('post.copyright.author.enable')
+        if hexo-config('post.default.copyright.author.enable')
           &:hover
             img.post-copyright__author_img_front
               transform scale(1) translateY(3px)
@@ -42,12 +42,12 @@
           bottom 0
           left 0
 
-        if hexo-config('post.copyright.author.enable')
+        if hexo-config('post.default.copyright.author.enable')
           &_back
             border-radius 66px
             z-index 10
 
-        if hexo-config('post.copyright.author.enable')
+        if hexo-config('post.default.copyright.author.enable')
           &_front
             z-index 20
             transform scale(1.2) translateY(6px)

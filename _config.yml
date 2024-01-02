@@ -716,7 +716,7 @@ cdn:
     walinejs: https://cdn.staticfile.org/waline/2.15.8/waline.min.js
   body:
     swiperjs: https://cdn.bootcdn.net/ajax/libs/Swiper/9.2.4/swiper-bundle.min.js
-    busuanzijs: https://cdn.bootcdn.net/ajax/libs/busuanzi/2.3.0/bsz.pure.mini.min.js
+    busuanzijs: https://cdn.bootcdn.net/ajax/libs/busuanzi/2.3.0/bsz.pure.mini.js
     pjaxjs: https://cdn.bootcdn.net/ajax/libs/pjax/0.2.8/pjax.min.js
     aplayerjs: https://cdn.bootcdn.net/ajax/libs/aplayer/1.10.1/APlayer.min.js
     metingjs: https://cdn.bootcdn.net/ajax/libs/meting/2.0.1/Meting.min.js
