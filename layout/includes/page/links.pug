@@ -4,7 +4,7 @@ if theme.thirdparty.circle.angle.enable
     include ../widgets/page/moments/angle
 .flink#article-container
     each data in site.data.links.links
-        h2= data.class_name
+        h2= data.class_name + " (" + data.link_list.length + ")"
         .flink-desc= data.descr
         case data.type
             when 'card'
