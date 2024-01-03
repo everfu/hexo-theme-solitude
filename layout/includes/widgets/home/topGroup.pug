@@ -1,7 +1,7 @@
 - var filteredPosts = site.posts.data.filter(item => item.recommend === true).slice(0,6)
 each post in filteredPosts
     .recent-post-item
-        .post_cover.left_radius
+        .post_cover
             a(href=url_for(post.path), title=post.title)
                 span.recent-post-top-text 荐
                 img.post_bg(alt=post.title, src=post.cover)

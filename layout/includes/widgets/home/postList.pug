@@ -1,5 +1,5 @@
 div.recent-post-item(onclick="pjax.loadUrl('/" + post.path + "')")
-    div.post_cover.left_radius
+    div.post_cover
         a(href=url_for(post.path), title=post.title)
             img.post_bg(src=url_for(post.cover), alt=post.title)
     div.recent-post-info
@@ -7,8 +7,8 @@ div.recent-post-item(onclick="pjax.loadUrl('/" + post.path + "')")
             div.recent-post-info-top-tips
                 if post.sticky && is_home()
                     span.article-meta.sticky-warp
-                        i.scoicon.sco-thumbtack-solid.sticky
-                        span.sticky= "置顶"
+                        i.scoicon.sco-thumbtack-solid.sticky.orange
+                        span.sticky.orange= "置顶"
                 each category in post.categories.data
                     span.original= category.name
 

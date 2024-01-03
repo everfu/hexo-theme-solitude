@@ -2,4 +2,11 @@
  * 首页样式
  */
 // 首页顶部
-@import "home-top.styl"
+if hexo-config('hometop.banner.enable')
+  @import "home-top.styl"
+
+// 分类导航栏
+@import "category-bar.styl"
+
+// 首页文章列表
+@import "recent-post.styl"
