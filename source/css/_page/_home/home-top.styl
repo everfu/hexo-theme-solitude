@@ -17,7 +17,7 @@ div#banners
     will-change transform
     animation slide-in .6s .1s backwards
 
-    &:hover
+    :not(.flink)&:hover
       box-shadow var(--sco-shadow-main)
 
     .banner-button-group
@@ -183,6 +183,9 @@ div#banners
       width 100%
       margin-bottom 0
       -webkit-user-select none
+
+      +maxWidth768()
+        border-radius 0
 
       .recent-post-top
         display flex

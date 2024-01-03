@@ -9,19 +9,25 @@
     align-items center
     margin 0 0 16px 0
 
-    .author-tag-left, .author-tag-right
-      .author-tag:first-child, .author-tag:last-child
-        margin-left -16px
-
     .author-tag-left
       display flex
       flex-direction column
       align-items flex-end
 
+      .author-tag
+        &:first-child,
+        &:last-child
+          margin-right -16px
+
     .author-tag-right
       display flex
       flex-direction column
       align-items flex-start
+
+      .author-tag
+        &:first-child,
+        &:last-child
+          margin-left -16px
 
     +maxWidth768()
       .author-tag-left, .author-tag-right
@@ -759,7 +765,7 @@
   color var(--sco-gray)
   font-size 14px
   position absolute
-  bottom 2rem
+  bottom 1rem
   left 2rem
 
   +maxWidth768()
