@@ -21,9 +21,13 @@
         background rgba(0, 0, 0, .2)
         top 0
         left 0
+        opacity .01
         display none
         z-index 101
-        margin 0 !important
+        margin 0
+
+        +maxWidth768()
+          height calc(100vh - 380px)
 
       // reward
       /.post-reward
