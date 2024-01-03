@@ -35,9 +35,9 @@
       max-height: calc(100vh - 300px)
 
       * > .toc-item > .toc-child
-        margin-left: 10px;
+        margin-left 10px
         transition display .3s ease-in-out 0s
-        padding-left: 10px;
+        padding-left 10px
 
       ol
         margin 0
@@ -64,7 +64,8 @@
       &:hover
       .toc-content
         .toc-link:not(.active) span
-          filter: blur(0)
+          if hexo-config('aside.toc.vague')
+            filter: blur(0)
           opacity: 1
 
       .toc-item.active .toc-link
@@ -94,7 +95,8 @@
         &:not(.active) span
           opacity .6
           cursor pointer
-          filter blur(1px)
+          if hexo-config('aside.toc.vague')
+            filter blur(1px)
           transition .3s
 
           &:hover
