@@ -1,0 +1,179 @@
+#pagination
+  width 100%
+  +minWidth1300()
+    margin-top .25rem
+  +minWidth768()
+    overflow visible
+  +maxWidth768()
+    margin-bottom 0
+    margin-top 0
+
+  .pagination
+    text-align center
+    +minWidth768()
+      background var(--sco-background)
+      transition .3s
+      display flex
+      position relative
+      justify-content center
+    +maxWidth768()
+      background var(--sco-background)
+      transition .3s
+      display flex
+
+    .extend
+      +maxWidth768()
+        width 100%
+        height 2.5rem
+        margin .2rem 0 1rem 0
+        border-radius 12px
+        line-height 2.5rem
+        background var(--sco-card-bg)
+        border var(--style-border-always)
+        box-shadow var(--sco-shadow-border)
+
+      i
+        +maxWidth768()
+          display none
+
+  .page-number
+    display inline-block
+    margin 0 .2rem
+    min-width 1.2rem
+    height 1.2rem
+    text-align center
+    line-height 1.2rem
+
+    +minWidth768()
+      width 2rem
+      background var(--sco-card-bg)
+      height 2rem
+      line-height calc(2rem - 2px)
+      border-radius 8px
+      margin 0 .3rem
+      box-shadow var(--sco-shadow-border)
+      border var(--style-border)
+      transition .3s
+      &:hover
+        color var(--sco-theme)
+        border var(--style-border-hover)
+        box-shadow var(--sco-shadow-main)
+    +maxWidth768()
+      display none
+
+    &.current
+      background var(--sco-theme)
+      color var(--sco-white)
+      border-radius 5px
+
+      +minWidth768()
+        background var(--sco-theme)
+        border var(--style-border-hover)
+        box-shadow var(--sco-shadow-theme)
+
+        &:hover
+          background var(--sco-theme)
+          box-shadow var(--sco-shadow-theme)
+          color var(--sco-white)
+
+  a.extend.next, a.extend.prev
+    +minWidth768()
+      width 4rem
+      height 2rem
+      line-height 1.9rem
+      border-radius 8px !important
+      background var(--sco-card-bg)
+      box-shadow var(--sco-shadow-border)
+      position absolute
+      border var(--style-border)
+      display flex
+      align-items center
+      justify-content center
+      overflow hidden
+      transition .3s
+
+      i
+        transition .3s
+
+  a.extend
+    &:hover
+      background var(--sco-theme)
+      color var(--sco-white)
+
+    &.next
+      right 0
+      +minWidth768()
+        .pagination_tips_next
+          margin-left -32px
+          transition .3s
+          opacity 0
+
+      &:hover
+        .pagination_tips_next
+          margin-left 2px
+          opacity 1
+          white-space nowrap
+
+    &.prev
+      left 0
+      +minWidth768()
+        .pagination_tips_prev
+          margin-right -32px
+          transition .3s
+          opacity 0
+
+      &:hover
+        .pagination_tips_prev
+          margin-right 2px
+          opacity 1
+          white-space nowrap
+
+  .toPageGroup
+    display flex
+    position relative
+    margin 0 .3rem
+    +maxWidth768()
+      display none
+
+    a#toPageButton
+      display flex
+      position absolute
+      width 40px
+      height 40px
+      right 0
+      top 0
+      border-radius 8px
+      justify-content center
+      align-items center
+      transition .3s
+      background var(--sco-card-bg)
+      border var(--style-border-always)
+      cursor text
+      pointer-events none
+
+    &:focus-within a#toPageButton, &:hover a#toPageButton
+      width 30px
+      height 30px
+      right 4px
+      top 5px
+      background var(--sco-card-bg)
+      border 1px solid var(--sco-none)
+      border-radius 4px
+      opacity .2
+
+    input
+      width 40px
+      height 40px
+      border-radius 8px
+      border var(--style-border-always)
+      transition .3s
+      outline-style none
+      font-size 16px
+      padding-left 12px
+      background var(--sco-secondbg)
+      color var(--sco-fontcolor)
+
+      &:focus, /#pagination .toPageGroup:hover input
+        border var(--style-border-hover-always)
+        outline-style none
+        width 100px
