@@ -1,12 +1,19 @@
 // aside（侧边栏）
 @import "_aside/index.styl"
 
-// footer（页脚）
-@import "footer.styl"
-
 // 手机端侧边栏
-@import "sidebar.styl"
+@import "_mixins/sidebar.styl"
 
+// article-sort （归档）
+@import "_mixins/article-sort.styl"
+
+// footer
+@import "_mixins/footer.styl"
+
+// 零散的样式
+@import "_mixins/other.styl"
+
+// 短标签
 @import "_tags/*"
 
 // comment
@@ -22,9 +29,7 @@ if hexo-config('thirdparty.search.enable')
   else if hexo-config('thirdparty.search.type') == 'local'
     @import '_search/local-search'
 
-/**
-  * extra
- */
+// 控制台样式
 @import '_extra/console.styl'
 
 // rightmenu
@@ -34,6 +39,10 @@ if hexo-config('rightside.enable')
 // pace
 if hexo-config('loading.pace')
   @import "_extra/pace.styl"
+
+// 音乐胶囊
+if hexo-config('thirdparty.aplayer.enable')
+  @import "_extra/music.styl"
 
 // post
 @import "_post/index.styl"
