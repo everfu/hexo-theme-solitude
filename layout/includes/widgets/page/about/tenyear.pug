@@ -1,0 +1,50 @@
+- var tenyear = site.data.about.tenyear
+if tenyear
+    .author-content#tenyear
+        .create-site-post.author-content-item.single
+            .author-content-item-tips="始终如一，不离不弃"
+            .author-content-item-title="十年"
+            p=tenyear.text
+            .tenyear-timeline
+                .progress
+                .past-time
+                .percentage-label
+            .time-labels
+                .start-time#tenyear-start-time= tenyear.start
+                .end-time#tenyear-end-time= tenyear.end
+
+    script.
+        function parseDateString(e) {
+            return e.replace(/年|月/g, '-').replace(/日/g, '');
+        }
+
+        const progressElement = document.querySelector(".progress");
+        const pastTimeElement = document.querySelector(".past-time");
+        const percentageLabelElement = document.querySelector(".percentage-label");
+        const startTimeElement = document.getElementById("tenyear-start-time");
+        const endTimeElement = document.getElementById("tenyear-end-time");
+
+        function tenYear() {
+            const startTime = new Date(parseDateString(startTimeElement.textContent)).getTime();
+            const endTime = new Date(parseDateString(endTimeElement.textContent)).getTime();
+
+            function updateProgress() {
+                const currentTime = new Date().getTime();
+                const progress = ((currentTime - startTime) / (endTime - startTime) * 100);
+                const progressPercentage = progress <= 100 ? progress + "%" : "100%";
+
+                pastTimeElement.style.setProperty("--past-time-percentage", progress + "%");
+                progressElement.style.setProperty("--progress-percentage", progressPercentage);
+                percentageLabelElement.textContent = `${progress.toFixed(0)}%`;
+                percentageLabelElement.style.left = `calc(${progress}% - 38px)`;
+
+                if (progress < 100) {
+                    requestAnimationFrame(updateProgress);
+                }
+            }
+
+            percentageLabelElement.style.visibility = "visible";
+            updateProgress();
+        }
+
+        document.getElementById("tenyear") && tenYear()

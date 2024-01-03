@@ -34,4 +34,5 @@ html(lang=config.language, data-theme="light")
         include ./widgets/third-party/search/index.pug
 
         // music
-        include ./widgets/third-party/music.pug
+        if theme.thirdparty.aplayer.enable
+            include ./widgets/third-party/music.pug
