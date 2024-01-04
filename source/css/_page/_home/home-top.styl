@@ -269,6 +269,16 @@ div#banners
                 +maxWidth768()
                   border-radius 8px
 
+                &:after
+                  top 50px
+                  width 1rem
+                  left 21px
+                  height 2px
+                  background var(--sco-white)
+                  content ""
+                  border-radius 1px
+                  position absolute
+
                 i
                   font-size 5rem
                   opacity .2
@@ -280,6 +290,9 @@ div#banners
                   text-align center
                   filter blur(2px)
                   transform scale(1) rotate(15deg)
+
+                  +maxWidth768()
+                    display none
 
                 &:hover
                   i

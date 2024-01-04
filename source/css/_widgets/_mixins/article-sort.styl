@@ -15,9 +15,14 @@
     display flex
     -webkit-box-align center
     align-items center
-    margin 0 0 1rem .5rem
+    margin 0 0 1rem 0
     transition all .2s ease-in-out 0s
     overflow hidden
+
+    &.year
+      font-size .8rem
+      color var(--sco-secondtext)
+      margin 0 0 .2rem 0
 
     .article-sort-item-img
       border-radius 12px
@@ -37,21 +42,24 @@
         transition all .6s ease 0s
         object-fit cover
 
-        &:hover
-          transform scale(1.1)
-
     .article-sort-item-info
-      padding 0 .8rem
+      padding 0 0.8rem
       display flex
       flex-direction column
       -webkit-box-flex 1
+      flex 1 1 0%
 
       a
-        margin-right 8px
         overflow hidden
         text-overflow ellipsis
 
+        &:hover
+          color var(--sco-theme)
+
       .article-sort-item-title
+        color var(--sco-fontcolor)
+        font-size 1.1em
+        transition all .3s ease 0s
         line-height 1.3
         -webkit-line-clamp 1
         order 0
@@ -64,11 +72,10 @@
         margin-top 8px
         white-space nowrap
         overflow hidden
-        display flex
         text-overflow ellipsis
         width 100%
         font-size .7rem
-        max-height 50px
+        display flex
 
         a
           color var(--sco-fontcolor)
@@ -79,3 +86,8 @@
           .tags-punctuation
             font-size 12px
             margin-right 1px
+
+        .article-meta__tags
+          margin-right 8px
+          padding 0 0.2rem 0 0
+          color var(--sco-fontcolor)

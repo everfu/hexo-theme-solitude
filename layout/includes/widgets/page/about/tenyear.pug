@@ -2,8 +2,8 @@
 if tenyear
     .author-content#tenyear
         .create-site-post.author-content-item.single
-            .author-content-item-tips="始终如一，不离不弃"
-            .author-content-item-title="十年"
+            .author-content-item-tips=tenyear.tips
+            .author-content-item-title=tenyear.title
             p=tenyear.text
             .tenyear-timeline
                 .progress
@@ -35,11 +35,9 @@ if tenyear
 
                 pastTimeElement.style.setProperty("--past-time-percentage", progress + "%");
                 progressElement.style.setProperty("--progress-percentage", progressPercentage);
-                percentageLabelElement.textContent = `${progress.toFixed(0)}%`;
-                percentageLabelElement.style.left = `calc(${progress}% - 38px)`;
-
-                if (progress < 100) {
-                    requestAnimationFrame(updateProgress);
+                if(progress > 5){
+                    percentageLabelElement.textContent = `${progress.toFixed(0)}%`;
+                    percentageLabelElement.style.left = `calc(${progress}% - 28px)`;
                 }
             }
 

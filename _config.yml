@@ -263,6 +263,8 @@ aside:
     post: true
     # 在任意页显示
     page: false
+    # 开启后不悬停目录有模糊效果
+    vague: true
 
   # 侧边栏文章列表
   tags:
@@ -278,6 +280,8 @@ aside:
   archive:
     # 是否显示
     enable: false
+    # 显示类型
+    type: 'month' # monthly: 按月 / yearly: 按年
 
   # 建站信息
   siteinfo:

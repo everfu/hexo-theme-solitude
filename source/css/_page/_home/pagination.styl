@@ -77,7 +77,7 @@
       width 4rem
       height 2rem
       line-height 1.9rem
-      border-radius 8px !important
+      border-radius 8px
       background var(--sco-card-bg)
       box-shadow var(--sco-shadow-border)
       position absolute
@@ -93,15 +93,16 @@
 
   a.extend
     &:hover
-      background var(--sco-theme)
-      color var(--sco-white)
+      color var(--sco-theme)
+      border var(--style-border-hover)
+      box-shadow var(--sco-shadow-main)
 
     &.next
       right 0
       +minWidth768()
         .pagination_tips_next
           margin-left -32px
-          transition .3s
+          transition .3s ease-out 0s
           opacity 0
 
       &:hover
@@ -115,7 +116,7 @@
       +minWidth768()
         .pagination_tips_prev
           margin-right -32px
-          transition .3s
+          transition .3s ease-out 0s
           opacity 0
 
       &:hover
