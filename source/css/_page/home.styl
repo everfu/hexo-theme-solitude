@@ -12,6 +12,9 @@
   +maxWidth768()
     padding 0 1rem
 
+  > div:not(.author-content-item)
+    animation slide-in .6s .2s backwards
+
 .tags-group-icon
   width: 120px
   height: 120px
@@ -42,5 +45,5 @@
 
 +minWidth768()
   .needEndHide.hide
-    bottom -200px!important
+    bottom -200px !important
     opacity 0
