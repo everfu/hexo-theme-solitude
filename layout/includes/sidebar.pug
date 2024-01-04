@@ -1,15 +1,15 @@
 div#sidebar(style="zoom: 1;")
     div#menu-mask(style="display: none;")
     div#sidebar-menus
-        span.sidebar-menu-item-title= "功能"
+        span.sidebar-menu-item-title= __('sidebar.title1')
         div.sidebar-menu-item
-            a.darkmode_switchbutton.menu-child(onclick="sco.switchDarkMode()", title="显示模式切换", href="javascript:void(0);")
+            a.darkmode_switchbutton.menu-child(onclick="sco.switchDarkMode()", href="javascript:void(0);")
                 i.scoicon.sco-moon-clear-fill
-                span= "显示模式"
+                span= __('sidebar.darkmode')
         if theme.nav.left.enable
             include ./widgets/nav/left.pug
         include ./widgets/nav/menu.pug
-        span.sidebar-menu-item-title= "标签"
+        span.sidebar-menu-item-title= __('sidebar.title2')
         div.card-widget.card-tags.card-archives.card-webinfo.card-allinfo
             div.card-tag-cloud
                 each tag in site.tags.find({ parent: { $exists: false } }).data

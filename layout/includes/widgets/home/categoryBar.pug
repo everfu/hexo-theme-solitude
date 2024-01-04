@@ -1,10 +1,10 @@
 .category-bar-items#category-bar-items
     .category-bar-item(class=is_home() ? 'select' : '', id="category-bar-home")
-        a(href="/") 首页
+        a(href="/")= __('home.categoryBar.home')
     each item in site.categories.find({ parent: { $exists: false } }).data
         .category-bar-item(class=select ? (select === item.name ? 'select' : '') : '', id=item.name)
             a(href=url_for(item.path))= item.name
 if site.categories.length > 13
     .category-bar-next#category-bar-next(onclick="sco.scrollCategoryBarToRight()")
         i.scoicon.sco-show-right-line
-a.category-bar-more(href="/categories/") 更多
+a.category-bar-more(href="/categories/")= __('home.categoryBar.more')

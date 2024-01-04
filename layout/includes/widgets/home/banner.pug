@@ -12,5 +12,5 @@ div.tags-group-all
                         .tags-group-icon(style=`background: ${theme.hometop.banner.icon[key].color}`)
                             img(src=theme.hometop.banner.icon[key].img, title=key)
 a#banner-hover(onclick="toRandomPost()")
-    span.bannerText 随便逛逛
+    span.bannerText= _p('home.bannertext')
     i.scoicon.sco-arrow-2-right-line.banner-righticon

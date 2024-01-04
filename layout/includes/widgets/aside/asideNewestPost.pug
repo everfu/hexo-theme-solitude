@@ -1,7 +1,7 @@
 .card-widget.card-recent-post
     .item-headline
         i.scoicon.sco-map-line
-        span 最近发布
+        span= _p('aside.newpost')
     .aside-list
         - let index = 1
         each post in site.posts.data.sort((a, b) => b.date < a.date ? -1 : 1)

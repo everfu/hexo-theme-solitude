@@ -3,7 +3,7 @@
         a(href=url_for(tag.path))= tag.name
             sup= tag.length
 if site.tags.length > 50
-    a#more-tags-btn(href="javascript:void(0);", onclick="sco.openAllTags();") 查看全部
+    a#more-tags-btn(href="javascript:void(0);", onclick="sco.openAllTags();")= __('aside.tagmore')
 else
     style.
         .card-tag-cloud::after {

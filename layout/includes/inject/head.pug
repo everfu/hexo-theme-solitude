@@ -21,7 +21,7 @@ if theme.comment.enable
             script(src=cdn.walinejs)
             link(rel="stylesheet", href=cdn.walinecss)
 
-// pace 胶囊加载条
+// pace 胶囊加载条(Capsule loading bar)
 if theme.loading.pace
     script(src=cdn.pacejs)
 
@@ -45,7 +45,7 @@ if theme.says.home_mini || theme.aside.history.enable
 if theme.about.echarts.enable && theme.about.enable
     script(src=url_for(cdn.echartsjs))
 
-// 纪念日
+// 灰色纪念日(Gray Anniversary)
 if theme.fest.enable
     include ../head/fest.pug
 
@@ -109,7 +109,7 @@ script.
     )(window)
 
     console.log(
-        "%c🔥 程序：Hexo | 主题：Hexo-Theme-Solitude | 作者：王卓Sco、亦封 | Github: https://github.com/DuoSco/Hexo-theme-solitude | 版本：v1.2.5-dev 😄",
+        "%c🔥 !{_p('head.console')}",
         "color: #fff; background: linear-gradient(-25deg, #a8edea, #fed6e3); padding: 8px 15px; border-radius: 8px; text-shadow: 2px 2px 4px white; color: black;"
     );
 

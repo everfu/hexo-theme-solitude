@@ -1,5 +1,5 @@
 .card-widget#card-toc
     .item-headline
         i.scoicon.sco-menu-line
-        span 文章目录
+        span= __('aside.toc')
     .toc-content#toc-content!= toc(page.content, { list_number: false })

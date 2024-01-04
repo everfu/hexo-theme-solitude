@@ -8,14 +8,14 @@ div.recent-post-item(onclick="pjax.loadUrl('/" + post.path + "')")
                 if post.sticky && is_home()
                     span.article-meta.sticky-warp
                         i.scoicon.sco-thumbtack-solid.sticky.orange
-                        span.sticky.orange= "置顶"
+                        span.sticky.orange= _p('home.recent-post.sticky')
                 each category in post.categories.data
                     span.original= category.name
 
                 if post.prev == null && is_home()
-                    span.original="最新"
+                    span.original= _p('home.recent-post.new')
 
-                a.unvisited-post(href=url_for(post.path))= "未读"
+                a.unvisited-post(href=url_for(post.path))= _p('home.recent-post.read')
 
             a.article-title(href=url_for(post.path), title=post.title)= post.title
 

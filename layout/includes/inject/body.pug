@@ -16,7 +16,6 @@ if theme.rightside.enable
 
 div#js-pjax
     if page.type === 'says'
-        script(src=cdn_url_for("/lib/waterfall.min.js"))
         script.
             window.addEventListener('resize', utils.throttle(function () {
                 if (document.getElementById('waterfall')) {
@@ -64,6 +63,10 @@ if page.katex
 
 if theme.aside.welcome.enable
     script(src=cdn_url_for("/lib/txmap.min.js"))
+
+// waterfall
+if theme.says.enable
+    script(src=cdn_url_for("/lib/waterfall.min.js"))
 
 if theme.comment.enable
     case theme.comment.type

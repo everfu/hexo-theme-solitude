@@ -192,14 +192,6 @@ aside:
   page:
     noSticky: "about"
     Sticky: "newestPost,allInfo"
-  # 爱发电
-  power:
-    link: https://afdian.net/a/wleelw0u0 # 爱发电链接
-  #    list:
-  #      - name: 王卓Sco
-  #        avatar: https://bu.dusays.com/2023/11/04/6545e8a57f97b.jpg
-  #        descr: 宁静致远，热爱生活。
-  #        link: https://afdian.net/u/wleelw0u0
   # 侧边栏个人信息卡片
   card:
     # 头像信息

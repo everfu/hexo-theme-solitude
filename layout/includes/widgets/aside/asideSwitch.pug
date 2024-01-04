@@ -1,6 +1,4 @@
 case item
-    when 'power'
-        include ./asidePower.pug
     when 'about'
         include ./asideInfoCard.pug
     when 'flip'
@@ -11,15 +9,6 @@ case item
         include ./asideHistory.pug
     when 'newestPost'
         include ./asideNewestPost.pug
-    when 'tag'
-        .card-widget.card-tags
-            include ./asideTag.pug
-    when 'archive'
-        .card-widget.card-archives
-            include ./asideArchive.pug
-    when 'webInfo'
-        .card-widget.card-webinfo
-            include ./asideWebInfo.pug
     when 'allInfo'
         include ./asideAllInfo.pug
     default

@@ -4,5 +4,5 @@
         .swiper-wrapper#bber-talk
             each item, i in site.data.essay.essay_list
                 if i < 10
-                    .li-style.swiper-slide= item.image ? item.content + '【图片】' : item.content
-    i.bber-gotobb.scoicon.sco-right-btn-fill(title="查看全文", onclick="pjax.loadUrl('/essay/')")
+                    .li-style.swiper-slide= item.image ? item.content + _p('home.bbtime.image') : item.content
+    i.bber-gotobb.scoicon.sco-right-btn-fill(title=_p('home.bbtime.text'), onclick="pjax.loadUrl('/essay/')")
