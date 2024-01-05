@@ -1,9 +1,15 @@
 #tag
+  +minWidth1300()
+    padding: 4rem 2rem 1rem 2rem
+
+  +maxWidth768()
+    padding 0 1rem
+
   #tag-page-tags
     display flex
     flex-direction row
     flex-wrap wrap
-    margin 0 -0.25rem
+    margin 0
     margin-bottom 0.5rem
     position absolute
     z-index 1
@@ -17,6 +23,11 @@
     backdrop-filter saturate(180%) blur(20px)
     transition .1s ease-out
 
+    &:hover
+      max-height 1000px
+      transition .3s ease-out
+      background var(--sco-maskbgdeep)
+
     a
       padding .1rem .5rem
       margin .25rem .25rem
@@ -26,6 +37,8 @@
       border var(--style-border-always)
       display flex
       align-items center
+      background var(--sco-card-bg)
+      transition all .3s ease-out 0s
 
       &.select
         order -1
@@ -43,14 +56,3 @@
         color var(--sco-lighttext)
     +maxWidth768()
       display none
-span.tags-punctuation
-  margin-right 2px
-  font-size .7rem
-  font-weight 700
-  display flex;
-  align-items center
-  transition .3s
-
-+minWidth1300()
-  #tag
-    padding: 4rem 2rem 1rem 2rem

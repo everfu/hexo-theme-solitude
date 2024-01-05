@@ -1,0 +1,113 @@
+#post-comment
+  .comment-head
+    .comment-headline
+      display inline-block
+      vertical-align middle
+      font-weight 700
+      font-size 20px
+
+    #comment-switch
+      display inline-block
+      float right
+      margin .1rem auto 0
+      padding .2rem .8rem
+      width max-content
+      border-radius 5px
+      background #f6f8fa
+
+      .first-comment
+        color #307af6
+
+      .second-comment
+        color #ff7242
+
+      .switch-btn
+        position relative
+        display inline-block
+        margin -4px .4rem 0
+        width 42px
+        height 22px
+        border-radius 34px
+        background-color #307af6
+        vertical-align middle
+        cursor pointer
+        transition all .4s ease 0s
+
+        &::before
+          position absolute
+          bottom 4px
+          left 4px
+          width 14px
+          height 14px
+          border-radius 50%
+          background-color #fff
+          content ""
+          transition all .4s ease 0s
+
+        &.move
+          background-color #ff7242
+
+          &::before
+            transform translateX(20px)
+
+  .comment-wrap
+    > div:nth-child(2)
+      display none
+
+.post-comment
+  background var(--sco-card-bg)
+
+div#post-comment
+  margin-top 2rem
+
+#post-comment
+  > div.comment-head
+    > div.comment-privacy
+      display block
+      justify-content space-between
+      margin-left 8px
+      font-size 13px
+
+    > div.comment-privacy
+      a:hover
+        color var(--sco-main)
+
+  .comment-tips
+    background-color rgba(103, 194, 58, 0.13)
+    border var(--style-border-always)
+    border-color var(--sco-green)
+    color var(--sco-green)
+    border-radius 8px
+    padding 8px 12px
+    margin-top 0.5rem
+    display none
+    width 100%
+
+    &.show
+      display flex
+      font-weight 700
+
+  blockquote
+    background var(--sco-secondbg)
+    border var(--style-border)
+    box-shadow none
+    margin 0 0 .5rem
+    font-size .6rem
+    color var(--sco-secondtext)
+    border-radius 8px
+
+  .comment-head
+    font-size .8em !important
+    margin-bottom .5rem
+    display flex
+    align-items center
+    flex-wrap wrap
+    position relative
+
+.comment-randomInfo
+  margin-left auto
+  font-size 13px
+
+  &:hover
+    a
+      color var(--sco-theme)

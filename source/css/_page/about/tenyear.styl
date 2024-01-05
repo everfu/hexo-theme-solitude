@@ -1,0 +1,56 @@
+.percentage-label
+  position absolute
+  left 0
+  font-size 14px
+  color var(--sco-card-bg)
+  font-weight bold
+  top 10px
+  white-space nowrap
+  transition left 0.5s linear
+  visibility hidden
+
+.time-labels
+  display flex
+  justify-content space-between
+  width 100%
+
+  > div
+    font-size 14px
+    color var(--sco-fontcolor)
+
+.tenyear-timeline
+  width 100%
+  background-color var(--sco-background)
+  position relative
+  overflow hidden
+  margin-bottom 20px
+  border-radius 0.5rem
+  height 2.5rem
+
+.progress
+  width 0
+  height 100%
+  background-color var(--sco-main)
+  position absolute
+  animation-delay -0.1s
+  border-radius 0.5rem
+  animation renamedProgressAnimation 2s linear forwards
+
+.past-time
+  animation renamedPastTimeAnimation 3s linear forwards
+  width 2px
+  height 20px
+  position absolute
+  transform-origin left
+
+@keyframes renamedProgressAnimation
+  0%
+    width 0
+  100%
+    width var(--progress-percentage, 0)
+
+@keyframes renamedPastTimeAnimation
+  0%
+    transform scaleX(0)
+  100%
+    transform scaleX(var(--past-time-percentage, 0))

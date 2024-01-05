@@ -1,0 +1,20 @@
+// commentBarrage
+if hexo-config('comment.commentBarrage')
+  @import 'commentBarrage'
+
+@import "content"
+
+@import "copyright"
+
+@import "meta"
+
+@import "relatedPost"
+
+@import "tools"
+
+@import "pagination"
+
+@import "_highlight/index"
+
+if hexo-config('thirdparty.ai.enable')
+  @import "postAI"

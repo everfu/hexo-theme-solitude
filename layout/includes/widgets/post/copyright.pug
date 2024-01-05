@@ -1,27 +1,29 @@
-div.post-copyright
-    div.post-copyright__author_group
-        a.post-copyright__author_img(href="/about/", data-pjax-state="")
-            img.post-copyright__author_img_back(src=theme.post.author_back)
+.post-copyright
+    .post-copyright__author_group
+        a.post-copyright__author_img(href="/about/")
+            if theme.post.default.copyright.author.enable
+                img.post-copyright__author_img_back(src=theme.post.default.copyright.author.author_back)
             img.post-copyright__author_img_front(src=theme.site.icon)
-        div.post-copyright__author_name= config.title
-        div.post-copyright__author_desc= config.subtitle
-    div.post-tools#post-tools
-        div.post-tools-left
+        .post-copyright__author_name= config.title
+        .post-copyright__author_desc= config.subtitle
+    .post-tools#post-tools
+        .post-tools-left
+            #quit-box(onclick="RemoveRewardMask()")
             if theme.post.award.enable
                 include ./award
-            if theme.footer.rss.enable
-                div.reward-link.mode
-                    a.reward-link-button(href=theme.footer.rss.url)
+            if theme.post.rss.enable
+                .reward-link.mode
+                    a.reward-link-button(href=url_for(theme.post.rss.url), title="订阅")
                         i.scoicon.sco-plant-fill
                         | 订阅
     if theme.post.default.copyright.enable || page.copyright
-        div.post-copyright__notice
+        .post-copyright__notice
             span.post-copyright-info
                 if page.reprint
                     | 本文是转载或翻译文章，版权归原作者所有。转载本文请联系原作者。
                 else
                     | 本文是原创文章，采用
-                    a(href=url_for(theme.post.default.copyright.licenurl), target="_blank")
+                    a(href=url_for(theme.post.default.copyright.licenurl))
                         | #{theme.post.default.copyright.license}
                     | 协议，完整转载请注明来自
-                    a(href="/", target="_blank") #{config.title}
+                    a(href="/") #{config.title}

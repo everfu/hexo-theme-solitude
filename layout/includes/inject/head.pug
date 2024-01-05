@@ -6,15 +6,11 @@ if theme.verify.baidu
 if theme.verify.google
     meta(name="google-site-verification", content=theme.verify.google)
 
-if theme.loading.pace
-    script(src=cdn.pace, data-pace-options='{ &quot;restartOnRequestAfter&quot;:false,&quot;eventLag&quot;:false}')
-
-// pwa
-if theme.pwa.enable
-    include ../head/pwa.pug
+if theme.verify.sougou
+    meta(name="sogou_site_verification", content=theme.verify.sougou)
 
 link(rel="stylesheet", href=cdn.scoicon)
-link(rel="stylesheet", href=cdn.snackbarcss)
+link(rel="stylesheet", href=cdn_url_for("/lib/snackbar.min.css"))
 
 // comment
 if theme.comment.enable
@@ -25,6 +21,10 @@ if theme.comment.enable
             script(src=cdn.walinejs)
             link(rel="stylesheet", href=cdn.walinecss)
 
+// pace 胶囊加载条(Capsule loading bar)
+if theme.loading.pace
+    script(src=cdn.pacejs)
+
 // search
 if theme.thirdparty.search.enable
     if theme.thirdparty.search.type === 'algolia'
@@ -34,25 +34,27 @@ if theme.thirdparty.search.enable
         script(src=url_for(cdn.lunrjs))
 
 // aplayer
-if theme.thirdparty.aplayer.enable
+if theme.thirdparty.aplayer.enable || theme.music.enable
     link(rel="stylesheet", href=cdn.aplayercss)
 
 // swiper
 if theme.says.home_mini || theme.aside.history.enable
     link(rel="stylesheet", href=cdn.swipercss)
 
-// custom inject
-if theme.extends.head
-    each item in theme.extends.head
-        != item
-
-// post-ai
-if theme.thirdparty.ai.enable
-    script(src='/lib/chuckle-post-ai.js')
-
 // echarts
 if theme.about.echarts.enable && theme.about.enable
     script(src=url_for(cdn.echartsjs))
+
+// 灰色纪念日(Gray Anniversary)
+if theme.fest.enable
+    include ../head/fest.pug
+
+// Open Graph
+include ../head/opengraph.pug
+
+// pwa
+if theme.pwa.enable
+    include ../head/pwa.pug
 
 script.
     (win => {
@@ -106,8 +108,16 @@ script.
         }
     )(window)
 
-    console.log("%c🔥 程序：Hexo | 主题：Hexo-Theme-Solitude | 作者：DuoSco团队 | 官网：https://github.com/DuoSco/Hexo-theme-solitude 😋", "color:#fff; background: linear-gradient(270deg, #18d7d3, #68b7dd, #8695e6, #986fee); padding: 8px 15px; border-radius: 8px");
+    console.log(
+        "%c🔥 !{_p('head.console')}",
+        "color: #fff; background: linear-gradient(-25deg, #a8edea, #fed6e3); padding: 8px 15px; border-radius: 8px; text-shadow: 2px 2px 4px white; color: black;"
+    );
 
 div
-    script(src="/js/utils.js")
-    script(src="/js/main.js")
+    script(src=cdn_url_for("/js/utils.js"))
+    script(src=cdn_url_for("/js/main.js"))
+
+// custom inject
+if theme.extends.head
+    each item in theme.extends.head
+        != item

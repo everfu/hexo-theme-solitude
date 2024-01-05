@@ -9,18 +9,16 @@
             .skills-style-group
                 .tags-group-all
                     .tags-group-wrapper
-                        .tags-group-all
-                            .tags-group-wrapper
-                                each i in [1,2]
-                                    - var pair = []
-                                    each tag, index in skills.tags
-                                        - pair.push(tag)
-                                        if pair.length === 2 || index === skills.tags.length - 1
-                                            .tags-group-icon-pair
-                                                each item in pair
-                                                    .tags-group-icon(style=`background:${item.color}`)
-                                                        img(src=item.icon, title=item.title)
-                                            - pair = []
+                        each i in [1,2]
+                            - var pair = []
+                            each tag, index in skills.tags
+                                - pair.push(tag)
+                                if pair.length === 2 || index === skills.tags.length - 1
+                                    .tags-group-icon-pair
+                                        each item in pair
+                                            .tags-group-icon(style=`background:${item.color}`)
+                                                img(src=item.icon, title=item.title)
+                                    - pair = []
                 .skills-list
                     each tag in skills.tags
                         .skill-info

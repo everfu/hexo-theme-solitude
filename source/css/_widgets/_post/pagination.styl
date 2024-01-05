@@ -1,0 +1,177 @@
+#post #pagination
+  overflow hidden
+  position inherit
+  border var(--style-border-always)
+  +minWidth1300()
+    position fixed
+    width 300px
+    bottom -100px
+    right 20px
+    z-index 1000
+    height fit-content
+    transition cubic-bezier(.42, 0, .3, 1.11) .3s
+    border var(--style-border)
+    border-radius 12px
+    overflow hidden
+    cursor pointer
+    opacity 0
+  +maxWidth768()
+    border-radius 12px
+    border var(--style-border-always)
+    box-shadow var(--sco-shadow-border)
+
+  &.pagination-post
+    margin-top 1.5rem
+    background var(--sco-card-bg)
+    +minWidth768()
+      border-radius 12px
+      margin-top 1rem
+    +minWidth1300()
+      margin-top 0
+
+  .next-post, .prev-post, .next-post.pull-right, .prev-post.pull-left
+    background var(--sco-secondbg)
+    +minWidth1300()
+      background var(--sco-maskbgdeep)
+      backdrop-filter blur(5px)
+      transform translateZ(0)
+    +maxWidth768()
+      background var(--sco-card-bg)
+
+  .next-post.pull-full, .prev-post.pull-full
+    +minWidth1300()
+      width 100%
+
+  .prev-post.pull-left
+    +minWidth1300()
+      display none
+    +maxWidth768()
+      border-bottom var(--style-border-always)
+
+  .next-post.pull-right
+    +minWidth1300()
+      width 100%
+
+  .next-post, .prev-post
+    width 50%
+    +minWidth1300()
+      text-align left
+      position relative
+    +maxWidth768()
+      width 100%
+
+    .label
+      color var(--sco-fontcolor)
+      text-transform uppercase
+      font-size 90%
+
+      +minWidth1300()
+        color var(--sco-fontcolor)
+        font-weight 700
+        font-size 12px
+        margin-bottom 0.5rem
+        border-bottom var(--style-border)
+        line-height 1
+        padding-bottom 0.5rem
+
+      +maxWidth768()
+        text-align left
+
+    a
+      position relative
+      display block
+      overflow hidden
+      height 150px
+
+      +minWidth768()
+        &:hover
+          background var(--sco-main)
+
+          div
+            color: var(--sco-white)
+
+      +maxWidth768()
+        &:hover
+          background var(--sco-none)
+
+  .prev-post
+    .pagination-info
+      text-align left
+
+    a
+      +minWidth768()
+        border-right var(--sco-main-op)
+        border-right-width 1px
+        border-right-style solid
+
+      +minWidth1300()
+        border none
+        height fit-content
+        padding 0.5rem 0
+
+  .next-post
+    .pagination-info
+      text-align right
+
+      +minWidth1300()
+        text-align left
+
+    a
+      +minWidth768()
+        border-left var(--sco-main-op)
+        border-left-width 1px
+        border-left-style solid
+        display flex
+        align-items flex-start
+        height 150px
+
+      +minWidth1300()
+        border none
+        height fit-content
+        padding 0.5rem 0
+
+  .pagination-info
+    position absolute
+    top 50%
+    padding 1rem 2rem
+    width 100%
+    transform translate(0, -50%)
+    +minWidth768()
+      padding 1rem 1.5rem 1rem 1.5rem
+      position relative
+      display flex
+      top 0
+      transform none
+      flex-direction column
+      justify-content center
+      margin auto
+      height 100%
+
+    +minWidth1300()
+      padding 0.5rem 1rem
+      transform none
+
+  .next_info, .prev_info
+    color var(--sco-fontcolor)
+    font-weight 700
+    -webkit-line-clamp 2
+    white-space normal
+    line-height 1.3
+    font-size .9rem
+    display -webkit-box
+    -webkit-box-orient vertical
+    overflow hidden
+    margin-bottom 10px
+
+    +minWidth1300()
+      font-size 14px
+      font-weight 400
+      margin-bottom 0
+
+    +maxWidth768()
+      text-align left
+
+  &.show-window
+    +minWidth1300()
+      bottom 20px
+      opacity 1

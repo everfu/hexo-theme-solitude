@@ -1,0 +1,420 @@
+.post
+  #page-header.post-bg
+    height 20rem
+    background-color var(--sco-background)
+    transition .6s
+    overflow hidden
+
+    +minWidth1300()
+      height: 25rem
+
+    +maxWidth768()
+      height 30rem
+      background-color var(--sco-main) !important
+      transition 0s
+      margin-bottom -12px
+
+    &::before
+      transition .3s
+      height 20rem
+      background-color var(--sco-main)
+      opacity 1
+      position absolute
+      top 0
+      left 0
+      display block
+      width 100%
+      content ""
+
+      +minWidth1300()
+        height 25rem
+        opacity 0
+        background-color var(--sco-main)
+        animation slide-in-op .6s 0s forwards
+
+      +maxWidth768()
+        height 15rem
+
+  /*** 顶部背景 ***/
+
+  .post-bg
+    .main-hero-waves-area
+      width 100%
+      position absolute
+      left 0
+      bottom -11px
+      z-index 5
+
+    .waves-area .waves-svg
+      width 100%
+      height 60px
+
+    .parallax > use
+      animation move-forever 30s cubic-bezier(.55, .5, .45, .5) infinite
+
+    .parallax > use:nth-child(1)
+      animation-delay -2s
+      animation-duration 7s
+      fill var(--sco-background)
+      opacity .5
+
+    .parallax > use:nth-child(2)
+      animation-delay -3s
+      animation-duration 10s
+      fill var(--sco-background)
+      opacity .6
+
+    .parallax > use:nth-child(3)
+      animation-delay -4s
+      animation-duration 13s
+      fill var(--sco-background)
+      opacity .7
+
+    .parallax > use:nth-child(4)
+      animation-delay -5s
+      animation-duration 20s
+      fill var(--sco-background)
+
+    +maxWidth768()
+      .main-hero-waves-area
+        display none
+
+    #post-cover
+      width 100%
+      height 100%
+      object-fit cover
+      min-width 50vw
+      min-height 20rem
+      opacity .8
+
+      +minWidth768()
+        min-height 15rem !important
+        height 70% !important
+        opacity 1 !important
+
+    .coverdiv
+      width 70%
+      height 100%
+      position relative
+      overflow hidden
+      margin 0 -20% 0 auto
+      transform rotate(10deg) translateY(-10%) scale(2)
+      filter blur(10px)
+
+      &:after
+        position absolute
+        content ''
+        width 100%
+        height 100%
+        top 0
+        left 0
+        box-shadow 110px -130px 300px 60px var(--sco-main) inset
+
+      +minWidth1300()
+        width 70%
+        height 100%
+        position relative
+        overflow hidden
+        margin 0 -20% 0 auto
+        transform rotate(10deg) translateY(-8%) scale(1.8)
+        filter blur(10px)
+        opacity 0
+
+        &.loaded
+          display block
+          opacity .5
+          animation showCover 1s .3s backwards
+          transform rotate(10deg) translateY(-10%) scale(2)
+
+      +minWidth768()
+        width 70%
+        height 100%
+        position relative
+        overflow hidden
+        margin 0 -20% 0 auto
+        transform rotate(10deg) translateY(-8%) scale(1.8)
+        filter blur(10px)
+        opacity 0
+
+        &.loaded
+          display block
+          opacity .5
+          animation showCover 1s .3s backwards
+          transform rotate(10deg) translateY(-10%) scale(2)
+
+      +maxWidth768()
+        margin 0 0 0 auto
+        transform rotate(0) translateY(0) scale(1)
+        filter blur(0)
+        width 100%
+        height 30rem
+
+        &:after
+          box-shadow 0 0 205px 59px var(--sco-main) inset
+
+      &.loaded
+        display block
+
+    /*** 顶部背景 end ***/
+
+    /*** 顶部信息 ***/
+
+    #post-info
+      top 0
+      position absolute
+      padding 0 3rem
+      margin 0 auto
+      z-index 10
+      color var(--sco-white)
+      max-width 1400px
+      display flex
+      flex-direction column
+      align-items flex-start
+      height calc(100% + 0px)
+      justify-content center
+      animation slide-in .6s 0s backwards
+      width 100%
+      text-align center
+
+      +minWidth1300()
+        height calc(100% + 0px)
+        top 0
+        display flex
+        justify-content center
+
+      +maxWidth900()
+        bottom 1.5rem
+        text-align left
+
+      +maxWidth768()
+        padding 0 6%
+        justify-content normal
+        padding-top 18rem
+
+      .post-title
+        color var(--sco-white)
+        font-weight 700
+        font-size 2.3rem
+        line-height 1.2
+        text-align left
+        margin 1rem 0 1rem 0
+        -webkit-line-clamp 2
+        padding 0
+        overflow hidden
+
+        +maxWidth768()
+          font-size 1.2rem
+          -webkit-line-clamp 3
+          margin .2rem auto
+          text-align center
+          z-index 1
+
+        +minWidth1300()
+          width 1100px
+          font-size 2.6rem !important
+
+      #post-meta
+        margin-top .4rem
+        transition .3s
+        display flex
+        -webkit-user-select none
+        z-index 1
+        color var(--light-grey)
+        font-size 95%
+
+        +maxWidth768()
+          font-size 90%
+          padding 0 2rem
+
+        a
+          color var(--light-grey)
+          transition all .3s ease-out 0s
+
+        i
+          font-size 16px
+          margin-right 4px
+
+        > div
+          text-align left
+
+        .meta-secondline
+          display flex
+          flex-direction row
+          flex-wrap wrap
+          justify-content flex-start
+          align-items center
+
+          +maxWidth768()
+            justify-content center
+
+          > span
+            display: flex
+            align-items center
+            line-height 1
+
+            +maxWidth768()
+              line-height 1.5
+
+          > span:first-child
+            margin-right .8rem
+
+          .post-meta-date
+            margin-right .8rem
+            opacity .6
+
+          .post-meta-wordcount
+            opacity .6
+            margin-right 20px
+
+            +maxWidth768()
+              margin-left 0
+
+            > span.word-count
+              font-weight 800
+
+            > span:nth-child(7)
+              font-weight 800
+
+          .post-meta-separator
+            margin 0 10px
+
+          .post-meta-position
+            margin-right 12px
+            opacity .6
+
+          .post-meta-pv
+            opacity .6
+            margin-right 8px
+            padding 0 8px
+            display flex
+            align-items center
+            border-radius 12px
+
+            &:hover
+              opacity 1
+              background var(--sco-white-op)
+              text-decoration none
+              color var(--sco-white)
+
+          .post-meta-pv-cv
+            margin-left .8rem
+
+            #busuanzi_value_page_pv
+              font-weight 800
+
+          .post-meta-commentcount
+            opacity .6
+            cursor pointer
+            transition .3s
+            border-radius 12px
+            padding 8px
+
+            &:hover
+              opacity 1
+              background var(--sco-white-op)
+
+          .post-meta-wechat
+            margin-right .8rem
+            opacity .6
+            transition .3s
+            cursor pointer
+
+            &:hover
+              opacity 1
+              background var(--sco-white-op)
+
+      #post-firstinfo
+        text-align left
+        display flex
+        white-space nowrap
+        -webkit-user-select none
+
+        +maxWidth768()
+          white-space nowrap
+          margin 0 auto
+          z-index 1
+
+          .tag_share
+            display none
+
+        .meta-firstline
+          display flex
+          align-items center
+          height 32px
+
+          +maxWidth768()
+            margin-bottom .4rem
+
+          .post-meta-original
+            background var(--sco-white-op)
+            color var(--sco-white)
+            padding 0 .5rem
+            font-size .7rem
+            margin auto
+            border-radius 8px
+            font-weight 700
+            line-height 32px
+            width 100%
+            height 100%
+            display flex
+
+            &:hover
+              color var(--sco-main)
+              background var(--sco-white)
+              border-radius 8px
+
+          .tag_share
+            margin-left .5rem
+
+            .post-meta__tag-list
+              display flex
+              flex-direction row
+              align-items center
+
+              +maxWidth768()
+                display none
+
+              &::-webkit-scrollbar
+                display none
+
+              .post-meta__tags
+                color var(--sco-white)
+                opacity .8
+                margin-right 8px
+                padding 0 8px
+                border-radius 12px
+                display flex
+                align-items center
+                flex-direction row
+
+                &:hover
+                  color var(--sco-white)
+                  opacity 1
+                  background var(--sco-white-op)
+
+                +maxWidth768()
+                  margin 0 .5rem 0 0
+
+          span.post-meta-categories
+            background-color var(--sco-white-op)
+            border-radius 8px
+            line-height 32px
+            height 32px
+            transition .3s
+
+            &:not(:first-child)
+              margin-left 8px
+
+            &:hover
+              background-color var(--sco-white)
+
+            a.post-meta-categories
+              color var(--sco-white)
+              font-size .7rem
+              width 100%
+              height 100%
+              display flex
+              padding 0 .5rem
+
+              &:hover
+                color var(--sco-main)

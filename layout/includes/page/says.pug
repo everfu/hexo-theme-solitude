@@ -1,5 +1,4 @@
 if theme.says.enable
-    - var pageClass = "sharePage"
     include ../widgets/page/banner
     #bber
         section.timeline.page-1
@@ -14,7 +13,7 @@ if theme.says.enable
                         if theme.says.style === 1
                             hr
                             include ../widgets/page/says/saysBottom
-    #bber-tips(style="color: var(--sco-secondtext);") - 只展示最近30条短文 -
+    #bber-tips - 只展示最近30条短文 -
 
 script.
     sco.reflashEssayWaterFall()

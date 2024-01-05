@@ -1,0 +1,80 @@
+#article-container .tag-Link
+  background var(--sco-secondbg)
+  border-radius 8px !important
+  display flex
+  border var(--style-border)
+  flex-direction column
+  padding .3rem 1rem .6rem
+  border-width 1px !important
+  margin-top 1rem
+
+  &:hover
+    border var(--style-border-hover)
+
+  .tag-link-tips
+    border-bottom var(--style-border-always)
+    padding-bottom 4px
+    font-size .6rem
+    color var(--sco-gray)
+    font-weight 400
+    pointer-events none
+
+  &:hover .tag-link-tips
+    color var(--sco-fontcolor)
+
+  .tag-link-bottom
+    display flex
+    margin-top .5rem
+    align-items center
+    justify-content space-around
+    pointer-events none
+
+    .tag-link-left
+      width 60px
+      min-width 60px
+      height 60px
+      background-size cover !important
+      border-radius 8px
+      background var(--sco-card-bg)
+      pointer-events none
+      display flex
+
+      i
+        padding 0
+        margin auto
+        font-size 24px
+        color var(--sco-fontcolor)
+
+    .tag-link-right
+      margin-left 1rem
+      pointer-events none
+
+      .tag-link-title
+        font-size 16px
+        line-height 1.2
+        pointer-events none
+        word-break break-all
+        text-overflow ellipsis
+        display -webkit-box
+        -webkit-box-orient vertical
+        -webkit-line-clamp 2
+        overflow hidden
+
+      .tag-link-sitename
+        font-size .7rem
+        color var(--sco-gray)
+        font-weight 400
+        margin-top 8px
+        pointer-events none
+        line-height 1
+        overflow hidden
+        text-overflow ellipsis
+        white-space nowrap
+
+  &:hover .tag-link-bottom .tag-link-right .tag-link-sitename
+    color var(--sco-fontcolor)
+
+  .tag-link-bottom i
+    margin-left auto
+    padding-left .5rem
+    pointer-events none

@@ -1,8 +1,10 @@
+- page.type = is_home() ? 'solitude' : page.type
+
 doctype html
 html(lang=config.language, data-theme="light")
     head
         include ./head.pug
-    body(id="body")
+    body#body(data-type=page.type)
         // loading
         if theme.loading.fullpage
             include ./loading.pug
@@ -13,17 +15,17 @@ html(lang=config.language, data-theme="light")
         // sidebar
         include ./sidebar.pug
 
-        if(page.type !== '404')
-            div(class = is_post() ? 'post' : 'page', id="body-wrap")
-                include ./header.pug
+        #body-wrap(class = is_post() ? 'post' : 'page')
+            include ./header.pug
 
+            if(page.type !== '404')
                 block content
 
                 footer#footer
                     include ./footer.pug
-        else
-            div.error#body-wrap
-                block content
+            else
+                .error#body-wrap
+                    block content
 
         // inject body
         include ./inject/body.pug
@@ -32,4 +34,5 @@ html(lang=config.language, data-theme="light")
         include ./widgets/third-party/search/index.pug
 
         // music
-        include ./widgets/third-party/music.pug
+        if theme.thirdparty.aplayer.enable
+            include ./widgets/third-party/music.pug

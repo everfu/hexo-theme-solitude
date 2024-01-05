@@ -1,0 +1,506 @@
+body[data-type=music]
+  #page-header.not-top-img #nav a
+    color var(--sco-white)
+  #page-header.not-top-img #nav .back-home-button
+    color var(--sco-white)
+  .page
+    .layout#content-inner
+      background none
+
+  #page
+    padding 0
+    background transparent
+
+  #footer,
+  #nav-music
+    display none
+
+#Music-bg
+  display none
+  position fixed
+  z-index -999
+  width 200%
+  height 200%
+  top -50%
+  left -50%
+  background-size 40%
+  transition 0.6s
+  background-image url(https://bu.dusays.com/2023/11/08/654af68b25bb8.jpg)
+
+  &:before
+    content ''
+    background rgba(0, 0, 0, 0.4)
+    backdrop-filter blur(200px)
+    -webkit-backdrop-filter blur(200px)
+    position fixed
+    z-index -998
+    top -50%
+    left -50%
+    width 200%
+    height 200%
+
+#Music-page
+  max-width 1400px
+
+  meting-js
+    .aplayer
+      display flex
+      flex-direction row-reverse
+      background transparent
+      box-shadow none
+      justify-content space-between
+
+  .aplayer-body 
+    width 70%
+
+    +maxWidth798()
+      width 100%
+      overflow hidden
+      position fixed
+      margin auto
+      margin-top 50px
+      left 0
+      right 0
+      top 0
+      height calc(var(--vh) - 250px)
+
+  ol
+    max-height calc(var(--vh) - 170px)!important
+
+    +maxWidth798()
+      max-height 100%!important
+      padding-right 3px
+      padding-left 8px
+
+    & > li 
+      font-size 14px
+      opacity 0.6
+      border-top none
+
+      +maxWidth798()
+        display flex
+
+      &:hover 
+        background var(--sco-black-op)
+        border-radius 6px
+
+      &.aplayer-list-light 
+        background var(--sco-black-op)
+        border-radius 6px
+        height 60px
+        display flex
+        flex-direction column
+        opacity 1
+
+        +maxWidth798()
+          background #33a673
+          padding 5px 20px
+          border-radius 10px
+          height 52px
+          justify-content center
+
+        .aplayer-list-index 
+          display none
+
+        .aplayer-list-title 
+          font-size 20px
+          line-height 20px
+          margin-top 8px
+          font-weight bold
+          overflow hidden
+          text-overflow ellipsis
+          white-space nowrap
+
+          +maxWidth798()
+            margin-top 4px
+
+        .aplayer-list-cur 
+          display none
+
+        span
+          +maxWidth798()
+            color #fff
+
+          &.aplayer-list-author 
+            max-width 100%
+
+            +maxWidth798()
+              margin-left 0
+              right 15px
+
+      span 
+        color var(--sco-white)
+
+        +maxWidth798()
+          color var(--sco-black)
+
+        &.aplayer-list-title 
+          line-height 32px
+
+          +maxWidth798()
+            max-width 55%
+            width auto
+            display -webkit-box
+            -webkit-line-clamp 1
+            overflow hidden
+            -webkit-box-orient vertical
+            width 30%
+
+        &.aplayer-list-author 
+          opacity 0.6
+          overflow hidden
+          text-overflow ellipsis
+          white-space nowrap
+          max-width 40%
+          line-height 32px
+
+          +maxWidth798()
+            right 10px
+            width auto
+            max-width 35%
+            display -webkit-box
+            -webkit-line-clamp 1
+            overflow hidden
+            -webkit-box-orient vertical
+            margin-left auto
+
+      .aplayer-list-index 
+        line-height 32px
+
+    &::-webkit-scrollbar-thumb 
+      background-color var(--sco-white-op)
+
+  .aplayer-pic 
+    float none
+    width 60px
+    height 60px
+    border-radius 12px
+    margin auto
+    bottom 30px
+    left 90px
+    position fixed
+    z-index 999
+    display none
+
+  .aplayer-info 
+    margin 0 20px 0 20px
+    border-bottom none
+
+    .aplayer-music 
+      display none
+
+      +maxWidth798()
+        display flex
+        position fixed
+        top calc(var(--vh) - 178px)
+        left 0
+        margin 0
+        margin-left 32px
+        height 21px
+        max-width calc(100vw - 110px)
+        white-space nowrap
+        overflow hidden
+        text-overflow ellipsis
+        opacity 0.6
+        align-items center
+        line-height 1
+
+      .aplayer-title
+        +maxWidth798()
+          margin 0
+
+      .aplayer-author
+        +maxWidth798()
+          margin-left 4px
+
+      .aplayer-author,
+      .aplayer-title
+        +maxWidth798()
+          white-space nowrap
+          overflow hidden
+          text-overflow ellipsis
+          max-width calc(100vw - 176px)
+          font-size 16px
+          font-weight normal
+          line-height 1
+          color #fff
+
+    .aplayer-lrc 
+      padding-top 240px
+      height var(--vh)
+
+      +maxWidth798()
+        margin-top 0
+        height auto
+        min-height 100%
+        mask-image linear-gradient(to bottom, #000, #000, #000, #000, #0000, #0000)
+        padding-top 100px
+
+      &:hover
+        p
+          filter blur(0px)
+
+      p 
+        font-size 36px
+        line-height 44px !important
+        height 44px !important
+        margin-bottom 36px !important
+        color #fff
+        font-weight bold
+        text-align center
+        filter blur(2px)
+        opacity 0.3
+        transition all 0.9s cubic-bezier(0.56, 0.17, 0.22, 0.76)
+        user-select none
+        text-shadow 0px 4px 0px #ffffff00
+        overflow hidden
+
+        +maxWidth798()
+          font-size 32px
+          margin-bottom 38px
+          line-height 42px
+          height 42px
+
+        &.aplayer-lrc-current 
+          filter blur(0px)
+          opacity 1
+          transition all 0.3s cubic-bezier(0.56, 0.17, 0.22, 0.76), text-shadow 8s 4s ease-in
+          height fit-content !important
+          text-shadow 0px 4px 4px #ffffff94
+
+          &:first-child 
+            text-shadow 0px 4px 4px #ffffff00
+
+    .aplayer-controller 
+      position fixed
+      max-width 1400px
+      margin auto
+      left 0
+      right 0
+      bottom 38px
+      display flex
+      justify-content center
+      align-items center
+
+      +maxWidth798()
+        width 100%
+        bottom 120px
+
+      .aplayer-bar-wrap 
+        margin 0 160px 0 150px
+
+        +maxWidth798()
+          margin 0 32px
+
+      .aplayer-played 
+        background var(--sco-white) !important
+
+      .aplayer-thumb 
+        -webkit-transform none
+        transform none
+        background #fff !important
+
+    .aplayer-time 
+      position absolute
+      width 100%
+      bottom 26px
+      height 0
+      display flex
+      justify-content flex-end
+
+      +maxWidth798()
+        bottom -40px
+        align-items center
+
+      .aplayer-icon 
+        width 1.8rem
+        height 1.8rem
+        margin-left 16px
+
+        path 
+          fill var(--sco-white)
+          opacity 0.8
+
+      .aplayer-time-inner 
+        margin-right 18px
+        margin-top -8px
+
+        +maxWidth798()
+          position absolute
+          width 100%
+          margin-right 4px
+          margin-top -60px
+          
+          .aplayer-dtime
+            position absolute
+            right 30px
+
+          .aplayer-ptime
+            position absolute
+            left 44px
+
+      .aplayer-icon-back 
+        position absolute
+        left 0
+        display inline
+
+        +maxWidth798()
+          margin auto
+          right 110px
+
+      .aplayer-icon-play 
+        position absolute
+        left 40px
+        display inline
+
+        +maxWidth798()
+          margin auto
+          right 0
+          left 0
+          width 56px
+          height 56px
+
+      .aplayer-icon-forward 
+        position absolute
+        left 80px
+        display inline
+
+        +maxWidth798()
+          margin auto
+          left 110px
+          right 0
+
+      .aplayer-icon-order
+        +maxWidth798()
+          position absolute
+          left 22px
+          width 24px
+          height 24px
+          opacity 0.4
+
+      .aplayer-icon-loop
+        +maxWidth798()
+          position absolute
+          right 25px
+          width 24px
+          height 24px
+          opacity 0.4
+
+      .aplayer-icon-menu 
+        display none
+
+        +maxWidth798()
+          display inline
+          position absolute
+          right 30px
+          top -100px
+          width 24px
+          height 24px
+          opacity 0.4
+
+  .aplayer-list 
+    width 40%
+    max-width 480px
+    max-height none !important
+    height 100%
+    min-width 200px
+
+    +maxWidth798()
+      position fixed
+      z-index 1002
+      width 100%
+      bottom 0px
+      left 0
+      background var(--sco-white)
+      border-radius 16px 16px 0px 0px
+      padding 15px 0px
+      max-width 100%
+      height calc(var(--vh) - 200px)
+
+      &.aplayer-list-hide
+        bottom -100% !important
+
+  .aplayer
+    .aplayer-lrc
+      +maxWidth798()
+        overflow inherit
+
+      &:after,
+      &:before 
+        display none
+
+      .aplayer-lrc-contents 
+        width 90%
+        margin-left auto
+        transition all .5s cubic-bezier(0.49, 0.21, 0.22, 0.84)
+        position relative
+
+        +maxWidth798()
+          width 100%
+
+    .aplayer-info 
+      .aplayer-controller 
+        .aplayer-bar-wrap 
+          .aplayer-bar 
+            height 8px
+            border-radius 8px
+            background var(--sco-white-op)
+
+            .aplayer-loaded 
+              background var(--sco-white-op)
+              height 8px
+              border-radius 8px
+
+            .aplayer-played 
+              height 8px
+              border-radius 8px
+
+              .aplayer-thumb 
+                height 16px
+                width 16px
+
+        .aplayer-time 
+          color var(--sco-white)
+
+
+        .aplayer-volume-wrap
+          &:hover
+            .aplayer-volume-bar-wrap
+              height 120px
+              border-radius 40px
+              width 30px
+
+          .aplayer-volume-bar-wrap
+            width 30px
+            right 6px
+
+            .aplayer-volume-bar
+              width 100%
+              height 100%
+              left 0
+
+              .aplayer-volume
+                width: 100%
+                background: var(--sco-white) !important
+
+          .aplayer-icon-volume-down
+            display block
+            
+            +maxWidth798()
+              display none
+
+  .aplayer-volume-bar-wrap
+    +maxWidth798()
+      bottom 0
+      right 7px
+
+.Music-loading
+  display flex
+  align-items center
+  justify-content center
+  height 50vh
+
+  div
+    font-size 1rem
+    font-weight bold
+    letter-spacing 2px

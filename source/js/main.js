@@ -1,33 +1,3 @@
-const adjustMenu = (change = false) => {
-    const $blogName = document.getElementById('site-name')
-    let blogNameWidth = $blogName && $blogName.offsetWidth
-    const $menusEle = document.querySelector('#menus .menus_items')
-    let menusWidth = $menusEle && $menusEle.offsetWidth
-    const $searchEle = document.querySelector('#search-button')
-    let searchWidth = $searchEle && $searchEle.offsetWidth
-    if (change) {
-        blogNameWidth = $blogName && $blogName.offsetWidth
-        menusWidth = $menusEle && $menusEle.offsetWidth
-        searchWidth = $searchEle && $searchEle.offsetWidth
-    }
-    const $nav = document.getElementById('nav')
-    let t
-    if (window.innerWidth < 768) t = true
-    else t = blogNameWidth + menusWidth + searchWidth > $nav.offsetWidth - 120
-
-    if (t) {
-        $nav.classList.add('hide-menu')
-    } else {
-        $nav.classList.remove('hide-menu')
-    }
-}
-
-// 初始化header
-const initAdjust = () => {
-    adjustMenu()
-    document.getElementById('nav').classList.add('show')
-}
-
 /**
  * side menu
  */
@@ -36,8 +6,6 @@ const sidebarFn = () => {
     const $mobileSidebarMenus = document.getElementById('sidebar-menus')
     const $menuMask = document.getElementById('menu-mask')
     const $body = document.body
-
-    const isOpen = () => $mobileSidebarMenus.classList.contains('open')
 
     function openMobileSidebar() {
         utils.sidebarPaddingR()
@@ -55,15 +23,15 @@ const sidebarFn = () => {
 
     $toggleMenu.addEventListener('click', openMobileSidebar)
 
-    $menuMask.addEventListener('click', () => {
-        if (isOpen()) {
+    $menuMask.addEventListener('click', e => {
+        if ($mobileSidebarMenus.classList.contains('open')) {
             closeMobileSidebar()
         }
     })
 
-    window.addEventListener('resize', () => {
-        if (utils.isHidden($toggleMenu) && isOpen()) {
-            closeMobileSidebar()
+    window.addEventListener('resize', e => {
+        if (utils.isHidden($toggleMenu)) {
+            if ($mobileSidebarMenus.classList.contains('open')) closeMobileSidebar()
         }
     })
 }
@@ -82,15 +50,16 @@ const scrollFn = function () {
         const isDown = scrollDirection(currentTop);
 
         if (currentTop > 0) {
-            $header.classList.add('nav-fixed');
             if (isDown) {
                 if ($header.classList.contains('nav-visible')) $header.classList.remove('nav-visible');
             } else {
                 if (!$header.classList.contains('nav-visible')) $header.classList.add('nav-visible');
             }
+            $header.classList.add('nav-fixed');
         } else {
             $header.classList.remove('nav-fixed', 'nav-visible');
         }
+
         percent();
     }, 200));
 
@@ -118,7 +87,7 @@ const percent = () => {
     } else {
         document.querySelector("#nav-totop").classList.remove("long")
         if (scrollPercent >= 0) {
-            percentElement.innerHTML = scrollPercent
+            percentElement.innerHTML = scrollPercent + ""
         }
     }
 
@@ -187,10 +156,10 @@ const initObserver = () => {
         entries.forEach(function (entry) {
             if (entry.isIntersecting) {
                 paginationElement.classList.add("show-window");
-                document.querySelector(".comment-barrage").style.bottom = "-200px";
+                GLOBAL_CONFIG.comment.commentBarrage && (document.querySelector(".comment-barrage").style.bottom = "-200px");
             } else {
                 paginationElement.classList.remove("show-window");
-                document.querySelector(".comment-barrage").style.bottom = "0px";
+                GLOBAL_CONFIG.comment.commentBarrage && (document.querySelector(".comment-barrage").style.bottom = "0px");
             }
         });
     }
@@ -223,7 +192,7 @@ class toc {
         const $tocContent = document.getElementById('toc-content')
         const list = $article.querySelectorAll('h1,h2,h3,h4,h5,h6')
         let detectItem = ''
-        const autoScroll = (el) => {
+        function autoScroll(el) {
             const activePosition = el.getBoundingClientRect().top
             const sidebarScrollTop = $tocContent.scrollTop
             if (activePosition > (document.documentElement.clientHeight - 100)) {
@@ -233,16 +202,19 @@ class toc {
                 $tocContent.scrollTop = sidebarScrollTop - 150
             }
         }
-        const findHeadPosition = (top) => {
+        function findHeadPosition(top) {
             if (top === 0) {
                 return false
             }
+
             let currentIndex = ''
-            list.forEach((ele, index) => {
+
+            list.forEach(function (ele, index) {
                 if (top > utils.getEleTop(ele) - 80) {
                     currentIndex = index
                 }
             })
+
             if (detectItem === currentIndex) return
             detectItem = currentIndex
             document.querySelectorAll('.toc .active').forEach((i) => {
@@ -250,19 +222,19 @@ class toc {
             })
             const activeitem = toc[detectItem]
             if (activeitem) {
+                let parent = toc[detectItem].parentNode
                 activeitem.classList.add('active')
                 autoScroll(activeitem)
-                let parent = activeitem.parentNode
-                while (!parent.matches('.toc')) {
+                for (; !parent.matches('.toc'); parent = parent.parentNode) {
                     if (parent.matches('li')) parent.classList.add('active')
-                    parent = parent.parentNode
                 }
             }
         }
-        window.tocScrollFn = utils.throttle(() => {
+        window.tocScrollFn = utils.throttle(function () {
             const currentTop = window.scrollY || document.documentElement.scrollTop
             findHeadPosition(currentTop)
         }, 100)
+
         window.addEventListener('scroll', tocScrollFn)
     }
 }
@@ -443,12 +415,12 @@ let sco = {
             'light'
         if (nowMode === 'light') {
             document.documentElement.setAttribute('data-theme', 'dark')
-            saveToLocal.set('theme', 'dark', 0.04);
+            saveToLocal.set('theme', 'dark', 0.02);
             utils.snackbarShow(GLOBAL_CONFIG.lang.theme.dark, false, 2000)
             document.querySelector(".menu-darkmode-text").textContent = "深色模式";
         } else {
             document.documentElement.setAttribute('data-theme', 'light')
-            saveToLocal.set('theme', 'light', 0.04);
+            saveToLocal.set('theme', 'light', 0.02);
             utils.snackbarShow(GLOBAL_CONFIG.lang.theme.light, false, 2000)
             document.querySelector(".menu-darkmode-text").textContent = "浅色模式";
         }
@@ -490,23 +462,15 @@ let sco = {
      * 初始化
      */
     initTheme: function () {
-        let isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        try {
-            const cachedMode = saveToLocal.get('theme');
-            if (cachedMode === undefined) {
-                const nowMode =
-                    isDarkMode ? 'dark' : 'light'
-                document.documentElement.setAttribute('data-theme', nowMode);
-                saveToLocal.set('theme', nowMode, 0.5);
-            } else {
-                document.documentElement.setAttribute('data-theme', cachedMode);
-            }
-        } catch (e) {
-            if (isDarkMode) {
-                saveToLocal.set('theme', 'dark', 0.5)
-            } else {
-                saveToLocal.set('theme', 'light', 0.5)
-            }
+        let isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+        const cachedMode = saveToLocal.get('theme');
+        if (cachedMode === undefined) {
+            const nowMode =
+                isDarkMode ? 'dark' : 'light'
+            document.documentElement.setAttribute('data-theme', nowMode);
+            saveToLocal.set('theme', nowMode, 0.2);
+        } else {
+            document.documentElement.setAttribute('data-theme', cachedMode);
         }
     },
     /**
@@ -547,14 +511,17 @@ let sco = {
      * @param txt
      */
     toTalk: function (txt) {
-        const input = document.querySelector('.el-textarea__inner');
-        const evt = new Event('input', {bubbles: true, cancelable: true});
-        const inputValue = txt.replace(/\n/g, '\n> ');
-        input.value = '> ' + inputValue + '\n\n';
-        input.dispatchEvent(evt);
-        utils.scrollToDest(utils.getEleTop(document.getElementById('post-comment')), 300)
-        input.focus();
-        input.setSelectionRange(-1, -1);
+        const inputs = ["#wl-edit", ".el-textarea__inner"]
+        for (let i = 0; i < inputs.length; i++) {
+            let el = document.querySelector(inputs[i])
+            if (el != null) {
+                el.dispatchEvent(new Event('input', { bubble: true, cancelable: true }))
+                el.value = '> ' + txt.replace(/\n/g, '\n> ') + '\n\n'
+                utils.scrollToDest(utils.getEleTop(document.getElementById('post-comment')), 300)
+                el.focus()
+                el.setSelectionRange(-1, -1)
+            }
+        }
         const commentTips = document.querySelector("#comment-tips");
         if (commentTips) {
             commentTips.classList.add("show");
@@ -576,7 +543,7 @@ let sco = {
         }
     },
     /**
-     * 图片添加水印
+     * 图片添加底部展示信息
      */
     addPhotoFigcaption: function () {
         let images = document.querySelectorAll('#article-container img');
@@ -596,42 +563,39 @@ let sco = {
     /**
      * 下载图片并添加水印
      */
-    downloadImage: async function (url, filename) {
-        rm.hideRightMenu();
+    downloadImage: function (imageUrl, filename = 'photo') {
         if (rm.downloadimging) {
             utils.snackbarShow("有正在进行中的下载，请稍后再试");
             return;
         }
-        try {
-            rm.downloadimging = true;
-            utils.snackbarShow("正在下载中，请稍后", false, 10000);
-            await new Promise(resolve => setTimeout(resolve, 10000));
-            const img = new Image();
-            img.setAttribute("crossOrigin", "anonymous");
-            img.onload = function () {
-                const canvas = document.createElement("canvas");
-                const ctx = canvas.getContext("2d");
-                canvas.width = img.width;
-                canvas.height = img.height;
-                ctx.drawImage(img, 0, 0, img.width, img.height);
-                ctx.font = "30px Arial";
-                ctx.fillText(window.location.href, 10, img.height - 10);
-                const dataUrl = canvas.toDataURL("image/png");
-                const link = document.createElement("a");
-                const event = new MouseEvent("click");
-                link.download = filename || "photo";
-                link.href = dataUrl;
-                link.dispatchEvent(event);
-                utils.snackbarShow("图片已添加盲水印，请遵守版权协议");
-                rm.downloadimging = false;
-            };
-            img.src = url;
-        } catch (error) {
-            console.error(error);
-            utils.snackbarShow("下载图片时出错");
+
+        rm.hideRightMenu();
+        rm.downloadimging = true;
+        utils.snackbarShow("正在下载中，请稍后", false, 10000);
+
+        let img = new Image();
+        img.setAttribute("crossOrigin", "anonymous");
+        img.onload = function () {
+            let canvas = document.createElement("canvas");
+            canvas.width = img.width;
+            canvas.height = img.height;
+            let ctx = canvas.getContext("2d");
+            ctx.drawImage(img, 0, 0, img.width, img.height);
+
+            let dataUrl = canvas.toDataURL("image/png");
+            let link = document.createElement("a");
+            link.download = filename;
+            link.href = dataUrl;
+
+            let clickEvent = new MouseEvent("click");
+            link.dispatchEvent(clickEvent);
+
+            utils.snackbarShow("图片已添加盲水印，请遵守版权协议");
             rm.downloadimging = false;
-        }
+        };
+        img.src = imageUrl;
     },
+
     /**
      * 音乐播放暂停
      */
@@ -680,27 +644,6 @@ let sco = {
         utils.scrollToDest(utils.getEleTop(document.getElementById('post-comment')), 300)
     },
     /**
-     * 一些日子灰色页面
-     */
-    setFest: function () {
-        const date = new Date();
-        const currentDate = `${date.getMonth() + 1}.${date.getDate()}`;
-
-        const specialDates = ['1.8', '9.9', '7.7', '9.18', '12.13'];
-
-        if (specialDates.includes(currentDate)) {
-            const css = `
-        html {
-            filter: grayscale(100%);
-        }
-        `;
-
-            const styleElement = document.createElement('style');
-            styleElement.textContent = css;
-            document.head.appendChild(styleElement);
-        }
-    },
-    /**
      * 个人信息顶部文字更新
      */
     setTimeState: function () {
@@ -710,11 +653,11 @@ let sco = {
             const hours = timeNow.getHours();
             const lang = GLOBAL_CONFIG.lang.sayhello;
             const greetings = [
-                {start: 0, end: 5, text: lang.goodnight},
-                {start: 6, end: 10, text: lang.morning},
-                {start: 11, end: 14, text: lang.noon},
-                {start: 15, end: 18, text: lang.afternoon},
-                {start: 19, end: 24, text: lang.night},
+                { start: 0, end: 5, text: lang.goodnight },
+                { start: 6, end: 10, text: lang.morning },
+                { start: 11, end: 14, text: lang.noon },
+                { start: 15, end: 18, text: lang.afternoon },
+                { start: 19, end: 24, text: lang.night },
             ];
             for (let greeting of greetings) {
                 if (hours >= greeting.start && hours <= greeting.end) {
@@ -883,6 +826,35 @@ let sco = {
         }
     },
     /**
+     * 初始化Header
+     * @param change
+     */
+    initAdjust: function (change = false) {
+        const $blogName = document.getElementById('site-name')
+        let blogNameWidth = $blogName && $blogName.offsetWidth
+        const $menusEle = document.querySelector('#menus .menus_items')
+        let menusWidth = $menusEle && $menusEle.offsetWidth
+        const $searchEle = document.querySelector('#search-button')
+        let searchWidth = $searchEle && $searchEle.offsetWidth
+        if (change) {
+            blogNameWidth = $blogName && $blogName.offsetWidth
+            menusWidth = $menusEle && $menusEle.offsetWidth
+            searchWidth = $searchEle && $searchEle.offsetWidth
+        }
+        const $nav = document.getElementById('nav')
+        let t
+        if (window.innerWidth < 768) t = true
+        else t = blogNameWidth + menusWidth + searchWidth > $nav?.offsetWidth - 120
+
+        if (t) {
+            $nav?.classList.add('hide-menu')
+        } else {
+            $nav?.classList.remove('hide-menu')
+        }
+
+        document.getElementById('nav')?.classList.add('show')
+    },
+    /**
      * 首页分页跳转
      */
     toPage: function () {
@@ -904,6 +876,25 @@ let sco = {
             document.getElementById("toPageButton").href = targetPageUrl;
         }
     },
+    addRandomCommentInfo: function () {
+        const e = `${GLOBAL_CONFIG.comment.randomInfoStart[Math.floor(Math.random() * GLOBAL_CONFIG.comment.randomInfoStart.length)]}${GLOBAL_CONFIG.comment.randomInfoEnd[Math.floor(Math.random() * GLOBAL_CONFIG.comment.randomInfoEnd.length)]}`;
+
+        const nameSelectors = ["#author", "input[name='comname']", "#inpName", "input[name='author']", "#ds-dialog-name", "#name", "input[name='nick']", "#comment_author"];
+        const emailSelectors = ["#mail", "#email", "input[name='commail']", "#inpEmail", "input[name='email']", "#ds-dialog-email", "input[name='mail']", "#comment_email"];
+
+        const nameElements = nameSelectors.map(selector => document.querySelector(selector)).filter(Boolean);
+        const emailElements = emailSelectors.map(selector => document.querySelector(selector)).filter(Boolean);
+
+        nameElements.forEach(element => {
+            element.value = e;
+            element.dispatchEvent(new Event("input"));
+        });
+
+        emailElements.forEach(element => {
+            element.value = "donotreply@examp.com";
+            element.dispatchEvent(new Event("input"));
+        });
+    }
 }
 
 /*
@@ -912,13 +903,13 @@ let sco = {
 class hightlight {
     static createEle(langEl, item) {
         const fragment = document.createDocumentFragment()
-        const highlightCopyEle = '<i class="scoicon sco-copy-fill"></i>'
-        const highlightExpandEle = '<i class="scoicon sco-arrow-down expand" style="font-size: 16px"></i>'
+        const highlightCopyEle = GLOBAL_CONFIG.hightlight.copy ? '<i class="scoicon sco-copy-fill"></i>' : '<i></i>'
+        const highlightExpandEle = '<i class="scoicon sco-arrow-down expand"></i>'
 
         const hlTools = document.createElement('div')
         hlTools.className = `highlight-tools`
         hlTools.innerHTML = highlightExpandEle + langEl + highlightCopyEle
-        let expand = true
+        let expand = GLOBAL_CONFIG.hightlight.expand
         hlTools.children[0].addEventListener('click', (e) => {
             if (expand) {
                 hlTools.children[0].classList.add('closed')
@@ -954,11 +945,13 @@ class hightlight {
             ele.innerHTML = '<i class="scoicon sco-show-line" style="font-size: 1.2rem"></i>'
             ele.addEventListener('click', (e) => {
                 $table.setAttribute('style', `height: ${itemHeight}px`)
-                e.target.className !== 'code-expand-btn' ? e.target.parentNode.classList.add('expand-done') : e.target.classList.add('expand-done')
+                e.target.classList.add('expand-done')
+                e.target.setAttribute('style', 'display:none')
             })
             fragment.appendChild(ele)
         }
         item.insertBefore(fragment, item.firstChild)
+        hlTools.children[0].click()
     }
 
     static init() {
@@ -1003,14 +996,14 @@ class tabs {
         document.querySelectorAll('#article-container .tabs .tab-to-top').forEach(function (item) {
             item.addEventListener('click', function () {
                 utils.scrollToDest(utils.getEleTop(item.parentElement.parentElement.parentNode), 300)
+
             })
         })
     }
 }
 
 window.refreshFn = () => {
-    if (PAGE_CONFIG.page === "404") return;
-    initAdjust()
+    sco.initAdjust()
     scrollFn()
     sidebarFn()
     changeTimeFormat()
@@ -1018,7 +1011,6 @@ window.refreshFn = () => {
     sco.addRuntime()
     sco.hideCookie()
     sco.addPhotoFigcaption()
-    sco.setFest()
     sco.setTimeState()
     sco.tagPageActive()
     sco.categoriesBarActive()
@@ -1028,26 +1020,19 @@ window.refreshFn = () => {
     GLOBAL_CONFIG.lazyload.enable && sco.lazyloadImg()
     GLOBAL_CONFIG.lightbox && sco.lightbox('')
     GLOBAL_CONFIG.randomlinks && randomLinksList()
-    if (PAGE_CONFIG.comment) {
-        initComment()
-    }
-    PAGE_CONFIG.toc && toc.init()
-    if (PAGE_CONFIG.is_post || PAGE_CONFIG.is_page) {
-        GLOBAL_CONFIG.hightlight.enable && hightlight.init()
-        tabs.init()
-    }
-    if (PAGE_CONFIG.is_home) {
-        showTodayCard()
-        sco.initbbtalk()
-    }
-    GLOBAL_CONFIG.covercolor && coverColor();
+    PAGE_CONFIG.comment && initComment()
+    PAGE_CONFIG.toc && toc.init();
+    (PAGE_CONFIG.is_post || PAGE_CONFIG.is_page) && ((GLOBAL_CONFIG.hightlight.enable && hightlight.init()) || tabs.init())
+    PAGE_CONFIG.is_home && (showTodayCard() || sco.initbbtalk())
+    GLOBAL_CONFIG.covercolor.enable && coverColor()
     sco.initConsoleState()
-    if (document.getElementById('history-baidu')) sco.card_history() // 那年今日
-    if (document.getElementById('welcome-info')) sco.card_welcome() // 个性定位
-    GLOBAL_CONFIG.comment.enable && newestCommentInit() // 最新评论
-    if (GLOBAL_CONFIG.comment.type === "twikoo" && PAGE_CONFIG.comment) {
-        initializeCommentBarrage() // 热评
-    }
+    document.getElementById('history-baidu') && sco.card_history()
+    document.getElementById('welcome-info') && sco.card_welcome()
+    GLOBAL_CONFIG.comment.commentBarrage && PAGE_CONFIG.comment && initializeCommentBarrage()
+    document.body.setAttribute('data-type', PAGE_CONFIG.page)
+    PAGE_CONFIG.page === "music" && scoMusic.init()
+    GLOBAL_CONFIG.music.enable && !document.querySelector('#Music-page') && document.removeEventListener('keydown', scoMusic.setKeydown)
+    GLOBAL_CONFIG.ai.enable && PAGE_CONFIG.page === "post" && ScoAI.init()
 }
 
 sco.initTheme()
@@ -1056,10 +1041,6 @@ document.addEventListener('DOMContentLoaded', function () {
     window.refreshFn()
 })
 
-document.addEventListener('pjax:complete', () => {
-    window.refreshFn()
-})
-
 window.onkeydown = function (e) {
     123 === e.keyCode && utils.snackbarShow("开发者模式已打开，请遵循GPL协议", !1, 3e3)
-};
+}

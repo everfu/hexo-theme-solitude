@@ -2,13 +2,13 @@
 each post in page.posts.find({ parent: { $exists: false } }).data
     if(year !== post.date.year())
         - year = post.date.year()
-        div.article-sort-item.year #{year}
-    div.article-sort-item
+        .article-sort-item.year #{year}
+    .article-sort-item
         a.article-sort-item-img(href=url_for(post.path) title=post.title)
             img(src=post.cover alt=post.title)
-        div.article-sort-item-info
+        .article-sort-item-info
             a.article-sort-item-title(href=url_for(post.path) title=post.title onclick="window.event.cancelBubble=true;") #{post.title}
-            div.article-sort-item-tags
+            .article-sort-item-tags
                 each tags in post.tags.data
                     a.article-meta__tags(href=url_for(tags.path) onclick="window.event.cancelBubble=true;")
                         span.tags-punctuation #{tags.name}

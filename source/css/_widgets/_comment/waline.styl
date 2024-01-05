@@ -1,0 +1,91 @@
+#comment
+  .wl-sort li
+    color var(--sco-gray)
+
+    &.active
+      color var(--sco-main) !important
+
+  .wl-comment
+    .wl-panel
+      margin 0 !important
+
+    .wl-avatar
+      margin-right 1rem
+
+      a
+        img
+          flex-shrink 0
+          overflow hidden
+          text-align center
+          border-radius 65px
+
+    .wl-footer
+      .wl-info
+        button
+          background-color var(--sco-card-bg)
+          border var(--style-border-always)
+          color var(--sco-fontcolor)
+
+        button:hover
+          background-color var(--sco-main)
+          border-color var(--sco-main)
+          color var(--sco-card-bg)
+
+    #wl-edit
+      font-size 13px
+      line-height 1.5
+      margin .75rem .25rem
+
+    .wl-action
+      transition .3s
+
+      &:hover
+        color var(--sco-main)
+
+  .wl-meta-head
+    .wl-count
+      color var(--sco-gray)
+      font-size 14px
+      font-weight normal
+
+  .wl-cards
+    font-size 16px !important
+
+    .wl-comment-actions
+      button
+        margin-right 15px
+        font-size 18px
+
+        &:hover
+          color var(--sco-main)
+
+    .wl-head .wl-nick
+      font-size 20px !important
+      color var(--sco-lighttext)
+      font-weight bolder
+
+    .wl-meta > span
+      background var(--sco-gray)
+      border-radius 5px
+      color var(--sco-card-bg)
+      margin-right 5px
+
+    .wl-user
+      img
+        flex-shrink 0
+        height 2.5rem
+        width 2.5rem
+        overflow hidden
+        text-align center
+        border-radius 2.5rem
+        border var(--style-border-always)
+
+  .wl-empty
+    font-size 16px
+    color var(--sco-gray)
+
+[data-waline] a
+  color var(--sco-fontcolor) !important
+
+.wl-content pre, .wl-content pre[class*=language-]
+  padding .5rem !important

@@ -1,24 +1,28 @@
-div(class="recent-post-item" onclick="pjax.loadUrl('/" + post.path + "')")
-    div.post_cover.left_radius
+div.recent-post-item(onclick="pjax.loadUrl('/" + post.path + "')")
+    div.post_cover
         a(href=url_for(post.path), title=post.title)
-            img(src=url_for(post.cover), alt=post.title, class="post_bg")
+            img.post_bg(src=url_for(post.cover), alt=post.title)
     div.recent-post-info
         div.recent-post-info-top
             div.recent-post-info-top-tips
+                if post.sticky && is_home()
+                    span.article-meta.sticky-warp
+                        i.scoicon.sco-thumbtack-solid.sticky.orange
+                        span.sticky.orange= _p('home.recent-post.sticky')
                 each category in post.categories.data
-                    span(class="original")= category.name
+                    span.original= category.name
 
                 if post.prev == null && is_home()
-                    span(class="original")="最新"
+                    span.original= _p('home.recent-post.new')
 
-                a(class="unvisited-post" href=url_for(post.path), data-pjax-state)= "未读"
+                a.unvisited-post(href=url_for(post.path))= _p('home.recent-post.read')
 
-            a(class="article-title" href=url_for(post.path), data-pjax-state, title=post.title)= post.title
+            a.article-title(href=url_for(post.path), title=post.title)= post.title
 
         div.article-meta-wrap
             span.article-meta.tags
                 each tag in post.tags.data
-                    a(class="article-meta__tags" href=url_for(tag.path), data-pjax-state, onclick="window.event.cancelable=true")
+                    a.article-meta__tags(href=url_for(tag.path), onclick="event.stopPropagation();")
                         span.tags-punctuation=tag.name
 
             span.post-meta-date

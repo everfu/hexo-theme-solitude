@@ -1,0 +1,34 @@
+span.tags-punctuation
+  margin-right 2px
+  font-size .7rem
+  font-weight 700
+  display flex
+  transition .3s
+  align-items center
+
+  &:hover
+    color var(--sco-main)
+
+.bber-reply
+  cursor pointer
+  margin 0 4px
+
+  &:hover
+    color var(--sco-main)
+
+.post-tips
+  color var(--sco-gray)
+  font-size 14px;
+  position absolute
+  bottom 2rem
+  left 2rem
+
+  +maxWidth768()
+    left 1rem
+
+  a
+    color var(--sco-gray)
+    border none
+
+    &:hover
+      color var(--sco-main)

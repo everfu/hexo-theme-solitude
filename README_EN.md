@@ -4,7 +4,7 @@
   <a title="English" href="/README.md">中文</a>
 </div>
 
-<p align="center"><img width="400" src="/source/img/logo-horizontal_version.png"></p>
+<p align="center"><img width="400" src="https://bu.dusays.com/2023/12/20/6582bf58c64cf.png"></p>
 
 <p align="center">An elegant Hexo theme</p>
 <p align="center">"Explore the inner self in peaceful solitude, leading a life of simplicity and elegance."</p>
@@ -18,11 +18,11 @@
   <a title="GitHub Commits" target="_blank" href="https://github.com/DuoSco/Hexo-Theme-solitude/commits/master"><img alt="GitHub Commits" src="https://img.shields.io/github/commit-activity/m/DuoSco/Hexo-Theme-solitude.svg?style=flat&color=brightgreen&label=commits"></a>
 </p>
 
-![](/source/img/solitude-show.jpg)
+![](https://bu.dusays.com/2023/12/20/6582bf81b4641.png)
 
-Theme Preview: 👋[Demo](https://solitude.wzsco.top/) | [王卓Sco](https://blog.wzsco.top/)
+Theme Preview: 👋 [王卓Sco](https://blog.wzsco.top/) ｜ 🎆 [糕小菜](https://blog.kaixed.com/)
 
-Theme Document: [📖Solidude Document](https://docs.wzsco.top/)
+Theme Document: [📖 Solidude Document](https://docs.wzsco.top/)
 
 Theme discussion group：`The usage document above contains a QR code`
 
@@ -74,7 +74,7 @@ cp -rf ./themes/solitude/_config.yml ./_config.solitude.yml
 
 As we generate power for Love, the domain name and some scattered expenses are borne by the developers. If possible, we hope to receive your appreciation. Thank you very much! 🙏 Of course, even without sponsorship, we will strive to continue developing.
 
-[王卓Sco](https://afdian.net/a/wleelw0u0) &nbsp;  [亦小封](https://afdian.net/a/yife68)
+[@王卓Sco](https://afdian.net/a/wleelw0u0) &nbsp;  [@亦小封](https://afdian.net/a/yife68)
 
 ## ✨ Contributors
 
@@ -92,7 +92,7 @@ Special thanks to：
 
 **This theme is a derivative theme of [Heo](https://blog.zhheo.com/), designed and authorized by the author [张洪Heo](https://github.com/zhheo)!**
 
-> Welcome to contribute to this theme!  [Contribution Guide](https://opensource.guide/zh-hans/how-to-contribute/#%E5%A6%82%E4%BD%95%E6%8F%90%E4%BA%A4%E8%B4%A1%E7%8C%AE)
+> Welcome to contribute to this theme!  [Contribution Guide](/CONTRIBUTING.md)
 
 ## 📊 Repository Statistics
 ![Repository Statistics](https://repobeats.axiom.co/api/embed/75ec216f1d0b289e1b6a92f585342f3eeeeb0fdd.svg "Repobeats analytics image")

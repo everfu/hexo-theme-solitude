@@ -3,6 +3,8 @@ extends includes/layout.pug
 block content
     main.layout#content-inner
         #post
+            if theme.thirdparty.ai.enable
+                include includes/widgets/third-party/ai/index
             article.post-content#article-container!= page.content
             include includes/widgets/post/copyright
             .post-tools-right
@@ -19,25 +21,3 @@ block content
             if page.comment
                 include includes/widgets/third-party/comments/comment
         include includes/widgets/aside/aside
-        if theme.thirdparty.ai.enable
-            -  let ai_black_list = theme.thirdparty.ai.BlackWhite_List.mode === 'black' ? theme.thirdparty.ai.BlackWhite_List.List.map(item => `'${item}'`).join(', ') : '';
-            -  let ai_white_list = theme.thirdparty.ai.BlackWhite_List.mode === 'white' ? theme.thirdparty.ai.BlackWhite_List.List.map(item => `'${item}'`).join(', ') : '';
-            script(data-pjax, defer).
-                new ChucklePostAI({
-                    el: '#post #article-container',
-                    key: '#{theme.thirdparty.ai.key}',
-                    title_el: '.post-title',
-                    rec_method: '#{theme.thirdparty.ai.rec_method || 'web'}',
-                    interface: {
-                        name: "#{theme.thirdparty.ai.ai_name || 'Solitude AI'}",
-                        introduce: "#{theme.thirdparty.ai.ai_introduce || '我是文章辅助AI生成工具: Solitude AI。你可以点击下方的按钮，让我生成本文简介、推荐相关文章等。'}",
-                        version: "#{theme.thirdparty.ai.ai_tips || 'GPT 4'}",
-                    },
-                    hide_shuttle: !{!!theme.thirdparty.ai.hide_shuttle},
-                    typewriter: !{!!theme.thirdparty.ai.typewriter},
-                    speed: !{!!theme.thirdparty.ai.speed},
-                    eliminate: [!{ai_black_list}],
-                    whitelist: [!{ai_white_list}],
-                    total_length: !{page.ai_total_length ? page.ai_total_length : 0},
-                    ratio_string: !{page.ai_ratio_string ? page.ai_ratio_string : 0},
-                })

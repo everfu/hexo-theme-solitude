@@ -5,7 +5,7 @@ div#rightMenu
         div.rightMenu-item#menu-forward
             i.scoicon.sco-arrow-right-line
         div.rightMenu-item#menu-refresh
-            i.scoicon.sco-restart-line(style="font-size: 19px;")
+            i.scoicon.sco-restart-line
         div.rightMenu-item#menu-top
             i.scoicon.sco-arrow-up-line
     div.rightMenu-group.rightMenu-line.rightMenuPlugin
@@ -15,7 +15,7 @@ div#rightMenu
         div.rightMenu-item#menu-pastetext
             i.scoicon.sco-clipboard-fill
             span 粘贴文本
-        a.rightMenu-item#menu-commenttext(data-pjax-state="")
+        a.rightMenu-item#menu-commenttext
             i.scoicon.sco-chat-new-fill
             span 引用到评论
         div.rightMenu-item#menu-newwindow
@@ -52,22 +52,23 @@ div#rightMenu
             i.scoicon.sco-copy-fill
             span 复制歌名
     div.rightMenu-group.rightMenu-line.rightMenuOther
-        a.rightMenu-item.menu-Link#menu-randomPost(data-pjax-state="")
+        a.rightMenu-item.menu-Link#menu-randomPost
             i.scoicon.sco-signal-tower-fill
             span 随便逛逛
-        a.rightMenu-item.menu-link(href="/categories/", data-pjax-state="")
+        a.rightMenu-item.menu-link(href="/categories/")
             i.scoicon.sco-checkbox-multiple-blank-fill
             span 博客分类
-        a.rightMenu-item.menu-link(href="/tags/", data-pjax-state="")
+        a.rightMenu-item.menu-link(href="/tags/")
             i.scoicon.sco-price-tag-fill
             span 文章标签
     div.rightMenu-group.rightMenu-line.rightMenuOther
         div.rightMenu-item#menu-copy
             i.scoicon.sco-external-link-fill
             span 复制地址
-        div.rightMenu-item#menu-commentBarrage
-            i.scoicon.sco-chat-fill
-            span.menu-commentBarrage-text 关闭热评
+        if  theme.comment.enable && theme.comment.commentBarrage
+            div.rightMenu-item#menu-commentBarrage
+                i.scoicon.sco-chat-fill
+                span.menu-commentBarrage-text 关闭热评
         div.rightMenu-item#menu-darkmode
             i.scoicon.sco-moon-clear-fill
             span.menu-darkmode-text 浅色模式

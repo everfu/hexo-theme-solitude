@@ -1,9 +1,9 @@
-div.menus_items
+.menus_items
     - var menu = theme.nav && theme.nav.menu ? theme.nav.menu : {}
     each value, x in menu
-        div.menus_item
+        .menus_item
             if !value.url
-                a.site-page(href="javascript:void(0);", rel="external nofollow")
+                a.site-page(href="javascript:void(0);")
                     span= x
                 ul.menus_item_child
                     each childValue, y in value.child
@@ -12,5 +12,5 @@ div.menus_items
                                 i(class=childValue.icon)
                                 span= y
             else
-                a.site-page.not-child(href=url_for(value.url), rel="external nofollow")
+                a.site-page.not-child(href=url_for(value.url))
                     span= x

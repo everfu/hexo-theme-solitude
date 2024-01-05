@@ -1,0 +1,48 @@
+- var tenyear = site.data.about.tenyear
+if tenyear
+    .author-content#tenyear
+        .create-site-post.author-content-item.single
+            .author-content-item-tips=tenyear.tips
+            .author-content-item-title=tenyear.title
+            p=tenyear.text
+            .tenyear-timeline
+                .progress
+                .past-time
+                .percentage-label
+            .time-labels
+                .start-time#tenyear-start-time= tenyear.start
+                .end-time#tenyear-end-time= tenyear.end
+
+    script.
+        function parseDateString(e) {
+            return e.replace(/年|月/g, '-').replace(/日/g, '');
+        }
+
+        function tenYear() {
+            let progressElement = document.querySelector(".progress");
+            let pastTimeElement = document.querySelector(".past-time");
+            let percentageLabelElement = document.querySelector(".percentage-label");
+            let startTimeElement = document.getElementById("tenyear-start-time");
+            let endTimeElement = document.getElementById("tenyear-end-time");
+
+            let startTime = new Date(parseDateString(startTimeElement.textContent)).getTime();
+            let endTime = new Date(parseDateString(endTimeElement.textContent)).getTime();
+
+            function updateProgress() {
+                let currentTime = new Date().getTime();
+                let progress = ((currentTime - startTime) / (endTime - startTime) * 100);
+                let progressPercentage = progress <= 100 ? progress + "%" : "100%";
+
+                pastTimeElement.style.setProperty("--past-time-percentage", progress + "%");
+                progressElement.style.setProperty("--progress-percentage", progressPercentage);
+                if(progress > 5){
+                    percentageLabelElement.textContent = `${progress.toFixed(0)}%`;
+                    percentageLabelElement.style.left = `calc(${progress}% - 28px)`;
+                }
+            }
+
+            percentageLabelElement.style.visibility = "visible";
+            updateProgress();
+        }
+
+        document.getElementById("tenyear") && tenYear() && window.Pjax.on('complete', tenYear)

@@ -27,13 +27,110 @@ page:
   echarts: 博客统计
 
 nav:
+  site_name_title: 返回博客主页
   backtop: 返回顶部
   travellings: 开往-友链接力
   search: 搜索
   randompost: 随机一篇文章
   console: 中控台
 
+home:
+  bannertext: 随便逛逛
+  bbtime:
+    text: 查看全文
+    image: 【图片】
+  categoryBar:
+    home: 首页
+    more: 更多
+  recent-post:
+    sticky: 置顶
+    new: 最新
+    read: 未读
+  top-group:
+    recommend: 荐
+    recommendmore: 更多推荐
+
+about:
+  info:
+    title1: 你好，很高兴认识你👋
+    title2: 我叫
+    title3: 是一名
+    tip1: 追求
+    tip2: 源于
+    tip3: 热爱而去
+    tip4: 创造
+
+post:
+  meta_reprint: 转载或翻译
+  meta_original: 原创
+  meta_cc: 该文章为${cc}文章，注意版权协议
+  meta_posted: 发布于
+  meta_updated: 最后更新于
+  meta_wordcount: 文章字数
+  meta_minread: 阅读耗时
+  meta_ip: 作者IP归属地为
+  meta_pv: 文章热度
+  meta_comment: 评论数
+
+award:
+  wechat: 微信
+  alipay: 支付宝
+  about:
+    tip: 致谢
+    tip1: 赞赏作者
+    tip2: 感谢你赐予我前进的力量
+    title: 赞赏名单
+
 search:
   empty: 找不到你查询的内容：${query}
   hit: 找到 ${hits} 条结果，用时 ${time} 毫秒
   placeholder: 输入关键词快速查找
+
+head:
+  noscript: 开启JavaScript才能访问本站哦~
+  console: '程序：Hexo | 主题：Hexo-Theme-Solitude | 作者：王卓Sco、亦封 | Github: https://github.com/DuoSco/Hexo-theme-solitude | 版本：v1.2.5-dev 😄'
+
+aside:
+  postcount: '文章总数 :'
+  pv: '总访问数 :'
+  uv: '总访客数 :'
+  runtime: '建站天数 :'
+  updatetime: '最后更新 :'
+  wordcount: '全站字数 :'
+  welcome: 来访者
+  toc: 文章目录
+  tagmore: 查看全部
+  avatar: 头像
+  sticker: 心情贴纸
+  history: 那年今日
+  newpost: 最近发布
+
+console:
+  comment_tip: 互动
+  comment_title: 最新评论
+  tag_tip: 标签
+  tag_title: 寻找感兴趣的领域
+  switch_darkmode: 昼夜切换
+  switch_hideAside: 边栏显示控制
+  switch_music: 音乐开关
+  archive_unit: 篇
+
+sidebar:
+  title1: 功能
+  title2: 标签
+  darkmode: 显示模式
+
+footer:
+  description: 来自${title}的文章
+  learnmore: 了解更多
+  randomlink: 友链
+  rss: 订阅
+  theme: 主题
+
+cookies:
+  title: 协议提醒助手
+  tip: 查看本站为你的个人隐私做出的努力
+  privacy: 本站如何保护你的隐私
+
+music:
+  hit: 音乐已暂停

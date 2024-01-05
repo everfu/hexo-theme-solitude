@@ -1,0 +1,74 @@
+#category-bar
+  padding: 0.4rem 1rem 0.4rem 0.7rem;
+  background: var(--sco-card-bg);
+  border-radius: 12px;
+  display: flex;
+  white-space: nowrap;
+  overflow: hidden;
+  margin-bottom: 1rem;
+  border: var(--style-border);
+  transition: 0.3s;
+  height: 50px;
+  width: 100%;
+  justify-content: space-between;
+  -webkit-user-select: none;
+  align-items: center;
+
+  +maxWidth1300()
+    margin-bottom 1rem
+    animation slide-in .6s 0s backwards
+
+  +minWidth1300()
+    margin-bottom .75rem
+    &:hover
+      border var(--style-border-hover)
+      box-shadow var(--sco-shadow-main)
+
+  +maxWidth768()
+    margin-bottom 0
+    margin-top 0
+    border-radius 0
+    background var(--sco-background)
+    padding 0.5rem 0
+    border none
+
+  .category-bar-more
+    margin-left 14px
+    font-weight 700
+
+    &:hover
+      color var(--sco-lighttext)
+
+  .category-bar-items
+    white-space nowrap
+    overflow-x scroll
+    overflow-y hidden
+    display flex
+    border-radius 8px
+    align-items center
+    height 30px
+
+    &::-webkit-scrollbar
+      display: none
+
+    .category-bar-item
+      &:hover
+        a
+          background var(--sco-theme)
+          color var(--sco-white)
+
+      a
+        padding .1rem .5rem
+        margin-right 6px
+        font-weight 700
+        border-radius 8px
+        display flex
+        align-items center
+        height 30px
+
+      &.select
+        order -1
+
+        a
+          background var(--sco-theme)
+          color var(--sco-white)

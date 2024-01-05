@@ -1,0 +1,249 @@
+#post
+  .post-tools
+    display flex
+    width 100%
+    justify-content center
+    margin-top 8px
+    flex-wrap wrap
+    -webkit-user-select none
+
+    .post-tools-left
+      white-space nowrap
+      display flex
+      text-overflow ellipsis
+      justify-content center
+      flex-wrap wrap
+
+      #quit-box
+        position fixed
+        width 100vw
+        height 100vh
+        background rgba(0, 0, 0, .2)
+        top 0
+        left 0
+        opacity .01
+        display none
+        z-index 101
+        margin 0
+
+        +maxWidth768()
+          height calc(100vh - 380px)
+
+      // reward
+      /.post-reward
+        position relative
+        text-align center
+        display flex
+        justify-content center
+
+        &:hover
+          > .reward-main
+            display block
+
+          +minWidth768()
+            > .reward-main
+              display: flex
+              justify-content: left
+
+          .reward-button
+            color var(--sco-white)
+            background var(--sco-theme)
+            box-shadow none
+
+        .reward-button
+          background var(--sco-red)
+          color var(--sco-white)
+          padding 0 16px
+          height 40px
+          border-radius 8px
+          line-height 39px
+          box-shadow var(--sco-shadow-red)
+          display inline-block
+          cursor pointer
+          transition all .4s ease 0s
+
+          &:hover
+            background-color var(--sco-theme)
+
+        .reward-main
+          animation .3s ease .1s 1 normal both running donate_effcet
+          position absolute
+          bottom 40px
+          left -96px
+          z-index 100
+          display none
+          padding 0 0 15px
+          width fit-content
+
+          +maxWidth768()
+            justify-content center !important
+            position fixed
+            bottom 0
+            left 0
+            right 0
+            z-index 1003
+            width 100%
+            margin auto
+            padding 0
+
+          .reward-all
+            margin: 0
+            padding: .8rem
+            border-radius: 12px
+            background: var(--sco-card-bg)
+            border: var(--style-border-always)
+            display: flex
+            box-shadow: var(--sco-shadow-border)
+            flex-direction: column
+            align-items: center
+
+            +maxWidth768()
+              width 100%
+              display flex
+              flex-wrap wrap
+              justify-content space-around
+              padding 30px 10px 60px
+              border-radius 12px 12px 0 0
+
+            .reward-title
+              font-weight 700
+              color var(--sco-red)
+
+            .reward-group
+              display flex
+              margin-top .5rem
+
+              .reward-item
+                display inline-block
+                padding 0 8px
+                list-style-type none
+                vertical-align top
+
+                &:first-child
+                  img
+                    border-color var(--sco-green)
+
+                &:last-child
+                  img
+                    border-color var(--sco-blue)
+
+                img
+                  width 130px
+                  height 130px
+
+                .post-qr-code-desc
+                  padding-top .4rem
+                  width 130px
+                  color var(--sco-gray)
+                  margin-top -8px
+                  margin-bottom 8px
+
+                .post-qr-code-img
+                  box-shadow var(--sco-shadow-lightblack)
+                  border-radius 12px
+                  border var(--style-border-always)
+
+            .reward-main-btn
+              background var(--sco-secondbg)
+              color var(--sco-fontcolor)
+              display flex
+              flex-direction column
+              border-radius 12px
+              padding 4px 0
+              border var(--style-border-always)
+              width 100%
+
+              &:hover
+                color var(--sco-white)
+                background var(--sco-red)
+                background-image url(https://bu.dusays.com/2023/11/01/6541f7aeb5752.gif)
+                box-shadow var(--sco-shadow-red)
+
+              .reward-text
+                margin-bottom 0
+                font-weight 700
+
+              .reward-dec
+                font-size .6rem
+
+      // rss
+
+      .reward-link.mode
+        background var(--sco-green)
+        color var(--sco-white)
+        padding 0 16px
+        height 40px
+        line-height 39px
+        box-shadow var(--sco-shadow-green)
+        border-radius 8px
+        margin-left .5rem
+        cursor pointer
+        text-align center
+        transition .3s
+
+        a
+          color var(--sco-white)
+
+        i
+          margin-right 4px
+
+        &:hover
+          background var(--sco-theme)
+          box-shadow none
+
+
+  .post-tools-right
+    padding-right 0
+    display flex
+    align-items center
+    flex-direction row
+    flex-wrap wrap
+
+    .tag_share
+      .post-meta__tag-list
+        display flex
+        padding 0
+        width 100%
+        flex-wrap wrap
+        flex-direction row
+
+        a
+          margin-bottom 8px
+          margin-right 8px
+
+        .post-meta__tags
+          background var(--sco-card-bg)
+          border var(--style-border-always)
+          color var(--sco-fontcolor)
+          border-radius 8px
+          display flex
+          align-items center
+          white-space nowrap
+          height 40px
+          padding 0 .6rem
+          width fit-content
+          font-size .85em
+          transition all .2s ease-in-out 0s
+
+          &:hover
+            background var(--sco-lighttext)
+            box-shadow var(--sco-shadow-main)
+            color var(--sco-white)
+
+          span.tags-punctuation
+            font-size 12px
+            margin-right 1px
+            display flex
+            align-items center
+
+          .tagsPageCount, /  #tag-page-tags .tagsPageCount
+            padding 2px
+            background var(--sco-card-bg)
+            border var(--style-border-always)
+            min-width 22.5px
+            display inline-block
+            border-radius 4px
+            text-align center
+            font-size .6rem
+            color var(--sco-fontcolor)
+            margin-left 4px

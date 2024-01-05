@@ -18,15 +18,20 @@ script.
 
 if theme.footer.randomlink
     script.
-        function randomLinksList(){
-            let data='';
+        function randomLinksList() {
+            const linkcard = document.getElementById('friend-links-in-footer');
+            if (linkcard == null) return;
+
+            let data = '';
             let linksCopy = [...links];
             let count = Math.min(3, linksCopy.length);
+
             for (let i = 0; i < count; i++) {
                 let index = utils.randomNum(linksCopy.length);
-                const link = linksCopy[index];
-                data += '<a class="footer-item" href="' + link.link + '" target="_blank" rel="noopener nofollow">' + link.name + '</a>';
+                const {link, name} = linksCopy[index];
+                data += `<a class="footer-item" href="${link}">${name}</a>`;
                 linksCopy.splice(index, 1);
             }
-            document.getElementById('friend-links-in-footer').innerHTML = data + '<a class="footer-item" href="/links/">更多</a>';
+
+            linkcard.innerHTML = data + '<a class="footer-item" href="/links/">更多</a>';
         }

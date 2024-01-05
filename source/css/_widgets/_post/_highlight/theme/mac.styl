@@ -1,0 +1,25 @@
+figure
+  &.highlight
+    .highlight-tools
+      .sco-copy-fill
+        right 1.7rem
+
+      &:after
+        position absolute
+        left 14px
+        width 12px
+        height 12px
+        border-radius 50%
+        background #fc625d
+        -webkit-box-shadow 20px 0 #fdbc40, 40px 0 #35cd4b
+        box-shadow 20px 0 #fdbc40, 40px 0 #35cd4b
+        content ' '
+
+      .expand
+        right 0
+
+        & + .code-lang
+          left 75px
+
+        &.closed
+          transform rotate(90deg)

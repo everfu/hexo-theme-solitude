@@ -14,22 +14,19 @@
   font-weight 700
   padding 0 4px
 
-.random-friends-post:hover
-  text-decoration none
-  border-bottom 2px solid var(--sco-none)
-  color var(--sco-white)
-  background var(--sco-main)
-  border-radius 4px
-  box-shadow var(--sco-shadow-main)
+  &:hover
+    text-decoration none
+    border-bottom 2px solid var(--sco-none)
+    color var(--sco-white)
+    background var(--sco-main)
+    border-radius 4px
+    box-shadow var(--sco-shadow-main)
 
 .random-post-start
   transition-duration .3s
 
-.random-post-start:hover
-  color var(--sco-hovertext)
-
-.title-h2-a a.random-post-start
-  opacity .6
+  &:hover
+    color var(--sco-hovertext)
 
 .moments-list
   display: flex
@@ -46,11 +43,11 @@
         color: var(--sco-hovertext)
 
 #friend_link_moments
-  border: none !important
+  border: none 
 
 .moments-article-img
   height: 100%
-  margin: 0 !important
+  margin: 0 
 
 .tab-item-content
   #moments_container
@@ -81,28 +78,28 @@
 
 .moments-sort-item-title
   color: var(--sco-lighttext)
-  border-bottom: none !important
-  padding: 0 !important
+  border-bottom: none 
+  padding: 0 
 
   &:hover
-    color: var(--sco-hovertext) !important
-    background: 0 0 !important
-    box-shadow: none !important
+    color: var(--sco-hovertext) 
+    background: 0 0 
+    box-shadow: none 
 
 .moments_load_button
-  color: var(--sco-fontcolor) !important
-  background: var(--sco-card-btn-bg) !important
-  padding: 12px 16px !important
-  border-radius: 12px !important
+  color: var(--sco-fontcolor) 
+  background: var(--sco-card-btn-bg) 
+  padding: 12px 16px 
+  border-radius: 12px 
   transition: .3s
   width: 100%
   margin-top: 1rem
   margin-bottom: 1rem
-  border: 0 !important
+  border: 0 
 
   &:hover
-    color: var(--sco-white) !important
-    background: var(--sco-main) !important
+    color: var(--sco-white) 
+    background: var(--sco-main) 
     transition: .3s
 
 .moments-item-title
@@ -111,7 +108,7 @@
   order: 0
   width: 100%
   font-weight: 700
-  -webkit-line-clamp: 1 !important
+  -webkit-line-clamp: 1 
   overflow: hidden
   -webkit-box-orient: vertical
 
@@ -132,8 +129,8 @@
   float: right
 
 .moments-item-img
-  width: 60px !important
-  height: 60px !important
+  width: 60px 
+  height: 60px 
 
   img
     border-radius: 99px
@@ -142,8 +139,8 @@
     overflow: hidden
 
 .moments-item
-  margin-left: 0 !important
-  box-shadow: none !important
+  margin-left: 0 
+  box-shadow: none 
 
 #hexo-circle-of-friends-root
   margin: 0 -8px
@@ -152,28 +149,31 @@
   a
     width: fit-content
 
-.title-h2-a
-  display: flex
-  align-items: center
-  justify-content: space-between
-  margin-top: .5rem
+.cf-article .cf-img-avatar
+  border-radius 50% 
 
-  a
-    margin-left: .5rem
-    color: var(--sco-secondtext)
-    font-weight: 700
-
-    &:hover
-      color: var(--sco-hovertext)
-
-  .title-h2-a-left
+#page
+  .title-h2-a
     display: flex
     align-items: center
+    justify-content: space-between
+    margin-top: .5rem
 
-    h2
-      margin-top: 0 !important
-      margin-bottom: 0 !important
+    a
+      margin-left: .5rem
+      color: var(--sco-secondtext)
+      font-weight: 700
 
-  .title-h2-a-right
-    font-size: 14px
-    color: var(--sco-secondtext)
+      &:hover
+        color: var(--sco-hovertext)
+
+    .title-h2-a-left
+      display: flex
+      align-items: center
+
+      h2
+        margin: 0
+
+    .title-h2-a-right
+      font-size: 14px
+      color: var(--sco-secondtext)

@@ -13,18 +13,16 @@
 
 .tags-group-all.nowrapMove
     .tags-group-wrapper
-        - const data = site.data.links.links
+        - const data = site.data.links.banners
+        - var pairs = []
         - for (let i = 0; i < 2; i++)
-        each x in data
-            if x.type === "item"
-                - var pairs = []
-                each y, index in x.link_list
-                    if (index % 2 === 0)
-                        - pairs.push([y])
-                    else
-                        - pairs[pairs.length - 1].push(y)
-                each pair in pairs
-                    .tags-group-icon-pair
-                        each y in pair
-                            a.tags-group-icon(href=url_for(y.link), title=y.name)
-                                img(src=y.avatar, title=y.name)
+            each y, index in data
+                if (index % 2 === 0)
+                    - pairs.push([y])
+                else
+                    - pairs[pairs.length - 1].push(y)
+            each pair in pairs
+                .tags-group-icon-pair
+                    each y in pair
+                        a.tags-group-icon(href=url_for(y.link), title=y.name)
+                            img(src=y.avatar, title=y.name)

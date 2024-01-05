@@ -1,0 +1,93 @@
+.article-sort-title
+  font-weight 700
+  font-size 2em
+
+  sup
+    margin-left 4px
+    font-size 16px
+    font-weight 700
+    opacity .4
+    top -1em
+
+.article-sort
+  .article-sort-item
+    position relative
+    display flex
+    -webkit-box-align center
+    align-items center
+    margin 0 0 1rem 0
+    transition all .2s ease-in-out 0s
+    overflow hidden
+
+    &.year
+      font-size .8rem
+      color var(--sco-secondtext)
+      margin 0 0 .2rem 0
+
+    .article-sort-item-img
+      border-radius 12px
+      min-width 151px
+      min-height 80px
+      background var(--sco-secondbg)
+      overflow hidden
+      width 80px
+      height 80px
+
+      +maxWidth768()
+        min-width 80px
+
+      img
+        width 100%
+        height 100%
+        transition all .6s ease 0s
+        object-fit cover
+
+    .article-sort-item-info
+      padding 0 0.8rem
+      display flex
+      flex-direction column
+      -webkit-box-flex 1
+      flex 1 1 0%
+
+      a
+        overflow hidden
+        text-overflow ellipsis
+
+        &:hover
+          color var(--sco-theme)
+
+      .article-sort-item-title
+        color var(--sco-fontcolor)
+        font-size 1.1em
+        transition all .3s ease 0s
+        line-height 1.3
+        -webkit-line-clamp 1
+        order 0
+        font-weight 700
+
+        +maxWidth768()
+          -webkit-line-clamp 2
+
+      .article-sort-item-tags
+        margin-top 8px
+        white-space nowrap
+        overflow hidden
+        text-overflow ellipsis
+        width 100%
+        font-size .7rem
+        display flex
+
+        a
+          color var(--sco-fontcolor)
+
+          &:hover
+            color var(--sco-theme)
+
+          .tags-punctuation
+            font-size 12px
+            margin-right 1px
+
+        .article-meta__tags
+          margin-right 8px
+          padding 0 0.2rem 0 0
+          color var(--sco-fontcolor)

@@ -4,7 +4,7 @@
         if (theme.thirdparty.search.local_search.enable)
             localSearch = JSON.stringify({
                 preload: theme.thirdparty.search.local_search.preload,
-                path: theme.thirdparty.search.local_search.path || '/search.xml'
+                path: theme?.thirdparty?.search?.local_search?.CDN || '/search.xml'
             })
         var algolia = 'undefined';
         if (theme.thirdparty.search.algolia_search.enable)
@@ -13,10 +13,13 @@
                 apiKey: config.algolia.apiKey,
                 indexName: config.algolia.indexName,
                 hits: {
-                    per_page: theme.thirdparty.search.algolia_search.hits.per_page || 10
+                    per_page: theme.thirdparty?.search?.algolia_search?.hits?.per_page || 10
                 }
             })
     }
+
+    const commentInfoStart = theme.comment.randomInfoStart.map(item => `"${item}"`) || ""
+    const commentInfoEnd = theme.comment.randomInfoEnd.map(item => `"${item}"`) || ""
 
 script.
     const GLOBAL_CONFIG = {
@@ -31,6 +34,8 @@ script.
         hightlight: {
             enable: !{theme.hightlight.enable},
             limit: !{theme.hightlight.hightlimit},
+            expand: !{theme.hightlight.expand},
+            copy: !{theme.hightlight.copy},
         },
         lightbox: !{theme.lightbox},
         randomlinks: !{theme.footer.randomlink},
@@ -52,11 +57,11 @@ script.
                 runtime: '!{_p('time.runtime')}',
             },
             sayhello: {
-                morning: '!{_p('sayhello.morning')}',
-                noon: '!{_p('sayhello.noon')}',
-                afternoon: '!{_p('sayhello.afternoon')}',
-                night: '!{_p('sayhello.night')}',
-                goodnight: '!{_p('sayhello.goodnight')}',
+                morning: `!{_p('sayhello.morning')}`,
+                noon: `!{_p('sayhello.noon')}`,
+                afternoon: `!{_p('sayhello.afternoon')}`,
+                night: `!{_p('sayhello.night')}`,
+                goodnight: `!{_p('sayhello.goodnight')}`,
             },
             search: {
                 empty: '!{_p('search.empty')}',
@@ -64,10 +69,15 @@ script.
                 placeholder: '!{_p('search.placeholder')}',
             }
         },
-        covercolor: !{theme.post.covercolor.enable},
+        covercolor: {
+            enable: !{theme.post.covercolor.enable}
+        },
         comment: {
             enable: !{theme.comment.enable},
             type: '!{theme.comment.type}',
+            commentBarrage: !{theme.comment.commentBarrage},
+            randomInfoStart: [!{commentInfoStart}],
+            randomInfoEnd: [!{commentInfoEnd}],
             twikoo: {
                 url: '!{theme.comment.twikoo.envId}',
                 accessToken: '!{theme.comment.twikoo.accessToken}'
@@ -78,5 +88,14 @@ script.
         },
         rightside: {
             enable: !{theme.rightside.enable}
+        },
+        ai:{
+            enable: !{theme.thirdparty.ai.enable},
+            key: '!{theme.thirdparty.ai.key}',
+            talk: '!{theme.thirdparty.ai.talk}',
+            randomPost: !{theme.thirdparty.ai.randomPost},
+        },
+        music:{
+            enable: !{theme.music.enable},
         }
     }

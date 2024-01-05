@@ -1,0 +1,85 @@
+$border-colors = {
+  red: #fe5f58,
+  green: #3dc550,
+  yellow: #ffbd2b,
+  cyan: #1bcdfc,
+  blue: #2196f3
+}
+
+.checkbox
+  display flex
+  align-items center
+  p
+    display inline-block
+    margin 2px 0 0 !important
+  input
+    appearance none
+    position relative
+    height 16px
+    width 16px
+    transition all 0.15s ease-out 0s
+    cursor pointer
+    display inline-block
+    outline none
+    flex-shrink 0
+    margin-right 8px
+    border 2px solid #2196f3
+    pointer-events none
+    border-radius 16px
+    &:before, &:after
+      position absolute
+      content ""
+      background #fff
+    &:checked
+      background #2196f3
+    [type="checkbox"]
+      &:before
+        left 1px
+        top 5px
+        width 0
+        height 2px
+        transition all 0.2s ease-in
+        transform rotate(45deg)
+      &:after
+        right 7px
+        bottom 3px
+        width 2px
+        height 0
+        transition all 0.2s ease-out
+        transform rotate(40deg)
+        transition-delay 0.25s
+      &:checked
+        &:before
+          left 0
+          top 7px
+          width 6px
+          height 2px
+        &:after
+          right 3px
+          bottom 1px
+          width 2px
+          height 10px
+    [type="radio"]
+      border-radius 50%
+      &:before
+        content ""
+        display block
+        width 8px
+        height 8px
+        border-radius 50%
+        margin 2px
+        transform scale(0)
+        transition all 0.25s ease-out
+      &:checked
+        &:before
+          transform scale(1)
+          background var(--text-bg-hover)
+  for color, value in $border-colors
+    &.{color}
+      input
+        border-color value
+        [type="checkbox"]:checked
+          background value
+        [type="radio"]:checked
+          &:before
+            background value

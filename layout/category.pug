@@ -2,11 +2,10 @@ extends includes/layout.pug
 
 block content
     main.layout#content-inner
-        div#category
-            div#category-bar
-                div.category-bar-items#category-bar-items
-                    include includes/widgets/home/categoryBar
-            div.recent-posts#recent-posts
+        #category
+            #category-bar
+                include includes/widgets/home/categoryBar
+            .recent-posts#recent-posts
                 each post in page.posts.find({ parent: { $exists: false } }).data
                     include includes/widgets/home/postList
             include includes/mixins/pagination

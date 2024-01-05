@@ -2,17 +2,17 @@
 
 .author-content
     .author-content-item.myInfoAndSayHello
-        .title1 你好，很高兴认识你👋
-        .title2 我叫
+        .title1= _p('about.info.title1')
+        .title2= _p('about.info.title2')
             span.inline-word= contentinfo.name
-        .title1 是一名 #{contentinfo.title}
+        .title1= _p('about.info.title3') + contentinfo.title
     .aboutsiteTips.author-content-item
-        .author-content-item-tips 追求
+        .author-content-item-tips= _p('about.info.tip1')
         h2
-            | 源于
+            = _p('about.info.tip2')
             br
-            | 热爱而去
-            span.inline-word 创造
+            = _p('about.info.tip3')
+            span.inline-word= _p('about.info.tip4')
             .mask
                 span.first-tips(data-show='')= contentinfo.product
                 span= contentinfo.design

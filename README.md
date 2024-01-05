@@ -4,10 +4,10 @@
   <a title="English" href="/README_EN.md">English</a>
 </div>
 
-<p align="center"><img width="400" src="/source/img/logo-horizontal_version.png"></p>
+<p align="center"><img width="400" src="https://bu.dusays.com/2023/12/20/6582bf58c64cf.png"></p>
 
 <p align="center">一款优雅的 Hexo 主题</p>
-<p align="center">"在宁静的孤独中心探索内心，我们以简约之美引领优雅生活"</p>
+<p align="center">"在宁静的孤独中心探索，我们以简约之美引领优雅生活"</p>
 
 <p align="center">
   <a title="Hexo Version" target="_blank" href="https://hexo.io/zh-cn/"><img alt="Hexo Version" src="https://img.shields.io/badge/Hexo-%3E%3D%205.3.0-orange?style=flat"></a>
@@ -18,11 +18,11 @@
   <a title="GitHub Commits" target="_blank" href="https://github.com/DuoSco/Hexo-Theme-solitude/commits/master"><img alt="GitHub Commits" src="https://img.shields.io/github/commit-activity/m/DuoSco/Hexo-Theme-solitude.svg?style=flat&color=brightgreen&label=commits"></a>
 </p>
 
-![](/source/img/solitude-show.jpg)
+![](https://bu.dusays.com/2023/12/20/6582bf81b4641.png)
 
-主题预览: 👋[Demo](https://solitude.wzsco.top/) | [王卓Sco](https://blog.wzsco.top/)
+主题预览: 👋 [王卓Sco](https://blog.wzsco.top/) ｜ 🎆 [糕小菜](https://blog.kaixed.com/)
 
-主题文档: 📖[Solidude 文档](https://docs.wzsco.top/)
+主题文档:  [📖 Solidude 文档](https://docs.wzsco.top/)
 
 主题交流群：`文档内有群二维码和链接`
 
@@ -72,9 +72,9 @@ cp -rf ./themes/solitude/_config.yml ./_config.solitude.yml
 
 ## 🎁 赞助我们
 
-由于我们是为爱发电，域名和一些零零散散的支出都是由开发者在承担费用，如果可以，希望能够得到你的赞赏，非常感谢！🙏 当然了，即使没有赞助我们也会用心开发。
+非常感谢你的支持和赞赏！我们非常欣赏你为爱发电的精神和对开发者的理解。我们将继续用心开发和提供帮助，尽最大努力满足你的需求。如有任何其他问题或需求，请随时告诉我们，我们将尽力为你提供支持。谢谢！🙏
 
-[王卓Sco](https://afdian.net/a/wleelw0u0) &nbsp;  [亦小封](https://afdian.net/a/yife68)
+[@王卓Sco](https://afdian.net/a/wleelw0u0) &nbsp;  [@亦小封](https://afdian.net/a/yife68)
 
 ## ✨ 贡献者
 
@@ -92,7 +92,7 @@ cp -rf ./themes/solitude/_config.yml ./_config.solitude.yml
 
 **本主题为 [Heo](https://blog.zhheo.com/) 的衍生主题，由 [@张洪Heo](https://github.com/zhheo) 作者全权授权、设计！**
 
-> 欢迎你对本主题做出贡献！ [贡献指南](https://opensource.guide/zh-hans/how-to-contribute/#%E5%A6%82%E4%BD%95%E6%8F%90%E4%BA%A4%E8%B4%A1%E7%8C%AE)
+> 欢迎你对本主题做出贡献！[贡献指南](/CONTRIBUTING.md)
 
 ## 📊 仓库统计
 ![仓库统计](https://repobeats.axiom.co/api/embed/75ec216f1d0b289e1b6a92f585342f3eeeeb0fdd.svg "Repobeats analytics image")

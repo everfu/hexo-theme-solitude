@@ -1,0 +1,158 @@
+.search-dialog
+  position fixed
+  top 5rem
+  left 50%
+  z-index 1001
+  display none
+  margin-left -15rem
+  padding 1rem
+  width 30rem
+  box-shadow var(--sco-shadow-lightblack)
+  background var(--sco-card-bg)
+  border var(--style-border)
+  transition 0.3s
+  border-radius 8px
+
+  &:hover
+    border var(--style-border-hover)
+    box-shadow var(--sco-shadow-theme)
+
+  +maxWidth768()
+    top 0
+    left 0
+    margin 0
+    width 100%
+    height 100%
+
+  .search-close-button
+    position absolute
+    top 0.8rem
+    right 1rem
+    color var(--sco-gray)
+    font-size 1.4em
+    line-height 1
+    cursor pointer
+    transition color .2s ease-in-out 0s
+
+    &:hover
+      color var(--sco-main)
+
+  #algolia-input-panel
+    margin-bottom 8px
+
+  .search-box, .ais-SearchBox
+    padding-top 8px
+    max-width 100%
+    position relative
+    width 100%
+    min-width 100%
+
+    input, .ais-SearchBox-input
+      height 100%
+      width 100%
+      padding 0.25rem 0.7rem
+      outline 0
+      border var(--style-border)
+      border-radius 8px
+      background var(--sco-secondbg)
+      color var(--sco-fontcolor)
+
+      &:focus
+        border var(--style-border-hover)
+
+  .ais-Pagination
+    .ais-Pagination-item--disabled
+      visibility hidden
+
+  #search-results
+    padding 8px
+    max-height calc(80vh - 130px)
+    overflow-y auto
+
+    +maxWidth768()
+      max-height 80vh !important
+
+  .ais-Hits-list
+    padding 0
+
+  .ais-Hits-item
+    margin 10px 0
+
+  .algolia-hit-item-content
+    margin 0
+    padding-left 10px
+    font-size 14px
+    color var(--sco-gray)
+
+  .algolia-hit-item-link
+    width auto
+    max-width 100%
+    white-space nowrap
+    text-overflow ellipsis
+    overflow hidden
+    font-weight bold
+
+  mark
+    color var(--sco-theme)
+    font-style normal
+    background var(--sco-card-bg)
+
+  .ais-Hits--empty
+    text-align center
+    font-weight 600
+
+  .ais-Pagination-list
+    margin 0.2rem 0 0
+    padding 0
+    text-align center
+
+  .ais-Pagination-item.pagination-item
+    margin 0 0.2rem
+    padding 0
+    display inline-block
+
+    a
+      border-radius 4px
+      background var(--sco-main)
+      color var(--sco-white)
+      cursor pointer
+      display inline-block
+      min-width 1.2rem
+      text-align center
+      line-height 1.2rem
+
+  .search-dialog__title
+    font-weight 700
+    padding 0 0 0.7rem
+    color var(--sco-main)
+    font-size 1.4em
+    line-height 1
+
+  #algolia-tips
+    padding-top 12px
+    color var(--sco-secondtext)
+    right 0
+    margin auto
+
+    #algolia-stats
+      margin-bottom 10px
+      color var(--sco-gray)
+      font-size .8rem
+      font-weight bold
+
+    .algolia-tips-text
+      margin-left .4rem
+
+  #algolia-search-results
+    padding-top 8px
+
+#search-mask
+  position fixed
+  inset 0
+  z-index 1000
+  display none
+  background rgba(0, 0, 0, 0.6)
+  backdrop-filter blur(12px)
+  -webkit-backdrop-filter blur(12px)
+  transform translateZ(0)
+  background var(--sco-maskbgdeep)

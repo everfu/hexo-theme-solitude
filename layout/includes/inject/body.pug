@@ -1,21 +1,21 @@
 - cdn = theme.cdn.body
+- page.type = is_post() ? 'post' : page.type
 
 script(src=url_for(cdn.pjaxjs))
 if theme.lazyload.enable
-    script(src=url_for(cdn.lazyloadjs))
-script(src=url_for(cdn.snackbarjs))
+    script(src=cdn_url_for("/lib/lazyload.min.js"))
+script(src=cdn_url_for("/lib/snackbar.min.js"))
 if theme.lightbox
-    script(src=url_for(cdn.viewimagejs))
+    script(src=cdn_url_for("/lib/view-image.min.js"))
 if theme.says.home_mini || theme.aside.history.enable
     script(src=url_for(cdn.swiperjs))
 
 if theme.rightside.enable
     include ../widgets/rightside/index.pug
-    script(src='/js/rightside.js')
+    script(src=cdn_url_for("/lib/rightside.min.js"))
 
 div#js-pjax
     if page.type === 'says'
-        script(src=url_for(cdn.waterfalljs))
         script.
             window.addEventListener('resize', utils.throttle(function () {
                 if (document.getElementById('waterfall')) {
@@ -30,18 +30,29 @@ div#js-pjax
             is_post: !{is_post()},
             is_page: !{is_page()},
             is_home: !{is_home()},
-            page: '!{page.type || 'default'}',
+            page: '!{page.type}',
             toc: !{!!page.toc},
             comment: !{!!page.comment},
         }
-if theme.thirdparty.aplayer.enable
+
+// post-ai)
+if theme.thirdparty.ai.enable
+    script(src=cdn_url_for("/lib/sco-ai.min.js"))
+
+if theme.thirdparty.aplayer.enable || theme.music.enable
     script(src=url_for(cdn.aplayerjs))
     script(src=url_for(cdn.metingjs))
     script.
         const meting_api = '!{theme.thirdparty.aplayer.api}';
 
-if theme.post.covercolor
-    script(src='/js/extend/covercolor/local.js')
+if theme.post.covercolor.enable
+    script.
+        const coverColorConfig = {
+            mode: '!{theme.post.covercolor.mode}',
+            api: '!{theme.post.covercolor.api}',
+            time: !{theme.post.covercolor.time},
+        }
+    script(src=cdn_url_for("/lib/cover-color.min.js"))
 
 if theme.footer.randomlink
     include ../widgets/randomlink.pug
@@ -51,19 +62,28 @@ if page.katex
     script(src=url_for(cdn.katexjs))
 
 if theme.aside.welcome.enable
-    script(src='/js/txmap.js')
+    script(src=cdn_url_for("/lib/txmap.min.js"))
+
+// waterfall
+if theme.says.enable
+    script(src=cdn_url_for("/lib/waterfall.min.js"))
 
 if theme.comment.enable
     case theme.comment.type
         when 'twikoo'
-            script(src='/js/extend/comment/twikoo.js')
-            script(src='/js/commentBarrage.js')
+            script(src=cdn_url_for("/js/extend/comment/twikoo/twikoo.js"))
+            script(src=cdn_url_for("/js/extend/comment/twikoo/commentBarrage.js"))
         when 'waline'
-            script(src='/js/extend/comment/waline.js')
+            script(src=cdn_url_for("/js/extend/comment/waline/waline.js"))
+            script(src=cdn_url_for("/js/extend/comment/waline/commentBarrage.js"))
 
 
 // pjax
 include ../widgets/third-party/pjax.pug
+
+// music
+if theme.music.enable
+    script(src=cdn_url_for("/js/music.js"))
 
 // inject custom body
 if theme.extends.body

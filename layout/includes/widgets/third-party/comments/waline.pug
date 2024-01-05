@@ -1,17 +1,16 @@
-- const { envId, option, pageview } = theme.comment.waline
-- const { lazyload, count, type } = theme.comment
+- const { envId, option } = theme.comment.waline
 
 script.
     async function initComment() {
         (() => {
-            const waline = Waline.init(Object.assign({
+            Waline.init(Object.assign({
                 el: '#comment',
                 serverURL: '!{envId}',
-                pageview: !{lazyload ? false : pageview},
+                pageview: !{theme.post.meta.pv},
                 dark: 'html[data-theme="dark"]',
                 path: window.location.pathname,
                 search: false,
-                comment: !{lazyload ? false : count},
+                comment: #{theme.post.meta.comment && is_post()},
             }, !{JSON.stringify(option)}))
         })()
     }

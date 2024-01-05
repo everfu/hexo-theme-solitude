@@ -1,0 +1,230 @@
+#sidebar
+  background var(--sco-maskbg)
+
+  #menu-mask
+    position fixed
+    z-index 1001
+    display none
+    width 100%
+    height 100%
+    background var(--sco-maskbg)
+    -webkit-backdrop-filter saturate(180%) blur(20px)
+    backdrop-filter saturate(180%) blur(20px)
+    transform translateZ(0)
+    animation .6s ease 0s 1 normal none running to_show
+
+  #sidebar-menus
+    position fixed
+    top 0
+    right -300px
+    overflow hidden auto
+    width 300px
+    height 100%
+    background var(--sco-maskbgdeep)
+    transition all .5s ease 0s
+    padding-top 30px
+    z-index 1001
+    border-left var(--style-border-always)
+
+    +minWidth768()
+      display none
+
+    +maxWidth768()
+      .back-menu-list-groups .back-menu-list .back-menu-item
+        width calc(50% - 16px)
+
+        &:hover
+          background var(--sco-lighttext)
+
+      .menus_items
+        li
+          .site-page
+            font-weight 400
+
+          .site-page:hover
+            background var(--sco-main)!important
+            color var(--sco-white)
+
+          .site-page span:hover
+            color var(--sco-white)
+
+    .menus_items
+      padding 0 16px
+
+      .site-page
+        position relative
+        display block
+        padding 0
+        color var(--sco-fontcolor)
+        cursor pointer
+        font-size 14px
+        font-weight 700
+
+      .menus_item > .site-page
+        display flex
+        font-size 12px
+        color var(--sco-secondtext)
+
+      .expand
+        position absolute
+        top .78em
+        right .4rem
+        transition transform .3s ease 0s
+
+        &.hide
+          transform rotate(90deg) !important
+
+      .menus_item_child
+        margin 0 -4px
+        list-style none
+        display flex
+        flex-direction row
+        flex-wrap wrap
+
+        .site-page.child
+          display flex
+          flex-direction column
+          align-items center
+          padding 8px
+          border-radius 8px
+          border var(--style-border-always)
+          background var(--sco-card-bg)
+
+        li
+          width calc(50% - 8px)
+          margin 4px
+
+        .site-page.child span
+          line-height 1
+          margin-top 8px
+
+    > hr
+      display none
+
+    &.open
+      transform translate3d(-100%, 0, 0)
+
+    .back-menu-list-groups
+      padding 0 16px
+
+      .back-menu-list-title
+        font-size 12px
+        color var(--sco-secondtext)
+
+      .back-menu-list
+        width calc(100% + 16px)
+        justify-content flex-start
+        margin 0 -8px
+
+        .back-menu-item
+          background var(--sco-card-bg)
+          border var(--style-border-always)
+          border-radius 8px
+
+    .back-home-button
+      display none
+
+    > .author-avatar
+      padding 1.3rem 1.5rem 0
+      text-align center
+
+      img
+        width 110px
+        height 110px
+        border-radius 70px
+        transition all .5s ease 0s
+
+        &:hover
+          transform rotate(360deg)
+
+    .site-data
+      display table
+      padding .6rem .5rem 0
+      width 100%
+      table-layout fixed
+
+      .data-item
+        display table-cell
+
+        .data-item-link .length-num
+          color var(--text-highlight-color)
+          font-size 1.28em
+
+        .data-item-link .headline
+          color var(--sco-fontcolor)
+
+    hr
+      margin 1rem auto
+
+    .card-tag-cloud
+      padding 0 16px
+      display flex
+      white-space nowrap
+      flex-direction row
+      flex-wrap wrap
+      margin-bottom 60px
+
+      a
+        color var(--sco-fontcolor) !important
+        padding 2px 8px 2px 12px
+        margin 4px
+        border-radius 8px
+        border var(--style-border-always)
+        background var(--sco-card-bg)
+        font-size 14px !important
+
+        sup
+          opacity .6
+          margin-left 4px
+
+    span.sidebar-menu-item-title
+      font-size 12px
+      color var(--sco-secondtext)
+      margin-left 16px
+
+    .sidebar-menu-item
+      display flex
+      flex-direction column
+      padding 0 16px
+      margin-bottom 6px
+
+      a.darkmode_switchbutton
+        padding 4px 8px
+
+        [data-theme="dark"] &
+          background var(--sco-orange)
+          color var(--sco-white)
+
+      a.menu-child
+        width 100%
+        background var(--sco-card-bg)
+        border-radius 8px
+        border var(--style-border-always)
+        display flex
+        align-items center
+        font-size 14px
+
+        i
+          width 24px
+          height 24px
+          display flex
+          align-items center
+          justify-content center
+
+      a.menu-child span
+        margin-left 10px
+
+    .webinfo
+      padding 0 16px
+      display flex
+      white-space nowrap
+      flex-direction column
+
+      .webinfo-item
+        justify-content space-between
+
+    .menus_items .site-page span:hover
+      color var(--sco-fontcolor)
+
+  #toggle-sidebar
+    bottom 80px

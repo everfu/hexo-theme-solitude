@@ -11,15 +11,14 @@ time:
   yesterday: Yesterday
   berforeyesterday: TDBY
   daybefore: Days ago
-  runtime:  days
+  runtime: days
 
 sayhello:
-  morning: Good morning
-  noon: Good noon
-  afternoon: Good afternoon
-  night: Good evening
-  goodnight: Good night
-  iam: '! I am'
+  morning: The plan of the day is in the morning
+  noon: Only when you are full can you have the strength to work
+  afternoon: Concentrate and overcome the difficulties
+  night: Don't get too tired, it's healthier to go to bed early
+  goodnight: Get a good night's sleep and keep yourself energized
 
 page:
   tag: Tags
@@ -27,14 +26,112 @@ page:
   archives: Archives
   echarts: Echarts
 
+home:
+  bannertext: Just browsing
+  bbtime:
+    text: Read more
+    image: [ Image ]
+  categoryBar:
+    home: Home
+    more: More
+  recent-post:
+    sticky: Sticky
+    new: New
+    read: Unread
+  top-group:
+    recommend: Favor
+    recommendmore: More
+
+about:
+  info:
+    title1: Hello, nice to meet you👋
+    title2: 'My name is '
+    title3: 'I am a '
+    tip1: Pursue
+    tip2: Originated from
+    tip3: 'Love to go '
+    tip4: Create
+
+post:
+  meta_reprint: Reprint or translation
+  meta_original: Original
+  meta_cc: This article is a ${cc} article, pay attention to the copyright.
+  meta_posted: Posted on
+  meta_updated: Last updated on
+  meta_wordcount: Word count
+  meta_minread: Reading time
+  meta_ip: The author's IP belongs to
+  meta_pv: PV
+  meta_comment: Comments
+
 nav:
+  site_name_title: Back to home
   backtop: Back to top
   travellings: Traveling - Friends Link
   search: Search
   randompost: Random post
   console: Console
 
+award:
+  wechat: Wechat
+  alipay: Alipay
+  about:
+    tip: Thanks
+    tip1: Tipping
+    tip2: Thank you for giving me the strength to move forward.
+    title: List of appreciation
+
+
 search:
   empty: No results found
   hit: Found ${query} results for you
   placeholder: Enter keywords to quickly search
+
+head:
+  noscript: Please enable JavaScript to view the site
+  console: 'Program: Hexo | Theme: Hexo-Theme-Solitude | Author: WangZhuoSco、YiFeng | Github: https://github.com/DuoSco/Hexo-theme-solitude | Version: v1.2.5-dev 😄'
+
+aside:
+  postcount: 'Posts :'
+  pv: 'PV :'
+  uv: 'UV :'
+  runtime: 'Runtime :'
+  updatetime: 'Last update :'
+  wordcount: 'Word count :'
+  welcome: Visitors
+  toc: Table of contents
+  tagmore: View all
+  avatar: Avatar
+  sticker: Mood sticker
+  history: On this day
+  newpost: New posts
+
+console:
+  comment_tip: Interaction
+  comment_title: Latest comments
+  tag_tip: Tags
+  tag_title: Find interesting areas
+  switch_darkmode: Day and night switching
+  switch_hideAside: Sidebar display control
+  switch_music: Music switch
+  archive_unit: Posts
+
+sidebar:
+  title1: Features
+  title2: Tags
+  darkmode: Display mode
+
+footer:
+  description: Article from ${title}
+  learnmore: Learn more
+  randomlink: Links
+  rss: Subscribe
+  theme: Theme
+
+cookies:
+  title: Agreement reminder assistant
+  tip: Check out the efforts we make to protect your privacy
+  privacy: How this site protects your privacy
+
+music:
+  hit: Paused

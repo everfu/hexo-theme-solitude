@@ -1,0 +1,305 @@
+.flink#banners
+  margin-bottom: .5rem
+
+.flink#article-container
+  margin-top 1rem
+  #friendlink_checkboxs input
+    margin-right 4px
+
+  h2
+    margin-top 0.5rem
+    margin-bottom 0
+
+  .flink-desc
+    margin 0
+    color var(--sco-secondtext)
+
+  .site-card-group
+    padding 20px 0
+    display flex
+    flex-wrap wrap
+    -webkit-box-pack start
+    justify-content flex-start
+    margin -8px
+    -webkit-box-align stretch
+    align-items stretch
+
+    .site-card
+      border var(--style-border)
+      border-radius 12px
+      transition .3s
+      transition-timing-function ease-in-out
+      overflow hidden
+      height 200px
+      position relative
+      width calc(100% / 7 - 16px)
+      background var(--sco-card-bg)
+      box-shadow var(--sco-shadow-border)
+      margin 8px
+      display block
+      line-height 1.4
+
+      +maxWidth1200()
+        width calc(20% - 16px)
+
+      +maxWidth1024()
+        width calc(25% - 16px)
+
+      +maxWidth768()
+        width calc(33.3333% - 16px)
+
+      +maxWidth600()
+        width calc(50% - 16px)
+
+      .site-card-tag
+        position absolute
+        top 0
+        left 0
+        padding 4px 8px
+        background-color var(--sco-blue)
+        box-shadow var(--sco-shadow-blue)
+        color var(--sco-white)
+        z-index 1
+        border-radius 12px 0 12px 0
+        transition .3s
+        font-size .6rem
+
+        &.vip
+          background-color var(--sco-vip)
+
+        &.life
+          background-color var(--sco-life)
+
+      .img
+        -webkit-mask-image -webkit-radial-gradient(center, #fff, #000)
+        border-radius 0
+        height 120px
+        width 100%
+        display flex
+        border none
+        padding 0
+        transition all .3s ease 0s
+        overflow hidden
+        background-color #f6f6f6
+
+        img
+          width 100%
+          height 100%
+          object-fit cover
+          border-radius 0
+          transform scale(1.03)
+          transition .3s
+          margin 0
+          max-width 100%
+
+      .img-alt
+        display none
+
+      .info
+        display flex
+        border none
+        padding 0.5rem
+        width 100%
+        height 90px
+        margin 0
+        border-radius 0 0 12px 12px
+
+        img
+          border-radius 32px
+          transition all .3s ease-out
+          margin 2px 8px 0 0
+          width 20px
+          height 20px
+          min-width 20px
+          min-height 20px
+          background var(--sco-secondbg)
+
+        .site-card-text
+          display flex
+          flex-direction column
+          align-items flex-start
+
+          .title
+            color var(--sco-fontcolor)
+            text-align left
+            font-weight 600
+            display -webkit-box
+            -webkit-box-orient vertical
+            overflow hidden
+            -webkit-line-clamp 1
+            transition all .3s ease 0s
+
+          .desc
+            font-size .7rem
+            color var(--sco-fontcolor)
+            opacity .7
+            transition all .3s
+            text-align left
+            overflow-wrap break-word
+            line-height 1.2
+            display -webkit-box
+            -webkit-box-orient vertical
+            overflow hidden
+            -webkit-line-clamp 2
+
+      &:hover
+        border var(--style-border-hover)
+        box-shadow var(--sco-shadow-main)
+        .site-card-tag
+          left: -80px
+
+        .img
+          height 80px
+
+          img
+            transform scale(1.1)
+            filter brightness(.3)
+
+        a
+          border-bottom 2px solid var(--sco-none)
+          color var(--sco-white)
+          background var(--sco-main)
+          box-shadow var(--sco-shadow-main)
+
+        .info
+          height 120px
+          background-color var(--sco-theme)
+
+          img
+            width 0
+            height 0
+            opacity 0
+            min-width 0
+            min-height 0
+
+          .title
+            color var(--sco-white)
+
+          .desc
+            color var(--sco-white)
+            text-align left
+            -webkit-line-clamp 4
+            width 100%
+
+  .flink-list
+    padding 0
+    margin 0.5rem -6px 1rem -6px
+    overflow-x hidden
+    overflow auto
+    text-align center
+
+    > .flink-list-item
+      margin 6px 6px
+      transition .3s
+      border-radius 12px
+      transition-timing-function ease-in-out
+      position relative
+      width calc(20% - 12px)
+      border var(--style-border-always)
+      box-shadow var(--sco-shadow-border)
+      background var(--sco-card-bg)
+      display flex
+      float left
+      overflow hidden
+      height 90px
+      line-height 17px
+      transform translateZ(0)
+
+      +maxWidth1200()
+        width calc(25% - 12px)
+
+      +maxWidth1024()
+        width calc(33.3333% - 12px)
+
+      +maxWidth768()
+        width calc(50% - 12px)
+
+      +maxWidth600()
+        width calc(100% - 12px)
+
+      .site-card-tag
+        display none
+
+      a
+        display flex
+        width 100%
+        height 100%
+        align-items center
+
+        .img-alt
+          display none
+
+        img
+          border-radius 32px
+          margin 15px 20px 15px 15px
+          transition .3s
+          background var(--sco-background)
+          min-width 60px
+          min-height 60px
+          float left
+          width 60px
+          height 60px
+
+        .flink-item-info
+          display flex
+          flex-direction column
+          justify-content center
+          width calc(100% - 90px)
+          height fit-content
+          padding 0 4px
+
+          span
+            transition .3s
+
+          .flink-item-name
+            text-align left
+            font-size 19px
+            line-height 20px
+            color var(--sco-fontcolor)
+            display block
+            padding 0 10px 0 0
+            font-weight 700
+            max-width calc(100% - 12px)
+            overflow hidden
+            text-overflow ellipsis
+            white-space nowrap
+
+          .flink-item-desc
+            white-space normal
+            padding 5px 10px 16px 0
+            color var(--sco-fontcolor)
+            text-align left
+            height 40px
+            text-overflow ellipsis
+            opacity .7
+            display -webkit-box
+            overflow hidden
+            -webkit-box-orient vertical
+            -webkit-line-clamp 2
+            font-size .93em
+
+      &:hover
+        background var(--sco-theme)
+
+        a
+          background 0 0
+
+          img
+            transition .6s
+            width 0
+            height 0
+            opacity 0
+            margin 5px
+            min-width 0
+            min-height 0
+
+        .flink-item-info
+          min-width calc(100% - 20px)
+
+          .flink-item-name
+            color var(--sco-card-bg)
+
+          .flink-item-desc
+            color var(--sco-card-bg)
+            overflow hidden
+            width 100%

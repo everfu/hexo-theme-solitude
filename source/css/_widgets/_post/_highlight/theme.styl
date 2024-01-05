@@ -1,0 +1,68 @@
+$highlight_color = hexo-config('hightlight.color')
+
+if $highlight_color == "default"
+  $highlight-comment = #969896
+  $highlight-red = #FF5370
+  $highlight-orange = #F78C6C
+  $highlight-yellow = #FFCB6B
+  $highlight-green = #C3E88D
+  $highlight-aqua = #89DDFF
+  $highlight-blue = #82AAFF
+  $highlight-purple = #C792EA
+  $highlight-deletion = #BF42BF
+  $highlight-addition = #105EDE
+else if $highlight_color == "vscode"
+  $highlight-comment = #6A9955
+  $highlight-red = #D16969
+  $highlight-orange = #D7BA7D
+  $highlight-yellow = #D7BA7D
+  $highlight-green = #608B4E
+  $highlight-aqua = #4EC9B0
+  $highlight-blue = #569CD6
+  $highlight-purple = #C586C0
+  $highlight-deletion = #D16969
+  $highlight-addition = #608B4E
+else if $highlight_color == "solarized-dark"
+  $highlight-comment = #93A1A1
+  $highlight-red = #DC322F
+  $highlight-orange = #CB4B16
+  $highlight-yellow = #B58900
+  $highlight-green = #859900
+  $highlight-aqua = #2AA198
+  $highlight-blue = #268BD2
+  $highlight-purple = #6C71C4
+  $highlight-deletion = #DC322F
+  $highlight-addition = #859900
+else if $highlight_color == "solarized-light"
+  $highlight-comment = #586E75
+  $highlight-red = #D30102
+  $highlight-orange = #BD3613
+  $highlight-yellow = #A57705
+  $highlight-green = #728A05
+  $highlight-aqua = #259185
+  $highlight-blue = #2176C7
+  $highlight-purple = #6C71C4
+  $highlight-deletion = #D30102
+  $highlight-addition = #728A05
+else if $highlight_color == "dracula"
+  $highlight-comment = #6272A4
+  $highlight-red = #FF5555
+  $highlight-orange = #FFB86C
+  $highlight-yellow = #F1FA8C
+  $highlight-green = #50FA7B
+  $highlight-aqua = #8BE9FD
+  $highlight-blue = #BD93F9
+  $highlight-purple = #FF79C6
+  $highlight-deletion = #FF5555
+  $highlight-addition = #50FA7B
+else if $highlight_color == "monokai"
+  $highlight-comment = #75715E
+  $highlight-red = #F926
+  $highlight-orange = #FD971F
+  $highlight-yellow = #E6DB74
+  $highlight-green = #A6E22E
+  $highlight-aqua = #66D9EF
+  $highlight-blue = #AE81FF
+  $highlight-purple = #F92672
+  $highlight-deletion = #F926
+  $highlight-addition = #A6E22E

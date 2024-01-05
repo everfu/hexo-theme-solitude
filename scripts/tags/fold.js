@@ -1,8 +1,3 @@
-/**
- * Fold
- * from acrylic
- */
-
 'use strict'
 
 function postTabs(args, content) {

@@ -1,53 +1,5 @@
-// 即刻、categoriesBar 样式
-#bbTimeList,
-#category-bar
-  padding 0.4rem 1rem 0.4rem 1rem
-  background var(--sco-card-bg)
-  border-radius 12px
-  display flex
-  white-space nowrap
-  overflow hidden
-  margin-bottom 1rem
-  border var(--style-border)
-  transition .3s
-  width 100%
-  justify-content space-between
-  -webkit-user-select none
-  align-items center
-
-  +maxWidth1300()
-    margin-bottom 1rem
-    animation slide-in .6s 0s backwards
-
-  +minWidth1300()
-    &:hover
-      border var(--style-border-hover)
-      box-shadow var(--sco-shadow-main)
-
-  +maxWidth768()
-    margin-bottom 0
-    margin-top 0
-    border-radius 0
-    background var(--sco-background)
-    padding 0.5rem 20px
-    border none
-
-#category-bar
-  white-space nowrap
-  overflow hidden
-  justify-content space-between
-
-  +minWidth1300()
-    margin-bottom 0.75rem
-    animation slide-in .6s .3s backwards
-
-    .category-in-bar-tips
-      margin-bottom .25rem
-
-.page-title
-  display none
-
 #page h1.page-title
+  display inline
   margin .4rem 0 1rem
 
 #page
@@ -56,3 +8,42 @@
   padding 0
   box-shadow none
   min-height calc(100vh - 464px)
+
+  +maxWidth768()
+    padding 0 1rem
+
+  > div:not(.author-content-item)
+    animation slide-in .6s .2s backwards
+
+.tags-group-icon
+  width: 120px
+  height: 120px
+  border-radius: 30px
+  display: flex
+  align-items: center
+  justify-content: center
+  color: #fff
+  font-size: 66px
+  font-weight: 700
+  box-shadow: var(--sco-shadow-blackdeep)
+
+  img
+    width: 60%
+
++minWidth768()
+  > div:nth-child(1) > a::before
+    height: 24px
+    width: 44px
+    content: ""
+    background-size: 38px 24px
+    position: absolute
+    top: 0
+    left: 0
+
+  > a:nth-child(0) > i
+    padding-right: 8px
+
++minWidth768()
+  .needEndHide.hide
+    bottom -200px !important
+    opacity 0

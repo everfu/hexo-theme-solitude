@@ -1,9 +1,11 @@
+- var archive = theme.aside.archive
+
 ul.card-archive-list
-    - var type = locals.type ? locals.type : 'year'
+    - var type = archive.type ? archive.type : 'year'
     each value, key in getArchiveLength(type)
         li.card-archive-list-item
-            a.card-archive-list-link(onclick=`pjax.loadUrl('/archives/${key}/')`, data-pjax-state="", href="javascript:void(0);")
+            a.card-archive-list-link(onclick=`pjax.loadUrl('/archives/${key}/')`, href="javascript:void(0);")
                 span.card-archive-list-date= key
                 .card-archive-list-count-group
                     span.card-archive-list-count= value
-                    span.card-archive-list-count-unit 篇
+                    span.card-archive-list-count-unit= __('console.archive_unit')

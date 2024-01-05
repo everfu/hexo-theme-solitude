@@ -3,85 +3,80 @@
   width 100%
   flex-direction row
   flex-wrap wrap
-  margin 0 -4px
+  margin-left -4px
   position relative
 
-.rss-plan-item.rss-plan-wechat
-  background #27c125
-  overflow hidden
-
-.rss-plan-item.rss-plan-mail
-  background var(--sco-blue)
-
-.rss-plan-item.rss-plan-rss
-  background var(--sco-orange)
-
-.rss-plan-item
-  border-radius 12px
-  display flex
-  flex-direction column
-  justify-content space-between
-  min-width 240px
-  height 240px
-  margin 4px auto
-  overflow hidden
-  text-decoration none
-  width calc(100% / 3 - 8px)
-  filter brightness(1)
-  transition .3s
-
-.rss-plan-item:hover
-  filter brightness(1.1)
-
-+maxWidth1024()
   .rss-plan-item
-    width calc(100% / 2 - 4px)
+    border-radius 12px
+    display flex
+    flex-direction column
+    justify-content space-between
+    min-width 240px
+    height 240px
+    margin 4px auto
+    overflow hidden
+    text-decoration none
+    width calc(100% / 3 - 8px)
+    filter brightness(1)
+    transition .3s
 
-  .rss-plan-item:first-child
-    width 100%
+    +maxWidth1024()
+      width calc(100% / 2 - 8px)
 
-+maxWidth768()
-  .rss-plan-item
-    width 100%
+      &first-child
+        width 100%
 
-.rss-plan-item:visited
-  color var(--sco-white)
+    +maxWidth768()
+      width 100%
 
-.rss-plan-description
-  font-size 16px
-  color var(--sco-white)
-  margin 26px 0 0 30px
-  line-height 20px
+    &.rss-plan-wechat
+      background #27c125
+      overflow hidden
 
-img.rss-plan-icon
-  position absolute
-  bottom -50px
-  right -20px
-  height 140px
-  user-select none
-  -webkit-user-drag none
-  transition all 1.2s cubic-bezier(.39, .575, .565, 1)
-  transform-origin bottom right
-  filter blur(8px)
-  opacity .6
+    &.rss-plan-mail
+      background var(--sco-blue)
 
-.rss-plan-item:hover img.rss-plan-icon
-  bottom -40px
-  right -10px
-  filter blur(0)
-  opacity 1
+    &.rss-plan-rss
+      background var(--sco-orange)
 
-.rss-plan-info-group
-  position relative
-  margin 0 0 26px 30px
-  color var(--sco-white)
+    &:hover
+      filter brightness(1.1)
 
-.rss-plan-title
-  font-size 36px
-  font-weight 700
-  width fit-content
-  line-height 1
+      img.rss-plan-icon
+        bottom -40px
+        right -10px
+        filter blur(0)
+        opacity 1
 
-.rss-plan-info
-  width fit-content
-  opacity .6
+    .rss-plan-description
+      font-size 16px
+      color var(--sco-white)
+      margin 26px 0 0 30px
+      line-height 20px
+
+    img.rss-plan-icon
+      position absolute
+      bottom -50px
+      right -20px
+      height 140px
+      user-select none
+      -webkit-user-drag none
+      transition all 1.2s cubic-bezier(.39, .575, .565, 1)
+      transform-origin bottom right
+      filter blur(8px)
+      opacity .6
+
+    .rss-plan-info-group
+      position relative
+      margin 0 0 26px 30px
+      color var(--sco-white)
+
+      .rss-plan-title
+        font-size 36px
+        font-weight 700
+        width fit-content
+        line-height 1
+
+      .rss-plan-info
+        width fit-content
+        opacity .6

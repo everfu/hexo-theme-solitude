@@ -1,0 +1,377 @@
+#console
+  display flex
+  position fixed
+  width 100vw
+  height 100vh
+  top 0
+  left 0
+  z-index 9999
+  justify-content center
+  opacity 0
+  transition .3s ease-out
+  flex-direction column
+  align-items center
+  pointer-events none
+  -webkit-user-select none
+
+  &.show
+    opacity 1
+    pointer-events all
+
+  &.show .close-btn i
+    transform rotate(0)
+
+  .console-card-group
+    display flex
+    justify-content space-between
+    align-items center
+    margin 0 30px
+    transform translateY(20px)
+    transition .3s
+    max-width 1400px
+
+    +maxWidth1300()
+      justify-content center
+
+    +maxWidth768()
+      display none
+
+    +maxHeight800()
+      display none
+
+  &.show
+    .console-card-group
+      transform translateY(0)
+      opacity 1
+      transition-delay .1s
+
+  .console-card-group-left
+    margin-right .5rem
+    width 40%
+    height 100%
+
+    +maxWidth1300()
+      display none
+
+  .console-card-group-right
+    display flex
+    flex-direction column
+    justify-content center
+    height 100%
+    width 60%
+    overflow hidden
+
+    +maxWidth1300()
+      width 100%
+      margin 0
+
+  .console-card
+    background var(--sco-maskbg)
+    border-radius 12px
+    overflow hidden
+    border var(--style-border)
+    box-shadow var(--sco-shadow-border)
+    padding 40px
+
+  .console-card.tags
+    height calc(100% - 172px)
+
+  .console-mask
+    background var(--sco-maskbgdeep)
+    backdrop-filter saturate(180%) blur(20px)
+    -webkit-backdrop-filter blur(20px)
+    width 100vw
+    height 100vh
+    top 0
+    left 0
+    position absolute
+    z-index -1
+    -webkit-backface-visibility hidden
+    -webkit-transform-style preserve-3d
+    transform translateZ(0)
+
+  &.show
+    .console-mask
+      backdrop-filter saturate(180%) blur(20px)
+      -webkit-backdrop-filter blur(20px)
+      transform translateZ(0)
+      animation .6s ease 0s 1 normal none running to_show
+
+  .author-content-item-tips
+    opacity .8
+    font-size .6rem
+    margin-bottom .5rem
+
+  .author-content-item-title
+    font-size 36px
+    font-weight 700
+    line-height 1
+
+  .aside-list-item
+    .thumbnail
+      display flex
+      align-items center
+
+    &:hover
+      .thumbnail
+        color var(--sco-white)
+
+    .content
+      display flex
+      flex-direction column
+      height 100%
+      margin-top .5rem
+
+      .comment
+        -webkit-line-clamp 2
+        display -webkit-box
+        overflow hidden
+        -webkit-box-orient vertical
+        line-height 24px
+        font-size 14px
+
+        &::before
+          content ''
+          width 100%
+          height 100%
+          position absolute
+          top 0
+          left 0
+
+      &:hover
+        .comment
+          color var(--sco-white)
+
+      time
+        font-size 12px
+        color var(--sco-secondtext)
+        margin-top auto
+
+      &:hover
+        time
+          color var(--sco-white)
+
+  .aside-list
+    display flex
+    flex-wrap wrap
+    flex-direction row
+    justify-content space-between
+    margin-top 1.5rem
+
+  .button-group
+    display flex
+    margin 1rem auto 0 auto
+    justify-content center
+    width fit-content
+
+    .console-btn-item
+      width 60px
+      height 60px
+      transition .3s
+      cursor pointer
+
+      a.darkmode_switchbutton
+        [data-theme="dark"] &
+          background var(--sco-orange)
+          color var(--sco-white)
+  .button-group
+    .console-btn-item
+      &:not(:last-child)
+        margin-right .5rem
+
+      &:hover
+        a
+          background var(--sco-main)
+
+      a
+        width 100%
+        height 100%
+        background var(--sco-card-bg)
+        border var(--style-border)
+        border-radius 60px
+        display flex
+        align-items center
+        justify-content center
+        color var(--sco-fontcolor)
+
+        i
+          font-size 1rem
+
+      &.on
+        a
+          background var(--sco-orange)
+          color var(--sco-white)
+          transition .3s
+
+      &:not(.on)
+        a:hover
+          background var(--sco-main)
+
+      &:hover
+        a
+          color var(--sco-white)
+
+  .console-card.tags
+    .card-tag-cloud
+      margin-top 1.5rem
+      display flex
+      flex-wrap wrap
+
+      a
+        color var(--sco-fontcolor)
+        margin 6px 4px
+        padding 2px 8px
+        border-radius 8px
+        background var(--sco-card-bg)
+        border var(--style-border)
+        font-size 14px
+        font-weight 700
+
+        &:hover
+          background var(--sco-main)
+          color var(--sco-white)
+
+        sup
+          opacity .6
+
+  .close-btn
+    width 100%
+    height 60px
+    position fixed
+    right max('calc((100% - 1400px) / 2)', someValue)
+    top 0
+    font-size 35px
+    color var(--sco-fontcolor)
+    cursor pointer
+    transition .3s
+    display flex
+    align-items center
+    justify-content center
+    max-width 1400px
+
+    i
+      font-size 32px
+      margin-right 1.5rem
+      margin-left auto
+      line-height 1
+      transform rotate(-30deg)
+      transition .6s
+
+    i:hover
+      color var(--sco-hovertext)
+      background var(--sco-main-op)
+      border-radius 32px
+
+  .console-card.history
+    margin-top 8px
+    padding 0
+    background 0 0
+    box-shadow none
+    border none
+    overflow hidden
+    border-radius 0
+
+    .item-headline
+      display none
+
+  .console-card.history
+    .card-archive-list
+      display flex
+      flex-direction row
+      justify-content space-between
+      flex-wrap wrap
+      height 164px
+
+      li.card-archive-list-item
+        flex 0 0 24%
+
+      .card-archive-list-link
+        border-radius 8px
+        margin-top 8px
+        display flex
+        flex-direction column
+        align-content space-between
+        border var(--style-border)
+        transition all .3s ease 0s
+        background var(--sco-maskbgdeep)
+        padding 8px 16px
+
+        &:hover
+          background var(--sco-main)
+          color var(--sco-white)
+          cursor pointer
+
+        .card-archive-list-date
+          font-size 14px
+          opacity .6
+
+        .card-archive-list-count-group
+          display flex
+          flex-direction row
+
+          .card-archive-list-count
+            width auto
+            text-align left
+            font-size 1.1rem
+            line-height .9
+            margin-right 2px
+            font-weight 700
+
+          .card-archive-list-count-unit
+            width auto
+            text-align left
+            font-size 14px
+            font-weight 700
+
+  #card-newest-comments
+    height 100%
+
+  #consoleMusic
+    +maxWidth1300()
+      display none
+
+    +maxHeight800()
+      display none
+
+  #consoleCommentBarrage
+    +maxWidth1300()
+      display none
+
+    +maxHeight800()
+      display none
+
+  #consoleHideAside
+    +maxWidth768()
+      display none
+
+#card-newest-comments
+  .aside-list-item
+    background: var(--sco-card-bg)
+    border-radius: 12px
+    border: var(--style-border)
+    padding: 12px 16px
+    width: 49%
+    display: flex
+    flex-direction: column
+    height: 150px
+    transition: .3s
+    position: relative
+
+    &:hover
+      background: var(--sco-main)
+      color: var(--sco-white)
+
+    &:not(:last-child)
+      margin-bottom: .5rem
+
+    .thumbnail img
+      width: 20px
+      height: 20px
+      margin-right: 8px
+      border-radius: 20px
+
+    .name
+      text-overflow: ellipsis
+      overflow: hidden
+      white-space: nowrap
+      font-weight: 700

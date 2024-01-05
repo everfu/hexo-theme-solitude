@@ -1,6 +1,6 @@
 div#algolia-search
     div.search-dialog
-        div.search-dialog__title#algolia-search-title= "搜索"
+        div.search-dialog__title#algolia-search-title=__('nav.search')
         div#algolia-input-panel
             div#algolia-search-input
         div#search-results
@@ -8,7 +8,8 @@ div#algolia-search
         div#algolia-tips
             div#algolia-pagination
             div#algolia-stats
-            #algolia-poweredBy
+            i.scoicon.sco-algolia-fill
+            span.algolia-tips-text='Algolia 提供搜索服务'
         span.search-close-button
             i.scoicon.sco-close-fill
     div#search-mask
