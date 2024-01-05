@@ -1,0 +1,107 @@
+name: Bug 报告 🐛
+description: 本项目仅对最新版本进行维护，使用老版本出现问题的，请先升级到最新版本或使用dev版本，升级完后如果发现bug依然存在，请继续填写此issue。
+labels: ['status: needs check']
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ### ⚠️ 前置确认
+        1. 请确保阅读过本主题GitHub项目说明
+        2. 查询主题使用文档的相关内容和正确配置
+        3. 使用的是Solitude主题最新版本
+        4. 执行`npm ls -dept 0`检查是否已安装对应插件
+        5. [FAQS](https://docs.wzsco.top/FAQ.html) 中无类似问题
+  - type: checkboxes
+    attributes:
+      label: 前置确认
+      options:
+        - label: 我确认我运行的是最新版本的主题，并且安装了所需的依赖，在[FAQS](https://docs.wzsco.top/FAQ.html)中也未找到类似问题。
+          required: true
+  - type: checkboxes
+    attributes:
+      label: ⚠️ 搜索issues中是否已存在类似问题
+      description: >
+        请在 [历史issue](https://github.com/DuoSco/Hexo-theme-solitude/issues) 中清空输入框，搜索你的问题
+        或相关日志的关键词来查找是否存在类似问题。
+      options:
+        - label: 我已经搜索过issues和disscussions，没有跟我遇到的问题相关的issue
+          required: true
+  - type: markdown
+    attributes:
+      value: |
+        请在上方的`title`中填写你对你所遇到问题的简略总结，这将帮助其他人更好的找到相似问题，谢谢❤️。
+  - type: dropdown
+    attributes:
+      label: 操作系统类型?
+      description: >
+        请选择你运行程序的操作系统类型。
+      options:
+        - Windows
+        - MacOS
+    validations:
+      required: true
+  - type: dropdown
+    attributes:
+      label: 运行的Hexo版本是?
+      description: |
+        请选择你运行的`Hexo`版本。
+        注意：在`Hexo 7.0+`版本中，Node的最低支持的版本为：14.0.0。
+        你可以前往 [Node.js 版本限制](https://hexo.io/zh-cn/docs/#Node-js-%E7%89%88%E6%9C%AC%E9%99%90%E5%88%B6)进行查看详情。
+      options:
+        - Hexo 7.0.0
+        - Hexo 6.3.0及以下
+    validations:
+      required: true
+  - type: dropdown
+    attributes:
+      label: 你所使用的主题版本是稳定/最新?
+      description: |
+        **注意：新手小白推荐使用稳定版本（main分支）。**
+        具有一定的排错能力且具备开发知识的同学可以尝试使用开发版（dev分支）进行体验。
+      options:
+        - 稳定版（main）
+        - 开发板 (dev)
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: 问题描述 😯
+      description: 详细描述出现的问题，或提供有关截图。
+  - type: textarea
+    attributes:
+      label: 终端日志 📒
+      description: |
+        在此处粘贴终端运行日志，这会帮助我们更好的分析问题。
+        建议使用`hexo s -debug`进行调试输出，打印出的日志会更有帮助。
+
+        <details>
+        <summary><i>示例</i></summary>
+        ERROR Process failed: layout/index.pug
+        Error: ENOENT: no such file or directory, open 'E:\OC\Desktop\iCat\Solitude\themes\solitude\layout\includes\widgets\home\bbTimeList.pug'
+            at E:\OC\Desktop\iCat\Solitude\themes\solitude\layout\index.pug line 6
+            at Object.openSync (node:fs:590:3)
+            at Object.readFileSync (node:fs:458:35)
+            at Function.read (E:\OC\Desktop\iCat\Solitude\node_modules\pug-load\index.js:85:13)
+            at Object.read (E:\OC\Desktop\iCat\Solitude\node_modules\pug\lib\index.js:164:25)
+            at E:\OC\Desktop\iCat\Solitude\node_modules\pug-load\index.js:28:25
+            at walkAST (E:\OC\Desktop\iCat\Solitude\node_modules\pug-walk\index.js:26:18)
+            at E:\OC\Desktop\iCat\Solitude\node_modules\pug-walk\index.js:112:20
+            at Array.reduce (<anonymous>)
+            at walkAndMergeNodes (E:\OC\Desktop\iCat\Solitude\node_modules\pug-walk\index.js:111:18)
+            at walkAST (E:\OC\Desktop\iCat\Solitude\node_modules\pug-walk\index.js:40:19)
+            at walkAST (E:\OC\Desktop\iCat\Solitude\node_modules\pug-walk\index.js:69:26)
+            at E:\OC\Desktop\iCat\Solitude\node_modules\pug-walk\index.js:112:20
+            at Array.reduce (<anonymous>)
+            at walkAndMergeNodes (E:\OC\Desktop\iCat\Solitude\node_modules\pug-walk\index.js:111:18)
+            at walkAST (E:\OC\Desktop\iCat\Solitude\node_modules\pug-walk\index.js:40:19)
+            at walkAST (E:\OC\Desktop\iCat\Solitude\node_modules\pug-walk\index.js:51:21)
+            at E:\OC\Desktop\iCat\Solitude\node_modules\pug-walk\index.js:112:20
+            at Array.reduce (<anonymous>)
+            at walkAndMergeNodes (E:\OC\Desktop\iCat\Solitude\node_modules\pug-walk\index.js:111:18)
+            at walkAST (E:\OC\Desktop\iCat\Solitude\node_modules\pug-walk\index.js:40:19)
+            at E:\OC\Desktop\iCat\Solitude\node_modules\pug-walk\index.js:112:20
+            at Array.reduce (<anonymous>)
+        INFO  Hexo is running at http://localhost:4000/ . Press Ctrl+C to stop.
+        </details>
+      value: |
+        <此处粘贴终端日志>
