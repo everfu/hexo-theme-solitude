@@ -19,6 +19,7 @@
     &::before
       content "\e082"
       font-family scoicon
+      cursor pointer
 
     &:hover
       opacity 1
@@ -55,7 +56,7 @@
     max-width 90%
     max-height 450px
 
-  a
+  a:not(.headerlink)
     border-bottom 2px dotted var(--sco-lighttext)
     color var(--sco-fontcolor)
     font-weight 700
