@@ -704,22 +704,19 @@ cdn:
   # tip：目前主题还在更新，请注意群内通知。
   prefix: # cdn前缀 https://cdn.jsdelivr.net/gh/用户名/仓库名@版本号/
   head:
-    scoicon: https://cdn3.codesign.qq.com/icons/7pOrz0WXB5ZWJPX/latest/iconfont.css
-    aplayercss: https://cdn.bootcdn.net/ajax/libs/aplayer/1.10.1/APlayer.min.css
-    swipercss: https://cdn.bootcdn.net/ajax/libs/Swiper/9.2.4/swiper-bundle.min.css
-    twikoojs: https://cdn.bootcdn.net/ajax/libs/twikoo/1.6.20/twikoo.all.min.js
-    instantsearch: https://cdn.bootcdn.net/ajax/libs/instantsearch.js/4.9.1/instantsearch.production.min.js
-    algoliajs: https://cdn.bootcdn.net/ajax/libs/algoliasearch/4.9.3/algoliasearch-lite.umd.min.js
-    pacejs: https://cdn.bootcdn.net/ajax/libs/pace/1.2.4/pace.min.js
-    echartsjs: https://cdn.bootcdn.net/ajax/libs/echarts/5.4.2/echarts.min.js
-    lunrjs: https://cdn.bootcdn.net/ajax/libs/lunr.js/2.3.9/lunr.min.js
-    walinecss: https://cdn.staticfile.org/waline/2.15.8/waline.min.css
-    walinejs: https://cdn.staticfile.org/waline/2.15.8/waline.min.js
+    scoicon: https://cdn2.codesign.qq.com/icons/7pOrz0WXB5ZWJPX/latest/iconfont.css
+    aplayercss: https://cdn.staticfile.org/aplayer/1.10.1/APlayer.min.css
+    swipercss: https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-M/Swiper/8.0.6/swiper-bundle.min.css
+    twikoojs: https://cdn.staticfile.org/twikoo/1.6.26/twikoo.min.js
+    instantsearch: https://cdn.staticfile.org/instantsearch.js/4.56.10/instantsearch.production.min.js
+    algoliajs: https://cdn.staticfile.org/algoliasearch/4.20.0/algoliasearch-lite.umd.min.js
+    pacejs: https://cdn.staticfile.org/pace/1.2.4/pace.min.js
+    echartsjs: https://cdn.staticfile.org/echarts/5.4.3/echarts.min.js
   body:
-    swiperjs: https://cdn.bootcdn.net/ajax/libs/Swiper/9.2.4/swiper-bundle.min.js
-    busuanzijs: https://cdn.bootcdn.net/ajax/libs/busuanzi/2.3.0/bsz.pure.mini.js
-    pjaxjs: https://cdn.bootcdn.net/ajax/libs/pjax/0.2.8/pjax.min.js
-    aplayerjs: https://cdn.bootcdn.net/ajax/libs/aplayer/1.10.1/APlayer.min.js
-    metingjs: https://cdn.bootcdn.net/ajax/libs/meting/2.0.1/Meting.min.js
-    katexcss: https://cdn.bootcdn.net/ajax/libs/KaTeX/0.16.6/katex.min.css
-    katexjs: https://cdn.bootcdn.net/ajax/libs/KaTeX/0.16.6/katex.min.js
+    swiperjs: https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-M/Swiper/8.0.6/swiper-bundle.min.js
+    busuanzijs: https://cdn.staticfile.org/busuanzi/2.3.0/bsz.pure.mini.min.js
+    pjaxjs: https://cdn.staticfile.org/pjax/0.2.8/pjax.min.js
+    aplayerjs: https://cdn.staticfile.org/aplayer/1.10.1/APlayer.min.js
+    metingjs: https://cdn.staticfile.org/meting/2.0.1/Meting.min.js
+    katexcss: https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/KaTeX/0.15.2/katex.min.css
+    katexjs: https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-M/KaTeX/0.15.2/katex.min.js

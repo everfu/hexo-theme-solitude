@@ -141,11 +141,7 @@ window.addEventListener("load", () => {
         },
     });
 
-    const powerBy = instantsearch.widgets.poweredBy({
-        container: "#algolia-tips > #algolia-poweredBy",
-    });
-
-    search.addWidgets([configure, searchBox,stats, hits,powerBy, pagination]); // add the widgets to the instantsearch instance
+    search.addWidgets([configure, searchBox,stats, hits, pagination]);
 
     search.start();
 
