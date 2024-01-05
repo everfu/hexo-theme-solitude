@@ -14,25 +14,14 @@ figure
     &:hover
       color var(--sco-lighttext)
 
-  .copy-btn svg
-    width 1.5em
-    height 1.5em
-    vertical-align middle
-    fill currentColor
-    overflow hidden
-    padding-right 5px
-
-  .copy-btn svg:hover
-    color var(--sco-lighttext)
-
   &.highlight
-    background-color var(--sco-card-bg)
+    background-color var(--sco-hl-bg)
     color var(--sco-fontcolor)
     border var(--style-border-always)
     overflow hidden
     border-radius 8px 8px 4px 4px
     position relative
-    margin 0 0 1rem
+    margin .5rem 0 .5rem
     padding 0
     line-height 1.6
 
@@ -50,13 +39,12 @@ figure
       min-height 1.2rem
       height 2.15em
       font-size 16px
-      background var(--sco-secondbg)
+      background var(--sco-hltools-bg)
       border-bottom var(--style-border-always)
       color var(--sco-fontcolor)
 
       .sco-copy-fill
         position absolute
-        right .7rem
         cursor pointer
         transition color .2s
         font-size 18px
@@ -70,12 +58,8 @@ figure
         cursor pointer
         transition transform .3s ease 0s
 
-        & + .code-lang
-          left 1.7rem
-
         &.closed
           transition all .3s ease 0s
-          transform rotate(-90deg)
 
       .code-lang
         text-transform capitalize
@@ -85,13 +69,12 @@ figure
         user-select none
 
     .code-expand-btn
-      background: var(--sco-secondbg)
-      transition: .3s
-      backdrop-filter: saturate(180%) blur(20px)
-      -webkit-backdrop-filter: blur(20px)
-      transform: translateZ(0)
-      border-top: var(--style-border-always)
-      position: absolute
+      background var(--sco-hltools-bg)
+      transition .3s
+      backdrop-filter saturate(180%) blur(20px)
+      transform translateZ(0)
+      border-top var(--style-border-always)
+      position absolute
       bottom 0
       z-index 10
       width 100%
@@ -155,38 +138,7 @@ figure
       &.marked
         background-color: rgba(97, 97, 97, .314)
 
-    .deletion
-      color #bf42bf
+@import "theme"
+@import "diff"
 
-    .addition
-      color #105ede
-
-    .meta
-      color #c792ea
-
-    .comment
-      color #969896
-
-    .attribute, .css .class, .css .id, .css .pseudo, .html .doctype, .regexp, .ruby .constant, .tag .name, .variable, .xml .doctype, .xml .pi, .xml .tag .title
-      color var(--sco-red)
-
-    .tag
-      color var(--sco-pink)
-
-    .command, .constant, .literal, .number, .params, .preprocessor
-      color var(--sco-orange)
-
-    .built_in
-      color var(--sco-yellow)
-
-    .css .rules .attribute, .formula, .header, .inheritance, .number, .ruby .class .title, .ruby .symbol, .special, .string, .value, .xml .cdata
-      color var(--sco-green)
-
-    .css .hexcolor, .keyword, .title
-      color #3eb1df
-
-    .coffeescript .title, .function
-      color var(--sco-blue)
-
-    .javascript .function, .tag .attr
-      color #c792ea
+@import "theme/" + hexo-config('hightlight.theme')

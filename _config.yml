@@ -469,9 +469,14 @@ lightbox: false
 
 #代码高亮增强
 hightlight:
-  enable: false # 是否开启
+  enable: false
   # 代码块行高限制
   hightlimit: 200
+  copy: true # 是否开启复制按钮
+  expand: false # 是否默认展开
+  # 代码块样式
+  theme: default # default: 默认 / mac
+  color: default # default: 默认  / vscode / solarized-dark / solarized-light / dracula / monokai
 
 # 加载动画
 loading:

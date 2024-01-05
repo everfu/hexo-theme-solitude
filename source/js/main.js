@@ -903,13 +903,13 @@ let sco = {
 class hightlight {
     static createEle(langEl, item) {
         const fragment = document.createDocumentFragment()
-        const highlightCopyEle = '<i class="scoicon sco-copy-fill"></i>'
+        const highlightCopyEle = GLOBAL_CONFIG.hightlight.copy ? '<i class="scoicon sco-copy-fill"></i>' : '<i></i>'
         const highlightExpandEle = '<i class="scoicon sco-arrow-down expand"></i>'
 
         const hlTools = document.createElement('div')
         hlTools.className = `highlight-tools`
         hlTools.innerHTML = highlightExpandEle + langEl + highlightCopyEle
-        let expand = true
+        let expand = GLOBAL_CONFIG.hightlight.expand
         hlTools.children[0].addEventListener('click', (e) => {
             if (expand) {
                 hlTools.children[0].classList.add('closed')
@@ -946,10 +946,12 @@ class hightlight {
             ele.addEventListener('click', (e) => {
                 $table.setAttribute('style', `height: ${itemHeight}px`)
                 e.target.classList.add('expand-done')
+                e.target.setAttribute('style', 'display:none')
             })
             fragment.appendChild(ele)
         }
         item.insertBefore(fragment, item.firstChild)
+        hlTools.children[0].click()
     }
 
     static init() {
