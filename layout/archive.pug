@@ -3,7 +3,7 @@ extends includes/layout.pug
 block content
     main.layout#content-inner
         #archive
-            .article-sort-title #{__('page.archives')}<sup>#{page.posts.find({ parent: { $exists: false } }).length}</sup>
+            .article-sort-title #{__('page.archives')}<sup>#{site.posts.find({ parent: { $exists: false } }).length}</sup>
             .article-sort
                 include includes/mixins/articleSort
             include includes/mixins/pagination
