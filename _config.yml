@@ -498,6 +498,13 @@ theme_color:
   light_op_deep: '#4259efdd' # 亮色模式透明深色
   light_none: '#4259ef01' # 亮色模式透明无色
 
+# 主题显示模式调整
+# 主题支持三种模式：自动切换、暗色模式、亮色模式
+# --------------------------------------
+display_mode:
+  type: auto # auto: 自动切换 / dark: 暗色模式 / light: 亮色模式
+  dark_universe: true # 暗色模式背景星空
+
 # 第三方设置
 thirdparty:
   # 字数统计

@@ -459,21 +459,6 @@ let sco = {
         window.ViewImage && window.ViewImage.init("#article-container img:not(.flink-avatar), .bber-content-img img, #album_detail img, #equipment img, #twikoo .tk-content img:not(.tk-owo-emotion)");
     },
     /**
-     * 初始化
-     */
-    initTheme: function () {
-        let isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
-        const cachedMode = saveToLocal.get('theme');
-        if (cachedMode === undefined) {
-            const nowMode =
-                isDarkMode ? 'dark' : 'light'
-            document.documentElement.setAttribute('data-theme', nowMode);
-            saveToLocal.set('theme', nowMode, 0.2);
-        } else {
-            document.documentElement.setAttribute('data-theme', cachedMode);
-        }
-    },
-    /**
      *
      */
     reflashEssayWaterFall: function () {
@@ -1034,8 +1019,6 @@ window.refreshFn = () => {
     GLOBAL_CONFIG.music.enable && !document.querySelector('#Music-page') && document.removeEventListener('keydown', scoMusic.setKeydown)
     GLOBAL_CONFIG.ai.enable && PAGE_CONFIG.page === "post" && ScoAI.init()
 }
-
-sco.initTheme()
 
 document.addEventListener('DOMContentLoaded', function () {
     window.refreshFn()

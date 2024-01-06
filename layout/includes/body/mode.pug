@@ -1,0 +1,40 @@
+case theme.display_mode.type
+    when "auto"
+        script.
+            initTheme = () => {
+                let isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+                const cachedMode = saveToLocal.get('theme');
+                if (cachedMode === undefined) {
+                    const nowMode =
+                        isDarkMode ? 'dark' : 'light'
+                    document.documentElement.setAttribute('data-theme', nowMode);
+                } else {
+                    document.documentElement.setAttribute('data-theme', cachedMode);
+                }
+            }
+            initTheme()
+    when "dark"
+        script.
+            initTheme = () => {
+                const cachedMode = saveToLocal.get('theme');
+                if (cachedMode === undefined)
+                    document.documentElement.setAttribute('data-theme', 'dark');
+                else
+                    document.documentElement.setAttribute('data-theme', cachedMode);
+            }
+            initTheme()
+    when "light"
+        script.
+            initTheme = () => {
+                const cachedMode = saveToLocal.get('theme');
+                if (cachedMode === undefined)
+                    document.documentElement.setAttribute('data-theme', 'light');
+                else
+                    document.documentElement.setAttribute('data-theme', cachedMode);
+            }
+            initTheme()
+
+if theme.display_mode.dark_universe
+    script(src=cdn_url_for("/lib/universe.min.js"))
+    script.
+        dark()

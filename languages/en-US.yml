@@ -89,7 +89,7 @@ search:
 
 head:
   noscript: Please enable JavaScript to view the site
-  console: 'Program: Hexo | Theme: Hexo-Theme-Solitude | Author: WangZhuoSco、YiFeng | Github: https://github.com/DuoSco/Hexo-theme-solitude | Version: v1.3.0 😄'
+  console: 'Program: Hexo | Theme: Hexo-Theme-Solitude | Author: WangZhuoSco、YiFeng | Github: https://github.com/DuoSco/Hexo-theme-solitude | Version: v1.3.1 😄'
 
 aside:
   postcount: 'Posts :'

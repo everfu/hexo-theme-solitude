@@ -5,6 +5,7 @@ html(lang=config.language, data-theme="light")
     head
         include ./head.pug
     body#body(data-type=page.type)
+        canvas#universe
         // loading
         if theme.loading.fullpage
             include ./loading.pug
