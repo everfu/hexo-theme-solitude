@@ -9,6 +9,16 @@
                 .tips!= page.rightend
         if page.rightbtn
             .banner-button-group
-                a.banner-button(onclick="pjax.loadUrl(\"" + page.rightbtnlink + "\")")
-                    i.scoicon.sco-right-btn-fill
-                    span.banner-button-text= page.rightbtn
+                case page.rightbtnlink.startsWith('/')
+                    when true
+                        a.banner-button(onclick="pjax.loadUrl(\"" + page.rightbtnlink + "\")")
+                            i.scoicon.sco-right-btn-fill
+                            span.banner-button-text= page.rightbtn
+                    when false
+                        script.
+                            function GoTodayCard() {
+                                window.open("#{page.rightbtnlink}", "_blank");
+                            }
+                        a.banner-button(onclick="GoTodayCard()")
+                            i.scoicon.sco-right-btn-fill
+                            span.banner-button-text= page.rightbtn
