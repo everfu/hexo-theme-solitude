@@ -15,10 +15,6 @@
                             i.scoicon.sco-right-btn-fill
                             span.banner-button-text= page.rightbtn
                     when false
-                        script.
-                            function GoTodayCard() {
-                                window.open("#{page.rightbtnlink}", "_blank");
-                            }
-                        a.banner-button(onclick="GoTodayCard()")
+                        a.banner-button(href=page.rightbtnlink, target="_blank")
                             i.scoicon.sco-right-btn-fill
                             span.banner-button-text= page.rightbtn

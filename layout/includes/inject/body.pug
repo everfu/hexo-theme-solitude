@@ -1,6 +1,10 @@
 - cdn = theme.cdn.body
 - page.type = is_post() ? 'post' : page.type
 
+div
+    script(src=cdn_url_for("/js/utils.js"))
+    script(src=cdn_url_for("/js/main.js"))
+
 script(src=url_for(cdn.pjaxjs))
 if theme.lazyload.enable
     script(src=cdn_url_for("/lib/lazyload.min.js"))
@@ -22,6 +26,7 @@ div#js-pjax
                     sco.reflashEssayWaterFall();
                 }
             }), 500);
+            sco.reflashEssayWaterFall();
     if theme.thirdparty.busuanzi && (theme.aside.siteinfo.uv || theme.aside.siteinfo.pv || theme.thirdparty.busuanzi.usecomment === false)
         script(async src=url_for(cdn.busuanzijs))
 
