@@ -3,6 +3,7 @@
         .flink-list-item
             if item.tag
                 span.site-card-tag(class=item.color)= item.tag
+                    i.light
             a.cf-friends-link(href=url_for(item.link), title=item.name)
                 img.flink-avatar.cf-friends-avatar(alt=item.name, src=item.avatar + item_suffix)
                 .flink-item-info

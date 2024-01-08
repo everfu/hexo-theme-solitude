@@ -3,6 +3,7 @@
 
 .flink#article-container
   margin-top 1rem
+
   #friendlink_checkboxs input
     margin-right 4px
 
@@ -26,6 +27,16 @@
     border-radius 12px 0 12px 0
     transition .3s
     font-size .6rem
+    overflow hidden
+
+    .light
+      cursor pointer
+      position absolute
+      top 0
+      width 100px
+      height 50px
+      background-image -webkit-linear-gradient(0deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, .5), rgba(255, 255, 255, 0))
+      animation light_tag 4s both infinite
 
     &.vip
       background-color var(--sco-vip)
@@ -145,6 +156,7 @@
       &:hover
         border var(--style-border-hover)
         box-shadow var(--sco-shadow-main)
+
         .site-card-tag
           left: -80px
 
@@ -154,6 +166,7 @@
           img
             transform scale(1.1)
             filter brightness(.3)
+            cursor pointer
 
         a
           border-bottom 2px solid var(--sco-none)
@@ -278,6 +291,7 @@
 
       &:hover
         background var(--sco-theme)
+
         .site-card-tag
           left: -50px
 
@@ -303,3 +317,11 @@
             color var(--sco-card-bg)
             overflow hidden
             width 100%
+
+@keyframes light_tag
+  0%
+    transform skewx(0)
+    left -150px
+  99%
+    transform skewx(-25deg)
+    left 50px

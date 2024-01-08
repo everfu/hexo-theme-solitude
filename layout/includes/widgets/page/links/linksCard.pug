@@ -3,6 +3,7 @@
         .site-card
             if item.tag
                 span.site-card-tag(class=item.color)= item.tag
+                    i.light
             a.img(title=item.name, href=url_for(item.link))
                 img.flink-avatar(src=item.topimg + topimg_suffix, alt=item.name)
                 .img-alt.is-center= item.name

@@ -9,8 +9,8 @@ div#sco-footer-bar
     div.footer-bar-description= __('footer.description').replace(/\$\{title}/, config.title + " - " + config.subtitle)
     a.footer-bar-link(href="/")= __('footer.learnmore')
 div#footer_deal
-    - var leftInfo = theme.footer && theme.footer.information && theme.footer.information.left ? theme.footer.information.left : {}
-    - var rightInfo = theme.footer && theme.footer.information && theme.footer.information.right ? theme.footer.information.right : {}
+    - var leftInfo = theme.footer && theme.footer.information && theme.footer.information.left || {}
+    - var rightInfo = theme.footer && theme.footer.information && theme.footer.information.right || {}
 
     each value, i in leftInfo
         a.deal_link(href=url_for(value.url), title=i)
@@ -49,21 +49,22 @@ div#footer-bar
                 div.copyright © #{moment(theme.aside.siteinfo.runtime).year()} - #{new Date().getFullYear()} By&nbsp;
                     a.footer-bar-link(href="/")= config.author
         div.footer-bar-right
-            if theme.footer.rss.enable
-                a.footer-bar-link(href="/rss/", target="_self")= _p('footer.rss')
+            if theme.footer.rss
+                a.footer-bar-link(href=theme.footer.rss)= _p('footer.rss')
             a.footer-bar-link(href="https://github.com/DuoSco/hexo-theme-solitude")= _p('footer.theme')
             if theme.site && theme.site.icp
-                a.footer-bar-link(href="https://beian.miit.gov.cn/#/Integrated/index")= theme.site.icp
-            a.footer-bar-link.cc(href=theme.footer.license.url)
+                a.footer-bar-link(href=theme.site.icp_url || "https://beian.miit.gov.cn/#/Integrated/index")= theme.site.icp
+            a.footer-bar-link.cc(href=theme.footer.license)
                 i.scoicon.sco-copyright-line
                 i.scoicon.sco-creative-commons-by-line
                 i.scoicon.sco-creative-commons-nc-line
                 i.scoicon.sco-creative-commons-nd-line
-div.needEndHide#cookies-window
-    div.cookies-window-title= __('cookies.title')
-    div.cookies-window-content
-        span.cookies-tip= __('cookies.tip')
-        a.cookies-link(href="/privacy/", title=_p('cookies.privacy'))
-            i.scoicon.sco-right-btn-fill
+if theme.footer.privacy
+    div.needEndHide#cookies-window
+        div.cookies-window-title= __('cookies.title')
+        div.cookies-window-content
+            span.cookies-tip= __('cookies.tip')
+            a.cookies-link(href=theme.footer.privacy, title=_p('cookies.privacy'))
+                i.scoicon.sco-right-btn-fill
 if theme.comment.commentBarrage
     div.comment-barrage.needEndHide

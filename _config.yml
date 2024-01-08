@@ -24,6 +24,8 @@ site:
   icon: https://bu.dusays.com/2023/11/08/654af68b25bb8.jpg
   # ICP 例如：湘ICP备2023015327号
   icp:
+  # ICP链接 例如：http://www.beian.miit.gov.cn/
+  icp_url:
 
 # 导航栏
 nav:
@@ -331,21 +333,12 @@ footer:
   # 底部随机友链
   # tip：此处的友链是随机显示的，不是固定的
   randomlink: false
+  # 隐私助手
+  privacy: # /privacy/
   # rss
-  # tip：此部分需要配置rss页面显示
-  rss:
-    enable: false # 是否显示
-    # 微信公众号链接
-    wechatOA:
-    # 邮箱链接
-    emailOA:
-    # rss订阅链接
-    rssOA:
+  rss: # /rss/
   # 版权
-  # tip：就是页脚的四个版权小图标点击跳转
-  license:
-    # 点击跳转链接
-    url: /copyright/
+  license: # /license/
 
 # 页面页默认设置
 page:
