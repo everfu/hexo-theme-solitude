@@ -2,16 +2,13 @@
     each item in data.link_list
         .site-card
             if item.tag
-                if item.vip
-                    span.site-card-tag.vip= item.tag
-                else
-                    span.site-card-tag= item.tag
+                span.site-card-tag(class=item.color)= item.tag
             a.img(title=item.name, href=url_for(item.link))
-                img.flink-avatar(src=item.topimg, alt=item.name)
+                img.flink-avatar(src=item.topimg + topimg_suffix, alt=item.name)
                 .img-alt.is-center= item.name
             a.info.cf-friends-link(title=item.name, href=url_for(item.link))
                 .site-card-avatar
-                    img.flink-avatar.cf-friends-avatar(src=item.avatar, alt=item.name)
+                    img.flink-avatar.cf-friends-avatar(src=item.avatar + card_suffix, alt=item.name)
                     .img-alt.is-center= item.name
                 .site-card-text
                     span.title.cf-friends-name= item.name

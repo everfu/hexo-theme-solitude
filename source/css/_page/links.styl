@@ -14,6 +14,25 @@
     margin 0
     color var(--sco-secondtext)
 
+  .site-card-tag
+    position absolute
+    top 0
+    left 0
+    padding 4px 8px
+    background-color var(--sco-blue)
+    box-shadow var(--sco-shadow-blue)
+    color var(--sco-white)
+    z-index 1
+    border-radius 12px 0 12px 0
+    transition .3s
+    font-size .6rem
+
+    &.vip
+      background-color var(--sco-vip)
+
+    &.speed
+      background-color var(--sco-speed)
+
   .site-card-group
     padding 20px 0
     display flex
@@ -50,25 +69,6 @@
 
       +maxWidth600()
         width calc(50% - 16px)
-
-      .site-card-tag
-        position absolute
-        top 0
-        left 0
-        padding 4px 8px
-        background-color var(--sco-blue)
-        box-shadow var(--sco-shadow-blue)
-        color var(--sco-white)
-        z-index 1
-        border-radius 12px 0 12px 0
-        transition .3s
-        font-size .6rem
-
-        &.vip
-          background-color var(--sco-vip)
-
-        &.life
-          background-color var(--sco-life)
 
       .img
         -webkit-mask-image -webkit-radial-gradient(center, #fff, #000)
@@ -217,9 +217,6 @@
       +maxWidth600()
         width calc(100% - 12px)
 
-      .site-card-tag
-        display none
-
       a
         display flex
         width 100%
@@ -281,6 +278,8 @@
 
       &:hover
         background var(--sco-theme)
+        .site-card-tag
+          left: -50px
 
         a
           background 0 0

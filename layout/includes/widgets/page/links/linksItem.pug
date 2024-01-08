@@ -1,13 +1,10 @@
 .flink-list
     each item in data.link_list
         .flink-list-item
+            if item.tag
+                span.site-card-tag(class=item.color)= item.tag
             a.cf-friends-link(href=url_for(item.link), title=item.name)
-                if item.tag
-                    if item.vip
-                        span.site-card-tag.vip= item.tag
-                    else
-                        span.site-card-tag= item.tag
-                img.flink-avatar.cf-friends-avatar(alt=item.name, src=item.avatar)
+                img.flink-avatar.cf-friends-avatar(alt=item.name, src=item.avatar + item_suffix)
                 .flink-item-info
                     span.flink-item-name.cf-friends-name= item.name
                     span.flink-item-desc(title=item.descr)= item.descr
