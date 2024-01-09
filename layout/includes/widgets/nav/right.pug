@@ -1,7 +1,8 @@
-if theme.nav.right.travellings
-    .nav-button.only-home#travellings_button
-        a.site-page(href="https://www.travellings.cn/go.html", title=_p('nav.travellings'), target="_blank")
-            i.scoicon.sco-train-line
+- var custom = theme.nav.right.custom || []
+each item in custom
+    .nav-button(id=item.id)
+        a.site-page(href=item.url || 'javascript:void(0);', onclick=item.onclick, title=item.title || '')
+            i.scoicon(class=item.icon || '')
 if theme.nav.right.random
     .nav-button#randomPost_button
         a.site-page(onclick="toRandomPost()", title=_p('nav.randompost'), href="javascript:void(0);")

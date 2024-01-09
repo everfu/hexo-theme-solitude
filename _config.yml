@@ -98,10 +98,16 @@ nav:
 
   # 导航栏右侧快捷菜单
   # tip：只需填写true和false即可
-  right: # @todo 允许用户自定义
-    travellings: false   #开往
+  right:
     random: false        # 随机文章跳转
     console: false       #控制台
+    # 从左至右
+    custom:
+#      - name: 开往 - 友链接力
+#        url: https://www.travellings.cn/go.html
+#        icon: sco-train-line
+#        onclick:
+#        id: travellings_button
 
 # 首页顶部样式
 # tip：此内容为首页顶部的内容
