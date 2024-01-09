@@ -37,6 +37,26 @@
       display none
 
     .card-tag-cloud
+      max-height 500px
+      overflow hidden
+      position relative
+
+      &.all-tags
+        max-height none
+
+        &:after
+          display none
+
+      &:after
+        content ""
+        position absolute
+        bottom 0
+        left 0
+        right 0
+        height 150px
+        background-image linear-gradient(to top, var(--sco-card-bg), transparent)
+        pointer-events none
+
       a
         display inline-block
         padding 0 0.3rem
@@ -61,6 +81,20 @@
           border var(--style-border)
           margin-top 8px
           font-size 16px !important
+
+    a#more-tags-btn
+      width 100%
+      text-align center
+      background var(--sco-secondbg)
+      color var(--sco-fontcolor)
+      border-radius 8px
+      display flex
+      justify-content center
+      font-size 14px
+      user-select none
+      padding 4px 0
+      border var(--style-border-always)
+      box-shadow var(--heo-shadow-border)
 
   .card-archives
     ul.card-archive-list

@@ -264,6 +264,8 @@ aside:
   tags:
     # 是否显示标签
     enable: false
+    # 显示标签数量，当高于标签总数时，显示全部标签按钮
+    limit: 20
     # 高亮显示
     highlight: false
     # 高亮显示标签列表
