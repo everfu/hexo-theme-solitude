@@ -217,15 +217,15 @@ aside:
     content2: 相信你可以在这里找到对你有用的知识和教程。
     # 个人信息卡片底部的小图标，按照例子填写
     information:
-      # 悬停显示文字
-      Github:
-        # 图标
-        icon: scoicon sco-github-line
-        # 跳转链接
-        url: https://github.com/DuoSco/Hexo-Theme-slitude
-      Bilibili:
-        icon: scoicon sco-bilibili-line
-        url: https://space.bilibili.com/1329819902
+#      # 悬停显示文字
+#      Github:
+#        # 图标
+#        icon: scoicon sco-github-line
+#        # 跳转链接
+#        url: https://github.com/DuoSco/Hexo-Theme-slitude
+#      Bilibili:
+#        icon: scoicon sco-bilibili-line
+#        url: https://space.bilibili.com/1329819902
   # 公众号二维码
   flip:
     # 右下角头像
