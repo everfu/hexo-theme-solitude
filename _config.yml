@@ -395,11 +395,7 @@ post:
     alipay: https://bu.dusays.com/2023/11/07/6549e79d02bd6.png
     # 打赏统计页面链接
     url: /about
-  rss:
-    # 开启后文章底部显示订阅按钮
-    enable: false
-    # rss订阅链接
-    url: /atom.xml
+  rss: # /atom.xml
   # 文章颜色获取
   covercolor: #文章cover取色
     enable: false # 是否开启
