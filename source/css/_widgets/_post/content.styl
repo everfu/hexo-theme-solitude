@@ -109,22 +109,37 @@
           background var(--sco-lighttext)
 
   ol
+    li:before
+      margin-top .65em
+      width 1.45em
+      height 1.45em
+      border-radius .725em
+      text-align center
+      font-size .85em
+      color var(--sco-white)
+      line-height 1.45em
+
     > li
 
       &:not(.tab)
         padding .2em .2em .2em 1.8em
 
       &:before
-        margin-top .65em
-        width 1.45em
-        height 1.45em
-        border-radius .725em
         content counter(li)
         counter-increment li 1
-        text-align center
-        font-size .85em
-        color var(--sco-white)
-        line-height 1.45em
+
+      > ol
+        > li
+          &:before
+            content counter(li, lower-alpha)
+            counter-increment li
+
+          > ol
+            > li
+              &:before
+                content counter(li, lower-roman)
+                counter-increment li
+
 
   // 文章内容样式
 
