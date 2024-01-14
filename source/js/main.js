@@ -192,6 +192,7 @@ class toc {
         const $tocContent = document.getElementById('toc-content')
         const list = $article.querySelectorAll('h1,h2,h3,h4,h5,h6')
         let detectItem = ''
+
         function autoScroll(el) {
             const activePosition = el.getBoundingClientRect().top
             const sidebarScrollTop = $tocContent.scrollTop
@@ -202,6 +203,7 @@ class toc {
                 $tocContent.scrollTop = sidebarScrollTop - 150
             }
         }
+
         function findHeadPosition(top) {
             if (top === 0) {
                 return false
@@ -230,6 +232,7 @@ class toc {
                 }
             }
         }
+
         window.tocScrollFn = utils.throttle(function () {
             const currentTop = window.scrollY || document.documentElement.scrollTop
             findHeadPosition(currentTop)
@@ -415,7 +418,7 @@ let sco = {
         for (let i = 0; i < inputs.length; i++) {
             let el = document.querySelector(inputs[i])
             if (el != null) {
-                el.dispatchEvent(new Event('input', { bubble: true, cancelable: true }))
+                el.dispatchEvent(new Event('input', {bubble: true, cancelable: true}))
                 el.value = '> ' + txt.replace(/\n/g, '\n> ') + '\n\n'
                 utils.scrollToDest(utils.getEleTop(document.getElementById('post-comment')), 300)
                 el.focus()
@@ -553,11 +556,11 @@ let sco = {
             const hours = timeNow.getHours();
             const lang = GLOBAL_CONFIG.lang.sayhello;
             const greetings = [
-                { start: 0, end: 5, text: lang.goodnight },
-                { start: 6, end: 10, text: lang.morning },
-                { start: 11, end: 14, text: lang.noon },
-                { start: 15, end: 18, text: lang.afternoon },
-                { start: 19, end: 24, text: lang.night },
+                {start: 0, end: 5, text: lang.goodnight},
+                {start: 6, end: 10, text: lang.morning},
+                {start: 11, end: 14, text: lang.noon},
+                {start: 15, end: 18, text: lang.afternoon},
+                {start: 19, end: 24, text: lang.night},
             ];
             for (let greeting of greetings) {
                 if (hours >= greeting.start && hours <= greeting.end) {
@@ -823,12 +826,7 @@ class hightlight {
                 if ($expand.length !== 0) {
                     $expand[0].setAttribute('style', 'display:block')
                 }
-                if (itemHeight < 200) {
-                    $table.setAttribute('style', 'height: auto')
-                } else {
-                    $table.setAttribute('style', 'height:200px')
-                    ele.classList.remove("expand-done")
-                }
+                $table.setAttribute('style', `height: ${GLOBAL_CONFIG.hightlight.limit}px`)
             }
             expand = !expand
         })
@@ -842,7 +840,7 @@ class hightlight {
         if (GLOBAL_CONFIG.hightlight.limit && itemHeight > GLOBAL_CONFIG.hightlight.limit + 30) {
             $table.setAttribute('style', `height: ${GLOBAL_CONFIG.hightlight.limit}px`)
             ele.className = 'code-expand-btn'
-            ele.innerHTML = '<i class="scoicon sco-show-line" style="font-size: 1.2rem"></i>'
+            ele.innerHTML = '<i class="scoicon sco-show-line"></i>'
             ele.addEventListener('click', (e) => {
                 $table.setAttribute('style', `height: ${itemHeight}px`)
                 e.target.classList.add('expand-done')
