@@ -66,9 +66,6 @@ if page.katex
     link(rel="stylesheet", href=url_for(cdn.katexcss))
     script(src=url_for(cdn.katexjs))
 
-if theme.aside.welcome.enable
-    script(src=cdn_url_for("/lib/txmap.min.js"))
-
 // waterfall
 if theme.says.enable
     script(src=cdn_url_for("/lib/waterfall.min.js"))

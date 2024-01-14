@@ -244,27 +244,6 @@ let wleelw_musicPlaying = false
 
 let sco = {
     /**
-     * 个性定位
-     */
-    card_welcome: function () {
-        ipLoacation = window.saveToLocal.get('ipLocation');
-        if (!ipLoacation) {
-            // 数据已过期或不存在
-            let script = document.createElement('script');
-            let url = `https://apis.map.qq.com/ws/location/v1/ip?key=${txkey}&output=jsonp`;
-            script.src = url;
-            window.QQmap = function (data) {
-                ipLoacation = data;
-                // 将数据保存到 localStorage，过期时间设置为 1 天
-                window.saveToLocal.set('ipLocation', ipLoacation, 1);
-                document.body.removeChild(script);
-                delete window.QQmap;
-            };
-            document.body.appendChild(script);
-        }
-        showWelcome();
-    },
-    /**
      * 隐藏协议小助手
      */
     hideCookie: function () {
@@ -947,7 +926,6 @@ window.refreshFn = () => {
     PAGE_CONFIG.is_home && (showTodayCard() || sco.initbbtalk())
     GLOBAL_CONFIG.covercolor.enable && coverColor()
     sco.initConsoleState()
-    document.getElementById('welcome-info') && sco.card_welcome()
     GLOBAL_CONFIG.comment.commentBarrage && PAGE_CONFIG.comment && initializeCommentBarrage()
     document.body.setAttribute('data-type', PAGE_CONFIG.page)
     PAGE_CONFIG.page === "music" && scoMusic.init()

@@ -97,12 +97,10 @@ aside:
   runtime: '建站天数 :'
   updatetime: '最后更新 :'
   wordcount: '全站字数 :'
-  welcome: 来访者
   toc: 文章目录
   tagmore: 查看全部
   avatar: 头像
   sticker: 心情贴纸
-  history: 那年今日
   newpost: 最近发布
 
 console:

@@ -98,12 +98,10 @@ aside:
   runtime: 'Runtime :'
   updatetime: 'Last update :'
   wordcount: 'Word count :'
-  welcome: Visitors
   toc: Table of contents
   tagmore: View all
   avatar: Avatar
   sticker: Mood sticker
-  history: On this day
   newpost: New posts
 
 console:
