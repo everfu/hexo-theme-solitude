@@ -77,10 +77,12 @@ if theme.comment.enable
     case theme.comment.type
         when 'twikoo'
             script(src=cdn_url_for("/js/extend/comment/twikoo/twikoo.js"))
-            script(src=cdn_url_for("/js/extend/comment/twikoo/commentBarrage.js"))
+            if theme.comment.commentBarrage
+                script(src=cdn_url_for("/js/extend/comment/twikoo/commentBarrage.js"))
         when 'waline'
             script(src=cdn_url_for("/js/extend/comment/waline/waline.js"))
-            script(src=cdn_url_for("/js/extend/comment/waline/commentBarrage.js"))
+            if theme.comment.commentBarrage
+                script(src=cdn_url_for("/js/extend/comment/waline/commentBarrage.js"))
 
 
 // pjax

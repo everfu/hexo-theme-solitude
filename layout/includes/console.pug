@@ -34,7 +34,7 @@ div#console
             div.console-btn-item#consoleMusic(onclick="sco.musicToggle()")
                 a.music-switch(title=_p('console.switch_music'), href="javascript:void(0);")
                     i.scoicon.sco-disc-fill
-        if theme.comment.commentBarrage
+        if theme.comment.enable && theme.comment.commentBarrage
             div.console-btn-item.on#consoleCommentBarrage(onclick="sco.switchCommentBarrage()")
                 a.commentBarrage
                     i.scoicon.sco-chat-fill

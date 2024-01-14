@@ -581,7 +581,7 @@ comment:
   # waline, twikoo
   # tip：如果不需要评论系统，可以将enable设置为false
   type:
-  commentBarrage: true # 热评开关
+  commentBarrage: false # 热评开关
   # 匿名评论前部分随机信息
   randomInfoStart:
     - '聪敏的'
@@ -599,8 +599,8 @@ comment:
     accessToken:  # accessToken
   # waline配置信息
   waline: # https://waline.js.org/
-    envId:  # url:
-    pageview: false # 是否开启页面访问量统计
+    envId:  # url: https://waline.wzsco.top
+    pageview: true # 是否开启页面访问量统计
     option: # waline配置项
 
 # Open Graph
@@ -708,6 +708,8 @@ cdn:
   # tip：目前主题还在更新，请注意群内通知。
   prefix: # cdn前缀 https://cdn.jsdelivr.net/gh/用户名/仓库名@版本号/
   head:
+    walinejs: https://cdn.staticfile.org/waline/2.15.8/waline.min.js
+    walinecss: https://cdn.staticfile.org/waline/2.15.8/waline.min.css
     scoicon: https://cdn2.codesign.qq.com/icons/7pOrz0WXB5ZWJPX/latest/iconfont.css
     aplayercss: https://cdn.staticfile.org/aplayer/1.10.1/APlayer.min.css
     swipercss: https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-M/Swiper/8.0.6/swiper-bundle.min.css

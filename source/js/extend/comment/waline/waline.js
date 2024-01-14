@@ -19,7 +19,6 @@ const newestCommentInit = () => {
         getComment()
     }
 }
-
 const getComment = () => {
     Waline.RecentComments(
         options = {
@@ -58,3 +57,5 @@ const generateHtml = array => {
     window.pjax && window.pjax.refresh($dom)
     changeTimeFormat()
 }
+
+newestCommentInit()
