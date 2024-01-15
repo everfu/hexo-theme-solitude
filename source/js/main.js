@@ -826,11 +826,7 @@ class hightlight {
                 if ($expand.length !== 0) {
                     $expand[0].setAttribute('style', 'display:block')
                 }
-                if(GLOBAL_CONFIG.hightlight.limit && itemHeight > GLOBAL_CONFIG.hightlight.limit){
-                    $table.setAttribute('style', `height: ${GLOBAL_CONFIG.hightlight.limit}px`)
-                }else{
-                    $table.setAttribute('style', `height: auto`)
-                }
+                $table.setAttribute('style', `height: ${GLOBAL_CONFIG.hightlight.limit}px`)
             }
             expand = !expand
         })
@@ -853,7 +849,6 @@ class hightlight {
             fragment.appendChild(ele)
         }
         item.insertBefore(fragment, item.firstChild)
-        hlTools.children[0].click()
     }
 
     static init() {
