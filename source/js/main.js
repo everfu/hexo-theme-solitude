@@ -837,7 +837,8 @@ class hightlight {
         fragment.appendChild(hlTools)
         const itemHeight = item.clientHeight, $table = item.querySelector('table'),
             $expand = item.getElementsByClassName('code-expand-btn')
-        if (GLOBAL_CONFIG.hightlight.limit && itemHeight > GLOBAL_CONFIG.hightlight.limit + 30) {
+        console.log(itemHeight)
+        if (GLOBAL_CONFIG.hightlight.limit && itemHeight > GLOBAL_CONFIG.hightlight.limit) {
             $table.setAttribute('style', `height: ${GLOBAL_CONFIG.hightlight.limit}px`)
             ele.className = 'code-expand-btn'
             ele.innerHTML = '<i class="scoicon sco-show-line"></i>'

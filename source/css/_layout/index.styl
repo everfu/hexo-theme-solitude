@@ -19,13 +19,12 @@
     width calc(100% - 300px)
 
     +maxWidth1200()
-      width 100% !important
+      width 100%
 
   > div:first-child:not(.recent-posts)
     box-shadow var(--sco-shadow-border)
     padding 1rem 2rem
     border-radius 12px
-    width calc(100% - 300px)
     background var(--sco-card-bg);
     border var(--style-border);
     align-self flex-start
@@ -34,6 +33,8 @@
     overflow hidden
 
     +maxWidth768()
+      box-shadow none
+      border none
       padding 0 1rem
       background var(--sco-background)
 
