@@ -6,4 +6,4 @@ each groupName, index in groupNames
     .categoryItem(style=`box-shadow: var(${styles[index]});`)
         a.categoryButton(class=classes[index], href=url_for(theme.hometop.categoryGroup[groupName].url))
             span.categoryButtonText= theme.hometop.categoryGroup[groupName].name
-            i(class=theme.hometop.categoryGroup[groupName].icon)
+            i.scoicon(class=theme.hometop.categoryGroup[groupName].icon)
