@@ -25,8 +25,8 @@
     box-shadow var(--sco-shadow-border)
     padding 1rem 2rem
     border-radius 12px
-    background var(--sco-card-bg);
-    border var(--style-border);
+    background var(--sco-card-bg)
+    border var(--style-border)
     align-self flex-start
     animation slide-in .6s .1s backwards
     position relative
@@ -52,3 +52,55 @@ span.tags-punctuation::before
   #post-info &
     font-size 14px
     line-height 32px
+
+// snackbar
+.snackbar-container 
+  background var(--sco-lighttext)!important
+  color var(--sco-card-bg)!important
+  border-radius 0!important
+  display flex
+  justify-content center!important
+  max-width none!important
+  min-width 100%!important
+  margin 0!important
+  left 0!important
+  height 60px!important
+  transform none!important
+
+.snackbar-container p 
+  color var(--sco-card-bg)!important
+  font-weight 700!important
+  text-align center!important
+  font-size .8rem!important
+  display flex!important
+  justify-content center!important
+
+.snackbar-container .action 
+  color var(--sco-card-bg)!important
+  background var(--sco-lighttext)!important
+  padding 4px 6px!important
+  font-weight 700
+  border-radius 8px!important
+  transition .3s
+  border var(--style-border)!important
+.snackbar-container .action:hover 
+  color var(--sco-lighttext)!important
+  background var(--sco-card-bg)!important
+
+.snackbar-container::after 
+  position absolute
+  width 0
+  height 100%
+  left 0
+  top 0
+  background var(--sco-white)
+  opacity .1
+  content ""
+  animation snackbar-progress var(--sco-snackbar-time) linear forwards
+  pointer-events none
+
+@keyframes snackbar-progress 
+  from 
+    width 0
+  to 
+    width 100%

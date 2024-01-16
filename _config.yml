@@ -640,30 +640,22 @@ rightside:
 
 # 站点验证
 # 仅需要填写验证代码即可，譬如：codeva-KReTIJu5us
-verify:
-  baidu:
-  google:
-  sougou:
-
+verify_site:
+#  - name: google-site-verification
+#    content: xxxxxx
+#  - name: baidu-site-verification
+#    content: xxxxxxx
 # CSS 前缀
 # 有些 CSS 并不是所有浏览器都支持，需要增加对应的前缀才会生效
 # 开启 css_prefix 后，会自动为一些 CSS 增加前缀。（会增加 20%的体积）
 # --------------------------------------
 css_prefix: false
 
-# Fest (纪念日灰色)
-# 譬如国家公祭日
-fest:
-  enable: false # 开启
-  list: # 纪念日列表
-    - '12.13' # 国家公祭日
-
 # PWA
 # 图标信息非必选，填了就显示，不想添加的可以进行注释
 # https://github.com/JLHwung/hexo-offline
 pwa:
   enable: false # 是否开启
-  startup_image_enable: false # 是否开启启动画面
   manifest: /manifest.json # manifest.json 文件路径
   theme_color: '#ffffff' # 主题颜色
   mask_icon: https://fastly.jsdelivr.net/npm/solitude-source@1.0.0/img/pwa/180.png # 遮罩图标
@@ -671,58 +663,48 @@ pwa:
   bookmark_icon: https://fastly.jsdelivr.net/npm/solitude-source@1.0.0/img/pwa/180.png # 书签图标
   favicon_32_32: https://fastly.jsdelivr.net/npm/solitude-source@1.0.0/img/pwa/32.png # 32x32图标
   favicon_16_16: https://fastly.jsdelivr.net/npm/solitude-source@1.0.0/img/pwa/16.png # 16x16图标
-  favicon_2048_2732: https://fastly.jsdelivr.net/npm/solitude-source@1.0.0/img/pwa/siteicon/splash-2048x2732.png # 2048x2732图标
-  favicon_2732_2048: https://fastly.jsdelivr.net/npm/solitude-source@1.0.0/img/pwa/siteicon/splash-2732x2048.png # 2732x2048图标
-  favicon_1668_2388: https://fastly.jsdelivr.net/npm/solitude-source@1.0.0/img/pwa/siteicon/splash-1668x2388.png # 1668x2388图标
-  favicon_2388_1668: https://fastly.jsdelivr.net/npm/solitude-source@1.0.0/img/pwa/siteicon/splash-2388x1668.png # 2388x1668图标
-  favicon_1536_2048: https://fastly.jsdelivr.net/npm/solitude-source@1.0.0/img/pwa/siteicon/splash-1536x2048.png # 1536x2048图标
-  favicon_2048_1536: https://fastly.jsdelivr.net/npm/solitude-source@1.0.0/img/pwa/siteicon/splash-2048x1536.png # 2048x1536图标
-  favicon_1668_2224: https://fastly.jsdelivr.net/npm/solitude-source@1.0.0/img/pwa/siteicon/splash-1668x2224.png # 1668x2224图标
-  favicon_2224_1668: https://fastly.jsdelivr.net/npm/solitude-source@1.0.0/img/pwa/siteicon/splash-2224x1668.png # 2224x1668图标
-  favicon_1620_2160: https://fastly.jsdelivr.net/npm/solitude-source@1.0.0/img/pwa/siteicon/splash-1620x2160.png # 1620x2160图标
-  favicon_2160_1620: https://fastly.jsdelivr.net/npm/solitude-source@1.0.0/img/pwa/siteicon/splash-2160x1620.png # 2160x1620图标
-  favicon_1290_2796: https://fastly.jsdelivr.net/npm/solitude-source@1.0.0/img/pwa/siteicon/splash-1290x2796.png # 1290x2796图标
-  favicon_2796_1290: https://fastly.jsdelivr.net/npm/solitude-source@1.0.0/img/pwa/siteicon/splash-2796x1290.png # 2796x1290图标
-  favicon_1179_2556: https://fastly.jsdelivr.net/npm/solitude-source@1.0.0/img/pwa/siteicon/splash-1179x2556.png # 1179x2556图标
-  favicon_2556_1179: https://fastly.jsdelivr.net/npm/solitude-source@1.0.0/img/pwa/siteicon/splash-2556x1179.png # 2556x1179图标
-  favicon_1248_2778: https://fastly.jsdelivr.net/npm/solitude-source@1.0.0/img/pwa/siteicon/splash-1248x2778.png # 1248x2778图标
-  favicon_2778_1248: https://fastly.jsdelivr.net/npm/solitude-source@1.0.0/img/pwa/siteicon/splash-2778x1248.png # 2778x1248图标
-  favicon_1170_2532: https://fastly.jsdelivr.net/npm/solitude-source@1.0.0/img/pwa/siteicon/splash-1170x2532.png # 1170x2532图标
-  favicon_2532_1170: https://fastly.jsdelivr.net/npm/solitude-source@1.0.0/img/pwa/siteicon/splash-2532x1170.png # 2532x1170图标
-  favicon_1125_2436: https://fastly.jsdelivr.net/npm/solitude-source@1.0.0/img/pwa/siteicon/splash-1125x2436.png # 1125x2436图标
-  favicon_2436_1125: https://fastly.jsdelivr.net/npm/solitude-source@1.0.0/img/pwa/siteicon/splash-2436x1125.png # 2436x1125图标
-  favicon_1242_2688: https://fastly.jsdelivr.net/npm/solitude-source@1.0.0/img/pwa/siteicon/splash-1242x2688.png # 1242x2688图标
-  favicon_2688_1242: https://fastly.jsdelivr.net/npm/solitude-source@1.0.0/img/pwa/siteicon/splash-2688x1242.png # 2688x1242图标
-  favicon_828_1792: https://fastly.jsdelivr.net/npm/solitude-source@1.0.0/img/pwa/siteicon/splash-828x1792.png # 828x1792图标
-  favicon_1792_828: https://fastly.jsdelivr.net/npm/solitude-source@1.0.0/img/pwa/siteicon/splash-1792x828.png # 1792x828图标
-  favicon_1242_2208: https://fastly.jsdelivr.net/npm/solitude-source@1.0.0/img/pwa/siteicon/splash-1242x2208.png # 1242x2208图标
-  favicon_2208_1242: https://fastly.jsdelivr.net/npm/solitude-source@1.0.0/img/pwa/siteicon/splash-2208x1242.png # 2208x1242图标
-  favicon_750_1334: https://fastly.jsdelivr.net/npm/solitude-source@1.0.0/img/pwa/siteicon/splash-750x1334.png # 750x1334图标
-  favicon_1334_750: https://fastly.jsdelivr.net/npm/solitude-source@1.0.0/img/pwa/siteicon/splash-1334x750.png # 1334x750图标
-  favicon_640_1136: https://fastly.jsdelivr.net/npm/solitude-source@1.0.0/img/pwa/siteicon/splash-640x1136.png # 640x1136图标
-  favicon_1136_640: https://fastly.jsdelivr.net/npm/solitude-source@1.0.0/img/pwa/siteicon/splash-1136x640.png # 1136x640图标
 
-# 非必要勿动
-cdn:
-  # 如果没有请留空
-  # tip：目前主题还在更新，请注意群内通知。
-  prefix: # cdn前缀 https://cdn.jsdelivr.net/gh/用户名/仓库名@版本号/
-  head:
-    walinejs: https://cdn.staticfile.org/waline/2.15.8/waline.min.js
-    walinecss: https://cdn.staticfile.org/waline/2.15.8/waline.min.css
-    scoicon: https://cdn2.codesign.qq.com/icons/7pOrz0WXB5ZWJPX/latest/iconfont.css
-    aplayercss: https://cdn.staticfile.org/aplayer/1.10.1/APlayer.min.css
-    swipercss: https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-M/Swiper/8.0.6/swiper-bundle.min.css
-    twikoojs: https://cdn.staticfile.org/twikoo/1.6.26/twikoo.min.js
-    instantsearch: https://cdn.staticfile.org/instantsearch.js/4.56.10/instantsearch.production.min.js
-    algoliajs: https://cdn.staticfile.org/algoliasearch/4.20.0/algoliasearch-lite.umd.min.js
-    pacejs: https://cdn.staticfile.org/pace/1.2.4/pace.min.js
-    echartsjs: https://cdn.staticfile.org/echarts/5.4.3/echarts.min.js
-  body:
-    swiperjs: https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-M/Swiper/8.0.6/swiper-bundle.min.js
-    busuanzijs: https://cdn.staticfile.org/busuanzi/2.3.0/bsz.pure.mini.min.js
-    pjaxjs: https://cdn.staticfile.org/pjax/0.2.8/pjax.min.js
-    aplayerjs: https://cdn.staticfile.org/aplayer/1.10.1/APlayer.min.js
-    metingjs: https://cdn.staticfile.org/meting/2.0.1/Meting.min.js
-    katexcss: https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/KaTeX/0.15.2/katex.min.css
-    katexjs: https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-M/KaTeX/0.15.2/katex.min.js
+# CDN
+# Don't modify the following settings unless you know how they work
+# 非必要请不要修改
+CDN:
+  # The CDN provider of internal scripts (主题内 js 的 cdn 配置)
+  # option: local/jsdelivr/unpkg/cdnjs/custom_cdn/custom
+  # Dev version can only choose. ( dev版本只能为 local )
+  internal: custom_cdn
+  # 自己搭建的cdn地址 默认路径：/source/$1
+  custom_cdn: https://cdn2.wzsco.top/
+
+  # The CDN provider of third party scripts (第三方 js 的 cdn 配置)
+  # option: local/jsdelivr/unpkg/cdnjs/custom
+  third_party: custom
+
+  # Add version number to url, true or false
+  version: true
+
+  # Custom format
+  # For example: https://cdn.staticfile.org/${cdnjs_name}/${version}/${min_cdnjs_file}
+  custom_format: https://cdn.staticfile.org/${cdnjs_name}/${version}/${min_cdnjs_file}
+
+  option:
+    # algolia_search:
+    # instantsearch:
+    # pjax:
+    # twikoo:
+    # waline_js:
+    # waline_css:
+    # sharejs:
+    # sharejs_css:
+    # katex:
+    # katex_copytex:
+    # lazyload:
+    # aplayer_css:
+    # aplayer_js:
+    # meting_js:
+    # pace_js:
+    # lunr_js:
+    # swiper_css:
+    # swiper_js:
+    # busuanzi_js:
+    # snackbar_css:
+    # snackbar_js:

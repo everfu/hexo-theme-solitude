@@ -169,5 +169,5 @@ const utils = {
             ele.removeEventListener('animationend', f)
         })
         ele.style.animation = text
-    }
+    },
 }

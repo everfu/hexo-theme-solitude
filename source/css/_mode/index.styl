@@ -41,20 +41,6 @@
   --style-border-forever 2px solid var(--sco-lighttext)
   --sco-hl-bg $hl_bg_dark
   --sco-hltools-bg $hltools_bg_dark
-  if hexo-config("display_mode.dark_universe")
-    #universe
-      display block
-      position fixed
-      margin 0
-      padding 0
-      border 0
-      outline 0
-      left 0
-      top 0
-      width 100%
-      height 100%
-      pointer-events none
-      z-index 1
 
 [data-theme=light]
   --sco-theme $light_theme
@@ -101,6 +87,3 @@
   --sco-navbg var(--sco-theme-op)
   --sco-hl-bg $hl_bg_light
   --sco-hltools-bg $hltools_bg_light
-  if hexo-config("display_mode.dark_universe")
-    #universe
-      display none

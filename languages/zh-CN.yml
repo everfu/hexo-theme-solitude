@@ -23,6 +23,8 @@ sayhello:
 page:
   tag: 标签
   category: 分类
+  tags: 全部标签
+  categories: 全部分类
   archives: 文章
   echarts: 博客统计
 

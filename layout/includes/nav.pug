@@ -11,7 +11,7 @@ nav#nav.show
                 else if theme.site.name.class === 'img'
                     img(src=theme.site.name.custom, alt=config.title)
                 else if theme.site.name.class === 'text'
-                    span.scoicon= theme.site.name.custom
+                    span.title= theme.site.name.custom
         #page-name-mask
             #page-name
                 a#page-name-text(onclick="sco.toTop()")= title || config.title

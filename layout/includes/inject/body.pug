@@ -1,22 +1,21 @@
-- cdn = theme.cdn.body
 - page.type = is_post() ? 'post' : page.type
 
 div
-    script(src=cdn_url_for("/js/utils.js"))
-    script(src=cdn_url_for("/js/main.js"))
+    script(src=url_for(theme.cdn.utils))
+    script(src=url_for(theme.cdn.main))
 
-script(src=url_for(cdn.pjaxjs))
+script(src=url_for(theme.cdn.pjax))
 if theme.lazyload.enable
-    script(src=cdn_url_for("/lib/lazyload.min.js"))
-script(src=cdn_url_for("/lib/snackbar.min.js"))
+    script(src=url_for(theme.cdn.lazyload))
+script(src=url_for(theme.cdn.snackbar))
 if theme.lightbox
-    script(src=cdn_url_for("/lib/view-image.min.js"))
+    script(src=url_for(theme.cdn.view_image))
 if theme.says.home_mini
-    script(src=url_for(cdn.swiperjs))
+    script(src=url_for(theme.cdn.swiper_js))
 
 if theme.rightside.enable
     include ../widgets/rightside/index.pug
-    script(src=cdn_url_for("/lib/rightside.min.js"))
+    script(src=url_for(theme.cdn.rightside_js))
 
 div#js-pjax
     if page.type === 'says'
@@ -28,7 +27,7 @@ div#js-pjax
             }), 500);
             sco.reflashEssayWaterFall();
     if theme.thirdparty.busuanzi && (theme.aside.siteinfo.uv || theme.aside.siteinfo.pv || theme.thirdparty.busuanzi.usecomment === false)
-        script(async src=url_for(cdn.busuanzijs))
+        script(async src=url_for(theme.cdn.busuanzi_js))
 
     script#config-diff.
         var PAGE_CONFIG = {
@@ -42,11 +41,11 @@ div#js-pjax
 
 // post-ai)
 if theme.thirdparty.ai.enable
-    script(src=cdn_url_for("/lib/sco-ai.min.js"))
+    script(src=url_for(theme.cdn.sco_ai_js))
 
 if theme.thirdparty.aplayer.enable || theme.music.enable
-    script(src=url_for(cdn.aplayerjs))
-    script(src=url_for(cdn.metingjs))
+    script(src=url_for(theme.cdn.aplayer_js))
+    script(src=url_for(theme.cdn.meting_js))
     script.
         const meting_api = '!{theme.thirdparty.aplayer.api}';
 
@@ -57,30 +56,27 @@ if theme.post.covercolor.enable
             api: '!{theme.post.covercolor.api}',
             time: !{theme.post.covercolor.time},
         }
-    script(src=cdn_url_for("/lib/cover-color.min.js"))
+    script(src=url_for(theme.cdn.cover_color_js))
 
 if theme.footer.randomlink
     include ../widgets/randomlink.pug
 
 if page.katex
-    link(rel="stylesheet", href=url_for(cdn.katexcss))
-    script(src=url_for(cdn.katexjs))
+    link(rel="stylesheet", href=url_for(theme.cdn.katexcss))
 
 // waterfall
 if theme.says.enable
-    script(src=cdn_url_for("/lib/waterfall.min.js"))
+    script(src=url_for(theme.cdn.waterfall))
 
-if theme.comment.enable
+if theme.comment.enable && theme.comment.commentBarrage
     case theme.comment.type
         when 'twikoo'
-            script(src=cdn_url_for("/js/extend/comment/twikoo/twikoo.js"))
-            if theme.comment.commentBarrage
-                script(src=cdn_url_for("/js/extend/comment/twikoo/commentBarrage.js"))
+            script(src=url_for(theme.cdn.twikoo_commentBarrage))
         when 'waline'
-            script(src=cdn_url_for("/js/extend/comment/waline/waline.js"))
-            if theme.comment.commentBarrage
-                script(src=cdn_url_for("/js/extend/comment/waline/commentBarrage.js"))
+            script(src=url_for(theme.cdn.waline_commentBarrage))
 
+// newest comment
+include ../widgets/third-party/news-comment/newest-comment.pug
 
 // pjax
 include ../widgets/third-party/pjax.pug
@@ -90,7 +86,7 @@ include ../body/mode
 
 // music
 if theme.music.enable
-    script(src=cdn_url_for("/js/music.js"))
+    script(src=url_for(theme.cdn.music_js))
 
 // inject custom body
 if theme.extends.body

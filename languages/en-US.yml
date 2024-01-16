@@ -23,6 +23,8 @@ sayhello:
 page:
   tag: Tags
   category: Categories
+  tags: All tags
+  categories: All categories
   archives: Archives
   echarts: Echarts
 

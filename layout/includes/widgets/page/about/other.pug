@@ -8,11 +8,7 @@
                 .post-tips
                     | 统计信息来自
                     a(href="https://invite.51.la/1NzKqTeb?target=V6") 51la网站统计
-                if theme.about.echarts.enable
-                    .banner-button-group
-                        a.banner-button(onclick="pjax.loadUrl('/echart/');")
-                            i.scoicon.sco-right-btn-fill
-                            span.banner-button-text 文章统计
+
             script.
                 fetch("#{site.data.about.tj.url}")
                     .then(res => res.text())

@@ -1,53 +1,37 @@
-- var cdn = theme.cdn.head
+each item in theme.verify_site
+    meta(name=item.name, content=item.content)
 
-if theme.verify.baidu
-    meta(name="baidu-site-verification", content=theme.verify.baidu)
-
-if theme.verify.google
-    meta(name="google-site-verification", content=theme.verify.google)
-
-if theme.verify.sougou
-    meta(name="sogou_site_verification", content=theme.verify.sougou)
-
-link(rel="stylesheet", href=cdn.scoicon)
-link(rel="stylesheet", href=cdn_url_for("/lib/snackbar.min.css"))
+link(rel="stylesheet", href=url_for(theme.cdn.scoicon_css))
+link(rel="stylesheet", href=url_for(theme.cdn.snackbar_css))
 
 // comment
 if theme.comment.enable
     case theme.comment.type
         when 'twikoo'
-            script(src=cdn.twikoojs)
+            script(src=url_for(theme.cdn.twikoo))
         when 'waline'
-            script(src=cdn.walinejs)
-            link(rel="stylesheet", href=cdn.walinecss)
+            script(src=url_for(theme.cdn.waline_js))
+            link(rel="stylesheet", href=url_for(theme.cdn.waline_css))
 
 // pace 胶囊加载条(Capsule loading bar)
 if theme.loading.pace
-    script(src=cdn.pacejs)
+    script(src=url_for(theme.cdn.pace_js))
 
 // search
 if theme.thirdparty.search.enable
     if theme.thirdparty.search.type === 'algolia'
-        script(src=url_for(cdn.instantsearch))
-        script(src=url_for(cdn.algoliajs))
+        script(src=url_for(theme.cdn.instantsearch))
+        script(src=url_for(theme.cdn.algolia_search))
     else if theme.thirdparty.search.type === 'local'
-        script(src=url_for(cdn.lunrjs))
+        script(src=url_for(theme.cdn.lunr_js))
 
 // aplayer
 if theme.thirdparty.aplayer.enable || theme.music.enable
-    link(rel="stylesheet", href=cdn.aplayercss)
+    link(rel="stylesheet", href=url_for(theme.cdn.aplayer_css))
 
 // swiper
 if theme.says.home_mini
-    link(rel="stylesheet", href=cdn.swipercss)
-
-// echarts
-if theme.about.echarts.enable && theme.about.enable
-    script(src=url_for(cdn.echartsjs))
-
-// 灰色纪念日(Gray Anniversary)
-if theme.fest.enable
-    include ../head/fest.pug
+    link(rel="stylesheet", href=url_for(theme.cdn.swiper_css))
 
 // Open Graph
 include ../head/opengraph.pug
