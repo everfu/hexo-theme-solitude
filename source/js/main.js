@@ -812,7 +812,7 @@ class hightlight {
         const hlTools = document.createElement('div')
         hlTools.className = `highlight-tools`
         hlTools.innerHTML = highlightExpandEle + langEl + highlightCopyEle
-        let expand = GLOBAL_CONFIG.hightlight.expand
+        let expand = !GLOBAL_CONFIG.hightlight.expand
         hlTools.children[0].addEventListener('click', (e) => {
             if (expand) {
                 hlTools.children[0].classList.add('closed')
@@ -826,7 +826,11 @@ class hightlight {
                 if ($expand.length !== 0) {
                     $expand[0].setAttribute('style', 'display:block')
                 }
-                $table.setAttribute('style', `height: ${GLOBAL_CONFIG.hightlight.limit}px`)
+                if(GLOBAL_CONFIG.hightlight.limit && itemHeight > GLOBAL_CONFIG.hightlight.limit) {
+                    $table.setAttribute('style', `height: ${GLOBAL_CONFIG.hightlight.limit}px`)
+                }else{
+                    $table.setAttribute('style', `height: auto`)
+                }
             }
             expand = !expand
         })
