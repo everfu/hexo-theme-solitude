@@ -1,7 +1,7 @@
 div#console
     div.close-btn(onclick="sco.hideConsole()")
         i.scoicon.sco-close-fill
-    if theme.thirdparty.consolePlus
+    if theme.comment.newComment
         div.console-card-group
             div.console-card-group-left
                 div.console-card#card-newest-comments(onclick="sco.hideConsole()")
@@ -30,7 +30,7 @@ div#console
         div.console-btn-item#consoleHideAside
             a.asideSwitch(onclick="sco.switchHideAside()", title=_p('console.switch_hideAside'), href="javascript:void(0);")
                 i.scoicon.sco-side-bar-fill
-        if theme.thirdparty.aplayer.enable
+        if theme.capsule.enable
             div.console-btn-item#consoleMusic(onclick="sco.musicToggle()")
                 a.music-switch(title=_p('console.switch_music'), href="javascript:void(0);")
                     i.scoicon.sco-disc-fill

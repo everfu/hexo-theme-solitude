@@ -36,13 +36,13 @@ nav:
     # 导航栏显示的内容
     menu:
     # 显示分类名
-#      项目:
-#        # 显示子类
-#        Solitude:
-#          # 显示的图标
-#          icon: https://bu.dusays.com/2023/11/08/654af68b25bb8.jpg
-#          # 点击的跳转链接
-#          url: https://github.com/DuoSco/Hexo-Theme-solitude
+    #      项目:
+    #        # 显示子类
+    #        Solitude:
+    #          # 显示的图标
+    #          icon: https://bu.dusays.com/2023/11/08/654af68b25bb8.jpg
+    #          # 点击的跳转链接
+    #          url: https://github.com/DuoSco/Hexo-Theme-solitude
     # ...
 
   # 导航栏内容
@@ -67,33 +67,33 @@ nav:
         全部标签:
           url: /tags/
           icon: scoicon sco-price-tag-fill
-#    友链:
-#      url: false
-#      child:
-#        鱼塘:
-#          url: /moments/
-#          icon: scoicon sco-wifi-fill
-#        友情链接:
-#          url: /links/
-#          icon: scoicon sco-group-fill
-#        宝藏博主:
-#          url: javascript:travelling()
-#          icon: scoicon sco-gift-fill
-#    我的:
-#      url: false
-#      child:
-#        装备:
-#          url: /equipment/
-#          icon: scoicon sco-laptop-line
-#        工具箱:
-#          url: /tlink/
-#          icon: scoicon sco-tools-fill
-#    关于:
-#      url: false
-#      child:
-#        关于本站:
-#          url: /about/
-#          icon: scoicon sco-contacts-fill
+  #    友链:
+  #      url: false
+  #      child:
+  #        鱼塘:
+  #          url: /moments/
+  #          icon: scoicon sco-wifi-fill
+  #        友情链接:
+  #          url: /links/
+  #          icon: scoicon sco-group-fill
+  #        宝藏博主:
+  #          url: javascript:travelling()
+  #          icon: scoicon sco-gift-fill
+  #    我的:
+  #      url: false
+  #      child:
+  #        装备:
+  #          url: /equipment/
+  #          icon: scoicon sco-laptop-line
+  #        工具箱:
+  #          url: /tlink/
+  #          icon: scoicon sco-tools-fill
+  #    关于:
+  #      url: false
+  #      child:
+  #        关于本站:
+  #          url: /about/
+  #          icon: scoicon sco-contacts-fill
 
 
   # 导航栏右侧快捷菜单
@@ -217,15 +217,15 @@ aside:
     content2: 相信你可以在这里找到对你有用的知识和教程。
     # 个人信息卡片底部的小图标，按照例子填写
     information:
-#      # 悬停显示文字
-#      Github:
-#        # 图标
-#        icon: scoicon sco-github-line
-#        # 跳转链接
-#        url: https://github.com/DuoSco/Hexo-Theme-slitude
-#      Bilibili:
-#        icon: scoicon sco-bilibili-line
-#        url: https://space.bilibili.com/1329819902
+  #      # 悬停显示文字
+  #      Github:
+  #        # 图标
+  #        icon: scoicon sco-github-line
+  #        # 跳转链接
+  #        url: https://github.com/DuoSco/Hexo-Theme-slitude
+  #      Bilibili:
+  #        icon: scoicon sco-bilibili-line
+  #        url: https://space.bilibili.com/1329819902
   # 公众号二维码
   flip:
     # 右下角头像
@@ -430,7 +430,11 @@ says:
   # 1：张洪heo样式 / 2：Leonus样式
   style: 1
 
-# 音乐馆界面
+# -------------------------
+# 音乐相关配置
+# meting-api
+meting_api: "https://meting.qjqq.cn/?server=:server&type=:type&id=:id&auth=:auth&r=:r" #自定义api
+# 音乐播放器界面
 music:
   enable: false
   id: 1994908354
@@ -443,6 +447,14 @@ music:
   # 是否开启互斥模式，即同时只能有一个播放器播放
   mutex: true
 
+# 音乐胶囊
+capsule:
+  enable: false
+  id: 8407304077 # 歌单id
+  server: netease # 播放列表的服务商。netease：网易云 / tencent：腾讯 / kugou：酷狗 / xiami：小米 / baidu：百度
+  type: playlist # 播放列表的类型。song：单曲 / playlist：歌单 / album：专辑 / artist：歌手
+
+# -------------------------
 # 404 页面
 errorpage:
   # 图片
@@ -502,80 +514,47 @@ display_mode:
   type: auto # auto: 自动切换 / dark: 暗色模式 / light: 亮色模式
   dark_universe: true # 暗色模式背景星空
 
+# --------------------------------------
 # 第三方设置
-thirdparty:
-  # 字数统计
-  # tip：开启前需要安装字数统计插件
-  wordcount: false
-  # 访问统计
-  busuanzi: true
-  # 搜索
-  # tip：开启前需要安装搜索插件
-  search:
-    enable: false
-    # algolia, local
-    type: algolia
-    algolia_search:
-      enable: false
-      # hits:
-      #   per_page: 6
-    local_search:
-      enable: false
-      preload: false
-      CDN:
-  # 全局底部音乐播放胶囊
-  aplayer:
-    enable: false
-    # netease, tencent, kugou, xiami, baidu
-    server: netease
-    # 歌单ID
-    # tip：不是用户的id，是歌单的id
-    id: 8407304077
-    # 自定义api，参照格式写
-    # tip：如果没有自己的api，请不要随意更改
-    api: "https://api.injahow.cn/meting/?server=:server&type=:type&id=:id&auth=:auth&r=:r"
-  # 中控台拓展
-  # tip：扩展后，右侧会显示最新评论
-  consolePlus: false
-  # 文章页面AI
-  ai:
-    enable: false # 是否开启
-    # 右侧显示的模型名称
-    modelName: GPT 4
-    # key
-    # 具体获取方法见文档
-    key:
-    # 自介
-    talk: 我是王卓Sco开发的摘要生成助理ScoGPT，ScoGPT在静态部署时进行摘要的撰写，并且在访客访问时通过ScoCorrection转译后的文本摘要实现工具。我在这里只负责已经生成的摘要显示，你无法与我直接沟通，但我可以回答一些预设的问题。
-    # 随机文章按钮
-    randomPost: false
-    # 举报链接，不填不显示
-    report: https://blog.wzsco.top/about/
-    # 底部提示
-    tips: 此内容根据文章生成，并经过人工审核，仅用于文章内容的解释与总结
+# 字数统计
+# tip：开启前需要安装字数统计插件
+wordcount: false
+# 访问统计
+busuanzi: true
 
-  # 朋友圈配置
-  circle:
-    # 朋友圈api
-    # tip：请参照主题文档指引配置好后端后填入自己的api
-    api: https://circle.sondy.top/
-    # 加载失败显示头像
-    error_img: /img/avatar.png
-    # 排序规则（created:创建时间、updated:更新时间）
-    sort_rule: created
-    # 缓存过期时间（天）
-    expire_days: 1
-    # 首次加载文章数，默认10
-    page_init_number: 12
-    # 翻页加载文章数，默认10
-    page_turning_number: 12
-    # 🎣钓鱼
-    # 开启后友链页面也会显示朋友圈钓鱼
-    angle:
-      enable: true # 是否开启
+# 搜索
+# tip：开启前需要安装搜索插件
+search:
+  enable: false
+  # algolia, local
+  type: algolia
+  algolia_search:
+    enable: false
+    # hits:
+    #   per_page: 6
+  local_search:
+    enable: false
+    preload: false
+    CDN:
+
+# 文章页面AI
+post-ai:
+  enable: false # 是否开启
+  # 右侧显示的模型名称
+  modelName: GPT 4
+  # key
+  # 具体获取方法见文档
+  key:
+  # 自介
+  talk: 我是王卓Sco开发的摘要生成助理ScoGPT，ScoGPT在静态部署时进行摘要的撰写，并且在访客访问时通过ScoCorrection转译后的文本摘要实现工具。我在这里只负责已经生成的摘要显示，你无法与我直接沟通，但我可以回答一些预设的问题。
+  # 随机文章按钮
+  randomPost: false
+  # 举报链接，不填不显示
+  report: https://blog.wzsco.top/about/
+  # 底部提示
+  tips: 此内容根据文章生成，并经过人工审核，仅用于文章内容的解释与总结
 
 # 数学公式
-# -------------
 katex:
   enable: false # 是否开启
   per_page: false # 是否在每页都加载
@@ -589,6 +568,7 @@ comment:
   # tip：如果不需要评论系统，可以将enable设置为false
   type:
   commentBarrage: false # 热评开关
+  newComment: false # 最新评论开关
   # 匿名评论前部分随机信息
   randomInfoStart:
     - '聪敏的'
@@ -693,24 +673,24 @@ CDN:
   custom_format: https://cdn.staticfile.org/${cdnjs_name}/${version}/${min_cdnjs_file}
 
   option:
-    # algolia_search:
-    # instantsearch:
-    # pjax:
-    # twikoo:
-    # waline_js:
-    # waline_css:
-    # sharejs:
-    # sharejs_css:
-    # katex:
-    # katex_copytex:
-    # lazyload:
-    # aplayer_css:
-    # aplayer_js:
-    # meting_js:
-    # pace_js:
-    # lunr_js:
-    # swiper_css:
-    # swiper_js:
-    # busuanzi_js:
-    # snackbar_css:
-    # snackbar_js:
+  # algolia_search:
+  # instantsearch:
+  # pjax:
+  # twikoo:
+  # waline_js:
+  # waline_css:
+  # sharejs:
+  # sharejs_css:
+  # katex:
+  # katex_copytex:
+  # lazyload:
+  # aplayer_css:
+  # aplayer_js:
+  # meting_js:
+  # pace_js:
+  # lunr_js:
+  # swiper_css:
+  # swiper_js:
+  # busuanzi_js:
+  # snackbar_css:
+  # snackbar_js:

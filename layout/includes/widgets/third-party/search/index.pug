@@ -1,7 +1,8 @@
-if theme.thirdparty.search.enable
-    if theme.thirdparty.search.type==="algolia"
-        include ./algolia-search.pug
-        script(src=url_for(theme.cdn.algolia_js))
-    else if theme.thirdparty.search.type === "local"
-        include ./local-search.pug
-        script(src=url_for(theme.cdn.local_search))
+if theme.search.enable
+    case theme.search.type
+        when 'algolia'
+            include algolia-search
+            script(src=url_for(theme.cdn.algolia_js))
+        when 'local'
+            include local-search
+            script(src=url_for(theme.cdn.local_search))

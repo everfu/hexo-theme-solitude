@@ -45,7 +45,7 @@ div#rightMenu
         div.rightMenu-item#menu-music-forward
             i.scoicon.sco-skip-forward-fill
             span 切换到下一首
-        div.rightMenu-item#menu-music-playlist(onclick=`window.open('${theme.thirdparty.aplayer.server === 'tencent' ? `https://y.qq.com/n/ryqq/playlist/${theme.thirdparty.aplayer.id}` : `https://music.163.com/#/playlist?id=${theme.thirdparty.aplayer.id}`}', '_blank');`)
+        div.rightMenu-item#menu-music-playlist(onclick=`window.open('${theme.capsule.server === 'tencent' ? `https://y.qq.com/n/ryqq/playlist/${theme.capsule.id}` : `https://music.163.com/#/playlist?id=${theme.capsule.id}`}', '_blank');`)
             i.scoicon.sco-play-list-2-line
             span 查看所有歌曲
         div.rightMenu-item#menu-music-copyMusicName

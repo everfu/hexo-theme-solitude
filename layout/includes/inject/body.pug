@@ -37,14 +37,14 @@ div
         script(src=url_for(theme.cdn.rightside_js))
 
     // post-ai)
-    if theme.thirdparty.ai.enable
+    if theme.post_ai.enable
         script(src=url_for(theme.cdn.sco_ai_js))
 
-    if theme.thirdparty.aplayer.enable || theme.music.enable
+    if theme.capsule.enable || theme.music.enable
         script(src=url_for(theme.cdn.aplayer_js))
         script(src=url_for(theme.cdn.meting_js))
         script.
-            const meting_api = '!{theme.thirdparty.aplayer.api}';
+            const meting_api = '!{theme.meting_api}';
 
     if theme.post.covercolor.enable
         script.
@@ -75,12 +75,13 @@ div
         script(src=url_for(theme.cdn.pace_js))
 
     // search
-    if theme.thirdparty.search.enable
-        if theme.thirdparty.search.type === 'algolia'
-            script(src=url_for(theme.cdn.instantsearch))
-            script(src=url_for(theme.cdn.algolia_search))
-        else if theme.thirdparty.search.type === 'local'
-            script(src=url_for(theme.cdn.lunr_js))
+    if theme.search.enable
+        case theme.search.type
+            when 'algolia'
+                script(src=url_for(theme.cdn.instantsearch))
+                script(src=url_for(theme.cdn.algolia_search))
+            when 'local'
+                script(src=url_for(theme.cdn.lunr_js))
 
     // inject custom body
     if theme.extends.body
@@ -96,7 +97,7 @@ div#js-pjax
                 }
             }), 500);
             sco.reflashEssayWaterFall();
-    if theme.thirdparty.busuanzi && (theme.aside.siteinfo.uv || theme.aside.siteinfo.pv)
+    if theme.busuanzi && (theme.aside.siteinfo.uv || theme.aside.siteinfo.pv)
         script(async src=url_for(theme.cdn.busuanzi_js))
 
     script#config-diff.
