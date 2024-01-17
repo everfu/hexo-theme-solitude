@@ -521,7 +521,7 @@ search:
     CDN:
 
 # 文章页面AI
-post-ai:
+post_ai:
   enable: false # 是否开启
   # 右侧显示的模型名称
   modelName: GPT 4
