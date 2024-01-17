@@ -574,6 +574,13 @@ thirdparty:
     angle:
       enable: true # 是否开启
 
+# 数学公式
+# -------------
+katex:
+  enable: false # 是否开启
+  per_page: false # 是否在每页都加载
+  copytex: false # 是否开启复制公式
+
 # 评论
 # --------------------------------------
 comment:
@@ -671,10 +678,9 @@ CDN:
   # The CDN provider of internal scripts (主题内 js 的 cdn 配置)
   # option: local/jsdelivr/unpkg/cdnjs/custom_cdn/custom
   # Dev version can only choose. ( dev版本只能为 local )
-  internal: custom_cdn
+  internal: local
   # 自己搭建的cdn地址 默认路径：/source/$1
-  custom_cdn: https://cdn2.wzsco.top/
-
+  custom_cdn:
   # The CDN provider of third party scripts (第三方 js 的 cdn 配置)
   # option: local/jsdelivr/unpkg/cdnjs/custom
   third_party: custom

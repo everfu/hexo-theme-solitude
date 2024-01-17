@@ -170,4 +170,12 @@ const utils = {
         })
         ele.style.animation = text
     },
+    wrap: (selector, eleType, options) => {
+        const createEle = document.createElement(eleType)
+        for (const [key, value] of Object.entries(options)) {
+            createEle.setAttribute(key, value)
+        }
+        selector.parentNode.insertBefore(createEle, selector)
+        createEle.appendChild(selector)
+    },
 }

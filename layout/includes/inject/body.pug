@@ -61,8 +61,24 @@ if theme.post.covercolor.enable
 if theme.footer.randomlink
     include ../widgets/randomlink.pug
 
-if page.katex
-    link(rel="stylesheet", href=url_for(theme.cdn.katexcss))
+mixin katex
+    if theme.katex.copytex
+        script(src=url_for(theme.cdn.katex_copytex))
+            script.
+                (() => {
+                    document.querySelectorAll('#article-container span.katex-display').forEach(item => {
+                        utils.wrap(item, 'div', {class: 'katex-wrap'})
+                    })
+                })()
+
+if theme.katex && theme.katex.enable
+    link(rel="stylesheet", href=url_for(theme.cdn.katex))
+    if theme.katex.per_page
+        if is_post() || is_page()
+            +katex
+    else
+        if page.katex
+            +katex
 
 // waterfall
 if theme.says.enable
