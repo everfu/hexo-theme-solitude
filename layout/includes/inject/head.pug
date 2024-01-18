@@ -1,4 +1,4 @@
-each item in theme.verify_site
+each item in theme.verify_site || []
     meta(name=item.name, content=item.content)
 
 link(rel="stylesheet", href=url_for(theme.cdn.scoicon_css))
