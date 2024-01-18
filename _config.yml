@@ -1,7 +1,7 @@
 #---------------------------
 # Hexo Theme Solitude
-# Author: 王卓Sco、亦封
-# Github: https://github.com/DuoSco/Hexo-theme-solitude
+# Author: wleelw（王卓Sco）、yife68（亦封）
+# Github: https://github.com/wleelw/Hexo-theme-solitude
 #
 # 配置指南: https://docs.wzsco.top/
 # 你可以从指南中获得更详细的说明
@@ -10,118 +10,158 @@
 # You can get more detailed help from the guide
 #---------------------------
 
+# -------------------------
+# 基本配置
+# basic settings
+
 # 站点设置
+# site settings
 site:
   # 顶部导航栏logo区域
+  # Logo area in the top navigation bar
   name:
     # 显示类型 （i_class/text/img）
+    # Display type (i_class/text/img)
     class: text
     # 具体内容 例如：scoicon sco-logo / 王卓Sco / https://p.sondy.top/logo.png
+    # Specific content, for example: scoicon sco-logo / 王卓Sco / https://p.sondy.top/logo.png
     custom: Solitude
   # 网页icon
+  # Web icon
   siteIcon: https://bu.dusays.com/2023/11/08/654af68b25bb8.jpg
   # 页脚的Logo、加载动画默认的logo
+  # Logo in the footer, default logo for loading animation
   icon: https://bu.dusays.com/2023/11/08/654af68b25bb8.jpg
   # ICP 例如：湘ICP备2023015327号
+  # ICP, for example: 湘ICP备2023015327号
   icp:
   # ICP链接 例如：http://www.beian.miit.gov.cn/
+  # ICP link, for example: http://www.beian.miit.gov.cn/
   icp_url:
 
 # 导航栏
+# navigation bar
 nav:
   #导航栏左侧
+  # left
   left:
     # 是否开启左侧导航栏
+    # Whether to enable the left navigation bar
     enable: false
     # 导航栏显示的内容
+    # Content displayed in the navigation bar
     menu:
-    # 显示分类名
-#      项目:
-#        # 显示子类
-#        Solitude:
-#          # 显示的图标
-#          icon: https://bu.dusays.com/2023/11/08/654af68b25bb8.jpg
-#          # 点击的跳转链接
-#          url: https://github.com/DuoSco/Hexo-Theme-solitude
-    # ...
+  #      # 显示分类名
+  #      # Display category name
+  #      项目:
+  #        # 显示子类
+  #        # Display subcategories
+  #        Solitude:
+  #          # 显示的图标
+  #          # Displayed icon
+  #          icon: https://bu.dusays.com/2023/11/08/654af68b25bb8.jpg
+  #          # 点击的跳转链接
+  #          # Click the jump link
+  #          url: https://github.com/DuoSco/Hexo-Theme-solitude
 
   # 导航栏内容
+  # Navigation bar content
   # tip：此部分内容是顶部导航栏中间菜单区域
+  # tip: This part of the content is the menu area in the middle of the top navigation bar
   menu:
-    # 显示的大分类名称
-    文库:
-      # 点击跳转链接
-      # tip：如果没有子类就填跳转链接，例如：/archives，否则填false
-      url: false
-      # 子类数组
-      child:
-        # 子类名称
-        文章列表:
-          # 点击跳转链接
-          url: /archives/
-          # 子类名称左侧图标
-          icon: sco-folder-fill
-        全部分类:
-          url: /categories/
-          icon: sco-checkbox-multiple-blank-fill
-        全部标签:
-          url: /tags/
-          icon: sco-price-tag-fill
-#      友链:
-#        url: false
-#        child:
-#          友情链接:
-#            url: /links/
-#            icon: sco-group-fill
-#          宝藏博主:
-#            url: javascript:travelling()
-#            icon: sco-gift-fill
-#      我的:
-#        url: false
-#        child:
-#          装备:
-#            url: /equipment/
-#            icon: sco-laptop-line
-#          工具箱:
-#            url: /tlink/
-#            icon: sco-tools-fill
-#      关于:
-#        url: false
-#        child:
-#          关于本站:
-#            url: /about/
-#            icon: sco-contacts-fill
+  # 显示的大分类名称
+  # Displayed category name
+  #    文库:
+  #      # 点击跳转链接
+  #      # Click the jump link
+  #      # tip：如果没有子类就填跳转链接，例如：/archives，否则填false
+  #      # tip: If there is no subcategory, fill in the jump link, for example: /archives, otherwise fill in false
+  #      url: false
+  #      # 子类数组
+  #      # Subcategory array
+  #      child:
+  #        # 子类名称
+  #        # Subcategory name
+  #        文章列表:
+  #          # 点击跳转链接
+  #          # Click the jump link
+  #          url: /archives/
+  #          # 子类名称左侧图标
+  #          # Subcategory name left icon
+  #          icon: sco-folder-fill
+  #        全部分类:
+  #          url: /categories/
+  #          icon: sco-checkbox-multiple-blank-fill
+  #        全部标签:
+  #          url: /tags/
+  #          icon: sco-price-tag-fill
+  #      友链:
+  #        url: false
+  #        child:
+  #          友情链接:
+  #            url: /links/
+  #            icon: sco-group-fill
+  #          宝藏博主:
+  #            url: javascript:travelling()
+  #            icon: sco-gift-fill
+  #      我的:
+  #        url: false
+  #        child:
+  #          装备:
+  #            url: /equipment/
+  #            icon: sco-laptop-line
+  #          工具箱:
+  #            url: /tlink/
+  #            icon: sco-tools-fill
+  #      关于:
+  #        url: false
+  #        child:
+  #          关于本站:
+  #            url: /about/
+  #            icon: sco-contacts-fill
 
 
   # 导航栏右侧快捷菜单
+  # Quick menu on the right side of the navigation bar
   # tip：只需填写true和false即可
+  # tip: Just fill in true and false
   right:
-    random: false        # 随机文章跳转
-    console: false       #控制台
+    random: false        # 随机文章跳转 true：开启 / false：关闭 : random post jump true: on / false: off
+    console: false       #控制台 true：开启 / false：关闭 : console true: on / false: off
     # 从左至右
+    # From left to right
     custom:
-#      - name: 开往 - 友链接力
-#        url: https://www.travellings.cn/go.html
-#        icon: sco-train-line
-#        onclick:
-#        id: travellings_button
+#      - name: 开往 - 友链接力 # 显示文字 / Displayed text
+#        url: https://www.travellings.cn/go.html # 跳转链接 / Jump link
+#        icon: sco-train-line # 图标 / Icon
+#        onclick:  # 点击事件 / Click event
+#        id: travellings_button # id
 
 # 首页顶部样式
-# tip：此内容为首页顶部的内容
+# Home top style
 hometop:
   # 首页顶部瀑布技能点、右侧文章推荐、左侧下部分三大分类
+  # Home top waterfall skill points, right article recommendation, left lower part of the three major categories
   banner:
-    # 是否开启显示，不要开启则顶部只会显示即刻mini（需配置）
-    enable: false # 是否打开顶部banner
+    # 是否开启显示，不开启则顶部只会显示即刻mini（需配置）
+    # Whether to enable display, do not enable the top will only display the mini immediately (need to configure)
+    enable: false # 是否打开顶部banner / Whether to open the top banner
     # 左上角显示大文字
+    # Large text displayed in the upper left corner
     # tip：可使用html标签
+    # tip: html tags can be used
     title: 宁静致远<br>热爱生活
     # 左上角显示小文字
+    # Small text displayed in the upper left corner
     url: Hexo-Theme-Solitude
     # 轮播icon
+    # Carousel icon
     icon:
+    # 名字 / Name
   #      HTML:
+  #        # 图片 / Image
   #        img: https://npm.elemecdn.com/wleelw-blog-abs@1.0.0/img/icon/HTML.png
+  #        # 背景色 / Background color
   #        color: '#e9572b'
   #      JS:
   #        img: https://npm.elemecdn.com/wleelw-blog-abs@1.0.0/img/icon/JS.png
@@ -146,73 +186,106 @@ hometop:
   #        color: '#ffffff'
 
   # 顶部三大分类
+  # Top three categories
   categoryGroup:
     # 左侧
+    # Left
     G1:
       # 显示文字
+      # Displayed text
       name: 必看精选
       # 显示图标
+      # Displayed icon
       icon: scoicon sco-star-smile-fill
       # 跳转链接
+      # Jump link
       url: /tags/精选/
     # 中间
+    # Middle
     G2:
       name: 热门文章
       icon: scoicon sco-fire-fill
       url: /categories/热门/
     # 右侧
+    # Right
     G3:
       name: 实用教程
       icon: scoicon sco-book-mark-fill
       url: /tags/教程/
 
   # 右侧置顶列表（在文章的front matter中添加“recommend: true”）
+  # Right top list (add "recommend: true" in the front matter of the article)
   recommendList:
     # 左上角显示文字
+    # Large text displayed in the upper left corner
     sup: 置顶
     # 左下角大字
+    # Large text in the lower left corner
     title: Solitude主题文档
     # 点击跳转链接
+    # Click the jump link
     url: https://docs.wzsco.top/
     # 显示背景图片
+    # Display background image
     img: /img/default.png
     # 阴影颜色
+    # Shadow color
     color: '#ff0000'
 
-# 侧边栏
+# --------------------------------------
+# Aside Settings
+# 侧边栏配置
 aside:
-  # 值：about（关于我）、power（爱发电）、newestPost（最新文章）、allInfo（网站信息）、flip（公众号二维码）、welcome（个性定位）、history（那年今日）
+  # 值：about（关于我）、newestPost（最新文章）、allInfo（网站信息）、flip（公众号二维码）
+  # Values: about (info card), newestPost (latest article), allInfo (website information), flip (official account QR code)
+
   # 在主页显示的侧边栏信息
+  # Sidebar information displayed on the homepage
   # tip：将需要显示的侧边栏模块按照以上的值所述填入
+  # tip: Fill in the sidebar modules that need to be displayed as described above
   home:
-    # 固定的信息（滑动不不跟随）
+    # 固定的信息（滑动不跟随）
+    # Fixed information (not followed by sliding)
     noSticky: "about"
     # 不固定的信息（滑动跟随）
+    # Unfixed information (sliding follow)
     Sticky: "allInfo"
   # 在文章页显示的侧边栏信息
+  # Sidebar information displayed on the article page
   post:
     noSticky: "about"
     Sticky: "newestPost"
   # 在页面中显示的侧边栏信息
+  # Sidebar information displayed on the
   page:
     noSticky: "about"
     Sticky: "newestPost,allInfo"
   # 侧边栏个人信息卡片
+  # Sidebar personal information
   card:
     # 头像信息
+    # Avatar information
     author:
       # 头像
+      # Avatar
       img: https://bu.dusays.com/2023/11/08/654af68b25bb8.jpg
       # 表情图片链接
+      # Emoticon image link
       # tip: 推荐尺寸 26x26
+      # tip: Recommended size 26x26
       sticker: https://bu.dusays.com/2023/12/30/659011053e246.png
     # 文案1
+    # label1
     # tip：可使用html标签
+    # tip: html tags can be used
     content: 分享自己对编程的<b>热爱</b>，对美好生活的<b>向往</b>，对知识海洋<b>探索历程</b>。
     # 文案2
+    # label2
     # tip：可使用html标签
+    # tip: html tags can be used
     content2: 相信你可以在这里找到对你有用的知识和教程。
     # 个人信息卡片底部的小图标，按照例子填写
+    # Small icons at the bottom of the personal information card, fill in according to the example
     information:
   #      # 悬停显示文字
   #      Github:
@@ -223,290 +296,365 @@ aside:
   #      Bilibili:
   #        icon: scoicon sco-bilibili-line
   #        url: https://space.bilibili.com/1329819902
-  # 公众号二维码
+
+  # 二维码
+  # Official account QR code
   flip:
     # 右下角头像
+    # Avatar in the lower right corner
     favicon:
     # 正面
+    # Front
     face:
     # 鼠标悬停翻转图片
+    # Mouse hover flip image
     backface:
     # 夜间模式下是否开启卡片背景颜色 true：使用背景颜色 / false：不使用背景颜色
+    # Whether to enable card background color in night mode true: use background color / false: do not use background color
     darkcolor: false
-  # 个性定位
-  welcome:
-    enable: false
-    #【选填】留空将默认显示为：来访者
-    title:
-    #【选填】留空将默认显示为：scoicon sco-map-pin-line
-    icon:
-    # 腾讯key
-    key:
-    # 经度
-    # tip：一定要改！不要用作者的经纬度！查询办法见文档
-    longitude: 112.8455033596802
-    # 纬度
-    Latitude: 26.430308353457896
-  # 那年今日
-  history:
-    enable: false
-    #【选填】留空将默认显示为：那年今日
-    title:
-    #【选填】留空将默认显示为：scoicon sco-calendar-line
-    icon:
+
   # 页面目录
+  # Page directory
   toc:
     # 在文章页显示
+    # Display on the article page
     post: true
     # 在任意页显示
+    # Display on any page
     page: false
     # 开启后不悬停目录有模糊效果
+    # After opening, there is a fuzzy effect without hovering over the directory
     vague: true
 
   # 侧边栏文章列表
+  # Sidebar article list
   tags:
     # 是否显示标签
+    # Whether to display tags
     enable: false
     # 显示标签数量，当高于标签总数时，显示全部标签按钮
+    # Display the number of tags, when it is higher than the total number of tags, display all tags button
     limit: 20
     # 高亮显示
+    # Highlight
     highlight: false
     # 高亮显示标签列表
+    # Highlighted tag list
     list:
       - 'Solitude-使用'
 
   # 侧边栏归档
+  # aside archive
   archive:
-    # 是否显示
     enable: false
     # 显示类型
-    type: 'month' # monthly: 按月 / yearly: 按年
+    type: 'month' # monthly: 按月 / yearly: 按年 : monthly: by month / yearly: by year
 
   # 建站信息
+  # Website information
   siteinfo:
     # 文章数
+    # Number of articles
     postcount: true
     # 总字数
+    # Total number of words
     wordcount: true
     # 访问量
+    # Number of visits
     pv: true
     # 访客数
+    # Number of visitors
     uv: true
     # 最后更新日期
+    # Last update date
     updatetime: true
     # 建站时间
+    # Website creation time
     runtimeenable: true
     # 格式：yyyy-MM-dd hh-mm-ss
+    # Format: yyyy-MM-dd hh-mm-ss
     runtime: '2023-04-20 00:00:00'
 
-# Footer Settings
 # --------------------------------------
+# Footer Settings
+# 页脚配置
 footer:
   # 底部上方一排图标
+  # Bottom row of icons
   information:
-    left: # 左侧显示图标
-#      Github:
-#        icon: scoicon sco-bilibili-line
-#        url: https://github.com/wleelw
-#      Mail:
-#        icon: scoicon sco-mail-line
-#        url: mailto:wleelw@wzsco.top
-    right: # 右侧显示图标
-#      Bilibili:
-#        icon: scoicon sco-bilibili-line
-#        url: https://space.bilibili.com/1329819902
-#      抖音:
-#        icon: scoicon sco-douyin-fill
-#        url: https://v.douyin.com/iJsLc8jt/
+    left: # 左侧显示图标 / Left display icon
+    #      Github:
+    #        icon: scoicon sco-bilibili-line
+    #        url: https://github.com/wleelw
+    #      Mail:
+    #        icon: scoicon sco-mail-line
+    #        url: mailto:wleelw@wzsco.top
+    right: # 右侧显示图标 / Right display icon
+    #      Bilibili:
+    #        icon: scoicon sco-bilibili-line
+    #        url: https://space.bilibili.com/1329819902
+    #      抖音:
+    #        icon: scoicon sco-douyin-fill
+    #        url: https://v.douyin.com/iJsLc8jt/
+
   # 底部导航栏
-  group: # 从左至右
-#    导航:
-#      归档: /archives/
-#      分类: /categories/
-#      标签: /tags/
-#    服务:
-#      阿里云: https://aliyun.com/
-#      51la统计: https://v6.51.la/
-#      百度统计: https://tongji.baidu.com/
-#    支持:
-#      打赏记录: /about/
-#    协议:
-#      Cookies: /cookies/
-#      用户协议: /privacy/
-#      版权协议: /copyright/
+  # Bottom navigation bar
+  group: # 从左至右 / From left to right
+  #    导航:
+  #      归档: /archives/
+  #      分类: /categories/
+  #      标签: /tags/
+  #    服务:
+  #      阿里云: https://aliyun.com/
+  #      51la统计: https://v6.51.la/
+  #      百度统计: https://tongji.baidu.com/
+  #    支持:
+  #      打赏记录: /about/
+  #    协议:
+  #      Cookies: /cookies/
+  #      用户协议: /privacy/
+  #      版权协议: /copyright/
 
   # 底部随机友链
+  # Random links at the bottom
   # tip：此处的友链是随机显示的，不是固定的
+  # tip: The links here are displayed randomly, not fixed
+  # warning: 打开前必须先配置links
+  # warning: links must be configured before opening
   randomlink: false
-  # 隐私助手
+  # 隐私助手右侧弹窗，填写路径后开启
+  # Privacy assistant right pop-up window, fill in the path to open
   privacy: # /privacy/
   # 订阅链接
+  # Subscription link
   rss: # /rss/
   # 版权
+  # Copyright
   license: # /license/
 
-# 页面页默认设置
+# -------------------------
+# 文章页、页面配置
+# post、page settings
+
+# 页面默认设置
+# page default settings
 page:
-  error: true  # 404页面
-  tags: true # 标签页
-  categories: true # 分类页
-  default: # 默认值
+  error: true  # 404页面 / 404 page
+  tags: true # 标签页 /  Tags page
+  categories: true # 分类页 /  Categories page
+  default: # 默认值 /  Default value
     # 默认图片
+    # default cover
     # tip：随机数组图片，每次生成的时候都会从中随机抽取一张
+    # tip: Random array pictures, each time you generate, you will randomly extract one from them
     cover:
-      - /img/default.png # 默认图片
+      - /img/default.png # 默认图片 / default cover
 
 # 文章页默认设置
+# post default settings
 post:
   default:
     # 文章默认图片
-    # tip：同page的default
+    # default cover
     cover:
-      - /img/default.png # 默认图片
+      - /img/default.png # 默认图片 / default cover
+    # 文章发布默认地址
+    # default post locate
     locate: 衡阳
+    # 文章默认版权
+    # default post copyright
     copyright:
-      # 是否打开copyright
       enable: true
       license: CC BY-NC-SA 4.0
       licenurl: https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh
       # 是否使用移轴动画头像
+      # Whether to use the shift animation avatar
       author:
         enable: false
-        author_back: https://bu.dusays.com/2023/11/01/6541f6d4b2573.png # 底部头像背景
+        author_back: https://bu.dusays.com/2023/11/01/6541f6d4b2573.png # 底部头像背景 / Bottom avatar background
   # 顶部文章简介
+  # Top article introduction
   meta:
-    date: false # 发布日期
-    updated: false # 更新日期
-    locate: false # 位置
-    wordcount: false # 字数
-    readtime: false # 访问
-    pv: false # 浏览量
-    comment: false # 评论数
+    date: false # 发布日期 / Release date
+    updated: false # 更新日期 / Update date
+    locate: false # 位置 / Location
+    wordcount: false # 字数 / Number of words
+    readtime: false # 访问 / uv
+    pv: false # 浏览量 / pv
+    comment: false # 评论数 / Comment count
   # 打赏
+  # reward
   award:
-    # 开启后文章底部显示打赏按钮
     enable: false
     # 微信收款码
+    # WeChat payment code
     wechat: https://bu.dusays.com/2023/11/07/6549e79364fa3.png
     # 支付宝收款码
+    # Alipay payment code
     alipay: https://bu.dusays.com/2023/11/07/6549e79d02bd6.png
     # 打赏统计页面链接
+    # Reward statistics page link
     url: /about
+  # 版权中订阅按钮跳转链接，填写地址后开启
+  # Subscription button jump link in copyright
   rss: # /atom.xml
-  # 文章颜色获取
-  covercolor: #文章cover取色
-    enable: false # 是否开启
-    mode: local #local：本地取色 / api：img2color取色（无存缓） / api_redis：img2color取色（有存缓）
-    api: https://img2color.meuicat.com/api?img=
-    time: 43200000 # api取色间隔（毫秒），默认为12小时
+  # 文章主题色获取
+  # Article theme color acquisition
+  covercolor:
+    enable: false
+    mode: local # local：本地取色 / api：img2color取色（无存缓） / api_redis：img2color取色（有存缓） : local: local color / api: img2color color (no storage cache) / api_redis: img2color color (with storage cache)
+    api: https://img2color.meuicat.com/api?img= # api地址 / api address
+    time: 43200000 # api取色间隔（毫秒），默认为12小时 / api color interval (milliseconds), default is 12 hours
 
-# 关于界面
+# -------------------------
+# 页面配置
+# page settings
+
+# 404 页面
+# 404 page
+errorpage:
+  # 图片
+  # image
+  img: https://npm.elemecdn.com/wzheo-absolute@1.0.3/image/source/404.png
+  # 文字
+  # text
+  text: =awa= 页面走丢了
+  # 推荐文章列表
+  # Recommended article list
+  recommendList: true
+
+# 关于页
+# about page
 about: false
 
-# 即刻说说界面
+# 即刻说说页
+# jike says page
 # 前置要求：需配置即刻说说页面
+# Pre-requirements: Jike says page needs to be configured
 # 开启后将显示即刻页面
+# After opening, the Jike page will be displayed
 says:
   enable: false
   # 主页的即刻轮播条
+  # Jike carousel bar on the homepage
   home_mini: false
   # 1：张洪heo样式 / 2：Leonus样式
+  # 1: Zhang Hong heo style / 2: Leonus style
   style: 1
 
 # -------------------------
-# 音乐相关配置
-# meting-api
+# meeting-api，用于界面中的音乐胶囊和音乐馆页，可自定义api，不会请勿动。
+# meeting-api, used for music capsules and music halls in the interface, can customize api, do not move if you don't know.
 meting_api: "https://meting.qjqq.cn/?server=:server&type=:type&id=:id&auth=:auth&r=:r" #自定义api
-# 音乐播放器界面
+# 音乐馆页
+# music hall
 music:
   enable: false
+  # 音乐ID：歌单ID / 专辑ID / 歌手ID
+  # Music ID: playlist ID / album ID / singer ID
   id: 1994908354
   # 播放列表的服务商。netease：网易云 / tencent：腾讯 / kugou：酷狗 / xiami：小米 / baidu：百度
+  # Music service provider. netease: Netease Cloud / tencent: Tencent / kugou: Kugou / xiaomi: Xiaomi / baidu: Baidu
   server: netease
   # 播放列表的类型。song：单曲 / playlist：歌单 / album：专辑 / artist：歌手
+  # Type of playlist. song: Single / playlist: Playlist / album: Album / artist: Singer
   type: playlist
   # 初始音量。0.8 = 80%，范围 0 到 1
+  # Initial volume. 0.8 = 80%, range 0 to 1
   volume: 0.8
   # 是否开启互斥模式，即同时只能有一个播放器播放
+  # Whether to enable mutex mode, that is, only one player can play at the same time
   mutex: true
 
 # 音乐胶囊
+# capsule music
 capsule:
   enable: false
-  id: 8407304077 # 歌单id
-  server: netease # 播放列表的服务商。netease：网易云 / tencent：腾讯 / kugou：酷狗 / xiami：小米 / baidu：百度
-  type: playlist # 播放列表的类型。song：单曲 / playlist：歌单 / album：专辑 / artist：歌手
+  id: 8407304077 # 歌单id / playlist id
+  server: netease # 播放列表的服务商。netease：网易云 / tencent：腾讯 / kugou：酷狗 / xiami：小米 / baidu：百度 : Music service provider. netease: Netease Cloud / tencent: Tencent / kugou: Kugou / xiaomi: Xiaomi / baidu: Baidu
+  type: playlist # 播放列表的类型。song：单曲 / playlist：歌单 / album：专辑 / artist：歌手 : Type of playlist. song: Single / playlist: Playlist / album: Album / artist: Singer
+
+# 自定义主题配色
+# custom theme color
+# 注意：颜色值必须使用引号，如“#000”，否则可能会导致错误！
+# Note: The color value must be enclosed in quotation marks, such as "#000", otherwise it may cause an error!
+# --------------------------------------
+theme_color:
+  dark: "#ffc848" # 暗色模式 / Dark mode
+  dark_op: '#f2b94b23' # 暗色模式透明 / Dark mode transparent
+  dark_op_deep: '#f2b94bdd' # 暗色模式透明深色 / Dark mode transparent dark
+  dark_none: '#f2b94b00' # 暗色模式透明无色 / Dark mode transparent colorless
+  light: "#425AEF" # 亮色模式 / Light mode
+  light_op: '#4259ef23' # 亮色模式透明 / Light mode transparent
+  light_op_deep: '#4259efdd' # 亮色模式透明深色 / Light mode transparent dark
+  light_none: '#4259ef01' # 亮色模式透明无色 / Light mode transparent colorless
+
+# 主题显示模式调整
+# theme display mode adjustment
+# 主题支持三种模式：自动切换、暗色模式、亮色模式
+# The theme supports three modes: automatic switching, dark mode, and light mode
+# --------------------------------------
+display_mode:
+  type: auto # auto: 自动切换 / dark: 暗色模式 / light: 亮色模式 / auto: automatic switching / dark: dark mode / light: light mode
 
 # -------------------------
-# 404 页面
-errorpage:
-  # 图片
-  img: https://npm.elemecdn.com/wzheo-absolute@1.0.3/image/source/404.png
-  # 文字
-  text: =awa= 页面走丢了
-  # 推荐文章列表
-  recommendList: true
+# 扩展配置
+# extend settings
 
 # 懒加载
+# lazyload
 lazyload:
-  # 是否开启
   enable: false
   # 加载中显示图片
+  # Loading display image
   placeholder: /img/loading.gif
   # 加载失败显示图片
+  # Loading failed display image
   errorimg: /img/error_load.png
 
 # 图片灯箱
+# image lightbox
 lightbox: false
 
 #代码高亮增强
+# code highlight
 hightlight:
   enable: false
   # 代码块行高限制
+  # Code block line height limit
   hightlimit: 200
-  copy: true # 是否开启复制按钮
-  expand: false # 是否默认展开
+  copy: true # 是否开启复制按钮 / Whether to enable the copy button
+  expand: false # 是否默认展开 / Whether to expand by default
   # 代码块样式
-  theme: default # default: 默认 / mac
+  # Code block style
+  theme: default # default: 默认 / mac : apple terminal
+  # 代码配色
+  # Code color
   color: default # default: 默认  / vscode / solarized-dark / solarized-light / dracula / monokai
 
 # 加载动画
+# loading animation
 loading:
   # 全局加载动画
+  # Global loading animation
   fullpage: false
   # 顶部加载胶囊
+  # Top loading capsule
   pace: true
 
-# 用于自定义的主题颜色
-# 注意：颜色值必须使用引号，如“#000”，否则可能会导致错误！
-# --------------------------------------
-theme_color:
-  dark: "#ffc848" # 暗色模式
-  dark_op: '#f2b94b23' # 暗色模式透明
-  dark_op_deep: '#f2b94bdd' # 暗色模式透明深色
-  dark_none: '#f2b94b00' # 暗色模式透明无色
-  light: "#425AEF" # 亮色模式
-  light_op: '#4259ef23' # 亮色模式透明
-  light_op_deep: '#4259efdd' # 亮色模式透明深色
-  light_none: '#4259ef01' # 亮色模式透明无色
-
-# 主题显示模式调整
-# 主题支持三种模式：自动切换、暗色模式、亮色模式
-# --------------------------------------
-display_mode:
-  type: auto # auto: 自动切换 / dark: 暗色模式 / light: 亮色模式
-  dark_universe: true # 暗色模式背景星空
-
-# --------------------------------------
-# 第三方设置
 # 字数统计
-# tip：开启前需要安装字数统计插件
+# word count
+# warning：开启前需要安装字数统计插件
+# warning: You need to install the word count plugin before turning it on
 wordcount: false
 # 访问统计
+# access statistics
 busuanzi: true
 
 # 搜索
-# tip：开启前需要安装搜索插件
+# search
+# warning：开启前需要安装搜索插件
+# warning: You need to install the search plugin before turning it on
 search:
   enable: false
   # algolia, local
@@ -520,64 +668,71 @@ search:
     preload: false
     CDN:
 
-# 文章页面AI
+# 文章摘要AI
+# post abstract AI
 post_ai:
-  enable: false # 是否开启
+  enable: false
   # 右侧显示的模型名称
+  # Model name displayed on the right
   modelName: GPT 4
   # key
   # 具体获取方法见文档
+  # Specific acquisition method, see the document
   key:
   # 自介
+  # talk
   talk: 我是王卓Sco开发的摘要生成助理ScoGPT，ScoGPT在静态部署时进行摘要的撰写，并且在访客访问时通过ScoCorrection转译后的文本摘要实现工具。我在这里只负责已经生成的摘要显示，你无法与我直接沟通，但我可以回答一些预设的问题。
   # 随机文章按钮
+  # Random post button
   randomPost: false
   # 举报链接，不填不显示
+  # Report link, do not fill in and do not display
   report: https://blog.wzsco.top/about/
   # 底部提示
+  # Bottom tip
   tips: 此内容根据文章生成，并经过人工审核，仅用于文章内容的解释与总结
 
-# 数学公式
+# latex 公式支持
+# latex formula support
 katex:
-  enable: false # 是否开启
-  per_page: false # 是否在每页都加载
-  copytex: false # 是否开启复制公式
+  enable: false
+  per_page: false # 是否在每页都加载 / Whether to load on each page
+  copytex: false # 是否开启复制公式 / Whether to enable copy formula
 
 # 评论
-# --------------------------------------
+# comment
 comment:
-  enable: false # 是否开启评论
-  # waline, twikoo
-  # tip：如果不需要评论系统，可以将enable设置为false
-  type:
-  commentBarrage: false # 热评开关
-  newComment: false # 最新评论开关
-  # 匿名评论前部分随机信息
+  enable: false
+  type: # waline, twikoo
+  commentBarrage: false # 热评开关 / Hot comment switch
+  newComment: false # 最新评论开关 / Latest comment switch
+  # 匿名评论前部分随机信息 / Anonymous comment front random information
   randomInfoStart:
     - '聪敏的'
     - '可爱的'
     - '美丽的'
-  # 匿名评论后部分随机信息
+  # 匿名评论后部分随机信息 / Anonymous comment after random information
   randomInfoEnd:
     - '白菜'
     - '小可爱'
     - '小仙女'
-  # twikoo配置信息
+  # twikoo 配置信息
+  # twikoo settings
   twikoo: # https://twikoo.js.org/
     envId: # url: https://twikoo.sondy.top/
     lang: 'zh-CN' # 语言
     accessToken:  # accessToken
-  # waline配置信息
+  # waline 配置信息
+  # waline settings
   waline: # https://waline.js.org/
     envId:  # url: https://waline.wzsco.top
-    pageview: true # 是否开启页面访问量统计
-    option: # waline配置项
+    pageview: true # 是否开启页面访问量统计 / Whether to enable page access statistics
+    option: # waline配置项 / waline configuration item
 
 # Open Graph
 # --------------------------------------
 # https://ogp.me/
 # https://developers.facebook.com/docs/sharing/webmasters/
-# tip: 开启后，将会在页面中插入 Open Graph 标签，用于社交分享。
 opengraph:
   enable: false
   options:
@@ -590,40 +745,49 @@ opengraph:
 #    fb_app_id:
 
 # 插入代码到头部 </head> 之前 和 底部 </body> 之前
+# Insert code before </head> and before </body>
 # 插入额外代码 如：统计，广告等
+# Insert additional code such as: statistics, advertising, etc.
 extends:
-  head: # 在head中插入
-  # - <script src="https://cdn.bootcdn.net/ajax/libs/pace/1.2.4/pace.min.js"></script>
-  body: # 在body中插入
+  head: # 在head中插入 / Insert in head
+  #    - <script src="https://cdn.bootcdn.net/ajax/libs/pace/1.2.4/pace.min.js"></script>
+  body: # 在body中插入 / Insert in body
 
 # 文章底部推荐文章
+# Recommended articles at the bottom of the article
 related_post:
   enable: false
   # 推荐文章数量
+  # Number of recommended articles
   limit: 2
   # 根据创建日期（created）或是更新日期（updated）
+  # According to the creation date (created) or the update date (updated)
   date_type: created
 
 # rightside(右键菜单)
+# right menu
 rightside:
   enable: false
 
 # 站点验证
+# Site verification
 # 仅需要填写验证代码即可，譬如：codeva-KReTIJu5us
+# Only need to fill in the verification code, such as: codeva-KReTIJu5us
 verify_site:
 #  - name: google-site-verification
 #    content: xxxxxx
 #  - name: baidu-site-verification
 #    content: xxxxxxx
+
 # CSS 前缀
+# CSS prefix
 # 有些 CSS 并不是所有浏览器都支持，需要增加对应的前缀才会生效
+# Some CSS is not supported by all browsers, and you need to add the corresponding prefix to take effect
 # 开启 css_prefix 后，会自动为一些 CSS 增加前缀。（会增加 20%的体积）
-# --------------------------------------
+# After opening css_prefix, some CSS will be automatically prefixed. (Will increase 20% of the volume)
 css_prefix: false
 
 # PWA
-# 图标信息非必选，填了就显示，不想添加的可以进行注释
-# https://github.com/JLHwung/hexo-offline
 pwa:
   enable: false # 是否开启
   manifest: /manifest.json # manifest.json 文件路径
