@@ -87,3 +87,15 @@ snackbar:
   name: node-snackbar
   file: dist/snackbar.min.js
   version: 0.1.16
+scoicon_css:
+  name: solitude-source
+  file: icon/scoicon.min.css
+  version: 1.0.3
+waterfall:
+  name: solitude-source
+  file: js/waterfall.min.js
+  version: 1.0.3
+view_image:
+  name: solitude-source
+  file: js/view-image.min.js
+  version: 1.0.3

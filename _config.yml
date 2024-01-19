@@ -121,8 +121,8 @@ nav:
   #            icon: sco-contacts-fill
 
 
-  # 导航栏右侧快捷菜单
-  # Quick menu on the right side of the navigation bar
+  # 导航栏右侧按钮
+  # Button on the right side of the navigation bar
   # tip：只需填写true和false即可
   # tip: Just fill in true and false
   right:
@@ -375,62 +375,73 @@ aside:
     # Format: yyyy-MM-dd hh-mm-ss
     runtime: '2023-04-20 00:00:00'
 
-# --------------------------------------
-# Footer Settings
-# 页脚配置
-footer:
-  # 底部上方一排图标
-  # Bottom row of icons
-  information:
-    left: # 左侧显示图标 / Left display icon
-    #      Github:
-    #        icon: scoicon sco-bilibili-line
-    #        url: https://github.com/wleelw
-    #      Mail:
-    #        icon: scoicon sco-mail-line
-    #        url: mailto:wleelw@wzsco.top
-    right: # 右侧显示图标 / Right display icon
-    #      Bilibili:
-    #        icon: scoicon sco-bilibili-line
-    #        url: https://space.bilibili.com/1329819902
-    #      抖音:
-    #        icon: scoicon sco-douyin-fill
-    #        url: https://v.douyin.com/iJsLc8jt/
+# -------------------------
+# 页面配置
+# page settings
 
-  # 底部导航栏
-  # Bottom navigation bar
-  group: # 从左至右 / From left to right
-  #    导航:
-  #      归档: /archives/
-  #      分类: /categories/
-  #      标签: /tags/
-  #    服务:
-  #      阿里云: https://aliyun.com/
-  #      51la统计: https://v6.51.la/
-  #      百度统计: https://tongji.baidu.com/
-  #    支持:
-  #      打赏记录: /about/
-  #    协议:
-  #      Cookies: /cookies/
-  #      用户协议: /privacy/
-  #      版权协议: /copyright/
+# 404 页面
+# 404 page
+errorpage:
+  # 图片
+  # image
+  img: https://npm.elemecdn.com/wzheo-absolute@1.0.3/image/source/404.png
+  # 文字
+  # text
+  text: =awa= 页面走丢了
+  # 推荐文章列表
+  # Recommended article list
+  recommendList: true
 
-  # 底部随机友链
-  # Random links at the bottom
-  # tip：此处的友链是随机显示的，不是固定的
-  # tip: The links here are displayed randomly, not fixed
-  # warning: 打开前必须先配置links
-  # warning: links must be configured before opening
-  randomlink: false
-  # 隐私助手右侧弹窗，填写路径后开启
-  # Privacy assistant right pop-up window, fill in the path to open
-  privacy: # /privacy/
-  # 订阅链接
-  # Subscription link
-  rss: # /rss/
-  # 版权
-  # Copyright
-  license: # /license/
+# 关于页
+# about page
+about: false
+
+# 即刻说说页
+# jike says page
+# 前置要求：需配置即刻说说页面
+# Pre-requirements: Jike says page needs to be configured
+# 开启后将显示即刻页面
+# After opening, the Jike page will be displayed
+says:
+  enable: false
+  # 主页的即刻轮播条
+  # Jike carousel bar on the homepage
+  home_mini: false
+  # 1：张洪heo样式 / 2：Leonus样式
+  # 1: Zhang Hong heo style / 2: Leonus style
+  style: 1
+
+# -------------------------
+# meeting-api，用于界面中的音乐胶囊和音乐馆页，可自定义api，不会请勿动。
+# meeting-api, used for music capsules and music halls in the interface, can customize api, do not move if you don't know.
+meting_api: "https://meting.qjqq.cn/?server=:server&type=:type&id=:id&auth=:auth&r=:r" #自定义api
+# 音乐馆页
+# music hall
+music:
+  enable: false
+  # 音乐ID：歌单ID / 专辑ID / 歌手ID
+  # Music ID: playlist ID / album ID / singer ID
+  id: 1994908354
+  # 播放列表的服务商。netease：网易云 / tencent：腾讯 / kugou：酷狗 / xiami：小米 / baidu：百度
+  # Music service provider. netease: Netease Cloud / tencent: Tencent / kugou: Kugou / xiaomi: Xiaomi / baidu: Baidu
+  server: netease
+  # 播放列表的类型。song：单曲 / playlist：歌单 / album：专辑 / artist：歌手
+  # Type of playlist. song: Single / playlist: Playlist / album: Album / artist: Singer
+  type: playlist
+  # 初始音量。0.8 = 80%，范围 0 到 1
+  # Initial volume. 0.8 = 80%, range 0 to 1
+  volume: 0.8
+  # 是否开启互斥模式，即同时只能有一个播放器播放
+  # Whether to enable mutex mode, that is, only one player can play at the same time
+  mutex: true
+
+# 音乐胶囊
+# capsule music
+capsule:
+  enable: false
+  id: 8407304077 # 歌单id / playlist id
+  server: netease # 播放列表的服务商。netease：网易云 / tencent：腾讯 / kugou：酷狗 / xiami：小米 / baidu：百度 : Music service provider. netease: Netease Cloud / tencent: Tencent / kugou: Kugou / xiaomi: Xiaomi / baidu: Baidu
+  type: playlist # 播放列表的类型。song：单曲 / playlist：歌单 / album：专辑 / artist：歌手 : Type of playlist. song: Single / playlist: Playlist / album: Album / artist: Singer
 
 # -------------------------
 # 文章页、页面配置
@@ -507,74 +518,9 @@ post:
     time: 43200000 # api取色间隔（毫秒），默认为12小时 / api color interval (milliseconds), default is 12 hours
 
 # -------------------------
-# 页面配置
-# page settings
+# 自定义主题
 
-# 404 页面
-# 404 page
-errorpage:
-  # 图片
-  # image
-  img: https://npm.elemecdn.com/wzheo-absolute@1.0.3/image/source/404.png
-  # 文字
-  # text
-  text: =awa= 页面走丢了
-  # 推荐文章列表
-  # Recommended article list
-  recommendList: true
-
-# 关于页
-# about page
-about: false
-
-# 即刻说说页
-# jike says page
-# 前置要求：需配置即刻说说页面
-# Pre-requirements: Jike says page needs to be configured
-# 开启后将显示即刻页面
-# After opening, the Jike page will be displayed
-says:
-  enable: false
-  # 主页的即刻轮播条
-  # Jike carousel bar on the homepage
-  home_mini: false
-  # 1：张洪heo样式 / 2：Leonus样式
-  # 1: Zhang Hong heo style / 2: Leonus style
-  style: 1
-
-# -------------------------
-# meeting-api，用于界面中的音乐胶囊和音乐馆页，可自定义api，不会请勿动。
-# meeting-api, used for music capsules and music halls in the interface, can customize api, do not move if you don't know.
-meting_api: "https://meting.qjqq.cn/?server=:server&type=:type&id=:id&auth=:auth&r=:r" #自定义api
-# 音乐馆页
-# music hall
-music:
-  enable: false
-  # 音乐ID：歌单ID / 专辑ID / 歌手ID
-  # Music ID: playlist ID / album ID / singer ID
-  id: 1994908354
-  # 播放列表的服务商。netease：网易云 / tencent：腾讯 / kugou：酷狗 / xiami：小米 / baidu：百度
-  # Music service provider. netease: Netease Cloud / tencent: Tencent / kugou: Kugou / xiaomi: Xiaomi / baidu: Baidu
-  server: netease
-  # 播放列表的类型。song：单曲 / playlist：歌单 / album：专辑 / artist：歌手
-  # Type of playlist. song: Single / playlist: Playlist / album: Album / artist: Singer
-  type: playlist
-  # 初始音量。0.8 = 80%，范围 0 到 1
-  # Initial volume. 0.8 = 80%, range 0 to 1
-  volume: 0.8
-  # 是否开启互斥模式，即同时只能有一个播放器播放
-  # Whether to enable mutex mode, that is, only one player can play at the same time
-  mutex: true
-
-# 音乐胶囊
-# capsule music
-capsule:
-  enable: false
-  id: 8407304077 # 歌单id / playlist id
-  server: netease # 播放列表的服务商。netease：网易云 / tencent：腾讯 / kugou：酷狗 / xiami：小米 / baidu：百度 : Music service provider. netease: Netease Cloud / tencent: Tencent / kugou: Kugou / xiaomi: Xiaomi / baidu: Baidu
-  type: playlist # 播放列表的类型。song：单曲 / playlist：歌单 / album：专辑 / artist：歌手 : Type of playlist. song: Single / playlist: Playlist / album: Album / artist: Singer
-
-# 自定义主题配色
+# 自定义配色
 # custom theme color
 # 注意：颜色值必须使用引号，如“#000”，否则可能会导致错误！
 # Note: The color value must be enclosed in quotation marks, such as "#000", otherwise it may cause an error!
@@ -597,6 +543,63 @@ theme_color:
 display_mode:
   type: auto # auto: 自动切换 / dark: 暗色模式 / light: 亮色模式 / auto: automatic switching / dark: dark mode / light: light mode
 
+# --------------------------------------
+# Footer Settings
+# 页脚配置
+footer:
+  # 底部上方一排图标
+  # Bottom row of icons
+  information:
+    left: # 左侧显示图标 / Left display icon
+    #      Github:
+    #        icon: scoicon sco-bilibili-line
+    #        url: https://github.com/wleelw
+    #      Mail:
+    #        icon: scoicon sco-mail-line
+    #        url: mailto:wleelw@wzsco.top
+    right: # 右侧显示图标 / Right display icon
+    #      Bilibili:
+    #        icon: scoicon sco-bilibili-line
+    #        url: https://space.bilibili.com/1329819902
+    #      抖音:
+    #        icon: scoicon sco-douyin-fill
+    #        url: https://v.douyin.com/iJsLc8jt/
+
+  # 底部导航栏
+  # Bottom navigation bar
+  group: # 从左至右 / From left to right
+  #    导航:
+  #      归档: /archives/
+  #      分类: /categories/
+  #      标签: /tags/
+  #    服务:
+  #      阿里云: https://aliyun.com/
+  #      51la统计: https://v6.51.la/
+  #      百度统计: https://tongji.baidu.com/
+  #    支持:
+  #      打赏记录: /about/
+  #    协议:
+  #      Cookies: /cookies/
+  #      用户协议: /privacy/
+  #      版权协议: /copyright/
+
+  # 底部随机友链
+  # Random links at the bottom
+  # tip：此处的友链是随机显示的，不是固定的
+  # tip: The links here are displayed randomly, not fixed
+  # warning: 打开前必须先配置links
+  # warning: links must be configured before opening
+  randomlink: false
+  # 隐私助手右侧弹窗，填写路径后开启
+  # Privacy assistant right pop-up window, fill in the path to open
+  privacy: # /privacy/
+  # 订阅链接
+  # Subscription link
+  rss: # /rss/
+  # 版权
+  # Copyright
+  license: # /license/
+
 # -------------------------
 # 扩展配置
 # extend settings
@@ -612,9 +615,15 @@ lazyload:
   # Loading failed display image
   errorimg: /img/error_load.png
 
-# 图片灯箱
-# image lightbox
-lightbox: false
+# 加载动画
+# loading animation
+loading:
+  # 全局加载动画
+  # Global loading animation
+  fullpage: false
+  # 顶部加载胶囊
+  # Top loading capsule
+  pace: true
 
 #代码高亮增强
 # code highlight
@@ -632,24 +641,44 @@ hightlight:
   # Code color
   color: default # default: 默认  / vscode / solarized-dark / solarized-light / dracula / monokai
 
-# 加载动画
-# loading animation
-loading:
-  # 全局加载动画
-  # Global loading animation
-  fullpage: false
-  # 顶部加载胶囊
-  # Top loading capsule
-  pace: true
+# 图片灯箱
+# image lightbox
+lightbox: false
+
+# Open Graph
+# https://ogp.me/
+# https://developers.facebook.com/docs/sharing/webmasters/
+opengraph:
+  enable: false
+  options:
+#    twitter_card:
+#    twitter_image:
+#    twitter_id:
+#    twitter_site:
+#    google_plus:
+#    fb_admins:
+#    fb_app_id:
+
+# 文章底部推荐文章
+# Recommended articles at the bottom of the article
+related_post:
+  enable: false
+  # 推荐文章数量
+  # Number of recommended articles
+  limit: 2
+  # 根据创建日期（created）或是更新日期（updated）
+  # According to the creation date (created) or the update date (updated)
+  date_type: created
 
 # 字数统计
 # word count
 # warning：开启前需要安装字数统计插件
 # warning: You need to install the word count plugin before turning it on
 wordcount: false
+
 # 访问统计
 # access statistics
-busuanzi: true
+busuanzi: false
 
 # 搜索
 # search
@@ -659,14 +688,17 @@ search:
   enable: false
   # algolia, local
   type: algolia
-  algolia_search:
-    enable: false
+  algolia:
     # hits:
     #   per_page: 6
-  local_search:
-    enable: false
+  local:
     preload: false
     CDN:
+
+# rightside(右键菜单)
+# right menu
+rightside:
+  enable: false
 
 # 文章摘要AI
 # post abstract AI
@@ -729,46 +761,6 @@ comment:
     pageview: true # 是否开启页面访问量统计 / Whether to enable page access statistics
     option: # waline配置项 / waline configuration item
 
-# Open Graph
-# --------------------------------------
-# https://ogp.me/
-# https://developers.facebook.com/docs/sharing/webmasters/
-opengraph:
-  enable: false
-  options:
-#    twitter_card:
-#    twitter_image:
-#    twitter_id:
-#    twitter_site:
-#    google_plus:
-#    fb_admins:
-#    fb_app_id:
-
-# 插入代码到头部 </head> 之前 和 底部 </body> 之前
-# Insert code before </head> and before </body>
-# 插入额外代码 如：统计，广告等
-# Insert additional code such as: statistics, advertising, etc.
-extends:
-  head: # 在head中插入 / Insert in head
-  #    - <script src="https://cdn.bootcdn.net/ajax/libs/pace/1.2.4/pace.min.js"></script>
-  body: # 在body中插入 / Insert in body
-
-# 文章底部推荐文章
-# Recommended articles at the bottom of the article
-related_post:
-  enable: false
-  # 推荐文章数量
-  # Number of recommended articles
-  limit: 2
-  # 根据创建日期（created）或是更新日期（updated）
-  # According to the creation date (created) or the update date (updated)
-  date_type: created
-
-# rightside(右键菜单)
-# right menu
-rightside:
-  enable: false
-
 # 站点验证
 # Site verification
 # 仅需要填写验证代码即可，譬如：codeva-KReTIJu5us
@@ -787,27 +779,34 @@ verify_site:
 # After opening css_prefix, some CSS will be automatically prefixed. (Will increase 20% of the volume)
 css_prefix: false
 
+# 插入代码到头部 </head> 之前 和 底部 </body> 之前
+# Insert code before </head> and before </body>
+# 插入额外代码 如：统计，广告等
+# Insert additional code such as: statistics, advertising, etc.
+extends:
+  head: # 在head中插入 / Insert in head
+  #    - <script src="https://cdn.bootcdn.net/ajax/libs/pace/1.2.4/pace.min.js"></script>
+  body: # 在body中插入 / Insert in body
+
 # PWA
 pwa:
   enable: false # 是否开启
   manifest: /manifest.json # manifest.json 文件路径
   theme_color: '#ffffff' # 主题颜色
-  mask_icon: https://fastly.jsdelivr.net/npm/solitude-source@1.0.0/img/pwa/180.png # 遮罩图标
-  apple_touch_icon: https://fastly.jsdelivr.net/npm/solitude-source@1.0.0/img/pwa/180.png # 苹果触摸图标
-  bookmark_icon: https://fastly.jsdelivr.net/npm/solitude-source@1.0.0/img/pwa/180.png # 书签图标
-  favicon_32_32: https://fastly.jsdelivr.net/npm/solitude-source@1.0.0/img/pwa/32.png # 32x32图标
-  favicon_16_16: https://fastly.jsdelivr.net/npm/solitude-source@1.0.0/img/pwa/16.png # 16x16图标
+  mask_icon: https://cdn.cbd.int/solitude-source@1.0.3/img/pwa/180.png # 遮罩图标
+  apple_touch_icon: https://cdn.cbd.int/solitude-source@1.0.3/img/pwa/180.png # 苹果触摸图标
+  bookmark_icon: https://cdn.cbd.int/solitude-source@1.0.3/img/pwa/180.png # 书签图标
+  favicon_32_32: https://cdn.cbd.int/solitude-source@1.0.3/img/pwa/32.png # 32x32图标
+  favicon_16_16: https://cdn.cbd.int/solitude-source@1.0.3/img/pwa/16.png # 16x16图标
 
 # CDN
 # Don't modify the following settings unless you know how they work
 # 非必要请不要修改
 CDN:
   # The CDN provider of internal scripts (主题内 js 的 cdn 配置)
-  # option: local/jsdelivr/unpkg/cdnjs/custom_cdn/custom
+  # option: local/jsdelivr/unpkg/cdnjs/custom
   # Dev version can only choose. ( dev版本只能为 local )
   internal: local
-  # 自己搭建的cdn地址 默认路径：/source/$1
-  custom_cdn:
   # The CDN provider of third party scripts (第三方 js 的 cdn 配置)
   # option: local/jsdelivr/unpkg/cdnjs/custom
   third_party: custom
@@ -820,6 +819,9 @@ CDN:
   custom_format: https://cdn.staticfile.org/${cdnjs_name}/${version}/${min_cdnjs_file}
 
   option:
+    scoicon_css: https://cdn.cbd.int/solitude-source@1.0.3/icon/scoicon.min.css
+    waterfall: https://cdn.cbd.int/solitude-source@1.0.3/js/waterfall.min.js
+    view_image: https://cdn.cbd.int/solitude-source@1.0.3/js/view-image.min.js
   # algolia_search:
   # instantsearch:
   # pjax:

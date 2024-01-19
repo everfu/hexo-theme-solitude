@@ -34,11 +34,6 @@ hexo.extend.filter.register('before_generate', () => {
             file: 'js/search/algolia.js',
             version
         },
-        friends_post_js: {
-            name: 'hexo-theme-solitude',
-            file: 'js/friends-post.min.js',
-            version
-        },
         cover_color_js: {
             name: 'hexo-theme-solitude',
             file: 'js/covercolor.js',
@@ -54,24 +49,9 @@ hexo.extend.filter.register('before_generate', () => {
             file: 'js/music.js',
             version
         },
-        scoicon_css: {
-            name: 'hexo-theme-solitude',
-            file: 'scoicon/iconfont.css',
-            version
-        },
         sco_ai_js: {
             name: 'hexo-theme-solitude',
             file: 'js/sco-ai.min.js',
-            version
-        },
-        waterfall: {
-            name: 'hexo-theme-solitude',
-            file: 'js/waterfall.min.js',
-            version
-        },
-        view_image:{
-            name: 'hexo-theme-solitude',
-            file: 'js/view-image.min.js',
             version
         },
         twikoo_commentBarrage: {
@@ -116,7 +96,8 @@ hexo.extend.filter.register('before_generate', () => {
                 unpkg: `https://unpkg.com/${name}${verType}/${file}`,
                 cdnjs: `https://cdnjs.cloudflare.com/ajax/libs/${cdnjs_name}/${version}/${min_cdnjs_file}`,
                 custom: (CDN.custom_format || '').replace(/\$\{(.+?)\}/g, (match, $1) => value[$1]),
-                custom_cdn: `${CDN.custom_cdn + cdnjs_file}`
+                custom_cdn: `${CDN.custom_cdn + cdnjs_file}`,
+                cdncbd: `https://cdn.cbd.int/${name}${verType}/${file}`,
             }
 
             data[key] = cdnSource[type]
