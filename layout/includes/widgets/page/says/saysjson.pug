@@ -1,0 +1,117 @@
+script.
+    (()=>{
+        const replaceSymbol = (str) => {
+            return str.replace(/[\p{P}\p{S}]/gu, "-")
+        }
+        let says = ""
+
+        fetch("!{url_for(theme.says.mode_link)}")
+            .then(response => response.json())
+            .then(str => {
+                for(let i = 0; i < str.length; i++){
+                    let list = ""
+                    let listResult = ""
+                    let saysList = str[i].essay_list
+                    let style = !{theme.says.style}
+                    let strip = !{theme.says.strip}
+                    let saysTips = ""
+                    if (strip === -1 || strip >= str[i].essay_list.length) {
+                        list = saysList
+                        saysTips = `<div id="bber-tips">- 已展开所有短文 -</div>`
+                    } else {
+                        list = saysList.slice(0, strip)
+                        saysTips = `<div id="bber-tips">- 只展示最近 ${strip} 条短文 -</div>`
+                    }
+
+                    for(let j = 0; j < list.length; j++){
+                        let content = ""
+                        let onclick = ""
+                        if (list[j].content === undefined || list[j].content === null) {
+                            content = ""
+                        } else if (list[j].content) {
+                            content = `<p class="datacont">${list[j].content}</p>`
+                            onclick = `<a class="bber-reply goComment" onclick="sco.toTalk('${list[j].content}')"><i class="scoicon sco-chat-fill" style="font-size: 1rem;"></i></a>`
+                        }
+
+                        let imageBox = ""
+                        let imageList = ""
+                        if (list[j].image) {
+                            const image = list[j].image
+                            for(let e = 0; e < image.length; e++){
+                                imageList += `<img src="${image[e]}" title="即刻短文配图" />`
+                            }
+                            imageBox += `<div class="bber-content-img">${imageList}</div>`
+                        }
+
+                        let aplayer = ""
+                        if (list[j].aplayer) {
+                            aplayer = `<div class="bber-music"><meting-js server="${list[j].aplayer.server}" type="song" id="${list[j].aplayer.id}" mutex="true" preload="none" theme="var(--sco-main)" data-lrctype="0"></meting-js></div>`
+                        }
+
+                        let video = ""
+                        if (list[j].video) {
+                            if (list[j].video.player) {
+                                video = `<div class="bber-video"><video src="${list[j].video.player}" controls="controls" style="object-fit: cover;"></video></div>`
+                            }
+                            if (list[j].video.bilibili) {
+                                video = `<div class="bber-video"><iframe src="${list[j].video.bilibili}" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe></div>`
+                            }
+                        }
+
+                        let link = ""
+                        if (list[j].link) {
+                            link = `<a class="bber-content-link href="${list[j].link}" title="跳转到短文指引的链接"><i class="scoicon sco-link-m-line"></i>链接</a>`
+                        }
+
+                        if (style === 1) {
+                            listResult += `
+                                <li class="item">
+                                    <div id="bber-content">
+                                        ${content}
+                                        ${imageBox}
+                                    </div>
+                                    ${video}
+                                    ${aplayer}
+                                    <hr>
+                                    <div class="bber-bottom">
+                                        <div class="bber-info">
+                                            <div class="bber-info-time">
+                                                <i class="scoicon sco-calendar-todo-fill"></i>
+                                                <time class="datetime" datetime="${list[j].date}"></time>
+                                            </div>
+                                            ${link}
+                                        </div>
+                                        ${onclick}
+                                    </div>
+                                </li>`
+                        } else if (style === 2) {
+                            listResult += `
+                                <li class="item">
+                                    <div class="meta">
+                                        <img class="no-lightbox no-lazyload avatar" src="!{theme.aside.card.author.img}">
+                                        <div class="info">
+                                            <span class="bber_nick">#{config.author}</span>
+                                            <time class="datetime bber_date" datetime="${list[j].date}"></time>
+                                        </div>
+                                        ${onclick}
+                                    </div>
+                                    <div id="bber-content">
+                                        ${content}
+                                        ${imageBox}
+                                    </div>
+                                    ${video}
+                                    ${aplayer}
+                                </li>`
+                        } else {
+                            console.log('请正确配置即刻样式！')
+                        }
+                    }
+                    says += `<ul id="waterfall" class="list">${listResult}</ul> ${saysTips}`
+                }
+
+                document.querySelector(".page-1").insertAdjacentHTML("afterbegin", says)
+                changeTimeFormat()
+                sco.reflashEssayWaterFall()
+                sco.lazyloadImg()
+            })
+    })()
