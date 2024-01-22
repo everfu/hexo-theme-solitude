@@ -3,7 +3,7 @@ script.
         await fetch('!{theme.says.mode_link}')
             .then(res => res.json())
             .then(res => {
-                let list = res.data.slice(0, 10)
+                let list = res.slice(0, 10)
                 document.querySelector('#bber-talk').innerHTML = list.map(item => {
                     item.content = item.image ? item.content + '!{_p('home.bbtime.image')}' : item.content || item.aplayer ? item.content + '!{_p('home.bbtime.aplayer')}' : item.content || item.video ? item.content + '!{_p('home.bbtime.video')}' : item.content
                     return `<div class="li-style swiper-slide">${item.content}</div>`
