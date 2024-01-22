@@ -29,4 +29,6 @@ script.
         }
     }
 
-    GLOBAL_CONFIG.lightbox && sco.lightbox('#twikoo .tk-content img:not(.tk-owo-emotion)')
+    document.addEventListener('DOMContentLoaded', function () {
+        GLOBAL_CONFIG.lightbox && sco.lightbox('#twikoo .tk-content img:not(.tk-owo-emotion)')
+    })
