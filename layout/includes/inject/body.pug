@@ -1,7 +1,6 @@
 - page.type = is_post() ? 'post' : page.type
 
 div
-    script(src=url_for(theme.cdn.utils))
     script(src=url_for(theme.cdn.main))
 
     mixin katex
@@ -89,7 +88,7 @@ div
             != item
 
 div#js-pjax
-    if page.type === 'says'
+    if page.type === 'says' && theme.says.enable
         script.
             window.addEventListener('resize', utils.throttle(function () {
                 if (document.getElementById('waterfall')) {
@@ -97,7 +96,7 @@ div#js-pjax
                 }
             }), 500);
             sco.reflashEssayWaterFall();
-            GLOBAL_CONFIG.lightbox && sco.lightbox(".bber-content-img img");
+            GLOBAL_CONFIG.lightbox && utils.lightbox(".bber-content-img img");
     if theme.busuanzi && (theme.aside.siteinfo.uv || theme.aside.siteinfo.pv)
         script(async src=url_for(theme.cdn.busuanzi_js))
 

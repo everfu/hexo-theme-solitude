@@ -178,4 +178,25 @@ const utils = {
         selector.parentNode.insertBefore(createEle, selector)
         createEle.appendChild(selector)
     },
+    /**
+     * 懒加载图片
+     */
+    lazyloadImg: function () {
+        window.lazyLoadInstance = new LazyLoad({
+            elements_selector: 'img',
+            threshold: 0,
+            data_src: 'lazy-src',
+            callback_error: (img) => {
+                img.setAttribute("src", GLOBAL_CONFIG.lazyload.error);
+            }
+        })
+    },
+    /**
+     * 灯箱使用
+     */
+    lightbox: function (selector = '') {
+        mediumZoom && mediumZoom(selector, options = {
+            background: "var(--sco-card-bg)"
+        });
+    },
 }

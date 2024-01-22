@@ -1,12 +1,12 @@
 .bbTimeList.container#bbTimeList
-    i.bber-logo.scoicon.sco-bblogo(onclick=`pjax.loadUrl('${theme.says.home_mini_link}')`)
-    .swiper-container.swiper-no-swiping.swiper-container-initialized.swiper-container-vertical.swiper-container-pointer-events#bbtalk(tabindex="-1" onclick=`pjax.loadUrl('${theme.says.home_mini_link}')`)
+    i.bber-logo.scoicon.sco-bblogo(onclick=`pjax.loadUrl('/essay/')`)
+    .swiper-container.swiper-no-swiping.swiper-container-initialized.swiper-container-vertical.swiper-container-pointer-events#bbtalk(tabindex="-1" onclick=`pjax.loadUrl('/essay/')`)
         .swiper-wrapper#bber-talk
-            if theme.says.mode === 'local'
-                each item, i in site.data.essay.essay_list.slice(0, 10)
-                    .li-style.swiper-slide= item.image ? item.content + _p('home.bbtime.image') : item.content || item.aplayer ? item.content + _p('home.bbtime.aplayer') : item.content || item.video ? item.content + _p('home.bbtime.video') : item.content
-            if theme.says.mode === 'json'
-                include ./bb_dynamic.pug
-            if theme.says.mode === 'memos'
-                include ./bb_dynamic.pug
+            case theme.says.mode
+                when 'local'
+                    include bb/local
+                when 'json'
+                    include bb/json
+                when 'memos'
+                    include bb/memos
     i.bber-gotobb.scoicon.sco-right-btn-fill(title=_p('home.bbtime.text') onclick=`pjax.loadUrl('${theme.says.home_mini_link}')`)

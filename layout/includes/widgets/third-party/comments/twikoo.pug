@@ -5,7 +5,7 @@ script.
             {
                 el: '#comment',
                 onCommentLoaded: function () {
-                    GLOBAL_CONFIG.lightbox && sco.lightbox('#article-container img, #twikoo .tk-content img:not(.tk-owo-emotion)')
+                    GLOBAL_CONFIG.lightbox && utils.lightbox('#twikoo .tk-content img:not(.tk-owo-emotion)')
                 },
                 lang: '#{theme.comment.twikoo.lang}',
             }
@@ -28,7 +28,3 @@ script.
             }
         }
     }
-
-    document.addEventListener('DOMContentLoaded', function () {
-        GLOBAL_CONFIG.lightbox && sco.lightbox('#twikoo .tk-content img:not(.tk-owo-emotion)')
-    })

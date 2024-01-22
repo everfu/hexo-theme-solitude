@@ -1,0 +1,79 @@
+case theme.says.style
+    when 1
+        script.
+            !async function () {
+                let say_strip = !{theme.says.strip}
+                await fetch('!{url_for(theme.says.mode_link)}')
+                    .then(res => res.json())
+                    .then(res => {
+                        let list = say_strip === -1 || say_strip >= res.data.length ? res.data : res.data.slice(0, say_strip)
+                        let aplayer = null
+                        let video = null
+                        let imageBox = null
+
+                        document.querySelector('#waterfall').innerHTML = list.map(item => {
+                            aplayer = item.aplayer ? `<div class="bber-music"><meting-js server="${item.aplayer.server}" type="song" id="${item.aplayer.id}" mutex="true" preload="none" theme="var(--sco-main)" data-lrctype="0"></meting-js></div>` : null
+                            video = item.video ? `<div class="bber-video"><video src="${item.video}" controls="controls" style="object-fit: cover;"></video></div>` : item.bilibili ? `<div class="bber-video"><iframe src="${item.bilibili}" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe></div>` : null
+                            imageBox = item.images ? `<div class="bber-content-img">${item.images.map(img => `<img src="${img}" title="即刻短文配图" />`).join('')}</div>` : null
+                            return `<li class="item">
+                                        <div id="bber-content">
+                                            <p class="datacont">${item.content || ''}</p>
+                                            ${imageBox || ''}
+                                        </div>
+                                        ${video || ''}
+                                        ${aplayer || ''}
+                                        <hr>
+                                        <div class="bber-bottom">
+                                            <div class="bber-info">
+                                                <div class="bber-info-time">
+                                                    <i class="scoicon sco-calendar-todo-fill"></i>
+                                                    <time class="datetime" datetime="${item.create_time}"></time>
+                                                </div>
+                                                ${item.link ? `<a class="bber-content-link href="${item.link}" title="跳转到短文指引的链接"><i class="scoicon sco-link-m-line"></i>链接</a>` : ''}
+                                            </div>
+                                            ${item.content ? `<a class="bber-reply goComment" onclick="sco.toTalk('${item.content}')"><i class="scoicon sco-chat-fill" style="font-size: 1rem;"></i></a>` : ''}
+                                        </div>
+                            </li>`
+                        }).join('')
+                    })
+                GLOBAL_CONFIG.lazyload.enable && utils.lazyloadImg()
+                GLOBAL_CONFIG.lightbox && utils.lightbox(".bber-content-img img");
+
+            }()
+    when 2
+        script.
+            !async function () {
+                let say_strip = !{theme.says.strip}
+                await fetch('!{url_for(theme.says.mode_link)}')
+                    .then(res => res.json())
+                    .then(res => {
+                        let list = say_strip === -1 || say_strip >= res.data.length ? res.data : res.data.slice(0, say_strip)
+                        let aplayer = null
+                        let video = null
+                        let imageBox = null
+
+                        document.querySelector('#waterfall').innerHTML = list.map(item => {
+                            aplayer = item.aplayer ? `<div class="bber-music"><meting-js server="${item.aplayer.server}" type="song" id="${item.aplayer.id}" mutex="true" preload="none" theme="var(--sco-main)" data-lrctype="0"></meting-js></div>` : null
+                            video = item.video ? `<div class="bber-video"><video src="${item.video}" controls="controls" style="object-fit: cover;"></video></div>` : item.bilibili ? `<div class="bber-video"><iframe src="${item.bilibili}" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe></div>` : null
+                            imageBox = item.images ? `<div class="bber-content-img">${item.images.map(img => `<img src="${img}" title="即刻短文配图" />`).join('')}</div>` : null
+                            return `<li class="item">
+                                        <div class="meta">
+                                            <img class="no-lightbox no-lazyload avatar" src="!{theme.aside.card.author.img}">
+                                            <div class="info">
+                                                <span class="bber_nick">#{config.author}</span>
+                                                <time class="datetime bber_date" datetime="${item.create_time}"></time>
+                                            </div>
+                                            ${item.content ? `<a class="bber-reply goComment" onclick="sco.toTalk('${item.content}')"><i class="scoicon sco-chat-fill" style="font-size: 1rem;"></i></a>` : ''}
+                                        </div>
+                                        <div id="bber-content">
+                                            <p class="datacont">${item.content || ''}</p>
+                                            ${imageBox || ''}
+                                        </div>
+                                        ${video || ''}
+                                        ${aplayer || ''}
+                            </li>`
+                        })
+                        GLOBAL_CONFIG.lazyload.enable && utils.lazyloadImg()
+                        GLOBAL_CONFIG.lightbox && utils.lightbox(".bber-content-img img");
+                    })
+            }()

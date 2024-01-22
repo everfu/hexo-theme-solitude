@@ -1,0 +1,18 @@
+script.
+    !async function () {
+        await fetch('!{theme.says.mode_link}')
+            .then(response => response.json())
+            .then(data => {
+                const list = data.slice(0, 10)
+                document.querySelector('#bber-talk').innerHTML = list.map(item => {
+                    let content = item.content
+                    content = content.replace(/#说说/g, '');
+                    content = content.replace(/!\[\]\((.*?)\)/g, '【图片】');
+                    content = content.replace(/\{ music (.*?) \}/g, '【音乐】');
+                    content = content.replace(/\{ bilibili (.*?) \}/g, '【视频】');
+                    content = content.replace(/\{ player (.*?) \}/g, '【视频】');
+                    return `<div class="li-style swiper-slide">${content}</div>`
+                }).join(' ')
+            })
+            .catch(error => console.error('bbtime | ', error));
+    }()

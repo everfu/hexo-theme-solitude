@@ -371,14 +371,6 @@ let sco = {
         }
     },
     /**
-     * 灯箱使用
-     */
-    lightbox: function (selector = '') {
-        mediumZoom && mediumZoom(selector, options = {
-            background: "var(--sco-card-bg)"
-        });
-    },
-    /**
      *
      */
     reflashEssayWaterFall: function () {
@@ -397,19 +389,6 @@ let sco = {
         if (el && GLOBAL_CONFIG.runtime) {
             el.innerText = utils.timeDiff(new Date(GLOBAL_CONFIG.runtime), new Date()) + GLOBAL_CONFIG.lang.time.runtime
         }
-    },
-    /**
-     * 懒加载图片
-     */
-    lazyloadImg: function () {
-        window.lazyLoadInstance = new LazyLoad({
-            elements_selector: 'img',
-            threshold: 0,
-            data_src: 'lazy-src',
-            callback_error: (img) => {
-                img.setAttribute("src", GLOBAL_CONFIG.lazyload.error);
-            }
-        })
     },
     /**
      * 跳转到输评论
@@ -920,8 +899,8 @@ window.refreshFn = () => {
     sco.listenToPageInputPress()
     sco.addNavBackgroundInit()
     GLOBAL_CONFIG.rightside.enable && addRightMenuClickEvent()
-    GLOBAL_CONFIG.lazyload.enable && sco.lazyloadImg()
-    GLOBAL_CONFIG.lightbox && sco.lightbox("#article-container img:not(.flink-avatar)")
+    GLOBAL_CONFIG.lazyload.enable && utils.lazyloadImg()
+    GLOBAL_CONFIG.lightbox && utils.lightbox("#article-container img:not(.flink-avatar)")
     GLOBAL_CONFIG.randomlinks && randomLinksList()
     PAGE_CONFIG.comment && initComment()
     PAGE_CONFIG.toc && toc.init();

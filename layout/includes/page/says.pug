@@ -2,11 +2,18 @@ include ../widgets/page/banner
 if theme.says.enable
     #bber
         section.timeline.page-1
-            if theme.says.mode === 'local'
-                include ../widgets/page/says/sayslocal
-            if theme.says.mode === 'json'
-                include ../widgets/page/says/saysjson
-            if theme.says.mode === 'memos'
-                include ../widgets/page/says/saysmemos
+            ul.list#waterfall
+            case theme.says.mode
+                when 'local'
+                    include ../widgets/page/says/local
+                when 'json'
+                    include ../widgets/page/says/json
+                when 'memos'
+                    include ../widgets/page/says/memos
+            #bber-tips
+                if theme.says.strip === -1
+                    | - 已展开所有短文 -
+                else
+                    | - 只展示最近 #{theme.says.strip} 条短文 -
 else
     include ./not_configured.pug

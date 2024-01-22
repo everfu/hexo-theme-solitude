@@ -407,9 +407,6 @@ says:
   # 主页的即刻轮播条
   # Jike carousel bar on the homepage
   home_mini: false
-  # 主页的即刻轮播条跳转地址
-  # Talking about the module redirect address on the homepage
-  home_mini_link: /essay/
   # 1：张洪heo样式 / 2：Leonus样式
   # 1: Zhang Hong heo style / 2: Leonus style
   style: 1
