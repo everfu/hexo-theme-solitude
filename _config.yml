@@ -407,9 +407,21 @@ says:
   # 主页的即刻轮播条
   # Jike carousel bar on the homepage
   home_mini: false
+  # 主页的即刻轮播条跳转地址
+  # Talking about the module redirect address on the homepage
+  home_mini_link: /essay/
   # 1：张洪heo样式 / 2：Leonus样式
   # 1: Zhang Hong heo style / 2: Leonus style
   style: 1
+  # 即刻短文数量（条）。建议范围：1 ~ 999，当数量为-1时，将显示全部。
+  # Number of immediate short articles (pieces). Suggested range: 1~999, when the quantity is -1, all will be displayed.
+  strip: 30
+  # 模式选择。local：本地静态 / json：动态json / memos：动态Memos
+  # Mode selection. Local: local static/JSON: dynamic JSON/memory: dynamic Memos
+  mode: local
+  # 动态模式地址。如为json或memos模式，此项为必填。链接获取以及格式可查看主题文档。
+  # Dynamic mode address. If it is in JSON or Memos mode, this field is mandatory. The link acquisition and format can be viewed in the theme document.
+  mode_link: # https://cdn.meuicat.com/gh/yife/essay.json
 
 # -------------------------
 # meeting-api，用于界面中的音乐胶囊和音乐馆页，可自定义api，不会请勿动。

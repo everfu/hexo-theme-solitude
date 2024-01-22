@@ -33,6 +33,8 @@ home:
   bbtime:
     text: Read more
     image: [ Image ]
+    aplayer: [ Music ]
+    video: [ Video ]
   categoryBar:
     home: Home
     more: More
