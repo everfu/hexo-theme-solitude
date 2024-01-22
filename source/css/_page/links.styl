@@ -201,6 +201,20 @@
     overflow auto
     text-align center
 
+    &.mini
+      > .flink-list-item
+        height 60px
+
+        a
+          img
+            width 30px
+            height 30px
+            min-width 30px
+            min-height 30px
+
+          .flink-item-desc
+            display none
+
     > .flink-list-item
       margin 6px 6px
       transition .3s
@@ -262,32 +276,32 @@
           span
             transition .3s
 
-          .flink-item-name
-            text-align left
-            font-size 19px
-            line-height 20px
-            color var(--sco-fontcolor)
-            display block
-            padding 0 10px 0 0
-            font-weight 700
-            max-width calc(100% - 12px)
-            overflow hidden
-            text-overflow ellipsis
-            white-space nowrap
+        .flink-item-name
+          text-align left
+          font-size 19px
+          line-height 20px
+          color var(--sco-fontcolor)
+          display block
+          padding 0 10px 0 0
+          font-weight 700
+          max-width calc(100% - 12px)
+          overflow hidden
+          text-overflow ellipsis
+          white-space nowrap
 
-          .flink-item-desc
-            white-space normal
-            padding 5px 10px 16px 0
-            color var(--sco-fontcolor)
-            text-align left
-            height 40px
-            text-overflow ellipsis
-            opacity .7
-            display -webkit-box
-            overflow hidden
-            -webkit-box-orient vertical
-            -webkit-line-clamp 2
-            font-size .93em
+        .flink-item-desc
+          white-space normal
+          padding 5px 10px 16px 0
+          color var(--sco-fontcolor)
+          text-align left
+          height 40px
+          text-overflow ellipsis
+          opacity .7
+          display -webkit-box
+          overflow hidden
+          -webkit-box-orient vertical
+          -webkit-line-clamp 2
+          font-size .93em
 
       &:hover
         background var(--sco-theme)

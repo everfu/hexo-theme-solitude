@@ -1,8 +1,3 @@
-- var item_suffix = site.data.links.item_suffix || ''
-- var card_suffix = site.data.links.card_suffix || ''
-- var banner_suffix = site.data.links.banner_suffix || ''
-- var topimg_suffix = site.data.links.topimg_suffix || ''
-
 .flink#banners
     include ../widgets/page/links/banner
 .flink#article-container
@@ -14,4 +9,6 @@
                 include ../widgets/page/links/linksCard
             when 'item'
                 include ../widgets/page/links/linksItem
+            when 'discn'
+                include ../widgets/page/links/linksDiscn
     != page.content

@@ -165,7 +165,7 @@ function img2color(src) {
                     const cacheGroup = saveToLocal.get('Solitude') || {};
                     cacheGroup.postcolor = cacheGroup.postcolor || {};
                     cacheGroup.postcolor[src] = {value: color, expiration: expirationTime};
-                    saveToLocal.set('Solitude', cacheGroup, coverColorConfig.time);
+                    saveToLocal.set('Solitude', cacheGroup);
                 }
             })
             .catch(error => {

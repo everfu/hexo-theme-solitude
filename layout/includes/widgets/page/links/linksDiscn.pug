@@ -1,10 +1,7 @@
-.flink-list
+.flink-list.cf-friends-lost-contact.mini
     each item in data.link_list
         .flink-list-item
-            if item.tag
-                span.site-card-tag(class=item.color)= item.tag
-                    i.light
-            a.cf-friends-link(href=url_for(item.link), title=item.name)
+            a.cf-friends-link(href="javascript:void(0);", title=item.name)
                 img.flink-avatar.cf-friends-avatar(alt=item.name, src=item.avatar + (data.suffix || ''))
                 .flink-item-info
                     span.flink-item-name.cf-friends-name= item.name
