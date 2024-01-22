@@ -373,8 +373,10 @@ let sco = {
     /**
      * 灯箱使用
      */
-    lightbox: function () {
-        window.ViewImage && window.ViewImage.init("#article-container img:not(.flink-avatar), .bber-content-img img, #album_detail img, #equipment img, #twikoo .tk-content img:not(.tk-owo-emotion)");
+    lightbox: function (selector = '') {
+        mediumZoom && mediumZoom(selector, options = {
+            background: "var(--sco-card-bg)"
+        });
     },
     /**
      *
@@ -826,9 +828,9 @@ class hightlight {
                 if ($expand.length !== 0) {
                     $expand[0].setAttribute('style', 'display:block')
                 }
-                if(GLOBAL_CONFIG.hightlight.limit && itemHeight > GLOBAL_CONFIG.hightlight.limit) {
+                if (GLOBAL_CONFIG.hightlight.limit && itemHeight > GLOBAL_CONFIG.hightlight.limit) {
                     $table.setAttribute('style', `height: ${GLOBAL_CONFIG.hightlight.limit}px`)
-                }else{
+                } else {
                     $table.setAttribute('style', `height: auto`)
                 }
             }
@@ -919,7 +921,7 @@ window.refreshFn = () => {
     sco.addNavBackgroundInit()
     GLOBAL_CONFIG.rightside.enable && addRightMenuClickEvent()
     GLOBAL_CONFIG.lazyload.enable && sco.lazyloadImg()
-    GLOBAL_CONFIG.lightbox && sco.lightbox('')
+    GLOBAL_CONFIG.lightbox && sco.lightbox("#article-container img:not(.flink-avatar)")
     GLOBAL_CONFIG.randomlinks && randomLinksList()
     PAGE_CONFIG.comment && initComment()
     PAGE_CONFIG.toc && toc.init();

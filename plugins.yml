@@ -95,7 +95,7 @@ waterfall:
   name: solitude-source
   file: js/waterfall.min.js
   version: 1.0.3
-view_image:
-  name: solitude-source
-  file: js/view-image.min.js
-  version: 1.0.3
+medium_zoom:
+  name: medium-zoom
+  file: dist/medium-zoom.min.js
+  version: 1.1.0

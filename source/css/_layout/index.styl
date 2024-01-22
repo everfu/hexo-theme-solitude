@@ -104,3 +104,10 @@ span.tags-punctuation::before
     width 0
   to 
     width 100%
+
+// lightbox
+if hexo-config("lightbox")
+  .medium-zoom-overlay
+    z-index 9
+  .medium-zoom-image
+    z-index 9
