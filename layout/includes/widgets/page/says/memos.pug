@@ -48,8 +48,9 @@ case theme.says.style
                                                 ${link}
                                             </div>
                                             ${content ? `<a class="bber-reply goComment" onclick="sco.toTalk('${content}')"><i class="scoicon sco-chat-fill" style="font-size: 1rem;"></i></a>` : ''}
-                                        </div></li>`;
-                        });
+                                        </div>
+                                    </li>`;
+                        }).join('');
                     }).catch(error => console.log(error));
                 sco.reflashEssayWaterFall();
                 GLOBAL_CONFIG.lazyload.enable && utils.lazyloadImg();
@@ -85,6 +86,7 @@ case theme.says.style
                             let time = new Date(item.createdTs * 1000).toISOString().replace('Z', '+08:00');
                             let content = item.content.match(contentRegex);
                             content = content ? content[1] : '';
+                            // 不应该用 , 分割，因为可能会有逗号
                             return `<li class="item">
                                         <div class="meta">
                                             <img class="no-lightbox no-lazyload avatar" src="!{theme.aside.card.author.img}">
@@ -101,8 +103,7 @@ case theme.says.style
                                         ${video || ''}
                                         ${aplayer || ''}
                                     </li>`;
-                        });
-
+                        }).join('');
                         sco.reflashEssayWaterFall();
                         GLOBAL_CONFIG.lazyload.enable && utils.lazyloadImg();
                         GLOBAL_CONFIG.lightbox && utils.lightbox(".bber-content-img img");

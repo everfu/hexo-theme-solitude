@@ -72,7 +72,7 @@ case theme.says.style
                                         ${video || ''}
                                         ${aplayer || ''}
                             </li>`
-                        })
+                        }).join('')
                         GLOBAL_CONFIG.lazyload.enable && utils.lazyloadImg()
                         GLOBAL_CONFIG.lightbox && utils.lightbox(".bber-content-img img");
                         changeTimeFormat()
