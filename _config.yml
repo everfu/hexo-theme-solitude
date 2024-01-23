@@ -418,7 +418,7 @@ says:
   mode: local
   # 动态模式地址。如为json或memos模式，此项为必填。链接获取以及格式可查看主题文档。
   # Dynamic mode address. If it is in JSON or Memos mode, this field is mandatory. The link acquisition and format can be viewed in the theme document.
-  mode_link: # https://cdn.meuicat.com/gh/yife/essay.json
+  mode_link: # https://example.com/api/v1/memo?creatorId=1&tag=says
 
 # -------------------------
 # meeting-api，用于界面中的音乐胶囊和音乐馆页，可自定义api，不会请勿动。

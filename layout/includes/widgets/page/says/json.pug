@@ -13,7 +13,7 @@ case theme.says.style
 
                         document.querySelector('#waterfall').innerHTML = list.map(item => {
                             aplayer = item.aplayer ? `<div class="bber-music"><meting-js server="${item.aplayer.server}" type="song" id="${item.aplayer.id}" mutex="true" preload="none" theme="var(--sco-main)" data-lrctype="0"></meting-js></div>` : null
-                            video = item.player ? `<div class="bber-video"><video src="${item.player}" controls="controls" style="object-fit: cover;"></video></div>` : item.bilibili ? `<div class="bber-video"><iframe src="${item.bilibili}" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe></div>` : null
+                            video = item.player ? `<div class="bber-video"><video src="${item.player}" controls="controls" style="objectfit: cover;"></video></div>` : item.bilibili ? `<div class="bber-video"><iframe src="//player.bilibili.com/player.html?autop-lay=0&bvid=${item.bilibili}" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe></div>` : null
                             imageBox = item.images ? `<div class="bber-content-img">${item.images.map(img => `<img src="${img}" title="即刻短文配图" />`).join('')}</div>` : null
                             return `<li class="item">
                                         <div id="bber-content">
@@ -29,7 +29,7 @@ case theme.says.style
                                                     <i class="scoicon sco-calendar-todo-fill"></i>
                                                     <time class="datetime" datetime="${item.create_time}"></time>
                                                 </div>
-                                                ${item.link ? `<a class="bber-content-link href="${item.link}" title="跳转到短文指引的链接"><i class="scoicon sco-link-m-line"></i>链接</a>` : ''}
+                                                ${item.link ? `<a class="bber-content-link" href="${item.link}" title="跳转到短文指引的链接"><i class="scoicon sco-link-m-line"></i>链接</a>` : ''}
                                             </div>
                                             ${item.content ? `<a class="bber-reply goComment" onclick="sco.toTalk('${item.content}')"><i class="scoicon sco-chat-fill" style="font-size: 1rem;"></i></a>` : ''}
                                         </div>
@@ -54,7 +54,7 @@ case theme.says.style
 
                         document.querySelector('#waterfall').innerHTML = list.map(item => {
                             aplayer = item.aplayer ? `<div class="bber-music"><meting-js server="${item.aplayer.server}" type="song" id="${item.aplayer.id}" mutex="true" preload="none" theme="var(--sco-main)" data-lrctype="0"></meting-js></div>` : null
-                            video = item.player ? `<div class="bber-video"><video src="${item.player}" controls="controls" style="object-fit: cover;"></video></div>` : item.bilibili ? `<div class="bber-video"><iframe src="${item.bilibili}" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe></div>` : null
+                            video = item.player ? `<div class="bber-video"><video src="${item.player}" controls="controls" style="object-fit: cover;"></video></div>` : item.bilibili ? `<div class="bber-video"><iframe src="//player.bilibili.com/player.html?autoplay=0&bvid=${item.bilibili}" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe></div>` : null
                             imageBox = item.images ? `<div class="bber-content-img">${item.images.map(img => `<img src="${img}" title="即刻短文配图" />`).join('')}</div>` : null
                             return `<li class="item">
                                         <div class="meta">

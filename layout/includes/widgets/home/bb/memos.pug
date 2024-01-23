@@ -1,31 +1,22 @@
 script.
     !async function () {
-        const contentRegex = /\(content\){.*?}/g;
-        const imageRegex = /\(image\){.*?}/g;
-        const musicRegex = /\(music\){.*?}/g;
-        const bilibiliRegex = /\(bilibili\){.*?}/g;
-        const playerRegex = /\(player\){.*?}/g;
-        const hashtagRegex = /#(.*?)\s/g;
-
         await fetch('!{theme.says.mode_link}')
             .then(response => response.json())
             .then(data => {
-                const list = (data.filter(item => item.content.match(contentRegex))).slice(0, 10);
+                const list = (data.filter(item => item.content.match(/\(content\){.*?}/g))).slice(0, 10)
 
                 document.querySelector('#bber-talk').innerHTML = list.map(item => {
-                    let content = item.content;
-                    content = content.replace(hashtagRegex, '')
-                        .replace(contentRegex, '$1')
-                        .replace(imageRegex, '【图片】')
-                        .replace(musicRegex, '【音乐】')
-                        .replace(bilibiliRegex, '【视频】')
-                        .replace(playerRegex, '【视频】');
-                    return `<div class="li-style swiper-slide">${content}</div>`;
-                }).join(' ');
-
-                document.addEventListener('DOMContentLoaded', function () {
-                    sco.initbbtalk();
-                });
+                    item.content = item.content
+                        .replace(/#(.*?)\s/g, '')
+                        .replace(/\(link\){(.*?)}/g, '')
+                        .replace(/\(content\){(.*?)}/g, '$1')
+                        .replace(/\(image\){.*?}/g, '!{_p('home.bbtime.image')}')
+                        .replace(/\(aplayer\){.*?}/g, '!{_p('home.bbtime.aplayer')}')
+                        .replace(/\(bilibili\){.*?}/g, '!{_p('home.bbtime.video')}')
+                        .replace(/\(player\){.*?}/g, '!{_p('home.bbtime.video')}');
+                    return `<div class="li-style swiper-slide">${item.content}</div>`
+                }).join(' ')
+                sco.initbbtalk()
             })
             .catch(error => console.error('bbtime | ', error));
-    }();
+    }()
