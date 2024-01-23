@@ -905,7 +905,7 @@ window.refreshFn = () => {
     PAGE_CONFIG.comment && initComment()
     PAGE_CONFIG.toc && toc.init();
     (PAGE_CONFIG.is_post || PAGE_CONFIG.is_page) && ((GLOBAL_CONFIG.hightlight.enable && hightlight.init()) || tabs.init())
-    PAGE_CONFIG.is_home && (showTodayCard() || sco.initbbtalk())
+    PAGE_CONFIG.is_home && showTodayCard()
     GLOBAL_CONFIG.covercolor.enable && coverColor()
     sco.initConsoleState()
     GLOBAL_CONFIG.comment.commentBarrage && PAGE_CONFIG.comment && initializeCommentBarrage()

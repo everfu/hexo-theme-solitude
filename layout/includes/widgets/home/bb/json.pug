@@ -1,12 +1,26 @@
 script.
     !async function () {
+        const htmlTagRegex = /<[^>]+>/g;
+
         await fetch('!{theme.says.mode_link}')
             .then(res => res.json())
             .then(res => {
-                let list = res.slice(0, 10)
+                let list = res.filter(item => item.content).slice(0, 10);
+
                 document.querySelector('#bber-talk').innerHTML = list.map(item => {
-                    item.content = item.image ? item.content + '!{_p('home.bbtime.image')}' : item.content || item.aplayer ? item.content + '!{_p('home.bbtime.aplayer')}' : item.content || item.video ? item.content + '!{_p('home.bbtime.video')}' : item.content
-                    return `<div class="li-style swiper-slide">${item.content}</div>`
-                }).join('')
-            }).catch(err => console.log('bbtime |', err))
-    }()
+                    let content = item.content ? item.content.replace(htmlTagRegex, '') : '';
+                    if (item.image) {
+                        content += '!{_p('home.bbtime.image')}';
+                    } else if (item.aplayer) {
+                        content += '!{_p('home.bbtime.aplayer')}';
+                    } else if (item.video) {
+                        content += '!{_p('home.bbtime.video')}';
+                    }
+                    return `<div class="li-style swiper-slide">${content}</div>`;
+                }).join('');
+
+                document.addEventListener('DOMContentLoaded', function () {
+                    sco.initbbtalk();
+                });
+            }).catch(err => console.log('bbtime |', err));
+    }();
