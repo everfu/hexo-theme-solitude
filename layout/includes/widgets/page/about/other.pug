@@ -1,6 +1,9 @@
+- var tj = site.data.about.tj
+- var oneself = site.data.about.oneself
+
 .author-content
-    if site.data.about.tj
-        .about-statistic.author-content-item(style=`background: url(${site.data.about.tj.img});`)
+    if tj
+        .about-statistic.author-content-item(style=`background: url(${tj.img});`)
             .card-content
                 .author-content-item-tips 数据
                 span.author-content-item-title 访问统计
@@ -10,7 +13,7 @@
                     a(href="https://invite.51.la/1NzKqTeb?target=V6") 51la网站统计
 
             script.
-                fetch("#{site.data.about.tj.url}")
+                fetch("#{tj.url}")
                     .then(res => res.text())
                     .then(data => {
                         const title = ["最近活跃", "今日人数", "今日访问", "昨日人数", "昨日访问", "本月访问", "总访问量"];
@@ -29,13 +32,12 @@
                     });
 
 
-    if site.data.about.oneself
+    if oneself
         style.
             :root {
-                --site-about-oneself-map--light: url(#{site.data.about.oneself.map.light});
-                --site-about-oneself-map--dark: url(#{site.data.about.oneself.map.dark});
+                --site-about-oneself-map--light: url(#{oneself.map.light});
+                --site-about-oneself-map--dark: url(#{oneself.map.dark});
             }
-        - const oneself = site.data.about.oneself
         .author-content-item-group.column.mapAndInfo
             .author-content-item.map.single
                 span.map-title 我现在住在 #{oneself.location}

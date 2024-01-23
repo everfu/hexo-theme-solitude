@@ -1,38 +1,39 @@
 - const contentinfo = site.data.about.contentinfo
 
-.author-content
-    .author-content-item.myInfoAndSayHello
-        .title1= _p('about.info.title1')
-        .title2= _p('about.info.title2')
-            span.inline-word= contentinfo.name
-        .title1= _p('about.info.title3') + contentinfo.title
-    .aboutsiteTips.author-content-item
-        .author-content-item-tips= _p('about.info.tip1')
-        h2
-            = _p('about.info.tip2')
-            br
-            = _p('about.info.tip3')
-            span.inline-word= _p('about.info.tip4')
-            .mask
-                span.first-tips(data-show='')= contentinfo.product
-                span= contentinfo.design
-                span= contentinfo.program
-                span(data-up='')= contentinfo.user_experience
+if contenginfo
+    .author-content
+        .author-content-item.myInfoAndSayHello
+            .title1= _p('about.info.title1')
+            .title2= _p('about.info.title2')
+                span.inline-word= contentinfo.name
+            .title1= _p('about.info.title3') + contentinfo.title
+        .aboutsiteTips.author-content-item
+            .author-content-item-tips= _p('about.info.tip1')
+            h2
+                = _p('about.info.tip2')
+                br
+                = _p('about.info.tip3')
+                span.inline-word= _p('about.info.tip4')
+                .mask
+                    span.first-tips(data-show='')= contentinfo.product
+                    span= contentinfo.design
+                    span= contentinfo.program
+                    span(data-up='')= contentinfo.user_experience
 
-script.
-    var pursuitInterval = null;
-    pursuitInterval = setInterval(function () {
-        const show = document.querySelector('span[data-show]')
-        const next = show.nextElementSibling || document.querySelector('.first-tips')
-        const up = document.querySelector('span[data-up]')
-        if (up) {
-            up.removeAttribute('data-up')
-        }
-        show.removeAttribute('data-show')
-        show.setAttribute('data-up', '')
-        next.setAttribute('data-show', '')
-    }, 2000)
+    script.
+        var pursuitInterval = null;
+        pursuitInterval = setInterval(function () {
+            const show = document.querySelector('span[data-show]')
+            const next = show.nextElementSibling || document.querySelector('.first-tips')
+            const up = document.querySelector('span[data-up]')
+            if (up) {
+                up.removeAttribute('data-up')
+            }
+            show.removeAttribute('data-show')
+            show.setAttribute('data-up', '')
+            next.setAttribute('data-show', '')
+        }, 2000)
 
-    document.addEventListener('pjax:send', function(){
-        clearInterval(pursuitInterval);
-    });
+        document.addEventListener('pjax:send', function () {
+            clearInterval(pursuitInterval);
+        });
