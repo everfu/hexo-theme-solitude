@@ -3,17 +3,17 @@ script.
         await fetch('!{theme.says.mode_link}')
             .then(response => response.json())
             .then(data => {
-                const list = (data.filter(item => item.content.match(/\(content\){.*?}/g))).slice(0, 10)
-
+                const list = data.slice(0, 10)
                 document.querySelector('#bber-talk').innerHTML = list.map(item => {
                     item.content = item.content
                         .replace(/#(.*?)\s/g, '')
-                        .replace(/\(link\){(.*?)}/g, '')
-                        .replace(/\(content\){(.*?)}/g, '$1')
-                        .replace(/\(image\){.*?}/g, '!{_p('home.bbtime.image')}')
-                        .replace(/\(aplayer\){.*?}/g, '!{_p('home.bbtime.aplayer')}')
-                        .replace(/\(bilibili\){.*?}/g, '!{_p('home.bbtime.video')}')
-                        .replace(/\(player\){.*?}/g, '!{_p('home.bbtime.video')}');
+                        .replace(/\n/g, ' ')
+                        .replace(/!\[\]\(.*?\)/g, '!{_p("home.bbtime.image")}')
+                        .replace(/\[(.*?)\]\(.*?\)/g, '')
+                        .replace(/{bilibili,(.*?),(.*?)}/g, '!{_p("home.bbtime.video")}')
+                        .replace(/{player,(.*?)}/g, '!{_p("home.bbtime.video")}')
+                        .replace(/{aplayer,(.*?),(.*?)}/g, '!{_p("home.bbtime.aplayer")}')
+                    console.log(item.content)
                     return `<div class="li-style swiper-slide">${item.content}</div>`
                 }).join(' ')
                 sco.initbbtalk()

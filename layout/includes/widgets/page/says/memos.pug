@@ -3,12 +3,12 @@ case theme.says.style
         script.
             !async function () {
                 let say_strip = !{theme.says.strip};
-                let aplayerRegex = /\(aplayer\){(.*?)}/g;
-                let playerRegex = /\(player\){(.*?)}/;
-                let bilibiliRegex = /\(bilibili\){(.*?)}/;
-                let imageRegex = /\(image\){(.*?)}/g;
-                let contentRegex = /\(content\){(.*?)}/;
-                let linkRegex = /\(link\){(.*?)}/;
+                let aplayerRegex = /{aplayer,(.*?),(.*?)}/g;
+                let linkRegex = /(?<!\!)\[([^\]]*)\]\(([^\)]*)\)/g;
+                let bilibiliRegex = /{bilibili,(.*?)}/g;
+                let playerRegex = /{player,(.*?)}/g;
+                let imageRegex = /!\[\]\((.*?)\)/g;
+                let contentRegex = /#says\s*(.*)/g;
 
                 await fetch("!{url_for(theme.says.mode_link)}")
                     .then(res => res.json())
@@ -20,17 +20,16 @@ case theme.says.style
 
                         document.querySelector('#waterfall').innerHTML = list.map(item => {
                             aplayer = item.content.match(aplayerRegex);
-                            aplayer = aplayer ? `<div class="bber-music"><meting-js server="${aplayer[0].replace(/\(aplayer\){(.*?),.*/, '$1')}" type="song" id="${aplayer[0].replace(/\(aplayer\){.*?,\s*(.*?)\s*}/, '$1')}" mutex="true" preload="none" theme="var(--sco-main)" data-lrctype="0"></meting-js></div>` : null;
+                            aplayer = aplayer ? `<div class="bber-music"><meting-js server="${aplayer[0].replace(aplayerRegex, '$1')}" type="song" id="${aplayer[0].replace(aplayerRegex, '$2')}" mutex="true" preload="none" theme="var(--sco-main)" data-lrctype="0"></meting-js></div>` : null;
                             video = item.content.match(playerRegex);
-                            video = video ? `<div class="bber-video"><video src="${video[1]}" controls="controls" style="object-fit: cover;"></video></div>` : item.content.match(bilibiliRegex);
-                            video = item.content.match(bilibiliRegex) ? `<div class="bber-video"><iframe src="//player.bilibili.com/player.html?autoplay=0&bvid=${video[1]}" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe></div>` : video;
+                            video = video ? `<div class="bber-video"><video src="${video[0].replace(playerRegex, '$1')}" controls="controls" style="object-fit: cover;"></video></div>` : item.content.match(bilibiliRegex);
+                            video = item.content.match(bilibiliRegex) ? `<div class="bber-video"><iframe src="//player.bilibili.com/player.html?autoplay=0&bvid=${video[0].replace(bilibiliRegex, '$1')}" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe></div>` : video;
                             imageBox = item.content.match(imageRegex);
                             imageBox = imageBox ? `<div class="bber-content-img">${imageBox.map(img => `<img src="${img.replace(imageRegex, '$1')}" title="即刻短文配图" />`).join('')}</div>` : '';
                             let time = new Date(item.createdTs * 1000).toISOString().replace('Z', '+08:00');
-                            let content = item.content.match(contentRegex);
-                            content = content ? content[1] : '';
+                            let content = item.content.match(contentRegex).map(item => item.replace(contentRegex, '$1'));
                             let link = item.content.match(linkRegex);
-                            link = link ? `<a class="bber-content-link" href='${link[1]}' title="跳转到短文指引的链接"><i class="scoicon sco-link-m-line"></i>链接</a>` : '';
+                            link = link ? `<a class="bber-content-link" href='${link[0].replace(linkRegex, '$2')}' title="${link[0].replace(linkRegex, '$1')}" target="_blank"><i class="scoicon sco-link-m-line"></i>链接</a>` : '';
                             return `<li class="item">
                                         <div id="bber-content">
                                             <p class="datacont">${content}</p>
@@ -61,11 +60,11 @@ case theme.says.style
         script.
             !async function () {
                 let say_strip = !{theme.says.strip};
-                let aplayerRegex = /\(aplayer\){(.*?)}/g;
-                let playerRegex = /\(player\){(.*?)}/;
-                let bilibiliRegex = /\(bilibili\){(.*?)}/;
-                let imageRegex = /\(image\){(.*?)}/g;
-                let contentRegex = /\(content\){(.*?)}/;
+                let aplayerRegex = /{aplayer,(.*?),(.*?)}/g;
+                let bilibiliRegex = /{bilibili,(.*?)}/g;
+                let playerRegex = /{player,(.*?)}/g;
+                let imageRegex = /!\[\]\((.*?)\)/g;
+                let contentRegex = /#says\s*(.*)/g;
 
                 await fetch("!{url_for(theme.says.mode_link)}")
                     .then(res => res.json())
@@ -77,16 +76,14 @@ case theme.says.style
 
                         document.querySelector('#waterfall').innerHTML = list.map(item => {
                             aplayer = item.content.match(aplayerRegex);
-                            aplayer = aplayer ? `<div class="bber-music"><meting-js server="${aplayer[0].replace(/\(aplayer\){(.*?),.*/, '$1')}" type="song" id="${aplayer[0].replace(/\(aplayer\){.*?,\s*(.*?)\s*}/, '$1')}" mutex="true" preload="none" theme="var(--sco-main)" data-lrctype="0"></meting-js></div>` : null;
+                            aplayer = aplayer ? `<div class="bber-music"><meting-js server="${aplayer[0].replace(aplayerRegex, '$1')}" type="song" id="${aplayer[0].replace(aplayerRegex, '$2')}" mutex="true" preload="none" theme="var(--sco-main)" data-lrctype="0"></meting-js></div>` : null;
                             video = item.content.match(playerRegex);
-                            video = video ? `<div class="bber-video"><video src="${video[1]}" controls="controls" style="object-fit: cover;"></video></div>` : item.content.match(bilibiliRegex);
-                            video = item.content.match(bilibiliRegex) ? `<div class="bber-video"><iframe src="//player.bilibili.com/player.html?autoplay=0&bvid=${video[1]}" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe></div>` : video;
+                            video = video ? `<div class="bber-video"><video src="${video[0].replace(playerRegex, '$1')}" controls="controls" style="object-fit: cover;"></video></div>` : item.content.match(bilibiliRegex);
+                            video = item.content.match(bilibiliRegex) ? `<div class="bber-video"><iframe src="//player.bilibili.com/player.html?autoplay=0&bvid=${video[0].replace(bilibiliRegex, '$1')}" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe></div>` : video;
                             imageBox = item.content.match(imageRegex);
                             imageBox = imageBox ? `<div class="bber-content-img">${imageBox.map(img => `<img src="${img.replace(imageRegex, '$1')}" title="即刻短文配图" />`).join('')}</div>` : '';
                             let time = new Date(item.createdTs * 1000).toISOString().replace('Z', '+08:00');
-                            let content = item.content.match(contentRegex);
-                            content = content ? content[1] : '';
-                            // 不应该用 , 分割，因为可能会有逗号
+                            let content = item.content.match(contentRegex).map(item => item.replace(contentRegex, '$1'));
                             return `<li class="item">
                                         <div class="meta">
                                             <img class="no-lightbox no-lazyload avatar" src="!{theme.aside.card.author.img}">
