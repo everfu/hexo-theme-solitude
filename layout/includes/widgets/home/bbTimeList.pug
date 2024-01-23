@@ -1,4 +1,4 @@
-.bbTimeList.container#bbTimeList
+.bbTimeList.container#bbTimeList(class=is_home_first_page() ? '' : 'more-page')
     i.bber-logo.scoicon.sco-bblogo(onclick=`pjax.loadUrl('/essay/')`)
     .swiper-container.swiper-no-swiping.swiper-container-initialized.swiper-container-vertical.swiper-container-pointer-events#bbtalk(tabindex="-1" onclick=`pjax.loadUrl('/essay/')`)
         .swiper-wrapper#bber-talk
