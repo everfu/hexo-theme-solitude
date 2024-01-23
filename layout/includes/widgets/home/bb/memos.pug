@@ -3,18 +3,19 @@ script.
         await fetch('!{theme.says.mode_link}')
             .then(response => response.json())
             .then(data => {
+                let aplayerRegex = /{aplayer,(.*?),(.*?)}/g;
+                let bilibiliRegex = /{bilibili,(.*?)}/g;
+                let playerRegex = /{player,(.*?)}/g;
+                let imageRegex = /!\[\]\((.*?)\)/g;
+                let contentRegex = /#.*?\s([^{\n]*)/g
                 const list = data.slice(0, 10)
                 document.querySelector('#bber-talk').innerHTML = list.map(item => {
-                    item.content = item.content
-                        .replace(/#(.*?)\s/g, '')
-                        .replace(/\n/g, ' ')
-                        .replace(/!\[\]\(.*?\)/g, '!{_p("home.bbtime.image")}')
-                        .replace(/\[(.*?)\]\(.*?\)/g, '')
-                        .replace(/{bilibili,(.*?),(.*?)}/g, '!{_p("home.bbtime.video")}')
-                        .replace(/{player,(.*?)}/g, '!{_p("home.bbtime.video")}')
-                        .replace(/{aplayer,(.*?),(.*?)}/g, '!{_p("home.bbtime.aplayer")}')
-                    console.log(item.content)
-                    return `<div class="li-style swiper-slide">${item.content}</div>`
+                    let content = item.content.match(contentRegex, '$1').map(item => item.replace(contentRegex, '$1'));
+                    let aplayer = item.content.match(aplayerRegex) ? '!{_p("home.bbtime.aplayer")}' : '';
+                    let video = item.content.match(playerRegex) ? '!{_p("home.bbtime.video")}' : item.content.match(bilibiliRegex) ? '!{_p("home.bbtime.video")}' : '';
+                    let imageBox = item.content.match(imageRegex) ? '!{_p("home.bbtime.image")}' : '';
+
+                    return `<div class="li-style swiper-slide">${content+aplayer+video+imageBox}</div>`
                 }).join(' ')
                 sco.initbbtalk()
             })

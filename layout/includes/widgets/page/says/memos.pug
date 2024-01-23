@@ -8,7 +8,7 @@ case theme.says.style
                 let bilibiliRegex = /{bilibili,(.*?)}/g;
                 let playerRegex = /{player,(.*?)}/g;
                 let imageRegex = /!\[\]\((.*?)\)/g;
-                let contentRegex = /#says\s*(.*)/g;
+                let contentRegex = /#.*?\s([^{\n]*)/g
 
                 await fetch("!{url_for(theme.says.mode_link)}")
                     .then(res => res.json())
@@ -64,7 +64,7 @@ case theme.says.style
                 let bilibiliRegex = /{bilibili,(.*?)}/g;
                 let playerRegex = /{player,(.*?)}/g;
                 let imageRegex = /!\[\]\((.*?)\)/g;
-                let contentRegex = /#says\s*(.*)/g;
+                let contentRegex = /#.*?\s([^{\n]*)/g
 
                 await fetch("!{url_for(theme.says.mode_link)}")
                     .then(res => res.json())
