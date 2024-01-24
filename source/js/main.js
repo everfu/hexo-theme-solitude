@@ -1,6 +1,3 @@
-/**
- * side menu
- */
 const sidebarFn = () => {
     const $toggleMenu = document.getElementById('toggle-menu')
     const $mobileSidebarMenus = document.getElementById('sidebar-menus')
@@ -36,9 +33,6 @@ const sidebarFn = () => {
     })
 }
 
-/**
- * 滚动处理
- */
 const scrollFn = function () {
     const innerHeight = window.innerHeight;
     const $header = document.getElementById('page-header');
@@ -70,9 +64,6 @@ const scrollFn = function () {
     }
 }
 
-/**
- * 滑动导航栏数字变化
- */
 const percent = () => {
     let scrollTop = document.documentElement.scrollTop || window.pageYOffset
     let totalHeight = Math.max(document.body.scrollHeight, document.documentElement.scrollHeight, document.body.offsetHeight, document.documentElement.offsetHeight, document.body.clientHeight, document.documentElement.clientHeight) - document.documentElement.clientHeight
@@ -117,9 +108,6 @@ const showTodayCard = () => {
     }
 }
 
-/**
- * 修改时间格式
- */
 const changeTimeFormat = () => {
     const timeElements = document.getElementsByTagName("time"), lang = GLOBAL_CONFIG.lang.time
     for (let i = 0; i < timeElements.length; i++) {
@@ -145,9 +133,6 @@ const changeTimeFormat = () => {
     }
 }
 
-/*
- * 文章页右下角下一篇
- */
 const initObserver = () => {
     let commentElement = document.getElementById("post-comment");
     let paginationElement = document.getElementById("pagination");
@@ -246,9 +231,6 @@ let lastSayHello = "";
 let wleelw_musicPlaying = false
 
 let sco = {
-    /**
-     * 隐藏协议小助手
-     */
     hideCookie: function () {
         setTimeout(() => {
             const cookiesWindow = document.getElementById("cookies-window");
@@ -260,10 +242,6 @@ let sco = {
             }
         }, 3000);
     },
-    /**
-     * 平滑滚动处理
-     * @param elementId
-     */
     scrollTo: function (elementId) {
         const targetElement = document.getElementById(elementId);
         if (targetElement) {
@@ -281,9 +259,6 @@ let sco = {
             }));
         }
     },
-    /**
-     * 控制台热评隐藏显示切换
-     */
     switchCommentBarrage: function () {
         let commentBarrageElement = document.querySelector(".comment-barrage");
         if (commentBarrageElement) {
@@ -300,9 +275,6 @@ let sco = {
             }
         }
     },
-    /**
-     * 控制台侧边栏隐藏显示切换
-     */
     switchHideAside: function () {
         const htmlClassList = document.documentElement.classList;
         htmlClassList.contains("hide-aside") ? saveToLocal.set("aside-status", "show", 1) : saveToLocal.set("aside-status", "hide", 1)
@@ -312,11 +284,8 @@ let sco = {
     initConsoleState: function () {
         document.documentElement.classList.contains("hide-aside") ? document.querySelector("#consoleHideAside").classList.add("on") : document.querySelector("#consoleHideAside").classList.remove("on")
     },
-    /**
-     * 个人信息顶部
-     */
     changeSayHelloText: function () {
-        const greetings = ["🤖️ 数码科技爱好者", "🔍 分享与热心帮助", "🏠 智能家居小能手", "🔨 设计开发一条龙", "🤝 专修交互与设计", "🏃 脚踏实地行动派", "🧱 团队小组发动机", "💢 壮汉人狠话不多"];
+        const greetings = GLOBAL_CONFIG.aside.sayhello2;
         const greetingElement = document.getElementById("author-info__sayhi");
         let randomGreeting = greetings[Math.floor(Math.random() * greetings.length)];
         while (randomGreeting === lastSayHello) {
@@ -325,9 +294,6 @@ let sco = {
         greetingElement.textContent = randomGreeting;
         lastSayHello = randomGreeting;
     },
-    /**
-     * 昼夜切换
-     */
     switchDarkMode: function () {
         let nowMode = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' :
             'light'
@@ -335,44 +301,32 @@ let sco = {
             document.documentElement.setAttribute('data-theme', 'dark')
             saveToLocal.set('theme', 'dark', 0.02);
             utils.snackbarShow(GLOBAL_CONFIG.lang.theme.dark, false, 2000)
-            document.querySelector(".menu-darkmode-text").textContent = "深色模式";
+            GLOBAL_CONFIG.rightside && (document.querySelector(".menu-darkmode-text").textContent = "浅色模式");
         } else {
             document.documentElement.setAttribute('data-theme', 'light')
             saveToLocal.set('theme', 'light', 0.02);
             utils.snackbarShow(GLOBAL_CONFIG.lang.theme.light, false, 2000)
-            document.querySelector(".menu-darkmode-text").textContent = "浅色模式";
+            GLOBAL_CONFIG.rightside && (document.querySelector(".menu-darkmode-text").textContent = "深色模式");
         }
     },
     hideTodayCard: function () {
         document.getElementById('todayCard').classList.add('hide')
     },
-    /**
-     * 返回顶部
-     */
     toTop: function () {
         utils.scrollToDest(0)
     },
-    /**
-     * 显示控制台
-     */
     showConsole: function () {
         let el = document.getElementById('console')
         if (!el.classList.contains('show')) {
             el.classList.add('show')
         }
     },
-    /**
-     * 隐藏控制台
-     */
     hideConsole: function () {
         const el = document.getElementById('console')
         if (el.classList.contains('show')) {
             el.classList.remove('show')
         }
     },
-    /**
-     *
-     */
     reflashEssayWaterFall: function () {
         if (document.getElementById('waterfall')) {
             setTimeout(function () {
@@ -381,19 +335,12 @@ let sco = {
             }, 500);
         }
     },
-    /**
-     * 更新站点运行时间
-     */
     addRuntime: function () {
         let el = document.getElementById('runtimeshow')
         if (el && GLOBAL_CONFIG.runtime) {
             el.innerText = utils.timeDiff(new Date(GLOBAL_CONFIG.runtime), new Date()) + GLOBAL_CONFIG.lang.time.runtime
         }
     },
-    /**
-     * 跳转到输评论
-     * @param txt
-     */
     toTalk: function (txt) {
         const inputs = ["#wl-edit", ".el-textarea__inner"]
         for (let i = 0; i < inputs.length; i++) {
@@ -411,9 +358,6 @@ let sco = {
             commentTips.classList.add("show");
         }
     },
-    /**
-     * 初始化即刻mini
-     */
     initbbtalk: function () {
         if (document.querySelector('#bber-talk')) {
             let swiper = new Swiper('.swiper-container', {
@@ -426,9 +370,6 @@ let sco = {
             });
         }
     },
-    /**
-     * 图片添加底部展示信息
-     */
     addPhotoFigcaption: function () {
         let images = document.querySelectorAll('#article-container img');
         images.forEach((image) => {
@@ -444,9 +385,6 @@ let sco = {
             }
         });
     },
-    /**
-     * 下载图片并添加水印
-     */
     downloadImage: function (imageUrl, filename = 'photo') {
         if (rm.downloadimging) {
             utils.snackbarShow("有正在进行中的下载，请稍后再试");
@@ -479,10 +417,6 @@ let sco = {
         };
         img.src = imageUrl;
     },
-
-    /**
-     * 音乐播放暂停
-     */
     musicToggle: function () {
         const $music = document.querySelector('#nav-music');
         const $meting = document.querySelector('meting-js');
@@ -500,42 +434,27 @@ let sco = {
         }
         rm.hideRightMenu();
     },
-    /**
-     * 音乐上一首
-     */
     musicSkipBack: function () {
         document.querySelector('meting-js').aplayer.skipBack()
         rm.hideRightMenu()
     },
-    /**
-     * 音乐下一首
-     */
     musicSkipForward: function () {
         document.querySelector('meting-js').aplayer.skipForward()
         rm.hideRightMenu()
     },
-    /**
-     * 获取歌曲名称
-     */
     musicGetName: function () {
         const titles = Array.from(document.querySelectorAll('.aplayer-title')).map(e => e.innerText);
         return titles[0];
     },
-    /**
-     * 跳转到评论
-     */
     scrollToComment: function () {
         utils.scrollToDest(utils.getEleTop(document.getElementById('post-comment')), 300)
     },
-    /**
-     * 个人信息顶部文字更新
-     */
     setTimeState: function () {
         const el = document.getElementById('author-info__sayhi');
         if (el) {
             const timeNow = new Date();
             const hours = timeNow.getHours();
-            const lang = GLOBAL_CONFIG.lang.sayhello;
+            const lang = GLOBAL_CONFIG.aside.sayhello;
             const greetings = [
                 {start: 0, end: 5, text: lang.goodnight},
                 {start: 6, end: 10, text: lang.morning},
@@ -551,9 +470,6 @@ let sco = {
             }
         }
     },
-    /**
-     * tagPageActive
-     */
     tagPageActive: function () {
         const currentPath = window.location.pathname;
         const decodedPath = decodeURIComponent(currentPath);
@@ -576,9 +492,6 @@ let sco = {
             }
         }
     },
-    /**
-     * categoryBarActive
-     */
     categoriesBarActive: function () {
         const categoryBar = document.querySelector("#category-bar");
         const currentPath = window.location.pathname;
@@ -608,9 +521,6 @@ let sco = {
             }
         }
     },
-    /**
-     * categoryBarRightButton
-     */
     scrollCategoryBarToRight: function () {
         let timeoutId;
         let scrollBar = document.getElementById("category-bar-items");
@@ -641,9 +551,6 @@ let sco = {
             });
         }
     },
-    /**
-     * 打开侧边栏标签隐藏
-     */
     openAllTags: function () {
         let tagCloudElements = document.querySelectorAll(".card-allinfo .card-tag-cloud");
         tagCloudElements.forEach(function (tagCloudElement) {
@@ -654,9 +561,6 @@ let sco = {
             moreTagsButton.parentNode.removeChild(moreTagsButton);
         }
     },
-    /**
-     * 监听底部分页输入框
-     */
     listenToPageInputPress: function () {
         const pageText = document.getElementById("toPageText");
         const pageButton = document.getElementById("toPageButton");
@@ -693,9 +597,6 @@ let sco = {
             }
         });
     },
-    /**
-     * 初始化Nav背景
-     */
     addNavBackgroundInit: function () {
         var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
         if (scrollTop !== 0) {
@@ -709,10 +610,6 @@ let sco = {
             }
         }
     },
-    /**
-     * 初始化Header
-     * @param change
-     */
     initAdjust: function (change = false) {
         const $blogName = document.getElementById('site-name')
         let blogNameWidth = $blogName && $blogName.offsetWidth
@@ -738,9 +635,6 @@ let sco = {
 
         document.getElementById('nav')?.classList.add('show')
     },
-    /**
-     * 首页分页跳转
-     */
     toPage: function () {
         const pageNumbers = document.querySelectorAll(".page-number");
         const maxPageNumber = parseInt(pageNumbers[pageNumbers.length - 1].innerHTML);
@@ -781,9 +675,6 @@ let sco = {
     }
 }
 
-/*
- * 代码高亮显示
- */
 class hightlight {
     static createEle(langEl, item) {
         const fragment = document.createDocumentFragment()
@@ -793,7 +684,7 @@ class hightlight {
         const hlTools = document.createElement('div')
         hlTools.className = `highlight-tools`
         hlTools.innerHTML = highlightExpandEle + langEl + highlightCopyEle
-        let expand = !GLOBAL_CONFIG.hightlight.expand
+        let expand = GLOBAL_CONFIG.hightlight.expand
         hlTools.children[0].addEventListener('click', (e) => {
             if (expand) {
                 hlTools.children[0].classList.add('closed')
@@ -834,6 +725,13 @@ class hightlight {
             fragment.appendChild(ele)
         }
         item.insertBefore(fragment, item.firstChild)
+        if (!expand) {
+            hlTools.children[0].classList.add('closed')
+            $table.setAttribute('style', 'display:none')
+            if ($expand.length !== 0) {
+                $expand[0].setAttribute('style', 'display:none')
+            }
+        }
     }
 
     static init() {

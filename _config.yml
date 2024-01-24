@@ -286,6 +286,26 @@ aside:
     content2: 相信你可以在这里找到对你有用的知识和教程。
     # 个人信息卡片底部的小图标，按照例子填写
     # Small icons at the bottom of the personal information card, fill in according to the example
+    # 个人信息卡片顶部按钮的打招呼语句
+    # Greeting statement of the button at the top of the personal information card
+    sayhello:
+      morning: 一日之计在于晨
+      noon: 吃饱了才有力气干活
+      afternoon: 集中精力，攻克难关
+      night: 不要太劳累了，早睡更健康
+      goodnight: 睡个好觉，保证精力充沛
+    # 个人信息卡片顶部按钮的切换文字
+    # Switching text of the button at the top of the personal information card
+    sayhello2:
+      - 🤖️ 数码科技爱好者
+      - 🔍 分享与热心帮助
+      - 🏠 智能家居小能手
+      - 🔨 设计开发一条龙
+      - 🤝 专修交互与设计
+      - 🏃 脚踏实地行动派
+      - 🧱 团队小组发动机
+      - 💢 壮汉人狠话不多
+      - 🎮 电竞游戏爱好者
     information:
   #      # 悬停显示文字
   #      Github:

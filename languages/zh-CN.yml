@@ -13,13 +13,6 @@ time:
   daybefore: 天前
   runtime:  天
 
-sayhello:
-  morning: 一日之计在于晨
-  noon: 吃饱了才有力气干活
-  afternoon: 集中精力，攻克难关
-  night: 不要太劳累了，早睡更健康
-  goodnight: 睡个好觉，保证精力充沛
-
 page:
   tag: 标签
   category: 分类
@@ -48,16 +41,6 @@ home:
   top-group:
     recommend: 荐
     recommendmore: 更多推荐
-
-about:
-  info:
-    title1: 你好，很高兴认识你👋
-    title2: 我叫
-    title3: 是一名
-    tip1: 追求
-    tip2: 源于
-    tip3: 热爱而去
-    tip4: 创造
 
 post:
   meta_reprint: 转载或翻译

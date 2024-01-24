@@ -2,11 +2,11 @@
     if (theme.search.enable) {
         var localSearch = 'undefined';
         var algolia = 'undefined';
-        switch (theme.search.type){
+        switch (theme.search.type) {
             case 'local':
                 localSearch = JSON.stringify({
-                    preload: theme.search.local_search.preload,
-                    path: theme?.search?.local_search?.CDN || '/search.xml'
+                    preload: theme.search.local.preload,
+                    path: theme?.search?.local?.CDN || '/search.xml'
                 })
                 break;
             case 'algolia':
@@ -24,6 +24,7 @@
 
     const commentInfoStart = theme.comment.randomInfoStart.map(item => `"${item}"`) || ""
     const commentInfoEnd = theme.comment.randomInfoEnd.map(item => `"${item}"`) || ""
+    var sayhello2 = theme.aside.card.sayhello2.map(item => `"${item}"`) || []
 
 script.
     const GLOBAL_CONFIG = {
@@ -60,18 +61,21 @@ script.
                 daybefore: '!{_p('time.daybefore')}',
                 runtime: '!{_p('time.runtime')}',
             },
-            sayhello: {
-                morning: `!{_p('sayhello.morning')}`,
-                noon: `!{_p('sayhello.noon')}`,
-                afternoon: `!{_p('sayhello.afternoon')}`,
-                night: `!{_p('sayhello.night')}`,
-                goodnight: `!{_p('sayhello.goodnight')}`,
-            },
             search: {
                 empty: '!{_p('search.empty')}',
                 hit: '!{_p('search.hit')}',
                 placeholder: '!{_p('search.placeholder')}',
             }
+        },
+        aside: {
+            sayhello: {
+                morning: '!{theme.aside.card.sayhello.morning}',
+                noon: '!{theme.aside.card.sayhello.noon}',
+                afternoon: '!{theme.aside.card.sayhello.afternoon}',
+                evening: '!{theme.aside.card.sayhello.evening}',
+                night: '!{theme.aside.card.sayhello.night}',
+            },
+            sayhello2: [!{sayhello2}],
         },
         covercolor: {
             enable: !{theme.post.covercolor.enable}
@@ -93,13 +97,13 @@ script.
         rightside: {
             enable: !{theme.rightside.enable}
         },
-        ai:{
+        ai: {
             enable: !{theme.post_ai.enable},
             key: '!{theme.post_ai.key}',
             talk: '!{theme.post_ai.talk}',
             randomPost: !{theme.post_ai.randomPost},
         },
-        music:{
+        music: {
             enable: !{theme.music.enable},
         }
     }

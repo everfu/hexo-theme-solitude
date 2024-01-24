@@ -13,13 +13,6 @@ time:
   daybefore: Days ago
   runtime: days
 
-sayhello:
-  morning: The plan of the day is in the morning
-  noon: Only when you are full can you have the strength to work
-  afternoon: Concentrate and overcome the difficulties
-  night: Don't get too tired, it's healthier to go to bed early
-  goodnight: Get a good night's sleep and keep yourself energized
-
 page:
   tag: Tags
   category: Categories
@@ -40,16 +33,6 @@ home:
   top-group:
     recommend: Favor
     recommendmore: More
-
-about:
-  info:
-    title1: Hello, nice to meet you👋
-    title2: 'My name is '
-    title3: 'I am a '
-    tip1: Pursue
-    tip2: Originated from
-    tip3: 'Love to go '
-    tip4: Create
 
 post:
   meta_reprint: Reprint or translation

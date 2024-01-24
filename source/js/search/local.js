@@ -27,8 +27,30 @@ window.onload = () => {
         utils.animateOut($searchMask, "to_hide 0.5s");
         window.removeEventListener("resize", fixSafariHeight);
     };
-    utils.addEventListenerPjax(document.querySelector("#search-button > .search"), "click", openSearch);
-    utils.addEventListenerPjax(document.querySelector("#local-search .search-close-button"), "click", closeSearch);
+
+    const searchFnOnce = () => {
+        $searchMask.addEventListener("click", closeSearch);
+        utils.addEventListenerPjax(document.querySelector("#local-search .search-close-button"), "click", closeSearch);
+    };
+
+    searchFnOnce();
+
+    const searchClickFn = () =>{
+        utils.addEventListenerPjax(document.querySelector("#search-button > .search"), "click", openSearch);
+
+        GLOBAL_CONFIG.rightside.enable && document.getElementById("menu-search").addEventListener("click", function (){
+            rm.hideRightMenu();
+            openSearch();
+            let t=document.getElementsByClassName('search-box-input')[0];
+            let evt = document.createEvent('HTMLEvents');
+            evt.initEvent('input', true,true)
+            t.value = selectTextNow
+            t.dispatchEvent(evt)
+        })
+    }
+
+    searchClickFn();
+
     function initLunr() {
         fetch("/search.xml")
             .then(response => response.text())

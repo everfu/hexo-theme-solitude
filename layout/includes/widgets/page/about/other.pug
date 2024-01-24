@@ -52,9 +52,11 @@
                     span.selfInfo-title 现在职业
                     span.selfInfo-content(style="color: #b04fe6;")= oneself.occupation
 
-if site.data.about.cause
+- var cause = site.data.about.cause
+
+if cause
     .author-content
         .create-site-post.author-content-item.single
-            .author-content-item-tips 心路历程
-            span.author-content-item-title 为什么建站？
-            != site.data.about.cause
+            .author-content-item-tips= cause.tip
+            span.author-content-item-title= cause.title
+            != cause.content

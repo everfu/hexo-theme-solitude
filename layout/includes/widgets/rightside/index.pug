@@ -15,9 +15,10 @@ div#rightMenu
         div.rightMenu-item#menu-pastetext
             i.scoicon.sco-clipboard-fill
             span 粘贴文本
-        a.rightMenu-item#menu-commenttext
-            i.scoicon.sco-chat-new-fill
-            span 引用到评论
+        if theme.comment.enable
+            a.rightMenu-item#menu-commenttext
+                i.scoicon.sco-chat-new-fill
+                span 引用到评论
         div.rightMenu-item#menu-newwindow
             i.scoicon.sco-window-fill
             span 新窗口打开
@@ -71,5 +72,5 @@ div#rightMenu
                 span.menu-commentBarrage-text 关闭热评
         div.rightMenu-item#menu-darkmode
             i.scoicon.sco-moon-clear-fill
-            span.menu-darkmode-text 浅色模式
+            span.menu-darkmode-text 深色模式
 div#rightmenu-mask
