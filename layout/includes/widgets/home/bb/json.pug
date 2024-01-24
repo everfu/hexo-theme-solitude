@@ -9,13 +9,11 @@ script.
 
                 document.querySelector('#bber-talk').innerHTML = list.map(item => {
                     let content = item.content ? item.content.replace(htmlTagRegex, '') : '';
-                    if (item.image) {
-                        content += '!{_p('home.bbtime.image')}';
-                    } else if (item.aplayer) {
-                        content += '!{_p('home.bbtime.aplayer')}';
-                    } else if (item.video) {
-                        content += '!{_p('home.bbtime.video')}';
-                    }
+                    content += item.image ? '<i class="scoicon scp-image-fill"></i>' : '';
+                    content += item.aplayer ? '<i class="scoicon sco-disc-fill"></i>' : '';
+                    content += item.video ? '<i class="scoicon sco-video-fill"></i>' : '';
+                    content += item.bilibili ? '<i class="scoicon sco-bilibili-line"></i>' : '';
+                    content += item.link ? `<i class="scoicon sco-link"></i>` : '';
                     return `<div class="li-style swiper-slide">${content}</div>`;
                 }).join('');
 

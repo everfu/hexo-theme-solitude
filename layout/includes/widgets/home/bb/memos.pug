@@ -6,16 +6,18 @@ script.
                 let aplayerRegex = /{aplayer,(.*?),(.*?)}/g;
                 let bilibiliRegex = /{bilibili,(.*?)}/g;
                 let playerRegex = /{player,(.*?)}/g;
+                let linkRegex = /(?<!\!)\[([^\]]*)\]\(([^\)]*)\)/g;
                 let imageRegex = /!\[\]\((.*?)\)/g;
                 let contentRegex = /#.*?\s([^{\n]*)/g
                 const list = data.slice(0, 10)
                 document.querySelector('#bber-talk').innerHTML = list.map(item => {
                     let content = item.content.match(contentRegex, '$1').map(item => item.replace(contentRegex, '$1'));
-                    let aplayer = item.content.match(aplayerRegex) ? '!{_p("home.bbtime.aplayer")}' : '';
-                    let video = item.content.match(playerRegex) ? '!{_p("home.bbtime.video")}' : item.content.match(bilibiliRegex) ? '!{_p("home.bbtime.video")}' : '';
-                    let imageBox = item.content.match(imageRegex) ? '!{_p("home.bbtime.image")}' : '';
+                    let imageBox = item.content.match(imageRegex) ? '<i class="scoicon sco-image-fill"></i>' : '';
+                    let aplayer = item.content.match(aplayerRegex) ? '<i class="scoicon sco-disc-fill"></i>' : '';
+                    let video = item.content.match(playerRegex) ? '<i class="scoicon sco-video-fill"></i>' : item.content.match(bilibiliRegex) ? '<i class="scoicon sco-bilibili-line"></i>' : '';
+                    let link = item.content.match(linkRegex) ? `<i class="scoicon sco-link"></i>` : '';
 
-                    return `<div class="li-style swiper-slide">${content+aplayer+video+imageBox}</div>`
+                    return `<div class="li-style swiper-slide">${content+aplayer+video+imageBox+link}</div>`
                 }).join(' ')
                 sco.initbbtalk()
             })

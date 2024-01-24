@@ -30,11 +30,6 @@ page:
 
 home:
   bannertext: Just browsing
-  bbtime:
-    text: Read more
-    image: [ Image ]
-    aplayer: [ Music ]
-    video: [ Video ]
   categoryBar:
     home: Home
     more: More

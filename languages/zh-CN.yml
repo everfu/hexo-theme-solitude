@@ -38,11 +38,6 @@ nav:
 
 home:
   bannertext: 随便逛逛
-  bbtime:
-    text: 查看全文
-    image: 【图片】
-    aplayer: 【音乐】
-    video: 【视频】
   categoryBar:
     home: 首页
     more: 更多
