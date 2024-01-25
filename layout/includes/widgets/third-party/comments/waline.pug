@@ -2,15 +2,13 @@
 
 script.
     async function initComment() {
-        (() => {
-            Waline.init(Object.assign({
-                el: '#comment',
-                serverURL: '!{envId}',
-                pageview: !{theme.post.meta.pv},
-                dark: 'html[data-theme="dark"]',
-                path: window.location.pathname,
-                search: false,
-                comment: #{theme.post.meta.comment && is_post()},
-            }, !{JSON.stringify(option)}))
-        })()
+        Waline.init(Object.assign({
+            el: '#comment',
+            serverURL: '!{envId}',
+            pageview: !{theme.post.meta.pv},
+            dark: 'html[data-theme="dark"]',
+            path: window.location.pathname,
+            search: false,
+            comment: #{theme.post.meta.comment && is_post()},
+        }, !{JSON.stringify(option)}))
     }

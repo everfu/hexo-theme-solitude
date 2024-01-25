@@ -15,15 +15,6 @@ if theme.says.home_mini
 if theme.fancybox
     link(rel="stylesheet", href=url_for(theme.cdn.fancyapps_css))
 
-// comment
-if theme.comment.enable
-    case theme.comment.type
-        when 'twikoo'
-            script(src=url_for(theme.cdn.twikoo))
-        when 'waline'
-            script(src=url_for(theme.cdn.waline_js))
-            link(rel="stylesheet", href=url_for(theme.cdn.waline_css))
-
 // Open Graph
 include ../head/opengraph.pug
 

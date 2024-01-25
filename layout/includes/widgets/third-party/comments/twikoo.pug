@@ -5,7 +5,7 @@ script.
             {
                 el: '#comment',
                 onCommentLoaded: function () {
-                    GLOBAL_CONFIG.lightbox.enable && utils.lightbox(document.querySelectorAll('#twikoo .tk-content img:not(.tk-owo-emotion)'))
+                    GLOBAL_CONFIG.lightbox && utils.lightbox(document.querySelectorAll('#twikoo .tk-content img:not(.tk-owo-emotion)'))
                 },
                 lang: '#{theme.comment.twikoo.lang}',
             }
