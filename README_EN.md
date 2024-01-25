@@ -13,9 +13,9 @@
   <a title="Hexo Version" target="_blank" href="https://hexo.io/zh-cn/"><img alt="Hexo Version" src="https://img.shields.io/badge/Hexo-%3E%3D%205.3.0-orange?style=flat"></a>
   <a title="Node Version" target="_blank" href="https://nodejs.org/zh-cn/"><img alt="Node Version" src="https://img.shields.io/badge/Node-%3E%3D%2010.13.0-yellowgreen?style=flat"></a>
   <a title="npm Downloads" target="_blank" href="https://www.npmjs.com/package/hexo-theme-solitude"><img alt="GitHub Forks" src="https://img.shields.io/npm/dt/hexo-theme-solitude?color=red&label=npm"></a>
-  <a title="License" target="_blank" href="https://github.com/DuoSco/Hexo-theme-solitude/blob/main/LICENSE"><img alt="License" src="https://img.shields.io/github/license/DuoSco/Hexo-Theme-solitude.svg?style=flat"></a>
-  <a title="GitHub Release" target="_blank" href="https://github.com/DuoSco/Hexo-theme-solitude/releases"><img alt="GitHub Release" src="https://img.shields.io/github/v/release/DuoSco/Hexo-theme-solitude?style=flat"></a>
-  <a title="GitHub Commits" target="_blank" href="https://github.com/DuoSco/Hexo-Theme-solitude/commits/master"><img alt="GitHub Commits" src="https://img.shields.io/github/commit-activity/m/DuoSco/Hexo-Theme-solitude.svg?style=flat&color=brightgreen&label=commits"></a>
+  <a title="License" target="_blank" href="https://github.com/wleelw/hexo-theme-solitude/blob/main/LICENSE"><img alt="License" src="https://img.shields.io/github/license/wleelw/hexo-Theme-solitude.svg?style=flat"></a>
+  <a title="GitHub Release" target="_blank" href="https://github.com/wleelw/hexo-theme-solitude/releases"><img alt="GitHub Release" src="https://img.shields.io/github/v/release/wleelw/hexo-theme-solitude?style=flat"></a>
+  <a title="GitHub Commits" target="_blank" href="https://github.com/wleelw/hexo-Theme-solitude/commits/master"><img alt="GitHub Commits" src="https://img.shields.io/github/commit-activity/m/wleelw/hexo-Theme-solitude.svg?style=flat&color=brightgreen&label=commits"></a>
 </p>
 
 ![](https://bu.dusays.com/2023/12/20/6582bf81b4641.png)
@@ -33,13 +33,13 @@ Theme discussion group：`The usage document above contains a QR code`
 Install the stable version in the root of your blog directory 【Recommended】
 
 ```powershell
-git clone -b main https://github.com/DuoSco/Hexo-theme-solitude.git themes/solitude
+git clone -b main https://github.com/wleelw/hexo-theme-solitude.git themes/solitude
 ```
 
 If you want to install the latest development version, you can install the dev branch in the root of your blog directory
 
 ```powershell
-git clone -b dev https://github.com/DuoSco/Hexo-theme-solitude.git themes/solitude
+git clone -b dev https://github.com/wleelw/hexo-theme-solitude.git themes/solitude
 ```
 
 ### Installation via npm
@@ -78,8 +78,8 @@ As we generate power for Love, the domain name and some scattered expenses are b
 
 ## ✨ Contributors
 
-<a href="https://github.com/DuoSco/Hexo-theme-solitude/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=DuoSco/Hexo-theme-solitude" />
+<a href="https://github.com/wleelw/hexo-theme-solitude/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=wleelw/hexo-theme-solitude" />
 </a>
 
 Special thanks to：
