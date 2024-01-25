@@ -53,7 +53,7 @@ case theme.says.style
                     }).catch(error => console.log(error));
                 sco.reflashEssayWaterFall();
                 GLOBAL_CONFIG.lazyload.enable && utils.lazyloadImg();
-                GLOBAL_CONFIG.lightbox && utils.lightbox(".bber-content-img img");
+                GLOBAL_CONFIG.lightbox && utils.lightbox(document.querySelectorAll(".bber-content-img img"));
                 changeTimeFormat();
             }();
     when 2
@@ -103,7 +103,7 @@ case theme.says.style
                         }).join('');
                         sco.reflashEssayWaterFall();
                         GLOBAL_CONFIG.lazyload.enable && utils.lazyloadImg();
-                        GLOBAL_CONFIG.lightbox && utils.lightbox(".bber-content-img img");
+                        GLOBAL_CONFIG.lightbox && utils.lightbox(document.querySelectorAll(".bber-content-img img"));
                         changeTimeFormat();
                     }).catch(error => console.log(error));
             }();

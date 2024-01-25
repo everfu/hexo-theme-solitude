@@ -99,3 +99,11 @@ medium_zoom:
   name: medium-zoom
   file: dist/medium-zoom.min.js
   version: 1.1.0
+fancyapps_ui:
+  name: fancyapps-ui
+  file: dist/fancybox/fancybox.umd.js
+  version: 5.0.33
+fancyapps_css:
+  name: fancyapps-ui
+  file: dist/fancybox/fancybox.min.css
+  version: 5.0.33

@@ -26,8 +26,12 @@ div
     if theme.lazyload.enable
         script(src=url_for(theme.cdn.lazyload))
     script(src=url_for(theme.cdn.snackbar))
-    if theme.lightbox
-        script(src=url_for(theme.cdn.medium_zoom))
+    if theme.lightbox.enable
+        case theme.lightbox.type
+            when 'mediumZoom'
+                script(src=url_for(theme.cdn.medium_zoom))
+            when 'fancybox'
+                script(src=url_for(theme.cdn.fancyapps_ui))
     if theme.says.home_mini
         script(src=url_for(theme.cdn.swiper_js))
 
@@ -96,7 +100,7 @@ div#js-pjax
                 }
             }), 500);
             sco.reflashEssayWaterFall();
-            GLOBAL_CONFIG.lightbox && utils.lightbox(".bber-content-img img");
+            GLOBAL_CONFIG.lightbox && utils.lightbox(document.querySelectorAll(".bber-content-img img"));
     if theme.busuanzi && (theme.aside.siteinfo.uv || theme.aside.siteinfo.pv)
         script(async src=url_for(theme.cdn.busuanzi_js))
 

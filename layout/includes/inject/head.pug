@@ -12,6 +12,9 @@ if theme.capsule.enable || theme.music.enable
 if theme.says.home_mini
     link(rel="stylesheet", href=url_for(theme.cdn.swiper_css))
 
+if theme.lightbox.type === 'fancybox'
+    link(rel="stylesheet", href=url_for(theme.cdn.fancyapps_css))
+
 // comment
 if theme.comment.enable
     case theme.comment.type

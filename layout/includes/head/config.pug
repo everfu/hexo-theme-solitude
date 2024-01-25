@@ -42,7 +42,6 @@ script.
             expand: !{theme.hightlight.expand},
             copy: !{theme.hightlight.copy},
         },
-        lightbox: !{theme.lightbox},
         randomlinks: !{theme.footer.randomlink},
         lang: {
             theme: {
@@ -72,8 +71,8 @@ script.
                 morning: '!{theme.aside.card.sayhello.morning}',
                 noon: '!{theme.aside.card.sayhello.noon}',
                 afternoon: '!{theme.aside.card.sayhello.afternoon}',
-                evening: '!{theme.aside.card.sayhello.evening}',
                 night: '!{theme.aside.card.sayhello.night}',
+                goodnight: '!{theme.aside.card.sayhello.goodnight}',
             },
             sayhello2: [!{sayhello2}],
         },
@@ -94,6 +93,7 @@ script.
                 url: '!{theme.comment.waline.envId}',
             }
         },
+        lightbox: '!{ theme.lightbox.type || null }',
         rightside: {
             enable: !{theme.rightside.enable}
         },

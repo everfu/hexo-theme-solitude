@@ -178,9 +178,6 @@ const utils = {
         selector.parentNode.insertBefore(createEle, selector)
         createEle.appendChild(selector)
     },
-    /**
-     * 懒加载图片
-     */
     lazyloadImg: function () {
         window.lazyLoadInstance = new LazyLoad({
             elements_selector: 'img',
@@ -191,12 +188,59 @@ const utils = {
             }
         })
     },
-    /**
-     * 灯箱使用
-     */
-    lightbox: function (selector = '') {
-        mediumZoom && mediumZoom(selector, options = {
-            background: "var(--sco-card-bg)"
-        });
+    lightbox: function (selector) {
+        const lightbox = GLOBAL_CONFIG.lightbox
+
+        if (lightbox === 'mediumZoom' && mediumZoom) {
+            mediumZoom(selector, {background: "var(--sco-card-bg)"});
+        }
+
+        if (lightbox === 'fancybox') {
+            selector.forEach(i => {
+                if (i.parentNode.tagName !== 'A') {
+                    const dataSrc = i.dataset.lazySrc || i.src
+                    const dataCaption = i.title || i.alt || ''
+                    utils.wrap(i, 'a', {
+                        href: dataSrc,
+                        'data-fancybox': 'gallery',
+                        'data-caption': dataCaption,
+                        'data-thumb': dataSrc
+                    })
+                }
+            })
+
+            if (!window.fancyboxRun) {
+                Fancybox.bind('[data-fancybox]', {
+                    Hash: false,
+                    Thumbs: {
+                        showOnStart: false
+                    },
+                    Images: {
+                        Panzoom: {
+                            maxScale: 4
+                        }
+                    },
+                    Carousel: {
+                        transition: 'slide'
+                    },
+                    Toolbar: {
+                        display: {
+                            left: ['infobar'],
+                            middle: [
+                                'zoomIn',
+                                'zoomOut',
+                                'toggle1to1',
+                                'rotateCCW',
+                                'rotateCW',
+                                'flipX',
+                                'flipY'
+                            ],
+                            right: ['slideshow', 'thumbs', 'close']
+                        }
+                    }
+                })
+                window.fancyboxRun = true
+            }
+        }
     },
 }

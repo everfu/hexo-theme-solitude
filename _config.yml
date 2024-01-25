@@ -672,7 +672,9 @@ hightlight:
 
 # 图片灯箱
 # image lightbox
-lightbox: false
+lightbox:
+  enable: true
+  type: fancybox # fancybox : fancyapps-ui / mediumZoom : medium-zoom
 
 # Open Graph
 # https://ogp.me/
