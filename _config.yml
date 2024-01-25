@@ -798,13 +798,6 @@ comment:
     envId:  # url: https://waline.wzsco.top
     pageview: true # 是否开启页面访问量统计 / Whether to enable page access statistics
     option: # waline配置项 / waline configuration item
-  # Artalk
-  # https://artalk.js.org/guide/frontend/config.html
-  artalk:
-    server:
-    site:
-    visitor: false
-    option:
 
 # 站点验证
 # Site verification
