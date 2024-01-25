@@ -26,12 +26,11 @@ div
     if theme.lazyload.enable
         script(src=url_for(theme.cdn.lazyload))
     script(src=url_for(theme.cdn.snackbar))
-    if theme.lightbox.enable
-        case theme.lightbox.type
-            when 'mediumZoom'
-                script(src=url_for(theme.cdn.medium_zoom))
-            when 'fancybox'
-                script(src=url_for(theme.cdn.fancyapps_ui))
+    if theme.lightbox
+        if theme.mediumZoom
+            script(src=url_for(theme.cdn.medium_zoom))
+        if theme.fancybox
+            script(src=url_for(theme.cdn.fancyapps_ui))
     if theme.says.home_mini
         script(src=url_for(theme.cdn.swiper_js))
 

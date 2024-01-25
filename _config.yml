@@ -672,9 +672,16 @@ hightlight:
 
 # 图片灯箱
 # image lightbox
-lightbox:
-  enable: true
-  type: fancybox # fancybox : fancyapps-ui / mediumZoom : medium-zoom
+# warning：开启前下方的fancybox或mediumZoom必须打开一个
+# warning: One of the fancybox or mediumZoom below must be turned on before turning on
+lightbox: false
+
+# fancybox
+# https://fancyapps.com/fancybox/
+fancybox: true
+
+# mediumZoom
+mediumZoom: false
 
 # Open Graph
 # https://ogp.me/

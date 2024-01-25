@@ -66,6 +66,15 @@
     padding 0 4px
     border-radius 4px 4px 0 0
 
+    if hexo-config('fancybox')
+      &.fancybox
+        border-bottom 0
+        padding 0
+        margin auto
+        display contents
+        width fit-content
+        -webkit-user-select none
+
     &:not(.headerlink):hover
       border 0
       text-decoration none

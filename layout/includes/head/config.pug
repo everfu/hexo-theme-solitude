@@ -93,7 +93,7 @@ script.
                 url: '!{theme.comment.waline.envId}',
             }
         },
-        lightbox: '!{ theme.lightbox.type || null }',
+        lightbox: '!{ theme.mediumZoom ? "mediumZoom" : (theme.fancybox ? "fancybox" : "null" )}',
         rightside: {
             enable: !{theme.rightside.enable}
         },

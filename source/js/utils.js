@@ -201,6 +201,7 @@ const utils = {
                     const dataSrc = i.dataset.lazySrc || i.src
                     const dataCaption = i.title || i.alt || ''
                     utils.wrap(i, 'a', {
+                        class: 'fancybox',
                         href: dataSrc,
                         'data-fancybox': 'gallery',
                         'data-caption': dataCaption,
