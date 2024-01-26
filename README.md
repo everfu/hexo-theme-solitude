@@ -10,7 +10,7 @@
 ![hexo version](https://img.shields.io/badge/hexo-5.3.0+-0e83c)
 ![license](https://img.shields.io/github/license/wleelw/hexo-theme-solitude?color=FF5531)
 
-![](https://bu.dusays.com/2023/12/20/6582bf81b4641.png)
+![首页](https://github.com/wleelw/hexo-theme-solitude/assets/74389842/d008aba4-942d-4fdb-a611-d934c0bad9fe)
 
 主题预览:  [王卓Sco](https://blog.wzsco.top/) ｜  [Demo](https://solitude.wzsco.top/)
 
