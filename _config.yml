@@ -542,8 +542,8 @@ post:
   # Article theme color acquisition
   covercolor:
     enable: false
-    mode: local # local：本地取色 / api：img2color取色（无存缓） / api_redis：img2color取色（有存缓） : local: local color / api: img2color color (no storage cache) / api_redis: img2color color (with storage cache)
-    api: https://img2color.meuicat.com/api?img= # api地址 / api address
+    mode: local # local：本地取色 / api：img2color取色 : local: local color / api: img2color color
+    api: https://img2color.wzsco.top/api?img= # api地址 / api address
     time: 43200000 # api取色间隔（毫秒），默认为12小时 / api color interval (milliseconds), default is 12 hours
 
 # -------------------------

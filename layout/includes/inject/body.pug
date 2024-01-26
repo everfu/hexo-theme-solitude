@@ -49,13 +49,16 @@ div
             const meting_api = '!{theme.meting_api}';
 
     if theme.post.covercolor.enable
-        script.
-            const coverColorConfig = {
-                mode: '!{theme.post.covercolor.mode}',
-                api: '!{theme.post.covercolor.api}',
-                time: !{theme.post.covercolor.time},
-            }
-        script(src=url_for(theme.cdn.cover_color_js))
+        case theme.post.covercolor.mode
+            when 'local'
+                script(src=url_for(theme.cdn.cover_local))
+            when 'api'
+                script.
+                    const coverColorConfig = {
+                        api: '!{theme.post.covercolor.api}',
+                        time: !{theme.post.covercolor.time},
+                    }
+                script(src=url_for(theme.cdn.cover_api))
 
     // waterfall
     if theme.says.enable

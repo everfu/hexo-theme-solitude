@@ -1,52 +1,29 @@
-const ColorMode = coverColorConfig.mode;
-
-function coverColor() {
+const coverColor = () => {
     const path = document.getElementById("post-cover")?.src;
-
     if (path) {
-        switch (ColorMode) {
-            case 'local':
-                localColor(path);
-                break;
-            case 'api':
-                handleApiColor(path);
-                break;
-            case 'api_redis':
-                img2color(path);
-                break;
-        }
-    } else {
-        setThemeColors();
+        localColor(path);
     }
 }
 
-function handleApiColor(path) {
-    const cacheGroup = saveToLocal.get('Solitude') || {};
-    if (cacheGroup.postcolor && cacheGroup.postcolor[path]) {
-        const color = cacheGroup.postcolor[path].value;
-        const [r, g, b] = color.match(/\w\w/g).map(x => parseInt(x, 16));
-        setThemeColors(color, r, g, b);
-    } else {
-        img2color(path);
-    }
-}
-
-function localColor(path) {
+const localColor = (path) => {
     const img = new Image();
     img.crossOrigin = "Anonymous";
     img.onload = function () {
         const canvas = document.createElement("canvas");
-        canvas.width = this.width;
-        canvas.height = this.height;
+        canvas.width = img.width;
+        canvas.height = img.height;
         const ctx = canvas.getContext("2d");
-        ctx.drawImage(this, 0, 0);
-        const data = ctx.getImageData(0, 0, this.width, this.height).data;
+        ctx.drawImage(img, 0, 0);
+        const data = ctx.getImageData(0, 0, img.width, img.height).data;
         const {r, g, b} = calculateRGB(data);
         let value = rgbToHex(r, g, b);
         if (getContrastYIQ(value) === "light") {
             value = LightenDarkenColor(value, -50);
         }
         setThemeColors(value, r, g, b);
+    };
+    img.onerror = function() {
+        console.error('图片加载失败');
     };
     img.src = path;
 }
@@ -69,17 +46,6 @@ function rgbToHex(r, g, b) {
     return "#" + [r, g, b].map(x => x.toString(16).padStart(2, '0')).join('');
 }
 
-function getContrastYIQ(hexcolor) {
-    var colorrgb = colorRgb(hexcolor);
-    var colors = colorrgb.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/);
-    var red = colors[1];
-    var green = colors[2];
-    var blue = colors[3];
-    var brightness = (red * 299) + (green * 587) + (blue * 114);
-    brightness = brightness / 255000;
-    return brightness >= 0.5 ? "light" : "dark";
-}
-
 function LightenDarkenColor(col, amt) {
     let usePound = false;
 
@@ -96,28 +62,15 @@ function LightenDarkenColor(col, amt) {
     return `${usePound ? "#" : ""}${(g | (b << 8) | (r << 16)).toString(16).padStart(6, "0")}`;
 }
 
-
-function colorHex(colorString) {
-    const hexRegex = /^#([0-9a-fA-f]{3}|[0-9a-fA-f]{6})$/;
-    let color = colorString;
-
-    if (/^(rgb|RGB)/.test(color)) {
-        const colorArr = color.replace(/(?:\(|\)|rgb|RGB)*/g, "").split(",");
-        const hexArr = colorArr.map(c => {
-            const hex = Number(c).toString(16);
-            return hex.length === 1 ? "0" + hex : hex;
-        });
-        return "#" + hexArr.join("");
-    } else if (hexRegex.test(color)) {
-        const hexDigits = color.replace(/#/, "").split("");
-        if (hexDigits.length === 6) {
-            return color;
-        } else if (hexDigits.length === 3) {
-            const hexArr = hexDigits.map(c => c + c);
-            return "#" + hexArr.join("");
-        }
-    }
-    return color;
+function getContrastYIQ(hexcolor) {
+    var colorrgb = colorRgb(hexcolor);
+    var colors = colorrgb.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/);
+    var red = colors[1];
+    var green = colors[2];
+    var blue = colors[3];
+    var brightness = (red * 299) + (green * 587) + (blue * 114);
+    brightness = brightness / 255000;
+    return brightness >= 0.5 ? "light" : "dark";
 }
 
 function colorRgb(str) {
@@ -147,35 +100,10 @@ function colorRgb(str) {
     }
 }
 
-function img2color(src) {
-    if (src.startsWith("http://localhost")) {
-        localColor(src);
-    } else {
-        const apiUrl = coverColorConfig.api + encodeURIComponent(src);
-
-        fetch(apiUrl)
-            .then(response => response.json())
-            .then(data => {
-                const color = data.RGB;
-                const [r, g, b] = color.match(/\w\w/g).map(x => parseInt(x, 16));
-                setThemeColors(color, r, g, b);
-
-                if (ColorMode === 'api') {
-                    const expirationTime = Date.now() + coverColorConfig.time;
-                    const cacheGroup = saveToLocal.get('Solitude') || {};
-                    cacheGroup.postcolor = cacheGroup.postcolor || {};
-                    cacheGroup.postcolor[src] = {value: color, expiration: expirationTime};
-                    saveToLocal.set('Solitude', cacheGroup);
-                }
-            })
-            .catch(error => {
-                console.error('请检查API是否正常！\n' + error);
-                setThemeColors();
-            });
-    }
-}
-
 function setThemeColors(value, r = null, g = null, b = null) {
+    const cardContents = document.getElementsByClassName('card-content');
+    const authorInfo = document.getElementsByClassName('author-info__sayhi');
+
     if (value) {
         document.documentElement.style.setProperty('--sco-main', value);
         document.documentElement.style.setProperty('--sco-main-op', value + '23');
@@ -184,17 +112,13 @@ function setThemeColors(value, r = null, g = null, b = null) {
 
         if (r && g && b) {
             var brightness = Math.round(((parseInt(r) * 299) + (parseInt(g) * 587) + (parseInt(b) * 114)) / 1000);
-            if (brightness < 125) {
-                var cardContents = document.getElementsByClassName('card-content');
-                for (var i = 0; i < cardContents.length; i++) {
-                    cardContents[i].style.setProperty('--sco-card-bg', 'var(--sco-white)');
-                }
+            for (let i = 0; i < cardContents.length; i++) {
+                cardContents[i].style.setProperty('--sco-card-bg', 'var(--sco-white)');
+            }
 
-                var authorInfo = document.getElementsByClassName('author-info__sayhi');
-                for (var i = 0; i < authorInfo.length; i++) {
-                    authorInfo[i].style.setProperty('background', 'var(--sco-white-op)');
-                    authorInfo[i].style.setProperty('color', 'var(--sco-white)');
-                }
+            for (let i = 0; i < authorInfo.length; i++) {
+                authorInfo[i].style.setProperty('background', 'var(--sco-white-op)');
+                authorInfo[i].style.setProperty('color', 'var(--sco-white)');
             }
         }
 

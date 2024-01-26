@@ -34,9 +34,14 @@ hexo.extend.filter.register('before_generate', () => {
             file: 'js/search/algolia.js',
             version
         },
-        cover_color_js: {
+        cover_local: {
             name: 'hexo-theme-solitude',
-            file: 'js/covercolor.js',
+            file: 'js/covercolor/local.js',
+            version
+        },
+        cover_api: {
+            name: 'hexo-theme-solitude',
+            file: 'js/covercolor/api.js',
             version
         },
         rightside_js: {
