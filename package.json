@@ -1,6 +1,6 @@
 {
   "name": "hexo-theme-solitude",
-  "version": "1.3.1",
+  "version": "1.4.0",
   "description": "A beautiful, powerful, and efficient Hexo theme developed by the DuoSco team",
   "main": "package.json",
   "scripts": {
