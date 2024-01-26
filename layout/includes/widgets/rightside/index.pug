@@ -15,9 +15,10 @@ div#rightMenu
         div.rightMenu-item#menu-pastetext
             i.scoicon.sco-clipboard-fill
             span 粘贴文本
-        a.rightMenu-item#menu-commenttext
-            i.scoicon.sco-chat-new-fill
-            span 引用到评论
+        if theme.comment.enable
+            a.rightMenu-item#menu-commenttext
+                i.scoicon.sco-chat-new-fill
+                span 引用到评论
         div.rightMenu-item#menu-newwindow
             i.scoicon.sco-window-fill
             span 新窗口打开
@@ -45,7 +46,7 @@ div#rightMenu
         div.rightMenu-item#menu-music-forward
             i.scoicon.sco-skip-forward-fill
             span 切换到下一首
-        div.rightMenu-item#menu-music-playlist(onclick=`window.open('${theme.thirdparty.aplayer.server === 'tencent' ? `https://y.qq.com/n/ryqq/playlist/${theme.thirdparty.aplayer.id}` : `https://music.163.com/#/playlist?id=${theme.thirdparty.aplayer.id}`}', '_blank');`)
+        div.rightMenu-item#menu-music-playlist(onclick=`window.open('${theme.capsule.server === 'tencent' ? `https://y.qq.com/n/ryqq/playlist/${theme.capsule.id}` : `https://music.163.com/#/playlist?id=${theme.capsule.id}`}', '_blank');`)
             i.scoicon.sco-play-list-2-line
             span 查看所有歌曲
         div.rightMenu-item#menu-music-copyMusicName
@@ -71,5 +72,5 @@ div#rightMenu
                 span.menu-commentBarrage-text 关闭热评
         div.rightMenu-item#menu-darkmode
             i.scoicon.sco-moon-clear-fill
-            span.menu-darkmode-text 浅色模式
+            span.menu-darkmode-text 深色模式
 div#rightmenu-mask

@@ -1,19 +1,20 @@
 - const motto = site.data.about.motto
 - const expertise = site.data.about.expertise
 
-.author-content
-    .author-content-item.maxim
-        .author-content-item-tips= motto.title
-        span.maxim-title
-            span= motto.prefix
-            span= motto.content
-    .author-content-item.buff
-        .card-content
-            .author-content-item-tips= expertise.title
-            span.buff-title
-                span
-                    | #{expertise.prefix}
-                    span.inline-word= expertise.specialist
-                span
-                    | #{expertise.content}
-                    span.inline-word= expertise.level
+if motto || expertise
+    .author-content
+        .author-content-item.maxim
+            .author-content-item-tips= motto.title
+            span.maxim-title
+                span= motto.prefix
+                span= motto.content
+        .author-content-item.buff
+            .card-content
+                .author-content-item-tips= expertise.title
+                span.buff-title
+                    span
+                        | #{expertise.prefix}
+                        span.inline-word= expertise.specialist
+                    span
+                        | #{expertise.content}
+                        span.inline-word= expertise.level

@@ -1,4 +1,4 @@
-#post-comment(view-image)
+#post-comment
     .comment-head
         .comment-headline
             i.scoicon.sco-chat-fill
@@ -13,9 +13,5 @@
         case theme.comment.type
             when 'twikoo'
                 include ./twikoo.pug
-            when 'gitalk'
-                include ./gitalk.pug
-            when 'valine'
-                include ./valine.pug
             when 'waline'
                 include ./waline.pug

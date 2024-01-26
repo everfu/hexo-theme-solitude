@@ -1,28 +1,20 @@
 <div align="right">
-  语言:
-  中文 / 
   <a title="English" href="/README_EN.md">English</a>
 </div>
 
-<p align="center"><img width="400" src="https://bu.dusays.com/2023/12/20/6582bf58c64cf.png"></p>
+## Hexo-Theme-Solitude
 
-<p align="center">一款优雅的 Hexo 主题</p>
-<p align="center">"在宁静的孤独中心探索，我们以简约之美引领优雅生活"</p>
+![master version](https://img.shields.io/github/package-json/v/wleelw/hexo-theme-solitude/master?color=%231ab1ad&label=master)
+![master version](https://img.shields.io/github/package-json/v/wleelw/hexo-theme-solitude/dev?label=dev)
+![https://img.shields.io/npm/v/hexo-theme-solitude?color=%09%23bf00ff](https://img.shields.io/npm/v/hexo-theme-solitude?color=%09%23bf00ff)
+![hexo version](https://img.shields.io/badge/hexo-5.3.0+-0e83c)
+![license](https://img.shields.io/github/license/wleelw/hexo-theme-solitude?color=FF5531)
 
-<p align="center">
-  <a title="Hexo Version" target="_blank" href="https://hexo.io/zh-cn/"><img alt="Hexo Version" src="https://img.shields.io/badge/Hexo-%3E%3D%205.3.0-orange?style=flat"></a>
-  <a title="Node Version" target="_blank" href="https://nodejs.org/zh-cn/"><img alt="Node Version" src="https://img.shields.io/badge/Node-%3E%3D%2010.13.0-yellowgreen?style=flat"></a>
-  <a title="npm Downloads" target="_blank" href="https://www.npmjs.com/package/hexo-theme-solitude"><img alt="GitHub Forks" src="https://img.shields.io/npm/dt/hexo-theme-solitude?color=red&label=npm"></a>
-  <a title="License" target="_blank" href="https://github.com/DuoSco/Hexo-theme-solitude/blob/main/LICENSE"><img alt="License" src="https://img.shields.io/github/license/DuoSco/Hexo-Theme-solitude.svg?style=flat"></a>
-  <a title="GitHub Release" target="_blank" href="https://github.com/DuoSco/Hexo-theme-solitude/releases"><img alt="GitHub Release" src="https://img.shields.io/github/v/release/DuoSco/Hexo-theme-solitude?style=flat"></a>
-  <a title="GitHub Commits" target="_blank" href="https://github.com/DuoSco/Hexo-Theme-solitude/commits/master"><img alt="GitHub Commits" src="https://img.shields.io/github/commit-activity/m/DuoSco/Hexo-Theme-solitude.svg?style=flat&color=brightgreen&label=commits"></a>
-</p>
+![首页](https://github.com/wleelw/hexo-theme-solitude/assets/74389842/d008aba4-942d-4fdb-a611-d934c0bad9fe)
 
-![](https://bu.dusays.com/2023/12/20/6582bf81b4641.png)
+主题预览:  [王卓Sco](https://blog.wzsco.top/) ｜  [Demo](https://solitude.wzsco.top/)
 
-主题预览: 👋 [王卓Sco](https://blog.wzsco.top/) ｜ 🎆 [糕小菜](https://blog.kaixed.com/)
-
-主题文档:  [📖 Solidude 文档](https://docs.wzsco.top/)
+主题文档:  [中文](https://docs.wzsco.top/) ｜ [ English ](https://docs.wzsco.top/en/)
 
 主题交流群：`文档内有群二维码和链接`
 
@@ -30,16 +22,18 @@
 
 ### Git 安裝
 
+> 本仓库同时上传到 [Gitee](https://gitee.com/nsjjd_w/hexo-theme-solitude)，如果你访问 Github 缓慢，可从 Gitee 中下载。
+
 在博客根目录里安装稳定版【推荐】
 
 ```powershell
-git clone -b main https://github.com/DuoSco/Hexo-theme-solitude.git themes/solitude
+git clone -b main https://github.com/wleelw/hexo-theme-solitude.git themes/solitude
 ```
 
 如果想要安装比较新的 dev 分支，可以在博客根目录里安装开发版
 
 ```powershell
-git clone -b dev https://github.com/DuoSco/Hexo-theme-solitude.git themes/solitude
+git clone -b dev https://github.com/wleelw/hexo-theme-solitude.git themes/solitude
 ```
 
 ### npm 安装
@@ -60,39 +54,62 @@ npm install hexo-theme-solitude
 theme: solitude
 ```
 
-## 🛠️ 更好的配置
+## 🎉 特色
 
-- macos/linux 在博客根目录运行
-
-```bash
-cp -rf ./themes/solitude/_config.yml ./_config.solitude.yml
-```
-
-- windows 复制 `/themes/solitude/_config.yml` 此文件到hexo根目录，并重命名为 `_config.solitude.yml`
-
-## 🎁 赞助我们
-
-非常感谢你的支持和赞赏！我们非常欣赏你为爱发电的精神和对开发者的理解。我们将继续用心开发和提供帮助，尽最大努力满足你的需求。如有任何其他问题或需求，请随时告诉我们，我们将尽力为你提供支持。谢谢！🙏
-
-[@王卓Sco](https://afdian.net/a/wleelw0u0) &nbsp;  [@亦小封](https://afdian.net/a/yife68)
+- [x] 页面组件懒加载(pjax方案)
+- [x] 图片懒加载
+- [x] 多种代码高亮方案
+- [x] 多语言配置
+- [x] 支持多种评论插件
+- [x] 内置网页访问统计
+- [x] 支持暗色模式
+- [x] 支持脚注语法
+- [x] 支持自定义CDN静态资源
+- [x] 支持多功能右键菜单
+- [x] 支持定制化的主色调随封面图片颜色变化
+- [x] 支持沉浸式状态栏
+- [x] 支持聊天系统
+- [x] 支持百度分析
+- [x] 支持图片大图查看
+- [x] 支持瀑布流即刻说说
+- [x] 支持自定义图标（iconfont、CoDeSign、fontawesome）
+- [x] 支持高速缓存的swpp，pwa特性
+- [x] 优秀的隐私协议支持
+- [x] 文章摘要AI支持
+- [x] 支持全局中控台
+- [x] 支持本地搜索/algolia搜索🔍
+- [x] 支持 Katex 数学公式
+- [x] 支持 PWA
 
 ## ✨ 贡献者
 
-<a href="https://github.com/DuoSco/Hexo-theme-solitude/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=DuoSco/Hexo-theme-solitude" />
+<a href="https://github.com/wleelw/hexo-theme-solitude/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=wleelw/hexo-theme-solitude" />
 </a>
-
-特别冠名：
-[@王卓Sco](https://github.com/wleelw)
-[@亦小封](https://github.com/yife68)
-[@rootlex](https://github.com/rootlexme)
-[@timigomen](https://github.com/timigomen)
-[@Glannons](https://github.com/Glannons)
-[@Adil](https://github.com/adil-zhang)
 
 **本主题为 [Heo](https://blog.zhheo.com/) 的衍生主题，由 [@张洪Heo](https://github.com/zhheo) 作者全权授权、设计！**
 
 > 欢迎你对本主题做出贡献！[贡献指南](/CONTRIBUTING.md)
 
-## 📊 仓库统计
-![仓库统计](https://repobeats.axiom.co/api/embed/75ec216f1d0b289e1b6a92f585342f3eeeeb0fdd.svg "Repobeats analytics image")
+## 📷 截图
+
+### 首页
+![首页](https://github.com/wleelw/hexo-theme-solitude/assets/74389842/d008aba4-942d-4fdb-a611-d934c0bad9fe)
+
+### 即刻短文
+![即刻短文](https://github.com/wleelw/hexo-theme-solitude/assets/74389842/ef6b2657-25e1-4aab-a9b3-eb631840c8da)
+
+### 友情链接
+![友情链接](https://github.com/wleelw/hexo-theme-solitude/assets/74389842/d82cf750-8679-4a54-b3e2-96ec01e9665f)
+
+### 音乐馆
+![音乐馆](https://github.com/wleelw/hexo-theme-solitude/assets/74389842/ec8c9276-5b43-4950-99a2-c94cb0e5c39e)
+
+### 装备
+![装备](https://github.com/wleelw/hexo-theme-solitude/assets/74389842/26596846-f39e-4981-8083-ad1c3e8de290)
+
+### 工具箱
+![工具箱](https://github.com/wleelw/hexo-theme-solitude/assets/74389842/d52e6dde-a8a9-4d3c-aa21-fddcfe47de23)
+
+### 关于
+![关于](https://github.com/wleelw/hexo-theme-solitude/assets/74389842/46d9db0d-a2d8-4c69-a393-f3388389fbcb)

@@ -5,7 +5,6 @@ html(lang=config.language, data-theme="light")
     head
         include ./head.pug
     body#body(data-type=page.type)
-        canvas#universe
         // loading
         if theme.loading.fullpage
             include ./loading.pug
@@ -35,5 +34,5 @@ html(lang=config.language, data-theme="light")
         include ./widgets/third-party/search/index.pug
 
         // music
-        if theme.thirdparty.aplayer.enable
+        if theme.capsule.enable
             include ./widgets/third-party/music.pug

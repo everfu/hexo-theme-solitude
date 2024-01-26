@@ -2,7 +2,7 @@
     each tag in site.tags.find({ parent: { $exists: false } }).data
         a(href=url_for(tag.path))= tag.name
             sup= tag.length
-if site.tags.length > 50
+if site.tags.length > theme.aside.tags.limit
     a#more-tags-btn(href="javascript:void(0);", onclick="sco.openAllTags();")= __('aside.tagmore')
 else
     style.

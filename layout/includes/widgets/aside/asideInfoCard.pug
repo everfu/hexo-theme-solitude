@@ -11,10 +11,10 @@
             .author-info__description!= theme.aside.card.content
             .author-info__description2!= theme.aside.card.content2
         .author-info__bottom-group
-            a.author-info__bottom-group-left(href=theme.about ? "/about" : "/")
+            a.author-info__bottom-group-left(href=theme.about ? "/about/" : "/")
                 .author-info__name= config.author
                 .author-info__desc!= config.subtitle
             .card-info-social-icons.is-center
-                each value, key in theme.aside.card.information
+                each value, key in theme.aside.card.information || []
                     a.social-icon(href=url_for(value.url), title=key)
-                        i(class=value.icon)
+                        i.scoicon(class=value.icon)

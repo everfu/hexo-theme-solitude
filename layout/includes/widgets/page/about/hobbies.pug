@@ -1,20 +1,24 @@
-.author-content
-    if site.data.about.game1
-        .author-content-item.game-apex(style=`background: url(${site.data.about.game1.img}) no-repeat top; background-size: cover;`)
-            .card-content
-                .author-content-item-tips= site.data.about.game1.title
-                span.author-content-item-title= site.data.about.game1.subtitle
-                .content-bottom
-                    .tips= site.data.about.game1.tips_left
-                    .tips= site.data.about.game1.tips_right
-    if site.data.about.game2
-        .author-content-item.game-jl(style=`background: url(${site.data.about.game2.img}) no-repeat top; background-size: cover;`)
-            .card-content
-                .author-content-item-tips= site.data.about.game2.title
-                span.author-content-item-title= site.data.about.game2.subtitle
-                .content-bottom
-                    .tips= site.data.about.game2.tips_left
-                    .tips= site.data.about.game2.tips_right
+- var game1 = game1
+- var game2 = game2
+
+if game1 || game2
+    .author-content
+        if game1
+            .author-content-item.game-apex(style=`background: url(${game1.img}) no-repeat top; background-size: cover;`)
+                .card-content
+                    .author-content-item-tips= game1.title
+                    span.author-content-item-title= game1.subtitle
+                    .content-bottom
+                        .tips= game1.tips_left
+                        .tips= game1.tips_right
+        if game2
+            .author-content-item.game-jl(style=`background: url(${game2.img}) no-repeat top; background-size: cover;`)
+                .card-content
+                    .author-content-item-tips= game2.title
+                    span.author-content-item-title= game2.subtitle
+                    .content-bottom
+                        .tips= game2.tips_left
+                        .tips= game2.tips_right
 
 if site.data.about.likes
     - const likes = site.data.about.likes

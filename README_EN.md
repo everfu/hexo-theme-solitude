@@ -1,28 +1,21 @@
 <div align="right">
-  Language:
-  English / 
   <a title="English" href="/README.md">中文</a>
 </div>
 
-<p align="center"><img width="400" src="https://bu.dusays.com/2023/12/20/6582bf58c64cf.png"></p>
 
-<p align="center">An elegant Hexo theme</p>
-<p align="center">"Explore the inner self in peaceful solitude, leading a life of simplicity and elegance."</p>
+## Hexo-Theme-Solitude
 
-<p align="center">
-  <a title="Hexo Version" target="_blank" href="https://hexo.io/zh-cn/"><img alt="Hexo Version" src="https://img.shields.io/badge/Hexo-%3E%3D%205.3.0-orange?style=flat"></a>
-  <a title="Node Version" target="_blank" href="https://nodejs.org/zh-cn/"><img alt="Node Version" src="https://img.shields.io/badge/Node-%3E%3D%2010.13.0-yellowgreen?style=flat"></a>
-  <a title="npm Downloads" target="_blank" href="https://www.npmjs.com/package/hexo-theme-solitude"><img alt="GitHub Forks" src="https://img.shields.io/npm/dt/hexo-theme-solitude?color=red&label=npm"></a>
-  <a title="License" target="_blank" href="https://github.com/DuoSco/Hexo-theme-solitude/blob/main/LICENSE"><img alt="License" src="https://img.shields.io/github/license/DuoSco/Hexo-Theme-solitude.svg?style=flat"></a>
-  <a title="GitHub Release" target="_blank" href="https://github.com/DuoSco/Hexo-theme-solitude/releases"><img alt="GitHub Release" src="https://img.shields.io/github/v/release/DuoSco/Hexo-theme-solitude?style=flat"></a>
-  <a title="GitHub Commits" target="_blank" href="https://github.com/DuoSco/Hexo-Theme-solitude/commits/master"><img alt="GitHub Commits" src="https://img.shields.io/github/commit-activity/m/DuoSco/Hexo-Theme-solitude.svg?style=flat&color=brightgreen&label=commits"></a>
-</p>
+![master version](https://img.shields.io/github/package-json/v/wleelw/hexo-theme-solitude/master?color=%231ab1ad&label=master)
+![master version](https://img.shields.io/github/package-json/v/wleelw/hexo-theme-solitude/dev?label=dev)
+![https://img.shields.io/npm/v/hexo-theme-solitude?color=%09%23bf00ff](https://img.shields.io/npm/v/hexo-theme-solitude?color=%09%23bf00ff)
+![hexo version](https://img.shields.io/badge/hexo-5.3.0+-0e83c)
+![license](https://img.shields.io/github/license/wleelw/hexo-theme-solitude?color=FF5531)
 
-![](https://bu.dusays.com/2023/12/20/6582bf81b4641.png)
+![首页](https://github.com/wleelw/hexo-theme-solitude/assets/74389842/d008aba4-942d-4fdb-a611-d934c0bad9fe)
 
-Theme Preview: 👋 [王卓Sco](https://blog.wzsco.top/) ｜ 🎆 [糕小菜](https://blog.kaixed.com/)
+Theme Preview:  [王卓Sco](https://blog.wzsco.top/)｜[Demo](https://solitude.wzsco.top/)
 
-Theme Document: [📖 Solidude Document](https://docs.wzsco.top/)
+Theme Document: [中文](https://docs.wzsco.top/)｜[ English ](https://docs.wzsco.top/en/)
 
 Theme discussion group：`The usage document above contains a QR code`
 
@@ -30,16 +23,18 @@ Theme discussion group：`The usage document above contains a QR code`
 
 ### Installation via Git
 
+> This repository is also uploaded to [Gitee](https://gitee.com/nsjjd_w/hexo-theme-solitude). If you have trouble accessing Github, you can download it from Gitee.
+
 Install the stable version in the root of your blog directory 【Recommended】
 
 ```powershell
-git clone -b main https://github.com/DuoSco/Hexo-theme-solitude.git themes/solitude
+git clone -b main https://github.com/wleelw/hexo-theme-solitude.git themes/solitude
 ```
 
 If you want to install the latest development version, you can install the dev branch in the root of your blog directory
 
 ```powershell
-git clone -b dev https://github.com/DuoSco/Hexo-theme-solitude.git themes/solitude
+git clone -b dev https://github.com/wleelw/hexo-theme-solitude.git themes/solitude
 ```
 
 ### Installation via npm
@@ -60,39 +55,62 @@ Modify the hexo configuration file `_config.yml` and change the theme to `solitu
 theme: solitude
 ```
 
-## 🛠️ Better Configuration
+## 🎉 Features
 
-- MacOS/Linux Run the following command in the root of your blog directory
-
-```bash
-cp -rf ./themes/solitude/_config.yml ./_config.solitude.yml
-```
-
-- Windows Copy the file `/themes/solitude/_config.yml` to the root directory of your Hexo installation and rename it as `_config.solitude.yml`
-
-## 🎁 Sponsor Us
-
-As we generate power for Love, the domain name and some scattered expenses are borne by the developers. If possible, we hope to receive your appreciation. Thank you very much! 🙏 Of course, even without sponsorship, we will strive to continue developing.
-
-[@王卓Sco](https://afdian.net/a/wleelw0u0) &nbsp;  [@亦小封](https://afdian.net/a/yife68)
+- [x] Lazy loading of page components (pjax scheme)
+- [x] Lazy loading of images
+- [x] Multiple code highlighting schemes
+- [x] Multi-language configuration
+- [x] Support for multiple comment plugins
+- [x] Built-in web page access statistics
+- [x] Support for dark mode
+- [x] Support for footnote syntax
+- [x] Support for custom CDN static resources
+- [x] Support multi-function right-click menu
+- [x] Support for customizing the main color to change with the color of the cover image
+- [x] Support for immersive status bars
+- [x] Support for chat system
+- [x] Support for Baidu Analytics
+- [x] Support viewing large images
+- [x] Support for waterfall instant talk
+- [x] Support for custom icons (iconfont, CoDeSign, fontawesome)
+- [x] Support SWPP and PWA features for caching
+- [x] Excellent privacy protocol support
+- [x] Article abstract AI support
+- [x] Support for global center consoles
+- [x] Support local search/algolia search 🔍
+- [x] Support for Katex math formulas
+- [x] PWA support
 
 ## ✨ Contributors
 
-<a href="https://github.com/DuoSco/Hexo-theme-solitude/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=DuoSco/Hexo-theme-solitude" />
+<a href="https://github.com/wleelw/hexo-theme-solitude/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=wleelw/hexo-theme-solitude" />
 </a>
-
-Special thanks to：
-[@王卓Sco](https://github.com/wleelw)
-[@亦小封](https://github.com/yife68)
-[@rootlex](https://github.com/rootlexme)
-[@timigomen](https://github.com/timigomen)
-[@Glannons](https://github.com/Glannons)
-[@Adil](https://github.com/adil-zhang)
 
 **This theme is a derivative theme of [Heo](https://blog.zhheo.com/), designed and authorized by the author [张洪Heo](https://github.com/zhheo)!**
 
 > Welcome to contribute to this theme!  [Contribution Guide](/CONTRIBUTING.md)
 
-## 📊 Repository Statistics
-![Repository Statistics](https://repobeats.axiom.co/api/embed/75ec216f1d0b289e1b6a92f585342f3eeeeb0fdd.svg "Repobeats analytics image")
+## 📷 Preview
+
+### Home
+![Home](https://github.com/wleelw/hexo-theme-solitude/assets/74389842/d008aba4-942d-4fdb-a611-d934c0bad9fe)
+
+### Essay
+![Essay](https://github.com/wleelw/hexo-theme-solitude/assets/74389842/ef6b2657-25e1-4aab-a9b3-eb631840c8da)
+
+### Links
+![Links](https://github.com/wleelw/hexo-theme-solitude/assets/74389842/d82cf750-8679-4a54-b3e2-96ec01e9665f)
+
+### Music
+![Music](https://github.com/wleelw/hexo-theme-solitude/assets/74389842/ec8c9276-5b43-4950-99a2-c94cb0e5c39e)
+
+### Equip
+![Equip](https://github.com/wleelw/hexo-theme-solitude/assets/74389842/26596846-f39e-4981-8083-ad1c3e8de290)
+
+### Tools of link
+![Tools of link](https://github.com/wleelw/hexo-theme-solitude/assets/74389842/d52e6dde-a8a9-4d3c-aa21-fddcfe47de23)
+
+### About
+![About](https://github.com/wleelw/hexo-theme-solitude/assets/74389842/46d9db0d-a2d8-4c69-a393-f3388389fbcb)

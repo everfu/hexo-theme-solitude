@@ -1,29 +1,124 @@
-- cdn = theme.cdn.body
 - page.type = is_post() ? 'post' : page.type
 
-script(src=url_for(cdn.pjaxjs))
-if theme.lazyload.enable
-    script(src=cdn_url_for("/lib/lazyload.min.js"))
-script(src=cdn_url_for("/lib/snackbar.min.js"))
-if theme.lightbox
-    script(src=cdn_url_for("/lib/view-image.min.js"))
-if theme.says.home_mini || theme.aside.history.enable
-    script(src=url_for(cdn.swiperjs))
+div
+    script(src=url_for(theme.cdn.main))
 
-if theme.rightside.enable
-    include ../widgets/rightside/index.pug
-    script(src=cdn_url_for("/lib/rightside.min.js"))
+    mixin katex
+        link(rel="stylesheet", href=url_for(theme.cdn.katex))
+        if theme.katex.copytex
+            script(src=url_for(theme.cdn.katex_copytex))
+                script.
+                    (() => {
+                        document.querySelectorAll('#article-container span.katex-display').forEach(item => {
+                            utils.wrap(item, 'div', {class: 'katex-wrap'})
+                        })
+                    })()
+
+    if theme.katex && theme.katex.enable
+        if theme.katex.per_page
+            if is_post() || is_page()
+                +katex
+        else
+            if page.katex
+                +katex
+
+    script(src=url_for(theme.cdn.pjax))
+    if theme.lazyload.enable
+        script(src=url_for(theme.cdn.lazyload))
+    script(src=url_for(theme.cdn.snackbar))
+    if theme.lightbox
+        if theme.mediumZoom
+            script(src=url_for(theme.cdn.medium_zoom))
+        if theme.fancybox
+            script(src=url_for(theme.cdn.fancyapps_ui))
+    if theme.says.home_mini
+        script(src=url_for(theme.cdn.swiper_js))
+
+    if theme.rightside.enable
+        include ../widgets/rightside/index
+        script(src=url_for(theme.cdn.rightside_js))
+
+    // post-ai)
+    if theme.post_ai.enable
+        script(src=url_for(theme.cdn.sco_ai_js))
+
+    if theme.capsule.enable || theme.music.enable
+        script(src=url_for(theme.cdn.aplayer_js))
+        script(src=url_for(theme.cdn.meting_js))
+        script.
+            const meting_api = '!{theme.meting_api}';
+
+    if theme.post.covercolor.enable
+        case theme.post.covercolor.mode
+            when 'local'
+                script(src=url_for(theme.cdn.cover_local))
+            when 'api'
+                script.
+                    const coverColorConfig = {
+                        api: '!{theme.post.covercolor.api}',
+                        time: !{theme.post.covercolor.time},
+                    }
+                script(src=url_for(theme.cdn.cover_api))
+
+    // waterfall
+    if theme.says.enable
+        script(src=url_for(theme.cdn.waterfall))
+
+    // comment
+    if theme.comment.enable
+        case theme.comment.type
+            when 'twikoo'
+                script(src=url_for(theme.cdn.twikoo))
+            when 'waline'
+                script(src=url_for(theme.cdn.waline_js))
+                link(rel="stylesheet", href=url_for(theme.cdn.waline_css))
+
+        if theme.comment.commentBarrage
+            case theme.comment.type
+                when 'twikoo'
+                    script(src=url_for(theme.cdn.twikoo_commentBarrage))
+                when 'waline'
+                    script(src=url_for(theme.cdn.waline_commentBarrage))
+
+    // music
+    if theme.music.enable
+        script(src=url_for(theme.cdn.music_js))
+
+    // gallery
+    if theme.gallery
+        script(src=url_for(theme.cdn.fj_gallery))
+        link(rel="stylesheet", href=url_for(theme.cdn.fj_gallery_css))
+
+    // pace 胶囊加载条(Capsule loading bar)
+    if theme.loading.pace
+        script(src=url_for(theme.cdn.pace_js))
+
+    // search
+    if theme.search.enable
+        case theme.search.type
+            when 'algolia'
+                script(src=url_for(theme.cdn.instantsearch))
+                script(src=url_for(theme.cdn.algolia_search))
+            when 'local'
+                script(src=url_for(theme.cdn.lunr_js))
+
+    // inject custom body
+    if theme.extends.body
+        each item in theme.extends.body
+            != item
 
 div#js-pjax
-    if page.type === 'says'
+    if page.type === 'says' && theme.says.enable
         script.
             window.addEventListener('resize', utils.throttle(function () {
                 if (document.getElementById('waterfall')) {
                     sco.reflashEssayWaterFall();
                 }
             }), 500);
-    if theme.thirdparty.busuanzi && (theme.aside.siteinfo.uv || theme.aside.siteinfo.pv || theme.thirdparty.busuanzi.usecomment === false)
-        script(async src=url_for(cdn.busuanzijs))
+            sco.reflashEssayWaterFall();
+            GLOBAL_CONFIG.lightbox && utils.lightbox(document.querySelectorAll(".bber-content-img img"));
+    if theme.busuanzi && (theme.aside.siteinfo.uv || theme.aside.siteinfo.pv)
+        script(async src=url_for(theme.cdn.busuanzi_js))
 
     script#config-diff.
         var PAGE_CONFIG = {
@@ -35,60 +130,14 @@ div#js-pjax
             comment: !{!!page.comment},
         }
 
-// post-ai)
-if theme.thirdparty.ai.enable
-    script(src=cdn_url_for("/lib/sco-ai.min.js"))
-
-if theme.thirdparty.aplayer.enable || theme.music.enable
-    script(src=url_for(cdn.aplayerjs))
-    script(src=url_for(cdn.metingjs))
-    script.
-        const meting_api = '!{theme.thirdparty.aplayer.api}';
-
-if theme.post.covercolor.enable
-    script.
-        const coverColorConfig = {
-            mode: '!{theme.post.covercolor.mode}',
-            api: '!{theme.post.covercolor.api}',
-            time: !{theme.post.covercolor.time},
-        }
-    script(src=cdn_url_for("/lib/cover-color.min.js"))
-
 if theme.footer.randomlink
     include ../widgets/randomlink.pug
 
-if page.katex
-    link(rel="stylesheet", href=url_for(cdn.katexcss))
-    script(src=url_for(cdn.katexjs))
-
-if theme.aside.welcome.enable
-    script(src=cdn_url_for("/lib/txmap.min.js"))
-
-// waterfall
-if theme.says.enable
-    script(src=cdn_url_for("/lib/waterfall.min.js"))
-
-if theme.comment.enable
-    case theme.comment.type
-        when 'twikoo'
-            script(src=cdn_url_for("/js/extend/comment/twikoo/twikoo.js"))
-            script(src=cdn_url_for("/js/extend/comment/twikoo/commentBarrage.js"))
-        when 'waline'
-            script(src=cdn_url_for("/js/extend/comment/waline/waline.js"))
-            script(src=cdn_url_for("/js/extend/comment/waline/commentBarrage.js"))
-
+// newest comment
+include ../widgets/third-party/news-comment/newest-comment.pug
 
 // pjax
 include ../widgets/third-party/pjax.pug
 
 // theme
 include ../body/mode
-
-// music
-if theme.music.enable
-    script(src=cdn_url_for("/js/music.js"))
-
-// inject custom body
-if theme.extends.body
-    each item in theme.extends.body
-        != item

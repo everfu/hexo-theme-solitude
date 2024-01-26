@@ -9,7 +9,7 @@
                     each childValue, y in value.child
                         li
                             a.site-page.child(href=url_for(childValue.url))
-                                i(class=childValue.icon)
+                                i.scoicon(class=childValue.icon)
                                 span= y
             else
                 a.site-page.not-child(href=url_for(value.url))

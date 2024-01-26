@@ -24,7 +24,7 @@
                 span.post-meta-date(title=_p('meta_updated') + ' ' + full_date(page.updated))
                     i.post-meta-icon.scoicon.sco-refresh-line
                     time(datetime=date_xml(page.updated))= date_xml(page.updated)
-            if theme.thirdparty.wordcount
+            if theme.wordcount
                 span.post-meta-wordcount
                     if theme.post.meta.wordcount
                         i.post-meta-icon.scoicon.sco-word-fill(title=_p('post.meta_wordcount'))
@@ -48,7 +48,7 @@
                             when "waline"
                                 span.waline-pageview-count
                                     i.scoicon.sco-loading-line
-                    else if theme.thirdparty.busuanzi
+                    else if theme.busuanzi
                         span#busuanzi_value_page_pv
                             i.scoicon.sco-loading-line
             if theme.post.meta.comment && page.comment

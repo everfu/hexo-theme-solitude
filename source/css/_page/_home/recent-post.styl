@@ -56,10 +56,11 @@
         color var(--sco-theme)
 
     .post_cover
+      position relative
       transition 1s
       width 100%
-      overflow: hidden
-      height: 100%
+      overflow hidden
+      height 100%
 
       +minWidth1300()
         height 225px
@@ -101,6 +102,12 @@
       padding 0
       display inline-block
       overflow hidden
+
+      span.tags-punctuation
+        transition .3s
+
+        &:hover
+          color var(--sco-main)
 
       .recent-post-info-top
         position relative
@@ -154,7 +161,7 @@
             &:visited
               color var(--sco-card-bg)
 
-      > .article-meta-wrap
+      /.article-meta-wrap
         position absolute
         bottom 16px
         transition .3s

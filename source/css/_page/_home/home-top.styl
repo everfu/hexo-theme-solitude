@@ -337,55 +337,32 @@ div#banners
       display flex
       flex-direction row
       flex-wrap wrap
-      height calc(328px + .5rem)
+      justify-content space-between
+      height calc(328px + 0.5rem)
       align-content space-between
       width calc(50% - 0.25rem)
       position relative
       animation slide-in .6s .1s backwards
-      overflow-x visible
-      gap 0.5rem
 
     .recent-post-item
       display flex
-      width 200px
       flex-direction column
+      width calc(100% / 3 - 0.25rem)
       align-items flex-start
-      margin-left .5rem
       background var(--sco-card-bg)
       border-radius 12px
       overflow hidden
-      min-width 200px
       height 164px
       max-height 164px
       border var(--style-border-always)
       transition .3s
       position relative
       box-shadow var(--sco-shadow-border)
-      +minWidth1300()
-        width calc(100% / 3 - 0.35rem)
-        margin-left 0
 
-      +minWidth1200()
-        display flex
-        width calc(100% / 3 - 0.35rem)
-        flex-direction column
-        align-items flex-start
-        margin-left 0
-        background var(--sco-card-bg)
-        border-radius 12px
-        overflow hidden
+      +maxWidth1200()
+        width 200px
         min-width 200px
-        height 164px
-        max-height 164px
-        border var(--style-border-always)
-        transition .3s
-        position relative
-        box-shadow var(--sco-shadow-border)
-
-      +maxWidth768()
-        border-radius 8px
-        box-shadow none
-        clip-path inset(0 0 0 0 round 8px)
+        margin-left .5rem
 
         &:last-child
           margin-right 1rem
@@ -395,7 +372,6 @@ div#banners
 
       .post_cover
         width 100%
-        -webkit-mask-image -webkit-radial-gradient(center, #fff, #000)
 
         a
           height 100px
@@ -421,7 +397,7 @@ div#banners
             transition .3s
             cursor pointer
 
-      .recent-post-info
+      /.recent-post-info
         padding .3rem .5rem .3rem .5rem
         transition .3s
 
@@ -437,6 +413,9 @@ div#banners
           font-weight 700
           font-size .8rem
           padding 0
+
+          &:hover
+            color var(--sco-fontcolor)
 
 
     .todayCard

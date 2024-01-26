@@ -1,0 +1,8 @@
+.flink-list.cf-friends-lost-contact.mini
+    each item in data.link_list
+        .flink-list-item
+            a.cf-friends-link(href="javascript:void(0);", title=item.name)
+                img.flink-avatar.cf-friends-avatar(alt=item.name, src=item.avatar + (data.suffix || ''))
+                .flink-item-info
+                    span.flink-item-name.cf-friends-name= item.name
+                    span.flink-item-desc(title=item.descr)= item.descr

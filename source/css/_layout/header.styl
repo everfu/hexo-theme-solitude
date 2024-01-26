@@ -332,7 +332,7 @@
     transition .3s
     display flex
     height 35px
-    min-width 70px
+    min-width 50px
     justify-content center
     align-items center
     border-radius 40px
@@ -375,7 +375,12 @@
           transition all .3s, color 0s, opacity .3s
 
     if hexo-config('site.name.class') == text
-      span
+      span.title
+        letter-spacing normal
+        font-size 1rem
+        font-weight 700
+        padding 0 5px
+        line-height 2rem
         +maxWidth768()
           padding-left 8px
 

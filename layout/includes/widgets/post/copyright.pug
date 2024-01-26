@@ -11,9 +11,9 @@
             #quit-box(onclick="RemoveRewardMask()")
             if theme.post.award.enable
                 include ./award
-            if theme.post.rss.enable
+            if theme.post.rss
                 .reward-link.mode
-                    a.reward-link-button(href=url_for(theme.post.rss.url), title="订阅")
+                    a.reward-link-button(href=url_for(theme.post.rss), title="订阅")
                         i.scoicon.sco-plant-fill
                         | 订阅
     if theme.post.default.copyright.enable || page.copyright

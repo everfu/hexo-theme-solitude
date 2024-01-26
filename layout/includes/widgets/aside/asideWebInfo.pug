@@ -5,7 +5,7 @@
                 i.item-icon.scoicon.sco-folder-fill
                 .item-name= __('aside.postcount')
             .item-count= site.posts.length
-    if theme.thirdparty.busuanzi
+    if theme.busuanzi
         if theme.aside.siteinfo.pv
             .webinfo-item
                 .webinfo-item-title
@@ -32,7 +32,7 @@
                 i.item-icon.scoicon.sco-loop-left-fill
                 .item-name= __('aside.updatetime')
             time.item-count(datetime=new Date())
-    if theme.thirdparty.wordcount && theme.aside.siteinfo.wordcount
+    if theme.wordcount && theme.aside.siteinfo.wordcount
         .webinfo-item
             .webinfo-item-title
                 i.item-icon.scoicon.sco-word-fill

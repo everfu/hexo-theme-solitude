@@ -1,12 +1,13 @@
 - const authorinfo = site.data.about.authorinfo
 
-.author-info
-    .author-tag-left
-        each tag in authorinfo.leftTags
-            span.author-tag= tag
-    .author-img
-        img(src=authorinfo.image)
-    .author-tag-right
-        each tag in authorinfo.rightTags
-            span.author-tag= tag
+if authorinfo
+    .author-info
+        .author-tag-left
+            each tag in authorinfo.leftTags
+                span.author-tag= tag
+        .author-img
+            img(src=authorinfo.image)
+        .author-tag-right
+            each tag in authorinfo.rightTags
+                span.author-tag= tag
 .author-title= authorinfo.title

@@ -1,25 +1,30 @@
 -
-    if (theme.thirdparty.search.enable) {
+    if (theme.search.enable) {
         var localSearch = 'undefined';
-        if (theme.thirdparty.search.local_search.enable)
-            localSearch = JSON.stringify({
-                preload: theme.thirdparty.search.local_search.preload,
-                path: theme?.thirdparty?.search?.local_search?.CDN || '/search.xml'
-            })
         var algolia = 'undefined';
-        if (theme.thirdparty.search.algolia_search.enable)
-            algolia = JSON.stringify({
-                appId: config.algolia.appId || config.algolia.applicationID,
-                apiKey: config.algolia.apiKey,
-                indexName: config.algolia.indexName,
-                hits: {
-                    per_page: theme.thirdparty?.search?.algolia_search?.hits?.per_page || 10
-                }
-            })
+        switch (theme.search.type) {
+            case 'local':
+                localSearch = JSON.stringify({
+                    preload: theme.search.local.preload,
+                    path: theme?.search?.local?.CDN || '/search.xml'
+                })
+                break;
+            case 'algolia':
+                algolia = JSON.stringify({
+                    appId: config.algolia.appId || config.algolia.applicationID,
+                    apiKey: config.algolia.apiKey,
+                    indexName: config.algolia.indexName,
+                    hits: {
+                        per_page: theme?.search?.algolia_search?.hits?.per_page || 10
+                    }
+                })
+                break;
+        }
     }
 
     const commentInfoStart = theme.comment.randomInfoStart.map(item => `"${item}"`) || ""
     const commentInfoEnd = theme.comment.randomInfoEnd.map(item => `"${item}"`) || ""
+    var sayhello2 = theme.aside.card.sayhello2.map(item => `"${item}"`) || []
 
 script.
     const GLOBAL_CONFIG = {
@@ -37,7 +42,6 @@ script.
             expand: !{theme.hightlight.expand},
             copy: !{theme.hightlight.copy},
         },
-        lightbox: !{theme.lightbox},
         randomlinks: !{theme.footer.randomlink},
         lang: {
             theme: {
@@ -56,18 +60,21 @@ script.
                 daybefore: '!{_p('time.daybefore')}',
                 runtime: '!{_p('time.runtime')}',
             },
-            sayhello: {
-                morning: `!{_p('sayhello.morning')}`,
-                noon: `!{_p('sayhello.noon')}`,
-                afternoon: `!{_p('sayhello.afternoon')}`,
-                night: `!{_p('sayhello.night')}`,
-                goodnight: `!{_p('sayhello.goodnight')}`,
-            },
             search: {
                 empty: '!{_p('search.empty')}',
                 hit: '!{_p('search.hit')}',
                 placeholder: '!{_p('search.placeholder')}',
             }
+        },
+        aside: {
+            sayhello: {
+                morning: '!{theme.aside.card.sayhello.morning}',
+                noon: '!{theme.aside.card.sayhello.noon}',
+                afternoon: '!{theme.aside.card.sayhello.afternoon}',
+                night: '!{theme.aside.card.sayhello.night}',
+                goodnight: '!{theme.aside.card.sayhello.goodnight}',
+            },
+            sayhello2: [!{sayhello2}],
         },
         covercolor: {
             enable: !{theme.post.covercolor.enable}
@@ -75,7 +82,7 @@ script.
         comment: {
             enable: !{theme.comment.enable},
             type: '!{theme.comment.type}',
-            commentBarrage: !{theme.comment.commentBarrage},
+            commentBarrage: !{theme.comment.commentBarrage && theme.comment.enable},
             randomInfoStart: [!{commentInfoStart}],
             randomInfoEnd: [!{commentInfoEnd}],
             twikoo: {
@@ -86,16 +93,17 @@ script.
                 url: '!{theme.comment.waline.envId}',
             }
         },
+        lightbox: '!{ theme.mediumZoom ? "mediumZoom" : (theme.fancybox ? "fancybox" : "null" )}',
         rightside: {
             enable: !{theme.rightside.enable}
         },
-        ai:{
-            enable: !{theme.thirdparty.ai.enable},
-            key: '!{theme.thirdparty.ai.key}',
-            talk: '!{theme.thirdparty.ai.talk}',
-            randomPost: !{theme.thirdparty.ai.randomPost},
+        ai: {
+            enable: !{theme.post_ai.enable},
+            key: '!{theme.post_ai.key}',
+            talk: '!{theme.post_ai.talk}',
+            randomPost: !{theme.post_ai.randomPost},
         },
-        music:{
+        music: {
             enable: !{theme.music.enable},
         }
     }

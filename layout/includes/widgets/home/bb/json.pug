@@ -1,0 +1,22 @@
+script.
+    !async function () {
+        const htmlTagRegex = /<[^>]+>/g;
+
+        await fetch('!{theme.says.mode_link}')
+            .then(res => res.json())
+            .then(res => {
+                let list = res.filter(item => item.content).slice(0, 10);
+
+                document.querySelector('#bber-talk').innerHTML = list.map(item => {
+                    let content = item.content ? item.content.replace(htmlTagRegex, '') : '';
+                    content += item.image ? '<i class="scoicon scp-image-fill"></i>' : '';
+                    content += item.aplayer ? '<i class="scoicon sco-disc-fill"></i>' : '';
+                    content += item.video ? '<i class="scoicon sco-video-fill"></i>' : '';
+                    content += item.bilibili ? '<i class="scoicon sco-bilibili-line"></i>' : '';
+                    content += item.link ? `<i class="scoicon sco-link"></i>` : '';
+                    return `<div class="li-style swiper-slide">${content}</div>`;
+                }).join('');
+
+                sco.initbbtalk();
+            }).catch(err => console.log('bbtime |', err));
+    }();

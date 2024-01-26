@@ -13,24 +13,16 @@ time:
   daybefore: Days ago
   runtime: days
 
-sayhello:
-  morning: The plan of the day is in the morning
-  noon: Only when you are full can you have the strength to work
-  afternoon: Concentrate and overcome the difficulties
-  night: Don't get too tired, it's healthier to go to bed early
-  goodnight: Get a good night's sleep and keep yourself energized
-
 page:
   tag: Tags
   category: Categories
+  tags: All tags
+  categories: All categories
   archives: Archives
   echarts: Echarts
 
 home:
   bannertext: Just browsing
-  bbtime:
-    text: Read more
-    image: [ Image ]
   categoryBar:
     home: Home
     more: More
@@ -41,16 +33,6 @@ home:
   top-group:
     recommend: Favor
     recommendmore: More
-
-about:
-  info:
-    title1: Hello, nice to meet you👋
-    title2: 'My name is '
-    title3: 'I am a '
-    tip1: Pursue
-    tip2: Originated from
-    tip3: 'Love to go '
-    tip4: Create
 
 post:
   meta_reprint: Reprint or translation
@@ -89,7 +71,7 @@ search:
 
 head:
   noscript: Please enable JavaScript to view the site
-  console: 'Program: Hexo | Theme: Hexo-Theme-Solitude | Author: WangZhuoSco、YiFeng | Github: https://github.com/DuoSco/Hexo-theme-solitude | Version: v1.3.1 😄'
+  console: 'Program: Hexo | Theme: Hexo-Theme-Solitude | Author: WangZhuoSco、YiFeng | Github: https://github.com/DuoSco/Hexo-theme-solitude | Version: v1.4.0 😄'
 
 aside:
   postcount: 'Posts :'
@@ -98,12 +80,10 @@ aside:
   runtime: 'Runtime :'
   updatetime: 'Last update :'
   wordcount: 'Word count :'
-  welcome: Visitors
   toc: Table of contents
   tagmore: View all
   avatar: Avatar
   sticker: Mood sticker
-  history: On this day
   newpost: New posts
 
 console:

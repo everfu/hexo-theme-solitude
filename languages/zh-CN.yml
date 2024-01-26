@@ -13,16 +13,11 @@ time:
   daybefore: 天前
   runtime:  天
 
-sayhello:
-  morning: 一日之计在于晨
-  noon: 吃饱了才有力气干活
-  afternoon: 集中精力，攻克难关
-  night: 不要太劳累了，早睡更健康
-  goodnight: 睡个好觉，保证精力充沛
-
 page:
   tag: 标签
   category: 分类
+  tags: 全部标签
+  categories: 全部分类
   archives: 文章
   echarts: 博客统计
 
@@ -36,9 +31,6 @@ nav:
 
 home:
   bannertext: 随便逛逛
-  bbtime:
-    text: 查看全文
-    image: 【图片】
   categoryBar:
     home: 首页
     more: 更多
@@ -49,16 +41,6 @@ home:
   top-group:
     recommend: 荐
     recommendmore: 更多推荐
-
-about:
-  info:
-    title1: 你好，很高兴认识你👋
-    title2: 我叫
-    title3: 是一名
-    tip1: 追求
-    tip2: 源于
-    tip3: 热爱而去
-    tip4: 创造
 
 post:
   meta_reprint: 转载或翻译
@@ -88,7 +70,7 @@ search:
 
 head:
   noscript: 开启JavaScript才能访问本站哦~
-  console: '程序：Hexo | 主题：Hexo-Theme-Solitude | 作者：王卓Sco、亦封 | Github: https://github.com/DuoSco/Hexo-theme-solitude | 版本：v1.3.1 😄'
+  console: '程序：Hexo | 主题：Hexo-Theme-Solitude | 作者：王卓Sco、亦封 | Github: https://github.com/DuoSco/Hexo-theme-solitude | 版本：v1.4.0 😄'
 
 aside:
   postcount: '文章总数 :'
@@ -97,12 +79,10 @@ aside:
   runtime: '建站天数 :'
   updatetime: '最后更新 :'
   wordcount: '全站字数 :'
-  welcome: 来访者
   toc: 文章目录
   tagmore: 查看全部
   avatar: 头像
   sticker: 心情贴纸
-  history: 那年今日
   newpost: 最近发布
 
 console:

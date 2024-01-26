@@ -1,16 +1,17 @@
 - const personalities = site.data.about.personalities
 
-.author-content
-    .author-content-item.personalities
-        .author-content-item-tips= personalities.tips
-        span.author-content-item-title= personalities.title
-        .title2(style=`color:${personalities.color}`)= personalities.type
-        .image
-            img(src=personalities.image)
-        .post-tips
-            | 在
-            a(href="https://www.16personalities.com/")= personalities.linkText
-            | 了解更多关于
-            a(href=personalities.typeLink)= personalities.typeName
-    .author-content-item.myphoto
-        img.author-content-img(src=personalities.myphoto, alt="自拍")
+if personalities
+    .author-content
+        .author-content-item.personalities
+            .author-content-item-tips= personalities.tips
+            span.author-content-item-title= personalities.title
+            .title2(style=`color:${personalities.color}`)= personalities.type
+            .image
+                img(src=personalities.image)
+            .post-tips
+                | 在
+                a(href="https://www.16personalities.com/")= personalities.linkText
+                | 了解更多关于
+                a(href=personalities.typeLink)= personalities.typeName
+        .author-content-item.myphoto
+            img.author-content-img(src=personalities.myphoto, alt="自拍")

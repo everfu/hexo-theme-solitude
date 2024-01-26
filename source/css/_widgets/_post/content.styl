@@ -16,6 +16,9 @@
     line-height 1
     font-size .8rem
 
+    #page &
+      display none
+
     &::before
       content "\e082"
       font-family scoicon
@@ -56,17 +59,26 @@
     max-width 90%
     max-height 450px
 
-  a:not(.headerlink)
+  a
     border-bottom 2px dotted var(--sco-lighttext)
     color var(--sco-fontcolor)
     font-weight 700
     padding 0 4px
     border-radius 4px 4px 0 0
 
-    &:hover
+    if hexo-config('fancybox')
+      &.fancybox
+        border-bottom 0
+        padding 0
+        margin auto
+        display contents
+        width fit-content
+        -webkit-user-select none
+
+    &:not(.headerlink):hover
+      border 0
       text-decoration none
       background var(--sco-main)
-      border-width 0
       color var(--sco-white)
       border-radius 4px
 
@@ -95,6 +107,7 @@
         padding 0.2em 0.2em 0.2em 1.4em
 
         &:before
+          margin 0
           top 0.78em
           width 0.42em
           height 0.42em
@@ -106,22 +119,40 @@
           background var(--sco-lighttext)
 
   ol
+    > li:before
+      margin-top .65em
+      width 1.45em
+      height 1.45em
+      border-radius .725em
+      text-align center
+      font-size .85em
+      color var(--sco-white)
+      line-height 1.45em
+
+    ul li
+      line-height 1.7
+
     > li
 
       &:not(.tab)
         padding .2em .2em .2em 1.8em
 
       &:before
-        margin-top .65em
-        width 1.45em
-        height 1.45em
-        border-radius .725em
         content counter(li)
         counter-increment li 1
-        text-align center
-        font-size .85em
-        color var(--sco-white)
-        line-height 1.45em
+
+      > ol
+        > li
+          &:before
+            content counter(li, lower-alpha)
+            counter-increment li
+
+          > ol
+            > li
+              &:before
+                content counter(li, lower-roman)
+                counter-increment li
+
 
   // 文章内容样式
 

@@ -1,19 +1,19 @@
+include ../widgets/page/banner
 if theme.says.enable
-    include ../widgets/page/banner
     #bber
         section.timeline.page-1
             ul.list#waterfall
-                - var limitedList = site.data.essay.essay_list.slice(0, 30)
-                each item in limitedList
-                    li.item
-                        if theme.says.style === 2
-                            include ../widgets/page/says/saysMeta
-                        include ../widgets/page/says/saysContent
-                        include ../widgets/page/says/saysFunction
-                        if theme.says.style === 1
-                            hr
-                            include ../widgets/page/says/saysBottom
-    #bber-tips - 只展示最近30条短文 -
-
-script.
-    sco.reflashEssayWaterFall()
+                case theme.says.mode
+                    when 'local'
+                        include ../widgets/page/says/local
+                    when 'json'
+                        include ../widgets/page/says/json
+                    when 'memos'
+                        include ../widgets/page/says/memos
+            #bber-tips
+                if theme.says.strip === -1
+                    | - 已展开所有短文 -
+                else
+                    | - 只展示最近 #{theme.says.strip} 条短文 -
+else
+    include ./not_configured.pug

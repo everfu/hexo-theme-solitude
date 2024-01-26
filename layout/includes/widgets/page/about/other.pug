@@ -1,6 +1,9 @@
+- var tj = site.data.about.tj
+- var oneself = site.data.about.oneself
+
 .author-content
-    if site.data.about.tj
-        .about-statistic.author-content-item(style=`background: url(${site.data.about.tj.img});`)
+    if tj
+        .about-statistic.author-content-item(style=`background: url(${tj.img});`)
             .card-content
                 .author-content-item-tips 数据
                 span.author-content-item-title 访问统计
@@ -8,13 +11,9 @@
                 .post-tips
                     | 统计信息来自
                     a(href="https://invite.51.la/1NzKqTeb?target=V6") 51la网站统计
-                if theme.about.echarts.enable
-                    .banner-button-group
-                        a.banner-button(onclick="pjax.loadUrl('/echart/');")
-                            i.scoicon.sco-right-btn-fill
-                            span.banner-button-text 文章统计
+
             script.
-                fetch("#{site.data.about.tj.url}")
+                fetch("#{tj.url}")
                     .then(res => res.text())
                     .then(data => {
                         const title = ["最近活跃", "今日人数", "今日访问", "昨日人数", "昨日访问", "本月访问", "总访问量"];
@@ -33,13 +32,12 @@
                     });
 
 
-    if site.data.about.oneself
+    if oneself
         style.
             :root {
-                --site-about-oneself-map--light: url(#{site.data.about.oneself.map.light});
-                --site-about-oneself-map--dark: url(#{site.data.about.oneself.map.dark});
+                --site-about-oneself-map--light: url(#{oneself.map.light});
+                --site-about-oneself-map--dark: url(#{oneself.map.dark});
             }
-        - const oneself = site.data.about.oneself
         .author-content-item-group.column.mapAndInfo
             .author-content-item.map.single
                 span.map-title 我现在住在 #{oneself.location}
@@ -54,9 +52,11 @@
                     span.selfInfo-title 现在职业
                     span.selfInfo-content(style="color: #b04fe6;")= oneself.occupation
 
-if site.data.about.cause
+- var cause = site.data.about.cause
+
+if cause
     .author-content
         .create-site-post.author-content-item.single
-            .author-content-item-tips 心路历程
-            span.author-content-item-title 为什么建站？
-            != site.data.about.cause
+            .author-content-item-tips= cause.tip
+            span.author-content-item-title= cause.title
+            != cause.content

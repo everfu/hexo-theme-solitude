@@ -169,5 +169,79 @@ const utils = {
             ele.removeEventListener('animationend', f)
         })
         ele.style.animation = text
-    }
+    },
+    wrap: (selector, eleType, options) => {
+        const createEle = document.createElement(eleType)
+        for (const [key, value] of Object.entries(options)) {
+            createEle.setAttribute(key, value)
+        }
+        selector.parentNode.insertBefore(createEle, selector)
+        createEle.appendChild(selector)
+    },
+    lazyloadImg: function () {
+        window.lazyLoadInstance = new LazyLoad({
+            elements_selector: 'img',
+            threshold: 0,
+            data_src: 'lazy-src',
+            callback_error: (img) => {
+                img.setAttribute("src", GLOBAL_CONFIG.lazyload.error);
+            }
+        })
+    },
+    lightbox: function (selector) {
+        const lightbox = GLOBAL_CONFIG.lightbox
+
+        if (lightbox === 'mediumZoom' && mediumZoom) {
+            mediumZoom(selector, {background: "var(--sco-card-bg)"});
+        }
+
+        if (lightbox === 'fancybox') {
+            selector.forEach(i => {
+                if (i.parentNode.tagName !== 'A') {
+                    const dataSrc = i.dataset.lazySrc || i.src
+                    const dataCaption = i.title || i.alt || ''
+                    utils.wrap(i, 'a', {
+                        class: 'fancybox',
+                        href: dataSrc,
+                        'data-fancybox': 'gallery',
+                        'data-caption': dataCaption,
+                        'data-thumb': dataSrc
+                    })
+                }
+            })
+
+            if (!window.fancyboxRun) {
+                Fancybox.bind('[data-fancybox]', {
+                    Hash: false,
+                    Thumbs: {
+                        showOnStart: false
+                    },
+                    Images: {
+                        Panzoom: {
+                            maxScale: 4
+                        }
+                    },
+                    Carousel: {
+                        transition: 'slide'
+                    },
+                    Toolbar: {
+                        display: {
+                            left: ['infobar'],
+                            middle: [
+                                'zoomIn',
+                                'zoomOut',
+                                'toggle1to1',
+                                'rotateCCW',
+                                'rotateCW',
+                                'flipX',
+                                'flipY'
+                            ],
+                            right: ['slideshow', 'thumbs', 'close']
+                        }
+                    }
+                })
+                window.fancyboxRun = true
+            }
+        }
+    },
 }

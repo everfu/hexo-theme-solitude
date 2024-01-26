@@ -15,6 +15,9 @@ if hexo-config('says.home_mini')
     align-items center
     padding .5rem 1rem
 
+    &.more-page
+      margin-bottom 0
+
     +maxWidth1300()
       margin-bottom 1rem
       animation slide-in .6s 0s backwards
@@ -360,10 +363,17 @@ if hexo-config('says.enable')
       overflow hidden
       text-overflow ellipsis
       transition .3s
+      display flex
+      justify-content center
+      align-items center
       font-weight 700
       margin auto
       cursor pointer
       white-space nowrap
+
+      .scoicon
+        font-size 1rem
+        margin-left .5rem
 
   #bbtalk
     overflow hidden

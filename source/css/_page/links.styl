@@ -3,6 +3,7 @@
 
 .flink#article-container
   margin-top 1rem
+
   #friendlink_checkboxs input
     margin-right 4px
 
@@ -13,6 +14,35 @@
   .flink-desc
     margin 0
     color var(--sco-secondtext)
+
+  .site-card-tag
+    position absolute
+    top 0
+    left 0
+    padding 4px 8px
+    background-color var(--sco-blue)
+    box-shadow var(--sco-shadow-blue)
+    color var(--sco-white)
+    z-index 1
+    border-radius 12px 0 12px 0
+    transition .3s
+    font-size .6rem
+    overflow hidden
+
+    .light
+      cursor pointer
+      position absolute
+      top 0
+      width 100px
+      height 50px
+      background-image -webkit-linear-gradient(0deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, .5), rgba(255, 255, 255, 0))
+      animation light_tag 4s both infinite
+
+    &.vip
+      background-color var(--sco-vip)
+
+    &.speed
+      background-color var(--sco-speed)
 
   .site-card-group
     padding 20px 0
@@ -50,25 +80,6 @@
 
       +maxWidth600()
         width calc(50% - 16px)
-
-      .site-card-tag
-        position absolute
-        top 0
-        left 0
-        padding 4px 8px
-        background-color var(--sco-blue)
-        box-shadow var(--sco-shadow-blue)
-        color var(--sco-white)
-        z-index 1
-        border-radius 12px 0 12px 0
-        transition .3s
-        font-size .6rem
-
-        &.vip
-          background-color var(--sco-vip)
-
-        &.life
-          background-color var(--sco-life)
 
       .img
         -webkit-mask-image -webkit-radial-gradient(center, #fff, #000)
@@ -145,6 +156,7 @@
       &:hover
         border var(--style-border-hover)
         box-shadow var(--sco-shadow-main)
+
         .site-card-tag
           left: -80px
 
@@ -154,6 +166,7 @@
           img
             transform scale(1.1)
             filter brightness(.3)
+            cursor pointer
 
         a
           border-bottom 2px solid var(--sco-none)
@@ -188,6 +201,20 @@
     overflow auto
     text-align center
 
+    &.mini
+      > .flink-list-item
+        height 60px
+
+        a
+          img
+            width 30px
+            height 30px
+            min-width 30px
+            min-height 30px
+
+          .flink-item-desc
+            display none
+
     > .flink-list-item
       margin 6px 6px
       transition .3s
@@ -216,9 +243,6 @@
 
       +maxWidth600()
         width calc(100% - 12px)
-
-      .site-card-tag
-        display none
 
       a
         display flex
@@ -252,35 +276,38 @@
           span
             transition .3s
 
-          .flink-item-name
-            text-align left
-            font-size 19px
-            line-height 20px
-            color var(--sco-fontcolor)
-            display block
-            padding 0 10px 0 0
-            font-weight 700
-            max-width calc(100% - 12px)
-            overflow hidden
-            text-overflow ellipsis
-            white-space nowrap
+        .flink-item-name
+          text-align left
+          font-size 19px
+          line-height 20px
+          color var(--sco-fontcolor)
+          display block
+          padding 0 10px 0 0
+          font-weight 700
+          max-width calc(100% - 12px)
+          overflow hidden
+          text-overflow ellipsis
+          white-space nowrap
 
-          .flink-item-desc
-            white-space normal
-            padding 5px 10px 16px 0
-            color var(--sco-fontcolor)
-            text-align left
-            height 40px
-            text-overflow ellipsis
-            opacity .7
-            display -webkit-box
-            overflow hidden
-            -webkit-box-orient vertical
-            -webkit-line-clamp 2
-            font-size .93em
+        .flink-item-desc
+          white-space normal
+          padding 5px 10px 16px 0
+          color var(--sco-fontcolor)
+          text-align left
+          height 40px
+          text-overflow ellipsis
+          opacity .7
+          display -webkit-box
+          overflow hidden
+          -webkit-box-orient vertical
+          -webkit-line-clamp 2
+          font-size .93em
 
       &:hover
         background var(--sco-theme)
+
+        .site-card-tag
+          left: -50px
 
         a
           background 0 0
@@ -304,3 +331,11 @@
             color var(--sco-card-bg)
             overflow hidden
             width 100%
+
+@keyframes light_tag
+  0%
+    transform skewx(0)
+    left -150px
+  99%
+    transform skewx(-25deg)
+    left 50px

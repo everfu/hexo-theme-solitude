@@ -24,8 +24,8 @@ body
   margin 0
 
 ::selection
-  background var(--sco-fontcolor)
-  color var(--sco-background)
+  background var(--sco-main)
+  color var(--sco-white)
 
 i.scoicon
   font-size 22px
@@ -58,6 +58,9 @@ a
   transition all .3s ease 0s
   overflow-wrap break-word
   -webkit-user-drag none
+
+  &:hover
+    color var(--sco-lighttext)
 
 abbr[title]
   border-bottom none
@@ -95,7 +98,7 @@ button, input
   overflow visible
 
 input::placeholder
-  color var(--sco-gray) !important
+  color var(--sco-gray)
 
 button, select
   text-transform none
@@ -179,10 +182,6 @@ table td, table th
   border 1px solid var(--light-grey)
   vertical-align middle
 
-::selection
-  background #0079ff
-  color #f7f7f7
-
 button
   padding 0
   outline 0
@@ -192,9 +191,11 @@ button
   cursor pointer
 
 img
-  max-width 100%
-  transition all .2s ease 0s;
   border-style none
+  border-radius 8px
+  max-width 100%
+  transition all .2s ease 0s
+  -webkit-user-drag none
 
 img:not([src]), img[src=""]
   opacity 0
@@ -204,9 +205,6 @@ img:not([src]), img[src=""]
   margin 0
   margin-top 8px
   color var(--sco-secondtext)
-
-.img-alt:hover
-  text-decoration none !important
 
 .is-center
   text-align center

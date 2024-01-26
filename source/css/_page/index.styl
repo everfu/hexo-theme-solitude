@@ -21,7 +21,7 @@ if hexo-config('says.enable')
 
 @import "links.styl"
 
-if hexo-config('about.enable')
+if hexo-config('about')
   @import "about.styl"
   @import "about/index.styl"
 
@@ -84,7 +84,6 @@ if hexo-config('music.enable')
     height 100%
     top 0
     left 0
-    z-index 2
     display flex
     flex-direction column
     padding 1rem 2rem
@@ -156,8 +155,8 @@ if hexo-config('music.enable')
         font-weight 700
         padding 0 4px
         border-radius 4px 4px 0 0
+
       &:hover
         color var(--sco-white)
-        border-width 0
         border-radius 4px
         background var(--sco-main)

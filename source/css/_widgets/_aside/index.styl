@@ -18,11 +18,8 @@
     padding-left 1rem
     animation slide-in .6s .3s backwards
 
-  .card-widget.card-power, .card-widget.card-history, .card-widget.card-welcome
-    padding: .4rem .6rem !important
-
   .item-headline
-    padding-bottom
+    padding-bottom 0
     margin-left 8px
     font-size 1em
     font-weight 700
@@ -85,9 +82,6 @@ if "allInfo" in aside
 
 if "wlcome" in aside
   @import "welcome.styl"
-
-if "history" in aside
-  @import "history.styl"
 
 if "newestPost" in aside
   @import "newPost.styl"
