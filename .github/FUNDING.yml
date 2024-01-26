@@ -10,4 +10,4 @@ liberapay: # Replace with a single Liberapay username
 issuehunt: # Replace with a single IssueHunt username
 otechie: # Replace with a single Otechie username
 lfx_crowdfunding: # Replace with a single LFX Crowdfunding project-name e.g., cloud-foundry
-custom: # Replace with up to 4 custom sponsorship URLs e.g., ['link1', 'link2']
+custom: ['https://github.com/wleelw/hexo-theme-solitude/assets/74389842/abf4a023-9f0d-40c1-969d-41ecb2d36c61'] # Replace with up to 4 custom sponsorship URLs e.g., ['link1', 'link2']
