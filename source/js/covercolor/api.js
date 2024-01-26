@@ -25,7 +25,9 @@ function img2color(src) {
             const color = data.RGB;
             const [r, g, b] = color.match(/\w\w/g).map(x => parseInt(x, 16));
             setThemeColors(color, r, g, b);
-            cacheColor(src, color);
+            if (coverColorConfig.time !== 0) {
+                cacheColor(src, color);
+            }
         })
         .catch(error => {
             console.error('请检查API是否正常！\n' + error);
