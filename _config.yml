@@ -727,8 +727,8 @@ search:
   # algolia, local
   type: algolia
   algolia:
-    # hits:
-    #   per_page: 6
+  # hits:
+  #   per_page: 6
   local:
     preload: false
     CDN:
@@ -827,8 +827,9 @@ extends:
   body: # 在body中插入 / Insert in body
 
 # PWA
+# https://developer.mozilla.org/zh-CN/docs/Web/Progressive_web_apps
 pwa:
-  enable: false # 是否开启
+  enable: false
   manifest: /manifest.json # manifest.json 文件路径
   theme_color: '#ffffff' # 主题颜色
   mask_icon: https://cdn.cbd.int/solitude-source@1.0.3/img/pwa/180.png # 遮罩图标
@@ -860,24 +861,24 @@ CDN:
     scoicon_css: https://cdn.cbd.int/solitude-source@1.0.3/icon/scoicon.min.css
     waterfall: https://cdn.cbd.int/solitude-source@1.0.3/js/waterfall.min.js
     view_image: https://cdn.cbd.int/solitude-source@1.0.3/js/view-image.min.js
-  # algolia_search:
-  # instantsearch:
-  # pjax:
-  # twikoo:
-  # waline_js:
-  # waline_css:
-  # sharejs:
-  # sharejs_css:
-  # katex:
-  # katex_copytex:
-  # lazyload:
-  # aplayer_css:
-  # aplayer_js:
-  # meting_js:
-  # pace_js:
-  # lunr_js:
-  # swiper_css:
-  # swiper_js:
-  # busuanzi_js:
-  # snackbar_css:
-  # snackbar_js:
+#    algolia_search:
+#    instantsearch:
+#    pjax:
+#    twikoo:
+#    waline_js:
+#    waline_css:
+#    sharejs:
+#    sharejs_css:
+#    katex:
+#    katex_copytex:
+#    lazyload:
+#    aplayer_css:
+#    aplayer_js:
+#    meting_js:
+#    pace_js:
+#    lunr_js:
+#    swiper_css:
+#    swiper_js:
+#    busuanzi_js:
+#    snackbar_css:
+#    snackbar_js:
