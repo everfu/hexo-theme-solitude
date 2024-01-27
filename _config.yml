@@ -430,8 +430,8 @@ says:
   # 1：张洪heo样式 / 2：Leonus样式
   # 1: Zhang Hong heo style / 2: Leonus style
   style: 1
-  # 即刻短文数量（条）。建议范围：1 ~ 999，当数量为-1时，将显示全部。
-  # Number of immediate short articles (pieces). Suggested range: 1~999, when the quantity is -1, all will be displayed.
+  # 即刻短文仅展示前n条
+  # Jike short text only shows the first n
   strip: 30
   # 模式选择。local：本地静态 / json：动态json / memos：动态Memos
   # Mode selection. Local: local static/JSON: dynamic JSON/memory: dynamic Memos
