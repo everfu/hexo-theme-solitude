@@ -404,17 +404,13 @@ aside:
 errorpage:
   # 图片
   # image
-  img: https://npm.elemecdn.com/wzheo-absolute@1.0.3/image/source/404.png
+  img: https://bu.dusays.com/2023/03/03/6401a7906aa4a.gif
   # 文字
   # text
   text: =awa= 页面走丢了
   # 推荐文章列表
   # Recommended article list
   recommendList: true
-
-# 关于页
-# about page
-about: false
 
 # 即刻说说页
 # jike says page
@@ -430,8 +426,8 @@ says:
   # 1：张洪heo样式 / 2：Leonus样式
   # 1: Zhang Hong heo style / 2: Leonus style
   style: 1
-  # 即刻短文数量（条）。建议范围：1 ~ 999，当数量为-1时，将显示全部。
-  # Number of immediate short articles (pieces). Suggested range: 1~999, when the quantity is -1, all will be displayed.
+  # 即刻短文仅展示前n条
+  # Jike short text only shows the first n
   strip: 30
   # 模式选择。local：本地静态 / json：动态json / memos：动态Memos
   # Mode selection. Local: local static/JSON: dynamic JSON/memory: dynamic Memos
@@ -832,11 +828,11 @@ pwa:
   enable: false
   manifest: /manifest.json # manifest.json 文件路径
   theme_color: '#ffffff' # 主题颜色
-  mask_icon: https://cdn.cbd.int/solitude-source@1.0.3/img/pwa/180.png # 遮罩图标
-  apple_touch_icon: https://cdn.cbd.int/solitude-source@1.0.3/img/pwa/180.png # 苹果触摸图标
-  bookmark_icon: https://cdn.cbd.int/solitude-source@1.0.3/img/pwa/180.png # 书签图标
-  favicon_32_32: https://cdn.cbd.int/solitude-source@1.0.3/img/pwa/32.png # 32x32图标
-  favicon_16_16: https://cdn.cbd.int/solitude-source@1.0.3/img/pwa/16.png # 16x16图标
+  mask_icon: https://cdn.cbd.int/solitude-source/img/pwa/180.png # 遮罩图标
+  apple_touch_icon: https://cdn.cbd.int/solitude-source/img/pwa/180.png # 苹果触摸图标
+  bookmark_icon: https://cdn.cbd.int/solitude-source/img/pwa/180.png # 书签图标
+  favicon_32_32: https://cdn.cbd.int/solitude-source/img/pwa/32.png # 32x32图标
+  favicon_16_16: https://cdn.cbd.int/solitude-source/img/pwa/16.png # 16x16图标
 
 # CDN
 # Don't modify the following settings unless you know how they work
@@ -858,9 +854,9 @@ CDN:
   custom_format: https://cdn.staticfile.org/${cdnjs_name}/${version}/${min_cdnjs_file}
 
   option:
-    scoicon_css: https://cdn.cbd.int/solitude-source@1.0.3/icon/scoicon.min.css
-    waterfall: https://cdn.cbd.int/solitude-source@1.0.3/js/waterfall.min.js
-    view_image: https://cdn.cbd.int/solitude-source@1.0.3/js/view-image.min.js
+    scoicon_css: https://cdn.cbd.int/solitude-source/icon/scoicon.min.css
+    waterfall: https://cdn.cbd.int/solitude-source/js/waterfall.min.js
+    view_image: https://cdn.cbd.int/solitude-source/js/view-image.min.js
 #    algolia_search:
 #    instantsearch:
 #    pjax:

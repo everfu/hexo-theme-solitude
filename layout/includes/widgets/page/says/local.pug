@@ -1,8 +1,4 @@
-if theme.says.strip === -1
-    - var limitedList = site.data.essay.essay_list
-else
-    - var limitedList = site.data.essay.essay_list.slice(0, theme.says.strip)
-each item in limitedList
+each item in site.data.essay.essay_list.slice(0, theme.says.strip)
     li.item
         if theme.says.style === 2
             .meta
@@ -45,4 +41,4 @@ each item in limitedList
                             | 链接
                 if item.content
                     a.bber-reply(onclick=`sco.toTalk('${item.content}')`)
-                        i.scoicon.sco-chat-fill(style="font-size: 1rem;")
+                        i.scoicon.sco-chat-fill

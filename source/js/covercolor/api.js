@@ -7,6 +7,7 @@ const coverColor = () => {
 
 function handleApiColor(path) {
     const cacheGroup = JSON.parse(localStorage.getItem('Solitude')) || {};
+    console.log(cacheGroup)
     if (cacheGroup.postcolor && cacheGroup.postcolor[path]) {
         const color = cacheGroup.postcolor[path].value;
         const [r, g, b] = color.match(/\w\w/g).map(x => parseInt(x, 16));
@@ -18,28 +19,22 @@ function handleApiColor(path) {
 
 function img2color(src) {
     const apiUrl = coverColorConfig.api + encodeURIComponent(src);
-
     fetch(apiUrl)
         .then(response => response.json())
         .then(data => {
             const color = data.RGB;
             const [r, g, b] = color.match(/\w\w/g).map(x => parseInt(x, 16));
             setThemeColors(color, r, g, b);
-            if (coverColorConfig.time !== 0) {
-                cacheColor(src, color);
-            }
+            const expirationTime = Date.now() + coverColorConfig.time;
+            const cacheGroup = saveToLocal.get('Solitude') || {};
+            cacheGroup.postcolor = cacheGroup.postcolor || {};
+            cacheGroup.postcolor[src] = {value: color, expiration: expirationTime};
+            localStorage.setItem('Solitude', JSON.stringify(cacheGroup));
         })
         .catch(error => {
             console.error('请检查API是否正常！\n' + error);
+            setThemeColors();
         });
-}
-
-function cacheColor(src, color) {
-    const expirationTime = Date.now() + coverColorConfig.time;
-    const cacheGroup = saveToLocal.get('Solitude') || {};
-    cacheGroup.postcolor = cacheGroup.postcolor || {};
-    cacheGroup.postcolor[src] = {value: color, expiration: expirationTime};
-    localStorage.setItem('Solitude', JSON.stringify(cacheGroup));
 }
 
 function setThemeColors(value, r = null, g = null, b = null) {
@@ -51,15 +46,17 @@ function setThemeColors(value, r = null, g = null, b = null) {
 
         if (r && g && b) {
             var brightness = Math.round(((parseInt(r) * 299) + (parseInt(g) * 587) + (parseInt(b) * 114)) / 1000);
-            var cardContents = document.getElementsByClassName('card-content');
-            var authorInfo = document.getElementsByClassName('author-info__sayhi');
-            for (let i = 0; i < cardContents.length; i++) {
-                cardContents[i].style.setProperty('--sco-card-bg', 'var(--sco-white)');
-            }
+            if (brightness < 125) {
+                var cardContents = document.getElementsByClassName('card-content');
+                for (let i = 0; i < cardContents.length; i++) {
+                    cardContents[i].style.setProperty('--sco-card-bg', 'var(--sco-white)');
+                }
 
-            for (let i = 0; i < authorInfo.length; i++) {
-                authorInfo[i].style.setProperty('background', 'var(--sco-white-op)');
-                authorInfo[i].style.setProperty('color', 'var(--sco-white)');
+                var authorInfo = document.getElementsByClassName('author-info__sayhi');
+                for (let i = 0; i < authorInfo.length; i++) {
+                    authorInfo[i].style.setProperty('background', 'var(--sco-white-op)');
+                    authorInfo[i].style.setProperty('color', 'var(--sco-white)');
+                }
             }
         }
 

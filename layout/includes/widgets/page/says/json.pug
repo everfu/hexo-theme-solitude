@@ -2,11 +2,10 @@ case theme.says.style
     when 1
         script.
             !async function () {
-                let say_strip = !{theme.says.strip}
                 await fetch('!{url_for(theme.says.mode_link)}')
                     .then(res => res.json())
                     .then(res => {
-                        let list = say_strip === -1 || say_strip >= res.length ? res : res.slice(0, say_strip)
+                        let list = res.slice(0, !{theme.says.strip})
                         let aplayer = null
                         let video = null
                         let imageBox = null
@@ -43,11 +42,10 @@ case theme.says.style
     when 2
         script.
             !async function () {
-                let say_strip = !{theme.says.strip}
                 await fetch('!{url_for(theme.says.mode_link)}')
                     .then(res => res.json())
                     .then(res => {
-                        let list = say_strip === -1 || say_strip >= res.length ? res : res.slice(0, say_strip)
+                        let list = res.slice(0, !{theme.says.strip})
                         let aplayer = null
                         let video = null
                         let imageBox = null

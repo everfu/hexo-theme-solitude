@@ -2,7 +2,6 @@ case theme.says.style
     when 1
         script.
             !async function () {
-                let say_strip = !{theme.says.strip};
                 let aplayerRegex = /{aplayer,(.*?),(.*?)}/g;
                 let linkRegex = /(?<!\!)\[([^\]]*)\]\(([^\)]*)\)/g;
                 let bilibiliRegex = /{bilibili,(.*?)}/g;
@@ -13,7 +12,7 @@ case theme.says.style
                 await fetch("!{url_for(theme.says.mode_link)}")
                     .then(res => res.json())
                     .then(data => {
-                        let list = say_strip === -1 || say_strip >= data.length ? data : data.slice(0, say_strip);
+                        let list = data.slice(0, !{theme.says.strip});
                         let aplayer = null;
                         let video = null;
                         let imageBox = null;
@@ -59,7 +58,6 @@ case theme.says.style
     when 2
         script.
             !async function () {
-                let say_strip = !{theme.says.strip};
                 let aplayerRegex = /{aplayer,(.*?),(.*?)}/g;
                 let bilibiliRegex = /{bilibili,(.*?)}/g;
                 let playerRegex = /{player,(.*?)}/g;
@@ -69,7 +67,7 @@ case theme.says.style
                 await fetch("!{url_for(theme.says.mode_link)}")
                     .then(res => res.json())
                     .then(data => {
-                        let list = say_strip === -1 || say_strip >= data.length ? data : data.slice(0, say_strip);
+                        let list = data.slice(0, !{theme.says.strip})
                         let aplayer = null;
                         let video = null;
                         let imageBox = null;

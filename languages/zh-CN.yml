@@ -19,7 +19,7 @@ page:
   tags: 全部标签
   categories: 全部分类
   archives: 文章
-  echarts: 博客统计
+  404: 页面没有找到
 
 nav:
   site_name_title: 返回博客主页
@@ -70,7 +70,7 @@ search:
 
 head:
   noscript: 开启JavaScript才能访问本站哦~
-  console: '程序：Hexo | 主题：Hexo-Theme-Solitude | 作者：王卓Sco、亦封 | Github: https://github.com/DuoSco/Hexo-theme-solitude | 版本：v1.4.0 😄'
+  console: '程序：Hexo | 主题：Hexo-Theme-Solitude | 作者：王卓Sco、亦封 | Github: https://github.com/DuoSco/Hexo-theme-solitude | 版本：v1.4.1 😄'
 
 aside:
   postcount: '文章总数 :'
