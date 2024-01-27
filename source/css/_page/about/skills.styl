@@ -1,0 +1,75 @@
+#about-page
+  .author-content-item.skills
+    display flex
+    justify-content center
+    align-items flex-start
+    flex-direction column
+    width 49%
+    min-height 450px
+
+    .tags-group-all
+      display flex
+      transform rotate(0)
+      transition .3s
+
+    .tags-group-wrapper
+      margin-top 20px
+      display flex
+      flex-wrap nowrap
+      animation rowup 60s linear infinite
+
+    .skills-style-group
+      position relative
+
+    .skills-list
+      display flex
+      opacity 0
+      transition .3s
+      position absolute
+      width 100%
+      top 0
+      left 0
+      flex-wrap wrap
+      flex-direction row
+      margin-top 10px
+
+    &:hover
+      .skills-style-group
+        .tags-group-all
+          opacity 0
+
+        .skills-list
+          opacity 1
+
+    .skill-info
+      display flex
+      align-items center
+      margin-right 10px
+      margin-top 10px
+      background var(--sco-background)
+      border-radius 40px
+      padding 4px 12px 4px 8px
+      border var(--style-border)
+      box-shadow var(--sco-shadow-border)
+
+    .etc
+      margin-right 10px
+      margin-top 10px
+
+    .skill-icon
+      width 32px
+      height 32px
+      border-radius 32px
+      display flex
+      align-items center
+      justify-content center
+      margin-right 8px
+      user-select none
+
+      img
+        width 18px
+        height 18px
+
+    .skill-name
+      font-weight 700
+      line-height 1

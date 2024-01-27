@@ -14,7 +14,7 @@ block content
     if theme.errorpage.recommendList
         .aside-list
             .aside-list-group
-                each post, index in site.posts.sort('-date').data
+                each post, index in site.posts.sort('-date').data.slice(0, 6)
                     if index >= 5
                         break
                     .aside-list-item

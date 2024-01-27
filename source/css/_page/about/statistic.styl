@@ -1,0 +1,55 @@
+#about-page
+  .author-content-item
+    .card-content
+      z-index 2
+
+  .about-statistic
+    min-height 380px
+    width 39%
+    background-size cover
+    color var(--sco-white)
+    overflow hidden
+
+    &::after
+      box-shadow 0 -159px 173px 71px #0f1114 inset
+      position absolute
+      content ''
+      width 100%
+      height 100%
+      top 0
+      left 0
+
+    #statistic
+      font-size 16px
+      border-radius 15px
+      width 100%
+      color var(--sco-white)
+      display flex
+      justify-content space-between
+      flex-direction row
+      flex-wrap wrap
+      margin-top 1rem
+      margin-bottom 2rem
+
+      div
+        display flex
+        justify-content space-between
+        flex-direction column
+        width 50%
+        margin-bottom .5rem
+
+        span:first-child
+          opacity .8
+          font-size .6rem
+
+        span:last-child
+          font-weight 700
+          font-size 34px
+          line-height 1
+          white-space nowrap
+
+    .banner-button
+      background var(--sco-white-op)
+
+    .banner-button:hover
+      background var(--sco-theme)

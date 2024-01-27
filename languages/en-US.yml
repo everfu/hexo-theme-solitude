@@ -19,7 +19,7 @@ page:
   tags: All tags
   categories: All categories
   archives: Archives
-  echarts: Echarts
+  404: Page not found
 
 home:
   bannertext: Just browsing

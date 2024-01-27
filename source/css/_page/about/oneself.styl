@@ -1,0 +1,91 @@
+#about-page
+  .author-content-item-group
+    &.column
+      display flex
+      flex-direction column
+      width 49%
+      justify-content space-between
+
+      +maxWidth768()
+        width 100% !important
+
+    &.mapAndInfo
+      width 59%
+
+  .author-content-item
+    +minWidth1300()
+      animation slide-in .6s 0s backwards
+
+    &.map
+      background var(--site-about-oneself-map--light) no-repeat center
+      min-height 160px
+      max-height 400px
+      position relative
+      overflow hidden
+      margin-bottom 0.5rem
+      height 60%
+      background-size 100%
+      transition 1s ease-in-out
+
+      .map-title
+        position absolute
+        bottom 0
+        left 0
+        width 100%
+        background var(--sco-maskbg)
+        padding 0.5rem 2rem
+        backdrop-filter saturate(180%) blur(20px)
+        transition 1s ease-in-out
+        font-size 20px
+        transform translateZ(0)
+
+        +maxWidth768()
+          padding 1rem
+
+        b
+          color var(--sco-fontcolor)
+
+      +maxWidth768()
+        margin-bottom 0
+
+      [data-theme=dark] &
+        background var(--site-about-oneself-map--dark) no-repeat center
+        background-size 100%
+
+      &:hover
+        background-size 120%
+        transition 4s ease-in-out
+        background-position-x 0
+        background-position-y 36%
+
+        .map-title
+          bottom -100%
+
+  .author-content-item.selfInfo
+    display flex
+    min-height 100px
+    max-height 400px
+    justify-content space-between
+    align-items center
+    flex-wrap wrap
+    height -webkit-fill-available
+    height 40%
+
+    +maxWidth1300()
+      height 70%
+
+    div
+      display flex
+      flex-direction column
+      margin .5rem 2rem .5rem 0
+
+    .selfInfo-title
+      opacity .8
+      font-size .6rem
+      line-height 1
+      margin-bottom 8px
+
+    .selfInfo-content
+      font-weight 700
+      font-size 34px
+      line-height 1

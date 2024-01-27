@@ -404,17 +404,13 @@ aside:
 errorpage:
   # 图片
   # image
-  img: https://npm.elemecdn.com/wzheo-absolute/image/source/404.png
+  img: https://bu.dusays.com/2023/03/03/6401a7906aa4a.gif
   # 文字
   # text
   text: =awa= 页面走丢了
   # 推荐文章列表
   # Recommended article list
   recommendList: true
-
-# 关于页
-# about page
-about: false
 
 # 即刻说说页
 # jike says page

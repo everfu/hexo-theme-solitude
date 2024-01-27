@@ -21,12 +21,28 @@ if hexo-config('says.enable')
 
 @import "links.styl"
 
-if hexo-config('about')
-  @import "about.styl"
-  @import "about/index.styl"
+@import "about/index.styl"
 
 if hexo-config('music.enable')
   @import "music.styl"
+
+.author-content
+  display flex
+  flex-wrap wrap
+  justify-content space-between
+  width 100%
+  margin-top 1rem
+
+  +maxWidth768()
+    margin-top 0
+
+  .author-content-item
+    +maxWidth1300()
+      animation slide-in .6s 0s backwards
+    +maxWidth768()
+      width 100% !important
+      margin-top 1rem
+      padding 1rem
 
 .author-content.author-content-item.sharePage
   height 19rem

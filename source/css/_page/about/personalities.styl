@@ -1,0 +1,25 @@
+.author-content-item.personalities
+  overflow hidden
+  position relative
+  width 59%
+  +maxWidth768()
+    min-height 360px
+
+  .title2
+    font-size 36px
+    font-weight 700
+    line-height 1.1
+
+  .image
+    position absolute
+    right -40px
+    bottom -10rem
+    transition transform 2s cubic-bezier(.13, .45, .21, 1.02)
+    user-select none
+
+    +maxWidth768()
+      right -70px
+
+  &:hover
+    .image
+      transform rotate(-10deg)

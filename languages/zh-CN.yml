@@ -19,7 +19,7 @@ page:
   tags: 全部标签
   categories: 全部分类
   archives: 文章
-  echarts: 博客统计
+  404: 页面没有找到
 
 nav:
   site_name_title: 返回博客主页

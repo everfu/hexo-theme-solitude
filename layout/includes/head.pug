@@ -3,7 +3,7 @@
 - else if (is_archive()) title = _p('page.archives') + (page.year || "")
 - else if (is_tag()) title = _p('page.tag')+': '  + page.tag
 - else if (is_category()) title = _p('page.category') +': ' + page.category
-- else if (page.type === '404') title = '404'+': '  + theme.errorpage.text
+- else if (page.type === '404') title = _p('page.404')
 - else if (page.type === 'tags') title = _p('page.tags')
 - else if (page.type === 'categories') title = _p('page.categories')
 - else if (is_post() || is_page()) title = page.title
