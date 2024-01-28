@@ -68,7 +68,7 @@ window.addEventListener("load", () => {
     });
 
     const configure = instantsearch.widgets.configure({
-        hitsPerPage: algolia.hits.per_page ?? 5,
+        hitsPerPage: algolia.hits.per_page || 5,
     });
 
     const searchBox = instantsearch.widgets.searchBox({
