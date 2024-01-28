@@ -1,0 +1,65 @@
+- const list = theme.keyboard.list || []
+#keyboard-tips
+    .keyboardTitle= '博客快捷键'
+    .keyboardList
+        each item in list
+            .keyboardItem
+                .keyGroup
+                    .key= 'Shift'
+                    .key= item.key
+                .keyContent
+                    .content= item.name
+script.
+    const keyboard_addKeyup = (e) => {
+        if (e.key === 'Shift') {
+            document.getElementById('keyboard-tips').classList.remove('show');
+        }
+    }
+
+    const keyboard_addKeydown = (e) => {
+        const keyboards = !{JSON.stringify(list)};
+        if (e.keyCode === 16) {
+            document.getElementById('keyboard-tips').classList.add('show');
+        }
+
+        for (let i = 0; i < keyboards.length; i++) {
+            if (keyboards[i].url) {
+                if (keyboards[i].url.startsWith('http')) {
+                    if (e.key === keyboards[i].key) {
+                        window.open(keyboards[i].url);
+                    }
+                } else {
+                    if (e.key === keyboards[i].key) {
+                        pjax.loadUrl(keyboards[i].url);
+                    }
+                }
+            } else if (keyboards[i].sco) {
+                if (e.key === keyboards[i].key) {
+                    sco[keyboards[i].sco]();
+                }
+            } else if (keyboards[i].func) {
+                if (e.key === keyboards[i].key) {
+                    window[keyboards[i].func]();
+                }
+            }
+        }
+    }
+
+    function openKeyboard() {
+
+        window.addEventListener('keyup', keyboard_addKeyup);
+
+        window.addEventListener('keydown', keyboard_addKeydown);
+    }
+    function closeKeyboard() {
+
+        window.removeEventListener('keyup', keyboard_addKeyup);
+
+        window.removeEventListener('keydown', keyboard_addKeydown);
+    }
+
+    var sco_keyboards = localStorage.getItem('keyboard') === 'true'
+    if (sco_keyboards) {
+        openKeyboard();
+        document.getElementById('consoleKeyboard').classList.add('on');
+    }

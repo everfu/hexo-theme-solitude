@@ -93,6 +93,7 @@ console:
   tag_title: Find interesting areas
   switch_darkmode: Day and night switching
   switch_hideAside: Sidebar display control
+  switch_keyboard: Keyboard operation
   switch_music: Music switch
   archive_unit: Posts
 

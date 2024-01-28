@@ -542,6 +542,35 @@ post:
     api: https://img2color.wzsco.top/api?img= # api地址 / api address
     time: 43200000 # api取色间隔（毫秒），默认为12小时 / api color interval (milliseconds), default is 12 hours
 
+keyboard:
+  enable: false # 是否开启键盘控制 / Whether to enable keyboard control
+  # 键盘控制配置
+  # Keyboard control configuration
+  list:
+    # name: 按键名称
+    # name: Key name
+    # key: 按键
+    # key: Key
+    # func: 方法
+    # func: Function
+    # sco: sco内置方法
+    # sco: sco built-in method
+    # url: 跳转链接
+    # url: Jump link
+#    - name: 关闭快捷键功能
+#      key: K
+#      func: keyboard
+#    - name: 打开中控台
+#      key: A
+#      sco: showConsole
+#    - name: 播放/暂停音乐
+#      key: M
+#      sco: musicToggle
+#    - name: 打开友情链接
+#      key: L
+#      url: '/links/'
+
+
 # -------------------------
 # 自定义主题
 

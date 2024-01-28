@@ -30,6 +30,10 @@ div#console
         div.console-btn-item#consoleHideAside
             a.asideSwitch(onclick="sco.switchHideAside()", title=_p('console.switch_hideAside'), href="javascript:void(0);")
                 i.scoicon.sco-side-bar-fill
+        if theme.keyboard.enable
+            div.console-btn-item#consoleKeyboard(onclick="sco.switchKeyboard()")
+                a.keyboardSwitch(title=_p('console.switch_keyboard'), href="javascript:void(0);")
+                    i.scoicon.sco-keyboard-box-fill
         if theme.capsule.enable
             div.console-btn-item#consoleMusic(onclick="sco.musicToggle()")
                 a.music-switch(title=_p('console.switch_music'), href="javascript:void(0);")

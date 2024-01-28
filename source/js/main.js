@@ -281,6 +281,20 @@ let sco = {
         htmlClassList.toggle("hide-aside");
         htmlClassList.contains("hide-aside") ? document.querySelector("#consoleHideAside").classList.add("on") : document.querySelector("#consoleHideAside").classList.remove("on");
     },
+    switchKeyboard: function() {
+        sco_keyboards = !sco_keyboards;
+        const consoleKeyboard = document.querySelector("#consoleKeyboard");
+        if (sco_keyboards) {
+            consoleKeyboard.classList.add("on");
+            openKeyboard()
+            localStorage.setItem("keyboard", true);
+        } else {
+            closeKeyboard()
+            consoleKeyboard.classList.remove("on");
+            localStorage.setItem("keyboard", false);
+            document.getElementById('keyboard-tips')?.classList.remove('show')
+        }
+    },
     initConsoleState: function () {
         document.documentElement.classList.contains("hide-aside") ? document.querySelector("#consoleHideAside").classList.add("on") : document.querySelector("#consoleHideAside").classList.remove("on")
     },
