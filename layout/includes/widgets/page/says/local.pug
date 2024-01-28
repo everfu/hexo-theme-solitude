@@ -26,7 +26,7 @@ each item in site.data.essay.essay_list.slice(0, theme.says.strip)
                 if item.video.player
                     video(src=item.video.player controls="controls" style="object-fit: cover;")
                 if item.video.bilibili
-                    iframe(src='//player.bilibili.com/player.html?autop-lay=0&bvid=' + item.video.bilibili scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true")
+                    iframe(src='//player.bilibili.com/player.html?auto-play=0&bvid=' + item.video.bilibili scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true")
 
         if theme.says.style === 1
             hr
