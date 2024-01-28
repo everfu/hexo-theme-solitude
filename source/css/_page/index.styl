@@ -10,7 +10,8 @@
 
 @import "rss.styl"
 
-@import "moment.styl"
+if hexo-config('moments.enable')
+  @import "moment.styl"
 
 if hexo-config('says.enable')
   @import "says.styl"

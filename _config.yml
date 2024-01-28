@@ -468,6 +468,21 @@ capsule:
   server: netease # 播放列表的服务商。netease：网易云 / tencent：腾讯 / kugou：酷狗 / xiami：小米 / baidu：百度 : Music service provider. netease: Netease Cloud / tencent: Tencent / kugou: Kugou / xiaomi: Xiaomi / baidu: Baidu
   type: playlist # 播放列表的类型。song：单曲 / playlist：歌单 / album：专辑 / artist：歌手 : Type of playlist. song: Single / playlist: Playlist / album: Album / artist: Singer
 
+# 友链鱼塘
+# Links fish pond
+moments:
+  enable: false # 是否开启鱼塘 / Whether to enable fish pond
+  api: # https://blog.wzsco.top/circle/ # api地址 / api address
+  error_img: https://bu.dusays.com/2023/11/08/654af68b25bb8.jpg # 加载失败显示图片 / Loading failed display image
+  sort_rule: created # 排序规则：created：按创建时间排序 / updated：按更新时间排序 : Sort rule: created: Sort by creation time / updated: Sort by update time
+  expire_days: 1 # 缓存过期时间（天），默认为1天 / Cache expiration time (days), default is 1 day
+  page_init_number: 10 # 页面初始化加载数量，默认为10条 / Page initialization loading quantity, default is 10
+  page_turning_number: 5 # 页面翻页加载数量，默认为5条 / Page turning loading quantity, default is 5
+  angle: true # 鱼塘随机文章 / Fish pond random article
+  appjs: https://cdn.cbd.int/solitude-source@1.0.3/js/fcircle.min.js # 鱼塘js / Fish pond js
+  bundlejs: https://cdn.cbd.int/solitude-source/js/moment/bundle.min.js # 鱼塘js / Fish pond js
+  randompostjs: https://cdn.cbd.int/solitude-source/js/moment/random_post.min.js # 鱼塘js / Fish pond js
+
 # -------------------------
 # 文章页、页面配置
 # post、page settings
