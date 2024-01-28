@@ -122,12 +122,12 @@
   .el-button--primary
     border-color var(--sco-fontcolor) !important
     color var(--sco-card-bg) !important
-    border-radius 4px !important
+    border-radius 12px !important
     box-shadow var(--sco-shadow-black)
     transition .3s
     width 5rem
     position absolute
-    top -53px
+    top -51.5px
     right 0
     margin-left .5rem !important
     height 32px
@@ -176,7 +176,7 @@
 
 .tk-meta-input
   position relative !important
-  margin-top .8rem
+  margin-top 8px
   width calc(100% - 5.5rem)
 
 .tk-content
@@ -224,12 +224,13 @@
 
 .tk-comments-container
   > .tk-comment
-    margin-top 0 !important
-    margin-bottom .5rem !important
+    margin-top 0!important
+    margin-bottom 0.5rem!important
     background var(--sco-card-bg)
     transition .3s
     border-radius 12px
-    padding .5rem 0 0
+    padding 0
+    padding-top 0.5rem
     border none
     border-top var(--style-border-dashed)
 
@@ -283,6 +284,7 @@
 .tk-meta-input
   .el-input
     .el-input-group__prepend
+      box-shadow none
       border-radius 12px 0 0 12px
       -webkit-user-select none
 
@@ -412,7 +414,7 @@ img.tk-avatar-img
   border-radius 8px !important
 
 .el-button:hover
-  background var(--sco-main) !important
+  background var(--sco-black) !important
   color var(--sco-white) !important
 
 .el-button.tk-preview
