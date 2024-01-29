@@ -127,10 +127,10 @@
     transition .3s
     width 5rem
     position absolute
-    top -51.5px
+    top -44px
     right 0
     margin-left .5rem !important
-    height 32px
+    height 34px
 
   .el-button--primary.is-disabled,
   .el-button--primary.is-disabled:active,
@@ -140,15 +140,15 @@
 
 .tk-row-actions-start
   position absolute
-  top -100px
+  top -84px
   left 17px
 
 @media screen and (max-width: 768px)
   .tk-submit
     .el-button--primary
       width 5rem
-      height 132px
-      top -161px
+      height 122px
+      top -132px
 
   .tk-row-actions-start
     top -210px
@@ -304,7 +304,6 @@
     .el-input
       margin-left 0 !important
       width 100% !important
-      margin-bottom 8px
 
   .tk-icon
     position absolute
@@ -324,6 +323,7 @@ img.tk-avatar-img
 .el-input.el-input--small.el-input-group.el-input-group--prepend
   border-radius 12px
   background var(--sco-secondbg)
+  border var(--style-border-always)
 
 .el-input.el-input--small.el-input-group.el-input-group--prepend:nth-child(1):before
   content '输入QQ号会自动获取昵称和头像'
@@ -367,15 +367,16 @@ img.tk-avatar-img
 .el-input-group__append, .el-input-group__prepend
   background-color var(--sco-card-bg) !important
   color var(--sco-fontcolor) !important
-  border-color var(--sco-card-border) !important
-  border var(--style-border-always) !important
+  border 0 !important
   font-weight 700
 
 .el-input__inner
   background var(--sco-secondbg) !important
-  border 1px solid var(--sco-card-border) !important
+  border 0 !important
   color var(--sco-fontcolor) !important
   padding-left 8px
+  height 32px
+  line-height 32px
   border-radius 12px
 
 .page
