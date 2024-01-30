@@ -686,7 +686,7 @@ let sco = {
             element.value = "donotreply@examp.com";
             element.dispatchEvent(new Event("input"));
         });
-    }
+    },
 }
 
 class hightlight {

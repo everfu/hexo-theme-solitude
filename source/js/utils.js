@@ -243,5 +243,5 @@ const utils = {
                 window.fancyboxRun = true
             }
         }
-    },
+    }
 }

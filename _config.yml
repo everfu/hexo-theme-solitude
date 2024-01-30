@@ -483,6 +483,10 @@ moments:
   bundlejs: https://cdn.cbd.int/solitude-source/js/moment/bundle.min.js # 鱼塘js / Fish pond js
   randompostjs: https://cdn.cbd.int/solitude-source/js/moment/random_post.min.js # 鱼塘js / Fish pond js
 
+# 相册
+# album
+album: false # 是否开启相册 / Whether to enable album
+
 # -------------------------
 # 文章页、页面配置
 # post、page settings

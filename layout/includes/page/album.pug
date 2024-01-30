@@ -1,0 +1,55 @@
+include ../widgets/page/banner
+
+- var gallery = site.data.gallery.gallery
+- var album = gallery.find(item => item.album = page.album)
+
+if album
+    #album
+        #sco-container
+            if album.json
+                script.
+                    function initGallery() {
+                        let macy = Macy({ container: '#sco-container', trueOrder: false, waitForImages: true, margin: 5, columns: 6, breakAt: { 1200: 5, 940: 3, 520: 2, 400: 1 }})
+                        macy.runOnImageLoad(function () {
+                            setTimeout(function () {
+                                GLOBAL_CONFIG.lightbox && utils.lightbox(document.querySelectorAll(".sco-gallery-item img"));
+                                macy.recalculate(true)
+                            }, 500);
+                        }, true)
+                    }
+                    (async function () {
+                        await fetch('!{url_for(album.json)}')
+                            .then(res => res.json())
+                            .then(data => {
+                                let html = ''
+                                data = data.sort((a, b) => b.date - a.date)
+                                data.forEach(item => {
+                                    html += `
+                                            <div class="sco-gallery-item">
+                                                <span class="locate">${item.locate}</span>
+                                                <img class="sco-gallery-image" src="${item.image}" alt="${item.content}">
+                                            </div>
+                                        `
+                                })
+                                document.querySelector('#sco-container').innerHTML = html
+                                GLOBAL_CONFIG.lazyload.enable && utils.lazyloadImg();
+                                initGallery()
+                            })
+                    })()
+
+            else
+                each item in album.items.sort((a, b) => b.date - a.date)
+                    .sco-gallery-item
+                        span.locate= item.locate
+                        img.sco-gallery-image(src=item.image, alt=item.content)
+                script.
+                    function initGallery(){
+                        let macy = Macy({ container: '#sco-container', trueOrder: false, waitForImages: true, margin: 5, columns: 6, breakAt: { 1200: 5, 940: 3, 520: 2, 400: 1 }})
+                        macy.runOnImageLoad(function () {
+                            setTimeout(function () {
+                                GLOBAL_CONFIG.lightbox && utils.lightbox(document.querySelectorAll(".sco-gallery-item img"));
+                                macy.recalculate(true)
+                            }, 500);
+                        }, true)
+                    }
+                    document.addEventListener('DOMContentLoaded', initGallery);
