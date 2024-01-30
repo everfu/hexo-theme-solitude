@@ -5,7 +5,7 @@ include ../widgets/page/banner
 if theme.album && gallery
     #gallery
         each item in gallery
-            .gallery-item(onclick="pjax.loadUrl('/" + item.album + "')")
+            .gallery-item(onclick="pjax.loadUrl('/" + item.album + "/')")
                 img.cover(src=item.cover)
                 span.title= item.class_name
                 span.desc= item.descr
