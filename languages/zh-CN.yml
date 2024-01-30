@@ -70,7 +70,7 @@ search:
 
 head:
   noscript: 开启JavaScript才能访问本站哦~
-  console: '程序：Hexo | 主题：Hexo-Theme-Solitude | 作者：王卓Sco、亦封 | Github: https://github.com/DuoSco/Hexo-theme-solitude | 版本：v1.4.1 😄'
+  console: '程序：Hexo | 主题：Hexo-Theme-Solitude | 作者：王卓Sco、亦封 | Github: https://github.com/DuoSco/Hexo-theme-solitude | 版本：v1.4.2 😄'
 
 aside:
   postcount: '文章总数 :'
@@ -92,6 +92,7 @@ console:
   tag_title: 寻找感兴趣的领域
   switch_darkmode: 昼夜切换
   switch_hideAside: 边栏显示控制
+  switch_keyboard: 键盘快捷键
   switch_music: 音乐开关
   archive_unit: 篇
 

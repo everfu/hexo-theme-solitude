@@ -1,15 +1,20 @@
-div#algolia-search
-    div.search-dialog
-        div.search-dialog__title#algolia-search-title=__('nav.search')
-        div#algolia-input-panel
-            div#algolia-search-input
-        div#search-results
-            div#algolia-hits
-        div#algolia-tips
-            div#algolia-pagination
-            div#algolia-stats
-            i.scoicon.sco-algolia-fill
-            span.algolia-tips-text='Algolia 提供搜索服务'
-        span.search-close-button
-            i.scoicon.sco-close-fill
-    div#search-mask
+#algolia-search
+    .search-dialog
+        .algolia-navbar
+            .search-dialog__title#algolia-search-title=__('nav.search')
+            .algolia-tips
+                i.scoicon.sco-algolia-fill
+                span.algolia-tips-text='Algolia'
+            span.search-close-button
+                i.scoicon.sco-close-fill
+        #algolia-input-panel
+            #algolia-search-input
+        #search-results
+            #algolia-hits
+                each tag in theme.search.tags || []
+                    a.tag-list(href='/tags/' + tag + '/')=tag
+
+        #algolia-tips
+            #algolia-pagination
+            #algolia-stats
+    #search-mask

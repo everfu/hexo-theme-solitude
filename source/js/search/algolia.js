@@ -1,8 +1,10 @@
+let openSearch
+
 window.addEventListener("load", () => {
     const $searchMask = document.getElementById("search-mask");
     const $searchDialog = document.querySelector("#algolia-search .search-dialog");
 
-    const openSearch = () => {
+    openSearch = () => {
         utils.animateIn($searchMask, "to_show 0.5s");
         $searchDialog.style.display = "block";
         setTimeout(() => {
@@ -68,7 +70,7 @@ window.addEventListener("load", () => {
     });
 
     const configure = instantsearch.widgets.configure({
-        hitsPerPage: algolia.hits.per_page ?? 5,
+        hitsPerPage: algolia.hits.per_page || 5,
     });
 
     const searchBox = instantsearch.widgets.searchBox({

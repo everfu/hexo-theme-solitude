@@ -1,0 +1,11 @@
+include ../widgets/page/banner
+
+- var gallery = site.data.gallery.gallery
+
+if theme.album.enable && gallery
+    #gallery
+        each item in gallery
+            .gallery-item(onclick="pjax.loadUrl('/" + item.album + "/')")
+                img.cover(src=item.cover)
+                span.title= item.class_name
+                span.desc= item.descr

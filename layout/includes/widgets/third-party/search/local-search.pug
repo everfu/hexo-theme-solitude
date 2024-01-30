@@ -8,6 +8,9 @@
             div.search-box
                 input.search-box-input#search-input(type="text", autocomplete="off", spellcheck="false", autocorrect="off", autocapitalize="off", placeholder=__('search.placeholder'))
             div#search-results
+                #search-hits
+                    each tag in theme.search.tags || []
+                        a.tag-list(href='/tags/' + tag + '/')=tag
             div#search-pagination
             div#search-tips
     div#search-mask

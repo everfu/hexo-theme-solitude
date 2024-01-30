@@ -4,6 +4,10 @@
 // 手机端侧边栏
 @import "_mixins/sidebar.styl"
 
+// keyboard（键盘）
+if hexo-config('keyboard.enable')
+  @import "_mixins/keyboard.styl"
+
 // article-sort （归档）
 @import "_mixins/article-sort.styl"
 

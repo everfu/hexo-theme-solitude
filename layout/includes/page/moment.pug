@@ -1,0 +1,28 @@
+include ../widgets/page/banner
+if theme.moments.angle
+    include ../widgets/page/moments/angle
+
+.title-h2-a
+    .title-h2-a-left
+        h2(style="padding-top: 0;margin:0.6rem 0 0.6rem;") 🐟 鱼塘
+    .title-h2-a-right
+        span 以下内容自动生成，未经过审核
+
+div#hexo-circle-of-friends-root
+script.
+    let UserConfig = {
+        // 填写你的api地址
+        private_api_url: '!{theme.moments.api}',
+        // 默认加载文章数
+        page_init_number: !{theme.moments.page_init_number},
+        // 点击加载更多时，一次最多加载几篇文章，默认10
+        page_turning_number: !{theme.moments.page_turning_number},
+        // 头像加载失败时，默认头像地址
+        error_img: '!{theme.moments.error_img}',
+        // 进入页面时第一次的排序规则
+        sort_rule: '!{theme.moments.sort_rule}',
+        // 本地文章缓存数据过期时间（天）
+        expire_days: !{theme.moments.expire_days},
+    }
+script(src=url_for(theme.moments.appjs))
+script(src=url_for(theme.moments.bundlejs))

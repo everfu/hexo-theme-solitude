@@ -15,6 +15,10 @@ html(lang=config.language, data-theme="light")
         // sidebar
         include ./sidebar.pug
 
+        // keyboard
+        if theme.keyboard.enable
+            include ./keyboard.pug
+
         #body-wrap(class = is_post() ? 'post' : 'page')
             include ./header.pug
 
