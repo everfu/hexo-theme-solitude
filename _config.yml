@@ -485,7 +485,9 @@ moments:
 
 # 相册
 # album
-album: false # 是否开启相册 / Whether to enable album
+album:
+  enable: false # 是否开启相册 / Whether to enable album
+  limit: 6 # 单行显示图片数量 / Number of pictures displayed in a single line
 
 # -------------------------
 # 文章页、页面配置

@@ -3,7 +3,7 @@
 div
     script(src=url_for(theme.cdn.main))
 
-    if theme.album
+    if theme.album.enable
         script(src=url_for(theme.cdn.macy_js))
 
     mixin katex
@@ -106,7 +106,7 @@ div
             != item
 
 div#js-pjax
-    if page.type === 'album' && theme.album
+    if page.type === 'album' && theme.album.enable
         script.
             initGallery()
     if page.type === 'says' && theme.says.enable
