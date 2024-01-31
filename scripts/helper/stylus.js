@@ -22,5 +22,7 @@ hexo.extend.filter.register('stylus:renderer', function (style) {
 
     if (data && data.about) {
         style.define('about', Object.keys(data.about));
+    } else {
+        style.define('about', []);
     }
 });
