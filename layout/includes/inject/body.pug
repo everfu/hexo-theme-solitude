@@ -6,6 +6,10 @@ div
     if theme.album.enable
         script(src=url_for(theme.cdn.macy_js))
 
+    if theme.rightside.enable
+        include ../widgets/rightside/index
+        script(src=url_for(theme.cdn.rightside_js))
+
     if theme.translate.enable
         script(src=url_for(theme.cdn.translate))
 
@@ -39,10 +43,6 @@ div
             script(src=url_for(theme.cdn.fancyapps_ui))
     if theme.says.home_mini
         script(src=url_for(theme.cdn.swiper_js))
-
-    if theme.rightside.enable
-        include ../widgets/rightside/index
-        script(src=url_for(theme.cdn.rightside_js))
 
     // post-ai)
     if theme.post_ai.enable

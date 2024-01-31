@@ -11,75 +11,77 @@ div#rightMenu
     div.rightMenu-group.rightMenu-line.rightMenuPlugin
         div.rightMenu-item#menu-copytext
             i.scoicon.sco-copy-fill
-            span 复制选中文本
+            span= _p('rightmenu.copytext')
         div.rightMenu-item#menu-pastetext
             i.scoicon.sco-clipboard-fill
-            span 粘贴文本
+            span= _p('rightmenu.pastetext')
         if theme.comment.enable
             a.rightMenu-item#menu-commenttext
                 i.scoicon.sco-chat-new-fill
-                span 引用到评论
+                span= _p('rightmenu.commenttext')
         div.rightMenu-item#menu-newwindow
             i.scoicon.sco-window-fill
-            span 新窗口打开
+            span= _p('rightmenu.newwindow')
         div.rightMenu-item#menu-copylink
             i.scoicon.sco-link-line
-            span 复制链接地址
+            span= _p('rightmenu.copylink')
         div.rightMenu-item#menu-copyimg
             i.scoicon.sco-copy-fill
-            span 复制此图片
+            span= _p('rightmenu.copyimg')
         div.rightMenu-item#menu-downloadimg
             i.scoicon.sco-download-cloud-fill
-            span 下载此图片
+            span= _p('rightmenu.downloadimg')
         div.rightMenu-item#menu-search
             i.scoicon.sco-search-line
-            span 站内搜索
-        div.rightMenu-item#menu-searchBaidu
-            i.scoicon.sco-baidu-fill
-            span 百度搜索
+            span= _p('rightmenu.search')
         div.rightMenu-item#menu-music-toggle
             i.scoicon.sco-play-fill
-            span 播放音乐
+            span= _p('rightmenu.music.toggle')
         div.rightMenu-item#menu-music-back
             i.scoicon.sco-skip-back-fill
-            span 切换到上一首
+            span= _p('rightmenu.music.back')
         div.rightMenu-item#menu-music-forward
             i.scoicon.sco-skip-forward-fill
-            span 切换到下一首
+            span= _p('rightmenu.music.forward')
         div.rightMenu-item#menu-music-playlist(onclick=`window.open('${theme.capsule.server === 'tencent' ? `https://y.qq.com/n/ryqq/playlist/${theme.capsule.id}` : `https://music.163.com/#/playlist?id=${theme.capsule.id}`}', '_blank');`)
             i.scoicon.sco-play-list-2-line
-            span 查看所有歌曲
+            span= _p('rightmenu.music.playlist')
         div.rightMenu-item#menu-music-copyMusicName
             i.scoicon.sco-copy-fill
-            span 复制歌名
+            span= _p('rightmenu.music.copyMusicName')
     div.rightMenu-group.rightMenu-line.rightMenuOther
         a.rightMenu-item.menu-Link#menu-randomPost
             i.scoicon.sco-signal-tower-fill
-            span 随便逛逛
+            span= _p('rightmenu.randomPost')
         a.rightMenu-item.menu-link(href="/categories/")
             i.scoicon.sco-checkbox-multiple-blank-fill
-            span 博客分类
+            span= _p('rightmenu.categories')
         a.rightMenu-item.menu-link(href="/tags/")
             i.scoicon.sco-price-tag-fill
-            span 文章标签
+            span= _p('rightmenu.tags')
     div.rightMenu-group.rightMenu-line.rightMenuOther
         div.rightMenu-item#menu-copy
             i.scoicon.sco-external-link-fill
-            span 复制地址
+            span= _p('rightmenu.copyaddress')
         if  theme.comment.enable && theme.comment.commentBarrage
             div.rightMenu-item#menu-commentBarrage
                 i.scoicon.sco-chat-fill
-                span.menu-commentBarrage-text 关闭热评
+                span.menu-commentBarrage-text= _p('rightmenu.commentBarrage')
         div.rightMenu-item#menu-darkmode
             i.scoicon.sco-moon-clear-fill
-            span.menu-darkmode-text 深色模式
+            case theme.display_mode.type
+                when 'auto'
+                when 'light'
+                    span.menu-darkmode-text= _p('rightmenu.dark')
+                when 'dark'
+                    span.menu-darkmode-text= _p('rightmenu.light')
         if theme.translate.enable
             div.rightMenu-item#menu-translate
                 case theme.translate.defaultEncoding
                     when 2
                         i.scoicon.sco-panben-line
-                        span 轉為繁體
+                        span= _p('rightmenu.chs_to_cht')
                     when 1
                         i.scoicon.sco-jianben-line
-                        span 转为简体
+                        span= _p('rightmenu.cht_to_chs')
 div#rightmenu-mask
