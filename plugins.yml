@@ -94,7 +94,11 @@ scoicon_css:
 waterfall:
   name: solitude-source
   file: js/waterfall.min.js
-  version: 1.0.3
+  version: 1.0.5
+universe_js:
+  name: solitude-source
+  file: js/universe.min.js
+  version: 1.0.5
 medium_zoom:
   name: medium-zoom
   file: dist/medium-zoom.min.js

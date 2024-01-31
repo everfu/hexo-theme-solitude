@@ -28,7 +28,7 @@ case theme.says.style
                                                     <i class="scoicon sco-calendar-todo-fill"></i>
                                                     <time class="datetime" datetime="${item.date}"></time>
                                                 </div>
-                                                ${item.link ? `<a class="bber-content-link" href="${item.link}" title="跳转到短文指引的链接"><i class="scoicon sco-link-m-line"></i>链接</a>` : ''}
+                                                ${item.link ? `<a class="bber-content-link" href="${item.link}" title="跳转到短文指引的链接" target="_blank"><i class="scoicon sco-link-m-line"></i>链接</a>` : ''}
                                             </div>
                                             ${item.content ? `<a class="bber-reply goComment" onclick="sco.toTalk('${item.content}')"><i class="scoicon sco-chat-fill" style="font-size: 1rem;"></i></a>` : ''}
                                         </div>
