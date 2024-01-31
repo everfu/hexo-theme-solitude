@@ -1,19 +1,24 @@
 #gallery
-  width 100%
+  padding 16px 0
   display flex
   flex-wrap wrap
-  justify-content start
-  padding 10px 0
+  -webkit-box-pack start
+  justify-content flex-start
+  margin -8px
+  -webkit-box-align stretch
+  align-items stretch
 
   .gallery-item
     overflow hidden
     border var(--style-border-always)
     border-radius 12px
     position relative
+    float left
     display flex
     height 250px
-    width calc(100% / 3 - 10px)
+    width calc(100% / 3 - 16px)
     cursor pointer
+    margin 8px
 
     &:hover
       .cover

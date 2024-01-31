@@ -90,7 +90,7 @@ snackbar:
 scoicon_css:
   name: solitude-source
   file: icon/scoicon.min.css
-  version: 1.0.3
+  version: 1.0.5
 waterfall:
   name: solitude-source
   file: js/waterfall.min.js
