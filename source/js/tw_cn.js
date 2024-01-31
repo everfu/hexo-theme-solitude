@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', function () {
         saveToLocal.set(targetEncodingCookie, targetEncoding, 2);
         translateBody();
         if (isSnackbar) utils.snackbarShow(isTargetEncodingOne ? snackbarData.cht_to_chs : snackbarData.chs_to_cht);
-        translateButtonObject && ((translateButtonObject.innerHTML = isTargetEncodingOne ? msgToTraditionalChinese : msgToSimplifiedChinese) || rm.hideRightMenu())
+        translateButtonObject && ((translateButtonObject.innerHTML = isTargetEncodingOne ? msgToTraditionalChinese : msgToSimplifiedChinese) && rm.hideRightMenu())
     }
 
     const translateChar = (cc, source, target) => {
