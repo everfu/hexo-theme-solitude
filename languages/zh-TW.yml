@@ -14,6 +14,10 @@ time:
   daybefore: 天前
   runtime: 天
 
+chs:
+  chs_tw: 繁體中文
+  chs_cn: 簡體中文
+
 page:
   tag: 標籤
   category: 分類

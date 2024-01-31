@@ -13,6 +13,10 @@ time:
   daybefore: Days ago
   runtime: days
 
+chs:
+  chs_tw: Traditional Chinese
+  chs_cn: Simplified Chinese
+
 page:
   tag: Tags
   category: Categories

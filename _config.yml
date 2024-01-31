@@ -729,6 +729,15 @@ fancybox: true
 # mediumZoom
 mediumZoom: false
 
+# 简繁转换
+# Simplified and Traditional Chinese conversion
+translate:
+  enable: false
+  # the language of website (1 - Traditional Chinese/ 2 - Simplified Chinese）
+  defaultEncoding: 2
+  # Time delay
+  translateDelay: 0
+
 # Open Graph
 # https://ogp.me/
 # https://developers.facebook.com/docs/sharing/webmasters/

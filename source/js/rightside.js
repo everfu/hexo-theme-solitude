@@ -299,6 +299,11 @@ function addRightMenuClickEvent() {
         menuCommentBarrage.addEventListener('click', sco.switchCommentBarrage);
     }
 
+    GLOBAL_CONFIG.translate && document.getElementById('menu-translate').addEventListener('click', function() {
+        rm.hideRightMenu();
+        translatePage();
+    });
+
     var rightmenuMask = document.getElementById('rightmenu-mask');
     rightmenuMask.addEventListener('click', rm.hideRightMenu);
     rightmenuMask.addEventListener('contextmenu', function () {
@@ -314,7 +319,7 @@ function addRightMenuClickEvent() {
         utils.snackbarShow("复制成功，复制和转载请标注本文地址");
     });
 
-    document.getElementById('menu-commenttext').addEventListener('click', function () {
+    GLOBAL_CONFIG.comment.enable && document.getElementById('menu-commenttext').addEventListener('click', function () {
         rm.rightMenuCommentText(selectTextNow);
     });
 

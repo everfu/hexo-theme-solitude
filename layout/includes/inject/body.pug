@@ -6,6 +6,9 @@ div
     if theme.album.enable
         script(src=url_for(theme.cdn.macy_js))
 
+    if theme.translate.enable
+        script(src=url_for(theme.cdn.translate))
+
     mixin katex
         link(rel="stylesheet", href=url_for(theme.cdn.katex))
         if theme.katex.copytex
