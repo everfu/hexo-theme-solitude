@@ -62,7 +62,7 @@ nav:
   #          icon: https://bu.dusays.com/2023/11/08/654af68b25bb8.jpg
   #          # 点击的跳转链接
   #          # Click the jump link
-  #          url: https://github.com/DuoSco/Hexo-Theme-solitude
+  #          url: https://github.com/wleelw/Hexo-Theme-solitude
 
   # 导航栏内容
   # Navigation bar content
@@ -312,7 +312,7 @@ aside:
   #        # 图标
   #        icon: scoicon sco-github-line
   #        # 跳转链接
-  #        url: https://github.com/DuoSco/Hexo-Theme-slitude
+  #        url: https://github.com/wleelw/Hexo-Theme-slitude
   #      Bilibili:
   #        icon: scoicon sco-bilibili-line
   #        url: https://space.bilibili.com/1329819902

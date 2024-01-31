@@ -1,0 +1,118 @@
+# Language: 繁體中文 (台灣)
+theme:
+  dark: 已切換至深色模式
+  light: 已切換至淺色模式
+
+copy:
+  success: 複製成功
+  error: 複製失敗
+
+time:
+  recent: 最近
+  yesterday: 昨天
+  berforeyesterday: 前天
+  daybefore: 天前
+  runtime: 天
+
+page:
+  tag: 標籤
+  category: 分類
+  tags: 全部標籤
+  categories: 全部分類
+  archives: 文章
+  404: 頁面沒有找到
+
+nav:
+  site_name_title: 返回博客主頁
+  backtop: 返回頂部
+  travellings: 開往-友鏈接力
+  search: 搜索
+  randompost: 隨機一篇文章
+  console: 中控台
+
+home:
+  bannertext: 隨便逛逛
+  categoryBar:
+    home: 首頁
+    more: 更多
+  recent-post:
+    sticky: 置頂
+    new: 最新
+    read: 未讀
+  top-group:
+    recommend: 荐
+    recommendmore: 更多推薦
+
+post:
+  meta_reprint: 轉載或翻譯
+  meta_original: 原創
+  meta_cc: 該文章為${cc}文章，注意版權協議
+  meta_posted: 發布於
+  meta_updated: 最後更新於
+  meta_wordcount: 文章字數
+  meta_minread: 閱讀耗時
+  meta_ip: 作者IP歸屬地為
+  meta_pv: 文章熱度
+  meta_comment: 評論數
+
+award:
+  wechat: 微信
+  alipay: 支付寶
+  about:
+    tip: 致謝
+    tip1: 贊助作者
+    tip2: 感謝你賜予我前進的力量
+    title: 贊助作者
+
+search:
+  empty: 找不到你查詢的內容：${query}
+  hit: 找到 ${hits} 條結果，用時 ${time} 毫秒
+  placeholder: 輸入關鍵詞快速查找
+
+head:
+  noscript: 開啟JavaScript才能訪問本站哦~
+  console: '程式：Hexo |主題：Hexo-Theme-Solitude |作者：王卓Sco、亦封 |Github位址： https://github.com/wleelw/Hexo-theme-solitude |版本：v1.4.3 😄'
+
+aside:
+  postcount: '文章數：'
+  pv: '瀏覽量：'
+  uv: '訪客數：'
+  runtime: '運行時間：'
+  updatetime: '最後更新：'
+  wordcount: '字數統計：'
+  toc: 文章目錄
+  tagmore: 查看全部
+  avatar: 头像
+  sticker: 心情贴纸
+  newpost: 最近发布
+
+console:
+  comment_tip: 互動
+  comment_title: 評論
+  tag_tip: 標籤
+  tag_title: 標籤
+  switch_darkmode: 昼夜切換
+  switch_hideAside: 边栏显示控制
+  switch_keyboard: 鍵盤快捷鍵
+  switch_music: 音樂開關
+  archive_unit: 篇
+
+sidebar:
+  title1: 功能
+  title2: 標籤
+  darkmode: 顯示模式
+
+footer:
+  description: 來自${title}的文章
+  learnmore: 了解更多
+  randomlink: 友鏈
+  rss: 訂閱
+  theme: 主題
+
+cookies:
+  title: 協議提醒助手
+  tip: 查看本站為你的個人隱私做出的努力
+  privacy: 本站如何保護你的隱私
+
+music:
+  hit: 音樂已暫停
