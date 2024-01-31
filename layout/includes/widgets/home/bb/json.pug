@@ -17,6 +17,7 @@ script.
                     return `<div class="li-style swiper-slide">${content}</div>`;
                 }).join('');
 
-                sco.initbbtalk();
+                document.addEventListener('DOMContentLoaded', sco.initbbtalk)
+                document.addEventListener('pjax:complete', sco.initbbtalk)
             }).catch(err => console.log('bbtime |', err));
     }();
