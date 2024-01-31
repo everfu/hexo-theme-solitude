@@ -41,11 +41,10 @@ document.addEventListener('DOMContentLoaded', function () {
         const isTargetEncodingOne = targetEncoding === 1;
         currentEncoding = isTargetEncodingOne ? 1 : 2;
         targetEncoding = isTargetEncodingOne ? 2 : 1;
-        translateButtonObject.innerHTML = isTargetEncodingOne ? msgToTraditionalChinese : msgToSimplifiedChinese;
+        translateButtonObject && (translateButtonObject.innerHTML = isTargetEncodingOne ? msgToTraditionalChinese : msgToSimplifiedChinese);
         saveToLocal.set(targetEncodingCookie, targetEncoding, 2);
         translateBody();
         if (isSnackbar) utils.snackbarShow(isTargetEncodingOne ? snackbarData.cht_to_chs : snackbarData.chs_to_cht);
-        rm.hideRightMenu();
     }
 
     const translateChar = (cc, source, target) => {
@@ -68,6 +67,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 translateButtonObject.innerHTML = targetEncoding === 1 ? msgToSimplifiedChinese : msgToTraditionalChinese;
             }
             translateButtonObject.addEventListener('click', translatePage, false);
+            rm.hideRightMenu();
         }
     }
 
