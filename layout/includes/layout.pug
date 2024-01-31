@@ -5,6 +5,10 @@ html(lang=config.language, data-theme="light")
     head
         include ./head.pug
     body#body(data-type=page.type)
+        // universe
+        if theme.display_mode.universe
+            canvas#universe
+
         // loading
         if theme.loading.fullpage
             include ./loading.pug

@@ -54,6 +54,11 @@ hexo.extend.filter.register('before_generate', () => {
             file: 'js/music.js',
             version
         },
+        translate:{
+            name: 'hexo-theme-solitude',
+            file: 'js/tw_cn.js',
+            version
+        },
         sco_ai_js: {
             name: 'hexo-theme-solitude',
             file: 'js/sco-ai.min.js',

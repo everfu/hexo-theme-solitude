@@ -1,40 +1,42 @@
 - var skills = site.data.about.skills
 - var careers = site.data.about.careers
 
-if skills || caches
+if skills || careers
     .author-content
-        .author-content-item.skills
-            .card-content
-                .author-content-item-tips= skills.title
-                span.author-content-item-title= skills.subtitle
-                .skills-style-group
-                    .tags-group-all
-                        .tags-group-wrapper
-                            each i in [1,2]
-                                - var pair = []
-                                each tag, index in skills.tags
-                                    - pair.push(tag)
-                                    if pair.length === 2 || index === skills.tags.length - 1
-                                        .tags-group-icon-pair
-                                            each item in pair
-                                                .tags-group-icon(style=`background:${item.color}`)
-                                                    img(src=item.icon, title=item.title)
-                                        - pair = []
-                    .skills-list
-                        each tag in skills.tags
-                            .skill-info
-                                .skill-icon(style=`background:${tag.color}`)
-                                    img(src=tag.icon, title=tag.title)
-                                .skill-name
-                                    span= tag.title
-                        .etc ...
-        .author-content-item.careers
-            .card-content
-                .author-content-item-tips= careers.title
-                span.author-content-item-title= careers.subtitle
-                .careers-group
-                    each item in careers.items
-                        .careers-item
-                            .circle(style=`background:${item.color}`)
-                            .name= `${item.school}, ${item.major}`
-                img.author-content-img(src=careers.image, alt=careers.title)
+        if skills
+            .author-content-item.skills
+                .card-content
+                    .author-content-item-tips= skills.title
+                    span.author-content-item-title= skills.subtitle
+                    .skills-style-group
+                        .tags-group-all
+                            .tags-group-wrapper
+                                each i in [1,2]
+                                    - var pair = []
+                                    each tag, index in skills.tags
+                                        - pair.push(tag)
+                                        if pair.length === 2 || index === skills.tags.length - 1
+                                            .tags-group-icon-pair
+                                                each item in pair
+                                                    .tags-group-icon(style=`background:${item.color}`)
+                                                        img(src=item.icon, title=item.title)
+                                            - pair = []
+                        .skills-list
+                            each tag in skills.tags
+                                .skill-info
+                                    .skill-icon(style=`background:${tag.color}`)
+                                        img(src=tag.icon, title=tag.title)
+                                    .skill-name
+                                        span= tag.title
+                            .etc ...
+        if careers
+            .author-content-item.careers
+                .card-content
+                    .author-content-item-tips= careers.title
+                    span.author-content-item-title= careers.subtitle
+                    .careers-group
+                        each item in careers.items
+                            .careers-item
+                                .circle(style=`background:${item.color}`)
+                                .name= `${item.school}, ${item.major}`
+                    img.author-content-img(src=careers.image, alt=careers.title)

@@ -13,6 +13,10 @@ time:
   daybefore: Days ago
   runtime: days
 
+chs:
+  chs_tw: Traditional Chinese
+  chs_cn: Simplified Chinese
+
 page:
   tag: Tags
   category: Categories
@@ -71,7 +75,7 @@ search:
 
 head:
   noscript: Please enable JavaScript to view the site
-  console: 'Program: Hexo | Theme: Hexo-Theme-Solitude | Author: WangZhuoSco、YiFeng | Github: https://github.com/DuoSco/Hexo-theme-solitude | Version: v1.4.2 😄'
+  console: 'Program: Hexo | Theme: Hexo-Theme-Solitude | Author: WangZhuoSco、YiFeng | Github: https://github.com/wleelw/Hexo-theme-solitude | Version: v1.4.3 😄'
 
 aside:
   postcount: 'Posts :'
@@ -116,3 +120,28 @@ cookies:
 
 music:
   hit: Paused
+
+rightmenu:
+  copytext: Copy the selected
+  pastetext: Paste the text
+  commenttext: Quote to comment
+  newwindow: A new window opens
+  copylink: Copy the link address
+  copyimg: Copy this image
+  downloadimg: Download this image
+  search: Search on the site
+  music:
+    toggle: Play music
+    back: Switch to the previous track
+    forward: Switch to the next track
+    playlist: See all songs
+    copyMusicName: Reproduction Song Name
+  randomPost: Feel free to wander around
+  categories: Article classification
+  tags: Article tags
+  copyaddress: Copy the address
+  commentBarrage: Turn off trending reviews
+  dark: Dark
+  light: Light
+  chs_to_cht: Traditional
+  cht_to_chs: Simplified

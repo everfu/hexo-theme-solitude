@@ -36,7 +36,7 @@ each item in site.data.essay.essay_list.slice(0, theme.says.strip)
                         i.scoicon.sco-calendar-todo-fill
                         time.datetime(datetime=moment(item.date).format())
                     if item.link
-                        a.bber-content-link(href=url_for(item.link) title="跳转到短文指引的链接")
+                        a.bber-content-link(href=url_for(item.link) title="跳转到短文指引的链接" target="_blank")
                             i.scoicon.sco-link-m-line
                             | 链接
                 if item.content

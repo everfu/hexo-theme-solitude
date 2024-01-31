@@ -22,6 +22,14 @@
         }
     }
 
+    let translate = 'undefined';
+    if (theme.translate && theme.translate.enable) {
+        translate = JSON.stringify({
+            defaultEncoding: theme.translate.defaultEncoding,
+            translateDelay: theme.translate.translateDelay,
+        })
+    }
+
     const commentInfoStart = theme.comment.randomInfoStart.map(item => `"${item}"`) || ""
     const commentInfoEnd = theme.comment.randomInfoEnd.map(item => `"${item}"`) || ""
     var sayhello2 = theme.aside.card.sayhello2.map(item => `"${item}"`) || []
@@ -64,6 +72,10 @@ script.
                 empty: '!{_p('search.empty')}',
                 hit: '!{_p('search.hit')}',
                 placeholder: '!{_p('search.placeholder')}',
+            },
+            chs: {
+                chs_to_cht: '!{_p('chs.chs_tw')}',
+                cht_to_chs: '!{_p('chs.chs_cn')}',
             }
         },
         aside: {
@@ -93,7 +105,7 @@ script.
                 url: '!{theme.comment.waline.envId}',
             }
         },
-        lightbox: '!{ theme.mediumZoom ? "mediumZoom" : (theme.fancybox ? "fancybox" : "null" )}',
+        lightbox: '!{ theme.mediumZoom ? "mediumZoom" : (theme.fancybox ? "fancybox" : "null")}',
         rightside: {
             enable: !{theme.rightside.enable}
         },
@@ -105,5 +117,6 @@ script.
         },
         music: {
             enable: !{theme.music.enable},
-        }
+        },
+        translate: !{translate},
     }

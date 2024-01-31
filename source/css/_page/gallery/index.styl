@@ -1,19 +1,24 @@
 #gallery
-  width 100%
+  padding 16px 0
   display flex
   flex-wrap wrap
-  justify-content start
-  padding 10px 0
+  -webkit-box-pack start
+  justify-content flex-start
+  margin -8px
+  -webkit-box-align stretch
+  align-items stretch
 
   .gallery-item
     overflow hidden
     border var(--style-border-always)
     border-radius 12px
     position relative
+    float left
     display flex
     height 250px
-    width calc(100% / 3 - 10px)
+    width calc(100% / 3 - 16px)
     cursor pointer
+    margin 8px
 
     &:hover
       .cover
@@ -65,7 +70,7 @@
       text-wrap break-word
 
 #album
-  margin 22px auto 0
+  margin 5px auto
 
   .locate
     display flex
@@ -81,14 +86,12 @@
     z-index 1
     user-select none
 
-  #sco-container 
-    margin-top 22px
-
   .sco-gallery-item
     margin-bottom 24px
     overflow hidden
     border-radius 8px
     transition all .3s
+    border var(--style-border-always)
 
   .sco-gallery-image
     width 100%

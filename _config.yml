@@ -62,7 +62,7 @@ nav:
   #          icon: https://bu.dusays.com/2023/11/08/654af68b25bb8.jpg
   #          # 点击的跳转链接
   #          # Click the jump link
-  #          url: https://github.com/DuoSco/Hexo-Theme-solitude
+  #          url: https://github.com/wleelw/Hexo-Theme-solitude
 
   # 导航栏内容
   # Navigation bar content
@@ -312,7 +312,7 @@ aside:
   #        # 图标
   #        icon: scoicon sco-github-line
   #        # 跳转链接
-  #        url: https://github.com/DuoSco/Hexo-Theme-slitude
+  #        url: https://github.com/wleelw/Hexo-Theme-slitude
   #      Bilibili:
   #        icon: scoicon sco-bilibili-line
   #        url: https://space.bilibili.com/1329819902
@@ -617,6 +617,7 @@ theme_color:
 # --------------------------------------
 display_mode:
   type: auto # auto: 自动切换 / dark: 暗色模式 / light: 亮色模式 / auto: automatic switching / dark: dark mode / light: light mode
+  universe: true # 开启后暗色模式下会显示星空背景 / After opening, the dark mode will display the starry sky background
 
 # --------------------------------------
 # Footer Settings
@@ -728,6 +729,15 @@ fancybox: true
 
 # mediumZoom
 mediumZoom: false
+
+# 简繁转换
+# Simplified and Traditional Chinese conversion
+translate:
+  enable: false
+  # the language of website (1 - Traditional Chinese/ 2 - Simplified Chinese）
+  defaultEncoding: 2
+  # Time delay
+  translateDelay: 0
 
 # Open Graph
 # https://ogp.me/
@@ -911,7 +921,7 @@ CDN:
   option:
     scoicon_css: https://cdn.cbd.int/solitude-source/icon/scoicon.min.css
     waterfall: https://cdn.cbd.int/solitude-source/js/waterfall.min.js
-    view_image: https://cdn.cbd.int/solitude-source/js/view-image.min.js
+    universe_js: https://cdn.cbd.int/solitude-source/js/universe.min.js
 #    algolia_search:
 #    instantsearch:
 #    pjax:

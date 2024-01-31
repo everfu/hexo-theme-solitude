@@ -1,13 +1,12 @@
 hexo.extend.filter.register('stylus:renderer', function (style) {
     const {config, theme} = this
+    const data = hexo.locals.get('data');
 
-    // 侧边栏标签高亮
     if (theme.config.aside.tags.highlight) {
         let array = theme.config.aside.tags.list.map(item => encodeURIComponent(item));
         style.define('highlightTags', array);
     }
 
-    // 侧边栏加载样式控制
     let aside = [
         theme.config.aside.home.noSticky,
         theme.config.aside.home.Sticky,
@@ -17,7 +16,13 @@ hexo.extend.filter.register('stylus:renderer', function (style) {
         theme.config.aside.page.noSticky
     ].join(',').split(',');
     let uniqueArr = [...new Set(aside)]; // 去重
-    if (uniqueArr.length > 0) { // 是否为空
+    if (uniqueArr.length > 0) {
         style.define('aside', uniqueArr);
+    }
+
+    if (data && data.about) {
+        style.define('about', Object.keys(data.about));
+    } else {
+        style.define('about', []);
     }
 });

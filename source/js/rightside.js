@@ -1,64 +1,36 @@
 let rm = {};
-
+const addEvent = (element, event, callback) => element.addEventListener(event, callback);
 rm.stopdragimg = Array.from(document.getElementsByTagName('img'));
-rm.stopdragimg.forEach(function (img) {
-    img.addEventListener('dragstart', function () {
-        return false;
-    });
-});
-
+rm.stopdragimg.forEach(img => addEvent(img, 'dragstart', () => false));
 rm.showRightMenu = function (e, n = 0, t = 0) {
     let o = document.getElementById('rightMenu');
     o.style.top = n + 'px';
     o.style.left = t + 'px';
-
-    if (e) {
-        o.style.display = 'block';
-        stopMaskScroll();
-    } else {
-        o.style.display = 'none';
-    }
+    o.style.display = e ? 'block' : 'none';
+    e ? stopMaskScroll() : document.getElementById('rightmenu-mask').style.display = 'none';
 };
-
-rm.hideRightMenu = function () {
-    rm.showRightMenu(false);
-    document.getElementById('rightmenu-mask').style.display = 'none';
-};
-
-document.querySelector("#rightMenu").style.display = "block"
-rmWidth = document.querySelector("#rightMenu").offsetWidth;
-rmHeight = document.querySelector("#rightMenu").offsetHeight;
-document.querySelector("#rightMenu").style.display = 'none'
-
 rm.reloadrmSize = function () {
-    document.querySelector("#rightMenu").style.display = "block"
-    rmWidth = document.querySelector("#rightMenu").offsetWidth;
-    rmHeight = document.querySelector("#rightMenu").offsetHeight;
-    document.querySelector("#rightMenu").style.display = 'none'
+    let menu = document.querySelector("#rightMenu");
+    menu.style.display = "block";
+    rmWidth = menu.offsetWidth;
+    rmHeight = menu.offsetHeight;
+    menu.style.display = 'none';
 }
-
-let domhref = "", domImgSrc = "", globalEvent = null;
-
-function imageToBlob(e) {
-    const n = new Image
-        , t = document.createElement("canvas")
-        , o = t.getContext("2d");
-    return n.crossOrigin = "",
-        n.src = e,
-        new Promise((e => {
-                n.onload = function () {
-                    t.width = this.naturalWidth,
-                        t.height = this.naturalHeight,
-                        o.drawImage(this, 0, 0),
-                        t.toBlob((n => {
-                                e(n)
-                            }
-                        ), "image/png", .75)
-                }
-            }
-        ))
+async function imageToBlob(e) {
+    const n = new Image();
+    const t = document.createElement("canvas");
+    const o = t.getContext("2d");
+    n.crossOrigin = "";
+    n.src = e;
+    return new Promise((resolve => {
+        n.onload = function () {
+            t.width = this.naturalWidth;
+            t.height = this.naturalHeight;
+            o.drawImage(this, 0, 0);
+            t.toBlob((blob => resolve(blob)), "image/png", .75);
+        };
+    }));
 }
-
 async function copyImage(e) {
     try {
         const n = await imageToBlob(e);
@@ -70,286 +42,31 @@ async function copyImage(e) {
         console.error('Failed to copy image: ', error);
     }
 }
-
 function stopMaskScroll() {
-    if (document.getElementById("rightmenu-mask")) {
-        document.getElementById("rightmenu-mask").addEventListener("mousewheel", (function (e) {
-                rm.hideRightMenu()
-            }
-        ), !1)
-    }
-    if (document.getElementById("rightMenu")) {
-        document.getElementById("rightMenu").addEventListener("mousewheel", (function (e) {
-                rm.hideRightMenu()
-            }
-        ), !1)
-    }
+    addEvent(document.getElementById("rightmenu-mask"), "mousewheel", rm.hideRightMenu);
+    addEvent(document.getElementById("rightMenu"), "mousewheel", rm.hideRightMenu);
 }
-
-window.oncontextmenu = function (e) {
-    if (document.body.clientWidth > 768) {
-        let n = e.clientX + 10;
-        let t = e.clientY;
-        let o = document.getElementsByClassName('rightMenuOther');
-        let i = document.getElementsByClassName('rightMenuPlugin');
-        let c = document.getElementById('menu-copytext');
-        let r = document.getElementById('menu-pastetext');
-        let m = document.getElementById('menu-commenttext');
-        let a = document.getElementById('menu-newwindow');
-        let u = document.getElementById('menu-copylink');
-        let l = document.getElementById('menu-copyimg');
-        let h = document.getElementById('menu-downloadimg');
-        let d = document.getElementById('menu-search');
-        let s = document.getElementById('menu-searchBaidu');
-        let g = document.getElementById('menu-music-toggle');
-        let w = document.getElementById('menu-music-back');
-        let f = document.getElementById('menu-music-forward');
-        let p = document.getElementById('menu-music-playlist');
-        let k = document.getElementById('menu-music-copyMusicName');
-        let y = e.target.href;
-        let M = e.target.currentSrc;
-        let b = false;
-
-        for (let j = 0; j < o.length; j++) {
-            o[j].style.display = 'block';
-        }
-        globalEvent = e;
-
-        if (selectTextNow && window.getSelection()) {
-            b = true;
-            c.style.display = 'block';
-            m.style.display = 'block';
-            d.style.display = 'block';
-            s.style.display = 'block';
-        } else {
-            c.style.display = 'none';
-            m.style.display = 'none';
-            s.style.display = 'none';
-            d.style.display = 'none';
-        }
-
-        if (y) {
-            b = true;
-            a.style.display = 'block';
-            u.style.display = 'block';
-            domhref = y;
-        } else {
-            a.style.display = 'none';
-            u.style.display = 'none';
-        }
-
-        if (M) {
-            b = true;
-            l.style.display = 'block';
-            h.style.display = 'block';
-            domImgSrc = M;
-        } else {
-            l.style.display = 'none';
-            h.style.display = 'none';
-        }
-
-        if (e.target.tagName.toLowerCase() === 'input' || e.target.tagName.toLowerCase() === 'textarea') {
-            b = true;
-            r.style.display = 'block';
-        } else {
-            r.style.display = 'none';
-        }
-
-        if (e.target.nodeName === 'METING-JS') {
-            b = true;
-            g.style.display = 'block';
-            w.style.display = 'block';
-            f.style.display = 'block';
-            p.style.display = 'block';
-            k.style.display = 'block';
-        } else {
-            g.style.display = 'none';
-            w.style.display = 'none';
-            f.style.display = 'none';
-            p.style.display = 'none';
-            k.style.display = 'none';
-        }
-
-        if (b) {
-            for (let j = 0; j < o.length; j++) {
-                o[j].style.display = 'none';
-            }
-            for (let j = 0; j < i.length; j++) {
-                i[j].style.display = 'block';
-            }
-        } else {
-            for (let j = 0; j < i.length; j++) {
-                i[j].style.display = 'none';
-            }
-        }
-
-        rm.reloadrmSize();
-        if (n + rmWidth > window.innerWidth) {
-            n -= rmWidth + 10;
-        }
-
-        if (t + rmHeight > window.innerHeight) {
-            t -= t + rmHeight - window.innerHeight;
-        }
-        rm.showRightMenu(true, t, n);
-        document.getElementById('rightmenu-mask').style.display = 'flex';
-
-        return false;
-    }
-};
-rm.downloadimging = !1
-rm.writeClipImg = function (e) {
-    const n = "localhost" === window.location.hostname || "127.0.0.1" === window.location.hostname ? 0 : 1e4;
-    rm.hideRightMenu();
-    utils.snackbarShow("正在下载中，请稍后", !1, n);
-    if (0 == rm.downloadimging) {
-        rm.downloadimging = !0;
+rm.downloadimging = false;
+rm.writeClipImg = async function (e) {
+    if (!rm.downloadimging) {
+        rm.downloadimging = true;
+        utils.snackbarShow("正在下载中，请稍后", false, 10000);
+        rm.hideRightMenu();
         setTimeout(async function () {
             await copyImage(e);
             utils.snackbarShow("复制成功！图片已添加盲水印，请遵守版权协议");
-            rm.downloadimging = !1;
+            rm.downloadimging = false;
         }, 1000);
     }
-}
-
-rm.switchDarkMode = function () {
-    sco.switchDarkMode()
-    rm.hideRightMenu()
-}
-
+};
 rm.copyUrl = function (e) {
-    var n = e;
-    var t = document.createElement('input');
-    t.id = 'copyVal';
+    const t = document.createElement('input');
+    t.value = e;
     document.body.appendChild(t);
-    t.value = n;
     t.select();
-    t.setSelectionRange(0, t.value.length);
     document.execCommand('copy');
     document.body.removeChild(t);
-}
-
-rm.rightmenuCopyText = function (e) {
-    navigator.clipboard && navigator.clipboard.writeText(e),
-        utils.snackbarShow("复制文本成功", !1, 2e3),
-        rm.hideRightMenu()
-}
-
-rm.copyPageUrl = function () {
-    var e = window.location.href;
-    rm.copyUrl(e),
-        utils.snackbarShow("复制本页链接地址成功", !1, 2e3),
-        rm.hideRightMenu()
-}
-
-rm.sharePage = function () {
-    window;
-    rm.copyUrl(url),
-        utils.snackbarShow("复制本页链接地址成功", !1, 2e3),
-        rm.hideRightMenu()
-}
-
-var selectTextNow = "";
-
-function selceText() {
-    var e;
-    e = document.selection ? document.selection.createRange().text : window.getSelection() + "",
-        selectTextNow = e || ""
-}
-
-function replaceAll(e, n, t) {
-    return e.split(n).join(t)
-}
-
-function addRightMenuClickEvent() {
-    document.getElementById('menu-backward').addEventListener('click', function () {
-        window.history.back();
-        rm.hideRightMenu();
-    });
-
-    document.getElementById('menu-forward').addEventListener('click', function () {
-        window.history.forward();
-        rm.hideRightMenu();
-    });
-
-    document.getElementById('menu-refresh').addEventListener('click', function () {
-        window.location.reload();
-    });
-
-    document.getElementById('menu-top').addEventListener('click', function () {
-        utils.scrollToDest(0, 500);
-        rm.hideRightMenu();
-    });
-
-    Array.from(document.getElementsByClassName('menu-link')).forEach(function (element) {
-        element.addEventListener('click', rm.hideRightMenu);
-    });
-
-    var menuDarkmode = document.getElementById('menu-darkmode');
-    menuDarkmode.onclick = null;
-    menuDarkmode.addEventListener('click', rm.switchDarkMode);
-
-    document.getElementById('menu-randomPost').addEventListener('click', function () {
-        toRandomPost();
-    });
-
-    if (GLOBAL_CONFIG.comment.commentBarrage) {
-        const menuCommentBarrage = document.getElementById('menu-commentBarrage');
-        menuCommentBarrage.onclick = null;
-        menuCommentBarrage.addEventListener('click', sco.switchCommentBarrage);
-    }
-
-    var rightmenuMask = document.getElementById('rightmenu-mask');
-    rightmenuMask.addEventListener('click', rm.hideRightMenu);
-    rightmenuMask.addEventListener('contextmenu', function () {
-        rm.hideRightMenu();
-        return false;
-    });
-
-    document.getElementById('menu-copy').addEventListener('click', rm.copyPageUrl);
-    document.getElementById('menu-pastetext').addEventListener('click', rm.pasteText);
-
-    document.getElementById('menu-copytext').addEventListener('click', function () {
-        rm.rightmenuCopyText(selectTextNow);
-        utils.snackbarShow("复制成功，复制和转载请标注本文地址");
-    });
-
-    document.getElementById('menu-commenttext').addEventListener('click', function () {
-        rm.rightMenuCommentText(selectTextNow);
-    });
-
-    document.getElementById('menu-newwindow').addEventListener('click', function () {
-        window.open(domhref);
-        rm.hideRightMenu();
-    });
-
-    document.getElementById('menu-copylink').addEventListener('click', rm.copyLink);
-
-    document.getElementById('menu-downloadimg').addEventListener('click', function () {
-        sco.downloadImage(domImgSrc);
-    });
-
-    document.getElementById('menu-copyimg').addEventListener('click', function () {
-        rm.writeClipImg(domImgSrc);
-    });
-
-    document.getElementById('menu-searchBaidu').addEventListener('click', rm.searchBaidu);
-
-    document.getElementById('menu-music-toggle').addEventListener('click', sco.musicToggle);
-    document.getElementById('menu-music-back').addEventListener('click', sco.musicSkipBack);
-    document.getElementById('menu-music-forward').addEventListener('click', sco.musicSkipForward);
-
-    document.getElementById('menu-music-copyMusicName').addEventListener('click', function () {
-        rm.rightmenuCopyText(sco.musicGetName());
-        utils.snackbarShow("复制歌曲名称成功", false, 3000);
-    });
-}
-
-document.onmouseup = document.ondbclick = selceText
-rm.readClipboard = function () {
-    navigator.clipboard && navigator.clipboard.readText().then((e => rm.insertAtCaret(globalEvent.target, e)))
-}
-
+};
 rm.insertAtCaret = function (e, n) {
     const t = e.selectionStart
         , o = e.selectionEnd;
@@ -357,8 +74,8 @@ rm.insertAtCaret = function (e, n) {
         e.focus(),
             document.selection.createRange().text = n,
             e.focus();
-    else if (t || "0" == t) {
-        var i = e.scrollTop;
+    else if (t || "0" === t) {
+        let i = e.scrollTop;
         e.value = e.value.substring(0, t) + n + e.value.substring(o, e.value.length),
             e.focus(),
             e.selectionStart = t + n.length,
@@ -368,15 +85,9 @@ rm.insertAtCaret = function (e, n) {
         e.value += n,
             e.focus()
 }
-
-rm.pasteText = function () {
-    rm.readClipboard();
-    rm.hideRightMenu()
-}
-
 rm.rightMenuCommentText = function (e) {
     rm.hideRightMenu();
-    var n = document.getElementsByClassName("el-textarea__inner")[0];
+    let n = document.getElementsByClassName("el-textarea__inner")[0];
     let t = document.createEvent("HTMLEvents");
     t.initEvent("input", !0, !0);
     let o = replaceAll(e, "\n", "\n> ");
@@ -388,17 +99,123 @@ rm.rightMenuCommentText = function (e) {
         n.setSelectionRange(-1, -1),
     document.getElementById("comment-tips") && document.getElementById("comment-tips").classList.add("show")
 }
-
-rm.searchBaidu = function () {
-    utils.snackbarShow("即将跳转到百度搜索", !1, 2e3);
-    setTimeout((function () {
-            window.open("https://www.baidu.com/s?wd=" + selectTextNow)
+rm.hideRightMenu = () => rm.showRightMenu(false) || (document.getElementById('rightmenu-mask').style.display = 'none')
+document.querySelector("#rightMenu").style.display = "block"
+rmWidth = document.querySelector("#rightMenu").offsetWidth;
+rmHeight = document.querySelector("#rightMenu").offsetHeight;
+document.querySelector("#rightMenu").style.display = 'none'
+let domhref = "", domImgSrc = "", globalEvent = null;
+rm.switchDarkMode = () => sco.switchDarkMode() || rm.hideRightMenu()
+rm.rightmenuCopyText = (e) => navigator.clipboard && navigator.clipboard.writeText(e) || utils.snackbarShow("复制文本成功", !1, 2e3) || rm.hideRightMenu()
+rm.copyPageUrl = () => rm.copyUrl(window.location.href) || utils.snackbarShow("复制本页链接地址成功", !1, 2e3) || rm.hideRightMenu()
+rm.sharePage = () => rm.copyUrl(url) || utils.snackbarShow("复制本页链接地址成功", !1, 2e3) || rm.hideRightMenu()
+var selectTextNow = "";
+let selceText = () => selectTextNow = document.selection ? document.selection.createRange().text : window.getSelection() + "" || ""
+let replaceAll = (e, n, t) => e.split(n).join(t);
+document.onmouseup = document.ondbclick = selceText
+rm.readClipboard = () => navigator.clipboard && navigator.clipboard.readText().then((e => rm.insertAtCaret(globalEvent.target, e)))
+rm.pasteText = () => rm.readClipboard() || rm.hideRightMenu()
+rm.copyLink = () => rm.rightmenuCopyText(domhref) || utils.snackbarShow("已复制链接地址")
+window.oncontextmenu = function (e) {
+    if (document.body.clientWidth <= 768) return;
+    let n = e.clientX + 10;
+    let t = e.clientY;
+    let menuItems = {
+        other: document.getElementsByClassName('rightMenuOther'),
+        plugin: document.getElementsByClassName('rightMenuPlugin'),
+        copytext: document.getElementById('menu-copytext'),
+        pastetext: document.getElementById('menu-pastetext'),
+        commenttext: document.getElementById('menu-commenttext'),
+        newwindow: document.getElementById('menu-newwindow'),
+        copylink: document.getElementById('menu-copylink'),
+        copyimg: document.getElementById('menu-copyimg'),
+        downloadimg: document.getElementById('menu-downloadimg'),
+        search: document.getElementById('menu-search'),
+        music: {
+            toggle: document.getElementById('menu-music-toggle'),
+            back: document.getElementById('menu-music-back'),
+            forward: document.getElementById('menu-music-forward'),
+            playlist: document.getElementById('menu-music-playlist'),
+            copyMusicName: document.getElementById('menu-music-copyMusicName'),
         }
-    ), 2000);
-    rm.hideRightMenu()
-}
-
-rm.copyLink = function () {
-    rm.rightmenuCopyText(domhref)
-    utils.snackbarShow("已复制链接地址")
+    };
+    let y = e.target.href;
+    let M = e.target.currentSrc;
+    let b = false;
+    Array.from(menuItems.other).forEach(item => item.style.display = 'block');
+    globalEvent = e;
+    if (selectTextNow && window.getSelection()) {
+        b = true;
+        menuItems.copytext.style.display = 'block';
+        menuItems.commenttext.style.display = 'block';
+        menuItems.search.style.display = 'block';
+    } else {
+        menuItems.copytext.style.display = 'none';
+        menuItems.commenttext.style.display = 'none';
+        menuItems.search.style.display = 'none';
+    }
+    if (y) {
+        b = true;
+        menuItems.newwindow.style.display = 'block';
+        menuItems.copylink.style.display = 'block';
+        domhref = y;
+    } else {
+        menuItems.newwindow.style.display = 'none';
+        menuItems.copylink.style.display = 'none';
+    }
+    if (M) {
+        b = true;
+        menuItems.copyimg.style.display = 'block';
+        menuItems.downloadimg.style.display = 'block';
+        domImgSrc = M;
+    } else {
+        menuItems.copyimg.style.display = 'none';
+        menuItems.downloadimg.style.display = 'none';
+    }
+    let tagName = e.target.tagName.toLowerCase();
+    if (tagName === 'input' || tagName === 'textarea') {
+        b = true;
+        menuItems.pastetext.style.display = 'block';
+    } else {
+        menuItems.pastetext.style.display = 'none';
+    }
+    if (e.target.nodeName === 'METING-JS') {
+        b = true;
+        Object.values(menuItems.music).forEach(item => item.style.display = 'block');
+    } else {
+        Object.values(menuItems.music).forEach(item => item.style.display = 'none');
+    }
+    Array.from(b ? menuItems.other : menuItems.plugin).forEach(item => item.style.display = 'none');
+    Array.from(b ? menuItems.plugin : menuItems.other).forEach(item => item.style.display = 'block');
+    rm.reloadrmSize();
+    n + rmWidth > window.innerWidth && (n -= rmWidth + 10);
+    t + rmHeight > window.innerHeight && (t -= t + rmHeight - window.innerHeight)
+    rm.showRightMenu(true, t, n);
+    document.getElementById('rightmenu-mask').style.display = 'flex';
+    return false;
+};
+function addRightMenuClickEvent() {
+    const addEvent = (id, event, callback) => document.getElementById(id)?.addEventListener(event, callback)
+    addEvent('menu-backward', 'click', () => window.history.back() || rm.hideRightMenu())
+    addEvent('menu-forward', 'click', () => window.history.forward() || rm.hideRightMenu())
+    addEvent('menu-refresh', 'click', () => window.location.reload());
+    addEvent('menu-top', 'click', () => utils.scrollToDest(0, 500) || rm.hideRightMenu())
+    Array.from(document.getElementsByClassName('menu-link')).forEach(element => element.addEventListener('click', rm.hideRightMenu))
+    addEvent('menu-darkmode', 'click', rm.switchDarkMode);
+    addEvent('menu-randomPost', 'click', () => toRandomPost() || rm.hideRightMenu());
+    GLOBAL_CONFIG.comment.commentBarrage && addEvent('menu-commentBarrage', 'click', sco.switchCommentBarrage);
+    addEvent('rightmenu-mask', 'click', rm.hideRightMenu);
+    addEvent('rightmenu-mask', 'contextmenu', () => rm.hideRightMenu() || false)
+    addEvent('menu-copy', 'click', rm.copyPageUrl);
+    addEvent('menu-pastetext', 'click', rm.pasteText);
+    addEvent('menu-copytext', 'click', () => rm.rightmenuCopyText(selectTextNow) || utils.snackbarShow("复制成功，复制和转载请标注本文地址") || rm.hideRightMenu())
+    GLOBAL_CONFIG.comment.enable && addEvent('menu-commenttext', 'click', () => rm.rightMenuCommentText(selectTextNow))
+    addEvent('menu-newwindow', 'click', () => window.open(domhref) || rm.hideRightMenu());
+    addEvent('menu-copylink', 'click', rm.copyLink);
+    addEvent('menu-downloadimg', 'click', () => sco.downloadImage(domImgSrc));
+    addEvent('menu-copyimg', 'click', () => rm.writeClipImg(domImgSrc));
+    addEvent('menu-music-toggle', 'click', sco.musicToggle);
+    addEvent('menu-music-back', 'click', sco.musicSkipBack);
+    addEvent('menu-music-forward', 'click', sco.musicSkipForward);
+    addEvent('menu-music-copyMusicName', 'click', () => rm.rightmenuCopyText(sco.musicGetName()) || utils.snackbarShow("复制歌曲名称成功", false, 3000))
 }

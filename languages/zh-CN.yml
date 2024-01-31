@@ -1,3 +1,4 @@
+# Language: 简体中文
 theme:
   dark: 已切换至深色模式
   light: 已切换至浅色模式
@@ -12,6 +13,10 @@ time:
   berforeyesterday: 前天
   daybefore: 天前
   runtime:  天
+
+chs:
+  chs_tw: 繁體中文
+  chs_cn: 简体中文
 
 page:
   tag: 标签
@@ -70,7 +75,7 @@ search:
 
 head:
   noscript: 开启JavaScript才能访问本站哦~
-  console: '程序：Hexo | 主题：Hexo-Theme-Solitude | 作者：王卓Sco、亦封 | Github: https://github.com/DuoSco/Hexo-theme-solitude | 版本：v1.4.2 😄'
+  console: '程序：Hexo | 主题：Hexo-Theme-Solitude | 作者：王卓Sco、亦封 | Github: https://github.com/wleelw/Hexo-theme-solitude | 版本：v1.4.3 😄'
 
 aside:
   postcount: '文章总数 :'
@@ -115,3 +120,28 @@ cookies:
 
 music:
   hit: 音乐已暂停
+
+rightmenu:
+  copytext: 复制选中文本
+  pastetext: 粘贴文本
+  commenttext: 引用到评论
+  newwindow: 新窗口打开
+  copylink: 复制链接地址
+  copyimg: 复制此图片
+  downloadimg: 下载此图片
+  search: 站内搜索
+  music:
+    toggle: 播放音乐
+    back: 切换到上一首
+    forward: 切换到下一首
+    playlist: 查看所有歌曲
+    copyMusicName: 复制歌名
+  randomPost: 随便逛逛
+  categories: 文章分类
+  tags: 文章标签
+  copyaddress: 复制地址
+  commentBarrage: 关闭热评
+  dark: 深色模式
+  light: 浅色模式
+  chs_to_cht: 轉為繁體
+  cht_to_chs: 转为简体

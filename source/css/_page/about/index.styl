@@ -10,30 +10,40 @@
     margin 1rem 0
     line-height 1
 
-@import "tenyear"
+if "tenyear" in about
+  @import "tenyear"
 
-@import "author"
+if "authorinfo" in about
+  @import "author"
 
-@import "contentinfo"
+if "contentinfo" in about
+  @import "contentinfo"
 
-@import "skills"
+if "skills" in about
+  @import "skills"
 
-@import "oneself"
+if "oneself" in about
+  @import "oneself"
 
-@import "buff"
+if "motto" in about
+  @import "buff"
+  @import "maxim"
 
-@import "game"
+if "game1" in about
+  @import "game"
 
-@import "personalities"
+if "personalities" in about
+  @import "personalities"
+  @import "myphoto"
 
-@import "myphoto"
+if "careers" in about
+  @import "careers"
 
-@import "careers"
+if "likes" in about
+  @import "like"
 
-@import "like"
+if "tj" in about
+  @import "statistic"
 
-@import "maxim"
-
-@import "statistic"
-
-@import "reward"
+if "award" in about
+  @import "reward"
