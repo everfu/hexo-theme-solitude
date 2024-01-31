@@ -12,6 +12,5 @@ each item, i in site.data.essay.essay_list.slice(0, 10)
         if item.link
             i.scoicon.sco-links
 script.
-    document.addEventListener('DOMContentLoaded', function () {
-        sco.initbbtalk()
-    })
+    document.addEventListener('DOMContentLoaded', sco.initbbtalk)
+    document.addEventListener('pjax:complete', sco.initbbtalk)

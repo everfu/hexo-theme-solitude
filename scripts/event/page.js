@@ -1,4 +1,3 @@
-// generate 404 Page
 hexo.extend.generator.register('404', function (locals) {
   if(!this.theme.config.page.error)return
   return {
@@ -10,8 +9,6 @@ hexo.extend.generator.register('404', function (locals) {
     }
   }
 })
-
-// generate tags Page
 hexo.extend.generator.register('tags', function(locals) {
   if(!this.theme.config.page.tags)return
   return {
@@ -23,8 +20,6 @@ hexo.extend.generator.register('tags', function(locals) {
     }
   };
 });
-
-// generate categories Page
 hexo.extend.generator.register('categories', function(locals) {
   if(!this.theme.config.page.categories)return
   return {

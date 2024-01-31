@@ -7,7 +7,7 @@
 ![master version](https://img.shields.io/github/package-json/v/wleelw/hexo-theme-solitude/master?color=%231ab1ad&label=master)
 ![master version](https://img.shields.io/github/package-json/v/wleelw/hexo-theme-solitude/dev?label=dev)
 ![https://img.shields.io/npm/v/hexo-theme-solitude?color=%09%23bf00ff](https://img.shields.io/npm/v/hexo-theme-solitude?color=%09%23bf00ff)
-![hexo version](https://img.shields.io/badge/hexo-5.3.0+-0e83c)
+![hexo version](https://img.shields.io/badge/hexo-6.3.0+-0e83c)
 ![license](https://img.shields.io/github/license/wleelw/hexo-theme-solitude?color=FF5531)
 
 ![首页](https://github.com/wleelw/hexo-theme-solitude/assets/74389842/d008aba4-942d-4fdb-a611-d934c0bad9fe)

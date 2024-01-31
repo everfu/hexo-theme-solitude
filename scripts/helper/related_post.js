@@ -1,9 +1,3 @@
-/**
- * Solitude
- * Related Posts
- * According the tag
- */
-
 'use strict'
 
 hexo.extend.helper.register('related_posts', function (currentPost, allPosts) {
