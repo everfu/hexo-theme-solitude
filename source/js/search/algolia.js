@@ -1,10 +1,8 @@
-let openSearch
-
 window.addEventListener("load", () => {
     const $searchMask = document.getElementById("search-mask");
     const $searchDialog = document.querySelector("#algolia-search .search-dialog");
 
-    openSearch = () => {
+    window.openSearch = () => {
         utils.animateIn($searchMask, "to_show 0.5s");
         $searchDialog.style.display = "block";
         setTimeout(() => {
