@@ -737,7 +737,7 @@ lightbox: false
 
 # fancybox
 # https://fancyapps.com/fancybox/
-fancybox: true
+fancybox: false
 
 # mediumZoom
 mediumZoom: false
