@@ -32,12 +32,6 @@ site:
   # 页脚的Logo、加载动画默认的logo
   # Logo in the footer, default logo for loading animation
   icon: https://bu.dusays.com/2023/11/08/654af68b25bb8.jpg
-  # ICP 例如：湘ICP备2023015327号
-  # ICP, for example: 湘ICP备2023015327号
-  icp:
-  # ICP链接 例如：http://www.beian.miit.gov.cn/
-  # ICP link, for example: http://www.beian.miit.gov.cn/
-  icp_url:
 
 # 导航栏
 # navigation bar
@@ -561,12 +555,18 @@ footer:
   # 隐私助手右侧弹窗，填写路径后开启
   # Privacy assistant right pop-up window, fill in the path to open
   privacy: # /privacy/
-  # 订阅链接
-  # Subscription link
-  rss: # /rss/
   # 版权
   # Copyright
   license: # /license/
+  # 页脚右侧链接
+  # Footer right link
+  links:
+    # 为了主题能够得到更多的支持，建议保留主题链接
+    # In order for the theme to get more support, it is recommended to keep the theme link
+    - name: 主题
+      url: https://github.com/wleelw/hexo-theme-solitude
+#    - name: 订阅
+#      url: /atom.xml
 
 # -------------------------
 # 扩展页面配置

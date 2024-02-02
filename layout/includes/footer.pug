@@ -49,11 +49,8 @@ div#footer-bar
                 div.copyright © #{moment(theme.aside.siteinfo.runtime).year()} - #{new Date().getFullYear()} By&nbsp;
                     a.footer-bar-link(href="/")= config.author
         div.footer-bar-right
-            if theme.footer.rss
-                a.footer-bar-link(href=theme.footer.rss)= _p('footer.rss')
-            a.footer-bar-link(href="https://github.com/wleelw/hexo-theme-solitude")= _p('footer.theme')
-            if theme.site && theme.site.icp
-                a.footer-bar-link(href=theme.site.icp_url || "https://beian.miit.gov.cn/#/Integrated/index")= theme.site.icp
+            each item in theme.footer.links
+                a.footer-bar-link(href=url_for(item.url), title=item.name)= item.name
             a.footer-bar-link.cc(href=theme.footer.license)
                 i.scoicon.sco-copyright-line
                 i.scoicon.sco-creative-commons-by-line

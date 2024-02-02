@@ -1,7 +1,12 @@
-/**
- * 首页样式
- */
-// 首页顶部
+#home_top
+  max-width 1400px
+  margin .5rem auto auto
+  padding 0 1.5rem
+
+  +maxWidth768()
+    padding 0
+    margin-top 0
+
 if hexo-config('hometop.banner.enable')
   @import "home-top.styl"
 

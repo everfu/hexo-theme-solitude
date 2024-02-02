@@ -33,4 +33,4 @@ if site.data.about.rewardList
                                                 img.post-qr-code-img(alt=reward.description, src=reward.image)
                                             .post-qr-code-desc= reward.description
             .reward-list-tips
-                p= award.tips.replace('{sum}', sum)
+                p= award.tips.replace('{sum}', sum.toFixed(2))
