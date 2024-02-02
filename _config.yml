@@ -558,8 +558,8 @@ footer:
   # 版权
   # Copyright
   license: # /license/
-  # 页脚右侧链接
-  # Footer right link
+  # 页脚右侧链接，例如：ICP备案号、公安备案号等
+  # Footer right link, such as: ICP filing number, public security filing number, etc.
   links:
     # 为了主题能够得到更多的支持，建议保留主题链接
     # In order for the theme to get more support, it is recommended to keep the theme link
