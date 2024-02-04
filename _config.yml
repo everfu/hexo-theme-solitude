@@ -782,7 +782,7 @@ busuanzi: false
 search:
   enable: false
   # algolia, local
-  type: algolia
+  type: local
   # 推荐标签
   # Recommended tags
   tags:

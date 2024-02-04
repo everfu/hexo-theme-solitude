@@ -7,7 +7,9 @@ case theme.says.style
                 let bilibiliRegex = /{bilibili,(.*?)}/g;
                 let playerRegex = /{player,(.*?)}/g;
                 let imageRegex = /!\[\]\((.*?)\)/g;
-                let contentRegex = /#.*?\s([^{\n]*)/g
+                let contentRegex = /#.*?\s([^{\n]*)/g;
+
+                document.querySelector('#waterfall').innerHTML = '<i class="scoicon sco-loading-line"></i>'
 
                 await fetch("!{url_for(theme.says.mode_link)}")
                     .then(res => res.json())
@@ -49,11 +51,11 @@ case theme.says.style
                                         </div>
                                     </li>`;
                         }).join('');
+                        sco.reflashEssayWaterFall();
+                        GLOBAL_CONFIG.lazyload.enable && utils.lazyloadImg();
+                        GLOBAL_CONFIG.lightbox && utils.lightbox(document.querySelectorAll(".bber-content-img img"));
+                        changeTimeFormat();
                     }).catch(error => console.log(error));
-                sco.reflashEssayWaterFall();
-                GLOBAL_CONFIG.lazyload.enable && utils.lazyloadImg();
-                GLOBAL_CONFIG.lightbox && utils.lightbox(document.querySelectorAll(".bber-content-img img"));
-                changeTimeFormat();
             }();
     when 2
         script.
@@ -63,6 +65,8 @@ case theme.says.style
                 let playerRegex = /{player,(.*?)}/g;
                 let imageRegex = /!\[\]\((.*?)\)/g;
                 let contentRegex = /#.*?\s([^{\n]*)/g
+
+                document.querySelector('#waterfall').innerHTML = '<i class="scoicon sco-loading-line"></i>'
 
                 await fetch("!{url_for(theme.says.mode_link)}")
                     .then(res => res.json())

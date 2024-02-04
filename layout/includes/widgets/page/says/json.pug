@@ -2,6 +2,7 @@ case theme.says.style
     when 1
         script.
             !async function () {
+                document.querySelector('#waterfall').innerHTML = '<li class="item"><div class="bber-content"><p class="datacont"><i class="scoicon sco-loading-line"></i></p></div></li>'
                 await fetch('!{url_for(theme.says.mode_link)}')
                     .then(res => res.json())
                     .then(res => {
@@ -34,14 +35,16 @@ case theme.says.style
                                         </div>
                             </li>`
                         }).join('')
+                        sco.reflashEssayWaterFall();
+                        GLOBAL_CONFIG.lazyload.enable && utils.lazyloadImg();
+                        GLOBAL_CONFIG.lightbox && utils.lightbox(document.querySelectorAll(".bber-content-img img"));
+                        changeTimeFormat();
                     })
-                GLOBAL_CONFIG.lazyload.enable && utils.lazyloadImg()
-                GLOBAL_CONFIG.lightbox && utils.lightbox(document.querySelectorAll(".bber-content-img img"));
-                changeTimeFormat()
             }()
     when 2
         script.
             !async function () {
+                document.querySelector('#waterfall').innerHTML = '<li class="item"><div class="bber-content"><p class="datacont"><i class="scoicon sco-loading-line"></i></p></div></li>'
                 await fetch('!{url_for(theme.says.mode_link)}')
                     .then(res => res.json())
                     .then(res => {
@@ -71,8 +74,9 @@ case theme.says.style
                                         ${aplayer || ''}
                             </li>`
                         }).join('')
-                        GLOBAL_CONFIG.lazyload.enable && utils.lazyloadImg()
+                        sco.reflashEssayWaterFall();
+                        GLOBAL_CONFIG.lazyload.enable && utils.lazyloadImg();
                         GLOBAL_CONFIG.lightbox && utils.lightbox(document.querySelectorAll(".bber-content-img img"));
-                        changeTimeFormat()
+                        changeTimeFormat();
                     })
             }()
