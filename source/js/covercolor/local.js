@@ -3,10 +3,10 @@ const coverColor = () => {
     if (path) {
         localColor(path);
     } else {
-        document.documentElement.style.setProperty('--sco-main', 'let(--sco-theme)');
-        document.documentElement.style.setProperty('--sco-main-op', 'let(--sco-theme-op)');
-        document.documentElement.style.setProperty('--sco-main-op-deep', 'let(--sco-theme-op-deep)');
-        document.documentElement.style.setProperty('--sco-main-none', 'let(--sco-theme-none)');
+        document.documentElement.style.setProperty('--sco-main', 'var(--sco-theme)');
+        document.documentElement.style.setProperty('--sco-main-op', 'var(--sco-theme-op)');
+        document.documentElement.style.setProperty('--sco-main-op-deep', 'var(--sco-theme-op-deep)');
+        document.documentElement.style.setProperty('--sco-main-none', 'var(--sco-theme-none)');
         initThemeColor()
     }
 }
@@ -119,22 +119,22 @@ function setThemeColors(value, r = null, g = null, b = null) {
         if (r && g && b) {
             let brightness = Math.round(((parseInt(r) * 299) + (parseInt(g) * 587) + (parseInt(b) * 114)) / 1000);
             for (let i = 0; i < cardContents.length; i++) {
-                cardContents[i].style.setProperty('--sco-card-bg', 'let(--sco-white)');
+                cardContents[i].style.setProperty('--sco-card-bg', 'var(--sco-white)');
             }
 
             for (let i = 0; i < authorInfo.length; i++) {
-                authorInfo[i].style.setProperty('background', 'let(--sco-white-op)');
-                authorInfo[i].style.setProperty('color', 'let(--sco-white)');
+                authorInfo[i].style.setProperty('background', 'var(--sco-white-op)');
+                authorInfo[i].style.setProperty('color', 'var(--sco-white)');
             }
         }
 
         document.getElementById("coverdiv").classList.add("loaded");
         initThemeColor();
     } else {
-        document.documentElement.style.setProperty('--sco-main', 'let(--sco-theme)');
-        document.documentElement.style.setProperty('--sco-main-op', 'let(--sco-theme-op)');
-        document.documentElement.style.setProperty('--sco-main-op-deep', 'let(--sco-theme-op-deep)');
-        document.documentElement.style.setProperty('--sco-main-none', 'let(--sco-theme-none)');
+        document.documentElement.style.setProperty('--sco-main', 'var(--sco-theme)');
+        document.documentElement.style.setProperty('--sco-main-op', 'var(--sco-theme-op)');
+        document.documentElement.style.setProperty('--sco-main-op-deep', 'var(--sco-theme-op-deep)');
+        document.documentElement.style.setProperty('--sco-main-none', 'var(--sco-theme-none)');
         initThemeColor();
     }
 }

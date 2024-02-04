@@ -268,6 +268,9 @@ aside:
       # tip: 推荐尺寸 26x26
       # tip: Recommended size 26x26
       sticker: https://bu.dusays.com/2023/12/30/659011053e246.png
+    # 点击作者名称跳转链接
+    # Click the author name to jump link
+    url: /about/
     # 文案1
     # label1
     # tip：可使用html标签
