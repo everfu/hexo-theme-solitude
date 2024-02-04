@@ -19,6 +19,11 @@
     width calc(100% / 3 - 16px)
     cursor pointer
     margin 8px
+    +maxWidth1200()
+      width calc(100% / 2 - 16px)
+
+    +maxWidth768()
+      width 100%
 
     &:hover
       .cover

@@ -12,7 +12,7 @@ if theme.capsule.enable || theme.music.enable
 if theme.says.home_mini
     link(rel="stylesheet", href=url_for(theme.cdn.swiper_css))
 
-if theme.fancybox
+if theme.lightbox && theme.fancybox
     link(rel="stylesheet", href=url_for(theme.cdn.fancyapps_css))
 
 // Open Graph
@@ -78,9 +78,6 @@ script.
         "%c🔥 !{_p('head.console')}",
         "color: #fff; background: linear-gradient(-25deg, #a8edea, #fed6e3); padding: 8px 15px; border-radius: 8px; text-shadow: 2px 2px 4px white; color: black;"
     );
-
-div
-    script(src=url_for(theme.cdn.utils))
 
 // custom inject
 if theme.extends.head

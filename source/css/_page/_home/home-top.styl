@@ -1,334 +1,157 @@
-// 首页顶部一坨 and 友链banner
-div#banners
-  display none
-  +minWidth1200()
-    display flex
-    width 100%
-    height 76%
-    background var(--sco-card-bg)
-    margin-bottom .5rem
-    border var(--style-border)
+#home_top
+  .recent-top-post-group
     border-radius 12px
     overflow hidden
-    position relative
-    box-shadow var(--sco-shadow-border)
-    flex-direction column
-    transition .3s
-    will-change transform
-    animation slide-in .6s .1s backwards
+    overflow-x auto
+    width 100%
+    margin-bottom 0
+    -webkit-user-select none
 
-    :not(.flink)&:hover
-      box-shadow var(--sco-shadow-main)
+    +maxWidth768()
+      border-radius 0
 
-    .banner-button-group
-      position absolute
-      right 2rem
-      top 2rem
+    .recent-post-top
       display flex
-
-    .banner-button
-      padding 8px 12px
-      background var(--sco-fontcolor)
-      border-radius 12px
-      color var(--sco-card-bg)
-      display flex
-      align-items center
-      z-index 1
-      transition .3s
-      cursor pointer
-      box-shadow var(--sco-shadow-black)
-
-      &.secondary
-        background var(--sco-secondbg)
-        border var(--style-border-always)
-        color var(--sco-lighttext)
-        margin-right 1rem
-        box-shadow var(--sco-shadow-border)
-
-      &:hover
-        background var(--sco-theme)
-        color var(--sco-white)
-
-      i
-        margin-right 8px
-        font-size 1rem
-
-    .banners-title
-      top 2rem
-      left 1.5rem
-      position absolute
-      display flex
-      flex-direction column
-
-      &-big
-        font-size 36px
-        line-height 1
-        font-weight 700
-        margin-bottom 8px
-
-      &-small
-        font-size 12px
-        line-height 1
-        color var(--sco-secondtext)
-        margin-top 8px
-        margin-bottom .5rem
-
-    #banner-hover
-      position absolute
+      flex-direction row
+      flex-wrap nowrap
       width 100%
-      height 100%
-      top 0
-      left 0
-      border-radius 12px
-      background var(--sco-theme)
-      color var(--sco-card-bg)
-      padding-left .5rem
-      display flex
-      flex-direction column
-      justify-content center
-      opacity 0
-      transition cubic-bezier(.71, .15, .16, 1.15) .6s
+      overflow-x scroll
 
-      i
-        font-size 80px
-        opacity .4
+      &::-webkit-scrollbar
+        display none
 
-    &:hover
-      #banner-hover
-        opacity 1
-        padding-left 2rem
-        background var(--sco-theme-op-deep)
-        backdrop-filter blur(15px)
-        transform translateZ(0)
-        transition .3s
-        background-size 200%
-        cursor pointer
-
-    .flink
-      .banners-title
-        top 1.5rem
-
-    .bannerText
-      font-size 4rem
-      line-height 4rem
-      font-weight 700
-
-  .tags-group-all
-    display flex
-    transform rotate(-30deg)
-
-    &.nowrapMove
-      transform rotate(0)
-      padding-bottom 2rem
-
-      .tags-group-wrapper
-        margin-top: 7rem
-        animation: rowup 120s linear infinite
-
-      .tags-group-icon
-        border-radius 50%
-
-        img
-          min-width 100%
-          min-height 100%
-          border-radius 50%
-          object-fit cover
-
-    .tags-group-wrapper
-      margin-top: 5rem
-      display: flex
-      flex-wrap: nowrap
-      animation: rowup 60s linear infinite
-
-      /.tags-group-icon-pair
-        margin-left 1rem
-        user-select none
-
-        a img
-          border-radius 50%
-
-        .tags-group-icon
-          width 120px
-          height 120px
-          display flex
-          align-items center
-          justify-content center
-          color #fff
-          font-size 66px
-          font-weight 700
-          box-shadow var(--sco-shadow-blackdeep)
-
-          &:nth-child(even)
-            margin-top 1rem
-            transform translate(-60px)
-
-          img
-            width 60%
-
-#home_top
-  max-width 1400px
-  margin .5rem auto auto
-  padding 0 1.5rem
-
-  +maxWidth768()
-    padding 0
-    margin-top 0
-
-  // banner
-  if hexo-config('hometop.banner.enable')
-    .recent-top-post-group
-      border-radius 12px
-      overflow hidden
-      overflow-x auto
-      width 100%
-      margin-bottom 0
-      -webkit-user-select none
-
-      +maxWidth768()
-        border-radius 0
-
-      .recent-post-top
+      / #bannerGroup
         display flex
-        flex-direction row
-        flex-wrap nowrap
-        width 100%
-        overflow-x scroll
 
-        &::-webkit-scrollbar
-          display none
-
-        / #bannerGroup
+        +minWidth1200()
+          width calc(50% - .25rem)
+          margin-right .5rem
+          height calc(328px + .5rem)
           display flex
+          flex-direction column
+          justify-content space-between
 
+        .categoryGroup
+          display flex
+          flex-direction column
+          justify-content space-between
+          min-width 200px
           +minWidth1200()
-            width calc(50% - .25rem)
-            margin-right .5rem
-            height calc(328px + .5rem)
-            display flex
-            flex-direction column
-            justify-content space-between
+            flex-direction row
+            height 24%
+            animation slide-in .6s .2s backwards
+          +maxWidth768()
+            min-width 130px
+            margin-bottom .5rem
+            margin-left 1rem
+            max-height 164px
+            overflow hidden
+            position relative
 
-          .categoryGroup
-            display flex
-            flex-direction column
-            justify-content space-between
-            min-width 200px
-            +minWidth1200()
-              flex-direction row
-              height 24%
-              animation slide-in .6s .2s backwards
+          .categoryItem
+            overflow hidden
+            transform scale(1)
+            transition all .8s cubic-bezier(.65, .15, .37, 1.19)
+            height 48%
+            border-radius 12px
             +maxWidth768()
-              min-width 130px
-              margin-bottom .5rem
-              margin-left 1rem
-              max-height 164px
-              overflow hidden
-              position relative
+              border-radius 0
+              height 47%
+              box-shadow none
 
-            .categoryItem
-              overflow hidden
-              transform scale(1)
-              transition all .8s cubic-bezier(.65, .15, .37, 1.19)
-              height 48%
-              border-radius 12px
-              +maxWidth768()
-                border-radius 0
-                height 47%
-                box-shadow none
+            &:nth-child(3)
+              display none
+            +minWidth1200()
+              width calc(100% / 3 - .33rem)
+              height 100%
+              margin-right .5rem
+
+              &:last-child
+                margin-right 0
+
+              &:hover
+                width 50%
 
               &:nth-child(3)
-                display none
-              +minWidth1200()
-                width calc(100% / 3 - .33rem)
-                height 100%
-                margin-right .5rem
+                display flex
 
-                &:last-child
-                  margin-right 0
+            a.categoryButton
+              height 100%
+              width 100%
+              background var(--sco-card-bg)
+              border-radius 12px
+              display inline-block
+              text-align left
+              line-height 4em
+              font-weight 700
+              font-size .9rem
+              color var(--sco-white)
+              transition all .8s cubic-bezier(.39, .575, .565, 1)
+              transform scale(1)
+              overflow hidden
+              +maxWidth768()
+                border-radius 8px
 
-                &:hover
-                  width 50%
+              &:after
+                top 50px
+                width 1rem
+                left 21px
+                height 2px
+                background var(--sco-white)
+                content ""
+                border-radius 1px
+                position absolute
 
-                &:nth-child(3)
-                  display flex
+              i
+                font-size 5rem
+                opacity .2
+                position absolute
+                right 0
+                top 20%
+                transition .3s
+                width 100px
+                text-align center
+                filter blur(2px)
+                transform scale(1) rotate(15deg)
 
-              a.categoryButton
-                height 100%
-                width 100%
-                background var(--sco-card-bg)
-                border-radius 12px
-                display inline-block
-                text-align left
-                line-height 4em
-                font-weight 700
-                font-size .9rem
-                color var(--sco-white)
-                transition all .8s cubic-bezier(.39, .575, .565, 1)
-                transform scale(1)
-                overflow hidden
                 +maxWidth768()
-                  border-radius 8px
+                  display none
 
-                &:after
-                  top 50px
-                  width 1rem
-                  left 21px
-                  height 2px
-                  background var(--sco-white)
-                  content ""
-                  border-radius 1px
-                  position absolute
-
+              &:hover
                 i
-                  font-size 5rem
-                  opacity .2
-                  position absolute
-                  right 0
-                  top 20%
-                  transition .3s
-                  width 100px
-                  text-align center
-                  filter blur(2px)
-                  transform scale(1) rotate(15deg)
+                  opacity .8
+                  transition .8s
+                  transition-delay .15s
+                  transform scale(1.03) rotate(0)
+                  font-size 2.5rem
+                  filter blur(0)
 
-                  +maxWidth768()
-                    display none
+              .categoryButtonText
+                padding-left 21px
 
-                &:hover
-                  i
-                    opacity .8
-                    transition .8s
-                    transition-delay .15s
-                    transform scale(1.03) rotate(0)
-                    font-size 2.5rem
-                    filter blur(0)
+              &.bikan
+                background linear-gradient(to right, #358bff, #15c6ff)
+                background-size 200%
 
-                .categoryButtonText
-                  padding-left 21px
-
-                &.bikan
-                  background linear-gradient(to right, #358bff, #15c6ff)
+                [data-theme=dark] &
+                  background linear-gradient(to right, #0653b8, #2fcbff)
                   background-size 200%
 
-                  [data-theme=dark] &
-                    background linear-gradient(to right, #0653b8, #2fcbff)
-                    background-size 200%
+              &.remen
+                background linear-gradient(to right, #f65, #ffbf37)
+                background-size 200%
 
-                &.remen
-                  background linear-gradient(to right, #f65, #ffbf37)
+                [data-theme=dark] &
+                  background linear-gradient(to right, #e22a16, #da980c)
                   background-size 200%
 
-                  [data-theme=dark] &
-                    background linear-gradient(to right, #e22a16, #da980c)
-                    background-size 200%
+              &.shiyong
+                background linear-gradient(to right, #18e7ae, #1eebeb)
+                background-size 200%
 
-                &.shiyong
-                  background linear-gradient(to right, #18e7ae, #1eebeb)
+                [data-theme=dark] &
+                  background linear-gradient(to right, #099e74, #0ea4a4)
                   background-size 200%
-
-                  [data-theme=dark] &
-                    background linear-gradient(to right, #099e74, #0ea4a4)
-                    background-size 200%
 
   /.topGroup
     display: flex

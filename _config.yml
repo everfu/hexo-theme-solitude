@@ -32,12 +32,6 @@ site:
   # 页脚的Logo、加载动画默认的logo
   # Logo in the footer, default logo for loading animation
   icon: https://bu.dusays.com/2023/11/08/654af68b25bb8.jpg
-  # ICP 例如：湘ICP备2023015327号
-  # ICP, for example: 湘ICP备2023015327号
-  icp:
-  # ICP链接 例如：http://www.beian.miit.gov.cn/
-  # ICP link, for example: http://www.beian.miit.gov.cn/
-  icp_url:
 
 # 导航栏
 # navigation bar
@@ -274,6 +268,9 @@ aside:
       # tip: 推荐尺寸 26x26
       # tip: Recommended size 26x26
       sticker: https://bu.dusays.com/2023/12/30/659011053e246.png
+    # 点击作者名称跳转链接
+    # Click the author name to jump link
+    url: /about/
     # 文案1
     # label1
     # tip：可使用html标签
@@ -396,8 +393,187 @@ aside:
     runtime: '2023-04-20 00:00:00'
 
 # -------------------------
-# 页面配置
-# page settings
+# 文章页、页面配置
+# post、page settings
+
+# 页面默认设置
+# page default settings
+page:
+  error: true  # 404页面 / 404 page
+  tags: true # 标签页 /  Tags page
+  categories: true # 分类页 /  Categories page
+  default: # 默认值 /  Default value
+    # 默认图片
+    # default cover
+    # tip：随机数组图片，每次生成的时候都会从中随机抽取一张
+    # tip: Random array pictures, each time you generate, you will randomly extract one from them
+    cover:
+      - /img/default.png # 默认图片 / default cover
+
+# 文章页默认设置
+# post default settings
+post:
+  default:
+    # 文章默认图片
+    # default cover
+    cover:
+      - /img/default.png # 默认图片 / default cover
+    # 文章发布默认地址
+    # default post locate
+    locate: 衡阳
+    # 文章默认版权
+    # default post copyright
+    copyright:
+      enable: true
+      license: CC BY-NC-SA 4.0
+      licenurl: https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh
+      # 是否使用移轴动画头像
+      # Whether to use the shift animation avatar
+      author:
+        enable: false
+        author_back: https://bu.dusays.com/2023/11/01/6541f6d4b2573.png # 底部头像背景 / Bottom avatar background
+  # 顶部文章简介
+  # Top article introduction
+  meta:
+    date: false # 发布日期 / Release date
+    updated: false # 更新日期 / Update date
+    locate: false # 位置 / Location
+    wordcount: false # 字数 / Number of words
+    readtime: false # 访问 / uv
+    pv: false # 浏览量 / pv
+    comment: false # 评论数 / Comment count
+  # 打赏
+  # reward
+  award:
+    enable: false
+    # 微信收款码
+    # WeChat payment code
+    wechat: https://bu.dusays.com/2023/11/07/6549e79364fa3.png
+    # 支付宝收款码
+    # Alipay payment code
+    alipay: https://bu.dusays.com/2023/11/07/6549e79d02bd6.png
+    # 打赏统计页面链接
+    # Reward statistics page link
+    url: /about
+  # 版权中订阅按钮跳转链接，填写地址后开启
+  # Subscription button jump link in copyright
+  rss: # /atom.xml
+  # 文章主题色获取
+  # Article theme color acquisition
+  covercolor:
+    enable: false
+    mode: local # local：本地取色 / api：img2color取色 : local: local color / api: img2color color
+    api: https://img2color.wzsco.top/api?img= # api地址 / api address
+    time: 43200000 # api取色间隔（毫秒），默认为12小时 / api color interval (milliseconds), default is 12 hours
+
+# -------------------------
+# 自定义主题
+
+# 自定义配色
+# custom theme color
+# 注意：颜色值必须使用引号，如“#000”，否则可能会导致错误！
+# Note: The color value must be enclosed in quotation marks, such as "#000", otherwise it may cause an error!
+# --------------------------------------
+theme_color:
+  dark: "#ffc848" # 暗色模式 / Dark mode
+  dark_op: '#f2b94b23' # 暗色模式透明 / Dark mode transparent
+  dark_op_deep: '#f2b94bdd' # 暗色模式透明深色 / Dark mode transparent dark
+  dark_none: '#f2b94b00' # 暗色模式透明无色 / Dark mode transparent colorless
+  light: "#425AEF" # 亮色模式 / Light mode
+  light_op: '#4259ef23' # 亮色模式透明 / Light mode transparent
+  light_op_deep: '#4259efdd' # 亮色模式透明深色 / Light mode transparent dark
+  light_none: '#4259ef01' # 亮色模式透明无色 / Light mode transparent colorless
+
+# 主题显示模式调整
+# theme display mode adjustment
+# 主题支持三种模式：自动切换、暗色模式、亮色模式
+# The theme supports three modes: automatic switching, dark mode, and light mode
+# --------------------------------------
+display_mode:
+  type: auto # auto: 自动切换 / dark: 暗色模式 / light: 亮色模式 / auto: automatic switching / dark: dark mode / light: light mode
+  universe: true # 开启后暗色模式下会显示星空背景 / After opening, the dark mode will display the starry sky background
+
+# 文章底部推荐文章
+# Recommended articles at the bottom of the article
+related_post:
+  enable: false
+  # 推荐文章数量
+  # Number of recommended articles
+  limit: 2
+  # 根据创建日期（created）或是更新日期（updated）
+  # According to the creation date (created) or the update date (updated)
+  date_type: created
+
+# -------------------------
+# 扩展配置
+# extend settings
+
+# --------------------------------------
+# Footer Settings
+# 页脚配置
+footer:
+  # 底部上方一排图标
+  # Bottom row of icons
+  information:
+    left: # 左侧显示图标 / Left display icon
+    #      Github:
+    #        icon: scoicon sco-bilibili-line
+    #        url: https://github.com/wleelw
+    #      Mail:
+    #        icon: scoicon sco-mail-line
+    #        url: mailto:wleelw@wzsco.top
+    right: # 右侧显示图标 / Right display icon
+    #      Bilibili:
+    #        icon: scoicon sco-bilibili-line
+    #        url: https://space.bilibili.com/1329819902
+    #      抖音:
+    #        icon: scoicon sco-douyin-fill
+    #        url: https://v.douyin.com/iJsLc8jt/
+
+  # 底部导航栏
+  # Bottom navigation bar
+  group: # 从左至右 / From left to right
+  #    导航:
+  #      归档: /archives/
+  #      分类: /categories/
+  #      标签: /tags/
+  #    服务:
+  #      阿里云: https://aliyun.com/
+  #      51la统计: https://v6.51.la/
+  #      百度统计: https://tongji.baidu.com/
+  #    支持:
+  #      打赏记录: /about/
+  #    协议:
+  #      Cookies: /cookies/
+  #      用户协议: /privacy/
+  #      版权协议: /copyright/
+
+  # 底部随机友链
+  # Random links at the bottom
+  # tip：此处的友链是随机显示的，不是固定的
+  # tip: The links here are displayed randomly, not fixed
+  # warning: 打开前必须先配置links
+  # warning: links must be configured before opening
+  randomlink: false
+  # 隐私助手右侧弹窗，填写路径后开启
+  # Privacy assistant right pop-up window, fill in the path to open
+  privacy: # /privacy/
+  # 版权
+  # Copyright
+  license: # /license/
+  # 页脚右侧链接，例如：ICP备案号、公安备案号等
+  # Footer right link, such as: ICP filing number, public security filing number, etc.
+  links:
+    # 为了主题能够得到更多的支持，建议保留主题链接
+    # In order for the theme to get more support, it is recommended to keep the theme link
+    - name: 主题
+      url: https://github.com/wleelw/hexo-theme-solitude
+#    - name: 订阅
+#      url: /atom.xml
+
+# -------------------------
+# 扩展页面配置
+# extra page settings
 
 # 404 页面
 # 404 page
@@ -489,95 +665,23 @@ album:
   enable: false # 是否开启相册 / Whether to enable album
   limit: 6 # 单行显示图片数量 / Number of pictures displayed in a single line
 
-# -------------------------
-# 文章页、页面配置
-# post、page settings
-
-# 页面默认设置
-# page default settings
-page:
-  error: true  # 404页面 / 404 page
-  tags: true # 标签页 /  Tags page
-  categories: true # 分类页 /  Categories page
-  default: # 默认值 /  Default value
-    # 默认图片
-    # default cover
-    # tip：随机数组图片，每次生成的时候都会从中随机抽取一张
-    # tip: Random array pictures, each time you generate, you will randomly extract one from them
-    cover:
-      - /img/default.png # 默认图片 / default cover
-
-# 文章页默认设置
-# post default settings
-post:
-  default:
-    # 文章默认图片
-    # default cover
-    cover:
-      - /img/default.png # 默认图片 / default cover
-    # 文章发布默认地址
-    # default post locate
-    locate: 衡阳
-    # 文章默认版权
-    # default post copyright
-    copyright:
-      enable: true
-      license: CC BY-NC-SA 4.0
-      licenurl: https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh
-      # 是否使用移轴动画头像
-      # Whether to use the shift animation avatar
-      author:
-        enable: false
-        author_back: https://bu.dusays.com/2023/11/01/6541f6d4b2573.png # 底部头像背景 / Bottom avatar background
-  # 顶部文章简介
-  # Top article introduction
-  meta:
-    date: false # 发布日期 / Release date
-    updated: false # 更新日期 / Update date
-    locate: false # 位置 / Location
-    wordcount: false # 字数 / Number of words
-    readtime: false # 访问 / uv
-    pv: false # 浏览量 / pv
-    comment: false # 评论数 / Comment count
-  # 打赏
-  # reward
-  award:
-    enable: false
-    # 微信收款码
-    # WeChat payment code
-    wechat: https://bu.dusays.com/2023/11/07/6549e79364fa3.png
-    # 支付宝收款码
-    # Alipay payment code
-    alipay: https://bu.dusays.com/2023/11/07/6549e79d02bd6.png
-    # 打赏统计页面链接
-    # Reward statistics page link
-    url: /about
-  # 版权中订阅按钮跳转链接，填写地址后开启
-  # Subscription button jump link in copyright
-  rss: # /atom.xml
-  # 文章主题色获取
-  # Article theme color acquisition
-  covercolor:
-    enable: false
-    mode: local # local：本地取色 / api：img2color取色 : local: local color / api: img2color color
-    api: https://img2color.wzsco.top/api?img= # api地址 / api address
-    time: 43200000 # api取色间隔（毫秒），默认为12小时 / api color interval (milliseconds), default is 12 hours
-
+# 快捷菜单你
+# quick menu
 keyboard:
   enable: false # 是否开启键盘控制 / Whether to enable keyboard control
   # 键盘控制配置
   # Keyboard control configuration
   list:
-    # name: 按键名称
-    # name: Key name
-    # key: 按键
-    # key: Key
-    # func: 方法
-    # func: Function
-    # sco: sco内置方法
-    # sco: sco built-in method
-    # url: 跳转链接
-    # url: Jump link
+  # name: 按键名称
+  # name: Key name
+  # key: 按键
+  # key: Key
+  # func: 方法
+  # func: Function
+  # sco: sco内置方法
+  # sco: sco built-in method
+  # url: 跳转链接
+  # url: Jump link
 #    - name: 关闭快捷键功能
 #      key: K
 #      func: keyboard
@@ -590,95 +694,6 @@ keyboard:
 #    - name: 打开友情链接
 #      key: L
 #      url: '/links/'
-
-
-# -------------------------
-# 自定义主题
-
-# 自定义配色
-# custom theme color
-# 注意：颜色值必须使用引号，如“#000”，否则可能会导致错误！
-# Note: The color value must be enclosed in quotation marks, such as "#000", otherwise it may cause an error!
-# --------------------------------------
-theme_color:
-  dark: "#ffc848" # 暗色模式 / Dark mode
-  dark_op: '#f2b94b23' # 暗色模式透明 / Dark mode transparent
-  dark_op_deep: '#f2b94bdd' # 暗色模式透明深色 / Dark mode transparent dark
-  dark_none: '#f2b94b00' # 暗色模式透明无色 / Dark mode transparent colorless
-  light: "#425AEF" # 亮色模式 / Light mode
-  light_op: '#4259ef23' # 亮色模式透明 / Light mode transparent
-  light_op_deep: '#4259efdd' # 亮色模式透明深色 / Light mode transparent dark
-  light_none: '#4259ef01' # 亮色模式透明无色 / Light mode transparent colorless
-
-# 主题显示模式调整
-# theme display mode adjustment
-# 主题支持三种模式：自动切换、暗色模式、亮色模式
-# The theme supports three modes: automatic switching, dark mode, and light mode
-# --------------------------------------
-display_mode:
-  type: auto # auto: 自动切换 / dark: 暗色模式 / light: 亮色模式 / auto: automatic switching / dark: dark mode / light: light mode
-  universe: true # 开启后暗色模式下会显示星空背景 / After opening, the dark mode will display the starry sky background
-
-# --------------------------------------
-# Footer Settings
-# 页脚配置
-footer:
-  # 底部上方一排图标
-  # Bottom row of icons
-  information:
-    left: # 左侧显示图标 / Left display icon
-    #      Github:
-    #        icon: scoicon sco-bilibili-line
-    #        url: https://github.com/wleelw
-    #      Mail:
-    #        icon: scoicon sco-mail-line
-    #        url: mailto:wleelw@wzsco.top
-    right: # 右侧显示图标 / Right display icon
-    #      Bilibili:
-    #        icon: scoicon sco-bilibili-line
-    #        url: https://space.bilibili.com/1329819902
-    #      抖音:
-    #        icon: scoicon sco-douyin-fill
-    #        url: https://v.douyin.com/iJsLc8jt/
-
-  # 底部导航栏
-  # Bottom navigation bar
-  group: # 从左至右 / From left to right
-  #    导航:
-  #      归档: /archives/
-  #      分类: /categories/
-  #      标签: /tags/
-  #    服务:
-  #      阿里云: https://aliyun.com/
-  #      51la统计: https://v6.51.la/
-  #      百度统计: https://tongji.baidu.com/
-  #    支持:
-  #      打赏记录: /about/
-  #    协议:
-  #      Cookies: /cookies/
-  #      用户协议: /privacy/
-  #      版权协议: /copyright/
-
-  # 底部随机友链
-  # Random links at the bottom
-  # tip：此处的友链是随机显示的，不是固定的
-  # tip: The links here are displayed randomly, not fixed
-  # warning: 打开前必须先配置links
-  # warning: links must be configured before opening
-  randomlink: false
-  # 隐私助手右侧弹窗，填写路径后开启
-  # Privacy assistant right pop-up window, fill in the path to open
-  privacy: # /privacy/
-  # 订阅链接
-  # Subscription link
-  rss: # /rss/
-  # 版权
-  # Copyright
-  license: # /license/
-
-# -------------------------
-# 扩展配置
-# extend settings
 
 # 懒加载
 # lazyload
@@ -725,7 +740,7 @@ lightbox: false
 
 # fancybox
 # https://fancyapps.com/fancybox/
-fancybox: true
+fancybox: false
 
 # mediumZoom
 mediumZoom: false
@@ -753,17 +768,6 @@ opengraph:
 #    fb_admins:
 #    fb_app_id:
 
-# 文章底部推荐文章
-# Recommended articles at the bottom of the article
-related_post:
-  enable: false
-  # 推荐文章数量
-  # Number of recommended articles
-  limit: 2
-  # 根据创建日期（created）或是更新日期（updated）
-  # According to the creation date (created) or the update date (updated)
-  date_type: created
-
 # 字数统计
 # word count
 # warning：开启前需要安装字数统计插件
@@ -781,7 +785,7 @@ busuanzi: false
 search:
   enable: false
   # algolia, local
-  type: algolia
+  type: local
   # 推荐标签
   # Recommended tags
   tags:
@@ -908,7 +912,7 @@ CDN:
   # Dev version can only choose. ( dev版本只能为 local )
   internal: local
   # The CDN provider of third party scripts (第三方 js 的 cdn 配置)
-  # option: local/jsdelivr/unpkg/cdnjs/custom
+  # option: jsdelivr/unpkg/cdnjs/custom
   third_party: custom
 
   # Add version number to url, true or false

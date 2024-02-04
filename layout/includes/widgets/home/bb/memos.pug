@@ -1,5 +1,6 @@
 script.
     !async function () {
+        document.querySelector('#bber-talk').innerHTML = '<div class="li-style swiper-slide"><i class="scoicon sco-loading-line"></i></div>'
         await fetch('!{theme.says.mode_link}')
             .then(response => response.json())
             .then(data => {
@@ -17,7 +18,7 @@ script.
                     let video = item.content.match(playerRegex) ? '<i class="scoicon sco-video-fill"></i>' : item.content.match(bilibiliRegex) ? '<i class="scoicon sco-bilibili-line"></i>' : '';
                     let link = item.content.match(linkRegex) ? `<i class="scoicon sco-link"></i>` : '';
 
-                    return `<div class="li-style swiper-slide">${content+aplayer+video+imageBox+link}</div>`
+                    return `<div class="li-style swiper-slide">${content + aplayer + video + imageBox + link}</div>`
                 }).join(' ')
                 document.addEventListener('DOMContentLoaded', sco.initbbtalk)
                 document.addEventListener('pjax:complete', sco.initbbtalk)

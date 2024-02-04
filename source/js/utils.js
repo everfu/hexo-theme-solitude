@@ -72,10 +72,7 @@ const utils = {
         const dur = (typeof duration !== 'undefined') ? duration : 5000
         document.styleSheets[0].addRule(':root', '--sco-snackbar-time:' + dur + 'ms!important')
         Snackbar.show({
-            text: text,
-            showAction: sa,
-            duration: dur,
-            pos: 'top-center'
+            text: text, showAction: sa, duration: dur, pos: 'top-center'
         })
     },
 
@@ -112,8 +109,7 @@ const utils = {
         if (currentPos > pos || isNavFixed) pos = pos - 70
         if ('scrollBehavior' in document.documentElement.style) {
             window.scrollTo({
-                top: pos,
-                behavior: 'smooth'
+                top: pos, behavior: 'smooth'
             })
             return
         }
@@ -180,10 +176,7 @@ const utils = {
     },
     lazyloadImg: function () {
         window.lazyLoadInstance = new LazyLoad({
-            elements_selector: 'img',
-            threshold: 0,
-            data_src: 'lazy-src',
-            callback_error: (img) => {
+            elements_selector: 'img', threshold: 0, data_src: 'lazy-src', callback_error: (img) => {
                 img.setAttribute("src", GLOBAL_CONFIG.lazyload.error);
             }
         })
@@ -212,30 +205,18 @@ const utils = {
 
             if (!window.fancyboxRun) {
                 Fancybox.bind('[data-fancybox]', {
-                    Hash: false,
-                    Thumbs: {
+                    Hash: false, Thumbs: {
                         showOnStart: false
-                    },
-                    Images: {
+                    }, Images: {
                         Panzoom: {
                             maxScale: 4
                         }
-                    },
-                    Carousel: {
+                    }, Carousel: {
                         transition: 'slide'
-                    },
-                    Toolbar: {
+                    }, Toolbar: {
                         display: {
                             left: ['infobar'],
-                            middle: [
-                                'zoomIn',
-                                'zoomOut',
-                                'toggle1to1',
-                                'rotateCCW',
-                                'rotateCW',
-                                'flipX',
-                                'flipY'
-                            ],
+                            middle: ['zoomIn', 'zoomOut', 'toggle1to1', 'rotateCCW', 'rotateCW', 'flipX', 'flipY'],
                             right: ['slideshow', 'thumbs', 'close']
                         }
                     }

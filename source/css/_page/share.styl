@@ -1,0 +1,318 @@
+// banner
+
+div#banners
+  display none
+  +minWidth1200()
+    display flex
+    width 100%
+    height 76%
+    background var(--sco-card-bg)
+    margin-bottom .5rem
+    border var(--style-border)
+    border-radius 12px
+    overflow hidden
+    position relative
+    box-shadow var(--sco-shadow-border)
+    flex-direction column
+    transition .3s
+    will-change transform
+    animation slide-in .6s .1s backwards
+
+    :not(.flink)&:hover
+      box-shadow var(--sco-shadow-main)
+
+    .banner-button-group
+      position absolute
+      right 2rem
+      top 2rem
+      display flex
+
+    .banner-button
+      padding 8px 12px
+      background var(--sco-fontcolor)
+      border-radius 12px
+      color var(--sco-card-bg)
+      display flex
+      align-items center
+      z-index 1
+      transition .3s
+      cursor pointer
+      box-shadow var(--sco-shadow-black)
+
+      &.secondary
+        background var(--sco-secondbg)
+        border var(--style-border-always)
+        color var(--sco-lighttext)
+        margin-right 1rem
+        box-shadow var(--sco-shadow-border)
+
+      &:hover
+        background var(--sco-theme)
+        color var(--sco-white)
+
+      i
+        margin-right 8px
+        font-size 1rem
+
+    .banners-title
+      top 2rem
+      left 1.5rem
+      position absolute
+      display flex
+      flex-direction column
+
+      &-big
+        font-size 36px
+        line-height 1
+        font-weight 700
+        margin-bottom 8px
+
+      &-small
+        font-size 12px
+        line-height 1
+        color var(--sco-secondtext)
+        margin-top 8px
+        margin-bottom .5rem
+
+    #banner-hover
+      position absolute
+      width 100%
+      height 100%
+      top 0
+      left 0
+      border-radius 12px
+      background var(--sco-theme)
+      color var(--sco-card-bg)
+      padding-left .5rem
+      display flex
+      flex-direction column
+      justify-content center
+      opacity 0
+      transition cubic-bezier(.71, .15, .16, 1.15) .6s
+
+      i
+        font-size 80px
+        opacity .4
+
+    &:hover
+      #banner-hover
+        opacity 1
+        padding-left 2rem
+        background var(--sco-theme-op-deep)
+        backdrop-filter blur(15px)
+        transform translateZ(0)
+        transition .3s
+        background-size 200%
+        cursor pointer
+
+    .flink
+      .banners-title
+        top 1.5rem
+
+    .bannerText
+      font-size 4rem
+      line-height 4rem
+      font-weight 700
+
+  .tags-group-all
+    display flex
+    transform rotate(-30deg)
+
+    &.nowrapMove
+      transform rotate(0)
+      padding-bottom 2rem
+
+      .tags-group-wrapper
+        margin-top: 7rem
+        animation: rowup 120s linear infinite
+
+      .tags-group-icon
+        border-radius 50%
+
+        img
+          min-width 100%
+          min-height 100%
+          border-radius 50%
+          object-fit cover
+
+    .tags-group-wrapper
+      margin-top: 5rem
+      display: flex
+      flex-wrap: nowrap
+      animation: rowup 60s linear infinite
+
+      /.tags-group-icon-pair
+        margin-left 1rem
+        user-select none
+
+        a img
+          border-radius 50%
+
+        .tags-group-icon
+          width 120px
+          height 120px
+          display flex
+          align-items center
+          justify-content center
+          color #fff
+          font-size 66px
+          font-weight 700
+          box-shadow var(--sco-shadow-blackdeep)
+
+          &:nth-child(even)
+            margin-top 1rem
+            transform translate(-60px)
+
+          img
+            width 60%
+
+.author-content
+  display flex
+  flex-wrap wrap
+  justify-content space-between
+  width 100%
+  margin-top 1rem
+
+  +maxWidth768()
+    margin-top 0
+
+  .author-content-item
+    +maxWidth1300()
+      animation slide-in .6s 0s backwards
+    +maxWidth768()
+      width 100% !important
+      margin-top 1rem
+      padding 1rem
+
+.author-content.author-content-item.sharePage
+  height 19rem
+  background-size cover
+  color var(--sco-white)
+  overflow hidden
+  margin-top 0
+
+.author-content-item
+  width 49%
+  border-radius 12px
+  background var(--sco-card-bg)
+  border var(--style-border-always)
+  box-shadow var(--sco-shadow-border)
+  position relative
+  overflow hidden
+  padding 1rem 2rem
+
+  +maxWidth768()
+    width 100%
+    margin-top 1rem
+    padding 1rem
+
+  &.single
+    width 100%
+
+  .author-content-item-title
+    font-size 36px
+    font-weight 700
+    line-height 1
+
+  .author-content-item-tips
+    opacity .8
+    font-size .6rem
+    margin-bottom .5rem
+
+  .content-bottom
+    margin-top auto
+    display flex
+    align-items center
+    justify-content space-between
+
+    .icon-group
+      display flex
+
+      i
+        display inline-block
+        width 22px
+        height 18px
+        margin-right .5rem
+
+  .card-content
+    position absolute
+    width 100%
+    height 100%
+    top 0
+    left 0
+    display flex
+    flex-direction column
+    padding 1rem 2rem
+
+    +maxWidth768()
+      padding 1rem
+
+    .author-content-item-title
+      margin-bottom .5rem
+
+    .banner-button-group
+      position absolute
+      bottom 1.5rem
+      right 2rem
+
+      .banner-button
+        height 40px
+        width 118px
+        border-radius 20px
+        justify-content center
+        background var(--sco-black-op)
+        color var(--sco-white)
+        display flex
+        align-items center
+        z-index 1
+        transition .3s
+        cursor pointer
+        backdrop-filter saturate(180%) blur(20px)
+        -webkit-backdrop-filter blur(20px)
+        transform translateZ(0)
+
+        &:hover
+          background var(--sco-main)
+          color var(--sco-card-bg)
+
+        i
+          margin-right 8px
+          font-size 22px
+
++maxWidth900()
+  .author-content-item
+    .card-content
+      .banner-button-group
+        right 1rem
+        bottom 1rem
+
+      .banner-button-group
+        .banner-button
+          background 0 0
+          color var(--sco-white)
+          padding 0
+          width 30px
+          height 30px
+
+          i
+            margin-right 0
+            font-size 1.5rem
+
+      .banner-button-text
+        display none
+
+#page
+  p
+    a
+      &:not(.headerlink)
+        text-decoration none
+        border-bottom 2px dotted var(--sco-lighttext)
+        color var(--sco-fontcolor)
+        font-weight 700
+        padding 0 4px
+        border-radius 4px 4px 0 0
+
+      &:hover
+        color var(--sco-white)
+        border-radius 4px
+        background var(--sco-main)

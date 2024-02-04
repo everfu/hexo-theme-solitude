@@ -64,37 +64,45 @@ const scrollFn = function () {
     }
 }
 
+let ticking = false;
+
 const percent = () => {
-    let scrollTop = document.documentElement.scrollTop || window.pageYOffset
-    let totalHeight = Math.max(document.body.scrollHeight, document.documentElement.scrollHeight, document.body.offsetHeight, document.documentElement.offsetHeight, document.body.clientHeight, document.documentElement.clientHeight) - document.documentElement.clientHeight
-    let scrollPercent = Math.round(scrollTop / totalHeight * 100)
-    let percentElement = document.querySelector("#percent")
-    let viewportBottom = window.scrollY + document.documentElement.clientHeight
-    let remainingScroll = totalHeight - scrollTop
+    if (!ticking) {
+        window.requestAnimationFrame(() => {
+            let scrollTop = document.documentElement.scrollTop || window.pageYOffset;
+            let totalHeight = Math.max(document.body.scrollHeight, document.documentElement.scrollHeight, document.body.offsetHeight, document.documentElement.offsetHeight, document.body.clientHeight, document.documentElement.clientHeight) - document.documentElement.clientHeight;
+            let scrollPercent = Math.round(scrollTop / totalHeight * 100);
+            let percentElement = document.querySelector("#percent");
+            let viewportBottom = window.scrollY + document.documentElement.clientHeight;
+            let remainingScroll = totalHeight - scrollTop;
 
-    if ((document.getElementById("post-comment") || document.getElementById("footer")).offsetTop < viewportBottom || scrollPercent > 90) {
-        document.querySelector("#nav-totop").classList.add("long")
-        percentElement.innerHTML = "返回顶部"
-    } else {
-        document.querySelector("#nav-totop").classList.remove("long")
-        if (scrollPercent >= 0) {
-            percentElement.innerHTML = scrollPercent + ""
-        }
+            if ((document.getElementById("post-comment") || document.getElementById("footer")).offsetTop < viewportBottom || scrollPercent > 90) {
+                document.querySelector("#nav-totop").classList.add("long");
+                percentElement.innerHTML = "返回顶部";
+            } else {
+                document.querySelector("#nav-totop").classList.remove("long");
+                if (scrollPercent >= 0) {
+                    percentElement.innerHTML = scrollPercent + "";
+                }
+            }
+
+            let elementsToHide = document.querySelectorAll(".needEndHide");
+            if (remainingScroll < 100) {
+                elementsToHide.forEach(function (element) {
+                    element.classList.add("hide");
+                });
+            } else {
+                elementsToHide.forEach(function (element) {
+                    element.classList.remove("hide");
+                });
+            }
+            ticking = false;
+        });
+        ticking = true;
     }
+};
 
-    let elementsToHide = document.querySelectorAll(".needEndHide")
-    if (remainingScroll < 100) {
-        elementsToHide.forEach(function (element) {
-            element.classList.add("hide")
-        })
-    } else {
-        elementsToHide.forEach(function (element) {
-            element.classList.remove("hide")
-        })
-    }
-
-    window.onscroll = percent
-}
+window.onscroll = percent;
 
 
 const showTodayCard = () => {
@@ -109,10 +117,15 @@ const showTodayCard = () => {
 }
 
 const changeTimeFormat = () => {
-    const timeElements = document.getElementsByTagName("time"), lang = GLOBAL_CONFIG.lang.time
-    for (let i = 0; i < timeElements.length; i++) {
-        const datetime = timeElements[i].getAttribute("datetime"), timeObj = new Date(datetime),
-            daysDiff = utils.timeDiff(timeObj, new Date())
+    const timeElements = Array.from(document.getElementsByTagName("time"));
+    const lang = GLOBAL_CONFIG.lang.time;
+    const currentDate = new Date();
+
+    timeElements.forEach(timeElement => {
+        const datetime = timeElement.getAttribute("datetime");
+        const timeObj = new Date(datetime);
+        const daysDiff = utils.timeDiff(timeObj, currentDate);
+
         let timeString;
         if (daysDiff === 0) {
             timeString = lang.recent;
@@ -121,16 +134,16 @@ const changeTimeFormat = () => {
         } else if (daysDiff === 2) {
             timeString = lang.berforeyesterday;
         } else if (daysDiff <= 7) {
-            timeString = daysDiff + lang.daybefore;
+            timeString = `${daysDiff}${lang.daybefore}`;
         } else {
-            if (timeObj.getFullYear() !== new Date().getFullYear()) {
-                timeString = timeObj.getFullYear() + "/" + (timeObj.getMonth() + 1) + "/" + timeObj.getDate();
+            if (timeObj.getFullYear() !== currentDate.getFullYear()) {
+                timeString = `${timeObj.getFullYear()}/${timeObj.getMonth() + 1}/${timeObj.getDate()}`;
             } else {
-                timeString = (timeObj.getMonth() + 1) + "/" + timeObj.getDate();
+                timeString = `${timeObj.getMonth() + 1}/${timeObj.getDate()}`;
             }
         }
-        timeElements[i].textContent = timeString;
-    }
+        timeElement.textContent = timeString;
+    });
 }
 
 const initObserver = () => {
@@ -281,7 +294,7 @@ let sco = {
         htmlClassList.toggle("hide-aside");
         htmlClassList.contains("hide-aside") ? document.querySelector("#consoleHideAside").classList.add("on") : document.querySelector("#consoleHideAside").classList.remove("on");
     },
-    switchKeyboard: function() {
+    switchKeyboard: function () {
         sco_keyboards = !sco_keyboards;
         const consoleKeyboard = document.querySelector("#consoleKeyboard");
         if (sco_keyboards) {
@@ -323,37 +336,31 @@ let sco = {
             GLOBAL_CONFIG.rightside && (document.querySelector(".menu-darkmode-text").textContent = "深色模式");
         }
     },
-    hideTodayCard: function () {
-        document.getElementById('todayCard').classList.add('hide')
-    },
-    toTop: function () {
-        utils.scrollToDest(0)
-    },
+    hideTodayCard: () => document.getElementById('todayCard').classList.add('hide'),
+    toTop: () => utils.scrollToDest(0),
+
     showConsole: function () {
         let el = document.getElementById('console')
-        if (!el.classList.contains('show')) {
+        if (el && !el.classList.contains('show')) {
             el.classList.add('show')
         }
     },
     hideConsole: function () {
         const el = document.getElementById('console')
-        if (el.classList.contains('show')) {
-            el.classList.remove('show')
-        }
+        el && el.classList.remove('show')
     },
     reflashEssayWaterFall: function () {
-        if (document.getElementById('waterfall')) {
+        const el = document.getElementById('waterfall')
+        el && (() => {
             setTimeout(function () {
                 waterfall('#waterfall');
-                document.getElementById("waterfall").classList.add('show');
+                el.classList.add('show');
             }, 500);
-        }
+        })();
     },
     addRuntime: function () {
         let el = document.getElementById('runtimeshow')
-        if (el && GLOBAL_CONFIG.runtime) {
-            el.innerText = utils.timeDiff(new Date(GLOBAL_CONFIG.runtime), new Date()) + GLOBAL_CONFIG.lang.time.runtime
-        }
+        el && GLOBAL_CONFIG.runtime && (el.innerText = utils.timeDiff(new Date(GLOBAL_CONFIG.runtime), new Date()) + GLOBAL_CONFIG.lang.time.runtime)
     },
     toTalk: function (txt) {
         const inputs = ["#wl-edit", ".el-textarea__inner"]
@@ -832,5 +839,6 @@ document.addEventListener('DOMContentLoaded', function () {
 })
 
 window.onkeydown = function (e) {
-    123 === e.keyCode && utils.snackbarShow("开发者模式已打开，请遵循GPL协议", !1, 3e3)
+    (123 === e.keyCode || (17 === e.ctrlKey && 16 === e.shiftKey && 67 === e.keyCode)) && utils.snackbarShow("开发者模式已打开，请遵循GPL协议", !1, 3e3);
+    (27 === e.keyCode) && sco.hideConsole();
 }

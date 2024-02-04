@@ -1,7 +1,7 @@
 script.
     !async function () {
         const htmlTagRegex = /<[^>]+>/g;
-
+        document.querySelector('#bber-talk').innerHTML = '<div class="li-style swiper-slide"><i class="scoicon sco-loading-line"></i></div>';
         await fetch('!{theme.says.mode_link}')
             .then(res => res.json())
             .then(res => {

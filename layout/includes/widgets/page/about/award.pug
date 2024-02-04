@@ -7,14 +7,17 @@ if site.data.about.rewardList
             .author-content-item-tips= _p('award.about.tip')
             span.author-content-item-title= _p('award.about.title')
             .author-content-item-description
-               = award.description
+                = award.description
             .reward-list-all
                 each reward in site.data.about.rewardList
                     - sum += reward.money
                     .reward-list-item
                         .reward-list-item-name= reward.name
                         .reward-list-bottom-group
-                            .reward-list-item-money(style=(reward.vip ? "background: var(--sco-vip);" : "")) ¥ #{reward.money}
+                            .reward-list-item-money(style=(reward.vip ? "background: var(--sco-vip);" : ""))
+                                if reward.icon
+                                    i.scoicon(class=reward.icon)
+                                | ¥ #{reward.money}
                             time.datatime.reward-list-item-time(datetime=moment(reward.time).format())
                 if theme.post.award.enable
                     .post-reward
@@ -33,4 +36,4 @@ if site.data.about.rewardList
                                                 img.post-qr-code-img(alt=reward.description, src=reward.image)
                                             .post-qr-code-desc= reward.description
             .reward-list-tips
-                p= award.tips.replace('{sum}', sum)
+                p= award.tips.replace('{sum}', sum.toFixed(2))
