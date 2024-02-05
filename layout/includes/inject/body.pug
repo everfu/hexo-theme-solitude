@@ -50,7 +50,6 @@ div
     if theme.says.home_mini
         script(src=url_for(theme.cdn.swiper_js))
 
-    // post-ai)
     if theme.post_ai.enable
         script(src=url_for(theme.cdn.sco_ai_js))
 
@@ -72,11 +71,9 @@ div
                     }
                 script(src=url_for(theme.cdn.cover_api))
 
-    // waterfall
     if theme.says.enable
         script(src=url_for(theme.cdn.waterfall))
 
-    // comment
     if theme.comment.enable
         case theme.comment.type
             when 'twikoo'
@@ -92,15 +89,12 @@ div
                 when 'waline'
                     script(src=url_for(theme.cdn.waline_commentBarrage))
 
-    // music
     if theme.music.enable
         script(src=url_for(theme.cdn.music_js))
 
-    // pace 胶囊加载条(Capsule loading bar)
     if theme.loading.pace
         script(src=url_for(theme.cdn.pace_js))
 
-    // search
     if theme.search.enable
         case theme.search.type
             when 'algolia'
@@ -109,7 +103,6 @@ div
             when 'local'
                 script(src=url_for(theme.cdn.lunr_js))
 
-    // inject custom body
     if theme.extends.body
         each item in theme.extends.body
             != item
@@ -118,6 +111,9 @@ div#js-pjax
     if page.type === 'album' && theme.album.enable
         script.
             initGallery()
+    if is_home() && theme.says.home_mini
+        script.
+            sco.initbbtalk()
     if page.type === 'says' && theme.says.enable
         script.
             window.addEventListener('resize', utils.throttle(function () {
