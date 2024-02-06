@@ -1,5 +1,7 @@
 script.
-    !async function () {
+    async function getSays () {
+        document.addEventListener('DOMContentLoaded', this)
+        document.addEventListener('pjax:complete', this)
         const htmlTagRegex = /<[^>]+>/g;
         document.querySelector('#bber-talk').innerHTML = '<div class="li-style swiper-slide"><i class="scoicon sco-loading-line"></i></div>';
         await fetch('!{theme.says.mode_link}')
@@ -16,8 +18,8 @@ script.
                     content += item.link ? `<i class="scoicon sco-link"></i>` : '';
                     return `<div class="li-style swiper-slide">${content}</div>`;
                 }).join('');
-
-                document.addEventListener('DOMContentLoaded', sco.initbbtalk)
-                document.addEventListener('pjax:complete', sco.initbbtalk)
+                sco.initbbtalk();
             }).catch(err => console.log('bbtime |', err));
-    }();
+    }
+    document.addEventListener('DOMContentLoaded', getSays)
+    document.addEventListener('pjax:complete', getSays)

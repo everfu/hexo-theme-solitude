@@ -111,9 +111,6 @@ div#js-pjax
     if page.type === 'album' && theme.album.enable
         script.
             initGallery()
-    if is_home() && theme.says.home_mini
-        script.
-            sco.initbbtalk()
     if page.type === 'says' && theme.says.enable
         script.
             window.addEventListener('resize', utils.throttle(function () {
