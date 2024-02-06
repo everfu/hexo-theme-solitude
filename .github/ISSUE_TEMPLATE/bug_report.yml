@@ -1,4 +1,4 @@
-name: Bug 报告 🐛
+name: Bug report 🐛
 description: 本项目仅对最新版本进行维护，使用老版本出现问题的，请先升级到最新版本或使用dev版本，升级完后如果发现bug依然存在，请继续填写此issue。
 labels: ['status: needs check']
 body:
@@ -21,7 +21,7 @@ body:
     attributes:
       label: ⚠️ 搜索issues中是否已存在类似问题
       description: >
-        请在 [历史issue](https://github.com/DuoSco/Hexo-theme-solitude/issues) 中清空输入框，搜索你的问题
+        请在 [历史issue](https://github.com/wleelw/hexo-theme-solitude/issues) 中清空输入框，搜索你的问题
         或相关日志的关键词来查找是否存在类似问题。
       options:
         - label: 我已经搜索过issues和disscussions，没有跟我遇到的问题相关的issue
