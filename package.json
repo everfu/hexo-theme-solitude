@@ -1,7 +1,7 @@
 {
   "name": "hexo-theme-solitude",
-  "version": "1.4.5",
-  "description": "A beautiful, powerful, and efficient Hexo theme developed by the DuoSco team",
+  "version": "1.4.6",
+  "description": "A beautiful, powerful, and efficient Hexo theme developed by the wleelw",
   "main": "package.json",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
