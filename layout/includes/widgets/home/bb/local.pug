@@ -3,13 +3,13 @@ each item, i in site.data.essay.essay_list.slice(0, 10)
         | #{item.content}
         if item.image
             i.scoicon.sco-image-fill
-        if item.aplayer
+        else if item.aplayer
             i.scoicon.sco-disc-fill
-        if item.video
+        else if item.video
             i.scoicon.sco-video-fill
-        if item.bilibili
+        else if item.bilibili
             i.scoicon.sco-bilibili-line
-        if item.link
+        else if item.link
             i.scoicon.sco-links
 script.
     document.addEventListener('DOMContentLoaded',()=>{

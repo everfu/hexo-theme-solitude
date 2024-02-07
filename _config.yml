@@ -1,3 +1,4 @@
+---
 #---------------------------
 # Hexo Theme Solitude
 # Author: wleelw（王卓Sco）、yife68（亦封）
@@ -45,91 +46,90 @@ nav:
     # 导航栏显示的内容
     # Content displayed in the navigation bar
     menu:
-  #      # 显示分类名
-  #      # Display category name
-  #      项目:
-  #        # 显示子类
-  #        # Display subcategories
-  #        Solitude:
-  #          # 显示的图标
-  #          # Displayed icon
-  #          icon: https://bu.dusays.com/2023/11/08/654af68b25bb8.jpg
-  #          # 点击的跳转链接
-  #          # Click the jump link
-  #          url: https://github.com/wleelw/Hexo-Theme-solitude
+      # 显示分类名
+      # Display category name
+      项目:
+        # # 显示子类
+        # # Display subcategories
+        # Solitude:
+        #   # 显示的图标
+        #   # Displayed icon
+        #   icon: https://bu.dusays.com/2023/11/08/654af68b25bb8.jpg
+        #   # 点击的跳转链接
+        #   # Click the jump link
+        #   url: https://github.com/wleelw/Hexo-Theme-solitude
 
   # 导航栏内容
   # Navigation bar content
   # tip：此部分内容是顶部导航栏中间菜单区域
   # tip: This part of the content is the menu area in the middle of the top navigation bar
   menu:
-  # 显示的大分类名称
-  # Displayed category name
-  #    文库:
-  #      # 点击跳转链接
-  #      # Click the jump link
-  #      # tip：如果没有子类就填跳转链接，例如：/archives，否则填false
-  #      # tip: If there is no subcategory, fill in the jump link, for example: /archives, otherwise fill in false
-  #      url: false
-  #      # 子类数组
-  #      # Subcategory array
-  #      child:
-  #        # 子类名称
-  #        # Subcategory name
-  #        文章列表:
-  #          # 点击跳转链接
-  #          # Click the jump link
-  #          url: /archives/
-  #          # 子类名称左侧图标
-  #          # Subcategory name left icon
-  #          icon: sco-folder-fill
-  #        全部分类:
-  #          url: /categories/
-  #          icon: sco-checkbox-multiple-blank-fill
-  #        全部标签:
-  #          url: /tags/
-  #          icon: sco-price-tag-fill
-  #      友链:
-  #        url: false
-  #        child:
-  #          友情链接:
-  #            url: /links/
-  #            icon: sco-group-fill
-  #          宝藏博主:
-  #            url: javascript:travelling()
-  #            icon: sco-gift-fill
-  #      我的:
-  #        url: false
-  #        child:
-  #          装备:
-  #            url: /equipment/
-  #            icon: sco-laptop-line
-  #          工具箱:
-  #            url: /tlink/
-  #            icon: sco-tools-fill
-  #      关于:
-  #        url: false
-  #        child:
-  #          关于本站:
-  #            url: /about/
-  #            icon: sco-contacts-fill
-
+    # 显示的大分类名称
+    # Displayed category name
+    # 文库:
+    #   # 点击跳转链接
+    #   # Click the jump link
+    #   # tip：如果没有子类就填跳转链接，例如：/archives，否则填false
+    #   # tip: If there is no subcategory, fill in the jump link, for example: /archives, otherwise fill in false
+    #   url: false
+    #   # 子类数组
+    #   # Subcategory array
+    #   child:
+    #     # 子类名称
+    #     # Subcategory name
+    #     文章列表:
+    #       # 点击跳转链接
+    #       # Click the jump link
+    #       url: /archives/
+    #       # 子类名称左侧图标
+    #       # Subcategory name left icon
+    #       icon: sco-folder-fill
+    #     全部分类:
+    #       url: /categories/
+    #       icon: sco-checkbox-multiple-blank-fill
+    #     全部标签:
+    #       url: /tags/
+    #       icon: sco-price-tag-fill
+    # 友链:
+    #   url: false
+    #   child:
+    #     友情链接:
+    #       url: /links/
+    #       icon: sco-group-fill
+    #     宝藏博主:
+    #       url: javascript:travelling()
+    #       icon: sco-gift-fill
+    # 我的:
+    #   url: false
+    #   child:
+    #     装备:
+    #       url: /equipment/
+    #       icon: sco-laptop-line
+    #     工具箱:
+    #       url: /tlink/
+    #       icon: sco-tools-fill
+    # 关于:
+    #   url: false
+    #   child:
+    #     关于本站:
+    #       url: /about/
+    #       icon: sco-contacts-fill
 
   # 导航栏右侧按钮
   # Button on the right side of the navigation bar
   # tip：只需填写true和false即可
   # tip: Just fill in true and false
   right:
-    random: false        # 随机文章跳转 true：开启 / false：关闭 : random post jump true: on / false: off
-    console: false       #控制台 true：开启 / false：关闭 : console true: on / false: off
+    random: false # 随机文章跳转 true：开启 / false：关闭 : random post jump true: on / false: off
+    console: false #控制台 true：开启 / false：关闭 : console true: on / false: off
     # 从左至右
     # From left to right
     custom:
-#      - name: 开往 - 友链接力 # 显示文字 / Displayed text
-#        url: https://www.travellings.cn/go.html # 跳转链接 / Jump link
-#        icon: sco-train-line # 图标 / Icon
-#        onclick:  # 点击事件 / Click event
-#        id: travellings_button # id
+      # - name: 开往 - 友链接力 # 显示文字 / Displayed text
+      #   url: https://www.travellings.cn/go.html # 跳转链接 / Jump link
+      #   icon: sco-train-line # 图标 / Icon
+      #   onclick: # 点击事件 / Click event
+      #   id: travellings_button # id
 
 # 首页顶部样式
 # Home top style
@@ -151,33 +151,33 @@ hometop:
     # 轮播icon
     # Carousel icon
     icon:
-    # 名字 / Name
-  #      HTML:
-  #        # 图片 / Image
-  #        img: https://npm.elemecdn.com/wleelw-blog-abs@1.0.0/img/icon/HTML.png
-  #        # 背景色 / Background color
-  #        color: '#e9572b'
-  #      JS:
-  #        img: https://npm.elemecdn.com/wleelw-blog-abs@1.0.0/img/icon/JS.png
-  #        color: '#f7cb4f'
-  #      Kotlin:
-  #        img: https://npm.elemecdn.com/wleelw-blog-abs@1.0.0/img/icon/kotlin-logo.svg
-  #        color: '#ffffff'
-  #      Docker:
-  #        img: https://npm.elemecdn.com/wleelw-blog-abs@1.0.0/img/icon/docker.png
-  #        color: '#57b6e6'
-  #      Flutter:
-  #        img: https://npm.elemecdn.com/wleelw-blog-abs@1.0.0/img/icon/flutter.png
-  #        color: '#ffffff'
-  #      WebPack:
-  #        img: https://npm.elemecdn.com/wleelw-blog-abs@1.0.0/img/icon/webpack.png
-  #        color: '#2e3a41'
-  #      Git:
-  #        img: https://npm.elemecdn.com/wleelw-blog-abs@1.0.0/img/icon/git.png
-  #        color: '#df5b40'
-  #      VS:
-  #        img: https://npm.elemecdn.com/wleelw-blog-abs@1.0.0/img/icon/vs-logo.svg
-  #        color: '#ffffff'
+      # # 名字 / Name
+      # HTML:
+      #   # 图片 / Image
+      #   img: https://npm.elemecdn.com/wleelw-blog-abs@1.0.0/img/icon/HTML.png
+      #   # 背景色 / Background color
+      #   color: "#e9572b"
+      # JS:
+      #   img: https://npm.elemecdn.com/wleelw-blog-abs@1.0.0/img/icon/JS.png
+      #   color: "#f7cb4f"
+      # Kotlin:
+      #   img: https://npm.elemecdn.com/wleelw-blog-abs@1.0.0/img/icon/kotlin-logo.svg
+      #   color: "#ffffff"
+      # Docker:
+      #   img: https://npm.elemecdn.com/wleelw-blog-abs@1.0.0/img/icon/docker.png
+      #   color: "#57b6e6"
+      # Flutter:
+      #   img: https://npm.elemecdn.com/wleelw-blog-abs@1.0.0/img/icon/flutter.png
+      #   color: "#ffffff"
+      # WebPack:
+      #   img: https://npm.elemecdn.com/wleelw-blog-abs@1.0.0/img/icon/webpack.png
+      #   color: "#2e3a41"
+      # Git:
+      #   img: https://npm.elemecdn.com/wleelw-blog-abs@1.0.0/img/icon/git.png
+      #   color: "#df5b40"
+      # VS:
+      #   img: https://npm.elemecdn.com/wleelw-blog-abs@1.0.0/img/icon/vs-logo.svg
+      #   color: "#ffffff"
 
   # 顶部三大分类
   # Top three categories
@@ -224,7 +224,7 @@ hometop:
     img: /img/default.png
     # 阴影颜色
     # Shadow color
-    color: '#ff0000'
+    color: "#ff0000"
 
 # --------------------------------------
 # Aside Settings
@@ -304,15 +304,15 @@ aside:
       - 💢 壮汉人狠话不多
       - 🎮 电竞游戏爱好者
     information:
-  #      # 悬停显示文字
-  #      Github:
-  #        # 图标
-  #        icon: scoicon sco-github-line
-  #        # 跳转链接
-  #        url: https://github.com/wleelw/Hexo-Theme-slitude
-  #      Bilibili:
-  #        icon: scoicon sco-bilibili-line
-  #        url: https://space.bilibili.com/1329819902
+      # # 悬停显示文字
+      # Github:
+      #   # 图标
+      #   icon: scoicon sco-github-line
+      #   # 跳转链接
+      #   url: https://github.com/wleelw/Hexo-Theme-slitude
+      # Bilibili:
+      #   icon: scoicon sco-bilibili-line
+      #   url: https://space.bilibili.com/1329819902
 
   # 二维码
   # Official account QR code
@@ -358,14 +358,14 @@ aside:
     # 高亮显示标签列表
     # Highlighted tag list
     list:
-      - 'Solitude-使用'
+      - "Solitude-使用"
 
   # 侧边栏归档
   # aside archive
   archive:
     enable: false
     # 显示类型
-    type: 'month' # monthly: 按月 / yearly: 按年 : monthly: by month / yearly: by year
+    type: "month" # monthly: 按月 / yearly: 按年 : monthly: by month / yearly: by year
 
   # 建站信息
   # Website information
@@ -390,7 +390,7 @@ aside:
     runtimeenable: true
     # 格式：yyyy-MM-dd hh-mm-ss
     # Format: yyyy-MM-dd hh-mm-ss
-    runtime: '2023-04-20 00:00:00'
+    runtime: "2023-04-20 00:00:00"
 
 # -------------------------
 # 文章页、页面配置
@@ -399,7 +399,7 @@ aside:
 # 页面默认设置
 # page default settings
 page:
-  error: true  # 404页面 / 404 page
+  error: true # 404页面 / 404 page
   tags: true # 标签页 /  Tags page
   categories: true # 分类页 /  Categories page
   default: # 默认值 /  Default value
@@ -476,13 +476,13 @@ post:
 # --------------------------------------
 theme_color:
   dark: "#ffc848" # 暗色模式 / Dark mode
-  dark_op: '#f2b94b23' # 暗色模式透明 / Dark mode transparent
-  dark_op_deep: '#f2b94bdd' # 暗色模式透明深色 / Dark mode transparent dark
-  dark_none: '#f2b94b00' # 暗色模式透明无色 / Dark mode transparent colorless
+  dark_op: "#f2b94b23" # 暗色模式透明 / Dark mode transparent
+  dark_op_deep: "#f2b94bdd" # 暗色模式透明深色 / Dark mode transparent dark
+  dark_none: "#f2b94b00" # 暗色模式透明无色 / Dark mode transparent colorless
   light: "#425AEF" # 亮色模式 / Light mode
-  light_op: '#4259ef23' # 亮色模式透明 / Light mode transparent
-  light_op_deep: '#4259efdd' # 亮色模式透明深色 / Light mode transparent dark
-  light_none: '#4259ef01' # 亮色模式透明无色 / Light mode transparent colorless
+  light_op: "#4259ef23" # 亮色模式透明 / Light mode transparent
+  light_op_deep: "#4259efdd" # 亮色模式透明深色 / Light mode transparent dark
+  light_none: "#4259ef01" # 亮色模式透明无色 / Light mode transparent colorless
 
 # 主题显示模式调整
 # theme display mode adjustment
@@ -515,38 +515,40 @@ footer:
   # 底部上方一排图标
   # Bottom row of icons
   information:
-    left: # 左侧显示图标 / Left display icon
-    #      Github:
-    #        icon: scoicon sco-bilibili-line
-    #        url: https://github.com/wleelw
-    #      Mail:
-    #        icon: scoicon sco-mail-line
-    #        url: mailto:wleelw@wzsco.top
-    right: # 右侧显示图标 / Right display icon
-    #      Bilibili:
-    #        icon: scoicon sco-bilibili-line
-    #        url: https://space.bilibili.com/1329819902
-    #      抖音:
-    #        icon: scoicon sco-douyin-fill
-    #        url: https://v.douyin.com/iJsLc8jt/
+    # 左侧显示图标 / Left display icon
+    left:
+      # Github:
+      #   icon: scoicon sco-bilibili-line
+      #   url: https://github.com/wleelw
+      # Mail:
+      #   icon: scoicon sco-mail-line
+      #   url: mailto:wleelw@wzsco.top
+    # 右侧显示图标 / Right display icon
+    right:
+      # Bilibili:
+      #   icon: scoicon sco-bilibili-line
+      #   url: https://space.bilibili.com/1329819902
+      # 抖音:
+      #   icon: scoicon sco-douyin-fill
+      #   url: https://v.douyin.com/iJsLc8jt/
 
   # 底部导航栏
   # Bottom navigation bar
-  group: # 从左至右 / From left to right
-  #    导航:
-  #      归档: /archives/
-  #      分类: /categories/
-  #      标签: /tags/
-  #    服务:
-  #      阿里云: https://aliyun.com/
-  #      51la统计: https://v6.51.la/
-  #      百度统计: https://tongji.baidu.com/
-  #    支持:
-  #      打赏记录: /about/
-  #    协议:
-  #      Cookies: /cookies/
-  #      用户协议: /privacy/
-  #      版权协议: /copyright/
+  group:
+    # 导航:
+    #   归档: /archives/
+    #   分类: /categories/
+    #   标签: /tags/
+    # 服务:
+    #   阿里云: https://aliyun.com/
+    #   51la统计: https://v6.51.la/
+    #   百度统计: https://tongji.baidu.com/
+    # 支持:
+    #   打赏记录: /about/
+    # 协议:
+    #   Cookies: /cookies/
+    #   用户协议: /privacy/
+    #   版权协议: /copyright/
 
   # 底部随机友链
   # Random links at the bottom
@@ -605,11 +607,11 @@ says:
   # 即刻短文仅展示前n条
   # Jike short text only shows the first n
   strip: 30
-  # 模式选择。local：本地静态 / json：动态json / memos：动态Memos
-  # Mode selection. Local: local static/JSON: dynamic JSON/memory: dynamic Memos
+  # 模式选择。local：本地静态 / memos：动态Memos
+  # Mode selection. Local: local static/memos: dynamic Memos
   mode: local
-  # 动态模式地址。如为json或memos模式，此项为必填。链接获取以及格式可查看主题文档。
-  # Dynamic mode address. If it is in JSON or Memos mode, this field is mandatory. The link acquisition and format can be viewed in the theme document.
+  # 动态模式地址。memos模式，此项为必填。链接获取以及格式可查看主题文档。
+  # Dynamic mode address. For memos mode, this item is required. Link acquisition and format can be viewed in the theme documentation.
   mode_link: # https://example.com/api/v1/memo?creatorId=1&tag=says
 
 # -------------------------
@@ -672,28 +674,28 @@ keyboard:
   # 键盘控制配置
   # Keyboard control configuration
   list:
-  # name: 按键名称
-  # name: Key name
-  # key: 按键
-  # key: Key
-  # func: 方法
-  # func: Function
-  # sco: sco内置方法
-  # sco: sco built-in method
-  # url: 跳转链接
-  # url: Jump link
-#    - name: 关闭快捷键功能
-#      key: K
-#      func: keyboard
-#    - name: 打开中控台
-#      key: A
-#      sco: showConsole
-#    - name: 播放/暂停音乐
-#      key: M
-#      sco: musicToggle
-#    - name: 打开友情链接
-#      key: L
-#      url: '/links/'
+    # name: 按键名称
+    # name: Key name
+    # key: 按键
+    # key: Key
+    # func: 方法
+    # func: Function
+    # sco: sco内置方法
+    # sco: sco built-in method
+    # url: 跳转链接
+    # url: Jump link
+    # - name: 关闭快捷键功能
+    #   key: K
+    #   func: keyboard
+    # - name: 打开中控台
+    #   key: A
+    #   sco: showConsole
+    # - name: 播放/暂停音乐
+    #   key: M
+    #   sco: musicToggle
+    # - name: 打开友情链接
+    #   key: L
+    #   url: "/links/"
 
 # 懒加载
 # lazyload
@@ -760,13 +762,13 @@ translate:
 opengraph:
   enable: false
   options:
-#    twitter_card:
-#    twitter_image:
-#    twitter_id:
-#    twitter_site:
-#    google_plus:
-#    fb_admins:
-#    fb_app_id:
+  #  twitter_card:
+  #  twitter_image:
+  #  twitter_id:
+  #  twitter_site:
+  #  google_plus:
+  #  fb_admins:
+  #  fb_app_id:
 
 # 字数统计
 # word count
@@ -843,24 +845,24 @@ comment:
   newComment: false # 最新评论开关 / Latest comment switch
   # 匿名评论前部分随机信息 / Anonymous comment front random information
   randomInfoStart:
-    - '聪敏的'
-    - '可爱的'
-    - '美丽的'
+    - "聪敏的"
+    - "可爱的"
+    - "美丽的"
   # 匿名评论后部分随机信息 / Anonymous comment after random information
   randomInfoEnd:
-    - '白菜'
-    - '小可爱'
-    - '小仙女'
+    - "白菜"
+    - "小可爱"
+    - "小仙女"
   # twikoo 配置信息
   # twikoo settings
   twikoo: # https://twikoo.js.org/
     envId: # url: https://twikoo.sondy.top/
-    lang: 'zh-CN' # 语言
-    accessToken:  # accessToken
+    lang: "zh-CN" # 语言
+    accessToken: # accessToken
   # waline 配置信息
   # waline settings
   waline: # https://waline.js.org/
-    envId:  # url: https://waline.wzsco.top
+    envId: # url: https://waline.wzsco.top
     pageview: true # 是否开启页面访问量统计 / Whether to enable page access statistics
     option: # waline配置项 / waline configuration item
 
@@ -896,7 +898,7 @@ extends:
 pwa:
   enable: false
   manifest: /manifest.json # manifest.json 文件路径
-  theme_color: '#ffffff' # 主题颜色
+  theme_color: "#ffffff" # 主题颜色
   mask_icon: https://cdn.cbd.int/solitude-source/img/pwa/180.png # 遮罩图标
   apple_touch_icon: https://cdn.cbd.int/solitude-source/img/pwa/180.png # 苹果触摸图标
   bookmark_icon: https://cdn.cbd.int/solitude-source/img/pwa/180.png # 书签图标
@@ -923,27 +925,27 @@ CDN:
   custom_format: https://cdn.staticfile.org/${cdnjs_name}/${version}/${min_cdnjs_file}
 
   option:
-    scoicon_css: https://cdn.cbd.int/solitude-source/icon/scoicon.min.css
-    waterfall: https://cdn.cbd.int/solitude-source/js/waterfall.min.js
-    universe_js: https://cdn.cbd.int/solitude-source/js/universe.min.js
-#    algolia_search:
-#    instantsearch:
-#    pjax:
-#    twikoo:
-#    waline_js:
-#    waline_css:
-#    sharejs:
-#    sharejs_css:
-#    katex:
-#    katex_copytex:
-#    lazyload:
-#    aplayer_css:
-#    aplayer_js:
-#    meting_js:
-#    pace_js:
-#    lunr_js:
-#    swiper_css:
-#    swiper_js:
-#    busuanzi_js:
-#    snackbar_css:
-#    snackbar_js:
+   scoicon_css: https://cdn.cbd.int/solitude-source/icon/scoicon.min.css
+   waterfall: https://cdn.cbd.int/solitude-source/js/waterfall.min.js
+   universe_js: https://cdn.cbd.int/solitude-source/js/universe.min.js
+  #  algolia_search:
+  #  instantsearch:
+  #  pjax:
+  #  twikoo:
+  #  waline_js:
+  #  waline_css:
+  #  sharejs:
+  #  sharejs_css:
+  #  katex:
+  #  katex_copytex:
+  #  lazyload:
+  #  aplayer_css:
+  #  aplayer_js:
+  #  meting_js:
+  #  pace_js:
+  #  lunr_js:
+  #  swiper_css:
+  #  swiper_js:
+  #  busuanzi_js:
+  #  snackbar_css:
+  #  snackbar_js:

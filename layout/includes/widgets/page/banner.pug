@@ -3,18 +3,13 @@
         .author-content-item-tips= page.title
         span.author-content-item-title= page.desc
         .content-bottom
-            if (page.leftend)
-                .tips!= page.leftend
-            if(page.rightend)
-                .tips!= page.rightend
+            if page.leftend
+                .tips= page.leftend
+            if page.rightend
+                .tips= page.rightend
         if page.rightbtn
             .banner-button-group
-                case page.rightbtnlink.startsWith('/')
-                    when true
-                        a.banner-button(onclick="pjax.loadUrl(\"" + page.rightbtnlink + "\")")
-                            i.scoicon.sco-right-btn-fill
-                            span.banner-button-text= page.rightbtn
-                    when false
-                        a.banner-button(href=page.rightbtnlink, target="_blank")
-                            i.scoicon.sco-right-btn-fill
-                            span.banner-button-text= page.rightbtn
+                - const isInternalLink = page.rightbtnlink.startsWith('/')
+                a.banner-button(onclick=isInternalLink ? `pjax.loadUrl("${page.rightbtnlink}")` : null, href=isInternalLink ? null : page.rightbtnlink, target=isInternalLink ? null : "_blank")
+                    i.scoicon.sco-right-btn-fill
+                    span.banner-button-text= page.rightbtn

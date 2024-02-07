@@ -9,6 +9,6 @@ hexo.on('ready', () => {
       ######  ####  ##### #####    #      ###   ######   ######
                             ${version}
   ===================================================================
-  主题链接：https://github.com/wleelw/Hexo-theme-solitude
+  GitHub: https://github.com/wleelw/hexo-theme-solitude
   `)
 })

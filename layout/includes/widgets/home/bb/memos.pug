@@ -1,28 +1,36 @@
 script.
     async function getSays() {
-        document.querySelector('#bber-talk').innerHTML = '<div class="li-style swiper-slide"><i class="scoicon sco-loading-line"></i></div>'
-        await fetch('!{theme.says.mode_link}')
-            .then(response => response.json())
-            .then(data => {
-                let aplayerRegex = /{aplayer,(.*?),(.*?)}/g;
-                let bilibiliRegex = /{bilibili,(.*?)}/g;
-                let playerRegex = /{player,(.*?)}/g;
-                let linkRegex = /(?<!\!)\[([^\]]*)\]\(([^\)]*)\)/g;
-                let imageRegex = /!\[\]\((.*?)\)/g;
-                let contentRegex = /#.*?\s([^{\n]*)/g
-                const list = data.slice(0, 10)
-                document.querySelector('#bber-talk').innerHTML = list.map(item => {
-                    let content = item.content.match(contentRegex, '$1').map(item => item.replace(contentRegex, '$1'));
-                    let imageBox = item.content.match(imageRegex) ? '<i class="scoicon sco-image-fill"></i>' : '';
-                    let aplayer = item.content.match(aplayerRegex) ? '<i class="scoicon sco-disc-fill"></i>' : '';
-                    let video = item.content.match(playerRegex) ? '<i class="scoicon sco-video-fill"></i>' : item.content.match(bilibiliRegex) ? '<i class="scoicon sco-bilibili-line"></i>' : '';
-                    let link = item.content.match(linkRegex) ? `<i class="scoicon sco-link"></i>` : '';
+        const bberTalk = document.querySelector('#bber-talk');
+        if (!bberTalk) return;
+        else bberTalk.innerHTML = '<div class="li-style swiper-slide"><i class="scoicon sco-loading-line"></i></div>';
 
-                    return `<div class="li-style swiper-slide">${content + aplayer + video + imageBox + link}</div>`
-                }).join(' ')
-                sco.initbbtalk();
-            })
-            .catch(error => console.error('bbtime | ', error));
+        try {
+            const response = await fetch('!{theme.says.mode_link}');
+            const data = await response.json();
+
+            const aplayerRegex = /{aplayer,(.*?),(.*?)}/g;
+            const bilibiliRegex = /{bilibili,(.*?)}/g;
+            const playerRegex = /{player,(.*?)}/g;
+            const linkRegex = /(?<!\!)\[([^\]]*)\]\(([^\)]*)\)/g;
+            const imageRegex = /!\[\]\((.*?)\)/g;
+            const contentRegex = /#.*?\s([^{\n]*)/g;
+
+            const list = data.slice(0, 10);
+            bberTalk.innerHTML = list.map(item => {
+                const content = item.content.match(contentRegex, '$1').map(item => item.replace(contentRegex, '$1'));
+                const imageBox = item.content.match(imageRegex) ? '<i class="scoicon sco-image-fill"></i>' : '';
+                const aplayer = item.content.match(aplayerRegex) ? '<i class="scoicon sco-disc-fill"></i>' : '';
+                const video = item.content.match(playerRegex) ? '<i class="scoicon sco-video-fill"></i>' : item.content.match(bilibiliRegex) ? '<i class="scoicon sco-bilibili-line"></i>' : '';
+                const link = item.content.match(linkRegex) ? `<i class="scoicon sco-link"></i>` : '';
+
+                return `<div class="li-style swiper-slide">${content + aplayer + video + imageBox + link}</div>`;
+            }).join(' ');
+
+            sco.initbbtalk();
+        } catch (error) {
+            console.error('bbtime | ', error);
+        }
     }
-    document.addEventListener('DOMContentLoaded', getSays)
-    document.addEventListener('pjax:complete', getSays)
+
+    document.addEventListener('DOMContentLoaded', getSays);
+    document.addEventListener('pjax:complete', getSays);

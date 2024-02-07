@@ -107,9 +107,6 @@ function colorRgb(str) {
 }
 
 function setThemeColors(value, r = null, g = null, b = null) {
-    const cardContents = document.getElementsByClassName('card-content');
-    const authorInfo = document.getElementsByClassName('author-info__sayhi');
-
     if (value) {
         document.documentElement.style.setProperty('--sco-main', value);
         document.documentElement.style.setProperty('--sco-main-op', value + '23');
@@ -118,13 +115,17 @@ function setThemeColors(value, r = null, g = null, b = null) {
 
         if (r && g && b) {
             let brightness = Math.round(((parseInt(r) * 299) + (parseInt(g) * 587) + (parseInt(b) * 114)) / 1000);
-            for (let i = 0; i < cardContents.length; i++) {
-                cardContents[i].style.setProperty('--sco-card-bg', 'var(--sco-white)');
-            }
+            if (brightness < 125) {
+                let cardContents = document.getElementsByClassName('card-content');
+                for (let i = 0; i < cardContents.length; i++) {
+                    cardContents[i].style.setProperty('--sco-card-bg', 'var(--sco-white)');
+                }
 
-            for (let i = 0; i < authorInfo.length; i++) {
-                authorInfo[i].style.setProperty('background', 'var(--sco-white-op)');
-                authorInfo[i].style.setProperty('color', 'var(--sco-white)');
+                let authorInfo = document.getElementsByClassName('author-info__sayhi');
+                for (let i = 0; i < authorInfo.length; i++) {
+                    authorInfo[i].style.setProperty('background', 'var(--sco-white-op)');
+                    authorInfo[i].style.setProperty('color', 'var(--sco-white)');
+                }
             }
         }
 
