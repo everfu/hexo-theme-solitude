@@ -75,7 +75,7 @@ search:
 
 head:
   noscript: Please enable JavaScript to view the site
-  console: 'Program: Hexo | Theme: Hexo-Theme-Solitude | Author: WangZhuoSco、YiFeng | Github: https://github.com/wleelw/Hexo-theme-solitude | Version: v1.4.6 😄'
+  console: 'Program: Hexo | Theme: Hexo-Theme-Solitude | Author: WangZhuoSco、YiFeng | Github: https://github.com/wleelw/Hexo-theme-solitude | Version: v1.4.7 😄'
 
 aside:
   postcount: 'Posts :'
@@ -145,3 +145,6 @@ rightmenu:
   light: Light
   chs_to_cht: Traditional
   cht_to_chs: Simplified
+
+404:
+  button: Back to home

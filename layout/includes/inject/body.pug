@@ -1,5 +1,15 @@
 - page.type = is_post() ? 'post' : page.type
 
+mixin katex
+    if theme.katex.copytex
+        script(src=url_for(theme.cdn.katex_copytex))
+            script.
+                (() => {
+                    document.querySelectorAll('#article-container span.katex-display').forEach(item => {
+                        utils.wrap(item, 'div', {class: 'katex-wrap'})
+                    })
+                })();
+
 div
     script(src=url_for(theme.cdn.main))
     script(src=url_for(theme.cdn.utils))
@@ -19,24 +29,11 @@ div
     if theme.translate.enable
         script(src=url_for(theme.cdn.translate))
 
-    mixin katex
-        link(rel="stylesheet", href=url_for(theme.cdn.katex))
-        if theme.katex.copytex
-            script(src=url_for(theme.cdn.katex_copytex))
-                script.
-                    (() => {
-                        document.querySelectorAll('#article-container span.katex-display').forEach(item => {
-                            utils.wrap(item, 'div', {class: 'katex-wrap'})
-                        })
-                    })()
-
     if theme.katex && theme.katex.enable
-        if theme.katex.per_page
-            if is_post() || is_page()
-                +katex
-        else
-            if page.katex
-                +katex
+        if theme.katex.per_page && (is_post() || is_page())
+            +katex
+        else if page.katex
+            +katex
 
     script(src=url_for(theme.cdn.pjax))
     if theme.lazyload.enable
@@ -111,6 +108,9 @@ div#js-pjax
     if page.type === 'album' && theme.album.enable
         script.
             initGallery()
+    if is_home() && theme.says.home_mini
+        script.
+            sco.initbbtalk();
     if page.type === 'says' && theme.says.enable
         script.
             window.addEventListener('resize', utils.throttle(function () {

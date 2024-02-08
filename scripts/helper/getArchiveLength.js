@@ -6,13 +6,9 @@ hexo.extend.helper.register('getArchiveLength', function (type) {
     }
     const posts = this.site.posts.sort('-date').data
     let archive = {}
-    posts.forEach(post => {
+    for (const post of posts) {
         const postdate = type === 'year' ? moment(post.date).format('YYYY') : moment(post.date).format('YYYY/MM');
-        if(!archive[postdate]){
-            archive[postdate] = 1
-        } else {
-            archive[postdate] ++
-        }
-    });
-    return archive
+        archive[postdate] = (archive[postdate] || 0) + 1;
+    }
+    return archive;
 });

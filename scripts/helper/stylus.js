@@ -1,13 +1,13 @@
 hexo.extend.filter.register('stylus:renderer', function (style) {
-    const {config, theme} = this
+    const {config, theme} = this;
     const data = hexo.locals.get('data');
 
     if (theme.config.aside.tags.highlight) {
-        let array = theme.config.aside.tags.list.map(item => encodeURIComponent(item));
+        const array = theme.config.aside.tags.list.map(item => encodeURIComponent(item));
         style.define('highlightTags', array);
     }
 
-    let aside = [
+    const aside = [
         theme.config.aside.home.noSticky,
         theme.config.aside.home.Sticky,
         theme.config.aside.post.noSticky,
@@ -15,14 +15,10 @@ hexo.extend.filter.register('stylus:renderer', function (style) {
         theme.config.aside.page.Sticky,
         theme.config.aside.page.noSticky
     ].join(',').split(',');
-    let uniqueArr = [...new Set(aside)]; // 去重
+    const uniqueArr = [...new Set(aside)];
     if (uniqueArr.length > 0) {
         style.define('aside', uniqueArr);
     }
 
-    if (data && data.about) {
-        style.define('about', Object.keys(data.about));
-    } else {
-        style.define('about', []);
-    }
+    style.define('about', data && data.about ? Object.keys(data.about) : []);
 });

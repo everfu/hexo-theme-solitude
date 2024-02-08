@@ -2,11 +2,17 @@
     i.bber-logo.scoicon.sco-bblogo(onclick=`pjax.loadUrl('/essay/')`)
     .swiper-container.swiper-no-swiping.swiper-container-initialized.swiper-container-vertical.swiper-container-pointer-events#bbtalk(tabindex="-1" onclick=`pjax.loadUrl('/essay/')`)
         .swiper-wrapper#bber-talk
-            case theme.says.mode
-                when 'local'
-                    include bb/local
-                when 'json'
-                    include bb/json
-                when 'memos'
-                    include bb/memos
+            each item, i in site.data.essay.essay_list.slice(0, 10)
+                .li-style.swiper-slide
+                    | #{item.content}
+                    if item.image
+                        i.scoicon.sco-image-fill
+                    else if item.aplayer
+                        i.scoicon.sco-disc-fill
+                    else if item.video
+                        i.scoicon.sco-video-fill
+                    else if item.bilibili
+                        i.scoicon.sco-bilibili-line
+                    else if item.link
+                        i.scoicon.sco-links
     i.bber-gotobb.scoicon.sco-right-btn-fill(title=_p('home.bbtime.text') onclick=`pjax.loadUrl('/essay/')`)
