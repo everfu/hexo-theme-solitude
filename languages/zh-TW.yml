@@ -145,3 +145,6 @@ rightmenu:
   light: 淺色模式
   chs_to_cht: 轉為繁體
   cht_to_chs: 转为简体
+
+404:
+  button: 返回首頁

@@ -42,15 +42,69 @@ const scoMusic = {
         }
     },
     buttonlist: () => {
-        document.querySelector(".aplayer-lrc").addEventListener("click", () => {
-            const aplayerList = document.querySelector(".aplayer-list");
+        const aplayerList = document.querySelector(".aplayer-list");
+        if (aplayerList) {
+            document.querySelector(".aplayer-lrc").addEventListener("click", () => {
+                if (aplayerList.classList.contains("aplayer-list-hide")) {
+                    aplayerList.classList.remove("aplayer-list-hide");
+                } else {
+                    aplayerList.classList.add("aplayer-list-hide");
+                }
+            });
+        }
+    },
+   extractValue: (input) => {
+        const valueRegex = /\("([^\s]+)"\)/g;
+        const match = valueRegex.exec(input);
+        return match[1];
+    },
+    changeMusicBg: (isChangeBg = true) => {
+        const MusicBg = document.getElementById("Music-bg");
+        const MusicLoading = document.getElementsByClassName("Music-loading");
 
-            if (aplayerList.classList.contains("aplayer-list-hide")) {
-                aplayerList.classList.remove("aplayer-list-hide");
-            } else {
-                aplayerList.classList.add("aplayer-list-hide");
-            }
-        });
+        if (isChangeBg) {
+            const musiccover = document.querySelector("#Music-page .aplayer-pic");
+            const img = new Image();
+            img.src = scoMusic.extractValue(musiccover.style.backgroundImage);
+            img.onload = () => {
+                MusicBg.style.backgroundImage = musiccover.style.backgroundImage;
+            };
+        } else {
+            const timer = setInterval(() => {
+                const musiccover = document.querySelector("#Music-page .aplayer-pic");
+                if (musiccover) {
+                    MusicLoading[0].style.display = "none";
+                    clearInterval(timer);
+                    document.querySelector('meting-js').aplayer.volume(0.8, true);
+
+                    scoMusic.addEventListenerChangeMusicBg();
+                    MusicBg.style.display = "block";
+                }
+            }, 100);
+        }
+    },
+    lrcupdate: () => {
+        const aplayerLrcContents = document.querySelector('.aplayer-lrc-contents');
+        const currentLrc = aplayerLrcContents.querySelector('p.aplayer-lrc-current');
+
+        if (currentLrc) {
+            const currentIndex = Array.from(aplayerLrcContents.children).indexOf(currentLrc);
+            const translateYValue = -currentIndex * 80;
+
+            aplayerLrcContents.style.transform = `translateY(${translateYValue}px)`;
+        }
+    },
+    buttonlist: () => {
+        const aplayerList = document.querySelector(".aplayer-list");
+        if (aplayerList) {
+            document.querySelector(".aplayer-lrc").addEventListener("click", () => {
+                if (aplayerList.classList.contains("aplayer-list-hide")) {
+                    aplayerList.classList.remove("aplayer-list-hide");
+                } else {
+                    aplayerList.classList.add("aplayer-list-hide");
+                }
+            });
+        }
     },
     addEventListenerChangeMusicBg: () => {
         const aplayer = document.getElementById("Music-page").querySelector("meting-js").aplayer;
@@ -60,7 +114,6 @@ const scoMusic = {
         aplayer.on('timeupdate', () => {
             scoMusic.lrcupdate();
         });
-        scoMusic.buttonlist();
     },
     getCustomPlayList: () => {
         const MusicPage = document.getElementById("Music-page");

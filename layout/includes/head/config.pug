@@ -7,7 +7,7 @@
                 localSearch = JSON.stringify({
                     preload: theme.search.local.preload,
                     path: theme?.search?.local?.CDN || '/search.xml'
-                })
+                });
                 break;
             case 'algolia':
                 algolia = JSON.stringify({
@@ -17,7 +17,7 @@
                     hits: {
                         per_page: theme?.search?.algolia?.hits?.per_page || 10
                     }
-                })
+                });
                 break;
         }
     }
@@ -27,12 +27,12 @@
         translate = JSON.stringify({
             defaultEncoding: theme.translate.defaultEncoding,
             translateDelay: theme.translate.translateDelay,
-        })
+        });
     }
 
-    const commentInfoStart = theme.comment.randomInfoStart.map(item => `"${item}"`) || ""
-    const commentInfoEnd = theme.comment.randomInfoEnd.map(item => `"${item}"`) || ""
-    var sayhello2 = theme.aside.card.sayhello2.map(item => `"${item}"`) || []
+    const commentInfoStart = theme.comment.randomInfoStart.map(item => `"${item}"`) || [];
+    const commentInfoEnd = theme.comment.randomInfoEnd.map(item => `"${item}"`) || [];
+    const sayhello2 = theme.aside.card.sayhello2.map(item => `"${item}"`) || [];
 
 script.
     const GLOBAL_CONFIG = {
@@ -119,4 +119,4 @@ script.
             enable: !{theme.music.enable},
         },
         translate: !{translate},
-    }
+    };

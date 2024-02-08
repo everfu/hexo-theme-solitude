@@ -607,12 +607,6 @@ says:
   # 即刻短文仅展示前n条
   # Jike short text only shows the first n
   strip: 30
-  # 模式选择。local：本地静态 / memos：动态Memos
-  # Mode selection. Local: local static/memos: dynamic Memos
-  mode: local
-  # 动态模式地址。memos模式，此项为必填。链接获取以及格式可查看主题文档。
-  # Dynamic mode address. For memos mode, this item is required. Link acquisition and format can be viewed in the theme documentation.
-  mode_link: # https://example.com/api/v1/memo?creatorId=1&tag=says
 
 # -------------------------
 # meeting-api，用于界面中的音乐胶囊和音乐馆页，可自定义api，不会请勿动。

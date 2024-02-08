@@ -145,3 +145,6 @@ rightmenu:
   light: Light
   chs_to_cht: Traditional
   cht_to_chs: Simplified
+
+404:
+  button: Back to home
