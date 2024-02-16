@@ -10,7 +10,7 @@
                             .equipment-item-content-item-cover
                                 img.equipment-item-content-item-image(src=item.image, alt=item.name)
                             .equipment-item-content-item-info
-                                .equipment-item-content-item-name= item.name
+                                .equipment-item-content-item-name(onclick='utils.copy("' + item.name + '")')= item.name
                                 .equipment-item-content-item-specification= item.specification
                                 .equipment-item-content-item-description= item.description
                                 if item.link
