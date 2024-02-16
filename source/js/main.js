@@ -821,7 +821,7 @@ window.refreshFn = () => {
     GLOBAL_CONFIG.lazyload.enable && utils.lazyloadImg()
     GLOBAL_CONFIG.lightbox && utils.lightbox(document.querySelectorAll("#article-container img:not(.flink-avatar)"))
     GLOBAL_CONFIG.randomlinks && randomLinksList()
-    PAGE_CONFIG.comment && initComment()
+    PAGE_CONFIG.comment.enable && initComment()
     PAGE_CONFIG.toc && toc.init();
     (PAGE_CONFIG.is_post || PAGE_CONFIG.is_page) && ((GLOBAL_CONFIG.hightlight.enable && hightlight.init()) || tabs.init())
     PAGE_CONFIG.is_home && showTodayCard()
