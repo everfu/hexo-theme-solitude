@@ -64,45 +64,37 @@ const scrollFn = function () {
     }
 }
 
-let ticking = false;
-
 const percent = () => {
-    if (!ticking) {
-        window.requestAnimationFrame(() => {
-            let scrollTop = document.documentElement.scrollTop || window.pageYOffset;
-            let totalHeight = Math.max(document.body.scrollHeight, document.documentElement.scrollHeight, document.body.offsetHeight, document.documentElement.offsetHeight, document.body.clientHeight, document.documentElement.clientHeight) - document.documentElement.clientHeight;
-            let scrollPercent = Math.round(scrollTop / totalHeight * 100);
-            let percentElement = document.querySelector("#percent");
-            let viewportBottom = window.scrollY + document.documentElement.clientHeight;
-            let remainingScroll = totalHeight - scrollTop;
+    let scrollTop = document.documentElement.scrollTop || window.pageYOffset
+    let totalHeight = Math.max(document.body.scrollHeight, document.documentElement.scrollHeight, document.body.offsetHeight, document.documentElement.offsetHeight, document.body.clientHeight, document.documentElement.clientHeight) - document.documentElement.clientHeight
+    let scrollPercent = Math.round(scrollTop / totalHeight * 100)
+    let percentElement = document.querySelector("#percent")
+    let viewportBottom = window.scrollY + document.documentElement.clientHeight
+    let remainingScroll = totalHeight - scrollTop
 
-            if ((document.getElementById("post-comment") || document.getElementById("footer")).offsetTop < viewportBottom || scrollPercent > 90) {
-                document.querySelector("#nav-totop").classList.add("long");
-                percentElement.innerHTML = "返回顶部";
-            } else {
-                document.querySelector("#nav-totop").classList.remove("long");
-                if (scrollPercent >= 0) {
-                    percentElement.innerHTML = scrollPercent + "";
-                }
-            }
-
-            let elementsToHide = document.querySelectorAll(".needEndHide");
-            if (remainingScroll < 100) {
-                elementsToHide.forEach(function (element) {
-                    element.classList.add("hide");
-                });
-            } else {
-                elementsToHide.forEach(function (element) {
-                    element.classList.remove("hide");
-                });
-            }
-            ticking = false;
-        });
-        ticking = true;
+    if ((document.getElementById("post-comment") || document.getElementById("footer")).offsetTop < viewportBottom || scrollPercent > 90) {
+        document.querySelector("#nav-totop").classList.add("long")
+        percentElement.innerHTML = "返回顶部"
+    } else {
+        document.querySelector("#nav-totop").classList.remove("long")
+        if (scrollPercent >= 0) {
+            percentElement.innerHTML = scrollPercent + ""
+        }
     }
-};
 
-window.onscroll = percent;
+    let elementsToHide = document.querySelectorAll(".needEndHide")
+    if (remainingScroll < 100) {
+        elementsToHide.forEach(function (element) {
+            element.classList.add("hide")
+        })
+    } else {
+        elementsToHide.forEach(function (element) {
+            element.classList.remove("hide")
+        })
+    }
+
+    window.onscroll = percent
+}
 
 
 const showTodayCard = () => {
@@ -821,7 +813,7 @@ window.refreshFn = () => {
     GLOBAL_CONFIG.lazyload.enable && utils.lazyloadImg()
     GLOBAL_CONFIG.lightbox && utils.lightbox(document.querySelectorAll("#article-container img:not(.flink-avatar)"))
     GLOBAL_CONFIG.randomlinks && randomLinksList()
-    PAGE_CONFIG.comment.enable && initComment()
+    PAGE_CONFIG.comment && initComment()
     PAGE_CONFIG.toc && toc.init();
     (PAGE_CONFIG.is_post || PAGE_CONFIG.is_page) && ((GLOBAL_CONFIG.hightlight.enable && hightlight.init()) || tabs.init())
     PAGE_CONFIG.is_home && showTodayCard()

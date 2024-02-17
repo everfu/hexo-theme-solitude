@@ -114,4 +114,3 @@ theme: solitude
 
 ### About
 ![About](https://github.com/wleelw/hexo-theme-solitude/assets/74389842/46d9db0d-a2d8-4c69-a393-f3388389fbcb)
-

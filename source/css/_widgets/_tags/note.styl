@@ -31,6 +31,10 @@ $colors = {
   &.success:not(.no-icon)::before
     content: '\e0a4'
 
+  &.success:not(.no-icon)
+    p
+      color var(--sco-card-bg)
+
   &::before
     font-family 'scoicon'
 
