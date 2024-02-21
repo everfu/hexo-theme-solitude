@@ -5,7 +5,7 @@ nav#nav.show
                 .back-home-button(tabindex="-1")
                     i.back-home-button-icon.scoicon.sco-more-fill
                     include ./widgets/nav/left.pug
-            a#site-name(href="/", title=_p('nav.site_name_title'), target="_self")
+            a#site-name(href="/", title=_p('nav.site_name_title'))
                 if theme.site.name.class === 'i_class'
                     i.scoicon(class=theme.site.name.custom, style="font-size: 16px;")
                 else if theme.site.name.class === 'img'
