@@ -179,33 +179,21 @@ hometop:
       #   img: https://npm.elemecdn.com/wleelw-blog-abs@1.0.0/img/icon/vs-logo.svg
       #   color: "#ffffff"
 
-  # 顶部三大分类
-  # Top three categories
-  categoryGroup:
-    # 左侧
-    # Left
-    G1:
-      # 显示文字
-      # Displayed text
-      name: 必看精选
-      # 显示图标
-      # Displayed icon
-      icon: scoicon sco-star-smile-fill
-      # 跳转链接
-      # Jump link
-      url: /tags/精选/
-    # 中间
-    # Middle
-    G2:
-      name: 热门文章
-      icon: scoicon sco-fire-fill
-      url: /categories/热门/
-    # 右侧
-    # Right
-    G3:
-      name: 实用教程
-      icon: scoicon sco-book-mark-fill
-      url: /tags/教程/
+    # banner 左下跳转按钮
+    # Banner lower left jump button
+    group:
+      - name: 热门 # 显示文字 / Displayed text
+        url: /tags/热门/ # 跳转链接 / Jump link
+        icon: sco-fire-fill # 图标 / Icon
+        color: "linear-gradient(to right,#f65,#ffbf37)" # 背景颜色 / Background color
+      - name: 教程
+        url: /tags/教程/
+        icon: sco-book-mark-fill
+        color: "linear-gradient(to right,#358bff,#15c6ff)"
+      - name: 必看
+        url: /tags/必看/
+        icon: sco-star-smile-fill
+        color: "linear-gradient(to right,#18e7ae,#1eebeb)"
 
   # 右侧置顶列表（在文章的front matter中添加“recommend: true”）
   # Right top list (add "recommend: true" in the front matter of the article)

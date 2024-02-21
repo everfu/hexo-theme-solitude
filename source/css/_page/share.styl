@@ -5,9 +5,8 @@ div#banners
   +minWidth1200()
     display flex
     width 100%
-    height 76%
+    height 100%
     background var(--sco-card-bg)
-    margin-bottom .5rem
     border var(--style-border)
     border-radius 12px
     overflow hidden
@@ -55,15 +54,15 @@ div#banners
         font-size 1rem
 
     .banners-title
-      top 2rem
-      left 1.5rem
+      top 2.6rem
+      left 2rem
       position absolute
       display flex
       flex-direction column
 
       &-big
         font-size 36px
-        line-height 1
+        line-height 1.15
         font-weight 700
         margin-bottom 8px
 
@@ -72,38 +71,8 @@ div#banners
         line-height 1
         color var(--sco-secondtext)
         margin-top 8px
-        margin-bottom .5rem
-
-    #banner-hover
-      position absolute
-      width 100%
-      height 100%
-      top 0
-      left 0
-      border-radius 12px
-      background var(--sco-theme)
-      color var(--sco-card-bg)
-      padding-left .5rem
-      display flex
-      flex-direction column
-      justify-content center
-      opacity 0
-      transition cubic-bezier(.71, .15, .16, 1.15) .6s
-
-      i
-        font-size 80px
-        opacity .4
-
-    &:hover
-      #banner-hover
-        opacity 1
-        padding-left 2rem
-        background var(--sco-theme-op-deep)
-        backdrop-filter blur(15px)
-        transform translateZ(0)
-        transition .3s
-        background-size 200%
-        cursor pointer
+        margin-bottom 0.5rem
+        margin-left 2px
 
     .flink
       .banners-title
@@ -116,15 +85,14 @@ div#banners
 
   .tags-group-all
     display flex
-    transform rotate(-30deg)
 
     &.nowrapMove
-      transform rotate(0)
       padding-bottom 2rem
 
       .tags-group-wrapper
         margin-top: 7rem
-        animation: rowup 120s linear infinite
+        animation: rowleft 120s linear infinite
+        display flex
 
       .tags-group-icon
         border-radius 50%
@@ -135,36 +103,31 @@ div#banners
           border-radius 50%
           object-fit cover
 
-    .tags-group-wrapper
-      margin-top: 5rem
-      display: flex
-      flex-wrap: nowrap
-      animation: rowup 60s linear infinite
+    .tags-group-icon-pair
+      margin-left 1rem
+      user-select none
 
-      /.tags-group-icon-pair
-        margin-left 1rem
-        user-select none
+      a img
+        border-radius 50%
 
-        a img
-          border-radius 50%
+      /.tags-group-icon
+        width 120px
+        height 120px
+        border-radius 30px
+        display flex
+        align-items center
+        justify-content center
+        color #fff
+        font-size 66px
+        font-weight 700
+        box-shadow var(--sco-shadow-blackdeep)
 
-        .tags-group-icon
-          width 120px
-          height 120px
-          display flex
-          align-items center
-          justify-content center
-          color #fff
-          font-size 66px
-          font-weight 700
-          box-shadow var(--sco-shadow-blackdeep)
+        &:nth-child(even)
+          margin-top 1rem
+          transform translate(-60px)
 
-          &:nth-child(even)
-            margin-top 1rem
-            transform translate(-60px)
-
-          img
-            width 60%
+        img
+          width 60%
 
 .author-content
   display flex

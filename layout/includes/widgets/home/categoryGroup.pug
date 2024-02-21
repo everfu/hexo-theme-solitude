@@ -1,9 +1,9 @@
-- var groupNames = ['G1', 'G2', 'G3'];
-- var styles = ['--sco-shadow-blue', '--sco-shadow-red', '--sco-shadow-green'];
-- var classes = ['bikan', 'remen', 'shiyong'];
+- group = theme.hometop.group?.slice(0, 2)
 
-each groupName, index in groupNames
-    .categoryItem(style=`box-shadow: var(${styles[index]});`)
-        a.categoryButton(class=classes[index], href=url_for(theme.hometop.categoryGroup[groupName].url))
-            span.categoryButtonText= theme.hometop.categoryGroup[groupName].name
-            i.scoicon(class=theme.hometop.categoryGroup[groupName].icon)
+if group
+    .categoryGroup
+        each item, index in group
+            .categoryItem
+                a.categoryButton(href=url_for(item.url) style="background:" + item.color + ";")
+                    span.categoryButtonText= item.name
+                    i.scoicon(class=item.icon)
