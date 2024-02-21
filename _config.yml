@@ -49,71 +49,37 @@ nav:
       # 显示分类名
       # Display category name
       项目:
-        # # 显示子类
-        # # Display subcategories
-        # Solitude:
-        #   # 显示的图标
-        #   # Displayed icon
-        #   icon: https://bu.dusays.com/2023/11/08/654af68b25bb8.jpg
-        #   # 点击的跳转链接
-        #   # Click the jump link
-        #   url: https://github.com/wleelw/Hexo-Theme-solitude
+      # # 显示子类
+      # # Display subcategories
+      # Solitude:
+      #   # 显示的图标
+      #   # Displayed icon
+      #   icon: https://bu.dusays.com/2023/11/08/654af68b25bb8.jpg
+      #   # 点击的跳转链接
+      #   # Click the jump link
+      #   url: https://github.com/wleelw/Hexo-Theme-solitude
 
   # 导航栏内容
   # Navigation bar content
   # tip：此部分内容是顶部导航栏中间菜单区域
   # tip: This part of the content is the menu area in the middle of the top navigation bar
   menu:
-    # 显示的大分类名称
-    # Displayed category name
-    # 文库:
-    #   # 点击跳转链接
-    #   # Click the jump link
-    #   # tip：如果没有子类就填跳转链接，例如：/archives，否则填false
-    #   # tip: If there is no subcategory, fill in the jump link, for example: /archives, otherwise fill in false
-    #   url: false
-    #   # 子类数组
-    #   # Subcategory array
-    #   child:
-    #     # 子类名称
-    #     # Subcategory name
-    #     文章列表:
-    #       # 点击跳转链接
-    #       # Click the jump link
-    #       url: /archives/
-    #       # 子类名称左侧图标
-    #       # Subcategory name left icon
-    #       icon: sco-folder-fill
-    #     全部分类:
-    #       url: /categories/
-    #       icon: sco-checkbox-multiple-blank-fill
-    #     全部标签:
-    #       url: /tags/
-    #       icon: sco-price-tag-fill
-    # 友链:
-    #   url: false
-    #   child:
-    #     友情链接:
-    #       url: /links/
-    #       icon: sco-group-fill
-    #     宝藏博主:
-    #       url: javascript:travelling()
-    #       icon: sco-gift-fill
-    # 我的:
-    #   url: false
-    #   child:
-    #     装备:
-    #       url: /equipment/
-    #       icon: sco-laptop-line
-    #     工具箱:
-    #       url: /tlink/
-    #       icon: sco-tools-fill
-    # 关于:
-    #   url: false
-    #   child:
-    #     关于本站:
-    #       url: /about/
-    #       icon: sco-contacts-fill
+  #  首页: / # 显示名称：路径 / Display name: path
+  #  文库: # 显示名称 / Display name
+  #    文章列表: /archives/ || sco-folder-fill # 子菜单名称：路径 || 图标 / Submenu name: path || icon
+  #    全部分类: /categories/ || sco-checkbox-multiple-blank-fill
+  #    全部标签: /tags/ || sco-price-tag-fill
+  #  友链:
+  #    友链鱼塘: /moments/ || sco-wifi-fill
+  #    友情链接: /links/ || sco-group-fill
+  #    宝藏博主: javascript:travelling() || sco-gift-fill
+  #  我的:
+  #    相册集: /gallery/ || sco-image-fill
+  #    装备: /equipment/ || sco-laptop-line
+  #    工具箱: /tlink/ || sco-tools-fill
+  #    音乐馆: /music/ || sco-disc-fill
+  #  关于:
+  #    关于本站: /about/ || sco-contacts-fill
 
   # 导航栏右侧按钮
   # Button on the right side of the navigation bar
@@ -125,11 +91,11 @@ nav:
     # 从左至右
     # From left to right
     custom:
-      # - name: 开往 - 友链接力 # 显示文字 / Displayed text
-      #   url: https://www.travellings.cn/go.html # 跳转链接 / Jump link
-      #   icon: sco-train-line # 图标 / Icon
-      #   onclick: # 点击事件 / Click event
-      #   id: travellings_button # id
+    # - name: 开往 - 友链接力 # 显示文字 / Displayed text
+    #   url: https://www.travellings.cn/go.html # 跳转链接 / Jump link
+    #   icon: sco-train-line # 图标 / Icon
+    #   onclick: # 点击事件 / Click event
+    #   id: travellings_button # id
 
 # 首页顶部样式
 # Home top style
@@ -151,49 +117,40 @@ hometop:
     # 轮播icon
     # Carousel icon
     icon:
-      # # 名字 / Name
-      # HTML:
-      #   # 图片 / Image
-      #   img: https://npm.elemecdn.com/wleelw-blog-abs@1.0.0/img/icon/HTML.png
-      #   # 背景色 / Background color
-      #   color: "#e9572b"
-      # JS:
-      #   img: https://npm.elemecdn.com/wleelw-blog-abs@1.0.0/img/icon/JS.png
-      #   color: "#f7cb4f"
-      # Kotlin:
-      #   img: https://npm.elemecdn.com/wleelw-blog-abs@1.0.0/img/icon/kotlin-logo.svg
-      #   color: "#ffffff"
-      # Docker:
-      #   img: https://npm.elemecdn.com/wleelw-blog-abs@1.0.0/img/icon/docker.png
-      #   color: "#57b6e6"
-      # Flutter:
-      #   img: https://npm.elemecdn.com/wleelw-blog-abs@1.0.0/img/icon/flutter.png
-      #   color: "#ffffff"
-      # WebPack:
-      #   img: https://npm.elemecdn.com/wleelw-blog-abs@1.0.0/img/icon/webpack.png
-      #   color: "#2e3a41"
-      # Git:
-      #   img: https://npm.elemecdn.com/wleelw-blog-abs@1.0.0/img/icon/git.png
-      #   color: "#df5b40"
-      # VS:
-      #   img: https://npm.elemecdn.com/wleelw-blog-abs@1.0.0/img/icon/vs-logo.svg
-      #   color: "#ffffff"
+    # # 名字 / Name
+    # HTML:
+    #   # 图片 / Image
+    #   img: https://npm.elemecdn.com/wleelw-blog-abs@1.0.0/img/icon/HTML.png
+    #   # 背景色 / Background color
+    #   color: "#e9572b"
+    # JS:
+    #   img: https://npm.elemecdn.com/wleelw-blog-abs@1.0.0/img/icon/JS.png
+    #   color: "#f7cb4f"
+    # Kotlin:
+    #   img: https://npm.elemecdn.com/wleelw-blog-abs@1.0.0/img/icon/kotlin-logo.svg
+    #   color: "#ffffff"
+    # Docker:
+    #   img: https://npm.elemecdn.com/wleelw-blog-abs@1.0.0/img/icon/docker.png
+    #   color: "#57b6e6"
+    # Flutter:
+    #   img: https://npm.elemecdn.com/wleelw-blog-abs@1.0.0/img/icon/flutter.png
+    #   color: "#ffffff"
+    # WebPack:
+    #   img: https://npm.elemecdn.com/wleelw-blog-abs@1.0.0/img/icon/webpack.png
+    #   color: "#2e3a41"
+    # Git:
+    #   img: https://npm.elemecdn.com/wleelw-blog-abs@1.0.0/img/icon/git.png
+    #   color: "#df5b40"
+    # VS:
+    #   img: https://npm.elemecdn.com/wleelw-blog-abs@1.0.0/img/icon/vs-logo.svg
+    #   color: "#ffffff"
 
     # banner 左下跳转按钮
     # Banner lower left jump button
     group:
-#      - name: 热门 # 显示文字 / Displayed text
-#        url: /tags/热门/ # 跳转链接 / Jump link
-#        icon: sco-fire-fill # 图标 / Icon
-#        color: "linear-gradient(to right,#f65,#ffbf37)" # 背景颜色 / Background color
-#      - name: 教程
-#        url: /tags/教程/
-#        icon: sco-book-mark-fill
-#        color: "linear-gradient(to right,#358bff,#15c6ff)"
-#      - name: 精选
-#        url: /tags/精选/
-#        icon: sco-star-smile-fill
-#        color: "linear-gradient(to right,#18e7ae,#1eebeb)"
+    #  热门: /tags/热门/ || sco-fire-fill || linear-gradient(to right,#f65,#ffbf37)
+    #  教程: /tags/教程/ || sco-book-mark-fill || linear-gradient(to right,#358bff,#15c6ff)
+    #  精选: /tags/精选/ || sco-star-smile-fill || linear-gradient(to right,#18e7ae,#1eebeb)
 
   # 右侧置顶列表（在文章的front matter中添加“recommend: true”）
   # Right top list (add "recommend: true" in the front matter of the article)
@@ -291,16 +248,10 @@ aside:
       - 🧱 团队小组发动机
       - 💢 壮汉人狠话不多
       - 🎮 电竞游戏爱好者
+    # 个人信息卡片底部的小图标，按照例子填写
     information:
-      # # 悬停显示文字
-      # Github:
-      #   # 图标
-      #   icon: scoicon sco-github-line
-      #   # 跳转链接
-      #   url: https://github.com/wleelw/Hexo-Theme-slitude
-      # Bilibili:
-      #   icon: scoicon sco-bilibili-line
-      #   url: https://space.bilibili.com/1329819902
+    #  Github: https://github.com/wleelw || sco-github-line # 名称：链接 || 图标 / Name: link || icon
+    #  Bilibili: https://space.bilibili.com/1329819902 || sco-bilibili-line
 
   # 二维码
   # Official account QR code
@@ -503,40 +454,30 @@ footer:
   # 底部上方一排图标
   # Bottom row of icons
   information:
-    # 左侧显示图标 / Left display icon
-    left:
-      # Github:
-      #   icon: scoicon sco-bilibili-line
-      #   url: https://github.com/wleelw
-      # Mail:
-      #   icon: scoicon sco-mail-line
-      #   url: mailto:wleelw@wzsco.top
-    # 右侧显示图标 / Right display icon
-    right:
-      # Bilibili:
-      #   icon: scoicon sco-bilibili-line
-      #   url: https://space.bilibili.com/1329819902
-      # 抖音:
-      #   icon: scoicon sco-douyin-fill
-      #   url: https://v.douyin.com/iJsLc8jt/
+    left: # 左侧显示图标
+    #  Github: https://github.com/wleelw || sco-github-line # 名称：链接 || 图标 / Name: link || icon
+    #  Mail: mailto:wleelw@wzsco.top || sco-mail-line
+    right: # 右侧显示图标
+    #  Bilibili: https://space.bilibili.com/1329819902 || sco-bilibili-line
+    #  抖音: https://v.douyin.com/iJsLc8jt/ || sco-douyin-fill
 
   # 底部导航栏
   # Bottom navigation bar
   group:
-    # 导航:
-    #   归档: /archives/
-    #   分类: /categories/
-    #   标签: /tags/
-    # 服务:
-    #   阿里云: https://aliyun.com/
-    #   51la统计: https://v6.51.la/
-    #   百度统计: https://tongji.baidu.com/
-    # 支持:
-    #   打赏记录: /about/
-    # 协议:
-    #   Cookies: /cookies/
-    #   用户协议: /privacy/
-    #   版权协议: /copyright/
+  # 导航:
+  #   归档: /archives/
+  #   分类: /categories/
+  #   标签: /tags/
+  # 服务:
+  #   阿里云: https://aliyun.com/
+  #   51la统计: https://v6.51.la/
+  #   百度统计: https://tongji.baidu.com/
+  # 支持:
+  #   打赏记录: /about/
+  # 协议:
+  #   Cookies: /cookies/
+  #   用户协议: /privacy/
+  #   版权协议: /copyright/
 
   # 底部随机友链
   # Random links at the bottom
@@ -656,28 +597,28 @@ keyboard:
   # 键盘控制配置
   # Keyboard control configuration
   list:
-    # name: 按键名称
-    # name: Key name
-    # key: 按键
-    # key: Key
-    # func: 方法
-    # func: Function
-    # sco: sco内置方法
-    # sco: sco built-in method
-    # url: 跳转链接
-    # url: Jump link
-    # - name: 关闭快捷键功能
-    #   key: K
-    #   func: keyboard
-    # - name: 打开中控台
-    #   key: A
-    #   sco: showConsole
-    # - name: 播放/暂停音乐
-    #   key: M
-    #   sco: musicToggle
-    # - name: 打开友情链接
-    #   key: L
-    #   url: "/links/"
+  # name: 按键名称
+  # name: Key name
+  # key: 按键
+  # key: Key
+  # func: 方法
+  # func: Function
+  # sco: sco内置方法
+  # sco: sco built-in method
+  # url: 跳转链接
+  # url: Jump link
+  # - name: 关闭快捷键功能
+  #   key: K
+  #   func: keyboard
+  # - name: 打开中控台
+  #   key: A
+  #   sco: showConsole
+  # - name: 播放/暂停音乐
+  #   key: M
+  #   sco: musicToggle
+  # - name: 打开友情链接
+  #   key: L
+  #   url: "/links/"
 
 # 懒加载
 # lazyload
@@ -907,9 +848,9 @@ CDN:
   custom_format: https://cdn.staticfile.org/${cdnjs_name}/${version}/${min_cdnjs_file}
 
   option:
-   scoicon_css: https://cdn.cbd.int/solitude-source/icon/scoicon.min.css
-   waterfall: https://cdn.cbd.int/solitude-source/js/waterfall.min.js
-   universe_js: https://cdn.cbd.int/solitude-source/js/universe.min.js
+    scoicon_css: https://cdn.cbd.int/solitude-source/icon/scoicon.min.css
+    waterfall: https://cdn.cbd.int/solitude-source/js/waterfall.min.js
+    universe_js: https://cdn.cbd.int/solitude-source/js/universe.min.js
   #  algolia_search:
   #  instantsearch:
   #  pjax:

@@ -4,16 +4,12 @@ div.banners-title
 - var group = theme.hometop.group
 if group
     div.banners-links
-        each item,index in group
-            if index % 2 === 0
-                .banners-link
-                    a.banners-link-btn(href=item.url class=item.name)
-                        i.scoicon(class=item.icon)
-                        .banners-link-title= item.name
-                    if group[index + 1]
-                        a.banners-link-btn(href=group[index + 1].url class=group[index + 1].name)
-                            i.scoicon(class=group[index + 1].icon)
-                            .banners-link-title= group[index + 1].name
+        each value,label in group
+            - var array = value.split('||')
+            a.banners-link-btn(href=url_for(trim(array[0])) class="banners-link-"+label)
+                if array[1]
+                    i.scoicon(class=array[1])
+                .banners-link-title= label
 
 div.tags-group-all
     .tags-group-wrapper

@@ -22,9 +22,11 @@ hexo.extend.filter.register('stylus:renderer', function (style) {
 
     style.define('about', data && data.about ? Object.keys(data.about) : []);
 
-    let group = theme.config.hometop.group?.map(item => ({
-        [item.name]: item.color
-    })) || [];
+    let group = Object.keys(theme.config.hometop.group).map(key => {
+        return {
+            [key]: (theme.config.hometop.group[key]).split('||')[2]
+        }
+    });
 
     style.define('banner_group', group);
 

@@ -1,10 +1,10 @@
 nav#nav.show
     #nav-group
         #blog_name
-            if theme.nav.left.enable
+            if theme.nav.group
                 .back-home-button(tabindex="-1")
                     i.back-home-button-icon.scoicon.sco-more-fill
-                    include ./widgets/nav/left.pug
+                    include ./widgets/nav/group
             a#site-name(href="/", title=_p('nav.site_name_title'))
                 if theme.site.name.class === 'i_class'
                     i.scoicon(class=theme.site.name.custom, style="font-size: 16px;")

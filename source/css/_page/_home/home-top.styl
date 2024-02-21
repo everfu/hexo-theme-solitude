@@ -314,20 +314,15 @@
           .banner-button-group
             bottom: 1rem
 
-// banner link
-.banners-link
-  display flex
-  flex-direction column
-  align-items flex-start
-
-  &:not(:last-child)
-    margin-right 10px
-
 .banners-links
   display flex
   position absolute
   bottom 20px
   left 40px
+  flex-direction column
+  justify-content space-between
+  flex-wrap wrap
+  height 120px
 
 .tags-group-icon-pair
   margin-left 1rem
@@ -345,6 +340,9 @@
   position relative
   background-size 200%
 
+  &:not(:last-child)
+    margin-right 10px
+
   &:hover
     background-position 100% 0
 
@@ -352,6 +350,6 @@
   margin-left auto
 
 for name in banner_group
-  .{name}
+  .banners-link-{name}
     background convert(getGroupColor(name))
     background-size 200%
