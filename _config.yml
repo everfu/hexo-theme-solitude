@@ -182,18 +182,18 @@ hometop:
     # banner 左下跳转按钮
     # Banner lower left jump button
     group:
-      - name: 热门 # 显示文字 / Displayed text
-        url: /tags/热门/ # 跳转链接 / Jump link
-        icon: sco-fire-fill # 图标 / Icon
-        color: "linear-gradient(to right,#f65,#ffbf37)" # 背景颜色 / Background color
-      - name: 教程
-        url: /tags/教程/
-        icon: sco-book-mark-fill
-        color: "linear-gradient(to right,#358bff,#15c6ff)"
-      - name: 必看
-        url: /tags/必看/
-        icon: sco-star-smile-fill
-        color: "linear-gradient(to right,#18e7ae,#1eebeb)"
+#      - name: 热门 # 显示文字 / Displayed text
+#        url: /tags/热门/ # 跳转链接 / Jump link
+#        icon: sco-fire-fill # 图标 / Icon
+#        color: "linear-gradient(to right,#f65,#ffbf37)" # 背景颜色 / Background color
+#      - name: 教程
+#        url: /tags/教程/
+#        icon: sco-book-mark-fill
+#        color: "linear-gradient(to right,#358bff,#15c6ff)"
+#      - name: 精选
+#        url: /tags/精选/
+#        icon: sco-star-smile-fill
+#        color: "linear-gradient(to right,#18e7ae,#1eebeb)"
 
   # 右侧置顶列表（在文章的front matter中添加“recommend: true”）
   # Right top list (add "recommend: true" in the front matter of the article)

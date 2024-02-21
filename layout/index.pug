@@ -1,20 +1,20 @@
-extends includes/layout.pug
+extends includes/layout
 
 block content
     #home_top
         if theme.says.home_mini
             include ./includes/widgets/home/bbTimeList
         if theme.hometop.banner.enable && is_home_first_page()
-            include ./includes/widgets/home/hometop.pug
+            include ./includes/widgets/home/hometop
     main.layout#content-inner
         .recent-posts#recent-posts
             #category-bar
-                include ./includes/widgets/home/categoryBar.pug
+                include ./includes/widgets/home/categoryBar
             for post in page.posts.sort("-sticky" || "-date").data
-                include ./includes/widgets/home/postList.pug
+                include ./includes/widgets/home/postList
 
             // pageination
-            include ./includes/mixins/pagination.pug
+            include ./includes/mixins/pagination
 
         // aside
-        include ./includes/widgets/aside/aside.pug
+        include ./includes/widgets/aside/aside
