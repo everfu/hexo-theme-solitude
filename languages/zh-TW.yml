@@ -75,7 +75,7 @@ search:
 
 head:
   noscript: 開啟JavaScript才能訪問本站哦~
-  console: '程式：Hexo |主題：Hexo-Theme-Solitude |作者：王卓Sco、亦封 |Github位址： https://github.com/wleelw/Hexo-theme-solitude |版本：v1.4.8 😄'
+  console: '程式：Hexo |主題：Hexo-Theme-Solitude |作者：王卓Sco、亦封 |Github位址： https://github.com/wleelw/Hexo-theme-solitude |版本：v1.5.0 😄'
 
 aside:
   postcount: '文章數：'
