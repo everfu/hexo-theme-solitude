@@ -82,7 +82,6 @@
         width calc(50% - 16px)
 
       .img
-        -webkit-mask-image -webkit-radial-gradient(center, #fff, #000)
         border-radius 0
         height 120px
         width 100%
@@ -91,17 +90,16 @@
         padding 0
         transition all .3s ease 0s
         overflow hidden
-        background-color #f6f6f6
 
         img
-          width 100%
-          height 100%
-          object-fit cover
           border-radius 0
           transform scale(1.03)
           transition .3s
           margin 0
           max-width 100%
+          width 100%
+          height 100%
+          object-fit cover
 
       .img-alt
         display none
@@ -158,18 +156,21 @@
         box-shadow var(--sco-shadow-main)
 
         .site-card-tag
-          left: -80px
+          left: -60px
 
         .img
           height 80px
+          transform scale(1.1)
+          filter brightness(.3)
+          border-radius 12px
+          background var(--sco-lighttext)
 
           img
+            border-radius 12px
             transform scale(1.1)
             filter brightness(.3)
-            cursor pointer
 
         a
-          border-bottom 2px solid var(--sco-none)
           color var(--sco-white)
           background var(--sco-main)
           box-shadow var(--sco-shadow-main)

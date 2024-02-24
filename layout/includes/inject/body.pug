@@ -77,8 +77,6 @@ div
                 script(src=url_for(theme.cdn.twikoo))
             when 'waline'
                 script(src=url_for(theme.cdn.waline_js))
-                link(rel="stylesheet", href=url_for(theme.cdn.waline_css))
-
         if theme.comment.commentBarrage
             case theme.comment.type
                 when 'twikoo'

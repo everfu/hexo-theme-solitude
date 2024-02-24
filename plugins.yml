@@ -19,11 +19,6 @@ waline_js:
   file: dist/waline.js
   other_name: waline
   version: 2.15.8
-waline_css:
-  name: '@waline/client'
-  file: dist/waline.css
-  other_name: waline
-  version: 2.15.8
 sharejs:
   name: butterfly-extsrc
   file: sharejs/dist/js/social-share.min.js
