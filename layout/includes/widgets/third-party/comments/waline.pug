@@ -11,4 +11,6 @@ script.
             search: false,
             comment: #{theme.post.meta.comment && is_post()},
         }, !{JSON.stringify(option)}))
+
+        GLOBAL_CONFIG.lightbox && utils.lightbox(document.querySelectorAll('#comment .wl-content img:not(.wl-emoji)'))
     }

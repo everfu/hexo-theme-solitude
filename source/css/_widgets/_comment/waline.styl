@@ -38,8 +38,52 @@
     margin 0
     justify-content space-around
 
-    .wl-emoji-popup
-      display none
+  .wl-emoji-popup
+    display none
+    position absolute
+    left 0
+    right 0
+    overflow hidden
+    max-width 500px
+    color #4a4a4a
+    top .5rem
+    z-index 1000
+    border var(--style-border-always)
+    border-radius 8px !important
+    background-color var(--sco-maskbg)
+    backdrop-filter saturate(180%) blur(10px)
+    transform translateZ(0)
+    animation 0.3s ease 0.1s 1 normal both running donate_effcet
+
+    button
+      font-size 20px
+      line-height 19px
+      list-style-type none
+      padding 5px 10px
+      border-radius 5px
+      display inline-block
+      transition .3s
+      text-align center
+
+    &.display
+      display block
+
+    .wl-tab-wrapper
+      max-height 197px
+      padding 10px
+      padding-right 0
+      overflow auto
+      font-size 0
+      margin 12px 8px
+      min-height 197px
+
+    .wl-tabs
+      margin 0
+      padding 0
+      font-size 0
+      background var(--sco-background)
+      padding-left 8px
+
 
   .wl-actions
     flex 1
@@ -82,73 +126,20 @@
       bottom 5px
       right 10px
 
-  .wl-login-info
-    display flex
-    align-items center
-    justify-content center
-    flex-direction row
-    position absolute
-    bottom -55px
-    right 120px
-
-    .wl-avatar
-      display flex
-      align-items center
-      flex-direction row-reverse
-      justify-content center
-
-      .wl-logout-btn
-        margin-top 10px
-        display flex
-        align-items center
-        justify-content center
-        color var(--sco-fontcolor)
-
-        svg
-          width 15px
-          height 15px
-          cursor pointer
-
-    > .wl-login-nick
-      padding-bottom 10px
-      margin-left 5px
-      font-size 16px
-      opacity .7
-
-    img
-      width 32px
-      height 32px
-      border-radius 50%
+  .wl-close
+    display none
 
   .wl-quote
     .wl-card-item
       padding 1rem 0 0
 
   .wl-reply-wrapper
-    order 1
+    order 2
     width 100%
-
-    .wl-comment
-      .wl-close
-        display none
-
-    .wl-login-info
-      bottom -52px
-
-    .wl-header
-      +minWidth900()
-        width 100%
-
-    .wl-btn
-      +minWidth768()
-        top 56px
-
-    .wl-btn:only-of-type
-      top 10px
 
   .wl-header
     order 1
-    width calc(100% - 11rem)
+    width calc(100% - 5.5rem)
     display flex
     align-items center
     justify-content space-between
@@ -156,11 +147,7 @@
     margin .5rem 0
     gap .5rem
 
-    +maxWidth1400()
-      width 100%
-
-    +maxWidth768()
-      width calc(100% - 5.5rem)
+    +maxWidth899()
       flex-direction column
 
     .wl-header-item
@@ -174,7 +161,7 @@
       border-collapse separate
       border-spacing 0
 
-      +maxWidth768()
+      +maxWidth899()
         width 100%
 
       label
@@ -213,33 +200,20 @@
     width 5rem
     position absolute
     margin-left 0.5rem
-    height 32px
+    height 34px
     background-color var(--sco-fontcolor)
     border 0 solid var(--sco-main)
     color var(--sco-background)
-    top 11px
-    right 110px
+    top 10px
+    right 0
     opacity .2
 
-    +maxWidth1400()
-      top 53px
-
-    +maxWidth768()
-      height 56px
-      right 0
-      top 76px
-
-      &:only-of-type
-        height 32px
+    +maxWidth899()
+      height 122px
 
     &:hover
       background var(--sco-main)
       color var(--sco-white)
-
-    &.primary
-      right 0
-      +maxWidth768()
-        top 10px
 
   .wl-power
     padding 0.5em 0
@@ -259,7 +233,7 @@
     align-items center
     flex-direction row
     gap 0.5rem
-    margin .5rem 0
+    margin-bottom .5rem
 
     li
       cursor pointer
@@ -296,6 +270,7 @@
     border-radius 12px
     border-top var(--style-border-dashed)
     padding 1rem 1rem 1.5rem
+    overflow hidden
 
   .wl-user
     flex-shrink 0
@@ -421,8 +396,14 @@
       overflow auto
       border-radius 0.5em
 
+      +maxWidth768()
+        max-width 90%
+
   .wl-quote
     order 3
+
+    +maxWidth768()
+      max-width 90%
 
   .wl-operation
     width 100%
@@ -455,6 +436,16 @@
     display flex
     justify-content center
     align-items center
+
+  .wl-emoji
+    height 32px
+    margin 0 0.2rem
+
+  .wl-empty
+    display flex
+    justify-content center
+    align-items center
+    color var(--sco-lighttext)
 
 #page .wl-cards > .wl-card-item
   padding 1rem 1rem 1.5rem
