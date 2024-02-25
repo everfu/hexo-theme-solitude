@@ -21,4 +21,23 @@ hexo.extend.filter.register('stylus:renderer', function (style) {
     }
 
     style.define('about', data && data.about ? Object.keys(data.about) : []);
+
+    let group = Object.keys(theme.config.hometop.group).map(key => {
+        return {
+            [key]: (theme.config.hometop.group[key]).split('||')[2]
+        }
+    });
+
+    style.define('banner_group', group);
+
+    function getGroupColor(key) {
+        let color = '';
+        group.forEach(item => {
+            if (item[key]) {
+                color = item[key];
+            }
+        });
+        return color;
+    }
+    style.define('getGroupColor', getGroupColor);
 });

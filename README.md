@@ -12,9 +12,9 @@
 
 ![首页](https://github.com/wleelw/hexo-theme-solitude/assets/74389842/d008aba4-942d-4fdb-a611-d934c0bad9fe)
 
-主题预览:  [王卓Sco](https://blog.wzsco.top/) ｜  [Demo](https://solitude.wzsco.top/)
+主题预览:  [王卓Sco](https://blog.wzsco.cn/) ｜  [Demo](https://solitude.wzsco.cn/)
 
-主题文档:  [中文](https://docs.wzsco.top/) ｜ [ English ](https://docs.wzsco.top/en/)
+主题文档:  [中文](https://docs.wzsco.cn/) ｜ [ English ](https://docs.wzsco.cn/en/)
 
 主题交流群：`文档内有群二维码和链接`
 

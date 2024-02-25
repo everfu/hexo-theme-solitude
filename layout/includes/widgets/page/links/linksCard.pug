@@ -6,7 +6,6 @@
                     i.light
             a.img(title=item.name, href=url_for(item.link))
                 img.flink-avatar(src=item.topimg + (data.topimg_suffix || ''), alt=item.name)
-                .img-alt.is-center= item.name
             a.info.cf-friends-link(title=item.name, href=url_for(item.link))
                 .site-card-avatar
                     img.flink-avatar.cf-friends-avatar(src=item.avatar + (data.suffix || ''), alt=item.name)

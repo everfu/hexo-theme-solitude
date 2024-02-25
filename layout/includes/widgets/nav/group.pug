@@ -1,0 +1,13 @@
+- var menu = theme.nav.group
+if menu
+    .back-menu-list-groups
+        each value, label in menu
+            .back-menu-list-group
+                .back-menu-list-title= label
+                .back-menu-list
+                    each data, label in value
+                        - var array = data.split('||')
+                        a.back-menu-item(href=url_for(trim(array[0])), title=index)
+                            if array[1]
+                                img.back-menu-item-icon(src=trim(array[1]), alt=index)
+                            span.back-menu-item-text= label

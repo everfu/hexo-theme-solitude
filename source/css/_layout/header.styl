@@ -97,7 +97,7 @@
     transition 0.3s
     display flex
     justify-content center
-    -webkit-user-select none
+    user-select none
 
     +maxWidth768()
       background linear-gradient(to top, var(--sco-main-none) 0, var(--sco-main) 100%)
@@ -558,7 +558,7 @@
     font-size .78em
     cursor pointer
 
-  if hexo-config('nav.left.enable')
+  if hexo-config('nav.group')
     .back-home-button
       &:hover
         +minWidth900()
@@ -658,7 +658,7 @@
   transition .3s
   white-space nowrap
 
-if hexo-config('nav.left.enable')
+if hexo-config('nav.group')
   .back-home-button
     display flex
     width 35px
@@ -749,7 +749,7 @@ if hexo-config('nav.left.enable')
         +minWidth900()
           background var(--sco-lighttext)
 
-    if hexo-config('nav.left.enable')
+    if hexo-config('nav.group')
       .back-home-button
         color var(--sco-fontcolor)
 
@@ -767,7 +767,7 @@ if hexo-config('nav.left.enable')
             background-color var(--sco-main)
 
 .post
-  if hexo-config('nav.left.enable')
+  if hexo-config('nav.group')
     .back-home-button
       color var(--sco-white)
 

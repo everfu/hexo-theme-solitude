@@ -26,6 +26,7 @@
       box-shadow var(--sco-shadow-border)
       min-height 400px
       position relative
+      user-select none
 
       +maxWidth1200()
         width calc(50% - 12px)
@@ -56,11 +57,11 @@
           white-space nowrap
           overflow hidden
           text-overflow ellipsis
-          cursor pointer
           width fit-content
 
           &:hover
-            color var(--sco-main)
+            color var(--sco-vip)
+            cursor pointer
 
         .equipment-item-content-item-specification
           font-size 12px

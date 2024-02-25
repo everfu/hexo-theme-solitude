@@ -1,16 +1,20 @@
-.menus_items
-    - var menu = theme.nav && theme.nav.menu ? theme.nav.menu : {}
-    each value, x in menu
-        .menus_item
-            if !value.url
-                a.site-page(href="javascript:void(0);")
-                    span= x
-                ul.menus_item_child
-                    each childValue, y in value.child
-                        li
-                            a.site-page.child(href=url_for(childValue.url))
-                                i.scoicon(class=childValue.icon)
-                                span= y
-            else
-                a.site-page.not-child(href=url_for(value.url))
-                    span= x
+- var menu = theme.nav.menu
+
+if menu
+    .menus_items
+        each value, label in menu
+            .menus_item
+                if typeof value !== 'object'
+                    a.site-page(href=url_for(value))
+                        span= label
+                else
+                    a.site-page(href="javascript:void(0);")
+                        span= label
+                    ul.menus_item_child
+                        each childValue, childLabel in value
+                            li
+                                - var array = childValue.split('||')
+                                a.site-page.child(href=url_for(trim(array[0])))
+                                    if array[1]
+                                        i.scoicon(class=array[1])
+                                    span= childLabel

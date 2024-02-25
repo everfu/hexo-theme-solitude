@@ -13,9 +13,9 @@
 
 ![首页](https://github.com/wleelw/hexo-theme-solitude/assets/74389842/d008aba4-942d-4fdb-a611-d934c0bad9fe)
 
-Theme Preview:  [王卓Sco](https://blog.wzsco.top/)｜[Demo](https://solitude.wzsco.top/)
+Theme Preview:  [王卓Sco](https://blog.wzsco.cn/)｜[Demo](https://solitude.wzsco.cn/)
 
-Theme Document: [中文](https://docs.wzsco.top/)｜[ English ](https://docs.wzsco.top/en/)
+Theme Document: [中文](https://docs.wzsco.cn/)｜[ English ](https://docs.wzsco.cn/en/)
 
 Theme discussion group：`The usage document above contains a QR code`
 

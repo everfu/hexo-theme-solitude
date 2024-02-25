@@ -1,6 +1,16 @@
 div.banners-title
     div.banners-title-big!= theme.hometop.banner.title
     div.banners-title-small= theme.hometop.banner.url
+- var group = theme.hometop.group
+if group
+    div.banners-links
+        each value,label in group
+            - var array = value.split('||')
+            a.banners-link-btn(href=url_for(trim(array[0])) class="banners-link-"+label)
+                if array[1]
+                    i.scoicon(class=array[1])
+                .banners-link-title= label
+
 div.tags-group-all
     .tags-group-wrapper
         each i in [1,2]
@@ -11,6 +21,3 @@ div.tags-group-all
                     each key in pair
                         .tags-group-icon(style=`background: ${theme.hometop.banner.icon[key].color}`)
                             img(src=theme.hometop.banner.icon[key].img, title=key)
-a#banner-hover(onclick="toRandomPost()")
-    span.bannerText= _p('home.bannertext')
-    i.scoicon.sco-arrow-2-right-line.banner-righticon

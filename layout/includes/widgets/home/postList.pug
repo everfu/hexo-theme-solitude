@@ -15,14 +15,14 @@ div.recent-post-item(onclick="pjax.loadUrl('/" + post.path + "')")
                 if post.prev == null && is_home()
                     span.original= _p('home.recent-post.new')
 
-                a.unvisited-post(href=url_for(post.path))= _p('home.recent-post.read')
+                a.unvisited-post(href=post.path)= _p('home.recent-post.read')
 
-            a.article-title(href=url_for(post.path), title=post.title)= post.title
+            a.article-title(href=post.path, title=post.title)= post.title
 
         div.article-meta-wrap
             span.article-meta.tags
                 each tag in post.tags.data
-                    a.article-meta__tags(href=url_for(tag.path), onclick="event.stopPropagation();")
+                    a.article-meta__tags(href=tag.path, onclick="event.stopPropagation();")
                         span.tags-punctuation=tag.name
 
             span.post-meta-date

@@ -15,6 +15,7 @@
                 .author-info__name= config.author
                 .author-info__desc!= config.subtitle
             .card-info-social-icons.is-center
-                each value, key in theme.aside.card.information || []
-                    a.social-icon(href=url_for(value.url), title=key)
-                        i.scoicon(class=value.icon)
+                each value, label in theme.aside.card.information || {}
+                    - var array = value.split('||')
+                    a.social-icon(href=url_for(trim(array[0])), title=label)
+                        i.scoicon(class=array[1])

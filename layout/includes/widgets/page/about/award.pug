@@ -14,7 +14,7 @@ if site.data.about.rewardList
                     .reward-list-item
                         .reward-list-item-name= reward.name
                         .reward-list-bottom-group
-                            .reward-list-item-money(style=(reward.vip ? "background: var(--sco-vip);" : ""))
+                            .reward-list-item-money(style=(reward.vip ? "background: var(--sco-vip);color: var(--sco-white)" : ""))
                                 if reward.icon
                                     i.scoicon(class=reward.icon)
                                 | ¥ #{reward.money}
