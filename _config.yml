@@ -265,9 +265,9 @@ aside:
     # 鼠标悬停翻转图片
     # Mouse hover flip image
     backface:
-    # 夜间模式下是否开启卡片背景颜色 true：使用背景颜色 / false：不使用背景颜色
-    # Whether to enable card background color in night mode true: use background color / false: do not use background color
-    darkcolor: false
+    # 背景色：var(--sco-blue) / #000 / rgba(0,0,0,0.5) / linear-gradient(to right,#f65,#ffbf37)
+    # Background color: var(--sco-blue) / #000 / rgba(0,0,0,0.5) / linear-gradient(to right,#f65,#ffbf37)
+    backcolor: "var(--sco-blue)"
 
   # 页面目录
   # Page directory

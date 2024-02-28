@@ -1,10 +1,11 @@
 favicon = hexo-config('aside.flip.favicon')
 face = hexo-config('aside.flip.face')
 faceback = hexo-config('aside.flip.backface')
+backcolor = convert(hexo-config('aside.flip.backcolor'))
 
 #aside-content
   .card-widget.card-platform
-    background var(--sco-main)
+    background backcolor
     display flex
     justify-content center
     align-content center
@@ -64,7 +65,3 @@ faceback = hexo-config('aside.flip.backface')
       box-sizing border-box
       background url(faceback) center center no-repeat
       background-size 100%
-
-if !hexo-config('aside.flip.darkcolor')
-  [data-theme='dark'] #aside-content .card-widget.card-platform
-    background var(--sco-card-bg)
