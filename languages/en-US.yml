@@ -75,7 +75,6 @@ search:
 
 head:
   noscript: Please enable JavaScript to view the site
-  console: 'Program: Hexo | Theme: Hexo-Theme-Solitude | Author: WangZhuoSco、YiFeng | Github: https://github.com/wleelw/Hexo-theme-solitude | Version: v1.5.0 😄'
 
 aside:
   postcount: 'Posts :'

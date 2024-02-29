@@ -16,7 +16,7 @@ if theme.lightbox && theme.fancybox
     link(rel="stylesheet", href=url_for(theme.cdn.fancyapps_css))
 
 if theme.katex && theme.katex.enable
-   link(rel="stylesheet", href=url_for(theme.cdn.katex))
+    link(rel="stylesheet", href=url_for(theme.cdn.katex))
 
 // Open Graph
 include ../head/opengraph.pug
@@ -78,8 +78,10 @@ script.
     )(window)
 
     console.log(
-        "%c🔥 !{_p('head.console')}",
-        "color: #fff; background: linear-gradient(-25deg, #a8edea, #fed6e3); padding: 8px 15px; border-radius: 8px; text-shadow: 2px 2px 4px white; color: black;"
+        "%c Program: Hexo %c Theme: Hexo-Theme-Solitude %c Version: v1.5.1",
+        "border-radius:5px 0 0 5px;padding: 5px 10px;color:white;background:#ff3842;margin:10px 0",
+        "padding: 5px 10px;color:white;background:#3e9f50;",
+        "border-radius:0 5px 5px 0;padding: 5px 10px;background:#0084ff;"
     );
 if theme.extends.head
     each item in theme.extends.head
