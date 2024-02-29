@@ -1,4 +1,5 @@
-- group = (Object.entries(theme.hometop.group)).slice(0, 2)
+- gg = theme.hometop.group
+- group = gg ? (Object.entries(gg)).slice(0, 2) : null
 
 if group
     .categoryGroup

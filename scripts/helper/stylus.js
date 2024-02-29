@@ -22,9 +22,17 @@ hexo.extend.filter.register('stylus:renderer', function (style) {
 
     style.define('about', data && data.about ? Object.keys(data.about) : []);
 
-    let group = Object.keys(theme.config.hometop.group).map(key => {
+    initGroupColor(theme.config.hometop.group,style);
+});
+
+function initGroupColor(gg,style) {
+    if(gg === null || gg === undefined) {
+        style.define('banner_group', [])
+        return;
+    }
+    let group = Object.keys(gg).map(key => {
         return {
-            [key]: (theme.config.hometop.group[key]).split('||')[2]
+            [key]: (gg[key]).split('||')[2]
         }
     });
 
@@ -40,4 +48,4 @@ hexo.extend.filter.register('stylus:renderer', function (style) {
         return color;
     }
     style.define('getGroupColor', getGroupColor);
-});
+}
