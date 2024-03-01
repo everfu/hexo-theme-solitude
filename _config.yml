@@ -37,27 +37,15 @@ site:
 # 导航栏
 # navigation bar
 nav:
-  #导航栏左侧
-  # left
-  left:
-    # 是否开启左侧导航栏
-    # Whether to enable the left navigation bar
-    enable: false
-    # 导航栏显示的内容
-    # Content displayed in the navigation bar
-    menu:
-      # 显示分类名
-      # Display category name
-      项目:
-      # # 显示子类
-      # # Display subcategories
-      # Solitude:
-      #   # 显示的图标
-      #   # Displayed icon
-      #   icon: https://bu.dusays.com/2023/11/08/654af68b25bb8.jpg
-      #   # 点击的跳转链接
-      #   # Click the jump link
-      #   url: https://github.com/wleelw/Hexo-Theme-solitude
+  # 导航栏左侧
+  # Left side of the navigation bar
+  group:
+    # 分类名称: 链接地址 || 图标
+    # Category name: link address || icon
+    项目:
+      # 子菜单名称: 链接地址 || 图标
+      # Submenu name: link address || icon
+      Solitude: https://github.com/wleelw/hexo-theme-solitude || https://bu.dusays.com/2023/11/08/654af68b25bb8.jpg
 
   # 导航栏内容
   # Navigation bar content
