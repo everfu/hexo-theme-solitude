@@ -658,6 +658,10 @@ fancybox: false
 # mediumZoom
 mediumZoom: false
 
+# mermaid
+# https://mermaid.js.org/
+mermaid: false
+
 # 简繁转换
 # Simplified and Traditional Chinese conversion
 translate:
