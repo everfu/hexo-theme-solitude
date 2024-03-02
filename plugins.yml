@@ -112,5 +112,5 @@ macy_js:
   version: 2.5.1
 mermaid_js:
   name: mermaid
-  file: mermaid.min.js
+  file: dist/mermaid.min.js
   version: 10.8.0

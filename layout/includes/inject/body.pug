@@ -106,6 +106,9 @@ div
             != item
 
 div#js-pjax
+    if theme.mermaid
+        script.
+            mermaid.run();
     if page.type === 'album' && theme.album.enable
         script.
             initGallery()
