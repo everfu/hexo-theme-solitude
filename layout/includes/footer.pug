@@ -3,7 +3,7 @@ div#sco-footer-bar
         if theme.site.name.class === 'i_class'
             i.scoicon(class=theme.site.name.custom)
         else if theme.site.name.class === 'img'
-            i.scoicon(style="background-image: url(" + url_for(theme.site.name.custom) + ")")
+            img.scoicon.nolazyload(src=url_for(theme.site.name.custom))
         else if theme.site.name.class === 'text'
             span.scoicon= theme.site.name.custom
     div.footer-bar-description= __('footer.description').replace(/\$\{title}/, config.title + " - " + config.subtitle)
