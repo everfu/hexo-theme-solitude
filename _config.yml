@@ -820,6 +820,15 @@ pwa:
   favicon_32_32: https://cdn.cbd.int/solitude-source/img/pwa/32.png # 32x32图标
   favicon_16_16: https://cdn.cbd.int/solitude-source/img/pwa/16.png # 16x16图标
 
+# 谷歌广告 (Google Adsense)
+# 目前仅支持自动广告
+# Currently only automatic ads are supported
+google_adsense:
+  enable: false
+  js: https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js
+  client: # 填写自己的client id / Fill in your own client id
+  enable_page_level_ads: true
+
 # CDN
 # Don't modify the following settings unless you know how they work
 # 非必要请不要修改
