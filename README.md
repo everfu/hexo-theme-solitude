@@ -12,9 +12,9 @@
 
 ![首页](https://github.com/wleelw/hexo-theme-solitude/assets/74389842/d008aba4-942d-4fdb-a611-d934c0bad9fe)
 
-主题预览:  [王卓Sco](https://blog.wzsco.cn/) ｜  [Demo](https://solitude.wzsco.cn/)
+主题预览:  [王卓Sco](https://blog.wzsco.cn/) ｜  [Demo](https://solitude.wzsco.top/)
 
-主题文档:  [中文](https://docs.wzsco.cn/) ｜ [ English ](https://docs.wzsco.cn/en/)
+主题文档:  [中文](https://docs.wzsco.top/)
 
 主题交流群：`文档内有群二维码和链接`
 
@@ -36,7 +36,7 @@ git clone -b main https://github.com/wleelw/hexo-theme-solitude.git themes/solit
 git clone -b dev https://github.com/wleelw/hexo-theme-solitude.git themes/solitude
 ```
 
-### npm 安装
+### NPM 安装
 
 > 此方法只支持 Hexo 5.0.0 以上版本。通过 npm 安装并不会在 themes 里生成主题文件夹，而是在 node_modules 里生成
 
@@ -87,29 +87,8 @@ theme: solitude
   <img src="https://contrib.rocks/image?repo=wleelw/hexo-theme-solitude" />
 </a>
 
-**本主题为 [Heo](https://blog.zhheo.com/) 的衍生主题，由 [@张洪Heo](https://github.com/zhheo) 作者全权授权、设计！**
+**主题为 [Heo](https://blog.zhheo.com/) 的衍生主题，由 [@张洪Heo](https://github.com/zhheo) 作者全权授权、设计！**
 
 > 欢迎你对本主题做出贡献！[贡献指南](/CONTRIBUTING.md)
 
-## 📷 截图
-
-### 首页
-![首页](https://github.com/wleelw/hexo-theme-solitude/assets/74389842/d008aba4-942d-4fdb-a611-d934c0bad9fe)
-
-### 即刻短文
-![即刻短文](https://github.com/wleelw/hexo-theme-solitude/assets/74389842/ef6b2657-25e1-4aab-a9b3-eb631840c8da)
-
-### 友情链接
-![友情链接](https://github.com/wleelw/hexo-theme-solitude/assets/74389842/d82cf750-8679-4a54-b3e2-96ec01e9665f)
-
-### 音乐馆
-![音乐馆](https://github.com/wleelw/hexo-theme-solitude/assets/74389842/ec8c9276-5b43-4950-99a2-c94cb0e5c39e)
-
-### 装备
-![装备](https://github.com/wleelw/hexo-theme-solitude/assets/74389842/26596846-f39e-4981-8083-ad1c3e8de290)
-
-### 工具箱
-![工具箱](https://github.com/wleelw/hexo-theme-solitude/assets/74389842/d52e6dde-a8a9-4d3c-aa21-fddcfe47de23)
-
-### 关于
-![关于](https://github.com/wleelw/hexo-theme-solitude/assets/74389842/46d9db0d-a2d8-4c69-a393-f3388389fbcb)
+[![Hexo-Theme-Solitude](https://starchart.cc/wleelw/hexo-theme-solitude.svg?variant=adaptive)](https://github.com/wleelw/hexo-theme-solitude)

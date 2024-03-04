@@ -13,9 +13,9 @@
 
 ![首页](https://github.com/wleelw/hexo-theme-solitude/assets/74389842/d008aba4-942d-4fdb-a611-d934c0bad9fe)
 
-Theme Preview:  [王卓Sco](https://blog.wzsco.cn/)｜[Demo](https://solitude.wzsco.cn/)
+Theme Preview:  [王卓Sco](https://blog.wzsco.cn/)｜[Demo](https://solitude.wzsco.top/)
 
-Theme Document: [中文](https://docs.wzsco.cn/)｜[ English ](https://docs.wzsco.cn/en/)
+Theme Document: [中文](https://docs.wzsco.cn/)
 
 Theme discussion group：`The usage document above contains a QR code`
 
@@ -37,7 +37,7 @@ If you want to install the latest development version, you can install the dev b
 git clone -b dev https://github.com/wleelw/hexo-theme-solitude.git themes/solitude
 ```
 
-### Installation via npm
+### Installation via NPM
 
 > This method only supports Hexo versions above 5.0.0. Installing through npm will not generate a theme folder in themes, but in node_modules instead.
 
@@ -92,25 +92,4 @@ theme: solitude
 
 > Welcome to contribute to this theme!  [Contribution Guide](/CONTRIBUTING.md)
 
-## 📷 Preview
-
-### Home
-![Home](https://github.com/wleelw/hexo-theme-solitude/assets/74389842/d008aba4-942d-4fdb-a611-d934c0bad9fe)
-
-### Essay
-![Essay](https://github.com/wleelw/hexo-theme-solitude/assets/74389842/ef6b2657-25e1-4aab-a9b3-eb631840c8da)
-
-### Links
-![Links](https://github.com/wleelw/hexo-theme-solitude/assets/74389842/d82cf750-8679-4a54-b3e2-96ec01e9665f)
-
-### Music
-![Music](https://github.com/wleelw/hexo-theme-solitude/assets/74389842/ec8c9276-5b43-4950-99a2-c94cb0e5c39e)
-
-### Equip
-![Equip](https://github.com/wleelw/hexo-theme-solitude/assets/74389842/26596846-f39e-4981-8083-ad1c3e8de290)
-
-### Tools of link
-![Tools of link](https://github.com/wleelw/hexo-theme-solitude/assets/74389842/d52e6dde-a8a9-4d3c-aa21-fddcfe47de23)
-
-### About
-![About](https://github.com/wleelw/hexo-theme-solitude/assets/74389842/46d9db0d-a2d8-4c69-a393-f3388389fbcb)
+[![Hexo-Theme-Solitude](https://starchart.cc/wleelw/hexo-theme-solitude.svg?variant=adaptive)](https://github.com/wleelw/hexo-theme-solitude)
