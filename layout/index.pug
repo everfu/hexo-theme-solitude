@@ -10,7 +10,7 @@ block content
         .recent-posts#recent-posts
             #category-bar
                 include ./includes/widgets/home/categoryBar
-            for post in page.posts.sort("-sticky" || "-date").data
+            for post, index in page.posts.sort("-sticky" || "-date").data
                 include ./includes/widgets/home/postList
 
             // pageination

@@ -821,13 +821,19 @@ pwa:
   favicon_16_16: https://cdn.cbd.int/solitude-source/img/pwa/16.png # 16x16图标
 
 # 谷歌广告 (Google Adsense)
-# 目前仅支持自动广告
-# Currently only automatic ads are supported
 google_adsense:
   enable: false
-  js: https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js
-  client: # 填写自己的client id / Fill in your own client id
-  enable_page_level_ads: true
+  auto_ads: false # 自动广告关闭后则为手动广告 / After auto ads are turned off, it is manual ads
+  enable_page_level_ads: true # 页面级广告 / Page-level ads
+  js: https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js # 谷歌广告js / Google Adsense js
+  # client id
+  # 无论是否开启自动广告，都需要填写 client id
+  # Whether to enable auto ads or not, you need to fill in the client id
+  client: # ca-pub-XXXXXXXXXXXXXX
+  # slot id
+  # 只有关闭自动广告时才需要填写 slot id，可以在谷歌广告后台 按广告单元中创建广告位后获取
+  # Only when auto ads are turned off, you need to fill in the slot id, which can be obtained after creating an ad space in the Google Adsense background according to the ad unit
+  slot: # 4236388782
 
 # CDN
 # Don't modify the following settings unless you know how they work
