@@ -4,17 +4,17 @@
 
 ## Hexo-Theme-Solitude
 
-![master version](https://img.shields.io/github/package-json/v/wleelw/hexo-theme-solitude/master?color=%231ab1ad&label=master)
-![master version](https://img.shields.io/github/package-json/v/wleelw/hexo-theme-solitude/dev?label=dev)
+![master version](https://img.shields.io/github/package-json/v/valor-x/hexo-theme-solitude/master?color=%231ab1ad&label=master)
+![master version](https://img.shields.io/github/package-json/v/valor-x/hexo-theme-solitude/dev?label=dev)
 ![https://img.shields.io/npm/v/hexo-theme-solitude?color=%09%23bf00ff](https://img.shields.io/npm/v/hexo-theme-solitude?color=%09%23bf00ff)
 ![hexo version](https://img.shields.io/badge/hexo-6.3.0+-0e83c)
-![license](https://img.shields.io/github/license/wleelw/hexo-theme-solitude?color=FF5531)
+![license](https://img.shields.io/github/license/valor-x/hexo-theme-solitude?color=FF5531)
 
-![首页](https://github.com/wleelw/hexo-theme-solitude/assets/74389842/d008aba4-942d-4fdb-a611-d934c0bad9fe)
+![首页](https://github.com/valor-x/hexo-theme-solitude/assets/74389842/d008aba4-942d-4fdb-a611-d934c0bad9fe)
 
-主题预览:  [王卓Sco](https://blog.wzsco.cn/) ｜  [Demo](https://solitude.wzsco.cn/)
+主题预览:  [亦封](https://blog.meuicat.cn/)｜[Demo](https://solitude-demo.efu.me/)
 
-主题文档:  [中文](https://docs.wzsco.cn/) ｜ [ English ](https://docs.wzsco.cn/en/)
+主题文档:  [中文](https://solitude-docs.efu.me/)
 
 主题交流群：`文档内有群二维码和链接`
 
@@ -27,13 +27,13 @@
 在博客根目录里安装稳定版【推荐】
 
 ```powershell
-git clone -b main https://github.com/wleelw/hexo-theme-solitude.git themes/solitude
+git clone -b main https://github.com/valor-x/hexo-theme-solitude.git themes/solitude
 ```
 
 如果想要安装比较新的 dev 分支，可以在博客根目录里安装开发版
 
 ```powershell
-git clone -b dev https://github.com/wleelw/hexo-theme-solitude.git themes/solitude
+git clone -b dev https://github.com/valor-x/hexo-theme-solitude.git themes/solitude
 ```
 
 ### npm 安装
@@ -83,33 +83,12 @@ theme: solitude
 
 ## ✨ 贡献者
 
-<a href="https://github.com/wleelw/hexo-theme-solitude/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=wleelw/hexo-theme-solitude" />
+<a href="https://github.com/valor-x/hexo-theme-solitude/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=valor-x/hexo-theme-solitude" />
 </a>
 
 **本主题为 [Heo](https://blog.zhheo.com/) 的衍生主题，由 [@张洪Heo](https://github.com/zhheo) 作者全权授权、设计！**
 
 > 欢迎你对本主题做出贡献！[贡献指南](/CONTRIBUTING.md)
 
-## 📷 截图
-
-### 首页
-![首页](https://github.com/wleelw/hexo-theme-solitude/assets/74389842/d008aba4-942d-4fdb-a611-d934c0bad9fe)
-
-### 即刻短文
-![即刻短文](https://github.com/wleelw/hexo-theme-solitude/assets/74389842/ef6b2657-25e1-4aab-a9b3-eb631840c8da)
-
-### 友情链接
-![友情链接](https://github.com/wleelw/hexo-theme-solitude/assets/74389842/d82cf750-8679-4a54-b3e2-96ec01e9665f)
-
-### 音乐馆
-![音乐馆](https://github.com/wleelw/hexo-theme-solitude/assets/74389842/ec8c9276-5b43-4950-99a2-c94cb0e5c39e)
-
-### 装备
-![装备](https://github.com/wleelw/hexo-theme-solitude/assets/74389842/26596846-f39e-4981-8083-ad1c3e8de290)
-
-### 工具箱
-![工具箱](https://github.com/wleelw/hexo-theme-solitude/assets/74389842/d52e6dde-a8a9-4d3c-aa21-fddcfe47de23)
-
-### 关于
-![关于](https://github.com/wleelw/hexo-theme-solitude/assets/74389842/46d9db0d-a2d8-4c69-a393-f3388389fbcb)
+[![Hexo-Theme-Solitude](https://starchart.cc/valor-x/hexo-theme-solitude.svg?variant=adaptive)](https://github.com/valor-x/hexo-theme-solitude)
