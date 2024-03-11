@@ -9,6 +9,7 @@
 ![https://img.shields.io/npm/v/hexo-theme-solitude?color=%09%23bf00ff](https://img.shields.io/npm/v/hexo-theme-solitude?color=%09%23bf00ff)
 ![hexo version](https://img.shields.io/badge/hexo-6.3.0+-0e83c)
 ![license](https://img.shields.io/github/license/valor-x/hexo-theme-solitude?color=FF5531)
+[![GitHub all releases](https://img.shields.io/github/downloads/valor-x/hexo-theme-solitude/total)](https://github.com/valor-x/hexo-theme-solitude/releases/latest)
 
 ![首页](https://github.com/valor-x/hexo-theme-solitude/assets/74389842/d008aba4-942d-4fdb-a611-d934c0bad9fe)
 
