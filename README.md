@@ -88,8 +88,6 @@ theme: solitude
   <img src="https://contrib.rocks/image?repo=valor-x/hexo-theme-solitude" />
 </a>
 
-**主题为 [Heo](https://blog.zhheo.com/) 的衍生主题，由 [@张洪Heo](https://github.com/zhheo) 作者全权授权、设计！**
+**主题由 [@张洪Heo](https://github.com/zhheo) 作者全权授权、设计！**
 
 > 欢迎你对本主题做出贡献！[贡献指南](/CONTRIBUTING.md)
-
-[![Hexo-Theme-Solitude](https://starchart.cc/valor-x/hexo-theme-solitude.svg?variant=adaptive)](https://github.com/valor-x/hexo-theme-solitude)
