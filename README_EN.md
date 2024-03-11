@@ -10,6 +10,7 @@
 ![https://img.shields.io/npm/v/hexo-theme-solitude?color=%09%23bf00ff](https://img.shields.io/npm/v/hexo-theme-solitude?color=%09%23bf00ff)
 ![hexo version](https://img.shields.io/badge/hexo-6.3.0+-0e83c)
 ![license](https://img.shields.io/github/license/valor-x/hexo-theme-solitude?color=FF5531)
+[![GitHub all releases](https://img.shields.io/github/downloads/valor-x/hexo-theme-solitude/total)](https://github.com/valor-x/hexo-theme-solitude/releases/latest)
 
 ![首页](https://github.com/valor-x/hexo-theme-solitude/assets/74389842/d008aba4-942d-4fdb-a611-d934c0bad9fe)
 
@@ -69,7 +70,6 @@ theme: solitude
 - [x] Support multi-function right-click menu
 - [x] Support for customizing the main color to change with the color of the cover image
 - [x] Support for immersive status bars
-- [x] Support for chat system
 - [x] Support for Baidu Analytics
 - [x] Support viewing large images
 - [x] Support for waterfall instant talk
@@ -88,8 +88,6 @@ theme: solitude
   <img src="https://contrib.rocks/image?repo=valor-x/hexo-theme-solitude" />
 </a>
 
-**This theme is a derivative theme of [Heo](https://blog.zhheo.com/), designed and authorized by the author [张洪Heo](https://github.com/zhheo)!**
+**This theme designed and authorized by the author [张洪Heo](https://github.com/zhheo)!**
 
 > Welcome to contribute to this theme!  [Contribution Guide](/CONTRIBUTING.md)
-
-[![Hexo-Theme-Solitude](https://starchart.cc/valor-x/hexo-theme-solitude.svg?variant=adaptive)](https://github.com/valor-x/hexo-theme-solitude)
