@@ -861,8 +861,8 @@ CDN:
   # Dev version can only choose. ( dev版本只能为 local )
   internal: local
   # The CDN provider of third party scripts (第三方 js 的 cdn 配置)
-  # option: jsdelivr/unpkg/cdnjs/custom/cdncbd
-  third_party: cdncbd
+  # option: jsdelivr/unpkg/cdnjs/custom/cdncbd/onmicrosoft
+  third_party: onmicrosoft
 
   # Add version number to url, true or false
   version: true
