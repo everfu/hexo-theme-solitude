@@ -107,6 +107,7 @@ hexo.extend.filter.register('before_generate', () => {
                 cdnjs: `https://cdnjs.cloudflare.com/ajax/libs/${cdnjs_name}/${version}/${min_cdnjs_file}`,
                 custom: (CDN.custom_format || '').replace(/\$\{(.+?)\}/g, (match, $1) => value[$1]),
                 cdncbd: `https://cdn.cbd.int/${name}${verType}/${file}`,
+                onmicrosoft: `https://npm.onmicrosoft.cn/${name}${verType}/${file}`,
             }
 
             data[key] = cdnSource[type]

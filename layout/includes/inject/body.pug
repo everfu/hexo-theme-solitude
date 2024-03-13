@@ -14,9 +14,6 @@ div
     script(src=url_for(theme.cdn.main))
     script(src=url_for(theme.cdn.utils))
 
-    if theme.mermaid
-        script(src=url_for(theme.cdn.mermaid_js))
-
     if theme.album.enable
         script(src=url_for(theme.cdn.macy_js))
 
@@ -106,9 +103,6 @@ div
             != item
 
 div#js-pjax
-    if theme.mermaid
-        script.
-            mermaid.run();
     if page.type === 'album' && theme.album.enable
         script.
             initGallery()
@@ -146,8 +140,6 @@ include ../widgets/third-party/news-comment/newest-comment.pug
 // pjax
 include ../widgets/third-party/pjax.pug
 
-// theme
-include ../body/mode
-
-// google adsense
-include ../body/gadsense
+//- 弹幕js
+if theme.envelope_comment.enable && theme.envelope_comment.easy_Danmaku_js
+    include ../page/danmu.pug

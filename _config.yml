@@ -42,32 +42,49 @@ nav:
   group:
     # 分类名称: 链接地址 || 图标
     # Category name: link address || icon
-    项目:
-      # 子菜单名称: 链接地址 || 图标
-      # Submenu name: link address || icon
-      Solitude: https://github.com/wleelw/hexo-theme-solitude || https://bu.dusays.com/2023/11/08/654af68b25bb8.jpg
+    enable: false
+    # 导航栏显示的内容
+    # Content displayed in the navigation bar
+    menu:
+      # - title: 网页
+      #   item:
+      #     - name: Gitee博客
+      #       link: https://myxiaochuang.gitee.io/
+      #       icon: https://cdn.cbd.int/naokuo-blog-static@1.0.12/img/pwa/favicon.ico
+      #     - name: 博客
+      #       link: https://www.naokuo.top/
+      #       icon: https://cdn.cbd.int/naokuo-blog-static@1.0.12/img/pwa/favicon.ico
+      #     - name: 主页
+      #       link: https://blog.naokuo.top/
+      #       icon: https://cdn.cbd.int/naokuo-blog-static@1.0.12/img/pwa/favicon.ico
+      # - title: 项目
+      #   item:
+      #     - name: Echarts标签
+      #       link: https://www.npmjs.com/package/hexo-tag-echarts-plus
+      #       icon: https://cdn.cbd.int/naokuo-blog-static@1.0.12/img/pwa/favicon.ico
 
   # 导航栏内容
   # Navigation bar content
   # tip：此部分内容是顶部导航栏中间菜单区域
   # tip: This part of the content is the menu area in the middle of the top navigation bar
   menu:
-  #  首页: / # 显示名称：路径 / Display name: path
-  #  文库: # 显示名称 / Display name
-  #    文章列表: /archives/ || sco-folder-fill # 子菜单名称：路径 || 图标 / Submenu name: path || icon
-  #    全部分类: /categories/ || sco-checkbox-multiple-blank-fill
-  #    全部标签: /tags/ || sco-price-tag-fill
-  #  友链:
-  #    友链鱼塘: /moments/ || sco-wifi-fill
-  #    友情链接: /links/ || sco-group-fill
-  #    宝藏博主: javascript:travelling() || sco-gift-fill
-  #  我的:
-  #    相册集: /gallery/ || sco-image-fill
-  #    装备: /equipment/ || sco-laptop-line
-  #    工具箱: /tlink/ || sco-tools-fill
-  #    音乐馆: /music/ || sco-disc-fill
-  #  关于:
-  #    关于本站: /about/ || sco-contacts-fill
+    # 首页: / # 显示名称：路径 / Display name: path
+    # 文库: # 显示名称 / Display name
+    #   文章列表: /archives/ || sco-folder-fill # 子菜单名称：路径 || 图标 / Submenu name: path || icon
+    #   全部分类: /categories/ || sco-checkbox-multiple-blank-fill
+    #   全部标签: /tags/ || sco-price-tag-fill
+    # 友链:
+    #   友链鱼塘: /moment/ || sco-wifi-fill
+    #   友情链接: /links/ || sco-group-fill
+    #   宝藏博主: javascript:travelling() || sco-gift-fill
+    #   留言板: /comments/ || sco-group-fill
+    # 我的:
+    #   相册集: /gallery/ || sco-image-fill
+    #   装备: /equipment/ || sco-laptop-line
+    #   工具箱: /tlink/ || sco-tools-fill
+    #   音乐馆: /music/ || sco-disc-fill
+    # 关于:
+    #   关于本站: /about/ || sco-contacts-fill
 
   # 导航栏右侧按钮
   # Button on the right side of the navigation bar
@@ -105,40 +122,40 @@ hometop:
     # 轮播icon
     # Carousel icon
     icon:
-    # # 名字 / Name
-    # HTML:
-    #   # 图片 / Image
-    #   img: https://npm.elemecdn.com/wleelw-blog-abs@1.0.0/img/icon/HTML.png
-    #   # 背景色 / Background color
-    #   color: "#e9572b"
-    # JS:
-    #   img: https://npm.elemecdn.com/wleelw-blog-abs@1.0.0/img/icon/JS.png
-    #   color: "#f7cb4f"
-    # Kotlin:
-    #   img: https://npm.elemecdn.com/wleelw-blog-abs@1.0.0/img/icon/kotlin-logo.svg
-    #   color: "#ffffff"
-    # Docker:
-    #   img: https://npm.elemecdn.com/wleelw-blog-abs@1.0.0/img/icon/docker.png
-    #   color: "#57b6e6"
-    # Flutter:
-    #   img: https://npm.elemecdn.com/wleelw-blog-abs@1.0.0/img/icon/flutter.png
-    #   color: "#ffffff"
-    # WebPack:
-    #   img: https://npm.elemecdn.com/wleelw-blog-abs@1.0.0/img/icon/webpack.png
-    #   color: "#2e3a41"
-    # Git:
-    #   img: https://npm.elemecdn.com/wleelw-blog-abs@1.0.0/img/icon/git.png
-    #   color: "#df5b40"
-    # VS:
-    #   img: https://npm.elemecdn.com/wleelw-blog-abs@1.0.0/img/icon/vs-logo.svg
-    #   color: "#ffffff"
+      # 名字 / Name
+      # HTML:
+      #   # 图片 / Image
+      #   img: https://npm.elemecdn.com/wleelw-blog-abs@1.0.0/img/icon/HTML.png
+      #   # 背景色 / Background color
+      #   color: "#e9572b"
+      # JS:
+      #   img: https://npm.elemecdn.com/wleelw-blog-abs@1.0.0/img/icon/JS.png
+      #   color: "#f7cb4f"
+      # Kotlin:
+      #   img: https://npm.elemecdn.com/wleelw-blog-abs@1.0.0/img/icon/kotlin-logo.svg
+      #   color: "#ffffff"
+      # Docker:
+      #   img: https://npm.elemecdn.com/wleelw-blog-abs@1.0.0/img/icon/docker.png
+      #   color: "#57b6e6"
+      # Flutter:
+      #   img: https://npm.elemecdn.com/wleelw-blog-abs@1.0.0/img/icon/flutter.png
+      #   color: "#ffffff"
+      # WebPack:
+      #   img: https://npm.elemecdn.com/wleelw-blog-abs@1.0.0/img/icon/webpack.png
+      #   color: "#2e3a41"
+      # Git:
+      #   img: https://npm.elemecdn.com/wleelw-blog-abs@1.0.0/img/icon/git.png
+      #   color: "#df5b40"
+      # VS:
+      #   img: https://npm.elemecdn.com/wleelw-blog-abs@1.0.0/img/icon/vs-logo.svg
+      #   color: "#ffffff"
 
     # banner 左下跳转按钮
     # Banner lower left jump button
     group:
-    #  热门: /tags/热门/ || sco-fire-fill || linear-gradient(to right,#f65,#ffbf37)
-    #  教程: /tags/教程/ || sco-book-mark-fill || linear-gradient(to right,#358bff,#15c6ff)
-    #  精选: /tags/精选/ || sco-star-smile-fill || linear-gradient(to right,#18e7ae,#1eebeb)
+      # 热门: /tags/热门/ || sco-fire-fill || linear-gradient(to right,#f65,#ffbf37)
+      # 教程: /tags/教程/ || sco-book-mark-fill || linear-gradient(to right,#358bff,#15c6ff)
+      # 精选: /tags/精选/ || sco-star-smile-fill || linear-gradient(to right,#18e7ae,#1eebeb)
 
   # 右侧置顶列表（在文章的front matter中添加“recommend: true”）
   # Right top list (add "recommend: true" in the front matter of the article)
@@ -389,8 +406,8 @@ post:
   # Article theme color acquisition
   covercolor:
     enable: false
-    mode: local # local：本地取色 / api：img2color取色 : local: local color / api: img2color color
-    api: https://img2color.wzsco.top/api?img= # api地址 / api address
+    mode: api # local：本地取色 / api：img2color取色 : local: local color / api: img2color color
+    api: https://imgcolor.naokuo.top/api?img= # api地址 / api address
     time: 43200000 # api取色间隔（毫秒），默认为12小时 / api color interval (milliseconds), default is 12 hours
 
 # -------------------------
@@ -528,14 +545,14 @@ says:
 # -------------------------
 # meeting-api，用于界面中的音乐胶囊和音乐馆页，可自定义api，不会请勿动。
 # meeting-api, used for music capsules and music halls in the interface, can customize api, do not move if you don't know.
-meting_api: "https://meting.qjqq.cn/?server=:server&type=:type&id=:id&auth=:auth&r=:r" #自定义api
+meting_api: "https://meting.naokuo.top/api?server=:server&type=:type&id=:id&auth=:auth&r=:r" #自定义api
 # 音乐馆页
 # music hall
 music:
   enable: false
   # 音乐ID：歌单ID / 专辑ID / 歌手ID
   # Music ID: playlist ID / album ID / singer ID
-  id: 1994908354
+  id: 3067156818
   # 播放列表的服务商。netease：网易云 / tencent：腾讯 / kugou：酷狗 / xiami：小米 / baidu：百度
   # Music service provider. netease: Netease Cloud / tencent: Tencent / kugou: Kugou / xiaomi: Xiaomi / baidu: Baidu
   server: netease
@@ -553,7 +570,7 @@ music:
 # capsule music
 capsule:
   enable: false
-  id: 8407304077 # 歌单id / playlist id
+  id: 3067156818 # 歌单id / playlist id
   server: netease # 播放列表的服务商。netease：网易云 / tencent：腾讯 / kugou：酷狗 / xiami：小米 / baidu：百度 : Music service provider. netease: Netease Cloud / tencent: Tencent / kugou: Kugou / xiaomi: Xiaomi / baidu: Baidu
   type: playlist # 播放列表的类型。song：单曲 / playlist：歌单 / album：专辑 / artist：歌手 : Type of playlist. song: Single / playlist: Playlist / album: Album / artist: Singer
 
@@ -585,28 +602,28 @@ keyboard:
   # 键盘控制配置
   # Keyboard control configuration
   list:
-  # name: 按键名称
-  # name: Key name
-  # key: 按键
-  # key: Key
-  # func: 方法
-  # func: Function
-  # sco: sco内置方法
-  # sco: sco built-in method
-  # url: 跳转链接
-  # url: Jump link
-  # - name: 关闭快捷键功能
-  #   key: K
-  #   func: keyboard
-  # - name: 打开中控台
-  #   key: A
-  #   sco: showConsole
-  # - name: 播放/暂停音乐
-  #   key: M
-  #   sco: musicToggle
-  # - name: 打开友情链接
-  #   key: L
-  #   url: "/links/"
+    # name: 按键名称
+    # name: Key name
+    # key: 按键
+    # key: Key
+    # func: 方法
+    # func: Function
+    # sco: sco内置方法
+    # sco: sco built-in method
+    # url: 跳转链接
+    # url: Jump link
+    # - name: 关闭快捷键功能
+    #   key: K
+    #   func: keyboard
+    # - name: 打开中控台
+    #   key: A
+    #   sco: showConsole
+    # - name: 播放/暂停音乐
+    #   key: M
+    #   sco: musicToggle
+    # - name: 打开友情链接
+    #   key: L
+    #   url: "/links/"
 
 # 懒加载
 # lazyload
@@ -844,8 +861,8 @@ CDN:
   # Dev version can only choose. ( dev版本只能为 local )
   internal: local
   # The CDN provider of third party scripts (第三方 js 的 cdn 配置)
-  # option: jsdelivr/unpkg/cdnjs/custom
-  third_party: custom
+  # option: jsdelivr/unpkg/cdnjs/custom/cdncbd
+  third_party: cdncbd
 
   # Add version number to url, true or false
   version: true

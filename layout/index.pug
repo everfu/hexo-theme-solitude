@@ -6,11 +6,11 @@ block content
             include ./includes/widgets/home/bbTimeList
         if theme.hometop.banner.enable && is_home_first_page()
             include ./includes/widgets/home/hometop
-    main.layout#content-inner
+    .layout#content-inner
         .recent-posts#recent-posts
             #category-bar
                 include ./includes/widgets/home/categoryBar
-            for post, index in page.posts.sort("-sticky" || "-date").data
+            for post in page.posts.sort("-sticky" || "-date").data
                 include ./includes/widgets/home/postList
 
             // pageination

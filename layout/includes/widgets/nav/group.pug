@@ -1,13 +1,11 @@
 - var menu = theme.nav.group
-if menu
+if menu.enable
     .back-menu-list-groups
-        each value, label in menu
+        each group in menu.menu
             .back-menu-list-group
-                .back-menu-list-title= label
+                .back-menu-list-title= group.title
                 .back-menu-list
-                    each data, label in value
-                        - var array = data.split('||')
-                        a.back-menu-item(href=url_for(trim(array[0])), title=index)
-                            if array[1]
-                                img.back-menu-item-icon(src=trim(array[1]), alt=index)
-                            span.back-menu-item-text= label
+                    each item in group.item
+                        a.back-menu-item(href=url_for(item.link), title=item.name)
+                            img.back-menu-item-icon(src=url_for(item.icon) alt=item.name)
+                            span.back-menu-item-text= item.name

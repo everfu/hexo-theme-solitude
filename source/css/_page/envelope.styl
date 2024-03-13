@@ -1,0 +1,85 @@
+if hexo-config('envelope_comment.enable')
+  $hoverHeight = hexo-config('envelope_comment.height') ? convert(hexo-config('envelope_comment.height')) : 1050px
+  body[data-type="envelope"]
+    #page
+      border: 0
+      box-shadow: none !important
+      padding: 0 !important
+      background: 0 0 !important
+    .page-title
+      display: none
+    #maincontent
+      margin: var(--album-spacing-xxl) 0 0
+
+    @media screen and (max-width: 600px)
+      #beforeimg,
+      #afterimg
+        display: none !important
+
+    @media screen and (min-width: 600px)
+      #article-container img
+        margin: 0 auto 0rem
+      
+      #form-wrap
+        overflow: hidden
+        height: 447px
+        position: relative
+        top: 0px
+        transition: all 1s ease-in-out .3s
+        z-index: 0
+        &:hover
+          height: $hoverHeight
+          top: -200px
+          will-change: transform,top
+      
+      #beforeimg
+        position: absolute
+        bottom: 126px
+        left: 0px
+        background-repeat: no-repeat
+        width: 530px
+        height: 317px
+        z-index: -100
+        pointer-events: none
+      
+      #afterimg
+        position: absolute
+        bottom: -2px
+        left: 0
+        background-repeat: no-repeat
+        width: 530px
+        height: 259px
+        z-index: 100
+        pointer-events: none
+
+      #envelope
+        position: relative
+        overflow: visible
+        width: 500px
+        margin: 0px auto
+        transition: all 1s ease-in-out .3s
+        padding-top: 200px
+        will-change: transform
+
+      #maincontent
+        width: 530px
+        margin: 20px auto 0
+      
+      .formmain
+        background: white
+        width: 95%
+        max-width: 800px
+        margin: auto auto
+        border-radius: 5px
+        border: 1px solid
+        overflow: hidden
+        -webkit-box-shadow: 0px 0px 20px 0px #000000
+        box-shadow: 0px 0px 20px 0px #000000
+      
+  // 夜间模式
+  [data-theme='dark']
+    body[data-type="envelope"]
+      .formmain
+        background: #323232
+      .comments
+        background: #5a5a5a !important

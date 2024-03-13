@@ -1,0 +1,75 @@
+- const { envId } = theme.comment.twikoo
+- const { easy_Danmaku_js, danmu_page, danmu_el, danmu_line, danmu_speed, danmu_hover, danmu_loop } = theme.envelope_comment
+
+script.
+  //- 留言板页面弹幕
+  window.addEventListener('load', () => {
+    const getnaokuo_danmu = () => {
+      if (!window.location.pathname.startsWith('!{danmu_page}')) return; //- 判断是否是留言板页面
+      const naokuo_danmu = async () => {
+        const Danmaku = new EasyDanmaku({
+          page: '!{danmu_page}', //- 即留言板地址
+          el: '#!{danmu_el}', //- 弹幕挂载节点
+          line: !{danmu_line}, //- 弹幕行数
+          speed: !{danmu_speed}, //- 弹幕播放速度
+          hover: !{danmu_hover},
+          loop: !{danmu_loop}, //- 开启循环播放
+        });
+        try {
+          let danmuStore = saveToLocal.get('twikoo-danmu');
+          if (!danmuStore) {
+            const options = {
+              method: "POST",
+              body: JSON.stringify({
+                "event": "GET_RECENT_COMMENTS",
+                "includeReply": false,
+                "pageSize": 100
+              }),
+              headers: { 'Content-Type': 'application/json' }
+            }
+            danmuStore = [];
+            const response = await fetch(`!{envId}`, options);
+            if (response.ok) {
+              const { data } = await response.json();
+              //- console.info(data);
+              data.forEach(i => {
+                if (i.avatar == undefined) i.avatar = 'https://cravatar.cn/avatar/d615d5793929e8c7d70eab5f00f7f5f1?d=mp'
+                danmuStore.push({ avatar: i.avatar, content: i.nick + '：' + formatDanmaku(i.comment), url: i.url + '#' + i.id })
+              });
+              Danmaku.batchSend(danmuStore, true);
+              saveToLocal.set('twikoo-danmu', danmuStore, 0.5)
+            }
+            //- 格式化评论
+            function formatDanmaku(str) {
+              str = str.replace(/<\/*br>|[\s\uFEFF\xA0]+/g, '');
+              str = str.replace(/<img.*?>/g, '[图片]');
+              str = str.replace(/<a.*?>.*?<\/a>/g, '[链接]');
+              str = str.replace(/<pre.*?>.*?<\/pre>/g, '[代码块]');
+              str = str.replace(/<.*?>/g, '');
+              return str
+            }
+          } else {
+            Danmaku.batchSend(danmuStore, true);
+          }
+        } catch (err) {
+          console.error("Error fetching data:", err);
+        }
+
+        document.getElementById('danmu-Btn') && (document.getElementById('danmu-Btn').innerHTML = `<button class="hide-Btn" onclick="document.getElementById('!{danmu_el}').classList.remove('hide-danmu')">显示弹幕</button> <button class="hide-Btn" onclick="document.getElementById('!{danmu_el}').classList.add('hide-danmu')">隐藏弹幕</button>`)
+      }
+      (async () => {
+        if (typeof EasyDanmaku === 'function') {
+          await naokuo_danmu();
+        } else {
+          const easyDanmakuScript = await getScript('!{url_for(easy_Danmaku_js)}');
+          if (typeof EasyDanmaku === 'function') {
+            await naokuo_danmu();
+          } else {
+            console.error('EasyDanmaku function not found even after loading the script.');
+          }
+        }
+      })();
+    }
+    getnaokuo_danmu()
+    document.addEventListener('pjax:complete', getnaokuo_danmu)
+  })

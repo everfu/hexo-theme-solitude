@@ -1,7 +1,7 @@
 extends includes/layout.pug
 
 block content
-    main.layout#content-inner
+    .layout#content-inner
         #tag
             #tag-page-tags
                 each tag in site.tags.find({ parent: { $exists: false } }).data

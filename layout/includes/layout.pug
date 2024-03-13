@@ -27,7 +27,8 @@ html(lang=config.language, data-theme="light")
             include ./header.pug
 
             if(page.type !== '404')
-                block content
+                main#blog-container
+                    block content
 
                 footer#footer
                     include ./footer.pug

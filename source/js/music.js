@@ -41,7 +41,30 @@ const scoMusic = {
             aplayerLrcContents.style.transform = `translateY(${translateYValue}px)`;
         }
     },
-   extractValue: (input) => {
+    buttonlist: () => {
+        const anMusicPage = document.getElementById("Music-page");
+        const aplayerIconMenu = anMusicPage.querySelector(".aplayer-info .aplayer-time .aplayer-icon-menu");
+        const menu_mask = document.getElementById("Music-menu-mask");        
+        function anMusicPageMenuAask() {
+            if (!document.querySelector('body[data-type="music"]')) {
+                menu_mask.removeEventListener("click", anMusicPageMenuAask);
+                return;
+            }
+            if (menu_mask) {
+                menu_mask.style.display = "";
+            }
+            anMusicPage.querySelector(".aplayer-list") && anMusicPage.querySelector(".aplayer-list").classList.remove("aplayer-list-hide");
+        }
+
+        menu_mask.addEventListener("click", anMusicPageMenuAask);
+        aplayerIconMenu.addEventListener("click", function () {
+            if (menu_mask) {
+                menu_mask.style.display = "block";
+                menu_mask.style.animation = "0.5s ease 0s 1 normal none running to_show";
+            }
+        });
+    },
+    extractValue: (input) => {
         const valueRegex = /\("([^\s]+)"\)/g;
         const match = valueRegex.exec(input);
         return match[1];
@@ -82,18 +105,6 @@ const scoMusic = {
             aplayerLrcContents.style.transform = `translateY(${translateYValue}px)`;
         }
     },
-    buttonlist: () => {
-        const aplayerList = document.querySelector(".aplayer-list");
-        if (aplayerList) {
-            document.querySelector(".aplayer-lrc").addEventListener("click", () => {
-                if (aplayerList.classList.contains("aplayer-list-hide")) {
-                    aplayerList.classList.remove("aplayer-list-hide");
-                } else {
-                    aplayerList.classList.add("aplayer-list-hide");
-                }
-            });
-        }
-    },
     addEventListenerChangeMusicBg: () => {
         const aplayer = document.getElementById("Music-page").querySelector("meting-js").aplayer;
         aplayer.on('loadeddata', () => {
@@ -102,6 +113,7 @@ const scoMusic = {
         aplayer.on('timeupdate', () => {
             scoMusic.lrcupdate();
         });
+        scoMusic.buttonlist()
     },
     getCustomPlayList: () => {
         const MusicPage = document.getElementById("Music-page");
@@ -148,7 +160,6 @@ const scoMusic = {
         document.documentElement.style.setProperty('--vh', `${vh}px`);
         scoMusic.getCustomPlayList();
         document.addEventListener("keydown", scoMusic.setKeydown);
-        scoMusic.buttonlist();
     }
 };
 

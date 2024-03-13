@@ -1,7 +1,7 @@
 extends includes/layout.pug
 
 block content
-    main.layout#content-inner(class=page.aside ? '' : 'hide-aside')
+    .layout#content-inner(class=page.aside ? '' : 'hide-aside')
         #page
             case page.type
                 when 'categories'
@@ -29,6 +29,8 @@ block content
                     include includes/page/gallery
                 when 'album'
                     include includes/page/album
+                when 'envelope'
+                    include includes/page/envelope.pug     
                 default
                     include includes/page/default
             if page.comment

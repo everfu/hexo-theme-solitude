@@ -359,7 +359,7 @@ let sco = {
         for (let i = 0; i < inputs.length; i++) {
             let el = document.querySelector(inputs[i])
             if (el != null) {
-                el.dispatchEvent(new Event('input', {bubble: true, cancelable: true}))
+                el.dispatchEvent(new Event('input', { bubble: true, cancelable: true }))
                 el.value = '> ' + txt.replace(/\n/g, '\n> ') + '\n\n'
                 utils.scrollToDest(utils.getEleTop(document.getElementById('post-comment')), 300)
                 el.focus()
@@ -469,11 +469,11 @@ let sco = {
             const hours = timeNow.getHours();
             const lang = GLOBAL_CONFIG.aside.sayhello;
             const greetings = [
-                {start: 0, end: 5, text: lang.goodnight},
-                {start: 6, end: 10, text: lang.morning},
-                {start: 11, end: 14, text: lang.noon},
-                {start: 15, end: 18, text: lang.afternoon},
-                {start: 19, end: 24, text: lang.night},
+                { start: 0, end: 5, text: lang.goodnight },
+                { start: 6, end: 10, text: lang.morning },
+                { start: 11, end: 14, text: lang.noon },
+                { start: 15, end: 18, text: lang.afternoon },
+                { start: 19, end: 24, text: lang.night },
             ];
             for (let greeting of greetings) {
                 if (hours >= greeting.start && hours <= greeting.end) {
@@ -813,7 +813,7 @@ window.refreshFn = () => {
     GLOBAL_CONFIG.lazyload.enable && utils.lazyloadImg()
     GLOBAL_CONFIG.lightbox && utils.lightbox(document.querySelectorAll("#article-container img:not(.flink-avatar)"))
     GLOBAL_CONFIG.randomlinks && randomLinksList()
-    PAGE_CONFIG.comment && initComment()
+    if (typeof initComment === 'function') PAGE_CONFIG.comment && initComment()
     PAGE_CONFIG.toc && toc.init();
     (PAGE_CONFIG.is_post || PAGE_CONFIG.is_page) && ((GLOBAL_CONFIG.hightlight.enable && hightlight.init()) || tabs.init())
     PAGE_CONFIG.is_home && showTodayCard()

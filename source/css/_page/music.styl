@@ -10,7 +10,6 @@ body[data-type=music]
   #page
     padding 0
     background transparent
-    overflow hidden
 
   #footer,
   #nav-music
@@ -50,10 +49,10 @@ body[data-type=music]
       background transparent
       box-shadow none
       justify-content space-between
-      overflow visible
 
   .aplayer-body 
     width 70%
+    height: calc(100vh - 169px)
 
     +maxWidth798()
       width 100%
@@ -228,15 +227,14 @@ body[data-type=music]
           color #fff
 
     .aplayer-lrc 
-      padding-top 240px
-      height var(--vh)
+      // padding-top 240px
 
       +maxWidth798()
         margin-top 0
         height auto
         min-height 100%
         mask-image linear-gradient(to bottom, #000, #000, #000, #000, #0000, #0000)
-        padding-top 100px
+        // padding-top 100px
 
       &:hover
         p
@@ -411,7 +409,7 @@ body[data-type=music]
       position fixed
       z-index 1002
       width 100%
-      bottom 0px
+      bottom -100%
       left 0
       background var(--sco-white)
       border-radius 16px 16px 0px 0px
@@ -420,7 +418,7 @@ body[data-type=music]
       height calc(var(--vh) - 200px)
 
       &.aplayer-list-hide
-        bottom -100% !important
+        bottom 0 !important
 
   .aplayer
     .aplayer-lrc
@@ -506,3 +504,34 @@ body[data-type=music]
     font-size 1rem
     font-weight bold
     letter-spacing 2px
+
+body[data-type=music] 
+  #body-wrap
+    -webkit-box-pack: start;
+    -moz-box-pack: start;
+    -o-box-pack: start;
+    -ms-flex-pack: start;
+    -webkit-justify-content: flex-start;
+    justify-content: flex-start;
+
+    #Music-menu-mask
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1001;
+      display: none;
+      width: 100%;
+      height: 100%;
+      background: var(--sco-maskbg);
+      backdrop-filter: saturate(180%) blur(20px);
+      transform: translateZ(0);
+      animation: 0.6s ease 0s 1 normal none running to_show;
+
+    #Music-page 
+      .aplayer-info 
+        .aplayer-lrc
+          padding-top: 50%
+          height: auto;
+          max-height: calc(100vh - 360px);
+          min-height: 100%;
+          mask-image: linear-gradient(to bottom,#000,#000,#000,#000,#000,#000,#000,#000,#000,#000,rgba(0,0,0,0),rgba(0,0,0,0));

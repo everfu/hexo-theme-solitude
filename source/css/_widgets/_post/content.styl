@@ -1,14 +1,3 @@
-a
-    color var(--sco-fontcolor)
-    padding 0 4px
-    border-radius 4px 4px 0 0
-
-    &:not(.headerlink, .fancybox):hover
-      border 0
-      text-decoration none
-      color var(--sco-white)
-      border-radius 4px
-
 #article-container
   overflow-wrap break-word
 
@@ -68,6 +57,20 @@ a
     margin 0.8rem auto
     max-width 90%
     max-height 450px
+
+  a
+    border-bottom 2px dotted var(--sco-lighttext)
+    color var(--sco-fontcolor)
+    font-weight 700
+    padding 0 4px
+    border-radius 4px 4px 0 0
+
+    &:not(.headerlink, .fancybox):hover
+      border 0
+      text-decoration none
+      background var(--sco-main)
+      color var(--sco-white)
+      border-radius 4px
 
   ul, ol
     padding 0

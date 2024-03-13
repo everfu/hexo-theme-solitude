@@ -51,7 +51,7 @@ aplayer_js:
   version: 1.10.1
 meting_js:
   name: meting
-  file: Meting.min.js
+  file: dist/Meting.min.js
   version: 2.0.1
 pace_js:
   name: pace-js
@@ -63,11 +63,11 @@ lunr_js:
   file: lunr.min.js
   version: 2.3.9
 swiper_css:
-  name: Swiper
+  name: swiper
   file: swiper-bundle.min.css
   version: 11.0.5
 swiper_js:
-  name: Swiper
+  name: swiper
   file: swiper-bundle.min.js
   version: 11.0.5
 busuanzi_js:
@@ -99,18 +99,14 @@ medium_zoom:
   file: dist/medium-zoom.min.js
   version: 1.1.0
 fancyapps_ui:
-  name: fancyapps-ui
+  name: "@fancyapps/ui"
   file: dist/fancybox/fancybox.umd.js
   version: 5.0.33
 fancyapps_css:
-  name: fancyapps-ui
-  file: dist/fancybox/fancybox.min.css
+  name: "@fancyapps/ui"
+  file: dist/fancybox/fancybox.css
   version: 5.0.33
 macy_js:
   name: macy
-  file: dist/macy.min.js
+  file: dist/macy.js
   version: 2.5.1
-mermaid_js:
-  name: mermaid
-  file: dist/mermaid.min.js
-  version: 10.8.0
