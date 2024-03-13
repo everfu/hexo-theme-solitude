@@ -13,7 +13,7 @@
 
 ![首页](https://github.com/valor-x/hexo-theme-solitude/assets/74389842/d008aba4-942d-4fdb-a611-d934c0bad9fe)
 
-主题预览:  [亦封](https://blog.meuicat.cn/) ｜  [Demo](https://solitude-demo.efu.me/)
+主题预览:  [亦封](https://blog.meuicat.cn/) ｜  [Demo](https://solitude-demo.efu.me/)  ｜  [Naokuo](https://nao-kuo.netlify.app) 
 
 主题文档:  [中文](https://solitude-docs.efu.me/)
 
