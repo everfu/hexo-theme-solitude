@@ -4,20 +4,18 @@
 
 ## Hexo-Theme-Solitude
 
-![master version](https://img.shields.io/github/package-json/v/valor-x/hexo-theme-solitude/master?color=%231ab1ad&label=master)
-![master version](https://img.shields.io/github/package-json/v/valor-x/hexo-theme-solitude/dev?label=dev)
+![main version](https://img.shields.io/github/package-json/v/valor-x/hexo-theme-solitude/master?color=%231ab1ad&label=main)
+![dev version](https://img.shields.io/github/package-json/v/valor-x/hexo-theme-solitude/dev?label=dev)
 ![https://img.shields.io/npm/v/hexo-theme-solitude?color=%09%23bf00ff](https://img.shields.io/npm/v/hexo-theme-solitude?color=%09%23bf00ff)
 ![hexo version](https://img.shields.io/badge/hexo-6.3.0+-0e83c)
-![license](https://img.shields.io/github/license/valor-x/hexo-theme-solitude?color=FF5531)
 [![GitHub all releases](https://img.shields.io/github/downloads/valor-x/hexo-theme-solitude/total)](https://github.com/valor-x/hexo-theme-solitude/releases/latest)
+![license](https://img.shields.io/github/license/valor-x/hexo-theme-solitude?color=FF5531)
 
 ![首页](https://github.com/valor-x/hexo-theme-solitude/assets/74389842/d008aba4-942d-4fdb-a611-d934c0bad9fe)
 
-主题预览:  [亦封](https://blog.meuicat.cn/) ｜  [Demo](https://solitude-demo.efu.me/)
+主题预览:  ✨ [亦封](https://blog.meuicat.cn/) ｜  🐞 [Demo](https://solitude-demo.efu.me/)
 
 主题文档:  [中文](https://solitude-docs.efu.me/)
-
-主题交流群：`文档内有群二维码和链接`
 
 ## 💻 安裝
 
@@ -64,22 +62,21 @@ theme: solitude
 - [x] 支持多种评论插件
 - [x] 内置网页访问统计
 - [x] 支持暗色模式
-- [x] 支持脚注语法
 - [x] 支持自定义CDN静态资源
 - [x] 支持多功能右键菜单
 - [x] 支持定制化的主色调随封面图片颜色变化
 - [x] 支持沉浸式状态栏
-- [x] 支持聊天系统
 - [x] 支持百度分析
 - [x] 支持图片大图查看
 - [x] 支持瀑布流即刻说说
+- [x] 瀑布流相册 
 - [x] 支持自定义图标（iconfont、CoDeSign、fontawesome）
 - [x] 支持高速缓存的swpp，pwa特性
 - [x] 优秀的隐私协议支持
 - [x] 文章摘要AI支持
 - [x] 支持全局中控台
 - [x] 支持本地搜索/algolia搜索🔍
-- [x] 支持 Katex 数学公式
+- [x] 支持 Latex 数学公式
 - [x] 支持 PWA
 
 ## ✨ 贡献者
