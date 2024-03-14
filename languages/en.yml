@@ -1,9 +1,9 @@
 theme:
-  dark: Switched to dark mode
-  light: Switched to light mode
+  dark: dark
+  light: light
 
 copy:
-  success: Copied successfully
+  success: Copied
   error: Copied failed
 
 time:
@@ -26,7 +26,6 @@ page:
   404: Page not found
 
 home:
-  bannertext: Just browsing
   categoryBar:
     home: Home
     more: More
