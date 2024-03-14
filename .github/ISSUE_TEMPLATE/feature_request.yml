@@ -2,7 +2,6 @@ name: 功能新增✨
 description: 为这个项目提出一个想法
 title: "[想法]: "
 labels: ["增强"]
-assignees: '    '
 body:
   - type: markdown
     attributes:
