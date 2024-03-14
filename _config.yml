@@ -1,6 +1,6 @@
 #---------------------------
 # Hexo Theme Solitude
-# Author: Valor Team (from Efu)
+# Author: Valor Team
 # Github: https://github.com/valor-x/hexo-theme-solitude
 #
 # 配置指南: https://solitude-docs.efu.me/
@@ -817,8 +817,8 @@ CDN:
   version: true
 
   # Custom format
-  # For example: https://cdn.staticfile.org/${cdnjs_name}/${version}/${min_cdnjs_file}
-  custom_format: https://cdn.staticfile.org/${cdnjs_name}/${version}/${min_cdnjs_file}
+  # For example: https://cdn.staticfile.net/${cdnjs_name}/${version}/${min_cdnjs_file}
+  custom_format: https://cdn.staticfile.net/${cdnjs_name}/${version}/${min_cdnjs_file}
 
   option:
     solitude_css: https://cdn2.codesign.qq.com/icons/7pOrz0WXB5ZWJPX/latest/iconfont.css
