@@ -1,0 +1,17 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 关于主题使用问题
+    url: https://github.com/valor-x/hexo-theme-solitude/discussions
+    about: 一些使用上碰到的问题 Discussion 询问。 Please ask questions in Discussion.
+
+  - name: Solitude Q&A
+    url: https://solitude-docs.efu.me/faq
+    about: Solitude Q&A
+
+  - name: Telegram
+    url: https://t.me/efuome
+    about: 'Official Telegram Group'
+
+  - name: QQ 群
+    url: https://qm.qq.com/q/VlqOewI4Cu
+    about: '群号 773016811'
