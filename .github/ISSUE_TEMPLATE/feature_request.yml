@@ -1,0 +1,61 @@
+name: 功能新增✨
+description: 为这个项目提出一个想法
+title: "[想法]: "
+labels: ["增强"]
+assignees: ''
+body:
+  - type: markdown
+    attributes:
+      value: "感谢你抽出宝贵时间提出新功能建议！"
+  - type: input
+    id: feature_summary
+    attributes:
+      label: 功能简介
+      description: 对功能的清晰简明的描述。
+      placeholder: "e.g., 我想要..."
+    validations:
+      required: true
+  - type: textarea
+    id: feature_motivation
+    attributes:
+      label: 解决问题
+      description: 对问题是什么进行清晰简洁的描述。
+      placeholder: "e.g., 我在...需要..."
+    validations:
+      required: true
+  - type: textarea
+    id: feature_description
+    attributes:
+      label: 实现效果
+      description: 清晰简洁地描述您想要发生的事情。
+      placeholder: "e.g., 这个功能实现...的效果"
+    validations:
+      required: true
+  - type: textarea
+    id: feature_alternatives
+    attributes:
+      label: 你想到的可行的替代方案
+      description: 对你考虑过的任何替代解决方案或功能进行清晰简洁的描述。
+      placeholder: "e.g., 解决这个问题的一种方法是..."
+    validations:
+      required: false
+  - type: checkboxes
+    id: user_impact
+    attributes:
+      label: 受众范围
+      description: 请选择谁可能从此功能中受益。
+      options:
+        - label: 个人
+          required: false
+        - label: 所有用户
+          required: false
+        - label: 其它
+          required: false
+  - type: textarea
+    id: additional_context
+    attributes:
+      label: 其他内容
+      description: 在此处添加有关功能请求的任何其他上下文或屏幕截图。
+      placeholder: "在这里添加屏幕截图或着文字内容..."
+    validations:
+      required: false
