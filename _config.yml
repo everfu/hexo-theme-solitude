@@ -1,13 +1,13 @@
 ---
 #---------------------------
 # Hexo Theme Solitude
-# Author: wleelw（王卓Sco）、yife68（亦封）
-# Github: https://github.com/wleelw/Hexo-theme-solitude
+# Author: Valor Team (from Efu)
+# Github: https://github.com/valor-x/hexo-theme-solitude
 #
-# 配置指南: https://docs.wzsco.top/
+# 配置指南: https://solitude-docs.efu.me/
 # 你可以从指南中获得更详细的说明
 #
-# Guide: https://docs.wzsco.top/
+# Guide: https://solitude-docs.efu.me/
 # You can get more detailed help from the guide
 #---------------------------
 
@@ -42,32 +42,32 @@ nav:
   group:
     # 分类名称: 链接地址 || 图标
     # Category name: link address || icon
-    项目:
-      # 子菜单名称: 链接地址 || 图标
-      # Submenu name: link address || icon
-      Solitude: https://github.com/wleelw/hexo-theme-solitude || https://bu.dusays.com/2023/11/08/654af68b25bb8.jpg
+    # 项目:
+    #   # 子菜单名称: 链接地址 || 图标
+    #   # Submenu name: link address || icon
+    #   Solitude: https://github.com/wleelw/hexo-theme-solitude || https://bu.dusays.com/2023/11/08/654af68b25bb8.jpg
 
   # 导航栏内容
   # Navigation bar content
   # tip：此部分内容是顶部导航栏中间菜单区域
   # tip: This part of the content is the menu area in the middle of the top navigation bar
   menu:
-  #  首页: / # 显示名称：路径 / Display name: path
-  #  文库: # 显示名称 / Display name
-  #    文章列表: /archives/ || sco-folder-fill # 子菜单名称：路径 || 图标 / Submenu name: path || icon
-  #    全部分类: /categories/ || sco-checkbox-multiple-blank-fill
-  #    全部标签: /tags/ || sco-price-tag-fill
-  #  友链:
-  #    友链鱼塘: /moments/ || sco-wifi-fill
-  #    友情链接: /links/ || sco-group-fill
-  #    宝藏博主: javascript:travelling() || sco-gift-fill
-  #  我的:
-  #    相册集: /gallery/ || sco-image-fill
-  #    装备: /equipment/ || sco-laptop-line
-  #    工具箱: /tlink/ || sco-tools-fill
-  #    音乐馆: /music/ || sco-disc-fill
-  #  关于:
-  #    关于本站: /about/ || sco-contacts-fill
+    # 首页: / # 显示名称：路径 / Display name: path
+    # 文库: # 显示名称 / Display name
+    #   文章列表: /archives/ || sco-folder-fill # 子菜单名称：路径 || 图标 / Submenu name: path || icon
+    #   全部分类: /categories/ || sco-checkbox-multiple-blank-fill
+    #   全部标签: /tags/ || sco-price-tag-fill
+    # 友链:
+    #   友链鱼塘: /moments/ || sco-wifi-fill
+    #   友情链接: /links/ || sco-group-fill
+    #   宝藏博主: javascript:travelling() || sco-gift-fill
+    # 我的:
+    #   相册集: /gallery/ || sco-image-fill
+    #   装备: /equipment/ || sco-laptop-line
+    #   工具箱: /tlink/ || sco-tools-fill
+    #   音乐馆: /music/ || sco-disc-fill
+    # 关于:
+    #   关于本站: /about/ || sco-contacts-fill
 
   # 导航栏右侧按钮
   # Button on the right side of the navigation bar
@@ -88,12 +88,10 @@ nav:
 # 首页顶部样式
 # Home top style
 hometop:
+  enable: false # 是否打开 / if enable
   # 首页顶部瀑布技能点、右侧文章推荐、左侧下部分三大分类
   # Home top waterfall skill points, right article recommendation, left lower part of the three major categories
   banner:
-    # 是否开启显示，不开启则顶部只会显示即刻mini（需配置）
-    # Whether to enable display, do not enable the top will only display the mini immediately (need to configure)
-    enable: false # 是否打开顶部banner / Whether to open the top banner
     # 左上角显示大文字
     # Large text displayed in the upper left corner
     # tip：可使用html标签
@@ -133,12 +131,12 @@ hometop:
     #   img: https://npm.elemecdn.com/wleelw-blog-abs@1.0.0/img/icon/vs-logo.svg
     #   color: "#ffffff"
 
-    # banner 左下跳转按钮
-    # Banner lower left jump button
-    group:
-    #  热门: /tags/热门/ || sco-fire-fill || linear-gradient(to right,#f65,#ffbf37)
-    #  教程: /tags/教程/ || sco-book-mark-fill || linear-gradient(to right,#358bff,#15c6ff)
-    #  精选: /tags/精选/ || sco-star-smile-fill || linear-gradient(to right,#18e7ae,#1eebeb)
+  # banner 左下跳转按钮
+  # Banner lower left jump button
+  group:
+    # 热门: /tags/热门/ || sco-fire-fill || linear-gradient(to right,#f65,#ffbf37)
+    # 教程: /tags/教程/ || sco-book-mark-fill || linear-gradient(to right,#358bff,#15c6ff)
+    # 精选: /tags/精选/ || sco-star-smile-fill || linear-gradient(to right,#18e7ae,#1eebeb)
 
   # 右侧置顶列表（在文章的front matter中添加“recommend: true”）
   # Right top list (add "recommend: true" in the front matter of the article)
