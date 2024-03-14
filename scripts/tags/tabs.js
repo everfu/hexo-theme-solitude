@@ -41,9 +41,9 @@ function postTabs (args, content) {
 
     const isOnlyicon = tabIcon.length > 0 && tabCaption.length === 0 ? ' style="text-align: center;"' : ''
     const icon = tabIcon.trim()
-    tabIcon.length > 0 && (tabIcon = `<i ${isOnlyicon} class="tab scoicon ${icon}"></i>`)
+    tabIcon.length > 0 && (tabIcon = `<i ${isOnlyicon} class="tab solitude ${icon}"></i>`)
 
-    const toTop = '<button type="button" class="tab-to-top" aria-label="scroll to top"><i class="scoicon sco-arrow-up-line"></i></button>'
+    const toTop = '<button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude st-arrow-up-line"></i></button>'
 
     const isActive = (tabActive > 0 && tabActive === tabId) || (tabActive === 0 && tabId === 1) ? ' active' : ''
     tabNav += `<li class="tab${isActive}"><button type="button" data-href="#${tabHref}">${tabIcon + tabCaption.trim()}</button></li>`

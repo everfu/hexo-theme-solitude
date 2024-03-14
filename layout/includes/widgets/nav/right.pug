@@ -2,23 +2,23 @@
 each item in custom
     .nav-button(id=item.id)
         a.site-page(href=item.url || 'javascript:void(0);', onclick=item.onclick, title=item.title || '')
-            i.scoicon(class=item.icon || '')
+            i.solitude(class=item.icon || '')
 if theme.nav.right.random
     .nav-button#randomPost_button
         a.site-page(onclick="toRandomPost()", title=_p('nav.randompost'), href="javascript:void(0);")
-            i.scoicon.sco-signal-tower-fill
+            i.solitude.st-signal-tower-fill
 if theme.search.enable
     .nav-button#search-button
         a.site-page.social-icon.search(href="javascript:void(0);", title=_p('nav.search'))
-            i.scoicon.sco-search-line
+            i.solitude.st-search-line
 if theme.nav.right.console
     .nav-button#nav-console
         a.console_switchbutton(onclick="sco.showConsole()", title=_p('nav.console'), href="javascript:void(0);")
-            i.scoicon.sco-dashboard-fill
+            i.solitude.st-dashboard-fill
 .nav-button#nav-totop(onclick="sco.toTop()")
     a.totopbtn
-        i.scoicon.sco-arrow-up-line
+        i.solitude.st-arrow-up-line
         span#percent= "0"
 #toggle-menu
     a.site-page
-        i.scoicon.sco-menu-line
+        i.solitude.st-menu-line

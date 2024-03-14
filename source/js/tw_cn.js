@@ -2,8 +2,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const {translate, lang} = GLOBAL_CONFIG;
     const {defaultEncoding, translateDelay} = translate;
     const snackbarData = lang.chs;
-    const msgToTraditionalChinese = '<i class="scoicon sco-panben-line"></i><span>轉為繁體</span>';
-    const msgToSimplifiedChinese = '<i class="scoicon sco-jianben-line"></i><span>转为简体</span>';
+    const msgToTraditionalChinese = '<i class="solitude st-panben-line"></i><span>轉為繁體</span>';
+    const msgToSimplifiedChinese = '<i class="solitude st-jianben-line"></i><span>转为简体</span>';
     const targetEncodingCookie = 'translate-chn-cht';
     const isSnackbar = true;
     let currentEncoding = defaultEncoding;

@@ -440,10 +440,10 @@ let sco = {
         $console.classList.toggle("on", wleelw_musicPlaying);
         if (wleelw_musicPlaying) {
             $meting.aplayer.play();
-            $toggleButton.innerHTML = `<i class="scoicon sco-pause-fill"></i><span>暂停音乐</span>`;
+            $toggleButton.innerHTML = `<i class="solitude st-pause-fill"></i><span>暂停音乐</span>`;
         } else {
             $meting.aplayer.pause();
-            $toggleButton.innerHTML = `<i class="scoicon sco-play-fill"></i><span>播放音乐</span>`;
+            $toggleButton.innerHTML = `<i class="solitude st-play-fill"></i><span>播放音乐</span>`;
         }
         rm.hideRightMenu();
     },
@@ -691,8 +691,8 @@ let sco = {
 class hightlight {
     static createEle(langEl, item) {
         const fragment = document.createDocumentFragment()
-        const highlightCopyEle = GLOBAL_CONFIG.hightlight.copy ? '<i class="scoicon sco-copy-fill"></i>' : '<i></i>'
-        const highlightExpandEle = '<i class="scoicon sco-arrow-down expand"></i>'
+        const highlightCopyEle = GLOBAL_CONFIG.hightlight.copy ? '<i class="solitude st-copy-fill"></i>' : '<i></i>'
+        const highlightExpandEle = '<i class="solitude st-arrow-down expand"></i>'
 
         const hlTools = document.createElement('div')
         hlTools.className = `highlight-tools`
@@ -729,7 +729,7 @@ class hightlight {
         if (GLOBAL_CONFIG.hightlight.limit && itemHeight > GLOBAL_CONFIG.hightlight.limit) {
             $table.setAttribute('style', `height: ${GLOBAL_CONFIG.hightlight.limit}px`)
             ele.className = 'code-expand-btn'
-            ele.innerHTML = '<i class="scoicon sco-show-line"></i>'
+            ele.innerHTML = '<i class="solitude st-show-line"></i>'
             ele.addEventListener('click', (e) => {
                 $table.setAttribute('style', `height: ${itemHeight}px`)
                 e.target.classList.add('expand-done')

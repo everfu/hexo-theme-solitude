@@ -82,7 +82,7 @@ function initializeCommentBarrage() {
             <div class="barrageNick">${comment.nick}</div>
             <img class="barrageAvatar" src="https://cravatar.cn/avatar/${comment.avatar}"/>
             <a class="comment-barrage-close" href="javascript:sco.switchCommentBarrage();">
-                <i class="scoicon sco-close-fill"></i>
+                <i class="solitude st-close-fill"></i>
             </a>
         </div>
         <a class="barrageContent" href="javascript:sco.scrollTo('${comment.objectId}');">${comment.comment}</a>

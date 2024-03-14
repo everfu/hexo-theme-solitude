@@ -22,10 +22,10 @@
       width 100%
 
   > div:first-child:not(.recent-posts)
-    box-shadow var(--sco-shadow-border)
+    box-shadow var(--efu-shadow-border)
     padding 1rem 2rem
     border-radius 12px
-    background var(--sco-card-bg)
+    background var(--efu-card-bg)
     border var(--style-border)
     align-self flex-start
     animation slide-in .6s .1s backwards
@@ -35,11 +35,11 @@
       box-shadow none
       border none
       padding 0 1rem
-      background var(--sco-background)
+      background var(--efu-background)
 
 span.tags-punctuation::before
   content: "\e071"
-  font-family: scoicon, serif !important
+  font-family: solitude, serif !important
   font-size: 12px
   transition none
   margin-right: 2px
@@ -54,8 +54,8 @@ span.tags-punctuation::before
 
 // snackbar
 body .snackbar-container
-  background var(--sco-lighttext) !important
-  color var(--sco-card-bg) !important
+  background var(--efu-lighttext) !important
+  color var(--efu-card-bg) !important
   border-radius 0 !important
   display flex
   justify-content center !important
@@ -67,7 +67,7 @@ body .snackbar-container
   transform none !important
 
 .snackbar-container p
-  color var(--sco-card-bg) !important
+  color var(--efu-card-bg) !important
   font-weight 700 !important
   text-align center !important
   font-size .8rem !important
@@ -75,8 +75,8 @@ body .snackbar-container
   justify-content center !important
 
 .snackbar-container .action
-  color var(--sco-card-bg) !important
-  background var(--sco-lighttext) !important
+  color var(--efu-card-bg) !important
+  background var(--efu-lighttext) !important
   padding 4px 6px !important
   font-weight 700
   border-radius 8px !important
@@ -84,8 +84,8 @@ body .snackbar-container
   border var(--style-border) !important
 
 .snackbar-container .action:hover
-  color var(--sco-lighttext) !important
-  background var(--sco-card-bg) !important
+  color var(--efu-lighttext) !important
+  background var(--efu-card-bg) !important
 
 .snackbar-container::after
   position absolute
@@ -93,10 +93,10 @@ body .snackbar-container
   height 100%
   left 0
   top 0
-  background var(--sco-white)
+  background var(--efu-white)
   opacity .1
   content ""
-  animation snackbar-progress var(--sco-snackbar-time) linear forwards
+  animation snackbar-progress var(--efu-snackbar-time) linear forwards
   pointer-events none
 
 @keyframes snackbar-progress

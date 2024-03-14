@@ -7,5 +7,5 @@
 div.category-bar-right
     if site.categories.find({parent: {$exists: false}}).data.length > 10
         .category-bar-next#category-bar-next(onclick="sco.scrollCategoryBarToRight()")
-            i.scoicon.sco-show-right-line
+            i.solitude.st-show-right-line
     a.category-bar-more(href="/categories/")= __('home.categoryBar.more')

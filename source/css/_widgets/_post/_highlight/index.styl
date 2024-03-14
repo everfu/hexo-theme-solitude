@@ -1,22 +1,22 @@
 figure
   &:hover
-    box-shadow var(--sco-shadow-border-hover)
+    box-shadow var(--efu-shadow-border-hover)
 
   .copy-btn
     position absolute
     top 1rem
     right 1rem
     z-index 10
-    color var(--sco-fontcolor)
+    color var(--efu-fontcolor)
     cursor pointer
     transition all .2s ease 0s
 
     &:hover
-      color var(--sco-lighttext)
+      color var(--efu-lighttext)
 
   &.highlight
-    background-color var(--sco-hl-bg)
-    color var(--sco-fontcolor)
+    background-color var(--efu-hl-bg)
+    color var(--efu-fontcolor)
     border var(--style-border-always)
     overflow hidden
     border-radius 8px 8px 4px 4px
@@ -39,18 +39,18 @@ figure
       min-height 1.2rem
       height 2.15em
       font-size 16px
-      background var(--sco-hltools-bg)
+      background var(--efu-hltools-bg)
       border-bottom var(--style-border-always)
-      color var(--sco-fontcolor)
+      color var(--efu-fontcolor)
 
-      .sco-copy-fill
+      .st-copy-fill
         position absolute
         cursor pointer
         transition color .2s
         font-size 18px
 
-      .sco-copy-fill:hover
-        color var(--sco-main)
+      .st-copy-fill:hover
+        color var(--efu-main)
 
       .expand
         position absolute
@@ -69,7 +69,7 @@ figure
         user-select none
 
     .code-expand-btn
-      background var(--sco-hltools-bg)
+      background var(--efu-hltools-bg)
       transition .3s
       backdrop-filter saturate(180%) blur(20px)
       transform translateZ(0)
@@ -87,15 +87,15 @@ figure
       height 32px
 
       i
-        color var(--sco-fontcolor)
+        color var(--efu-fontcolor)
         line-height 1
         animation 1.2s ease 0s infinite normal none running code-expand-key
 
       &:hover
-        background var(--sco-main)
+        background var(--efu-main)
 
         i
-          color var(--sco-white)
+          color var(--efu-white)
 
     table
       display block
@@ -118,8 +118,8 @@ figure
             margin 0
             padding 8px .5rem
             border none
-            color var(--sco-secondtext)
-            background var(--sco-secondbg)
+            color var(--efu-secondtext)
+            background var(--efu-secondbg)
             border-right var(--style-border-always)
             text-align right
 

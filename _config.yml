@@ -4,10 +4,10 @@
 # Author: Valor Team (from Efu)
 # Github: https://github.com/valor-x/hexo-theme-solitude
 #
-# 配置指南: https://solitude-docs.efu.me/
+# 配置指南: https://st-docs.efu.me/
 # 你可以从指南中获得更详细的说明
 #
-# Guide: https://solitude-docs.efu.me/
+# Guide: https://st-docs.efu.me/
 # You can get more detailed help from the guide
 #---------------------------
 
@@ -24,8 +24,8 @@ site:
     # 显示类型 （i_class/text/img）
     # Display type (i_class/text/img)
     class: text
-    # 具体内容 例如：scoicon sco-logo / 王卓Sco / https://p.sondy.top/logo.png
-    # Specific content, for example: scoicon sco-logo / 王卓Sco / https://p.sondy.top/logo.png
+    # 具体内容 例如：solitude st-logo / 王卓Sco / https://p.sondy.top/logo.png
+    # Specific content, for example: solitude st-logo / 王卓Sco / https://p.sondy.top/logo.png
     custom: Solitude
   # 网页icon
   # Web icon
@@ -54,20 +54,20 @@ nav:
   menu:
     # 首页: / # 显示名称：路径 / Display name: path
     # 文库: # 显示名称 / Display name
-    #   文章列表: /archives/ || sco-folder-fill # 子菜单名称：路径 || 图标 / Submenu name: path || icon
-    #   全部分类: /categories/ || sco-checkbox-multiple-blank-fill
-    #   全部标签: /tags/ || sco-price-tag-fill
+    #   文章列表: /archives/ || st-folder-fill # 子菜单名称：路径 || 图标 / Submenu name: path || icon
+    #   全部分类: /categories/ || st-checkbox-multiple-blank-fill
+    #   全部标签: /tags/ || st-price-tag-fill
     # 友链:
-    #   友链鱼塘: /moments/ || sco-wifi-fill
-    #   友情链接: /links/ || sco-group-fill
-    #   宝藏博主: javascript:travelling() || sco-gift-fill
+    #   友链鱼塘: /moments/ || st-wifi-fill
+    #   友情链接: /links/ || st-group-fill
+    #   宝藏博主: javascript:travelling() || st-gift-fill
     # 我的:
-    #   相册集: /gallery/ || sco-image-fill
-    #   装备: /equipment/ || sco-laptop-line
-    #   工具箱: /tlink/ || sco-tools-fill
-    #   音乐馆: /music/ || sco-disc-fill
+    #   相册集: /gallery/ || st-image-fill
+    #   装备: /equipment/ || st-laptop-line
+    #   工具箱: /tlink/ || st-tools-fill
+    #   音乐馆: /music/ || st-disc-fill
     # 关于:
-    #   关于本站: /about/ || sco-contacts-fill
+    #   关于本站: /about/ || st-contacts-fill
 
   # 导航栏右侧按钮
   # Button on the right side of the navigation bar
@@ -81,7 +81,7 @@ nav:
     custom:
     # - name: 开往 - 友链接力 # 显示文字 / Displayed text
     #   url: https://www.travellings.cn/go.html # 跳转链接 / Jump link
-    #   icon: sco-train-line # 图标 / Icon
+    #   icon: st-train-line # 图标 / Icon
     #   onclick: # 点击事件 / Click event
     #   id: travellings_button # id
 
@@ -134,9 +134,9 @@ hometop:
   # banner 左下跳转按钮
   # Banner lower left jump button
   group:
-    # 热门: /tags/热门/ || sco-fire-fill || linear-gradient(to right,#f65,#ffbf37)
-    # 教程: /tags/教程/ || sco-book-mark-fill || linear-gradient(to right,#358bff,#15c6ff)
-    # 精选: /tags/精选/ || sco-star-smile-fill || linear-gradient(to right,#18e7ae,#1eebeb)
+    # 热门: /tags/热门/ || st-fire-fill || linear-gradient(to right,#f65,#ffbf37)
+    # 教程: /tags/教程/ || st-book-mark-fill || linear-gradient(to right,#358bff,#15c6ff)
+    # 精选: /tags/精选/ || st-star-smile-fill || linear-gradient(to right,#18e7ae,#1eebeb)
 
   # 右侧置顶列表（在文章的front matter中添加“recommend: true”）
   # Right top list (add "recommend: true" in the front matter of the article)
@@ -236,8 +236,8 @@ aside:
       - 🎮 电竞游戏爱好者
     # 个人信息卡片底部的小图标，按照例子填写
     information:
-    #  Github: https://github.com/wleelw || sco-github-line # 名称：链接 || 图标 / Name: link || icon
-    #  Bilibili: https://space.bilibili.com/1329819902 || sco-bilibili-line
+    #  Github: https://github.com/wleelw || st-github-line # 名称：链接 || 图标 / Name: link || icon
+    #  Bilibili: https://space.bilibili.com/1329819902 || st-bilibili-line
 
   # 二维码
   # Official account QR code
@@ -251,9 +251,9 @@ aside:
     # 鼠标悬停翻转图片
     # Mouse hover flip image
     backface:
-    # 背景色：var(--sco-blue) / #000 / rgba(0,0,0,0.5) / linear-gradient(to right,#f65,#ffbf37)
-    # Background color: var(--sco-blue) / #000 / rgba(0,0,0,0.5) / linear-gradient(to right,#f65,#ffbf37)
-    backcolor: "var(--sco-blue)"
+    # 背景色：var(--st-blue) / #000 / rgba(0,0,0,0.5) / linear-gradient(to right,#f65,#ffbf37)
+    # Background color: var(--st-blue) / #000 / rgba(0,0,0,0.5) / linear-gradient(to right,#f65,#ffbf37)
+    backcolor: "var(--st-blue)"
 
   # 页面目录
   # Page directory
@@ -283,7 +283,7 @@ aside:
     # 高亮显示标签列表
     # Highlighted tag list
     list:
-      - "Solitude-使用"
+      - "st-使用"
 
   # 侧边栏归档
   # aside archive
@@ -441,11 +441,11 @@ footer:
   # Bottom row of icons
   information:
     left: # 左侧显示图标
-    #  Github: https://github.com/wleelw || sco-github-line # 名称：链接 || 图标 / Name: link || icon
-    #  Mail: mailto:wleelw@wzsco.top || sco-mail-line
+    #  Github: https://github.com/wleelw || st-github-line # 名称：链接 || 图标 / Name: link || icon
+    #  Mail: mailto:wleelw@wzsco.top || st-mail-line
     right: # 右侧显示图标
-    #  Bilibili: https://space.bilibili.com/1329819902 || sco-bilibili-line
-    #  抖音: https://v.douyin.com/iJsLc8jt/ || sco-douyin-fill
+    #  Bilibili: https://space.bilibili.com/1329819902 || st-bilibili-line
+    #  抖音: https://v.douyin.com/iJsLc8jt/ || st-douyin-fill
 
   # 底部导航栏
   # Bottom navigation bar
@@ -566,9 +566,9 @@ moments:
   page_init_number: 10 # 页面初始化加载数量，默认为10条 / Page initialization loading quantity, default is 10
   page_turning_number: 5 # 页面翻页加载数量，默认为5条 / Page turning loading quantity, default is 5
   angle: false # 鱼塘随机文章 / Fish pond random article
-  appjs: https://cdn.cbd.int/solitude-source@1.0.3/js/fcircle.min.js # 鱼塘js / Fish pond js
-  bundlejs: https://cdn.cbd.int/solitude-source/js/moment/bundle.min.js # 鱼塘js / Fish pond js
-  randompostjs: https://cdn.cbd.int/solitude-source/js/moment/random_post.min.js # 鱼塘js / Fish pond js
+  appjs: https://cdn.cbd.int/st-source@1.0.3/js/fcircle.min.js # 鱼塘js / Fish pond js
+  bundlejs: https://cdn.cbd.int/st-source/js/moment/bundle.min.js # 鱼塘js / Fish pond js
+  randompostjs: https://cdn.cbd.int/st-source/js/moment/random_post.min.js # 鱼塘js / Fish pond js
 
 # 相册
 # album
@@ -812,11 +812,11 @@ pwa:
   enable: false
   manifest: /manifest.json # manifest.json 文件路径
   theme_color: "#ffffff" # 主题颜色
-  mask_icon: https://cdn.cbd.int/solitude-source/img/pwa/180.png # 遮罩图标
-  apple_touch_icon: https://cdn.cbd.int/solitude-source/img/pwa/180.png # 苹果触摸图标
-  bookmark_icon: https://cdn.cbd.int/solitude-source/img/pwa/180.png # 书签图标
-  favicon_32_32: https://cdn.cbd.int/solitude-source/img/pwa/32.png # 32x32图标
-  favicon_16_16: https://cdn.cbd.int/solitude-source/img/pwa/16.png # 16x16图标
+  mask_icon: https://cdn.cbd.int/st-source/img/pwa/180.png # 遮罩图标
+  apple_touch_icon: https://cdn.cbd.int/st-source/img/pwa/180.png # 苹果触摸图标
+  bookmark_icon: https://cdn.cbd.int/st-source/img/pwa/180.png # 书签图标
+  favicon_32_32: https://cdn.cbd.int/st-source/img/pwa/32.png # 32x32图标
+  favicon_16_16: https://cdn.cbd.int/st-source/img/pwa/16.png # 16x16图标
 
 # 谷歌广告 (Google Adsense)
 google_adsense:
@@ -853,7 +853,7 @@ CDN:
   custom_format: https://cdn.staticfile.org/${cdnjs_name}/${version}/${min_cdnjs_file}
 
   option:
-    scoicon_css: https://cdn.cbd.int/solitude-source/icon/scoicon.min.css
+    solitude_css: https://cdn2.codesign.qq.com/icons/7pOrz0WXB5ZWJPX/latest/iconfont.css
     waterfall: https://cdn.cbd.int/solitude-source/js/waterfall.min.js
     universe_js: https://cdn.cbd.int/solitude-source/js/universe.min.js
   #  algolia_search:

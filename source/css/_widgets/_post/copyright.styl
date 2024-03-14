@@ -1,6 +1,6 @@
 #post
   .post-copyright
-    background var(--sco-secondbg)
+    background var(--efu-secondbg)
     border-width 1px
     transition 0.3s
     position relative
@@ -10,7 +10,7 @@
     border var(--style-border-always)
 
     +maxWidth768()
-      box-shadow var(--sco-shadow-border)
+      box-shadow var(--efu-shadow-border)
       padding: 1rem 1.3rem;
     .post-copyright__author_group
       .post-copyright__author_img
@@ -23,7 +23,7 @@
         left calc(50% - 33px)
         top -33px
         border var(--style-border-always)
-        box-shadow var(--sco-shadow-main)
+        box-shadow var(--efu-shadow-main)
 
         if hexo-config('post.default.copyright.author.enable')
           &:hover
@@ -57,13 +57,13 @@
         font-size 20px
         font-weight 700
         margin-top 16px
-        color var(--sco-fontcolor)
+        color var(--efu-fontcolor)
         line-height 1
 
       .post-copyright__author_desc
         text-align center
         font-size 14px
-        color var(--sco-secondtext)
+        color var(--efu-secondtext)
         margin-top 4px
 
     .post-copyright__notice
@@ -72,7 +72,7 @@
 
       .post-copyright-info
         padding-left 0
-        color var(--sco-secondtext)
+        color var(--efu-secondtext)
         overflow hidden
         display -webkit-box
         -webkit-line-clamp 1
@@ -87,12 +87,12 @@
           word-break break-word
           padding 0 4px
           border-radius 4px
-          color var(--sco-fontcolor)
+          color var(--efu-fontcolor)
           font-weight 700
 
           &:hover
             text-decoration none
-            background-color var(--sco-main)
-            color var(--sco-white)
+            background-color var(--efu-main)
+            color var(--efu-white)
             cursor pointer
             border-radius 4px

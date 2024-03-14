@@ -14,16 +14,16 @@ if site.data.about.rewardList
                     .reward-list-item
                         .reward-list-item-name= reward.name
                         .reward-list-bottom-group
-                            .reward-list-item-money(style=(reward.vip ? "background: var(--sco-vip);color: var(--sco-white)" : ""))
+                            .reward-list-item-money(style=(reward.vip ? "background: var(--st-vip);color: var(--st-white)" : ""))
                                 if reward.icon
-                                    i.scoicon(class=reward.icon)
+                                    i.solitude(class=reward.icon)
                                 | ¥ #{reward.money}
                             time.datatime.reward-list-item-time(datetime=moment(reward.time).format())
                 if theme.post.award.enable
                     .post-reward
                         .post-reward(onclick="AddRewardMask()")
                         .reward-button(title=_p('award.about.tip1'))
-                            i.scoicon.sco-hand-heart-fill
+                            i.solitude.st-hand-heart-fill
                             = _p('award.about.tip1')
                         .reward-main
                             ul.reward-all

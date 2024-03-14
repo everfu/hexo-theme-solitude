@@ -7,8 +7,8 @@
   margin-left -15rem
   padding 1rem
   width 30rem
-  box-shadow var(--sco-shadow-lightblack)
-  background var(--sco-card-bg)
+  box-shadow var(--efu-shadow-lightblack)
+  background var(--efu-card-bg)
   border var(--style-border)
   transition 0.3s
   border-radius 8px
@@ -16,7 +16,7 @@
 
   &:hover
     border var(--style-border-hover)
-    box-shadow var(--sco-shadow-theme)
+    box-shadow var(--efu-shadow-theme)
     +maxWidth768()
       border none
 
@@ -30,7 +30,7 @@
 
   .search-dialog-title
     font-weight 700
-    color var(--sco-main)
+    color var(--efu-main)
     padding 0 0 0.7rem
     font-size 1.4em
     line-height 1
@@ -39,14 +39,14 @@
     position absolute
     top 0.8rem
     right 1rem
-    color var(--sco-gray)
+    color var(--efu-gray)
     font-size 1.4em
     line-height 1
     cursor pointer
     transition color .2s ease-in-out 0s
 
     &:hover
-      color var(--sco-main)
+      color var(--efu-main)
 
   #search-results
     max-height calc(80vh - 130px)
@@ -66,10 +66,10 @@
         display block
 
         &:hover
-          color var(--sco-hovertext)
+          color var(--efu-hovertext)
 
         em
-          color var(--sco-theme)
+          color var(--efu-theme)
           font-style normal
 
     +maxWidth768()
@@ -82,7 +82,7 @@
       text-align center
 
       .pagination-item
-        color var(--sco-fontcolor)
+        color var(--efu-fontcolor)
         display inline-block
         min-width 1.2rem
         height 1.2rem
@@ -91,28 +91,28 @@
         cursor pointer
 
         &:hover
-          color var(--sco-main)
+          color var(--efu-main)
 
         &.select
           border-radius 4px
-          background var(--sco-main)
-          color var(--sco-white)
+          background var(--efu-main)
+          color var(--efu-white)
           cursor default
 
           &:hover
-            color var(--sco-white)
+            color var(--efu-white)
 
   #search-tips
     padding-top 12px
-    color var(--sco-secondtext)
+    color var(--efu-secondtext)
     right 0
     margin auto
 
     .search-result-count
-      color var(--sco-gray)
+      color var(--efu-gray)
 
       b
-        color var(--sco-main)
+        color var(--efu-main)
 
   .search-box
     position relative
@@ -129,9 +129,9 @@
       border var(--style-border)
       padding 0.25rem 0.7rem;
       outline 0
-      background var(--sco-secondbg)
-      color var(--sco-fontcolor)
-      caret-color var(--sco-theme)
+      background var(--efu-secondbg)
+      color var(--efu-fontcolor)
+      caret-color var(--efu-theme)
 
 #search-mask
   position fixed
@@ -142,7 +142,7 @@
   backdrop-filter blur(12px)
   -webkit-backdrop-filter blur(12px)
   transform translateZ(0)
-  background var(--sco-maskbgdeep)
+  background var(--efu-maskbgdeep)
 
 #search-hits
   .tag-list
@@ -153,5 +153,5 @@
     border var(--style-border-always)
 
     &:hover
-      background var(--sco-main)
-      color var(--sco-white)
+      background var(--efu-main)
+      color var(--efu-white)

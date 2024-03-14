@@ -1,7 +1,7 @@
 .post
   #page-header.post-bg
     height 20rem
-    background-color var(--sco-background)
+    background-color var(--efu-background)
     transition .6s
     overflow hidden
 
@@ -10,14 +10,14 @@
 
     +maxWidth768()
       height 30rem
-      background-color var(--sco-main) !important
+      background-color var(--efu-main) !important
       transition 0s
       margin-bottom -12px
 
     &::before
       transition .3s
       height 20rem
-      background-color var(--sco-main)
+      background-color var(--efu-main)
       opacity 1
       position absolute
       top 0
@@ -29,7 +29,7 @@
       +minWidth1300()
         height 25rem
         opacity 0
-        background-color var(--sco-main)
+        background-color var(--efu-main)
         animation slide-in-op .6s 0s forwards
 
       +maxWidth768()
@@ -54,25 +54,25 @@
     .parallax > use:nth-child(1)
       animation-delay -2s
       animation-duration 7s
-      fill var(--sco-background)
+      fill var(--efu-background)
       opacity .5
 
     .parallax > use:nth-child(2)
       animation-delay -3s
       animation-duration 10s
-      fill var(--sco-background)
+      fill var(--efu-background)
       opacity .6
 
     .parallax > use:nth-child(3)
       animation-delay -4s
       animation-duration 13s
-      fill var(--sco-background)
+      fill var(--efu-background)
       opacity .7
 
     .parallax > use:nth-child(4)
       animation-delay -5s
       animation-duration 20s
-      fill var(--sco-background)
+      fill var(--efu-background)
 
     +maxWidth768()
       .main-hero-waves-area
@@ -107,7 +107,7 @@
         height 100%
         top 0
         left 0
-        box-shadow 110px -130px 300px 60px var(--sco-main) inset
+        box-shadow 110px -130px 300px 60px var(--efu-main) inset
 
       +minWidth1300()
         width 70%
@@ -149,7 +149,7 @@
         height 30rem
 
         &:after
-          box-shadow 0 0 205px 59px var(--sco-main) inset
+          box-shadow 0 0 205px 59px var(--efu-main) inset
 
       &.loaded
         display block
@@ -163,7 +163,7 @@
       position absolute
       padding 0 3rem
       margin 0 auto
-      color var(--sco-white)
+      color var(--efu-white)
       max-width 1400px
       display flex
       flex-direction column
@@ -190,7 +190,7 @@
         padding-top 18rem
 
       .post-title
-        color var(--sco-white)
+        color var(--efu-white)
         font-weight 700
         font-size 2.3rem
         line-height 1.2
@@ -289,9 +289,9 @@
 
             &:hover
               opacity 1
-              background var(--sco-white-op)
+              background var(--efu-white-op)
               text-decoration none
-              color var(--sco-white)
+              color var(--efu-white)
 
           .post-meta-pv-cv
             margin-left .8rem
@@ -308,7 +308,7 @@
 
             &:hover
               opacity 1
-              background var(--sco-white-op)
+              background var(--efu-white-op)
 
           .post-meta-wechat
             margin-right .8rem
@@ -318,7 +318,7 @@
 
             &:hover
               opacity 1
-              background var(--sco-white-op)
+              background var(--efu-white-op)
 
       #post-firstinfo
         text-align left
@@ -343,8 +343,8 @@
             margin-bottom .4rem
 
           .post-meta-original
-            background var(--sco-white-op)
-            color var(--sco-white)
+            background var(--efu-white-op)
+            color var(--efu-white)
             padding 0 .5rem
             font-size .7rem
             margin auto
@@ -356,8 +356,8 @@
             display flex
 
             &:hover
-              color var(--sco-main)
-              background var(--sco-white)
+              color var(--efu-main)
+              background var(--efu-white)
               border-radius 8px
 
           .tag_share
@@ -375,7 +375,7 @@
                 display none
 
               .post-meta__tags
-                color var(--sco-white)
+                color var(--efu-white)
                 opacity .8
                 margin-right 8px
                 padding 0 8px
@@ -385,15 +385,15 @@
                 flex-direction row
 
                 &:hover
-                  color var(--sco-white)
+                  color var(--efu-white)
                   opacity 1
-                  background var(--sco-white-op)
+                  background var(--efu-white-op)
 
                 +maxWidth768()
                   margin 0 .5rem 0 0
 
           span.post-meta-categories
-            background-color var(--sco-white-op)
+            background-color var(--efu-white-op)
             border-radius 8px
             line-height 32px
             height 32px
@@ -403,10 +403,10 @@
               margin-left 8px
 
             &:hover
-              background-color var(--sco-white)
+              background-color var(--efu-white)
 
             a.post-meta-categories
-              color var(--sco-white)
+              color var(--efu-white)
               font-size .7rem
               width 100%
               height 100%
@@ -414,4 +414,4 @@
               padding 0 .5rem
 
               &:hover
-                color var(--sco-main)
+                color var(--efu-main)

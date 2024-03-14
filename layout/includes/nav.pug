@@ -3,11 +3,11 @@ nav#nav.show
         #blog_name
             if theme.nav.group
                 .back-home-button(tabindex="-1")
-                    i.back-home-button-icon.scoicon.sco-more-fill
+                    i.back-home-button-icon.solitude.st-more-fill
                     include ./widgets/nav/group
             a#site-name(href="/", title=_p('nav.site_name_title'))
                 if theme.site.name.class === 'i_class'
-                    i.scoicon(class=theme.site.name.custom, style="font-size: 16px;")
+                    i.solitude(class=theme.site.name.custom, style="font-size: 16px;")
                 else if theme.site.name.class === 'img'
                     img(src=theme.site.name.custom, alt=config.title)
                 else if theme.site.name.class === 'text'
