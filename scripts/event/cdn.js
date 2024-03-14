@@ -74,6 +74,16 @@ hexo.extend.filter.register('before_generate', () => {
             file: 'js/comment/waline_commentBarrage.js',
             version
         },
+        waterfall: {
+            name: 'hexo-theme-solitude',
+            file: 'js/waterfall.min.js',
+            version
+        },
+        universe_js: {
+            name: 'hexo-theme-solitude',
+            file: 'js/universe.min.js',
+            version
+        }
     }
 
     const minFile = file => {
