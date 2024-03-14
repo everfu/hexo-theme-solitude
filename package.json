@@ -1,6 +1,6 @@
 {
   "name": "hexo-theme-solitude",
-  "version": "1.5.1",
+  "version": "1.5.2",
   "description": "A beautiful, powerful, and efficient Hexo theme developed by the wleelw",
   "main": "package.json",
   "scripts": {
@@ -11,7 +11,7 @@
     "theme",
     "solitude",
     "Card UI Design",
-    "Wleelw",
+    "Efu",
     "hexo-theme-solitude"
   ],
   "repository": {
@@ -24,9 +24,9 @@
   },
   "bugs": {
     "url": "https://github.com/valor-x/hexo-theme-solitude/issues",
-    "email": "me@wzsco.top"
+    "email": "o@efu.me"
   },
-  "homepage": "https://blog.wzsco.top/",
-  "author": "Hexo-Theme-Solitude<me@wzsco.top>",
-  "license": "GNU"
+  "homepage": "https://solitude-demo.efu.me/",
+  "author": "Hexo-Theme-Solitude<o@efu.me>",
+  "license": "MIT"
 }
