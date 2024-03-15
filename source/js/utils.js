@@ -185,7 +185,7 @@ const utils = {
         const lightbox = GLOBAL_CONFIG.lightbox
 
         if (lightbox === 'mediumZoom' && mediumZoom) {
-            mediumZoom(selector, {background: "var(--st-card-bg)"});
+            mediumZoom(selector, {background: "var(--efu-card-bg)"});
         }
 
         if (lightbox === 'fancybox') {

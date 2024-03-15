@@ -1,11 +1,11 @@
-[简体中文](README.md)丨[繁体中文](README_EN.md)丨English
+[简体中文](README.md)丨繁体中文丨[English](README_EN.md)
 
 <div align="center">
   <img width="200" style="border-radius:10%;" src="./source/img/logo.png" alt="Solitude logo"/>
 
   <h1 align="center">Hexo Theme Solitude</h1>
 
-  <p align="center">An elegant Hexo theme that supports lazy loading, PWA, Latex, and multiple comment systems.</p>
+  <p align="center">一款優雅的 Hexo 主題，支援懶載入、PWA、Latex以及多種評論系統。</p>
 
 ![release](https://img.shields.io/github/package-json/v/valor-x/hexo-theme-solitude/master?color=%231ab1ad&label=release)
 ![https://img.shields.io/npm/v/hexo-theme-solitude?color=%09%23bf00ff](https://img.shields.io/npm/v/hexo-theme-solitude?color=%09%23bf00ff)
@@ -14,47 +14,47 @@
 [![Stars](https://img.shields.io/github/stars/valor-x/hexo-theme-solitude)](https://github.com/valor-x/hexo-theme-solitude/stargazers)
 [![GitHub all releases](https://img.shields.io/github/downloads/valor-x/hexo-theme-solitude/total)](https://github.com/valor-x/hexo-theme-solitude/releases/latest)
 
-[Preview](https://solitude-demo.efu.me/) 丨  [Documentation](https://solitude-docs.efu.me/)
+[預覽](https://solitude-demo.efu.me/) 丨  [文档](https://solitude-docs.efu.me/)
 
 </div>
 
-![Home](https://github.com/valor-x/hexo-theme-solitude/assets/74389842/d008aba4-942d-4fdb-a611-d934c0bad9fe)
+![首頁](https://github.com/valor-x/hexo-theme-solitude/assets/74389842/d008aba4-942d-4fdb-a611-d934c0bad9fe)
 
-## Features
+## 特性
 
-- Pjax、LazyLoad、PWA
-- Comments(Twikoo、Waline)
-- ColorMode
-- Lightbox(medium-zoom、fancybox)
-- Mathematical formulas(Latex)
-- Featured pages: Instant Short Article, My Equipment, Online Tools, Music Gallery, Friend Chain Fish Pond, Photo Album Page, Douban Page
-- Article features: AI summary, code highlighting
+- 頁面懶載入（Pjax）、圖片懶載入（LazyLoad）、離線應用（PWA） 
+- 評論（Twikoo、Waline） 
+- 顯示切換（ColorMode） 
+- 燈箱（medium-zoom、fancybox） 
+- 數學公式（Latex） 
+- 特色頁面：即刻短文、我的裝備、在線工具、音樂館、友鏈魚塘、相冊頁、豆瓣頁 
+- 文章功能：AI 摘要、代碼高亮
 
 ## Todo
 
-- [x] Support Waline
-- [ ] Tags plugin
-- [ ] Album reconstruction
+- [x] Waline 評論支援
+- [ ] Tags plugin 外掛程式化
+- [ ] 相冊頁重構
 
-## Setup
+## 應用
 
-1. Use the NPM package
+1. 使用 NPM 包進行安裝
       ```bash
       npm i hexo-theme-solitude
       ```
-2. Apply
+2. 應用主題
       ```yaml
       theme: solitude
       ```
 
-Check out the [Documentation](https://solitude-docs.efu.me/) for more information.
+前往 [文檔](https://solitude-docs.efu.me) 獲取更多資訊。
 
-## Contributors
+## 貢獻者
 
 <a href="https://github.com/valor-x/hexo-theme-solitude/graphs/contributors">
   <img alt="contributors" src="https://contrib.rocks/image?repo=valor-x/hexo-theme-solitude" />
 </a>
 
-**Theme is fully licensed and designed by the author of [@张洪Heo](https://github.com/zhheo)!**
+**主題由 [@张洪Heo](https://github.com/zhheo) 全權授權、設計！**
 
-> You are welcome to contribute to this topic! [Contribution Guide](/CONTRIBUTING.md)
+> 歡迎你對本主題做出貢獻！[貢獻指南](/CONTRIBUTING.md)

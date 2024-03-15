@@ -3,10 +3,10 @@ const coverColor = () => {
     if (path) {
         handleApiColor(path);
     } else {
-        document.documentElement.style.setProperty('--st-main', 'var(--st-theme)');
-        document.documentElement.style.setProperty('--st-main-op', 'var(--st-theme-op)');
-        document.documentElement.style.setProperty('--st-main-op-deep', 'var(--st-theme-op-deep)');
-        document.documentElement.style.setProperty('--st-main-none', 'var(--st-theme-none)');
+        document.documentElement.style.setProperty('--st-main', 'var(--efu-theme)');
+        document.documentElement.style.setProperty('--st-main-op', 'var(--efu-theme-op)');
+        document.documentElement.style.setProperty('--st-main-op-deep', 'var(--efu-theme-op-deep)');
+        document.documentElement.style.setProperty('--st-main-none', 'var(--efu-theme-none)');
         initThemeColor()
     }
 }
@@ -53,13 +53,13 @@ function setThemeColors(value, r = null, g = null, b = null) {
             if (brightness < 125) {
                 let cardContents = document.getElementsByClassName('card-content');
                 for (let i = 0; i < cardContents.length; i++) {
-                    cardContents[i].style.setProperty('--st-card-bg', 'var(--st-white)');
+                    cardContents[i].style.setProperty('--st-card-bg', 'var(--efu-white)');
                 }
 
                 let authorInfo = document.getElementsByClassName('author-info__sayhi');
                 for (let i = 0; i < authorInfo.length; i++) {
-                    authorInfo[i].style.setProperty('background', 'var(--st-white-op)');
-                    authorInfo[i].style.setProperty('color', 'var(--st-white)');
+                    authorInfo[i].style.setProperty('background', 'var(--efu-white-op)');
+                    authorInfo[i].style.setProperty('color', 'var(--efu-white)');
                 }
             }
         }
@@ -67,10 +67,10 @@ function setThemeColors(value, r = null, g = null, b = null) {
         document.getElementById("coverdiv").classList.add("loaded");
         initThemeColor();
     } else {
-        document.documentElement.style.setProperty('--st-main', 'var(--st-theme)');
-        document.documentElement.style.setProperty('--st-main-op', 'var(--st-theme-op)');
-        document.documentElement.style.setProperty('--st-main-op-deep', 'var(--st-theme-op-deep)');
-        document.documentElement.style.setProperty('--st-main-none', 'var(--st-theme-none)');
+        document.documentElement.style.setProperty('--st-main', 'var(--efu-theme)');
+        document.documentElement.style.setProperty('--st-main-op', 'var(--efu-theme-op)');
+        document.documentElement.style.setProperty('--st-main-op-deep', 'var(--efu-theme-op-deep)');
+        document.documentElement.style.setProperty('--st-main-none', 'var(--efu-theme-none)');
         initThemeColor();
     }
 }
