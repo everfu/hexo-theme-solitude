@@ -1,4 +1,4 @@
-[简体中文](README.md)丨[繁体中文](README_EN.md)丨English
+[简体中文](README.md)丨[繁体中文](README_zh-tw.md)丨English
 
 <div align="center">
   <img width="200" style="border-radius:10%;" src="./.github/logo.png" alt="Solitude logo"/>
