@@ -8,17 +8,15 @@
 ![master version](https://img.shields.io/github/package-json/v/valor-x/hexo-theme-solitude/master?color=%231ab1ad&label=master)
 ![master version](https://img.shields.io/github/package-json/v/valor-x/hexo-theme-solitude/dev?label=dev)
 ![https://img.shields.io/npm/v/hexo-theme-solitude?color=%09%23bf00ff](https://img.shields.io/npm/v/hexo-theme-solitude?color=%09%23bf00ff)
+[![GitHub all releases](https://img.shields.io/github/downloads/valor-x/hexo-theme-solitude/total)](https://github.com/valor-x/hexo-theme-solitude/releases/latest)
 ![hexo version](https://img.shields.io/badge/hexo-6.3.0+-0e83c)
 ![license](https://img.shields.io/github/license/valor-x/hexo-theme-solitude?color=FF5531)
-[![GitHub all releases](https://img.shields.io/github/downloads/valor-x/hexo-theme-solitude/total)](https://github.com/valor-x/hexo-theme-solitude/releases/latest)
 
 ![首页](https://github.com/valor-x/hexo-theme-solitude/assets/74389842/d008aba4-942d-4fdb-a611-d934c0bad9fe)
 
 Theme Preview:  [亦封](https://blog.meuicat.cn/)｜[Demo](https://solitude-demo.efu.me/)
 
 Theme Document: [中文](https://solitude-docs.efu.me/)
-
-Theme discussion group：`The usage document above contains a QR code`
 
 ## 💻 Installation
 
