@@ -1,7 +1,7 @@
 [简体中文](README.md)丨[繁体中文](README_EN.md)丨English
 
 <div align="center">
-  <img width="200" style="border-radius:10%;" src="./source/img/logo.png" alt="Solitude logo"/>
+  <img width="200" style="border-radius:10%;" src="./.github/logo.png" alt="Solitude logo"/>
 
   <h1 align="center">Hexo Theme Solitude</h1>
 
@@ -18,7 +18,7 @@
 
 </div>
 
-![Screenshot](./source/img/screenshot.png)
+![Screenshot](.github/screenshot.png)
 
 ## Features
 
