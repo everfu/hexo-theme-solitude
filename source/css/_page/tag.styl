@@ -19,40 +19,40 @@
     top 0
     max-height 64px
     overflow hidden
-    background var(--sco-card-bg)
+    background var(--efu-card-bg)
     backdrop-filter saturate(180%) blur(20px)
     transition .1s ease-out
 
     &:hover
       max-height 1000px
       transition .3s ease-out
-      background var(--sco-maskbgdeep)
+      background var(--efu-maskbgdeep)
 
     a
       padding .1rem .5rem
       margin .25rem .25rem
       line-height 1.6
       border-radius 8px
-      color var(--sco-fontcolor) !important
+      color var(--efu-fontcolor) !important
       border var(--style-border-always)
       display flex
       align-items center
-      background var(--sco-card-bg)
+      background var(--efu-card-bg)
       transition all .3s ease-out 0s
 
       &.select
         order -1
-        color var(--sco-card-bg) !important
-        background var(--sco-theme)
-        box-shadow var(--sco-shadow-theme)
+        color var(--efu-card-bg) !important
+        background var(--efu-theme)
+        box-shadow var(--efu-shadow-theme)
 
       &:hover
-        color var(--sco-white) !important
-        background var(--sco-theme)
-        box-shadow var(--sco-shadow-theme)
+        color var(--efu-white) !important
+        background var(--efu-theme)
+        box-shadow var(--efu-shadow-theme)
 
       &.select .tagsPageCount
-        background var(--sco-card-bg)
-        color var(--sco-lighttext)
+        background var(--efu-card-bg)
+        color var(--efu-lighttext)
     +maxWidth768()
       display none

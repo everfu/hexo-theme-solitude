@@ -8,6 +8,7 @@
 ![master version](https://img.shields.io/github/package-json/v/valor-x/hexo-theme-solitude/master?color=%231ab1ad&label=master)
 ![master version](https://img.shields.io/github/package-json/v/valor-x/hexo-theme-solitude/dev?label=dev)
 ![https://img.shields.io/npm/v/hexo-theme-solitude?color=%09%23bf00ff](https://img.shields.io/npm/v/hexo-theme-solitude?color=%09%23bf00ff)
+[![GitHub all releases](https://img.shields.io/github/downloads/valor-x/hexo-theme-solitude/total)](https://github.com/valor-x/hexo-theme-solitude/releases/latest)
 ![hexo version](https://img.shields.io/badge/hexo-6.3.0+-0e83c)
 ![license](https://img.shields.io/github/license/valor-x/hexo-theme-solitude?color=FF5531)
 
@@ -16,8 +17,6 @@
 Theme Preview:  [亦封](https://blog.meuicat.cn/)｜[Demo](https://solitude-demo.efu.me/)
 
 Theme Document: [中文](https://solitude-docs.efu.me/)
-
-Theme discussion group：`The usage document above contains a QR code`
 
 ## 💻 Installation
 
@@ -37,7 +36,7 @@ If you want to install the latest development version, you can install the dev b
 git clone -b dev https://github.com/valor-x/hexo-theme-solitude.git themes/solitude
 ```
 
-### Installation via npm
+### Installation via NPM
 
 > This method only supports Hexo versions above 5.0.0. Installing through npm will not generate a theme folder in themes, but in node_modules instead.
 
@@ -69,7 +68,6 @@ theme: solitude
 - [x] Support multi-function right-click menu
 - [x] Support for customizing the main color to change with the color of the cover image
 - [x] Support for immersive status bars
-- [x] Support for chat system
 - [x] Support for Baidu Analytics
 - [x] Support viewing large images
 - [x] Support for waterfall instant talk
@@ -88,8 +86,6 @@ theme: solitude
   <img src="https://contrib.rocks/image?repo=valor-x/hexo-theme-solitude" />
 </a>
 
-**This theme is a derivative theme of [Heo](https://blog.zhheo.com/), designed and authorized by the author [张洪Heo](https://github.com/zhheo)!**
+**This theme designed and authorized by the author [张洪Heo](https://github.com/zhheo)!**
 
 > Welcome to contribute to this theme!  [Contribution Guide](/CONTRIBUTING.md)
-
-[![Hexo-Theme-Solitude](https://starchart.cc/valor-x/hexo-theme-solitude.svg?variant=adaptive)](https://github.com/valor-x/hexo-theme-solitude)

@@ -10,7 +10,7 @@
 
     &.card-info
       padding 0 !important
-      box-shadow var(--sco-shadow-black)
+      box-shadow var(--efu-shadow-black)
 
       > div.card-content
         padding 1rem 1.2rem
@@ -19,7 +19,7 @@
 
   > .card-widget.card-info
     &:before
-      background linear-gradient(-25deg, var(--sco-main), var(--sco-main-op-deep), var(--sco-main), var(--sco-main-op-deep))
+      background linear-gradient(-25deg, var(--efu-main), var(--efu-main-op-deep), var(--efu-main), var(--efu-main-op-deep))
       background-size 400%
       position absolute
       width 100%
@@ -36,11 +36,11 @@
 
     > div.card-info-avatarimg
       overflow hidden
-      background var(--sco-yellow)
+      background var(--efu-yellow)
       transition 1.5s
       min-height 160px
       position relative
-      box-shadow var(--sco-shadow-yellow)
+      box-shadow var(--efu-shadow-yellow)
 
       &:hover img
         transform scale(1.03)
@@ -59,7 +59,7 @@
       justify-content center
       transition .3s .2s
       transform scale(1)
-      background var(--sco-card-bg)
+      background var(--efu-card-bg)
       border-radius 50%
 
       img
@@ -72,15 +72,15 @@
 
     .author-info__desc
       font-size 12px
-      color var(--sco-card-bg)
+      color var(--efu-card-bg)
       opacity .6
       line-height 1
 
     #author-info__sayhi
       text-align center
       width fit-content
-      color var(--sco-white)
-      background var(--sco-white-op)
+      color var(--efu-white)
+      background var(--efu-white-op)
       font-size 12px
       padding 2px 8px
       border-radius 12px
@@ -92,14 +92,14 @@
 
       / [data-theme=dark] &
         background #00000015
-        color var(--sco-black)
+        color var(--efu-black)
 
         &:hover
-          color var(--sco-white)
+          color var(--efu-white)
 
       &:hover
-        background var(--sco-card-bg)
-        color var(--sco-main)
+        background var(--efu-card-bg)
+        color var(--efu-main)
         transform scale(1.1)
 
     .card-info-avatar.is-center
@@ -116,7 +116,7 @@
       position absolute
       transition cubic-bezier(.69, .39, 0, 1.21) .3s
       transform-origin bottom
-      border 5px solid var(--sco-card-bg)
+      border 5px solid var(--efu-card-bg)
 
       ../ :hover .avatar-img-group
         opacity 0
@@ -125,7 +125,7 @@
     .author-info__name
       text-align left
       font-weight 700
-      color var(--sco-card-bg)
+      color var(--efu-card-bg)
       font-size 20px
       line-height 1
       margin-bottom 5px
@@ -151,10 +151,10 @@
         line-height 1.38
         margin .3rem 0
         text-align justify
-        color var(--sco-card-bg)
+        color var(--efu-card-bg)
 
         b
-          color var(--sco-card-bg)
+          color var(--efu-card-bg)
 
       .author-info__description2
         line-height 1.38
@@ -162,10 +162,10 @@
         text-align justify
         width 100%
         z-index 2
-        color var(--sco-card-bg)
+        color var(--efu-card-bg)
 
         b
-          color var(--sco-card-bg)
+          color var(--efu-card-bg)
 
     .author-info__bottom-group
       display flex
@@ -195,7 +195,7 @@
 
         a
           .headline
-            color var(--sco-fontcolor)
+            color var(--efu-fontcolor)
             font-size 1em
 
           .length-num
@@ -218,7 +218,7 @@
       .social-icon
         margin 0
         margin-left 8px
-        color var(--sco-fontcolor)
+        color var(--efu-fontcolor)
         font-size 1.4em
         cursor pointer
         display flex
@@ -228,8 +228,8 @@
         padding 8px
         border-radius 32px
         cursor pointer
-        background var(--sco-white-op)
-        color var(--sco-card-bg)
+        background var(--efu-white-op)
+        color var(--efu-card-bg)
         width 40px
         height 40px
         display flex
@@ -237,17 +237,17 @@
         justify-content center
 
         &:hover
-          background var(--sco-white)
+          background var(--efu-white)
           transform scale(1.1)
-          color var(--sco-main)
+          color var(--efu-main)
           box-shadow none
 
         / [data-theme=dark] &
-          background var(--sco-black-op)
+          background var(--efu-black-op)
 
           &:hover
-            background-color var(--sco-black)
-            color var(--sco-white)
+            background-color var(--efu-black)
+            color var(--efu-white)
 
     img.avatar-img
       width 118px

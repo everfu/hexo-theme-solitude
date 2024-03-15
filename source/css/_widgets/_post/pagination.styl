@@ -18,11 +18,11 @@
   +maxWidth768()
     border-radius 12px
     border var(--style-border-always)
-    box-shadow var(--sco-shadow-border)
+    box-shadow var(--efu-shadow-border)
 
   &.pagination-post
     margin-top 1.5rem
-    background var(--sco-card-bg)
+    background var(--efu-card-bg)
     +minWidth768()
       border-radius 12px
       margin-top 1rem
@@ -30,13 +30,13 @@
       margin-top 0
 
   .next-post, .prev-post, .next-post.pull-right, .prev-post.pull-left
-    background var(--sco-secondbg)
+    background var(--efu-secondbg)
     +minWidth1300()
-      background var(--sco-maskbgdeep)
+      background var(--efu-maskbgdeep)
       backdrop-filter blur(5px)
       transform translateZ(0)
     +maxWidth768()
-      background var(--sco-card-bg)
+      background var(--efu-card-bg)
 
   .next-post.pull-full, .prev-post.pull-full
     +minWidth1300()
@@ -61,12 +61,12 @@
       width 100%
 
     .label
-      color var(--sco-fontcolor)
+      color var(--efu-fontcolor)
       text-transform uppercase
       font-size 90%
 
       +minWidth1300()
-        color var(--sco-fontcolor)
+        color var(--efu-fontcolor)
         font-weight 700
         font-size 12px
         margin-bottom 0.5rem
@@ -85,14 +85,14 @@
 
       +minWidth768()
         &:hover
-          background var(--sco-main)
+          background var(--efu-main)
 
           div
-            color: var(--sco-white)
+            color: var(--efu-white)
 
       +maxWidth768()
         &:hover
-          background var(--sco-none)
+          background var(--efu-none)
 
   .prev-post
     .pagination-info
@@ -100,7 +100,7 @@
 
     a
       +minWidth768()
-        border-right var(--sco-main-op)
+        border-right var(--efu-main-op)
         border-right-width 1px
         border-right-style solid
 
@@ -118,7 +118,7 @@
 
     a
       +minWidth768()
-        border-left var(--sco-main-op)
+        border-left var(--efu-main-op)
         border-left-width 1px
         border-left-style solid
         display flex
@@ -152,7 +152,7 @@
       transform none
 
   .next_info, .prev_info
-    color var(--sco-fontcolor)
+    color var(--efu-fontcolor)
     font-weight 700
     -webkit-line-clamp 2
     white-space normal

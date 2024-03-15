@@ -6,19 +6,19 @@ div#banners
     display flex
     width 100%
     height 100%
-    background var(--sco-card-bg)
+    background var(--efu-card-bg)
     border var(--style-border)
     border-radius 12px
     overflow hidden
     position relative
-    box-shadow var(--sco-shadow-border)
+    box-shadow var(--efu-shadow-border)
     flex-direction column
     transition .3s
     will-change transform
     animation slide-in .6s .1s backwards
 
     :not(.flink)&:hover
-      box-shadow var(--sco-shadow-main)
+      box-shadow var(--efu-shadow-main)
 
     .banner-button-group
       position absolute
@@ -28,26 +28,26 @@ div#banners
 
     .banner-button
       padding 8px 12px
-      background var(--sco-fontcolor)
+      background var(--efu-fontcolor)
       border-radius 12px
-      color var(--sco-card-bg)
+      color var(--efu-card-bg)
       display flex
       align-items center
       z-index 1
       transition .3s
       cursor pointer
-      box-shadow var(--sco-shadow-black)
+      box-shadow var(--efu-shadow-black)
 
       &.secondary
-        background var(--sco-secondbg)
+        background var(--efu-secondbg)
         border var(--style-border-always)
-        color var(--sco-lighttext)
+        color var(--efu-lighttext)
         margin-right 1rem
-        box-shadow var(--sco-shadow-border)
+        box-shadow var(--efu-shadow-border)
 
       &:hover
-        background var(--sco-theme)
-        color var(--sco-white)
+        background var(--efu-theme)
+        color var(--efu-white)
 
       i
         margin-right 8px
@@ -69,7 +69,7 @@ div#banners
       &-small
         font-size 12px
         line-height 1
-        color var(--sco-secondtext)
+        color var(--efu-secondtext)
         margin-top 8px
         margin-bottom 0.5rem
         margin-left 2px
@@ -120,7 +120,7 @@ div#banners
         color #fff
         font-size 66px
         font-weight 700
-        box-shadow var(--sco-shadow-blackdeep)
+        box-shadow var(--efu-shadow-blackdeep)
 
         &:nth-child(even)
           margin-top 1rem
@@ -150,16 +150,16 @@ div#banners
 .author-content.author-content-item.sharePage
   height 19rem
   background-size cover
-  color var(--sco-white)
+  color var(--efu-white)
   overflow hidden
   margin-top 0
 
 .author-content-item
   width 49%
   border-radius 12px
-  background var(--sco-card-bg)
+  background var(--efu-card-bg)
   border var(--style-border-always)
-  box-shadow var(--sco-shadow-border)
+  box-shadow var(--efu-shadow-border)
   position relative
   overflow hidden
   padding 1rem 2rem
@@ -223,8 +223,8 @@ div#banners
         width 118px
         border-radius 20px
         justify-content center
-        background var(--sco-black-op)
-        color var(--sco-white)
+        background var(--efu-black-op)
+        color var(--efu-white)
         display flex
         align-items center
         z-index 1
@@ -235,8 +235,8 @@ div#banners
         transform translateZ(0)
 
         &:hover
-          background var(--sco-main)
-          color var(--sco-card-bg)
+          background var(--efu-main)
+          color var(--efu-card-bg)
 
         i
           margin-right 8px
@@ -252,7 +252,7 @@ div#banners
       .banner-button-group
         .banner-button
           background 0 0
-          color var(--sco-white)
+          color var(--efu-white)
           padding 0
           width 30px
           height 30px
@@ -269,13 +269,13 @@ div#banners
     a
       &:not(.headerlink)
         text-decoration none
-        border-bottom 2px dotted var(--sco-lighttext)
-        color var(--sco-fontcolor)
+        border-bottom 2px dotted var(--efu-lighttext)
+        color var(--efu-fontcolor)
         font-weight 700
         padding 0 4px
         border-radius 4px 4px 0 0
 
       &:hover
-        color var(--sco-white)
+        color var(--efu-white)
         border-radius 4px
-        background var(--sco-main)
+        background var(--efu-main)

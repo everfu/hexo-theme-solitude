@@ -41,18 +41,6 @@ const scoMusic = {
             aplayerLrcContents.style.transform = `translateY(${translateYValue}px)`;
         }
     },
-    buttonlist: () => {
-        const aplayerList = document.querySelector(".aplayer-list");
-        if (aplayerList) {
-            document.querySelector(".aplayer-lrc").addEventListener("click", () => {
-                if (aplayerList.classList.contains("aplayer-list-hide")) {
-                    aplayerList.classList.remove("aplayer-list-hide");
-                } else {
-                    aplayerList.classList.add("aplayer-list-hide");
-                }
-            });
-        }
-    },
    extractValue: (input) => {
         const valueRegex = /\("([^\s]+)"\)/g;
         const match = valueRegex.exec(input);
@@ -160,6 +148,7 @@ const scoMusic = {
         document.documentElement.style.setProperty('--vh', `${vh}px`);
         scoMusic.getCustomPlayList();
         document.addEventListener("keydown", scoMusic.setKeydown);
+        scoMusic.buttonlist();
     }
 };
 

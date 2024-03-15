@@ -66,18 +66,18 @@
       margin 0
 
   .console-card
-    background var(--sco-maskbg)
+    background var(--efu-maskbg)
     border-radius 12px
     overflow hidden
     border var(--style-border)
-    box-shadow var(--sco-shadow-border)
+    box-shadow var(--efu-shadow-border)
     padding 40px
 
   .console-card.tags
     height calc(100% - 172px)
 
   .console-mask
-    background var(--sco-maskbgdeep)
+    background var(--efu-maskbgdeep)
     backdrop-filter saturate(180%) blur(20px)
     -webkit-backdrop-filter blur(20px)
     width 100vw
@@ -114,7 +114,7 @@
 
     &:hover
       .thumbnail
-        color var(--sco-white)
+        color var(--efu-white)
 
     .content
       display flex
@@ -140,16 +140,16 @@
 
       &:hover
         .comment
-          color var(--sco-white)
+          color var(--efu-white)
 
       time
         font-size 12px
-        color var(--sco-secondtext)
+        color var(--efu-secondtext)
         margin-top auto
 
       &:hover
         time
-          color var(--sco-white)
+          color var(--efu-white)
 
   .aside-list
     display flex
@@ -172,8 +172,8 @@
 
       a.darkmode_switchbutton
         [data-theme="dark"] &
-          background var(--sco-orange)
-          color var(--sco-white)
+          background var(--efu-orange)
+          color var(--efu-white)
   .button-group
     .console-btn-item
       &:not(:last-child)
@@ -181,35 +181,35 @@
 
       &:hover
         a
-          background var(--sco-main)
+          background var(--efu-main)
 
       a
         width 100%
         height 100%
-        background var(--sco-card-bg)
+        background var(--efu-card-bg)
         border var(--style-border)
         border-radius 60px
         display flex
         align-items center
         justify-content center
-        color var(--sco-fontcolor)
+        color var(--efu-fontcolor)
 
         i
           font-size 1rem
 
       &.on
         a
-          background var(--sco-orange)
-          color var(--sco-white)
+          background var(--efu-orange)
+          color var(--efu-white)
           transition .3s
 
       &:not(.on)
         a:hover
-          background var(--sco-main)
+          background var(--efu-main)
 
       &:hover
         a
-          color var(--sco-white)
+          color var(--efu-white)
 
   .console-card.tags
     .card-tag-cloud
@@ -218,18 +218,18 @@
       flex-wrap wrap
 
       a
-        color var(--sco-fontcolor)
+        color var(--efu-fontcolor)
         margin 6px 4px
         padding 2px 8px
         border-radius 8px
-        background var(--sco-card-bg)
+        background var(--efu-card-bg)
         border var(--style-border)
         font-size 14px
         font-weight 700
 
         &:hover
-          background var(--sco-main)
-          color var(--sco-white)
+          background var(--efu-main)
+          color var(--efu-white)
 
         sup
           opacity .6
@@ -241,7 +241,7 @@
     right max('calc((100% - 1400px) / 2)', someValue)
     top 0
     font-size 35px
-    color var(--sco-fontcolor)
+    color var(--efu-fontcolor)
     cursor pointer
     transition .3s
     display flex
@@ -258,8 +258,8 @@
       transition .6s
 
     i:hover
-      color var(--sco-hovertext)
-      background var(--sco-main-op)
+      color var(--efu-hovertext)
+      background var(--efu-main-op)
       border-radius 32px
 
   .console-card.history
@@ -293,12 +293,12 @@
         align-content space-between
         border var(--style-border)
         transition all .3s ease 0s
-        background var(--sco-maskbgdeep)
+        background var(--efu-maskbgdeep)
         padding 8px 16px
 
         &:hover
-          background var(--sco-main)
-          color var(--sco-white)
+          background var(--efu-main)
+          color var(--efu-white)
           cursor pointer
 
         .card-archive-list-date
@@ -346,7 +346,7 @@
 
 #card-newest-comments
   .aside-list-item
-    background: var(--sco-card-bg)
+    background: var(--efu-card-bg)
     border-radius: 12px
     border: var(--style-border)
     padding: 12px 16px
@@ -359,8 +359,8 @@
     cursor pointer
 
     &:hover
-      background: var(--sco-main)
-      color: var(--sco-white)
+      background: var(--efu-main)
+      color: var(--efu-white)
 
     &:not(:last-child)
       margin-bottom: .5rem

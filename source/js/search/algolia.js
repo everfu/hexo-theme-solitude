@@ -60,7 +60,7 @@ window.addEventListener("load", () => {
         searchClient: algoliasearch(algolia.appId, algolia.apiKey),
         searchFunction(helper) {
             if (helper.state.query) {
-                let innerLoading = '<i class="scoicon sco-loading-line sco-spin"></i>';
+                let innerLoading = '<i class="solitude st-loading-line st-spin"></i>';
                 document.getElementById("algolia-hits").innerHTML = innerLoading;
                 helper.search();
             }
@@ -87,7 +87,7 @@ window.addEventListener("load", () => {
             item(data) {
                 const link = data.permalink ? data.permalink : GLOBAL_CONFIG.root + data.path;
                 const result = data._highlightResult;
-                const loadingLogo = document.querySelector("#algolia-hits .sco-spin");
+                const loadingLogo = document.querySelector("#algolia-hits .st-spin");
                 if (loadingLogo) {
                     loadingLogo.style.display = "none";
                 }
@@ -100,7 +100,7 @@ window.addEventListener("load", () => {
           </a>`;
             },
             empty: function (data) {
-                const loadingLogo = document.querySelector("#algolia-hits .sco-spin");
+                const loadingLogo = document.querySelector("#algolia-hits .st-spin");
                 if (loadingLogo) {
                     loadingLogo.style.display = "none";
                 }
@@ -125,10 +125,10 @@ window.addEventListener("load", () => {
         scrollTo: false,
         showFirstLast: false,
         templates: {
-            first: '<i class="scoicon sco-show-left-line"></i>',
-            last: '<i class="scoicon sco-show-right-line"></i>',
-            previous: '<i class="scoicon sco-arrow-left-bold"></i>',
-            next: '<i class="scoicon sco-arrow-right-bold"></i>',
+            first: '<i class="solitude st-show-left-line"></i>',
+            last: '<i class="solitude st-show-right-line"></i>',
+            previous: '<i class="solitude st-arrow-left-bold"></i>',
+            next: '<i class="solitude st-arrow-right-bold"></i>',
         },
         cssClasses: {
             root: "pagination",

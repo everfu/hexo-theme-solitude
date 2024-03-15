@@ -35,7 +35,6 @@ nav:
   console: 中控台
 
 home:
-  bannertext: 隨便逛逛
   categoryBar:
     home: 首頁
     more: 更多

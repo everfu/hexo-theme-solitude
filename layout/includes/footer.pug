@@ -1,11 +1,11 @@
-div#sco-footer-bar
+div#st-footer-bar
     div.footer-logo
         if theme.site.name.class === 'i_class'
-            i.scoicon(class=theme.site.name.custom)
+            i.solitude(class=theme.site.name.custom)
         else if theme.site.name.class === 'img'
-            i.scoicon(style="background-image: url(" + url_for(theme.site.name.custom) + ")")
+            img.solitude.nolazyload(src=url_for(theme.site.name.custom))
         else if theme.site.name.class === 'text'
-            span.scoicon= theme.site.name.custom
+            span.solitude= theme.site.name.custom
     div.footer-bar-description= __('footer.description').replace(/\$\{title}/, config.title + " - " + config.subtitle)
     a.footer-bar-link(href="/")= __('footer.learnmore')
 div#footer_deal
@@ -15,7 +15,7 @@ div#footer_deal
     each value, label in leftInfo
         - var array = value.split('||')
         a.deal_link(href=url_for(trim(array[0])), title=label)
-            i.scoicon(class=array[1])
+            i.solitude(class=array[1])
 
     div#footer_mini_logo.footer_mini_logo(title=_p('nav.backtop'), onclick="sco.toTop()")
         img(src=theme.site.icon, alt=_p('nav.backtop'))
@@ -23,8 +23,8 @@ div#footer_deal
     each value, label in rightInfo
         - var array = value.split('||')
         a.deal_link(href=url_for(trim(array[0])), title=label)
-            i.scoicon(class=array[1])
-div#sco-footer
+            i.solitude(class=array[1])
+div#st-footer
     - var group = theme.footer && theme.footer.group ? theme.footer.group : {}
 
     each value, x in group
@@ -39,7 +39,7 @@ div#sco-footer
             div.footer-title-group
                 h3.footer-title= _p('footer.randomlink')
                 a.random-friends-btn(href="javascript:randomLinksList();")
-                    i.scoicon.sco-refresh-line
+                    i.solitude.st-refresh-line
             div.footer-links#friend-links-in-footer
 div#footer-bar
     div.footer-bar-links
@@ -54,16 +54,16 @@ div#footer-bar
             each item in theme.footer.links
                 a.footer-bar-link(href=url_for(item.url), title=item.name)= item.name
             a.footer-bar-link.cc(href=theme.footer.license)
-                i.scoicon.sco-copyright-line
-                i.scoicon.sco-creative-commons-by-line
-                i.scoicon.sco-creative-commons-nc-line
-                i.scoicon.sco-creative-commons-nd-line
+                i.solitude.st-copyright-line
+                i.solitude.st-creative-commons-by-line
+                i.solitude.st-creative-commons-nc-line
+                i.solitude.st-creative-commons-nd-line
 if theme.footer.privacy
     div.needEndHide#cookies-window
         div.cookies-window-title= __('cookies.title')
         div.cookies-window-content
             span.cookies-tip= __('cookies.tip')
             a.cookies-link(href=theme.footer.privacy, title=_p('cookies.privacy'))
-                i.scoicon.sco-right-btn-fill
+                i.solitude.st-right-btn-fill
 if theme.comment.enable && theme.comment.commentBarrage
     div.comment-barrage.needEndHide

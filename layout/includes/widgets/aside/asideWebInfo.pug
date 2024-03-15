@@ -2,39 +2,39 @@
     if theme.aside.siteinfo.postcount
         .webinfo-item
             .webinfo-item-title
-                i.item-icon.scoicon.sco-folder-fill
+                i.item-icon.solitude.st-folder-fill
                 .item-name= __('aside.postcount')
             .item-count= site.posts.length
     if theme.busuanzi
         if theme.aside.siteinfo.pv
             .webinfo-item
                 .webinfo-item-title
-                    i.item-icon.scoicon.sco-visitor-line
+                    i.item-icon.solitude.st-visitor-line
                     .item-name= __('aside.pv')
                 span#busuanzi_value_site_pv
-                    i.scoicon.sco-loading-line
+                    i.solitude.st-loading-line
         if theme.aside.siteinfo.uv
             .webinfo-item
                 .webinfo-item-title
-                    i.item-icon.scoicon.sco-team-fill
+                    i.item-icon.solitude.st-team-fill
                     .item-name= __('aside.uv')
                 span#busuanzi_value_site_uv
-                    i.scoicon.sco-loading-line
+                    i.solitude.st-loading-line
     if theme.aside.siteinfo.runtimeenable
         .webinfo-item
             .webinfo-item-title
-                i.item-icon.scoicon.sco-calendar-todo-fill
+                i.item-icon.solitude.st-calendar-todo-fill
                 .item-name= __('aside.runtime')
             .item-count#runtimeshow
     if theme.aside.siteinfo.updatetime
         .webinfo-item
             .webinfo-item-title
-                i.item-icon.scoicon.sco-loop-left-fill
+                i.item-icon.solitude.st-loop-left-fill
                 .item-name= __('aside.updatetime')
             time.item-count(datetime=new Date())
     if theme.wordcount && theme.aside.siteinfo.wordcount
         .webinfo-item
             .webinfo-item-title
-                i.item-icon.scoicon.sco-word-fill
+                i.item-icon.solitude.st-word-fill
                 .item-name= __('aside.wordcount')
             .item-count= totalcount(site)

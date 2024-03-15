@@ -31,7 +31,7 @@
       display flex
       position relative
       margin 1rem 0
-      border 1px dashed var(--sco-theme-op)
+      border 1px dashed var(--efu-theme-op)
 
     .item-headline
       display none
@@ -54,7 +54,7 @@
         left 0
         right 0
         height 150px
-        background-image linear-gradient(to top, var(--sco-card-bg), transparent)
+        background-image linear-gradient(to top, var(--efu-card-bg), transparent)
         pointer-events none
 
       a
@@ -68,9 +68,9 @@
           margin-left 2px
 
         &:hover
-          background var(--sco-theme)
-          color var(--sco-white) !important
-          box-shadow var(--sco-shadow-theme)
+          background var(--efu-theme)
+          color var(--efu-white) !important
+          box-shadow var(--efu-shadow-theme)
           cursor pointer
           border-radius 5px
 
@@ -85,8 +85,8 @@
     a#more-tags-btn
       width 100%
       text-align center
-      background var(--sco-secondbg)
-      color var(--sco-fontcolor)
+      background var(--efu-secondbg)
+      color var(--efu-fontcolor)
       border-radius 8px
       display flex
       justify-content center
@@ -114,7 +114,7 @@
           display inline-block
           padding .15rem .5rem
           width 100%
-          color var(--sco-fontcolor)
+          color var(--efu-fontcolor)
           transition all .4s ease 0s
           border-radius: 8px
           margin: 4px 0
@@ -123,10 +123,10 @@
           border: var(--style-border)
 
           &:hover
-            background-color var(--sco-theme)
-            color var(--sco-card-bg)
+            background-color var(--efu-theme)
+            color var(--efu-card-bg)
             border-radius 5px
-            box-shadow: var(--sco-shadow-theme)
+            box-shadow: var(--efu-shadow-theme)
             padding: .15rem .5rem
             border: var(--style-border-hover)
             cursor pointer
@@ -164,5 +164,5 @@ if hexo-config('aside.tags.highlight')
   for tag in highlightTags
     tag = '"/tags/' + tag + '/"'
     #aside-content .card-tag-cloud a[href*={tag}]
-      color var(--sco-lighttext)
+      color var(--efu-lighttext)
       font-weight 500

@@ -1,5 +1,5 @@
 #article-container .tag-Link
-  background var(--sco-secondbg)
+  background var(--efu-secondbg)
   border-radius 8px !important
   display flex
   border var(--style-border)
@@ -8,19 +8,20 @@
   border-width 1px !important
   margin-top 1rem
 
-  /#article-container a.tag-Link:not(.headerlink):hover
-    border var(--style-border-hover)
+  &:hover
+    color var(--efu-main) !important
+    border var(--style-border-hover) !important
 
   .tag-link-tips
     border-bottom var(--style-border-always)
     padding-bottom 4px
     font-size .6rem
-    color var(--sco-gray)
+    color var(--efu-gray)
     font-weight 400
     pointer-events none
 
   &:hover .tag-link-tips
-    color var(--sco-card-bg)
+    color var(--efu-card-bg)
     opacity .6
 
   .tag-link-bottom
@@ -36,7 +37,7 @@
       height 60px
       background-size cover !important
       border-radius 8px
-      background var(--sco-card-bg)
+      background var(--efu-card-bg)
       pointer-events none
       display flex
 
@@ -44,7 +45,7 @@
         padding 0
         margin auto
         font-size 24px
-        color var(--sco-fontcolor)
+        color var(--efu-fontcolor)
 
     .tag-link-right
       margin-left 1rem
@@ -63,7 +64,7 @@
 
       .tag-link-sitename
         font-size .7rem
-        color var(--sco-gray)
+        color var(--efu-gray)
         font-weight 400
         margin-top 8px
         pointer-events none
@@ -73,7 +74,7 @@
         white-space nowrap
 
   &:hover .tag-link-bottom .tag-link-right .tag-link-sitename
-    color var(--sco-card-bg)
+    color var(--efu-card-bg)
     opacity .6
 
   .tag-link-bottom i

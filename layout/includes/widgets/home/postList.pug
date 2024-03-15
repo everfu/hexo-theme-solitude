@@ -7,7 +7,7 @@ div.recent-post-item(onclick="pjax.loadUrl('" + url_for(post.path) + "')")
             div.recent-post-info-top-tips
                 if post.sticky && is_home()
                     span.article-meta.sticky-warp
-                        i.scoicon.sco-thumbtack-solid.sticky.orange
+                        i.solitude.st-thumbtack-solid.sticky.orange
                         span.sticky.orange= _p('home.recent-post.sticky')
                 each category in post.categories.data
                     span.original= category.name
@@ -27,3 +27,9 @@ div.recent-post-item(onclick="pjax.loadUrl('" + url_for(post.path) + "')")
 
             span.post-meta-date
                 time(datetime=moment(post.date))
+if (theme.google_adsense && theme.google_adsense.enable && theme.google_adsense.auto_ads === false)
+    if (index + 1) % 3 == 0
+        div.recent-post-item.google-ads-warp
+            ins.adsbygoogle(style="display:block; text-align:center;", data-ad-layout="in-article", data-ad-format="fluid", data-ad-client=theme.google_adsense.client, data-ad-slot=theme.google_adsense.slot)
+            script.
+                (adsbygoogle = window.adsbygoogle || []).push({});

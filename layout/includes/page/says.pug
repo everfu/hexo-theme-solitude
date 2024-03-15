@@ -13,7 +13,7 @@ if theme.says.enable
                                     time.datetime.bber_date(datetime=moment(item.date).format())
                                 if item.content
                                     a.bber-reply.goComment(onclick=`sco.toTalk('${item.content}')`)
-                                        i.scoicon.sco-chat-fill
+                                        i.solitude.st-chat-fill
 
                         #bber-content
                             p.datacont= item.content
@@ -24,7 +24,7 @@ if theme.says.enable
 
                         if item.aplayer
                             .bber-music
-                                meting-js(server=item.aplayer.server type="song" id=item.aplayer.id mutex="true" preload="none" theme="var(--sco-main)" data-lrctype="0")
+                                meting-js(server=item.aplayer.server type="song" id=item.aplayer.id mutex="true" preload="none" theme="var(--st-main)" data-lrctype="0")
 
                         if item.video
                             .bber-video
@@ -38,15 +38,15 @@ if theme.says.enable
                             .bber-bottom
                                 .bber-info
                                     .bber-info-time
-                                        i.scoicon.sco-calendar-todo-fill
+                                        i.solitude.st-calendar-todo-fill
                                         time.datetime(datetime=moment(item.date).format())
                                     if item.link
                                         a.bber-content-link(href=url_for(item.link) title="跳转到短文指引的链接" target="_blank")
-                                            i.scoicon.sco-link-m-line
+                                            i.solitude.st-link-m-line
                                             | 链接
                                 if item.content
                                     a.bber-reply(onclick=`sco.toTalk('${item.content}')`)
-                                        i.scoicon.sco-chat-fill
+                                        i.solitude.st-chat-fill
             #bber-tips
                 if theme.says.strip === -1
                     | - 已展开所有短文 -

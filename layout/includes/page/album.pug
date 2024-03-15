@@ -5,12 +5,12 @@ include ../widgets/page/banner
 
 if album
     #album
-        #sco-container
+        #st-container
             if album.json
                 script.
                     function initGallery() {
-                        let macy = Macy({ container: '#sco-container', trueOrder: false, waitForImages: true, margin: 5, columns: !{limit}, breakAt: { 1200: 5, 940: 3, 520: 2, 400: 1 }})
-                        macy.runOnImageLoad(function () { setTimeout(function () { GLOBAL_CONFIG.lightbox && utils.lightbox(document.querySelectorAll(".sco-gallery-item img")); macy.recalculate(true); }, 500); }, true)
+                        let macy = Macy({ container: '#st-container', trueOrder: false, waitForImages: true, margin: 5, columns: !{limit}, breakAt: { 1200: 5, 940: 3, 520: 2, 400: 1 }})
+                        macy.runOnImageLoad(function () { setTimeout(function () { GLOBAL_CONFIG.lightbox && utils.lightbox(document.querySelectorAll(".st-gallery-item img")); macy.recalculate(true); }, 500); }, true)
                     }
                     (async function () {
                         await fetch('!{url_for(album.json)}')
@@ -18,8 +18,8 @@ if album
                             .then(data => {
                                 let html = ''
                                 data = data.sort((a, b) => b.date - a.date)
-                                data.forEach(item => { html += `<div class="sco-gallery-item"><span class="locate">${item.locate}</span><img class="sco-gallery-image" src="${item.image}" alt="${item.content}"></div>` })
-                                document.querySelector('#sco-container').innerHTML = html
+                                data.forEach(item => { html += `<div class="st-gallery-item"><span class="locate">${item.locate}</span><img class="st-gallery-image" src="${item.image}" alt="${item.content}"></div>` })
+                                document.querySelector('#st-container').innerHTML = html
                                 GLOBAL_CONFIG.lazyload.enable && utils.lazyloadImg();
                                 initGallery()
                             })
@@ -27,12 +27,12 @@ if album
 
             else
                 each item in album.items.sort((a, b) => b.date - a.date)
-                    .sco-gallery-item
+                    .st-gallery-item
                         span.locate= item.locate
-                        img.sco-gallery-image(src=item.image, alt=item.content)
+                        img.st-gallery-image(src=item.image, alt=item.content)
                 script.
                     function initGallery(){
-                        let macy = Macy({ container: '#sco-container', trueOrder: false, waitForImages: true, margin: 5, columns: !{limit}, breakAt: { 1200: 5, 940: 3, 520: 2, 400: 1 }})
-                        macy.runOnImageLoad(function () { setTimeout(function () { GLOBAL_CONFIG.lightbox && utils.lightbox(document.querySelectorAll(".sco-gallery-item img")); macy.recalculate(true); }, 500); }, true)
+                        let macy = Macy({ container: '#st-container', trueOrder: false, waitForImages: true, margin: 5, columns: !{limit}, breakAt: { 1200: 5, 940: 3, 520: 2, 400: 1 }})
+                        macy.runOnImageLoad(function () { setTimeout(function () { GLOBAL_CONFIG.lightbox && utils.lightbox(document.querySelectorAll(".st-gallery-item img")); macy.recalculate(true); }, 500); }, true)
                     }
                     document.addEventListener('DOMContentLoaded', initGallery);

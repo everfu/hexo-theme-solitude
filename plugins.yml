@@ -82,17 +82,9 @@ snackbar:
   name: node-snackbar
   file: dist/snackbar.min.js
   version: 0.1.16
-scoicon_css:
-  name: solitude-source
-  file: icon/scoicon.min.css
-  version: 1.0.5
-waterfall:
-  name: solitude-source
-  file: js/waterfall.min.js
-  version: 1.0.5
-universe_js:
-  name: solitude-source
-  file: js/universe.min.js
+solitude_css:
+  name: st-source
+  file: icon/solitude.min.css
   version: 1.0.5
 medium_zoom:
   name: medium-zoom
@@ -110,3 +102,7 @@ macy_js:
   name: macy
   file: dist/macy.min.js
   version: 2.5.1
+mermaid_js:
+  name: mermaid
+  file: dist/mermaid.min.js
+  version: 10.8.0

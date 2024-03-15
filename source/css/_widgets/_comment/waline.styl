@@ -17,12 +17,12 @@
     vertical-align bottom
     font-size 14px
     min-height 8.75em
-    background-color var(--sco-card-bg)
+    background-color var(--efu-card-bg)
     resize vertical
     line-height 1.5
     box-sizing border-box
-    background var(--sco-secondbg)
-    color var(--sco-fontcolor)
+    background var(--efu-secondbg)
+    color var(--efu-fontcolor)
     border-radius 12px
     padding 16px 16px 40px 16px
     border var(--style-border-always)
@@ -31,7 +31,7 @@
     &:focus
       outline none
       border var(--style-border-hover-always)
-      box-shadow var(--sco-shadow-main)
+      box-shadow var(--efu-shadow-main)
 
   .wl-footer
     position relative
@@ -50,7 +50,7 @@
     z-index 1000
     border var(--style-border-always)
     border-radius 8px !important
-    background-color var(--sco-maskbg)
+    background-color var(--efu-maskbg)
     backdrop-filter saturate(180%) blur(10px)
     transform translateZ(0)
     animation 0.3s ease 0.1s 1 normal both running donate_effcet
@@ -81,7 +81,7 @@
       margin 0
       padding 0
       font-size 0
-      background var(--sco-background)
+      background var(--efu-background)
       padding-left 8px
 
 
@@ -119,7 +119,7 @@
     position relative
 
     .wl-text-number
-      color var(--sco-secondtext)
+      color var(--efu-secondtext)
       -webkit-user-select none
       position absolute
       font-size 12px
@@ -153,7 +153,7 @@
     .wl-header-item
       width calc((100% - 1rem) / 3)
       border-radius 12px
-      background var(--sco-secondbg)
+      background var(--efu-secondbg)
       border var(--style-border-always)
       display inline-table
       line-height normal
@@ -172,9 +172,10 @@
         vertical-align middle
         display table-cell
         position relative
-        background var(--sco-card-bg)
+        background var(--efu-card-bg)
 
       input
+        width 100%
         vertical-align middle
         display table-cell
         height 32px
@@ -184,26 +185,26 @@
         padding-left 16px
         border-left-width 0
         font-size inherit
-        background var(--sco-secondbg)
+        background var(--efu-secondbg)
         border none
-        color var(--sco-fontcolor)
+        color var(--efu-fontcolor)
 
         &:focus
           outline none
           border none
 
   .wl-btn
-    border-color var(--sco-fontcolor)
+    border-color var(--efu-fontcolor)
     border-radius 12px
-    box-shadow var(--sco-shadow-black)
+    box-shadow var(--efu-shadow-black)
     transition .3s
     width 5rem
     position absolute
     margin-left 0.5rem
     height 34px
-    background-color var(--sco-fontcolor)
-    border 0 solid var(--sco-main)
-    color var(--sco-background)
+    background-color var(--efu-fontcolor)
+    border 0 solid var(--efu-main)
+    color var(--efu-background)
     top 10px
     right 0
     opacity .2
@@ -212,17 +213,17 @@
       height 122px
 
     &:hover
-      background var(--sco-main)
-      color var(--sco-white)
+      background var(--efu-main)
+      color var(--efu-white)
 
   .wl-power
     padding 0.5em 0
-    color var(--sco-gray)
+    color var(--efu-gray)
     font-size 0.8em
     text-align end
 
     a
-      color var(--sco-fontcolor)
+      color var(--efu-fontcolor)
 
   .wl-count
     display none
@@ -237,7 +238,7 @@
 
     li
       cursor pointer
-      background var(--sco-secondbg)
+      background var(--efu-secondbg)
       transition 0.3s
       border var(--style-border-always)
       border-radius 8px
@@ -247,17 +248,17 @@
       display flex
       justify-content center
       align-items center
-      color var(--sco-fontcolor)
+      color var(--efu-fontcolor)
 
       &:hover
-        background var(--sco-main)
-        color var(--sco-white)
+        background var(--efu-main)
+        color var(--efu-white)
         transition 0.3s
         border var(--style-border-hover-always)
 
       &.active
-        background var(--sco-lighttext)
-        color var(--sco-background)
+        background var(--efu-lighttext)
+        color var(--efu-background)
 
   .wl-card-item
     display flex
@@ -265,7 +266,7 @@
     word-break break-all
     margin-top 0
     margin-bottom 0.5rem
-    background var(--sco-card-bg)
+    background var(--efu-card-bg)
     transition .3s
     border-radius 12px
     border-top var(--style-border-dashed)
@@ -275,7 +276,7 @@
   .wl-user
     flex-shrink 0
     text-align center
-    box-shadow var(--sco-shadow-border)
+    box-shadow var(--efu-shadow-border)
     margin-right 16px
     width 32px
     height 32px
@@ -302,7 +303,7 @@
 
     .wl-nick
       font-weight 700
-      color var(--sco-lighttext)
+      color var(--efu-lighttext)
       text-decoration none
       font-size 1rem
       line-height 32px
@@ -318,7 +319,7 @@
       background-color #c0c23a21
 
     .wl-time
-      color var(--sco-secondtext)
+      color var(--efu-secondtext)
       font-size .6rem
       margin-left 0.5rem
 
@@ -330,20 +331,20 @@
     gap 0.5rem
 
     button
-      color var(--sco-lighttext)
+      color var(--efu-lighttext)
       -webkit-user-select none
       padding 0 12px 0 12px
       transition .3s
       border-radius 8px
-      background-color var(--sco-secondbg)
+      background-color var(--efu-secondbg)
       border var(--style-border-always)
       display flex
       justify-content center
       align-items center
 
       &:hover
-        background-color var(--sco-lighttext)
-        color var(--sco-card-bg)
+        background-color var(--efu-lighttext)
+        color var(--efu-card-bg)
 
       &.wl-like
         +maxWidth768()
@@ -359,12 +360,12 @@
     margin .5rem 0
 
     span
-      background var(--sco-secondbg)
+      background var(--efu-secondbg)
       border var(--style-border-always)
       padding 1px 5px 1px 2px
       border-radius 8px
       margin-right 4px
-      color var(--sco-secondtext)
+      color var(--efu-secondtext)
       display inline
       font-size .5rem
       line-height 1
@@ -390,7 +391,7 @@
       font-family ui-monospace, SFMono-Regular, "SF Mono", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace
 
     pre
-      background var(--sco-secondbg)
+      background var(--efu-secondbg)
       padding .5rem
       margin 0.5rem 0
       overflow auto
@@ -419,18 +420,18 @@
       padding 0.75em
       transition all 0.5s
       font-size 0.75em
-      background var(--sco-card-bg)
-      color var(--sco-fontcolor)
+      background var(--efu-card-bg)
+      color var(--efu-fontcolor)
       border var(--style-border-always)
-      box-shadow var(--sco-shadow-border)
+      box-shadow var(--efu-shadow-border)
       border-radius 12px
       opacity 1
       height auto
       line-height 2
 
       &:hover
-        background var(--sco-lighttext)
-        color var(--sco-card-bg)
+        background var(--efu-lighttext)
+        color var(--efu-card-bg)
 
   .wl-loading
     display flex
@@ -445,10 +446,10 @@
     display flex
     justify-content center
     align-items center
-    color var(--sco-lighttext)
+    color var(--efu-lighttext)
 
 #page .wl-cards > .wl-card-item
   padding 1rem 1rem 1.5rem
   border var(--style-border)
   border-top var(--style-border)
-  box-shadow var(--sco-shadow-border)
+  box-shadow var(--efu-shadow-border)

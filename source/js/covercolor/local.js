@@ -3,10 +3,10 @@ const coverColor = () => {
     if (path) {
         localColor(path);
     } else {
-        document.documentElement.style.setProperty('--sco-main', 'var(--sco-theme)');
-        document.documentElement.style.setProperty('--sco-main-op', 'var(--sco-theme-op)');
-        document.documentElement.style.setProperty('--sco-main-op-deep', 'var(--sco-theme-op-deep)');
-        document.documentElement.style.setProperty('--sco-main-none', 'var(--sco-theme-none)');
+        document.documentElement.style.setProperty('--st-main', 'var(--st-theme)');
+        document.documentElement.style.setProperty('--st-main-op', 'var(--st-theme-op)');
+        document.documentElement.style.setProperty('--st-main-op-deep', 'var(--st-theme-op-deep)');
+        document.documentElement.style.setProperty('--st-main-none', 'var(--st-theme-none)');
         initThemeColor()
     }
 }
@@ -108,23 +108,23 @@ function colorRgb(str) {
 
 function setThemeColors(value, r = null, g = null, b = null) {
     if (value) {
-        document.documentElement.style.setProperty('--sco-main', value);
-        document.documentElement.style.setProperty('--sco-main-op', value + '23');
-        document.documentElement.style.setProperty('--sco-main-op-deep', value + 'dd');
-        document.documentElement.style.setProperty('--sco-main-none', value + '00');
+        document.documentElement.style.setProperty('--st-main', value);
+        document.documentElement.style.setProperty('--st-main-op', value + '23');
+        document.documentElement.style.setProperty('--st-main-op-deep', value + 'dd');
+        document.documentElement.style.setProperty('--st-main-none', value + '00');
 
         if (r && g && b) {
             let brightness = Math.round(((parseInt(r) * 299) + (parseInt(g) * 587) + (parseInt(b) * 114)) / 1000);
             if (brightness < 125) {
                 let cardContents = document.getElementsByClassName('card-content');
                 for (let i = 0; i < cardContents.length; i++) {
-                    cardContents[i].style.setProperty('--sco-card-bg', 'var(--sco-white)');
+                    cardContents[i].style.setProperty('--st-card-bg', 'var(--st-white)');
                 }
 
                 let authorInfo = document.getElementsByClassName('author-info__sayhi');
                 for (let i = 0; i < authorInfo.length; i++) {
-                    authorInfo[i].style.setProperty('background', 'var(--sco-white-op)');
-                    authorInfo[i].style.setProperty('color', 'var(--sco-white)');
+                    authorInfo[i].style.setProperty('background', 'var(--st-white-op)');
+                    authorInfo[i].style.setProperty('color', 'var(--st-white)');
                 }
             }
         }
@@ -132,10 +132,10 @@ function setThemeColors(value, r = null, g = null, b = null) {
         document.getElementById("coverdiv").classList.add("loaded");
         initThemeColor();
     } else {
-        document.documentElement.style.setProperty('--sco-main', 'var(--sco-theme)');
-        document.documentElement.style.setProperty('--sco-main-op', 'var(--sco-theme-op)');
-        document.documentElement.style.setProperty('--sco-main-op-deep', 'var(--sco-theme-op-deep)');
-        document.documentElement.style.setProperty('--sco-main-none', 'var(--sco-theme-none)');
+        document.documentElement.style.setProperty('--st-main', 'var(--st-theme)');
+        document.documentElement.style.setProperty('--st-main-op', 'var(--st-theme-op)');
+        document.documentElement.style.setProperty('--st-main-op-deep', 'var(--st-theme-op-deep)');
+        document.documentElement.style.setProperty('--st-main-none', 'var(--st-theme-none)');
         initThemeColor();
     }
 }
@@ -144,11 +144,11 @@ function initThemeColor() {
     const currentTop = window.scrollY || document.documentElement.scrollTop;
     let themeColor;
     if (currentTop > 0) {
-        themeColor = getComputedStyle(document.documentElement).getPropertyValue('--sco-card-bg');
+        themeColor = getComputedStyle(document.documentElement).getPropertyValue('--st-card-bg');
     } else if (PAGE_CONFIG.is_post) {
-        themeColor = getComputedStyle(document.documentElement).getPropertyValue('--sco-main');
+        themeColor = getComputedStyle(document.documentElement).getPropertyValue('--st-main');
     } else {
-        themeColor = getComputedStyle(document.documentElement).getPropertyValue('--sco-background');
+        themeColor = getComputedStyle(document.documentElement).getPropertyValue('--st-background');
     }
     changeThemeColor(themeColor);
 }

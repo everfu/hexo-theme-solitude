@@ -82,7 +82,7 @@ function initializeCommentBarrage() {
                     <a class="barrageTitle" href="javascript:sco.scrollTo('post-comment')">热评</a>
                     <div class="barrageNick">${comment.nick}</div>
                     <img class="barrageAvatar" src="https://cravatar.cn/avatar/${comment.mailMd5}"/>
-                    <a class="comment-barrage-close" href="javascript:sco.switchCommentBarrage();"><i class="scoicon sco-close-fill"></i></a>
+                    <a class="comment-barrage-close" href="javascript:sco.switchCommentBarrage();"><i class="solitude st-close-fill"></i></a>
                 </div>
                 <a class="barrageContent" href="javascript:sco.scrollTo('${comment.id}');">${commentContent}</a>
             `;

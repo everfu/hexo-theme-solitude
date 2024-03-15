@@ -1,0 +1,35 @@
+<!---
+☝️ PR title should follow conventional commits (https://conventionalcommits.org)
+
+Please carefully read the contribution docs before creating a pull request
+ 👉 https://github.com/valor-x/hexo-theme-solitude/blob/main/CONTRIBUTING.md
+-->
+
+### 🔗 链接 issue
+
+<!-- 请确保存在未解决的问题，将编号提及为 #123（示例） -->
+
+### ❓ 修改类型
+
+<!--代码引入了哪些类型的更改？在所有适用的框中放置一个“x”。 -->
+
+- [ ] 🐞 Bug fix (修复问题的连续性改)
+- [ ] 👌 增强功能（改进现有功能，如性能）
+- [ ] ✨ Feature（添加功能的连续性修改）
+- [ ] ⚠️ 中断修改（重大的修改，如配置文件调整、模块移除）
+
+### 📚 描述
+
+<!-- 详细说明你的更改 -->
+<!-- 为什么需要此更改？它解决了什么问题？-->
+<!-- 如果它解决了未解决的问题，请在此处链接到该问题。例如，“Resolves #1337” -->
+
+### 📝 清单
+
+<!-- 在所有适用的框中放置一个“x”。 -->
+<!-- 如果更改需要文档 PR，请适当地链接它 -->
+<!-- 如果不确定其中任何一个，请随时询问。我们是来帮忙的！ -->
+
+- [ ] 我已链接问题或讨论。
+- [ ] 我已经添加了测试（如果可能的话）。
+- [ ] 我已相应地更新了[文档](https://github.com/efuo/theme-solitude-docs)。

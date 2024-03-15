@@ -13,14 +13,14 @@
     padding 0 1rem
 
   > .recent-post-item
-    box-shadow var(--sco-shadow-light2black)
+    box-shadow var(--efu-shadow-light2black)
     display flex
     align-items center
     animation slide-in .6s .4s backwards
     transition all .3s ease 0s
     overflow hidden
     height fit-content
-    background var(--sco-card-bg)
+    background var(--efu-card-bg)
     border-radius 12px
     cursor pointer
     border var(--style-border)
@@ -31,20 +31,20 @@
       width calc(100% / 2 - .5rem)
       margin-top .25rem
       margin-bottom .75rem
-      box-shadow var(--sco-shadow-border)
+      box-shadow var(--efu-shadow-border)
 
     +maxWidth768()
       margin 1.5rem 0
       border-radius 12px
       margin-top 0.5rem
       border var(--style-border-always)
-      box-shadow var(--sco-shadow-border)
+      box-shadow var(--efu-shadow-border)
       display block
       position relative
       clip-path inset(0 0 0 0 round 12px)
 
     &:hover
-      box-shadow var(--sco-shadow-main)
+      box-shadow var(--efu-shadow-main)
       border var(--style-border-hover)
 
       .post_cover img.post_bg
@@ -53,7 +53,14 @@
         filter brightness(.85)
 
       .recent-post-info-top .article-title
-        color var(--sco-theme)
+        color var(--efu-theme)
+        
+    if hexo-config('google_adsense.enable')
+      + .google-ads-warp
+        iframe
+          width: 100% !important
+          height: 100% !important
+          border: none !important
 
     .post_cover
       position relative
@@ -108,7 +115,7 @@
         transition .3s
 
         &:hover
-          color var(--sco-main)
+          color var(--efu-main)
 
       .recent-post-info-top
         position relative
@@ -148,19 +155,19 @@
 
           .original
             display flex
-            color var(--sco-secondtext)
+            color var(--efu-secondtext)
             font-size .5rem
             position relative
             margin-right 8px
 
           .unvisited-post
             display flex
-            color var(--sco-secondtext)
+            color var(--efu-secondtext)
             font-size .5rem
             position relative
 
             &:visited
-              color var(--sco-card-bg)
+              color var(--efu-card-bg)
 
       /.article-meta-wrap
         position absolute
@@ -174,7 +181,7 @@
         left 0
         padding 0 32px
         white-space nowrap
-        color var(--sco-fontcolor)
+        color var(--efu-fontcolor)
         font-size .7rem
 
         > .article-meta
@@ -187,7 +194,7 @@
           > .article-meta__tags
             margin-right 8px
             padding 0 .2rem 0 0
-            color var(--sco-fontcolor)
+            color var(--efu-fontcolor)
 
         > .post-meta-date
           right 0
@@ -200,8 +207,8 @@
           display none
 
         a:hover
-          background-color var(--sco-none)
-          color var(--sco-lighttext)
+          background-color var(--efu-none)
+          color var(--efu-lighttext)
           cursor pointer
           border-radius 4px
 
@@ -209,4 +216,4 @@
           margin 0 .4rem 0 0
 
         .sticky
-          color var(--sco-fontcolor)
+          color var(--efu-fontcolor)
