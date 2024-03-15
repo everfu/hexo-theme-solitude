@@ -18,7 +18,7 @@
 
 </div>
 
-![首頁](https://github.com/valor-x/hexo-theme-solitude/assets/74389842/d008aba4-942d-4fdb-a611-d934c0bad9fe)
+![Screenshot](./source/img/screenshot.png)
 
 ## 特性
 
