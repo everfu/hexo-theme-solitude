@@ -2,15 +2,7 @@
 
 <div align="center">
 
-   <style>
-     @media (prefers-color-scheme: dark) {
-            svg path {
-                fill: #ffffff;
-            }
-        }
-   </style>   
-
-   <img src=".github/logo.svg" alt="Solitude logo" height="250">
+   <img src=".github/logo.svg" alt="Solitude logo" height="249">
 
    <h1 align="center">Hexo Theme Solitude</h1>
 
