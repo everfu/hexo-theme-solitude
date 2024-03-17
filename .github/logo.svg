@@ -1,7 +1,9 @@
 <svg width="230.246382px" height="528.14px" viewBox="0 0 230.246382 528.14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <style>
-        .dark path {
-        fill: #fff;
+        @media (prefers-color-scheme: dark) {
+            path {
+                fill: #ffffff;
+            }
         }
     </style>
     <g transform="translate(-226, -116)" fill="#000000">
