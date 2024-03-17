@@ -2,7 +2,7 @@
 
 <div align="center">
 
-   <img src=".github/logo.svg" alt="Solitude logo" height="249">
+   <img src=".github/logo.svg" alt="Solitude logo" height="200">
 
    <h1 align="center">Hexo Theme Solitude</h1>
 
