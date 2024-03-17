@@ -1,7 +1,8 @@
 [简体中文](README.md)丨繁体中文丨[English](README_EN.md)
 
 <div align="center">
-  <img width="200" style="border-radius:10%;" src="./.github/logo.png" alt="Solitude logo"/>
+  
+   <img src=".github/logo.svg" alt="Solitude logo" height="200">
 
   <h1 align="center">Hexo Theme Solitude</h1>
 

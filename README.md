@@ -1,11 +1,12 @@
 简体中文丨[繁体中文](README_zh-tw.md)丨[English](README_EN.md)
 
 <div align="center">
-  <img width="200" style="border-radius:10%;" src="./.github/logo.png" alt="Solitude logo"/>
 
-  <h1 align="center">Hexo Theme Solitude</h1>
+   <img src=".github/logo.svg" alt="Solitude logo" height="200">
 
-  <p align="center">一款优雅的 Hexo 主题，支持懒加载、PWA、Latex以及多种评论系统。</p>
+   <h1 align="center">Hexo Theme Solitude</h1>
+
+   <p align="center">一款优雅的 Hexo 主题，支持懒加载、PWA、Latex以及多种评论系统。</p>
 
 ![release](https://img.shields.io/github/package-json/v/valor-x/hexo-theme-solitude/master?color=%231ab1ad&label=release)
 ![https://img.shields.io/npm/v/hexo-theme-solitude?color=%09%23bf00ff](https://img.shields.io/npm/v/hexo-theme-solitude?color=%09%23bf00ff)

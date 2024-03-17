@@ -6,13 +6,13 @@ hexo.extend.filter.register('after_post_render', function (data) {
     if (data.layout === 'post') {
         data.locate = data.locate || config.post.default.locate
         data.cc = data.cc || config.post.default.copyright
-        data.cover = data.cover || config.post.default.cover[getRandomInt(0, config.post.default.cover.length)]
+        data.cover = data.cover || config.post.default.cover[getRandomInt(0, config.post.default.cover.length)] || '/img/default.png'
         data.excerpt = data.description || data.excerpt
         if (config.aside.toc.post && data.toc !== false) data.toc = true
         else data.toc = false
     }
     if (data.layout === 'page') {
-        data.cover = data.cover || config.page.default.cover[getRandomInt(0, config.post.default.cover.length)]
+        data.cover = data.cover || config.page.default.cover[getRandomInt(0, config.post.default.cover.length)] || '/img/default.png'
         data.excerpt = data.title
         if (config.aside.toc.page && data.toc !== false && data.aside) data.toc = true
         else data.toc = false
