@@ -3,10 +3,10 @@ const coverColor = () => {
     if (path) {
         handleApiColor(path);
     } else {
-        document.documentElement.style.setProperty('--st-main', 'var(--efu-theme)');
-        document.documentElement.style.setProperty('--st-main-op', 'var(--efu-theme-op)');
-        document.documentElement.style.setProperty('--st-main-op-deep', 'var(--efu-theme-op-deep)');
-        document.documentElement.style.setProperty('--st-main-none', 'var(--efu-theme-none)');
+        document.documentElement.style.setProperty('--efu-main', 'var(--efu-theme)');
+        document.documentElement.style.setProperty('--efu-main-op', 'var(--efu-theme-op)');
+        document.documentElement.style.setProperty('--efu-main-op-deep', 'var(--efu-theme-op-deep)');
+        document.documentElement.style.setProperty('--efu-main-none', 'var(--efu-theme-none)');
         initThemeColor()
     }
 }
@@ -43,17 +43,17 @@ function img2color(src) {
 
 function setThemeColors(value, r = null, g = null, b = null) {
     if (value) {
-        document.documentElement.style.setProperty('--st-main', value);
-        document.documentElement.style.setProperty('--st-main-op', value + '23');
-        document.documentElement.style.setProperty('--st-main-op-deep', value + 'dd');
-        document.documentElement.style.setProperty('--st-main-none', value + '00');
+        document.documentElement.style.setProperty('--efu-main', value);
+        document.documentElement.style.setProperty('--efu-main-op', value + '23');
+        document.documentElement.style.setProperty('--efu-main-op-deep', value + 'dd');
+        document.documentElement.style.setProperty('--efu-main-none', value + '00');
 
         if (r && g && b) {
             let brightness = Math.round(((parseInt(r) * 299) + (parseInt(g) * 587) + (parseInt(b) * 114)) / 1000);
             if (brightness < 125) {
                 let cardContents = document.getElementsByClassName('card-content');
                 for (let i = 0; i < cardContents.length; i++) {
-                    cardContents[i].style.setProperty('--st-card-bg', 'var(--efu-white)');
+                    cardContents[i].style.setProperty('--efu-card-bg', 'var(--efu-white)');
                 }
 
                 let authorInfo = document.getElementsByClassName('author-info__sayhi');
@@ -67,10 +67,10 @@ function setThemeColors(value, r = null, g = null, b = null) {
         document.getElementById("coverdiv").classList.add("loaded");
         initThemeColor();
     } else {
-        document.documentElement.style.setProperty('--st-main', 'var(--efu-theme)');
-        document.documentElement.style.setProperty('--st-main-op', 'var(--efu-theme-op)');
-        document.documentElement.style.setProperty('--st-main-op-deep', 'var(--efu-theme-op-deep)');
-        document.documentElement.style.setProperty('--st-main-none', 'var(--efu-theme-none)');
+        document.documentElement.style.setProperty('--efu-main', 'var(--efu-theme)');
+        document.documentElement.style.setProperty('--efu-main-op', 'var(--efu-theme-op)');
+        document.documentElement.style.setProperty('--efu-main-op-deep', 'var(--efu-theme-op-deep)');
+        document.documentElement.style.setProperty('--efu-main-none', 'var(--efu-theme-none)');
         initThemeColor();
     }
 }
@@ -79,11 +79,11 @@ function initThemeColor() {
     const currentTop = window.scrollY || document.documentElement.scrollTop;
     let themeColor;
     if (currentTop > 0) {
-        themeColor = getComputedStyle(document.documentElement).getPropertyValue('--st-card-bg');
+        themeColor = getComputedStyle(document.documentElement).getPropertyValue('--efu-card-bg');
     } else if (PAGE_CONFIG.is_post) {
-        themeColor = getComputedStyle(document.documentElement).getPropertyValue('--st-main');
+        themeColor = getComputedStyle(document.documentElement).getPropertyValue('--efu-main');
     } else {
-        themeColor = getComputedStyle(document.documentElement).getPropertyValue('--st-background');
+        themeColor = getComputedStyle(document.documentElement).getPropertyValue('--efu-background');
     }
     changeThemeColor(themeColor);
 }
