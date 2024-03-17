@@ -1,6 +1,15 @@
 简体中文丨[繁体中文](README_zh-tw.md)丨[English](README_EN.md)
 
 <div align="center">
+
+   <style>
+     @media (prefers-color-scheme: dark) {
+            svg path {
+                fill: #ffffff;
+            }
+        }
+   </style>   
+
    <img src=".github/logo.svg" alt="Solitude logo" height="250">
 
    <h1 align="center">Hexo Theme Solitude</h1>
