@@ -224,5 +224,10 @@ const utils = {
                 window.fancyboxRun = true
             }
         }
+    },
+    changeTimeFormat(){
+        window.Lately && Lately.init({
+            target: 'time'
+        })
     }
 }
