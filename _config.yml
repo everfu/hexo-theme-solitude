@@ -53,7 +53,6 @@ nav:
     #   友情链接: /links/ || st-group-fill
     #   宝藏博主: javascript:travelling() || st-gift-fill
     # 我的:
-    #   相册集: /gallery/ || st-image-fill
     #   装备: /equipment/ || st-laptop-line
     #   工具箱: /tlink/ || st-tools-fill
     #   音乐馆: /music/ || st-disc-fill
@@ -541,12 +540,6 @@ moments:
   appjs: https://cdn.cbd.int/st-source@1.0.3/js/fcircle.min.js
   bundlejs: https://cdn.cbd.int/st-source/js/moment/bundle.min.js
   randompostjs: https://cdn.cbd.int/st-source/js/moment/random_post.min.js
-
-# 相册
-# album
-album:
-  enable: false # 是否开启相册 / Whether to enable album
-  limit: 6 # 单行显示图片数量 / Number of pictures displayed in a single line
 
 # 快捷菜单你
 # quick menu
