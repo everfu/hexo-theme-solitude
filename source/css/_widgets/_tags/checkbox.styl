@@ -1,85 +1,204 @@
-$border-colors = {
-  red: #fe5f58,
-  green: #3dc550,
-  yellow: #ffbd2b,
-  cyan: #1bcdfc,
-  blue: #2196f3
-}
-
 .checkbox
   display flex
   align-items center
-  p
-    display inline-block
-    margin 2px 0 0 !important
+
   input
     appearance none
     position relative
     height 16px
     width 16px
-    transition all 0.15s ease-out 0s
+    transition all .15s ease-out 0s
     cursor pointer
     display inline-block
-    outline none
+    outline 0
+    border-radius 2px
     flex-shrink 0
     margin-right 8px
     border 2px solid #2196f3
     pointer-events none
-    border-radius 16px
-    &:before, &:after
-      position absolute
-      content ""
-      background #fff
-    &:checked
-      background #2196f3
-    [type="checkbox"]
+
+    &[type=checkbox]
       &:before
         left 1px
         top 5px
         width 0
         height 2px
-        transition all 0.2s ease-in
+        transition all .2s ease-in
         transform rotate(45deg)
+
       &:after
         right 7px
         bottom 3px
         width 2px
         height 0
-        transition all 0.2s ease-out
+        transition all .2s ease-out
         transform rotate(40deg)
-        transition-delay 0.25s
+        transition-delay .25s
+
       &:checked
-        &:before
-          left 0
-          top 7px
-          width 6px
-          height 2px
-        &:after
-          right 3px
-          bottom 1px
-          width 2px
-          height 10px
-    [type="radio"]
+        background #2196f3
+
+      &:checked:before
+        left 0
+        top 7px
+        width 6px
+        height 2px
+
+      &:checked:after
+        right 3px
+        bottom 1px
+        width 2px
+        height 10px
+
+  &.minus
+    input[type=checkbox]:before
+      transform rotate(0)
+      left 1px
+      top 5px
+      width 0
+      height 2px
+
+    input[type=checkbox]:after
+      transform rotate(0)
+      left 1px
+      top 5px
+      width 0
+      height 2px
+
+    input[type=checkbox]:checked:before
+      left 1px
+      top 5px
+      width 10px
+      height 2px
+
+    input[type=checkbox]:checked:after
+      left 1px
+      top 5px
+      width 10px
+      height 2px
+
+  &.plus
+    input[type=checkbox]:before
+      transform rotate(0)
+      left 1px
+      top 5px
+      width 0
+      height 2px
+
+    input[type=checkbox]:after
+      transform rotate(0)
+      left 5px
+      top 1px
+      width 2px
+      height 0
+
+    input[type=checkbox]:checked:before
+      left 1px
+      top 5px
+      width 10px
+      height 2px
+
+    input[type=checkbox]:checked:after
+      left 5px
+      top 1px
+      width 2px
+      height 10px
+
+  &.times
+    input[type=checkbox]:before
+      transform rotate(45deg)
+      left 3px
+      top 1px
+      width 0
+      height 2px
+
+    input[type=checkbox]:after
+      transform rotate(135deg)
+      right 3px
+      top 1px
+      width 0
+      height 2px
+
+    input[type=checkbox]:checked:before
+      left 1px
+      top 5px
+      width 10px
+      height 2px
+
+    input[type=checkbox]:checked:after
+      right 1px
+      top 5px
+      width 10px
+      height 2px
+
+  input[type=radio]
+    border-radius 50%
+
+    &:before
+      content ""
+      display block
+      width 8px
+      height 8px
       border-radius 50%
-      &:before
-        content ""
-        display block
-        width 8px
-        height 8px
-        border-radius 50%
-        margin 2px
-        transform scale(0)
-        transition all 0.25s ease-out
-      &:checked
-        &:before
-          transform scale(1)
-          background var(--text-bg-hover)
-  for color, value in $border-colors
-    &.{color}
-      input
-        border-color value
-        [type="checkbox"]:checked
-          background value
-        [type="radio"]:checked
-          &:before
-            background value
+      margin 2px
+      transform scale(0)
+      transition all .25s ease-out
+
+    &:checked:before
+      transform scale(1)
+      background var(--text-bg-hover)
+
+  &.red input
+    border-color #fe5f58
+
+    &[type=checkbox]:checked
+      background #fe5f58
+
+    &[type=radio]:checked:before
+      background #fe5f58
+
+  &.green input
+    border-color #3dc550
+
+    &[type=checkbox]:checked
+      background #3dc550
+
+    &[type=radio]:checked:before
+      background #3dc550
+
+  &.yellow input
+    border-color #ffbd2b
+
+    &[type=checkbox]:checked
+      background #ffbd2b
+
+    &[type=radio]:checked:before
+      background #ffbd2b
+
+  &.cyan input
+    border-color #1bcdfc
+
+    &[type=checkbox]:checked
+      background #1bcdfc
+
+    &[type=radio]:checked:before
+      background #1bcdfc
+
+  &.blue input
+    border-color #2196f3
+
+    &[type=checkbox]:checked
+      background #2196f3
+
+    &[type=radio]:checked:before
+      background #2196f3
+
+  p
+    display: inline-block
+    margin-top 2px !important
+    margin-bottom 0 !important
+
+  input[type=checkbox]:after, input[type=checkbox]:before
+    position absolute
+    content ""
+    background #fff
