@@ -65,23 +65,8 @@
       &:hover
         transform scale(1.1)
 
-      +maxWidth768()
-        width 120px
-        height 120px
-
-        &::before
-          bottom -5px
-          right -5px
-
-      img
-        border-radius 200px
-
       &::before
         content ''
-        -webkit-transition 1s
-        -moz-transition 1s
-        -o-transition 1s
-        -ms-transition 1s
         transition 1s
         width 30px
         height 30px
@@ -92,3 +77,16 @@
         bottom 5px
         right 10px
         z-index 2
+
+      +maxWidth768()
+        width 120px
+        height 120px
+
+        &::before
+          bottom -2px
+          right -2px
+          width 20px
+          height 20px
+
+      img
+        border-radius 200px
