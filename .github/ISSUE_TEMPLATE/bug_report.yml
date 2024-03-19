@@ -1,6 +1,7 @@
 name: Bug 报告 🐛
 description: 本项目仅对最新版本进行维护，使用老版本出现问题的，请先升级到最新版本或使用dev版本，升级完后如果发现bug依然存在，请继续填写此issue。
 labels: ['status: needs check']
+title: "[Bug]: "
 body:
   - type: markdown
     attributes:
@@ -15,13 +16,13 @@ body:
     attributes:
       label: 前置确认
       options:
-        - label: 我确认我运行的是最新版本的主题，并且安装了所需的依赖，在[FAQS](https://docs.wzsco.top/FAQ.html)中也未找到类似问题。
+        - label: 我确认我运行的是最新版本的主题，并且安装了所需的依赖，在[FAQS](https://solitude-docs.efu.me/faq)中也未找到类似问题。
           required: true
   - type: checkboxes
     attributes:
       label: ⚠️ 搜索issues中是否已存在类似问题
       description: >
-        请在 [历史issue](https://github.com/DuoSco/Hexo-theme-solitude/issues) 中清空输入框，搜索你的问题
+        请在 [历史issue](https://github.com/valor-x/hexo-theme-solitude/issues) 中清空输入框，搜索你的问题
         或相关日志的关键词来查找是否存在类似问题。
       options:
         - label: 我已经搜索过issues和disscussions，没有跟我遇到的问题相关的issue
@@ -37,7 +38,7 @@ body:
         请选择你运行程序的操作系统类型。
       options:
         - Windows
-        - MacOS
+        - Mac/Linux
     validations:
       required: true
   - type: dropdown
@@ -67,6 +68,7 @@ body:
     attributes:
       label: 问题描述 😯
       description: 详细描述出现的问题，或提供有关截图。
+      placeholder: "e.g., 我在...出现..."
   - type: textarea
     attributes:
       label: 终端日志 📒
@@ -103,5 +105,4 @@ body:
             at Array.reduce (<anonymous>)
         INFO  Hexo is running at http://localhost:4000/ . Press Ctrl+C to stop.
         </details>
-      value: |
-        <此处粘贴终端日志>
+      placeholder: "e.g., <此处粘贴终端日志>"
