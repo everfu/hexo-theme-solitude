@@ -7,7 +7,7 @@ if personalities
             span.author-content-item-title= personalities.title
             .title2(style=`color:${personalities.color}`)= personalities.type
             .image
-                img(src=personalities.image)
+                img.nolazyload(src=personalities.image)
             .post-tips
                 | 在
                 a(href="https://www.16personalities.com/")= personalities.linkText
