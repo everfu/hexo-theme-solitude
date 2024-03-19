@@ -20,9 +20,6 @@ div
     if theme.mermaid
         script(src=url_for(theme.cdn.mermaid_js))
 
-    if theme.album.enable
-        script(src=url_for(theme.cdn.macy_js))
-
     if theme.rightside.enable
         include ../widgets/rightside/index
         script(src=url_for(theme.cdn.rightside_js))
@@ -116,9 +113,6 @@ div#js-pjax
     if theme.mermaid
         script.
             mermaid.run();
-    if page.type === 'album' && theme.album.enable
-        script.
-            initGallery()
     if is_home() && theme.says.home_mini
         script.
             sco.initbbtalk();

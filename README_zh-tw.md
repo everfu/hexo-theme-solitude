@@ -1,4 +1,4 @@
-[简体中文](README.md)丨繁体中文丨[English](README_EN.md)
+[简体中文](README_zh-cn.md)丨繁体中文丨[English](README.md)
 
 <div align="center">
   
@@ -35,7 +35,7 @@
 
 - [x] Waline 評論支援
 - [ ] Tags plugin 外掛程式化
-- [ ] 相冊頁重構
+- [ ] 相冊頁重構（已移除，待重構）
 
 ## 應用
 

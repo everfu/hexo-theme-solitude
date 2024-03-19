@@ -26,7 +26,6 @@ body[data-type=music]
   left -50%
   background-size 40%
   transition 0.6s
-  background-image url(https://bu.dusays.com/2023/11/08/654af68b25bb8.jpg)
 
   &:before
     content ''
@@ -54,6 +53,7 @@ body[data-type=music]
 
   .aplayer-body 
     width 70%
+    height 88vh
 
     +maxWidth798()
       width 100%
@@ -64,10 +64,10 @@ body[data-type=music]
       left 0
       right 0
       top 0
-      height calc(var(--vh) - 250px)
+      height 75vh
 
   ol
-    max-height calc(var(--vh) - 170px)!important
+    max-height 88vh !important
 
     +maxWidth798()
       max-height 100%!important
@@ -194,7 +194,7 @@ body[data-type=music]
       +maxWidth798()
         display flex
         position fixed
-        top calc(var(--vh) - 178px)
+        top 88vh
         left 0
         margin 0
         margin-left 32px
@@ -229,7 +229,7 @@ body[data-type=music]
 
     .aplayer-lrc 
       padding-top 240px
-      height var(--vh)
+      height 100vh
 
       +maxWidth798()
         margin-top 0
@@ -254,7 +254,7 @@ body[data-type=music]
         opacity 0.3
         transition all 0.9s cubic-bezier(0.56, 0.17, 0.22, 0.76)
         user-select none
-        text-shadow 0px 4px 0px #ffffff00
+        text-shadow 0 4px 0 #ffffff00
         overflow hidden
 
         +maxWidth798()
@@ -414,10 +414,10 @@ body[data-type=music]
       bottom 0px
       left 0
       background var(--efu-white)
-      border-radius 16px 16px 0px 0px
-      padding 15px 0px
+      border-radius 16px 16px 0 0
+      padding 15px 0
       max-width 100%
-      height calc(var(--vh) - 200px)
+      height 75vh
 
       &.aplayer-list-hide
         bottom -100% !important

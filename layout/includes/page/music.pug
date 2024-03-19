@@ -1,16 +1,6 @@
 if theme.music.enable
     #Music-bg
     #Music-page
+        meting-js(id=theme.music.id, server=theme.music.server, type=theme.music.type, mutex=theme.music.mutex, volume=theme.music.volume, preload="none", data-lrctype="0", order="random")
     .Music-loading
         div APlayer加载中...
-
-    script.
-        if (!window.musicConfig) {
-            window.musicConfig = {
-                userId: '#{theme.music.id}',
-                userServer: "#{theme.music.server}",
-                userType: "#{theme.music.type}",
-                volume: #{theme.music.volume},
-                mutex: #{theme.music.mutex}
-            }
-        }
