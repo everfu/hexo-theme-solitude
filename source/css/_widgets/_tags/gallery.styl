@@ -1,0 +1,67 @@
+#article-container
+  .gallery-item
+    overflow hidden
+    border var(--style-border-always)
+    border-radius 12px
+    position relative
+    display inline-flex
+    height 250px
+    width calc(100% / 2 - 16px)
+    cursor pointer
+    margin-bottom 10px
+    user-select none
+
+    +maxWidth768()
+      width 100%
+
+    &:hover
+      .cover
+        filter brightness(0.5)
+        transition all .3s
+        transform scale(1.1)
+
+      .title::after
+        width 100%
+        transition all .3s
+
+      .desc
+        left 10%
+        transition left .35s
+        text-wrap unset
+
+    .cover
+      width 100%
+      object-fit cover
+      transition all 0.3s
+      margin 0
+      max-width 100%
+
+    .title
+      position absolute
+      top 10%
+      left 10%
+      font-weight 700
+      font-size 32px
+      color var(--efu-white)
+
+      &::after
+        top 55px
+        width 0
+        left 0
+        height 2px
+        background var(--efu-white)
+        content ""
+        border-radius 1px
+        position absolute
+        transition all .3s
+
+    .desc
+      position absolute
+      top 35%
+      left 100%
+      width 80%
+      color var(--efu-white)
+      font-size 1.1em
+      transition left .35s
+      letter-spacing 1px
+      text-wrap break-word

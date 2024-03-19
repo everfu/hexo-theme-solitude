@@ -108,36 +108,6 @@ const showTodayCard = () => {
     }
 }
 
-const changeTimeFormat = () => {
-    const timeElements = Array.from(document.getElementsByTagName("time"));
-    const lang = GLOBAL_CONFIG.lang.time;
-    const currentDate = new Date();
-
-    timeElements.forEach(timeElement => {
-        const datetime = timeElement.getAttribute("datetime");
-        const timeObj = new Date(datetime);
-        const daysDiff = utils.timeDiff(timeObj, currentDate);
-
-        let timeString;
-        if (daysDiff === 0) {
-            timeString = lang.recent;
-        } else if (daysDiff === 1) {
-            timeString = lang.yesterday;
-        } else if (daysDiff === 2) {
-            timeString = lang.berforeyesterday;
-        } else if (daysDiff <= 7) {
-            timeString = `${daysDiff}${lang.daybefore}`;
-        } else {
-            if (timeObj.getFullYear() !== currentDate.getFullYear()) {
-                timeString = `${timeObj.getFullYear()}/${timeObj.getMonth() + 1}/${timeObj.getDate()}`;
-            } else {
-                timeString = `${timeObj.getMonth() + 1}/${timeObj.getDate()}`;
-            }
-        }
-        timeElement.textContent = timeString;
-    });
-}
-
 const initObserver = () => {
     let commentElement = document.getElementById("post-comment");
     let paginationElement = document.getElementById("pagination");
@@ -352,7 +322,7 @@ let sco = {
     },
     addRuntime: function () {
         let el = document.getElementById('runtimeshow')
-        el && GLOBAL_CONFIG.runtime && (el.innerText = utils.timeDiff(new Date(GLOBAL_CONFIG.runtime), new Date()) + GLOBAL_CONFIG.lang.time.runtime)
+        el && GLOBAL_CONFIG.runtime && (el.innerText = utils.timeDiff(new Date(GLOBAL_CONFIG.runtime), new Date()) + GLOBAL_CONFIG.lang.lately.day)
     },
     toTalk: function (txt) {
         const inputs = ["#wl-edit", ".el-textarea__inner"]
@@ -799,7 +769,6 @@ window.refreshFn = () => {
     sco.initAdjust()
     scrollFn()
     sidebarFn()
-    changeTimeFormat()
     initObserver()
     sco.addRuntime()
     sco.hideCookie()
@@ -809,6 +778,7 @@ window.refreshFn = () => {
     sco.categoriesBarActive()
     sco.listenToPageInputPress()
     sco.addNavBackgroundInit()
+    utils.changeTimeFormat()
     GLOBAL_CONFIG.rightside.enable && addRightMenuClickEvent()
     GLOBAL_CONFIG.lazyload.enable && utils.lazyloadImg()
     GLOBAL_CONFIG.lightbox && utils.lightbox(document.querySelectorAll("#article-container img:not(.flink-avatar)"))

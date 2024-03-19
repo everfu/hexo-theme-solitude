@@ -98,10 +98,6 @@ fancyapps_css:
   name: fancyapps-ui
   file: dist/fancybox/fancybox.min.css
   version: 5.0.33
-macy_js:
-  name: macy
-  file: dist/macy.min.js
-  version: 2.5.1
 mermaid_js:
   name: mermaid
   file: dist/mermaid.min.js

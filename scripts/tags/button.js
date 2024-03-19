@@ -15,7 +15,7 @@ function btn(args) {
     option = option.trim();
 
     return `<button class="btn-sco ${option}" onclick="location.href = '${urlFor(url)}'" 
-  title="${text}">${icon.length ? `<i class="${icon}"></i>` : ""}${text.length ? `<span>${text}</span>` : ""}</button>`;
+  title="${text}">${icon.length ? `<i class="solitude ${icon}"></i>` : ""}${text.length ? `<span>${text}</span>` : ""}</button>`;
 }
 
 hexo.extend.tag.register("btn", btn, { ends: false });

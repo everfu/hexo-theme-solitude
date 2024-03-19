@@ -14,6 +14,9 @@ div
     script(src=url_for(theme.cdn.main))
     script(src=url_for(theme.cdn.utils))
 
+    // lately
+    script(src=url_for(theme.cdn.lately_js))
+
     if theme.mermaid
         script(src=url_for(theme.cdn.mermaid_js))
 
@@ -106,6 +109,10 @@ div
             != item
 
 div#js-pjax
+    case config.lang
+        when 'en'
+            script.
+                utils.changeTimeFormat()
     if theme.mermaid
         script.
             mermaid.run();

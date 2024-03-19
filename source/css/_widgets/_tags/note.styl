@@ -31,10 +31,6 @@ $colors = {
   &.success:not(.no-icon)::before
     content: '\e0a4'
 
-  &.success:not(.no-icon)
-    p
-      color var(--efu-card-bg)
-
   &::before
     font-family 'solitude'
 
@@ -74,9 +70,7 @@ $colors = {
     border 1px solid transparent !important
 
   &.flat
-    border-top initial
-    border-right initial
-    border-bottom initial
+    border initial
     border-image initial
     border-left 5px solid #eee
     background-color #f9f9f9

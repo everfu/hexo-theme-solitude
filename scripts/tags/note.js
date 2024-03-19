@@ -1,3 +1,9 @@
+/**
+ * note.js
+ * transplant from hexo-theme-next
+ * modified by @efu
+ */
+
 hexo.extend.tag.register('note', function (types, content) {
     let type = ""
     for (let i = 0; i < types.length; i++) {

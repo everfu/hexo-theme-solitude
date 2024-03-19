@@ -1,5 +1,11 @@
 #article-container
   overflow-wrap break-word
+  +maxWidth768()
+    overflow hidden
+
+  iframe
+    border-radius 12px
+    margin 0 0 1rem
 
   a
     color var(--efu-fontcolor)
@@ -11,6 +17,7 @@
       text-decoration none
       color var(--efu-white)
       border-radius 4px
+      background var(--efu-main)
 
   .table-wrap
     margin 1rem 0
