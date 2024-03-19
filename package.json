@@ -1,6 +1,6 @@
 {
   "name": "hexo-theme-solitude",
-  "version": "1.5.5",
+  "version": "1.5.6",
   "description": "A beautiful, powerful, and efficient Hexo theme developed by the wleelw",
   "main": "package.json",
   "scripts": {
