@@ -320,11 +320,6 @@ post:
       enable: true
       license: CC BY-NC-SA 4.0
       licenurl: https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh
-      # 是否使用移轴动画头像
-      # Whether to use the shift animation avatar
-      author:
-        enable: false
-        author_back: https://7.isyangs.cn/34/65f2e52b2d91e-34.png # 底部头像背景 / Bottom avatar background
   # 顶部文章简介
   # Top article introduction
   meta:

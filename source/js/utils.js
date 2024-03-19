@@ -227,7 +227,8 @@ const utils = {
     },
     changeTimeFormat(){
         window.Lately && Lately.init({
-            target: 'time'
+            target: 'time',
+            lang: GLOBAL_CONFIG.lang.lately,
         })
     }
 }

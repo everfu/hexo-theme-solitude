@@ -6,12 +6,15 @@ copy:
   success: Copied
   error: Copied failed
 
-time:
-  recent: Recent
-  yesterday: Yesterday
-  berforeyesterday: TDBY
-  daybefore: Days ago
-  runtime: days
+lately:
+  second: second
+  minute: minute
+  hour: hour
+  day: day
+  month: month
+  year: year
+  ago: ago
+  error: NaN
 
 chs:
   chs_tw: Traditional Chinese

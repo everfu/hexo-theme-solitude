@@ -7,12 +7,15 @@ copy:
   success: 複製成功
   error: 複製失敗
 
-time:
-  recent: 最近
-  yesterday: 昨天
-  berforeyesterday: 前天
-  daybefore: 天前
-  runtime: 天
+lately:
+  second: 秒
+  minute: 分鐘
+  hour: 小時
+  day: 天
+  month: 个月
+  year: 年
+  ago: 前
+  error: NaN
 
 chs:
   chs_tw: 繁體中文

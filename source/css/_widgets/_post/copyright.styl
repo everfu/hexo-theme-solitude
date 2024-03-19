@@ -25,14 +25,6 @@
         border var(--style-border-always)
         box-shadow var(--efu-shadow-main)
 
-        if hexo-config('post.default.copyright.author.enable')
-          &:hover
-            img.post-copyright__author_img_front
-              transform scale(1) translateY(3px)
-
-            img.post-copyright__author_img_back
-              transform scale(.8)
-
         img
           width 100%
           height 100%
@@ -41,16 +33,6 @@
           position absolute
           bottom 0
           left 0
-
-        if hexo-config('post.default.copyright.author.enable')
-          &_back
-            border-radius 66px
-            z-index 10
-
-        if hexo-config('post.default.copyright.author.enable')
-          &_front
-            z-index 20
-            transform scale(1.2) translateY(6px)
 
       .post-copyright__author_name
         text-align center
