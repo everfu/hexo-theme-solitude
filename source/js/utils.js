@@ -70,7 +70,7 @@ const utils = {
     snackbarShow: (text, showAction, duration) => {
         const sa = (typeof showAction !== 'undefined') ? showAction : false
         const dur = (typeof duration !== 'undefined') ? duration : 5000
-        document.styleSheets[0].addRule(':root', '--st-snackbar-time:' + dur + 'ms!important')
+        document.styleSheets[0].addRule(':root', '--efu-snackbar-time:' + dur + 'ms!important')
         Snackbar.show({
             text: text, showAction: sa, duration: dur, pos: 'top-center'
         })
