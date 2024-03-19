@@ -1,7 +1,7 @@
 'use strict';
 
 hexo.extend.tag.register('image', function(args) {
-    args = args.join(' ').split(', ');
+    args = args.join(' ').split(',');
     let url = args[0].trim();
     let alt = '';
     let bg = '';

@@ -1,6 +1,7 @@
 'use strict'
 
 function link(args) {
+    args = args.join(' ').split(',');
     let urlNoProtocol = args[2].replace(/^https?\:\/\//i, "");
     let imgUrl = "https://api.iowen.cn/favicon/" + urlNoProtocol + ".png";
     return `<a class="tag-link" target="_blank" href="${args[2]}">
