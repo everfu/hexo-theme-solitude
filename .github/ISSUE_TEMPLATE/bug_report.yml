@@ -11,7 +11,7 @@ body:
         2. 查询主题使用文档的相关内容和正确配置
         3. 使用的是Solitude主题最新版本
         4. 执行`npm ls -dept 0`检查是否已安装对应插件
-        5. [FAQS](https://docs.wzsco.top/FAQ.html) 中无类似问题
+        5. [FAQS](https://solitude-docs.efu.me/faq) 中无类似问题
   - type: checkboxes
     attributes:
       label: 前置确认
