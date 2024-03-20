@@ -53,7 +53,10 @@ body[data-type=music]
 
   .aplayer-body 
     width 70%
-    height 88vh
+    height 85vh
+
+    +maxWidth1000()
+      height 80vh
 
     +maxWidth798()
       width 100%
@@ -67,7 +70,10 @@ body[data-type=music]
       height 75vh
 
   ol
-    max-height 88vh !important
+    max-height 85vh !important
+
+    +maxWidth1000()
+      max-height 80vh !important
 
     +maxWidth798()
       max-height 100%!important
@@ -168,6 +174,7 @@ body[data-type=music]
 
       .aplayer-list-index 
         line-height 32px
+        opacity 0.6
 
     &::-webkit-scrollbar-thumb 
       background-color var(--efu-white-op)
@@ -194,7 +201,7 @@ body[data-type=music]
       +maxWidth798()
         display flex
         position fixed
-        top 88vh
+        top 83vh
         left 0
         margin 0
         margin-left 32px
