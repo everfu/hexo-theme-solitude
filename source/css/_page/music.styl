@@ -55,7 +55,7 @@ body[data-type=music]
     width 70%
     height 85vh
 
-    +maxWidth1000()
+    +maxWidth1200()
       height 80vh
 
     +maxWidth798()
@@ -72,7 +72,7 @@ body[data-type=music]
   ol
     max-height 85vh !important
 
-    +maxWidth1000()
+    +maxWidth1200()
       max-height 80vh !important
 
     +maxWidth798()
@@ -99,9 +99,10 @@ body[data-type=music]
         display flex
         flex-direction column
         opacity 1
+        transition none
 
         +maxWidth798()
-          background #33a673
+          background var(--efu-main)
           padding 5px 20px
           border-radius 10px
           height 52px
@@ -178,6 +179,9 @@ body[data-type=music]
 
     &::-webkit-scrollbar-thumb 
       background-color var(--efu-white-op)
+
+  .aplayer-list
+    transition none
 
   .aplayer-pic 
     float none
@@ -275,10 +279,10 @@ body[data-type=music]
           opacity 1
           transition all 0.3s cubic-bezier(0.56, 0.17, 0.22, 0.76), text-shadow 8s 4s ease-in
           height fit-content !important
-          text-shadow 0px 4px 4px #ffffff94
+          text-shadow 0 4px 4px #ffffff94
 
           &:first-child 
-            text-shadow 0px 4px 4px #ffffff00
+            text-shadow 0 4px 4px #ffffff00
 
     .aplayer-controller 
       position fixed
@@ -425,6 +429,7 @@ body[data-type=music]
       padding 15px 0
       max-width 100%
       height 75vh
+      transition all .3s
 
       &.aplayer-list-hide
         bottom -100% !important
