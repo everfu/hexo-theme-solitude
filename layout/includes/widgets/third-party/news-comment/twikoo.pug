@@ -34,6 +34,7 @@ script.
                     }))
                     generateHtml(twikooArray)
                 }).catch(function (err) {
+                    console.error(err)
                     $dom.innerHTML = "无法获取评论，请确认相关配置是否正确"
                 })
             }
@@ -56,7 +57,7 @@ script.
               `).join('') : '没有评论'
             window.lazyLoadInstance && window.lazyLoadInstance.update()
             window.pjax && window.pjax.refresh($dom)
-            changeTimeFormat()
+            utils && utils.changeTimeFormat()
         }
 
         const newestCommentInit = () => {

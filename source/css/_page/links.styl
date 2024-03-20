@@ -4,13 +4,6 @@
 .flink#article-container
   margin-top 1rem
 
-  #friendlink_checkboxs input
-    margin-right 4px
-
-  h2
-    margin-top 0.5rem
-    margin-bottom 0
-
   .flink-desc
     margin 0
     color var(--efu-secondtext)
@@ -35,7 +28,7 @@
       top 0
       width 100px
       height 50px
-      background-image -webkit-linear-gradient(0deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, .5), rgba(255, 255, 255, 0))
+      background-image -webkit-linear-gradient(0deg,rgba(255,255,255,0),rgba(255,255,255,.5),rgba(255,255,255,0))
       animation light_tag 4s both infinite
 
     &.vip
@@ -48,13 +41,14 @@
     padding 20px 0
     display flex
     flex-wrap wrap
-    -webkit-box-pack start
     justify-content flex-start
     margin -8px
-    -webkit-box-align stretch
     align-items stretch
 
     .site-card
+      margin 8px
+      display block
+      line-height 1.4
       border var(--style-border)
       border-radius 12px
       transition .3s
@@ -65,9 +59,6 @@
       width calc(100% / 7 - 16px)
       background var(--efu-card-bg)
       box-shadow var(--efu-shadow-border)
-      margin 8px
-      display block
-      line-height 1.4
 
       +maxWidth1200()
         width calc(20% - 16px)
@@ -82,6 +73,7 @@
         width calc(50% - 16px)
 
       .img
+        -webkit-mask-image -webkit-radial-gradient(center, #fff, #000)
         border-radius 0
         height 120px
         width 100%
@@ -89,6 +81,7 @@
         border none
         padding 0
         transition all .3s ease 0s
+        background #f6f6f6
         overflow hidden
 
         img
@@ -159,16 +152,15 @@
           left: -60px
 
         .img
-          height 80px
           transform scale(1.1)
           filter brightness(.3)
           border-radius 12px
           background var(--efu-lighttext)
+          +minWidth768()
+            height 80px
 
-          img
-            border-radius 12px
-            transform scale(1.1)
-            filter brightness(.3)
+            img
+              transform scale(1.1)
 
         a
           color var(--efu-white)

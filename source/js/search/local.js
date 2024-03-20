@@ -185,4 +185,7 @@ window.onload = () => {
     window.addEventListener('DOMContentLoaded', (event) => {
         initUI();
     });
+    window.addEventListener('pjax:complete', () => {
+        searchClickFn()
+    })
 }
