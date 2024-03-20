@@ -57,7 +57,7 @@ script.
               `).join('') : '没有评论'
             window.lazyLoadInstance && window.lazyLoadInstance.update()
             window.pjax && window.pjax.refresh($dom)
-            changeTimeFormat()
+            utils && utils.changeTimeFormat()
         }
 
         newestCommentInit()

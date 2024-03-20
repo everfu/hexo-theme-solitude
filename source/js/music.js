@@ -56,6 +56,7 @@ class ScoMusicPlayer {
                 this.addEventListenerChangeMusicBg();
                 backgroundElement.style.display = "block";
             }
+            this.addButtonListEventListener();
         }, 100);
     }
 
