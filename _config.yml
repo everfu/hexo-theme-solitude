@@ -585,13 +585,11 @@ loading:
 
 #代码高亮增强
 # code highlight
-hightlight:
-  enable: false
-  # 代码块行高限制
-  # Code block line height limit
-  hightlimit: 200
+highlight:
+  enable: true
+  limit: 200 # 代码行高限制 / Code line limit
   copy: true # 是否开启复制按钮 / Whether to enable the copy button
-  expand: false # 是否默认展开 / Whether to expand by default
+  expand: true # 是否默认展开 / Whether to expand by default
   # 代码块样式
   # Code block style
   theme: default # default: 默认 / mac : apple terminal

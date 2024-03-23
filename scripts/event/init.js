@@ -10,11 +10,6 @@ hexo.extend.filter.register('before_generate', () => {
         process.exit(-1);
     }
 
-    if (config.prismjs.enable) {
-        logger.error('主题尚未支持 prismjs 请使用 highlightjs ！');
-        process.exit(-1);
-    }
-
     if (Number(majorVer) < 14) {
         logger.error('请将 Node.js 升级到 v14.0.0 或更高的版本！');
         process.exit(-1);
