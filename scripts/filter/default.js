@@ -1,17 +1,19 @@
 'use strict';
 
 hexo.extend.filter.register('after_post_render', function (data) {
-    const config = hexo.theme.config
-    data.title = data.title || '无标题';
+    data.title = data.title || 'Untitled';
+    const { config } = hexo.theme;
     if (data.layout === 'post') {
-        data.locate = data.locate || config.post.default.locate
-        data.cc = data.cc || config.post.default.copyright
-        data.cover = data.cover || config.post.default.cover[getRandomInt(0, config.post.default?.cover?.length)] || '/img/default.png'
+        const { copyright, locate,cover } = hexo.theme.config.post.default
+        data.locate = data.locate || locate
+        data.cc = data.cc || copyright
+        data.cover = data.cover || cover ? cover[getRandomInt(0, cover?.length)] : '/img/default.png'
         data.excerpt = data.description || data.excerpt
         data.toc = !!(config.aside.toc.post && data.toc !== false);
     }
     if (data.layout === 'page') {
-        data.cover = data.cover || config.page.default.cover[getRandomInt(0, config.post.default?.cover?.length)] || '/img/default.png'
+        const { cover } = hexo.theme.config.page.default
+        data.cover = data.cover || cover ? cover[getRandomInt(0, cover?.length)] :'/img/default.png'
         data.excerpt = data.title
         data.toc = !!(config.aside.toc.page && data.toc !== false && data.aside);
     }
