@@ -658,72 +658,103 @@ let sco = {
     },
 }
 
-class hightlight {
-    static createEle(langEl, item) {
-        const fragment = document.createDocumentFragment()
-        const highlightCopyEle = GLOBAL_CONFIG.hightlight.copy ? '<i class="solitude st-copy-fill"></i>' : '<i></i>'
-        const highlightExpandEle = '<i class="solitude st-arrow-down expand"></i>'
+const AddHighLightTool = () => {
+    const highlight = GLOBAL_CONFIG.highlight;
+    if (!highlight) return;
 
-        const hlTools = document.createElement('div')
-        hlTools.className = `highlight-tools`
-        hlTools.innerHTML = highlightExpandEle + langEl + highlightCopyEle
-        let expand = GLOBAL_CONFIG.hightlight.expand
-        hlTools.children[0].addEventListener('click', (e) => {
-            if (expand) {
-                hlTools.children[0].classList.add('closed')
-                $table.setAttribute('style', 'display:none')
-                if ($expand.length !== 0) {
-                    $expand[0].setAttribute('style', 'display:none')
-                }
-            } else {
-                hlTools.children[0].classList.remove('closed')
-                $table.setAttribute('style', 'display:block')
-                if ($expand.length !== 0) {
-                    $expand[0].setAttribute('style', 'display:block')
-                }
-                if (GLOBAL_CONFIG.hightlight.limit && itemHeight > GLOBAL_CONFIG.hightlight.limit) {
-                    $table.setAttribute('style', `height: ${GLOBAL_CONFIG.hightlight.limit}px`)
-                } else {
-                    $table.setAttribute('style', `height: auto`)
-                }
-            }
-            expand = !expand
-        })
-        hlTools.children[2].addEventListener('click', (e) => {
-            utils.copy($table.querySelector('.code').innerText)
-        })
-        const ele = document.createElement('div')
-        fragment.appendChild(hlTools)
-        const itemHeight = item.clientHeight, $table = item.querySelector('table'),
-            $expand = item.getElementsByClassName('code-expand-btn')
-        if (GLOBAL_CONFIG.hightlight.limit && itemHeight > GLOBAL_CONFIG.hightlight.limit) {
-            $table.setAttribute('style', `height: ${GLOBAL_CONFIG.hightlight.limit}px`)
-            ele.className = 'code-expand-btn'
-            ele.innerHTML = '<i class="solitude st-show-line"></i>'
-            ele.addEventListener('click', (e) => {
-                $table.setAttribute('style', `height: ${itemHeight}px`)
-                e.target.classList.add('expand-done')
-                e.target.setAttribute('style', 'display:none')
-            })
-            fragment.appendChild(ele)
-        }
-        item.insertBefore(fragment, item.firstChild)
-        if (!expand) {
-            hlTools.children[0].classList.add('closed')
-            $table.setAttribute('style', 'display:none')
-            if ($expand.length !== 0) {
-                $expand[0].setAttribute('style', 'display:none')
-            }
+    const {copy, expand, limit, syntax} = highlight;
+    const $isPrismjs = syntax === 'prismjs';
+    const $isShowTool = highlight.enable || copy || expand || limit;
+    const expandClass = !expand === true ? 'closed' : ''
+    const $syntaxHighlight = syntax === 'highlight.js' ? document.querySelectorAll('figure.highlight') : document.querySelectorAll('pre[class*="language-"]')
+
+    if (!(($isShowTool || limit) && $syntaxHighlight.length)) return
+
+    const copyEle = copy ? `<i class="solitude st-copy-fill copy-button"></i>` : '<i></i>';
+    const expandEle = `<i class="solitude st-arrow-down expand"></i>`;
+    const limitEle = limit ? `<i class="solitude st-show-line"></i>` : '<i></i>';
+
+    const alertInfo = (ele, text) => {
+        utils.snackbarShow(text, false, 2000);
+    }
+
+    const copyCode = (e) => {
+        if (document.queryCommandSupported && document.queryCommandSupported('copy')) {
+            document.execCommand('copy')
+            alertInfo(e, GLOBAL_CONFIG.lang.copy.success)
+        } else {
+            alertInfo(e, GLOBAL_CONFIG.lang.copy.error)
         }
     }
 
-    static init() {
-        const $figureHighlight = document.querySelectorAll('figure.highlight'), that = this
-        $figureHighlight.forEach(function (item) {
+    const copyFn = (e) => {
+        const $buttonParent = e.parentNode
+        $buttonParent.classList.add('copy-true')
+        const selection = window.getSelection()
+        const range = document.createRange()
+        const preCodeSelector = $isPrismjs ? 'pre code' : 'table .code pre'
+        range.selectNodeContents($buttonParent.querySelectorAll(`${preCodeSelector}`)[0])
+        selection.removeAllRanges()
+        selection.addRange(range)
+        copyCode(e.lastChild)
+        selection.removeAllRanges()
+        $buttonParent.classList.remove('copy-true')
+    }
+
+    const expandClose = (e) => {
+        e.classList.toggle('closed')
+    }
+
+    const shrinkEle = function () {
+        this.classList.toggle('expand-done')
+    }
+
+    const ToolsFn = function (e) {
+        const $target = e.target.classList
+        if ($target.contains('expand')) expandClose(this)
+        else if ($target.contains('copy-button')) copyFn(this)
+    }
+
+    const createEle = (lang, item, service) => {
+        const fragment = document.createDocumentFragment()
+
+        if ($isShowTool) {
+            const hlTools = document.createElement('div')
+            hlTools.className = `highlight-tools ${expandClass}`
+            hlTools.innerHTML = expandEle + lang + copyEle
+            utils.addEventListenerPjax(hlTools, 'click', ToolsFn)
+            fragment.appendChild(hlTools)
+        }
+
+        if (limit && item.offsetHeight > limit + 30) {
+
+            const ele = document.createElement('div')
+            ele.className = 'code-expand-btn'
+            ele.innerHTML = limitEle
+            utils.addEventListenerPjax(ele, 'click', shrinkEle)
+            fragment.appendChild(ele)
+        }
+
+        if (service === 'hl') {
+            item.insertBefore(fragment, item.firstChild)
+        } else {
+            item.parentNode.insertBefore(fragment, item)
+        }
+    }
+
+    if ($isPrismjs) {
+        $syntaxHighlight.forEach(item => {
+            const langName = item.getAttribute('data-language') || 'Code'
+            const highlightLangEle = `<div class="code-lang">${langName}</div>`
+            utils.wrap(item, 'figure', {class: 'highlight'})
+            createEle(highlightLangEle, item)
+        })
+    } else {
+        $syntaxHighlight.forEach(item => {
             let langName = item.getAttribute('class').split(' ')[1]
-            if (langName === 'plaintext' || langName === undefined) langName = 'Code'
-            const highlightLangEle = `<div class="code-lang">${langName.toUpperCase()}</div>`
-            that.createEle(highlightLangEle, item)
+            if (langName === 'plain' || langName === undefined) langName = 'Code'
+            const highlightLangEle = `<div class="code-lang">${langName}</div>`
+            createEle(highlightLangEle, item, 'hl')
         })
     }
 }
@@ -785,7 +816,7 @@ window.refreshFn = () => {
     GLOBAL_CONFIG.randomlinks && randomLinksList()
     PAGE_CONFIG.comment && initComment()
     PAGE_CONFIG.toc && toc.init();
-    (PAGE_CONFIG.is_post || PAGE_CONFIG.is_page) && ((GLOBAL_CONFIG.hightlight.enable && hightlight.init()) || tabs.init())
+    (PAGE_CONFIG.is_post || PAGE_CONFIG.is_page) && ((AddHighLightTool()) || tabs.init())
     PAGE_CONFIG.is_home && showTodayCard()
     GLOBAL_CONFIG.covercolor.enable && coverColor()
     sco.initConsoleState()

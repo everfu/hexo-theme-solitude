@@ -1,0 +1,45 @@
+@import "diff"
+figure
+  pre
+    margin 0
+    padding 8px 0
+    border none
+  table
+    display block
+    border none
+    overflow-y hidden
+    overflow-x auto
+
+    td
+      padding 0
+      border none
+      height 100%
+
+      &.gutter
+        opacity .6
+        user-select none
+
+        pre
+          overflow auto
+          line-height 1.6
+          margin 0
+          padding 8px .5rem
+          border none
+          color var(--efu-secondtext)
+          background var(--efu-secondbg)
+          border-right var(--style-border-always)
+          text-align right
+
+      &.code
+        width 100%
+        display flex
+        position relative
+
+        pre
+          padding-right .5rem
+          padding-left .5rem
+          width 100%
+
+  .line
+    &.marked
+      background-color: rgba(97, 97, 97, .314)

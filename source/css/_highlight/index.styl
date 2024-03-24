@@ -1,3 +1,13 @@
+@import "color"
+
+@import "theme/" + hexo-config('highlight.theme')
+
+if $highlight_enable
+  @require "highlight/index.styl"
+
+if $prismjs_enable
+  @require "prismjs/index.styl"
+
 figure
   &:hover
     box-shadow var(--efu-shadow-border-hover)
@@ -25,11 +35,6 @@ figure
     padding 0
     line-height 1.6
 
-    pre
-      margin 0
-      padding 8px 0
-      border none
-
     .highlight-tools
       position relative
       display flex
@@ -42,6 +47,13 @@ figure
       background var(--efu-hltools-bg)
       border-bottom var(--style-border-always)
       color var(--efu-fontcolor)
+
+      &.closed
+        .expand
+          transition all .3s ease 0s
+
+        & ~ *
+          display none
 
       .st-copy-fill
         position absolute
@@ -57,9 +69,6 @@ figure
         padding 0.4rem 0.3rem
         cursor pointer
         transition transform .3s ease 0s
-
-        &.closed
-          transition all .3s ease 0s
 
       .code-lang
         text-transform capitalize
@@ -97,47 +106,11 @@ figure
         i
           color var(--efu-white)
 
-    table
-      display block
-      border none
-      overflow-y hidden
-      overflow-x auto
+      &.expand-done
+        display none
 
-      td
-        padding 0
-        border none
-        height 100%
-
-        &.gutter
-          opacity .6
-          user-select none
-
-          pre
-            overflow auto
-            line-height 1.6
-            margin 0
-            padding 8px .5rem
-            border none
-            color var(--efu-secondtext)
-            background var(--efu-secondbg)
-            border-right var(--style-border-always)
-            text-align right
-
-        &.code
-          width 100%
-          display flex
-          position relative
-
-          pre
-            padding-right .5rem
-            padding-left .5rem
-            width 100%
-
-    .line
-      &.marked
-        background-color: rgba(97, 97, 97, .314)
-
-@import "theme"
-@import "diff"
-
-@import "theme/" + hexo-config('hightlight.theme')
+      &:not(.expand-done)
+        & ~ table,
+        & ~ pre
+          overflow: hidden
+          height: unit(hexo-config('highlight.limit'), px)

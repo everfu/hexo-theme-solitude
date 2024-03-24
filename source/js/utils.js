@@ -136,12 +136,11 @@ const utils = {
     },
     isMobile: () => /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent),
     isHidden: e => 0 === e.offsetHeight && 0 === e.offsetWidth,
-    addEventListenerPjax: function (element, eventType, callback, useCapture = false) {
-        if (element == null) return
-        element.addEventListener(eventType, callback, useCapture);
-        utils.addGlobalFn("pjax", function () {
-            element.removeEventListener(eventType, callback, useCapture);
-        });
+    addEventListenerPjax: (ele, event, fn, option = false) => {
+        ele.addEventListener(event, fn, option)
+        utils.addGlobalFn('pjax', () => {
+            ele.removeEventListener(event, fn, option)
+        })
     },
     addGlobalFn: (key, fn, name = false, parent = window) => {
         const globalFn = parent.globalFn || {}
