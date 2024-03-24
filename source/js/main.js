@@ -688,7 +688,6 @@ const AddHighLightTool = () => {
     }
 
     const copyFn = (e) => {
-        console.error("我只行了")
         const $buttonParent = e.parentNode
         $buttonParent.classList.add('copy-true')
         const selection = window.getSelection()

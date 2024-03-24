@@ -1,0 +1,13 @@
+@require line-number
+
+@require diff
+
+#article-container
+  pre[class*='language-']
+    scrollbar-color var(--hlscrollbar-bg) transparent
+
+    &::-webkit-scrollbar-thumb
+      background var(--hlscrollbar-bg)
+
+    &:not(.line-numbers)
+      padding 10px 20px

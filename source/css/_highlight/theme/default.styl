@@ -4,9 +4,11 @@ figure
       .st-copy-fill
         right .7rem
 
+      &.closed
+        .expand
+          transform rotate(-90deg)
+
     .expand
       & + .code-lang
         left 1.7rem
 
-      &.closed
-        transform rotate(-90deg)

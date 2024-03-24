@@ -1,156 +1,45 @@
+@import "diff"
 figure
-  &:hover
-    box-shadow var(--efu-shadow-border-hover)
+  pre
+    margin 0
+    padding 8px 0
+    border none
+  table
+    display block
+    border none
+    overflow-y hidden
+    overflow-x auto
 
-  .copy-btn
-    position absolute
-    top 1rem
-    right 1rem
-    z-index 10
-    color var(--efu-fontcolor)
-    cursor pointer
-    transition all .2s ease 0s
-
-    &:hover
-      color var(--efu-lighttext)
-
-  &.highlight
-    background-color var(--efu-hl-bg)
-    color var(--efu-fontcolor)
-    border var(--style-border-always)
-    overflow hidden
-    border-radius 8px 8px 4px 4px
-    position relative
-    margin .5rem 0 .5rem
-    padding 0
-    line-height 1.6
-
-    pre
-      margin 0
-      padding 8px 0
+    td
+      padding 0
       border none
+      height 100%
 
-    .highlight-tools
-      position relative
-      display flex
-      -webkit-box-align center
-      align-items center
-      overflow hidden
-      min-height 1.2rem
-      height 2.15em
-      font-size 16px
-      background var(--efu-hltools-bg)
-      border-bottom var(--style-border-always)
-      color var(--efu-fontcolor)
-
-      &.closed
-        .expand
-          transition all .3s ease 0s
-          transform rotate(-90deg)
-
-        & ~ *
-          display none
-
-      .st-copy-fill
-        position absolute
-        cursor pointer
-        transition color .2s
-        font-size 18px
-
-      .st-copy-fill:hover
-        color var(--efu-main)
-
-      .expand
-        position absolute
-        padding 0.4rem 0.3rem
-        cursor pointer
-        transition transform .3s ease 0s
-
-      .code-lang
-        text-transform capitalize
-        position absolute
-        font-weight 700
-        font-size 1.15em
+      &.gutter
+        opacity .6
         user-select none
 
-    .code-expand-btn
-      background var(--efu-hltools-bg)
-      transition .3s
-      backdrop-filter saturate(180%) blur(20px)
-      transform translateZ(0)
-      border-top var(--style-border-always)
-      position absolute
-      bottom 0
-      z-index 10
-      width 100%
-      text-align center
-      font-size 16px
-      cursor pointer
-      display flex
-      align-items center
-      justify-content center
-      height 32px
+        pre
+          overflow auto
+          line-height 1.6
+          margin 0
+          padding 8px .5rem
+          border none
+          color var(--efu-secondtext)
+          background var(--efu-secondbg)
+          border-right var(--style-border-always)
+          text-align right
 
-      i
-        color var(--efu-fontcolor)
-        line-height 1
-        animation 1.2s ease 0s infinite normal none running code-expand-key
+      &.code
+        width 100%
+        display flex
+        position relative
 
-      &:hover
-        background var(--efu-main)
-
-        i
-          color var(--efu-white)
-
-      &.expand-done
-        display none
-
-      &:not(.expand-done)
-        & ~ table,
-        & ~ pre
-          overflow: hidden
-          height: unit(hexo-config('highlight.limit'), px)
-
-    table
-      display block
-      border none
-      overflow-y hidden
-      overflow-x auto
-
-      td
-        padding 0
-        border none
-        height 100%
-
-        &.gutter
-          opacity .6
-          user-select none
-
-          pre
-            overflow auto
-            line-height 1.6
-            margin 0
-            padding 8px .5rem
-            border none
-            color var(--efu-secondtext)
-            background var(--efu-secondbg)
-            border-right var(--style-border-always)
-            text-align right
-
-        &.code
+        pre
+          padding-right .5rem
+          padding-left .5rem
           width 100%
-          display flex
-          position relative
 
-          pre
-            padding-right .5rem
-            padding-left .5rem
-            width 100%
-
-    .line
-      &.marked
-        background-color: rgba(97, 97, 97, .314)
-
-@import "diff"
-
-@import "theme/" + hexo-config('hightlight.theme')
+  .line
+    &.marked
+      background-color: rgba(97, 97, 97, .314)
