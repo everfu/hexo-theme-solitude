@@ -1,0 +1,47 @@
+if hexo-config('loading.fullpage')
+  #loading-box
+    user-select none
+
+    .loading-bg
+      display flex
+      width 100%
+      height 100%
+      position fixed
+      background var(--efu-background)
+      z-index 1999
+      opacity 1
+      transition 0.2s
+      pointer-events all
+      animation showLoading 0.3s 0s backwards
+
+    &.loaded .loading-bg
+      pointer-events none
+      transition 0.2s
+      animation hideLoading 0.3s 0s forwards
+
+    .loading-img
+      width 100px
+      margin auto
+      animation-duration 0.2s
+      animation-name loadingAction
+      border-radius 50px
+      animation-iteration-count infinite
+      animation-direction alternate
+
+  @keyframes loadingAction
+    from
+      opacity 1
+    to
+      opacity 0.6
+
+  @keyframes hideLoading
+    from
+      opacity 1
+    to
+      opacity 0
+
+  @keyframes showLoading
+    from
+      opacity 0
+    to
+      opacity 1

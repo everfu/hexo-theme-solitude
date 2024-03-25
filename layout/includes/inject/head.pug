@@ -2,7 +2,6 @@ each item in theme.verify_site || []
     meta(name=item.name, content=item.content)
 
 link(rel="stylesheet", href=url_for(theme.cdn.solitude_css))
-link(rel="stylesheet", href=url_for(theme.cdn.snackbar_css))
 
 // aplayer
 if theme.capsule.enable || theme.music.enable

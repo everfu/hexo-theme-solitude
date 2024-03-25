@@ -824,6 +824,7 @@ window.refreshFn = () => {
     document.body.setAttribute('data-type', PAGE_CONFIG.page)
     PAGE_CONFIG.page === "music" && scoMusic.init()
     GLOBAL_CONFIG.ai.enable && PAGE_CONFIG.page === "post" && ScoAI.init()
+    preloader.removePaceDone()
 }
 
 document.addEventListener('DOMContentLoaded', function () {

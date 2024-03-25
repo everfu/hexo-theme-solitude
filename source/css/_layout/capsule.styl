@@ -1,0 +1,213 @@
+if hexo-config('capsule.enable')
+  #nav-music
+    display flex
+    align-items center
+    z-index 8
+    position fixed
+    bottom 20px
+    left 20px
+    cursor pointer
+    transition .3s
+    transform-origin left bottom
+    box-shadow var(--efu-shadow-border)
+    border-radius 40px
+    overflow hidden
+    user-select none
+
+    +maxWidth798()
+      display none !important
+
+    span
+      user-select none
+
+    div
+      user-select none
+
+    &.playing
+      box-shadow 0 0 12px -3px var(--efu-none)
+      -webkit-animation playingShadow 5s linear infinite
+
+      .aplayer
+        background var(--efu-main-op-deep)
+        border var(--style-border-hover)
+        backdrop-filter saturate(180%) blur(20px)
+        -webkit-backdrop-filter blur(20px)
+        transform translateZ(0)
+
+        &.aplayer-withlrc
+          .aplayer-pic
+            box-shadow 0 0 14px #ffffffa6
+            -webkit-transform rotate(0) scale(1.1)
+            border-color var(--efu-white)
+            animation-play-state running
+
+          .aplayer-info
+            color var(--efu-white)
+
+          .aplayer-lrc
+            width 200px
+            margin-bottom 0
+            opacity 1
+
+        .aplayer-info
+          .aplayer-controller
+            .aplayer-bar-wrap
+              .aplayer-bar
+                opacity 1
+
+                .aplayer-played
+                  animation-play-state running
+
+      #nav-music-hoverTips
+        opacity 0
+
+    .aplayer
+      background var(--efu-card-bg)
+      border-radius 60px
+      height 41px
+      display flex
+      margin 0
+      pointer-events none
+      transition .3s
+      border var(--style-border)
+      box-shadow none
+
+      &.aplayer-withlrc
+        .aplayer-pic
+          height 25px
+          width 25px
+          border-radius 40px
+          z-index 1
+          transition .3s
+          -webkit-transform rotate(0) scale(1)
+          border var(--style-border-always)
+          -webkit-animation changeright 24s linear infinite
+          animation-play-state paused
+
+        .aplayer-info
+          height 100%
+          color var(--efu-fontcolor)
+          margin-left 8px
+          padding 0
+          display flex
+          align-items center
+
+        .aplayer-lrc
+          width 0
+          opacity 0
+          transition .3s
+          margin-left 8px
+          margin-top -2px
+
+      .aplayer-notice
+        display none
+
+      .aplayer-miniswitcher
+        display none
+
+      .aplayer-body
+        position relative
+        display flex
+        align-items center
+        padding 0 12px 0 8px
+
+      .aplayer-pic
+        .aplayer-play
+          opacity 0
+
+        div
+          display none
+
+      .aplayer-info
+        .aplayer-music
+          margin 0
+          display flex
+          align-items center
+          padding 0
+          z-index 1
+
+          .aplayer-author
+            display none
+
+          .aplayer-title
+            cursor pointer
+            line-height 1
+            display inline-block
+            white-space nowrap
+            max-width 120px
+            overflow hidden
+            text-overflow ellipsis
+            transition .3s
+
+        .aplayer-controller
+          position absolute
+          width 100%
+          height 100%
+          top 0
+          left 0
+
+          .aplayer-time
+            display none
+
+          .aplayer-bar-wrap
+            margin 0
+            padding 0
+
+            .aplayer-bar
+              height 100%
+              background 0 0
+              opacity 0
+
+              .aplayer-loaded
+                display none
+
+              .aplayer-played
+                height 100%
+                opacity .1
+                background-color var(--efu-white) !important
+                -webkit-animation lightBar 5s ease infinite
+                animation-play-state paused
+
+      &.aplayer-withlist
+        .aplayer-info
+          border none
+
+      .aplayer-lrc
+        p
+          color #ffffffb3
+          filter blur(1px)
+
+          &.aplayer-lrc-current
+            color var(--efu-white)
+            border none
+            filter blur(0)
+
+    #nav-music-hoverTips
+      color var(--efu-white)
+      background var(--efu-main)
+      width 100%
+      height 100%
+      position absolute
+      top 0
+      left 0
+      align-items center
+      justify-content center
+      display flex
+      border-radius 40px
+      opacity 0
+      font-size 12px
+      z-index 2
+      pointer-events none
+      transition .3s
+
+    &:hover
+      &:not(.playing)
+        #nav-music-hoverTips
+          opacity 1
+
+    .aplayer-list
+      display none
+
+  #nav-music .aplayer .aplayer-lrc:after,
+  #nav-music .aplayer .aplayer-lrc:before
+    display none

@@ -1,0 +1,751 @@
+#aside-content
+  width 300px
+
+  > .card-widget:first-child
+    transition: .3s
+    border: none
+    box-shadow: none
+    background: var(--efu-main)
+    margin-top: 0
+
+  +minWidth900()
+    padding-left 15px
+
+  +maxWidth1200()
+    display none
+
+  +minWidth1300()
+    padding-left 1rem
+    animation slide-in .6s .3s backwards
+
+  .item-headline
+    padding-bottom 0
+    margin-left 8px
+    font-size 1em
+    font-weight 700
+    display flex
+    align-items center
+
+    i
+      font-size 16px
+      max-width 20px
+
+    span
+      margin-left 4px
+
+    + div, + ul
+      padding 0
+      user-select none
+
+  .card-widget
+    box-shadow var(--efu-shadow-border)
+    background var(--efu-card-bg)
+    border var(--style-border)
+    transition 0.3s
+    border-radius 12px
+    position relative
+    overflow hidden
+    margin-top 1rem
+    padding 1rem 1.2rem
+
+    &:hover
+      box-shadow var(--efu-shadow-border)
+
+    > .card-widget
+      &:first-child
+        transition 0.3s
+        border none
+        margin-top 0
+
+  .sticky_layout
+    top calc(60px + 1rem)
+    position sticky
+    transition: top .3s ease 0s
+
++minWidth900()
+  html.hide-aside .layout
+    -webkit-box-pack: center
+    justify-content: center
+    >div:first-child
+      width 100%
+
+  html.hide-aside .layout > .aside-content
+    display: none
+
+// toc
+if "toc" in aside
+  #aside-content
+    .card-toc
+      padding .5rem .5rem
+
+      &:hover
+        box-shadow var(--efu-shadow-border)
+
+      +minWidth900()
+        right 0 !important
+
+      .toc-content
+        overflow-y auto
+        max-height calc(100vh - 300px)
+
+        &::before
+          position absolute
+          top .6rem
+          right 1.2rem
+          color #a9a9a9
+          content attr(progress-percentage)
+          font-style italic
+          font-size 1.2rem
+
+        .toc-link.active
+          border-left-color #0061cc
+          background #0079ff
+          color #fff
+
+    #card-toc
+      +minWidth901()
+        right 0
+
+      .toc-content
+        overflow-y: auto
+        max-height: calc(100vh - 300px)
+
+        * > .toc-item > .toc-child
+          margin-left 10px
+          transition display .3s ease-in-out 0s
+          padding-left 10px
+
+        ol
+          margin 0
+          padding-left .4rem
+
+          &ul
+            list-style: none
+
+        > ol
+          padding-left 0
+
+        .toc-child
+          display none
+
+        .toc-child .toc-child
+          display none
+
+          &.active
+            display block
+
+        .toc-item.active > .toc-child
+          display block
+
+        &:hover
+        .toc-content
+          .toc-link:not(.active) span
+            if hexo-config('aside.toc.vague')
+              filter: blur(0)
+            opacity: 1
+
+        .toc-item.active .toc-link
+          opacity 1
+          border-radius 8px
+
+        .toc-link
+          line-height 24px
+          padding 8px
+          border-left 0 solid transparent
+          border-radius 12px
+          color var(--efu-secondtext)
+          cursor default
+          min-height 40px
+          display flex
+          align-items center
+          transition all .2s ease-in-out 0s
+
+          &.active
+            border-radius 12px
+            border-left-color var(--efu-hovertext)
+            background-color var(--efu-card-bg)
+            color var(--efu-lighttext)
+            font-weight 700
+            font-size 20px
+
+          &:not(.active) span
+            opacity .6
+            cursor pointer
+            if hexo-config('aside.toc.vague')
+              filter blur(1px)
+            transition .3s
+
+            &:hover
+              color var(--efu-lighttext)
+
+  [data-theme=dark]
+    .toc
+      .toc-item.active .toc-link .toc-text
+        color: var(--efu-white)
+
+if "about" in aside
+  #aside-content
+    .card-widget
+      &:hover
+        .avatar-sticker
+          opacity 0
+          transform scale(0)
+
+      &.card-recent-post
+        padding .4rem .6rem !important
+
+      &.card-info
+        padding 0 !important
+        box-shadow var(--efu-shadow-black)
+
+        > div.card-content
+          padding 1rem 1.2rem
+          min-height 320px
+          position relative
+
+    > .card-widget.card-info
+      &:before
+        background linear-gradient(-25deg, var(--efu-main), var(--efu-main-op-deep), var(--efu-main), var(--efu-main-op-deep))
+        background-size 400%
+        position absolute
+        width 100%
+        height 100%
+        left 0
+        top 0
+        content ''
+        animation gradient 15s ease infinite
+
+      > div.card-content
+        padding 1rem 1.2rem
+        min-height 320px
+        position relative
+
+      > div.card-info-avatarimg
+        overflow hidden
+        background var(--efu-yellow)
+        transition 1.5s
+        min-height 160px
+        position relative
+        box-shadow var(--efu-shadow-yellow)
+
+        &:hover img
+          transform scale(1.03)
+
+    .card-info
+      .avatar-sticker
+        position absolute
+        bottom -2px
+        right -2px
+        width 33px
+        height 33px
+        line-height 34px
+        z-index 0
+        display flex
+        align-items center
+        justify-content center
+        transition .3s .2s
+        transform scale(1)
+        background var(--efu-card-bg)
+        border-radius 50%
+
+        img
+          width 26px
+          height 26px
+
+        ../ :hover .avatar-sticker
+          opacity 0
+          transform scale(0)
+
+      .author-info__desc
+        font-size 12px
+        color var(--efu-card-bg)
+        opacity .6
+        line-height 1
+
+      #author-info__sayhi
+        text-align center
+        width fit-content
+        color var(--efu-white)
+        background var(--efu-white-op)
+        font-size 12px
+        padding 2px 8px
+        border-radius 12px
+        cursor pointer
+        user-select none
+        transition .3s
+        margin auto
+        min-width 100px
+
+        / [data-theme=dark] &
+          background #00000015
+          color var(--efu-black)
+
+          &:hover
+            color var(--efu-white)
+
+        &:hover
+          background var(--efu-card-bg)
+          color var(--efu-main)
+          transform scale(1.1)
+
+      .card-info-avatar.is-center
+        flex-direction column
+        display flex
+        align-items flex-start
+
+      .avatar-img-group
+        width 118px
+        height 118px
+        right calc(50% - 59px)
+        top 90px
+        border-radius 500px
+        position absolute
+        transition cubic-bezier(.69, .39, 0, 1.21) .3s
+        transform-origin bottom
+        border 5px solid var(--efu-card-bg)
+
+        ../ :hover .avatar-img-group
+          opacity 0
+          transform scale(0)
+
+      .author-info__name
+        text-align left
+        font-weight 700
+        color var(--efu-card-bg)
+        font-size 20px
+        line-height 1
+        margin-bottom 5px
+
+      .author-info__top-group
+        display flex
+        height 28px
+        width 100%
+
+      .author-info__description_group
+        position absolute
+        top 50px
+        width 100%
+        left 0
+        padding 1.2rem
+        opacity 0
+        transition .3s
+
+        ../ :hover .author-info__description_group
+          opacity 1
+
+        .author-info__description
+          line-height 1.38
+          margin .3rem 0
+          text-align justify
+          color var(--efu-card-bg)
+
+          b
+            color var(--efu-card-bg)
+
+        .author-info__description2
+          line-height 1.38
+          margin .3rem 0
+          text-align justify
+          width 100%
+          z-index 2
+          color var(--efu-card-bg)
+
+          b
+            color var(--efu-card-bg)
+
+      .author-info__bottom-group
+        display flex
+        justify-content space-between
+        position absolute
+        padding 1.2rem
+        width 100%
+        left 0
+        bottom 0
+        align-items center
+
+        a.author-info__bottom-group-left:hover
+          opacity .8
+
+      .card-info-data
+        display table
+        margin .7rem 0 .2rem
+        width 100%
+        table-layout fixed
+
+        > div:nth-child(0) > a > div.headline
+          font-weight 700
+
+        > .card-info-data-item
+          display table-cell
+          transition .3s
+
+          a
+            .headline
+              color var(--efu-fontcolor)
+              font-size 1em
+
+            .length-num
+              margin-top -.3rem
+              color var(--text-highlight-color)
+              font-size 1.4em
+
+          &:hover
+            background #000
+            border-radius 5px
+
+      .card-info-social-icons
+        margin 0
+        display flex
+        justify-content flex-start
+        flex-direction row
+        flex-wrap nowrap
+        cursor pointer
+
+        .social-icon
+          margin 0
+          margin-left 8px
+          color var(--efu-fontcolor)
+          font-size 1.4em
+          cursor pointer
+          display flex
+
+        i
+          transition all .3s ease 0s
+          padding 8px
+          border-radius 32px
+          cursor pointer
+          background var(--efu-white-op)
+          color var(--efu-card-bg)
+          width 40px
+          height 40px
+          display flex
+          align-items center
+          justify-content center
+
+          &:hover
+            background var(--efu-white)
+            transform scale(1.1)
+            color var(--efu-main)
+            box-shadow none
+
+          / [data-theme=dark] &
+            background var(--efu-black-op)
+
+            &:hover
+              background-color var(--efu-black)
+              color var(--efu-white)
+
+      img.avatar-img
+        width 118px
+        right 0
+        top 0
+        border-radius 500px
+        position absolute
+        opacity 1
+        transition .3s
+
+  [data-theme=dark] #aside-content
+    > .card-widget.card-info
+      border var(--style-border-always)
+
+if "allInfo" in aside
+  #aside-content
+    .card-webinfo
+      .webinfo
+        .webinfo-item-title
+          display flex
+
+          i
+            line-height: 2 !important
+            margin-right: 6px
+            width: 16px
+            text-align: center
+            font-size: 16px !important
+
+        .webinfo-item
+          display flex
+          justify-content space-between
+          white-space nowrap
+          -webkit-box-align center
+          align-items center
+          padding .1rem .5rem 0
+
+          div:first-child
+            -webkit-box-flex 1
+            flex 1 1 0
+            padding-right 1rem
+
+
+    .card-allinfo
+
+      hr
+        display flex
+        position relative
+        margin 1rem 0
+        border 1px dashed var(--efu-theme-op)
+
+      .item-headline
+        display none
+
+      .card-tag-cloud
+        max-height 500px
+        overflow hidden
+        position relative
+
+        &.all-tags
+          max-height none
+
+          &:after
+            display none
+
+        &:after
+          content ""
+          position absolute
+          bottom 0
+          left 0
+          right 0
+          height 150px
+          background-image linear-gradient(to top, var(--efu-card-bg), transparent)
+          pointer-events none
+
+        a
+          display inline-block
+          padding 0 0.3rem
+          font-size .8rem
+          border-radius 8px
+
+          sup
+            opacity .6
+            margin-left 2px
+
+          &:hover
+            background var(--efu-theme)
+            color var(--efu-white) !important
+            box-shadow var(--efu-shadow-theme)
+            cursor pointer
+            border-radius 5px
+
+          &.tags-cloud-more
+            width 100%
+            text-align center
+            border-radius 8px !important
+            border var(--style-border)
+            margin-top 8px
+            font-size 16px !important
+
+      a#more-tags-btn
+        width 100%
+        text-align center
+        background var(--efu-secondbg)
+        color var(--efu-fontcolor)
+        border-radius 8px
+        display flex
+        justify-content center
+        font-size 14px
+        user-select none
+        padding 4px 0
+        border var(--style-border-always)
+        box-shadow var(--heo-shadow-border)
+
+    .card-archives
+      ul.card-archive-list
+        margin 0
+        padding 0
+        list-style none
+        display: flex
+        flex-direction: row
+        justify-content: space-between
+        flex-wrap: wrap
+
+        > .card-archive-list-item
+          width 100%
+          flex 0 0 48%
+
+          a
+            display inline-block
+            padding .15rem .5rem
+            width 100%
+            color var(--efu-fontcolor)
+            transition all .4s ease 0s
+            border-radius: 8px
+            margin: 4px 0
+            flex-direction: column
+            align-content: space-between
+            border: var(--style-border)
+
+            &:hover
+              background-color var(--efu-theme)
+              color var(--efu-card-bg)
+              border-radius 5px
+              box-shadow: var(--efu-shadow-theme)
+              padding: .15rem .5rem
+              border: var(--style-border-hover)
+              cursor pointer
+
+            span
+              display inline-block
+              vertical-align bottom
+
+              &:last-child
+                text-align right
+                margin-left: 4px
+
+            .card-archive-list-count-group
+              display flex
+              flex-direction row
+
+              span.card-archive-list-count
+                ext-align left
+                font-size 1.1rem
+                line-height 0.9
+                font-weight bold
+
+              .card-archive-list-count-unit
+                width auto
+                text-align left
+                font-size 14px
+                font-weight 700
+
+            .card-archive-list-date
+              font-size 14px
+              opacity .6
+
+
+  if hexo-config('aside.tags.highlight')
+    for tag in highlightTags
+      tag = '"/tags/' + tag + '/"'
+      #aside-content .card-tag-cloud a[href*={tag}]
+        color var(--efu-lighttext)
+        font-weight 500
+
+if "newestPost" in aside
+  #aside-content
+    .card-recent-post
+      .aside-list
+        .aside-list-item
+          padding 2px 6px 8px 6px
+          border-radius 12px
+          transition .3s
+          margin 4px 0
+          cursor pointer
+          display flex
+          align-items flex-start
+
+          &:hover
+            background var(--efu-main)
+            color var(--efu-white)
+            transition .3s
+            box-shadow var(--efu-shadow-main)
+
+            .content a
+              color var(--efu-white)
+
+          .thumbnail
+            -webkit-mask-image -webkit-radial-gradient(center, #fff, #000)
+            border-radius 8px
+            border var(--style-border)
+            display flex
+            align-items center
+            overflow hidden
+            width 2.1em
+            height 2.1em
+            margin-top 4px
+
+            img
+              width 140%
+              height 140%
+              transition all .6s ease 0s
+              object-fit cover
+
+          .content
+            -webkit-box-flex 1
+            flex 1 1 0
+            padding-left 10px
+            word-break break-all
+            display flex
+            flex-direction column
+
+            .title
+              font-weight 700
+              padding 2px 0
+              margin-bottom 8px
+              color var(--efu-fontcolor)
+              font-size 95%
+              line-height 1.3
+              -webkit-line-clamp 2
+              overflow hidden
+
+            .article-recent_post_categories
+              font-size 12px
+              font-weight 700
+              opacity .6
+              line-height 1
+
+if "flip" in aside
+  favicon = hexo-config('aside.flip.favicon')
+  face = hexo-config('aside.flip.face')
+  faceback = hexo-config('aside.flip.backface')
+  backcolor = convert(hexo-config('aside.flip.backcolor'))
+
+  #aside-content
+    .card-widget.card-platform
+      background backcolor
+      display flex
+      justify-content center
+      align-content center
+      padding 0
+      cursor pointer
+      border none
+      height 110px
+      border var(--style-border)
+      transition 0.6s
+
+      &:before
+        position absolute
+        width 100%
+        height 100%
+        left 0
+        top 0
+        background url(favicon) center center no-repeat
+        content ''
+        background-size cover
+        transition .2s cubic-bezier(.45, .04, .43, 1.21)
+
+      &:hover:before
+        top 100%
+        opacity 0
+        transition .3s ease-out
+
+      &:hover
+        #flip-content
+          transform rotateY(180deg)
+
+      #flip-wrapper
+        perspective 1000
+        position relative
+        width 235px
+        height 110px
+        z-index 1
+
+      #flip-wrapper #flip-content
+        width 100%
+        height 100%
+        transform-style preserve-3d
+        transition cubic-bezier(0, 0, 0, 1.29) 0.3s
+
+      #flip-wrapper #flip-content .face
+        position absolute
+        width 100%
+        height 100%
+        -webkit-backface-visibility hidden
+        backface-visibility hidden
+        background url(face) center center no-repeat
+        background-size 100%
+
+      #flip-wrapper #flip-content .face.back
+        display block
+        -webkit-transform rotateY(180deg)
+        transform rotateY(180deg)
+        box-sizing border-box
+        background url(faceback) center center no-repeat
+        background-size 100%

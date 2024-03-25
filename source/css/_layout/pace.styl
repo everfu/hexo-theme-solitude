@@ -1,0 +1,40 @@
+if hexo-config('loading.pace')
+  .pace
+    pointer-events: none
+    user-select: none
+    z-index: 2000
+    position: fixed
+    margin: auto
+    top: 4px
+    left: 0
+    right: 0
+    height: 8px
+    border-radius: 8px
+    width: 4rem
+    background: var(--efu-secondbg)
+    border: var(--style-border)
+    overflow: hidden
+
+    &.pace-inactive
+      opacity: 0
+      transition: .3s
+      top: -8px
+
+      .pace-progress
+        opacity: 0
+        transition: .3s ease-in
+
+    .pace-progress
+      box-sizing: border-box
+      transform: translate3d(0,0,0)
+      max-width: 200px
+      z-index: 2000
+      display: block
+      position: absolute
+      top: 0
+      right: 100%
+      height: 100%
+      width: 100%
+      background: var(--efu-logo-color)
+      animation: gradient 2s ease infinite
+      background-size: 200%

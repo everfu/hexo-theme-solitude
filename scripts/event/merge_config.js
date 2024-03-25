@@ -128,7 +128,7 @@ hexo.extend.filter.register('before_generate', () => {
         }, keyboard: {
             enable: false, list: []
         }, lazyload: {
-            enable: false, placeholder: '/img/loading.gif', errorimg: '/img/error_load.png'
+            enable: false, field: 'site', placeholder: '/img/loading.gif', errorimg: '/img/error_load.png'
         }, loading: {
             fullpage: false, pace: true,
         }, highlight: {
@@ -167,6 +167,12 @@ hexo.extend.filter.register('before_generate', () => {
             },
             verify_site: [],
             css_prefix: false,
+            font: {
+                'font-size': '16px',
+                'code-font-size': '1rem',
+                'font-family': '"PingFang SC","Hiragino Sans GB","Microsoft YaHei"',
+                'code-font-family': '"monospace", "monospace"',
+            },
             extends: {
                 head: [], body: [],
             },

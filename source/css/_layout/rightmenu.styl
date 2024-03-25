@@ -1,0 +1,79 @@
+if hexo-config('rightside.enable')
+  #rightMenu
+    display none
+    position fixed
+    padding 0 .25rem
+    width 9rem
+    height fit-content
+    top 10%
+    left 10%
+    background-color var(--efu-maskbgdeep)
+    backdrop-filter blur(20px)
+    transform translateZ(0)
+    color var(--efu-fontcolor)
+    border-radius 12px
+    z-index 99994
+    border var(--style-border)
+    user-select none
+    box-shadow var(--efu-shadow-black)
+    transition border .3s
+
+    &:hover
+      border var(--style-border-hover)
+      box-shadow var(--efu-shadow-theme)
+
+    .rightMenu-group
+      padding .5rem .3rem
+
+      &.rightMenu-small
+        display flex
+        justify-content space-between
+
+        .rightMenu-item
+          width 30px
+          height 30px
+          line-height 30px
+          display flex
+          align-items center
+          justify-content center
+
+      &.rightMenu-line
+        .rightMenu-item
+          display flex
+
+      .rightMenu-item
+        border-radius 8px
+        transition .3s
+        cursor pointer
+        margin .25rem 0
+        padding .25rem .5rem
+
+        &:hover
+          background-color var(--efu-lighttext)
+          color var(--efu-card-bg)
+          box-shadow var(--efu-shadow-main)
+
+        i
+          display inline-block
+          text-align center
+          line-height 1.5rem
+          width 1.5rem
+          padding 0 .25rem
+          margin 0 .25rem
+
+        span
+          line-height 1.5rem
+
+    .rightMenu-line
+      border-top 1px dashed var(--efu-theme-op)
+
+  #rightmenu-mask
+    position fixed
+    width 100vw
+    height 100vh
+    background 0 0
+    top 0
+    left 0
+    display none
+    margin 0 !important
+    z-index 99993

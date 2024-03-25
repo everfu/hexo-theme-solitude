@@ -26,10 +26,10 @@ site:
     custom: Solitude
   # 网页icon
   # Web icon
-  siteIcon: /img/logo.png
+  siteIcon: /img/pwa/favicon.ico
   # 页脚的Logo、加载动画默认的logo
   # Logo in the footer, default logo for loading animation
-  icon: /img/logo.png
+  icon: /img/avatar.png
 
 # 导航栏
 # NavBar
@@ -566,6 +566,7 @@ keyboard:
 # lazyload
 lazyload:
   enable: false
+  field: site # post, site
   # 加载中显示图片
   # Loading display image
   placeholder: /img/loading.gif
@@ -750,6 +751,14 @@ verify_site:
 # After opening css_prefix, some CSS will be automatically prefixed. (Will increase 20% of the volume)
 css_prefix: false
 
+# Font 字体
+# Font
+font:
+  font-size: 16px
+  code-font-size: 1rem
+  font-family: '"PingFang SC","Hiragino Sans GB","Microsoft YaHei"'
+  code-font-family: '"monospace", "monospace"'
+
 # 插入代码到头部 </head> 之前 和 底部 </body> 之前
 # Insert code before </head> and before </body>
 # 插入额外代码 如：统计，广告等
@@ -827,5 +836,4 @@ CDN:
     # swiper_css:
     # swiper_js:
     # busuanzi_js:
-    # snackbar_css:
     # snackbar_js:

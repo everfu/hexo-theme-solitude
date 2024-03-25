@@ -74,10 +74,6 @@ busuanzi_js:
   name: busuanzi
   file: bsz.pure.mini.js
   version: 2.3.0
-snackbar_css:
-  name: node-snackbar
-  file: dist/snackbar.min.css
-  version: 0.1.16
 snackbar:
   name: node-snackbar
   file: dist/snackbar.min.js

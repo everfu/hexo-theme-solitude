@@ -5,7 +5,7 @@ div(id="loading-box" onclick="preloader.endLoading();" style="zoom:1")
 script.
     const preloader = {
         endLoading: () => {
-            document.getElementById('loading-box').classList.add('loaded');
+            document.getElementById('loading-box').classList.toggle('loaded');
         },
         initLoading: () => {
             document.getElementById('loading-box').classList.remove('loaded');

@@ -55,3 +55,360 @@
   --card-hover-box-shadow 0 3px 8px 6px rgba(7, 17, 27, 0.15)
   --offset 0px
   --hlscrollbar-bg #121212
+
+body
+  position relative
+  min-height 100%
+  background var(--efu-background)
+  color var(--efu-fontcolor)
+  font-size $font-size
+  font-family $font-family
+  line-height 2
+  -webkit-tap-highlight-color transparent
+  margin 0
+
+*
+  box-sizing border-box
+
+html
+  line-height 1.15
+  -webkit-text-size-adjust 100%
+  text-size-adjust 100%
+  height: 100%;
+  font-size: 20px
+  overflow-y: overlay
+
+main
+  display block
+
+// scrollbar - chrome/safari
+*::-webkit-scrollbar
+  width 5px
+  height 5px
+
+*::-webkit-scrollbar-thumb
+  background var(--scrollbar-color)
+
+*::-webkit-scrollbar-track
+  background-color transparent
+
+#site-title,
+#site-subtitle,
+.site-name,
+#aside-content .author-info__name,
+#aside-content .author-info__description
+  font-family "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif
+
+
+if hexo-config('lazyload.enable') && !hexo-config('lazyload.placeholder')
+  img
+    &[data-lazy-src]:not(.loaded)
+      filter blur(8px) brightness(1)
+
+    &[data-lazy-src].error
+      filter none
+
+::selection
+  background var(--efu-main)
+  color var(--efu-white)
+
+h1
+  font-size 2em
+  margin .67em 0
+
+h1, h2, h3, h4, h5, h6
+  padding-top 0
+  padding-left 0
+  font-weight 700
+  position relative
+  margin 1rem 0 0.7rem
+  color var(--efu-fontcolor)
+
+hr
+  box-sizing content-box
+  height 0
+  overflow visible
+  display: none
+
+pre
+  font-family monospace, monospace
+
+a
+  color var(--efu-fontcolor)
+  text-decoration none
+  transition all .3s ease 0s
+  overflow-wrap break-word
+  -webkit-user-drag none
+
+abbr[title]
+  border-bottom none
+  text-decoration underline dotted
+
+b, strong
+  font-weight bolder
+
+code, kbd, samp
+  font-family $code-font-family
+  font-size $code-font-size
+
+small
+  font-size 80%
+
+sub, sup
+  font-size 75%
+  line-height 0
+  position relative
+  vertical-align baseline
+
+sub
+  bottom -.25em
+
+sup
+  top -.5em
+
+button, input, optgroup, select, textarea
+  font-family inherit
+  font-size 100%
+  line-height 1.15
+  margin 0
+
+button, input
+  overflow visible
+
+input::placeholder
+  color var(--efu-gray)
+
+button, select
+  text-transform none
+
+[type=button], [type=reset], [type=submit], button
+  appearance button
+
+fieldset
+  padding .35em .75em .625em
+
+legend
+  box-sizing border-box
+  color inherit
+  display table
+  max-width 100%
+  padding 0
+  white-space normal
+
+progress
+  vertical-align baseline
+
+textarea
+  overflow auto
+
+[type=checkbox], [type=radio]
+  box-sizing border-box
+  padding 0
+
+[type=number]::-webkit-inner-spin-button, [type=number]::-webkit-outer-spin-button
+  height auto
+
+[type=search]
+  appearance textfield
+  outline-offset -2px
+
+[type=search]::-webkit-search-decoration
+  appearance none
+
+input[type=checkbox] + label::before, input[type=radio] + label::before
+  content ''
+  display inline-block
+  width 16px
+  height 16px
+  border 1px solid #999
+  background-color #fff
+  margin-right 5px
+  vertical-align middle
+
+::-webkit-file-upload-button
+  appearance button
+  font inherit
+
+summary
+  display list-item
+
+template
+  display none
+
+[hidden]
+  display none
+
+input::placeholder
+  color var(--efu-fontcolor)
+
+.table-wrap
+  overflow-x scroll
+  margin 0 0 1rem
+
+table
+  display table
+  width 100%
+  border-spacing 0
+  border-collapse collapse
+  empty-cells show
+
+table thead
+  background rgba(153, 169, 191, .1)
+
+table td, table th
+  padding .3rem .6rem
+  border 1px solid var(--light-grey)
+  vertical-align middle
+
+button
+  padding 0
+  outline 0
+  border none
+  color var(--efu-fontcolor)
+  background 0 0
+  cursor pointer
+
+img
+  border-style none
+  max-width 100%
+  transition all .2s ease 0s
+  -webkit-user-drag none
+
+img:not([src]), img[src=""]
+  opacity 0
+
+.img-alt
+  font-size 12px
+  margin 0
+  margin-top 8px
+  color var(--efu-secondtext)
+
+.is-center
+  text-align center
+  display flex
+  flex-wrap wrap
+  justify-content center
+  flex-direction row
+  align-items center
+
+.copy-true
+  user-select all
+
+.pull-left
+  float left
+
+.pull-right
+  float right
+
+blockquote
+  border var(--style-border-always)
+  background-color var(--efu-secondbg)
+  color var(--efu-secondtext)
+  border-radius 8px
+  margin 1rem 0
+  padding .5rem .8rem
+
+li, ul
+  list-style none
+  display block
+  margin 0
+  padding 0
+
+::-webkit-scrollbar
+  width 6px
+  height 6px
+
+::-webkit-scrollbar-thumb
+  background var(--efu-scrollbar)
+  border-radius 8px
+  cursor pointer
+
+::-webkit-scrollbar-thumb:hover
+  background var(--efu-main)
+  opacity 1
+  display block !important
+
+::-webkit-scrollbar-track
+  background-color var(--efu-none)
+
+[data-theme=dark] img
+  filter brightness(1)
+
+a.extend
+  .next
+    right 0
+
+  .prev
+    left 0
+
+table td, table th
+  border var(--style-border-always)
+
+table thead
+  background var(--efu-secondbg)
+
+b, strong
+  color var(--efu-lighttext)
+
+.button--animated
+  border-radius 8px
+  transition .3s
+  position relative
+
+i.solitude
+  font-size 22px
+  line-height 1
+
+.layout
+  display: flex
+  margin: 0 auto
+  padding: 1rem 1.5rem
+  max-width: 1200px
+  +maxWidth768()
+    padding 0
+
+  &#content-inner
+    max-width: 1400px
+
+  /.hide-aside.layout
+    max-width: 1400px
+
+    > div
+      width: 100% !important
+
+  > div:first-child
+    width calc(100% - 300px)
+
+    +maxWidth1200()
+      width 100%
+
+  > div:first-child:not(.recent-posts)
+    box-shadow var(--efu-shadow-border)
+    padding 1rem 2rem
+    border-radius 12px
+    background var(--efu-card-bg)
+    border var(--style-border)
+    align-self flex-start
+    animation slide-in .6s .1s backwards
+    position relative
+
+    +maxWidth768()
+      box-shadow none
+      border none
+      padding 0 1rem
+      background var(--efu-background)
+
+span.tags-punctuation::before
+  content: "\e071"
+  font-family: solitude, serif !important
+  font-size: 12px
+  transition none
+  margin-right: 2px
+  opacity: .4
+
+  .hide-aside #page &
+    font-size 16px
+
+  #post-info &
+    font-size 14px
+    line-height 32px
