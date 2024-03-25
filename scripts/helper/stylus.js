@@ -24,7 +24,7 @@ hexo.extend.filter.register('stylus:renderer', function (style) {
 
     initGroupColor(theme.config.hometop.group,style);
 
-    // hightlight
+    // highlight
     const { syntax_highlighter: syntaxHighlighter, highlight, prismjs } = hexo.config
     let { enable: highlightEnable, line_number: highlightLineNumber } = highlight
     let { enable: prismjsEnable, line_number: prismjsLineNumber } = prismjs
