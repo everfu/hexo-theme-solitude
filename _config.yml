@@ -274,7 +274,7 @@ aside:
     postcount: true
     # 总字数
     # The number of words on the web site
-    wordcount: true
+    wordcount: false
     # 访问量
     # PV
     pv: true
@@ -310,7 +310,7 @@ post:
     # 文章默认图片
     # default cover
     cover:
-      # - /img/default.png # 默认图片 / default cover
+      # -  # 默认图片 / default cover
     # 文章发布默认地址
     # default post locate
     locate: 衡阳
