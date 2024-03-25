@@ -11,18 +11,16 @@ $light_theme_none = hexo-config('theme_color.light_none')
 
 $todayCardColor = convert(hexo-config('hometop.recommendList.color'))
 
-// highlight code
-if hexo-config('hightlight.theme') == 'default'
+// code
+if hexo-config('highlight.theme') == 'default'
   $hl_bg_light = #fff
   $hltools_bg_light = #f7f7f9
   $hl_bg_dark = #1b1c20
   $hltools_bg_dark = #21232a
-
-else if hexo-config('hightlight.theme') == 'mac'
+else if hexo-config('highlight.theme') == 'mac'
   $hl_bg_light = #FFFFFF
   $hltools_bg_light = #E7E7E7
   $hl_bg_dark = #1C1E1E
-  $hltools_bg_dark = #2A282A
+  $hltools_bg_dark = #454a50
 
-// code
 $line-height-code-block = 1.6
