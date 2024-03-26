@@ -4,7 +4,8 @@ hexo.extend.filter.register('after_post_render', function (data) {
     data.title = data.title || 'Untitled';
     const {config} = hexo.theme;
     if (data.layout === 'post') {
-        const {copyright, locate, cover} = hexo.theme.config.post.default
+        let {copyright, locate, cover} = hexo.theme.config.post.default
+        cover = cover !== null ? cover : ['/img/default.png']
         data.locate = data.locate || locate
         data.cc = data.cc || copyright
         data.cover = data.cover || cover[getRandomInt(0, cover?.length)]
@@ -12,7 +13,8 @@ hexo.extend.filter.register('after_post_render', function (data) {
         data.toc = !!(config.aside.toc.post && data.toc !== false);
     }
     if (data.layout === 'page') {
-        const {cover} = hexo.theme.config.page.default
+        let {cover} = hexo.theme.config.page.default
+        cover = cover !== null ? cover : ['/img/default.png']
         data.cover = data.cover || cover[getRandomInt(0, cover?.length)]
         data.excerpt = data.title
         data.toc = !!(config.aside.toc.page && data.toc !== false && data.aside);

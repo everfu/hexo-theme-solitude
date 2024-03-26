@@ -3,15 +3,30 @@
 if hexo-config('css_prefix')
   @import 'nib'
 
+@import "third_party/snackbar.min.css"
 // project
+@import "var.styl"
 @import '_global/*'
 @import '_layout/*'
 @import '_page/index.styl'
-
-// widgets
-@import '_widgets/index.styl'
-
+@import '_post/index.styl'
 @import '_mode/*'
 
 // highlight
 @import '_highlight/index'
+
+// search
+if hexo-config('search.enable')
+  if hexo-config('search.type') == 'algolia'
+    @import '_search/algolia-search'
+  else if hexo-config('search.type') == 'local'
+    @import '_search/local-search'
+
+// tags plugin
+@import "_tags/*"
+
+// comment
+if hexo-config('comment.enable')
+  @import '_comments/index.styl'
+  @import '_comments/twikoo.styl' when hexo-config('comment.type') == 'twikoo'
+  @import '_comments/waline.styl' when hexo-config('comment.type') == 'waline'

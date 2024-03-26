@@ -1,6 +1,236 @@
-#recent-posts
-  position relative
-  +minWidth1300()
+if hexo-config('index_post_list.direction') == "column"
+  #recent-posts
+    position relative
+    +minWidth1300()
+      display flex
+      flex-wrap wrap
+      justify-content space-between
+      align-items flex-start
+      align-content flex-start
+      user-select none
+      transition width .3s
+
+    +maxWidth768()
+      padding 0 1rem
+
+    > .recent-post-item
+      box-shadow var(--efu-shadow-light2black)
+      display flex
+      align-items center
+      animation slide-in .6s .4s backwards
+      transition all .3s ease 0s
+      overflow hidden
+      height fit-content
+      background var(--efu-card-bg)
+      border-radius 12px
+      cursor pointer
+      border var(--style-border)
+      margin 1rem 0 1rem
+
+      +minWidth1300()
+        flex-direction column
+        width calc(100% / 2 - .5rem)
+        margin-top .25rem
+        margin-bottom .75rem
+        box-shadow var(--efu-shadow-border)
+
+      +maxWidth768()
+        margin 1.5rem 0
+        border-radius 12px
+        margin-top 0.5rem
+        border var(--style-border-always)
+        box-shadow var(--efu-shadow-border)
+        display block
+        position relative
+        clip-path inset(0 0 0 0 round 12px)
+
+      &:hover
+        box-shadow var(--efu-shadow-main)
+        border var(--style-border-hover)
+
+        .post_cover img.post_bg
+          transform scale(1.03)
+          transition .3s ease-in-out
+          filter brightness(.85)
+
+        .recent-post-info-top .article-title
+          color var(--efu-theme)
+
+      if hexo-config('google_adsense.enable')
+        + .google-ads-warp
+          iframe
+            width: 100% !important
+            height: 100% !important
+            border: none !important
+
+      .post_cover
+        position relative
+        transition 1s
+        width 100%
+        overflow hidden
+        height 100%
+
+        +minWidth1300()
+          height 225px
+
+        +maxWidth1300()
+          width 75%
+          display flex
+          height 220px
+
+        +maxWidth768()
+          width 100%
+          height 170px
+          border-radius 5px 8px 0 0
+
+        a
+          min-width 100%
+          min-height 100%
+
+        img.post_bg
+          width 100%
+          height 100%
+          transition all .6s ease 0s
+          object-fit cover
+
+          +maxWidth1300()
+            min-width 100%
+            -webkit-backface-visibility hidden
+            -webkit-transform-style preserve-3d
+            min-height 100%
+            user-select none
+
+          +maxWidth768()
+            border-radius: 12px 12px 0 0
+
+      > .recent-post-info
+        height 174px
+        width 100%
+        cursor pointer
+        position relative
+        padding 0
+        display inline-block
+        overflow hidden
+
+        .content
+          -webkit-line-clamp 2
+          display -webkit-box
+          overflow hidden
+          -webkit-box-orient vertical
+          padding 5px 32px
+          color var(--efu-gray)
+          font-size 14px
+          line-height 1.8
+
+        span.tags-punctuation
+          transition .3s
+
+          &:hover
+            color var(--efu-main)
+
+        .recent-post-info-top
+          position relative
+          transition .3s
+          padding 0 32px
+          width 100%
+
+          .article-title
+            line-height 30px
+            margin-top 0
+            font-weight 700
+            margin-bottom 0
+            width 100%
+            transition .3s
+            font-size 1rem
+            -webkit-line-clamp 2
+            display -webkit-box
+            overflow hidden
+            -webkit-box-orient vertical
+
+          .recent-post-info-top-tips
+            display flex
+            margin-top 20px
+            user-select none
+
+            > .sticky-warp
+              display flex
+              position relative
+              margin-right 8px
+              justify-content center
+              align-items center
+              font-size 0.5rem
+
+              i
+                font-size .5rem
+                margin-right 3px
+
+            .original
+              display flex
+              color var(--efu-secondtext)
+              font-size .5rem
+              position relative
+              margin-right 8px
+
+            .unvisited-post
+              display flex
+              color var(--efu-secondtext)
+              font-size .5rem
+              position relative
+
+              &:visited
+                color var(--efu-card-bg)
+
+        /.article-meta-wrap
+          position absolute
+          bottom 16px
+          transition .3s
+          display flex
+          flex-direction row
+          flex-wrap nowrap
+          justify-content space-between
+          width 100%
+          left 0
+          padding 0 32px
+          white-space nowrap
+          color var(--efu-fontcolor)
+          font-size .7rem
+
+          > .article-meta
+            margin 0 8px 0 0
+            white-space nowrap
+            overflow hidden
+            text-overflow ellipsis
+            display flex
+
+            > .article-meta__tags
+              margin-right 8px
+              padding 0 .2rem 0 0
+              color var(--efu-fontcolor)
+
+          > .post-meta-date
+            right 0
+            text-align right
+
+            i
+              display none
+
+          .article-meta__separator
+            display none
+
+          a:hover
+            background-color var(--efu-none)
+            color var(--efu-lighttext)
+            cursor pointer
+            border-radius 4px
+
+          i
+            margin 0 .4rem 0 0
+
+          .sticky
+            color var(--efu-fontcolor)
+else if hexo-config('index_post_list.direction') == "row"
+  #recent-posts
+    position relative
     display flex
     flex-wrap wrap
     justify-content space-between
@@ -9,211 +239,218 @@
     user-select none
     transition width .3s
 
-  +maxWidth768()
-    padding 0 1rem
+    +maxWidth768()
+      padding 0 1rem
 
-  > .recent-post-item
-    box-shadow var(--efu-shadow-light2black)
-    display flex
-    align-items center
-    animation slide-in .6s .4s backwards
-    transition all .3s ease 0s
-    overflow hidden
-    height fit-content
-    background var(--efu-card-bg)
-    border-radius 12px
-    cursor pointer
-    border var(--style-border)
-    margin 1rem 0 1rem
-
-    +minWidth1300()
-      flex-direction column
-      width calc(100% / 2 - .5rem)
+    > .recent-post-item
+      display flex
+      align-items center
+      animation slide-in .6s .4s backwards
+      transition all .3s ease 0s
+      overflow hidden
+      height fit-content
+      background var(--efu-card-bg)
+      border-radius 12px
+      cursor pointer
+      border var(--style-border)
+      margin 1rem 0 1rem
+      flex-direction row
+      width 100%
       margin-top .25rem
       margin-bottom .75rem
       box-shadow var(--efu-shadow-border)
 
-    +maxWidth768()
-      margin 1.5rem 0
-      border-radius 12px
-      margin-top 0.5rem
-      border var(--style-border-always)
-      box-shadow var(--efu-shadow-border)
-      display block
-      position relative
-      clip-path inset(0 0 0 0 round 12px)
+      +maxWidth768()
+        margin 1.5rem 0
+        border-radius 12px
+        margin-top 0.5rem
+        border var(--style-border-always)
+        box-shadow var(--efu-shadow-border)
+        flex-direction column
+        position relative
+        clip-path inset(0 0 0 0 round 12px)
 
-    &:hover
-      box-shadow var(--efu-shadow-main)
-      border var(--style-border-hover)
+      &:hover
+        box-shadow var(--efu-shadow-main)
+        border var(--style-border-hover)
 
-      .post_cover img.post_bg
-        transform scale(1.03)
-        transition .3s ease-in-out
-        filter brightness(.85)
+        .post_cover img.post_bg
+          transform scale(1.03)
+          transition .3s ease-in-out
+          filter brightness(.85)
 
-      .recent-post-info-top .article-title
-        color var(--efu-theme)
-        
-    if hexo-config('google_adsense.enable')
-      + .google-ads-warp
-        iframe
-          width: 100% !important
-          height: 100% !important
-          border: none !important
+        .recent-post-info-top .article-title
+          color var(--efu-theme)
 
-    .post_cover
-      position relative
-      transition 1s
-      width 100%
-      overflow hidden
-      height 100%
+      if hexo-config('google_adsense.enable')
+        + .google-ads-warp
+          iframe
+            width: 100% !important
+            height: 100% !important
+            border: none !important
 
-      +minWidth1300()
-        height 225px
-
-      +maxWidth1300()
+      .post_cover
+        position relative
+        transition 1s
+        overflow hidden
         width 75%
         display flex
         height 220px
 
-      +maxWidth768()
-        width 100%
-        height 170px
-        border-radius 5px 8px 0 0
+        +maxWidth768()
+          width 100%
+          height 170px
+          border-radius 5px 8px 0 0
+          order 1
 
-      a
-        min-width 100%
-        min-height 100%
+        a
+          min-width 100%
+          min-height 100%
 
-      img.post_bg
-        width 100%
-        height 100%
-        transition all .6s ease 0s
-        object-fit cover
-
-        +maxWidth1300()
+        img.post_bg
+          width 100%
+          height 100%
+          transition all .6s ease 0s
+          object-fit cover
           min-width 100%
           -webkit-backface-visibility hidden
           -webkit-transform-style preserve-3d
           min-height 100%
           user-select none
 
-        +maxWidth768()
-          border-radius: 12px 12px 0 0
+          +maxWidth768()
+            border-radius: 12px 12px 0 0
 
-    > .recent-post-info
-      height 174px
-      width 100%
-      cursor pointer
-      position relative
-      padding 0
-      display inline-block
-      overflow hidden
-
-      span.tags-punctuation
-        transition .3s
-
-        &:hover
-          color var(--efu-main)
-
-      .recent-post-info-top
-        position relative
-        transition .3s
-        padding 0 32px
+      > .recent-post-info
+        height 174px
         width 100%
+        cursor pointer
+        position relative
+        padding 0
+        display inline-block
+        overflow hidden
+        +maxWidth768()
+          order 2
 
-        .article-title
-          line-height 30px
-          margin-top 0
-          font-weight 700
-          margin-bottom 0
-          width 100%
-          transition .3s
-          font-size 1rem
-          -webkit-line-clamp 2
+        .content
+          -webkit-line-clamp 3
           display -webkit-box
           overflow hidden
           -webkit-box-orient vertical
+          padding 5px 32px
+          color var(--efu-gray)
+          font-size 14px
+          line-height 1.8
+          +maxWidth768()
+            -webkit-line-clamp 2
 
-        .recent-post-info-top-tips
-          display flex
-          margin-top 20px
-          user-select none
+        span.tags-punctuation
+          transition .3s
 
-          > .sticky-warp
+          &:hover
+            color var(--efu-main)
+
+        .recent-post-info-top
+          position relative
+          transition .3s
+          padding 0 32px
+          width 100%
+
+          .article-title
+            line-height 30px
+            margin-top 0
+            font-weight 700
+            margin-bottom 0
+            width 100%
+            transition .3s
+            font-size 1rem
+            -webkit-line-clamp 2
+            display -webkit-box
+            overflow hidden
+            -webkit-box-orient vertical
+
+          .recent-post-info-top-tips
             display flex
-            position relative
-            margin-right 8px
-            justify-content center
-            align-items center
-            font-size 0.5rem
+            user-select none
+
+            +maxWidth768()
+              margin-top 20px
+
+            > .sticky-warp
+              display flex
+              position relative
+              margin-right 8px
+              justify-content center
+              align-items center
+              font-size 0.5rem
+
+              i
+                font-size .5rem
+                margin-right 3px
+
+            .original
+              display flex
+              color var(--efu-secondtext)
+              font-size .5rem
+              position relative
+              margin-right 8px
+
+            .unvisited-post
+              display flex
+              color var(--efu-secondtext)
+              font-size .5rem
+              position relative
+
+              &:visited
+                color var(--efu-card-bg)
+
+        /.article-meta-wrap
+          position absolute
+          bottom 0
+          transition .3s
+          display flex
+          flex-direction row
+          flex-wrap nowrap
+          justify-content space-between
+          width 100%
+          left 0
+          padding 0 32px
+          white-space nowrap
+          color var(--efu-fontcolor)
+          font-size .7rem
+          +maxWidth768()
+            bottom 16px
+
+          > .article-meta
+            margin 0 8px 0 0
+            white-space nowrap
+            overflow hidden
+            text-overflow ellipsis
+            display flex
+
+            > .article-meta__tags
+              margin-right 8px
+              padding 0 .2rem 0 0
+              color var(--efu-fontcolor)
+
+          > .post-meta-date
+            right 0
+            text-align right
 
             i
-              font-size .5rem
-              margin-right 3px
+              display none
 
-          .original
-            display flex
-            color var(--efu-secondtext)
-            font-size .5rem
-            position relative
-            margin-right 8px
-
-          .unvisited-post
-            display flex
-            color var(--efu-secondtext)
-            font-size .5rem
-            position relative
-
-            &:visited
-              color var(--efu-card-bg)
-
-      /.article-meta-wrap
-        position absolute
-        bottom 16px
-        transition .3s
-        display flex
-        flex-direction row
-        flex-wrap nowrap
-        justify-content space-between
-        width 100%
-        left 0
-        padding 0 32px
-        white-space nowrap
-        color var(--efu-fontcolor)
-        font-size .7rem
-
-        > .article-meta
-          margin 0 8px 0 0
-          white-space nowrap
-          overflow hidden
-          text-overflow ellipsis
-          display flex
-
-          > .article-meta__tags
-            margin-right 8px
-            padding 0 .2rem 0 0
-            color var(--efu-fontcolor)
-
-        > .post-meta-date
-          right 0
-          text-align right
-
-          i
+          .article-meta__separator
             display none
 
-        .article-meta__separator
-          display none
+          a:hover
+            background-color var(--efu-none)
+            color var(--efu-lighttext)
+            cursor pointer
+            border-radius 4px
 
-        a:hover
-          background-color var(--efu-none)
-          color var(--efu-lighttext)
-          cursor pointer
-          border-radius 4px
+          i
+            margin 0 .4rem 0 0
 
-        i
-          margin 0 .4rem 0 0
-
-        .sticky
-          color var(--efu-fontcolor)
+          .sticky
+            color var(--efu-fontcolor)

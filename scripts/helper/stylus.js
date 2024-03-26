@@ -7,14 +7,7 @@ hexo.extend.filter.register('stylus:renderer', function (style) {
         style.define('highlightTags', array);
     }
 
-    const aside = [
-        theme.config.aside.home.noSticky,
-        theme.config.aside.home.Sticky,
-        theme.config.aside.post.noSticky,
-        theme.config.aside.post.Sticky,
-        theme.config.aside.page.Sticky,
-        theme.config.aside.page.noSticky
-    ].join(',').split(',');
+    const aside = [theme.config.aside.home.noSticky, theme.config.aside.home.Sticky, theme.config.aside.post.noSticky, theme.config.aside.post.Sticky, theme.config.aside.page.Sticky, theme.config.aside.page.noSticky].join(',').split(',');
     const uniqueArr = [...new Set(aside)];
     if (uniqueArr.length > 0) {
         style.define('aside', uniqueArr);
@@ -22,12 +15,12 @@ hexo.extend.filter.register('stylus:renderer', function (style) {
 
     style.define('about', data && data.about ? Object.keys(data.about) : []);
 
-    initGroupColor(theme.config.hometop.group,style);
+    initGroupColor(theme.config.hometop.group, style);
 
     // highlight
-    const { syntax_highlighter: syntaxHighlighter, highlight, prismjs } = hexo.config
-    let { enable: highlightEnable, line_number: highlightLineNumber } = highlight
-    let { enable: prismjsEnable, line_number: prismjsLineNumber } = prismjs
+    const {syntax_highlighter: syntaxHighlighter, highlight, prismjs} = hexo.config
+    let {enable: highlightEnable, line_number: highlightLineNumber} = highlight
+    let {enable: prismjsEnable, line_number: prismjsLineNumber} = prismjs
 
     // for hexo > 7.0
     if (syntaxHighlighter) {
@@ -41,8 +34,8 @@ hexo.extend.filter.register('stylus:renderer', function (style) {
     style.define('$prismjs_line_number', prismjsLineNumber)
 });
 
-function initGroupColor(gg,style) {
-    if(gg === null || gg === undefined) {
+function initGroupColor(gg, style) {
+    if (gg === null || gg === undefined) {
         style.define('banner_group', [])
         return;
     }
@@ -63,5 +56,6 @@ function initGroupColor(gg,style) {
         });
         return color;
     }
+
     style.define('getGroupColor', getGroupColor);
 }

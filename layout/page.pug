@@ -22,7 +22,7 @@ block content
                     include includes/page/moment
                 when 'douban'
                     include includes/widgets/page/banner
-                    include includes/page/default
+                    != page.content
                 when 'music'
                     include includes/page/music
                 default

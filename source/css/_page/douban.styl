@@ -1,125 +1,127 @@
-#article-container
-  .hexo-douban-items
-    display flex
-    flex-wrap wrap
-    gap 12px
-    flex-direction row
+.hexo-douban-items
+  display flex
+  flex-wrap wrap
+  gap 12px
+  flex-direction row
 
-    .hexo-douban-item
-      position relative
-      width calc(100% / 4 - 9px)
-      border-radius 12px
-      border var(--style-border)
-      box-shadow var(--efu-shadow-border)
-      background var(--efu-card-bg)
-      transition .3s
-      animation slide-in 0.6s 0.3s backwards
-      border var(--style-border)
-      margin 8px 0
-      height 160px
-      min-height 160px !important
-      overflow hidden
+  .hexo-douban-comment
+    display none
 
-      +maxWidth1200()
-        width calc(100% / 3 - 9px)
-
-      +maxWidth899()
-        width calc(100% / 2 - 9px)
-
-      +maxWidth600()
-        width 100%
-
-      &:hover
-        border-color var(--efu-main)
-
-      .hexo-douban-picture
-        width 120px
-        height 100%
-        top 0
-        padding 10px
-
-        img
-          margin 0
-          height 100%
-          max-width 100%
-          border-radius 6px
-
-      .hexo-douban-info
-        display flex
-        flex-wrap wrap
-        align-content flex-start
-        height 100%
-        position relative
-
-        .hexo-douban-rating
-          position absolute
-          bottom 5px
-          line-height 16px
-
-        .hexo-douban-meta
-          display -webkit-box
-          overflow hidden
-          -webkit-box-orient vertical
-
-          +maxWidth1300()
-            -webkit-line-clamp 3!important
-
-          +maxWidth899()
-            -webkit-line-clamp 4!important
-
-        .hexo-douban-title
-          transition all .2s ease 0s
-          white-space nowrap
-          overflow hidden
-          text-overflow ellipsis
-          width 100%
-
-          a
-            border-bottom 0
-
-            &:hover
-              background none
-              color var(--efu-main)
-
-  .hexo-douban-pagination
-    margin-top 1.25rem
-    animation slide-in 0.6s 0.3s backwards
-
-    .hexo-douban-button
-      background var(--efu-card-bg)
-      height 2rem
-      line-height calc(2rem - 2px)
-      border-radius 8px !important
-      margin 0 0.3rem
-      padding 6px 12px
-      box-shadow var(--efu-shadow-border)
-      border var(--style-border)
-      transition 0.3s
-      display inline-flex
-      align-items center
-
-      &:hover
-        background var(--efu-main)
-
-  .hexo-douban-tabs
-    white-space nowrap
-    overflow hidden
-    display flex
-    padding 0.4rem 1rem 0.4rem 1rem
-    background var(--efu-card-bg)
+  .hexo-douban-item
+    position relative
+    width calc(100% / 4 - 9px)
     border-radius 12px
     border var(--style-border)
+    box-shadow var(--efu-shadow-border)
+    background var(--efu-card-bg)
+    transition .3s
     animation slide-in 0.6s 0.3s backwards
+    border var(--style-border)
+    margin 8px 0
+    height 160px
+    min-height 160px !important
+    overflow hidden
+
+    +maxWidth1200()
+      width calc(100% / 3 - 9px)
+
+    +maxWidth899()
+      width calc(100% / 2 - 9px)
+
+    +maxWidth600()
+      width 100%
 
     &:hover
       border-color var(--efu-main)
 
-    a
-      padding 0.1rem 0.5rem
-      margin-right 6px
-      font-weight 700
-      border-radius 8px !important
-      border-bottom 0
+    .hexo-douban-picture
+      width 120px
+      height 100%
+      top 0
+      padding 10px
 
-    .hexo-douban-tab-active
+      img
+        margin 0
+        height 100%
+        max-width 100%
+        border-radius 6px
+
+    .hexo-douban-info
+      display flex
+      flex-wrap wrap
+      align-content flex-start
+      height 100%
+      position relative
+
+      .hexo-douban-rating
+        position absolute
+        bottom 5px
+        line-height 16px
+
+      .hexo-douban-meta
+        display -webkit-box
+        overflow hidden
+        -webkit-box-orient vertical
+
+        +maxWidth1300()
+          -webkit-line-clamp 3 !important
+
+        +maxWidth899()
+          -webkit-line-clamp 4 !important
+
+      .hexo-douban-title
+        transition all .2s ease 0s
+        white-space nowrap
+        overflow hidden
+        text-overflow ellipsis
+        width 100%
+
+        a
+          border-bottom 0
+
+          &:hover
+            background none
+            color var(--efu-main)
+
+.hexo-douban-pagination
+  margin-top 1.25rem
+  animation slide-in 0.6s 0.3s backwards
+
+  .hexo-douban-button
+    background var(--efu-card-bg)
+    height 2rem
+    line-height calc(2rem - 2px)
+    border-radius 8px !important
+    margin 0 0.3rem
+    padding 6px 12px
+    box-shadow var(--efu-shadow-border)
+    border var(--style-border)
+    transition 0.3s
+    display inline-flex
+    align-items center
+
+    &:hover
       background var(--efu-main)
+
+.hexo-douban-tabs
+  white-space nowrap
+  overflow hidden
+  display flex
+  padding 0.4rem 1rem 0.4rem 1rem
+  background var(--efu-card-bg)
+  border-radius 12px
+  border var(--style-border)
+  animation slide-in 0.6s 0.3s backwards
+
+  &:hover
+    border-color var(--efu-main)
+
+  a
+    padding 0.1rem 0.5rem
+    margin-right 6px
+    font-weight 700
+    border-radius 8px !important
+    border-bottom 0
+
+  .hexo-douban-tab-active
+    background var(--efu-main)

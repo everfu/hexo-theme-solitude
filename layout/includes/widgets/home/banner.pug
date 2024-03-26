@@ -20,4 +20,4 @@ div.tags-group-all
                 .tags-group-icon-pair
                     each key in pair
                         .tags-group-icon(style=`background: ${theme.hometop.banner.icon[key].color}`)
-                            img(src=theme.hometop.banner.icon[key].img, title=key)
+                            img.nolazyload(src=theme.hometop.banner.icon[key].img, title=key)
