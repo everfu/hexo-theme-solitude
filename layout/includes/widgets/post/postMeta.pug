@@ -7,7 +7,7 @@
             a.post-meta-original(title=_p('post.meta_cc').replace(/\$\{cc}/, cc))= cc
             if page.categories.data.length > 0
                 span.post-meta-categories
-                    a.post-meta-categories(href='/' + page.categories.data[0].path)= page.categories.data[0].name
+                    a.post-meta-categories(href=url_for('/' + page.categories.data[0].path))= page.categories.data[0].name
             .tag_share
                 .post-meta__tag-list
                     each tag in page.tags.data

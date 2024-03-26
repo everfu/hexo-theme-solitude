@@ -41,7 +41,7 @@ mixin info
     div.article-meta-wrap
         span.article-meta.tags
             each tag in post.tags.data
-                a.article-meta__tags(href=tag.path, onclick="event.stopPropagation();")
+                a.article-meta__tags(href=url_for(tag.path), onclick="event.stopPropagation();")
                     span.tags-punctuation=tag.name
 
         span.post-meta-date

@@ -53,10 +53,10 @@ div#rightMenu
         a.rightMenu-item.menu-Link#menu-randomPost
             i.solitude.st-signal-tower-fill
             span= _p('rightmenu.randomPost')
-        a.rightMenu-item.menu-link(href="/categories/")
+        a.rightMenu-item.menu-link(href=url_for("/categories/"))
             i.solitude.st-checkbox-multiple-blank-fill
             span= _p('rightmenu.categories')
-        a.rightMenu-item.menu-link(href="/tags/")
+        a.rightMenu-item.menu-link(href=url_for("/tags/"))
             i.solitude.st-price-tag-fill
             span= _p('rightmenu.tags')
     div.rightMenu-group.rightMenu-line.rightMenuOther
