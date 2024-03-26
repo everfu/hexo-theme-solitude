@@ -66,122 +66,122 @@
   html.hide-aside .layout
     -webkit-box-pack: center
     justify-content: center
-    >div:first-child
+
+    > div:first-child
       width 100%
 
   html.hide-aside .layout > .aside-content
     display: none
 
 // toc
-if "toc" in aside
-  #aside-content
-    .card-toc
-      padding .5rem .5rem
+#aside-content
+  .card-toc
+    padding .5rem .5rem
 
-      &:hover
-        box-shadow var(--efu-shadow-border)
+    &:hover
+      box-shadow var(--efu-shadow-border)
 
-      +minWidth900()
-        right 0 !important
+    +minWidth900()
+      right 0 !important
 
-      .toc-content
-        overflow-y auto
-        max-height calc(100vh - 300px)
+    .toc-content
+      overflow-y auto
+      max-height calc(100vh - 300px)
 
-        &::before
-          position absolute
-          top .6rem
-          right 1.2rem
-          color #a9a9a9
-          content attr(progress-percentage)
-          font-style italic
-          font-size 1.2rem
+      &::before
+        position absolute
+        top .6rem
+        right 1.2rem
+        color #a9a9a9
+        content attr(progress-percentage)
+        font-style italic
+        font-size 1.2rem
 
-        .toc-link.active
-          border-left-color #0061cc
-          background #0079ff
-          color #fff
+      .toc-link.active
+        border-left-color #0061cc
+        background #0079ff
+        color #fff
 
-    #card-toc
-      +minWidth901()
-        right 0
+  #card-toc
+    +minWidth901()
+      right 0
 
-      .toc-content
-        overflow-y: auto
-        max-height: calc(100vh - 300px)
+    .toc-content
+      overflow-y: auto
+      max-height: calc(100vh - 300px)
 
-        * > .toc-item > .toc-child
-          margin-left 10px
-          transition display .3s ease-in-out 0s
-          padding-left 10px
+      * > .toc-item > .toc-child
+        margin-left 10px
+        transition display .3s ease-in-out 0s
+        padding-left 10px
 
-        ol
-          margin 0
-          padding-left .4rem
+      ol
+        margin 0
+        padding-left .4rem
 
-          &ul
-            list-style: none
+        &ul
+          list-style: none
 
-        > ol
-          padding-left 0
+      > ol
+        padding-left 0
 
-        .toc-child
-          display none
+      .toc-child
+        display none
 
-        .toc-child .toc-child
-          display none
+      .toc-child .toc-child
+        display none
 
-          &.active
-            display block
-
-        .toc-item.active > .toc-child
+        &.active
           display block
 
-        &:hover
-        .toc-content
-          .toc-link:not(.active) span
-            if hexo-config('aside.toc.vague')
-              filter: blur(0)
-            opacity: 1
+      .toc-item.active > .toc-child
+        display block
 
-        .toc-item.active .toc-link
-          opacity 1
-          border-radius 8px
+      &:hover
+      .toc-content
+        .toc-link:not(.active) span
+          if hexo-config('aside.toc.vague')
+            filter: blur(0)
+          opacity: 1
 
-        .toc-link
-          line-height 24px
-          padding 8px
-          border-left 0 solid transparent
+      .toc-item.active .toc-link
+        opacity 1
+        border-radius 8px
+
+      .toc-link
+        line-height 24px
+        padding 8px
+        border-left 0 solid transparent
+        border-radius 12px
+        color var(--efu-secondtext)
+        cursor default
+        min-height 40px
+        display flex
+        align-items center
+        transition all .2s ease-in-out 0s
+
+        &.active
           border-radius 12px
-          color var(--efu-secondtext)
-          cursor default
-          min-height 40px
-          display flex
-          align-items center
-          transition all .2s ease-in-out 0s
+          border-left-color var(--efu-hovertext)
+          background-color var(--efu-card-bg)
+          color var(--efu-lighttext)
+          font-weight 700
+          font-size 20px
 
-          &.active
-            border-radius 12px
-            border-left-color var(--efu-hovertext)
-            background-color var(--efu-card-bg)
+        &:not(.active) span
+          opacity .6
+          cursor pointer
+          if hexo-config('aside.toc.vague')
+            filter blur(1px)
+          transition .3s
+
+          &:hover
             color var(--efu-lighttext)
-            font-weight 700
-            font-size 20px
 
-          &:not(.active) span
-            opacity .6
-            cursor pointer
-            if hexo-config('aside.toc.vague')
-              filter blur(1px)
-            transition .3s
-
-            &:hover
-              color var(--efu-lighttext)
-
-  [data-theme=dark]
-    .toc
-      .toc-item.active .toc-link .toc-text
-        color: var(--efu-white)
+[data-theme=dark]
+  .toc
+    .toc-item.active .toc-link .toc-text
+      color: var(--efu-white)
 
 if "about" in aside
   #aside-content
