@@ -37,27 +37,27 @@ nav:
   # logo 箱子
   # logo group
   group:
-    # 项目: # 分类名称
-    #   Solitude: https://github.com/valor-x/hexo-theme-solitude || /img/logo.png # 子菜单名称(submenu name): 链接地址(address) || 图标(icon)
+  # 项目: # 分类名称
+  #   Solitude: https://github.com/valor-x/hexo-theme-solitude || /img/logo.png # 子菜单名称(submenu name): 链接地址(address) || 图标(icon)
 
   # 中心菜单
   # center menu
   menu:
-    # 首页: / # 显示名称：路径 / Display name: path
-    # 文库: # 显示名称 / Display name
-    #   文章列表: /archives/ || st-folder-fill # 子菜单名称：路径 || 图标 / Submenu name: path || icon
-    #   全部分类: /categories/ || st-checkbox-multiple-blank-fill
-    #   全部标签: /tags/ || st-price-tag-fill
-    # 友链:
-    #   友链鱼塘: /moments/ || st-wifi-fill
-    #   友情链接: /links/ || st-group-fill
-    #   宝藏博主: javascript:travelling() || st-gift-fill
-    # 我的:
-    #   装备: /equipment/ || st-laptop-line
-    #   工具箱: /tlink/ || st-tools-fill
-    #   音乐馆: /music/ || st-disc-fill
-    # 关于:
-    #   关于本站: /about/ || st-contacts-fill
+  # 首页: / # 显示名称：路径 / Display name: path
+  # 文库: # 显示名称 / Display name
+  #   文章列表: /archives/ || st-folder-fill # 子菜单名称：路径 || 图标 / Submenu name: path || icon
+  #   全部分类: /categories/ || st-checkbox-multiple-blank-fill
+  #   全部标签: /tags/ || st-price-tag-fill
+  # 友链:
+  #   友链鱼塘: /moments/ || st-wifi-fill
+  #   友情链接: /links/ || st-group-fill
+  #   宝藏博主: javascript:travelling() || st-gift-fill
+  # 我的:
+  #   装备: /equipment/ || st-laptop-line
+  #   工具箱: /tlink/ || st-tools-fill
+  #   音乐馆: /music/ || st-disc-fill
+  # 关于:
+  #   关于本站: /about/ || st-contacts-fill
 
   # 右侧按钮
   # Button on the right
@@ -69,11 +69,11 @@ nav:
     # 左至右
     # from left to right
     custom:
-      # - name: 开往 - 友链接力 # 显示文字 / Displayed text
-      #   url: https://www.travellings.cn/go.html # 跳转链接 / Jump link
-      #   icon: st-train-line # 图标 / Icon
-      #   onclick: # 点击事件 / Click event
-      #   id: travellings_button # id
+    # - name: 开往 - 友链接力 # 显示文字 / Displayed text
+    #   url: https://www.travellings.cn/go.html # 跳转链接 / Jump link
+    #   icon: st-train-line # 图标 / Icon
+    #   onclick: # 点击事件 / Click event
+    #   id: travellings_button # id
 
 # 首页顶部样式
 # Home top style
@@ -93,31 +93,31 @@ hometop:
     # Carousel icon
     # tip: 76x76 size
     icon:
-      # HTML: # 名字 / Name
-      #   img: https://7.isyangs.cn/34/65f2e42921677-34.png # 图片 / Image
-      #   color: "#e9572b" # 背景色 / Background color
-      # JS:
-      #   img: https://7.isyangs.cn/34/65f2e43ceddda-34.png
-      #   color: "#f7cb4f"
-      # Docker:
-      #   img: https://7.isyangs.cn/34/65f2e45462045-34.png
-      #   color: "#57b6e6"
-      # Flutter:
-      #   img: https://7.isyangs.cn/34/65f2e47acbe98-34.png
-      #   color: "#ffffff"
-      # WebPack:
-      #   img: https://7.isyangs.cn/34/65f2e488bf8ed-34.png
-      #   color: "#2e3a41"
-      # Git:
-      #   img: https://7.isyangs.cn/34/65f2e499066fa-34.png
-      #   color: "#df5b40"
+    # HTML: # 名字 / Name
+    #   img: https://7.isyangs.cn/34/65f2e42921677-34.png # 图片 / Image
+    #   color: "#e9572b" # 背景色 / Background color
+    # JS:
+    #   img: https://7.isyangs.cn/34/65f2e43ceddda-34.png
+    #   color: "#f7cb4f"
+    # Docker:
+    #   img: https://7.isyangs.cn/34/65f2e45462045-34.png
+    #   color: "#57b6e6"
+    # Flutter:
+    #   img: https://7.isyangs.cn/34/65f2e47acbe98-34.png
+    #   color: "#ffffff"
+    # WebPack:
+    #   img: https://7.isyangs.cn/34/65f2e488bf8ed-34.png
+    #   color: "#2e3a41"
+    # Git:
+    #   img: https://7.isyangs.cn/34/65f2e499066fa-34.png
+    #   color: "#df5b40"
 
   # 左下跳转按钮
   # Banner lower left jump button
   group:
-    # 热门: /tags/热门/ || st-fire-fill || linear-gradient(to right,#f65,#ffbf37)
-    # 教程: /tags/教程/ || st-book-mark-fill || linear-gradient(to right,#358bff,#15c6ff)
-    # 精选: /tags/精选/ || st-star-smile-fill || linear-gradient(to right,#18e7ae,#1eebeb)
+  # 热门: /tags/热门/ || st-fire-fill || linear-gradient(to right,#f65,#ffbf37)
+  # 教程: /tags/教程/ || st-book-mark-fill || linear-gradient(to right,#358bff,#15c6ff)
+  # 精选: /tags/精选/ || st-star-smile-fill || linear-gradient(to right,#18e7ae,#1eebeb)
 
   # 右侧置顶列表（在文章的front matter中添加“recommend: true”）
   # Right top list (add "recommend: true" in the front matter of the article)
@@ -257,7 +257,7 @@ aside:
     # 高亮显示标签列表
     # Highlighted tag list
     list:
-      # - "Solitude"
+    # - "Solitude"
 
   # 侧边栏归档
   # aside archive
@@ -291,6 +291,14 @@ aside:
     # Format: yyyy-MM-dd hh-mm-ss
     runtime: "2023-04-20 00:00:00"
 
+# 首页文章配置信息
+# Configure information on the home page
+index_post_list:
+  direction: column # row / column
+  content: 3 # 1: post.description / 2: 自动获取description或截取内容(Automatically get descriptions or screenshots) / 3: 只使用截取内容(Use only screenshots) / false: 不显示内容(No content is displayed)
+  length: 500 # 截取内容的长度 : The length of the screenshot content
+  cover: both # left: 在左侧 : left / right: 在右侧 : right / both: 两侧 : both
+
 # 页面默认设置
 # page default settings
 page:
@@ -301,7 +309,7 @@ page:
     # 默认图片
     # default cover
     cover:
-      # - /img/default.png # 默认图片 / default cover
+    # - /img/default.png # 默认图片 / default cover
 
 # 文章页默认设置
 # post default settings
@@ -310,7 +318,7 @@ post:
     # 文章默认图片
     # default cover
     cover:
-      # -  # 默认图片 / default cover
+    # -  # 默认图片 / default cover
     # 文章发布默认地址
     # default post locate
     locate: 衡阳
@@ -410,20 +418,20 @@ footer:
   # 底部导航栏
   # Bottom navigation bar
   group:
-    # 导航:
-    #   归档: /archives/
-    #   分类: /categories/
-    #   标签: /tags/
-    # 服务:
-    #   阿里云: https://aliyun.com/
-    #   51la统计: https://v6.51.la/
-    #   百度统计: https://tongji.baidu.com/
-    # 支持:
-    #   打赏记录: /about/
-    # 协议:
-    #   Cookies: /cookies/
-    #   用户协议: /privacy/
-    #   版权协议: /copyright/
+  # 导航:
+  #   归档: /archives/
+  #   分类: /categories/
+  #   标签: /tags/
+  # 服务:
+  #   阿里云: https://aliyun.com/
+  #   51la统计: https://v6.51.la/
+  #   百度统计: https://tongji.baidu.com/
+  # 支持:
+  #   打赏记录: /about/
+  # 协议:
+  #   Cookies: /cookies/
+  #   用户协议: /privacy/
+  #   版权协议: /copyright/
 
   # 页脚随机友链
   # Random links at footer
@@ -502,7 +510,7 @@ music:
 capsule:
   enable:
     false
-    # 歌单id / playlist id
+  # 歌单id / playlist id
   id: 8407304077
   # 播放列表的服务商。netease：网易云 / tencent：腾讯 / kugou：酷狗 / xiami：小米 / baidu：百度
   # Music service provider. netease: Netease Cloud / tencent: Tencent / kugou: Kugou / xiaomi: Xiaomi / baidu: Baidu
@@ -660,8 +668,8 @@ search:
   #  - Solitude
   #  - Hexo
   algolia:
-    # hits:
-    #   per_page: 6
+  # hits:
+  #   per_page: 6
   local:
     preload: false
     CDN:
@@ -738,10 +746,10 @@ comment:
 # 仅需要填写验证代码即可，譬如：codeva-KReTIJu5us
 # Only need to fill in the verification code, such as: codeva-KReTIJu5us
 verify_site:
-  # - name: google-site-verification
-  #   content: xxxxxx
-  # - name: baidu-site-verification
-  #   content: xxxxxxx
+# - name: google-site-verification
+#   content: xxxxxx
+# - name: baidu-site-verification
+#   content: xxxxxxx
 
 # CSS 前缀
 # CSS prefix
@@ -755,7 +763,7 @@ css_prefix: false
 # Font
 font:
   font-size: 16px
-  code-font-size: 1rem
+  code-font-size: 16px
   font-family: '"PingFang SC","Hiragino Sans GB","Microsoft YaHei"'
   code-font-family: '"monospace", "monospace"'
 
@@ -765,7 +773,7 @@ font:
 # Insert additional code such as: statistics, advertising, etc.
 extends:
   head: # 在head中插入 / Insert in head
-    # - <script src="https://cdn.bootcdn.net/ajax/libs/pace/1.2.4/pace.min.js"></script>
+  # - <script src="https://cdn.bootcdn.net/ajax/libs/pace/1.2.4/pace.min.js"></script>
   body: # 在body中插入 / Insert in body
 
 # PWA

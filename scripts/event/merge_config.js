@@ -58,6 +58,8 @@ hexo.extend.filter.register('before_generate', () => {
                 runtimeenable: true,
                 runtime: "2023-04-20 00:00:00",
             },
+        }, index_post_list: {
+            direction: 'column', content: false, length: 500, cover: 'both'
         }, page: {
             error: true, tags: true, categories: true, default: {
                 cover: ['/img/default.png'],
@@ -169,7 +171,7 @@ hexo.extend.filter.register('before_generate', () => {
             css_prefix: false,
             font: {
                 'font-size': '16px',
-                'code-font-size': '1rem',
+                'code-font-size': '16px',
                 'font-family': '"PingFang SC","Hiragino Sans GB","Microsoft YaHei"',
                 'code-font-family': '"monospace", "monospace"',
             },
