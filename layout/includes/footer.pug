@@ -38,7 +38,7 @@ div#st-footer
         div.footer-group
             div.footer-title-group
                 h3.footer-title= _p('footer.randomlink')
-                a.random-friends-btn(href="javascript:randomLinksList();")
+                button.random-friends-btn(onclick='randomLinksList()', title=_p('footer.randomlink'))
                     i.solitude.st-refresh-line
             div.footer-links#friend-links-in-footer
 div#footer-bar
@@ -53,7 +53,7 @@ div#footer-bar
         div.footer-bar-right
             each item in theme.footer.links
                 a.footer-bar-link(href=url_for(item.url), title=item.name)= item.name
-            a.footer-bar-link.cc(href=url_for(theme.footer.license))
+            a.footer-bar-link.cc(href=url_for(theme.footer.license), aria-label = 'copyright')
                 i.solitude.st-copyright-line
                 i.solitude.st-creative-commons-by-line
                 i.solitude.st-creative-commons-nc-line

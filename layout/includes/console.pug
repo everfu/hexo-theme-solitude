@@ -25,21 +25,21 @@ div#console
 
     div.button-group
         div.console-btn-item
-            a.darkmode_switchbutton(onclick="sco.switchDarkMode()", title=_p('console.switch_darkmode'), href="javascript:void(0);")
+            span.darkmode_switchbutton(onclick="sco.switchDarkMode()", title=_p('console.switch_darkmode'))
                 i.solitude.st-moon-clear-fill
         div.console-btn-item#consoleHideAside
-            a.asideSwitch(onclick="sco.switchHideAside()", title=_p('console.switch_hideAside'), href="javascript:void(0);")
+            span.asideSwitch(onclick="sco.switchHideAside()", title=_p('console.switch_hideAside'))
                 i.solitude.st-side-bar-fill
         if theme.keyboard.enable
             div.console-btn-item#consoleKeyboard(onclick="sco.switchKeyboard()")
-                a.keyboardSwitch(title=_p('console.switch_keyboard'), href="javascript:void(0);")
+                span.keyboardSwitch(title=_p('console.switch_keyboard'))
                     i.solitude.st-keyboard-box-fill
         if theme.capsule.enable
             div.console-btn-item#consoleMusic(onclick="sco.musicToggle()")
-                a.music-switch(title=_p('console.switch_music'), href="javascript:void(0);")
+                span.music-switch(title=_p('console.switch_music'))
                     i.solitude.st-disc-fill
         if theme.comment.enable && theme.comment.commentBarrage
             div.console-btn-item.on#consoleCommentBarrage(onclick="sco.switchCommentBarrage()")
-                a.commentBarrage
+                span.commentBarrage
                     i.solitude.st-chat-fill
     div.console-mask(onclick="sco.hideConsole()")

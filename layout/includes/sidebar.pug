@@ -3,7 +3,7 @@ div#sidebar(style="zoom: 1;")
     div#sidebar-menus
         span.sidebar-menu-item-title= __('sidebar.title1')
         div.sidebar-menu-item
-            a.darkmode_switchbutton.menu-child(onclick="sco.switchDarkMode()", href="javascript:void(0);")
+            span.darkmode_switchbutton.menu-child(onclick="sco.switchDarkMode()")
                 i.solitude.st-moon-clear-fill
                 span= __('sidebar.darkmode')
         include ./widgets/nav/group
