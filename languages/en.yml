@@ -7,14 +7,14 @@ copy:
   error: Copied failed
 
 lately:
-  second: second
-  minute: minute
-  hour: hour
-  day: day
-  month: month
-  year: year
-  ago: ago
-  error: NaN
+  second: ' second'
+  minute: ' minute'
+  hour: ' hour'
+  day: ' day'
+  month: ' month'
+  year: ' year'
+  ago: ' ago'
+  error: ' NaN'
 
 chs:
   chs_tw: Traditional Chinese
@@ -61,13 +61,9 @@ nav:
   console: Console
 
 award:
-  wechat: Wechat
-  alipay: Alipay
-  about:
-    tip: Thanks
-    tip1: Tipping
-    tip2: Thank you for giving me the strength to move forward.
-    title: List of appreciation
+  tip: Thanks
+  tip1: Tipping
+  title: List of appreciation
 
 
 search:
@@ -149,3 +145,13 @@ rightmenu:
 
 404:
   button: Back to home
+
+link:
+  banner:
+    toComment: Application link
+    random: Random Visit
+  random: You are about to ⌈ ${name} ⌋ , security unknown.
+  more: More
+
+keyboard:
+  title: Blog shortcuts

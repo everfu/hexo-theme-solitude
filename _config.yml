@@ -199,15 +199,15 @@ aside:
     # 个人信息卡片顶部按钮的切换文字
     # Switching text of the button at the top of the personal information card
     sayhello2:
-      - 🤖️ 数码科技爱好者
-      - 🔍 分享与热心帮助
-      - 🏠 智能家居小能手
-      - 🔨 设计开发一条龙
-      - 🤝 专修交互与设计
-      - 🏃 脚踏实地行动派
-      - 🧱 团队小组发动机
-      - 💢 壮汉人狠话不多
-      - 🎮 电竞游戏爱好者
+    #  - 🤖️ 数码科技爱好者
+    #  - 🔍 分享与热心帮助
+    #  - 🏠 智能家居小能手
+    #  - 🔨 设计开发一条龙
+    #  - 🤝 专修交互与设计
+    #  - 🏃 脚踏实地行动派
+    #  - 🧱 团队小组发动机
+    #  - 💢 壮汉人狠话不多
+    #  - 🎮 电竞游戏爱好者
     # 个人信息卡片底部的小图标，按照例子填写
     information:
     #  Github: https://github.com/efuo || st-github-line # 名称：链接 || 图标 / Name: link || icon

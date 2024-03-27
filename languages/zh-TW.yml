@@ -62,13 +62,9 @@ post:
   meta_comment: 評論數
 
 award:
-  wechat: 微信
-  alipay: 支付寶
-  about:
-    tip: 致謝
-    tip1: 贊助作者
-    tip2: 感謝你賜予我前進的力量
-    title: 贊助作者
+  tip: 致謝
+  tip1: 贊助作者
+  title: 讚賞名單
 
 search:
   empty: 找不到你查詢的內容：${query}
@@ -149,3 +145,13 @@ rightmenu:
 
 404:
   button: 返回首頁
+
+link:
+  banner:
+    toComment: 申請友鏈
+    random: 隨機訪問
+  random: 您即將前往 ⌈ ${name} ⌋ ， 安全性未知
+  more: 更多
+
+keyboard:
+  title: 博客快捷鍵
