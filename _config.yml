@@ -342,15 +342,13 @@ post:
   # reward
   award:
     enable: false
-    # 微信收款码
-    # WeChat payment code
-    wechat: https://7.isyangs.cn/34/65f2e5814db1a-34.png
-    # 支付宝收款码
-    # Alipay payment code
-    alipay: https://7.isyangs.cn/34/65f2e5a6d2ef5-34.png
-    # 打赏统计页面链接
-    # Reward statistics page link
-    url: /about
+    appreciators: /about # 赞赏记录 / Appreciative records
+    title: 感谢您的赞赏。
+    desc: 因为有你们的支持，我才体会到写文章的价值。
+    list:
+    #  - name: 支付宝
+    #    qcode: https://7.isyangs.cn/34/65f2e5a6d2ef5-34.png
+    #    color: var(--efu-blue)
   # 版权中订阅按钮跳转链接，填写地址后开启
   # Subscription button jump link in copyright
   rss: # /atom.xml
