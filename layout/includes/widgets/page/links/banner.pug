@@ -6,10 +6,11 @@
     if theme.footer.randomlink
         a.banner-button.secondary(onclick="travelling()")
             i.solitude.st-signal-tower-fill
-            span.banner-button-text 随机访问
-    a.banner-button(onclick="sco.scrollToComment()")
-        i.solitude.st-right-btn-fill
-        span.solitude.banner-button-text 申请友链
+            span.banner-button-text=_p('link.banner.random')
+    if theme.comment.enable
+        a.banner-button(onclick="sco.scrollToComment()")
+            i.solitude.st-right-btn-fill
+            span.solitude.banner-button-text=_p('link.banner.toComment')
 
 .tags-group-all.nowrapMove
     .tags-group-wrapper

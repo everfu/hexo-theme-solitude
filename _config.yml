@@ -199,15 +199,15 @@ aside:
     # 个人信息卡片顶部按钮的切换文字
     # Switching text of the button at the top of the personal information card
     sayhello2:
-      - 🤖️ 数码科技爱好者
-      - 🔍 分享与热心帮助
-      - 🏠 智能家居小能手
-      - 🔨 设计开发一条龙
-      - 🤝 专修交互与设计
-      - 🏃 脚踏实地行动派
-      - 🧱 团队小组发动机
-      - 💢 壮汉人狠话不多
-      - 🎮 电竞游戏爱好者
+    #  - 🤖️ 数码科技爱好者
+    #  - 🔍 分享与热心帮助
+    #  - 🏠 智能家居小能手
+    #  - 🔨 设计开发一条龙
+    #  - 🤝 专修交互与设计
+    #  - 🏃 脚踏实地行动派
+    #  - 🧱 团队小组发动机
+    #  - 💢 壮汉人狠话不多
+    #  - 🎮 电竞游戏爱好者
     # 个人信息卡片底部的小图标，按照例子填写
     information:
     #  Github: https://github.com/efuo || st-github-line # 名称：链接 || 图标 / Name: link || icon
@@ -342,15 +342,13 @@ post:
   # reward
   award:
     enable: false
-    # 微信收款码
-    # WeChat payment code
-    wechat: https://7.isyangs.cn/34/65f2e5814db1a-34.png
-    # 支付宝收款码
-    # Alipay payment code
-    alipay: https://7.isyangs.cn/34/65f2e5a6d2ef5-34.png
-    # 打赏统计页面链接
-    # Reward statistics page link
-    url: /about
+    appreciators: /about # 赞赏记录 / Appreciative records
+    title: 感谢您的赞赏。
+    desc: 因为有你们的支持，我才体会到写文章的价值。
+    list:
+    #  - name: 支付宝
+    #    qcode: https://7.isyangs.cn/34/65f2e5a6d2ef5-34.png
+    #    color: var(--efu-blue)
   # 版权中订阅按钮跳转链接，填写地址后开启
   # Subscription button jump link in copyright
   rss: # /atom.xml
@@ -621,19 +619,10 @@ mediumZoom: false
 # https://mermaid.js.org/
 mermaid: false
 
-# 简繁转换
-# Simplified and Traditional Chinese conversion
-translate:
-  enable: false
-  # the language of website (1 - Traditional Chinese/ 2 - Simplified Chinese）
-  defaultEncoding: 2
-  # Time delay
-  translateDelay: 0
-
 # Open Graph
 # https://ogp.me/
 # https://developers.facebook.com/docs/sharing/webmasters/
-opengraph:
+OpenGraph:
   enable: false
   options:
   #  twitter_card:
@@ -674,11 +663,6 @@ search:
     preload: false
     CDN:
 
-# rightside(右键菜单)
-# right menu
-rightside:
-  enable: false
-
 # 文章摘要AI
 # post abstract AI
 post_ai:
@@ -692,7 +676,7 @@ post_ai:
   key:
   # 自介
   # talk
-  talk: 我是 Efu 开发的摘要生成助理EfuGPT，EfuGPT在静态部署时进行摘要的撰写，并且在访客访问时通过EfuCorrection转译后的文本摘要实现工具。我在这里只负责已经生成的摘要显示，你无法与我直接沟通，但我可以回答一些预设的问题。
+  talk: # 我是 Efu 开发的摘要生成助理EfuGPT，EfuGPT在静态部署时进行摘要的撰写，并且在访客访问时通过EfuCorrection转译后的文本摘要实现工具。我在这里只负责已经生成的摘要显示，你无法与我直接沟通，但我可以回答一些预设的问题。
   # 随机文章按钮
   # Random post button
   randomPost: false
@@ -701,7 +685,7 @@ post_ai:
   report: https://efu.me/
   # 底部提示
   # Bottom tip
-  tips: 此内容根据文章生成，并经过人工审核，仅用于文章内容的解释与总结
+  tips: # 此内容根据文章生成，并经过人工审核，仅用于文章内容的解释与总结
 
 # latex 公式支持
 # latex formula support
@@ -737,7 +721,7 @@ comment:
   # waline 配置信息
   # waline settings
   waline: # https://waline.js.org/
-    envId: # url: https://waline.wzsco.top
+    envId:  # url: https://waline.wzsco.top
     pageview: true # 是否开启页面访问量统计 / Whether to enable page access statistics
     option: # waline配置项 / waline configuration item
 

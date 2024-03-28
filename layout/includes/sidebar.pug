@@ -1,14 +1,30 @@
 div#sidebar(style="zoom: 1;")
     div#menu-mask(style="display: none;")
     div#sidebar-menus
-        span.sidebar-menu-item-title= __('sidebar.title1')
+        .site-data
+            .data-item.is-center
+                .data-item-link
+                    a(href=url_for('/archives/'))
+                        .headline=_p('page.archives')
+                        .length-num=site.posts.find({ parent: { $exists: false } }).length
+            .data-item.is-center
+                .data-item-link
+                    a(href=url_for('/categories/'))
+                        .headline=_p('page.category')
+                        .length-num=site.categories.find({parent: {$exists: false}}).length
+            .data-item.is-center
+                .data-item-link
+                    a(href=url_for('/tags/'))
+                        .headline=_p('page.tag')
+                        .length-num=site.tags.find({parent: {$exists: false}}).length
+        span.sidebar-menu-item-title= __('sidebar.function')
         div.sidebar-menu-item
-            a.darkmode_switchbutton.menu-child(onclick="sco.switchDarkMode()", href="javascript:void(0);")
+            span.darkmode_switchbutton.menu-child(onclick="sco.switchDarkMode()")
                 i.solitude.st-moon-clear-fill
                 span= __('sidebar.darkmode')
         include ./widgets/nav/group
         include ./widgets/nav/menu.pug
-        span.sidebar-menu-item-title= __('sidebar.title2')
+        span.sidebar-menu-item-title= __('page.tag')
         div.card-widget.card-tags.card-archives.card-webinfo.card-allinfo
             div.card-tag-cloud
                 each tag in site.tags.find({ parent: { $exists: false } }).data

@@ -224,7 +224,7 @@ const utils = {
             }
         }
     },
-    changeTimeFormat(){
+    changeTimeFormat() {
         window.Lately && Lately.init({
             target: 'time',
             lang: GLOBAL_CONFIG.lang.lately,

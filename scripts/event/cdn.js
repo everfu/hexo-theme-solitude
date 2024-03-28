@@ -44,11 +44,6 @@ hexo.extend.filter.register('before_generate', () => {
             file: 'js/covercolor/api.js',
             version
         },
-        rightside_js: {
-            name: 'hexo-theme-solitude',
-            file: 'js/rightside.js',
-            version
-        },
         music_js: {
             name: 'hexo-theme-solitude',
             file: 'js/music.js',
@@ -66,12 +61,12 @@ hexo.extend.filter.register('before_generate', () => {
         },
         twikoo_commentBarrage: {
             name: 'hexo-theme-solitude',
-            file: 'js/comment/twikoo_commentBarrage.js',
+            file: 'js/commentBarrage/twikoo.js',
             version
         },
         waline_commentBarrage: {
             name: 'hexo-theme-solitude',
-            file: 'js/comment/waline_commentBarrage.js',
+            file: 'js/commentBarrage/waline.js',
             version
         },
         waterfall: {

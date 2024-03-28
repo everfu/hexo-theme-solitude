@@ -28,7 +28,7 @@
       top 0
       width 100px
       height 50px
-      background-image -webkit-linear-gradient(0deg,rgba(255,255,255,0),rgba(255,255,255,.5),rgba(255,255,255,0))
+      background-image -webkit-linear-gradient(0deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, .5), rgba(255, 255, 255, 0))
       animation light_tag 4s both infinite
 
     &.vip
@@ -73,7 +73,6 @@
         width calc(50% - 16px)
 
       .img
-        -webkit-mask-image -webkit-radial-gradient(center, #fff, #000)
         border-radius 0
         height 120px
         width 100%
@@ -81,7 +80,6 @@
         border none
         padding 0
         transition all .3s ease 0s
-        background #f6f6f6
         overflow hidden
 
         img
@@ -114,6 +112,7 @@
           height 20px
           min-width 20px
           min-height 20px
+          transform scale(1.1)
           background var(--efu-secondbg)
 
         .site-card-text
@@ -147,15 +146,17 @@
       &:hover
         border var(--style-border-hover)
         box-shadow var(--efu-shadow-main)
+        background var(--efu-main)
 
         .site-card-tag
           left: -60px
 
         .img
-          transform scale(1.1)
+          transform scale(1)
           filter brightness(.3)
           border-radius 12px
           background var(--efu-lighttext)
+          background var(--efu-main)
           +minWidth768()
             height 80px
 
@@ -191,7 +192,6 @@
     padding 0
     margin 0.5rem -6px 1rem -6px
     overflow-x hidden
-    overflow auto
     text-align center
 
     &.mini

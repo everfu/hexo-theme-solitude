@@ -8,9 +8,10 @@ if(data)
 
 script.
     const links = !{JSON.stringify(datalinks)}
+    const randomText = '!{_p('link.random')}'
     function travelling() {
         const link = links[utils.randomNum(links.length)];
-        utils.snackbarShow('您即将前往 ⌈ ' + link.name + ' ⌋ , 安全性未知', false, 3000);
+        utils.snackbarShow(randomText.replace(/\$\{name}/, link.name), false, 3000);
         setTimeout(() => {
             window.open(link.link, "_blank")
         }, 3000)
@@ -33,5 +34,5 @@ if theme.footer.randomlink
                 linksCopy.splice(index, 1);
             }
 
-            linkcard.innerHTML = data + '<a class="footer-item" href="/links/">更多</a>';
+            linkcard.innerHTML = data + '<a class="footer-item" href="#{url_for(/links/)}">#{_p('more')}</a>';
         }

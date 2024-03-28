@@ -1,24 +1,19 @@
 .post-reward(onclick="AddRewardMask()")
-    .reward-button(title="赞赏作者")
+    .reward-button(title=_p('award.tipping'))
         i.solitude.st-hand-heart-fill
-        | 打赏作者
+        =_p('award.tipping')
     .reward-main
         ul.reward-all
-            span.reward-title 感谢你赐予我前进的力量
+            span.reward-title=theme.post.award.title
             ul.reward-group
-                if theme.post.award.wechat
+                - let list = theme.post.award.list || []
+                for item in list
                     li.reward-item
-                        a(href=theme.post.award.wechat)
-                            img.post-qr-code-img(src=theme.post.award.wechat alt="微信")
-                        .post-qr-code-desc 微信
-                if theme.post.award.alipay
-                    li.reward-item
-                        a(href=theme.post.award.alipay target="_blank")
-                            img.post-qr-code-img(src=theme.post.award.alipay alt="支付宝")
-                        .post-qr-code-desc 支付宝
-            a.reward-main-btn(href=url_for(theme.post.award.url))
-                .reward-text 赞赏者名单
-                .reward-dec 因为你们的支持让我意识到写文章的价值🙏
+                        img.post-qr-code-img.nolazyload(src=item.qcode, alt=item.name, style="border-color: " + item.color)
+                        .post-qr-code-desc=item.name
+            a.reward-main-btn(href=url_for(theme.post.award.appreciators))
+                .reward-text= _p('award.title')
+                .reward-dec=theme.post.award.desc
 
 script.
     function RemoveRewardMask() {

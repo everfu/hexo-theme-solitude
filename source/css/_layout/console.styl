@@ -170,7 +170,7 @@
       transition .3s
       cursor pointer
 
-      a.darkmode_switchbutton
+      span.darkmode_switchbutton
         [data-theme="dark"] &
           background var(--efu-orange)
           color var(--efu-white)
@@ -180,10 +180,10 @@
         margin-right .5rem
 
       &:hover
-        a
+        span
           background var(--efu-main)
 
-      a
+      span
         width 100%
         height 100%
         background var(--efu-card-bg)
@@ -193,22 +193,23 @@
         align-items center
         justify-content center
         color var(--efu-fontcolor)
+        transition all .3s
 
         i
           font-size 1rem
 
       &.on
-        a
+        span
           background var(--efu-orange)
           color var(--efu-white)
           transition .3s
 
       &:not(.on)
-        a:hover
+        span:hover
           background var(--efu-main)
 
       &:hover
-        a
+        span
           color var(--efu-white)
 
   .console-card.tags

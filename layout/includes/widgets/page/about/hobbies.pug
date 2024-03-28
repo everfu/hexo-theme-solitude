@@ -32,6 +32,6 @@ if site.data.about.likes
                         .tips= like.subtips
                         if like.button
                             .banner-button-group
-                                a.banner-button(href=like.button_link)
+                                a.banner-button(href=url_for(like.button_link))
                                     i.solitude.st-right-btn-fill
                                     span.banner-button-text= like.button_text

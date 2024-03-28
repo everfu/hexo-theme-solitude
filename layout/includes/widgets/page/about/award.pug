@@ -4,8 +4,8 @@
 if site.data.about.rewardList
     .author-content
         .author-content-item.single.reward
-            .author-content-item-tips= _p('award.about.tip')
-            span.author-content-item-title= _p('award.about.title')
+            .author-content-item-tips= _p('award.thanks')
+            span.author-content-item-title= _p('award.title')
             .author-content-item-description
                 = award.description
             .reward-list-all
@@ -22,18 +22,17 @@ if site.data.about.rewardList
                 if theme.post.award.enable
                     .post-reward
                         .post-reward(onclick="AddRewardMask()")
-                        .reward-button(title=_p('award.about.tip1'))
+                        .reward-button(title=_p('award.tipping'))
                             i.solitude.st-hand-heart-fill
-                            = _p('award.about.tip1')
+                            = _p('award.tipping')
                         .reward-main
                             ul.reward-all
-                                span.reward-title= _p('award.about.tip2')
+                                span.reward-title= theme.post.award.title
                                 ul.reward-group
-                                    - var rewards = [{image: theme.post.award.wechat, description: _p('award.wechat')}, {image: theme.post.award.alipay, description: _p('award.alipay')}]
+                                    - var rewards = theme.post.award.list
                                     each reward in rewards
                                         li.reward-item
-                                            a(href=reward.image, target="_blank")
-                                                img.post-qr-code-img(alt=reward.description, src=reward.image)
-                                            .post-qr-code-desc= reward.description
+                                            img.post-qr-code-img(alt=reward.name, src=reward.qcode, style="border-color:" + reward.color)
+                                            .post-qr-code-desc= reward.name
             .reward-list-tips
                 p= award.tips.replace('{sum}', sum.toFixed(2))

@@ -8,14 +8,14 @@ mixin info
             if post.sticky && is_home()
                 span.article-meta.sticky-warp
                     i.solitude.st-thumbtack-solid.sticky.orange
-                    span.sticky.orange= _p('home.recent-post.sticky')
+                    span.sticky.orange= _p('home.sticky')
             each category in post.categories.data
                 span.original= category.name
 
             if post.prev == null && is_home()
-                span.original= _p('home.recent-post.new')
+                span.original= _p('home.new')
 
-            a.unvisited-post(href=url_for(post.path))= _p('home.recent-post.read')
+            a.unvisited-post(href=url_for(post.path))= _p('home.read')
 
         a.article-title(href=url_for(post.path), title=post.title)= post.title
 
@@ -41,7 +41,7 @@ mixin info
     div.article-meta-wrap
         span.article-meta.tags
             each tag in post.tags.data
-                a.article-meta__tags(href=tag.path, onclick="event.stopPropagation();")
+                a.article-meta__tags(href=url_for(tag.path), onclick="event.stopPropagation();")
                     span.tags-punctuation=tag.name
 
         span.post-meta-date

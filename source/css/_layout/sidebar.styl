@@ -22,7 +22,6 @@
     height 100%
     background var(--efu-maskbgdeep)
     transition all .5s ease 0s
-    padding-top 30px
     z-index 1001
     border-left var(--style-border-always)
 
@@ -47,6 +46,33 @@
 
           .site-page span:hover
             color var(--efu-white)
+
+    .site-data
+      display flex
+      width 100%
+      justify-content flex-start
+      margin 12px 0 0 0
+      padding .6rem 16px
+
+      .data-item
+        display flex
+        justify-content flex-start
+        margin-right 36px
+
+        .data-item-link > a
+          display flex
+          flex-direction column
+          align-items flex-start
+
+        .data-item-link .length-num
+          color var(--efu-fontcolor)
+          font-size 20px
+          font-weight 700
+          line-height 1
+
+        .data-item-link .headline
+          font-size 12px
+          color var(--efu-secondtext)
 
     .menus_items
       padding 0 16px
@@ -137,22 +163,6 @@
         &:hover
           transform rotate(360deg)
 
-    .site-data
-      display table
-      padding .6rem .5rem 0
-      width 100%
-      table-layout fixed
-
-      .data-item
-        display table-cell
-
-        .data-item-link .length-num
-          color var(--text-highlight-color)
-          font-size 1.28em
-
-        .data-item-link .headline
-          color var(--efu-fontcolor)
-
     hr
       margin 1rem auto
 
@@ -188,14 +198,14 @@
       padding 0 16px
       margin-bottom 6px
 
-      a.darkmode_switchbutton
+      span.darkmode_switchbutton
         padding 4px 8px
 
         [data-theme="dark"] &
           background var(--efu-orange)
           color var(--efu-white)
 
-      a.menu-child
+      span.menu-child
         width 100%
         background var(--efu-card-bg)
         border-radius 8px
@@ -211,7 +221,7 @@
           align-items center
           justify-content center
 
-      a.menu-child span
+      span.menu-child span
         margin-left 10px
 
     .webinfo

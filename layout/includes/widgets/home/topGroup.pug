@@ -3,7 +3,7 @@ each post in filteredPosts
     .recent-post-item
         .post_cover
             a(href=url_for(post.path), title=post.title)
-                span.recent-post-top-text= _p('home.top-group.recommend')
+                span.recent-post-top-text= _p('home.recommend')
                 img.post_bg(alt=post.title, src=post.cover)
         .recent-post-info
             a.article-title(href=url_for(post.path), title=post.title)= post.title
@@ -16,7 +16,7 @@ mixin todayCardContent
     .banner-button-group
         a.banner-button(onclick="window.event.cancelBubble=true;sco.hideTodayCard();")
             i.solitude.st-add-fill
-            span.banner-button-text= _p('home.top-group.recommendmore')
+            span.banner-button-text= _p('home.recommendmore')
 
 case theme.hometop.recommendList.url.startsWith('/')
     when true

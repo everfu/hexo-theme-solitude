@@ -1,6 +1,6 @@
 .category-bar-items#category-bar-items
     .category-bar-item(class=is_home() ? 'select' : '', id="category-bar-home")
-        a(href="/")= __('home.categoryBar.home')
+        a(href=url_for('/'))= __('home.home')
     each item in site.categories.find({ parent: { $exists: false } }).data
         .category-bar-item(class=select ? (select === item.name ? 'select' : '') : '', id=item.name)
             a(href=url_for(item.path))= item.name
@@ -8,4 +8,4 @@ div.category-bar-right
     if site.categories.find({parent: {$exists: false}}).data.length > 10
         .category-bar-next#category-bar-next(onclick="sco.scrollCategoryBarToRight()")
             i.solitude.st-show-right-line
-    a.category-bar-more(href="/categories/")= __('home.categoryBar.more')
+    a.category-bar-more(href=url_for('/categories/'))= __('more')

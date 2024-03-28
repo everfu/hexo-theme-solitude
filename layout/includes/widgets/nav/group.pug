@@ -7,7 +7,7 @@ if menu
                 .back-menu-list
                     each data, label in value
                         - var array = data.split('||')
-                        a.back-menu-item(href=url_for(trim(array[0])), title=index)
+                        a.back-menu-item(href=url_for(trim(array[0])), title=label)
                             if array[1]
-                                img.nolazyload.back-menu-item-icon(src=trim(array[1]), alt=index)
+                                img.nolazyload.back-menu-item-icon(src=trim(array[1]), alt=label)
                             span.back-menu-item-text= label
