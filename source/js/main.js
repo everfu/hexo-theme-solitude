@@ -234,17 +234,29 @@ let sco = {
             }));
         }
     },
+    musicToggle: function () {
+        const $music = document.querySelector('#nav-music');
+        const $meting = document.querySelector('meting-js');
+        const $console = document.getElementById('consoleMusic');
+        const $toggleButton = document.getElementById('menu-music-toggle');
+        wleelw_musicPlaying = !wleelw_musicPlaying;
+        $music.classList.toggle("playing", wleelw_musicPlaying);
+        $console.classList.toggle("on", wleelw_musicPlaying);
+        if (wleelw_musicPlaying) {
+            $meting.aplayer.play();
+        } else {
+            $meting.aplayer.pause();
+        }
+    },
     switchCommentBarrage: function () {
         let commentBarrageElement = document.querySelector(".comment-barrage");
         if (commentBarrageElement) {
             if (window.getComputedStyle(commentBarrageElement).display === "flex") {
                 commentBarrageElement.style.display = "none";
-                document.querySelector(".menu-commentBarrage-text").textContent = "显示热评";
                 document.querySelector("#consoleCommentBarrage").classList.remove("on");
                 localStorage.removeItem("commentBarrageSwitch");
             } else {
                 commentBarrageElement.style.display = "flex";
-                document.querySelector(".menu-commentBarrage-text").textContent = "关闭热评";
                 document.querySelector("#consoleCommentBarrage").classList.add("on");
                 localStorage.setItem("commentBarrageSwitch", "false");
             }
@@ -290,12 +302,10 @@ let sco = {
             document.documentElement.setAttribute('data-theme', 'dark')
             saveToLocal.set('theme', 'dark', 0.02);
             utils.snackbarShow(GLOBAL_CONFIG.lang.theme.dark, false, 2000)
-            GLOBAL_CONFIG.rightside && (document.querySelector(".menu-darkmode-text").textContent = "浅色模式");
         } else {
             document.documentElement.setAttribute('data-theme', 'light')
             saveToLocal.set('theme', 'light', 0.02);
             utils.snackbarShow(GLOBAL_CONFIG.lang.theme.light, false, 2000)
-            GLOBAL_CONFIG.rightside && (document.querySelector(".menu-darkmode-text").textContent = "深色模式");
         }
     },
     hideTodayCard: () => document.getElementById('todayCard').classList.add('hide'),
@@ -367,67 +377,6 @@ let sco = {
                 imageParent.insertBefore(captionElement, image.nextSibling);
             }
         });
-    },
-    downloadImage: function (imageUrl, filename = 'photo') {
-        if (rm.downloadimging) {
-            utils.snackbarShow("有正在进行中的下载，请稍后再试");
-            return;
-        }
-
-        rm.hideRightMenu();
-        rm.downloadimging = true;
-        utils.snackbarShow("正在下载中，请稍后", false, 10000);
-
-        let img = new Image();
-        img.setAttribute("crossOrigin", "anonymous");
-        img.onload = function () {
-            let canvas = document.createElement("canvas");
-            canvas.width = img.width;
-            canvas.height = img.height;
-            let ctx = canvas.getContext("2d");
-            ctx.drawImage(img, 0, 0, img.width, img.height);
-
-            let dataUrl = canvas.toDataURL("image/png");
-            let link = document.createElement("a");
-            link.download = filename;
-            link.href = dataUrl;
-
-            let clickEvent = new MouseEvent("click");
-            link.dispatchEvent(clickEvent);
-
-            utils.snackbarShow("图片已添加盲水印，请遵守版权协议");
-            rm.downloadimging = false;
-        };
-        img.src = imageUrl;
-    },
-    musicToggle: function () {
-        const $music = document.querySelector('#nav-music');
-        const $meting = document.querySelector('meting-js');
-        const $console = document.getElementById('consoleMusic');
-        const $toggleButton = document.getElementById('menu-music-toggle');
-        wleelw_musicPlaying = !wleelw_musicPlaying;
-        $music.classList.toggle("playing", wleelw_musicPlaying);
-        $console.classList.toggle("on", wleelw_musicPlaying);
-        if (wleelw_musicPlaying) {
-            $meting.aplayer.play();
-            $toggleButton.innerHTML = `<i class="solitude st-pause-fill"></i><span>暂停音乐</span>`;
-        } else {
-            $meting.aplayer.pause();
-            $toggleButton.innerHTML = `<i class="solitude st-play-fill"></i><span>播放音乐</span>`;
-        }
-        rm.hideRightMenu();
-    },
-    musicSkipBack: function () {
-        document.querySelector('meting-js').aplayer.skipBack()
-        rm.hideRightMenu()
-    },
-    musicSkipForward: function () {
-        document.querySelector('meting-js').aplayer.skipForward()
-        rm.hideRightMenu()
-    },
-    musicGetName: function () {
-        const titles = Array.from(document.querySelectorAll('.aplayer-title')).map(e => e.innerText);
-        return titles[0];
     },
     scrollToComment: function () {
         utils.scrollToDest(utils.getEleTop(document.getElementById('post-comment')), 300)
@@ -581,13 +530,13 @@ let sco = {
         });
     },
     addNavBackgroundInit: function () {
-        var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
         if (scrollTop !== 0) {
-            var pageHeader = document.getElementById("page-header");
+            const pageHeader = document.getElementById("page-header");
             if (pageHeader) {
                 pageHeader.classList.add("nav-fixed", "nav-visible");
             }
-            var cookiesWindow = document.getElementById("cookies-window");
+            const cookiesWindow = document.getElementById("cookies-window");
             if (cookiesWindow) {
                 cookiesWindow.style.display = 'none';
             }
@@ -658,7 +607,7 @@ let sco = {
     },
 }
 
-const AddHighLightTool = () => {
+const addHighlight = () => {
     const highlight = GLOBAL_CONFIG.highlight;
     if (!highlight) return;
 
@@ -810,13 +759,12 @@ window.refreshFn = () => {
     sco.listenToPageInputPress()
     sco.addNavBackgroundInit()
     utils.changeTimeFormat()
-    GLOBAL_CONFIG.rightside.enable && addRightMenuClickEvent()
     GLOBAL_CONFIG.lazyload.enable && utils.lazyloadImg()
     GLOBAL_CONFIG.lightbox && utils.lightbox(document.querySelectorAll("#article-container img:not(.flink-avatar)"))
     GLOBAL_CONFIG.randomlinks && randomLinksList()
     PAGE_CONFIG.comment && initComment()
     PAGE_CONFIG.toc && toc.init();
-    (PAGE_CONFIG.is_post || PAGE_CONFIG.is_page) && ((AddHighLightTool()) || tabs.init())
+    (PAGE_CONFIG.is_post || PAGE_CONFIG.is_page) && ((addHighlight()) || tabs.init())
     PAGE_CONFIG.is_home && showTodayCard()
     GLOBAL_CONFIG.covercolor.enable && coverColor()
     sco.initConsoleState()

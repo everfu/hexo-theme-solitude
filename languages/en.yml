@@ -1,3 +1,5 @@
+more: More
+
 theme:
   dark: dark
   light: light
@@ -5,6 +7,12 @@ theme:
 copy:
   success: Copied
   error: Copied failed
+
+copy_copyright:
+  author: Author
+  link: Link
+  source: Source
+  info: Copyright is owned by the author. For commercial reprints, please contact the author for authorization. For non-commercial reprints, please indicate the source.
 
 lately:
   second: ' second'
@@ -29,28 +37,23 @@ page:
   404: Page not found
 
 home:
-  categoryBar:
-    home: Home
-    more: More
-  recent-post:
-    sticky: Sticky
-    new: New
-    read: Unread
-  top-group:
-    recommend: Favor
-    recommendmore: More
+  home: Home
+  sticky: Sticky
+  new: New
+  read: Unread
+  recommendmore: More
 
 post:
-  meta_reprint: Reprint or translation
-  meta_original: Original
-  meta_cc: This article is a ${cc} article, pay attention to the copyright.
-  meta_posted: Posted on
-  meta_updated: Last updated on
-  meta_wordcount: Word count
-  meta_minread: Reading time
-  meta_ip: The author's IP belongs to
-  meta_pv: PV
-  meta_comment: Comments
+  reprint: Reprint
+  original: Original
+  copyright: This article is a ${cc} article, pay attention to the copyright.
+  posted: Posted on
+  updated: Last updated on
+  wordcount: Word count
+  minread: Reading time
+  ip: The author's IP belongs to
+  pv: PV
+  comment: Comments
 
 nav:
   site_name_title: Back to home
@@ -61,8 +64,8 @@ nav:
   console: Console
 
 award:
-  tip: Thanks
-  tip1: Tipping
+  thanks: Thanks
+  tipping: Tipping
   title: List of appreciation
 
 
@@ -99,8 +102,7 @@ console:
   archive_unit: Posts
 
 sidebar:
-  title1: Features
-  title2: Tags
+  function: Function
   darkmode: Display mode
 
 footer:
@@ -118,31 +120,6 @@ cookies:
 music:
   hit: Paused
 
-rightmenu:
-  copytext: Copy the selected
-  pastetext: Paste the text
-  commenttext: Quote to comment
-  newwindow: A new window opens
-  copylink: Copy the link address
-  copyimg: Copy this image
-  downloadimg: Download this image
-  search: Search on the site
-  music:
-    toggle: Play music
-    back: Switch to the previous track
-    forward: Switch to the next track
-    playlist: See all songs
-    copyMusicName: Reproduction Song Name
-  randomPost: Feel free to wander around
-  categories: Article classification
-  tags: Article tags
-  copyaddress: Copy the address
-  commentBarrage: Turn off trending reviews
-  dark: Dark
-  light: Light
-  chs_to_cht: Traditional
-  cht_to_chs: Simplified
-
 404:
   button: Back to home
 
@@ -151,7 +128,6 @@ link:
     toComment: Application link
     random: Random Visit
   random: You are about to ⌈ ${name} ⌋ , security unknown.
-  more: More
 
 keyboard:
   title: Blog shortcuts

@@ -4,7 +4,7 @@
 if site.data.about.rewardList
     .author-content
         .author-content-item.single.reward
-            .author-content-item-tips= _p('award.tip')
+            .author-content-item-tips= _p('award.thanks')
             span.author-content-item-title= _p('award.title')
             .author-content-item-description
                 = award.description
@@ -22,9 +22,9 @@ if site.data.about.rewardList
                 if theme.post.award.enable
                     .post-reward
                         .post-reward(onclick="AddRewardMask()")
-                        .reward-button(title=_p('award.tip1'))
+                        .reward-button(title=_p('award.tipping'))
                             i.solitude.st-hand-heart-fill
-                            = _p('award.tip1')
+                            = _p('award.tipping')
                         .reward-main
                             ul.reward-all
                                 span.reward-title= theme.post.award.title

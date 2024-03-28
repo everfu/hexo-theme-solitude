@@ -20,10 +20,6 @@ div
     if theme.mermaid
         script(src=url_for(theme.cdn.mermaid_js))
 
-    if theme.rightside.enable
-        include ../widgets/rightside/index
-        script(src=url_for(theme.cdn.rightside_js))
-
     if theme.display_mode.universe
         script(src=url_for(theme.cdn.universe_js))
         script.

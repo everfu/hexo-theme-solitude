@@ -3,8 +3,8 @@
 #post-info
     #post-firstinfo
         .meta-firstline
-            - var cc = page.reprint ? _p('post.meta_reprint') : _p('post.meta_original')
-            a.post-meta-original(title=_p('post.meta_cc').replace(/\$\{cc}/, cc))= cc
+            - var cc = page.reprint ? _p('post.reprint') : _p('post.original')
+            a.post-meta-original(title=_p('post.copyright').replace(/\$\{cc}/, cc))= cc
             if page.categories.data.length > 0
                 span.post-meta-categories
                     a.post-meta-categories(href=url_for('/' + page.categories.data[0].path))= page.categories.data[0].name
@@ -17,28 +17,28 @@
     #post-meta
         .meta-secondline
             if theme.post.meta.date
-                span.post-meta-date(title=_p('meta_posted') + ' ' + full_date(page.date))
+                span.post-meta-date(title=_p('post.posted') + ' ' + full_date(page.date))
                     i.post-meta-icon.solitude.st-calendar-todo-fill
                     time(datetime=date_xml(page.date))= date_xml(page.date)
             if theme.post.meta.updated
-                span.post-meta-date(title=_p('meta_updated') + ' ' + full_date(page.updated))
+                span.post-meta-date(title=_p('post.updated') + ' ' + full_date(page.updated))
                     i.post-meta-icon.solitude.st-refresh-line
                     time(datetime=date_xml(page.updated))= date_xml(page.updated)
             if theme.wordcount
                 span.post-meta-wordcount
                     if theme.post.meta.wordcount
-                        i.post-meta-icon.solitude.st-word-fill(title=_p('post.meta_wordcount'))
+                        i.post-meta-icon.solitude.st-word-fill(title=_p('post.wordcount'))
                         span.word-count= wordcount(page.content)
                     span.post-meta-separator
                     if theme.post.meta.readtime
-                        i.post-meta-icon.solitude.st-clock-fill(title=_p('post.meta_minread'))
+                        i.post-meta-icon.solitude.st-clock-fill(title=_p('post.minread'))
                         span= min2read(page.content) + " min"
             if theme.post.meta.locate
-                span.post-meta-position(title=_p('post.meta_ip') + page.locate)
+                span.post-meta-position(title=_p('post.ip') + page.locate)
                     i.post-meta-icon.solitude.st-map-pin-fill
                     span= page.locate
             if theme.post.meta.pv
-                a.post-meta-pv(href=url_for(page.path), title=_p('post.meta_pv'))
+                a.post-meta-pv(href=url_for(page.path), title=_p('post.pv'))
                     i.post-meta-icon.solitude.st-fire-fill
                     if theme.comment.enable
                         case theme.comment.type
@@ -52,7 +52,7 @@
                         span#busuanzi_value_page_pv
                             i.solitude.st-loading-line
             if theme.post.meta.comment && page.comment
-                span.post-meta-commentcount(title=_p('post.meta_comment'), onclick="sco.scrollTo('post-comment')")
+                span.post-meta-commentcount(title=_p('post.comment'), onclick="sco.scrollTo('post-comment')")
                     i.solitude.st-chat-fill
                     a(href=url_for(page.path) + "#post-comment")
                         case theme.comment.type

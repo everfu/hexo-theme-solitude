@@ -30,6 +30,19 @@
         });
     }
 
+    let copyright = 'undefined';
+    if (theme.copy.enable && theme.copy.copyright.enable) {
+        copyright = JSON.stringify({
+            limitCount: theme.copy.copyright.limit_count,
+            languages: {
+                author: _p("copy_copyright.author") + ': ' + config.author,
+                link: _p("copy_copyright.link") + ': ',
+                source: _p("copy_copyright.source") + ': ' + config.title,
+                info: _p("copy_copyright.info")
+            }
+        })
+    }
+
     const commentInfoStart = theme.comment.randomInfoStart.map(item => `"${item}"`) || [];
     const commentInfoEnd = theme.comment.randomInfoEnd.map(item => `"${item}"`) || [];
     const sayhello2 = theme.aside.card.sayhello2.map(item => `"${item}"`) || [];

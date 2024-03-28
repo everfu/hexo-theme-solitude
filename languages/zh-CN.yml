@@ -1,3 +1,5 @@
+more: 更多
+
 # Language: 简体中文
 theme:
   dark: 已切换至深色模式
@@ -38,32 +40,28 @@ nav:
   console: 中控台
 
 home:
-  categoryBar:
-    home: 首页
-    more: 更多
-  recent-post:
-    sticky: 置顶
-    new: 最新
-    read: 未读
-  top-group:
-    recommend: 荐
-    recommendmore: 更多推荐
+  home: 首页
+  sticky: 置顶
+  new: 最新
+  read: 未读
+  recommend: 荐
+  recommendmore: 更多推荐
 
 post:
-  meta_reprint: 转载或翻译
-  meta_original: 原创
-  meta_cc: 该文章为${cc}文章，注意版权协议
-  meta_posted: 发布于
-  meta_updated: 最后更新于
-  meta_wordcount: 文章字数
-  meta_minread: 阅读耗时
-  meta_ip: 作者IP归属地为
-  meta_pv: 文章热度
-  meta_comment: 评论数
+  reprint: 转载或翻译
+  original: 原创
+  cc: 该文章为${cc}文章，注意版权协议
+  posted: 发布于
+  updated: 最后更新于
+  wordcount: 文章字数
+  minread: 阅读耗时
+  ip: 作者IP归属地为
+  pv: 文章热度
+  comment: 评论数
 
 award:
-  tip: 致谢
-  tip1: 赞赏作者
+  thanks: 致谢
+  tipping: 赞赏作者
   title: 赞赏名单
 
 search:
@@ -99,8 +97,7 @@ console:
   archive_unit: 篇
 
 sidebar:
-  title1: 功能
-  title2: 标签
+  function: 功能
   darkmode: 显示模式
 
 footer:
@@ -118,31 +115,6 @@ cookies:
 music:
   hit: 音乐已暂停
 
-rightmenu:
-  copytext: 复制选中文本
-  pastetext: 粘贴文本
-  commenttext: 引用到评论
-  newwindow: 新窗口打开
-  copylink: 复制链接地址
-  copyimg: 复制此图片
-  downloadimg: 下载此图片
-  search: 站内搜索
-  music:
-    toggle: 播放音乐
-    back: 切换到上一首
-    forward: 切换到下一首
-    playlist: 查看所有歌曲
-    copyMusicName: 复制歌名
-  randomPost: 随便逛逛
-  categories: 文章分类
-  tags: 文章标签
-  copyaddress: 复制地址
-  commentBarrage: 关闭热评
-  dark: 深色模式
-  light: 浅色模式
-  chs_to_cht: 轉為繁體
-  cht_to_chs: 转为简体
-
 404:
   button: 返回首页
 
@@ -151,7 +123,6 @@ link:
     toComment: 申请友链
     random: 随机访问
   random: 您即将前往 ⌈ ${name} ⌋ , 安全性未知
-  more: 更多
 
 keyboard:
   title: 博客快捷键

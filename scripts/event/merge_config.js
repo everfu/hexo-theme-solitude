@@ -137,7 +137,7 @@ hexo.extend.filter.register('before_generate', () => {
             enable: true, limit: 200, copy: true, expand: true, theme: 'default', color: 'default',
         }, lightbox: false, fancybox: false, mediumZoom: false, mermaid: false, translate: {
             enable: false, defaultEncoding: 2, translateDelay: 0,
-        }, opengraph: {
+        }, OpenGraph: {
             enable: false, options: null
         }, wordcount: false, busuanzi: false, search: {
             enable: false, type: 'local', tags: [], algolia: null, local: {
@@ -145,7 +145,15 @@ hexo.extend.filter.register('before_generate', () => {
             }
         }, rightside: {
             enable: false
-        }, post_ai: {
+        },
+        copy: {
+            enable: true,
+            copyright: {
+                enable: false,
+                limit_count: 50
+            }
+        }
+        , post_ai: {
             enable: false,
             modelName: 'GPT 3',
             key: 'your key',
