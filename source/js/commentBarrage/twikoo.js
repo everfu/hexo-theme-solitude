@@ -102,15 +102,9 @@ function initializeCommentBarrage() {
             const commentBarrageSwitch = localStorage.getItem("commentBarrageSwitch");
             if (commentBarrageSwitch != null) {
                 document.querySelector(".comment-barrage").style.display = "flex";
-                if (GLOBAL_CONFIG.rightside.enable) {
-                    document.querySelector(".menu-commentBarrage-text").textContent = "关闭热评";
-                }
                 document.querySelector("#consoleCommentBarrage").classList.add("on");
             } else {
                 document.querySelector(".comment-barrage").style.display = "none";
-                if (GLOBAL_CONFIG.rightside.enable) {
-                    document.querySelector(".menu-commentBarrage-text").textContent = "显示热评";
-                }
                 document.querySelector("#consoleCommentBarrage").classList.remove("on");
             }
             const comments = await this.fetchComments();

@@ -108,11 +108,9 @@ function initializeCommentBarrage() {
 
             if (localStorage.getItem("commentBarrageSwitch") != null) {
                 commentBarrage.style.display = "flex";
-                GLOBAL_CONFIG.rightside.enable && (menuCommentBarrageText.textContent = "关闭热评");
                 consoleCommentBarrage.classList.add("on");
             } else {
                 commentBarrage.style.display = "none";
-                GLOBAL_CONFIG.rightside.enable && (menuCommentBarrageText.textContent = "显示热评");
                 consoleCommentBarrage.classList.remove("on");
             }
 
