@@ -721,7 +721,7 @@ comment:
   # waline 配置信息
   # waline settings
   waline: # https://waline.js.org/
-    envId: # url: https://waline.wzsco.top
+    envId:  # url: https://waline.wzsco.top
     pageview: true # 是否开启页面访问量统计 / Whether to enable page access statistics
     option: # waline配置项 / waline configuration item
 

@@ -605,6 +605,60 @@ let sco = {
             element.dispatchEvent(new Event("input"));
         });
     },
+    owoBig() {
+        const type = GLOBAL_CONFIG.comment.type;
+        const owoSelectors = {
+            body: type === 'twikoo' ? '.OwO-body' : '.wl-emoji-popup',
+            item: type === 'twikoo' ? '.OwO-items li' : '.wl-tab-wrapper button'
+        };
+
+        let owoBig = document.getElementById('owo-big');
+        if (!owoBig) {
+            owoBig = document.createElement('div');
+            owoBig.id = 'owo-big';
+            document.body.appendChild(owoBig);
+        }
+
+        const debounce = (func, wait) => {
+            let timeout;
+            return function (...args) {
+                const later = () => {
+                    clearTimeout(timeout);
+                    func(...args);
+                };
+                clearTimeout(timeout);
+                timeout = setTimeout(later, wait);
+            };
+        };
+
+        const showOwoBig = (event) => {
+            const target = event.target;
+            const owoItem = target.closest(owoSelectors.item);
+            if (owoItem && target.closest(owoSelectors.body)) {
+                const imgSrc = owoItem.querySelector('img')?.src;
+                if (imgSrc) {
+                    owoBig.innerHTML = `<img src="${imgSrc}" style="max-width: 100%; height: auto;">`;
+                    owoBig.style.display = 'block';
+                    positionOwoBig(owoItem);
+                }
+            }
+        };
+
+        const hideOwoBig = (event) => {
+            if (event.target.closest(owoSelectors.item) && event.target.closest(owoSelectors.body)) {
+                owoBig.style.display = 'none';
+            }
+        };
+
+        function positionOwoBig(owoItem) {
+            const itemRect = owoItem.getBoundingClientRect();
+            owoBig.style.left = `${itemRect.left - (owoBig.offsetWidth / 4)}px`;
+            owoBig.style.top = `${itemRect.top}px`;
+        }
+
+        document.addEventListener('mouseover', debounce(showOwoBig, 100));
+        document.addEventListener('mouseout', hideOwoBig);
+    }
 }
 
 const addHighlight = () => {

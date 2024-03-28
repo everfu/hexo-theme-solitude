@@ -6,6 +6,7 @@ script.
                 el: '#comment',
                 onCommentLoaded: function () {
                     GLOBAL_CONFIG.lightbox && utils.lightbox(document.querySelectorAll('#twikoo .tk-content img:not(.tk-owo-emotion)'))
+                    sco.owoBig()
                 },
                 lang: '#{theme.comment.twikoo.lang}',
             }
