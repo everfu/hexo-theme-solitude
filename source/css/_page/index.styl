@@ -35,3 +35,19 @@ if hexo-config('google_adsense.enable')
 
 if hexo-config('message.enable')
   @import "message/index.styl"
+
+#page #article-container
+    a:not(.img,.cf-friends-link)
+      border-radius 4px 4px 0 0
+      text-decoration none
+      border-bottom 2px dotted var(--efu-lighttext)
+      color var(--efu-fontcolor)
+      font-weight 700
+      padding 0 4px
+
+      &:not(.fancybox):hover
+        border 0
+        text-decoration none
+        color var(--efu-white)
+        border-radius 4px
+        background var(--efu-main)
