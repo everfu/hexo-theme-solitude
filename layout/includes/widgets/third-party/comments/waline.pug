@@ -1,17 +1,45 @@
-- const { envId, option } = theme.comment.waline
+- const { envId, option ,pageview } = theme.comment.waline
+- const { lazyload, count } = theme.comment
 
 script.
     async function initComment() {
-        Waline.init(Object.assign({
-            el: '#comment',
-            serverURL: '!{envId}',
-            pageview: !{theme.post.meta.pv},
-            dark: 'html[data-theme="dark"]',
-            path: window.location.pathname,
-            search: false,
-            comment: #{theme.post.meta.comment && is_post()},
-        }, !{JSON.stringify(option)}))
+        const isLazyLoad = !!{lazyload};
+        let walineInitFunction = window.walineFn || null;
 
-        GLOBAL_CONFIG.lightbox && utils.lightbox(document.querySelectorAll('#comment .wl-content img:not(.wl-emoji)'))
-        sco.owoBig()
+        async function initWaline(Fn) {
+            const walineOptions = {
+                el: '#comment',
+                serverURL: '!{envId}',
+                pageview: !isLazyLoad,
+                dark: 'html[data-theme="dark"]',
+                path: window.location.pathname,
+                comment: !isLazyLoad,
+                ...!{JSON.stringify(option)}
+            };
+            const walineInstance = Fn(walineOptions);
+
+            utils.addGlobalFn('pjax', () => walineInstance.destroy(), 'destroyWaline');
+        }
+
+        async function loadWalineCSSAndJS() {
+            if (!walineInitFunction) {
+                await getCSS('!{url_for(theme.cdn.waline_css)}');
+                const {init} = await import('!{url_for(theme.cdn.waline_js)}');
+                walineInitFunction = init || Waline.init;
+                window.walineFn = walineInitFunction;
+            }
+            initWaline(walineInitFunction);
+        }
+
+        if (isLazyLoad) {
+            utils.loadComment(document.getElementById('comment'),loadWalineCSSAndJS);
+        } else {
+            await loadWalineCSSAndJS();
+        }
+
+        if (GLOBAL_CONFIG.lightbox) {
+            utils.lightbox(document.querySelectorAll('#comment .wl-content img:not(.wl-emoji)'));
+        }
+
+        sco.owoBig();
     }

@@ -126,3 +126,13 @@ link:
 
 keyboard:
   title: 博客快捷键
+
+newest_comment:
+  error: 无法获取评论，请确认相关配置是否正确。
+  zero: 没有评论
+
+comment:
+  title: 评论
+
+commentBarrage:
+  title: 热评

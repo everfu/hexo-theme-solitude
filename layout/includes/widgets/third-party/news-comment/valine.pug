@@ -1,0 +1,79 @@
+script.
+    window.addEventListener('load', () => {
+        const changeContent = (content) => {
+            if (content === '') return content;
+
+            const replacements = [
+                {regex: /<img.*?src="(.*?)"?[^\>]+>/ig, replacement: '[Image]'},
+                {regex: /<a[^>]+?href=["']?([^"']+)["']?[^>]*>([^<]+)<\/a>/gi, replacement: '[URL]'},
+                {regex: /```[\s\S]*?```/g, replacement: '[Code]'},
+                {regex: /<[^>]+>/g, replacement: ""}
+            ];
+
+            content = replacements.reduce((str, {regex, replacement}) => str.replace(regex, replacement), content);
+
+            return content.length > 150 ? content.substring(0, 150) + '...' : content;
+        }
+
+        const $asideList = document.querySelector('#card-newest-comments .aside-list')
+        const newestCommentInit = () => {
+            const data = saveToLocal.get('valine-newest-comment')
+            if (data) {
+                generateHtml(JSON.parse(data))
+            } else {
+                getComment()
+            }
+        }
+
+        const getComment = async () => {
+            try {
+                const settings = {
+                    "method": "GET",
+                    "headers": {
+                        "X-LC-Id": '!{theme.comment.valine.appId}',
+                        "X-LC-Key": '!{theme.comment.valine.appKey}',
+                        "Content-Type": "application/json"
+                    },
+                }
+
+                const res = await fetch('!{theme.comment.valine.serverURLs}/1.1/classes/Comment?limit=8&order=-createdAt', settings)
+                const result = await res.json()
+                window.res = result
+                const valineArray = result.results.map(e => {
+                    return {
+                        'content': changeContent(e.comment),
+                        'avatar': '!{theme.comment.avatar}' + '/avatar/' + md5(e.mail.toLowerCase()),
+                        'nick': e.nick,
+                        'url': e.url + '#' + e.objectId,
+                        'date': e.updatedAt || e.createdAt
+                    }
+                })
+                saveToLocal.set('valine-newest-comment', JSON.stringify(valineArray), !{theme.comment.newest_comment.storage} / (60 * 24))
+                generateHtml(valineArray)
+            } catch (err) {
+                console.error(err)
+                $asideList.textContent = "!{_p('newest_comment.error')}"
+            }
+        }
+
+        const generateHtml = array => {
+            const $dom = document.querySelector('#card-newest-comments .aside-list')
+            $dom.innerHTML = array.length ? array.map(item => `
+                        <div class='aside-list-item'>
+                          <a onclick='pjax.loadUrl("${item.url}")' class='thumbnail'>
+                            <img src='${item.avatar}' alt='${item.nick}'>
+                            <div class='name'><span>${item.nick}</span></div>
+                          </a>
+                          <div class='content'>
+                            <a class='comment' onclick='pjax.loadUrl("${item.url}")'>${item.content}</a>
+                            <time class="datetime" datetime="${item.date}"></time>
+                          </div>
+                        </div>
+                      `).join('') : "!{_p('newest_comment.zero')}"
+            window.lazyLoadInstance && window.lazyLoadInstance.update()
+            window.pjax && window.pjax.refresh()
+            utils && utils.changeTimeFormat()
+        }
+
+        newestCommentInit()
+    })

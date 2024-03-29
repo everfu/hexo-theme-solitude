@@ -17,28 +17,33 @@ script.
 
         const $asideList = document.querySelector('#card-newest-comments .aside-list')
         const newestCommentInit = () => {
-            if ($asideList) {
+            const data = saveToLocal.get('waline-newest-comment')
+            if (data) {
+                generateHtml(JSON.parse(data))
+            } else {
                 getComment()
             }
         }
-        const getComment = () => {
-            Waline.RecentComments(
-                options = {
-                    serverURL: GLOBAL_CONFIG.comment.waline.url,
-                    count: 6,
-                }
-            ).then(function (res) {
-                const walineArray = res.comments.map(item => ({
-                    'content': changeContent(item.comment),
-                    'avatar': item.avatar,
-                    'nick': item.nick,
-                    'url': `${item.url}#${item.objectId}`,
-                    'date': new Date(item.insertedAt).toISOString()
-                }))
+
+        const getComment = async () => {
+            try {
+                const res = await fetch('!{theme.comment.waline.envId}/api/comment?type=recent&count=8', {method: 'GET'})
+                const result = await res.json()
+                const walineArray = result.data.map(e => {
+                    return {
+                        'content': changeContent(e.comment),
+                        'avatar': e.avatar,
+                        'nick': e.nick,
+                        'url': e.url + '#' + e.objectId,
+                        'date': e.time || e.insertedAt
+                    }
+                })
+                saveToLocal.set('waline-newest-comment', JSON.stringify(walineArray), !{theme.comment.newest_comment.storage} / (60 * 24))
                 generateHtml(walineArray)
-            }).catch(
-                $asideList.innerHTML = "无法获取评论，请确认相关配置是否正确"
-            )
+            } catch (err) {
+                console.error(err)
+                $asideList.textContent = "!{_p('newest_comment.error')}"
+            }
         }
 
         const generateHtml = array => {
@@ -54,9 +59,9 @@ script.
                     <time class="datetime" datetime="${item.date}"></time>
                   </div>
                 </div>
-              `).join('') : '没有评论'
+              `).join('') : "!{_p('newest_comment.zero')}"
             window.lazyLoadInstance && window.lazyLoadInstance.update()
-            window.pjax && window.pjax.refresh($dom)
+            window.pjax && window.pjax.refresh()
             utils && utils.changeTimeFormat()
         }
 

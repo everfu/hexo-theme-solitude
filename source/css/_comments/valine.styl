@@ -1,0 +1,245 @@
+#comment
+  .vcount
+    display none !important
+
+  .vpreview-btn
+    display none
+
+  .vemoji-btn
+    position absolute
+    bottom 4.5px
+    left 50px
+
+  .vpanel
+    display flex
+    flex-direction column
+    position relative
+
+    .vemojis
+      display: none;
+      position: absolute;
+      left: 0;
+      right: 0;
+      max-width: 500px;
+      color: #4a4a4a;
+      border: 1px solid rgba(144, 147, 153, 0.31);
+      top: 6.7rem
+      z-index: 1000;
+      animation: .3s ease .1s 1 normal both running donate_effcet
+      width: 500px;
+      border: var(--style-border-always)
+      border-radius: 8px !important;
+      overflow: hidden;
+      background-color: var(--efu-maskbg)
+      backdrop-filter: saturate(180%) blur(10px);
+      transform: translateZ(0);
+      overflow-y: auto;
+      padding: 10px;
+
+  .vwrap
+    flex 1
+    display flex
+    border none !important
+    padding 0
+    overflow: inherit;
+    flex-direction column-reverse
+
+    .vheader
+      display flex
+      margin .5rem 0
+      position relative
+      width calc(100% - 5.5rem)
+      gap .5rem
+
+      +maxWidth768()
+        flex-direction column
+
+      input
+        border-radius 12px
+        width calc((100% - 1rem) / 3)
+        flex 1
+        position relative
+        font-size 13px
+        background var(--efu-secondbg)
+        border var(--style-border-always)
+        padding 6px 10px
+        line-height 1
+
+        +maxWidth768()
+          width 100%
+
+  .vquote
+
+    .vcard
+      background: var(--efu-card-bg);
+      border none
+      border-top: var(--style-border-dashed);
+      border-radius: 12px;
+      transition: .3s;
+      padding: 1rem 0 0;
+      margin-top: 0;
+      box-shadow: none;
+
+  .vreply-wrapper
+
+    .vrow .vcol:first-child
+      bottom 78px
+
+      +maxWidth768()
+        bottom 164px
+
+    .vrow .vcol.text-right:not(.vctrl)
+      bottom 31px
+
+      +maxWidth768()
+        bottom 117px
+
+    .cancel-reply
+      display flex !important
+      flex-direction row
+      justify-content center
+      margin 0
+
+    .cancel-reply-btn
+      position inherit
+
+  .vrow
+    padding 0
+
+    .vcol
+      position absolute
+
+      &:first-child
+        bottom 56px
+        left 20px
+        width auto
+
+        +maxWidth768()
+          bottom 141px
+
+      &.text-right:not(.vctrl)
+        bottom 9px
+        right 0
+        transition .3s
+        border 0 solid var(--efu-main)
+        width 5rem
+        margin-left .5rem
+        border-radius 12px
+        height 34px
+
+        +maxWidth768()
+          bottom 94px
+
+        button
+          background-color var(--efu-fontcolor)
+          width 100%
+          height 100%
+          color var(--efu-card-bg)
+          border-radius 12px
+          opacity .2
+
+          +maxWidth768()
+            height 119px
+
+      svg
+        width 18px
+        height 18px
+
+  #veditor
+    display block
+    padding 16px 16px 40px 16px
+    line-height 1.5
+    width 100%
+    font-size 14px
+    background var(--efu-secondbg)
+    color var(--efu-fontcolor)
+    border-radius 12px
+    min-height 121px
+    border var(--style-border-always)
+
+    &:focus
+      border var(--style-border-hover-always)
+      box-shadow var(--efu-shadow-main)
+
+  .vcard
+    margin-top: 0
+    margin-bottom: .5rem
+    background: var(--efu-card-bg);
+    transition: .3s;
+    border-radius: 12px;
+    padding: 0;
+    padding-top: .5rem;
+    border: none;
+    border-top: var(--style-border-dashed);
+    display: flex;
+    flex-direction: row;
+    word-break: break-all;
+
+    +maxWidth768()
+      padding: 1rem;
+      border: var(--style-border-always);
+      box-shadow: var(--efu-shadow-border)
+
+    .vimg
+      width 32px
+      height 32px
+      border-radius 32px
+      cursor pointer
+      margin-right 16px
+
+      &:hover
+        transform: rotate(360deg)
+
+    .vh
+      flex 1
+      padding 0
+      border 0
+
+      .vhead
+        display flex
+        align-items center
+        gap: 5px;
+
+    .vnick
+      font-size 1rem
+      line-height 32px
+      margin-right 0
+
+    .vsys
+      background: var(--efu-card-bg);
+      border: var(--style-border-always);
+      padding: 3px 5px
+      border-radius: 8px;
+      color: var(--efu-secondtext)
+      display: inline
+      font-size: .5rem;
+
+    .vat
+      display: flex;
+      align-items: center;
+      color: var(--efu-lighttext)
+      padding: 3px 12px
+      transition: all .3s;
+      border-radius: 8px;
+      background-color: var(--efu-secondbg);
+      border: var(--style-border-always);
+      position: absolute;
+      right: 0;
+      bottom: 18px
+
+      &:hover
+        background-color: var(--efu-lighttext)
+        color: var(--efu-card-bg)
+
+  .vquote
+    border-left none
+
+  .vicon.actived
+    fill var(--efu-main)
+
+#page
+  .vcard
+    padding: 1rem 1rem 1.5rem;
+    border: var(--style-border);
+    border-top: var(--style-border);
+    box-shadow: var(--efu-shadow-border);

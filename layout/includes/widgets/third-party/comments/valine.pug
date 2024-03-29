@@ -1,0 +1,44 @@
+- const { lazyload, count } = theme.comment
+- const { appId, appKey, avatar, serverURLs, visitor, option } = theme.comment.valine
+- let emojiMaps = '""'
+
+if site.data.valine
+    - emojiMaps = JSON.stringify(site.data.valine)
+
+script.
+    async function initComment() {
+        const initValine = () => {
+            const valine = new Valine(Object.assign({
+                el: '#comment',
+                appId: '#{appId}',
+                appKey: '#{appKey}',
+                avatar: '#{avatar}',
+                serverURLs: '#{serverURLs}',
+                emojiMaps: !{emojiMaps},
+                path: window.location.pathname,
+                visitor: #{visitor},
+                ...!{JSON.stringify(option)}
+            }))
+
+            if (GLOBAL_CONFIG.lightbox) {
+                utils.lightbox(document.querySelectorAll('#comment .vcontent img:not(.vemoji)'));
+            }
+
+            sco.owoBig();
+        }
+
+        const loadValine = async () => {
+            if (typeof Valine === 'function') initValine()
+            else {
+                await getScript('!{url_for(theme.cdn.valine)}')
+                initValine()
+            }
+        }
+
+        if (!!{lazyload}) {
+            if (!{lazyload}) utils.loadComment(document.getElementById('comment'), loadValine)
+            else setTimeout(loadValine, 0)
+        } else {
+            await loadValine()
+        }
+    }

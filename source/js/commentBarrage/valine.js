@@ -3,7 +3,7 @@ function initializeCommentBarrage() {
     let config = {
         maxBarrage: 1,
         barrageTime: 8e3,
-        walineUrl: GLOBAL_CONFIG.comment.url,
+        valineUrl: GLOBAL_CONFIG.comment.url,
         pageUrl: window.location.pathname,
     }
     new class {
@@ -23,10 +23,10 @@ function initializeCommentBarrage() {
         }
 
         async fetchComments() {
-            const url = new URL(`${this.config.walineUrl}/api/comment`);
+            const url = new URL(`${this.config.valineUrl}/1.1/classes/Comment`);
             const params = {
-                path: this.config.pageUrl,
-                sortBy: 'insertedAt_asc'
+                url: this.config.pageUrl,
+                order: '-createdAt'
             };
 
             for (const [key, value] of Object.entries(params)) {
@@ -37,6 +37,8 @@ function initializeCommentBarrage() {
                 const response = await fetch(url, {
                     method: "GET",
                     headers: {
+                        "X-LC-Id": GLOBAL_CONFIG.comment.appId,
+                        "X-LC-Key": GLOBAL_CONFIG.comment.appKey,
                         "Content-Type": "application/json"
                     },
                 });
@@ -46,17 +48,18 @@ function initializeCommentBarrage() {
                 }
 
                 const data = await response.json();
-                return data.data;
+                return data.results.filter(item => item.url === this.config.pageUrl)
             } catch (error) {
                 console.error("An error occurred while fetching comments: ", error);
             }
         }
 
         commentLinkFilter(comments) {
-            return comments.data.flatMap(comment => this.getCommentReplies(comment));
+            return comments.flatMap(comment => this.getCommentReplies(comment));
         }
 
         getCommentReplies(comment) {
+            window.comment = comment
             if (!comment.replies) {
                 return [comment];
             }
@@ -64,7 +67,7 @@ function initializeCommentBarrage() {
         }
 
         processCommentContent(comment) {
-            const processed = comment.replace(/<blockquote\b[^>]*>[\s\S]*?<\/blockquote>|<[^>]*>|\n/g, "").trim();
+            const processed = comment.replace(/```[\s\S]*?```|<blockquote\b[^>]*>[\s\S]*?<\/blockquote>|<[^>]*>|\n|`([^`]{1,9})`:/g, "").trim();
             return processed ? `<p>${processed}</p>` : "";
         }
 
@@ -80,7 +83,7 @@ function initializeCommentBarrage() {
         <div class="barrageHead">
             <a class="barrageTitle" href="javascript:sco.scrollTo('post-comment')">${GLOBAL_CONFIG.lang.barrage.title}</a>
             <div class="barrageNick">${comment.nick}</div>
-            <img class="barrageAvatar" src="${GLOBAL_CONFIG.comment.avatar}/avatar/${comment.avatar}"/>
+            <img class="barrageAvatar" src="${GLOBAL_CONFIG.comment.avatar}/avatar/${md5(comment.mail.toLowerCase())}"/>
             <a class="comment-barrage-close" href="javascript:sco.switchCommentBarrage();">
                 <i class="solitude st-close-fill"></i>
             </a>

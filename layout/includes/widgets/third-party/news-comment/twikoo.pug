@@ -15,12 +15,12 @@ script.
             return content.length > 150 ? content.substring(0, 150) + '...' : content;
         }
 
-        const getComment = () => {
-            const $dom = document.querySelector('#card-newest-comments .aside-list')
+        const $asideList = document.querySelector('#card-newest-comments .aside-list')
 
+        const getComment = () => {
             const runTwikoo = () => {
                 twikoo.getRecentComments({
-                    envId: GLOBAL_CONFIG.comment.twikoo.url,
+                    envId: GLOBAL_CONFIG.comment.url,
                     region: '',
                     pageSize: 6,
                     includeReply: true
@@ -32,18 +32,18 @@ script.
                         'url': `${e.url}#${e.id}`,
                         'date': new Date(e.created).toISOString()
                     }))
+                    saveToLocal.set('twikoo-newest-comment', JSON.stringify(twikooArray), !{theme.comment.newest_comment.storage}/(60*24))
                     generateHtml(twikooArray)
                 }).catch(function (err) {
                     console.error(err)
-                    $dom.innerHTML = "无法获取评论，请确认相关配置是否正确"
+                    $asideList.textContent = "!{_p('newest_comment.error')}"
                 })
             }
             runTwikoo()
         }
 
         const generateHtml = array => {
-            const $dom = document.querySelector('#card-newest-comments .aside-list')
-            $dom.innerHTML = array.length ? array.map(item => `
+            $asideList.innerHTML = array.length ? array.map(item => `
                 <div class='aside-list-item'>
                   <a onclick='pjax.loadUrl("${item.url}")' class='thumbnail'>
                     <img src='${item.avatar}' alt='${item.nick}'>
@@ -54,15 +54,17 @@ script.
                     <time class="datetime" datetime="${item.date}"></time>
                   </div>
                 </div>
-              `).join('') : '没有评论'
+              `).join('') : "!{_p('newest_comment.zero')}"
             window.lazyLoadInstance && window.lazyLoadInstance.update()
-            window.pjax && window.pjax.refresh($dom)
+            window.pjax && window.pjax.refresh()
             utils && utils.changeTimeFormat()
         }
 
         const newestCommentInit = () => {
-            const $asideList = document.querySelector('#card-newest-comments .aside-list')
-            if ($asideList) {
+            const data = saveToLocal.get('twikoo-newest-comment')
+            if (data) {
+                generateHtml(JSON.parse(data))
+            } else {
                 getComment()
             }
         }

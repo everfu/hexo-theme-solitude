@@ -131,3 +131,13 @@ link:
 
 keyboard:
   title: Blog shortcuts
+
+newest_comment:
+  error: Unable to get a comment, please confirm that the relevant configuration is correct.
+  zero: No comments.
+
+comment:
+  title: ' Comment'
+
+commentBarrage:
+  title: Hot

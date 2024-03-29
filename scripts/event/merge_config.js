@@ -164,7 +164,7 @@ hexo.extend.filter.register('before_generate', () => {
             enable: false, per_page: false, copytex: false,
         }, comment: {
             enable: false,
-            type: 'twikoo',
+            type: '',
             commentBarrage: false,
             newComment: false,
             randomInfoStart: [`baby's`, `little`, `my`,],
@@ -180,8 +180,8 @@ hexo.extend.filter.register('before_generate', () => {
             font: {
                 'font-size': '16px',
                 'code-font-size': '16px',
-                'font-family': '"PingFang SC","Hiragino Sans GB","Microsoft YaHei"',
-                'code-font-family': '"monospace", "monospace"',
+                'font-family': 'PingFang SC, Hiragino Sans GB,Microsoft YaHei',
+                'code-font-family': 'monospace, monospace',
             },
             extends: {
                 head: [], body: [],

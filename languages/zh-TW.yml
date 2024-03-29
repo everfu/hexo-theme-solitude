@@ -126,3 +126,13 @@ link:
 
 keyboard:
   title: 博客快捷鍵
+
+newest_comment:
+  error: 無法獲取評論，請確認相關配置是否正確。
+  zero: 沒有評論
+
+comment:
+  title: 評論
+
+commentBarrage:
+  title: 熱評

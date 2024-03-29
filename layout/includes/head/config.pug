@@ -42,10 +42,45 @@
             }
         })
     }
-
-    const commentInfoStart = theme.comment.randomInfoStart.map(item => `"${item}"`) || [];
-    const commentInfoEnd = theme.comment.randomInfoEnd.map(item => `"${item}"`) || [];
     const sayhello2 = theme.aside.card.sayhello2.map(item => `"${item}"`) || [];
+
+    let comment = null
+
+    if (theme.comment.type === 'twikoo') {
+        comment = {
+            url: theme.comment.twikoo.envId,
+            commentBarrage: theme.comment.enable,
+            accessToken: theme.comment.twikoo.accessToken,
+            owo: {
+                body: '.OwO-body',
+                item: '.OwO-items li'
+            }
+        }
+    }
+
+    if (theme.comment.type === 'waline') {
+        comment = {
+            url: theme.comment.waline.envId,
+            commentBarrage: theme.comment.enable,
+            owo: {
+                body: '.wl-emoji-popup',
+                item: '.wl-tab-wrapper button'
+            }
+        }
+    }
+
+    if (theme.comment.type === 'valine') {
+        comment = {
+            url: theme.comment.valine.serverURLs,
+            commentBarrage: theme.comment.enable,
+            appId: theme.comment.valine.appId,
+            appKey: theme.comment.valine.appKey,
+            owo: {
+                body: '.vwrap',
+                item: '.vemojis i'
+            }
+        }
+    }
 
 script.
     const GLOBAL_CONFIG = {
@@ -93,6 +128,9 @@ script.
             chs: {
                 chs_to_cht: '!{_p('chs.chs_tw')}',
                 cht_to_chs: '!{_p('chs.chs_cn')}',
+            },
+            barrage: {
+                title: '!{_p('commentBarrage.title')}',
             }
         },
         aside: {
@@ -109,18 +147,8 @@ script.
             enable: !{theme.post.covercolor.enable}
         },
         comment: {
-            enable: !{theme.comment.enable},
-            type: '!{theme.comment.type}',
-            commentBarrage: !{theme.comment.commentBarrage && theme.comment.enable},
-            randomInfoStart: [!{commentInfoStart}],
-            randomInfoEnd: [!{commentInfoEnd}],
-            twikoo: {
-                url: '!{theme.comment.twikoo.envId}',
-                accessToken: '!{theme.comment.twikoo.accessToken}'
-            },
-            waline: {
-                url: '!{theme.comment.waline.envId}',
-            }
+            avatar: '!{theme.comment.avatar}',
+            ...!{JSON.stringify(comment)}
         },
         lightbox: '!{ theme.mediumZoom ? "mediumZoom" : (theme.fancybox ? "fancybox" : "null")}',
         ai: {

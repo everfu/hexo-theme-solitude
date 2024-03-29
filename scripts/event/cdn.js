@@ -69,6 +69,11 @@ hexo.extend.filter.register('before_generate', () => {
             file: 'js/commentBarrage/waline.js',
             version
         },
+        valine_commentBarrage: {
+            name: 'hexo-theme-solitude',
+            file: 'js/commentBarrage/valine.js',
+            version
+        },
         waterfall: {
             name: 'hexo-theme-solitude',
             file: 'js/third_party/waterfall.min.js',

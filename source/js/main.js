@@ -346,10 +346,6 @@ let sco = {
                 el.setSelectionRange(-1, -1)
             }
         }
-        const commentTips = document.querySelector("#comment-tips");
-        if (commentTips) {
-            commentTips.classList.add("show");
-        }
     },
     initbbtalk: function () {
         if (document.querySelector('#bber-talk')) {
@@ -586,31 +582,8 @@ let sco = {
             document.getElementById("toPageButton").href = targetPageUrl;
         }
     },
-    addRandomCommentInfo: function () {
-        const e = `${GLOBAL_CONFIG.comment.randomInfoStart[Math.floor(Math.random() * GLOBAL_CONFIG.comment.randomInfoStart.length)]}${GLOBAL_CONFIG.comment.randomInfoEnd[Math.floor(Math.random() * GLOBAL_CONFIG.comment.randomInfoEnd.length)]}`;
-
-        const nameSelectors = ["#author", "input[name='comname']", "#inpName", "input[name='author']", "#ds-dialog-name", "#name", "input[name='nick']", "#comment_author"];
-        const emailSelectors = ["#mail", "#email", "input[name='commail']", "#inpEmail", "input[name='email']", "#ds-dialog-email", "input[name='mail']", "#comment_email"];
-
-        const nameElements = nameSelectors.map(selector => document.querySelector(selector)).filter(Boolean);
-        const emailElements = emailSelectors.map(selector => document.querySelector(selector)).filter(Boolean);
-
-        nameElements.forEach(element => {
-            element.value = e;
-            element.dispatchEvent(new Event("input"));
-        });
-
-        emailElements.forEach(element => {
-            element.value = "donotreply@examp.com";
-            element.dispatchEvent(new Event("input"));
-        });
-    },
     owoBig() {
-        const type = GLOBAL_CONFIG.comment.type;
-        const owoSelectors = {
-            body: type === 'twikoo' ? '.OwO-body' : '.wl-emoji-popup',
-            item: type === 'twikoo' ? '.OwO-items li' : '.wl-tab-wrapper button'
-        };
+        const owoSelectors = GLOBAL_CONFIG.comment.owo
 
         let owoBig = document.getElementById('owo-big');
         if (!owoBig) {

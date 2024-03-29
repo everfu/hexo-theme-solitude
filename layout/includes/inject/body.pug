@@ -14,6 +14,10 @@ div
     script(src=url_for(theme.cdn.main))
     script(src=url_for(theme.cdn.utils))
 
+    if theme.comment.enable && theme.comment.type === 'valine'
+        // md5
+        script(src=url_for(theme.cdn.blueimp_md5))
+
     // lately
     script(src=url_for(theme.cdn.lately_js))
 
@@ -74,14 +78,14 @@ div
         case theme.comment.type
             when 'twikoo'
                 script(src=url_for(theme.cdn.twikoo))
-            when 'waline'
-                script(src=url_for(theme.cdn.waline_js))
         if theme.comment.commentBarrage
             case theme.comment.type
                 when 'twikoo'
                     script(src=url_for(theme.cdn.twikoo_commentBarrage))
                 when 'waline'
                     script(src=url_for(theme.cdn.waline_commentBarrage))
+                when 'valine'
+                    script(src=url_for(theme.cdn.valine_commentBarrage))
 
     if theme.music.enable
         script(src=url_for(theme.cdn.music_js))

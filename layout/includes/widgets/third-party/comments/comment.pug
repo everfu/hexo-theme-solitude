@@ -2,16 +2,14 @@
     .comment-head
         .comment-headline
             i.solitude.st-chat-fill
-            span  评论
+            span=_p('comment.title')
             span
-        .comment-randomInfo
-            a(onclick="sco.addRandomCommentInfo()", href="javascript:void(0)") 匿名评论
-        .comment-tips#comment-tips
-            span ✅ 你无需删除空行，直接评论以获取最佳展示效果
     .comment-wrap
         #comment
         case theme.comment.type
             when 'twikoo'
-                include ./twikoo.pug
+                !=partial('includes/widgets/third-party/comments/twikoo',{}, {cache: true})
             when 'waline'
-                include ./waline.pug
+                !=partial('includes/widgets/third-party/comments/waline',{}, {cache: true})
+            when 'valine'
+                !=partial('includes/widgets/third-party/comments/valine',{}, {cache: true})

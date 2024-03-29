@@ -701,17 +701,11 @@ comment:
   enable: false
   type: # waline, twikoo
   commentBarrage: false # 热评开关 / Hot comment switch
-  newComment: false # 最新评论开关 / Latest comment switch
-  # 匿名评论前部分随机信息 / Anonymous comment front random information
-  randomInfoStart:
-    - "聪敏的"
-    - "可爱的"
-    - "美丽的"
-  # 匿名评论后部分随机信息 / Anonymous comment after random information
-  randomInfoEnd:
-    - "白菜"
-    - "小可爱"
-    - "小仙女"
+  lazyload: true # 懒加载
+  count: true # 评论数展示
+  newest_comment:
+    enable: false
+    storage: 421000 # 缓存时间
   # twikoo 配置信息
   # twikoo settings
   twikoo: # https://twikoo.js.org/
@@ -722,8 +716,21 @@ comment:
   # waline settings
   waline: # https://waline.js.org/
     envId:  # url: https://waline.wzsco.top
-    pageview: true # 是否开启页面访问量统计 / Whether to enable page access statistics
+    pageview: false # 是否开启页面访问量统计 / Whether to enable page access statistics
     option: # waline配置项 / waline configuration item
+  # valine 配置信息
+  # valine settings
+  valine:
+    appId: # leancloud application app id
+    appKey: # leancloud application app key
+    serverURLs: # This configuration is suitable for domestic custom domain name users, overseas version will be automatically detected (no need to manually fill in)
+    avatar:
+    visitor: false
+    option: # options list
+
+
+# 中控台扩展 ： 最新评论 + 标签 + 文章
+console_plus: false
 
 # 站点验证
 # Site verification
@@ -748,8 +755,8 @@ css_prefix: false
 font:
   font-size: 16px
   code-font-size: 16px
-  font-family: '"PingFang SC","Hiragino Sans GB","Microsoft YaHei"'
-  code-font-family: '"monospace", "monospace"'
+  font-family: 'PingFang SC,Hiragino Sans GB,Microsoft YaHei'
+  code-font-family: 'monospace, monospace'
 
 # 插入代码到头部 </head> 之前 和 底部 </body> 之前
 # Insert code before </head> and before </body>
