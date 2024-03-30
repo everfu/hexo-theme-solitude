@@ -735,6 +735,25 @@ const addHighlight = () => {
     }
 }
 
+const addCopyright = () => {
+    if (!GLOBAL_CONFIG.copyright) return
+    const {limit, author, link, source, info} = GLOBAL_CONFIG.copyright
+    const handleCopy = (e) => {
+        e.preventDefault()
+        const copyText = window.getSelection(0).toString()
+        let text = copyText
+        if (copyText.length > limit) {
+            text = `${copyText}\n\n${author}\n${link}${window.location.href}\n${source}\n${info}`
+        }
+        if (e.clipboardData) {
+            return e.clipboardData.setData('text', text)
+        } else {
+            return window.clipboardData.setData('text', text)
+        }
+    }
+    document.body.addEventListener('copy', handleCopy)
+}
+
 class tabs {
     static init() {
         this.clickFnOfTabs()
@@ -792,6 +811,7 @@ window.refreshFn = () => {
     PAGE_CONFIG.comment && initComment()
     PAGE_CONFIG.toc && toc.init();
     (PAGE_CONFIG.is_post || PAGE_CONFIG.is_page) && ((addHighlight()) || tabs.init())
+    addCopyright()
     PAGE_CONFIG.is_home && showTodayCard()
     GLOBAL_CONFIG.covercolor.enable && coverColor()
     sco.initConsoleState()

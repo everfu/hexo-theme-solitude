@@ -75,6 +75,15 @@
         })
     }
 
+    let copyright = false;
+    if (theme.copy.enable && theme.copy.copyright.enable) {
+        copyright = JSON.stringify({
+            limit: theme.copy.copyright.limit,
+            author: _p("copy_copyright.author") + ': ' + config.author,
+            link: _p("copy_copyright.link") + ': ',
+            source: _p("copy_copyright.source") + ': ' + config.title,
+            info: _p("copy_copyright.info")
+        })
     }
 
 script.
@@ -87,6 +96,7 @@ script.
             enable: !{theme.lazyload.enable},
             error: '!{theme.lazyload.errorimg}'
         },
+        copyright: !{copyright},
         highlight: {
             enable: !{theme.highlight.enable},
             limit: !{theme.highlight.limit},

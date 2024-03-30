@@ -9,6 +9,12 @@ copy:
   success: 複製成功
   error: 複製失敗
 
+copy_copyright:
+  author: 作者
+  link: 連結
+  source: 來源
+  info: 著作權歸作者所有。 商業轉載請聯繫作者獲得授權，非商業轉載請註明出處。
+
 lately:
   second: 秒
   minute: 分鐘
@@ -136,3 +142,5 @@ comment:
 
 commentBarrage:
   title: 熱評
+
+f12: 開發者模式已打開，請遵循GPL協定。

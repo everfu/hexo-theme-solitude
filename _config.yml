@@ -568,6 +568,14 @@ keyboard:
   #   key: L
   #   url: "/links/"
 
+# 复制
+# Copy
+copy:
+  enable: true
+  copyright: # Turn on Link copyright information after copying.（开启后将在默认增加版权信息）
+    enable: false
+    limit: 50
+
 # 懒加载
 # lazyload
 lazyload:

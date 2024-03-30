@@ -9,6 +9,12 @@ copy:
   success: 复制成功
   error: 复制失败
 
+copy_copyright:
+  author: 作者
+  link: 链接
+  source: 来源
+  info: 著作权归作者所有。 商业转载请联系作者获得授权，非商业转载请注明出处。
+
 lately:
   second: 秒
   minute: 分钟
@@ -136,3 +142,5 @@ comment:
 
 commentBarrage:
   title: 热评
+
+f12: 开发者模式已打开，请遵循GPL协议。
