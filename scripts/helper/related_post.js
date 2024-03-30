@@ -5,7 +5,7 @@ hexo.extend.helper.register('related_posts', function (currentPost, allPosts) {
     const config = hexo.theme.config
     const limitNum = config.related_post.limit || 6
     const dateType = config.related_post.date_type || 'created'
-    const headlineLang = this._p('喜欢这篇的人也看了')
+    const headlineLang = this._p('star')
 
     currentPost.tags.forEach(function (tag) {
         allPosts.forEach(function (post) {
@@ -36,7 +36,7 @@ hexo.extend.helper.register('related_posts', function (currentPost, allPosts) {
     relatedPosts.sort(compare('weight', dateType))
 
     let result = '<div class="relatedPosts">'
-    result += `<div class="headline"><i class="solitude st-star-smile-fill"></i><span>${headlineLang}</span><div class="relatedPosts-link"><a onclick="event.preventDefault(); toRandomPost();" href="javascript:void(0);" rel="external nofollow" data-pjax-state="">随便逛逛</a></div></div>`
+    result += `<div class="headline"><i class="solitude st-star-smile-fill"></i><span>${headlineLang}</span><div class="relatedPosts-link"><a onclick="event.preventDefault(); toRandomPost();" href="javascript:void(0);" rel="external nofollow" data-pjax-state="">${this._p('random')}</a></div></div>`
     result += '<div class="relatedPosts-list">'
 
     for (let i = 0; i < Math.min(relatedPosts.length, limitNum); i++) {

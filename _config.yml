@@ -574,7 +574,7 @@ copy:
   enable: true
   copyright: # Turn on Link copyright information after copying.（开启后将在默认增加版权信息）
     enable: false
-    limit: 50
+    limit: 50 # word count. （字数）
 
 # 懒加载
 # lazyload
