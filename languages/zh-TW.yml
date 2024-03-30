@@ -66,6 +66,10 @@ post:
   ip: 作者IP歸屬地為
   pv: 文章熱度
   comment: 評論數
+  copyright:
+    reprint: 本文是转载或翻译文章，版权归原作者所有。转载本文请联系原作者。
+    original: 本文是原创文章，采用
+    original_end: 协议，完整转载请注明来自
 
 award:
   thanks: 致謝

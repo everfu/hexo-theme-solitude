@@ -51,15 +51,18 @@
     .post-copyright__notice
       font-size 12px
       margin 0.5rem 0
+      display flex
+      justify-content center
 
       .post-copyright-info
         padding-left 0
         color var(--efu-secondtext)
         overflow hidden
         display -webkit-box
-        -webkit-line-clamp 1
+        -webkit-line-clamp 3
         -webkit-box-orient vertical
         text-align center
+        max-width 500px
 
         +maxWidth768()
           -webkit-line-clamp 2
