@@ -1,14 +1,15 @@
 div#console
     div.close-btn(onclick="sco.hideConsole()")
         i.solitude.st-close-fill
-    if theme.comment.newComment
+    if theme.console_plus
         div.console-card-group
-            div.console-card-group-left
-                div.console-card#card-newest-comments(onclick="sco.hideConsole()")
-                    div.card-content
-                        div.author-content-item-tips= _p('console.comment_tip')
-                        div.author-content-item-title= _p('console.comment_title')
-                    div.aside-list
+            if theme.console_plus && theme.comment.newest_comment.enable
+                div.console-card-group-left
+                    div.console-card#card-newest-comments(onclick="sco.hideConsole()")
+                        div.card-content
+                            div.author-content-item-tips= _p('console.comment_tip')
+                            div.author-content-item-title= _p('console.comment_title')
+                        div.aside-list
 
             div.console-card-group-right
                 div.console-card.tags(onclick="sco.hideConsole()")

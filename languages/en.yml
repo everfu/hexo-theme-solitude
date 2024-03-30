@@ -1,4 +1,6 @@
 more: More
+star: Behold, those who found delight in this piece also perused
+random: Around
 
 theme:
   dark: dark
@@ -131,3 +133,15 @@ link:
 
 keyboard:
   title: Blog shortcuts
+
+newest_comment:
+  error: Unable to get a comment, please confirm that the relevant configuration is correct.
+  zero: No comments.
+
+comment:
+  title: ' Comment'
+
+commentBarrage:
+  title: Hot
+
+f12: Developer mode is turned on, please follow the GPL.

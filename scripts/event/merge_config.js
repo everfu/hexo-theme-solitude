@@ -129,7 +129,8 @@ hexo.extend.filter.register('before_generate', () => {
             randompostjs: 'https://cdn.cbd.int/st-source/js/moment/random_post.min.js'
         }, keyboard: {
             enable: false, list: []
-        }, lazyload: {
+        }
+        ,lazyload: {
             enable: false, field: 'site', placeholder: '/img/loading.gif', errorimg: '/img/error_load.png'
         }, loading: {
             fullpage: false, pace: true,
@@ -150,7 +151,7 @@ hexo.extend.filter.register('before_generate', () => {
             enable: true,
             copyright: {
                 enable: false,
-                limit_count: 50
+                limit: 50
             }
         }
         , post_ai: {
@@ -164,7 +165,7 @@ hexo.extend.filter.register('before_generate', () => {
             enable: false, per_page: false, copytex: false,
         }, comment: {
             enable: false,
-            type: 'twikoo',
+            type: '',
             commentBarrage: false,
             newComment: false,
             randomInfoStart: [`baby's`, `little`, `my`,],
@@ -180,8 +181,8 @@ hexo.extend.filter.register('before_generate', () => {
             font: {
                 'font-size': '16px',
                 'code-font-size': '16px',
-                'font-family': '"PingFang SC","Hiragino Sans GB","Microsoft YaHei"',
-                'code-font-family': '"monospace", "monospace"',
+                'font-family': 'PingFang SC, Hiragino Sans GB,Microsoft YaHei',
+                'code-font-family': 'monospace, monospace',
             },
             extends: {
                 head: [], body: [],

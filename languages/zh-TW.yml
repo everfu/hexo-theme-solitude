@@ -1,4 +1,6 @@
 more: 更多
+star: 喜歡這篇的人也看了
+random: 随便逛逛
 
 # Language: 繁體中文 (台灣)
 theme:
@@ -8,6 +10,12 @@ theme:
 copy:
   success: 複製成功
   error: 複製失敗
+
+copy_copyright:
+  author: 作者
+  link: 連結
+  source: 來源
+  info: 著作權歸作者所有。 商業轉載請聯繫作者獲得授權，非商業轉載請註明出處。
 
 lately:
   second: 秒
@@ -126,3 +134,15 @@ link:
 
 keyboard:
   title: 博客快捷鍵
+
+newest_comment:
+  error: 無法獲取評論，請確認相關配置是否正確。
+  zero: 沒有評論
+
+comment:
+  title: 評論
+
+commentBarrage:
+  title: 熱評
+
+f12: 開發者模式已打開，請遵循GPL協定。

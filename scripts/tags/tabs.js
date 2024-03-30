@@ -1,6 +1,6 @@
 /**
  * Tabs
- * from butterfly
+ * from solitude
  */
 
 'use strict'

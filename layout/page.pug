@@ -25,6 +25,9 @@ block content
                     != page.content
                 when 'music'
                     include includes/page/music
+                when 'banner'
+                    include includes/widgets/page/banner
+                    include includes/page/default
                 default
                     include includes/page/default
             if page.comment

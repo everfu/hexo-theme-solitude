@@ -10,7 +10,7 @@ block content
                         | #{tag.name}
                         span.tagsPageCount #{tag.length}
             .recent-posts#recent-posts
-                each post in page.posts.find({ parent: { $exists: false } }).data
+                each post,index in page.posts.find({ parent: { $exists: false } }).data
                     include includes/widgets/home/postList
             include includes/mixins/pagination
         include includes/widgets/aside/aside

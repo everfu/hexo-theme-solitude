@@ -66,6 +66,9 @@ body
   line-height 2
   -webkit-tap-highlight-color transparent
   margin 0
+  if !hexo-config('copy.enable')
+    user-select none
+    -webkit-user-select none
 
 *
   box-sizing border-box

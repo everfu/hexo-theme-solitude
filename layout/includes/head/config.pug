@@ -22,30 +22,69 @@
         }
     }
 
-    let translate = 'undefined';
-    if (theme.translate && theme.translate.enable) {
-        translate = JSON.stringify({
-            defaultEncoding: theme.translate.defaultEncoding,
-            translateDelay: theme.translate.translateDelay,
-        });
-    }
+    const sayhello2 = theme.aside.card.sayhello2.map(item => `"${item}"`) || [];
 
-    let copyright = 'undefined';
-    if (theme.copy.enable && theme.copy.copyright.enable) {
-        copyright = JSON.stringify({
-            limitCount: theme.copy.copyright.limit_count,
-            languages: {
-                author: _p("copy_copyright.author") + ': ' + config.author,
-                link: _p("copy_copyright.link") + ': ',
-                source: _p("copy_copyright.source") + ': ' + config.title,
-                info: _p("copy_copyright.info")
+    let comment = false
+
+    if (theme.comment.type === 'twikoo') {
+        comment = JSON.stringify({
+            avatar: theme.comment.avatar,
+            url: theme.comment.twikoo.envId,
+            commentBarrage: theme.comment.enable,
+            accessToken: theme.comment.twikoo.accessToken,
+            owo: {
+                body: '.OwO-body',
+                item: '.OwO-items li'
             }
         })
     }
 
-    const commentInfoStart = theme.comment.randomInfoStart.map(item => `"${item}"`) || [];
-    const commentInfoEnd = theme.comment.randomInfoEnd.map(item => `"${item}"`) || [];
-    const sayhello2 = theme.aside.card.sayhello2.map(item => `"${item}"`) || [];
+    if (theme.comment.type === 'waline') {
+        comment = JSON.stringify({
+            avatar: theme.comment.avatar,
+            url: theme.comment.waline.envId,
+            commentBarrage: theme.comment.enable,
+            owo: {
+                body: '.wl-emoji-popup',
+                item: '.wl-tab-wrapper button'
+            }
+        })
+    }
+
+    if (theme.comment.type === 'valine') {
+        comment = JSON.stringify({
+            avatar: theme.comment.avatar,
+            url: theme.comment.valine.serverURLs,
+            commentBarrage: theme.comment.enable,
+            appId: theme.comment.valine.appId,
+            appKey: theme.comment.valine.appKey,
+            owo: {
+                body: '.vwrap',
+                item: '.vemojis i'
+            }
+        })
+    }
+
+    let post_ai = false
+
+    if (theme.post_ai.enable) {
+        post_ai = JSON.stringify({
+            key: theme.post_ai.key,
+            talk: theme.post_ai.talk,
+            randomPost: theme.post_ai.randomPost,
+        })
+    }
+
+    let copyright = false;
+    if (theme.copy.enable && theme.copy.copyright.enable) {
+        copyright = JSON.stringify({
+            limit: theme.copy.copyright.limit,
+            author: _p("copy_copyright.author") + ': ' + config.author,
+            link: _p("copy_copyright.link") + ': ',
+            source: _p("copy_copyright.source") + ': ' + config.title,
+            info: _p("copy_copyright.info")
+        })
+    }
 
 script.
     const GLOBAL_CONFIG = {
@@ -57,6 +96,7 @@ script.
             enable: !{theme.lazyload.enable},
             error: '!{theme.lazyload.errorimg}'
         },
+        copyright: !{copyright},
         highlight: {
             enable: !{theme.highlight.enable},
             limit: !{theme.highlight.limit},
@@ -64,7 +104,7 @@ script.
             copy: !{theme.highlight.copy},
             syntax: '!{config.syntax_highlighter}'
         },
-        randomlinks: !{theme.footer.randomlink},
+        randomlink: !{theme.footer.randomlink},
         lang: {
             theme: {
                 dark: '!{_p('theme.dark')}',
@@ -93,7 +133,11 @@ script.
             chs: {
                 chs_to_cht: '!{_p('chs.chs_tw')}',
                 cht_to_chs: '!{_p('chs.chs_cn')}',
-            }
+            },
+            barrage: {
+                title: '!{_p('commentBarrage.title')}',
+            },
+            f12: '!{_p('f12')}',
         },
         aside: {
             sayhello: {
@@ -108,25 +152,7 @@ script.
         covercolor: {
             enable: !{theme.post.covercolor.enable}
         },
-        comment: {
-            enable: !{theme.comment.enable},
-            type: '!{theme.comment.type}',
-            commentBarrage: !{theme.comment.commentBarrage && theme.comment.enable},
-            randomInfoStart: [!{commentInfoStart}],
-            randomInfoEnd: [!{commentInfoEnd}],
-            twikoo: {
-                url: '!{theme.comment.twikoo.envId}',
-                accessToken: '!{theme.comment.twikoo.accessToken}'
-            },
-            waline: {
-                url: '!{theme.comment.waline.envId}',
-            }
-        },
+        comment: !{comment},
         lightbox: '!{ theme.mediumZoom ? "mediumZoom" : (theme.fancybox ? "fancybox" : "null")}',
-        ai: {
-            enable: !{theme.post_ai.enable},
-            key: '!{theme.post_ai.key}',
-            talk: "!{theme.post_ai.talk}",
-            randomPost: !{theme.post_ai.randomPost},
-        }
+        post_ai: !{post_ai}
     };

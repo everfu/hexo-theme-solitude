@@ -1,4 +1,6 @@
 more: 更多
+star: 喜欢这篇的人也看了
+random: 随便逛逛
 
 # Language: 简体中文
 theme:
@@ -8,6 +10,12 @@ theme:
 copy:
   success: 复制成功
   error: 复制失败
+
+copy_copyright:
+  author: 作者
+  link: 链接
+  source: 来源
+  info: 著作权归作者所有。 商业转载请联系作者获得授权，非商业转载请注明出处。
 
 lately:
   second: 秒
@@ -126,3 +134,15 @@ link:
 
 keyboard:
   title: 博客快捷键
+
+newest_comment:
+  error: 无法获取评论，请确认相关配置是否正确。
+  zero: 没有评论
+
+comment:
+  title: 评论
+
+commentBarrage:
+  title: 热评
+
+f12: 开发者模式已打开，请遵循GPL协议。

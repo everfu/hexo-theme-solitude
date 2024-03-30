@@ -48,6 +48,10 @@
                             when "waline"
                                 span.waline-pageview-count
                                     i.solitude.st-loading-line
+                            when "valine"
+                                span.leancloud_visitors(id=url_for(page.path))
+                                    span.leancloud-visitors-count
+                                        i.solitude.st-loading-line
                     else if theme.busuanzi
                         span#busuanzi_value_page_pv
                             i.solitude.st-loading-line
@@ -61,6 +65,9 @@
                                     i.solitude.st-loading-line
                             when "waline"
                                 span.waline-comment-count
+                                    i.solitude.st-loading-line
+                            when "valine"
+                                span.valine-comment-count(data-xid=url_for(page.path) itemprop="commentCount")
                                     i.solitude.st-loading-line
 
 include ./wave

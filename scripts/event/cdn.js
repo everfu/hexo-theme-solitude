@@ -54,9 +54,9 @@ hexo.extend.filter.register('before_generate', () => {
             file: 'js/tw_cn.js',
             version
         },
-        sco_ai_js: {
+        efu_ai: {
             name: 'hexo-theme-solitude',
-            file: 'js/third_party/sco-ai.min.js',
+            file: 'js/third_party/efu_ai.min.js',
             version
         },
         twikoo_commentBarrage: {
@@ -67,6 +67,11 @@ hexo.extend.filter.register('before_generate', () => {
         waline_commentBarrage: {
             name: 'hexo-theme-solitude',
             file: 'js/commentBarrage/waline.js',
+            version
+        },
+        valine_commentBarrage: {
+            name: 'hexo-theme-solitude',
+            file: 'js/commentBarrage/valine.js',
             version
         },
         waterfall: {

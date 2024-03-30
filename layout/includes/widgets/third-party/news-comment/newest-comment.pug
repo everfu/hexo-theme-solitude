@@ -1,6 +1,8 @@
-if theme.comment.enable && theme.comment.newComment
+if theme.comment.enable && theme.console_plus && theme.comment.newest_comment.enable
     case theme.comment.type
         when 'twikoo'
-            include twikoo
+            !=partial('includes/widgets/third-party/news-comment/twikoo',{}, {cache: true})
         when 'waline'
-            include waline
+            !=partial('includes/widgets/third-party/news-comment/waline',{}, {cache: true})
+        when 'valine'
+            !=partial('includes/widgets/third-party/news-comment/valine',{}, {cache: true})

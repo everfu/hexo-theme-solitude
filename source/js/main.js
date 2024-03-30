@@ -74,7 +74,7 @@ const percent = () => {
 
     if ((document.getElementById("post-comment") || document.getElementById("footer")).offsetTop < viewportBottom || scrollPercent > 90) {
         document.querySelector("#nav-totop").classList.add("long")
-        percentElement.innerHTML = "返回顶部"
+        percentElement.innerHTML = GLOBAL_CONFIG.lang.backtop
     } else {
         document.querySelector("#nav-totop").classList.remove("long")
         if (scrollPercent >= 0) {
@@ -346,10 +346,6 @@ let sco = {
                 el.setSelectionRange(-1, -1)
             }
         }
-        const commentTips = document.querySelector("#comment-tips");
-        if (commentTips) {
-            commentTips.classList.add("show");
-        }
     },
     initbbtalk: function () {
         if (document.querySelector('#bber-talk')) {
@@ -586,31 +582,8 @@ let sco = {
             document.getElementById("toPageButton").href = targetPageUrl;
         }
     },
-    addRandomCommentInfo: function () {
-        const e = `${GLOBAL_CONFIG.comment.randomInfoStart[Math.floor(Math.random() * GLOBAL_CONFIG.comment.randomInfoStart.length)]}${GLOBAL_CONFIG.comment.randomInfoEnd[Math.floor(Math.random() * GLOBAL_CONFIG.comment.randomInfoEnd.length)]}`;
-
-        const nameSelectors = ["#author", "input[name='comname']", "#inpName", "input[name='author']", "#ds-dialog-name", "#name", "input[name='nick']", "#comment_author"];
-        const emailSelectors = ["#mail", "#email", "input[name='commail']", "#inpEmail", "input[name='email']", "#ds-dialog-email", "input[name='mail']", "#comment_email"];
-
-        const nameElements = nameSelectors.map(selector => document.querySelector(selector)).filter(Boolean);
-        const emailElements = emailSelectors.map(selector => document.querySelector(selector)).filter(Boolean);
-
-        nameElements.forEach(element => {
-            element.value = e;
-            element.dispatchEvent(new Event("input"));
-        });
-
-        emailElements.forEach(element => {
-            element.value = "donotreply@examp.com";
-            element.dispatchEvent(new Event("input"));
-        });
-    },
     owoBig() {
-        const type = GLOBAL_CONFIG.comment.type;
-        const owoSelectors = {
-            body: type === 'twikoo' ? '.OwO-body' : '.wl-emoji-popup',
-            item: type === 'twikoo' ? '.OwO-items li' : '.wl-tab-wrapper button'
-        };
+        const owoSelectors = GLOBAL_CONFIG.comment.owo
 
         let owoBig = document.getElementById('owo-big');
         if (!owoBig) {
@@ -762,6 +735,25 @@ const addHighlight = () => {
     }
 }
 
+const addCopyright = () => {
+    if (!GLOBAL_CONFIG.copyright) return
+    const {limit, author, link, source, info} = GLOBAL_CONFIG.copyright
+    const handleCopy = (e) => {
+        e.preventDefault()
+        const copyText = window.getSelection(0).toString()
+        let text = copyText
+        if (copyText.length > limit) {
+            text = `${copyText}\n\n${author}\n${link}${window.location.href}\n${source}\n${info}`
+        }
+        if (e.clipboardData) {
+            return e.clipboardData.setData('text', text)
+        } else {
+            return window.clipboardData.setData('text', text)
+        }
+    }
+    document.body.addEventListener('copy', handleCopy)
+}
+
 class tabs {
     static init() {
         this.clickFnOfTabs()
@@ -815,17 +807,18 @@ window.refreshFn = () => {
     utils.changeTimeFormat()
     GLOBAL_CONFIG.lazyload.enable && utils.lazyloadImg()
     GLOBAL_CONFIG.lightbox && utils.lightbox(document.querySelectorAll("#article-container img:not(.flink-avatar)"))
-    GLOBAL_CONFIG.randomlinks && randomLinksList()
+    GLOBAL_CONFIG.randomlink && randomLinksList()
     PAGE_CONFIG.comment && initComment()
     PAGE_CONFIG.toc && toc.init();
     (PAGE_CONFIG.is_post || PAGE_CONFIG.is_page) && ((addHighlight()) || tabs.init())
+    addCopyright()
     PAGE_CONFIG.is_home && showTodayCard()
     GLOBAL_CONFIG.covercolor.enable && coverColor()
     sco.initConsoleState()
     GLOBAL_CONFIG.comment.commentBarrage && PAGE_CONFIG.comment && initializeCommentBarrage()
     document.body.setAttribute('data-type', PAGE_CONFIG.page)
     PAGE_CONFIG.page === "music" && scoMusic.init()
-    GLOBAL_CONFIG.ai.enable && PAGE_CONFIG.page === "post" && ScoAI.init()
+    GLOBAL_CONFIG.post_ai && PAGE_CONFIG.page === "post" && efu_ai.init()
 }
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -833,6 +826,8 @@ document.addEventListener('DOMContentLoaded', function () {
 })
 
 window.onkeydown = function (e) {
-    (123 === e.keyCode || (17 === e.ctrlKey && 16 === e.shiftKey && 67 === e.keyCode)) && utils.snackbarShow("开发者模式已打开，请遵循GPL协议", !1, 3e3);
+    (123 === e.keyCode || (17 === e.ctrlKey && 16 === e.shiftKey && 67 === e.keyCode)) && utils.snackbarShow(GLOBAL_CONFIG.lang.f12, !1, 3e3);
     (27 === e.keyCode) && sco.hideConsole();
 }
+
+document.addEventListener('copy', () => utils.snackbarShow(GLOBAL_CONFIG.lang.copy.success,false,3e3))
