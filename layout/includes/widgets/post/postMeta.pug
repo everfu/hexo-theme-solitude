@@ -4,7 +4,7 @@
     #post-firstinfo
         .meta-firstline
             - var cc = page.reprint ? _p('post.reprint') : _p('post.original')
-            a.post-meta-original(title=_p('post.copyright').replace(/\$\{cc}/, cc))= cc
+            a.post-meta-original(title=_p('post.cc').replace(/\$\{cc}/, cc))= cc
             if page.categories.data.length > 0
                 span.post-meta-categories
                     a.post-meta-categories(href=url_for('/' + page.categories.data[0].path))= page.categories.data[0].name
