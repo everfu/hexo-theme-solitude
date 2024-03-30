@@ -22,32 +22,13 @@
         }
     }
 
-    let translate = 'undefined';
-    if (theme.translate && theme.translate.enable) {
-        translate = JSON.stringify({
-            defaultEncoding: theme.translate.defaultEncoding,
-            translateDelay: theme.translate.translateDelay,
-        });
-    }
-
-    let copyright = 'undefined';
-    if (theme.copy.enable && theme.copy.copyright.enable) {
-        copyright = JSON.stringify({
-            limitCount: theme.copy.copyright.limit_count,
-            languages: {
-                author: _p("copy_copyright.author") + ': ' + config.author,
-                link: _p("copy_copyright.link") + ': ',
-                source: _p("copy_copyright.source") + ': ' + config.title,
-                info: _p("copy_copyright.info")
-            }
-        })
-    }
     const sayhello2 = theme.aside.card.sayhello2.map(item => `"${item}"`) || [];
 
-    let comment = null
+    let comment = false
 
     if (theme.comment.type === 'twikoo') {
-        comment = {
+        comment = JSON.stringify({
+            avatar: theme.comment.avatar,
             url: theme.comment.twikoo.envId,
             commentBarrage: theme.comment.enable,
             accessToken: theme.comment.twikoo.accessToken,
@@ -55,22 +36,24 @@
                 body: '.OwO-body',
                 item: '.OwO-items li'
             }
-        }
+        })
     }
 
     if (theme.comment.type === 'waline') {
-        comment = {
+        comment = JSON.stringify({
+            avatar: theme.comment.avatar,
             url: theme.comment.waline.envId,
             commentBarrage: theme.comment.enable,
             owo: {
                 body: '.wl-emoji-popup',
                 item: '.wl-tab-wrapper button'
             }
-        }
+        })
     }
 
     if (theme.comment.type === 'valine') {
-        comment = {
+        comment = JSON.stringify({
+            avatar: theme.comment.avatar,
             url: theme.comment.valine.serverURLs,
             commentBarrage: theme.comment.enable,
             appId: theme.comment.valine.appId,
@@ -79,7 +62,19 @@
                 body: '.vwrap',
                 item: '.vemojis i'
             }
-        }
+        })
+    }
+
+    let post_ai = false
+
+    if (theme.post_ai.enable) {
+        post_ai = JSON.stringify({
+            key: theme.post_ai.key,
+            talk: theme.post_ai.talk,
+            randomPost: theme.post_ai.randomPost,
+        })
+    }
+
     }
 
 script.
@@ -99,7 +94,7 @@ script.
             copy: !{theme.highlight.copy},
             syntax: '!{config.syntax_highlighter}'
         },
-        randomlinks: !{theme.footer.randomlink},
+        randomlink: !{theme.footer.randomlink},
         lang: {
             theme: {
                 dark: '!{_p('theme.dark')}',
@@ -131,7 +126,8 @@ script.
             },
             barrage: {
                 title: '!{_p('commentBarrage.title')}',
-            }
+            },
+            f12: '!{_p('f12')}',
         },
         aside: {
             sayhello: {
@@ -146,15 +142,7 @@ script.
         covercolor: {
             enable: !{theme.post.covercolor.enable}
         },
-        comment: {
-            avatar: '!{theme.comment.avatar}',
-            ...!{JSON.stringify(comment)}
-        },
+        comment: !{comment},
         lightbox: '!{ theme.mediumZoom ? "mediumZoom" : (theme.fancybox ? "fancybox" : "null")}',
-        ai: {
-            enable: !{theme.post_ai.enable},
-            key: '!{theme.post_ai.key}',
-            talk: "!{theme.post_ai.talk}",
-            randomPost: !{theme.post_ai.randomPost},
-        }
+        post_ai: !{post_ai}
     };

@@ -129,7 +129,8 @@ hexo.extend.filter.register('before_generate', () => {
             randompostjs: 'https://cdn.cbd.int/st-source/js/moment/random_post.min.js'
         }, keyboard: {
             enable: false, list: []
-        }, lazyload: {
+        }
+        ,lazyload: {
             enable: false, field: 'site', placeholder: '/img/loading.gif', errorimg: '/img/error_load.png'
         }, loading: {
             fullpage: false, pace: true,
@@ -150,7 +151,7 @@ hexo.extend.filter.register('before_generate', () => {
             enable: true,
             copyright: {
                 enable: false,
-                limit_count: 50
+                limit: 50
             }
         }
         , post_ai: {

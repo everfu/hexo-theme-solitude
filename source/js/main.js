@@ -74,7 +74,7 @@ const percent = () => {
 
     if ((document.getElementById("post-comment") || document.getElementById("footer")).offsetTop < viewportBottom || scrollPercent > 90) {
         document.querySelector("#nav-totop").classList.add("long")
-        percentElement.innerHTML = "返回顶部"
+        percentElement.innerHTML = GLOBAL_CONFIG.lang.backtop
     } else {
         document.querySelector("#nav-totop").classList.remove("long")
         if (scrollPercent >= 0) {
@@ -788,7 +788,7 @@ window.refreshFn = () => {
     utils.changeTimeFormat()
     GLOBAL_CONFIG.lazyload.enable && utils.lazyloadImg()
     GLOBAL_CONFIG.lightbox && utils.lightbox(document.querySelectorAll("#article-container img:not(.flink-avatar)"))
-    GLOBAL_CONFIG.randomlinks && randomLinksList()
+    GLOBAL_CONFIG.randomlink && randomLinksList()
     PAGE_CONFIG.comment && initComment()
     PAGE_CONFIG.toc && toc.init();
     (PAGE_CONFIG.is_post || PAGE_CONFIG.is_page) && ((addHighlight()) || tabs.init())
@@ -798,7 +798,7 @@ window.refreshFn = () => {
     GLOBAL_CONFIG.comment.commentBarrage && PAGE_CONFIG.comment && initializeCommentBarrage()
     document.body.setAttribute('data-type', PAGE_CONFIG.page)
     PAGE_CONFIG.page === "music" && scoMusic.init()
-    GLOBAL_CONFIG.ai.enable && PAGE_CONFIG.page === "post" && ScoAI.init()
+    GLOBAL_CONFIG.post_ai && PAGE_CONFIG.page === "post" && efu_ai.init()
 }
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -806,6 +806,8 @@ document.addEventListener('DOMContentLoaded', function () {
 })
 
 window.onkeydown = function (e) {
-    (123 === e.keyCode || (17 === e.ctrlKey && 16 === e.shiftKey && 67 === e.keyCode)) && utils.snackbarShow("开发者模式已打开，请遵循GPL协议", !1, 3e3);
+    (123 === e.keyCode || (17 === e.ctrlKey && 16 === e.shiftKey && 67 === e.keyCode)) && utils.snackbarShow(GLOBAL_CONFIG.lang.f12, !1, 3e3);
     (27 === e.keyCode) && sco.hideConsole();
 }
+
+document.addEventListener('copy', () => utils.snackbarShow(GLOBAL_CONFIG.lang.copy.success,false,3e3))
