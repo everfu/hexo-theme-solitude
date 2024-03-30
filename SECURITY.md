@@ -1,9 +1,9 @@
-# 安全策略
+# Security Policy
 
-## 报告漏洞
+## Report a vulnerability
 
-要报告漏洞，请在正确的 GitHub 存储库上 [通过安全选项卡私下报告](https://github.com/valor-x/hexo-theme-solitude/security/advisories/new)（请参阅 [文档](https://docs.github.com/en/code-security/security-advisories/guidance-on-reporting-and-writing-information-about-vulnerabilities/privately-reporting-a-security-vulnerability#privately-reporting-a-security-vulnerability)）。如果无法报告，请随时发送电子邮件至 **o@efu.me**。
+To report a vulnerability, please [report privately via security tab](https://github.com/valor-x/hexo-theme-solitude/security/advisories/new) on the correct GitHub repository (see [Document](https://docs.github.com/en/code-security/security-advisories/guidance-on-reporting-and-writing-information-about-vulnerabilities/privately-reporting-a-security-vulnerability#privately-reporting-a-security-vulnerability)). If you are unable to report, please feel free to email us at o@efu.me.
 
-所有安全漏洞都将得到及时验证和解决。
+All security vulnerabilities will be verified and resolved in a timely manner.
 
-虽然发现新漏洞的情况很少见，但建议始终使用最新版本的主题和其他依赖项，通过维护锁定文件（`yarn.lock`、`package-lock.json`），以保证尽可能安全。
+While it is rare for new vulnerabilities to be discovered, it is recommended to always use the latest version of the theme and other dependencies by maintaining locked files (`yarn.lock`, `package-lock.json`) to ensure that they are as secure as possible.
