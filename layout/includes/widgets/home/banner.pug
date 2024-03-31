@@ -6,7 +6,7 @@ if group
     div.banners-links
         each value,label in group
             - var array = value.split('||')
-            a.banners-link-btn(href=url_for(trim(array[0])) class="banners-link-"+label)
+            a.banners-link-btn(href=url_for(trim(array[0])) style=`background-image: ${array[2]} `)
                 if array[1]
                     i.solitude(class=array[1])
                 .banners-link-title= label
