@@ -1,0 +1,197 @@
+#article-container
+  overflow-wrap break-word
+  +maxWidth768()
+    overflow hidden
+
+  iframe
+    border-radius 12px
+    margin 0 0 1rem
+
+  a
+    color var(--efu-fontcolor)
+    border-radius 4px 4px 0 0
+
+    border-bottom 2px dotted var(--efu-lighttext)
+    font-weight 700
+
+    &:not(.fancybox)
+      padding 0 4px
+
+      &:hover
+        border 0
+        text-decoration none
+        color var(--efu-white)
+        border-radius 4px
+        background var(--efu-main)
+
+  .table-wrap
+    margin 1rem 0
+    border-radius 8px
+    overflow-x scroll
+
+  a.headerlink
+    float right
+    opacity .08
+    position relative
+    padding 0
+    border none
+    border-radius 8px
+    line-height 1
+    font-size .8rem
+
+    #page &
+      display none
+
+    &::before
+      content "\e082"
+      font-family solitude
+      cursor pointer
+
+    &:hover
+      border-bottom none
+      box-shadow none
+      background var(--efu-none)
+      color var(--efu-lighttext)
+      opacity 1
+
+      &::before
+        color var(--efu-main)
+
+  p
+    font-size .9rem
+    line-height 1.7
+    font-weight 400
+    margin 1rem 0
+    text-align left
+    letter-spacing .6px
+
+    img
+      margin auto
+
+    a
+      &:not(.fancybox)
+        text-decoration none
+        border-bottom 2px dotted var(--efu-lighttext)
+        color var(--efu-fontcolor)
+        font-weight 700
+        padding 0 4px
+        border-radius 4px 4px 0 0
+
+        &:hover
+          color var(--efu-white)
+          border-radius 4px
+          background var(--efu-main)
+
+  code:not([class*='language-'])
+    color var(--efu-white)
+    padding 0.2rem 0.4rem
+    border-radius 4px
+    margin 0 4px
+    background var(--efu-pink)
+    line-height 2
+    box-shadow var(--efu-shadow-border)
+
+  img
+    border-radius 12px
+    object-fit cover
+    display block
+    margin 0.8rem auto
+    max-width 90%
+    max-height 450px
+
+  ul, ol
+    padding 0
+    margin-top 0.4rem
+    list-style none
+    counter-reset li 0
+
+    li
+      &:before
+        position absolute
+        top 0
+        left 0
+        color var(--efu-fontcolor)
+        transition all .3s ease-out 0s
+        background var(--efu-lighttext)
+
+      &:not(.tab)
+        position relative
+        margin 0.2rem 0
+
+  ul
+    > li
+      &:not(.tab)
+        padding 0.2em 0.2em 0.2em 1.4em
+
+        &:before
+          margin 0
+          top 0.78em
+          width 0.42em
+          height 0.42em
+          border-radius 0.42em
+          background 0 0
+          content ""
+          line-height .42em
+          border 0.21em solid var(--efu-lighttext)
+          background var(--efu-lighttext)
+
+  ol
+    > li:before
+      margin-top .65em
+      width 1.45em
+      height 1.45em
+      border-radius .725em
+      text-align center
+      font-size .85em
+      color var(--efu-white)
+      line-height 1.45em
+
+    ul li
+      line-height 1.7
+
+    > li
+
+      &:not(.tab)
+        padding .2em .2em .2em 1.8em
+
+      &:before
+        content counter(li)
+        counter-increment li 1
+
+      > ol
+        > li
+          &:before
+            content counter(li, lower-alpha)
+            counter-increment li
+
+          > ol
+            > li
+              &:before
+                content counter(li, lower-roman)
+                counter-increment li
+
+  &.post-content
+    h1, h2, h3, h4
+      display flex
+      align-items center
+      justify-content space-between
+      flex-direction row-reverse
+      transition all .2s ease-out 0s
+
+    h1
+      font-size 1.5rem
+      line-height 1.3
+
+    h2
+      font-size 1.3rem
+      line-height 1.3
+      border-top 1px dashed var(--efu-theme-op)
+      padding-top 1.5rem
+
+    h3
+      font-size 1.1rem
+      line-height 1.3
+
+    h4
+      font-size 1.1rem
+      line-height 1.3

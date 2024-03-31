@@ -1,3 +1,8 @@
+/**
+ * related post
+ * from solitude
+ */
+
 'use strict'
 
 hexo.extend.helper.register('related_posts', function (currentPost, allPosts) {

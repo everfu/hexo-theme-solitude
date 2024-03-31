@@ -1,9 +1,14 @@
+- const highlight = theme.aside.tags.highlight_list || []
 .card-tag-cloud
     each tag in site.tags.find({ parent: { $exists: false } }).data
-        a(href=url_for(tag.path))= tag.name
-            sup= tag.length
-if site.tags.length > theme.aside.tags.limit
-    a#more-tags-btn(href="javascript:void(0);", onclick="sco.openAllTags();")= __('aside.tagmore')
+        if highlight.includes(tag.name)
+            a.highlight(href=url_for(tag.path))= tag.name
+                sup= tag.length
+        else
+            a(href=url_for(tag.path))= tag.name
+                sup= tag.length
+if site.tags.length >= theme.aside.tags.limit
+    span#more-tags-btn(onclick="sco.openAllTags()")= __('aside.tagmore')
 else
     style.
         .card-tag-cloud::after {

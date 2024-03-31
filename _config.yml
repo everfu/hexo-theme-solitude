@@ -251,13 +251,10 @@ aside:
     # 显示标签数量，当高于标签总数时，显示全部标签按钮
     # Display the number of tags, when it is higher than the total number of tags, display all tags button
     limit: 20
-    # 高亮显示
-    # Highlight
-    highlight: false
     # 高亮显示标签列表
     # Highlighted tag list
-    list:
-    # - "Solitude"
+    highlight_list:
+    #  - Hexo
 
   # 侧边栏归档
   # aside archive
