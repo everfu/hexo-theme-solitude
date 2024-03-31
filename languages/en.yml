@@ -26,10 +26,6 @@ lately:
   ago: ' ago'
   error: ' NaN'
 
-chs:
-  chs_tw: Traditional Chinese
-  chs_cn: Simplified Chinese
-
 page:
   tag: Tags
   category: Categories
@@ -74,11 +70,11 @@ award:
   tipping: Tipping
   title: List of appreciation
 
-
 search:
   empty: No results found
   hit: Found ${query} results for you
   placeholder: Enter keywords to quickly search
+  count: Total <b>${count}</b> results.
 
 head:
   noscript: Please enable JavaScript to view the site

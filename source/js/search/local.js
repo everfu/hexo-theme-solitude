@@ -42,7 +42,7 @@ window.onload = () => {
     searchClickFn();
 
     function initLunr() {
-        fetch("/search.xml")
+        fetch(GLOBAL_CONFIG.localsearch.path)
             .then(response => response.text())
             .then(data => {
                 let parser = new DOMParser();
@@ -128,14 +128,13 @@ window.onload = () => {
             const $link = document.createElement("a");
             $link.className = "search-result-title";
             $link.href = result.link;
-            const title = highlightSearchKeyword(result.title, query);
-            $link.innerHTML = title;
+            $link.innerHTML = highlightSearchKeyword(result.title, query);
             $result.appendChild($link);
             $search_results.appendChild($result);
         });
         const count = document.createElement("span");
         count.className = "search-result-count";
-        count.innerHTML = `共 <b>${results.length}</b> 条结果`;
+        count.innerHTML = GLOBAL_CONFIG.lang.search.count.replace(/\$\{count}/, results.length)
         $tips.appendChild(count);
     }
     
