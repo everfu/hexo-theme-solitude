@@ -86,6 +86,45 @@
         })
     }
 
+    let lang = false
+    lang = {
+        theme: {
+            dark: _p('theme.dark'),
+            light: _p('theme.light'),
+        },
+        copy: {
+            success: _p('copy.success'),
+            error: _p('copy.error'),
+        },
+        backtop: _p('nav.backtop'),
+        lately: {
+            second: _p('lately.second'),
+            minute: _p('lately.minute'),
+            hour: _p('lately.hour'),
+            day: _p('lately.day'),
+            month: _p('lately.month'),
+            year: _p('lately.year'),
+            ago: _p('lately.ago'),
+            error: _p('lately.error'),
+        },
+        f12: _p('f12'),
+    }
+
+    if (theme.search.enable) {
+        lang.search = {
+            empty: _p('search.empty'),
+            hit: _p('search.hit'),
+            placeholder: _p('search.placeholder'),
+            count: _p('search.count')
+        }
+    }
+
+    if (theme.comment.enable && theme.comment.commentBarrage) {
+        lang.barrage = {
+            title: _p('commentBarrage.title'),
+        }
+    }
+
 script.
     const GLOBAL_CONFIG = {
         root: '!{config.root}',
@@ -105,40 +144,7 @@ script.
             syntax: '!{config.syntax_highlighter}'
         },
         randomlink: !{theme.footer.randomlink},
-        lang: {
-            theme: {
-                dark: '!{_p('theme.dark')}',
-                light: '!{_p('theme.light')}',
-            },
-            copy: {
-                success: '!{_p('copy.success')}',
-                error: '!{_p('copy.error')}',
-            },
-            backtop: '!{_p('nav.backtop')}',
-            lately: {
-                second: '!{_p('lately.second')}',
-                minute: '!{_p('lately.minute')}',
-                hour: '!{_p('lately.hour')}',
-                day: '!{_p('lately.day')}',
-                month: '!{_p('lately.month')}',
-                year: '!{_p('lately.year')}',
-                ago: '!{_p('lately.ago')}',
-                error: '!{_p('lately.error')}',
-            },
-            search: {
-                empty: '!{_p('search.empty')}',
-                hit: '!{_p('search.hit')}',
-                placeholder: '!{_p('search.placeholder')}',
-            },
-            chs: {
-                chs_to_cht: '!{_p('chs.chs_tw')}',
-                cht_to_chs: '!{_p('chs.chs_cn')}',
-            },
-            barrage: {
-                title: '!{_p('commentBarrage.title')}',
-            },
-            f12: '!{_p('f12')}',
-        },
+        lang: !{JSON.stringify(lang)},
         aside: {
             sayhello: {
                 morning: '!{theme.aside.card.sayhello.morning}',

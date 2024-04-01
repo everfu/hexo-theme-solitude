@@ -27,10 +27,6 @@ lately:
   ago: 前
   error: NaN
 
-chs:
-  chs_tw: 繁體中文
-  chs_cn: 简体中文
-
 page:
   tag: 标签
   category: 分类
@@ -80,6 +76,7 @@ search:
   empty: 找不到你查询的内容：${query}
   hit: 找到 ${hits} 条结果，用时 ${time} 毫秒
   placeholder: 输入关键词快速查找
+  count: 共 <b>${count}</b> 条结果。
 
 head:
   noscript: 开启JavaScript才能访问本站哦~
