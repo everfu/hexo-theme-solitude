@@ -3,7 +3,7 @@ hexo.extend.filter.register('before_generate', () => {
         site: {
             name: {
                 class: 'text', custom: 'Solitude'
-            }, siteIcon: '/img/logo.png', icon: 'icon'
+            }, siteIcon: '/img/pwa/favicon.ico', icon: 'icon'
         }, nav: {
             group: null, menu: null, right: {
                 random: false, console: false, custom: [],

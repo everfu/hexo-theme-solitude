@@ -29,7 +29,7 @@ site:
   siteIcon: /img/pwa/favicon.ico
   # 页脚的Logo、加载动画默认的logo
   # Logo in the footer, default logo for loading animation
-  icon: /img/avatar.png
+  icon: /img/pwa/favicon.ico
 
 # 导航栏
 # NavBar
@@ -38,7 +38,7 @@ nav:
   # logo group
   group:
   # 项目: # 分类名称
-  #   Solitude: https://github.com/valor-x/hexo-theme-solitude || /img/logo.png # 子菜单名称(submenu name): 链接地址(address) || 图标(icon)
+  #   Solitude: https://github.com/valor-x/hexo-theme-solitude || /img/pwa/favicon.ico # 子菜单名称(submenu name): 链接地址(address) || 图标(icon)
 
   # 中心菜单
   # center menu
@@ -172,7 +172,7 @@ aside:
     author:
       # 头像
       # Avatar
-      img: /img/logo.png
+      img: /img/avatar.png
       # 表情图片链接
       # Emoticon image link
       # tip: 26x26 size
@@ -452,7 +452,7 @@ footer:
 errorpage:
   # 图片
   # image
-  img: https://7.isyangs.cn/34/65f2e65eae32a-34.png
+  img: /img/404.webp
   # 文字
   # text
   text: =awa= 页面走丢了
@@ -523,7 +523,7 @@ moments:
   # example: https://example.com/
   api: # https://example.com/
   # 加载失败显示图片 / Loading failed display image
-  error_img: /img/logo.png
+  error_img: /img/pwa/favicon_64.ico
   # 排序规则：created：按创建时间排序 / updated：按更新时间排序
   # Sort rule: created: Sort by creation time / updated: Sort by update time
   sort_rule: created
@@ -779,11 +779,11 @@ pwa:
   enable: false
   manifest: /manifest.json # manifest.json 文件路径
   theme_color: "#006a73" # 主题颜色
-  mask_icon: /img/logo.png # 遮罩图标
-  apple_touch_icon: /img/logo.png # 苹果触摸图标
-  bookmark_icon: /img/logo.png # 书签图标
-  favicon_32_32: /img/logo.png # 32x32图标
-  favicon_16_16: /img/logo.png # 16x16图标
+  mask_icon: /img/pwa/favicon.ico # 遮罩图标
+  apple_touch_icon: /img/pwa/favicon.ico # 苹果触摸图标
+  bookmark_icon: /img/pwa/favicon.ico # 书签图标
+  favicon_32_32: /img/pwa/favicon_32.ico # 32x32图标
+  favicon_16_16: /img/pwa/favicon_16.ico # 16x16图标
 
 # 谷歌广告 (Google Adsense)
 google_adsense:

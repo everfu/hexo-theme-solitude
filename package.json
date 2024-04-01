@@ -1,7 +1,7 @@
 {
   "name": "hexo-theme-solitude",
   "version": "1.7.2",
-  "description": "A beautiful, powerful, and efficient Hexo theme developed by the wleelw",
+  "description": "A beautiful, powerful, and efficient Hexo theme developed by the efu.",
   "main": "package.json",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -26,7 +26,7 @@
     "url": "https://github.com/valor-x/hexo-theme-solitude/issues",
     "email": "o@efu.me"
   },
-  "homepage": "https://solitude-demo.efu.me/",
+  "homepage": "https://efu.me/",
   "author": "Hexo-Theme-Solitude<o@efu.me>",
   "license": "MIT"
 }

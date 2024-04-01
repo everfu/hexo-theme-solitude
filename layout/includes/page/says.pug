@@ -20,7 +20,7 @@ if theme.says.enable
                             if item.image
                                 .bber-content-img
                                     each img in item.image
-                                        img(src=img title="即刻短文配图")
+                                        img(src=img alt="image")
 
                         if item.aplayer
                             .bber-music
@@ -41,7 +41,7 @@ if theme.says.enable
                                         i.solitude.st-calendar-todo-fill
                                         time.datetime(datetime=moment(item.date).format())
                                     if item.link
-                                        a.bber-content-link(href=url_for(item.link) title="跳转到短文指引的链接" target="_blank")
+                                        a.bber-content-link(href=url_for(item.link) target="_blank")
                                             i.solitude.st-link-m-line
                                             | 链接
                                 if item.content
