@@ -10,7 +10,7 @@ if recommends
                         .blog-slider__content
                             a.blog-slider__title(onclick=`event.stopPropagation();`, href=item.path)=item.title
                             span.blog-slider__code
-                                | 发布时间：
+                                =_p('upload')
                                 time(datetime=item.date)
                             .blog-slider__text=item.description
             .swiper-button-next
