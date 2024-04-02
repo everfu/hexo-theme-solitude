@@ -237,12 +237,6 @@ const utils = {
             }
         }
     },
-    changeTimeFormat() {
-        window.Lately && Lately.init({
-            target: 'time',
-            lang: GLOBAL_CONFIG.lang.lately,
-        })
-    },
     diffDate: (d, more = false) => {
         const dateNow = new Date()
         const datePost = new Date(d)
