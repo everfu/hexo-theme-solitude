@@ -164,6 +164,7 @@ aside:
   page:
     noSticky: "about"
     Sticky: "newestPost,allInfo"
+  position: 0 # left(0): 左侧 / right(1): 右侧
   # 侧边栏个人信息卡片
   # Sidebar personal information
   card:
@@ -708,6 +709,7 @@ comment:
   commentBarrage: false # 热评开关 / Hot comment switch
   lazyload: true # 懒加载
   count: true # 评论数展示
+  avatar: https://cravatar.cn # Gravatar link
   newest_comment:
     enable: false
     storage: 421000 # 缓存时间

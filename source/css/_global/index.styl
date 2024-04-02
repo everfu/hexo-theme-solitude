@@ -389,7 +389,7 @@ i.solitude
     +maxWidth1200()
       width 100%
 
-  > div:first-child:not(.recent-posts)
+  > div:first-child:not(.recent-posts,.aside-content)
     box-shadow var(--efu-shadow-border)
     padding 1rem 2rem
     border-radius 12px
@@ -398,6 +398,8 @@ i.solitude
     align-self flex-start
     animation slide-in .6s .1s backwards
     position relative
+    if hexo-config('aside.position') == 0
+      order 2
 
     +maxWidth768()
       box-shadow none
