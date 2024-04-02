@@ -5,7 +5,6 @@ if hexo-config('says.home_mini')
     display flex
     white-space nowrap
     overflow hidden
-    margin-bottom 1rem
     border var(--style-border)
     transition .3s
     height 50px
@@ -18,12 +17,17 @@ if hexo-config('says.home_mini')
     &.more-page
       margin-bottom 0
 
-    +maxWidth1300()
+    if hexo-config('hometop.enable')
       margin-bottom 1rem
+
+    +maxWidth1300()
+      if hexo-config('hometop.enable')
+        margin-bottom 1rem
       animation slide-in .6s 0s backwards
 
     +minWidth1300()
-      margin-bottom .5rem
+      if hexo-config('hometop.enable')
+        margin-bottom .5rem
       animation slide-in .6s 0s backwards
       &:hover
         border var(--style-border-hover)
