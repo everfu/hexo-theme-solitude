@@ -82,9 +82,10 @@ hexo.extend.filter.register('before_generate', () => {
                 comment: false,
             }, award: {
                 enable: false,
-                wechat: 'https://7.isyangs.cn/34/65f2e5814db1a-34.png',
-                alipay: 'https://7.isyangs.cn/34/65f2e5a6d2ef5-34.png',
-                url: '/about/',
+                appreciators: '/',
+                title: '感谢您的赞赏。',
+                desc: '因为有你们的支持，我才体会到写文章的价值。',
+                list: [],
             }, rss: null, covercolor: {
                 enable: false, mode: 'local', api: 'https://api.qjqq.cn/api/Imgcolor?img=', time: 43200000,
             }

@@ -1,11 +1,12 @@
 extends includes/layout
 
 block content
-    #home_top
-        if theme.says.home_mini
-            include ./includes/widgets/home/bbTimeList
-        if theme.hometop.enable && is_home_first_page()
-            include ./includes/widgets/home/hometop
+    if theme.hometop.enable || theme.says.home_mini
+        #home_top
+            if theme.says.home_mini
+                include ./includes/widgets/home/bbTimeList
+            if theme.hometop.enable && is_home_first_page()
+                include ./includes/widgets/home/hometop
     main.layout#content-inner
         .recent-posts#recent-posts
             #category-bar
@@ -15,6 +16,5 @@ block content
 
             // pageination
             include ./includes/mixins/pagination
-
         // aside
         include ./includes/widgets/aside/aside

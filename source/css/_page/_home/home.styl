@@ -1,11 +1,12 @@
-#home_top
-  max-width 1400px
-  margin .5rem auto auto
-  padding 0 1.5rem
+if hexo-config('hometop.enable') || hexo-config('says.enable')
+  #home_top
+    max-width 1400px
+    margin .5rem auto auto
+    padding 0 1.5rem
 
-  +maxWidth768()
-    padding 0
-    margin-top 0
+    +maxWidth768()
+      padding 0
+      margin-top 0
 
 if hexo-config('hometop.enable')
   @import "home-top.styl"
