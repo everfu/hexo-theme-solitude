@@ -16,15 +16,12 @@ copy_copyright:
   source: Source
   info: Copyright is owned by the author. For commercial reprints, please contact the author for authorization. For non-commercial reprints, please indicate the source.
 
-lately:
-  second: ' second'
-  minute: ' minute'
-  hour: ' hour'
-  day: ' day'
-  month: ' month'
-  year: ' year'
-  ago: ' ago'
-  error: ' NaN'
+time:
+  day: " days ago"
+  hour: " hours ago"
+  just: "just"
+  min: " minutes ago"
+  month: " months ago"
 
 page:
   tag: Tags

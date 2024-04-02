@@ -72,7 +72,10 @@ const utils = {
         const dur = (typeof duration !== 'undefined') ? duration : 5000
         document.styleSheets[0].addRule(':root', '--efu-snackbar-time:' + dur + 'ms!important')
         Snackbar.show({
-            text: text, showAction: sa, duration: dur, pos: 'top-center'
+            text: text,
+            showAction: sa,
+            duration: dur,
+            pos: 'top-center'
         })
     },
 
@@ -109,7 +112,8 @@ const utils = {
         if (currentPos > pos || isNavFixed) pos = pos - 70
         if ('scrollBehavior' in document.documentElement.style) {
             window.scrollTo({
-                top: pos, behavior: 'smooth'
+                top: pos,
+                behavior: 'smooth'
             })
             return
         }
@@ -175,7 +179,10 @@ const utils = {
     },
     lazyloadImg: function () {
         window.lazyLoadInstance = new LazyLoad({
-            elements_selector: 'img', threshold: 0, data_src: 'lazy-src', callback_error: (img) => {
+            elements_selector: 'img',
+            threshold: 0,
+            data_src: 'lazy-src',
+            callback_error: (img) => {
                 img.setAttribute("src", GLOBAL_CONFIG.lazyload.error);
             }
         })
@@ -184,7 +191,9 @@ const utils = {
         const lightbox = GLOBAL_CONFIG.lightbox
 
         if (lightbox === 'mediumZoom' && mediumZoom) {
-            mediumZoom(selector, {background: "var(--efu-card-bg)"});
+            mediumZoom(selector, {
+                background: "var(--efu-card-bg)"
+            });
         }
 
         if (lightbox === 'fancybox') {
@@ -204,15 +213,19 @@ const utils = {
 
             if (!window.fancyboxRun) {
                 Fancybox.bind('[data-fancybox]', {
-                    Hash: false, Thumbs: {
+                    Hash: false,
+                    Thumbs: {
                         showOnStart: false
-                    }, Images: {
+                    },
+                    Images: {
                         Panzoom: {
                             maxScale: 4
                         }
-                    }, Carousel: {
+                    },
+                    Carousel: {
                         transition: 'slide'
-                    }, Toolbar: {
+                    },
+                    Toolbar: {
                         display: {
                             left: ['infobar'],
                             middle: ['zoomIn', 'zoomOut', 'toggle1to1', 'rotateCCW', 'rotateCW', 'flipX', 'flipY'],
@@ -230,6 +243,32 @@ const utils = {
             lang: GLOBAL_CONFIG.lang.lately,
         })
     },
+    diffDate: (d, more = false) => {
+        const dateNow = new Date()
+        const datePost = new Date(d)
+        const dateDiff = dateNow.getTime() - datePost.getTime()
+        const minute = 1000 * 60
+        const hour = minute * 60
+        const day = hour * 24
+        const month = day * 30
+        const {
+            time
+        } = GLOBAL_CONFIG.lang
+
+        if (!more) return parseInt(dateDiff / day)
+
+        const monthCount = dateDiff / month
+        const dayCount = dateDiff / day
+        const hourCount = dateDiff / hour
+        const minuteCount = dateDiff / minute
+
+        if (monthCount > 12) return datePost.toISOString().slice(0, 10)
+        if (monthCount >= 1) return `${parseInt(monthCount)} ${time.month}`
+        if (dayCount >= 1) return `${parseInt(dayCount)} ${time.day}`
+        if (hourCount >= 1) return `${parseInt(hourCount)} ${time.hour}`
+        if (minuteCount >= 1) return `${parseInt(minuteCount)} ${time.min}`
+        return time.just
+    },
     loadComment: (dom, callback) => {
         if ('IntersectionObserver' in window) {
             const observerItem = new IntersectionObserver((entries) => {
@@ -237,7 +276,9 @@ const utils = {
                     callback()
                     observerItem.disconnect()
                 }
-            }, { threshold: [0] })
+            }, {
+                threshold: [0]
+            })
             observerItem.observe(dom)
         } else {
             callback()

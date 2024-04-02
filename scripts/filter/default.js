@@ -10,7 +10,7 @@ hexo.extend.filter.register('after_post_render', function (data) {
         data.cc = data.cc || copyright
         data.cover = data.cover || cover[getRandomInt(0, cover?.length)]
         data.excerpt = data.description || data.excerpt
-        data.toc = !!(config.aside.toc.post && data.toc !== false);
+        data.toc = !!(config.aside.toc.post && data.toc !== false)
     }
     if (data.layout === 'page') {
         let {cover} = hexo.theme.config.page.default

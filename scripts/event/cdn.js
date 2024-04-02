@@ -83,12 +83,7 @@ hexo.extend.filter.register('before_generate', () => {
             name: 'hexo-theme-solitude',
             file: 'js/third_party/universe.min.js',
             version
-        },
-        lately_js: {
-            name: 'hexo-theme-solitude',
-            file: 'js/third_party/lately.min.js',
-            version
-        },
+        }
     }
 
     const minFile = file => {

@@ -17,15 +17,12 @@ copy_copyright:
   source: 来源
   info: 著作权归作者所有。 商业转载请联系作者获得授权，非商业转载请注明出处。
 
-lately:
-  second: 秒
-  minute: 分钟
-  hour: 小时
-  day: 天
-  month: 个月
-  year: 年
-  ago: 前
-  error: NaN
+time:
+  day: "天前"
+  hour: "小时前"
+  just: "刚刚"
+  min: "分钟前"
+  month: "个月前"
 
 page:
   tag: 标签

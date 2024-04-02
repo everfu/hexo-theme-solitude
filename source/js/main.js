@@ -332,14 +332,17 @@ let sco = {
     },
     addRuntime: function () {
         let el = document.getElementById('runtimeshow')
-        el && GLOBAL_CONFIG.runtime && (el.innerText = utils.timeDiff(new Date(GLOBAL_CONFIG.runtime), new Date()) + GLOBAL_CONFIG.lang.lately.day)
+        el && GLOBAL_CONFIG.runtime && (el.innerText = utils.timeDiff(new Date(GLOBAL_CONFIG.runtime), new Date()) + GLOBAL_CONFIG.lang.time.day)
     },
     toTalk: function (txt) {
         const inputs = ["#wl-edit", ".el-textarea__inner"]
         for (let i = 0; i < inputs.length; i++) {
             let el = document.querySelector(inputs[i])
             if (el != null) {
-                el.dispatchEvent(new Event('input', {bubble: true, cancelable: true}))
+                el.dispatchEvent(new Event('input', {
+                    bubble: true,
+                    cancelable: true
+                }))
                 el.value = '> ' + txt.replace(/\n/g, '\n> ') + '\n\n'
                 utils.scrollToDest(utils.getEleTop(document.getElementById('post-comment')), 300)
                 el.focus()
@@ -383,12 +386,31 @@ let sco = {
             const timeNow = new Date();
             const hours = timeNow.getHours();
             const lang = GLOBAL_CONFIG.aside.sayhello;
-            const greetings = [
-                {start: 0, end: 5, text: lang.goodnight},
-                {start: 6, end: 10, text: lang.morning},
-                {start: 11, end: 14, text: lang.noon},
-                {start: 15, end: 18, text: lang.afternoon},
-                {start: 19, end: 24, text: lang.night},
+            const greetings = [{
+                    start: 0,
+                    end: 5,
+                    text: lang.goodnight
+                },
+                {
+                    start: 6,
+                    end: 10,
+                    text: lang.morning
+                },
+                {
+                    start: 11,
+                    end: 14,
+                    text: lang.noon
+                },
+                {
+                    start: 15,
+                    end: 18,
+                    text: lang.afternoon
+                },
+                {
+                    start: 19,
+                    end: 24,
+                    text: lang.night
+                },
             ];
             for (let greeting of greetings) {
                 if (hours >= greeting.start && hours <= greeting.end) {
@@ -631,6 +653,13 @@ let sco = {
 
         document.addEventListener('mouseover', debounce(showOwoBig, 100));
         document.addEventListener('mouseout', hideOwoBig);
+    },
+    changeTimeFormat(selector) {
+        selector.forEach(item => {
+            const timeVal = item.getAttribute('datetime')
+            item.textContent = utils.diffDate(timeVal, true)
+            item.style.display = 'inline'
+        })
     }
 }
 
@@ -638,7 +667,12 @@ const addHighlight = () => {
     const highlight = GLOBAL_CONFIG.highlight;
     if (!highlight) return;
 
-    const {copy, expand, limit, syntax} = highlight;
+    const {
+        copy,
+        expand,
+        limit,
+        syntax
+    } = highlight;
     const $isPrismjs = syntax === 'prismjs';
     const $isShowTool = highlight.enable || copy || expand || limit;
     const expandClass = !expand === true ? 'closed' : ''
@@ -722,7 +756,9 @@ const addHighlight = () => {
         $syntaxHighlight.forEach(item => {
             const langName = item.getAttribute('data-language') || 'Code'
             const highlightLangEle = `<div class="code-lang">${langName}</div>`
-            utils.wrap(item, 'figure', {class: 'highlight'})
+            utils.wrap(item, 'figure', {
+                class: 'highlight'
+            })
             createEle(highlightLangEle, item)
         })
     } else {
@@ -737,7 +773,13 @@ const addHighlight = () => {
 
 const addCopyright = () => {
     if (!GLOBAL_CONFIG.copyright) return
-    const {limit, author, link, source, info} = GLOBAL_CONFIG.copyright
+    const {
+        limit,
+        author,
+        link,
+        source,
+        info
+    } = GLOBAL_CONFIG.copyright
     const handleCopy = (e) => {
         e.preventDefault()
         const copyText = window.getSelection(0).toString()
@@ -792,11 +834,17 @@ class tabs {
 }
 
 window.refreshFn = () => {
+    if (PAGE_CONFIG.is_home) {
+        sco.changeTimeFormat(document.querySelectorAll('#recent-posts time'))
+        GLOBAL_CONFIG.runtime && sco.addRuntime()
+    } else {
+        sco.changeTimeFormat(document.querySelectorAll('#post-meta time'))
+    }
+
     sco.initAdjust()
     scrollFn()
     sidebarFn()
     initObserver()
-    sco.addRuntime()
     sco.hideCookie()
     sco.addPhotoFigcaption()
     sco.setTimeState()
@@ -804,7 +852,6 @@ window.refreshFn = () => {
     sco.categoriesBarActive()
     sco.listenToPageInputPress()
     sco.addNavBackgroundInit()
-    utils.changeTimeFormat()
     GLOBAL_CONFIG.lazyload.enable && utils.lazyloadImg()
     GLOBAL_CONFIG.lightbox && utils.lightbox(document.querySelectorAll("#article-container img:not(.flink-avatar)"))
     GLOBAL_CONFIG.randomlink && randomLinksList()
@@ -830,4 +877,4 @@ window.onkeydown = function (e) {
     (27 === e.keyCode) && sco.hideConsole();
 }
 
-document.addEventListener('copy', () => utils.snackbarShow(GLOBAL_CONFIG.lang.copy.success,false,3e3))
+document.addEventListener('copy', () => utils.snackbarShow(GLOBAL_CONFIG.lang.copy.success, false, 3e3))

@@ -17,15 +17,12 @@ copy_copyright:
   source: 來源
   info: 著作權歸作者所有。 商業轉載請聯繫作者獲得授權，非商業轉載請註明出處。
 
-lately:
-  second: 秒
-  minute: 分鐘
-  hour: 小時
-  day: 天
-  month: 个月
-  year: 年
-  ago: 前
-  error: NaN
+time:
+  day: "天前"
+  hour: "小時前"
+  just: "剛剛"
+  min: "分鐘前"
+  month: "個月前"
 
 page:
   tag: 標籤
