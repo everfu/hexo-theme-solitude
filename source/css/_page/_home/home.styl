@@ -11,6 +11,9 @@ if hexo-config('hometop.enable') || hexo-config('says.enable')
 if hexo-config('hometop.enable')
   @import "home-top.styl"
 
+if hexo-config('banner')
+  @import "banner.styl"
+
 @import "category-bar.styl"
 
 @import "recent-post.styl"

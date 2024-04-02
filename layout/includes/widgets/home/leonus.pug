@@ -1,0 +1,49 @@
+- let recommends = site.posts.data.filter(item => item.recommend === true).slice(0,6) || false
+
+if recommends
+    .recent-post-item#swiperBox
+        span.swiperBox-top-text= _p('home.recommend')
+        div.blog-slider.swiper-container-fade.swiper-container-horizontal#swiper_container
+            .blog-slider__wrp.swiper-wrapper
+                each item,index in recommends
+                    .blog-slider__item.swiper-slide(style=`background-image: url(${item.cover})`)
+                        .blog-slider__content
+                            a.blog-slider__title(onclick=`event.stopPropagation();`, href=item.path)=item.title
+                            span.blog-slider__code
+                                | 发布时间：
+                                time(datetime=item.date)
+                            .blog-slider__text=item.description
+            .swiper-button-next
+            .swiper-button-prev
+            .blog-slider__pagination.swiper-pagination-clickable.swiper-pagination-bullets
+
+    script.
+        function banner_swiper() {
+            let e = new Swiper(".blog-slider", {
+                navigation: {
+                    nextEl: ".swiper-button-next",
+                    prevEl: ".swiper-button-prev"
+                },
+                passiveListeners: !0,
+                loop: !0,
+                autoplay: {
+                    disableOnInteraction: !0,
+                    delay: 5e3
+                },
+                mousewheel: !0,
+                pagination: {
+                    el: ".blog-slider__pagination",
+                    clickable: !0
+                }
+            })
+                , t = document.getElementById("swiper_container");
+            null !== t && (t.onmouseenter = () => {
+                    e.autoplay.stop()
+                }
+                    ,
+                    t.onmouseleave = () => {
+                        e.autoplay.start()
+                    }
+            )
+        }
+

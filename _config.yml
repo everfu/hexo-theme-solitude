@@ -138,6 +138,12 @@ hometop:
     # Shadow color
     color: "none"
 
+## banner
+## 推荐文章banner
+# 使用方法：在文章的front matter中添加“recommend: true”
+# tip：建议开了这个就不要开hometop，其功能类似
+banner: false
+
 # --------------------------------------
 # Aside Settings
 # 侧边栏配置
@@ -164,7 +170,7 @@ aside:
   page:
     noSticky: "about"
     Sticky: "newestPost,allInfo"
-  position: 0 # left(0): 左侧 / right(1): 右侧
+  position: 1 # left(0): 左侧 / right(1): 右侧
   # 侧边栏个人信息卡片
   # Sidebar personal information
   card:
