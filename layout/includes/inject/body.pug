@@ -103,10 +103,6 @@ div
             != item
 
 div#js-pjax
-    case config.lang
-        when 'en'
-            script.
-                utils.changeTimeFormat()
     if theme.mermaid
         script.
             mermaid.run();

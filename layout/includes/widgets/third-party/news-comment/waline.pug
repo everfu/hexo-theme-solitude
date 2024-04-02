@@ -62,7 +62,7 @@ script.
               `).join('') : "!{_p('newest_comment.zero')}"
             window.lazyLoadInstance && window.lazyLoadInstance.update()
             window.pjax && window.pjax.refresh()
-            utils && utils.changeTimeFormat()
+            sco && sco.changeTimeFormat(document.querySelectorAll('.aside-list-item time'))
         }
 
         newestCommentInit()
