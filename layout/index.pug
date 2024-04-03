@@ -1,9 +1,9 @@
 extends includes/layout
 
 block content
-    if theme.hometop.enable || theme.says.home_mini
+    if theme.hometop.enable || (theme.says.home_mini && theme.says.enable)
         #home_top
-            if theme.says.home_mini
+            if theme.says.home_mini && theme.says.enable
                 include ./includes/widgets/home/bbTimeList
             if theme.hometop.enable && is_home_first_page()
                 include ./includes/widgets/home/hometop

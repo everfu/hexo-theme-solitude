@@ -1,5 +1,5 @@
 window.onload = () => {
-    let idx, store = [];
+    let store = [];
     const $searchMask = document.getElementById("search-mask");
     const $searchDialog = document.querySelector("#local-search .search-dialog");
     window.openSearch = () => {
@@ -41,7 +41,7 @@ window.onload = () => {
 
     searchClickFn();
 
-    function initLunr() {
+    function init() {
         fetch(GLOBAL_CONFIG.localsearch.path)
             .then(response => response.text())
             .then(data => {
@@ -59,16 +59,6 @@ window.onload = () => {
                         'content': content
                     });
                 }
-
-                idx = lunr(function () {
-                    this.ref('link');
-                    this.field('title', {boost: 10});
-                    this.field('content');
-
-                    store.forEach(function (doc) {
-                        this.add(doc);
-                    }, this);
-                });
             })
             .catch(err => console.error("Error loading search data:", err));
     }
@@ -169,7 +159,7 @@ window.onload = () => {
         }
         paginationContainer.appendChild(paginationList);
     }
-    initLunr();
+    init();
     initUI();
     window.addEventListener('DOMContentLoaded', (event) => {
         initUI();

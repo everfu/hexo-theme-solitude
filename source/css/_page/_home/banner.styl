@@ -28,13 +28,16 @@ div#swiper_container
 
   .swiper-button-prev, .swiper-button-next
     transition all .3s
+    border-radius 5px
     color var(--efu-main) !important
+    background var(--efu-maskbg)
+    opacity .5
 
     &:hover
+      opacity 1
       transition all .3s
-      border-radius 5px
-      color var(--efu-card-bg) !important
-      background var(--efu-maskbg)
+      color var(--efu-white) !important
+      background var(--efu-main)
 
   .swiper-button-next::after, .swiper-button-prev::after
     font-size 1.5rem
