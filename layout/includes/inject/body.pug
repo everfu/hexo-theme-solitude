@@ -90,13 +90,9 @@ div
     if theme.loading.pace
         script(src=url_for(theme.cdn.pace_js))
 
-    if theme.search.enable
-        case theme.search.type
-            when 'algolia'
-                script(src=url_for(theme.cdn.instantsearch))
-                script(src=url_for(theme.cdn.algolia_search))
-            when 'local'
-                script(src=url_for(theme.cdn.lunr_js))
+    if theme.search.enable && theme.search.type === "algolia"
+        script(src=url_for(theme.cdn.instantsearch))
+        script(src=url_for(theme.cdn.algolia_search))
 
     if theme.extends.body
         each item in theme.extends.body
@@ -109,7 +105,7 @@ div#js-pjax
     if is_home() && (theme.says.home_mini && theme.says.enable)
         script.
             sco.initbbtalk();
-    if is_home() && theme.banner && site.posts.data.filter(item => item.recommend === true).slice(0,6) || false
+    if is_home() && theme.banner && site.posts.data.filter(item => item.recommend === true).slice(0, 6) || false
         script.
             banner_swiper()
     if page.type === 'says' && theme.says.enable
