@@ -44,7 +44,7 @@ div
             script(src=url_for(theme.cdn.medium_zoom))
         if theme.fancybox
             script(src=url_for(theme.cdn.fancyapps_ui))
-    if theme.says.home_mini
+    if (theme.says.home_mini && theme.says.enable) || theme.banner
         script(src=url_for(theme.cdn.swiper_js))
 
     if theme.post_ai.enable
@@ -106,7 +106,7 @@ div#js-pjax
     if theme.mermaid
         script.
             mermaid.run();
-    if is_home() && theme.says.home_mini
+    if is_home() && (theme.says.home_mini && theme.says.enable)
         script.
             sco.initbbtalk();
     if is_home() && theme.banner && site.posts.data.filter(item => item.recommend === true).slice(0,6) || false
