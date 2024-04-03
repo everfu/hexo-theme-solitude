@@ -510,8 +510,7 @@ music:
 # 音乐胶囊
 # capsule music
 capsule:
-  enable:
-    false
+  enable: false
   # 歌单id / playlist id
   id: 8407304077
   # 播放列表的服务商。netease：网易云 / tencent：腾讯 / kugou：酷狗 / xiami：小米 / baidu：百度
