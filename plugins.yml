@@ -67,7 +67,7 @@ pace_js:
   file: pace.min.js
   version: 1.2.4
 lunr_js:
-  name: lunr.js
+  name: lunr
   file: lunr.min.js
   version: 2.3.9
 swiper_css:
