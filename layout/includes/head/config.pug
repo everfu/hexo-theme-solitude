@@ -105,6 +105,7 @@
             month: _p('time.month')
         },
         f12: _p('f12'),
+        totalk: _p('totalk')
     }
 
     if (theme.search.enable) {
@@ -119,6 +120,35 @@
     if (theme.comment.enable && theme.comment.commentBarrage) {
         lang.barrage = {
             title: _p('commentBarrage.title'),
+        }
+    }
+
+    let rightMenu = false
+    if (theme.right_menu.enable) {
+        rightMenu = {
+            mode: {
+                dark: _p('right_menu.light'),
+                light: _p('right_menu.dark'),
+            },
+            img_error: _p('right_menu.img_error')
+        }
+        if (theme.capsule.enable) {
+            rightMenu.music = {
+                start: _p('right_menu.music.start'),
+                stop: _p('right_menu.music.stop'),
+            }
+        }
+        if(theme.comment.enable && theme.comment.commentBarrage){
+            rightMenu.barrage = {
+                open: _p('right_menu.barrage.open'),
+                close: _p('right_menu.barrage.close')
+            }
+        }
+        if(theme.right_menu.translate.enable){
+            rightMenu.translate = {
+                translateDelay: theme.right_menu.translate.translateDelay,
+                defaultEncoding: theme.right_menu.translate.defaultEncoding
+            }
         }
     }
 
@@ -157,5 +187,6 @@ script.
         },
         comment: !{comment},
         lightbox: '!{ theme.mediumZoom ? "mediumZoom" : (theme.fancybox ? "fancybox" : "null")}',
-        post_ai: !{post_ai}
+        post_ai: !{post_ai},
+        right_menu: !{rightMenu ? JSON.stringify(rightMenu) : false},
     };

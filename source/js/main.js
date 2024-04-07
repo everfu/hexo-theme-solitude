@@ -30,6 +30,7 @@ const sidebarFn = () => {
         if (utils.isHidden($toggleMenu)) {
             if ($mobileSidebarMenus.classList.contains('open')) closeMobileSidebar()
         }
+        sco.reflashEssayWaterFall();
     })
 }
 
@@ -204,6 +205,7 @@ class toc {
 
 let lastSayHello = "";
 let wleelw_musicPlaying = false
+let right_menu = false
 
 let sco = {
     hideCookie: function () {
@@ -238,14 +240,17 @@ let sco = {
         const $music = document.querySelector('#nav-music');
         const $meting = document.querySelector('meting-js');
         const $console = document.getElementById('consoleMusic');
-        const $toggleButton = document.getElementById('menu-music-toggle');
+        const $rm_text = document.querySelector('#menu-music-toggle span');
+        const $rm_icon = document.querySelector('#menu-music-toggle i');
         wleelw_musicPlaying = !wleelw_musicPlaying;
         $music.classList.toggle("playing", wleelw_musicPlaying);
         $console.classList.toggle("on", wleelw_musicPlaying);
         if (wleelw_musicPlaying) {
             $meting.aplayer.play();
+            right_menu && ($rm_text.textContent = GLOBAL_CONFIG.right_menu.music.stop) && ($rm_icon.className = 'solitude st-pause-fill')
         } else {
             $meting.aplayer.pause();
+            right_menu && ($rm_text.textContent = GLOBAL_CONFIG.right_menu.music.start) && ($rm_icon.className = 'solitude st-play-fill')
         }
     },
     switchCommentBarrage: function () {
@@ -255,10 +260,12 @@ let sco = {
                 commentBarrageElement.style.display = "none";
                 document.querySelector("#consoleCommentBarrage").classList.remove("on");
                 localStorage.removeItem("commentBarrageSwitch");
+                right_menu && rm.barrage(true)
             } else {
                 commentBarrageElement.style.display = "flex";
                 document.querySelector("#consoleCommentBarrage").classList.add("on");
                 localStorage.setItem("commentBarrageSwitch", "false");
+                right_menu && rm.barrage(false)
             }
         }
     },
@@ -302,15 +309,16 @@ let sco = {
             document.documentElement.setAttribute('data-theme', 'dark')
             saveToLocal.set('theme', 'dark', 0.02);
             utils.snackbarShow(GLOBAL_CONFIG.lang.theme.dark, false, 2000)
+            right_menu && rm.mode(true)
         } else {
             document.documentElement.setAttribute('data-theme', 'light')
             saveToLocal.set('theme', 'light', 0.02);
             utils.snackbarShow(GLOBAL_CONFIG.lang.theme.light, false, 2000)
+            right_menu && rm.mode(false)
         }
     },
     hideTodayCard: () => document.getElementById('todayCard').classList.add('hide'),
     toTop: () => utils.scrollToDest(0),
-
     showConsole: function () {
         let el = document.getElementById('console')
         if (el && !el.classList.contains('show')) {
@@ -335,7 +343,7 @@ let sco = {
         el && GLOBAL_CONFIG.runtime && (el.innerText = utils.timeDiff(new Date(GLOBAL_CONFIG.runtime), new Date()) + GLOBAL_CONFIG.lang.time.day)
     },
     toTalk: function (txt) {
-        const inputs = ["#wl-edit", ".el-textarea__inner"]
+        const inputs = ["#wl-edit", ".el-textarea__inner", "#veditor"]
         for (let i = 0; i < inputs.length; i++) {
             let el = document.querySelector(inputs[i])
             if (el != null) {
@@ -349,6 +357,7 @@ let sco = {
                 el.setSelectionRange(-1, -1)
             }
         }
+        utils.snackbarShow(GLOBAL_CONFIG.lang.totalk, !1, 2e3);
     },
     initbbtalk: function () {
         if (document.querySelector('#bber-talk')) {
@@ -387,10 +396,10 @@ let sco = {
             const hours = timeNow.getHours();
             const lang = GLOBAL_CONFIG.aside.sayhello;
             const greetings = [{
-                    start: 0,
-                    end: 5,
-                    text: lang.goodnight
-                },
+                start: 0,
+                end: 5,
+                text: lang.goodnight
+            },
                 {
                     start: 6,
                     end: 10,
@@ -660,19 +669,14 @@ let sco = {
             item.textContent = utils.diffDate(timeVal, true)
             item.style.display = 'inline'
         })
-    }
+    },
 }
 
 const addHighlight = () => {
     const highlight = GLOBAL_CONFIG.highlight;
     if (!highlight) return;
 
-    const {
-        copy,
-        expand,
-        limit,
-        syntax
-    } = highlight;
+    const {copy, expand, limit, syntax} = highlight;
     const $isPrismjs = syntax === 'prismjs';
     const $isShowTool = highlight.enable || copy || expand || limit;
     const expandClass = !expand === true ? 'closed' : ''
@@ -773,13 +777,7 @@ const addHighlight = () => {
 
 const addCopyright = () => {
     if (!GLOBAL_CONFIG.copyright) return
-    const {
-        limit,
-        author,
-        link,
-        source,
-        info
-    } = GLOBAL_CONFIG.copyright
+    const {limit, author, link, source, info} = GLOBAL_CONFIG.copyright
     const handleCopy = (e) => {
         e.preventDefault()
         const copyText = window.getSelection(0).toString()
@@ -834,8 +832,8 @@ class tabs {
 }
 
 window.refreshFn = () => {
-    if (PAGE_CONFIG.is_home) {
-        sco.changeTimeFormat(document.querySelectorAll('#recent-posts time'))
+    if (PAGE_CONFIG.is_home || PAGE_CONFIG.is_page) {
+        sco.changeTimeFormat(document.querySelectorAll('#recent-posts time, .webinfo-item time'))
         GLOBAL_CONFIG.runtime && sco.addRuntime()
     } else {
         sco.changeTimeFormat(document.querySelectorAll('#post-meta time'))
@@ -852,8 +850,9 @@ window.refreshFn = () => {
     sco.categoriesBarActive()
     sco.listenToPageInputPress()
     sco.addNavBackgroundInit()
+    sco.reflashEssayWaterFall()
     GLOBAL_CONFIG.lazyload.enable && utils.lazyloadImg()
-    GLOBAL_CONFIG.lightbox && utils.lightbox(document.querySelectorAll("#article-container img:not(.flink-avatar)"))
+    GLOBAL_CONFIG.lightbox && utils.lightbox(document.querySelectorAll("#article-container img:not(.flink-avatar,.gallery-group img)"))
     GLOBAL_CONFIG.randomlink && randomLinksList()
     PAGE_CONFIG.comment && initComment()
     PAGE_CONFIG.toc && toc.init();

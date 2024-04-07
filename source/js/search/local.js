@@ -37,6 +37,16 @@ window.onload = () => {
 
     const searchClickFn = () =>{
         utils.addEventListenerPjax(document.querySelector("#search-button > .search"), "click", openSearch);
+
+        GLOBAL_CONFIG.right_menu && document.getElementById("menu-search").addEventListener("click", function (){
+            rm.hideRightMenu();
+            openSearch();
+            let t=document.getElementsByClassName('search-box-input')[0];
+            let evt = document.createEvent('HTMLEvents');
+            evt.initEvent('input', true,true)
+            t.value = selectTextNow
+            t.dispatchEvent(evt)
+        })
     }
 
     searchClickFn();

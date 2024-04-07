@@ -26,8 +26,8 @@ div
         script.
             dark()
 
-    if theme.translate.enable
-        script(src=url_for(theme.cdn.translate))
+    if theme.right_menu.translate.enable
+        script(src=url_for(theme.cdn.translate_js))
 
     if theme.katex && theme.katex.enable
         if theme.katex.per_page && (is_post() || is_page())
@@ -44,7 +44,7 @@ div
             script(src=url_for(theme.cdn.medium_zoom))
         if theme.fancybox
             script(src=url_for(theme.cdn.fancyapps_ui))
-    if (theme.says.home_mini && theme.says.enable) || theme.banner
+    if (theme.says.home_mini && theme.says.enable) || theme.carousel
         script(src=url_for(theme.cdn.swiper_js))
 
     if theme.post_ai.enable
@@ -94,6 +94,9 @@ div
         script(src=url_for(theme.cdn.instantsearch))
         script(src=url_for(theme.cdn.algolia_search))
 
+    if theme.right_menu.enable
+        script(src=url_for(theme.cdn.right_menu_js))
+
     if theme.extends.body
         each item in theme.extends.body
             != item
@@ -102,20 +105,11 @@ div#js-pjax
     if theme.mermaid
         script.
             mermaid.run();
-    if is_home() && (theme.says.home_mini && theme.says.enable)
+    if is_home() && theme.carousel && site.posts.data.filter(item => item.recommend === true).slice(0, 6) || false
         script.
-            sco.initbbtalk();
-    if is_home() && theme.banner && site.posts.data.filter(item => item.recommend === true).slice(0, 6) || false
-        script.
-            banner_swiper()
+            carousel_swiper()
     if page.type === 'says' && theme.says.enable
         script.
-            window.addEventListener('resize', utils.throttle(function () {
-                if (document.getElementById('waterfall')) {
-                    sco.reflashEssayWaterFall();
-                }
-            }), 500);
-            sco.reflashEssayWaterFall();
             GLOBAL_CONFIG.lightbox && utils.lightbox(document.querySelectorAll(".bber-content-img img"));
             sco.changeTimeFormat(document.querySelectorAll('.bber-info-time time'))
     if theme.busuanzi && (theme.aside.siteinfo.uv || theme.aside.siteinfo.pv)
@@ -124,7 +118,7 @@ div#js-pjax
     script#config-diff.
         var PAGE_CONFIG = {
             is_post: !{is_post()},
-            is_page: !{is_page()},
+            is_page: !{!is_post() && !is_home()},
             is_home: !{is_home()},
             page: '!{page.type}',
             toc: !{!!page.toc},

@@ -2,6 +2,7 @@ more: 更多
 star: 喜欢这篇的人也看了
 random: 随便逛逛
 upload: 发布时间：
+totalk: 无需删除空行，直接输入评论即可
 
 # Language: 简体中文
 theme:
@@ -145,3 +146,27 @@ commentBarrage:
   title: 热评
 
 f12: 开发者模式已打开，请遵循GPL协议。
+
+right_menu:
+  copy: 复制选中文本
+  paste: 粘贴文本
+  comment: 引用到评论
+  new: 新窗口打开
+  link: 复制链接地址
+  img: 复制此图片
+  downloadImg: 下载此图片
+  search: 站内搜索
+  dark: 浅色模式
+  light: 深色模式
+  chs_to_cht: 轉為繁體
+  cht_to_chs: 转为简体
+  img_error: 此图片无法复制与下载
+  barrage:
+    open: 显示热评
+    close: 关闭热评
+  music:
+    start: 播放音乐
+    stop: 暂停音乐
+    back: 切换到上一首
+    forward: 切换到下一首
+    copyMusicName: 复制歌名
