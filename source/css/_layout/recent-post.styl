@@ -2,6 +2,11 @@
   if hexo-config('aside.position') == 0
       order 2
 
+  #category &,
+  #tag &
+    +maxWidth768()
+      padding 0
+
 if hexo-config('index_post_list.direction') == "column"
   #recent-posts
     position relative
