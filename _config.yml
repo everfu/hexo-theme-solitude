@@ -138,11 +138,11 @@ hometop:
     # Shadow color
     color: "none"
 
-## banner
-## 推荐文章banner
+# carousel
+# 顶部推荐轮播图
 # 使用方法：在文章的front matter中添加“recommend: true”
 # tip：建议开了这个就不要开hometop，其功能类似
-banner: false
+carousel: false
 
 # --------------------------------------
 # Aside Settings
@@ -626,7 +626,7 @@ fancybox: false
 # mediumZoom
 mediumZoom: false
 
-# mermaid
+# mermaid tags plugin
 # https://mermaid.js.org/
 mermaid: false
 
@@ -843,7 +843,6 @@ CDN:
     # aplayer_js:
     # meting_js:
     # pace_js:
-    # lunr_js:
     # swiper_css:
     # swiper_js:
     # busuanzi_js:
