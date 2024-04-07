@@ -35,6 +35,10 @@ html(lang=config.language, data-theme="light")
                 .error#body-wrap
                     block content
 
+        // right_menu
+        if theme.right_menu.enable
+            include rightmenu
+
         // inject body
         include ./inject/body.pug
 

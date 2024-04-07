@@ -26,8 +26,8 @@ div
         script.
             dark()
 
-    if theme.translate.enable
-        script(src=url_for(theme.cdn.translate))
+    if theme.right_menu.translate.enable
+        script(src=url_for(theme.cdn.translate_js))
 
     if theme.katex && theme.katex.enable
         if theme.katex.per_page && (is_post() || is_page())
@@ -93,6 +93,9 @@ div
     if theme.search.enable && theme.search.type === "algolia"
         script(src=url_for(theme.cdn.instantsearch))
         script(src=url_for(theme.cdn.algolia_search))
+
+    if theme.right_menu.enable
+        script(src=url_for(theme.cdn.right_menu_js))
 
     if theme.extends.body
         each item in theme.extends.body

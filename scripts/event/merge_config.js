@@ -4,11 +4,13 @@ hexo.extend.filter.register('before_generate', () => {
             name: {
                 class: 'text', custom: 'Solitude'
             }, siteIcon: '/img/pwa/favicon.ico', icon: 'icon'
-        }, nav: {
+        },
+        nav: {
             group: null, menu: null, right: {
                 random: false, console: false, custom: [],
             }
-        }, hometop: {
+        },
+        hometop: {
             enable: false, banner: {
                 title: 'Solitude', url: 'A simple theme for Hexo', icon: null,
             }, group: null, recommendList: {
@@ -18,14 +20,18 @@ hexo.extend.filter.register('before_generate', () => {
                 img: '/img/default.png',
                 color: 'none',
             }
-        }, aside: {
+        },
+        aside: {
             home: {
                 noSticky: 'about', Sticky: 'allInfo'
-            }, post: {
+            },
+            post: {
                 noSticky: 'about', Sticky: 'allInfo'
-            }, page: {
+            },
+            page: {
                 noSticky: 'about', Sticky: 'allInfo'
-            }, card: {
+            },
+            card: {
                 author: {
                     img: '/img/logo.png', sticker: '/img/happy-sticker.png',
                 },
@@ -41,14 +47,26 @@ hexo.extend.filter.register('before_generate', () => {
                 },
                 sayhello2: ['Welcome to Solitude', 'A simple theme for Hexo', 'Enjoy your time', 'Have a nice day', 'Good luck'],
                 information: null,
-            }, flip: {
-                favicon: '', face: '', backface: '', backcolor: 'var(--efu-blue)'
-            }, toc: {
-                post: true, page: false, vague: true,
-            }, tags: {
-                enable: true, limit: 20, highlight: false, list: [],
+            },
+            flip: {
+                favicon: '',
+                face: '',
+                backface: '',
+                backcolor: 'var(--efu-blue)'
+            },
+            toc: {
+                post: true,
+                page: false,
+                vague: true,
+            },
+            tags: {
+                enable: true,
+                limit: 20,
+                highlight: false,
+                list: [],
             }, archive: {
-                enable: true, type: 'month'
+                enable: true,
+                type: 'month'
             }, siteinfo: {
                 postcount: true,
                 wordcount: false,
@@ -58,20 +76,32 @@ hexo.extend.filter.register('before_generate', () => {
                 runtimeenable: true,
                 runtime: "2023-04-20 00:00:00",
             },
-        }, index_post_list: {
-            direction: 'column', content: false, length: 500, cover: 'both'
-        }, page: {
-            error: true, tags: true, categories: true, default: {
+        },
+        index_post_list: {
+            direction: 'column',
+            content: false,
+            length: 500,
+            cover: 'both'
+        },
+        page: {
+            error: true,
+            tags: true,
+            categories: true,
+            default: {
                 cover: ['/img/default.png'],
             }
-        }, post: {
+        },
+        post: {
             default: {
-                cover: ['/img/default.png'], locate: 'China, Changsha', copyright: {
+                cover: ['/img/default.png'],
+                locate: 'China, Changsha',
+                copyright: {
                     enable: true,
                     license: 'CC BY-NC-SA 4.0',
                     licenurl: 'https://creativecommons.org/licenses/by-nc-sa/4.0/',
                 }
-            }, meta: {
+            },
+            meta: {
                 date: false,
                 updated: false,
                 locate: false,
@@ -80,16 +110,23 @@ hexo.extend.filter.register('before_generate', () => {
                 pv: false,
                 uv: false,
                 comment: false,
-            }, award: {
+            },
+            award: {
                 enable: false,
                 appreciators: '/',
                 title: '感谢您的赞赏。',
                 desc: '因为有你们的支持，我才体会到写文章的价值。',
                 list: [],
-            }, rss: null, covercolor: {
-                enable: false, mode: 'local', api: 'https://api.qjqq.cn/api/Imgcolor?img=', time: 43200000,
+            },
+            rss: null,
+            covercolor: {
+                enable: false,
+                mode: 'local',
+                api: 'https://api.qjqq.cn/api/Imgcolor?img=',
+                time: 43200000,
             }
-        }, theme_color: {
+        },
+        theme_color: {
             dark: "#ffc848",
             dark_op: "#f2b94b23",
             dark_op_deep: "#f2b94bdd",
@@ -98,25 +135,55 @@ hexo.extend.filter.register('before_generate', () => {
             light_op: "#4259ef23",
             light_op_deep: "#4259efdd",
             light_none: "#4259ef01"
-        }, display_mode: {
-            type: 'auto', universe: false
-        }, related_post: {
-            enable: false, limit: 2, date_type: 'created'
-        }, footer: {
+        },
+        display_mode: {
+            type: 'auto',
+            universe: false
+        },
+        related_post: {
+            enable: false,
+            limit: 2,
+            date_type: 'created'
+        },
+        footer: {
             information: {
-                left: null, right: null,
-            }, group: null, randomlink: false, privacy: null, license: null, links: [{
-                name: 'Solitude', url: 'https://github.com/valor-x/hexo-theme-solitude',
+                left: null,
+                right: null,
+            },
+            group: null,
+            randomlink: false,
+            privacy: null,
+            license: null,
+            links: [{
+                name: 'Solitude',
+                url: 'https://github.com/valor-x/hexo-theme-solitude',
             }]
         }, errorpage: {
-            img: 'https://7.isyangs.cn/34/65f2e65eae32a-34.png', text: '404 Not Found', recommendList: true
+            img: 'https://7.isyangs.cn/34/65f2e65eae32a-34.png',
+            text: '404 Not Found',
+            recommendList: true
         }, says: {
-            enable: false, home_mini: false, style: 1, strip: 30
-        }, meting_api: "https://meting.qjqq.cn/?server=:server&type=:type&id=:id&auth=:auth&r=:r", music: {
-            enable: false, id: '8407304077', server: 'netease', type: 'playlist', volume: 0.8, mutex: true,
-        }, capsule: {
-            enable: false, id: '8407304077', server: 'netease', type: 'playlist',
-        }, moments: {
+            enable: false,
+            home_mini: false,
+            style: 1,
+            strip: 30
+        },
+        meting_api: "https://meting.qjqq.cn/?server=:server&type=:type&id=:id&auth=:auth&r=:r",
+        music: {
+            enable: false,
+            id: '8407304077',
+            server: 'netease',
+            type: 'playlist',
+            volume: 0.8,
+            mutex: true,
+        },
+        capsule: {
+            enable: false,
+            id: '8407304077',
+            server: 'netease',
+            type: 'playlist',
+        },
+        moments: {
             enable: false,
             api: '',
             error_img: '/img/logo.png',
@@ -128,24 +195,49 @@ hexo.extend.filter.register('before_generate', () => {
             appjs: 'https://cdn.cbd.int/st-source@1.0.3/js/fcircle.min.js',
             bundlejs: 'https://cdn.cbd.int/st-source/js/moment/bundle.min.js',
             randompostjs: 'https://cdn.cbd.int/st-source/js/moment/random_post.min.js'
-        }, keyboard: {
-            enable: false, list: []
+        },
+        keyboard: {
+            enable: false,
+            list: []
         }
-        ,lazyload: {
-            enable: false, field: 'site', placeholder: '/img/loading.gif', errorimg: '/img/error_load.png'
-        }, loading: {
-            fullpage: false, pace: true,
-        }, highlight: {
-            enable: true, limit: 200, copy: true, expand: true, theme: 'default', color: 'default',
-        }, lightbox: false, fancybox: false, mediumZoom: false, mermaid: false, translate: {
-            enable: false, defaultEncoding: 2, translateDelay: 0,
-        }, OpenGraph: {
-            enable: false, options: null
-        }, wordcount: false, busuanzi: false, search: {
-            enable: false, type: 'local', tags: [], algolia: null, local: {
+        , lazyload: {
+            enable: false,
+            field: 'site',
+            placeholder: '/img/loading.gif',
+            errorimg: '/img/error_load.png'
+        },
+        loading: {
+            fullpage: false,
+            pace: true,
+        },
+        highlight: {
+            enable: true,
+            limit: 200,
+            copy: true,
+            expand: true,
+            theme: 'default',
+            color: 'default',
+        },
+        lightbox: false,
+        fancybox: false,
+        mediumZoom: false,
+        mermaid: false,
+        OpenGraph: {
+            enable: false,
+            options: null
+        },
+        wordcount: false,
+        busuanzi: false,
+        search: {
+            enable: false,
+            type: 'local',
+            tags: [],
+            algolia: null,
+            local: {
                 preload: false, CDN: null,
             }
-        }, rightside: {
+        },
+        rightside: {
             enable: false
         },
         copy: {
@@ -154,17 +246,21 @@ hexo.extend.filter.register('before_generate', () => {
                 enable: false,
                 limit: 50
             }
-        }
-        , post_ai: {
+        },
+        post_ai: {
             enable: false,
             modelName: 'GPT 3',
             key: 'your key',
             talk: 'I am a AI.',
             randomPost: false,
             tips: 'AI is not perfect, please use it with caution.'
-        }, katex: {
-            enable: false, per_page: false, copytex: false,
-        }, comment: {
+        },
+        katex: {
+            enable: false,
+            per_page: false,
+            copytex: false,
+        },
+        comment: {
             enable: false,
             type: '',
             commentBarrage: false,
@@ -172,10 +268,14 @@ hexo.extend.filter.register('before_generate', () => {
             randomInfoStart: [`baby's`, `little`, `my`,],
             randomInfoEnd: [`home`, `world`, `heart`,],
             twikoo: {
-                envId: 'your envId', lang: 'zh-CN', accessToken: null,
+                envId: 'your envId',
+                lang: 'zh-CN',
+                accessToken: null,
             },
             waline: {
-                envId: 'your envId', pageview: true, option: null,
+                envId: 'your envId',
+                pageview: true,
+                option: null,
             },
             verify_site: [],
             css_prefix: false,
@@ -186,7 +286,8 @@ hexo.extend.filter.register('before_generate', () => {
                 'code-font-family': 'monospace, monospace',
             },
             extends: {
-                head: [], body: [],
+                head: [],
+                body: [],
             },
             pwa: {
                 enable: false,
@@ -205,6 +306,16 @@ hexo.extend.filter.register('before_generate', () => {
                 js: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js',
                 client: '',
                 slot: '',
+            },
+            right_menu: {
+                enable: false,
+                commentBarrage: false,
+                translate: {
+                    enable: false,
+                    defaultEncoding: 2,
+                    translateDelay: 0,
+                },
+                custom_list: []
             },
             CDN: {
                 internal: 'local',

@@ -576,7 +576,7 @@ keyboard:
 copy:
   enable: true
   copyright: # Turn on Link copyright information after copying.（开启后将在默认增加版权信息）
-    enable: false
+    enable: true
     limit: 50 # word count. （字数）
 
 # 懒加载
@@ -806,6 +806,35 @@ google_adsense:
   # 只有关闭自动广告时才需要填写 slot id，可以在谷歌广告后台 按广告单元中创建广告位后获取
   # Only when auto ads are turned off, you need to fill in the slot id, which can be obtained after creating an ad space in the Google Adsense background according to the ad unit
   slot: # 4236388782
+
+# 自定义右键菜单 (Custom Right Menu)
+right_menu:
+  enable: false
+  commentBarrage: false # 是否显示热评开关 / Whether to display the hot comment switch.
+  translate: # 翻译功能（仅支持简繁）/ Translation function (Simplified and Traditional Chinese only)
+    enable: false
+    defaultEncoding: 2 # 1: 默认繁体 2: 默认简体
+    translateDelay: 0 # 翻译迟疑时间
+  # 自定义菜单项列表 / Customize the list of menu items.
+  custom_list:
+  #  - name: 随机短文
+  #    url:
+  #    click: toRandomPost()
+  #    id: menu-randomPost
+  #    class:
+  #    icon: st-signal-tower-fill
+  #  - name: 全部分类
+  #    url: /categories/
+  #    click:
+  #    id:
+  #    class:
+  #    icon: st-checkbox-multiple-blank-fill
+  #  - name: 全部标签
+  #    url: /tags/
+  #    click:
+  #    id:
+  #    class:
+  #    icon: st-price-tag-fill
 
 # CDN
 # Don't modify the following settings unless you know how they work

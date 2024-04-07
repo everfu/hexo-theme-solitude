@@ -49,7 +49,12 @@ hexo.extend.filter.register('before_generate', () => {
             file: 'js/music.js',
             version
         },
-        translate:{
+        right_menu_js: {
+            name: 'hexo-theme-solitude',
+            file: 'js/right_menu.js',
+            version
+        },
+        translate_js:{
             name: 'hexo-theme-solitude',
             file: 'js/tw_cn.js',
             version

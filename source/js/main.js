@@ -205,6 +205,7 @@ class toc {
 
 let lastSayHello = "";
 let wleelw_musicPlaying = false
+let right_menu = false
 
 let sco = {
     hideCookie: function () {
@@ -239,14 +240,17 @@ let sco = {
         const $music = document.querySelector('#nav-music');
         const $meting = document.querySelector('meting-js');
         const $console = document.getElementById('consoleMusic');
-        const $toggleButton = document.getElementById('menu-music-toggle');
+        const $rm_text = document.querySelector('#menu-music-toggle span');
+        const $rm_icon = document.querySelector('#menu-music-toggle i');
         wleelw_musicPlaying = !wleelw_musicPlaying;
         $music.classList.toggle("playing", wleelw_musicPlaying);
         $console.classList.toggle("on", wleelw_musicPlaying);
         if (wleelw_musicPlaying) {
             $meting.aplayer.play();
+            right_menu && ($rm_text.textContent = GLOBAL_CONFIG.right_menu.music.stop) && ($rm_icon.className = 'solitude st-pause-fill')
         } else {
             $meting.aplayer.pause();
+            right_menu && ($rm_text.textContent = GLOBAL_CONFIG.right_menu.music.start) && ($rm_icon.className = 'solitude st-play-fill')
         }
     },
     switchCommentBarrage: function () {
@@ -256,10 +260,12 @@ let sco = {
                 commentBarrageElement.style.display = "none";
                 document.querySelector("#consoleCommentBarrage").classList.remove("on");
                 localStorage.removeItem("commentBarrageSwitch");
+                right_menu && rm.barrage(true)
             } else {
                 commentBarrageElement.style.display = "flex";
                 document.querySelector("#consoleCommentBarrage").classList.add("on");
                 localStorage.setItem("commentBarrageSwitch", "false");
+                right_menu && rm.barrage(false)
             }
         }
     },
@@ -303,10 +309,12 @@ let sco = {
             document.documentElement.setAttribute('data-theme', 'dark')
             saveToLocal.set('theme', 'dark', 0.02);
             utils.snackbarShow(GLOBAL_CONFIG.lang.theme.dark, false, 2000)
+            right_menu && rm.mode(true)
         } else {
             document.documentElement.setAttribute('data-theme', 'light')
             saveToLocal.set('theme', 'light', 0.02);
             utils.snackbarShow(GLOBAL_CONFIG.lang.theme.light, false, 2000)
+            right_menu && rm.mode(false)
         }
     },
     hideTodayCard: () => document.getElementById('todayCard').classList.add('hide'),
@@ -668,12 +676,7 @@ const addHighlight = () => {
     const highlight = GLOBAL_CONFIG.highlight;
     if (!highlight) return;
 
-    const {
-        copy,
-        expand,
-        limit,
-        syntax
-    } = highlight;
+    const {copy, expand, limit, syntax} = highlight;
     const $isPrismjs = syntax === 'prismjs';
     const $isShowTool = highlight.enable || copy || expand || limit;
     const expandClass = !expand === true ? 'closed' : ''
@@ -774,13 +777,7 @@ const addHighlight = () => {
 
 const addCopyright = () => {
     if (!GLOBAL_CONFIG.copyright) return
-    const {
-        limit,
-        author,
-        link,
-        source,
-        info
-    } = GLOBAL_CONFIG.copyright
+    const {limit, author, link, source, info} = GLOBAL_CONFIG.copyright
     const handleCopy = (e) => {
         e.preventDefault()
         const copyText = window.getSelection(0).toString()
