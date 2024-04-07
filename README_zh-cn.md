@@ -4,9 +4,11 @@
 
    <img src=".github/logo.svg" alt="Solitude logo" height="200">
 
-   <h1 align="center">Hexo Theme Solitude</h1>
+   <h1>Hexo Theme Solitude</h1>
 
-   <p align="center">一款优雅的 Hexo 主题，支持懒加载、PWA、Latex以及多种评论系统。</p>
+   一款优雅的 Hexo 主题，支持懒加载、PWA、Latex以及多种评论系统。
+   
+   主题由 [@张洪Heo](https://github.com/zhheo) 作者全权授权、设计！
 
 ![npm package](https://img.shields.io/npm/v/hexo-theme-solitude?color=blue&logo=npm)
 ![release](https://img.shields.io/github/package-json/v/valor-x/hexo-theme-solitude/master?color=%231ab1ad&label=release)
@@ -44,7 +46,7 @@
 ## 特性
 
 - 页面懒加载（Pjax）、图片懒加载（LazyLoad）、离线应用（PWA）
-- 评论(Twikoo、Waline)
+- 评论(Twikoo、Waline、Valine、Discuss)
 - 显示切换(ColorMode)
 - 灯箱(medium-zoom、fancybox)
 - 数学公式(Latex)
@@ -70,12 +72,14 @@
    
 前往 [文档](https://solitude-docs.efu.me/) 获取更多信息。
 
-## 贡献者
+## 赞助者
 
-<a href="https://github.com/valor-x/hexo-theme-solitude/graphs/contributors">
-  <img alt="contributors" src="https://contrib.rocks/image?repo=valor-x/hexo-theme-solitude" />
-</a>
+<p align="center">
+  <a href="https://cdn.jsdelivr.net/gh/efuo/static/sponsors.svg">
+    <img src='https://cdn.jsdelivr.net/gh/efuo/static/sponsors.svg'/>
+  </a>
+</p>
 
-**主题由 [@张洪Heo](https://github.com/zhheo) 作者全权授权、设计！**
+## 版权
 
-> 欢迎你对本主题做出贡献！[贡献指南](/CONTRIBUTING.md)
+[MIT](./LICENSE) License &copy; 2023-至今 [Efu](https://github.com/efuo)

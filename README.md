@@ -4,10 +4,12 @@
 
    <img src=".github/logo.svg" alt="Solitude logo" height="200">
 
-  <h1 align="center">Hexo Theme Solitude</h1>
+   <h1>Hexo Theme Solitude</h1>
 
-  <p align="center">An elegant Hexo theme that supports lazy loading, PWA, Latex, and multiple comment systems.</p>
+   An elegant Hexo theme that supports lazy loading, PWA, Latex, and multiple comment systems.
 
+   Theme is fully licensed and designed by the author of [@张洪Heo](https://github.com/zhheo)!
+  
 ![npm package](https://img.shields.io/npm/v/hexo-theme-solitude?color=blue&logo=npm)
 ![release](https://img.shields.io/github/package-json/v/valor-x/hexo-theme-solitude/master?color=%231ab1ad&label=release)
 ![license](https://img.shields.io/github/license/valor-x/hexo-theme-solitude?color=FF5531)
@@ -44,7 +46,7 @@
 ## Features
 
 - Pjax、LazyLoad、PWA
-- Comments(Twikoo、Waline)
+- Comments(Twikoo、Waline、Valine、Discuss)
 - ColorMode
 - Lightbox(medium-zoom、fancybox)
 - Mathematical formulas(Latex)
@@ -70,12 +72,14 @@
 
 Check out the [Documentation](https://solitude-docs.efu.me/) for more information.
 
-## Contributors
+## Sponsors
 
-<a href="https://github.com/valor-x/hexo-theme-solitude/graphs/contributors">
-  <img alt="contributors" src="https://contrib.rocks/image?repo=valor-x/hexo-theme-solitude" />
-</a>
+<p align="center">
+  <a href="https://cdn.jsdelivr.net/gh/efuo/static/sponsors.svg">
+    <img src='https://cdn.jsdelivr.net/gh/efuo/static/sponsors.svg'/>
+  </a>
+</p>
 
-**Theme is fully licensed and designed by the author of [@张洪Heo](https://github.com/zhheo)!**
+## License
 
-> You are welcome to contribute to this topic! [Contribution Guide](/CONTRIBUTING.md)
+[MIT](./LICENSE) License &copy; 2023-PRESENT [Efu](https://github.com/efuo)
