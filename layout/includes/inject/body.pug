@@ -107,12 +107,6 @@ div#js-pjax
             carousel_swiper()
     if page.type === 'says' && theme.says.enable
         script.
-            window.addEventListener('resize', utils.throttle(function () {
-                if (document.getElementById('waterfall')) {
-                    sco.reflashEssayWaterFall();
-                }
-            }), 500);
-            sco.reflashEssayWaterFall();
             GLOBAL_CONFIG.lightbox && utils.lightbox(document.querySelectorAll(".bber-content-img img"));
             sco.changeTimeFormat(document.querySelectorAll('.bber-info-time time'))
     if theme.busuanzi && (theme.aside.siteinfo.uv || theme.aside.siteinfo.pv)

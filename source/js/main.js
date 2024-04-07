@@ -30,6 +30,7 @@ const sidebarFn = () => {
         if (utils.isHidden($toggleMenu)) {
             if ($mobileSidebarMenus.classList.contains('open')) closeMobileSidebar()
         }
+        sco.reflashEssayWaterFall();
     })
 }
 
@@ -852,8 +853,9 @@ window.refreshFn = () => {
     sco.categoriesBarActive()
     sco.listenToPageInputPress()
     sco.addNavBackgroundInit()
+    sco.reflashEssayWaterFall()
     GLOBAL_CONFIG.lazyload.enable && utils.lazyloadImg()
-    GLOBAL_CONFIG.lightbox && utils.lightbox(document.querySelectorAll("#article-container img:not(.flink-avatar)"))
+    GLOBAL_CONFIG.lightbox && utils.lightbox(document.querySelectorAll("#article-container img:not(.flink-avatar,.gallery-group img)"))
     GLOBAL_CONFIG.randomlink && randomLinksList()
     PAGE_CONFIG.comment && initComment()
     PAGE_CONFIG.toc && toc.init();
