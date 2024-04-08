@@ -52,7 +52,7 @@ div#rightMenu
                 span= _p('right_menu.music.copyMusicName')
     div.rightMenu-group.rightMenu-line.rightMenuOther
         each item,index in custom_list
-            a.rightMenu-item(id=item.id class=item.class href=item.href onclick=item.click)
+            div.rightMenu-item(id=item.id class=item.class onclick=item.click+'||rm.hideRightMenu()')
                 i.solitude(class=item.icon)
                 span= item.name
     div.rightMenu-group.rightMenu-line.rightMenuOther

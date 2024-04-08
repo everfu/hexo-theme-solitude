@@ -811,30 +811,35 @@ google_adsense:
 right_menu:
   enable: false
   commentBarrage: false # 是否显示热评开关 / Whether to display the hot comment switch.
-  translate: # 翻译功能（仅支持简繁）/ Translation function (Simplified and Traditional Chinese only)
+  # 翻译功能（仅支持简繁）
+  # Translation function (Simplified and Traditional Chinese only)
+  translate: 
     enable: false
     defaultEncoding: 2 # 1: 默认繁体 2: 默认简体
-    translateDelay: 0 # 翻译迟疑时间
-  # 自定义菜单项列表 / Customize the list of menu items.
+    translateDelay: 0 # 首次加载翻译迟疑时间
+  # 自定义菜单项列表
+  # Customize the list of menu items.
   custom_list:
   #  - name: 随机短文
-  #    url:
   #    click: toRandomPost()
   #    id: menu-randomPost
   #    class:
   #    icon: st-signal-tower-fill
   #  - name: 全部分类
-  #    url: /categories/
-  #    click:
+  #    click: pjax.loadUrl('/categories/') # 外链用 window.open，pjax 无法请求跨域内容
   #    id:
   #    class:
   #    icon: st-checkbox-multiple-blank-fill
   #  - name: 全部标签
-  #    url: /tags/
-  #    click:
+  #    click: pjax.loadUrl('/tags/')
   #    id:
   #    class:
   #    icon: st-price-tag-fill
+  #  - name: 赞助主题
+  #    click: window.open('https://afdian.net/a/efu0u0/', '_blank')
+  #    id:
+  #    class:
+  #    icon: st-afdian-line
 
 # CDN
 # Don't modify the following settings unless you know how they work
