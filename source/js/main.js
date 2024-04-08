@@ -30,7 +30,7 @@ const sidebarFn = () => {
         if (utils.isHidden($toggleMenu)) {
             if ($mobileSidebarMenus.classList.contains('open')) closeMobileSidebar()
         }
-        sco.reflashEssayWaterFall();
+        sco.refreshWaterFall();
     })
 }
 
@@ -329,14 +329,11 @@ let sco = {
         const el = document.getElementById('console')
         el && el.classList.remove('show')
     },
-    reflashEssayWaterFall: function () {
-        const el = document.getElementById('waterfall')
-        el && (() => {
-            setTimeout(function () {
-                waterfall('#waterfall');
-                el.classList.add('show');
-            }, 500);
-        })();
+    refreshWaterFall: function () {
+        const els = document.querySelectorAll('.waterfall')
+        if (els.length !== 0) {
+            els.forEach(el => waterfall(el) || el.classList.add('show'))
+        }
     },
     addRuntime: function () {
         let el = document.getElementById('runtimeshow')
@@ -461,17 +458,13 @@ let sco = {
             categoryBarItems.forEach(item => {
                 item.classList.remove("select");
             });
-        }
-        if (decodedPath === "/") {
-            if (categoryBar) {
+            if (decodedPath === "/") {
                 const homeItem = document.getElementById("category-bar-home");
                 homeItem.classList.add("select");
-            }
-        } else {
-            if (/\/categories\/.*?\//.test(decodedPath)) {
-                let category = decodedPath.split("/").slice(-2, -1)[0];
-                category = category.charAt(0).toUpperCase() + category.slice(1);
-                if (categoryBar) {
+            } else {
+                if (/\/categories\/.*?\//.test(decodedPath)) {
+                    let category = decodedPath.split("/").slice(-2, -1)[0];
+                    category = category.charAt(0).toUpperCase() + category.slice(1);
                     const categoryItem = document.getElementById(category);
                     if (categoryItem) {
                         categoryItem.classList.add("select");
@@ -831,18 +824,21 @@ class tabs {
     }
 }
 
+sco.initAdjust()
+initObserver()
+addCopyright()
+sco.initConsoleState()
+
 window.refreshFn = () => {
+    document.body.setAttribute('data-type', PAGE_CONFIG.page)
     if (PAGE_CONFIG.is_home || PAGE_CONFIG.is_page) {
         sco.changeTimeFormat(document.querySelectorAll('#recent-posts time, .webinfo-item time'))
         GLOBAL_CONFIG.runtime && sco.addRuntime()
     } else {
         sco.changeTimeFormat(document.querySelectorAll('#post-meta time'))
     }
-
-    sco.initAdjust()
     scrollFn()
     sidebarFn()
-    initObserver()
     sco.hideCookie()
     sco.addPhotoFigcaption()
     sco.setTimeState()
@@ -850,19 +846,16 @@ window.refreshFn = () => {
     sco.categoriesBarActive()
     sco.listenToPageInputPress()
     sco.addNavBackgroundInit()
-    sco.reflashEssayWaterFall()
+    sco.refreshWaterFall()
     GLOBAL_CONFIG.lazyload.enable && utils.lazyloadImg()
     GLOBAL_CONFIG.lightbox && utils.lightbox(document.querySelectorAll("#article-container img:not(.flink-avatar,.gallery-group img)"))
     GLOBAL_CONFIG.randomlink && randomLinksList()
     PAGE_CONFIG.comment && initComment()
     PAGE_CONFIG.toc && toc.init();
     (PAGE_CONFIG.is_post || PAGE_CONFIG.is_page) && ((addHighlight()) || tabs.init())
-    addCopyright()
     PAGE_CONFIG.is_home && showTodayCard()
     GLOBAL_CONFIG.covercolor.enable && coverColor()
-    sco.initConsoleState()
     GLOBAL_CONFIG.comment.commentBarrage && PAGE_CONFIG.comment && initializeCommentBarrage()
-    document.body.setAttribute('data-type', PAGE_CONFIG.page)
     PAGE_CONFIG.page === "music" && scoMusic.init()
     GLOBAL_CONFIG.post_ai && PAGE_CONFIG.page === "post" && efu_ai.init()
 }

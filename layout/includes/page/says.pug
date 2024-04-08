@@ -2,7 +2,7 @@ include ../widgets/page/banner
 if theme.says.enable
     #bber
         section.timeline.page-1
-            ul.list#waterfall
+            ul.list.waterfall
                 each item in site.data.essay.essay_list.slice(0, theme.says.strip)
                     li.item
                         if theme.says.style === 2
