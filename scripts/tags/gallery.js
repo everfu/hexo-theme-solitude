@@ -28,7 +28,7 @@ const gallery = (args, content) => {
         }
         html += `<div class="gallery-item"><img class="nolazyload" src=${m[2]} alt="${m[1]}" /></div>`
     }
-    return `<div class="gallery-container" id="waterfall">
+    return `<div class="gallery-container waterfall">
         ${html}
       </div>`
 }
