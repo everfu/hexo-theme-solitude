@@ -13,6 +13,8 @@ mixin katex
 div
     script(src=url_for(theme.cdn.main))
     script(src=url_for(theme.cdn.utils))
+    script(src=url_for(theme.cdn.waterfall))
+    script(src=url_for(theme.cdn.pjax))
 
     if theme.comment.enable && theme.comment.type === 'valine'
         // md5
@@ -35,7 +37,6 @@ div
         else if page.katex
             +katex
 
-    script(src=url_for(theme.cdn.pjax))
     if theme.lazyload.enable
         script(src=url_for(theme.cdn.lazyload))
     script(src=url_for(theme.cdn.snackbar))
@@ -67,9 +68,6 @@ div
                         time: !{theme.post.covercolor.time},
                     }
                 script(src=url_for(theme.cdn.cover_api))
-
-    if theme.says.enable
-        script(src=url_for(theme.cdn.waterfall))
 
     if theme.comment.enable
         case theme.comment.type
