@@ -10,7 +10,7 @@
             div#search-results
                 #search-hits
                     each tag in theme.search.tags || []
-                        a.tag-list(href='javascript:void(0);' onclick="pjax.loadUrl('/tags/" + tag + "/')")=tag
+                        a.tag-list(href='javascript:void(0);' onclick="pjax.loadUrl('" + url_for('/tags/' + tag) + "/')")=tag
             div#search-pagination
             div#search-tips
     div#search-mask
