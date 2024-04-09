@@ -9,8 +9,8 @@ block content
                 include ./includes/widgets/home/hometop
     main.layout#content-inner
         .recent-posts#recent-posts
-            if theme.banner && is_home_first_page()
-                include ./includes/widgets/home/leonus.pug
+            if theme.carousel && is_home_first_page()
+                include ./includes/widgets/home/carousel.pug
             #category-bar
                 include ./includes/widgets/home/categoryBar
             for post, index in page.posts.sort("-sticky" || "-date").data

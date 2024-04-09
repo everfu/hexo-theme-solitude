@@ -6,7 +6,7 @@ if group
         each item in group
             - var array = item[1].split('||')
             .categoryItem
-                a.categoryButton(href=url_for(trim(array[0])) if array[2] style="background:" + array[2] + ";")
+                a.categoryButton(href=url_for(trim(array[0])) style="background-image:" + array[2] + ";")
                     span.categoryButtonText= item[0]
                     if array[1]
                         i.solitude(class=trim(array[1]))
