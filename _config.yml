@@ -64,6 +64,7 @@ nav:
   right:
     random: false # 随机文章跳转 / random post button
     console: false #控制台 / console
+    top: false # 进度球 / Progress Ball
     # 自定义按钮
     # custom button
     # 左至右

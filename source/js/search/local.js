@@ -28,6 +28,15 @@ window.onload = () => {
         window.removeEventListener("resize", fixSafariHeight);
     };
 
+    const addEventTagList = () => {
+        const list = document.querySelectorAll("#local-search .tag-list");
+        if(list.length > 0){
+            list.forEach(el => el.addEventListener("click", (e) => closeSearch()))
+        }
+    }
+
+    addEventTagList()
+
     const searchFnOnce = () => {
         $searchMask.addEventListener("click", closeSearch);
         utils.addEventListenerPjax(document.querySelector("#local-search .search-close-button"), "click", closeSearch);

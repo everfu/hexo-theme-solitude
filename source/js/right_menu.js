@@ -222,7 +222,6 @@ window.oncontextmenu = (ele) => {
     rm.menuItems.paste.addEventListener('click', () => rm.pasteText() && rm.hideRightMenu())
     rm.menuItems.comment.addEventListener('click', () => rm.hideRightMenu() || sco.toTalk(selectTextNow))
     rm.menuItems.new.addEventListener('click', () => window.open(rm.domhref) && rm.hideRightMenu())
-    rm.menuItems.search.addEventListener('click', () => rm.hideRightMenu())
     rm.menuItems.downloadImg.addEventListener('click', () => rm.downloadImage() && rm.hideRightMenu())
     rm.menuItems.copyImg.addEventListener('click', () => rm.copyImage() && rm.hideRightMenu())
 }()
