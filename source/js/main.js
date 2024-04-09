@@ -54,8 +54,6 @@ const scrollFn = function () {
         } else {
             $header.classList.remove('nav-fixed', 'nav-visible');
         }
-
-        percent();
     }, 200));
 
     function scrollDirection(currentTop) {
@@ -63,38 +61,6 @@ const scrollFn = function () {
         initTop = currentTop;
         return result;
     }
-}
-
-const percent = () => {
-    let scrollTop = document.documentElement.scrollTop || window.pageYOffset
-    let totalHeight = Math.max(document.body.scrollHeight, document.documentElement.scrollHeight, document.body.offsetHeight, document.documentElement.offsetHeight, document.body.clientHeight, document.documentElement.clientHeight) - document.documentElement.clientHeight
-    let scrollPercent = Math.round(scrollTop / totalHeight * 100)
-    let percentElement = document.querySelector("#percent")
-    let viewportBottom = window.scrollY + document.documentElement.clientHeight
-    let remainingScroll = totalHeight - scrollTop
-
-    if ((document.getElementById("post-comment") || document.getElementById("footer")).offsetTop < viewportBottom || scrollPercent > 90) {
-        document.querySelector("#nav-totop").classList.add("long")
-        percentElement.innerHTML = GLOBAL_CONFIG.lang.backtop
-    } else {
-        document.querySelector("#nav-totop").classList.remove("long")
-        if (scrollPercent >= 0) {
-            percentElement.innerHTML = scrollPercent + ""
-        }
-    }
-
-    let elementsToHide = document.querySelectorAll(".needEndHide")
-    if (remainingScroll < 100) {
-        elementsToHide.forEach(function (element) {
-            element.classList.add("hide")
-        })
-    } else {
-        elementsToHide.forEach(function (element) {
-            element.classList.remove("hide")
-        })
-    }
-
-    window.onscroll = percent
 }
 
 
