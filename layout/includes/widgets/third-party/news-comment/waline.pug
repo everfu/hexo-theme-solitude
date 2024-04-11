@@ -19,7 +19,7 @@ script.
         const newestCommentInit = () => {
             const data = saveToLocal.get('waline-newest-comment')
             if (data) {
-                generateHtml(JSON.parse(data))
+                generateHtml(data)
             } else {
                 getComment()
             }
@@ -38,7 +38,7 @@ script.
                         'date': e.time || e.insertedAt
                     }
                 })
-                saveToLocal.set('waline-newest-comment', JSON.stringify(walineArray), !{theme.comment.newest_comment.storage} / (60 * 24))
+                saveToLocal.set('waline-newest-comment', walineArray, !{theme.comment.newest_comment.storage})
                 generateHtml(walineArray)
             } catch (err) {
                 console.error(err)
