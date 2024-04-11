@@ -4,9 +4,9 @@ script.
             if (content === '') return content;
 
             const replacements = [
-                {regex: /<img.*?src="(.*?)"?[^\>]+>/ig, replacement: '[图片]'},
-                {regex: /<a[^>]+?href=["']?([^"']+)["']?[^>]*>([^<]+)<\/a>/gi, replacement: '[链接]'},
-                {regex: /<pre><code>.*?<\/pre>/gi, replacement: '[代码]'},
+                {regex: /<img.*?src="(.*?)"?[^\>]+>/ig, replacement: '<i class="solitude st-image-fill"></i>'},
+                {regex: /<a[^>]+?href=["']?([^"']+)["']?[^>]*>([^<]+)<\/a>/gi, replacement: '<i class="solitude st-link"></i>'},
+                {regex: /<pre><code>.*?<\/pre>/gi, replacement: '<i class="solitude st-code-box-fill"></i>'},
                 {regex: /<[^>]+>/g, replacement: ""}
             ];
 
@@ -19,7 +19,7 @@ script.
         const newestCommentInit = () => {
             const data = saveToLocal.get('waline-newest-comment')
             if (data) {
-                generateHtml(JSON.parse(data))
+                generateHtml(data)
             } else {
                 getComment()
             }
@@ -38,7 +38,7 @@ script.
                         'date': e.time || e.insertedAt
                     }
                 })
-                saveToLocal.set('waline-newest-comment', JSON.stringify(walineArray), !{theme.comment.newest_comment.storage} / (60 * 24))
+                saveToLocal.set('waline-newest-comment', walineArray, !{theme.comment.newest_comment.storage})
                 generateHtml(walineArray)
             } catch (err) {
                 console.error(err)

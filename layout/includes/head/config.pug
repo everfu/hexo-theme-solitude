@@ -26,43 +26,39 @@
 
     let comment = false
 
-    if (theme.comment.type === 'twikoo') {
-        comment = JSON.stringify({
+    if (theme.comment.enable) {
+        comment = {
             avatar: theme.comment.avatar,
-            url: theme.comment.twikoo.envId,
-            commentBarrage: theme.comment.enable,
-            accessToken: theme.comment.twikoo.accessToken,
-            owo: {
-                body: '.OwO-body',
-                item: '.OwO-items li'
-            }
-        })
-    }
-
-    if (theme.comment.type === 'waline') {
-        comment = JSON.stringify({
-            avatar: theme.comment.avatar,
-            url: theme.comment.waline.envId,
-            commentBarrage: theme.comment.enable,
-            owo: {
-                body: '.wl-emoji-popup',
-                item: '.wl-tab-wrapper button'
-            }
-        })
-    }
-
-    if (theme.comment.type === 'valine') {
-        comment = JSON.stringify({
-            avatar: theme.comment.avatar,
-            url: theme.comment.valine.serverURLs,
-            commentBarrage: theme.comment.enable,
-            appId: theme.comment.valine.appId,
-            appKey: theme.comment.valine.appKey,
-            owo: {
-                body: '.vwrap',
-                item: '.vemojis i'
-            }
-        })
+            commentBarrage: theme.comment.commentBarrage,
+        }
+        switch (theme.comment.type) {
+            case "twikoo":
+                comment.url = theme.comment.twikoo.envId
+                comment.accessToken = theme.comment.twikoo.accessToken
+                comment.owo = {
+                    body: '.OwO-body',
+                    item: '.OwO-items li'
+                }
+                break
+            case "waline":
+                comment.url = theme.comment.waline.envId
+                comment.owo = {
+                    body: '.wl-emoji-popup',
+                    item: '.wl-tab-wrapper button'
+                }
+                break
+            case "valine":
+                comment.url = theme.comment.valine.serverURLs
+                comment.appId = theme.comment.valine.appId
+                comment.appKey = theme.comment.valine.appKey
+                comment.owo = {
+                    body: '.vwrap',
+                    item: '.vemojis i'
+                }
+                break
+            default:
+                break
+        }
     }
 
     let post_ai = false
@@ -138,13 +134,13 @@
                 stop: _p('right_menu.music.stop'),
             }
         }
-        if(theme.comment.enable && theme.comment.commentBarrage){
+        if (theme.comment.enable && theme.comment.commentBarrage) {
             rightMenu.barrage = {
                 open: _p('right_menu.barrage.open'),
                 close: _p('right_menu.barrage.close')
             }
         }
-        if(theme.right_menu.translate.enable){
+        if (theme.right_menu.translate.enable) {
             rightMenu.translate = {
                 translateDelay: theme.right_menu.translate.translateDelay,
                 defaultEncoding: theme.right_menu.translate.defaultEncoding
@@ -185,7 +181,7 @@ script.
         covercolor: {
             enable: !{theme.post.covercolor.enable}
         },
-        comment: !{comment},
+        comment: !{comment ? JSON.stringify(comment) : false},
         lightbox: '!{ theme.mediumZoom ? "mediumZoom" : (theme.fancybox ? "fancybox" : "null")}',
         post_ai: !{post_ai},
         right_menu: !{rightMenu ? JSON.stringify(rightMenu) : false},

@@ -4,9 +4,9 @@ script.
             if (content === '') return content;
 
             const replacements = [
-                {regex: /<img.*?src="(.*?)"?[^\>]+>/ig, replacement: '[Image]'},
-                {regex: /<a[^>]+?href=["']?([^"']+)["']?[^>]*>([^<]+)<\/a>/gi, replacement: '[URL]'},
-                {regex: /```[\s\S]*?```/g, replacement: '[Code]'},
+                {regex: /<img.*?src="(.*?)"?[^\>]+>/ig, replacement: '<i class="solitude st-image-fill"></i>'},
+                {regex: /<a[^>]+?href=["']?([^"']+)["']?[^>]*>([^<]+)<\/a>/gi, replacement: '<i class="solitude st-link"></i>'},
+                {regex: /```[\s\S]*?```/g, replacement: '<i class="solitude st-code-box-fill"></i>'},
                 {regex: /<[^>]+>/g, replacement: ""}
             ];
 
@@ -19,7 +19,7 @@ script.
         const newestCommentInit = () => {
             const data = saveToLocal.get('valine-newest-comment')
             if (data) {
-                generateHtml(JSON.parse(data))
+                generateHtml(data)
             } else {
                 getComment()
             }
@@ -48,7 +48,7 @@ script.
                         'date': e.updatedAt || e.createdAt
                     }
                 })
-                saveToLocal.set('valine-newest-comment', JSON.stringify(valineArray), !{theme.comment.newest_comment.storage} / (60 * 24))
+                saveToLocal.set('valine-newest-comment', valineArray, !{theme.comment.newest_comment.storage})
                 generateHtml(valineArray)
             } catch (err) {
                 console.error(err)

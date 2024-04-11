@@ -190,10 +190,11 @@
 
 #aside-content
   .card-widget
-    &:hover
-      .avatar-sticker
-        opacity 0
-        transform scale(0)
+    if hexo-config('aside.card.author.sticker')
+      &:hover
+        .avatar-sticker
+          opacity 0
+          transform scale(0)
 
     &.card-recent-post
       padding .4rem .6rem !important
@@ -236,29 +237,30 @@
         transform scale(1.03)
 
   .card-info
-    .avatar-sticker
-      position absolute
-      bottom -2px
-      right -2px
-      width 33px
-      height 33px
-      line-height 34px
-      z-index 0
-      display flex
-      align-items center
-      justify-content center
-      transition .3s .2s
-      transform scale(1)
-      background var(--efu-card-bg)
-      border-radius 50%
+    if hexo-config('aside.card.author.sticker')
+      .avatar-sticker
+        position absolute
+        bottom -2px
+        right -2px
+        width 33px
+        height 33px
+        line-height 34px
+        z-index 0
+        display flex
+        align-items center
+        justify-content center
+        transition .3s .2s
+        transform scale(1)
+        background var(--efu-card-bg)
+        border-radius 50%
 
-      img
-        width 26px
-        height 26px
+        img
+          width 26px
+          height 26px
 
-      ../ :hover .avatar-sticker
-        opacity 0
-        transform scale(0)
+        ../ :hover .avatar-sticker
+          opacity 0
+          transform scale(0)
 
     .author-info__desc
       font-size 12px
@@ -440,7 +442,9 @@
             color var(--efu-white)
 
     img.avatar-img
-      width 118px
+      width 108px
+      height 108px
+      object-fit cover
       right 0
       top 0
       border-radius 500px
