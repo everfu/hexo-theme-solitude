@@ -718,7 +718,7 @@ comment:
   avatar: https://cravatar.cn # Gravatar link
   newest_comment:
     enable: false
-    storage: 421000 # 缓存时间
+    storage: .5 # 缓存时间 1: 1天 / .5 : 半天
   # twikoo 配置信息
   # twikoo settings
   twikoo: # https://twikoo.js.org/

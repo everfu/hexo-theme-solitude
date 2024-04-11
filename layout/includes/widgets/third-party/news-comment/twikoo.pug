@@ -32,7 +32,7 @@ script.
                         'url': `${e.url}#${e.id}`,
                         'date': new Date(e.created).toISOString()
                     }))
-                    saveToLocal.set('twikoo-newest-comment', JSON.stringify(twikooArray), !{theme.comment.newest_comment.storage}/(60*24))
+                    saveToLocal.set('twikoo-newest-comment', twikooArray, !{theme.comment.newest_comment.storage})
                     generateHtml(twikooArray)
                 }).catch(function (err) {
                     console.error(err)
@@ -63,7 +63,7 @@ script.
         const newestCommentInit = () => {
             const data = saveToLocal.get('twikoo-newest-comment')
             if (data) {
-                generateHtml(JSON.parse(data))
+                generateHtml(data)
             } else {
                 getComment()
             }

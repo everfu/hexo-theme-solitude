@@ -34,7 +34,7 @@ script.
                     const expiryDay = ttl * 86400000
                     const item = {
                         value: value,
-                        expiry: now.getTime() + expiryDay,
+                        expiry: now.getTime() + expiryDay
                     }
                     localStorage.setItem(key, JSON.stringify(item))
                 },
