@@ -4,9 +4,9 @@ script.
             if (content === '') return content;
 
             const replacements = [
-                {regex: /<img.*?src="(.*?)"?[^\>]+>/ig, replacement: '[Image]'},
-                {regex: /<a[^>]+?href=["']?([^"']+)["']?[^>]*>([^<]+)<\/a>/gi, replacement: '[URL]'},
-                {regex: /```[\s\S]*?```/g, replacement: '[Code]'},
+                {regex: /<img.*?src="(.*?)"?[^\>]+>/ig, replacement: '<i class="solitude st-image-fill"></i>'},
+                {regex: /<a[^>]+?href=["']?([^"']+)["']?[^>]*>([^<]+)<\/a>/gi, replacement: '<i class="solitude st-link"></i>'},
+                {regex: /```[\s\S]*?```/g, replacement: '<i class="solitude st-code-box-fill"></i>'},
                 {regex: /<[^>]+>/g, replacement: ""}
             ];
 
