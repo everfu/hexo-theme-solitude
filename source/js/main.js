@@ -63,6 +63,50 @@ const scrollFn = function () {
     }
 }
 
+const percent = () => {
+    let scrollTop = document.documentElement.scrollTop || window.pageYOffset
+    let totalHeight = Math.max(document.body.scrollHeight, document.documentElement.scrollHeight, document.body.offsetHeight, document.documentElement.offsetHeight, document.body.clientHeight, document.documentElement.clientHeight) - document.documentElement.clientHeight
+    let scrollPercent = Math.round(scrollTop / totalHeight * 100)
+    let percentElement = document.querySelector("#percent")
+    let viewportBottom = window.scrollY + document.documentElement.clientHeight
+    let remainingScroll = totalHeight - scrollTop
+
+    if ((document.getElementById("post-comment") || document.getElementById("footer")).offsetTop < viewportBottom || scrollPercent > 90) {
+        document.querySelector("#nav-totop").classList.add("long")
+        percentElement.innerHTML = GLOBAL_CONFIG.lang.backtop
+    } else {
+        document.querySelector("#nav-totop").classList.remove("long")
+        if (scrollPercent >= 0) {
+            percentElement.innerHTML = scrollPercent + ""
+        }
+    }
+
+    let elementsToHide = document.querySelectorAll(".needEndHide")
+    if (remainingScroll < 100) {
+        elementsToHide.forEach(function (element) {
+            element.classList.add("hide")
+        })
+    } else {
+        elementsToHide.forEach(function (element) {
+            element.classList.remove("hide")
+        })
+    }
+
+    window.onscroll = percent
+}
+
+const handleThemeChange = mode => {
+    const globalFn = window.globalFn || {}
+    const themeChange = globalFn.themeChange || {}
+    if (!themeChange) {
+        return
+    }
+
+    Object.keys(themeChange).forEach(key => {
+        const themeChangeFn = themeChange[key]
+        themeChangeFn(mode)
+    })
+}
 
 const showTodayCard = () => {
     const el = document.getElementById('todayCard')
@@ -282,6 +326,7 @@ let sco = {
             utils.snackbarShow(GLOBAL_CONFIG.lang.theme.light, false, 2000)
             right_menu && rm.mode(false)
         }
+        handleThemeChange(nowMode)
     },
     hideTodayCard: () => document.getElementById('todayCard').classList.add('hide'),
     toTop: () => utils.scrollToDest(0),
@@ -791,6 +836,7 @@ class tabs {
 }
 
 sco.initAdjust()
+percent()
 initObserver()
 addCopyright()
 sco.initConsoleState()
@@ -821,7 +867,6 @@ window.refreshFn = () => {
     (PAGE_CONFIG.is_post || PAGE_CONFIG.is_page) && ((addHighlight()) || tabs.init())
     PAGE_CONFIG.is_home && showTodayCard()
     GLOBAL_CONFIG.covercolor.enable && coverColor()
-    GLOBAL_CONFIG.comment.commentBarrage && PAGE_CONFIG.comment && initializeCommentBarrage()
     PAGE_CONFIG.page === "music" && scoMusic.init()
     GLOBAL_CONFIG.post_ai && PAGE_CONFIG.page === "post" && efu_ai.init()
 }

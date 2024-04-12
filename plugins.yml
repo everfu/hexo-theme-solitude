@@ -27,10 +27,14 @@ valine:
   name: valine
   file: dist/Valine.min.js
   version: 1.5.1
-discuss:
-  name: discuss
-  file: dist/discuss.js
-  version: 1.2.7
+artalk_css:
+  name: artalk
+  file: Artalk.css
+  version: 2.8.4
+artalk_js:
+  name: artalk
+  file: Artalk.js
+  version: 2.8.4
 katex:
   name: katex
   file: dist/katex.min.css

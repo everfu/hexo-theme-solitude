@@ -17,6 +17,13 @@ if theme.lightbox && theme.fancybox
 if theme.katex && theme.katex.enable
     link(rel="stylesheet", href=url_for(theme.cdn.katex))
 
+if theme.comment.enable
+    case theme.comment.type
+        when 'waline'
+            link(rel="stylesheet" href=url_for(theme.cdn.waline_css))
+        when 'artalk'
+            link(rel="stylesheet" href=url_for(theme.cdn.artalk_css))
+
 // Open Graph
 include ../head/opengraph.pug
 
@@ -73,45 +80,11 @@ script.
                     document.documentElement.classList.remove('hide-aside')
                 }
             }
-
-            win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
-                const link = document.createElement('link')
-                link.rel = 'stylesheet'
-                link.href = url
-                if (id) link.id = id
-                link.onerror = reject
-                link.onload = link.onreadystatechange = function () {
-                    const loadState = this.readyState
-                    if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
-                    link.onload = link.onreadystatechange = null
-                    resolve()
-                }
-                document.head.appendChild(link)
-            })
-
-            win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
-                const script = document.createElement('script')
-                script.src = url
-                script.async = true
-                script.onerror = reject
-                script.onload = script.onreadystatechange = function () {
-                    const loadState = this.readyState
-                    if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
-                    script.onload = script.onreadystatechange = null
-                    resolve()
-                }
-
-                Object.keys(attr).forEach(key => {
-                    script.setAttribute(key, attr[key])
-                })
-
-                document.head.appendChild(script)
-            })
         }
     )(window)
 
     console.log(
-        "%c Program: Hexo %c Theme: Solitude %c Version: v1.7.13",
+        "%c Program: Hexo %c Theme: Solitude %c Version: v1.7.12",
         "border-radius:5px 0 0 5px;padding: 5px 10px;color:white;background:#ff3842;",
         "padding: 5px 10px;color:white;background:#3e9f50;",
         "border-radius:0 5px 5px 0;padding: 5px 10px;background:#0084ff;color:white;"

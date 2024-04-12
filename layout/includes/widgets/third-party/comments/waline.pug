@@ -19,27 +19,54 @@ script.
             const walineInstance = Fn(walineOptions);
 
             utils.addGlobalFn('pjax', () => walineInstance.destroy(), 'destroyWaline');
-        }
 
-        async function loadWalineCSSAndJS() {
-            if (!walineInitFunction) {
-                await getCSS('!{url_for(theme.cdn.waline_css)}');
-                const {init} = await import('!{url_for(theme.cdn.waline_js)}');
-                walineInitFunction = init || Waline.init;
-                window.walineFn = walineInitFunction;
+            if (GLOBAL_CONFIG.lightbox) {
+                utils.lightbox(document.querySelectorAll('#comment .wl-content img:not(.wl-emoji)'));
             }
-            initWaline(walineInitFunction);
+
+            sco.owoBig();
+
+            GLOBAL_CONFIG.comment.commentBarrage && PAGE_CONFIG.comment && initializeCommentBarrage(await fetchComments())
         }
 
         if (isLazyLoad) {
-            utils.loadComment(document.getElementById('comment'),loadWalineCSSAndJS);
+            utils.loadComment(document.getElementById('comment'), initWaline(walineInitFunction));
         } else {
-            await loadWalineCSSAndJS();
+            await initWaline(walineInitFunction);
         }
 
-        if (GLOBAL_CONFIG.lightbox) {
-            utils.lightbox(document.querySelectorAll('#comment .wl-content img:not(.wl-emoji)'));
-        }
+        async function fetchComments() {
+            const url = new URL('#{envId}/api/comment');
+            const params = {
+                path: window.location.pathname,
+                sortBy: 'insertedAt_asc'
+            };
 
-        sco.owoBig();
+            for (const [key, value] of Object.entries(params)) {
+                url.searchParams.append(key, value);
+            }
+
+            try {
+                const response = await fetch(url, {
+                    method: "GET",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                });
+
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+
+                const data = await response.json();
+                return (data.data).map(item => Object.assign({
+                    nick: item.nick,
+                    mailId: item.avatar,
+                    content: item.comment,
+                    id: item.objectId
+                }))
+            } catch (error) {
+                console.error("An error occurred while fetching comments: ", error);
+            }
+        }
     }
