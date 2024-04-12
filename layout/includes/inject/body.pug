@@ -77,13 +77,7 @@ div
             when 'artalk'
                 script(src=url_for(theme.cdn.artalk_js))
         if theme.comment.commentBarrage
-            case theme.comment.type
-                when 'waline'
-                    script(src=url_for(theme.cdn.waline_commentBarrage))
-                when 'valine'
-                when 'artalk'
-                when 'twikoo'
-                    script(src=url_for(theme.cdn.commentBarrage))
+            script(src=url_for(theme.cdn.commentBarrage))
 
     if theme.music.enable
         script(src=url_for(theme.cdn.music_js))
