@@ -1,12 +1,13 @@
 script.
     async function initComment() {
-        var initOptions = Object.assign(
+        const initOptions = Object.assign(
             !{JSON.stringify(theme.comment.twikoo || {})},
             {
                 el: '#comment',
-                onCommentLoaded: function () {
+                onCommentLoaded: async function () {
                     GLOBAL_CONFIG.lightbox && utils.lightbox(document.querySelectorAll('#twikoo .tk-content img:not(.tk-owo-emotion)'))
                     sco.owoBig()
+                    GLOBAL_CONFIG.comment.commentBarrage && PAGE_CONFIG.comment && initializeCommentBarrage(await fetchComments())
                 },
                 lang: '#{theme.comment.twikoo.lang}',
             }
@@ -26,6 +27,34 @@ script.
                 document.querySelector('.comment-headline span:last-child').innerText = ` (${res[0].count})`
             } catch (e) {
                 document.getElementById('twikoo-count').innerText = '加载错误'
+            }
+        }
+
+        async function fetchComments() {
+            try {
+                const response = await fetch("!{theme.comment.twikoo.envId}", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        event: "COMMENT_GET",
+                        accessToken: "!{theme.comment.twikoo.accessToken}",
+                        url: window.location.pathname
+                    })
+                });
+                if (!response.ok) {
+                    throw new Error("HTTP error! status: " + response.status);
+                }
+                const data = await response.json();
+                return (data.data).map(item => Object.assign({
+                    content: item.comment,
+                    nick: item.nick,
+                    mailMd5: item.mailMd5,
+                    id: item.id
+                }))
+            } catch (error) {
+                console.error("An error occurred while fetching comments: ", error);
             }
         }
     }

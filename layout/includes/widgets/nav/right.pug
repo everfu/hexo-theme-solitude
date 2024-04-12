@@ -15,47 +15,10 @@ if theme.nav.right.console
     .nav-button#nav-console
         a.console_switchbutton(onclick="sco.showConsole()", title=_p('nav.console'), href="javascript:void(0);")
             i.solitude.st-dashboard-fill
-if theme.nav.right.top
-    .nav-button#nav-totop(onclick="sco.toTop()")
-        a.totopbtn
-            i.solitude.st-arrow-up-line
-            span#percent= "0"
-
-    script.
-        document.addEventListener('DOMContentLoaded', () => {
-            const percent = () => {
-                let scrollTop = document.documentElement.scrollTop || window.pageYOffset
-                let totalHeight = Math.max(document.body.scrollHeight, document.documentElement.scrollHeight, document.body.offsetHeight, document.documentElement.offsetHeight, document.body.clientHeight, document.documentElement.clientHeight) - document.documentElement.clientHeight
-                let scrollPercent = Math.round(scrollTop / totalHeight * 100)
-                let percentElement = document.querySelector("#percent")
-                let viewportBottom = window.scrollY + document.documentElement.clientHeight
-                let remainingScroll = totalHeight - scrollTop
-
-                if ((document.getElementById("post-comment") || document.getElementById("footer")).offsetTop < viewportBottom || scrollPercent > 90) {
-                    document.querySelector("#nav-totop").classList.add("long")
-                    percentElement.innerHTML = GLOBAL_CONFIG.lang.backtop
-                } else {
-                    document.querySelector("#nav-totop").classList.remove("long")
-                    if (scrollPercent >= 0) {
-                        percentElement.innerHTML = scrollPercent + ""
-                    }
-                }
-
-                let elementsToHide = document.querySelectorAll(".needEndHide")
-                if (remainingScroll < 100) {
-                    elementsToHide.forEach(function (element) {
-                        element.classList.add("hide")
-                    })
-                } else {
-                    elementsToHide.forEach(function (element) {
-                        element.classList.remove("hide")
-                    })
-                }
-
-                window.onscroll = percent
-            }
-            percent()
-        })
+.nav-button#nav-totop(onclick="sco.toTop()")
+    a.totopbtn
+        i.solitude.st-arrow-up-line
+        span#percent= "0"
 #toggle-menu
     a.site-page
         i.solitude.st-menu-line
