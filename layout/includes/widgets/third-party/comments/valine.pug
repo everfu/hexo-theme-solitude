@@ -7,7 +7,7 @@ if site.data.valine
 
 script.
     async function initComment() {
-        const initValine = () => {
+        const initValine = async () => {
             const valine = new Valine(Object.assign({
                 el: '#comment',
                 appId: '#{appId}',
@@ -25,20 +25,52 @@ script.
             }
 
             sco.owoBig();
-        }
-
-        const loadValine = async () => {
-            if (typeof Valine === 'function') initValine()
-            else {
-                await getScript('!{url_for(theme.cdn.valine)}')
-                initValine()
-            }
+            GLOBAL_CONFIG.comment.commentBarrage && PAGE_CONFIG.comment && initializeCommentBarrage(await fetchComments())
         }
 
         if (!!{lazyload}) {
-            if (!{lazyload}) utils.loadComment(document.getElementById('comment'), loadValine)
-            else setTimeout(loadValine, 0)
+            if (!{lazyload}) utils.loadComment(document.getElementById('comment'), initValine)
+            else setTimeout(initValine, 0)
         } else {
-            await loadValine()
+            await initValine()
+        }
+
+        async function fetchComments() {
+            const url = new URL('#{serverURLs}' + '/1.1/classes/Comment');
+            const params = {
+                url: window.location.pathname,
+                order: '-createdAt'
+            };
+
+            for (const [key, value] of Object.entries(params)) {
+                url.searchParams.append(key, value);
+            }
+
+            try {
+                const response = await fetch(url, {
+                    method: "GET",
+                    headers: {
+                        "X-LC-Id": "#{appId}",
+                        "X-LC-Key": '#{appKey}',
+                        "Content-Type": "application/json"
+                    },
+                });
+
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+
+                const data = await response.json();
+                return (data.results.filter(item => item.url === window.location.pathname)).map(item =>
+                    Object.assign({
+                        content: item.comment,
+                        nick: item.nick,
+                        mailMd5: md5(item.mail),
+                        id: item.objectId
+                    })
+                )
+            } catch (error) {
+                console.error("An error occurred while fetching comments: ", error);
+            }
         }
     }

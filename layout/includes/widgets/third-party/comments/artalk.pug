@@ -1,0 +1,50 @@
+- const { server, site, option } = theme.comment.artalk
+- const { lazyload, count } = theme.comment
+
+script.
+    async function initComment() {
+        let artalkItem = null
+        const initArtalk = () => {
+            artalkItem = Artalk.init({
+                el: '#comment',
+                server: '!{server}',
+                site: "!{site}",
+                pageKey: location.pathname,
+                darkMode: document.documentElement.getAttribute('data-theme') === 'dark',
+            }, !{JSON.stringify(option)})
+
+            if (GLOBAL_CONFIG.lightbox === 'null') return
+            artalkItem.on('list-loaded', () => {
+                const array = []
+                artalkItem.ctx.get('list').getCommentNodes().forEach(comment => {
+                    array.push({
+                        nick: comment.data.nick,
+                        content: comment.data.content_marked,
+                        mailMd5: comment.data.email_encrypted,
+                    })
+                    const $content = comment.getRender().$content
+                    utils.lightbox($content.querySelectorAll('img:not([atk-emoticon])'))
+                    sco.owoBig()
+                })
+                GLOBAL_CONFIG.comment.commentBarrage && PAGE_CONFIG.comment && initializeCommentBarrage(array)
+            })
+
+            const destroyArtalk = () => {
+                artalkItem.destroy()
+            }
+
+            utils.addGlobalFn('pjax', destroyArtalk, 'destroyArtalk')
+        }
+
+        const artalkChangeMode = theme => {
+            const artalkWrap = document.getElementById('comment')
+            console.log(artalkWrap, artalkWrap.children.length)
+            if (!(artalkWrap && artalkWrap.children.length)) return
+            const isDark = theme === 'dark'
+            artalkItem.setDarkMode(!isDark)
+        }
+
+        utils.addGlobalFn('themeChange', artalkChangeMode, 'artalk')
+
+        initArtalk()
+    }

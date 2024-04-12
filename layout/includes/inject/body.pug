@@ -16,10 +16,6 @@ div
     script(src=url_for(theme.cdn.waterfall))
     script(src=url_for(theme.cdn.pjax))
 
-    if theme.comment.enable && theme.comment.type === 'valine'
-        // md5
-        script(src=url_for(theme.cdn.blueimp_md5))
-
     if theme.mermaid
         script(src=url_for(theme.cdn.mermaid_js))
 
@@ -73,14 +69,15 @@ div
         case theme.comment.type
             when 'twikoo'
                 script(src=url_for(theme.cdn.twikoo))
+            when 'waline'
+                script(src=url_for(theme.cdn.waline_js))
+            when 'valine'
+                script(src=url_for(theme.cdn.blueimp_md5))
+                script(src=url_for(theme.cdn.valine))
+            when 'artalk'
+                script(src=url_for(theme.cdn.artalk_js))
         if theme.comment.commentBarrage
-            case theme.comment.type
-                when 'twikoo'
-                    script(src=url_for(theme.cdn.twikoo_commentBarrage))
-                when 'waline'
-                    script(src=url_for(theme.cdn.waline_commentBarrage))
-                when 'valine'
-                    script(src=url_for(theme.cdn.valine_commentBarrage))
+            script(src=url_for(theme.cdn.commentBarrage))
 
     if theme.music.enable
         script(src=url_for(theme.cdn.music_js))

@@ -267,17 +267,17 @@
 
   &.no-top-img
     margin-bottom 0
-  if hexo-config('nav.right.top')
-    &:not(.nav-fixed)
-      #percent
-        transition .3s
 
-      #nav-right #nav-totop
-        width 0
-        transform scale(0)
-        margin-left 0
-        overflow hidden
-        transition .3s ease-in
+  &:not(.nav-fixed)
+    #percent
+      transition .3s
+
+    #nav-right #nav-totop
+      width 0
+      transform scale(0)
+      margin-left 0
+      overflow hidden
+      transition .3s ease-in
 
 #page-header #scroll-down .scroll-down-effects,
 #page-header #site-subtitle, #page-header #site-title
@@ -606,51 +606,40 @@
 #site-logo
   width 121px
 
-if hexo-config('nav.right.top')
-  #nav-totop
-    position relative
-    width 35px
-    height 35px
-    display flex
-    border-radius 40px
-    transition all .3s ease-in-out
-    align-items center
+#nav-totop
+  position relative
+  width 35px
+  height 35px
+  display flex
+  border-radius 40px
+  transition all .3s ease-in-out
+  align-items center
 
-    &.long
-      width 80px
+  &.long
+    width 80px
 
+  .totopbtn
+    padding-top 0
+
+    i
+      position absolute
+      display flex
+      font-size 22px
+      opacity 0
+      line-height 1
+
+  &:hover
     .totopbtn
-      padding-top 0
-
       i
-        position absolute
-        display flex
-        font-size 22px
-        opacity 0
-        line-height 1
-
-    &:hover
-      .totopbtn
-        i
-          opacity 1
-          color var(--efu-card-bg)
-          transition .3s
-
-      #percent
-        opacity 0
-        font-weight 700
+        opacity 1
+        color var(--efu-card-bg)
+        transition .3s
 
     #percent
-      font-size 12px
-      border-radius 35px
-      display flex
-      justify-content center
-      align-items center
-      transition .3s
-      white-space nowrap
+      opacity 0
+      font-weight 700
 
-  .nav-fixed #nav-totop #percent,
-  .page #nav-totop #percent
+  #percent
     font-size 12px
     border-radius 35px
     display flex
@@ -658,6 +647,16 @@ if hexo-config('nav.right.top')
     align-items center
     transition .3s
     white-space nowrap
+
+.nav-fixed #nav-totop #percent,
+.page #nav-totop #percent
+  font-size 12px
+  border-radius 35px
+  display flex
+  justify-content center
+  align-items center
+  transition .3s
+  white-space nowrap
 
 if hexo-config('nav.group')
   .back-home-button
@@ -847,6 +846,7 @@ if hexo-config('nav.group')
         background var(--efu-main)
         transition .3s
         box-shadow var(--efu-shadow-main)
+
     #site-name
       &:hover
         i

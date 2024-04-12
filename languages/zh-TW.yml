@@ -103,6 +103,10 @@ console:
   switch_keyboard: 鍵盤快捷鍵
   switch_music: 音樂開關
   archive_unit: 篇
+  newest_comment:
+    image: 圖片
+    link: 連結
+    code: 代碼
 
 sidebar:
   function: 功能

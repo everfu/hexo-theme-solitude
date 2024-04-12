@@ -101,6 +101,10 @@ console:
   switch_keyboard: Keyboard operation
   switch_music: Music switch
   archive_unit: Posts
+  newest_comment:
+    image: Image
+    link: Link
+    code: Code
 
 sidebar:
   function: Function
