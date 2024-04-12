@@ -1,18 +1,21 @@
+- const { envId, lang, option } = theme.comment.twikoo
+- const { lazyload, count } = theme.comment
+
 script.
     async function initComment() {
-        const initOptions = Object.assign(
-            !{JSON.stringify(theme.comment.twikoo || {})},
-            {
-                el: '#comment',
-                onCommentLoaded: async function () {
-                    GLOBAL_CONFIG.lightbox && utils.lightbox(document.querySelectorAll('#twikoo .tk-content img:not(.tk-owo-emotion)'))
-                    sco.owoBig()
-                    GLOBAL_CONFIG.comment.commentBarrage && PAGE_CONFIG.comment && initializeCommentBarrage(await fetchComments())
-                },
-                lang: '#{theme.comment.twikoo.lang}',
-            }
-        )
-        await twikoo.init(initOptions)
+        await twikoo.init({
+            el: '#comment',
+            envId: '#{envId}',
+            onCommentLoaded: function () {
+                GLOBAL_CONFIG.lightbox && utils.lightbox(document.querySelectorAll('#twikoo .tk-content img:not(.tk-owo-emotion)'))
+                sco.owoBig()
+                GLOBAL_CONFIG.comment.commentBarrage && PAGE_CONFIG.comment && (async () => {
+                    initializeCommentBarrage(await fetchComments())
+                })()
+            },
+            lang: '#{lang}',
+            ...!{JSON.stringify(option)}
+        })
         if (#{theme.post.meta.comment && is_post()}) {
             var countOptions = Object.assign(
                 !{JSON.stringify(theme.comment.twikoo || {})},

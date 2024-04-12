@@ -724,6 +724,7 @@ comment:
     envId: # url: https://twikoo.sondy.top/
     lang: "zh-CN" # 语言
     accessToken: # accessToken
+    option: # twikoo option
   # waline 配置信息
   # waline settings
   waline: # https://waline.js.org/
