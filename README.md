@@ -46,7 +46,7 @@
 ## Features
 
 - Pjax、LazyLoad、PWA
-- Comments(Twikoo、Waline、Valine、Discuss)
+- Comments(Twikoo、Waline、Valine、Artalk)
 - ColorMode
 - Lightbox(medium-zoom、fancybox)
 - Mathematical formulas(Latex)

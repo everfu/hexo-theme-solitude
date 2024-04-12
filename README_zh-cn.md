@@ -46,7 +46,7 @@
 ## 特性
 
 - 页面懒加载（Pjax）、图片懒加载（LazyLoad）、离线应用（PWA）
-- 评论(Twikoo、Waline、Valine、Discuss)
+- 评论(Twikoo、Waline、Valine、Artalk)
 - 显示切换(ColorMode)
 - 灯箱(medium-zoom、fancybox)
 - 数学公式(Latex)
