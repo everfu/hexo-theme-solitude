@@ -27,7 +27,7 @@ script.
             else {
                 await utils.getScript('!{url_for(theme.cdn.valine)}').then(initValine)
             }
-            !{commentBarrage} && getBarrage()
+            !{commentBarrage} && barrageValine()
         }
         if ('!{use[0]}' === 'Valine' || !{lazyload}) {
             if (!{lazyload}) utils.loadComment(document.getElementById('vcomment'), loadValine)
@@ -39,26 +39,24 @@ script.
 
 if commentBarrage
     script.
-        async function getBarrage() {
+        const barrageValine = async () => {
             const url = new URL('!{serverURLs}/1.1/classes/Comment')
             const params = {
                 url: window.location.pathname,
                 order: '-createdAt'
             }
             Object.entries(params).forEach(([key, value]) => url.searchParams.append(key, value))
-            try {
-                const response = await fetch(url, {
-                    method: "GET",
-                    headers: {
-                        "X-LC-Id": "#{appId}",
-                        "X-LC-Key": "#{appKey}",
-                        "Content-Type": "application/json"
-                    },
-                })
-                if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`)
-                }
-                const data = await response.json()
+            await fetch(url, {
+                method: "GET",
+                headers: {
+                    "X-LC-Id": "#{appId}",
+                    "X-LC-Key": "#{appKey}",
+                    "Content-Type": "application/json"
+                },
+            }).then(async res => {
+                if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`)
+                const data = await res.json()
+                if(typeof md5 ==="undefined") await utils.getScript('!{url_for(theme.cdn.blueimp_md5)}')
                 await utils.getScript('!{url_for(theme.cdn.commentBarrage)}')
                 initializeCommentBarrage(data.results
                     .filter(item => item.url === window.location.pathname)
@@ -68,7 +66,5 @@ if commentBarrage
                         mailMd5: md5(item.mail),
                         id: item.objectId
                     })))
-            } catch (error) {
-                console.error("An error occurred while fetching comments: ", error)
-            }
+            }).catch(error => console.error("An error occurred while fetching comments: ", error))
         }

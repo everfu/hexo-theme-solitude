@@ -26,7 +26,7 @@
 
     let comment = false
 
-    if (theme.comment.enable) {
+    if (theme.comment.use) {
         comment = {
             avatar: theme.comment.avatar,
             commentBarrage: theme.comment.commentBarrage,
@@ -85,7 +85,7 @@
         }
     }
 
-    if (theme.comment.enable && theme.comment.commentBarrage) {
+    if (theme.comment.use && theme.comment.commentBarrage) {
         lang.barrage = {
             title: _p('commentBarrage.title'),
         }
@@ -106,7 +106,7 @@
                 stop: _p('right_menu.music.stop'),
             }
         }
-        if (theme.comment.enable && theme.comment.commentBarrage) {
+        if (theme.comment.use && theme.comment.commentBarrage) {
             rightMenu.barrage = {
                 open: _p('right_menu.barrage.open'),
                 close: _p('right_menu.barrage.close')

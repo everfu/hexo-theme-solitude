@@ -19,7 +19,7 @@ hexo.extend.filter.register('after_post_render', function (data) {
         data.excerpt = data.title
         data.toc = !!(config.aside.toc.page && data.toc !== false && data.aside);
     }
-    data.comment = !!(config.comment.enable && data.comment !== false);
+    data.comment = !!(config.comment.use && data.comment !== false);
     return data;
 });
 

@@ -12,7 +12,7 @@ script.
                 urls: [window.location.pathname],
                 includeReply: false
             }).then(res => {
-                ele.forEach(item => item.textContent=res[0].count)
+                ele.forEach(item => item.textContent = res[0].count)
             }).catch(err => {
                 console.error(err)
             })
@@ -33,7 +33,7 @@ script.
                 item: '.OwO-items li'
             })
 
-            !{commentBarrage} && getBarrage()
+            if (!{commentBarrage}) await barrageTwikoo()
         }
 
         const loadTwikoo = () => {
@@ -51,23 +51,20 @@ script.
 
 if commentBarrage
     script.
-        async function getBarrage() {
-            try {
-                const response = await fetch("!{envId}", {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json"
-                    },
-                    body: JSON.stringify({
-                        event: "COMMENT_GET",
-                        accessToken: "!{accessToken}",
-                        url: window.location.pathname
-                    })
-                });
-                if (!response.ok) {
-                    throw new Error("HTTP error! status: " + response.status);
-                }
-                const data = await response.json();
+        const barrageTwikoo = async () => {
+            await fetch("!{envId}", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    event: "COMMENT_GET",
+                    accessToken: "!{accessToken}",
+                    url: window.location.pathname
+                })
+            }).then(async res => {
+                if (!res.ok) throw new Error("HTTP error! status: " + res.status)
+                const data = await res.json();
                 await utils.getScript('!{url_for(theme.cdn.commentBarrage)}').then(() => {
                     initializeCommentBarrage((data.data).map(item => Object.assign({
                         content: item.comment,
@@ -76,7 +73,5 @@ if commentBarrage
                         id: item.id
                     })))
                 })
-            } catch (error) {
-                console.error("An error occurred while fetching comments: ", error);
-            }
+            }).catch(error => console.error("An error occurred while fetching comments: ", error))
         }

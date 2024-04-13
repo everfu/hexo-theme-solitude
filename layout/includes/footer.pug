@@ -52,7 +52,7 @@ div#footer-bar
                     a.footer-bar-link(href=url_for("/"))= config.author
         div.footer-bar-right
             each item in theme.footer.links
-                a.footer-bar-link(href=url_for(item.url), title=item.name)= item.name
+                a.footer-bar-link(href=url_for(item.url), alt=item.name)!= item.name
             a.footer-bar-link.cc(href=url_for(theme.footer.license), aria-label = 'copyright')
                 i.solitude.st-copyright-line
                 i.solitude.st-creative-commons-by-line
@@ -65,5 +65,5 @@ if theme.footer.privacy
             span.cookies-tip= __('cookies.tip')
             a.cookies-link(href=url_for(theme.footer.privacy), title=_p('cookies.privacy'))
                 i.solitude.st-right-btn-fill
-if theme.comment.enable && theme.comment.commentBarrage
+if theme.comment.use && theme.comment.commentBarrage
     div.comment-barrage.needEndHide

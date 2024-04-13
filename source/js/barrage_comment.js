@@ -1,15 +1,12 @@
-/**
- * Comment Barrage
- * author: @efu
- * website: efu.me
- * copyright: MIT
- * date: 2024-04-12
- * update: 2024-04-12
- * @param array
- */
 function initializeCommentBarrage(array) {
     if (array === undefined) return;
-    new class {
+    let existingBarrage = window.currentBarrage;
+
+    if (existingBarrage) {
+        existingBarrage.destroy();
+    }
+
+    let barrage = class {
         constructor() {
             this.config = {
                 barrageTimer: [],
@@ -36,7 +33,7 @@ function initializeCommentBarrage(array) {
             if (!content) return false;
             const element = document.createElement("div");
             element.className = "comment-barrage-item";
-            element.innerHTML = `<div class="barrageHead"><a class="barrageTitle" href="javascript:sco.scrollTo('post-comment')">${GLOBAL_CONFIG.lang.barrage.title}</a><div class="barrageNick">${comment.nick}</div><img class="barrageAvatar" src="${GLOBAL_CONFIG.comment.avatar}/avatar/${comment.mailMd5}"/><a class="comment-barrage-close" href="javascript:sco.switchCommentBarrage();"><i class="solitude st-close-fill"></i></a></div><a class="barrageContent" href="${comment.id ? `javascript:sco.scrollTo(\'${comment.id}\')` : 'javascript:sco.scrollTo(\'post-comment\')' }">${content}</a>`;
+            element.innerHTML = `<div class="barrageHead"><a class="barrageTitle" href="javascript:sco.scrollTo('post-comment')">${GLOBAL_CONFIG.lang.barrage.title}</a><div class="barrageNick">${comment.nick}</div><img class="barrageAvatar" src="${GLOBAL_CONFIG.comment.avatar}/avatar/${comment.mailMd5}"/><a class="comment-barrage-close" href="javascript:sco.switchCommentBarrage();"><i class="solitude st-close-fill"></i></a></div><a class="barrageContent" href="${comment.id ? `javascript:sco.scrollTo(\'${comment.id}\')` : 'javascript:sco.scrollTo(\'post-comment\')'}">${content}</a>`;
             this.config.dom.appendChild(element);
             this.config.barrageTimer.push(element);
             return true;
@@ -74,5 +71,14 @@ function initializeCommentBarrage(array) {
             this.config.dom.addEventListener('mouseover', () => this.hoverOnCommentBarrage = true);
             this.config.dom.addEventListener('mouseout', () => this.hoverOnCommentBarrage = false);
         }
-    }();
+
+        destroy() {
+            clearInterval(this.commentInterval);
+            this.config.dom.removeEventListener('mouseover', () => this.hoverOnCommentBarrage = true)
+            this.config.dom.removeEventListener('mouseout', () => this.hoverOnCommentBarrage = false)
+            this.config.dom.innerHTML = ""
+        }
+    }
+
+    window.currentBarrage = new barrage();
 }

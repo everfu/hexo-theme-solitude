@@ -39,7 +39,7 @@ div#console
             div.console-btn-item#consoleMusic(onclick="sco.musicToggle()")
                 span.music-switch(title=_p('console.switch_music'))
                     i.solitude.st-disc-fill
-        if theme.comment.enable && theme.comment.commentBarrage
+        if theme.comment.use && theme.comment.commentBarrage
             div.console-btn-item.on#consoleCommentBarrage(onclick="sco.switchCommentBarrage()")
                 span.commentBarrage
                     i.solitude.st-chat-fill
