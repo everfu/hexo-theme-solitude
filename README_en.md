@@ -29,7 +29,7 @@
 [![pwa](https://img.shields.io/badge/pwa-red?logo=pwa)](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps)
 
 [![twiter](https://img.shields.io/badge/@efu__oo-gray?logo=x)](https://twitter.com/efu_oo)
-[![TG](https://img.shields.io/badge/efuome-gray?logo=Telegram&logoColor=white)](https://t.me/efuome)
+[![TG](https://img.shields.io/badge/efuome-gray?logo=Telegram&logoColor=white)](https://t.me/solitudePro)
 
 ![JetBrains](https://img.shields.io/badge/jetbrains-support-black?logo=jetbrains)
 ![DuoLingo](https://img.shields.io/badge/duolingo-support-black?logo=duolingo&logoColor=white)
