@@ -17,7 +17,7 @@ script.
 
         const $asideList = document.querySelector('#card-newest-comments .aside-list')
         const newestCommentInit = () => {
-            const data = saveToLocal.get('waline-newest-comment')
+            const data = utils.saveToLocal.get('waline-newest-comment')
             if (data) {
                 generateHtml(data)
             } else {
@@ -27,7 +27,7 @@ script.
 
         const getComment = async () => {
             try {
-                const res = await fetch('!{theme.comment.waline.envId}/api/comment?type=recent&count=8', {method: 'GET'})
+                const res = await fetch('!{theme.waline.envId}/api/comment?type=recent&count=8', {method: 'GET'})
                 const result = await res.json()
                 const walineArray = result.data.map(e => {
                     return {
@@ -38,7 +38,7 @@ script.
                         'date': e.time || e.insertedAt
                     }
                 })
-                saveToLocal.set('waline-newest-comment', walineArray, !{theme.comment.newest_comment.storage})
+                utils.saveToLocal.set('waline-newest-comment', walineArray, !{theme.comment.newest_comment.storage})
                 generateHtml(walineArray)
             } catch (err) {
                 console.error(err)

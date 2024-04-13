@@ -5,9 +5,9 @@ document.addEventListener('DOMContentLoaded', function () {
     const msgToTraditionalChinese = '轉為繁體';
     const msgToSimplifiedChinese = '转为简体';
     let targetEncoding =
-        saveToLocal.get(targetEncodingCookie) === undefined
+        utils.saveToLocal.get(targetEncodingCookie) === undefined
             ? defaultEncoding
-            : Number(saveToLocal.get('translate-chn-cht'))
+            : Number(utils.saveToLocal.get('translate-chn-cht'))
     let translateButtonObject
 
     function setLang() {
@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', function () {
             translateButtonObject.firstChild.className = 'solitude st-jianben-line'
             utils.snackbarShow('你已切換為繁體')
         }
-        saveToLocal.set(targetEncodingCookie, targetEncoding, 2)
+        utils.saveToLocal.set(targetEncodingCookie, targetEncoding, 2)
         setLang()
         translateBody()
         rm.hideRightMenu()

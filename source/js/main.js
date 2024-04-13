@@ -71,7 +71,7 @@ const percent = () => {
     let viewportBottom = window.scrollY + document.documentElement.clientHeight
     let remainingScroll = totalHeight - scrollTop
 
-    if ((document.getElementById("post-comment") || document.getElementById("footer")).offsetTop < viewportBottom || scrollPercent > 90) {
+    if ((document.getElementById("post-comment") || document.getElementById("footer"))?.offsetTop < viewportBottom || scrollPercent > 90) {
         document.querySelector("#nav-totop").classList.add("long")
         percentElement.innerHTML = GLOBAL_CONFIG.lang.backtop
     } else {
@@ -281,7 +281,7 @@ let sco = {
     },
     switchHideAside: function () {
         const htmlClassList = document.documentElement.classList;
-        htmlClassList.contains("hide-aside") ? saveToLocal.set("aside-status", "show", 1) : saveToLocal.set("aside-status", "hide", 1)
+        htmlClassList.contains("hide-aside") ? utils.saveToLocal.set("aside-status", "show", 1) : saveToLocal.set("aside-status", "hide", 1)
         htmlClassList.toggle("hide-aside");
         htmlClassList.contains("hide-aside") ? document.querySelector("#consoleHideAside").classList.add("on") : document.querySelector("#consoleHideAside").classList.remove("on");
     },
@@ -317,12 +317,12 @@ let sco = {
             'light'
         if (nowMode === 'light') {
             document.documentElement.setAttribute('data-theme', 'dark')
-            saveToLocal.set('theme', 'dark', 0.02);
+            utils.saveToLocal.set('theme', 'dark', 0.02);
             utils.snackbarShow(GLOBAL_CONFIG.lang.theme.dark, false, 2000)
             right_menu && rm.mode(true)
         } else {
             document.documentElement.setAttribute('data-theme', 'light')
-            saveToLocal.set('theme', 'light', 0.02);
+            utils.saveToLocal.set('theme', 'light', 0.02);
             utils.snackbarShow(GLOBAL_CONFIG.lang.theme.light, false, 2000)
             right_menu && rm.mode(false)
         }
@@ -351,7 +351,7 @@ let sco = {
         el && GLOBAL_CONFIG.runtime && (el.innerText = utils.timeDiff(new Date(GLOBAL_CONFIG.runtime), new Date()) + GLOBAL_CONFIG.lang.time.day)
     },
     toTalk: function (txt) {
-        const inputs = ["#wl-edit", ".el-textarea__inner", "#veditor", ".atk-textarea"]
+        const inputs = ["#wl-edit", ".el-textarea__inner", "#veditor",".atk-textarea"]
         for (let i = 0; i < inputs.length; i++) {
             let el = document.querySelector(inputs[i])
             if (el != null) {
@@ -617,8 +617,7 @@ let sco = {
             document.getElementById("toPageButton").href = targetPageUrl;
         }
     },
-    owoBig() {
-        const owoSelectors = GLOBAL_CONFIG.comment.owo
+    owoBig(owoSelector) {
 
         let owoBig = document.getElementById('owo-big');
         if (!owoBig) {
@@ -641,8 +640,8 @@ let sco = {
 
         const showOwoBig = (event) => {
             const target = event.target;
-            const owoItem = target.closest(owoSelectors.item);
-            if (owoItem && target.closest(owoSelectors.body)) {
+            const owoItem = target.closest(owoSelector.item);
+            if (owoItem && target.closest(owoSelector.body)) {
                 const imgSrc = owoItem.querySelector('img')?.src;
                 if (imgSrc) {
                     owoBig.innerHTML = `<img src="${imgSrc}" style="max-width: 100%; height: auto;">`;
@@ -653,7 +652,7 @@ let sco = {
         };
 
         const hideOwoBig = (event) => {
-            if (event.target.closest(owoSelectors.item) && event.target.closest(owoSelectors.body)) {
+            if (event.target.closest(owoSelector.item) && event.target.closest(owoSelector.body)) {
                 owoBig.style.display = 'none';
             }
         };
@@ -674,6 +673,20 @@ let sco = {
             item.style.display = 'inline'
         })
     },
+    switchComments() {
+        const switchBtn = document.getElementById('switch-btn')
+        if (!switchBtn) return
+        let switchDone = false
+        const commentContainer = document.getElementById('post-comment')
+        const handleSwitchBtn = () => {
+            commentContainer.classList.toggle('move')
+            if (!switchDone && typeof loadTwoComment === 'function') {
+                switchDone = true
+                loadTwoComment()
+            }
+        }
+        utils.addEventListenerPjax(switchBtn, 'click', handleSwitchBtn)
+    }
 }
 
 const addHighlight = () => {
@@ -798,6 +811,17 @@ const addCopyright = () => {
     document.body.addEventListener('copy', handleCopy)
 }
 
+const asideStatus = () =>{
+    const asideStatus = utils.saveToLocal.get('aside-status')
+    if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+            document.documentElement.classList.add('hide-aside')
+        } else {
+            document.documentElement.classList.remove('hide-aside')
+        }
+    }
+}
+
 class tabs {
     static init() {
         this.clickFnOfTabs()
@@ -835,12 +859,6 @@ class tabs {
     }
 }
 
-sco.initAdjust()
-percent()
-initObserver()
-addCopyright()
-sco.initConsoleState()
-
 window.refreshFn = () => {
     document.body.setAttribute('data-type', PAGE_CONFIG.page)
     if (PAGE_CONFIG.is_home || PAGE_CONFIG.is_page) {
@@ -862,17 +880,23 @@ window.refreshFn = () => {
     GLOBAL_CONFIG.lazyload.enable && utils.lazyloadImg()
     GLOBAL_CONFIG.lightbox && utils.lightbox(document.querySelectorAll("#article-container img:not(.flink-avatar,.gallery-group img)"))
     GLOBAL_CONFIG.randomlink && randomLinksList()
-    PAGE_CONFIG.comment && initComment()
     PAGE_CONFIG.toc && toc.init();
     (PAGE_CONFIG.is_post || PAGE_CONFIG.is_page) && ((addHighlight()) || tabs.init())
     PAGE_CONFIG.is_home && showTodayCard()
     GLOBAL_CONFIG.covercolor.enable && coverColor()
     PAGE_CONFIG.page === "music" && scoMusic.init()
-    GLOBAL_CONFIG.post_ai && PAGE_CONFIG.page === "post" && efu_ai.init()
+    GLOBAL_CONFIG.post_ai && PAGE_CONFIG.is_post && efu_ai.init()
+    sco.switchComments()
 }
 
 document.addEventListener('DOMContentLoaded', function () {
+    sco.initAdjust()
+    percent()
+    initObserver()
+    addCopyright()
+    sco.initConsoleState()
     window.refreshFn()
+    asideStatus()
 })
 
 window.onkeydown = function (e) {

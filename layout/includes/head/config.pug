@@ -31,39 +31,6 @@
             avatar: theme.comment.avatar,
             commentBarrage: theme.comment.commentBarrage,
         }
-        switch (theme.comment.type) {
-            case "twikoo":
-                comment.url = theme.comment.twikoo.envId
-                comment.accessToken = theme.comment.twikoo.accessToken
-                comment.owo = {
-                    body: '.OwO-body',
-                    item: '.OwO-items li'
-                }
-                break
-            case "waline":
-                comment.url = theme.comment.waline.envId
-                comment.owo = {
-                    body: '.wl-emoji-popup',
-                    item: '.wl-tab-wrapper button'
-                }
-                break
-            case "valine":
-                comment.url = theme.comment.valine.serverURLs
-                comment.appId = theme.comment.valine.appId
-                comment.appKey = theme.comment.valine.appKey
-                comment.owo = {
-                    body: '.vwrap',
-                    item: '.vemojis i'
-                }
-                break
-            case "artalk":
-                comment.owo = {
-                    body: '.atk-grp',
-                    item: '.atk-item'
-                }
-            default:
-                break
-        }
     }
 
     let post_ai = false

@@ -1,4 +1,33 @@
 const utils = {
+    saveToLocal: {
+        set: function setWithExpiry(key, value, ttl) {
+            if (ttl === 0)
+                return
+            const now = new Date()
+            const expiryDay = ttl * 86400000
+            const item = {
+                value: value,
+                expiry: now.getTime() + expiryDay
+            }
+            localStorage.setItem(key, JSON.stringify(item))
+        },
+
+        get: function getWithExpiry(key) {
+            const itemStr = localStorage.getItem(key)
+
+            if (!itemStr) {
+                return undefined
+            }
+            const item = JSON.parse(itemStr)
+            const now = new Date()
+
+            if (now.getTime() > item.expiry) {
+                localStorage.removeItem(key)
+                return undefined
+            }
+            return item.value
+        }
+    },
     debounce: function (func, wait, immediate) {
         let timeout
         return function () {
@@ -278,4 +307,37 @@ const utils = {
             callback()
         }
     },
+    getCSS: (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function () {
+            const loadState = this.readyState
+            if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+            link.onload = link.onreadystatechange = null
+            resolve()
+        }
+        document.head.appendChild(link)
+    }),
+
+    getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function () {
+            const loadState = this.readyState
+            if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+            script.onload = script.onreadystatechange = null
+            resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+            script.setAttribute(key, attr[key])
+        })
+        document.head.appendChild(script)
+    })
+
 }

@@ -1,42 +1,39 @@
-- const { server, site, option } = theme.comment.artalk
+- const { server, site, option } = theme.artalk
 - const avatarCdn = option !== null && option.gravatar && option.gravatar.mirror
 - const avatarDefault = option !== null && option.gravatar && (option.gravatar.params || option.gravatar.default)
 
 script.
     window.addEventListener('load', () => {
-        const changeContent = (content) => {
+        const changeContent = content => {
             if (content === '') return content
-
             const replacements = [
                 {regex: /<img.*?src="(.*?)"?[^\>]+>/ig, replacement: '[!{_p("console.newest_comment.image")}]'},
-                {regex: /<a[^>]+?href=["']?([^"']+)["']?[^>]*>([^<]+)<\/a>/gi,replacement: '[!{_p("console.newest_comment.link")}]'},
+                {
+                    regex: /<a[^>]+?href=["']?([^"']+)["']?[^>]*>([^<]+)<\/a>/gi,
+                    replacement: '[!{_p("console.newest_comment.link")}]'
+                },
                 {regex: /<pre><code>.*?<\/pre>/gi, replacement: '[!{_p("console.newest_comment.code")}]'},
                 {regex: /<[^>]+>/g, replacement: ''}
-            ];
-
-            content = replacements.reduce((str, {regex, replacement}) => str.replace(regex, replacement), content);
-
-            return content.length > 150 ? content.substring(0, 150) + '...' : content;
+            ]
+            content = replacements.reduce((str, {regex, replacement}) => str.replace(regex, replacement), content)
+            return content.length > 150 ? content.substring(0, 150) + '...' : content
         }
-
-        const $asideList = document.querySelector('#card-newest-comments .aside-list')
-
-        const generateHtml = array => {
-            $asideList.innerHTML = array.length ? array.map(item => `
-                                <div class='aside-list-item'>
-                                  <a onclick='pjax.loadUrl("${item.url}")' class='thumbnail'>
-                                    <img src='${item.avatar}' alt='${item.nick}'>
-                                    <div class='name'><span>${item.nick}</span></div>
-                                  </a>
-                                  <div class='content'>
-                                    <a class='comment' onclick='pjax.loadUrl("${item.url}")'>${item.content}</a>
-                                    <time class="datetime" datetime="${item.date}"></time>
-                                  </div>
-                                </div>
-                              `).join('') : "!{_p('newest_comment.zero')}"
-            window.lazyLoadInstance && window.lazyLoadInstance.update()
-            window.pjax && window.pjax.refresh()
-            sco && sco.changeTimeFormat(document.querySelectorAll('.aside-list-item time'))
+        const generateHtml = (array, asideList) => {
+            asideList.innerHTML = array.length ? array.map(item => `
+                <div class='aside-list-item'>
+                    <a onclick='pjax.loadUrl("${item.url}")' class='thumbnail'>
+                        <img src='${item.avatar}' alt='${item.nick}'>
+                        <div class='name'><span>${item.nick}</span></div>
+                    </a>
+                    <div class='content'>
+                        <a class='comment' onclick='pjax.loadUrl("${item.url}")'>${item.content}</a>
+                        <time class="datetime" datetime="${item.date}"></time>
+                    </div>
+                </div>
+            `).join('') : "!{_p('newest_comment.zero')}"
+            window.lazyLoadInstance?.update()
+            window.pjax?.refresh()
+            sco?.changeTimeFormat(document.querySelectorAll('.aside-list-item time'))
         }
 
         const getSetting = async () => {
@@ -44,55 +41,48 @@ script.
                 const res = await fetch('!{server}/api/v2/conf', {method: 'GET'})
                 return await res.json()
             } catch (e) {
-                console.log(e)
+                console.error(e)
+                return null
             }
         }
 
-        const headerList = {
-            method: 'GET',
-        }
-
-        const searchParams = new URLSearchParams({
-            'site_name': "!{site}",
-            'limit': '6',
-        })
-
-        const getComment = async () => {
+        const getComment = async (asideList) => {
             try {
-                const res = await fetch(`!{server}/api/v2/stats/latest_comments?${searchParams}`, headerList)
+                const searchParams = new URLSearchParams({'site_name': "!{site}", 'limit': '6'})
+                const res = await fetch(`!{server}/api/v2/stats/latest_comments?${searchParams}`, {method: 'GET'})
                 const result = await res.json()
-                const avatarStr = await getSetting()
-                const {mirror, params, default: defaults} = avatarStr.frontend_conf.gravatar
+                const avatarConfig = await getSetting()
+                const {mirror, params, default: defaults} = avatarConfig.frontend_conf.gravatar
                 const avatarCdn = !{avatarCdn} || mirror
                 let avatarDefault = !{avatarDefault} || params || defaults
                 avatarDefault = avatarDefault.startsWith('d=') ? avatarDefault : `d=${avatarDefault}`
-                const artalk = result.data.map(function (e) {
-                    return {
-                        'avatar': `${avatarCdn}${e.email_encrypted}?${avatarDefault}`,
-                        'content': changeContent(e.content_marked),
-                        'nick': e.nick,
-                        'url': e.page_url,
-                        'date': e.date,
-                    }
-                })
-                saveToLocal.set('artalk-newest-comments', artalk, !{theme.comment.newest_comment.storage})
-                generateHtml(artalk)
+                const artalk = result.data.map(e => ({
+                    avatar: `${avatarCdn}${e.email_encrypted}?${avatarDefault}`,
+                    content: changeContent(e.content_marked),
+                    nick: e.nick,
+                    url: e.page_key,
+                    date: e.date,
+                }))
+                utils.saveToLocal.set('artalk-newest-comments', artalk, !{theme.comment.newest_comment.storage})
+                generateHtml(artalk, asideList)
             } catch (e) {
-                console.log(e)
-                $asideList.textContent = "!{_p('newest_comment.error')}"
+                console.error(e);
+                asideList.textContent = "!{_p('newest_comment.error')}"
+            }
+        };
+
+        const newestCommentInit = (asideList) => {
+            const data = utils.saveToLocal.get('artalk-newest-comments')
+            if (data) {
+                generateHtml(data, asideList)
+            } else {
+                getComment(asideList)
             }
         }
 
-        const newestCommentInit = () => {
-            if ($asideList) {
-                const data = saveToLocal.get('artalk-newest-comments')
-                if (data) {
-                    generateHtml(data)
-                } else {
-                    getComment()
-                }
-            }
+        const $asideList = document.querySelector('#card-newest-comments .aside-list')
+        if ($asideList) {
+            newestCommentInit($asideList)
+            utils.addGlobalFn('pjaxComplete', () => newestCommentInit($asideList), 'artalk_newestComment')
         }
-        newestCommentInit()
-        utils.addGlobalFn('pjaxComplete', newestCommentInit, 'artalk_newestComment')
-    })
+    });

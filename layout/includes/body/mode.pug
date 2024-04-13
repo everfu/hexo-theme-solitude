@@ -3,7 +3,7 @@ case theme.display_mode.type
         script.
             initTheme = () => {
                 let isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
-                const cachedMode = saveToLocal.get('theme');
+                const cachedMode = utils.saveToLocal.get('theme');
                 if (cachedMode === undefined) {
                     const nowMode =
                         isDarkMode ? 'dark' : 'light'
@@ -11,25 +11,28 @@ case theme.display_mode.type
                 } else {
                     document.documentElement.setAttribute('data-theme', cachedMode);
                 }
+                right_menu && rm.mode(cachedMode === 'dark' && isDarkMode)
             }
             initTheme()
     when "dark"
         script.
             initTheme = () => {
-                const cachedMode = saveToLocal.get('theme');
+                const cachedMode = utils.saveToLocal.get('theme');
                 if (cachedMode === undefined)
                     document.documentElement.setAttribute('data-theme', 'dark');
                 else
                     document.documentElement.setAttribute('data-theme', cachedMode);
+                right_menu && rm.mode(cachedMode === undefined || cachedMode === 'dark')
             }
             initTheme()
     when "light"
         script.
             initTheme = () => {
-                const cachedMode = saveToLocal.get('theme');
+                const cachedMode = utils.saveToLocal.get('theme');
                 if (cachedMode === undefined)
                     document.documentElement.setAttribute('data-theme', 'light');
                 else
                     document.documentElement.setAttribute('data-theme', cachedMode);
+                right_menu && rm.mode(cachedMode === 'dark')
             }
             initTheme()

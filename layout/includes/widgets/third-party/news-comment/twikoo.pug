@@ -1,8 +1,7 @@
 script.
     window.addEventListener('load', () => {
         const changeContent = (content) => {
-            if (content === '') return content;
-
+            if (!content) return '';
             const replacements = [
                 {regex: /<img.*?src="(.*?)"?[^\>]+>/ig, replacement: '[!{_p("console.newest_comment.image")}]'},
                 {
@@ -11,65 +10,59 @@ script.
                 },
                 {regex: /<pre><code>.*?<\/pre>/gi, replacement: '[!{_p("console.newest_comment.code")}]'},
                 {regex: /<[^>]+>/g, replacement: ''}
-            ];
-            content = replacements.reduce((str, {regex, replacement}) => str.replace(regex, replacement), content);
-
-            return content.length > 150 ? content.substring(0, 150) + '...' : content;
+            ]
+            content = replacements.reduce((str, {regex, replacement}) => str.replace(regex, replacement), content)
+            return content.length > 150 ? `${content.substring(0, 150)}...` : content
         }
-
-        const $asideList = document.querySelector('#card-newest-comments .aside-list')
-
-        const getComment = () => {
+        const generateHtml = (array) => {
+            const html = array.map(item => `
+                <div class='aside-list-item'>
+                    <a onclick='pjax.loadUrl("${item.url}")' class='thumbnail'>
+                        <img src='${item.avatar}' alt='${item.nick}'>
+                        <div class='name'><span>${item.nick}</span></div>
+                    </a>
+                    <div class='content'>
+                        <a class='comment' onclick='pjax.loadUrl("${item.url}")'>${item.content}</a>
+                        <time class="datetime" datetime="${item.date}"></time>
+                    </div>
+                </div>
+            `).join('')
+            document.querySelector('#card-newest-comments .aside-list').innerHTML = array.length ? html : "!{_p('newest_comment.zero')}"
+            window.lazyLoadInstance?.update()
+            window.pjax?.refresh()
+            sco?.changeTimeFormat(document.querySelectorAll('.aside-list-item time'))
+        }
+        const getComment = async () => {
             const runTwikoo = () => {
                 twikoo.getRecentComments({
-                    envId: GLOBAL_CONFIG.comment.url,
+                    envId: '!{theme.twikoo.envId}',
                     region: '',
                     pageSize: 6,
                     includeReply: true
-                }).then(function (res) {
+                }).then(res => {
                     const twikooArray = res.map(e => ({
-                        'content': changeContent(e.comment),
-                        'avatar': e.avatar,
-                        'nick': e.nick,
-                        'url': `${e.url}#${e.id}`,
-                        'date': new Date(e.created).toISOString()
+                        content: changeContent(e.comment),
+                        avatar: e.avatar,
+                        nick: e.nick,
+                        url: `${e.url}#${e.id}`,
+                        date: new Date(e.created).toString()
                     }))
-                    saveToLocal.set('twikoo-newest-comment', twikooArray, !{theme.comment.newest_comment.storage})
+                    utils.saveToLocal.set('twikoo-newest-comment', twikooArray, !{theme.comment.newest_comment.storage})
                     generateHtml(twikooArray)
-                }).catch(function (err) {
-                    console.error(err)
-                    $asideList.textContent = "!{_p('newest_comment.error')}"
+                }).catch((err) => {
+                    console.error(err);
+                    document.querySelector('#card-newest-comments .aside-list').textContent = "!{_p('newest_comment.error')}"
                 })
             }
-            runTwikoo()
-        }
-
-        const generateHtml = array => {
-            $asideList.innerHTML = array.length ? array.map(item => `
-                <div class='aside-list-item'>
-                  <a onclick='pjax.loadUrl("${item.url}")' class='thumbnail'>
-                    <img src='${item.avatar}' alt='${item.nick}'>
-                    <div class='name'><span>${item.nick}</span></div>
-                  </a>
-                  <div class='content'>
-                    <a class='comment' onclick='pjax.loadUrl("${item.url}")'>${item.content}</a>
-                    <time class="datetime" datetime="${item.date}"></time>
-                  </div>
-                </div>
-              `).join('') : "!{_p('newest_comment.zero')}"
-            window.lazyLoadInstance && window.lazyLoadInstance.update()
-            window.pjax && window.pjax.refresh()
-            sco && sco.changeTimeFormat(document.querySelectorAll('.aside-list-item time'))
-        }
-
-        const newestCommentInit = () => {
-            const data = saveToLocal.get('twikoo-newest-comment')
-            if (data) {
-                generateHtml(data)
+            if (typeof twikoo === 'object') {
+                runTwikoo()
             } else {
-                getComment()
+                utils.getScript('!{url_for(theme.cdn.twikoo)}').then(runTwikoo)
             }
         }
-
+        const newestCommentInit = () => {
+            const data = utils.saveToLocal.get('twikoo-newest-comment')
+            data ? generateHtml(data) : getComment()
+        }
         newestCommentInit()
     })
