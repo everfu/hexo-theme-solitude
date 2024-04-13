@@ -708,6 +708,7 @@ katex:
 
 # 评论
 # comment
+# getting start: http://solitude-docs.efu.me/comments/comment
 comment:
   use: # waline, twikoo, valine, artalk
   commentBarrage: false # 热评开关 / Hot comment switch
