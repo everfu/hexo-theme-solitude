@@ -1,5 +1,5 @@
 #article-container
-  .tag-link
+  a.tag-link
     background var(--efu-secondbg)
     border-radius 8px !important
     display flex
@@ -14,10 +14,15 @@
       border var(--style-border-hover) !important
 
       .tag-link-tips
-        color var(--efu-card-bg)
+        color var(--efu-white)
+
+      i
+        opacity 1
 
     i
+      transition .3s
       margin-left auto
+      opacity .6
 
     .tag-link-bottom
       display flex
