@@ -1,4 +1,4 @@
-[简体中文](README_zh-cn.md)丨繁体中文丨[English](README.md)
+[简体中文](README.md)丨繁体中文丨[English](README_en.md)
 
 <div align="center">
   
@@ -46,7 +46,7 @@
 ## 特性
 
 - 頁面懶載入（Pjax）、圖片懶載入（LazyLoad）、離線應用（PWA） 
-- 評論(Twikoo、Waline、Valine、Artalk)
+- 評論(Twikoo、Waline、Valine、Artalk)，支援雙評論
 - 顯示切換（ColorMode） 
 - 燈箱（medium-zoom、fancybox） 
 - 數學公式（Latex） 
