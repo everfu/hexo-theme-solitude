@@ -58,13 +58,13 @@
                             if theme.busuanzi
                                 span#busuanzi_value_page_pv
                             i.solitude.st-loading-line
-            if theme.post.meta.comment && page.comment
+            if theme.post.meta.comment && page.comment && theme.comment.count
                 span.post-meta-commentcount(title=_p('post.comment'), onclick="sco.scrollTo('post-comment')")
                     i.solitude.st-chat-fill
                     a(href=url_for(page.path) + "#post-comment")
                         case theme.comment.use[0]
                             when "Twikoo"
-                                span#twikoo-count
+                                span.twikoo-count
                                     i.solitude.st-loading-line
                             when "Waline"
                                 span.waline-comment-count
@@ -73,7 +73,7 @@
                                 span.valine-comment-count(data-xid=url_for(page.path) itemprop="commentCount")
                                     i.solitude.st-loading-line
                             when 'Artalk'
-                                span.waline-comment-count#ArtalkCount
+                                span#ArtalkCount
                                     i.solitude.st-loading-line
 
 include ./wave

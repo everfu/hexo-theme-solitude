@@ -79,6 +79,14 @@ div#post-comment
 
   if hexo-config('comment.use')[1]
     &.move
+      if hexo-config('comment.count')
+        .comment-head
+          .count span:first-child
+            display none
+
+          .count span:last-child
+            display inline-block
+
       #switch-btn::before
         transform translateX(20px)
 
@@ -96,12 +104,16 @@ div#post-comment
     position relative
 
     if hexo-config('comment.use')[1]
+      .count span:last-child
+        display none
+
       .comment-switch
         display inline-block
         float right
         margin 2px auto 0
         padding 4px 16px
         width max-content
+        user-select none
 
         #switch-btn
           position relative

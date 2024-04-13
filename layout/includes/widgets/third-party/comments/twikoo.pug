@@ -4,15 +4,15 @@
 script.
     !function () {
         const getCount = () => {
-            const countELement = document.getElementById('twikoo-count')
-            if (!countELement) return
+            const ele = document.querySelectorAll('.twikoo-count')
+            if (!ele) return
             twikoo.getCommentsCount({
                 envId: '!{envId}',
                 region: '!{region}',
                 urls: [window.location.pathname],
                 includeReply: false
             }).then(res => {
-                countELement.textContent = res[0].count
+                ele.forEach(item => item.textContent=res[0].count)
             }).catch(err => {
                 console.error(err)
             })
