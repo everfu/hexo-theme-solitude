@@ -30,7 +30,7 @@ script.
                 initWaline(walineInitFunction)
                 window.walineFn = walineInitFunction
             }
-            if (!{commentBarrage}) getBarrage()
+            if (!{commentBarrage}) barrageWaline()
         }
 
         if ('!{use[0]}' === 'Valine' || !{lazyload}) {
@@ -41,17 +41,16 @@ script.
 
 if commentBarrage
     script.
-        async function getBarrage() {
+        const barrageWaline = async () => {
             const url = new URL('!{envId}/api/comment')
             const params = {path: window.location.pathname, sortBy: 'insertedAt_asc'}
             Object.entries(params).forEach(([key, value]) => url.searchParams.append(key, value))
-            try {
-                const response = await fetch(url, {
-                    method: "GET",
-                    headers: {
-                        "Content-Type": "application/json"
-                    },
-                })
+            const response = await fetch(url, {
+                method: "GET",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+            }).then(async res => {
                 if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`)
                 const data = await response.json();
                 await utils.getScript('!{url_for(theme.cdn.commentBarrage)}')
@@ -61,7 +60,5 @@ if commentBarrage
                     content: item.comment,
                     id: item.objectId
                 })))
-            } catch (error) {
-                console.error("An error occurred while fetching comments: ", error)
-            }
+            }).catch(error => console.error("An error occurred while fetching comments: ", error))
         }

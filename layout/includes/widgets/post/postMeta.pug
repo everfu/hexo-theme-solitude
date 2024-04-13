@@ -40,25 +40,26 @@
             if theme.post.meta.pv
                 a.post-meta-pv(href=url_for(page.path), title=_p('post.pv'))
                     i.post-meta-icon.solitude.st-fire-fill
-                    case theme.comment.use[0]
-                        when "Twikoo"
-                            span#twikoo_visitors
-                                i.solitude.st-loading-line
-                        when "Waline"
-                            span.waline-pageview-count
-                                i.solitude.st-loading-line
-                        when "Valine"
-                            span.leancloud_visitors(id=url_for(page.path))
-                                span.leancloud-visitors-count
+                    if theme.comment.use
+                        case theme.comment.use[0]
+                            when "Twikoo"
+                                span#twikoo_visitors
                                     i.solitude.st-loading-line
-                        when 'Artalk'
-                            span#ArtalkPV
+                            when "Waline"
+                                span.waline-pageview-count
+                                    i.solitude.st-loading-line
+                            when "Valine"
+                                span.leancloud_visitors(id=url_for(page.path))
+                                    span.leancloud-visitors-count
+                                        i.solitude.st-loading-line
+                            when 'Artalk'
+                                span#ArtalkPV
+                                    i.solitude.st-loading-line
+                    else
+                        if theme.busuanzi
+                            span#busuanzi_value_page_pv
                                 i.solitude.st-loading-line
-                        default
-                            if theme.busuanzi
-                                span#busuanzi_value_page_pv
-                            i.solitude.st-loading-line
-            if theme.post.meta.comment && page.comment && theme.comment.count
+            if theme.post.meta.comment && page.comment && theme.comment.count && theme.comment.use
                 span.post-meta-commentcount(title=_p('post.comment'), onclick="sco.scrollTo('post-comment')")
                     i.solitude.st-chat-fill
                     a(href=url_for(page.path) + "#post-comment")

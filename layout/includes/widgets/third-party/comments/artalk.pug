@@ -25,7 +25,7 @@ script.
                     utils.lightbox($content.querySelectorAll('img:not([atk-emoticon])'))
                     sco.owoBig({body: '.atk-grp', item: '.atk-item'})
                 })
-                !{commentBarrage} && getBarrage(array)
+                !{commentBarrage} && barrageArtalk(array)
             })
             const destroyArtalk = () => artalkItem.destroy()
             utils.addGlobalFn('pjax', destroyArtalk, 'destroyArtalk')
@@ -54,7 +54,7 @@ script.
 
 if commentBarrage
     script.
-        async function getBarrage(array) {
+        const barrageArtalk = async array => {
             await utils.getScript('!{url_for(theme.cdn.commentBarrage)}').then(() => {
                 initializeCommentBarrage(array)
             })
