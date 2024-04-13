@@ -19,6 +19,8 @@
                             when "Valine"
                                 span.valine-comment-count(data-xid=url_for(page.path) itemprop="commentCount")
                                     i.solitude.st-loading-line
+                            when "Artalk"
+                                span.artalk-count
                     | )
 
         if use.length > 1
@@ -26,7 +28,7 @@
                 span.first=use[0]
                 span#switch-btn
                 span.second=use[1]
-                
+
     .comment-wrap
         each name in use
             case name
