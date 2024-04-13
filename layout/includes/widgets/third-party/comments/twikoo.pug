@@ -1,45 +1,66 @@
+- const { envId, region, option ,accessToken } = theme.twikoo
+- const { lazyload, count, use,commentBarrage } = theme.comment
+
 script.
-    async function initComment() {
-        const initOptions = Object.assign(
-            !{JSON.stringify(theme.comment.twikoo || {})},
-            {
-                el: '#comment',
-                onCommentLoaded: async function () {
-                    GLOBAL_CONFIG.lightbox && utils.lightbox(document.querySelectorAll('#twikoo .tk-content img:not(.tk-owo-emotion)'))
-                    sco.owoBig()
-                    GLOBAL_CONFIG.comment.commentBarrage && PAGE_CONFIG.comment && initializeCommentBarrage(await fetchComments())
-                },
-                lang: '#{theme.comment.twikoo.lang}',
-            }
-        )
-        await twikoo.init(initOptions)
-        if (#{theme.post.meta.comment && is_post()}) {
-            var countOptions = Object.assign(
-                !{JSON.stringify(theme.comment.twikoo || {})},
-                {
-                    urls: [window.location.pathname],
-                    includeReply: false
+    !function () {
+        const getCount = () => {
+            const ele = document.querySelectorAll('.twikoo-count')
+            if (!ele) return
+            twikoo.getCommentsCount({
+                envId: '!{envId}',
+                region: '!{region}',
+                urls: [window.location.pathname],
+                includeReply: false
+            }).then(res => {
+                ele.forEach(item => item.textContent=res[0].count)
+            }).catch(err => {
+                console.error(err)
+            })
+        }
+        const init = async () => {
+            twikoo.init(Object.assign({
+                el: '#twikoo-wrap',
+                envId: '!{envId}',
+                region: '!{region}',
+                onCommentLoaded: () => {
+                    utils.lightbox(document.querySelectorAll('#twikoo .tk-content img:not(.tk-owo-emotion)'))
                 }
-            )
-            const res = await twikoo.getCommentsCount(countOptions)
-            try {
-                document.getElementById('twikoo-count').innerText = res[0].count
-                document.querySelector('.comment-headline span:last-child').innerText = ` (${res[0].count})`
-            } catch (e) {
-                document.getElementById('twikoo-count').innerText = '加载错误'
-            }
+            }, !{JSON.stringify(option)}))
+
+            !{count ? ' && getCount()' : ''}
+            sco.owoBig({
+                body: '.OwO-body',
+                item: '.OwO-items li'
+            })
+
+            !{commentBarrage} && getBarrage()
         }
 
-        async function fetchComments() {
+        const loadTwikoo = () => {
+            if (typeof twikoo === 'object') init()
+            else utils.getScript('!{url_for(theme.cdn.twikoo)}').then(init)
+        }
+
+        if ('!{use[0]}' === 'Twikoo' || !{lazyload}) {
+            if (!{lazyload}) utils.loadComment(document.getElementById('twikoo-wrap'), loadTwikoo)
+            else loadTwikoo()
+        } else {
+            window.loadTwoComment = init
+        }
+    }()
+
+if commentBarrage
+    script.
+        async function getBarrage() {
             try {
-                const response = await fetch("!{theme.comment.twikoo.envId}", {
+                const response = await fetch("!{envId}", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json"
                     },
                     body: JSON.stringify({
                         event: "COMMENT_GET",
-                        accessToken: "!{theme.comment.twikoo.accessToken}",
+                        accessToken: "!{accessToken}",
                         url: window.location.pathname
                     })
                 });
@@ -47,14 +68,15 @@ script.
                     throw new Error("HTTP error! status: " + response.status);
                 }
                 const data = await response.json();
-                return (data.data).map(item => Object.assign({
-                    content: item.comment,
-                    nick: item.nick,
-                    mailMd5: item.mailMd5,
-                    id: item.id
-                }))
+                await utils.getScript('!{url_for(theme.cdn.commentBarrage)}').then(() => {
+                    initializeCommentBarrage((data.data).map(item => Object.assign({
+                        content: item.comment,
+                        nick: item.nick,
+                        mailMd5: item.mailMd5,
+                        id: item.id
+                    })))
+                })
             } catch (error) {
                 console.error("An error occurred while fetching comments: ", error);
             }
         }
-    }

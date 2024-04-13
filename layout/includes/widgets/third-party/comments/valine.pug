@@ -1,15 +1,15 @@
-- const { lazyload, count } = theme.comment
-- const { appId, appKey, avatar, serverURLs, visitor, option } = theme.comment.valine
+- const { lazyload, count, use,commentBarrage } = theme.comment
+- const { appId, appKey, avatar, serverURLs, visitor, option } = theme.valine
 - let emojiMaps = '""'
 
 if site.data.valine
     - emojiMaps = JSON.stringify(site.data.valine)
 
 script.
-    async function initComment() {
-        const initValine = async () => {
-            const valine = new Valine(Object.assign({
-                el: '#comment',
+    !function () {
+        const initValine = () => {
+            const valine = new Valine({
+                el: '#vcomment',
                 appId: '#{appId}',
                 appKey: '#{appKey}',
                 avatar: '#{avatar}',
@@ -18,59 +18,57 @@ script.
                 path: window.location.pathname,
                 visitor: #{visitor},
                 ...!{JSON.stringify(option)}
-            }))
-
-            if (GLOBAL_CONFIG.lightbox) {
-                utils.lightbox(document.querySelectorAll('#comment .vcontent img:not(.vemoji)'));
+            })
+            GLOBAL_CONFIG.lightbox && utils.lightbox(document.querySelectorAll('#comment .vcontent img:not(.vemoji)'))
+            sco.owoBig({body: '.vwrap', item: '.vemojis i'})
+        }
+        const loadValine = async () => {
+            if (typeof Valine === 'function') await initValine()
+            else {
+                await utils.getScript('!{url_for(theme.cdn.valine)}').then(initValine)
             }
-
-            sco.owoBig();
-            GLOBAL_CONFIG.comment.commentBarrage && PAGE_CONFIG.comment && initializeCommentBarrage(await fetchComments())
+            !{commentBarrage} && getBarrage()
         }
-
-        if (!!{lazyload}) {
-            if (!{lazyload}) utils.loadComment(document.getElementById('comment'), initValine)
-            else setTimeout(initValine, 0)
+        if ('!{use[0]}' === 'Valine' || !{lazyload}) {
+            if (!{lazyload}) utils.loadComment(document.getElementById('vcomment'), loadValine)
+            else loadValine()
         } else {
-            await initValine()
+            window.loadTwoComment = loadValine
         }
+    }()
 
-        async function fetchComments() {
-            const url = new URL('#{serverURLs}' + '/1.1/classes/Comment');
+if commentBarrage
+    script.
+        async function getBarrage() {
+            const url = new URL('!{serverURLs}/1.1/classes/Comment')
             const params = {
                 url: window.location.pathname,
                 order: '-createdAt'
-            };
-
-            for (const [key, value] of Object.entries(params)) {
-                url.searchParams.append(key, value);
             }
-
+            Object.entries(params).forEach(([key, value]) => url.searchParams.append(key, value))
             try {
                 const response = await fetch(url, {
                     method: "GET",
                     headers: {
                         "X-LC-Id": "#{appId}",
-                        "X-LC-Key": '#{appKey}',
+                        "X-LC-Key": "#{appKey}",
                         "Content-Type": "application/json"
                     },
-                });
-
+                })
                 if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
+                    throw new Error(`HTTP error! status: ${response.status}`)
                 }
-
-                const data = await response.json();
-                return (data.results.filter(item => item.url === window.location.pathname)).map(item =>
-                    Object.assign({
+                const data = await response.json()
+                await utils.getScript('!{url_for(theme.cdn.commentBarrage)}')
+                initializeCommentBarrage(data.results
+                    .filter(item => item.url === window.location.pathname)
+                    .map(item => ({
                         content: item.comment,
                         nick: item.nick,
                         mailMd5: md5(item.mail),
                         id: item.objectId
-                    })
-                )
+                    })))
             } catch (error) {
-                console.error("An error occurred while fetching comments: ", error);
+                console.error("An error occurred while fetching comments: ", error)
             }
         }
-    }

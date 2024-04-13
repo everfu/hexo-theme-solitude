@@ -17,7 +17,7 @@ script.
 
         const $asideList = document.querySelector('#card-newest-comments .aside-list')
         const newestCommentInit = () => {
-            const data = saveToLocal.get('valine-newest-comment')
+            const data = utils.saveToLocal.get('valine-newest-comment')
             if (data) {
                 generateHtml(data)
             } else {
@@ -30,13 +30,13 @@ script.
                 const settings = {
                     "method": "GET",
                     "headers": {
-                        "X-LC-Id": '!{theme.comment.valine.appId}',
-                        "X-LC-Key": '!{theme.comment.valine.appKey}',
+                        "X-LC-Id": '!{theme.valine.appId}',
+                        "X-LC-Key": '!{theme.valine.appKey}',
                         "Content-Type": "application/json"
                     },
                 }
 
-                const res = await fetch('!{theme.comment.valine.serverURLs}/1.1/classes/Comment?limit=8&order=-createdAt', settings)
+                const res = await fetch('!{theme.valine.serverURLs}/1.1/classes/Comment?limit=8&order=-createdAt', settings)
                 const result = await res.json()
                 window.res = result
                 const valineArray = result.results.map(e => {
@@ -48,7 +48,7 @@ script.
                         'date': e.updatedAt || e.createdAt
                     }
                 })
-                saveToLocal.set('valine-newest-comment', valineArray, !{theme.comment.newest_comment.storage})
+                utils.saveToLocal.set('valine-newest-comment', valineArray, !{theme.comment.newest_comment.storage})
                 generateHtml(valineArray)
             } catch (err) {
                 console.error(err)

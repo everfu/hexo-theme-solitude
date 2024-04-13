@@ -50,10 +50,6 @@
           &::before
             transform translateX(20px)
 
-  .comment-wrap
-    > div:nth-child(2)
-      display none
-
 .post-comment
   background var(--efu-card-bg)
 
@@ -81,26 +77,91 @@ div#post-comment
     color var(--efu-secondtext)
     border-radius 8px
 
+  if hexo-config('comment.use')[1]
+    &.move
+      if hexo-config('comment.count')
+        .comment-head
+          .count span:first-child
+            display none
+
+          .count span:last-child
+            display inline-block
+
+      #switch-btn::before
+        transform translateX(20px)
+
+      .comment-wrap
+        > div:first-child
+          display none
+
+        > div:last-child
+          display block
+          animation 0.5s ease 0s 1 normal none running tabshow
+
   .comment-head
-    font-size .8em !important
+    font-size .8em
     margin-bottom .5rem
-    display flex
-    align-items center
-    flex-wrap wrap
     position relative
+
+    if hexo-config('comment.use')[1]
+      .count span:last-child
+        display none
+
+      .comment-switch
+        display inline-block
+        float right
+        margin 2px auto 0
+        padding 4px 16px
+        width max-content
+        user-select none
+
+        #switch-btn
+          position relative
+          display inline-block
+          margin 0 8px 0
+          width 42px
+          height 22px
+          border-radius 34px
+          background-color var(--efu-main)
+          vertical-align middle
+          cursor pointer
+          transition .4s
+          border var(--style-border-always)
+
+          &::before
+            position absolute
+            bottom 3px
+            left 4px
+            width 14px
+            height 14px
+            border-radius 50%
+            background-color #fff
+            content ''
+            transition .4s
+
+  if hexo-config('comment.use')[1]
+    .comment-wrap
+      > div:last-child
+        display none
+
+      > div:first-child
+        animation 0.5s ease 0s 1 normal none running tabshow
 
 #owo-big
   position fixed
   align-items center
-  background-color var(--heo-card-bg)
+  background-color var(--efu-card-bg)
   border var(--style-border-always)
   border-radius 10px
   z-index 9999
   display none
   transform translate(0, -105%)
   overflow hidden
-  animation owoIn .3s cubic-bezier(.42,0,.3,1.11)
+  animation owoIn .3s cubic-bezier(.42, 0, .3, 1.11)
   padding 1rem
 
-@import 'twikoo.styl' when hexo-config('comment.type') == 'twikoo'
-@import 'valine.styl' when hexo-config('comment.type') == 'valine'
+if hexo-config('twikoo.style') && 'Twikoo' in hexo-config('comment.use')
+  @import 'twikoo.styl'
+
+if hexo-config('valine.style') && 'Valine' in hexo-config('comment.use')
+  @import 'valine.styl'

@@ -708,43 +708,50 @@ katex:
 
 # 评论
 # comment
+# getting start: http://solitude-docs.efu.me/comments/comment
 comment:
-  enable: false
-  type: # waline, twikoo, valine, artalk
+  use: # waline, twikoo, valine, artalk
   commentBarrage: false # 热评开关 / Hot comment switch
-  lazyload: true # 懒加载
-  count: true # 评论数展示
+  lazyload: false # 懒加载
+  count: false # 评论数展示
   avatar: https://cravatar.cn # Gravatar link
   newest_comment:
     enable: false
-    storage: .5 # 缓存时间 1: 1天 / .5 : 半天
-  # twikoo 配置信息
-  # twikoo settings
-  twikoo: # https://twikoo.js.org/
-    envId: # url: https://twikoo.sondy.top/
-    lang: "zh-CN" # 语言
-    accessToken: # accessToken
-  # waline 配置信息
-  # waline settings
-  waline: # https://waline.js.org/
-    envId:  # url: https://waline.wzsco.top
-    pageview: false # 是否开启页面访问量统计 / Whether to enable page access statistics
-    option: # waline配置项 / waline configuration item
-  # valine 配置信息
-  # valine settings
-  valine:
-    appId: # leancloud application app id
-    appKey: # leancloud application app key
-    serverURLs: # This configuration is suitable for domestic custom domain name users, overseas version will be automatically detected (no need to manually fill in)
-    avatar:
-    visitor: false
-    option: # options list
-  # artalk 配置信息
-  # artalk settings
-  artalk:
-    server: # server url / 后端地址
-    site: # site name / 站点名
-    option: # options
+    storage: .5 # 缓存时间 1: 1天 / .5 : 半天 / Cache time 1: 1 day .5 : half a day
+
+# twikoo 配置信息
+# twikoo settings
+twikoo: # https://twikoo.js.org/
+  envId: # url: https://twikoo.sondy.top/
+  region: # 环境地域，默认为 ap-shanghai，腾讯云环境填 ap-shanghai 或 ap-guangzhou；Vercel 环境不填
+  style: true # Use custom styles when turned on / 开启后使用自定义样式
+  accessToken: # AccessToken
+  option: # twikoo option
+
+# waline 配置信息
+# waline settings
+waline: # https://waline.js.org/
+  envId:  # url: https://waline.wzsco.top
+  pageview: false # 是否开启页面访问量统计 / Whether to enable page access statistics
+  option: # waline配置项 / waline configuration item
+
+# valine 配置信息
+# valine settings
+valine:
+  appId: # leancloud application app id
+  appKey: # leancloud application app key
+  serverURLs: # This configuration is suitable for domestic custom domain name users, overseas version will be automatically detected (no need to manually fill in)
+  avatar: # https://valine.js.org/avatar.html
+  visitor: false
+  style: true # Use custom styles when turned on / 开启后使用自定义样式
+  option: # options list
+
+# artalk 配置信息
+# artalk settings
+artalk:
+  server: # server url / 后端地址
+  site: # site name / 站点名
+  option: # options
 
 # 中控台扩展 ： 最新评论 + 标签 + 文章
 console_plus: false
@@ -818,7 +825,7 @@ right_menu:
   commentBarrage: false # 是否显示热评开关 / Whether to display the hot comment switch.
   # 翻译功能（仅支持简繁）
   # Translation function (Simplified and Traditional Chinese only)
-  translate: 
+  translate:
     enable: false
     defaultEncoding: 2 # 1: 默认繁体 2: 默认简体
     translateDelay: 0 # 首次加载翻译迟疑时间
@@ -856,7 +863,7 @@ CDN:
   internal: local
   # The CDN provider of third party scripts (第三方 js 的 cdn 配置)
   # option: jsdelivr/unpkg/cdnjs/custom
-  third_party: custom
+  third_party: cdnjs
 
   # Add version number to url, true or false
   version: true

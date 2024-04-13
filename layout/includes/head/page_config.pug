@@ -1,0 +1,9 @@
+script#config-diff.
+    var PAGE_CONFIG = {
+        is_post: !{is_post()},
+        is_page: !{!is_post() && !is_home()},
+        is_home: !{is_home()},
+        page: '!{page.type}',
+        toc: !{!!page.toc},
+        comment: !{!!page.comment},
+    }

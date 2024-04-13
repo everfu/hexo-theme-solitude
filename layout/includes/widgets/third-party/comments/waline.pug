@@ -1,72 +1,67 @@
 - const { envId, option ,pageview } = theme.comment.waline
-- const { lazyload, count } = theme.comment
+- const { lazyload, count, commentBarrage } = theme.comment
 
 script.
-    async function initComment() {
-        const isLazyLoad = !!{lazyload};
-        let walineInitFunction = window.walineFn || null;
+    !function () {
+        let walineInitFunction = window.walineFn || null
 
-        async function initWaline(Fn) {
+        function initWaline(initFn) {
             const walineOptions = {
-                el: '#comment',
+                el: '#waline-wrap',
                 serverURL: '!{envId}',
-                pageview: !isLazyLoad,
+                pageview: !{pageview},
                 dark: 'html[data-theme="dark"]',
                 path: window.location.pathname,
-                comment: !isLazyLoad,
+                comment: !{count},
                 ...!{JSON.stringify(option)}
-            };
-            const walineInstance = Fn(walineOptions);
-
-            utils.addGlobalFn('pjax', () => walineInstance.destroy(), 'destroyWaline');
-
-            if (GLOBAL_CONFIG.lightbox) {
-                utils.lightbox(document.querySelectorAll('#comment .wl-content img:not(.wl-emoji)'));
             }
-
-            sco.owoBig();
-
-            GLOBAL_CONFIG.comment.commentBarrage && PAGE_CONFIG.comment && initializeCommentBarrage(await fetchComments())
+            const walineInstance = initFn(walineOptions)
+            utils.addGlobalFn('pjax', () => walineInstance.destroy(), 'destroyWaline')
+            GLOBAL_CONFIG.lightbox && utils.lightbox(document.querySelectorAll('#comment .wl-content img:not(.wl-emoji)'))
+            sco.owoBig()
         }
 
-        if (isLazyLoad) {
-            utils.loadComment(document.getElementById('comment'), initWaline(walineInitFunction));
-        } else {
-            await initWaline(walineInitFunction);
+        async function loadWaline() {
+            if (walineInitFunction) initWaline(walineInitFunction)
+            else {
+                await utils.getCSS('!{url_for(theme.cdn.waline_css)}')
+                const {init} = await import('!{url_for(theme.cdn.waline_js)}')
+                walineInitFunction = init || Waline.init
+                initWaline(walineInitFunction)
+                window.walineFn = walineInitFunction
+            }
+            if (!{commentBarrage}) getBarrage()
         }
 
-        async function fetchComments() {
-            const url = new URL('#{envId}/api/comment');
-            const params = {
-                path: window.location.pathname,
-                sortBy: 'insertedAt_asc'
-            };
+        if ('!{use[0]}' === 'Valine' || !{lazyload}) {
+            if (!{lazyload}) utils.loadComment(document.getElementById('waline-wrap'), loadWaline)
+            else loadWaline()
+        } else window.loadTwoComment = loadWaline
+    }()
 
-            for (const [key, value] of Object.entries(params)) {
-                url.searchParams.append(key, value);
-            }
-
+if commentBarrage
+    script.
+        async function getBarrage() {
+            const url = new URL('!{envId}/api/comment')
+            const params = {path: window.location.pathname, sortBy: 'insertedAt_asc'}
+            Object.entries(params).forEach(([key, value]) => url.searchParams.append(key, value))
             try {
                 const response = await fetch(url, {
                     method: "GET",
                     headers: {
                         "Content-Type": "application/json"
                     },
-                });
-
-                if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
-                }
-
+                })
+                if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`)
                 const data = await response.json();
-                return (data.data).map(item => Object.assign({
+                await utils.getScript('!{url_for(theme.cdn.commentBarrage)}')
+                initializeCommentBarrage(data.data.map(item => ({
                     nick: item.nick,
                     mailId: item.avatar,
                     content: item.comment,
                     id: item.objectId
-                }))
+                })))
             } catch (error) {
-                console.error("An error occurred while fetching comments: ", error);
+                console.error("An error occurred while fetching comments: ", error)
             }
         }
-    }

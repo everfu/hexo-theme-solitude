@@ -11,8 +11,6 @@ mixin katex
                 })();
 
 div
-    script(src=url_for(theme.cdn.main))
-    script(src=url_for(theme.cdn.utils))
     script(src=url_for(theme.cdn.waterfall))
     script(src=url_for(theme.cdn.pjax))
 
@@ -61,23 +59,9 @@ div
                 script.
                     const coverColorConfig = {
                         api: '!{theme.post.covercolor.api}',
-                        time: !{theme.post.covercolor.time},
+                        time: !{theme.post.covercolor.time}
                     }
                 script(src=url_for(theme.cdn.cover_api))
-
-    if theme.comment.enable
-        case theme.comment.type
-            when 'twikoo'
-                script(src=url_for(theme.cdn.twikoo))
-            when 'waline'
-                script(src=url_for(theme.cdn.waline_js))
-            when 'valine'
-                script(src=url_for(theme.cdn.blueimp_md5))
-                script(src=url_for(theme.cdn.valine))
-            when 'artalk'
-                script(src=url_for(theme.cdn.artalk_js))
-        if theme.comment.commentBarrage
-            script(src=url_for(theme.cdn.commentBarrage))
 
     if theme.music.enable
         script(src=url_for(theme.cdn.music_js))
@@ -110,15 +94,6 @@ div#js-pjax
     if theme.busuanzi && (theme.aside.siteinfo.uv || theme.aside.siteinfo.pv)
         script(async src=url_for(theme.cdn.busuanzi_js))
 
-    script#config-diff.
-        var PAGE_CONFIG = {
-            is_post: !{is_post()},
-            is_page: !{!is_post() && !is_home()},
-            is_home: !{is_home()},
-            page: '!{page.type}',
-            toc: !{!!page.toc},
-            comment: !{!!page.comment},
-        }
 
 if theme.footer.randomlink
     include ../widgets/randomlink.pug
