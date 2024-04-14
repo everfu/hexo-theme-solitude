@@ -219,6 +219,10 @@ window.oncontextmenu = (ele) => {
         rm.hideRightMenu()
     })
 
+    if(GLOBAL_CONFIG.comment.commentBarrage){
+        rm.barrage(!utils.saveToLocal.get('commentBarrageSwitch'))
+    }
+
     rm.menuItems.paste.addEventListener('click', () => rm.pasteText() && rm.hideRightMenu())
     GLOBAL_CONFIG.comment && rm.menuItems.comment.addEventListener('click', () => rm.hideRightMenu() || sco.toTalk(selectTextNow))
     rm.menuItems.new.addEventListener('click', () => window.open(rm.domhref) && rm.hideRightMenu())

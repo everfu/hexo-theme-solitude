@@ -58,7 +58,7 @@ function initializeCommentBarrage(array) {
         }
 
         async initBarrage() {
-            const storageSwitch = localStorage.getItem("commentBarrageSwitch");
+            const storageSwitch = utils.saveToLocal.get("commentBarrageSwitch");
             this.config.dom.style.display = storageSwitch ? "flex" : "none";
             this.config.barrageList = this.filterAndFlatten(array);
             this.config.dom.innerHTML = "";

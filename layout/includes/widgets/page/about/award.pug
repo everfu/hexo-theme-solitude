@@ -7,7 +7,7 @@ if site.data.about.rewardList
             .author-content-item-tips= _p('award.thanks')
             span.author-content-item-title= _p('award.title')
             .author-content-item-description
-                = award.description
+                != award.description
             .reward-list-all
                 each reward in site.data.about.rewardList
                     - sum += reward.money
