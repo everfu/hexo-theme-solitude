@@ -47,9 +47,8 @@ script.
         }
 
         const getComment = async (asideList) => {
-            try {
-                const searchParams = new URLSearchParams({'site_name': "!{site}", 'limit': '6'})
-                const res = await fetch(`!{server}/api/v2/stats/latest_comments?${searchParams}`, {method: 'GET'})
+            const searchParams = new URLSearchParams({'site_name': "!{site}", 'limit': '6'})
+            await fetch(`!{server}/api/v2/stats/latest_comments?${searchParams}`, {method: 'GET'}).then(async res => {
                 const result = await res.json()
                 const avatarConfig = await getSetting()
                 const {mirror, params, default: defaults} = avatarConfig.frontend_conf.gravatar
@@ -65,11 +64,11 @@ script.
                 }))
                 utils.saveToLocal.set('artalk-newest-comments', artalk, !{theme.comment.newest_comment.storage})
                 generateHtml(artalk, asideList)
-            } catch (e) {
-                console.error(e);
+            }).catch(error => {
+                console.error(error);
                 asideList.textContent = "!{_p('newest_comment.error')}"
-            }
-        };
+            })
+        }
 
         const newestCommentInit = (asideList) => {
             const data = utils.saveToLocal.get('artalk-newest-comments')

@@ -51,7 +51,7 @@ script.
 
 if commentBarrage
     script.
-        const barrageTwikoo = async () => {
+        async function barrageTwikoo() {
             await fetch("!{envId}", {
                 method: "POST",
                 headers: {

@@ -1,5 +1,5 @@
 function initializeCommentBarrage(array) {
-    if (array === undefined) return;
+    if (array === []) return;
     let existingBarrage = window.currentBarrage;
 
     if (existingBarrage) {

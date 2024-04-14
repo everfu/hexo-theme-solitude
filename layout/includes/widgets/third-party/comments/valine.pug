@@ -39,7 +39,7 @@ script.
 
 if commentBarrage
     script.
-        const barrageValine = async () => {
+        async function barrageValine() {
             const url = new URL('!{serverURLs}/1.1/classes/Comment')
             const params = {
                 url: window.location.pathname,
@@ -56,15 +56,15 @@ if commentBarrage
             }).then(async res => {
                 if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`)
                 const data = await res.json()
-                if(typeof md5 ==="undefined") await utils.getScript('!{url_for(theme.cdn.blueimp_md5)}')
-                await utils.getScript('!{url_for(theme.cdn.commentBarrage)}')
-                initializeCommentBarrage(data.results
-                    .filter(item => item.url === window.location.pathname)
-                    .map(item => ({
-                        content: item.comment,
-                        nick: item.nick,
-                        mailMd5: md5(item.mail),
-                        id: item.objectId
-                    })))
+                if (typeof md5 === "undefined") await utils.getScript('!{url_for(theme.cdn.blueimp_md5)}')
+                await utils.getScript('!{url_for(theme.cdn.commentBarrage)}').then(() =>
+                    initializeCommentBarrage(data.results
+                        .filter(item => item.url === window.location.pathname)
+                        .map(item => ({
+                            content: item.comment,
+                            nick: item.nick,
+                            mailMd5: md5(item.mail),
+                            id: item.objectId
+                        }))))
             }).catch(error => console.error("An error occurred while fetching comments: ", error))
         }

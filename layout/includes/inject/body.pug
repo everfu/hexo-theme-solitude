@@ -80,19 +80,21 @@ div
         each item in theme.extends.body
             != item
 
-div#js-pjax
-    if theme.mermaid
-        script.
-            mermaid.run();
-    if is_home() && theme.carousel && site.posts.data.filter(item => item.recommend === true).slice(0, 6) || false
-        script.
-            carousel_swiper()
-    if page.type === 'says' && theme.says.enable
-        script.
-            GLOBAL_CONFIG.lightbox && utils.lightbox(document.querySelectorAll(".bber-content-img img"));
-            sco.changeTimeFormat(document.querySelectorAll('.bber-info-time time'))
-    if theme.busuanzi && (theme.aside.siteinfo.uv || theme.aside.siteinfo.pv)
-        script(async src=url_for(theme.cdn.busuanzi_js))
+    .js-pjax
+        if comment_js
+            include ../widgets/third-party/comments/js
+        if theme.mermaid
+            script.
+                mermaid.run();
+        if is_home() && theme.carousel && site.posts.data.filter(item => item.recommend === true).slice(0, 6) || false
+            script.
+                carousel_swiper()
+        if page.type === 'says' && theme.says.enable
+            script.
+                GLOBAL_CONFIG.lightbox && utils.lightbox(document.querySelectorAll(".bber-content-img img"));
+                sco.changeTimeFormat(document.querySelectorAll('.bber-info-time time'))
+        if theme.busuanzi && (theme.aside.siteinfo.uv || theme.aside.siteinfo.pv)
+            script(async src=url_for(theme.cdn.busuanzi_js))
 
 
 if theme.footer.randomlink

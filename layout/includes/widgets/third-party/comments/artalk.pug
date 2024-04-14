@@ -54,7 +54,7 @@ script.
 
 if commentBarrage
     script.
-        const barrageArtalk = async array => {
+        async function barrageArtalk(array) {
             await utils.getScript('!{url_for(theme.cdn.commentBarrage)}').then(() => {
                 initializeCommentBarrage(array)
             })

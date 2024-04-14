@@ -1,5 +1,5 @@
-- const { envId, option ,pageview } = theme.comment.waline
-- const { lazyload, count, commentBarrage } = theme.comment
+- const { envId, option ,pageview } = theme.waline
+- const { lazyload, count, commentBarrage,use } = theme.comment
 
 script.
     !function () {
@@ -18,7 +18,10 @@ script.
             const walineInstance = initFn(walineOptions)
             utils.addGlobalFn('pjax', () => walineInstance.destroy(), 'destroyWaline')
             GLOBAL_CONFIG.lightbox && utils.lightbox(document.querySelectorAll('#comment .wl-content img:not(.wl-emoji)'))
-            sco.owoBig()
+            sco.owoBig({
+                body: '.wl-emoji-popup',
+                item: '.wl-tab-wrapper button'
+            })
         }
 
         async function loadWaline() {
@@ -30,10 +33,10 @@ script.
                 initWaline(walineInitFunction)
                 window.walineFn = walineInitFunction
             }
-            if (!{commentBarrage}) barrageWaline()
+            !{commentBarrage} && barrageWaline()
         }
 
-        if ('!{use[0]}' === 'Valine' || !{lazyload}) {
+        if (!{use[0] === 'Waline'} || !{lazyload}) {
             if (!{lazyload}) utils.loadComment(document.getElementById('waline-wrap'), loadWaline)
             else loadWaline()
         } else window.loadTwoComment = loadWaline
@@ -41,24 +44,22 @@ script.
 
 if commentBarrage
     script.
-        const barrageWaline = async () => {
+        async function barrageWaline() {
             const url = new URL('!{envId}/api/comment')
             const params = {path: window.location.pathname, sortBy: 'insertedAt_asc'}
             Object.entries(params).forEach(([key, value]) => url.searchParams.append(key, value))
-            const response = await fetch(url, {
-                method: "GET",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-            }).then(async res => {
-                if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`)
-                const data = await response.json();
-                await utils.getScript('!{url_for(theme.cdn.commentBarrage)}')
-                initializeCommentBarrage(data.data.map(item => ({
-                    nick: item.nick,
-                    mailId: item.avatar,
-                    content: item.comment,
-                    id: item.objectId
-                })))
+            await fetch(url).then(async res => {
+                if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`)
+                const data = await res.json();
+                const regex = /<img [^>]*class="wl-emoji"[^>]*>/;
+                await utils.getScript('!{url_for(theme.cdn.commentBarrage)}').then(() => {
+                    initializeCommentBarrage(data.data.data
+                        .map(item => ({
+                            nick: item.nick,
+                            mailId: item.avatar,
+                            content: item.comment.replace(regex, ''),
+                            id: item.objectId
+                        })))
+                })
             }).catch(error => console.error("An error occurred while fetching comments: ", error))
         }
