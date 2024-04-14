@@ -1,9 +1,13 @@
-- var item_suffix = ''
 include ../widgets/page/banner
 .flink#article-container
     each data in site.data.tlink.links
-        h2= data.class_name
+        h2= data.class_name + " (" + data.link_list.length + ")"
         .flink-desc= data.descr
-        include ../widgets/page/links/linksItem
-
+        case data.type
+            when 'card'
+                include ../widgets/page/links/linksCard
+            when 'item'
+                include ../widgets/page/links/linksItem
+            when 'discn'
+                include ../widgets/page/links/linksDiscn
     != page.content

@@ -269,12 +269,12 @@ let sco = {
             if (window.getComputedStyle(commentBarrageElement).display === "flex") {
                 commentBarrageElement.style.display = "none";
                 document.querySelector("#consoleCommentBarrage").classList.remove("on");
-                localStorage.removeItem("commentBarrageSwitch");
+                utils.saveToLocal.set("commentBarrageSwitch", false, .2);
                 right_menu && rm.barrage(true)
             } else {
                 commentBarrageElement.style.display = "flex";
                 document.querySelector("#consoleCommentBarrage").classList.add("on");
-                localStorage.setItem("commentBarrageSwitch", "false");
+                utils.saveToLocal.set("commentBarrageSwitch", true, .2);
                 right_menu && rm.barrage(false)
             }
         }
