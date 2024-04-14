@@ -10,11 +10,11 @@
    
    主题由 [@张洪Heo](https://github.com/zhheo) 作者全权授权、设计！
 
-![npm package](https://img.shields.io/npm/v/hexo-theme-solitude?color=blue&logo=npm)
+![npm package](https://img.shields.io/npm/v/hexo-theme-solitude?logo=npm)
 ![release](https://img.shields.io/github/package-json/v/valor-x/hexo-theme-solitude/master?color=%231ab1ad&label=release)
 ![license](https://img.shields.io/github/license/valor-x/hexo-theme-solitude?color=FF5531)
 [![Stars](https://img.shields.io/github/stars/valor-x/hexo-theme-solitude)](https://github.com/valor-x/hexo-theme-solitude/stargazers)
-[![GitHub all releases](https://img.shields.io/github/downloads/valor-x/hexo-theme-solitude/total)](https://github.com/valor-x/hexo-theme-solitude/releases/latest)
+[![NPM all downloads](https://img.shields.io/npm/dy/hexo-theme-solitude?color=white)](https://www.npmjs.com/package/hexo-theme-solitude)
 
 ![hexo version](https://img.shields.io/badge/hexo-7.0.0+-blue?logo=hexo&logoColor=white)
 ![node version](https://img.shields.io/badge/node-14.0.0-white?logo=node.js&logoColor=white)
@@ -30,7 +30,7 @@
 
 [![twiter](https://img.shields.io/badge/Twitter-gray?logo=x)](https://twitter.com/efu_oo)
 [![TG](https://img.shields.io/badge/Telegram-gray?logo=Telegram&logoColor=white)](https://t.me/solitudePro)
-[![Discord](https://img.shields.io/badge/Discord-gray?logo=Discord&logoColor=white)](https://discord.gg/Y8VEvVgW)
+[![Discord](https://img.shields.io/discord/1218118131428495430?label=Discord&logo=Discord&labelColor=white&color=black)](https://discord.gg/Y8VEvVgW)
 
 ![JetBrains](https://img.shields.io/badge/jetbrains-support-black?logo=jetbrains)
 ![DuoLingo](https://img.shields.io/badge/duolingo-support-black?logo=duolingo&logoColor=white)
@@ -48,7 +48,7 @@
 
 - 页面懒加载（Pjax）、图片懒加载（LazyLoad）、离线应用（PWA）
 - 评论(Twikoo、Waline、Valine、Artalk)，支持双评论
-- 显示切换(ColorMode)
+- 昼夜切换(ColorMode)
 - 灯箱(medium-zoom、fancybox)
 - 数学公式(Latex)
 - 特色页面：即刻短文、我的装备、在线工具、音乐馆、友链鱼塘、相册页、豆瓣页

@@ -14,7 +14,7 @@
 ![release](https://img.shields.io/github/package-json/v/valor-x/hexo-theme-solitude/master?color=%231ab1ad&label=release)
 ![license](https://img.shields.io/github/license/valor-x/hexo-theme-solitude?color=FF5531)
 [![Stars](https://img.shields.io/github/stars/valor-x/hexo-theme-solitude)](https://github.com/valor-x/hexo-theme-solitude/stargazers)
-[![GitHub all releases](https://img.shields.io/github/downloads/valor-x/hexo-theme-solitude/total)](https://github.com/valor-x/hexo-theme-solitude/releases/latest)
+[![NPM all downloads](https://img.shields.io/npm/dy/hexo-theme-solitude?color=white)](https://www.npmjs.com/package/hexo-theme-solitude)
 
 ![hexo version](https://img.shields.io/badge/hexo-7.0.0+-blue?logo=hexo&logoColor=white)
 ![node version](https://img.shields.io/badge/node-14.0.0-white?logo=node.js&logoColor=white)
@@ -30,7 +30,7 @@
 
 [![twiter](https://img.shields.io/badge/Twitter-gray?logo=x)](https://twitter.com/efu_oo)
 [![TG](https://img.shields.io/badge/Telegram-gray?logo=Telegram&logoColor=white)](https://t.me/solitudePro)
-[![Discord](https://img.shields.io/badge/Discord-gray?logo=Discord&logoColor=white)](https://discord.gg/Y8VEvVgW)
+[![Discord](https://img.shields.io/discord/1218118131428495430?label=Discord&logo=Discord&labelColor=white&color=black)](https://discord.gg/Y8VEvVgW)
 
 ![JetBrains](https://img.shields.io/badge/jetbrains-support-black?logo=jetbrains)
 ![DuoLingo](https://img.shields.io/badge/duolingo-support-black?logo=duolingo&logoColor=white)
