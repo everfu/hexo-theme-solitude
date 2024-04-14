@@ -1,17 +1,7 @@
 script.
-    let pjaxSelectors = [
-        'title',
-        '#body-wrap',
-        '#site-config',
-        'meta[name="description"]',
-        '#js-pjax',
-        'meta[property^="og:"]',
-        '#config-diff'
-    ]
-
     const pjax = new Pjax({
         elements: 'a:not([target="_blank"])',
-        selectors: pjaxSelectors,
+        selectors: ['title','#body-wrap','#site-config','meta[name="description"]','.js-pjax','meta[property^="og:"]','#config-diff'],
         cacheBust: false,
         analytics: false,
         scrollRestoration: false

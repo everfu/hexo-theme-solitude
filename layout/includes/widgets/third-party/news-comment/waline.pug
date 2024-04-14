@@ -5,7 +5,10 @@ script.
 
             const replacements = [
                 {regex: /<img.*?src="(.*?)"?[^\>]+>/ig, replacement: '[!{_p("console.newest_comment.image")}]'},
-                {regex: /<a[^>]+?href=["']?([^"']+)["']?[^>]*>([^<]+)<\/a>/gi, replacement: '[!{_p("console.newest_comment.link")}]'},
+                {
+                    regex: /<a[^>]+?href=["']?([^"']+)["']?[^>]*>([^<]+)<\/a>/gi,
+                    replacement: '[!{_p("console.newest_comment.link")}]'
+                },
                 {regex: /<pre><code>.*?<\/pre>/gi, replacement: '[!{_p("console.newest_comment.code")}]'},
                 {regex: /<[^>]+>/g, replacement: ""}
             ];
@@ -26,8 +29,7 @@ script.
         }
 
         const getComment = async () => {
-            try {
-                const res = await fetch('!{theme.waline.envId}/api/comment?type=recent&count=8', {method: 'GET'})
+            await fetch('!{theme.waline.envId}/api/comment?type=recent&count=8', {method: 'GET'}).then(async res => {
                 const result = await res.json()
                 const walineArray = result.data.map(e => {
                     return {
@@ -40,10 +42,10 @@ script.
                 })
                 utils.saveToLocal.set('waline-newest-comment', walineArray, !{theme.comment.newest_comment.storage})
                 generateHtml(walineArray)
-            } catch (err) {
-                console.error(err)
+            }).catch(error => {
+                console.error(error)
                 $asideList.textContent = "!{_p('newest_comment.error')}"
-            }
+            })
         }
 
         const generateHtml = array => {
@@ -60,9 +62,9 @@ script.
                   </div>
                 </div>
               `).join('') : "!{_p('newest_comment.zero')}"
-            window.lazyLoadInstance && window.lazyLoadInstance.update()
-            window.pjax && window.pjax.refresh()
-            sco && sco.changeTimeFormat(document.querySelectorAll('.aside-list-item time'))
+            window.lazyLoadInstance?.update()
+            window.pjax?.refresh()
+            sco?.changeTimeFormat(document.querySelectorAll('.aside-list-item time'))
         }
 
         newestCommentInit()

@@ -20,5 +20,6 @@ block content
             if theme.related_post.enable
                 != related_posts(page, site.posts)
             if page.comment
+                - var comment_js = true
                 include includes/widgets/third-party/comments/comment
         include includes/widgets/aside/aside

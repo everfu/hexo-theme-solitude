@@ -40,14 +40,3 @@
                     #waline-wrap
                 when 'Artalk'
                     #artalk-wrap
-
-    each name in use
-        case name
-            when 'Twikoo'
-                !=partial('includes/widgets/third-party/comments/twikoo', {}, {cache: true})
-            when 'Waline'
-                !=partial('includes/widgets/third-party/comments/waline', {}, {cache: true})
-            when 'Valine'
-                !=partial('includes/widgets/third-party/comments/valine', {}, {cache: true})
-            when 'Artalk'
-                !=partial('includes/widgets/third-party/comments/artalk', {}, {cache: true})
