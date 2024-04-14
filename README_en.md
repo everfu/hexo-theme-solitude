@@ -28,8 +28,9 @@
 ![mermaid](https://img.shields.io/badge/mermaid-ff3670?logo=mermaid&logoColor=white)
 [![pwa](https://img.shields.io/badge/pwa-red?logo=pwa)](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps)
 
-[![twiter](https://img.shields.io/badge/@efu__oo-gray?logo=x)](https://twitter.com/efu_oo)
-[![TG](https://img.shields.io/badge/efuome-gray?logo=Telegram&logoColor=white)](https://t.me/solitudePro)
+[![twiter](https://img.shields.io/badge/Twitter-gray?logo=x)](https://twitter.com/efu_oo)
+[![TG](https://img.shields.io/badge/Telegram-gray?logo=Telegram&logoColor=white)](https://t.me/solitudePro)
+[![Discord](https://img.shields.io/badge/Discord-gray?logo=Discord&logoColor=white)](https://discord.gg/Y8VEvVgW)
 
 ![JetBrains](https://img.shields.io/badge/jetbrains-support-black?logo=jetbrains)
 ![DuoLingo](https://img.shields.io/badge/duolingo-support-black?logo=duolingo&logoColor=white)
@@ -55,9 +56,11 @@
 
 ## Todo
 
-- [x] Support Waline
-- [ ] Tags plugin
-- [ ] Album reconstruction(Removed, to be refactored)
+- [x] Artalk
+- [x] Use double comment
+- [x] Album
+
+> If you have any questions, please issue an [issue](https://github.com/valor-x/hexo-theme-solitude/issues)
 
 ## Setup
 

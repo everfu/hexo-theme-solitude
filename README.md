@@ -28,8 +28,9 @@
 ![mermaid](https://img.shields.io/badge/mermaid-ff3670?logo=mermaid&logoColor=white)
 [![pwa](https://img.shields.io/badge/pwa-red?logo=pwa)](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps)
 
-[![twiter](https://img.shields.io/badge/@efu__oo-gray?logo=x)](https://twitter.com/efu_oo)
-[![TG](https://img.shields.io/badge/efuome-gray?logo=Telegram&logoColor=white)](https://t.me/solitudePro)
+[![twiter](https://img.shields.io/badge/Twitter-gray?logo=x)](https://twitter.com/efu_oo)
+[![TG](https://img.shields.io/badge/Telegram-gray?logo=Telegram&logoColor=white)](https://t.me/solitudePro)
+[![Discord](https://img.shields.io/badge/Discord-gray?logo=Discord&logoColor=white)](https://discord.gg/Y8VEvVgW)
 
 ![JetBrains](https://img.shields.io/badge/jetbrains-support-black?logo=jetbrains)
 ![DuoLingo](https://img.shields.io/badge/duolingo-support-black?logo=duolingo&logoColor=white)
@@ -37,7 +38,7 @@
 [![gitee](https://img.shields.io/badge/Gitee-red?logo=gitee)](https://gitee.com/nsjjd_w/hexo-theme-solitude)
 [![gitlab](https://img.shields.io/badge/GitLab-blue?logo=gitlab)](https://gitlab.com/efu/hexo-theme-solitude)
 
-[预览](https://efu.me/) 丨  [文档](https://solitude-docs.efu.me/)
+[预览](https://www.efu.me/) 丨  [文档](https://solitude-docs.efu.me/)
 
 </div>
 
@@ -55,9 +56,11 @@
 
 ## Todo
 
-- [x] Waline 评论支持
-- [ ] Tags plugin 插件化
-- [ ] 相册页重构（已移除，待重构）
+- [x] Artalk 评论
+- [x] 双评论
+- [x] 相册
+
+> 如有問題請提 [issue](https://github.com/valor-x/hexo-theme-solitude/issues)
 
 ## 应用
 
