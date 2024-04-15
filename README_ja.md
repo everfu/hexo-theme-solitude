@@ -1,16 +1,16 @@
-[简体中文](README.md)丨[繁体中文](README_zh-tw.md)丨English
+[简体中文](README.md)丨[繁体中文](README_zh-Hant.md)丨[English](README_en-US.md)丨[Français](README_fr.md)丨日本語
 
 <div align="center">
 
    <img src=".github/logo.svg" alt="Solitude logo" height="200">
 
-   <h1>Hexo Theme Solitude</h1>
+   <h1>ヘキソテーマソリチュード</h1>
 
-   An elegant Hexo theme that supports lazy loading, PWA, Latex, and multiple comment systems.
+遅延読み込み、PWA、ラテックス、および複数のコメントシステムをサポートするエレガントなHexoテーマ。
 
-   Theme is fully licensed and designed by the author of [@张洪Heo](https://github.com/zhheo)!
-  
-![npm package](https://img.shields.io/npm/v/hexo-theme-solitude?color=blue&logo=npm)
+テーマは、 [@张洪Heo](https://github.com/zhheo) 著者の完全な権限、デザイン!
+
+![npm package](https://img.shields.io/npm/v/hexo-theme-solitude?logo=npm)
 ![release](https://img.shields.io/github/package-json/v/valor-x/hexo-theme-solitude/master?color=%231ab1ad&label=release)
 ![license](https://img.shields.io/github/license/valor-x/hexo-theme-solitude?color=FF5531)
 [![Stars](https://img.shields.io/github/stars/valor-x/hexo-theme-solitude)](https://github.com/valor-x/hexo-theme-solitude/stargazers)
@@ -38,44 +38,44 @@
 [![gitee](https://img.shields.io/badge/Gitee-red?logo=gitee)](https://gitee.com/nsjjd_w/hexo-theme-solitude)
 [![gitlab](https://img.shields.io/badge/GitLab-blue?logo=gitlab)](https://gitlab.com/efu/hexo-theme-solitude)
 
-[Preview](https://efu.me/) 丨  [Documentation](https://solitude-docs.efu.me/)
+[プレビュー](https://www.efu.me/) 丨  [ドキュメンテーション](https://solitude-docs.efu.me/)
 
 </div>
 
 ![Screenshot](.github/screenshot.png)
 
-## Features
+## 特性
 
-- Pjax、LazyLoad、PWA
-- Comments(Twikoo、Waline、Valine、Artalk), Can double comment
-- ColorMode
-- Lightbox(medium-zoom、fancybox)
-- Mathematical formulas(Latex)
-- Featured pages: Instant Short Article, My Equipment, Online Tools, Music Gallery, Friend Chain Fish Pond, Photo Album Page, Douban Page
-- Article features: AI summary, code highlighting
+- ページ遅延読み込み(Pjax)、画像遅延読み込み(LazyLoad)、オフラインアプリケーション(PWA)
+- コメント(Twikoo、Waline、Valine、Artalk)
+- カラーモード
+- ライトボックス(中ズーム、ファンシーボックス)
+- 数式(ラテックス)
+- 注目のページ:インスタントエッセイ、マイ機器、オンラインツール、ミュージックギャラリー、フレンドチェーンフィッシュポンド、フォトアルバムページ、Doubanページ
+- 記事の特徴:AIの要約、コードの強調表示
 
-## Todo
+## すべての
 
-- [x] Artalk
-- [x] Use double comment
-- [x] Album
+- [x] Artalkレビュー
+- [x] ダブルレビュー
+- [x] 写真集
 
-> If you have any questions, please issue an [issue](https://github.com/valor-x/hexo-theme-solitude/issues)
+> ご不明な点がございましたら、お問い合わせください [issue](https://github.com/valor-x/hexo-theme-solitude/issues)
 
-## Setup
+## 申し込む
 
-1. Use the NPM package
+1. インストールに NPM パッケージを使用する
       ```bash
       npm i hexo-theme-solitude
       ```
-2. Apply
+2. テーマを適用する
       ```yaml
       theme: solitude
       ```
 
-Check out the [Documentation](https://solitude-docs.efu.me/) for more information.
+詳しくは [Docs](https://solitude-docs.efu.me) をご覧ください。
 
-## Sponsors
+## スポンサー
 
 <p align="center">
   <a href="https://cdn.jsdelivr.net/gh/efuo/static/sponsors.svg">
@@ -83,6 +83,6 @@ Check out the [Documentation](https://solitude-docs.efu.me/) for more informatio
   </a>
 </p>
 
-## License
+## 著作権
 
-[MIT](./LICENSE) License &copy; 2023-PRESENT [Efu](https://github.com/efuo)
+[MIT](./LICENSE) License &copy; 2023-これまで [Efu](https://github.com/efuo)
