@@ -36,10 +36,10 @@ const sidebarFn = () => {
 
 const scrollFn = function () {
     const innerHeight = window.innerHeight;
-    const $header = document.getElementById('page-header');
-    if (!$header || document.body.scrollHeight <= innerHeight) return;
+    if (document.body.scrollHeight <= innerHeight) return;
 
     let initTop = 0;
+    const $header = document.getElementById('page-header');
     window.addEventListener('scroll', utils.throttle(function (e) {
         const currentTop = window.scrollY || document.documentElement.scrollTop;
         const isDown = scrollDirection(currentTop);
@@ -52,7 +52,9 @@ const scrollFn = function () {
             }
             $header.classList.add('nav-fixed');
         } else {
+            if (currentTop ===0){
             $header.classList.remove('nav-fixed', 'nav-visible');
+            }
         }
     }, 200));
 
@@ -561,16 +563,14 @@ let sco = {
         });
     },
     addNavBackgroundInit: function () {
-        const scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
-        if (scrollTop !== 0) {
-            const pageHeader = document.getElementById("page-header");
-            if (pageHeader) {
-                pageHeader.classList.add("nav-fixed", "nav-visible");
-            }
-            const cookiesWindow = document.getElementById("cookies-window");
-            if (cookiesWindow) {
-                cookiesWindow.style.display = 'none';
-            }
+        let e = 0
+            , t = 0;
+        document.body && (e = document.body.scrollTop),
+        document.documentElement && (t = document.documentElement.scrollTop),
+        0 !== (e - t > 0 ? e : t) && (document.getElementById("page-header").classList.add("nav-fixed"), document.getElementById("page-header").classList.add("nav-visible"))
+        const cookiesWindow = document.getElementById("cookies-window");
+        if (cookiesWindow) {
+            cookiesWindow.style.display = 'none';
         }
     },
     initAdjust: function (change = false) {
