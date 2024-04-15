@@ -5,7 +5,7 @@
 if site.data.valine
     - emojiMaps = JSON.stringify(site.data.valine)
 
-script(data-pjax).
+script.
     (() => {
         const initValine = () => {
             const valine = new Valine({
