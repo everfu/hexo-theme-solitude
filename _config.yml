@@ -410,6 +410,7 @@ footer:
   # 底部上方一排图标
   # Bottom row of icons
   information:
+    author: false # 是否显示 site_icon / enable site_icon in footer
     left: # 左侧显示图标
     #  Github: https://github.com/efuo || st-github-line # 名称：链接 || 图标 / Name: link || icon
     #  Mail: mailto:o@efu.me || st-mail-line

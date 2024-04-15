@@ -80,20 +80,21 @@
         background var(--efu-main)
         transform scale(1.1)
 
-    .footer_mini_logo
-      width 50px
-      height 50px
-      margin 0 1rem
-      cursor pointer
-      transition cubic-bezier(0, 0, 0, 1.29) .5s
-      user-select none
-      border-radius 50px
-      overflow hidden
-      +maxWidth768()
-        display none
+    if hexo-config('footer.information.author')
+      .footer_mini_logo
+        width 50px
+        height 50px
+        margin 0 1rem
+        cursor pointer
+        transition cubic-bezier(0, 0, 0, 1.29) .5s
+        user-select none
+        border-radius 50px
+        overflow hidden
+        +maxWidth768()
+          display none
 
-      &:hover
-        transform scale(1.2)
+        &:hover
+          transform scale(1.2)
 
   #st-footer
     display flex
