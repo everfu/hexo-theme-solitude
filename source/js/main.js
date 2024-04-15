@@ -351,7 +351,7 @@ let sco = {
         el && GLOBAL_CONFIG.runtime && (el.innerText = utils.timeDiff(new Date(GLOBAL_CONFIG.runtime), new Date()) + GLOBAL_CONFIG.lang.time.day)
     },
     toTalk: function (txt) {
-        const inputs = ["#wl-edit", ".el-textarea__inner", "#veditor",".atk-textarea"]
+        const inputs = ["#wl-edit", ".el-textarea__inner", "#veditor", ".atk-textarea"]
         for (let i = 0; i < inputs.length; i++) {
             let el = document.querySelector(inputs[i])
             if (el != null) {
@@ -811,7 +811,7 @@ const addCopyright = () => {
     document.body.addEventListener('copy', handleCopy)
 }
 
-const asideStatus = () =>{
+const asideStatus = () => {
     const asideStatus = utils.saveToLocal.get('aside-status')
     if (asideStatus !== undefined) {
         if (asideStatus === 'hide') {
@@ -883,7 +883,7 @@ window.refreshFn = () => {
     PAGE_CONFIG.toc && toc.init();
     (PAGE_CONFIG.is_post || PAGE_CONFIG.is_page) && ((addHighlight()) || tabs.init())
     PAGE_CONFIG.is_home && showTodayCard()
-    GLOBAL_CONFIG.covercolor.enable && coverColor()
+    GLOBAL_CONFIG.covercolor.enable && setTimeout(coverColor, 0)
     PAGE_CONFIG.page === "music" && scoMusic.init()
     GLOBAL_CONFIG.post_ai && PAGE_CONFIG.is_post && efu_ai.init()
     sco.switchComments()
