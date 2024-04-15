@@ -1,3 +1,4 @@
+- const {copyright} = theme.post.default
 .post-copyright
     .post-copyright__author_group
         a.post-copyright__author_img(href=url_for("/about/"))
@@ -14,7 +15,7 @@
                     a.reward-link-button(href=url_for(theme.post.rss))
                         i.solitude.st-plant-fill
                         = _p('footer.rss')
-    if theme.post.default.copyright.enable || page.copyright
+    if copyright.enable || page.copyright
         .post-copyright__notice
             span.post-copyright-info
                 if page.reprint

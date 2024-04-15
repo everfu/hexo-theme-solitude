@@ -215,7 +215,7 @@ class toc {
 
 let lastSayHello = "";
 let wleelw_musicPlaying = false
-let right_menu = false
+let is_rm = typeof rm !== 'undefined'
 
 let sco = {
     hideCookie: function () {
@@ -257,10 +257,10 @@ let sco = {
         $console.classList.toggle("on", wleelw_musicPlaying);
         if (wleelw_musicPlaying) {
             $meting.aplayer.play();
-            right_menu && ($rm_text.textContent = GLOBAL_CONFIG.right_menu.music.stop) && ($rm_icon.className = 'solitude st-pause-fill')
+            rm?.menuItems.music[0] && ($rm_text.textContent = GLOBAL_CONFIG.right_menu.music.stop) && ($rm_icon.className = 'solitude st-pause-fill')
         } else {
             $meting.aplayer.pause();
-            right_menu && ($rm_text.textContent = GLOBAL_CONFIG.right_menu.music.start) && ($rm_icon.className = 'solitude st-play-fill')
+            rm?.menuItems.music[0] && ($rm_text.textContent = GLOBAL_CONFIG.right_menu.music.start) && ($rm_icon.className = 'solitude st-play-fill')
         }
     },
     switchCommentBarrage: function () {
@@ -270,18 +270,18 @@ let sco = {
                 commentBarrageElement.style.display = "none";
                 document.querySelector("#consoleCommentBarrage").classList.remove("on");
                 utils.saveToLocal.set("commentBarrageSwitch", false, .2);
-                right_menu && rm.barrage(true)
+                rm?.menuItems.barrage && rm.barrage(true)
             } else {
                 commentBarrageElement.style.display = "flex";
                 document.querySelector("#consoleCommentBarrage").classList.add("on");
                 utils.saveToLocal.set("commentBarrageSwitch", true, .2);
-                right_menu && rm.barrage(false)
+                rm?.menuItems.barrage && rm.barrage(false)
             }
         }
     },
     switchHideAside: function () {
         const htmlClassList = document.documentElement.classList;
-        htmlClassList.contains("hide-aside") ? utils.saveToLocal.set("aside-status", "show", 1) : saveToLocal.set("aside-status", "hide", 1)
+        htmlClassList.contains("hide-aside") ? utils.saveToLocal.set("aside-status", "show", 1) : utils.saveToLocal.set("aside-status", "hide", 1)
         htmlClassList.toggle("hide-aside");
         htmlClassList.contains("hide-aside") ? document.querySelector("#consoleHideAside").classList.add("on") : document.querySelector("#consoleHideAside").classList.remove("on");
     },
@@ -319,12 +319,12 @@ let sco = {
             document.documentElement.setAttribute('data-theme', 'dark')
             utils.saveToLocal.set('theme', 'dark', 0.02);
             utils.snackbarShow(GLOBAL_CONFIG.lang.theme.dark, false, 2000)
-            right_menu && rm.mode(true)
+            is_rm && rm.mode(true)
         } else {
             document.documentElement.setAttribute('data-theme', 'light')
             utils.saveToLocal.set('theme', 'light', 0.02);
             utils.snackbarShow(GLOBAL_CONFIG.lang.theme.light, false, 2000)
-            right_menu && rm.mode(false)
+            is_rm && rm.mode(false)
         }
         handleThemeChange(nowMode)
     },

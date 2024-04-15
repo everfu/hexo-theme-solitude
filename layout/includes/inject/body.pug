@@ -24,7 +24,7 @@ div
         script.
             dark()
 
-    if theme.right_menu.translate.enable
+    if theme.right_menu.enable && theme.right_menu.translate.enable
         script(src=url_for(theme.cdn.translate_js))
 
     if theme.katex && theme.katex.enable
@@ -93,8 +93,12 @@ div
                 carousel_swiper()
         if page.type === 'says' && theme.says.enable
             script.
-                GLOBAL_CONFIG.lightbox && utils.lightbox(document.querySelectorAll(".bber-content-img img"));
-                sco.changeTimeFormat(document.querySelectorAll('.bber-info-time time'))
+                setTimeout(() => {
+                    sco.refreshWaterFall();
+                    GLOBAL_CONFIG.lazyload.enable && utils.lazyloadImg();
+                    GLOBAL_CONFIG.lightbox && utils.lightbox(document.querySelectorAll(".bber-content-img img"));
+                    sco.changeTimeFormat(document.querySelectorAll('.info time'));
+                }, 500)
         if theme.busuanzi && (theme.aside.siteinfo.uv || theme.aside.siteinfo.pv)
             script(async src=url_for(theme.cdn.busuanzi_js))
 

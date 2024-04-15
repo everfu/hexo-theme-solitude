@@ -26,6 +26,8 @@ const rm = {
         downloadImg: document.getElementById('menu-downloadimg'),
         search: document.getElementById('menu-search'),
         barrage: document.getElementById('menu-commentBarrage'),
+        mode: document.getElementById('menu-darkmode'),
+        translate: document.getElementById('menu-translate'),
         music: [
             toggle = document.getElementById('menu-music-toggle'),
             back = document.getElementById('menu-music-back'),
@@ -170,7 +172,7 @@ window.oncontextmenu = (ele) => {
         display = true;
         rm.menuItems.music.forEach(item => item.style.display = 'block');
     } else {
-        rm.menuItems.music.forEach(item => item.style.display = 'none');
+        rm.menuItems.music[0] && rm.menuItems.music.forEach(item => item.style.display = 'none');
     }
 
     Array.from(display ? rm.menuItems.other : rm.menuItems.plugin).forEach(item => item.style.display = 'none');
@@ -219,8 +221,8 @@ window.oncontextmenu = (ele) => {
         rm.hideRightMenu()
     })
 
-    if(GLOBAL_CONFIG.comment.commentBarrage){
-        rm.barrage(!utils.saveToLocal.get('commentBarrageSwitch'))
+    if(utils.saveToLocal.get('commentBarrageSwitch')!==null){
+        rm.menuItems.barrage && rm.barrage(!utils.saveToLocal.get('commentBarrageSwitch'))
     }
 
     rm.menuItems.paste.addEventListener('click', () => rm.pasteText() && rm.hideRightMenu())
@@ -230,4 +232,4 @@ window.oncontextmenu = (ele) => {
     rm.menuItems.copyImg.addEventListener('click', () => rm.copyImage() && rm.hideRightMenu())
 }()
 
-right_menu = true
+is_rm = true

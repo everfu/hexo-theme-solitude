@@ -11,7 +11,7 @@ case theme.display_mode.type
                 } else {
                     document.documentElement.setAttribute('data-theme', cachedMode);
                 }
-                right_menu && rm.mode(cachedMode === 'dark' && isDarkMode)
+                is_rm && rm.mode(cachedMode === 'dark' && isDarkMode)
             }
             initTheme()
     when "dark"
@@ -22,7 +22,7 @@ case theme.display_mode.type
                     document.documentElement.setAttribute('data-theme', 'dark');
                 else
                     document.documentElement.setAttribute('data-theme', cachedMode);
-                right_menu && rm.mode(cachedMode === undefined || cachedMode === 'dark')
+                is_rm && rm.mode(cachedMode === undefined || cachedMode === 'dark')
             }
             initTheme()
     when "light"
@@ -33,6 +33,6 @@ case theme.display_mode.type
                     document.documentElement.setAttribute('data-theme', 'light');
                 else
                     document.documentElement.setAttribute('data-theme', cachedMode);
-                right_menu && rm.mode(cachedMode === 'dark')
+                is_rm && rm.mode(cachedMode === 'dark')
             }
             initTheme()
