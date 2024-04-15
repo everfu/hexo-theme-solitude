@@ -131,6 +131,9 @@ if hexo-config('index_post_list.direction') == "column"
           font-size 14px
           line-height 1.8
 
+          +maxWidth600()
+            -webkit-line-clamp 1
+
         span.tags-punctuation
           transition .3s
 
@@ -353,6 +356,8 @@ else if hexo-config('index_post_list.direction') == "row"
           line-height 1.8
           +maxWidth768()
             -webkit-line-clamp 2
+          +maxWidth600()
+            -webkit-line-clamp 1
 
         span.tags-punctuation
           transition .3s

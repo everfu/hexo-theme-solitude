@@ -36,10 +36,10 @@ const sidebarFn = () => {
 
 const scrollFn = function () {
     const innerHeight = window.innerHeight;
-    const $header = document.getElementById('page-header');
-    if (!$header || document.body.scrollHeight <= innerHeight) return;
+    if (document.body.scrollHeight <= innerHeight) return;
 
     let initTop = 0;
+    const $header = document.getElementById('page-header');
     window.addEventListener('scroll', utils.throttle(function (e) {
         const currentTop = window.scrollY || document.documentElement.scrollTop;
         const isDown = scrollDirection(currentTop);
@@ -52,7 +52,9 @@ const scrollFn = function () {
             }
             $header.classList.add('nav-fixed');
         } else {
+            if (currentTop ===0){
             $header.classList.remove('nav-fixed', 'nav-visible');
+            }
         }
     }, 200));
 
@@ -215,7 +217,7 @@ class toc {
 
 let lastSayHello = "";
 let wleelw_musicPlaying = false
-let right_menu = false
+let is_rm = typeof rm !== 'undefined'
 
 let sco = {
     hideCookie: function () {
@@ -257,10 +259,10 @@ let sco = {
         $console.classList.toggle("on", wleelw_musicPlaying);
         if (wleelw_musicPlaying) {
             $meting.aplayer.play();
-            right_menu && ($rm_text.textContent = GLOBAL_CONFIG.right_menu.music.stop) && ($rm_icon.className = 'solitude st-pause-fill')
+            rm?.menuItems.music[0] && ($rm_text.textContent = GLOBAL_CONFIG.right_menu.music.stop) && ($rm_icon.className = 'solitude st-pause-fill')
         } else {
             $meting.aplayer.pause();
-            right_menu && ($rm_text.textContent = GLOBAL_CONFIG.right_menu.music.start) && ($rm_icon.className = 'solitude st-play-fill')
+            rm?.menuItems.music[0] && ($rm_text.textContent = GLOBAL_CONFIG.right_menu.music.start) && ($rm_icon.className = 'solitude st-play-fill')
         }
     },
     switchCommentBarrage: function () {
@@ -270,18 +272,18 @@ let sco = {
                 commentBarrageElement.style.display = "none";
                 document.querySelector("#consoleCommentBarrage").classList.remove("on");
                 utils.saveToLocal.set("commentBarrageSwitch", false, .2);
-                right_menu && rm.barrage(true)
+                rm?.menuItems.barrage && rm.barrage(true)
             } else {
                 commentBarrageElement.style.display = "flex";
                 document.querySelector("#consoleCommentBarrage").classList.add("on");
                 utils.saveToLocal.set("commentBarrageSwitch", true, .2);
-                right_menu && rm.barrage(false)
+                rm?.menuItems.barrage && rm.barrage(false)
             }
         }
     },
     switchHideAside: function () {
         const htmlClassList = document.documentElement.classList;
-        htmlClassList.contains("hide-aside") ? utils.saveToLocal.set("aside-status", "show", 1) : saveToLocal.set("aside-status", "hide", 1)
+        htmlClassList.contains("hide-aside") ? utils.saveToLocal.set("aside-status", "show", 1) : utils.saveToLocal.set("aside-status", "hide", 1)
         htmlClassList.toggle("hide-aside");
         htmlClassList.contains("hide-aside") ? document.querySelector("#consoleHideAside").classList.add("on") : document.querySelector("#consoleHideAside").classList.remove("on");
     },
@@ -319,12 +321,12 @@ let sco = {
             document.documentElement.setAttribute('data-theme', 'dark')
             utils.saveToLocal.set('theme', 'dark', 0.02);
             utils.snackbarShow(GLOBAL_CONFIG.lang.theme.dark, false, 2000)
-            right_menu && rm.mode(true)
+            is_rm && rm.mode(true)
         } else {
             document.documentElement.setAttribute('data-theme', 'light')
             utils.saveToLocal.set('theme', 'light', 0.02);
             utils.snackbarShow(GLOBAL_CONFIG.lang.theme.light, false, 2000)
-            right_menu && rm.mode(false)
+            is_rm && rm.mode(false)
         }
         handleThemeChange(nowMode)
     },
@@ -351,7 +353,7 @@ let sco = {
         el && GLOBAL_CONFIG.runtime && (el.innerText = utils.timeDiff(new Date(GLOBAL_CONFIG.runtime), new Date()) + GLOBAL_CONFIG.lang.time.day)
     },
     toTalk: function (txt) {
-        const inputs = ["#wl-edit", ".el-textarea__inner", "#veditor",".atk-textarea"]
+        const inputs = ["#wl-edit", ".el-textarea__inner", "#veditor", ".atk-textarea"]
         for (let i = 0; i < inputs.length; i++) {
             let el = document.querySelector(inputs[i])
             if (el != null) {
@@ -561,16 +563,14 @@ let sco = {
         });
     },
     addNavBackgroundInit: function () {
-        const scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
-        if (scrollTop !== 0) {
-            const pageHeader = document.getElementById("page-header");
-            if (pageHeader) {
-                pageHeader.classList.add("nav-fixed", "nav-visible");
-            }
-            const cookiesWindow = document.getElementById("cookies-window");
-            if (cookiesWindow) {
-                cookiesWindow.style.display = 'none';
-            }
+        let e = 0
+            , t = 0;
+        document.body && (e = document.body.scrollTop),
+        document.documentElement && (t = document.documentElement.scrollTop),
+        0 !== (e - t > 0 ? e : t) && (document.getElementById("page-header").classList.add("nav-fixed"), document.getElementById("page-header").classList.add("nav-visible"))
+        const cookiesWindow = document.getElementById("cookies-window");
+        if (cookiesWindow) {
+            cookiesWindow.style.display = 'none';
         }
     },
     initAdjust: function (change = false) {
@@ -811,7 +811,7 @@ const addCopyright = () => {
     document.body.addEventListener('copy', handleCopy)
 }
 
-const asideStatus = () =>{
+const asideStatus = () => {
     const asideStatus = utils.saveToLocal.get('aside-status')
     if (asideStatus !== undefined) {
         if (asideStatus === 'hide') {
@@ -883,13 +883,11 @@ window.refreshFn = () => {
     PAGE_CONFIG.toc && toc.init();
     (PAGE_CONFIG.is_post || PAGE_CONFIG.is_page) && ((addHighlight()) || tabs.init())
     PAGE_CONFIG.is_home && showTodayCard()
-    GLOBAL_CONFIG.covercolor.enable && coverColor()
+    GLOBAL_CONFIG.covercolor.enable && setTimeout(coverColor, 0)
     PAGE_CONFIG.page === "music" && scoMusic.init()
     GLOBAL_CONFIG.post_ai && PAGE_CONFIG.is_post && efu_ai.init()
     sco.switchComments()
 }
-
-utils.addGlobalFn('pjaxComplete', refreshFn, 'refreshFn')
 
 document.addEventListener('DOMContentLoaded', function () {
     sco.initAdjust()
