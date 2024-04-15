@@ -152,6 +152,7 @@ hexo.extend.filter.register('before_generate', () => {
             },
             footer: {
                 information: {
+                    author: false,
                     left: null,
                     right: null,
                 },
