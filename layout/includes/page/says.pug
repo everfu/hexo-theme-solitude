@@ -3,52 +3,113 @@ if theme.says.enable
     #bber
         section.timeline.page-1
             ul.list.waterfall
-                each item in site.data.essay.essay_list.slice(0, theme.says.strip)
-                    li.item
-                        if theme.says.style === 2
-                            .meta
-                                img.avatar(src=theme.aside.card.author.img)
-                                .info
-                                    span.bber_nick= config.author
-                                    time.datetime.bber_date(datetime=moment(item.date).format())
-                                if item.content
-                                    a.bber-reply.goComment(onclick=`sco.toTalk('${item.content}')`)
-                                        i.solitude.st-chat-fill
+                case theme.says.style
+                    when 1
+                        script.
+                            !async function () {
+                                let aplayerRegex = /{aplayer,(.*?),(.*?)}/g;
+                                let linkRegex = /(?<!!)\[([^\]]*)]\(([^)]*)\)/g;
+                                let bilibiliRegex = /{bilibili,(.*?)}/g;
+                                let playerRegex = /{player,(.*?)}/g;
+                                let imageRegex = /!\[(.*?)]\((.*?)\)/g;
+                                let contentRegex = /#.*?\s([^{\n]*)/g;
 
-                        #bber-content
-                            p.datacont= item.content
-                            if item.image
-                                .bber-content-img
-                                    each img in item.image
-                                        img(src=img alt="image")
+                                document.querySelector('.waterfall').innerHTML = '<i class="solitude st-loading-line"></i>'
 
-                        if item.aplayer
-                            .bber-music
-                                meting-js(server=item.aplayer.server type="song" id=item.aplayer.id mutex="true" preload="none" theme="var(--efu-main)" data-lrctype="0")
+                                await fetch("!{url_for(theme.says.link)}")
+                                    .then(res => res.json())
+                                    .then(data => {
+                                        let list = data.slice(0, !{theme.says.strip});
+                                        let aplayer = null;
+                                        let video = null;
+                                        let imageBox = null;
 
-                        if item.video
-                            .bber-video
-                                if item.video.player
-                                    video(src=item.video.player controls="controls" style="object-fit: cover;")
-                                if item.video.bilibili
-                                    iframe(src='//player.bilibili.com/player.html?autoplay=0&bvid=' + item.video.bilibili scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true")
+                                        document.querySelector('.waterfall').innerHTML = list.map(item => {
+                                            aplayer = item.content.match(aplayerRegex);
+                                            aplayer = aplayer ? `<div class="bber-music"><meting-js server="${aplayer[0].replace(aplayerRegex, '$1')}" type="song" id="${aplayer[0].replace(aplayerRegex, '$2')}" mutex="true" preload="none" theme="var(--sco-main)" data-lrctype="0"></meting-js></div>` : null;
+                                            video = item.content.match(playerRegex);
+                                            video = video ? `<div class="bber-video"><video src="${video[0].replace(playerRegex, '$1')}" controls="controls" style="object-fit: cover;"></video></div>` : item.content.match(bilibiliRegex);
+                                            video = item.content.match(bilibiliRegex) ? `<div class="bber-video"><iframe src="//player.bilibili.com/player.html?autoplay=0&bvid=${video[0].replace(bilibiliRegex, '$1')}" scrolling="no" bozrder="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe></div>` : video;
+                                            imageBox = item.content.match(imageRegex);
+                                            imageBox = imageBox ? `<div class="bber-content-img">${imageBox.map(img => `<img src="${img.replace(imageRegex, '$2')}" alt="${img.replace(imageRegex, '$1')}" />`).join('')}</div>` : '';
+                                            let time = new Date(item.createdTs * 1000).toString().replace('Z', '08:00');
+                                            let content = item.content.match(contentRegex).map(item => item.replace(contentRegex, '$1'));
+                                            let link = item.content.match(linkRegex);
+                                            link = link ? `<a class="bber-content-link" href='${link[0].replace(linkRegex, '$2')}' title="${link[0].replace(linkRegex, '$1')}" target="_blank"><i class="solitude st-link-m-line"></i>链接</a>` : '';
+                                            return `<li class="item">
+                                                                <div id="bber-content">
+                                                                    <p class="datacont">${content}</p>
+                                                                    ${imageBox || ''}
+                                                                </div>
+                                                                ${video || ''}
+                                                                ${aplayer || ''}
+                                                                <hr>
+                                                                <div class="bber-bottom">
+                                                                    <div class="bber-info">
+                                                                        <div class="bber-info-time">
+                                                                            <i class="solitude st-calendar-todo-fill"></i>
+                                                                            <time class="datetime" datetime="${time}"></time>
+                                                                        </div>
+                                                                        ${link}
+                                                                    </div>
+                                                                    ${content ? `<a class="bber-reply goComment" onclick="sco.toTalk('${content}')"><i class="solitude st-chat-fill" style="font-size: 1rem;"></i></a>` : ''}
+                                                                </div>
+                                                            </li>`;
+                                        }).join('');
+                                    }).catch(error => console.log(error));
+                            }();
+                    when 2
+                        script.
+                            !async function () {
+                                let aplayerRegex = /{aplayer,(.*?),(.*?)}/g;
+                                let bilibiliRegex = /{bilibili,(.*?)}/g;
+                                let playerRegex = /{player,(.*?)}/g;
+                                let imageRegex = /!\[(.*?)]\((.*?)\)/g;
+                                let contentRegex = /#.*?\s([^{\n]*)/g;
 
-                        if theme.says.style === 1
-                            hr
-                            .bber-bottom
-                                .bber-info
-                                    .bber-info-time
-                                        i.solitude.st-calendar-todo-fill
-                                        time.datetime(datetime=moment(item.date).format())
-                                    if item.link
-                                        a.bber-content-link(href=url_for(item.link) target="_blank")
-                                            i.solitude.st-link-m-line
-                                            | 链接
-                                if item.content
-                                    a.bber-reply(onclick=`sco.toTalk('${item.content}')`)
-                                        i.solitude.st-chat-fill
-            #bber-tips
-                if theme.says.strip === -1
-                    | - 已展开所有短文 -
-                else
-                    | - 只展示最近 #{theme.says.strip} 条短文 -
+                                const waterfall = document.querySelector('.waterfall')
+
+                                waterfall.innerHTML = '<li class="item"><i class="solitude st-loading-line"></i></li>'
+
+                                await fetch("!{url_for(theme.says.link)}")
+                                    .then(res => res.json())
+                                    .then(data => {
+                                        let list = data.slice(0, !{theme.says.strip})
+                                        let aplayer = null;
+                                        let video = null;
+                                        let imageBox = null;
+
+                                        waterfall.innerHTML = list.map(item => {
+                                            aplayer = item.content.match(aplayerRegex);
+                                            aplayer = aplayer ? `<div class="bber-music"><meting-js server="${aplayer[0].replace(aplayerRegex, '$1')}" type="song" id="${aplayer[0].replace(aplayerRegex, '$2')}" mutex="true" preload="none" theme="var(--efu-main)" data-lrctype="0"></meting-js></div>` : null;
+                                            video = item.content.match(playerRegex);
+                                            video = video ? `<div class="bber-video"><video src="${video[0].replace(playerRegex, '$1')}" controls="controls" style="object-fit: cover;"></video></div>` : item.content.match(bilibiliRegex);
+                                            video = item.content.match(bilibiliRegex) ? `<div class="bber-video"><iframe src="//player.bilibili.com/player.html?autoplay=0&bvid=${video[0].replace(bilibiliRegex, '$1')}" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe></div>` : video;
+                                            imageBox = item.content.match(imageRegex);
+                                            imageBox = imageBox ? `<div class="bber-content-img">${imageBox.map(img => `<img src="${img.replace(imageRegex, '$2')}" alt="${img.replace(imageRegex, '$1')}" />`).join('')}</div>` : '';
+                                            let time = new Date(item.createdTs * 1000).toString().replace('Z', '08:00');
+                                            let content = item.content.match(contentRegex).map(item => item.replace(contentRegex, '$1'));
+                                            return `<li class="item">
+                                                        <div class="meta">
+                                                             <img class="no-lightbox nolazyload avatar" src="!{theme.aside.card.author.img}">
+                                                             <div class="info">
+                                                                 <span class="bber_nick">#{config.author}</span>
+                                                                 <time class="datetime bber_date" datetime="${time}"></time>
+                                                             </div>
+                                                             ${content ? `<a class="bber-reply goComment" onclick="sco.toTalk('${content}')"><i class="solitude st-chat-fill" style="font-size: 1rem;"></i></a>` : ''}
+                                                        </div>
+                                                        <div id="bber-content">
+                                                             <p class="datacont">${content}</p>
+                                                             ${imageBox || ''}
+                                                        </div>
+                                                        ${video || ''}
+                                                        ${aplayer || ''}
+                                                    </li>`
+                                        }).join('');
+                                    }).catch(error => console.log(error));
+                            }();
+#bber-tips
+    if theme.says.strip === -1
+        | - 已展开所有短文 -
+    else
+        | - 只展示最近 #{theme.says.strip} 条短文 -

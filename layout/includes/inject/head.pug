@@ -38,5 +38,4 @@ if theme.extends.head
     each item in theme.extends.head
         != item
 
-script(src=url_for(theme.cdn.utils))
-script(src=url_for(theme.cdn.main))
+!=fragment_cache('injectHeadJs', function(){return inject_head_js()})
