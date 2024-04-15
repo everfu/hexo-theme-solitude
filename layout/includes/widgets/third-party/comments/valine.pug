@@ -6,7 +6,7 @@ if site.data.valine
     - emojiMaps = JSON.stringify(site.data.valine)
 
 script.
-    !function () {
+    (() => {
         const initValine = () => {
             const valine = new Valine({
                 el: '#vcomment',
@@ -23,7 +23,7 @@ script.
             sco.owoBig({body: '.vwrap', item: '.vemojis i'})
         }
         const loadValine = async () => {
-            if (typeof Valine === 'function') await initValine()
+            if (typeof Valine === 'function') setTimeout(initValine, 0)
             else {
                 await utils.getScript('!{url_for(theme.cdn.valine)}').then(initValine)
             }
@@ -35,7 +35,7 @@ script.
         } else {
             window.loadTwoComment = loadValine
         }
-    }()
+    })()
 
 if commentBarrage
     script.

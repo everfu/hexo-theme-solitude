@@ -1,8 +1,8 @@
 - const { envId, region, option ,accessToken } = theme.twikoo
 - const { lazyload, count, use,commentBarrage } = theme.comment
 
-script.
-    !function () {
+script().
+    (() => {
         const getCount = () => {
             const ele = document.querySelectorAll('.twikoo-count')
             if (!ele) return
@@ -17,11 +17,12 @@ script.
                 console.error(err)
             })
         }
-        const init = async () => {
+        const init = () => {
             twikoo.init(Object.assign({
                 el: '#twikoo-wrap',
                 envId: '!{envId}',
                 region: '!{region}',
+                path: window.location.pathname,
                 onCommentLoaded: () => {
                     utils.lightbox(document.querySelectorAll('#twikoo .tk-content img:not(.tk-owo-emotion)'))
                 }
@@ -32,12 +33,10 @@ script.
                 body: '.OwO-body',
                 item: '.OwO-items li'
             })
-
-            if (!{commentBarrage}) await barrageTwikoo()
         }
 
         const loadTwikoo = () => {
-            if (typeof twikoo === 'object') init()
+            if (typeof twikoo === 'object') setTimeout(init,0)
             else utils.getScript('!{url_for(theme.cdn.twikoo)}').then(init)
         }
 
@@ -45,9 +44,9 @@ script.
             if (!{lazyload}) utils.loadComment(document.getElementById('twikoo-wrap'), loadTwikoo)
             else loadTwikoo()
         } else {
-            window.loadTwoComment = init
+            window.loadTwoComment = loadTwikoo
         }
-    }()
+    })()
 
 if commentBarrage
     script.

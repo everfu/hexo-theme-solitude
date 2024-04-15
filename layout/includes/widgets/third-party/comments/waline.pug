@@ -2,7 +2,7 @@
 - const { lazyload, count, commentBarrage,use } = theme.comment
 
 script.
-    !function () {
+    (() => {
         let walineInitFunction = window.walineFn || null
 
         function initWaline(initFn) {
@@ -40,7 +40,7 @@ script.
             if (!{lazyload}) utils.loadComment(document.getElementById('waline-wrap'), loadWaline)
             else loadWaline()
         } else window.loadTwoComment = loadWaline
-    }()
+    })()
 
 if commentBarrage
     script.

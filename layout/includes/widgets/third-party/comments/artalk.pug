@@ -2,7 +2,7 @@
 - const { lazyload, count ,use} = theme.comment
 
 script.
-    !function () {
+    (() => {
         let artalkItem = null
         const initArtalk = () => {
             artalkItem = Artalk.init({
@@ -31,7 +31,7 @@ script.
             utils.addGlobalFn('pjax', destroyArtalk, 'destroyArtalk')
         }
         const loadArtalk = async () => {
-            if (typeof Artalk === 'object') await initArtalk()
+            if (typeof Artalk === 'object') initArtalk()
             else {
                 await utils.getCSS('!{theme.cdn.artalk_css}')
                 await utils.getScript('!{theme.cdn.artalk_js}').then(initArtalk)
@@ -50,7 +50,7 @@ script.
         } else {
             window.loadTwoComment = loadArtalk
         }
-    }()
+    })()
 
 if commentBarrage
     script.
