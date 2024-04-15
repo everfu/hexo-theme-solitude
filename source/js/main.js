@@ -889,8 +889,6 @@ window.refreshFn = () => {
     sco.switchComments()
 }
 
-utils.addGlobalFn('pjaxComplete', refreshFn, 'refreshFn')
-
 document.addEventListener('DOMContentLoaded', function () {
     sco.initAdjust()
     percent()
