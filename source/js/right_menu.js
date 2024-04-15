@@ -133,11 +133,11 @@ window.oncontextmenu = (ele) => {
         display = true;
         rm.menuItems.copy.style.display = 'block';
         GLOBAL_CONFIG.comment && (rm.menuItems.comment.style.display = 'block');
-        rm.menuItems.search.style.display = 'block';
+        rm.menuItems.search && (rm.menuItems.search.style.display = 'block');
     } else {
         rm.menuItems.copy.style.display = 'none';
         GLOBAL_CONFIG.comment && (rm.menuItems.comment.style.display = 'none');
-        rm.menuItems.search.style.display = 'none';
+        rm.menuItems.search && (rm.menuItems.search.style.display = 'none');
     }
 
     if (link) {
