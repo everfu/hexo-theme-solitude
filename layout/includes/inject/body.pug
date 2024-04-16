@@ -48,10 +48,10 @@ div
         script(src=url_for(theme.cdn.efu_ai))
 
     if theme.capsule.enable || theme.music.enable
+        script.
+            var meting_api = '!{theme.meting_api}';
         script(src=url_for(theme.cdn.aplayer_js))
         script(src=url_for(theme.cdn.meting_js))
-        script.
-            const meting_api = '!{theme.meting_api}';
 
     if theme.post.covercolor.enable
         case theme.post.covercolor.mode
