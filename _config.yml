@@ -875,6 +875,7 @@ CDN:
 
   option:
     solitude_css: https://cdn2.codesign.qq.com/icons/7pOrz0WXB5ZWJPX/latest/iconfont.css
+    busuanzi_js: https://pv.lemonso.com/js # 青秸的 Busanzi，相比较官方更稳定、快速
     # algolia_search:
     # instantsearch:
     # pjax:
