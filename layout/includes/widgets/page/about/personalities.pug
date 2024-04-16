@@ -9,9 +9,9 @@ if personalities
             .image
                 img.nolazyload(src=personalities.image)
             .post-tips
-                | 在
+                = _p('about.personalities.tip1')
                 a(href="https://www.16personalities.com/")= personalities.linkText
-                | 了解更多关于
+                = _p('about.personalities.tip2')
                 a(href=personalities.typeLink)= personalities.typeName
         .author-content-item.myphoto
-            img.author-content-img(src=personalities.myphoto, alt="自拍")
+            img.author-content-img(src=personalities.myphoto, alt="my photo")

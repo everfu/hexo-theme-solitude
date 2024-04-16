@@ -5,11 +5,11 @@
     if tj
         .about-statistic.author-content-item(style=`background: url(${tj.img});`)
             .card-content
-                .author-content-item-tips 数据
-                span.author-content-item-title 访问统计
+                .author-content-item-tips=_p('about.other.tj.tip')
+                span.author-content-item-title=_p('about.other.tj.title')
                 #statistic
                 .post-tips
-                    | 统计信息来自
+                    = _p('about.other.tj.post_tip')
                     a(href="https://v6.51.la/") 51la网站统计
 
             script.
@@ -31,7 +31,6 @@
                         s.innerHTML = html;
                     });
 
-
     if oneself
         style.
             :root {
@@ -40,16 +39,16 @@
             }
         .author-content-item-group.column.mapAndInfo
             .author-content-item.map.single
-                span.map-title 我现在住在 #{oneself.location}
+                span.map-title=_p('about.other.oneself.map_title') + oneself.location
             .author-content-item.selfInfo.single
                 div
-                    span.selfInfo-title 生于
+                    span.selfInfo-title=_p('about.other.oneself.info_title1')
                     span.selfInfo-content(style="color: #43a6c6;")= oneself.birthYear
                 div
                     span.selfInfo-title= oneself.university
                     span.selfInfo-content(style="color: #c69043;")= oneself.major
                 div
-                    span.selfInfo-title 现在职业
+                    span.selfInfo-title=_p('about.other.oneself.info_title2')
                     span.selfInfo-content(style="color: #b04fe6;")= oneself.occupation
 
 - var cause = site.data.about.cause

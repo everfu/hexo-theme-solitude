@@ -93,12 +93,8 @@ div
                 carousel_swiper()
         if page.type === 'says' && theme.says.enable
             script.
-                setTimeout(() => {
-                    sco.refreshWaterFall();
-                    GLOBAL_CONFIG.lazyload.enable && utils.lazyloadImg();
-                    GLOBAL_CONFIG.lightbox && utils.lightbox(document.querySelectorAll(".bber-content-img img"));
-                    sco.changeTimeFormat(document.querySelectorAll('.info time'));
-                }, 500)
+                GLOBAL_CONFIG.lightbox && utils.lightbox(document.querySelectorAll(".bber-content-img img"));
+                sco.changeTimeFormat(document.querySelectorAll('.bber-info-time time'))
         if theme.busuanzi && (theme.aside.siteinfo.uv || theme.aside.siteinfo.pv)
             script(async src=url_for(theme.cdn.busuanzi_js))
 

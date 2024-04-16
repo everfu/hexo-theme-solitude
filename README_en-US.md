@@ -1,15 +1,15 @@
-[简体中文](README.md)丨繁体中文丨[English](README_en.md)
+[简体中文](README.md)丨[繁体中文](README_zh-Hant.md)丨English丨[Français](README_fr.md)丨[日本語](README_ja.md)
 
 <div align="center">
-  
+
    <img src=".github/logo.svg" alt="Solitude logo" height="200">
 
-  <h1>Hexo Theme Solitude</h1>
+   <h1>Hexo Theme Solitude</h1>
 
-  一款優雅的 Hexo 主題，支援懶載入、PWA、Latex以及多種評論系統。
+   An elegant Hexo theme that supports lazy loading, PWA, Latex, and multiple comment systems.
 
-  主題由 [@张洪Heo](https://github.com/zhheo) 全權授權、設計！
-
+   Theme is fully licensed and designed by the author of [@张洪Heo](https://github.com/zhheo)!
+  
 ![npm package](https://img.shields.io/npm/v/hexo-theme-solitude?color=blue&logo=npm)
 ![release](https://img.shields.io/github/package-json/v/valor-x/hexo-theme-solitude/master?color=%231ab1ad&label=release)
 ![license](https://img.shields.io/github/license/valor-x/hexo-theme-solitude?color=FF5531)
@@ -38,42 +38,44 @@
 [![gitee](https://img.shields.io/badge/Gitee-red?logo=gitee)](https://gitee.com/nsjjd_w/hexo-theme-solitude)
 [![gitlab](https://img.shields.io/badge/GitLab-blue?logo=gitlab)](https://gitlab.com/efu/hexo-theme-solitude)
 
-[預覽](https://efu.me/) 丨  [文档](https://solitude-docs.efu.me/)
+[Preview](https://efu.me/) 丨  [Documentation](https://solitude-docs.efu.me/)
 
 </div>
 
 ![Screenshot](.github/screenshot.png)
 
-## 特性
+## Features
 
-- 頁面懶載入（Pjax）、圖片懶載入（LazyLoad）、離線應用（PWA） 
-- 評論(Twikoo、Waline、Valine、Artalk)，支援雙評論
-- 晝夜切換（ColorMode） 
-- 燈箱（medium-zoom、fancybox） 
-- 數學公式（Latex） 
-- 特色頁面：即刻短文、我的裝備、在線工具、音樂館、友鏈魚塘、相冊頁、豆瓣頁 
-- 文章功能：AI 摘要、代碼高亮
+- Pjax、LazyLoad、PWA
+- Comments(Twikoo、Waline、Valine、Artalk), Can double comment
+- ColorMode
+- Lightbox(medium-zoom、fancybox)
+- Mathematical formulas(Latex)
+- Featured pages: Instant Short Article, My Equipment, Online Tools, Music Gallery, Friend Chain Fish Pond, Photo Album Page, Douban Page
+- Article features: AI summary, code highlighting
 
 ## Todo
 
-- [x] Artalk 評論
-- [x] 雙評論
-- [x] 相冊
+- [x] Artalk
+- [x] Use double comment
+- [x] Album
 
-## 應用
+> If you have any questions, please issue an [issue](https://github.com/valor-x/hexo-theme-solitude/issues)
 
-1. 使用 NPM 包進行安裝
+## Setup
+
+1. Use the NPM package
       ```bash
       npm i hexo-theme-solitude
       ```
-2. 應用主題
+2. Apply
       ```yaml
       theme: solitude
       ```
 
-前往 [文檔](https://solitude-docs.efu.me) 獲取更多資訊。
+Check out the [Documentation](https://solitude-docs.efu.me/) for more information.
 
-## 贊助者
+## Sponsors
 
 <p align="center">
   <a href="https://cdn.jsdelivr.net/gh/efuo/static/sponsors.svg">
@@ -81,6 +83,6 @@
   </a>
 </p>
 
-## 版權
+## License
 
-[MIT](./LICENSE) License &copy; 2023-至今 [Efu](https://github.com/efuo)
+[MIT](./LICENSE) License &copy; 2023-PRESENT [Efu](https://github.com/efuo)

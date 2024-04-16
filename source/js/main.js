@@ -41,6 +41,7 @@ const scrollFn = function () {
     let initTop = 0;
     const $header = document.getElementById('page-header');
     window.addEventListener('scroll', utils.throttle(function (e) {
+        initThemeColor()
         const currentTop = window.scrollY || document.documentElement.scrollTop;
         const isDown = scrollDirection(currentTop);
 
@@ -686,7 +687,7 @@ let sco = {
             }
         }
         utils.addEventListenerPjax(switchBtn, 'click', handleSwitchBtn)
-    }
+    },
 }
 
 const addHighlight = () => {
@@ -883,7 +884,7 @@ window.refreshFn = () => {
     PAGE_CONFIG.toc && toc.init();
     (PAGE_CONFIG.is_post || PAGE_CONFIG.is_page) && ((addHighlight()) || tabs.init())
     PAGE_CONFIG.is_home && showTodayCard()
-    GLOBAL_CONFIG.covercolor.enable && setTimeout(coverColor, 0)
+    GLOBAL_CONFIG.covercolor.enable && coverColor()
     PAGE_CONFIG.page === "music" && scoMusic.init()
     GLOBAL_CONFIG.post_ai && PAGE_CONFIG.is_post && efu_ai.init()
     sco.switchComments()

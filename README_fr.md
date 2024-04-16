@@ -1,14 +1,15 @@
-简体中文丨[繁体中文](README_zh-Hant.md)丨[English](README_en-US.md)丨[Français](README_fr.md)丨[日本語](README_ja.md)
+[简体中文](README.md)丨[繁体中文](README_zh-Hant.md)丨[English](README_en-US.md)丨Français丨[日本語](README_ja.md)
 
 <div align="center">
 
-   <img src=".github/logo.svg" alt="Solitude logo" height="200">
+   <img src=".github/logo.svg" alt="Logo de la solitude" height="200">
 
-   <h1>Hexo Theme Solitude</h1>
+   <h1>Thème Hexo Solitude</h1>
 
-   一款优雅的 Hexo 主题，支持懒加载、PWA、Latex以及多种评论系统。
-   
-   主题由 [@张洪Heo](https://github.com/zhheo) 作者全权授权、设计！
+Un thème Hexo élégant qui prend en charge le chargement paresseux, les PWA, le latex et les systèmes de commentaires
+multiples.
+
+Le thème se compose de [@张洪Heo](https://github.com/zhheo) Autorisation complète de l’auteur, conception !
 
 ![npm package](https://img.shields.io/npm/v/hexo-theme-solitude?logo=npm)
 ![release](https://img.shields.io/github/package-json/v/valor-x/hexo-theme-solitude/master?color=%231ab1ad&label=release)
@@ -38,44 +39,45 @@
 [![gitee](https://img.shields.io/badge/Gitee-red?logo=gitee)](https://gitee.com/nsjjd_w/hexo-theme-solitude)
 [![gitlab](https://img.shields.io/badge/GitLab-blue?logo=gitlab)](https://gitlab.com/efu/hexo-theme-solitude)
 
-[预览](https://www.efu.me/) 丨  [文档](https://solitude-docs.efu.me/)
+[Aperçu](https://www.efu.me/) 丨  [documentation](https://solitude-docs.efu.me/)
 
 </div>
 
 ![Screenshot](.github/screenshot.png)
 
-## 特性
+## caractéristique
 
-- 页面懒加载（Pjax）、图片懒加载（LazyLoad）、离线应用（PWA）
-- 评论(Twikoo、Waline、Valine、Artalk)，支持双评论
-- 昼夜切换(ColorMode)
-- 灯箱(medium-zoom、fancybox)
-- 数学公式(Latex)
-- 特色页面：即刻短文、我的装备、在线工具、音乐馆、友链鱼塘、相册页、豆瓣页
-- 文章功能：AI 摘要、代码高亮
+- Chargement paresseux de page (Pjax), chargement paresseux d’image (LazyLoad), application hors ligne (PWA)
+- Commentaires (Twikoo, Waline, Valine, Artalk)
+- Mode couleur
+- Lightbox (zoom moyen, fancybox)
+- Formules mathématiques (latex)
+- Pages en vedette : Essais instantanés, Mon équipement, Outils en ligne, Galerie de musique, Étang à poissons Friend
+  Chain, Page d’album photo, Page Douban
+- Caractéristiques de l’article : résumé de l’IA, mise en évidence du code
 
 ## Todo
 
-- [x] Artalk 评论
-- [x] 双评论
-- [x] 相册
+- [x] Examen d’Artalk
+- [x] Double examen
+- [x] album photo
 
-> 如有問題請提 [issue](https://github.com/valor-x/hexo-theme-solitude/issues)
+> Si vous avez des questions, n’hésitez pas à les poser [issue](https://github.com/valor-x/hexo-theme-solitude/issues)
 
-## 应用
+## appliquer
 
-1. 使用 NPM 包进行安装
+1. Utiliser le package NPM pour l’installation
       ```bash
       npm i hexo-theme-solitude
       ```
-2. 应用主题
+2. Appliquer un thème
       ```yaml
       theme: solitude
       ```
-   
-前往 [文档](https://solitude-docs.efu.me/) 获取更多信息。
 
-## 赞助者
+Go to [Docs](https://solitude-docs.efu.me) for more information.
+
+## Sponsors
 
 <p align="center">
   <a href="https://cdn.jsdelivr.net/gh/efuo/static/sponsors.svg">
@@ -83,6 +85,6 @@
   </a>
 </p>
 
-## 版权
+## copyright
 
-[MIT](./LICENSE) License &copy; 2023-至今 [Efu](https://github.com/efuo)
+[MIT](./LICENSE) License &copy; 2023-jusqu’ici [Efu](https://github.com/efuo)
