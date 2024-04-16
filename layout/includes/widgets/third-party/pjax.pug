@@ -1,9 +1,11 @@
+- const google_adsense = theme.google_adsense.enable
+
 script.
     const pjax = new Pjax({
         elements: 'a:not([target="_blank"])',
         selectors: ['title','#body-wrap','#site-config','meta[name="description"]','.js-pjax','meta[property^="og:"]','#config-diff'],
         cacheBust: false,
-        analytics: false,
+        analytics: !{google_adsense},
         scrollRestoration: false
     })
 
