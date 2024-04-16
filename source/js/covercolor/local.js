@@ -154,8 +154,10 @@ function initThemeColor() {
 }
 
 function changeThemeColor(color) {
-    const meta = document.querySelector('meta[name="theme-color"]');
-    if (meta) {
-        meta.setAttribute('content', color);
+    if (null !== document.querySelector('meta[name="theme-color"]') && (document.querySelector('meta[name="theme-color"]').setAttribute("content", color),
+        document.querySelector('meta[name="apple-mobile-web-app-status-bar-style"]').setAttribute("content", color)),
+        window.matchMedia("(display-mode: standalone)").matches) {
+        const t = document.body;
+        t ? t.style.backgroundColor = color : console.error("document.body not found.")
     }
 }

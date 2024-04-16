@@ -174,3 +174,17 @@ right_menu:
     back: 切换到上一首
     forward: 切换到下一首
     copyMusicName: 复制歌名
+
+about:
+  other:
+    oneself:
+      map_title: 我现在住在
+      info_title1: 生于
+      info_title2: 现在职业
+    tj:
+      tip: 数据
+      title: 访问统计
+      post_tip: 统计信息来自
+  personalities:
+    tip1: 在
+    tip2: 了解更多关于

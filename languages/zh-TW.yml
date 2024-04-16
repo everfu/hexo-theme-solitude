@@ -174,3 +174,17 @@ right_menu:
     back: 切換到上一首
     forward: 切換到下一首
     copyMusicName: 複製歌名
+
+about:
+  other:
+    oneself:
+      map_title: 我現在住在
+      info_title1: 生於
+      info_title2: 現在職業
+    tj:
+      tip: 數據
+      title: 訪問統計
+      post_tip: 統計信息來自
+  personalities:
+    tip1: 在
+    tip2: 瞭解更多關於
