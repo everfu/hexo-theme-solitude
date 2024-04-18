@@ -1,8 +1,8 @@
 - const {copyright} = theme.post.default
 .post-copyright
     .post-copyright__author_group
-        a.post-copyright__author_img(href=url_for("/about/"))
-            img.post-copyright__author_img_front(src=theme.site.icon)
+        a.post-copyright__author_img(href=url_for(copyright.author.url))
+            img.post-copyright__author_img_front(src=copyright.author.img || theme.site.icon)
         .post-copyright__author_name= config.title
         .post-copyright__author_desc= config.subtitle
     .post-tools#post-tools

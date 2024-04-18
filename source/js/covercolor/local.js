@@ -139,25 +139,3 @@ function setThemeColors(value, r = null, g = null, b = null) {
         initThemeColor();
     }
 }
-
-function initThemeColor() {
-    const currentTop = window.scrollY || document.documentElement.scrollTop;
-    let themeColor;
-    if (currentTop > 0) {
-        themeColor = getComputedStyle(document.documentElement).getPropertyValue('--efu-card-bg');
-    } else if (PAGE_CONFIG.is_post) {
-        themeColor = getComputedStyle(document.documentElement).getPropertyValue('--efu-main');
-    } else {
-        themeColor = getComputedStyle(document.documentElement).getPropertyValue('--efu-background');
-    }
-    changeThemeColor(themeColor);
-}
-
-function changeThemeColor(color) {
-    if (null !== document.querySelector('meta[name="theme-color"]') && (document.querySelector('meta[name="theme-color"]').setAttribute("content", color),
-        document.querySelector('meta[name="apple-mobile-web-app-status-bar-style"]').setAttribute("content", color)),
-        window.matchMedia("(display-mode: standalone)").matches) {
-        const t = document.body;
-        t ? t.style.backgroundColor = color : console.error("document.body not found.")
-    }
-}
