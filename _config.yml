@@ -330,6 +330,9 @@ post:
     # default post copyright
     copyright:
       enable: true
+      author:
+        url: /about/ # 点击头像跳转地址
+        img: # 显示头像，不填写默认显示site_icon
       license: CC BY-NC-SA 4.0
       licenurl: https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh
   # 顶部文章简介
