@@ -40,7 +40,7 @@
             if theme.post.meta.pv
                 a.post-meta-pv(href=url_for(page.path), title=_p('post.pv'))
                     i.post-meta-icon.solitude.st-fire-fill
-                    if theme.comment.use
+                    if theme.comment.use && theme.comment.pv
                         case theme.comment.use[0]
                             when "Twikoo"
                                 span#twikoo_visitors

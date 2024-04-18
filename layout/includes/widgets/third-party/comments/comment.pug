@@ -5,7 +5,7 @@
         .comment-headline
             i.solitude.st-chat-fill
             span=' ' + _p('comment.title')
-            if count
+            if count && is_post()
                 span.count
                     = ' ('
                     each name in use
