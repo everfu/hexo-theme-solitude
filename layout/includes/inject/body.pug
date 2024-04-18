@@ -96,7 +96,7 @@ div
                 GLOBAL_CONFIG.lightbox && utils.lightbox(document.querySelectorAll(".bber-content-img img"));
                 sco.changeTimeFormat(document.querySelectorAll('.bber-info-time time'))
         if theme.busuanzi && (theme.aside.siteinfo.uv || theme.aside.siteinfo.pv)
-            script(async src=url_for(theme.cdn.busuanzi_js))
+            script(defer pjax src=url_for(theme.cdn.busuanzi_js))
 
 
 if theme.footer.randomlink

@@ -37,14 +37,12 @@ const sidebarFn = () => {
 const scrollFn = function () {
     const innerHeight = window.innerHeight;
     if (document.body.scrollHeight <= innerHeight) return;
-
     let initTop = 0;
     const $header = document.getElementById('page-header');
-    window.addEventListener('scroll', utils.throttle(function (e) {
-        initThemeColor()
+    const throttledScroll = utils.throttle(function (e) {
+        initThemeColor();
         const currentTop = window.scrollY || document.documentElement.scrollTop;
         const isDown = scrollDirection(currentTop);
-
         if (currentTop > 0) {
             if (isDown) {
                 if ($header.classList.contains('nav-visible')) $header.classList.remove('nav-visible');
@@ -53,12 +51,15 @@ const scrollFn = function () {
             }
             $header.classList.add('nav-fixed');
         } else {
-            if (currentTop ===0){
             $header.classList.remove('nav-fixed', 'nav-visible');
-            }
         }
-    }, 200));
-
+    }, 200);
+    window.addEventListener('scroll', function(e) {
+        throttledScroll(e);
+        if (window.scrollY === 0) {
+            $header.classList.remove('nav-fixed', 'nav-visible');
+        }
+    });
     function scrollDirection(currentTop) {
         const result = currentTop > initTop;
         initTop = currentTop;
@@ -67,34 +68,26 @@ const scrollFn = function () {
 }
 
 const percent = () => {
-    let scrollTop = document.documentElement.scrollTop || window.pageYOffset
-    let totalHeight = Math.max(document.body.scrollHeight, document.documentElement.scrollHeight, document.body.offsetHeight, document.documentElement.offsetHeight, document.body.clientHeight, document.documentElement.clientHeight) - document.documentElement.clientHeight
-    let scrollPercent = Math.round(scrollTop / totalHeight * 100)
-    let percentElement = document.querySelector("#percent")
-    let viewportBottom = window.scrollY + document.documentElement.clientHeight
-    let remainingScroll = totalHeight - scrollTop
-
-    if ((document.getElementById("post-comment") || document.getElementById("footer"))?.offsetTop < viewportBottom || scrollPercent > 90) {
-        document.querySelector("#nav-totop").classList.add("long")
-        percentElement.innerHTML = GLOBAL_CONFIG.lang.backtop
+    const docEl = document.documentElement;
+    const body = document.body;
+    const scrollPos = window.pageYOffset || docEl.scrollTop;
+    const scrollHeight = Math.max(body.scrollHeight, docEl.scrollHeight, body.offsetHeight, docEl.offsetHeight, body.clientHeight, docEl.clientHeight);
+    const viewportHeight = docEl.clientHeight;
+    const totalScrollableHeight = scrollHeight - viewportHeight;
+    const scrolledPercent = Math.round((scrollPos / totalScrollableHeight) * 100);
+    const navToTop = document.querySelector("#nav-totop");
+    const percentDisplay = document.querySelector("#percent");
+    const commentOrFooter = document.getElementById("post-comment") || document.getElementById("footer");
+    const isNearEnd = (window.scrollY + viewportHeight) >= commentOrFooter.offsetTop;
+    if (isNearEnd || scrolledPercent > 90) {
+        navToTop.classList.add("long");
+        percentDisplay.textContent = GLOBAL_CONFIG.lang.backtop;
     } else {
-        document.querySelector("#nav-totop").classList.remove("long")
-        if (scrollPercent >= 0) {
-            percentElement.innerHTML = scrollPercent + ""
-        }
+        navToTop.classList.remove("long");
+        percentDisplay.textContent = scrolledPercent;
     }
-
-    let elementsToHide = document.querySelectorAll(".needEndHide")
-    if (remainingScroll < 100) {
-        elementsToHide.forEach(function (element) {
-            element.classList.add("hide")
-        })
-    } else {
-        elementsToHide.forEach(function (element) {
-            element.classList.remove("hide")
-        })
-    }
-
+    const elementsToHide = document.querySelectorAll(".needEndHide");
+    elementsToHide.forEach(item => item.classList.toggle("hide", totalScrollableHeight - scrollPos < 100));
     window.onscroll = percent
 }
 
@@ -892,12 +885,12 @@ window.refreshFn = () => {
 
 document.addEventListener('DOMContentLoaded', function () {
     sco.initAdjust()
-    percent()
     initObserver()
     addCopyright()
     sco.initConsoleState()
     window.refreshFn()
     asideStatus()
+    percent()
 })
 
 window.onkeydown = function (e) {
