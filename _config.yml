@@ -715,6 +715,7 @@ comment:
   commentBarrage: false # 热评开关 / Hot comment switch
   lazyload: false # 懒加载
   count: false # 评论数展示
+  pv: false # 是否使用評論統計頁面訪問
   avatar: https://cravatar.cn # Gravatar link
   newest_comment:
     enable: false
