@@ -37,6 +37,7 @@ hexo.extend.filter.register('before_generate', () => {
                     noSticky: 'about', Sticky: 'allInfo'
                 },
                 card: {
+                    style: 0,
                     author: {
                         img: '/img/logo.png', sticker: '/img/happy-sticker.png',
                     },
@@ -188,19 +189,6 @@ hexo.extend.filter.register('before_generate', () => {
                 id: '8407304077',
                 server: 'netease',
                 type: 'playlist',
-            },
-            moments: {
-                enable: false,
-                api: '',
-                error_img: '/img/logo.png',
-                sort_rule: 'created',
-                expire_days: 1,
-                page_init_number: 10,
-                page_turning_number: 5,
-                angle: false,
-                appjs: 'https://cdn.cbd.int/st-source@1.0.3/js/fcircle.min.js',
-                bundlejs: 'https://cdn.cbd.int/st-source/js/moment/bundle.min.js',
-                randompostjs: 'https://cdn.cbd.int/st-source/js/moment/random_post.min.js'
             },
             keyboard: {
                 enable: false,

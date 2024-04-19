@@ -37,7 +37,7 @@ function img2color(src) {
             localStorage.setItem('Solitude', JSON.stringify(cacheGroup));
         })
         .catch(error => {
-            console.error('请检查API是否正常！\n' + error);
+            console.error('API:error:', error);
         });
 }
 
