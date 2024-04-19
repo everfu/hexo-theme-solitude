@@ -525,31 +525,6 @@ capsule:
   # Type of playlist. song: Single / playlist: Playlist / album: Album / artist: Singer
   type: playlist
 
-# 友链鱼塘
-# Links fish pond
-moments:
-  # enable
-  enable: false
-  # API 地址
-  # example: https://example.com/
-  api: # https://example.com/
-  # 加载失败显示图片 / Loading failed display image
-  error_img: /img/pwa/favicon_64.ico
-  # 排序规则：created：按创建时间排序 / updated：按更新时间排序
-  # Sort rule: created: Sort by creation time / updated: Sort by update time
-  sort_rule: created
-  # 缓存过期时间（天），默认为1天 / Cache expiration time (days), default is 1 day
-  expire_days: 1
-  # 页面初始化加载数量，默认为10条 / Page initialization loading quantity, default is 10
-  page_init_number: 10
-  # 页面翻页加载数量，默认为5条 / Page turning loading quantity, default is 5
-  page_turning_number: 5
-  # 鱼塘随机文章 / Fish pond random article
-  angle: false
-  appjs: https://cdn.cbd.int/st-source@1.0.3/js/fcircle.min.js
-  bundlejs: https://cdn.cbd.int/st-source/js/moment/bundle.min.js
-  randompostjs: https://cdn.cbd.int/st-source/js/moment/random_post.min.js
-
 # 快捷菜单你
 # quick menu
 keyboard:

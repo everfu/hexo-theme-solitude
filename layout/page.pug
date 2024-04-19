@@ -18,8 +18,6 @@ block content
                     include includes/page/says
                 when 'equipment'
                     include includes/page/equipment
-                when 'moment'
-                    include includes/page/moment
                 when 'douban'
                     include includes/widgets/page/banner
                     != page.content
@@ -27,7 +25,10 @@ block content
                     include includes/page/music
                 when 'banner'
                     include includes/widgets/page/banner
-                    include includes/page/default
+                    if page.container
+                        include includes/page/default
+                    else
+                        != page.content
                 default
                     include includes/page/default
             if page.comment

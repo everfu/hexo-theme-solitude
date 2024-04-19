@@ -1,7 +1,5 @@
 .flink#banners
     include ../widgets/page/links/banner
-if theme.moments.angle
-    include ../widgets/page/moments/angle
 .flink#article-container
     each data in site.data.links.links
         h2= data.class_name + " (" + data.link_list.length + ")"
