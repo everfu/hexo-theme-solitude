@@ -90,6 +90,10 @@ aside:
   avatar: Avatar
   sticker: Mood sticker
   newpost: New posts
+  card:
+    posts: 'Posts:'
+    tags: 'Tags:'
+    categories: 'Categories:'
 
 console:
   comment_tip: Interaction

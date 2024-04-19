@@ -29,7 +29,7 @@ const localColor = (path) => {
         setThemeColors(value, r, g, b);
     };
     img.onerror = function () {
-        console.error('图片加载失败');
+        console.error('Image Error');
     };
     img.src = path;
 }

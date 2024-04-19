@@ -92,6 +92,10 @@ aside:
   avatar: 头像
   sticker: 心情贴纸
   newpost: 最近发布
+  card:
+    posts: '累计文章数:'
+    tags: '标签总数:'
+    categories: '分类总数:'
 
 console:
   comment_tip: 互动
