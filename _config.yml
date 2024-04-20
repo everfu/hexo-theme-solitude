@@ -633,6 +633,7 @@ wordcount: false
 # 访问统计
 # access statistics
 busuanzi: false
+busuanzi_use: 0 # 0: 原版 / 1: 青秸(other: 其它自定義的busuanzi平台)
 
 # 搜索
 # search
@@ -855,7 +856,6 @@ CDN:
 
   option:
     solitude_css: https://cdn2.codesign.qq.com/icons/7pOrz0WXB5ZWJPX/latest/iconfont.css
-    busuanzi_js: //pv.lemonso.com/js
     # algolia_search:
     # instantsearch:
     # pjax:
