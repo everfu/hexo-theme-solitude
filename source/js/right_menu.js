@@ -93,19 +93,8 @@ const rm = {
             utils.snackbarShow(GLOBAL_CONFIG.right_menu.img_error, false, 2000)
         }
     },
-    copyImage: async function (imgUrl = this.domsrc) {
-        try {
-            const response = await fetch(imgUrl);
-            const blob = await response.blob();
-            const data = new ClipboardItem({
-                'image/png': blob
-            });
-            await navigator.clipboard.write([data]);
-
-            utils.snackbarShow(GLOBAL_CONFIG.lang.copy.success, false, 3e3)
-        } catch (error) {
-            utils.snackbarShow(GLOBAL_CONFIG.right_menu.img_error, false, 2000)
-        }
+    copyImage: function (imgUrl = this.domsrc) {
+        window.open(imgUrl)
     },
     mode: (darkmode) => (darkmode ? document.querySelector('.menu-darkmode-text').textContent = GLOBAL_CONFIG.right_menu.mode.light : document.querySelector('.menu-darkmode-text').textContent = GLOBAL_CONFIG.right_menu.mode.dark) && rm.hideRightMenu(),
     barrage: (enable) => (enable ? document.querySelector(".menu-commentBarrage-text").textContent = GLOBAL_CONFIG.right_menu.barrage.open : document.querySelector(".menu-commentBarrage-text").textContent = GLOBAL_CONFIG.right_menu.barrage.close) && rm.hideRightMenu()
@@ -185,51 +174,53 @@ window.oncontextmenu = (ele) => {
     return false;
 }
 
-!function () {
-    rm.menuItems.back.addEventListener('click', () => window.history.back() || rm.hideRightMenu());
-    rm.menuItems.forward.addEventListener('click', () => window.history.forward() || rm.hideRightMenu());
-    rm.menuItems.refresh.addEventListener('click', () => window.location.reload())
-    rm.menuItems.top.addEventListener('click', () => sco.toTop() || rm.hideRightMenu());
+(function() {
+    const addEventListener = (element, event, handler) => element.addEventListener(event, handler);
+
+    addEventListener(rm.menuItems.back, 'click', () => window.history.back() || rm.hideRightMenu());
+    addEventListener(rm.menuItems.forward, 'click', () => window.history.forward() || rm.hideRightMenu());
+    addEventListener(rm.menuItems.refresh, 'click', () => window.location.reload());
+    addEventListener(rm.menuItems.top, 'click', () => sco.toTop() || rm.hideRightMenu());
 
     if (GLOBAL_CONFIG.right_menu.music) {
-        rm.menuItems.music[0].addEventListener('click', () => {
-            sco.musicToggle()
-            rm.hideRightMenu()
-        })
-        rm.menuItems.music[1].addEventListener('click', () => {
-            document.querySelector('meting-js').aplayer.skipBack()
-            rm.hideRightMenu()
-        })
-        rm.menuItems.music[2].addEventListener('click', () => {
-            document.querySelector('meting-js').aplayer.skipForward()
-            rm.hideRightMenu()
-        })
-        rm.menuItems.music[3].addEventListener('click', () => {
+        addEventListener(rm.menuItems.music[0], 'click', () => {
+            sco.musicToggle();
+            rm.hideRightMenu();
+        });
+        addEventListener(rm.menuItems.music[1], 'click', () => {
+            document.querySelector('meting-js').aplayer.skipBack();
+            rm.hideRightMenu();
+        });
+        addEventListener(rm.menuItems.music[2], 'click', () => {
+            document.querySelector('meting-js').aplayer.skipForward();
+            rm.hideRightMenu();
+        });
+        addEventListener(rm.menuItems.music[3], 'click', () => {
             const title = Array.from(document.querySelectorAll('.aplayer-title')).map(e => e.innerText)[0];
-            rm.copyText(title)
-        })
+            rm.copyText(title);
+        });
     }
 
-    rm.menuItems.copy.addEventListener('click', () => {
+    addEventListener(rm.menuItems.copy, 'click', () => {
         if (GLOBAL_CONFIG.copyright) {
-            const {limit, author, link, source, info} = GLOBAL_CONFIG.copyright
+            const {limit, author, link, source, info} = GLOBAL_CONFIG.copyright;
             if (selectTextNow.length > limit) {
-                selectTextNow = `${selectTextNow}\n\n${author}\n${link}${window.location.href}\n${source}\n${info}`
+                selectTextNow = `${selectTextNow}\n\n${author}\n${link}${window.location.href}\n${source}\n${info}`;
             }
         }
-        rm.copyText(selectTextNow)
-        rm.hideRightMenu()
-    })
+        rm.copyText(selectTextNow);
+        rm.hideRightMenu();
+    });
 
-    if(utils.saveToLocal.get('commentBarrageSwitch')!==null){
-        rm.menuItems.barrage && rm.barrage(!utils.saveToLocal.get('commentBarrageSwitch'))
+    if(utils.saveToLocal.get('commentBarrageSwitch') !== null){
+        rm.menuItems.barrage && rm.barrage(!utils.saveToLocal.get('commentBarrageSwitch'));
     }
 
-    rm.menuItems.paste.addEventListener('click', () => rm.pasteText() && rm.hideRightMenu())
-    GLOBAL_CONFIG.comment && rm.menuItems.comment.addEventListener('click', () => rm.hideRightMenu() || sco.toTalk(selectTextNow))
-    rm.menuItems.new.addEventListener('click', () => window.open(rm.domhref) && rm.hideRightMenu())
-    rm.menuItems.downloadImg.addEventListener('click', () => rm.downloadImage() && rm.hideRightMenu())
-    rm.menuItems.copyImg.addEventListener('click', () => rm.copyImage() && rm.hideRightMenu())
-}()
+    addEventListener(rm.menuItems.paste, 'click', () => rm.pasteText() && rm.hideRightMenu());
+    GLOBAL_CONFIG.comment && addEventListener(rm.menuItems.comment, 'click', () => rm.hideRightMenu() || sco.toTalk(selectTextNow));
+    addEventListener(rm.menuItems.new, 'click', () => window.open(rm.domhref) && rm.hideRightMenu());
+    addEventListener(rm.menuItems.downloadImg, 'click', () => rm.downloadImage() && rm.hideRightMenu());
+    addEventListener(rm.menuItems.copyImg, 'click', () => rm.copyImage() && rm.hideRightMenu());
+})();
 
 is_rm = true

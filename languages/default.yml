@@ -55,6 +55,9 @@ post:
     reprint: This article is a reproduction or translation, and the copyright belongs to the original author. Please contact the original author for permission to republish this article.
     original: This piece of writing is an original article, utilizing the
     original_end: Agreement. For complete reproduction, please acknowledge the source as Courtesy of
+  ai:
+    title: Article Summary
+    tip: Complaints
 
 nav:
   site_name_title: Back to home

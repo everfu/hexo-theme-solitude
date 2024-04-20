@@ -78,8 +78,12 @@ swiper_js:
   version: 11.0.5
   other_name: Swiper
 busuanzi_js:
+  name: busuanzi
+  file: bsz.pure.mini.js
+  version: 2.3.0
+busuanzi_qj_js:
   name: pearssauce-busuanzi
-  file: bsz.pure.min.js
+  file: bsz.pure.js
   version: 1.0.0
 snackbar:
   name: node-snackbar

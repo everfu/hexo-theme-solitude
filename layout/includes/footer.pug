@@ -5,7 +5,7 @@ div#st-footer-bar
         else if theme.site.name.class === 'img'
             img.solitude.nolazyload(src=url_for(theme.site.name.custom))
         else if theme.site.name.class === 'text'
-            span.solitude= theme.site.name.custom
+            span= theme.site.name.custom
     div.footer-bar-description= __('footer.description').replace(/\$\{title}/, config.title + " - " + config.subtitle)
     a.footer-bar-link(href=url_for('/'))= __('footer.learnmore')
 div#footer_deal

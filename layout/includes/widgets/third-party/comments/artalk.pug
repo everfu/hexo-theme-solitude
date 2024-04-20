@@ -55,7 +55,7 @@ script.
 if commentBarrage
     script.
         async function barrageArtalk(array) {
-            await utils.getScript('!{url_for(theme.cdn.commentBarrage)}').then(() => {
-                initializeCommentBarrage(array)
-            })
+            const init = () => initializeCommentBarrage(array)
+            if (typeof initializeCommentBarrage === "undefined") await utils.getScript('!{url_for(theme.cdn.commentBarrage)}').then(init)
+            else init()
         }

@@ -20,10 +20,6 @@
         &:hover
           color var(--efu-card-bg)
 
-          +maxWidth768()
-            align-items flex-end
-            color var(--efu-fontcolor)
-
     &:not(.nav-fixed)
       #nav
         background var(--efu-none)
@@ -338,8 +334,13 @@
     cursor pointer
 
     &:hover
-      i, span, img
-        +minWidth900()
+      @media (hover: hover)
+        i, span, img
+          color var(--efu-card-bg)
+          transition .3s
+
+      +minWidth900()
+        i, span, img
           opacity 0
 
       &:after

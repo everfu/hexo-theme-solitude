@@ -1,75 +1,63 @@
 (() => {
     const utilsFn = {
-        throttle: (func, wait, options) => {
-            let timeout, context, args
-            let previous = 0
-            if (!options) options = {}
-            const later = function () {
-                previous = options.leading === false ? 0 : new Date().getTime()
-                func.apply(context, args)
-                context = args = null
-            }
+        throttle: (func, wait, {leading = true, trailing = true} = {}) => {
+            let timeout, previous = 0;
+            const later = (context, args) => {
+                timeout = previous = leading === false ? 0 : Date.now();
+                func.apply(context, args);
+            };
             return function () {
-                const now = new Date().getTime()
-                if (!previous && options.leading === false) previous = now
-                const remaining = wait - (now - previous)
-                context = this
-                args = arguments
+                const now = Date.now();
+                if (!previous && leading === false) previous = now;
+                const remaining = wait - (now - previous);
                 if (remaining <= 0 || remaining > wait) {
                     if (timeout) {
-                        clearTimeout(timeout)
-                        timeout = null
+                        clearTimeout(timeout);
+                        timeout = null;
                     }
-                    previous = now
-                    func.apply(context, args)
-                    if (!timeout) context = args = null
-                } else if (!timeout && options.trailing !== false) {
-                    timeout = setTimeout(later, remaining)
+                    later(this, arguments);
+                } else if (!timeout && trailing !== false) {
+                    timeout = setTimeout(() => later(this, arguments), remaining);
                 }
-            }
+            };
         },
         fadeIn: (ele, time) => ele.style.cssText = `display:block;animation: to_show ${time}s`,
         fadeOut: (ele, time) => {
-            ele.addEventListener('animationend', function f() {
-                ele.style.cssText = "display: none; animation: '' "
-                ele.removeEventListener('animationend', f)
-            })
-            ele.style.animation = `to_hide ${time}s`
+            const resetStyles = () => {
+                ele.style.cssText = "display: none; animation: '' ";
+                ele.removeEventListener('animationend', resetStyles);
+            };
+            ele.addEventListener('animationend', resetStyles);
+            ele.style.animation = `to_hide ${time}s`;
         },
         sidebarPaddingR: () => {
-            const innerWidth = window.innerWidth
-            const clientWidth = document.body.clientWidth
-            const paddingRight = innerWidth - clientWidth
-            if (innerWidth !== clientWidth) {
-                document.body.style.paddingRight = paddingRight + 'px'
+            const paddingRight = window.innerWidth - document.body.clientWidth;
+            if (paddingRight > 0) {
+                document.body.style.paddingRight = `${paddingRight}px`;
             }
         },
-        snackbarShow: (text, showAction, duration) => {
-            const sa = (typeof showAction !== 'undefined') ? showAction : false
-            const dur = (typeof duration !== 'undefined') ? duration : 5000
-            document.styleSheets[0].addRule(':root', '--efu-snackbar-time:' + dur + 'ms!important')
+        snackbarShow: (text, showAction = false, duration = 5000) => {
+            document.styleSheets[0].addRule(':root', `--efu-snackbar-time:${duration}ms!important`);
             Snackbar.show({
-                text: text,
-                showAction: sa,
-                duration: dur,
+                text,
+                showAction,
+                duration,
                 pos: 'top-center'
-            })
+            });
         },
         copy: async (text) => {
-            try {
-                await navigator.clipboard.writeText(text)
-                utils.snackbarShow(GLOBAL_CONFIG.lang.copy.success, false, 2000)
-            } catch (err) {
-                utils.snackbarShow(GLOBAL_CONFIG.lang.copy.error, false, 2000)
-            }
+            const message = await navigator.clipboard.writeText(text)
+                .then(() => GLOBAL_CONFIG.lang.copy.success)
+                .catch(() => GLOBAL_CONFIG.lang.copy.error);
+            utils.snackbarShow(message, false, 2000);
         },
         getEleTop: ele => {
-            let actualTop = 0
-            while (ele) {
-                actualTop += ele.offsetTop
-                ele = ele.offsetParent
+            let actualTop = ele.offsetTop;
+            while (ele.offsetParent) {
+                ele = ele.offsetParent;
+                actualTop += ele.offsetTop;
             }
-            return actualTop
+            return actualTop;
         },
         randomNum: (length) => {
             return Math.floor(Math.random() * length)
@@ -79,36 +67,29 @@
             return Math.floor(timeDiff / (1000 * 3600 * 24));
         },
         scrollToDest: (pos, time = 500) => {
-            const currentPos = window.pageYOffset
-            const isNavFixed = document.getElementById('page-header').classList.contains('nav-fixed')
-            if (currentPos > pos || isNavFixed) pos = pos - 70
+            const currentPos = window.pageYOffset;
+            const isNavFixed = document.getElementById('page-header').classList.contains('nav-fixed');
+            pos = currentPos > pos || isNavFixed ? pos - 70 : pos;
+
             if ('scrollBehavior' in document.documentElement.style) {
-                window.scrollTo({
-                    top: pos,
-                    behavior: 'smooth'
-                })
-                return
+                window.scrollTo({top: pos, behavior: 'smooth'});
+                return;
             }
-            let start = null
-            const distance = pos - currentPos
-            window.requestAnimationFrame(function step(currentTime) {
-                start = !start ? currentTime : start
-                const progress = currentTime - start
+
+            const distance = pos - currentPos;
+            const step = currentTime => {
+                const start = start || currentTime;
+                const progress = currentTime - start;
+
                 if (progress < time) {
-                    window.scrollTo(0, currentPos + distance * progress / time)
-                    window.requestAnimationFrame(step)
+                    window.scrollTo(0, currentPos + distance * progress / time);
+                    window.requestAnimationFrame(step);
                 } else {
-                    window.scrollTo(0, pos)
+                    window.scrollTo(0, pos);
                 }
-            })
-        },
-        siblings: (ele, selector) => {
-            return [...ele.parentNode.children].filter((child) => {
-                if (selector) {
-                    return child !== ele && child.matches(selector)
-                }
-                return child !== ele
-            })
+            };
+
+            window.requestAnimationFrame(step);
         },
         isMobile: () => /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent),
         isHidden: e => 0 === e.offsetHeight && 0 === e.offsetWidth,
@@ -119,16 +100,16 @@
             })
         },
         animateIn: (ele, text) => {
-            ele.style.display = 'block'
-            ele.style.animation = text
+            Object.assign(ele.style, {display: 'block', animation: text});
         },
         animateOut: (ele, text) => {
-            ele.addEventListener('animationend', function f() {
-                ele.style.display = ''
-                ele.style.animation = ''
-                ele.removeEventListener('animationend', f)
-            })
-            ele.style.animation = text
+            const resetAnimation = () => {
+                ele.style.display = '';
+                ele.style.animation = '';
+                ele.removeEventListener('animationend', resetAnimation);
+            };
+            ele.addEventListener('animationend', resetAnimation);
+            ele.style.animation = text;
         },
         wrap: (selector, eleType, options) => {
             const createEle = document.createElement(eleType)
@@ -138,68 +119,63 @@
             selector.parentNode.insertBefore(createEle, selector)
             createEle.appendChild(selector)
         },
-        lazyloadImg: function () {
+        lazyloadImg: () => {
             window.lazyLoadInstance = new LazyLoad({
                 elements_selector: 'img',
                 threshold: 0,
                 data_src: 'lazy-src',
-                callback_error: (img) => {
-                    img.setAttribute("src", GLOBAL_CONFIG.lazyload.error);
-                }
-            })
+                callback_error: img => img.src = GLOBAL_CONFIG.lazyload.error
+            });
         },
         lightbox: function (selector) {
             const lightboxType = GLOBAL_CONFIG.lightbox;
-            switch (lightboxType) {
-                case 'mediumZoom':
-                    mediumZoom ? mediumZoom(selector, {background: "var(--efu-card-bg)"}) : false
-                    break;
-                case 'fancybox':
-                    selector.forEach(i => {
-                        if (i.parentNode.tagName !== 'A') {
-                            const dataSrc = i.dataset.lazySrc || i.src;
-                            const dataCaption = i.title || i.alt || '';
-                            utils.wrap(i, 'a', {
-                                class: 'fancybox',
-                                href: dataSrc,
-                                'data-fancybox': 'gallery',
-                                'data-caption': dataCaption,
-                                'data-thumb': dataSrc
-                            });
+            const options = {
+                class: 'fancybox',
+                'data-fancybox': 'gallery',
+            };
+
+            if (lightboxType === 'mediumZoom') {
+                mediumZoom && mediumZoom(selector, {background: "var(--efu-card-bg)"});
+            } else if (lightboxType === 'fancybox') {
+                selector.forEach(i => {
+                    if (i.parentNode.tagName !== 'A') {
+                        options.href = options['data-thumb'] = i.dataset.lazySrc || i.src;
+                        options['data-caption'] = i.title || i.alt || '';
+                        utils.wrap(i, 'a', options);
+                    }
+                });
+
+                if (!window.fancyboxRun) {
+                    Fancybox.bind('[data-fancybox]', {
+                        Hash: false,
+                        Thumbs: {showOnStart: false},
+                        Images: {Panzoom: {maxScale: 4}},
+                        Carousel: {transition: 'slide'},
+                        Toolbar: {
+                            display: {
+                                left: ['infobar'],
+                                middle: ['zoomIn', 'zoomOut', 'toggle1to1', 'rotateCCW', 'rotateCW', 'flipX', 'flipY'],
+                                right: ['slideshow', 'thumbs', 'close']
+                            }
                         }
                     });
-                    if (!window.fancyboxRun) {
-                        Fancybox.bind('[data-fancybox]', {
-                            Hash: false,
-                            Thumbs: {showOnStart: false},
-                            Images: {Panzoom: {maxScale: 4}},
-                            Carousel: {transition: 'slide'},
-                            Toolbar: {
-                                display: {
-                                    left: ['infobar'],
-                                    middle: ['zoomIn', 'zoomOut', 'toggle1to1', 'rotateCCW', 'rotateCW', 'flipX', 'flipY'],
-                                    right: ['slideshow', 'thumbs', 'close']
-                                }
-                            }
-                        });
-                        window.fancyboxRun = true;
-                    }
-                    break;
+                    window.fancyboxRun = true;
+                }
             }
         },
         diffDate: (d, more = false) => {
             const dateNow = new Date();
             const datePost = new Date(d);
-            const dateDiff = dateNow - datePost; // Simplified date difference calculation
+            const dateDiff = dateNow - datePost;
             const minute = 60000;
             const hour = 3600000;
             const day = 86400000;
             const month = 2592000000;
             const {time} = GLOBAL_CONFIG.lang;
-            if (!more) return Math.floor(dateDiff / day)
+            const dayCount = Math.floor(dateDiff / day)
+            if (!more) return dayCount
             const minuteCount = Math.floor(dateDiff / minute)
             const hourCount = Math.floor(dateDiff / hour)
-            const dayCount = Math.floor(dateDiff / day)
             const monthCount = Math.floor(dateDiff / month)
             if (monthCount > 12) return datePost.toISOString().slice(0, 10)
             if (monthCount >= 1) return `${monthCount} ${time.month}`
@@ -209,17 +185,14 @@
             return time.just
         },
         loadComment: (dom, callback) => {
-            if ('IntersectionObserver' in window) {
-                const observerItem = new IntersectionObserver((entries) => {
-                    if (entries[0].isIntersecting) {
-                        callback()
-                        observerItem.disconnect()
-                    }
-                }, {threshold: [0]})
-                observerItem.observe(dom)
-            } else {
-                callback()
-            }
+            const observerItem = 'IntersectionObserver' in window ? new IntersectionObserver((entries) => {
+                if (entries[0].isIntersecting) {
+                    callback();
+                    observerItem.disconnect();
+                }
+            }, {threshold: [0]}) : null;
+
+            observerItem ? observerItem.observe(dom) : callback();
         },
     }
     window.utils = {...window.utils, ...utilsFn};

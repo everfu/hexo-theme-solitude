@@ -65,9 +65,6 @@ div
                     }
                 script(src=url_for(theme.cdn.cover_api))
 
-    if theme.music.enable
-        script(src=url_for(theme.cdn.music_js))
-
     if theme.loading.pace
         script(src=url_for(theme.cdn.pace_js))
 
@@ -96,7 +93,10 @@ div
                 GLOBAL_CONFIG.lightbox && utils.lightbox(document.querySelectorAll(".bber-content-img img"));
                 sco.changeTimeFormat(document.querySelectorAll('.bber-info-time time'))
         if theme.busuanzi && (theme.aside.siteinfo.uv || theme.aside.siteinfo.pv)
-            script(defer pjax src=url_for(theme.cdn.busuanzi_js))
+            if theme.busuanzi_use === 0
+                script(defer pjax src=url_for(theme.cdn.busuanzi_js))
+            else
+                script(defer pjax src=url_for(theme.cdn.busuanzi_qj_js))
 
 
 if theme.footer.randomlink
@@ -106,7 +106,7 @@ if theme.footer.randomlink
 include ../widgets/third-party/news-comment/newest-comment.pug
 
 // pjax
-!= partial("includes/widgets/third-party/pjax", {}, { cache: true })
+!= partial("includes/widgets/third-party/pjax", {}, {cache: true})
 
 // theme
 include ../body/mode

@@ -66,13 +66,15 @@ if commentBarrage
             }).then(async res => {
                 if (!res.ok) throw new Error("HTTP error! status: " + res.status)
                 const data = await res.json();
-                await utils.getScript('!{url_for(theme.cdn.commentBarrage)}').then(() => {
+                const init = () => {
                     initializeCommentBarrage((data.data).map(item => Object.assign({
                         content: item.comment,
                         nick: item.nick,
                         mailMd5: item.mailMd5,
                         id: item.id
                     })))
-                })
+                }
+                if (typeof initializeCommentBarrage === "undefined") await utils.getScript('!{url_for(theme.cdn.commentBarrage)}').then(init)
+                else init()
             }).catch(error => console.error("An error occurred while fetching comments: ", error))
         }

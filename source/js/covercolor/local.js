@@ -1,37 +1,32 @@
 const coverColor = () => {
     const path = document.getElementById("post-cover")?.src;
-    if (path) {
-        localColor(path);
-    } else {
-        document.documentElement.style.setProperty('--efu-main', 'var(--efu-theme)');
-        document.documentElement.style.setProperty('--efu-main-op', 'var(--efu-theme-op)');
-        document.documentElement.style.setProperty('--efu-main-op-deep', 'var(--efu-theme-op-deep)');
-        document.documentElement.style.setProperty('--efu-main-none', 'var(--efu-theme-none)');
-        initThemeColor()
-    }
+    path ? localColor(path) : setDefaultThemeColors();
 }
 
-const localColor = (path) => {
+function setDefaultThemeColors() {
+    document.documentElement.style.setProperty('--efu-main', 'var(--efu-theme)');
+    document.documentElement.style.setProperty('--efu-main-op', 'var(--efu-theme-op)');
+    document.documentElement.style.setProperty('--efu-main-op-deep', 'var(--efu-theme-op-deep)');
+    document.documentElement.style.setProperty('--efu-main-none', 'var(--efu-theme-none)');
+    initThemeColor();
+}
+
+const localColor = path => {
     const img = new Image();
     img.crossOrigin = "Anonymous";
-    img.onload = function () {
-        const canvas = document.createElement("canvas");
-        canvas.width = img.width;
-        canvas.height = img.height;
-        const ctx = canvas.getContext("2d");
-        ctx.drawImage(img, 0, 0);
-        const data = ctx.getImageData(0, 0, img.width, img.height).data;
-        const {r, g, b} = calculateRGB(data);
-        let value = rgbToHex(r, g, b);
-        if (getContrastYIQ(value) === "light") {
-            value = LightenDarkenColor(value, -50);
-        }
-        setThemeColors(value, r, g, b);
-    };
-    img.onerror = function () {
-        console.error('Image Error');
-    };
+    img.onload = () => setThemeColors(calculateColor(img));
+    img.onerror = () => console.error('Image Error');
     img.src = path;
+}
+
+const calculateColor = img => {
+    const canvas = document.createElement("canvas");
+    const ctx = canvas.getContext("2d");
+    ctx.drawImage(img, 0, 0);
+    const data = ctx.getImageData(0, 0, img.width, img.height).data;
+    const {r, g, b} = calculateRGB(data);
+    let value = rgbToHex(r, g, b);
+    return getContrastYIQ(value) === "light" ? LightenDarkenColor(value, -50) : value;
 }
 
 function calculateRGB(data) {

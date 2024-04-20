@@ -4,47 +4,10 @@ div#swiper_container
   position relative
   transition all .3s
   overflow hidden
-
-#swiperBox.recent-post-item
-  width 100%
-  cursor default
-  margin-top 0
-
-#swiperBox
-
-  .swiperBox-top-text
-    position absolute
-    z-index 2
-    color var(--efu-white)
-    background var(--efu-red)
-    letter-spacing 3px
-    top 0
-    left 15px
-    font-size 15px
-    width 35px
-    display flex
-    justify-content center
-    border-radius 0 0 12px 12px
-
-  .swiper-button-next::after, .swiper-button-prev::after
-    font-size 1rem !important
-
-  .swiper-button-prev, .swiper-button-next
-    transition all .3s
-    border-radius 5px
-    color var(--efu-main) !important
-    background var(--efu-maskbg)
-    opacity .5
-
-    &:hover
-      opacity 1
-      transition all .3s
-      color var(--efu-white) !important
-      background var(--efu-main)
-
-  .swiper-button-next::after, .swiper-button-prev::after
-    font-size 1.5rem
-    color var(--efu-bg)
+  display flex
+  flex-direction row
+  justify-content center
+  align-items center
 
   .blog-slider__pagination .swiper-pagination-bullet
     margin 0 8px
@@ -52,71 +15,92 @@ div#swiper_container
     height 11px
     display inline-block
     border-radius 99px
-    background var(--efu-white)
-    opacity .8
+    background var(--efu-gray)
+    opacity .2
     transition all .3s
 
   .blog-slider__pagination .swiper-pagination-bullet-active
     opacity 1
     background var(--efu-main)
-    width 30px
+    height 30px
 
   .blog-slider__pagination
     position absolute
     z-index 21
     text-align center
+    display flex
+    justify-content space-between
+    flex-direction column
+    height 60%
 
-  #recent-posts > #swiperBox.recent-post-item
-    cursor default
+#swiperBox.recent-post-item
+  width 100%
+  margin-top 0
+  +maxWidth798()
+    display none
 
-  .blog-slider__item
-    background-size cover
-    background-position center
+#swiperBox
+  .blog-slider__item.swiper-slide
+    padding 1rem
+    display flex
+    justify-content space-between
+    flex-direction row
+    height 100%
+
+    &:hover
+      .blog-slider__img
+        img
+          transform scale(1.1)
+          transition all .3s
+
+      .blog-slider__title
+        color var(--efu-main)
+        transition all .3s
+
+  .blog-slider__img
+    border-radius 12px
     overflow hidden
+    width 35%
+    height 100%
+    transition all .3s
+    cursor pointer
 
-    &::after
-      content ''
-      position absolute
+    img
       width 100%
       height 100%
-      background-color rgba(0, 0, 0, .5)
-      z-index -1
-      left 0
-      top 0
-
-  .blog-slider__content > *
-    text-align center
-    line-height 1.5
-    margin 2px 0
-    color var(--efu-white)
-
-  a.blog-slider__title
-    font-size 2rem
-
-    +maxWidth768()
-      font-size 1.3rem
-
-  .blog-slider__code
-    display block
-    font-weight 500
-
-  .blog-slider__text
-    font-size 18px
-    -webkit-line-clamp 2
-    overflow hidden
-    display -webkit-box
-    -webkit-box-orient vertical
-    +minWidth1300()
-      padding 0 5rem
-    +maxWidth900()
-      padding 0 3rem
-    +maxWidth768()
-      display none
+      object-fit cover
 
   .blog-slider__content
-    padding 0 50px 20px
+    margin 0 2rem 0 1rem
+    position relative
+    width 65%
     display flex
-    justify-content center
-    align-items center
+    align-items left
     flex-direction column
     height 100%
+
+    .article-meta-wrap
+      padding 0
+      bottom 0
+
+      .tags-punctuation
+        &:hover
+          color var(--efu-main)
+          transition all .3s
+
+    .blog-slider__title
+      font-size 1.5rem
+      font-weight 600
+      color var(--efu-fontcolor)
+      margin 0
+      transition all .3s
+      cursor pointer
+
+    .blog-slider__desc
+      -webkit-line-clamp: 4;
+      display: -webkit-box;
+      overflow: hidden;
+      -webkit-box-orient: vertical;
+      opacity: 0.8;
+      font-size: 14px;
+      line-height: 1.8;
