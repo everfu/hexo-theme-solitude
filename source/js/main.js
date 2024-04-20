@@ -637,7 +637,9 @@ const addHighlight = () => {
         $buttonParent.classList.remove('copy-true')
     }
     const expandClose = (e) => e.classList.toggle('closed')
-    const shrinkEle = () => this.classList.toggle('expand-done')
+    const shrinkEle = function () {
+        this.classList.toggle('expand-done')
+    }
     const ToolsFn = function (e) {
         const $target = e.target.classList
         if ($target.contains('expand')) expandClose(this)
