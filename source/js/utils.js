@@ -112,9 +112,12 @@
             ele.style.animation = text;
         },
         wrap: (selector, eleType, options) => {
-            const createEle = Object.assign(document.createElement(eleType), options);
-            selector.parentNode.insertBefore(createEle, selector);
-            createEle.appendChild(selector);
+            const createEle = document.createElement(eleType)
+            for (const [key, value] of Object.entries(options)) {
+                createEle.setAttribute(key, value)
+            }
+            selector.parentNode.insertBefore(createEle, selector)
+            createEle.appendChild(selector)
         },
         lazyloadImg: () => {
             window.lazyLoadInstance = new LazyLoad({
