@@ -855,6 +855,7 @@ CDN:
 
   option:
     solitude_css: https://cdn2.codesign.qq.com/icons/7pOrz0WXB5ZWJPX/latest/iconfont.css
+    busuanzi_js: //pv.lemonso.com/js
     # algolia_search:
     # instantsearch:
     # pjax:

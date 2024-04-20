@@ -79,7 +79,7 @@ swiper_js:
   other_name: Swiper
 busuanzi_js:
   name: pearssauce-busuanzi
-  file: bsz.pure.min.js
+  file: bsz.pure.js
   version: 1.0.0
 snackbar:
   name: node-snackbar
