@@ -136,7 +136,9 @@ function applyThemeColor(color) {
     const appleMobileWebAppMeta = document.querySelector('meta[name="apple-mobile-web-app-status-bar-style"]');
     themeColorMeta?.setAttribute("content", color);
     appleMobileWebAppMeta?.setAttribute("content", color);
-    document.body.style.backgroundColor = color;
+    if (window.matchMedia("(display-mode: standalone)").matches) {
+        document.body.style.backgroundColor = color;
+    }
 }
 
 /**
