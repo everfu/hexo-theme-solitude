@@ -134,11 +134,9 @@ function initThemeColor() {
 function applyThemeColor(color) {
     const themeColorMeta = document.querySelector('meta[name="theme-color"]');
     const appleMobileWebAppMeta = document.querySelector('meta[name="apple-mobile-web-app-status-bar-style"]');
-    if (themeColorMeta && appleMobileWebAppMeta && window.matchMedia("(display-mode: standalone)").matches) {
-        themeColorMeta.setAttribute("content", color);
-        appleMobileWebAppMeta.setAttribute("content", color);
-        document.body.style.backgroundColor = color;
-    }
+    themeColorMeta?.setAttribute("content", color);
+    appleMobileWebAppMeta?.setAttribute("content", color);
+    document.body.style.backgroundColor = color;
 }
 
 /**
