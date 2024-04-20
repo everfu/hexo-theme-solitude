@@ -1,4 +1,4 @@
-window.onload = () => {
+window.addEventListener("load", () => {
     let store = [];
     const $searchMask = document.getElementById("search-mask");
     const $searchDialog = document.querySelector("#local-search .search-dialog");
@@ -30,7 +30,7 @@ window.onload = () => {
 
     const addEventTagList = () => {
         const list = document.querySelectorAll("#local-search .tag-list");
-        if(list.length > 0){
+        if (list.length > 0) {
             list.forEach(el => el.addEventListener("click", (e) => closeSearch()))
         }
     }
@@ -44,15 +44,15 @@ window.onload = () => {
 
     searchFnOnce();
 
-    const searchClickFn = () =>{
+    const searchClickFn = () => {
         utils.addEventListenerPjax(document.querySelector("#search-button > .search"), "click", openSearch);
 
-        GLOBAL_CONFIG.right_menu && document.getElementById("menu-search").addEventListener("click", function (){
+        GLOBAL_CONFIG.right_menu && document.getElementById("menu-search").addEventListener("click", function () {
             rm.hideRightMenu();
             openSearch();
-            let t=document.getElementsByClassName('search-box-input')[0];
+            let t = document.getElementsByClassName('search-box-input')[0];
             let evt = document.createEvent('HTMLEvents');
-            evt.initEvent('input', true,true)
+            evt.initEvent('input', true, true)
             t.value = selectTextNow
             t.dispatchEvent(evt)
         })
@@ -81,6 +81,7 @@ window.onload = () => {
             })
             .catch(err => console.error("Error loading search data:", err));
     }
+
     let query = ''
     let currentPage = 0;
     const resultsPerPage = 10;
@@ -104,19 +105,22 @@ window.onload = () => {
             }
         });
     }
+
     function clearSearchResults() {
         const $results = document.getElementById("search-results");
         const $pagination = document.getElementById("search-pagination");
         const $tips = document.getElementById("search-tips");
-    
+
         $results.innerHTML = '';
         $pagination.innerHTML = '';
         $tips.innerHTML = '';
     }
+
     function search(query) {
         const regex = new RegExp(query.split('').join('.*'), 'i');
         return store.filter(page => regex.test(page.title) || regex.test(page.content));
-    }    
+    }
+
     function renderResults(results, page) {
         const $search_results = document.getElementById("search-results");
         $search_results.innerHTML = '';
@@ -146,12 +150,12 @@ window.onload = () => {
         count.innerHTML = GLOBAL_CONFIG.lang.search.count.replace(/\$\{count}/, results.length)
         $tips.appendChild(count);
     }
-    
+
     function highlightSearchKeyword(text, keyword) {
         const regex = new RegExp(`(${keyword.split(' ').join('|')})`, 'gi');
         return text.replace(regex, '<em>$1</em>');
     }
-    
+
     function renderPagination(totalResults) {
         const totalPages = Math.ceil(totalResults / resultsPerPage);
         const paginationContainer = document.getElementById("search-pagination");
@@ -178,6 +182,7 @@ window.onload = () => {
         }
         paginationContainer.appendChild(paginationList);
     }
+
     init();
     initUI();
     window.addEventListener('DOMContentLoaded', (event) => {
@@ -186,4 +191,4 @@ window.onload = () => {
     window.addEventListener('pjax:complete', () => {
         searchClickFn()
     })
-}
+});
