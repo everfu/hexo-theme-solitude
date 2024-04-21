@@ -354,9 +354,14 @@ post:
     title: 感谢您的赞赏。
     desc: 因为有你们的支持，我才体会到写文章的价值。
     list:
-    #  - name: 支付宝
-    #    qcode: https://7.isyangs.cn/34/65f2e5a6d2ef5-34.png
-    #    color: var(--efu-blue)
+    #  - name: 爱发电
+    #    qcode: https://s3.qjqq.cn/47/661ba8e695f17.webp!color
+    #    url: https://afdian.net/a/efu0u0/
+    #    color: var(--efu-purple)
+    #  - name: Github Sponsor
+    #    qcode: https://s3.qjqq.cn/47/661ba900c4bc1.webp!color
+    #    url: https://github.com/sponsors/efuo
+    #    color: var(--efu-black)
   # 版权中订阅按钮跳转链接，填写地址后开启
   # Subscription button jump link in copyright
   rss: # /atom.xml
