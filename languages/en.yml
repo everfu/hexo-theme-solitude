@@ -180,6 +180,11 @@ right_menu:
     forward: Forward
     copyMusicName: CopyName
 
+pagination:
+  prev: Prev
+  next: Next
+  to: To page
+
 about:
   other:
     oneself:
