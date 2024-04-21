@@ -79,7 +79,7 @@
 
 <p align="center">
   <a href="https://cdn.jsdelivr.net/gh/efuo/static/sponsors.svg">
-    <img src='https://cdn.jsdelivr.net/gh/efuo/static/sponsors.svg'/>
+    <img src='https://cdn.jsdelivr.net/gh/efuo/static/sponsors.svg' alt="赞助者"/>
   </a>
 </p>
 

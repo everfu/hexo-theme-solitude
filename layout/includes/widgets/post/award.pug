@@ -1,5 +1,5 @@
-.post-reward(onclick="AddRewardMask()")
-    .reward-button(title=_p('award.tipping'))
+.post-reward
+    .reward-button(title=_p('award.tipping') onclick="AddRewardMask()")
         i.solitude.st-hand-heart-fill
         =_p('award.tipping')
     .reward-main
@@ -9,7 +9,8 @@
                 - let list = theme.post.award.list || []
                 for item in list
                     li.reward-item
-                        img.post-qr-code-img.nolazyload(src=item.qcode, alt=item.name, style="border-color: " + item.color)
+                        a(href=url_for(item.url))
+                            img.post-qr-code-img.nolazyload(src=item.qcode, alt=item.name, style="border-color: " + item.color)
                         .post-qr-code-desc=item.name
             a.reward-main-btn(href=url_for(theme.post.award.appreciators))
                 .reward-text= _p('award.title')
@@ -19,8 +20,6 @@ script.
     function RemoveRewardMask() {
         let rewardMainElements = document.querySelectorAll(".reward-main");
         let quitBoxElement = document.querySelector("#quit-box");
-
-        console.log("RemoveRewardMask")
 
         rewardMainElements.forEach(element => {
             element.style.display = "none";
@@ -34,8 +33,6 @@ script.
     function AddRewardMask() {
         let rewardMainElements = document.querySelectorAll(".reward-main");
         let quitBoxElement = document.querySelector("#quit-box");
-
-        console.log("AddRewardMask")
 
         rewardMainElements.forEach(element => {
             element.style.display = "flex";
