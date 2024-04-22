@@ -8,4 +8,8 @@ case item
     when 'allInfo'
         include ./asideAllInfo.pug
     default
-        include ../../page/default.pug
+        - const custom = site.data?.aside?.find((i) => i.name === item)
+        if custom
+            != partial("includes/widgets/aside/asideCustom", {item: custom}, {cache: true})
+        else
+            include ../../page/default.pug

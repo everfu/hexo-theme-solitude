@@ -1,6 +1,6 @@
-.card-widget(class=item.class_name, id=item.id_name)
+.card-widget(class=item.class, id=item.id)
     .item-headline
         i(class=item.icon)
-        span=item.name
-    div(class=item.class_content ||'item-content', id=item.id_content, style=item.style_content)
-        != item.html
+        span=item.title
+    div(class=item.content_class ||'item-content', id=item.content_id, style=item.content_css)
+        != item.content_html
