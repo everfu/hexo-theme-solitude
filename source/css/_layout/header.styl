@@ -791,52 +791,54 @@ if hexo-config('nav.group')
         &:after
           color var(--efu-card-bg)
 
-.back-menu-list-groups
-  .back-menu-list
-    display flex
-    flex-direction row
-    flex-wrap wrap
-    width 340px
-    justify-content space-between
+.back-menu-list
+  display flex
+  flex-direction row
+  flex-wrap wrap
+  width 340px
+  justify-content space-between
 
-    &::before
-      position absolute
-      top -15px
-      left 0
-      width 100%
-      height 20px
-      content ''
+  &::before
+    position absolute
+    top -15px
+    left 0
+    width 100%
+    height 20px
+    content ''
 
-    .back-menu-item
-      display flex
-      align-items center
-      margin 4px 8px
-      padding 4px 8px
+.back-menu-item
+  display flex
+  align-items center
+  margin 4px 8px
+  padding 4px 8px
 
-      #nav &
-        padding 4px 8px
+  #nav &
+    padding 4px 8px
 
-      &:hover
-        background var(--efu-lighttext)
-        transform scale(1)
+  #nav &
+    &:hover
+      background var(--efu-lighttext)
 
-        .back-menu-item-text
-          color var(--efu-card-bg)
+  &:hover
+    background var(--efu-lighttext)
 
-      .back-menu-item-icon
-        width 24px
-        height 24px
-        border-radius 8px
-        background var(--efu-none)
+    .back-menu-item-text
+      color var(--efu-card-bg)
 
-      .back-menu-item-text
-        font-size 16px
-        transition .3s
-        margin-left .5rem
-        color var(--efu-fontcolor)
+  .back-menu-item-icon
+    width 24px
+    height 24px
+    border-radius 8px
+    background var(--efu-none)
 
-        +maxWidth768()
-          font-size 14px
+  .back-menu-item-text
+    font-size 16px
+    transition .3s
+    margin-left .5rem
+    color var(--efu-fontcolor)
+
+    +maxWidth768()
+      font-size 14px
 
 .page
   #nav
