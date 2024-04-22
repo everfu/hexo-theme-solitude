@@ -660,6 +660,23 @@ search:
     preload: false
     CDN:
 
+# Post Chat AI
+# 后台地址：https://ai.tianli0.top/?InviteID=OZ3Z0V2R
+tianli_talk:
+  enable: false
+  title: 智能客服与搜索
+  key: # https://ai.tianli0.top/?InviteID=OZ3Z0V2R
+  # 默认值
+  # backgroundColor: "var(--efu-main)",
+  # bottom: "60px",
+  option: #https://ai.tianli0.top/codeMaker.html
+  #  defaultInput: false
+  #  upLoadWeb: true
+  #  userTitle: Efu Chat
+  #  userDesc: 你好，我是 Efu 的智能客服，有什么可以帮助你的？
+  #  showInviteLink: 'https://ai.tianli0.top/?InviteID=OZ3Z0V2R'
+  #  blackDom:
+  #    - .aplayer
 # 文章摘要AI
 # post abstract AI
 post_ai:
