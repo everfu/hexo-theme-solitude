@@ -38,7 +38,7 @@
 [![gitee](https://img.shields.io/badge/Gitee-red?logo=gitee)](https://gitee.com/nsjjd_w/hexo-theme-solitude)
 [![gitlab](https://img.shields.io/badge/GitLab-blue?logo=gitlab)](https://gitlab.com/efu/hexo-theme-solitude)
 
-[プレビュー](https://www.efu.me/) 丨  [ドキュメンテーション](https://solitude-docs.efu.me/)
+[プレビュー](https://www.efu.me/) 丨  [ドキュメンテーション](https://docs.efu.me/)
 
 </div>
 
@@ -73,7 +73,7 @@
       theme: solitude
       ```
 
-詳しくは [Docs](https://solitude-docs.efu.me) をご覧ください。
+詳しくは [Docs](https://docs.efu.me) をご覧ください。
 
 ## スポンサー
 

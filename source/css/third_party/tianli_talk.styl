@@ -1,0 +1,62 @@
+#efuTalk
+  display flex
+  align-items center
+  z-index 1001
+  position fixed
+  bottom 70px
+  left 20px
+  height 38px
+  cursor pointer
+  transition .3s
+  box-shadow var(--efu-shadow-border)
+  background var(--efu-card-bg)
+  border-radius 20px
+  overflow hidden
+  padding 8px
+  color var(--efu-fontcolor)
+  width 42px
+  border var(--style-border-always)
+
+#efuTalk.on, #efuTalk:hover
+  background var(--efu-lighttext)
+  color var(--efu-card-bg)
+  width 159px
+  border-color var(--efu-lighttext)
+
+#efuTalk span.efuTalkTitle
+  display flex
+  font-size 14px
+  padding 0 12px
+  line-height 1
+  white-space nowrap
+  opacity 0
+  transition .3s
+
+#postChat_iframeContainer
+  z-index 1000
+  border var(--style-border-always)
+  background var(--efu-card-bg)
+  animation to_show_fromLeftBottom .2s ease-out
+  border-radius 12px
+
+#efuTalk.on span.efuTalkTitle, #efuTalk:hover span.efuTalkTitle
+  color var(--efu-card-bg)
+  opacity 1
+
+#postChat_button
+  display none!important
+
+#efuTalk i.solitude.efuTalkIcon
+  width 18px
+  height 18px
+  font-size 18px
+  margin-left 3px
+  line-height 1
+
+@keyframes to_show_fromLeftBottom
+  from
+    opacity 0
+    transform scale(0)
+  to
+    opacity 1
+    transform scale(1)

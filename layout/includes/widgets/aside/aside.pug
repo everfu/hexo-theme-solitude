@@ -2,29 +2,17 @@
     - var noSticky, Sticky, customNoSticky, customSticky;
     if(is_home())
         - noSticky = theme.aside.home.noSticky.split(',')
-        - customNoSticky = site.data.aside?.home?.noSticky
-        - customSticky = site.data.aside?.home?.Sticky
         - Sticky = theme.aside.home.Sticky.split(',')
     else if(is_post())
         - noSticky = theme.aside.post.noSticky.split(',')
-        - customNoSticky = site.data.aside?.post?.noSticky
-        - customSticky = site.data.aside?.post?.Sticky
         - Sticky = theme.aside.post.Sticky.split(',')
     else if(is_page() || is_archive() || is_tag() || is_category())
         - noSticky = theme.aside.page.noSticky.split(',')
-        - customNoSticky = site.data.aside?.page?.noSticky
-        - customSticky = site.data.aside?.page?.Sticky
         - Sticky = theme.aside.page.Sticky.split(',')
     each item in noSticky
         include ./asideSwitch.pug
-    if customNoSticky
-        each item in customNoSticky
-            include ./asideCustom.pug
     .sticky_layout
         if page.toc
             include ./asideToc.pug
-        if customSticky
-            each item in customSticky
-                include ./asideCustom.pug
         each item in Sticky
             include ./asideSwitch.pug

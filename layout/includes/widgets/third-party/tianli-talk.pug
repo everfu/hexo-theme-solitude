@@ -1,0 +1,26 @@
+- const {key,option,title} = theme.tianli_talk
+
+span.needEndHide#efuTalk(onclick="togglePostChatContainer(); return false;" title=title)
+    i.solitude.st-robot-fill
+    span.efuTalkTitle=title
+
+script.
+    var postChatConfig = {
+    backgroundColor: "var(--efu-main)",
+    bottom: "60px",
+    ...!{JSON.stringify(option)}
+    };
+
+    let b = true;
+
+    document.getElementById('efuTalk').addEventListener('click', function () {
+        this.classList.toggle('on');
+        let efu = this
+        b && setTimeout(() => {
+            document.getElementById('close-button').addEventListener('click', function () {
+                efu.classList.remove('on');
+            })
+        }, 0);
+        b = false
+    });
+script(pjax data-postChat_key=key src="https://ai.tianli0.top/static/public/postChatUser.min.js")
