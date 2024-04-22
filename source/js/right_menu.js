@@ -111,7 +111,6 @@ window.oncontextmenu = (ele) => {
     let x = ele.clientX + 10;
     let y = ele.clientY;
     Array.from(rm.menuItems.other).forEach(item => item.style.display = 'block');
-
     rm.globalEvent = ele
 
     let display = false
@@ -174,7 +173,7 @@ window.oncontextmenu = (ele) => {
     return false;
 }
 
-(function() {
+(function () {
     const addEventListener = (element, event, handler) => element.addEventListener(event, handler);
 
     addEventListener(rm.menuItems.back, 'click', () => window.history.back() || rm.hideRightMenu());
@@ -212,7 +211,7 @@ window.oncontextmenu = (ele) => {
         rm.hideRightMenu();
     });
 
-    if(utils.saveToLocal.get('commentBarrageSwitch') !== null){
+    if (utils.saveToLocal.get('commentBarrageSwitch') !== null) {
         rm.menuItems.barrage && rm.barrage(!utils.saveToLocal.get('commentBarrageSwitch'));
     }
 
@@ -221,6 +220,7 @@ window.oncontextmenu = (ele) => {
     addEventListener(rm.menuItems.new, 'click', () => window.open(rm.domhref) && rm.hideRightMenu());
     addEventListener(rm.menuItems.downloadImg, 'click', () => rm.downloadImage() && rm.hideRightMenu());
     addEventListener(rm.menuItems.copyImg, 'click', () => rm.copyImage() && rm.hideRightMenu());
+    addEventListener(rm.menuItems.copyLink, 'click', () => rm.copyText(rm.domhref) && rm.hideRightMenu());
 })();
 
 is_rm = true
