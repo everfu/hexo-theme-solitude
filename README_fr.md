@@ -39,7 +39,7 @@ Le thème se compose de [@张洪Heo](https://github.com/zhheo) Autorisation comp
 [![gitee](https://img.shields.io/badge/Gitee-red?logo=gitee)](https://gitee.com/nsjjd_w/hexo-theme-solitude)
 [![gitlab](https://img.shields.io/badge/GitLab-blue?logo=gitlab)](https://gitlab.com/efu/hexo-theme-solitude)
 
-[Aperçu](https://www.efu.me/) 丨  [documentation](https://solitude-docs.efu.me/)
+[Aperçu](https://www.efu.me/) 丨  [documentation](https://docs.efu.me/)
 
 </div>
 
@@ -75,7 +75,7 @@ Le thème se compose de [@张洪Heo](https://github.com/zhheo) Autorisation comp
       theme: solitude
       ```
 
-Go to [Docs](https://solitude-docs.efu.me) for more information.
+Go to [Docs](https://docs.efu.me) for more information.
 
 ## Sponsors
 

@@ -38,7 +38,7 @@
 [![gitee](https://img.shields.io/badge/Gitee-red?logo=gitee)](https://gitee.com/nsjjd_w/hexo-theme-solitude)
 [![gitlab](https://img.shields.io/badge/GitLab-blue?logo=gitlab)](https://gitlab.com/efu/hexo-theme-solitude)
 
-[Preview](https://efu.me/) 丨  [Documentation](https://solitude-docs.efu.me/)
+[Preview](https://efu.me/) 丨  [Documentation](https://docs.efu.me/)
 
 </div>
 
@@ -73,7 +73,7 @@
       theme: solitude
       ```
 
-Check out the [Documentation](https://solitude-docs.efu.me/) for more information.
+Check out the [Documentation](https://docs.efu.me/) for more information.
 
 ## Sponsors
 
