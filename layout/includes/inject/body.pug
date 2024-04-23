@@ -47,7 +47,7 @@ div
     if theme.post_ai.enable
         script(src=url_for(theme.cdn.efu_ai))
 
-    if theme.capsule.enable || theme.music.enable
+    if theme.capsule.enable || theme.music.enable || theme.says.enable
         script.
             var meting_api = '!{theme.meting_api}';
         script(src=url_for(theme.cdn.aplayer_js))
