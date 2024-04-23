@@ -15,6 +15,28 @@ block content
                                 span.tags-punctuation
                                 | #{data.name}
                                 span.tagsPageCount #{data.length}
+                .social-share
+                    -  const path = config.url + url_for(page.path);
+                    -  const encodedPath = encodeURIComponent(path);
+                    -  const encodedTitle = encodeURIComponent(page.title);
+                    -  const encodedDescription = encodeURIComponent(page.description);
+                    -  const encodedIcon = encodeURIComponent(page.cover || theme.site.icon);
+                    each item in theme.post.share.list || []
+                        case item
+                            when 'qq'
+                                a.social-share-ico.icon-qq(href=`https://connect.qq.com/widget/shareqq/index.html?url=${encodedPath}&title=${encodedTitle}&desc=${encodedDescription}&summary=${encodedDescription}&site=${encodedTitle}&pics=${encodedIcon}` title="QQ")
+                            when 'weibo'
+                                a.social-share-ico.icon-weibo(href=`http://service.weibo.com/share/share.php?url=${encodedPath}&title=${encodedTitle}&pic=${encodedIcon}` title="Weibo")
+                            when 'telegram'
+                                a.social-share-ico.icon-telegram(href=`https://t.me/share/url?url=${encodedPath}&text=${encodedTitle}` title="Telegram")
+                            when 'whatsapp'
+                                a.social-share-ico.icon-whatsapp(href=`https://api.whatsapp.com/send?text=${encodedTitle} ${encodedPath}` title="WhatsApp")
+                            when 'linkedin'
+                                a.social-share-ico.icon-linkedin(href=`https://www.linkedin.com/shareArticle?mini=true&url=${encodedPath}&title=${encodedTitle}&summary=${encodedDescription}&source=${encodedTitle}` title="LinkedIn")
+                            when 'facebook'
+                                a.social-share-ico.icon-facebook(href=`https://www.facebook.com/sharer/sharer.php?u=${encodedPath}` title="Facebook")
+                            when 'twitter'
+                                a.social-share-ico.icon-twitter(href=`https://twitter.com/intent/tweet?url=${encodedPath}&text=${encodedTitle}` title="Twitter")
             if site.posts.length > 1
                 include includes/widgets/post/postNav
             if theme.related_post.enable
