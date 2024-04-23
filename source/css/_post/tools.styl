@@ -191,6 +191,7 @@
     display flex
     align-items center
     flex-direction row
+    justify-content space-between
     flex-wrap wrap
 
     .tag_share
@@ -200,10 +201,6 @@
         width 100%
         flex-wrap wrap
         flex-direction row
-
-        a
-          margin-bottom 8px
-          margin-right 8px
 
         .post-meta__tags
           background var(--efu-card-bg)
@@ -241,3 +238,111 @@
             font-size .6rem
             color var(--efu-fontcolor)
             margin-left 4px
+    if hexo-config('post.share.enable')
+      /.social-share *
+        font-family solitude
+      /.social-share
+        display: flex;
+        justify-content: center;
+        margin 10px 0
+
+        +maxWidth768()
+          flex-wrap wrap
+
+        .social-share-ico
+          margin: 0 4px
+          width: 1.85em
+          height: 1.85em
+          font-size: 1.2em
+          line-height: 1.85em
+          border 1px solid
+          position: relative
+          display: inline-block;
+          border-radius 50%
+          text-align: center;
+          vertical-align: middle;
+          transition: background 0.6s ease-out 0s;
+          cursor pointer
+
+          &:hover
+            transition all .3s
+            color var(--efu-white)
+
+        .icon-qq
+          color #56b6e7
+          border-color #56b6e7
+
+          &:hover
+            background-color #56b6e7
+
+          &::before
+            content "\e0d0"
+
+        .icon-wechat
+          color #57bd6a
+          border-color #57bd6a
+
+          &::before
+            content "\e0d2"
+
+          &:hover
+            background-color #57bd6a
+
+        .icon-weibo
+          color #d44040
+          border-color #d44040
+
+          &::before
+            content "\e0e3"
+
+          &:hover
+            background-color #d44040
+
+        .icon-facebook
+          color #415dc9
+          border-color #415dc9
+
+          &::before
+            content "\e0e6"
+
+          &:hover
+            background-color #415dc9
+
+        .icon-twitter
+          color #56b6e7
+          border-color #56b6e7
+
+          &::before
+            content "\e0c1"
+
+          &:hover
+            background-color #56b6e7
+
+        .icon-telegram
+          color #56b6e7
+          border-color #56b6e7
+
+          &::before
+            content "\e062"
+
+          &:hover
+            background-color #56b6e7
+
+        .icon-linkedin
+          color #0077b5
+          border-color #0077b5
+
+          &::before
+            content "\e0ed"
+
+          &:hover
+            background-color #0077b5
+        .icon-whatsapp
+          color #25d366
+          border-color #25d366
+
+          &::before
+            content "\e0f0"
+
+          &:hover
+            background-color #25d366

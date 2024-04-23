@@ -8,7 +8,7 @@
 
    An elegant Hexo theme that supports lazy loading, PWA, Latex, and multiple comment systems.
 
-   Theme is fully licensed and designed by the author of [@张洪Heo](https://github.com/zhheo)!
+   Theme design is fully licensed by [@张洪Heo](https://github.com/zhheo).
   
 ![npm package](https://img.shields.io/npm/v/hexo-theme-solitude?color=blue&logo=npm)
 ![release](https://img.shields.io/github/package-json/v/valor-x/hexo-theme-solitude/master?color=%231ab1ad&label=release)

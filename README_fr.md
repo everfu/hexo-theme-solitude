@@ -9,7 +9,7 @@
 Un thème Hexo élégant qui prend en charge le chargement paresseux, les PWA, le latex et les systèmes de commentaires
 multiples.
 
-Le thème se compose de [@张洪Heo](https://github.com/zhheo) Autorisation complète de l’auteur, conception !
+La conception du thème est entièrement autorisée par [@张洪Heo](https://github.comzhheo).
 
 ![npm package](https://img.shields.io/npm/v/hexo-theme-solitude?logo=npm)
 ![release](https://img.shields.io/github/package-json/v/valor-x/hexo-theme-solitude/master?color=%231ab1ad&label=release)

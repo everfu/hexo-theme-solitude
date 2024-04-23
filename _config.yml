@@ -362,6 +362,17 @@ post:
     #    qcode: https://s3.qjqq.cn/47/661ba900c4bc1.webp!color
     #    url: https://github.com/sponsors/efuo
     #    color: var(--efu-black)
+  # 分享按钮，需要是什么哪些按钮，填写后开启
+  share:
+    enable: false
+    list:
+    #  - qq
+    #  - weibo
+    #  - twitter
+    #  - facebook
+    #  - telegram
+    #  - whatsapp
+    #  - linkedin
   # 版权中订阅按钮跳转链接，填写地址后开启
   # Subscription button jump link in copyright
   rss: # /atom.xml
@@ -884,8 +895,6 @@ CDN:
     # twikoo:
     # waline_js:
     # waline_css:
-    # sharejs:
-    # sharejs_css:
     # katex:
     # katex_copytex:
     # lazyload:
