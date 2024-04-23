@@ -8,7 +8,7 @@
 
 遅延読み込み、PWA、ラテックス、および複数のコメントシステムをサポートするエレガントなHexoテーマ。
 
-テーマは、 [@张洪Heo](https://github.com/zhheo) 著者の完全な権限、デザイン!
+テーマデザインは [@张洪Heo](https://github.comzhheo) によって完全にライセンスされています。
 
 ![npm package](https://img.shields.io/npm/v/hexo-theme-solitude?logo=npm)
 ![release](https://img.shields.io/github/package-json/v/valor-x/hexo-theme-solitude/master?color=%231ab1ad&label=release)

@@ -8,7 +8,7 @@
 
    一款优雅的 Hexo 主题，支持懒加载、PWA、Latex以及多种评论系统。
    
-   主题由 [@张洪Heo](https://github.com/zhheo) 作者全权授权、设计！
+   主题设计由 [@张洪Heo](https://github.com/zhheo) 全权授权
 
 ![npm package](https://img.shields.io/npm/v/hexo-theme-solitude?logo=npm)
 ![release](https://img.shields.io/github/package-json/v/valor-x/hexo-theme-solitude/master?color=%231ab1ad&label=release)
