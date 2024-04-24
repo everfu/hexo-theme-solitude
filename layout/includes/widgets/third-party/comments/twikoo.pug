@@ -24,7 +24,7 @@ script().
                 region: '!{region}',
                 path: window.location.pathname,
                 onCommentLoaded: () => {
-                    utils.lightbox(document.querySelectorAll('#twikoo .tk-content img:not(.tk-owo-emotion)'))
+                    GLOBAL_CONFIG.lightbox && utils.lightbox(document.querySelectorAll('#twikoo .tk-content img:not(.tk-owo-emotion)'))
                 }
             }, !{JSON.stringify(option)}))
 
