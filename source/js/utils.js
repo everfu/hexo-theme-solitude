@@ -148,6 +148,7 @@
                 if (!window.fancyboxRun) {
                     Fancybox.bind('[data-fancybox]', {
                         Hash: false,
+                        animated: true,
                         Thumbs: {showOnStart: false},
                         Images: {Panzoom: {maxScale: 4}},
                         Carousel: {transition: 'slide'},
@@ -157,7 +158,7 @@
                                 middle: ['zoomIn', 'zoomOut', 'toggle1to1', 'rotateCCW', 'rotateCW', 'flipX', 'flipY'],
                                 right: ['slideshow', 'thumbs', 'close']
                             }
-                        }
+                        },
                     });
                     window.fancyboxRun = true;
                 }

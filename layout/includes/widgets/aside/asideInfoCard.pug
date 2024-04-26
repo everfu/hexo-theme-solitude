@@ -30,7 +30,7 @@
                             .author-info__sayhi#author-info__sayhi(onclick="sco.changeSayHelloText()")= _p('sayhello.morning')
                 a.card-info-avatar(href=url_for(theme.aside.card.url) title=_p('aside.avatar'))
                     .avatar-img
-                        img(src=theme.aside.card.author.img)
+                        img(src=theme.aside.card.author.img alt=_p('aside.avatar'))
                     if theme.aside.card.author.sticker
                         .avatar-sticker
                             img.avatar-sticker-img(src=theme.aside.card.author.sticker, alt=_p('aside.sticker'))

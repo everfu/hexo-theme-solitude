@@ -22,7 +22,7 @@ script.
                         mailMd5: comment.data.email_encrypted,
                     })
                     const $content = comment.getRender().$content
-                    utils.lightbox($content.querySelectorAll('img:not([atk-emoticon])'))
+                    GLOBAL_CONFIG.lightbox && utils.lightbox($content.querySelectorAll('img:not([atk-emoticon])'))
                     sco.owoBig({body: '.atk-grp', item: '.atk-item'})
                 })
                 !{commentBarrage} && barrageArtalk(array)
