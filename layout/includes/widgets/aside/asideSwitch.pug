@@ -10,6 +10,6 @@ case item
     default
         - const custom = site.data?.aside?.find((i) => i.name === item)
         if custom
-            != partial("includes/widgets/aside/asideCustom", {item: custom}, {cache: true})
+            include ./asideCustom.pug
         else
             include ../../page/default.pug
