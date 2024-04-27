@@ -2,14 +2,14 @@
 
 script(pjax).
     (async () => {
-        if(typeof envelope === "undefined") await utils.getScript('!{url_for(theme.cdn.envelope_js)}')
-        const envel = new envelope({
+        if(typeof EasyDanmaku === "undefined") await utils.getScript('!{url_for(theme.cdn.envelope_js)}')
+        const envel = new EasyDanmaku({
             page: '/message/',
             el: '#barrage', 
-            line: 10, 
-            speed: 20, 
-            hover: true,
-            loop: true, 
+            line: !{line}, 
+            speed: !{speed}, 
+            hover: !{hover},
+            loop: !{loop},
         })
         const data = utils.saveToLocal.get('enevlope')
         if(data){

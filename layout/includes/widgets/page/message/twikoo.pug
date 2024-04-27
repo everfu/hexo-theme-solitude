@@ -6,10 +6,10 @@ script(pjax).
         const Danmaku = new EasyDanmaku({
             page: '/message/',
             el: '#barrage', 
-            line: 10, 
-            speed: 20, 
-            hover: true,
-            loop: true,
+            line: !{line}, 
+            speed: !{speed}, 
+            hover: !{hover},
+            loop: !{loop},
         })
         const data = utils.saveToLocal.get('enevlope')
         if(data){
@@ -35,9 +35,9 @@ script(pjax).
         });
         function formatDanmaku(str) {
             str = str.replace(/<\/*br>|[\s\uFEFF\xA0]+/g, '');
-            str = str.replace(/<img.*?>/g, '[图片]');
-            str = str.replace(/<a.*?>.*?<\/a>/g, '[链接]');
-            str = str.replace(/<pre.*?>.*?<\/pre>/g, '[代码块]');
+            str = str.replace(/<img.*?>/g, '[!{__("console.newest_comment.image")}]');
+            str = str.replace(/<a.*?>.*?<\/a>/g, '[!{__("console.newest_comment.link")}]');
+            str = str.replace(/<pre.*?>.*?<\/pre>/g, '[!{__("console.newest_comment.code")}]');
             str = str.replace(/<.*?>/g, '');
             return str
         }
