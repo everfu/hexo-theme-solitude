@@ -5,8 +5,12 @@ contact_links:
     about: 一些使用上碰到的问题 Discussion 询问。 Please ask questions in Discussion.
 
   - name: Solitude Q&A
-    url: https://solitude-docs.efu.me/faq
+    url: https://docs.efu.me/faq
     about: Solitude Q&A
+
+  - name: QQ群
+    url: https://qm.qq.com/q/mxfomMvJPG
+    about: 新建立的QQ群
 
   - name: Discord
     url: https://discord.gg/Y8VEvVgW
