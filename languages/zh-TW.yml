@@ -200,3 +200,7 @@ about:
   personalities:
     tip1: 在
     tip2: 瞭解更多關於
+
+message:
+  close: 隱藏彈幕 
+  open: 顯示彈幕

@@ -198,3 +198,7 @@ about:
   personalities:
     tip1: At
     tip2: 'Learn more:'
+
+message:
+  close: hide message
+  open: show message

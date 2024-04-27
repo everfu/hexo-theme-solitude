@@ -200,3 +200,7 @@ about:
   personalities:
     tip1: 在
     tip2: 了解更多关于
+
+message:
+  close: 隐藏弹幕
+  open: 显示弹幕

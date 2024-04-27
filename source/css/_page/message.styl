@@ -1,0 +1,63 @@
+.switch_message
+    display flex
+    justify-content center
+    margin 2rem 0
+    gap 1rem
+    button
+        background-color var(--efu-main)
+        border var(--style-border-always)
+        border-radius 50px
+        color var(--efu-card-bg)
+        padding 0.5rem 1rem
+        transition background-color 0.3s
+
+#barrage
+    display flex
+    justify-content center
+    width 100%
+    height calc(100% - 60px)
+    position fixed
+    left 0
+    top 60px
+    z-index 1
+    pointer-events none
+
+    .default-style 
+        pointer-events all
+        cursor pointer
+        font-size 16px
+        border-radius 100px
+        overflow hidden
+
+        a 
+            background-color rgba(0, 0, 0, 0.5)
+            transition .3s
+            color #eee
+            display flex
+            align-items center
+            justify-content center
+            padding 6px 16px 6px 6px
+            text-decoration none
+            border-bottom none
+
+            &:hover 
+                background-color rgba(0, 0, 0, 0.7)
+    
+        img 
+            pointer-events none
+            height 30px
+            width 30px
+            margin 0 5px 0 0 !important
+            border-radius 50% !important
+    
+        p 
+            line-height 1
+            pointer-events none
+            margin 0 !important
+            max-width 300px
+            white-space nowrap
+            overflow hidden
+            text-overflow ellipsis
+
+.hide
+    opacity 0
