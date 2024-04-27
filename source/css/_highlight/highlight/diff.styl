@@ -1,6 +1,10 @@
 figure.highlight
-  table
-    scrollbar-color var(--hlscrollbar-bg) transparent
+  table::-webkit-scrollbar
+    color var(--efu-secondbg)
+    height 6px
+    background var(--efu-hl-bg)
+    border-radius 6px
+    display initial
   pre .deletion
     color $highlight-deletion
 

@@ -56,9 +56,6 @@
       color var(--efu-lighttext)
       opacity 1
 
-      &::before
-        color var(--efu-main)
-
   p
     font-size .9rem
     line-height 1.7
@@ -80,6 +77,12 @@
           color var(--efu-white)
           border-radius 4px
           background var(--efu-main)
+
+  blockquote
+    p
+      padding 0
+      margin 0
+      font-size 15px
 
   code:not([class*='language-'])
     color var(--efu-white)
@@ -116,6 +119,9 @@
       &:not(.tab)
         position relative
         margin 0.2rem 0
+
+        p
+          margin 0
 
   ul
     > li
