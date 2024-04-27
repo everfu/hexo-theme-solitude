@@ -249,19 +249,24 @@ input::placeholder
   margin 0 0 1rem
 
 table
-  display table
+  display block
   width 100%
   border-spacing 0
   border-collapse collapse
   empty-cells show
+  overflow-x auto
+
+  &::-webkit-scrollbar
+    display none
 
 table thead
-  background rgba(153, 169, 191, .1)
+  background var(--efu-secondbg)
 
 table td, table th
   padding .3rem .6rem
-  border 1px solid var(--light-grey)
+  border var(--style-border-always)
   vertical-align middle
+  min-width 100px
 
 button
   padding 0
@@ -311,10 +316,6 @@ blockquote
   margin 1rem 0
   padding .5rem .8rem
 
-  p
-    padding 0
-    margin 0
-
 li, ul
   list-style none
   display block
@@ -347,12 +348,6 @@ a.extend
 
   .prev
     left 0
-
-table td, table th
-  border var(--style-border-always)
-
-table thead
-  background var(--efu-secondbg)
 
 b, strong
   color var(--efu-lighttext)
