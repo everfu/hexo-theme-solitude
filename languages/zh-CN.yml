@@ -141,8 +141,9 @@ link:
   banner:
     toComment: 申请友链
     random: 随机访问
-  random: 您即将前往 ⌈ ${name} ⌋ , 安全性未知
-
+  random: 点击前往按钮进入随机一个友链，不保证跳转网站的安全性和可用性。本次随机到的是本站友链：⌈ ${name} ⌋ 
+  to: 前往
+  
 keyboard:
   title: 博客快捷键
 
@@ -200,3 +201,7 @@ about:
   personalities:
     tip1: 在
     tip2: 了解更多关于
+
+message:
+  close: 隐藏弹幕
+  open: 显示弹幕

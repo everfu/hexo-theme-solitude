@@ -279,12 +279,14 @@
     .card-archive-list
       display flex
       flex-direction row
-      justify-content space-between
       flex-wrap wrap
       height 164px
 
       li.card-archive-list-item
         flex 0 0 24%
+
+        &:not(:nth-child(4n))
+          margin-right .555rem
 
       .card-archive-list-link
         border-radius 8px

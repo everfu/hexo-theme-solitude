@@ -1,0 +1,44 @@
+- const {envId} = theme.twikoo
+
+script(pjax).
+    (async () => {
+        if(typeof EasyDanmaku === "undefined") await utils.getScript('!{url_for(theme.cdn.envelope_js)}')
+        const Danmaku = new EasyDanmaku({
+            page: '/message/',
+            el: '#barrage', 
+            line: !{line}, 
+            speed: !{speed}, 
+            hover: !{hover},
+            loop: !{loop},
+        })
+        const data = utils.saveToLocal.get('enevlope')
+        if(data){
+            Danmaku.batchSend(data,true)
+            return
+        }
+        let ls = []
+        fetch('!{envId}/', {
+            method: "POST",
+            body: JSON.stringify({
+            "event": "GET_RECENT_COMMENTS",
+            "includeReply": false,
+            "pageSize": 100
+            }),
+            headers: { 'Content-Type': 'application/json' }
+        }).then(res => res.json()).then(({ data }) => {
+            data.forEach(i => {
+            if (i.avatar == undefined) i.avatar = '!{avatar}/avatar/d615d5793929e8c7d70eab5f00f7f5f1?d=mp'
+            ls.push({ avatar: i.avatar, content: i.nick + '：' + formatDanmaku(i.comment), url: i.url + '#' + i.id })
+            });
+            Danmaku.batchSend(ls, true);
+            utils.saveToLocal.set('envelope', ls, 0.02)
+        });
+        function formatDanmaku(str) {
+            str = str.replace(/<\/*br>|[\s\uFEFF\xA0]+/g, '');
+            str = str.replace(/<img.*?>/g, '[!{__("console.newest_comment.image")}]');
+            str = str.replace(/<a.*?>.*?<\/a>/g, '[!{__("console.newest_comment.link")}]');
+            str = str.replace(/<pre.*?>.*?<\/pre>/g, '[!{__("console.newest_comment.code")}]');
+            str = str.replace(/<.*?>/g, '');
+            return str
+        }
+    })()

@@ -43,6 +43,11 @@ $colors = {
     left .7rem
     font-size larger
 
+  a
+    color inherit !important
+    &:hover
+      color var(--efu-white) !important
+
   for $color, $value in $colors
     &.{$color}:not(.no-icon)::before
       color $value

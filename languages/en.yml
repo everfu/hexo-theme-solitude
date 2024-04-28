@@ -1,16 +1,16 @@
 more: More
 star: Behold, those who found delight in this piece also perused
-random: Around
+random: Random
 upload: 'datetime: '
 totalk: You don't need to delete blank lines, just type in your comments.
 
 theme:
-  dark: dark
-  light: light
+  dark: Dark
+  light: Light
 
 copy:
   success: Copied
-  error: Copied failed
+  error: Copy failed
 
 copy_copyright:
   author: Author
@@ -139,7 +139,8 @@ link:
   banner:
     toComment: Application link
     random: Random Visit
-  random: You are about to ⌈ ${name} ⌋ , security unknown.
+  random: 'Click the button to visit a random link. The safety and availability of the destination website are not guaranteed. The random link for this visit is: ⌈ ${name} ⌋ '
+  to: To
 
 keyboard:
   title: Blog shortcuts
@@ -190,7 +191,7 @@ about:
     oneself:
       map_title: I live in
       info_title1: Born
-      info_title2: Now occupational
+      info_title2: Current occupation
     tj:
       tip: Data
       title: Access statistics
@@ -198,3 +199,7 @@ about:
   personalities:
     tip1: At
     tip2: 'Learn more:'
+
+message:
+  close: Hide message
+  open: Show message

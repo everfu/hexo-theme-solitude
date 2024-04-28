@@ -504,6 +504,17 @@ says:
   # Talk short text only shows the first n
   strip: 30
 
+# 留言板
+# message board
+# 前置要求：需配置留言板页面
+# Pre-requirements: message board page needs to be configured
+envelope:
+  enable: false
+  line: 10 # 显示行数
+  speed: 20 # 播放速度
+  hover: true # 鼠标悬停暂停
+  loop: true # 循环播放
+
 # -------------------------
 # meeting-api，用于界面中的音乐胶囊和音乐馆页，可自定义api，不会请勿动。
 # meeting-api, used for music capsules and music halls in the interface, can customize api, do not move if you don't know.

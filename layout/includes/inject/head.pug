@@ -4,7 +4,7 @@ each item in theme.verify_site || []
 link(rel="stylesheet", href=url_for(theme.cdn.solitude_css))
 
 // aplayer
-if theme.capsule.enable || theme.music.enable || theme.says.enable
+if theme.capsule.enable || theme.music.enable
     link(rel="stylesheet", href=url_for(theme.cdn.aplayer_css))
 
 // swiper
@@ -27,7 +27,7 @@ include ../head/pwa.pug
 
 script.
     console.log(
-        "%c Program: Hexo %c Theme: Solitude %c Version: v1.9.2",
+        "%c Program: Hexo %c Theme: Solitude %c Version: v1.9.3",
         "border-radius:5px 0 0 5px;padding: 5px 10px;color:white;background:#ff3842;",
         "padding: 5px 10px;color:white;background:#3e9f50;",
         "padding: 5px 10px;color:white;background:#0084ff;",

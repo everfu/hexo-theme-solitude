@@ -11,10 +11,16 @@ script.
     const randomText = '!{_p('link.random')}'
     function travelling() {
         const link = links[utils.randomNum(links.length)];
-        utils.snackbarShow(randomText.replace(/\$\{name}/, link.name), false, 3000);
-        setTimeout(() => {
-            window.open(link.link, "_blank")
-        }, 3000)
+        Snackbar.show({
+            text: randomText.replace(/\$\{name}/,link.name),
+            duration: 8000,
+            pos: 'top-center',
+            actionText: '!{_p('link.to')}',
+            onActionClick: function(element) {
+                element.style.opacity = 0;
+                window.open(link.link, '_blank');
+            }
+        });
     }
 
 if theme.footer.randomlink

@@ -1,0 +1,48 @@
+- const {serverURLs,appId,appKey} = theme.valine
+
+script(pjax).
+    (async () => {
+        if(typeof EasyDanmaku === "undefined") await utils.getScript('!{url_for(theme.cdn.envelope_js)}')
+        const envel = new EasyDanmaku({
+            page: '/message/',
+            el: '#barrage', 
+            line: !{line}, 
+            speed: !{speed}, 
+            hover: !{hover},
+            loop: !{loop},
+        })
+        const data = utils.saveToLocal.get('enevlope')
+        if(data){
+            envel.batchSend(data,true)
+            return
+        }
+        const url = new URL('!{serverURLs}/1.1/classes/Comment')
+        const params = {
+            url: window.location.pathname,
+            order: '-createdAt'
+        }
+        Object.entries(params).forEach(([key, value]) => url.searchParams.append(key, value))
+        try {
+            const res = await fetch(url, {
+                method: "GET",
+                headers: {
+                    "X-LC-Id": "#{appId}",
+                    "X-LC-Key": "#{appKey}",
+                    "Content-Type": "application/json"
+                },
+            })
+            if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`)
+            const data = await res.json()
+            const init = () => 
+                data.results.map(item => ({
+                    content: item.comment,
+                    avatar: '!{avatar}/avatar/'+md5(item.mail),
+                    url: item.url,
+                }))
+            if (typeof md5 === "undefined") await utils.getScript('!{url_for(theme.cdn.blueimp_md5)}')
+            envel.batchSend(init(),true)
+            utils.saveToLocal.set('enevlope',init(),.02)
+        } catch (error) {
+            console.error("An error occurred while fetching comments: ", error)
+        }
+    })()

@@ -20,6 +20,8 @@ block content
                     include includes/page/equipment
                 when 'music'
                     include includes/page/music
+                when 'message'
+                    !=partial('includes/page/message', {}, {cache: true})
                 when 'banner'
                     include includes/widgets/page/banner
                     if page.container

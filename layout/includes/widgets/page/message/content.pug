@@ -1,0 +1,9 @@
+#article-container
+    != page.content
+    if theme.envelope.enable
+        .switch_message
+            button.open(type='button' onclick="document.getElementById('barrage').classList.remove('hide')")
+                span(aria-hidden='true')= __('message.open')
+            button.close(type='button' onclick="document.getElementById('barrage').classList.add('hide')")
+                span(aria-hidden='true')= __('message.close')
+        #barrage

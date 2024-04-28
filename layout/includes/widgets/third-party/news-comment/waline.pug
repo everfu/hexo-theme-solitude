@@ -52,12 +52,12 @@ script.
             const $dom = document.querySelector('#card-newest-comments .aside-list')
             $dom.innerHTML = array.length ? array.map(item => `
                 <div class='aside-list-item'>
-                  <a onclick='pjax.loadUrl("${item.url}")' class='thumbnail'>
+                  <div onclick='pjax.loadUrl("${item.url}")' class='thumbnail'>
                     <img src='${item.avatar}' alt='${item.nick}'>
                     <div class='name'><span>${item.nick}</span></div>
-                  </a>
+                  </div>
                   <div class='content'>
-                    <a class='comment' onclick='pjax.loadUrl("${item.url}")'>${item.content}</a>
+                    <div class='comment' onclick='pjax.loadUrl("${item.url}")'>${item.content}</div>
                     <time class="datetime" datetime="${item.date}"></time>
                   </div>
                 </div>

@@ -66,7 +66,7 @@ hexo.extend.filter.register('before_generate', () => {
         },
         commentBarrage: {
             name: 'hexo-theme-solitude',
-            file: 'js/barrage_comment.js',
+            file: 'js/third_party/barrage.min.js',
             version
         },
         waterfall: {
@@ -77,6 +77,11 @@ hexo.extend.filter.register('before_generate', () => {
         universe_js: {
             name: 'hexo-theme-solitude',
             file: 'js/third_party/universe.min.js',
+            version
+        },
+        envelope_js: {
+            name: 'hexo-theme-solitude',
+            file: 'js/third_party/envelope.min.js',
             version
         }
     }
