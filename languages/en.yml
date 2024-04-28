@@ -139,7 +139,8 @@ link:
   banner:
     toComment: Application link
     random: Random Visit
-  random: You are about to ⌈ ${name} ⌋ , security unknown.
+  random: 'Click the button to visit a random link. The safety and availability of the destination website are not guaranteed. The random link for this visit is: ⌈ ${name} ⌋ '
+  to: To
 
 keyboard:
   title: Blog shortcuts
