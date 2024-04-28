@@ -39,6 +39,7 @@ home:
   new: New
   read: Unread
   recommendmore: More
+  archives: All articles
 
 post:
   reprint: Reprint
