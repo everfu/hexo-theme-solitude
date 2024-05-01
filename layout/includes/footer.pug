@@ -52,7 +52,6 @@ div#footer-bar
                 div.copyright © #{moment(theme.aside.siteinfo.runtime).year()} - #{new Date().getFullYear()} By&nbsp;
                     a.footer-bar-link(href=url_for("/"))= config.author
         div.footer-bar-right
-            a.footer-bar-link(href="https://github.com/valor-x/hexo-theme-solitude" title=__('footer.theme'))= __('footer.theme')
             each item in theme.footer.links
                 a.footer-bar-link(href=url_for(item.url), alt=item.name)!= item.name
             a.footer-bar-link.cc(href=url_for(theme.footer.license), aria-label = 'copyright')
