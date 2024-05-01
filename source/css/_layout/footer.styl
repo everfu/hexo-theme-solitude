@@ -15,38 +15,37 @@
     content ''
     z-index -1
 
-  div#st-footer-bar
-    display none
 
-    a.footer-bar-link
-      padding 4px 16px
-      background var(--efu-secondbg)
-      border-radius 20px
-      margin-top 8px
-      font-size 14px
-      cursor pointer
-      border var(--style-border-always)
+  if hexo-config('post.footer.enable')
+    div#st-footer-bar
+      display flex
+      flex-direction column
+      align-items center
+      margin-top 16px
 
-      &:hover
-        background var(--efu-main)
-        color var(--efu-white)
-        transform scale(1.1)
-        border-color var(--efu-main)
+      a.footer-bar-link
+        padding 4px 16px
+        background var(--efu-secondbg)
+        border-radius 20px
+        margin-top 8px
+        font-size 14px
+        cursor pointer
+        border var(--style-border-always)
 
-    .footer-logo
-      font-size 24px
+        &:hover
+          background var(--efu-main)
+          color var(--efu-white)
+          transform scale(1.1)
+          border-color var(--efu-main)
 
-    .footer-bar-description
-      color var(--efu-secondtext)
-      font-weight 700
-      padding: 0 0.5rem
-      text-align: center
+      .footer-logo
+        font-size 24px
 
-  .post & div#st-footer-bar
-    display flex
-    flex-direction column
-    align-items center
-    margin-top 16px
+      .footer-bar-description
+        color var(--efu-secondtext)
+        font-weight 700
+        padding: 0 0.5rem
+        text-align: center
 
   #footer_deal
     justify-content center

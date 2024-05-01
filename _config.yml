@@ -383,6 +383,14 @@ post:
     mode: local # local：本地取色 / api：img2color取色 : local: local color / api: img2color color
     api: https://api.qjqq.cn/api/Imgcolor?img= # api地址 / api address
     time: 43200000 # api取色间隔（毫秒），默认为12小时 / api color interval (milliseconds), default is 12 hours
+  # footer
+  footer:
+    enable: true
+    desc: 来自 Efu 的文章 # 介绍文字
+    button: # 跳转按钮
+      enable: true
+      name: 了解更多
+      url: /about/
 
 # -------------------------
 # 自定义主题

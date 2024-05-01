@@ -1,13 +1,15 @@
-div#st-footer-bar
-    div.footer-logo
-        if theme.site.name.class === 'i_class'
-            i.solitude(class=theme.site.name.custom)
-        else if theme.site.name.class === 'img'
-            img.solitude.nolazyload(src=url_for(theme.site.name.custom))
-        else if theme.site.name.class === 'text'
-            span= theme.site.name.custom
-    div.footer-bar-description= __('footer.description').replace(/\$\{title}/, config.title + " - " + config.subtitle)
-    a.footer-bar-link(href=url_for('/'))= __('footer.learnmore')
+if theme.post.footer.enable && is_post()
+    div#st-footer-bar
+        div.footer-logo
+            if theme.site.name.class === 'i_class'
+                i.solitude(class=theme.site.name.custom)
+            else if theme.site.name.class === 'img'
+                img.solitude.nolazyload(src=url_for(theme.site.name.custom))
+            else if theme.site.name.class === 'text'
+                span= theme.site.name.custom
+        div.footer-bar-description=theme.post.footer.desc
+        if theme.post.footer.button.enable
+            a.footer-bar-link(href=url_for(theme.post.footer.button.url))= theme.post.footer.button.name
 div#footer_deal
     - var leftInfo = theme.footer && theme.footer.information && theme.footer.information.left || {}
     - var rightInfo = theme.footer && theme.footer.information && theme.footer.information.right || {}
