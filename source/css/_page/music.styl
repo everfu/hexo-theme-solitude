@@ -1,8 +1,10 @@
 body[data-type=music]
   #page-header #nav a
     color var(--efu-white)
+
   #page-header.not-top-img #nav .back-home-button
     color var(--efu-white)
+
   .page
     .layout#content-inner
       background none
@@ -51,12 +53,9 @@ body[data-type=music]
       justify-content space-between
       overflow visible
 
-  .aplayer-body 
+  .aplayer-body
     width 70%
-    height 85vh
-
-    +maxWidth1200()
-      height 80vh
+    height 75vh
 
     +maxWidth798()
       width 100%
@@ -67,20 +66,12 @@ body[data-type=music]
       left 0
       right 0
       top 0
-      height 75vh
+      height calc(var(--vh) - 230px)
 
   ol
-    max-height 85vh !important
+    max-height calc(var(--vh) - 170px)!important
 
-    +maxWidth1200()
-      max-height 80vh !important
-
-    +maxWidth798()
-      max-height 100%!important
-      padding-right 3px
-      padding-left 8px
-
-    & > li 
+    & > li
       font-size 14px
       opacity 0.6
       border-top none
@@ -88,11 +79,11 @@ body[data-type=music]
       +maxWidth798()
         display flex
 
-      &:hover 
+      &:hover
         background var(--efu-black-op)
         border-radius 6px
 
-      &.aplayer-list-light 
+      &.aplayer-list-light
         background var(--efu-black-op)
         border-radius 6px
         height 60px
@@ -108,10 +99,10 @@ body[data-type=music]
           height 52px
           justify-content center
 
-        .aplayer-list-index 
+        .aplayer-list-index
           display none
 
-        .aplayer-list-title 
+        .aplayer-list-title
           font-size 20px
           line-height 20px
           margin-top 8px
@@ -123,39 +114,38 @@ body[data-type=music]
           +maxWidth798()
             margin-top 4px
 
-        .aplayer-list-cur 
+        .aplayer-list-cur
           display none
 
         span
           +maxWidth798()
             color #fff
 
-          &.aplayer-list-author 
+          &.aplayer-list-author
             max-width 100%
 
             +maxWidth798()
               margin-left 0
               right 15px
 
-      span 
+      span
         color var(--efu-white)
 
         +maxWidth798()
           color var(--efu-black)
 
-        &.aplayer-list-title 
+        &.aplayer-list-title
           line-height 32px
 
           +maxWidth798()
             max-width 55%
-            width auto
             display -webkit-box
             -webkit-line-clamp 1
             overflow hidden
             -webkit-box-orient vertical
             width 30%
 
-        &.aplayer-list-author 
+        &.aplayer-list-author
           opacity 0.6
           overflow hidden
           text-overflow ellipsis
@@ -173,17 +163,17 @@ body[data-type=music]
             -webkit-box-orient vertical
             margin-left auto
 
-      .aplayer-list-index 
+      .aplayer-list-index
         line-height 32px
         opacity 0.6
 
-    &::-webkit-scrollbar-thumb 
+    &::-webkit-scrollbar-thumb
       background-color var(--efu-white-op)
 
   .aplayer-list
     transition none
 
-  .aplayer-pic 
+  .aplayer-pic
     float none
     width 60px
     height 60px
@@ -195,17 +185,17 @@ body[data-type=music]
     z-index 999
     display none
 
-  .aplayer-info 
+  .aplayer-info
     margin 0 20px 0 20px
     border-bottom none
 
-    .aplayer-music 
+    .aplayer-music
       display none
 
       +maxWidth798()
         display flex
         position fixed
-        top 83vh
+        top calc(var(--vh) - 178px)
         left 0
         margin 0
         margin-left 32px
@@ -238,29 +228,22 @@ body[data-type=music]
           line-height 1
           color #fff
 
-    .aplayer-lrc 
+    .aplayer-lrc
       padding-top 24%
-      height 100vh
-
-      +maxWidth798()
-        margin-top 0
-        height auto
-        min-height 100%
-        mask-image linear-gradient(to bottom, #000, #000, #000, #000, #0000, #0000)
-        padding-top 100px
+      height var(--vh)
 
       &:hover
         p
           filter blur(0px)
 
-      p 
+      p
         font-size 36px
         line-height 44px !important
         height 44px !important
         margin-bottom 36px !important
         color #fff
         font-weight bold
-        text-align center
+        text-align left
         filter blur(2px)
         opacity 0.3
         transition all 0.9s cubic-bezier(0.56, 0.17, 0.22, 0.76)
@@ -274,17 +257,17 @@ body[data-type=music]
           line-height 42px
           height 42px
 
-        &.aplayer-lrc-current 
+        &.aplayer-lrc-current
           filter blur(0px)
           opacity 1
           transition all 0.3s cubic-bezier(0.56, 0.17, 0.22, 0.76), text-shadow 8s 4s ease-in
           height fit-content !important
           text-shadow 0 4px 4px #ffffff94
 
-          &:first-child 
+          &:first-child
             text-shadow 0 4px 4px #ffffff00
 
-    .aplayer-controller 
+    .aplayer-controller
       position fixed
       max-width 1400px
       margin auto
@@ -299,21 +282,21 @@ body[data-type=music]
         width 100%
         bottom 120px
 
-      .aplayer-bar-wrap 
+      .aplayer-bar-wrap
         margin 0 160px 0 150px
 
         +maxWidth798()
           margin 0 32px
 
-      .aplayer-played 
+      .aplayer-played
         background var(--efu-white) !important
 
-      .aplayer-thumb 
+      .aplayer-thumb
         -webkit-transform none
         transform none
         background #fff !important
 
-    .aplayer-time 
+    .aplayer-time
       position absolute
       width 100%
       bottom 26px
@@ -325,16 +308,16 @@ body[data-type=music]
         bottom -40px
         align-items center
 
-      .aplayer-icon 
+      .aplayer-icon
         width 1.8rem
         height 1.8rem
         margin-left 16px
 
-        path 
+        path
           fill var(--efu-white)
           opacity 0.8
 
-      .aplayer-time-inner 
+      .aplayer-time-inner
         margin-right 18px
         margin-top -8px
 
@@ -343,7 +326,7 @@ body[data-type=music]
           width 100%
           margin-right 4px
           margin-top -60px
-          
+
           .aplayer-dtime
             position absolute
             right 30px
@@ -352,7 +335,7 @@ body[data-type=music]
             position absolute
             left 44px
 
-      .aplayer-icon-back 
+      .aplayer-icon-back
         position absolute
         left 0
         display inline
@@ -361,7 +344,7 @@ body[data-type=music]
           margin auto
           right 110px
 
-      .aplayer-icon-play 
+      .aplayer-icon-play
         position absolute
         left 40px
         display inline
@@ -373,7 +356,7 @@ body[data-type=music]
           width 56px
           height 56px
 
-      .aplayer-icon-forward 
+      .aplayer-icon-forward
         position absolute
         left 80px
         display inline
@@ -399,7 +382,7 @@ body[data-type=music]
           height 24px
           opacity 0.4
 
-      .aplayer-icon-menu 
+      .aplayer-icon-menu
         display none
 
         +maxWidth798()
@@ -411,7 +394,7 @@ body[data-type=music]
           height 24px
           opacity 0.4
 
-  .aplayer-list 
+  .aplayer-list
     width 40%
     max-width 480px
     max-height none !important
@@ -422,7 +405,7 @@ body[data-type=music]
       position fixed
       z-index 1002
       width 100%
-      bottom 0px
+      bottom 0
       left 0
       background var(--efu-white)
       border-radius 16px 16px 0 0
@@ -440,10 +423,10 @@ body[data-type=music]
         overflow inherit
 
       &:after,
-      &:before 
+      &:before
         display none
 
-      .aplayer-lrc-contents 
+      .aplayer-lrc-contents
         width 90%
         margin-left auto
         transition all .5s cubic-bezier(0.49, 0.21, 0.22, 0.84)
@@ -452,28 +435,28 @@ body[data-type=music]
         +maxWidth798()
           width 100%
 
-    .aplayer-info 
-      .aplayer-controller 
-        .aplayer-bar-wrap 
-          .aplayer-bar 
+    .aplayer-info
+      .aplayer-controller
+        .aplayer-bar-wrap
+          .aplayer-bar
             height 8px
             border-radius 8px
             background var(--efu-white-op)
 
-            .aplayer-loaded 
+            .aplayer-loaded
               background var(--efu-white-op)
               height 8px
               border-radius 8px
 
-            .aplayer-played 
+            .aplayer-played
               height 8px
               border-radius 8px
 
-              .aplayer-thumb 
+              .aplayer-thumb
                 height 16px
                 width 16px
 
-        .aplayer-time 
+        .aplayer-time
           color var(--efu-white)
 
 
@@ -499,7 +482,7 @@ body[data-type=music]
 
           .aplayer-icon-volume-down
             display block
-            
+
             +maxWidth798()
               display none
 

@@ -7,6 +7,7 @@ class ScoMusicPlayer {
         this.init();
     }
     init() {
+        document.documentElement.style.setProperty('--vh', `${window.innerHeight}px`);
         this.getCustomPlayList();
         this.addEventListenerToDocument();
         this.addButtonListEventListener();
