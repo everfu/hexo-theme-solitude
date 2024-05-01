@@ -602,7 +602,7 @@ let sco = {
             }
         }
         utils.addEventListenerPjax(switchBtn, 'click', handleSwitchBtn)
-    },
+    }
 }
 
 /**
