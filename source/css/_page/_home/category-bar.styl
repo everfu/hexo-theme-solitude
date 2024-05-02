@@ -1,5 +1,5 @@
 #category-bar
-  padding 0.4rem 1rem 0.4rem 0.7rem
+  padding .4rem .7rem
   background var(--efu-card-bg)
   border-radius 12px
   display flex
@@ -34,12 +34,27 @@
 
   .category-bar-right
     display flex
+    align-items center
 
-  .category-bar-more
-    margin-left 14px
-    font-weight 700
+    .category-bar-next
+      margin-left 8px
+      cursor pointer
+      height 30px
+      width 30px
+      display flex
+      border-radius 8px
+      align-items center
+      justify-content center
+      transition .3s
 
-    &:hover
+    .category-bar-more
+      margin-left 4px
+      font-weight 700
+      border-radius 8px
+      padding 0 8px
+
+    div:hover,a:hover
+      background var(--efu-secondbg-bg)
       color var(--efu-lighttext)
 
   .category-bar-items
@@ -57,8 +72,8 @@
     .category-bar-item
       &:hover
         a
-          background var(--efu-theme)
-          color var(--efu-white)
+          background var(--efu-secondbg-bg)
+          color var(--efu-lighttext)
 
       a
         padding .1rem .5rem
@@ -68,6 +83,7 @@
         display flex
         align-items center
         height 30px
+        border var(--style-border-always)
 
       &.select
         order -1
@@ -76,17 +92,6 @@
           background var(--efu-theme)
           color var(--efu-white)
 
-.category-bar-next
-    margin-left 8px
-    cursor pointer
-    height 30px
-    width 30px
-    display flex
-    border-radius 8px
-    align-items center
-    justify-content center
-    transition .3s
-@media (hover: hover) 
-  .category-bar-next:hover 
-    backgroundvar(--efu-secondbg)
-    color var(--efu-lighttext)
+    &.home
+      a
+        border initial
