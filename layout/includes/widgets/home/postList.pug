@@ -72,9 +72,9 @@ div.recent-post-item(onclick="pjax.loadUrl('" + url_for(post.path) + "')")
                     +cover()
 
 
-if (theme.google_adsense && theme.google_adsense.enable && theme.google_adsense.auto_ads === false)
+if theme.google_adsense && theme.google_adsense.enable && theme.google_adsense.auto_ads === false && theme.google_adsense.post_card
     if (index + 1) % 3 === 0
         div.recent-post-item.google-ads-warp
-            ins.adsbygoogle(style="display:block; text-align:center;", data-ad-layout="in-article", data-ad-format="fluid", data-ad-client=theme.google_adsense.client, data-ad-slot=theme.google_adsense.slot)
+            ins.adsbygoogle(style="display:block; text-align:center; min-width: 100%; height:220px", data-ad-layout="in-article", data-ad-format="fluid", hide-unfilled="true", data-ad-client=theme.google_adsense.client, data-ad-slot=theme.google_adsense.slot)
             script.
                 (adsbygoogle = window.adsbygoogle || []).push({});

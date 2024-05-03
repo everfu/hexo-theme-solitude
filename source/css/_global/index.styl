@@ -249,15 +249,17 @@ input::placeholder
   margin 0 0 1rem
 
 table
-  display block
   width 100%
   border-spacing 0
   border-collapse collapse
   empty-cells show
-  overflow-x auto
 
-  &::-webkit-scrollbar
-    display none
+  +maxWidth768()
+    display block
+    overflow-x auto
+
+    &::-webkit-scrollbar
+      display none
 
 table thead
   background var(--efu-secondbg)
@@ -299,6 +301,9 @@ img:not([src]), img[src=""]
   flex-direction row
   align-items center
 
+iframe
+  border-radius 12px
+
 .copy-true
   user-select all
 
@@ -323,13 +328,15 @@ li, ul
   padding 0
 
 ::-webkit-scrollbar
-  width 6px
+  width 10px
   height 6px
 
 ::-webkit-scrollbar-thumb
-  background var(--efu-scrollbar)
+  background var(--efu-card-border)
+  opacity .5
   border-radius 8px
   cursor pointer
+  border 2px solid var(--efu-background)
 
 ::-webkit-scrollbar-thumb:hover
   background var(--efu-main)

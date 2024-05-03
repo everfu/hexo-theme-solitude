@@ -1,6 +1,7 @@
 .card-widget(class=custom.class, id=custom.id)
-    .item-headline
-        i(class=custom.icon)
-        span=custom.title
+    if !custom.no_head
+        .item-headline
+            i(class=custom.icon)
+            span=custom.title
     div(class=custom.content_class ||'item-content', id=custom.content_id, style=custom.content_css)
         != custom.content_html

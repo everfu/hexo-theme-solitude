@@ -443,12 +443,14 @@ button.el-button.tk-cancel.el-button--default.el-button--small
   border-radius 8px !important
   color var(--efu-fontcolor) !important
 
-@media screen and (max-width: 768px)
-  .OwO .OwO-body
-    width 300px
 
 .OwO
+  &.OwO-open
+    .OwO-body
+      animation .3s ease .1s 1 normal both running donate_effcet
   .OwO-body
+    z-index 102
+    width 500px
     border var(--style-border-always) !important
     border-radius 8px !important
     overflow hidden
@@ -456,9 +458,20 @@ button.el-button.tk-cancel.el-button--default.el-button--small
     backdrop-filter saturate(180%) blur(10px)
     -webkit-backdrop-filter blur(10px)
     transform translateZ(0)
+    +maxWidth768()
+      width 300px
 
     .OwO-bar
       border-top none !important
+
+      .OwO-packages
+        li
+          margin-right 0 !important
+          height 48px
+          transition .3s
+
+        li:hover
+          transition .3s
 
     .OwO-items
       .OwO-item:hover
@@ -468,22 +481,6 @@ button.el-button.tk-cancel.el-button--default.el-button--small
 #twikoo > div.tk-comments > div.tk-submit > div.tk-row.actions > div > div.tk-action-icon.OwO.OwO-open > div.OwO-body > div > ul > li > span
   line-height 48px
   font-size 28px
-
-.OwO
-  &.OwO-open
-    .OwO-body
-      animation .3s ease .1s 1 normal both running donate_effcet
-
-  .OwO-body
-    .OwO-bar
-      .OwO-packages
-        li
-          margin-right 0 !important
-          height 48px
-          transition .3s
-
-        li:hover
-          transition .3s
 
 .OwO-packages
   background var(--efu-background)
@@ -504,24 +501,6 @@ button.el-button.tk-cancel.el-button--default.el-button--small
       .OwO-packages
         li
           line-height 45px !important
-    z-index 102
-    width 500px
-
-#owo-big
-  position fixed
-  align-items center
-  background-color var(--efu-card-bg)
-  border var(--style-border-always)
-  border-radius 10px
-  z-index 9999
-  display none
-  transform translate(0, -105%)
-  overflow hidden
-  animation owoIn .3s cubic-bezier(.42, 0, .3, 1.11)
-  padding 1rem
-
-  img
-    width 100%
 
 .tk-replies
   .tk-content

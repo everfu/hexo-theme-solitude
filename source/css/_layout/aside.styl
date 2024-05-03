@@ -87,6 +87,10 @@
       color var(--efu-main)
       transform scale(1.1)
 
+      &:active
+        transform scale(.97)
+        opacity .8
+        
   .card-info-social-icons
     margin 0
     display flex
@@ -895,3 +899,6 @@ backcolor = convert(hexo-config('aside.flip.backcolor'))
       box-sizing border-box
       background url(faceback) center center no-repeat
       background-size 100%
+
+  .card-widget.card-adsense
+    padding 0

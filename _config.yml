@@ -3,10 +3,10 @@
 # Author: Valor Team
 # Github: https://github.com/valor-x/hexo-theme-solitude
 #
-# 配置指南: https://docs.efu.me/
+# 配置指南: https://solitude.js.org/
 # 你可以从指南中获得更详细的说明
 #
-# Guide: https://docs.efu.me/
+# Guide: https://solitude.js.org/
 # You can get more detailed help from the guide
 #
 # 赞助：https://afdian.net/a/efu0u0
@@ -130,7 +130,7 @@ hometop:
     title: Solitude 主题文档
     # 点击跳转链接
     # Click the jump link
-    url: https://docs.efu.me/
+    url: https://solitude.js.org/
     # 显示背景图片
     # Display background image
     img: /img/default.png
@@ -604,7 +604,7 @@ lazyload:
   placeholder: /img/loading.gif
   # 加载失败显示图片
   # Loading failed display image
-  errorimg: /img/error_load.png
+  errorimg: /img/error_load.webp
 
 # 加载动画
 # loading animation
@@ -733,7 +733,7 @@ post_ai:
 
 # latex 公式支持
 # latex formula support
-# docs: https://docs.efu.me/configuration/extra#数学公式
+# docs: https://solitude.js.org/configuration/extra#数学公式
 katex:
   enable: false
   per_page: false # 是否在每页都加载 / Whether to load on each page
@@ -741,7 +741,7 @@ katex:
 
 # 评论
 # comment
-# getting start: http://docs.efu.me/comments/comment
+# getting start: https://solitude.js.org/comments/comment
 comment:
   use: # waline, twikoo, valine, artalk
   commentBarrage: false # 热评开关 / Hot comment switch
@@ -827,7 +827,7 @@ extends:
 
 # PWA
 # https://developer.mozilla.org/zh-CN/docs/Web/Progressive_web_apps
-# docs: https://docs.efu.me/configuration/extra#pwa
+# docs: https://solitude.js.org/configuration/extra#pwa
 pwa:
   enable: false
   manifest: /manifest.json # manifest.json 文件路径
@@ -843,6 +843,9 @@ google_adsense:
   enable: false
   auto_ads: false # 自动广告关闭后则为手动广告 / After auto ads are turned off, it is manual ads
   enable_page_level_ads: true # 页面级广告 / Page-level ads
+  aside_card: true # 侧边栏卡片广告 / Sidebar card ads（开启后自行到需要添加的页面使用：ads）
+  post_card: true # 文章卡片广告 / Post card ads（首页文章列表）
+  post_content: true # 文章内容广告 / Post content ads（文章内容底部广告）
   js: https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js # 谷歌广告js / Google Adsense js
   # client id
   # 无论是否开启自动广告，都需要填写 client id
