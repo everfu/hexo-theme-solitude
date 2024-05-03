@@ -159,6 +159,8 @@ div#post-comment
   overflow hidden
   animation owoIn .3s cubic-bezier(.42, 0, .3, 1.11)
   padding 1rem
+  +maxWidth768()
+    display none !important
 
 if hexo-config('twikoo.style') && 'Twikoo' in hexo-config('comment.use')
   @import 'twikoo.styl'
