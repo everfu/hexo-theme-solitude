@@ -3,10 +3,10 @@
 # Author: Valor Team
 # Github: https://github.com/valor-x/hexo-theme-solitude
 #
-# 配置指南: https://docs.efu.me/
+# 配置指南: https://solitude.js.org/
 # 你可以从指南中获得更详细的说明
 #
-# Guide: https://docs.efu.me/
+# Guide: https://solitude.js.org/
 # You can get more detailed help from the guide
 #
 # 赞助：https://afdian.net/a/efu0u0
@@ -130,7 +130,7 @@ hometop:
     title: Solitude 主题文档
     # 点击跳转链接
     # Click the jump link
-    url: https://docs.efu.me/
+    url: https://solitude.js.org/
     # 显示背景图片
     # Display background image
     img: /img/default.png
@@ -604,7 +604,7 @@ lazyload:
   placeholder: /img/loading.gif
   # 加载失败显示图片
   # Loading failed display image
-  errorimg: /img/error_load.png
+  errorimg: /img/error_load.webp
 
 # 加载动画
 # loading animation
@@ -733,7 +733,7 @@ post_ai:
 
 # latex 公式支持
 # latex formula support
-# docs: https://docs.efu.me/configuration/extra#数学公式
+# docs: https://solitude.js.org/configuration/extra#数学公式
 katex:
   enable: false
   per_page: false # 是否在每页都加载 / Whether to load on each page
@@ -741,7 +741,7 @@ katex:
 
 # 评论
 # comment
-# getting start: http://docs.efu.me/comments/comment
+# getting start: https://solitude.js.org/comments/comment
 comment:
   use: # waline, twikoo, valine, artalk
   commentBarrage: false # 热评开关 / Hot comment switch
@@ -827,7 +827,7 @@ extends:
 
 # PWA
 # https://developer.mozilla.org/zh-CN/docs/Web/Progressive_web_apps
-# docs: https://docs.efu.me/configuration/extra#pwa
+# docs: https://solitude.js.org/configuration/extra#pwa
 pwa:
   enable: false
   manifest: /manifest.json # manifest.json 文件路径

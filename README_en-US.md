@@ -1,4 +1,4 @@
-[简体中文](README.md)丨[繁体中文](README_zh-Hant.md)丨English丨[Français](README_fr.md)丨[日本語](README_ja.md)
+[简体中文](README.md)丨[繁体中文](README_zh-Hant.md)丨English
 
 <div align="center">
 
@@ -38,11 +38,11 @@
 [![gitee](https://img.shields.io/badge/Gitee-red?logo=gitee)](https://gitee.com/nsjjd_w/hexo-theme-solitude)
 [![gitlab](https://img.shields.io/badge/GitLab-blue?logo=gitlab)](https://gitlab.com/efu/hexo-theme-solitude)
 
-[Preview](https://efu.me/) 丨  [Documentation](https://docs.efu.me/)
+[Preview](https://efu.me/) 丨  [Documentation](https://solitude.js.org/)
 
 </div>
 
-![Screenshot](.github/screenshot.png)
+![Screenshot](.github/screenshot.webp)
 
 ## Features
 
@@ -51,7 +51,7 @@
 - ColorMode
 - Lightbox(medium-zoom、fancybox)
 - Mathematical formulas(Latex)
-- Featured pages: Instant Short Article, My Equipment, Online Tools, Music Gallery, Friend Chain Fish Pond, Photo Album Page, Douban Page
+- Featured pages: Instant Short Article, My Equipment, Online Tools, Music Gallery, Friend Chain Fish Pond, Photo Album Page, Douban Page, Barrage message page
 - Article features: AI summary, code highlighting
 
 ## Todo
@@ -59,6 +59,8 @@
 - [x] Artalk
 - [x] Use double comment
 - [x] Album
+- [x] Barrage message page
+- [ ] New style at the top of the home page
 
 > If you have any questions, please issue an [issue](https://github.com/valor-x/hexo-theme-solitude/issues)
 
@@ -73,7 +75,7 @@
       theme: solitude
       ```
 
-Check out the [Documentation](https://docs.efu.me/) for more information.
+Check out the [Documentation](https://solitude.js.org/) for more information.
 
 ## Sponsors
 

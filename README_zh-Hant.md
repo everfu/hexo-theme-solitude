@@ -1,4 +1,4 @@
-[简体中文](README.md)丨繁体中文丨[English](README_en-US.md)丨[Français](README_fr.md)丨[日本語](README_ja.md)
+[简体中文](README.md)丨繁体中文丨[English](README_en-US.md)
 
 <div align="center">
   
@@ -38,11 +38,11 @@
 [![gitee](https://img.shields.io/badge/Gitee-red?logo=gitee)](https://gitee.com/nsjjd_w/hexo-theme-solitude)
 [![gitlab](https://img.shields.io/badge/GitLab-blue?logo=gitlab)](https://gitlab.com/efu/hexo-theme-solitude)
 
-[預覽](https://efu.me/) 丨  [文档](https://docs.efu.me/)
+[預覽](https://efu.me/) 丨  [文档](https://solitude.js.org/)
 
 </div>
 
-![Screenshot](.github/screenshot.png)
+![Screenshot](.github/screenshot.webp)
 
 ## 特性
 
@@ -51,7 +51,7 @@
 - 晝夜切換（ColorMode） 
 - 燈箱（medium-zoom、fancybox） 
 - 數學公式（Latex） 
-- 特色頁面：即刻短文、我的裝備、在線工具、音樂館、友鏈魚塘、相冊頁、豆瓣頁 
+- 特色頁面：即刻短文、我的裝備、在線工具、音樂館、友鏈魚塘、相冊頁、豆瓣頁、留言彈幕頁
 - 文章功能：AI 摘要、代碼高亮
 
 ## Todo
@@ -59,6 +59,8 @@
 - [x] Artalk 評論
 - [x] 雙評論
 - [x] 相冊
+- [x] 留言彈幕頁
+- [ ] 首頁頂部新樣式 
 
 ## 應用
 
@@ -71,7 +73,7 @@
       theme: solitude
       ```
 
-前往 [文檔](https://docs.efu.me) 獲取更多資訊。
+前往 [文檔](https://solitude.js.org/) 獲取更多資訊。
 
 ## 贊助者
 

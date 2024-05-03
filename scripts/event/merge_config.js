@@ -28,7 +28,7 @@ hexo.extend.filter.register('before_generate', () => {
             recommendList: {
                 sup: 'Recommend',
                 title: 'Solitude Docs',
-                url: 'https://solitude-docs.efu.me/',
+                url: 'https://solitude.js.org/',
                 img: '/img/default.png',
                 color: 'none',
             }
@@ -229,7 +229,7 @@ hexo.extend.filter.register('before_generate', () => {
             enable: false,
             field: 'site',
             placeholder: '/img/loading.gif',
-            errorimg: '/img/error_load.png'
+            errorimg: '/img/error_load.webp'
         },
         loading: {
             fullpage: false,
