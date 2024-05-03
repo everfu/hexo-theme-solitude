@@ -7,6 +7,8 @@ case item
         include ./asideNewestPost.pug
     when 'allInfo'
         include ./asideAllInfo.pug
+    when 'ads'
+        include ./asideAdsense.pug
     default
         - const custom = site.data?.aside?.find((i) => i.name === item)
         if custom
