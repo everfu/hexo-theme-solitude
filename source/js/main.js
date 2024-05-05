@@ -799,7 +799,7 @@ class tabs {
 window.refreshFn = () => {
     const {is_home, is_page, page, is_post} = PAGE_CONFIG;
     const {runtime, lazyload, lightbox, randomlink, covercolor, post_ai} = GLOBAL_CONFIG;
-    const timeSelector = is_home || is_page ? '#recent-posts time, .webinfo-item time' : '#post-meta time';
+    const timeSelector = is_home ? '.post-meta-date time' : is_post ? '.post-meta-date time' : '.datatime'
     document.body.setAttribute('data-type', page);
     sco.changeTimeFormat(document.querySelectorAll(timeSelector));
     runtime && sco.addRuntime();
