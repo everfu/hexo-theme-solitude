@@ -38,7 +38,7 @@
 [![gitee](https://img.shields.io/badge/Gitee-red?logo=gitee)](https://gitee.com/nsjjd_w/hexo-theme-solitude)
 [![gitlab](https://img.shields.io/badge/GitLab-blue?logo=gitlab)](https://gitlab.com/efu/hexo-theme-solitude)
 
-[Preview](https://efu.me/) 丨  [Documentation](https://solitude.js.org/)
+[Documentation & Preview](https://solitude.js.org/)
 
 </div>
 
@@ -87,4 +87,4 @@ Check out the [Documentation](https://solitude.js.org/) for more information.
 
 ## License
 
-[MIT](./LICENSE) License &copy; 2023-PRESENT [Efu](https://github.com/efuo)
+[MIT](./LICENSE) License &copy; 2023-PRESENT [EverFu](https://github.com/efuo)
