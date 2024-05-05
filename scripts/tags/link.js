@@ -7,6 +7,7 @@ function link(args) {
     let link = args[2];
     let imgUrl = args[3] || "";
     let favicon = themeConfig.site.siteIcon;
+    let insideStation = false;
 
     link = link.trim();
     imgUrl = imgUrl.trim();
@@ -14,12 +15,12 @@ function link(args) {
 
     try {
         new URL(link);
-        InsideStation = false;
+        insideStation = false;
     } catch (err) {
-        InsideStation = true;
+        insideStation = true;
     }
 
-    if ((imgUrl == "") && (InsideStation == false)) {
+    if ((imgUrl === "") && (insideStation === false)) {
         let domain = new URL(link).hostname
         if (domain) {
             imgUrl_online = "https://api.iowen.cn/favicon/" + domain + ".png";
@@ -27,10 +28,10 @@ function link(args) {
     }
 
     return `<a class="tag-link" target="_blank" href="${urlFor(link)}">
-    <div class="tag-link-tips">${InsideStation ? "站内链接" : "引用站外链接"
+    <div class="tag-link-tips">${insideStation ? "站内链接" : "引用站外链接"
         }</div>
     <div class="tag-link-bottom">
-        <div class="tag-link-left" style="${InsideStation
+        <div class="tag-link-left" style="${insideStation
             ? `background-image: url(${imgUrl ? imgUrl : favicon})`
             : `background-image: url(${imgUrl ? imgUrl : imgUrl_online})`
         }">

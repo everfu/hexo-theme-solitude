@@ -1,7 +1,7 @@
 {
   "name": "hexo-theme-solitude",
-  "version": "1.10.1",
-  "description": "A beautiful, powerful, and efficient Hexo theme developed by the efu.",
+  "version": "1.10.2",
+  "description": "A beautiful, powerful, and efficient Hexo theme developed by EverFu.",
   "main": "package.json",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -11,7 +11,7 @@
     "theme",
     "solitude",
     "Card UI Design",
-    "Efu",
+    "EverFu",
     "hexo-theme-solitude"
   ],
   "repository": {

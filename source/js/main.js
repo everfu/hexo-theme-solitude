@@ -474,12 +474,16 @@ let sco = {
      * @description 监听页码输入
      */
     listenToPageInputPress: function () {
+        const toGroup = document.querySelector(".toPageGroup")
         const pageText = document.getElementById("toPageText");
         if (!pageText) return;
         const pageButton = document.getElementById("toPageButton");
         const pageNumbers = document.querySelectorAll(".page-number");
         const lastPageNumber = +pageNumbers[pageNumbers.length - 1].textContent;
-        if (!pageText || lastPageNumber === 1) return;
+        if (!pageText || lastPageNumber === 1) {
+            toGroup.style.display = "none";
+            return
+        }
         pageText.addEventListener("keydown", (event) => {
             if (event.keyCode === 13) {
                 sco.toPage();
@@ -500,8 +504,6 @@ let sco = {
     addNavBackgroundInit: function () {
         const scrollTop = document.documentElement.scrollTop;
         (scrollTop !== 0) && document.getElementById("page-header").classList.add("nav-fixed", "nav-visible");
-        const cookiesWindow = document.getElementById("cookies-window");
-        cookiesWindow && (cookiesWindow.style.display = 'none')
     },
     /**
      * initAdjust
@@ -797,7 +799,7 @@ class tabs {
 window.refreshFn = () => {
     const {is_home, is_page, page, is_post} = PAGE_CONFIG;
     const {runtime, lazyload, lightbox, randomlink, covercolor, post_ai} = GLOBAL_CONFIG;
-    const timeSelector = is_home || is_page ? '#recent-posts time, .webinfo-item time' : '#post-meta time';
+    const timeSelector = is_home ? '.post-meta-date time' : is_post ? '.post-meta-date time' : '.datatime'
     document.body.setAttribute('data-type', page);
     sco.changeTimeFormat(document.querySelectorAll(timeSelector));
     runtime && sco.addRuntime();

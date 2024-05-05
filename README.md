@@ -38,7 +38,7 @@
 [![gitee](https://img.shields.io/badge/Gitee-red?logo=gitee)](https://gitee.com/nsjjd_w/hexo-theme-solitude)
 [![gitlab](https://img.shields.io/badge/GitLab-blue?logo=gitlab)](https://gitlab.com/efu/hexo-theme-solitude)
 
-[预览](https://www.efu.me/) 丨  [文档](https://solitude.js.org/)
+[文档 & 预览](https://solitude.js.org/)
 
 </div>
 
@@ -87,4 +87,4 @@
 
 ## 版权
 
-[MIT](./LICENSE) License &copy; 2023-至今 [Efu](https://github.com/efuo)
+[MIT](./LICENSE) License &copy; 2023-至今 [EverFu](https://github.com/efuo)

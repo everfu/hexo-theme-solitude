@@ -32,7 +32,8 @@ if site.data.about.rewardList
                                     - var rewards = theme.post.award.list
                                     each reward in rewards
                                         li.reward-item
-                                            img.post-qr-code-img(alt=reward.name, src=reward.qcode, style="border-color:" + reward.color)
+                                            a(href=url_for(reward.url))
+                                                img.post-qr-code-img(alt=reward.name, src=reward.qcode, style="border-color:" + reward.color)
                                             .post-qr-code-desc= reward.name
             .reward-list-tips
                 p= award.tips.replace('{sum}', sum.toFixed(2))
