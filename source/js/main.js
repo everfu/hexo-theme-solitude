@@ -313,7 +313,9 @@ let sco = {
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    waterfall(entry.target) || entry.target.classList.add('show');
+                    setTimeout(() => {
+                        waterfall(entry.target) || entry.target.classList.add('show');
+                    }, 300);
                 }
             });
         });
@@ -368,7 +370,7 @@ let sco = {
      * @description 添加图片标题
      */
     addPhotoFigcaption: function () {
-        document.querySelectorAll('#article-container img').forEach(image => {
+        document.querySelectorAll('#article-container img:not(.gallery-item img)').forEach(image => {
             const captionText = image.getAttribute('alt');
             captionText && image.insertAdjacentHTML('afterend', `<div class="img-alt is-center">${captionText}</div>`);
         });
