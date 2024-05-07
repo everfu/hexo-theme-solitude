@@ -8,15 +8,16 @@ block content
             if theme.hometop.enable && is_home_first_page()
                 include ./includes/widgets/home/hometop
     main.layout#content-inner
-        .recent-posts#recent-posts
-            if theme.carousel && is_home_first_page()
-                include ./includes/widgets/home/carousel.pug
+        #home
             #category-bar
                 include ./includes/widgets/home/categoryBar
-            for post, index in page.posts.sort("-sticky" || "-date").data
-                include ./includes/widgets/home/postList
+            .recent-posts#recent-posts
+                if theme.carousel && is_home_first_page()
+                    include ./includes/widgets/home/carousel.pug
+                for post, index in page.posts.sort("-sticky" || "-date").data
+                    include ./includes/widgets/home/postList
 
-            // pagination
-            include ./includes/mixins/pagination
+                // pagination
+                include ./includes/mixins/pagination
         // aside
         include ./includes/widgets/aside/aside
