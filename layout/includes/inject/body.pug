@@ -80,6 +80,10 @@ div
             != item
 
     .js-pjax
+        if page.type === 'says' && theme.says.enable
+            script.
+                GLOBAL_CONFIG.lightbox && utils.lightbox(document.querySelectorAll(".bber-content-img img"));
+                sco.changeTimeFormat(document.querySelectorAll('.bber-info-time time'))
         if comment_js
             include ../widgets/third-party/comments/js
         if theme.mermaid
