@@ -247,6 +247,7 @@ else if hexo-config('index_post_list.direction') == "row"
     align-items flex-start
     align-content flex-start
     user-select none
+    gap .5rem
     transition width .3s
 
     +maxWidth768()
@@ -263,15 +264,12 @@ else if hexo-config('index_post_list.direction') == "row"
       border-radius 12px
       cursor pointer
       border var(--style-border)
-      margin-bottom .5rem
       flex-direction row
       width 100%
       box-shadow var(--efu-shadow-border)
 
       +maxWidth768()
-        margin 1.5rem 0
         border-radius 12px
-        margin-top 0.5rem
         border var(--style-border-always)
         box-shadow var(--efu-shadow-border)
         flex-direction column
