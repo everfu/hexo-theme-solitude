@@ -13,10 +13,7 @@ if hexo-config('index_post_list.direction') == "column"
     +minWidth1300()
       display flex
       flex-wrap wrap
-      justify-content space-between
-      align-items flex-start
-      align-content flex-start
-      user-select none
+      gap .5rem
       transition width .3s
 
     +maxWidth768()
@@ -34,19 +31,19 @@ if hexo-config('index_post_list.direction') == "column"
       border-radius 12px
       cursor pointer
       border var(--style-border)
-      margin 1rem 0 1rem
 
       +minWidth1300()
         flex-direction column
-        width calc(100% / 2 - .5rem)
-        margin-top .25rem
-        margin-bottom .75rem
+        width 100%
+        flex 1 1 40%
+        max-width 50%
         box-shadow var(--efu-shadow-border)
 
+      +maxWidth1300()
+        margin-bottom .5rem
+
       +maxWidth768()
-        margin 1.5rem 0
         border-radius 12px
-        margin-top 0.5rem
         border var(--style-border-always)
         box-shadow var(--efu-shadow-border)
         display block
@@ -250,6 +247,7 @@ else if hexo-config('index_post_list.direction') == "row"
     align-items flex-start
     align-content flex-start
     user-select none
+    gap .5rem
     transition width .3s
 
     +maxWidth768()
@@ -266,17 +264,12 @@ else if hexo-config('index_post_list.direction') == "row"
       border-radius 12px
       cursor pointer
       border var(--style-border)
-      margin 1rem 0 1rem
       flex-direction row
       width 100%
-      margin-top .25rem
-      margin-bottom .75rem
       box-shadow var(--efu-shadow-border)
 
       +maxWidth768()
-        margin 1.5rem 0
         border-radius 12px
-        margin-top 0.5rem
         border var(--style-border-always)
         box-shadow var(--efu-shadow-border)
         flex-direction column

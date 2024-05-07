@@ -5,7 +5,6 @@
   display flex
   white-space nowrap
   overflow hidden
-  margin-bottom 1rem
   border var(--style-border)
   transition 0.3s
   height 50px
@@ -13,23 +12,22 @@
   justify-content space-between
   user-select none
   align-items center
-
-  +maxWidth1300()
-    margin-bottom 1rem
-    animation slide-in .6s 0s backwards
+  margin-bottom .5rem
 
   +minWidth1300()
-    margin-bottom .75rem
     &:hover
       border var(--style-border-hover)
       box-shadow var(--efu-shadow-main)
+
+  +minWidth1200()
+    animation: slide-in .6s .3s backwards;
 
   +maxWidth768()
     margin-bottom 0
     margin-top 0
     border-radius 0
     background var(--efu-background)
-    padding 0.5rem 0
+    padding 0 1rem
     border none
 
   .category-bar-right

@@ -16,6 +16,10 @@
       flex-wrap nowrap
       width 100%
       overflow-x scroll
+      gap .5rem
+
+      +maxWidth1200()
+        gap 0
 
       &::-webkit-scrollbar
         display none
@@ -24,7 +28,6 @@
         display flex
         +minWidth1201()
           width calc(50% - .25rem)
-          margin-right 1rem
           height calc(328px + .5rem)
           display flex
           flex-direction column
@@ -53,7 +56,6 @@
             display none
           +maxWidth768()
             min-width 130px
-            margin-bottom .5rem
             margin-left 1rem
             max-height 164px
             overflow hidden
@@ -313,7 +315,7 @@
 
           .banner-button-group
             bottom: 1rem
-            
+
     +maxWidth768()
       margin-right 1rem
 
