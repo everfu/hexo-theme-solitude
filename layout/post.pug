@@ -37,7 +37,7 @@ block content
                                 a.social-share-ico.icon-facebook(href=`https://www.facebook.com/sharer/sharer.php?u=${encodedPath}` title="Facebook")
                             when 'twitter'
                                 a.social-share-ico.icon-twitter(href=`https://twitter.com/intent/tweet?url=${encodedPath}&text=${encodedTitle}` title="Twitter")
-            if theme.google_adsense.enable && theme.google_adsense.post_content
+            if theme.google_adsense.enable && !theme.google_adsense.auto_ads && theme.google_adsense.post_content
                 div.google-ads-warp
                     ins.adsbygoogle(style="display:block; text-align:center; height:284px", data-ad-layout="in-article", data-ad-format="fluid", hide-unfilled="true", data-ad-client=theme.google_adsense.client, data-ad-slot=theme.google_adsense.slot)
                     script.
