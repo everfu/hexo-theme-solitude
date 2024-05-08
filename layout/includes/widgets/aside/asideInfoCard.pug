@@ -54,3 +54,33 @@
                             - var array = value.split('||')
                             a.social-icon(href=url_for(trim(array[0])), title=label)
                                 i.solitude(class=array[1])
+            when 2
+                .card-info-bg-top
+                    .author-info-social
+                        .social-icons
+                            each value, label in theme.aside.card.information || {}
+                                - var array = value.split('||')
+                                a.social-icon(href=url_for(trim(array[0])), title=label)
+                                    i.solitude(class=array[1])
+                        span.more-info(onclick="document.querySelector('.social-icons').classList.toggle('show')")
+                            i.solitude.st-more-2-fill
+                a.card-info-avatar(href=url_for(theme.aside.card.url) title=_p('aside.avatar'))
+                    .avatar-img
+                        img(src=theme.aside.card.author.img alt=_p('aside.avatar'))
+                    if theme.aside.card.author.sticker
+                        .avatar-sticker
+                            img.avatar-sticker-img(src=theme.aside.card.author.sticker, alt=_p('aside.sticker'))
+                .author-info__name= config.author
+                .card-info__data.is-center
+                    a(href=url_for('/archives/') title=_p('aside.card.posts') + site.posts.length)
+                        .length-num= site.posts.length
+                        .headline= _p('page.archives')
+                    a(href=url_for('/tags/') title=_p('aside.card.tags') + site.tags.length)
+                        .length-num= site.tags.length
+                        .headline= _p('page.tag')
+                    a(href=url_for('/categories/') title=_p('aside.card.categories') + site.categories.length)
+                        .length-num= site.categories.length
+                        .headline= _p('page.category')
+                .card-info__desc_group
+                    .author-info__description!= theme.aside.card.content
+                    .author-info__description2!= theme.aside.card.content2
