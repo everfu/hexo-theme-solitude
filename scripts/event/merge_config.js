@@ -53,6 +53,7 @@ hexo.extend.filter.register('before_generate', () => {
                     sticker: '/img/happy-sticker.png',
                 },
                 url: '/about/',
+                background: null,
                 content1: 'Solitude',
                 content2: 'A simple theme for Hexo',
                 sayhello: {
