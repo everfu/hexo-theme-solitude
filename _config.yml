@@ -184,21 +184,24 @@ aside:
       # 表情图片链接
       # Emoticon image link
       # tip: 26x26 size
-      sticker: https://7.isyangs.cn/34/65f2e4e0423cc-34.png
-    # 点击作者名称跳转链接
-    # Click the author name to jump link
+      sticker: https://7.isyangs.cn/34/65f2e4e0423cc-34.png # 不填不显示
+    # 点击作者头像跳转链接
+    # Click the author's avatar to jump link
     url: /about/
+    # 背景图片
+    # Background image
+    background: # https://s3.qjqq.cn/47/663af296b85f4.webp!color # 不设置不会展示（仅样式为1、2时有效）
     # 文案1
     # label1
-    content: 分享自己对编程的<b>热爱</b>，对美好生活的<b>向往</b>，对知识海洋<b>探索历程</b>。
+    content: 分享自己对编程的<b>热爱</b>，对美好生活的<b>向往</b>，对知识海洋<b>探索历程</b>。 # 样式为1时无效
     # 文案2
     # label2
-    content2: 相信你可以在这里找到对你有用的知识和教程。
+    content2: 相信你可以在这里找到对你有用的知识和教程。 # 样式为1时无效
     # 个人信息卡片底部的小图标，按照例子填写
     # Small icons at the bottom of the personal information card, fill in according to the example
     # 个人信息卡片顶部按钮的打招呼语句
     # Greeting statement of the button at the top of the personal information card
-    sayhello:
+    sayhello: # 样式为2时无效
       morning: 一日之计在于晨
       noon: 吃饱了才有力气干活
       afternoon: 集中精力，攻克难关
@@ -206,7 +209,7 @@ aside:
       goodnight: 睡个好觉，保证精力充沛
     # 个人信息卡片顶部按钮的切换文字
     # Switching text of the button at the top of the personal information card
-    sayhello2:
+    sayhello2: # 样式为2时无效
     #  - 🤖️ 数码科技爱好者
     #  - 🔍 分享与热心帮助
     #  - 🏠 智能家居小能手
@@ -217,7 +220,7 @@ aside:
     #  - 💢 壮汉人狠话不多
     #  - 🎮 电竞游戏爱好者
     # 个人信息卡片底部的小图标，按照例子填写
-    information:
+    information: # 样式为1时请不要超过4个
     #  Github: https://github.com/efuo || st-github-line # 名称：链接 || 图标 / Name: link || icon
     #  Bilibili: https://space.bilibili.com/1329819902 || st-bilibili-line
 
