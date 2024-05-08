@@ -14,10 +14,6 @@
   pointer-events none
   user-select none
 
-  &.show
-    opacity 1
-    pointer-events all
-
   &.show .close-btn i
     transform rotate(0)
 
@@ -175,10 +171,8 @@
           background var(--efu-orange)
           color var(--efu-white)
   .button-group
+    gap .5rem
     .console-btn-item
-      &:not(:last-child)
-        margin-right .5rem
-
       &:hover
         span
           background var(--efu-main)
@@ -216,11 +210,11 @@
     .card-tag-cloud
       margin-top 1.5rem
       display flex
+      gap .5rem
       flex-wrap wrap
 
       a
         color var(--efu-fontcolor)
-        margin 6px 4px
         padding 2px 8px
         border-radius 8px
         background var(--efu-card-bg)
@@ -281,12 +275,10 @@
       flex-direction row
       flex-wrap wrap
       height 164px
+      gap .5rem
 
       li.card-archive-list-item
-        flex 0 0 24%
-
-        &:not(:nth-child(4n))
-          margin-right .555rem
+        flex 0 1 24.101%
 
       .card-archive-list-link
         border-radius 8px
@@ -296,7 +288,7 @@
         border var(--style-border)
         transition all .3s ease 0s
         background var(--efu-maskbgdeep)
-        padding 12px 16px
+        padding 9.5px 16px
 
         &:hover
           background var(--efu-main)

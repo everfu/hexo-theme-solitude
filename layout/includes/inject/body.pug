@@ -80,6 +80,9 @@ div
             != item
 
     .js-pjax
+        if is_home() && theme.says.enable && theme.says.home_mini
+            script.
+               sco.initbbtalk()
         if page.type === 'says' && theme.says.enable
             script.
                 GLOBAL_CONFIG.lightbox && utils.lightbox(document.querySelectorAll(".bber-content-img img"));
@@ -92,10 +95,6 @@ div
         if is_home() && theme.carousel && site.posts.data.filter(item => item.recommend === true).slice(0, 6) || false
             script.
                 carousel_swiper()
-        if page.type === 'says' && theme.says.enable
-            script.
-                GLOBAL_CONFIG.lightbox && utils.lightbox(document.querySelectorAll(".bber-content-img img"));
-                sco.changeTimeFormat(document.querySelectorAll('.bber-info-time time'))
         if theme.busuanzi && (theme.aside.siteinfo.uv || theme.aside.siteinfo.pv)
             if theme.busuanzi_use === 0
                 script(defer pjax src=url_for(theme.cdn.busuanzi_js))
