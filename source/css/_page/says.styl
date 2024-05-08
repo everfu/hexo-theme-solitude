@@ -56,7 +56,7 @@ if hexo-config('says.home_mini')
 
 if hexo-config('says.enable')
   #bber
-    margin-top 1rem
+    margin-top .5rem
     width 100%
 
     if hexo-config('says.style') == 2
@@ -100,12 +100,6 @@ if hexo-config('says.enable')
         border-radius 12px
         width 100%
         height 100%
-
-    & > section
-      & > ul
-        & > li
-          &.item
-            margin-bottom 1rem
 
     if hexo-config('says.style') == 1
       .bber-bottom
@@ -279,7 +273,7 @@ if hexo-config('says.enable')
         li
           &.item
             position relative
-            width 32%
+            width 33%
             border var(--style-border-always)
             border-radius 12px
             padding 1rem 1rem .5rem
@@ -290,8 +284,8 @@ if hexo-config('says.enable')
             justify-content space-between
             align-items flex-start
             background var(--efu-card-bg)
+            margin-right .5rem
             box-shadow var(--efu-shadow-border)
-            margin-right 2%
 
             +maxWidth1300()
               width 49%
