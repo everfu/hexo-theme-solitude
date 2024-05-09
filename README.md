@@ -62,7 +62,7 @@
 - [x] 弹幕留言页
 - [ ] 首页顶部新样式 
 
-> 如有問題請提 [issue](https://github.com/valor-x/hexo-theme-solitude/issues)
+> 如有问题请提 [issue](https://github.com/valor-x/hexo-theme-solitude/issues)
 
 ## 应用
 
