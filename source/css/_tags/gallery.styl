@@ -3,7 +3,7 @@
     position: relative
     float: left
     overflow: hidden
-    margin: 6px 4px
+    margin: 0
     width: calc(50% - 8px)
     height: 250px
     border-radius: 8px
@@ -92,8 +92,10 @@
         transform: translate3d(-100%, 0, 0)
 
   .gallery-group-main
-    overflow: auto
-    padding: 0 0 16px
+    overflow auto
+    display flex
+    gap .5rem
+    margin-top .5rem
 
   .gallery-item
     min-height 5rem
