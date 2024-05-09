@@ -61,7 +61,7 @@ script.
                     nick: e.nick,
                     url: e.page_key,
                     date: e.date,
-                }))
+                })).slice(0, 6)
                 utils.saveToLocal.set('artalk-newest-comments', artalk, !{theme.comment.newest_comment.storage})
                 generateHtml(artalk, asideList)
             }).catch(error => {
