@@ -30,6 +30,16 @@ window.addEventListener("load", () => {
         }
     };
 
+    const addEventCtrlK = () => {
+        document.addEventListener("keydown", function (event) {
+            if (event.ctrlKey && event.key === "k") {
+                openSearch();
+            }
+        });
+    }
+
+    addEventCtrlK()
+
     const searchClickFn = () => {
         utils.addEventListenerPjax(document.querySelector("#search-button > .search"), "click", openSearch);
 

@@ -131,7 +131,7 @@ div#banners
   flex-wrap wrap
   justify-content space-between
   width 100%
-  margin-top 1rem
+  gap .5rem
 
   +maxWidth768()
     margin-top 0
@@ -141,7 +141,6 @@ div#banners
       animation slide-in .6s 0s backwards
     +maxWidth768()
       width 100% !important
-      margin-top 1rem
       padding 1rem
 
 .author-content.author-content-item.sharePage
@@ -152,7 +151,7 @@ div#banners
   margin-top 0
 
 .author-content-item
-  width 49%
+  width 49.5%
   border-radius 12px
   background var(--efu-card-bg)
   border var(--style-border-always)
@@ -160,11 +159,6 @@ div#banners
   position relative
   overflow hidden
   padding 1rem 2rem
-
-  +maxWidth768()
-    width 100%
-    margin-top 1rem
-    padding 1rem
 
   &.single
     width 100%
