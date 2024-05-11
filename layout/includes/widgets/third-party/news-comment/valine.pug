@@ -49,7 +49,7 @@ script.
                         'url': e.url + '#' + e.objectId,
                         'date': e.updatedAt || e.createdAt
                     }
-                })
+                }).slice(0, 6)
                 utils.saveToLocal.set('valine-newest-comment', valineArray, !{theme.comment.newest_comment.storage})
                 generateHtml(valineArray)
             }).catch(error => {
