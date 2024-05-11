@@ -273,7 +273,7 @@ if hexo-config('says.enable')
         li
           &.item
             position relative
-            width 33%
+            width calc(33% - .06rem)
             border var(--style-border-always)
             border-radius 12px
             padding 1rem 1rem .5rem
@@ -289,7 +289,7 @@ if hexo-config('says.enable')
             box-shadow var(--efu-shadow-border)
 
             +maxWidth1300()
-              width 49%
+              width 49.5%
               margin-right 1%
 
             +maxWidth768()
@@ -312,7 +312,6 @@ if hexo-config('says.enable')
         display flex
         flex-direction row
         flex-wrap wrap
-        justify-content space-between
 
     li
       &.item
