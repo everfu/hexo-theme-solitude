@@ -2,6 +2,7 @@
 
 script(pjax).
     (async () => {
+        const emojiReg = /:[a-z0-9_\u4e00-\u9fa5]+:/g
         if(typeof EasyDanmaku === "undefined") await utils.getScript('!{url_for(theme.cdn.envelope_js)}')
         const envel = new EasyDanmaku({
             page: '!{theme.envelope.page}',
@@ -35,7 +36,7 @@ script(pjax).
             const data = await res.json()
             const init = () => 
                 data.results.map(item => ({
-                    content: item.comment,
+                    content: item.nick + ': ' + formatDanmaku(item.comment),
                     avatar: '!{avatar}/avatar/'+md5(item.mail),
                     url: item.url,
                 }))
@@ -44,5 +45,13 @@ script(pjax).
             utils.saveToLocal.set('enevlope',init(),.02)
         } catch (error) {
             console.error("An error occurred while fetching comments: ", error)
+        }
+
+        function formatDanmaku(str) {
+            str = str.replace(emojiReg, '[!{__("console.newest_comment.emoji")}]')
+            str = str.replace(/!\[.*?\]\((.*?)\)/g, '[!{__("console.newest_comment.image")}]')
+            str = str.replace(/\[.*?\]\((.*?)\)/g, '[!{__("console.newest_comment.link")}]')
+            str = str.replace(/```.*?```/g, '[!{__("console.newest_comment.code")}]')
+            return str
         }
     })()

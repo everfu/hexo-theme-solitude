@@ -68,6 +68,10 @@ script(pjax).
         }
 
         function formatContent(content) {
-            return content.replace(emojiReg, '')
+            content = content.replace(emojiReg, '[!{__("console.newest_comment.emoji")}]')
+            content = content.replace(/!\[.*?\]\((.*?)\)/g, '[!{__("console.newest_comment.image")}]')
+            content = content.replace(/\[.*?\]\((.*?)\)/g, '[!{__("console.newest_comment.link")}]')
+            content = content.replace(/```.*?```/g, '[!{__("console.newest_comment.code")}]')
+            return content
         }
     })()

@@ -117,6 +117,7 @@ console:
     image: 圖片
     link: 連結
     code: 代碼
+    emoji: 表情
 
 sidebar:
   function: 功能

@@ -200,12 +200,19 @@ hexo.extend.filter.register('before_generate', () => {
             style: 1,
             strip: 30
         },
+        recent_comments: {
+            enable: false,
+            limit: 50,
+            console: false,
+            page: '/recentcomments/'
+        },
         envelope: {
             enable: false,
             line: 10,
             speed: 20,
             hover: true,
             loop: true,
+            page: '/message/'
         },
         meting_api: "https://meting.qjqq.cn/?server=:server&type=:type&id=:id&auth=:auth&r=:r",
         music: {

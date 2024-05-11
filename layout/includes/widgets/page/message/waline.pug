@@ -23,7 +23,7 @@ script(pjax).
                         continue
                     }
                     ls.push({
-                        content: formatContent(i.comment),
+                        content: i.nick + ': ' + formatContent(i.comment),
                         avatar: i.avatar,
                         url: i.url,
                     })

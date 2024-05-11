@@ -115,6 +115,7 @@ console:
     image: Image
     link: Link
     code: Code
+    emoji: Emoji
 
 sidebar:
   function: Function

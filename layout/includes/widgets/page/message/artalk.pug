@@ -27,7 +27,7 @@ script(pjax).
                         continue
                     }
                     ls.push({
-                        content: formatContent(i.content),
+                        content: i.nick + ': ' + formatDanmaku(i.content),
                         avatar: '!{avatar}' + '/avatar/' + i.email_encrypted,
                         url: i.page_key + '#atk-comment-' + i.id,
                     })
@@ -42,7 +42,11 @@ script(pjax).
             return emojiReg.test(str)
         }
 
-        function formatContent(content) {
-            return content.replace(emojiReg, '').replace(/<[^>]+>/g, '').replace(/&[^;]+;/g, '')
+        function formatDanmaku(str) {
+            str = str.replace(emojiReg, '[!{__("console.newest_comment.emoji")}]')
+            str = str.replace(/!\[.*?\]\((.*?)\)/g, '[!{__("console.newest_comment.image")}]')
+            str = str.replace(/\[.*?\]\((.*?)\)/g, '[!{__("console.newest_comment.link")}]')
+            str = str.replace(/```.*?```/g, '[!{__("console.newest_comment.code")}]')
+            return str
         }
     })()
