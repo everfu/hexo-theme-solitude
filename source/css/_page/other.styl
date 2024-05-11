@@ -1,137 +1,155 @@
 div#banners
-  display none
-  +minWidth1201()
+  display flex
+  width 100%
+  background var(--efu-card-bg)
+  border var(--style-border-always)
+  border-radius 12px
+  overflow hidden
+  position relative
+  box-shadow var(--efu-shadow-border)
+  flex-direction column
+  transition .3s
+  will-change transform
+  animation slide-in .6s .1s backwards
+
+  #home_top &
+    +maxWidth1200()
+      height calc(328px + .5rem)
+
+  :not(.flink)&:hover
+    box-shadow var(--efu-shadow-main)
+
+  .banner-button-group
+    position absolute
+    right 2rem
+    top 2rem
     display flex
-    width 100%
-    background var(--efu-card-bg)
-    border var(--style-border)
+
+    +maxWidth768()
+      display none
+
+  .banner-button
+    padding 8px 12px
+    background var(--efu-fontcolor)
     border-radius 12px
-    overflow hidden
-    position relative
-    box-shadow var(--efu-shadow-border)
-    flex-direction column
+    color var(--efu-card-bg)
+    display flex
+    align-items center
+    z-index 1
     transition .3s
-    will-change transform
-    animation slide-in .6s .1s backwards
+    cursor pointer
+    box-shadow var(--efu-shadow-black)
 
-    :not(.flink)&:hover
-      box-shadow var(--efu-shadow-main)
+    &.secondary
+      background var(--efu-secondbg)
+      border var(--style-border-always)
+      color var(--efu-lighttext)
+      margin-right 1rem
+      box-shadow var(--efu-shadow-border)
 
-    .banner-button-group
-      position absolute
-      right 2rem
-      top 2rem
+    &:hover
+      background var(--efu-theme)
+      color var(--efu-white)
+
+    i
+      margin-right 8px
+      font-size 1rem
+
+  /.banners-title
+    top 2.6rem
+    left 2rem
+    position absolute
+    display flex
+    flex-direction column
+
+    &-big
+      font-size 36px
+      line-height 1
+      font-weight 700
+      margin-bottom 8px
+
+    &-small
+      font-size 12px
+      line-height 1
+      color var(--efu-secondtext)
+      margin-top 8px
+      margin-bottom 0.5rem
+      margin-left 2px
+
+  /.flink
+    .banners-title
+      top 1.5rem
+
+  .bannerText
+    font-size 4rem
+    line-height 4rem
+    font-weight 700
+
+/.tags-group-all
+  display flex
+
+  #home_top &
+    +maxWidth600()
+      opacity 0.06
+      filter blur(8px)
+
+  &.nowrapMove
+    padding-bottom 2rem
+
+    .tags-group-wrapper
+      margin-top: 7rem
+      animation: rowleft 120s linear infinite
       display flex
 
-    .banner-button
-      padding 8px 12px
-      background var(--efu-fontcolor)
-      border-radius 12px
-      color var(--efu-card-bg)
+      +maxWidth768()
+        margin-top 7.5rem
+
+    .tags-group-icon
+      border-radius 50%
+
+      img
+        min-width 100%
+        min-height 100%
+        border-radius 50%
+        object-fit cover
+
+  .tags-group-icon-pair
+    margin-left 1rem
+    user-select none
+
+    a img
+      border-radius 50%
+
+    /.tags-group-icon
+      width 120px
+      height 120px
+      border-radius 30px
       display flex
       align-items center
-      z-index 1
-      transition .3s
-      cursor pointer
-      box-shadow var(--efu-shadow-black)
-
-      &.secondary
-        background var(--efu-secondbg)
-        border var(--style-border-always)
-        color var(--efu-lighttext)
-        margin-right 1rem
-        box-shadow var(--efu-shadow-border)
-
-      &:hover
-        background var(--efu-theme)
-        color var(--efu-white)
-
-      i
-        margin-right 8px
-        font-size 1rem
-
-    /.banners-title
-      top 2.6rem
-      left 2rem
-      position absolute
-      display flex
-      flex-direction column
-
-      &-big
-        font-size 36px
-        line-height 1
-        font-weight 700
-        margin-bottom 8px
-
-      &-small
-        font-size 12px
-        line-height 1
-        color var(--efu-secondtext)
-        margin-top 8px
-        margin-bottom 0.5rem
-        margin-left 2px
-
-    /.flink
-      .banners-title
-        top 1.5rem
-
-    .bannerText
-      font-size 4rem
-      line-height 4rem
+      justify-content center
+      color #fff
+      font-size 66px
       font-weight 700
+      box-shadow var(--efu-shadow-blackdeep)
 
-  /.tags-group-all
-    display flex
+      #page &
+        +maxWidth768()
+          width 50px
+          height 50px
 
-    &.nowrapMove
-      padding-bottom 2rem
+      &:nth-child(even)
+        margin-top 1rem
+        transform translate(-60px)
 
-      .tags-group-wrapper
-        margin-top: 7rem
-        animation: rowleft 120s linear infinite
-        display flex
-
-      .tags-group-icon
-        border-radius 50%
-
-        img
-          min-width 100%
-          min-height 100%
-          border-radius 50%
-          object-fit cover
-
-    .tags-group-icon-pair
-      margin-left 1rem
-      user-select none
-
-      a img
-        border-radius 50%
-
-      /.tags-group-icon
-        width 120px
-        height 120px
-        border-radius 30px
-        display flex
-        align-items center
-        justify-content center
-        color #fff
-        font-size 66px
-        font-weight 700
-        box-shadow var(--efu-shadow-blackdeep)
-
-        &:nth-child(even)
-          margin-top 1rem
-          transform translate(-60px)
-
-        img
-          width 60%
+      img
+        width 60%
 
 .author-content
   display flex
   flex-wrap wrap
   justify-content space-between
   width 100%
-  margin-top 1rem
+  gap .5rem
 
   +maxWidth768()
     margin-top 0
@@ -141,7 +159,6 @@ div#banners
       animation slide-in .6s 0s backwards
     +maxWidth768()
       width 100% !important
-      margin-top 1rem
       padding 1rem
 
 .author-content.author-content-item.sharePage
@@ -152,7 +169,7 @@ div#banners
   margin-top 0
 
 .author-content-item
-  width 49%
+  width 49.5%
   border-radius 12px
   background var(--efu-card-bg)
   border var(--style-border-always)
@@ -160,11 +177,6 @@ div#banners
   position relative
   overflow hidden
   padding 1rem 2rem
-
-  +maxWidth768()
-    width 100%
-    margin-top 1rem
-    padding 1rem
 
   &.single
     width 100%

@@ -39,7 +39,7 @@ script.
                         'url': e.url + '#' + e.objectId,
                         'date': e.time || e.insertedAt
                     }
-                })
+                }).slice(0, 6)
                 utils.saveToLocal.set('waline-newest-comment', walineArray, !{theme.comment.newest_comment.storage})
                 generateHtml(walineArray)
             }).catch(error => {

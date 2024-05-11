@@ -46,7 +46,7 @@ script.
                         nick: e.nick,
                         url: `${e.url}#${e.id}`,
                         date: new Date(e.created).toString()
-                    }))
+                    })).slice(0, 6)
                     utils.saveToLocal.set('twikoo-newest-comment', twikooArray, !{theme.comment.newest_comment.storage})
                     generateHtml(twikooArray)
                 }).catch((err) => {

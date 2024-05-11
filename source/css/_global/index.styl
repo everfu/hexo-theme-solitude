@@ -86,14 +86,37 @@ main
 
 // scrollbar - chrome/safari
 *::-webkit-scrollbar
-  width 5px
-  height 5px
+  width 12px
+  height 6px
 
 *::-webkit-scrollbar-thumb
   background var(--scrollbar-color)
+  opacity .5
+  border-radius 8px
+  cursor pointer
+  border 2px solid var(--efu-background)
+
+  &:hover
+    background var(--efu-lighttext)
+    display block
 
 *::-webkit-scrollbar-track
   background-color transparent
+
+::-webkit-scrollbar-thumb
+  background var(--efu-card-border)
+  opacity .5
+  border-radius 8px
+  cursor pointer
+  border 2px solid var(--efu-background)
+
+::-webkit-scrollbar-thumb:hover
+  background var(--efu-main)
+  opacity 1
+  display block !important
+
+::-webkit-scrollbar-track
+  background-color var(--efu-none)
 
 if hexo-config('lazyload.enable') && !hexo-config('lazyload.placeholder')
   img
@@ -116,7 +139,7 @@ h1, h2, h3, h4, h5, h6
   padding-left 0
   font-weight 700
   position relative
-  margin 1rem 0 0.7rem
+  margin .5rem 0
   color var(--efu-fontcolor)
 
 hr
@@ -319,25 +342,6 @@ li, ul
   margin 0
   padding 0
 
-::-webkit-scrollbar
-  width 10px
-  height 6px
-
-::-webkit-scrollbar-thumb
-  background var(--efu-card-border)
-  opacity .5
-  border-radius 8px
-  cursor pointer
-  border 2px solid var(--efu-background)
-
-::-webkit-scrollbar-thumb:hover
-  background var(--efu-main)
-  opacity 1
-  display block !important
-
-::-webkit-scrollbar-track
-  background-color var(--efu-none)
-
 [data-theme=dark] img
   filter brightness(1)
 
@@ -383,7 +387,7 @@ i.solitude
     +maxWidth1200()
       width 100%
 
-  > #post,#category,#tag,#archive
+  > #post, #category, #tag, #archive
     box-shadow var(--efu-shadow-border)
     padding 1rem 2rem
     border-radius 12px

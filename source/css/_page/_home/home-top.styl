@@ -2,7 +2,6 @@
   .recent-top-post-group
     border-radius 12px
     overflow hidden
-    overflow-x auto
     width 100%
     margin-bottom 0
     user-select none
@@ -15,14 +14,23 @@
       flex-direction row
       flex-wrap nowrap
       width 100%
-      overflow-x scroll
       gap .5rem
 
       +maxWidth1200()
-        gap 0
+        flex-direction column
 
       &::-webkit-scrollbar
         display none
+
+      .recent-post-group
+        display flex
+        flex-direction row
+        flex-wrap wrap
+        align-content space-between
+        gap .5rem
+
+        +maxWidth1200()
+          flex-wrap nowrap
 
       / #bannerGroup
         display flex
@@ -47,94 +55,17 @@
           .tags-group-icon:nth-child(even)
             margin-left 4rem
 
-        .categoryGroup
-          display flex
-          flex-direction column
-          justify-content space-between
-          min-width 200px
-          +minWidth1201()
-            display none
-          +maxWidth768()
-            min-width 130px
-            margin-left 1rem
-            max-height 164px
-            overflow hidden
-            position relative
-
-          .categoryItem
-            overflow hidden
-            transform scale(1)
-            transition all .8s cubic-bezier(.65, .15, .37, 1.19)
-            height 48%
-            border-radius 12px
-            +maxWidth768()
-              border-radius 0
-              height 47%
-              box-shadow none
-
-            a.categoryButton
-              height 100%
-              width 100%
-              background var(--efu-card-bg)
-              background-size 200%
-              border-radius 12px
-              display inline-block
-              text-align left
-              line-height 4em
-              font-weight 700
-              font-size .9rem
-              color var(--efu-white)
-              transition all .8s cubic-bezier(.39, .575, .565, 1)
-              transform scale(1)
-              overflow hidden
-              +maxWidth768()
-                border-radius 8px
-
-              &:after
-                top 50px
-                width 1rem
-                left 21px
-                height 2px
-                background var(--efu-white)
-                content ""
-                border-radius 1px
-                position absolute
-
-              i
-                font-size 5rem
-                opacity .2
-                position absolute
-                right 0
-                top 20%
-                transition .3s
-                width 100px
-                text-align center
-                filter blur(2px)
-                transform scale(1) rotate(15deg)
-
-                +maxWidth768()
-                  display none
-
-              &:hover
-                i
-                  opacity .8
-                  transition .8s
-                  transition-delay .15s
-                  transform scale(1.03) rotate(0)
-                  font-size 2.5rem
-                  filter blur(0)
-
-              .categoryButtonText
-                padding-left 21px
-
   /.topGroup
-    display: flex
+    display flex
+    gap .5rem
+    +maxWidth1200()
+      overflow-x auto
 
     +minWidth1201()
       display flex
       flex-direction row
       flex-wrap wrap
-      justify-content space-between
+      justify-content flex-start
       height calc(328px + 0.5rem)
       align-content space-between
       width calc(50% - 0.25rem)
@@ -144,7 +75,7 @@
     .recent-post-item
       display flex
       flex-direction column
-      width calc(100% / 3 - 0.25rem)
+      width calc(100% / 3 - 0.5rem)
       align-items flex-start
       background var(--efu-card-bg)
       border-radius 12px
@@ -159,10 +90,6 @@
       +maxWidth1200()
         width 200px
         min-width 200px
-        margin-left .5rem
-
-        &:last-child
-          margin-right 1rem
 
       &:hover .post_cover a .recent-post-top-text
         left 0
@@ -214,7 +141,6 @@
           &:hover
             color var(--efu-fontcolor)
 
-
     .todayCard
       display none
 
@@ -227,7 +153,6 @@
         right 0
         background var(--efu-card-bg)
         border-radius 12px
-        margin-left 0.5rem
         overflow hidden
         transition .3s
         display flex
@@ -315,10 +240,6 @@
 
           .banner-button-group
             bottom: 1rem
-
-    +maxWidth768()
-      margin-right 1rem
-
 .banners-links
   display flex
   position absolute
