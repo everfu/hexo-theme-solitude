@@ -540,6 +540,7 @@ envelope:
   speed: 20 # 播放速度
   hover: true # 鼠标悬停暂停
   loop: true # 循环播放
+  page: /message/ # 留言板页面 / message board page
 
 # -------------------------
 # meeting-api，用于界面中的音乐胶囊和音乐馆页，可自定义api，不会请勿动。

@@ -3,7 +3,7 @@ script(pjax).
         const emojiReg = /<img [^>]+ class="wl-emoji">/g
         if(typeof EasyDanmaku === "undefined") await utils.getScript('!{url_for(theme.cdn.envelope_js)}')
         const envel = new EasyDanmaku({
-            page: '/message/',
+            page: '!{theme.envelope.page}',
             el: '#barrage',
             line: !{line},
             speed: !{speed},
