@@ -6,6 +6,9 @@
 
 @import "error.styl"
 
+if hexo-config('recent_comments.enable')
+  @import "recentcomment.styl"
+
 if hexo-config('says.enable')
   @import "says.styl"
 
