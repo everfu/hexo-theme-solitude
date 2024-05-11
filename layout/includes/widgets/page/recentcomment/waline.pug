@@ -1,6 +1,7 @@
 script(pjax).
     (async () => {
         document.querySelector('#comments-page').textContent = `#{__("loading")}`
+        const emojiReg = /<img [^>]+ class="wl-emoji">/g
         let cache = utils.saveToLocal.get('waline-recent-comments')
         if (cache) {
             setHtml(document.querySelector('#comments-page'), cache)
@@ -62,7 +63,6 @@ script(pjax).
         }
 
         function checkEmoji(content) {
-            emojiReg = /\ud83c[\udf00-\udfff]|\ud83d[\udc00-\ude4f]/g
             return emojiReg.test(content)
         }
 
