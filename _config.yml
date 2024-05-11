@@ -523,7 +523,7 @@ recent_comments:
   enable: false
   # 评论数
   # Number of comments
-  limit: 100
+  limit: 50 # ⚠️waline 仅支持最大50条评论 / ⚠️waline only supports a maximum of 50 comments
   # 缓存时间
   # Cache time
   cache: 0.2 # 1 = 1天 / 1 = 1 day

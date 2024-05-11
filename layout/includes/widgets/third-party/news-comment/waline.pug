@@ -29,7 +29,7 @@ script.
         }
 
         const getComment = async () => {
-            await fetch('!{theme.waline.envId}/api/comment?type=recent&count=8', {method: 'GET'}).then(async res => {
+            await fetch('!{theme.waline.envId}/api/comment?type=recent&count=6', {method: 'GET'}).then(async res => {
                 const result = await res.json()
                 const walineArray = result.data.map(e => {
                     return {
@@ -39,7 +39,7 @@ script.
                         'url': e.url + '#' + e.objectId,
                         'date': e.time || e.insertedAt
                     }
-                }).slice(0, 6)
+                })
                 utils.saveToLocal.set('waline-newest-comment', walineArray, !{theme.comment.newest_comment.storage})
                 generateHtml(walineArray)
             }).catch(error => {

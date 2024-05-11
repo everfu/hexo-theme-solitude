@@ -11,7 +11,7 @@ div#console
                             div.author-content-item-title
                                 | #{_p('console.comment_title')}
                                 if theme.recent_comments.enable && theme.recent_comments.console
-                                    a.recent-comment-more(href=url_for(theme.recent_comments.page))
+                                    a.recent-comment-more(href=url_for(theme.recent_comments.page) title=_p('console.recent_comment_more'))
                                         i.solitude.st-right-btn-fill
                         div.aside-list
 
