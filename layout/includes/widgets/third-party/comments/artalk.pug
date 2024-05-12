@@ -41,7 +41,7 @@ script.
             const artalkWrap = document.getElementById('artalk-wrap')
             if (!(artalkWrap && artalkWrap.children.length)) return
             const isDark = theme === 'dark'
-            artalkItem.setDarkMode(!isDark)
+            artalkItem.setDarkMode(isDark)
         }
         utils.addGlobalFn('themeChange', artalkChangeMode, 'artalk')
         if ('!{use[0]}' === 'Artalk' || !{lazyload}) {

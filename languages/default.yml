@@ -3,6 +3,7 @@ star: Behold, those who found delight in this piece also perused
 random: Random
 upload: 'datetime: '
 totalk: You don't need to delete blank lines, just type in your comments.
+loading: Loading...
 
 theme:
   dark: Dark
@@ -109,10 +110,12 @@ console:
   switch_keyboard: Keyboard operation
   switch_music: Music switch
   archive_unit: Posts
+  recent_comment_more: Recent comments
   newest_comment:
     image: Image
     link: Link
     code: Code
+    emoji: Emoji
 
 sidebar:
   function: Function

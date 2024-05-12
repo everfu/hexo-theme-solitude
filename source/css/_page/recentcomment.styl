@@ -1,0 +1,85 @@
+div#comments-page
+  display flex
+  flex-wrap wrap
+  gap 12px
+  min-height 100px
+  width 100%
+  margin-top .5rem
+
+.comment-card
+  position relative
+  width calc(100% / 3 - 8px)
+  background var(--efu-card-bg)
+  border-radius 12px
+  border var(--style-border-always)
+  padding 14px
+  cursor pointer
+  transition .3s
+  overflow hidden
+  gap 8px
+  display flex
+  flex-direction column
+
+  +maxWidth900()
+    width calc(100% / 2 - 6px)
+
+  +maxWidth768()
+    width 100%
+
+  &:hover
+    border-color var(--style-border-hover-always)
+
+.comment-info
+  display flex
+  align-items center
+  gap 8px
+  border-bottom var(--style-border-always)
+  padding-bottom 8px
+
+  div
+    display flex
+    flex-direction column
+    line-height 1.5
+
+.comment-article, .comment-content
+  transition .3s
+  overflow hidden
+  text-overflow ellipsis
+  display -webkit-box
+  -webkit-box-orient vertical
+  -webkit-line-clamp 2
+  line-height 1.7
+  font-size 14px
+
+.comment-title
+  font-size 12px
+  color var(--efu-secondtext)
+  margin-top auto
+  transition .3s
+  overflow hidden
+  text-overflow ellipsis
+  display -webkit-box
+  -webkit-box-orient vertical
+  -webkit-line-clamp 1
+  line-height 1
+  opacity .6
+  padding-top 8px
+
+  i
+    font-size 12px
+    line-height 12px
+
+#comments-page .comment-info img
+  width 30px
+  height 30px
+  object-fit cover
+  border-radius 30px
+  margin 0
+
+span.comment-user
+  font-weight 700
+
+time.comment-time
+  font-size 12px
+  color var(--efu-secondtext)
+  margin-left auto

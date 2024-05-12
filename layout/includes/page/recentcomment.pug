@@ -1,0 +1,16 @@
+- const { enable, limit, cache } = theme.recent_comments
+- const {use, avatar} = theme.comment
+
+include ../widgets/page/banner
+
+if enable && use
+    #comments-page
+    case use[0]
+        when 'Twikoo'
+            include ../widgets/page/recentcomment/twikoo
+        when 'Valine'
+            include ../widgets/page/recentcomment/valine
+        when 'Waline'
+            include ../widgets/page/recentcomment/waline
+        when 'Artalk'
+            include ../widgets/page/recentcomment/artalk

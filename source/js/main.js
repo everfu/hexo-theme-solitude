@@ -163,7 +163,7 @@ let is_rm = typeof rm !== 'undefined'
 /**
  * sco
  * @description solitude 主题的一些方法
- * @type {{showConsole: (function(): boolean), setTimeState: sco.setTimeState, toTop: (function(): void), changeTimeFormat(*): void, hideCookie: sco.hideCookie, owoBig(*): void, switchDarkMode: sco.switchDarkMode, openAllTags: sco.openAllTags, switchHideAside: sco.switchHideAside, addRuntime: sco.addRuntime, refreshWaterFall: sco.refreshWaterFall, categoriesBarActive: sco.categoriesBarActive, addNavBackgroundInit: sco.addNavBackgroundInit, toPage: sco.toPage, changeSayHelloText: sco.changeSayHelloText, initConsoleState: (function(): void), switchComments(): void, switchKeyboard: sco.switchKeyboard, initAdjust: sco.initAdjust, listenToPageInputPress: sco.listenToPageInputPress, scrollTo: sco.scrollTo, musicToggle: sco.musicToggle, toTalk: sco.toTalk, switchCommentBarrage: sco.switchCommentBarrage, hideTodayCard: (function(): void), scrollCategoryBarToRight: sco.scrollCategoryBarToRight, scrollToComment: sco.scrollToComment, initbbtalk: sco.initbbtalk, tagPageActive: sco.tagPageActive, hideConsole: (function(): void), addPhotoFigcaption: sco.addPhotoFigcaption}}
+ * @type {{showConsole: (function(): boolean), setTimeState: sco.setTimeState, toTop: (function(): void), changeTimeFormat(*): void, hideCookie: sco.hideCookie, owoBig(*): void, switchDarkMode: sco.switchDarkMode, openAllTags: sco.openAllTags, switchHideAside: sco.switchHideAside, addRuntime: sco.addRuntime, refreshWaterFall: sco.refreshWaterFall, categoriesBarActive: sco.categoriesBarActive, addNavBackgroundInit: sco.addNavBackgroundInit, toPage: sco.toPage, changeSayHelloText: sco.changeSayHelloText, initConsoleState: (function(): void), switchComments(): void, switchKeyboard: sco.switchKeyboard, listenToPageInputPress: sco.listenToPageInputPress, scrollTo: sco.scrollTo, musicToggle: sco.musicToggle, toTalk: sco.toTalk, switchCommentBarrage: sco.switchCommentBarrage, hideTodayCard: (function(): void), scrollCategoryBarToRight: sco.scrollCategoryBarToRight, scrollToComment: sco.scrollToComment, initbbtalk: sco.initbbtalk, tagPageActive: sco.tagPageActive, hideConsole: (function(): void), addPhotoFigcaption: sco.addPhotoFigcaption}}
  */
 let sco = {
     /**
@@ -508,26 +508,6 @@ let sco = {
         (scrollTop !== 0) && document.getElementById("page-header").classList.add("nav-fixed", "nav-visible");
     },
     /**
-     * initAdjust
-     * @description 初始化调整
-     */
-    initAdjust: function () {
-        const $blogName = document.getElementById('site-name');
-        const $menusEle = document.querySelector('#menus .menus_items');
-        const $searchEle = document.querySelector('#search-button');
-        const $nav = document.getElementById('nav');
-        const blogNameWidth = $blogName && $blogName.offsetWidth;
-        const menusWidth = $menusEle && $menusEle.offsetWidth;
-        const searchWidth = $searchEle && $searchEle.offsetWidth;
-        const shouldHideMenu = window.innerWidth < 768 || blogNameWidth + menusWidth + searchWidth > $nav?.offsetWidth - 120;
-        if (shouldHideMenu) {
-            $nav?.classList.add('hide-menu');
-        } else {
-            $nav?.classList.remove('hide-menu');
-        }
-        $nav?.classList.add('show');
-    },
-    /**
      * toPage
      * @description 跳转到指定页
      */
@@ -822,7 +802,7 @@ window.refreshFn = () => {
 }
 // 页面加载完成后执行
 document.addEventListener('DOMContentLoaded', () => {
-    [sco.initAdjust, addCopyright, sco.initConsoleState, window.refreshFn, asideStatus, () => window.onscroll = percent].forEach(fn => fn());
+    [addCopyright, sco.initConsoleState, window.refreshFn, asideStatus, () => window.onscroll = percent].forEach(fn => fn());
 });
 // 一些快捷键绑定
 window.onkeydown = e => {

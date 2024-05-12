@@ -515,6 +515,21 @@ says:
   # Talk short text only shows the first n
   strip: 30
 
+# 最近评论
+# recent comments
+# 前置要求：需配置最近评论页面和评论，否则显示为空
+# Pre-requirements: recent comments page needs to be configured and commented, otherwise it will be displayed as empty
+recent_comments:
+  enable: false
+  # 评论数
+  # Number of comments
+  limit: 50 # ⚠️waline 仅支持最大50条评论 / ⚠️waline only supports a maximum of 50 comments
+  # 缓存时间
+  # Cache time
+  cache: 0.2 # 1 = 1天 / 1 = 1 day
+  console: true # 控制台按钮 / console button
+  page: /recentcomments/ # 最近评论页面 / recent comments page
+
 # 留言板
 # message board
 # 前置要求：需配置留言板页面
@@ -525,6 +540,7 @@ envelope:
   speed: 20 # 播放速度
   hover: true # 鼠标悬停暂停
   loop: true # 循环播放
+  page: /message/ # 留言板页面 / message board page
 
 # -------------------------
 # meeting-api，用于界面中的音乐胶囊和音乐馆页，可自定义api，不会请勿动。

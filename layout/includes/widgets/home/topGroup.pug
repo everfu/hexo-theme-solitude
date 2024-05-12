@@ -1,12 +1,13 @@
 - var filteredPosts = site.posts.data.filter(item => item.recommend === true).slice(0,6)
-each post in filteredPosts
-    .recent-post-item
-        .post_cover
-            a(href=url_for(post.path), title=post.title)
-                span.recent-post-top-text= _p('home.recommend')
-                img.post_bg(alt=post.title, src=post.cover)
-        .recent-post-info
-            a.article-title(href=url_for(post.path), title=post.title)= post.title
+.recent-post-group
+    each post in filteredPosts
+        .recent-post-item
+            .post_cover
+                a(href=url_for(post.path), title=post.title)
+                    span.recent-post-top-text= _p('home.recommend')
+                    img.post_bg(alt=post.title, src=post.cover)
+            .recent-post-info
+                a.article-title(href=url_for(post.path), title=post.title)= post.title
 
 mixin todayCardContent
     .todayCard-info
