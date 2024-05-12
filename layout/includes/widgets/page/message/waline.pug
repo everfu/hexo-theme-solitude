@@ -1,0 +1,42 @@
+script(pjax).
+    (async () => {
+        const emojiReg = /<img [^>]+ class="wl-emoji">/g
+        if(typeof EasyDanmaku === "undefined") await utils.getScript('!{url_for(theme.cdn.envelope_js)}')
+        const envel = new EasyDanmaku({
+            page: '!{theme.envelope.page}',
+            el: '#barrage',
+            line: !{line},
+            speed: !{speed},
+            hover: !{hover},
+            loop: !{loop},
+        })
+        const data = utils.saveToLocal.get('enevlope')
+        if(data){
+            envel.batchSend(data,true)
+            return
+        }
+        await fetch('!{theme.waline.envId}/api/comment?type=recent&count=50', {method: 'GET'}).then(async res => res.json())
+            .then(async data => {
+                let ls = []
+                for (const i of data.data) {
+                    ls.push({
+                        content: i.nick + ': ' + formatContent(i.comment),
+                        avatar: i.avatar,
+                        url: i.url
+                    })
+                }
+                envel.batchSend(ls,true)
+                utils.saveToLocal.set('enevlope',ls,.02)
+            }).catch(error => {
+                console.error("An error occurred while fetching comments: ", error)
+            })
+
+        function formatContent(content) {
+            content = content.replace(emojiReg, '[!{__("console.newest_comment.emoji")}]')
+            content = content.replace(/<img.*?>/g, '[!{__("console.newest_comment.image")}]');
+            content = content.replace(/<a.*?>.*?<\/a>/g, '[!{__("console.newest_comment.link")}]');
+            content = content.replace(/<pre.*?>.*?<\/pre>/g, '[!{__("console.newest_comment.code")}]');
+            content = content.replace(/<.*?>/g, '');
+            return content
+        }
+    })()

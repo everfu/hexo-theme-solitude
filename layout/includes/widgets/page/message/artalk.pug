@@ -1,0 +1,45 @@
+- const { server, site, option } = theme.artalk
+
+script(pjax).
+    (async () => {
+        const emojiReg = /<img [^>]+ atk-emoticon="[^"]+">/g
+        if (typeof EasyDanmaku === "undefined") await utils.getScript('!{url_for(theme.cdn.envelope_js)}')
+        const envel = new EasyDanmaku({
+            page: '!{theme.envelope.page}',
+            el: '#barrage',
+            line: !{line},
+            speed: !{speed},
+            hover: !{hover},
+            loop: !{loop},
+        })
+        const data = utils.saveToLocal.get('enevlope')
+        if (data) {
+            envel.batchSend(data, true)
+            return
+        }
+
+        const searchParams = new URLSearchParams({'site_name': "!{site}", 'limit': '100'})
+        await fetch(`!{server}/api/v2/stats/latest_comments?${searchParams}`, {method: 'GET'}).then(async res => res.json())
+            .then(async data => {
+                let ls = []
+                for (const i of data.data) {
+                    ls.push({
+                        content: i.nick + ': ' + formatDanmaku(i.content),
+                        avatar: '!{avatar}' + '/avatar/' + i.email_encrypted,
+                        url: i.page_key + '#atk-comment-' + i.id,
+                    })
+                }
+                envel.batchSend(ls, true)
+                utils.saveToLocal.set('enevlope', ls, .02)
+            }).catch(error => {
+                console.error("An error occurred while fetching comments: ", error)
+            })
+
+        function formatDanmaku(str) {
+            str = str.replace(emojiReg, '[!{__("console.newest_comment.emoji")}]')
+            str = str.replace(/!\[.*?\]\((.*?)\)/g, '[!{__("console.newest_comment.image")}]')
+            str = str.replace(/\[.*?\]\((.*?)\)/g, '[!{__("console.newest_comment.link")}]')
+            str = str.replace(/```.*?```/g, '[!{__("console.newest_comment.code")}]')
+            return str
+        }
+    })()

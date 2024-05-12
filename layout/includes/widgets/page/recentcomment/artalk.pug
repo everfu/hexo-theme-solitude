@@ -1,0 +1,78 @@
+- const { server, site, option } = theme.artalk
+
+script(pjax).
+    (async () => {
+        document.querySelector('#comments-page').textContent = `#{__("loading")}`
+        const emojiReg = /<img [^>]+ atk-emoticon="[^"]+">/g
+        let cache = utils.saveToLocal.get('artalk-recent-comments')
+        if (cache) {
+            setHtml(document.querySelector('#comments-page'), cache)
+            return
+        }
+        let ls = []
+        const searchParams = new URLSearchParams({'site_name': "!{site}", 'limit': '!{limit}'})
+        await fetch(`!{server}/api/v2/stats/latest_comments?${searchParams}`, {method: 'GET'}).then(async res => res.json())
+            .then(async data => {
+                for (const i of data.data) {
+                    if (checkEmoji(i.content)) continue
+                    let title = ''
+                    if (i.page_key) {
+                        await fetch(i.page_key).then(res => res.text()).then(html => {
+                            const parser = new DOMParser()
+                            const doc = parser.parseFromString(html, 'text/html')
+                            title = doc.querySelector('title').innerText
+                        }).catch(() => {
+                            title = i.page_key
+                        })
+                    }
+                    if (title.indexOf('|') > 0) {
+                        title = title.split('|')[0]
+                    }
+                    ls.push({
+                        title: title,
+                        url: i.page_key + '#atk-comment-' + i.id,
+                        nick: i.nick,
+                        avatar: '!{avatar}' + '/avatar/' + i.email_encrypted,
+                        time: i.date,
+                        content: formatContent(i.content)
+                    })
+                }
+                setHtml(document.querySelector('#comments-page'), ls)
+                utils.saveToLocal.set('artalk-recent-comments', ls, !{cache})
+            })
+
+        function setHtml(el, data) {
+            el.innerHTML = data.map(i => `
+                                        <div class="comment-card" title="${i.title}" onclick="pjax.loadUrl('${i.url}')">
+                                            <div class="comment-info">
+                                                <img src="${i.avatar}" class="nolazyload" alt="${i.nick}">
+                                                <div>
+                                                    <span class="comment-user">${i.nick}</span>
+                                                </div>
+                                                <time class="comment-time" datetime="${i.time}"></time>
+                                            </div>
+                                            <div class="comment-content">${i.content}</div>
+                                            <div class="comment-title">
+                                            <i class="solitude st-chat-fill"></i>
+                                            ${i.title}</div>
+                                        </div>
+                                    `).join('')
+            if (typeof sco !== 'undefined') sco.changeTimeFormat(document.querySelectorAll('.comment-time'))
+            else {
+                document.addEventListener('pjax:complete', () => sco.changeTimeFormat(document.querySelectorAll('.comment-time')))
+                document.addEventListener('DOMContentLoaded', () => sco.changeTimeFormat(document.querySelectorAll('.comment-time')))
+            }
+        }
+
+        function checkEmoji(content) {
+            return emojiReg.test(content)
+        }
+
+        function formatContent(content) {
+            content = content.replace(emojiReg, '[!{__("console.newest_comment.emoji")}]')
+            content = content.replace(/!\[.*?\]\((.*?)\)/g, '[!{__("console.newest_comment.image")}]')
+            content = content.replace(/\[.*?\]\((.*?)\)/g, '[!{__("console.newest_comment.link")}]')
+            content = content.replace(/```.*?```/g, '[!{__("console.newest_comment.code")}]')
+            return content
+        }
+    })()

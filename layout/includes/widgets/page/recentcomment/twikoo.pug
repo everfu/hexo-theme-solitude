@@ -1,0 +1,83 @@
+- const {envId} = theme.twikoo
+
+script(pjax).
+    (async () => {
+        document.querySelector('#comments-page').textContent = `#{__("loading")}`
+        const emojiReg = /<img class="tk-owo-emotion" [^>]+>/g
+        let cache = utils.saveToLocal.get('twikoo-recent-comments')
+        if (cache) {
+            setHtml(document.querySelector('#comments-page'), cache)
+            return
+        }
+        let ls = []
+
+        await fetch('!{envId}', {
+            method: "POST",
+            body: JSON.stringify({
+                "event": "GET_RECENT_COMMENTS",
+                "includeReply": true,
+                "pageSize": !{limit}
+            }),
+            headers: {'Content-Type': 'application/json'}
+        }).then(res => res.json()).then(async ({data}) => {
+            for (const i of data) {
+                if (i.avatar === undefined) i.avatar = '!{avatar}/avatar/d615d5793929e8c7d70eab5f00f7f5f1?d=mp'
+                let title = ''
+                if (i.url) {
+                    await fetch(i.url).then(res => res.text()).then(html => {
+                        const parser = new DOMParser()
+                        const doc = parser.parseFromString(html, 'text/html')
+                        title = doc.querySelector('title').innerText
+                    }).catch(() => {
+                        title = i.url
+                    })
+                }
+                if (title.indexOf('|') > 0) {
+                    title = title.split('|')[0]
+                }
+                ls.push({
+                    avatar: i.avatar,
+                    nick: i.nick,
+                    title: title,
+                    content: i.comment,
+                    url: i.url + '#' + i.id,
+                    time: i.created
+                })
+            }
+            setHtml(document.querySelector('#comments-page'), ls)
+            utils.saveToLocal.set('twikoo-recent-comments', ls, !{cache})
+        });
+
+        function setHtml(el, data) {
+            el.innerHTML = data.map(i => `
+                <div class="comment-card" title="${i.title}" onclick="pjax.loadUrl('${i.url}')">
+                    <div class="comment-info">
+                        <img src="${i.avatar}" class="nolazyload" alt="${i.nick}">
+                        <div>
+                            <span class="comment-user">${i.nick}</span>
+                        </div>
+                        <time class="comment-time" datetime="${new Date(i.time)}"></time>
+                    </div>
+                    <div class="comment-content">${formatContent(i.content)}</div>
+                    <div class="comment-title">
+                    <i class="solitude st-chat-fill"></i>
+                    ${i.title}</div>
+                </div>
+            `).join('')
+            if (typeof sco !== 'undefined') sco.changeTimeFormat(document.querySelectorAll('.comment-time'))
+            else {
+                document.addEventListener('pjax:complete', () => sco.changeTimeFormat(document.querySelectorAll('.comment-time')))
+                document.addEventListener('DOMContentLoaded', () => sco.changeTimeFormat(document.querySelectorAll('.comment-time')))
+            }
+        }
+
+        function formatContent(content) {
+            content = content.replace(emojiReg, '!{__("console.newest_comment.emoji")}')
+            content = content.replace(/<\/*br>|[\s\uFEFF\xA0]+/g, '');
+            content = content.replace(/<img.*?>/g, '[!{__("console.newest_comment.image")}]');
+            content = content.replace(/<a.*?>.*?<\/a>/g, '[!{__("console.newest_comment.link")}]');
+            content = content.replace(/<pre.*?>.*?<\/pre>/g, '[!{__("console.newest_comment.code")}]');
+            content = content.replace(/<.*?>/g, '');
+            return content
+        }
+    })()

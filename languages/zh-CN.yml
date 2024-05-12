@@ -3,6 +3,7 @@ star: 喜欢这篇的人也看了
 random: 随便逛逛
 upload: 发布时间：
 totalk: 无需删除空行，直接输入评论即可
+loading: 加载中...
 
 # Language: 简体中文
 theme:
@@ -111,10 +112,12 @@ console:
   switch_keyboard: 键盘快捷键
   switch_music: 音乐开关
   archive_unit: 篇
+  recent_comment_more: 最近评论
   newest_comment:
     image: 图片
     link: 链接
     code: 代码
+    emoji: 表情
 
 sidebar:
   function: 功能

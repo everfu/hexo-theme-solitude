@@ -22,6 +22,8 @@ block content
                     include includes/page/music
                 when 'message'
                     !=partial('includes/page/message', {}, {cache: true})
+                when 'recentcomment'
+                    !=partial('includes/page/recentcomment', {}, {cache: true})
                 when 'banner'
                     include includes/widgets/page/banner
                     if page.container

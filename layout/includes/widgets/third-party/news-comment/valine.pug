@@ -1,5 +1,6 @@
 script.
     window.addEventListener('load', () => {
+        const emojiReg = /:[a-z0-9_\u4e00-\u9fa5]+:/g
         const changeContent = (content) => {
             if (content === '') return content;
 
@@ -38,31 +39,32 @@ script.
                 },
             }
             if (typeof md5 === "undefined") await utils.getScript('!{url_for(theme.cdn.blueimp_md5)}')
-            await fetch('!{theme.valine.serverURLs}/1.1/classes/Comment?limit=8&order=-createdAt', settings).then(async res => {
-                const result = await res.json()
-                window.res = result
-                const valineArray = result.results.map(e => {
-                    return {
-                        'content': changeContent(e.comment),
-                        'avatar': '!{theme.comment.avatar}' + '/avatar/' + md5(e.mail.toLowerCase()),
-                        'nick': e.nick,
-                        'url': e.url + '#' + e.objectId,
-                        'date': e.updatedAt || e.createdAt
+            await fetch('!{theme.valine.serverURLs}/1.1/classes/Comment?limit=8&order=-createdAt', settings).then(res => res.json())
+                .then(async result => {
+                    let ls = []
+                    for (const i of result.results.slice(0, 6)) {
+                        if (emojiReg.test(i.comment)) continue
+                        ls.push({
+                            content: changeContent(i.comment),
+                            avatar: '!{theme.comment.avatar}' + '/avatar/' + md5(i.mail.toLowerCase()),
+                            nick: i.nick,
+                            url: i.url,
+                            date: i.updatedAt || i.createdAt
+                        })
                     }
+                    utils.saveToLocal.set('valine-newest-comment', ls, !{theme.comment.newest_comment.storage})
+                    generateHtml(ls)
+                }).catch(error => {
+                    console.error(error);
+                    $asideList.textContent = "!{_p('newest_comment.error')}"
                 })
-                utils.saveToLocal.set('valine-newest-comment', valineArray, !{theme.comment.newest_comment.storage})
-                generateHtml(valineArray)
-            }).catch(error => {
-                console.error(error);
-                $asideList.textContent = "!{_p('newest_comment.error')}"
-            })
         }
 
         const generateHtml = array => {
             const $dom = document.querySelector('#card-newest-comments .aside-list')
             $dom.innerHTML = array.length ? array.map(item => `
                         <div class='aside-list-item'>
-                          <div onclick='pjax.loadUrl("${item.url}")' class='thumbnail'>
+                          <div onclick='pjax.loadUrl(\"${item.url}\")' class='thumbnail'>
                             <img src='${item.avatar}' alt='${item.nick}'>
                             <div class='name'><span>${item.nick}</span></div>
                           </div>

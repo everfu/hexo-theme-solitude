@@ -1,0 +1,72 @@
+script(pjax).
+    (async () => {
+        document.querySelector('#comments-page').textContent = `#{__("loading")}`
+        const emojiReg = /<img [^>]+ class="wl-emoji">/g
+        let cache = utils.saveToLocal.get('waline-recent-comments')
+        if (cache) {
+            setHtml(document.querySelector('#comments-page'), cache)
+            return
+        }
+        let ls = []
+        await fetch('!{theme.waline.envId}/api/comment?type=recent&count=!{limit}', {method: 'GET'}).then(async res => res.json())
+            .then(async data => {
+                console.log(data)
+                for (const i of data.data) {
+                    let title = ''
+                    if (i.url) {
+                        await fetch(i.url).then(res => res.text()).then(html => {
+                            const parser = new DOMParser()
+                            const doc = parser.parseFromString(html, 'text/html')
+                            title = doc.querySelector('title').innerText
+                        }).catch(() => {
+                            title = i.url
+                        })
+                    }
+                    if (title.indexOf('|') > 0) {
+                        title = title.split('|')[0]
+                    }
+                    ls.push({
+                        title: title,
+                        url: i.url,
+                        nick: i.nick,
+                        avatar: i.avatar,
+                        time: new Date(i.time),
+                        content: formatContent(i.comment)
+                    })
+                }
+                setHtml(document.querySelector('#comments-page'), ls)
+                utils.saveToLocal.set('waline-recent-comments', ls, !{cache})
+            })
+
+        function setHtml(el, data) {
+            el.innerHTML = data.map(i => `
+                                <div class="comment-card" title="${i.title}" onclick="pjax.loadUrl('${i.url}')">
+                                    <div class="comment-info">
+                                        <img src="${i.avatar}" class="nolazyload" alt="${i.nick}">
+                                        <div>
+                                            <span class="comment-user">${i.nick}</span>
+                                        </div>
+                                        <time class="comment-time" datetime="${i.time}"></time>
+                                    </div>
+                                    <div class="comment-content">${i.content}</div>
+                                    <div class="comment-title">
+                                    <i class="solitude st-chat-fill"></i>
+                                    ${i.title}</div>
+                                </div>
+                            `).join('')
+            if (typeof sco !== 'undefined') sco.changeTimeFormat(document.querySelectorAll('.comment-time'))
+            else {
+                document.addEventListener('pjax:complete', () => sco.changeTimeFormat(document.querySelectorAll('.comment-time')))
+                document.addEventListener('DOMContentLoaded', () => sco.changeTimeFormat(document.querySelectorAll('.comment-time')))
+            }
+        }
+
+        function formatContent(content) {
+            content = content.replace(emojiReg, '[!{__("console.newest_comment.emoji")}]')
+            content = content.replace(/<img.*?>/g, '[!{__("console.newest_comment.image")}]');
+            content = content.replace(/<a.*?>.*?<\/a>/g, '[!{__("console.newest_comment.link")}]');
+            content = content.replace(/<pre.*?>.*?<\/pre>/g, '[!{__("console.newest_comment.code")}]');
+            content = content.replace(/<.*?>/g, '');
+            return content
+        }
+    })()
