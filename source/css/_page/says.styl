@@ -13,22 +13,13 @@ if hexo-config('says.home_mini')
     user-select none
     align-items center
     padding .5rem 1rem
+    animation slide-in .6s 0s backwards
+    margin-bottom .5rem
 
     &.more-page
       margin-bottom 0
 
-    if hexo-config('hometop.enable')
-      margin-bottom 1rem
-
-    +maxWidth1300()
-      if hexo-config('hometop.enable')
-        margin-bottom 1rem
-      animation slide-in .6s 0s backwards
-
     +minWidth1300()
-      if hexo-config('hometop.enable')
-        margin-bottom .5rem
-      animation slide-in .6s 0s backwards
       &:hover
         border var(--style-border-hover)
         box-shadow var(--efu-shadow-main)

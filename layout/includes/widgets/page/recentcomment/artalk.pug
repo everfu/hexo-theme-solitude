@@ -14,7 +14,6 @@ script(pjax).
         await fetch(`!{server}/api/v2/stats/latest_comments?${searchParams}`, {method: 'GET'}).then(async res => res.json())
             .then(async data => {
                 for (const i of data.data) {
-                    window.test = i
                     if (checkEmoji(i.content)) continue
                     let title = ''
                     if (i.page_key) {
@@ -22,6 +21,8 @@ script(pjax).
                             const parser = new DOMParser()
                             const doc = parser.parseFromString(html, 'text/html')
                             title = doc.querySelector('title').innerText
+                        }).catch(() => {
+                            title = i.page_key
                         })
                     }
                     if (title.indexOf('|') > 0) {
