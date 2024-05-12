@@ -40,6 +40,10 @@ if theme.says.enable
                                     .bber-info-time
                                         i.solitude.st-calendar-todo-fill
                                         time.datetime(datetime=moment(item.date).format())
+                                    if item.location
+                                        .bber-info-location 
+                                            i.solitude.st-map-pin-fill
+                                            | #{item.location}
                                     if item.link
                                         a.bber-content-link(href=url_for(item.link) target="_blank")
                                             i.solitude.st-link-m-line
