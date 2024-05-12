@@ -26,6 +26,8 @@ script(pjax).
                         const parser = new DOMParser()
                         const doc = parser.parseFromString(html, 'text/html')
                         title = doc.querySelector('title').innerText
+                    }).catch(() => {
+                        title = i.url
                     })
                 }
                 if (title.indexOf('|') > 0) {
