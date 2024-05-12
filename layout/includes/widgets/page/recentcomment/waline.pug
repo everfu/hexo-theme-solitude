@@ -10,6 +10,7 @@ script(pjax).
         let ls = []
         await fetch('!{theme.waline.envId}/api/comment?type=recent&count=!{limit}', {method: 'GET'}).then(async res => res.json())
             .then(async data => {
+                console.log(data)
                 for (const i of data.data) {
                     let title = ''
                     if (i.url) {
@@ -21,9 +22,6 @@ script(pjax).
                     }
                     if (title.indexOf('|') > 0) {
                         title = title.split('|')[0]
-                    }
-                    if (checkEmoji(i.comment)) {
-                        continue
                     }
                     ls.push({
                         title: title,
@@ -61,11 +59,12 @@ script(pjax).
             }
         }
 
-        function checkEmoji(content) {
-            return emojiReg.test(content)
-        }
-
         function formatContent(content) {
-            return content.replace(emojiReg, '')
+            content = content.replace(emojiReg, '[!{__("console.newest_comment.emoji")}]')
+            content = content.replace(/<img.*?>/g, '[!{__("console.newest_comment.image")}]');
+            content = content.replace(/<a.*?>.*?<\/a>/g, '[!{__("console.newest_comment.link")}]');
+            content = content.replace(/<pre.*?>.*?<\/pre>/g, '[!{__("console.newest_comment.code")}]');
+            content = content.replace(/<.*?>/g, '');
+            return content
         }
     })()

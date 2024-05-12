@@ -31,9 +31,6 @@ script(pjax).
                 if (title.indexOf('|') > 0) {
                     title = title.split('|')[0]
                 }
-                if (checkEmoji(i.comment)) {
-                    continue
-                }
                 ls.push({
                     title: title,
                     url: i.url,
@@ -68,10 +65,6 @@ script(pjax).
                 document.addEventListener('pjax:complete', () => sco.changeTimeFormat(document.querySelectorAll('.comment-time')))
                 document.addEventListener('DOMContentLoaded', () => sco.changeTimeFormat(document.querySelectorAll('.comment-time')))
             }
-        }
-
-        function checkEmoji(content){
-            return emojiReg.test(content)
         }
 
         function formatContent(content) {

@@ -38,7 +38,7 @@ script(pjax).
                 data.results.map(item => ({
                     content: item.nick + ': ' + formatDanmaku(item.comment),
                     avatar: '!{avatar}/avatar/'+md5(item.mail),
-                    url: item.url,
+                    url: item.url
                 }))
             if (typeof md5 === "undefined") await utils.getScript('!{url_for(theme.cdn.blueimp_md5)}')
             envel.batchSend(init(),true)

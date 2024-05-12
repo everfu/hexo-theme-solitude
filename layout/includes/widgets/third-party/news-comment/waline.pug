@@ -37,7 +37,7 @@ script.
                         'avatar': e.avatar,
                         'nick': e.nick,
                         'url': e.url + '#' + e.objectId,
-                        'date': e.time || e.insertedAt
+                        'date': new Date(e.time || e.insertedAt)
                     }
                 })
                 utils.saveToLocal.set('waline-newest-comment', walineArray, !{theme.comment.newest_comment.storage})

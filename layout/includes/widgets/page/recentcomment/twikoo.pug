@@ -10,19 +10,17 @@ script(pjax).
             return
         }
         let ls = []
-        await fetch('!{envId}/', {
+
+        await fetch('!{envId}', {
             method: "POST",
             body: JSON.stringify({
                 "event": "GET_RECENT_COMMENTS",
-                "includeReply": false,
+                "includeReply": true,
                 "pageSize": !{limit}
             }),
             headers: {'Content-Type': 'application/json'}
         }).then(res => res.json()).then(async ({data}) => {
             for (const i of data) {
-                if (checkEmoji(i.comment)) {
-                    continue
-                }
                 if (i.avatar === undefined) i.avatar = '!{avatar}/avatar/d615d5793929e8c7d70eab5f00f7f5f1?d=mp'
                 let title = ''
                 if (i.url) {
@@ -72,10 +70,12 @@ script(pjax).
         }
 
         function formatContent(content) {
-            return content.replace(/<[^>]+>/g, '').replace(/&[^;]+;/g, '')
-        }
-
-        function checkEmoji(content) {
-            return emojiReg.test(content)
+            content = content.replace(emojiReg, '!{__("console.newest_comment.emoji")}')
+            content = content.replace(/<\/*br>|[\s\uFEFF\xA0]+/g, '');
+            content = content.replace(/<img.*?>/g, '[!{__("console.newest_comment.image")}]');
+            content = content.replace(/<a.*?>.*?<\/a>/g, '[!{__("console.newest_comment.link")}]');
+            content = content.replace(/<pre.*?>.*?<\/pre>/g, '[!{__("console.newest_comment.code")}]');
+            content = content.replace(/<.*?>/g, '');
+            return content
         }
     })()
