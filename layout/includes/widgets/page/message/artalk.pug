@@ -23,9 +23,6 @@ script(pjax).
             .then(async data => {
                 let ls = []
                 for (const i of data.data) {
-                    if (checkEmoji(i.content)) {
-                        continue
-                    }
                     ls.push({
                         content: i.nick + ': ' + formatDanmaku(i.content),
                         avatar: '!{avatar}' + '/avatar/' + i.email_encrypted,
@@ -37,10 +34,6 @@ script(pjax).
             }).catch(error => {
                 console.error("An error occurred while fetching comments: ", error)
             })
-
-        function checkEmoji(str) {
-            return emojiReg.test(str)
-        }
 
         function formatDanmaku(str) {
             str = str.replace(emojiReg, '[!{__("console.newest_comment.emoji")}]')
