@@ -33,6 +33,17 @@ script.
         "padding: 5px 10px;color:white;background:#0084ff;border-radius:0 5px 5px 0",
     )
 
+if theme.memorial.enable
+    script.
+        let mdate = "!{theme.memorial.date}";
+        mdate = (mdate.split(","));
+        let ndate = new Date();
+        for (let i of mdate) {
+            if (i == (ndate.getMonth()+1) + "-" + (ndate.getDate())) {
+                document.documentElement.classList.add('memorial');
+            }
+        }
+
 if theme.extends.head
     each item in theme.extends.head
         != item

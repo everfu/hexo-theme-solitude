@@ -909,6 +909,18 @@ right_menu:
   #    class:
   #    icon: st-afdian-line
 
+# 哀悼模式，网页黑白
+# Mourning mode, web page black and white
+memorial:
+  enable: false
+  # 日期, (M-D)
+  # Date, (M-D)
+  # eg: 7-8, 9-18, 12-13 ...
+  date:
+    - "7-8" #七八卢沟桥事变
+    - "9-18" #九一八事变/建军节
+    - "12-13" #南京国家公祭日
+
 # CDN
 # Don't modify the following settings unless you know how they work
 # 非必要请不要修改

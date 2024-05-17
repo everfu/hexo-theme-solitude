@@ -423,3 +423,11 @@ span.tags-punctuation::before
   #post-info &
     font-size 14px
     line-height 32px
+
+if hexo-config('memorial.enable')
+  .memorial
+    -webkit-filter grayscale(100%)
+    -moz-filter grayscale(100%)
+    -ms-filter grayscale(100%)
+    -o-filter grayscale(100%)
+    filter grayscale(100%)
