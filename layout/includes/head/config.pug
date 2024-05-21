@@ -23,6 +23,7 @@
     }
 
     const sayhello2 = theme.aside?.card?.sayhello2?.map(item => `"${item}"`) || [];
+    const [hello_prefix, hello_back] = [_p('aside.hello'), _p('aside.back')];
 
     let comment = false
 
@@ -149,6 +150,10 @@ script.
                 goodnight: '!{theme.aside.card.sayhello.goodnight}',
             },
             sayhello2: [!{sayhello2}],
+            sayhello3: {
+                prefix: '!{hello_prefix}',
+                back: '!{hello_back}',
+            },
         },
         covercolor: {
             enable: !{theme.post.covercolor.enable}
