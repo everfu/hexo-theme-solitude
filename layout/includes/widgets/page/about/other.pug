@@ -10,26 +10,53 @@
                 #statistic
                 .post-tips
                     = _p('about.other.tj.post_tip')
-                    a(href="https://v6.51.la/") 51la网站统计
+                    case tj.provider
+                        when '51la'
+                            a(href="https://v6.51.la/") 51la网站统计
+                        when 'baidu'
+                            a(href="https://tongji.baidu.com/") 百度统计
+                if tj.button
+                    .banner-button-group
+                        a.banner-button(href=url_for(tj.button_link))
+                            i.solitude.st-right-btn-fill
+                            span.banner-button-text= tj.button_text
 
-            script.
-                fetch("#{tj.url}")
-                    .then(res => res.text())
-                    .then(data => {
-                        const title = ["最近活跃", "今日人数", "今日访问", "昨日人数", "昨日访问", "本月访问", "总访问量"];
-                        let num = data.match(/(<\/span><span>).*?(\/span><\/p>)/g);
-                        num = num.map(el => {
-                            let val = el.replace(/(<\/span><span>)/g, "");
-                            return val.replace(/(<\/span><\/p>)/g, "");
-                        });
-                        const s = document.getElementById("statistic");
-                        let html = '';
-                        for (let i = 0; i < num.length; i++) {
-                            if (i === 0 || i === num.length - 1) continue;
-                            html += `<div><span>${title[i]}</span><span id="${title[i]}">${num[i]}</span></div>`;
-                        }
-                        s.innerHTML = html;
-                    });
+            case tj.provider
+                when '51la'
+                    script.
+                        fetch("#{tj.url}")
+                            .then(res => res.text())
+                            .then(data => {
+                                const title = ["最近活跃", "今日人数", "今日访问", "昨日人数", "昨日访问", "本月访问", "总访问量"];
+                                let num = data.match(/(<\/span><span>).*?(\/span><\/p>)/g);
+                                num = num.map(el => {
+                                    let val = el.replace(/(<\/span><span>)/g, "");
+                                    return val.replace(/(<\/span><\/p>)/g, "");
+                                });
+                                const s = document.getElementById("statistic");
+                                let html = '';
+                                for (let i = 0; i < num.length; i++) {
+                                    if (i === 0 || i === num.length - 1) continue;
+                                    html += `<div><span>${title[i]}</span><span id="${title[i]}">${num[i]}</span></div>`;
+                                }
+                                s.innerHTML = html;
+                            });
+                when 'baidu'
+                    script.
+                        fetch("#{tj.url}")
+                            .then(res => res.json())
+                            .then(data => {
+                                const title = {"today_uv": "今日人数", "today_pv": "今日访问", "yesterday_uv": "昨日人数", "yesterday_pv": "昨日访问", "last_month_pv": "最近月访问", "last_year_pv": "最近年访问"};
+
+                                let s = document.getElementById("statistic");
+
+                                for (let key in data) {
+                                if (data.hasOwnProperty(key) && title[key]) {
+                                    s.innerHTML += `<div><span>${title[key]}</span><span id="${key}">${data[key]}</span></div>`;
+                                }
+                                }
+                            });
+
 
     if oneself
         style.
