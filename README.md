@@ -38,7 +38,7 @@
 [![gitee](https://img.shields.io/badge/Gitee-red?logo=gitee)](https://gitee.com/nsjjd_w/hexo-theme-solitude)
 [![gitlab](https://img.shields.io/badge/GitLab-blue?logo=gitlab)](https://gitlab.com/efu/hexo-theme-solitude)
 
-[文档 & 预览](https://solitude.js.org/)
+[文档](https://solitude.js.org/)丨[预览](https://www.efu.me/)
 
 </div>
 
@@ -60,7 +60,7 @@
 - [x] 双评论
 - [x] 相册
 - [x] 弹幕留言页
-- [ ] 首页顶部新样式 
+- [x] 首页顶部新样式 
 
 > 如有问题请提 [issue](https://github.com/valor-x/hexo-theme-solitude/issues)
 
