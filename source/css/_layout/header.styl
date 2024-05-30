@@ -10,7 +10,6 @@
     background 0 center
 
     #nav
-      z-index 998
       transition .3s
       background var(--efu-card-bg)
 
@@ -187,7 +186,6 @@
     #nav
       position fixed
       top 0
-      z-index 103
       transition .3s
       box-shadow none
       background var(--efu-card-bg)
@@ -287,7 +285,7 @@
   padding 0
   position absolute
   top 0
-  z-index 90
+  z-index 10
   display flex
   flex-wrap wrap
   -webkit-box-align center
@@ -307,7 +305,6 @@
     top 0
     transition .2s
     position fixed
-    z-index 91
     opacity 1
     filter none
 
@@ -862,8 +859,6 @@ if hexo-config('nav.group')
           height 35px
           line-height 35px
           border-radius 40px
-          if hexo-config('language') == 'en'
-            letter-spacing 0
 
 #travellings_button
   display inline
