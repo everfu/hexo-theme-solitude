@@ -1,5 +1,5 @@
 - const { server, site, option } = theme.artalk
-- const { lazyload, count ,use} = theme.comment
+- const { lazyload ,use} = theme.comment
 
 script.
     (() => {
@@ -10,7 +10,7 @@ script.
                 server: '!{server}',
                 site: "!{site}",
                 pageKey: location.pathname,
-                darkMode: document.documentElement.getAttribute('data-theme') === 'dark',
+                darkMode: document.documentElement.getAttribute('data-theme') === 'dark'
             }, !{JSON.stringify(option)})
             if (GLOBAL_CONFIG.lightbox === 'null') return
             artalkItem.on('list-loaded', () => {
