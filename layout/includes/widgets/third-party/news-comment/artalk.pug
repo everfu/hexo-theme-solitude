@@ -1,23 +1,32 @@
 - const { server, site, option } = theme.artalk
-- const avatarCdn = option !== null && option.gravatar && option.gravatar.mirror
-- const avatarDefault = option !== null && option.gravatar && (option.gravatar.params || option.gravatar.default)
+- const avatarCdn = theme.comment.avatar
 
 script.
     window.addEventListener('load', () => {
         const changeContent = content => {
-            if (content === '') return content
+            if (content === '') return content;
             const replacements = [
-                {regex: /<img.*?src="(.*?)"?[^\>]+>/ig, replacement: '[!{_p("console.newest_comment.image")}]'},
+                {
+                    regex: /<img.*?src="(.*?)"?[^\>]+>/ig,
+                    replacement: '[!{_p("console.newest_comment.image")}]'
+                },
                 {
                     regex: /<a[^>]+?href=["']?([^"']+)["']?[^>]*>([^<]+)<\/a>/gi,
                     replacement: '[!{_p("console.newest_comment.link")}]'
                 },
-                {regex: /<pre><code>.*?<\/pre>/gi, replacement: '[!{_p("console.newest_comment.code")}]'},
-                {regex: /<[^>]+>/g, replacement: ''}
-            ]
-            content = replacements.reduce((str, {regex, replacement}) => str.replace(regex, replacement), content)
-            return content.length > 150 ? content.substring(0, 150) + '...' : content
-        }
+                {
+                    regex: /<pre><code>.*?<\/pre>/gi,
+                    replacement: '[!{_p("console.newest_comment.code")}]'
+                },
+                {
+                    regex: /<[^>]+>/g,
+                    replacement: ''
+                }
+            ];
+            content = replacements.reduce((str, {regex, replacement}) => str.replace(regex, replacement), content);
+            return content.length > 150 ? content.substring(0, 150) + '...' : content;
+        };
+
         const generateHtml = (array, asideList) => {
             asideList.innerHTML = array.length ? array.map(item => `
                 <div class='aside-list-item'>
@@ -30,58 +39,56 @@ script.
                         <time class="datetime" datetime="${item.date}"></time>
                     </div>
                 </div>
-            `).join('') : "!{_p('newest_comment.zero')}"
-            window.lazyLoadInstance?.update()
-            window.pjax?.refresh()
-            sco?.changeTimeFormat(document.querySelectorAll('.aside-list-item time'))
-        }
+            `).join('') : "!{_p('newest_comment.zero')}";
+            window.lazyLoadInstance?.update();
+            window.pjax?.refresh();
+            sco?.changeTimeFormat(document.querySelectorAll('.aside-list-item time'));
+        };
 
         const getSetting = async () => {
             try {
-                const res = await fetch('!{server}/api/v2/conf', {method: 'GET'})
-                return await res.json()
+                const res = await fetch('!{server}/api/v2/conf', {method: 'GET'});
+                return await res.json();
             } catch (e) {
-                console.error(e)
-                return null
+                console.error(e);
+                return null;
             }
-        }
+        };
 
         const getComment = async (asideList) => {
-            const searchParams = new URLSearchParams({'site_name': "!{site}", 'limit': '6'})
+            const searchParams = new URLSearchParams({'site_name': "!{site}", 'limit': '6'});
             await fetch(`!{server}/api/v2/stats/latest_comments?${searchParams}`, {method: 'GET'}).then(async res => {
-                const result = await res.json()
-                const avatarConfig = await getSetting()
-                const {mirror, params, default: defaults} = avatarConfig.frontend_conf.gravatar
-                const avatarCdn = !{avatarCdn} || mirror
-                let avatarDefault = !{avatarDefault} || params || defaults
-                avatarDefault = avatarDefault.startsWith('d=') ? avatarDefault : `d=${avatarDefault}`
+                const result = await res.json();
+                const avatarConfig = await getSetting();
+                const avatarCdn = '!{avatarCdn}' + '/avatar/';
+                const params = avatarConfig?.gravatar?.params || '';
                 const artalk = result.data.map(e => ({
-                    avatar: `${avatarCdn}${e.email_encrypted}?${avatarDefault}`,
+                    avatar: avatarCdn + e.email_encrypted + '?' + params,
                     content: changeContent(e.content_marked),
                     nick: e.nick,
-                    url: e.page_key,
+                    url: e.page_key + `#atk-comment-${e.id}`,
                     date: e.date,
-                })).slice(0, 6)
-                utils.saveToLocal.set('artalk-newest-comments', artalk, !{theme.comment.newest_comment.storage})
-                generateHtml(artalk, asideList)
+                })).slice(0, 6);
+                utils.saveToLocal.set('artalk-newest-comments', artalk, !{theme.comment.newest_comment.storage});
+                generateHtml(artalk, asideList);
             }).catch(error => {
                 console.error(error);
-                asideList.textContent = "!{_p('newest_comment.error')}"
-            })
-        }
+                asideList.textContent = "!{_p('newest_comment.error')}";
+            });
+        };
 
         const newestCommentInit = (asideList) => {
-            const data = utils.saveToLocal.get('artalk-newest-comments')
+            const data = utils.saveToLocal.get('artalk-newest-comments');
             if (data) {
-                generateHtml(data, asideList)
+                generateHtml(data, asideList);
             } else {
-                getComment(asideList)
+                getComment(asideList);
             }
-        }
+        };
 
-        const $asideList = document.querySelector('#card-newest-comments .aside-list')
+        const $asideList = document.querySelector('#card-newest-comments .aside-list');
         if ($asideList) {
-            newestCommentInit($asideList)
-            utils.addGlobalFn('pjaxComplete', () => newestCommentInit($asideList), 'artalk_newestComment')
+            newestCommentInit($asideList);
+            utils.addGlobalFn('pjaxComplete', () => newestCommentInit($asideList), 'artalk_newestComment');
         }
     });

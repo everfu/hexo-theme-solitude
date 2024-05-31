@@ -400,7 +400,6 @@ let sco = {
                 for (let key of keys) {
                     const data = localStorage.getItem(key);
                     if (data) {
-                        console.log(key, data);
                         return JSON.parse(data);
                     }
                 }
