@@ -3,7 +3,6 @@ extends includes/layout.pug
 block content
     main.layout#content-inner
         #post
-            - console.log(page.ai)
             if theme.post_ai.enable && page.ai
                 include includes/widgets/post/post-ai
             article.post-content#article-container!= page.content
