@@ -23,8 +23,8 @@ script.
                     })
                     const $content = comment.getRender().$content
                     GLOBAL_CONFIG.lightbox && utils.lightbox($content.querySelectorAll('img:not([atk-emoticon])'))
-                    sco.owoBig({body: '.atk-grp', item: '.atk-item'})
                 })
+                sco.owoBig({body: '.atk-grp', item: '.atk-item'})
                 !{commentBarrage} && barrageArtalk(array)
             })
             const destroyArtalk = () => artalkItem.destroy()

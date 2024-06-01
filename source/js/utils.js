@@ -59,6 +59,14 @@
             }
             return actualTop;
         },
+        siblings: (ele, selector) => {
+            return [...ele.parentNode.children].filter((child) => {
+                if (selector) {
+                    return child !== ele && child.matches(selector)
+                }
+                return child !== ele
+            })
+        },
         randomNum: (length) => {
             return Math.floor(Math.random() * length)
         },

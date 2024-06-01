@@ -329,7 +329,7 @@ let sco = {
      */
     addRuntime: function () {
         let el = document.getElementById('runtimeshow')
-        el && GLOBAL_CONFIG.runtime && (el.innerText = utils.timeDiff(new Date(GLOBAL_CONFIG.runtime), new Date()) + GLOBAL_CONFIG.lang.time.day)
+        el && GLOBAL_CONFIG.runtime && (el.innerText = utils.timeDiff(new Date(GLOBAL_CONFIG.runtime), new Date()) + GLOBAL_CONFIG.lang.day)
     },
     /**
      * toTalk
@@ -775,17 +775,20 @@ class tabs {
     }
 
     static clickFnOfTabs() {
-        document.querySelectorAll('#article-container .tab > button').forEach(item => {
-            item.addEventListener('click', e => {
-                const $tabItem = e.target.parentNode
+        document.querySelectorAll('#article-container .tab > button').forEach(function (item) {
+            item.addEventListener('click', function (e) {
+                const that = this
+                const $tabItem = that.parentNode
                 if (!$tabItem.classList.contains('active')) {
                     const $tabContent = $tabItem.parentNode.nextElementSibling
-                    const $siblings = $tabItem.parentNode.querySelector('.active')
+                    const $siblings = utils.siblings($tabItem, '.active')[0]
                     $siblings && $siblings.classList.remove('active')
                     $tabItem.classList.add('active')
-                    const tabId = e.target.getAttribute('data-href').replace('#', '')
-                    Array.from($tabContent.children).forEach(item => {
-                        item.id === tabId ? item.classList.add('active') : item.classList.remove('active')
+                    const tabId = that.getAttribute('data-href').replace('#', '')
+                    const childList = [...$tabContent.children]
+                    childList.forEach(item => {
+                        if (item.id === tabId) item.classList.add('active')
+                        else item.classList.remove('active')
                     })
                 }
             })
@@ -793,14 +796,14 @@ class tabs {
     }
 
     static backToTop() {
-        document.querySelectorAll('#article-container .tabs .tab-to-top').forEach(item => {
-            item.addEventListener('click', () => {
-                utils.scrollToDest(utils.getEleTop(item.closest('.tabs')), 300)
+        document.querySelectorAll('#article-container .tabs .tab-to-top').forEach(function (item) {
+            item.addEventListener('click', function () {
+                utils.scrollToDest(utils.getEleTop(item.parentElement.parentElement.parentNode), 300)
+
             })
         })
     }
 }
-
 // 页面刷新
 window.refreshFn = () => {
     const {is_home, is_page, page, is_post} = PAGE_CONFIG;
