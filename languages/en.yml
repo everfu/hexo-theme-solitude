@@ -4,6 +4,7 @@ random: Random
 upload: 'datetime: '
 totalk: You don't need to delete blank lines, just type in your comments.
 loading: Loading...
+day: ' days'
 
 theme:
   dark: Dark
@@ -71,7 +72,7 @@ nav:
 
 award:
   thanks: Thanks
-  tipping: Tipping
+  tipping: Sponsor
   title: List of appreciation
 
 search:
