@@ -3,7 +3,7 @@ div#console
         i.solitude.st-close-fill
     if theme.console_plus
         div.console-card-group
-            if theme.console_plus && theme.comment.newest_comment.enable
+            if theme.console_plus && theme.comment.newest_comment.enable && theme.comment.use[0] !== 'Giscus'
                 div.console-card-group-left
                     div.console-card#card-newest-comments(onclick="sco.hideConsole()")
                         div.card-content
