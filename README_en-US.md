@@ -13,7 +13,7 @@
 ![npm package](https://img.shields.io/npm/v/hexo-theme-solitude?color=blue&logo=npm)
 ![release](https://img.shields.io/github/package-json/v/valor-x/hexo-theme-solitude/master?color=%231ab1ad&label=release)
 ![license](https://img.shields.io/github/license/valor-x/hexo-theme-solitude?color=FF5531)
-[![Stars](https://img.shields.io/github/stars/valor-x/hexo-theme-solitude)](https://github.com/valor-x/hexo-theme-solitude/stargazers)
+[![Stars](https://img.shields.io/github/stars/valor-x/hexo-theme-solitude)](https://github.com/everfu/hexo-theme-solitude/stargazers)
 [![NPM all downloads](https://img.shields.io/npm/dy/hexo-theme-solitude?color=white)](https://www.npmjs.com/package/hexo-theme-solitude)
 
 ![hexo version](https://img.shields.io/badge/hexo-7.0.0+-blue?logo=hexo&logoColor=white)
@@ -46,13 +46,13 @@
 
 ## Features
 
-- Pjax、LazyLoad、PWA
-- Comments(Twikoo、Waline、Valine、Artalk), Can double comment
-- ColorMode
-- Lightbox(medium-zoom、fancybox)
-- Mathematical formulas(Latex)
-- Featured pages: Instant Short Article, My Equipment, Online Tools, Music Gallery, Friend Chain Fish Pond, Photo Album Page, Douban Page, Barrage message page
-- Article features: AI summary, code highlighting
+- Pjax、LazyLoad、PWA.
+- Comments(Twikoo、Waline、Valine、Artalk、Giscus), Can double comment.
+- ColorMode.
+- Lightbox(medium-zoom、fancybox).
+- Mathematical formulas(Latex).
+- Featured pages: Instant Short Article, My Equipment, Online Tools, Music Gallery, Friend Chain Fish Pond, Photo Album Page, Douban Page, Barrage message page.
+- Article features: AI summary, code highlighting.
 
 ## Todo
 
@@ -60,9 +60,9 @@
 - [x] Use double comment
 - [x] Album
 - [x] Barrage message page
-- [ ] New style at the top of the home page
+- [x] New style at the top of the home page
 
-> If you have any questions, please issue an [issue](https://github.com/valor-x/hexo-theme-solitude/issues)
+> If you have any questions, please issue an [issue](https://github.com/everfu/hexo-theme-solitude/issues)
 
 ## Setup
 
@@ -87,4 +87,4 @@ Check out the [Documentation](https://solitude.js.org/) for more information.
 
 ## License
 
-[MIT](./LICENSE) License &copy; 2023-PRESENT [EverFu](https://github.com/efuo)
+[MIT](./LICENSE) License &copy; 2023-PRESENT [Ever Fu](https://github.com/everfu)

@@ -2,7 +2,7 @@
 
 ## Report a vulnerability
 
-To report a vulnerability, please [report privately via security tab](https://github.com/valor-x/hexo-theme-solitude/security/advisories/new) on the correct GitHub repository (see [Document](https://docs.github.com/en/code-security/security-advisories/guidance-on-reporting-and-writing-information-about-vulnerabilities/privately-reporting-a-security-vulnerability#privately-reporting-a-security-vulnerability)). If you are unable to report, please feel free to email us at o@efu.me.
+To report a vulnerability, please [report privately via security tab](https://github.com/everfu/hexo-theme-solitude/security/advisories/new) on the correct GitHub repository (see [Document](https://docs.github.com/en/code-security/security-advisories/guidance-on-reporting-and-writing-information-about-vulnerabilities/privately-reporting-a-security-vulnerability#privately-reporting-a-security-vulnerability)). If you are unable to report, please feel free to email us at o@efu.me.
 
 All security vulnerabilities will be verified and resolved in a timely manner.
 

@@ -1,5 +1,5 @@
 script.
-    window.addEventListener('load', () => {
+    (() => {
         const changeContent = (content) => {
             if (content === '') return content;
 
@@ -15,10 +15,10 @@ script.
 
             content = replacements.reduce((str, {regex, replacement}) => str.replace(regex, replacement), content);
 
-            return content.length > 150 ? content.substring(0, 150) + '...' : content;
+            return content.length > 150 ? content.substring(0, 100) + '...' : content;
         }
 
-        const $asideList = document.querySelector('#card-newest-comments .aside-list')
+        const $asideList = document.querySelector('.card-recent-comment .aside-list')
         const newestCommentInit = () => {
             const data = utils.saveToLocal.get('waline-newest-comment')
             if (data) {
@@ -29,7 +29,7 @@ script.
         }
 
         const getComment = async () => {
-            await fetch('!{theme.waline.envId}/api/comment?type=recent&count=6', {method: 'GET'}).then(async res => {
+            await fetch('!{theme.waline.envId}/api/comment?type=recent&count=!{limit}', {method: 'GET'}).then(async res => {
                 const result = await res.json()
                 const walineArray = result.data.map(e => {
                     return {
@@ -49,7 +49,7 @@ script.
         }
 
         const generateHtml = array => {
-            const $dom = document.querySelector('#card-newest-comments .aside-list')
+            const $dom = document.querySelector('.card-recent-comment .aside-list')
             $dom.innerHTML = array.length ? array.map(item => `
                 <div class='aside-list-item'>
                   <div onclick='pjax.loadUrl("${item.url}")' class='thumbnail'>
@@ -67,5 +67,6 @@ script.
             sco?.changeTimeFormat(document.querySelectorAll('.aside-list-item time'))
         }
 
-        newestCommentInit()
-    })
+        window.addEventListener('DOMContentLoaded', newestCommentInit, false)
+        window.addEventListener('pjax:complete', newestCommentInit, false);
+    })()

@@ -1,5 +1,5 @@
 script.
-    window.addEventListener('load', () => {
+    (() => {
         const emojiReg = /:[a-z0-9_\u4e00-\u9fa5]+:/g
         const changeContent = (content) => {
             if (content === '') return content;
@@ -16,10 +16,10 @@ script.
 
             content = replacements.reduce((str, {regex, replacement}) => str.replace(regex, replacement), content);
 
-            return content.length > 150 ? content.substring(0, 150) + '...' : content;
+            return content.length > 150 ? content.substring(0, 100) + '...' : content;
         }
 
-        const $asideList = document.querySelector('#card-newest-comments .aside-list')
+        const $asideList = document.querySelector('.card-recent-comment .aside-list')
         const newestCommentInit = () => {
             const data = utils.saveToLocal.get('valine-newest-comment')
             if (data) {
@@ -42,7 +42,7 @@ script.
             await fetch('!{theme.valine.serverURLs}/1.1/classes/Comment?limit=8&order=-createdAt', settings).then(res => res.json())
                 .then(async result => {
                     let ls = []
-                    for (const i of result.results.slice(0, 6)) {
+                    for (const i of result.results.slice(0, !{limit})) {
                         if (emojiReg.test(i.comment)) continue
                         ls.push({
                             content: changeContent(i.comment),
@@ -61,7 +61,7 @@ script.
         }
 
         const generateHtml = array => {
-            const $dom = document.querySelector('#card-newest-comments .aside-list')
+            const $dom = document.querySelector('.card-recent-comment .aside-list')
             $dom.innerHTML = array.length ? array.map(item => `
                         <div class='aside-list-item'>
                           <div onclick='pjax.loadUrl(\"${item.url}\")' class='thumbnail'>
@@ -79,5 +79,6 @@ script.
             sco?.changeTimeFormat(document.querySelectorAll('.aside-list-item time'))
         }
 
-        newestCommentInit()
-    })
+        window.addEventListener('DOMContentLoaded', newestCommentInit, false)
+        window.addEventListener('pjax:complete', newestCommentInit, false);
+    })()

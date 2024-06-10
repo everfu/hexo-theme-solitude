@@ -1,8 +1,8 @@
 - const { server, site, option } = theme.artalk
 - const avatarCdn = theme.comment.avatar
 
-script.
-    window.addEventListener('load', () => {
+script(pjax).
+    (() => {
         const changeContent = content => {
             if (content === '') return content;
             const replacements = [
@@ -24,15 +24,14 @@ script.
                 }
             ];
             content = replacements.reduce((str, {regex, replacement}) => str.replace(regex, replacement), content);
-            return content.length > 150 ? content.substring(0, 150) + '...' : content;
+            return content.length > 150 ? content.substring(0, 100) + '...' : content;
         };
 
         const generateHtml = (array, asideList) => {
             asideList.innerHTML = array.length ? array.map(item => `
                 <div class='aside-list-item'>
-                    <div onclick='pjax.loadUrl("${item.url}")' class='thumbnail'>
+                    <div class='thumbnail'>
                         <img src='${item.avatar}' alt='${item.nick}'>
-                        <div class='name'><span>${item.nick}</span></div>
                     </div>
                     <div class='content'>
                         <div class='comment' onclick='pjax.loadUrl("${item.url}")'>${item.content}</div>
@@ -68,7 +67,7 @@ script.
                     nick: e.nick,
                     url: e.page_key + `#atk-comment-${e.id}`,
                     date: e.date,
-                })).slice(0, 6);
+                })).slice(0, !{limit});
                 utils.saveToLocal.set('artalk-newest-comments', artalk, !{theme.comment.newest_comment.storage});
                 generateHtml(artalk, asideList);
             }).catch(error => {
@@ -78,6 +77,7 @@ script.
         };
 
         const newestCommentInit = (asideList) => {
+            if (!asideList) return;
             const data = utils.saveToLocal.get('artalk-newest-comments');
             if (data) {
                 generateHtml(data, asideList);
@@ -86,9 +86,7 @@ script.
             }
         };
 
-        const $asideList = document.querySelector('#card-newest-comments .aside-list');
-        if ($asideList) {
-            newestCommentInit($asideList);
-            utils.addGlobalFn('pjaxComplete', () => newestCommentInit($asideList), 'artalk_newestComment');
-        }
-    });
+        const $asideList = document.querySelector('.card-recent-comment .aside-list');
+        window.addEventListener('DOMContentLoaded', () => newestCommentInit($asideList), false)
+        window.addEventListener('pjax:complete', () => newestCommentInit(document.querySelector('.card-recent-comment .aside-list')), false);
+    })();

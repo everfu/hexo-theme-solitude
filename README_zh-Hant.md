@@ -13,7 +13,7 @@
 ![npm package](https://img.shields.io/npm/v/hexo-theme-solitude?color=blue&logo=npm)
 ![release](https://img.shields.io/github/package-json/v/valor-x/hexo-theme-solitude/master?color=%231ab1ad&label=release)
 ![license](https://img.shields.io/github/license/valor-x/hexo-theme-solitude?color=FF5531)
-[![Stars](https://img.shields.io/github/stars/valor-x/hexo-theme-solitude)](https://github.com/valor-x/hexo-theme-solitude/stargazers)
+[![Stars](https://img.shields.io/github/stars/valor-x/hexo-theme-solitude)](https://github.com/everfu/hexo-theme-solitude/stargazers)
 [![NPM all downloads](https://img.shields.io/npm/dy/hexo-theme-solitude?color=white)](https://www.npmjs.com/package/hexo-theme-solitude)
 
 ![hexo version](https://img.shields.io/badge/hexo-7.0.0+-blue?logo=hexo&logoColor=white)
@@ -46,13 +46,13 @@
 
 ## 特性
 
-- 頁面懶載入（Pjax）、圖片懶載入（LazyLoad）、離線應用（PWA） 
-- 評論(Twikoo、Waline、Valine、Artalk)，支援雙評論
-- 晝夜切換（ColorMode） 
-- 燈箱（medium-zoom、fancybox） 
-- 數學公式（Latex） 
-- 特色頁面：即刻短文、我的裝備、在線工具、音樂館、友鏈魚塘、相冊頁、豆瓣頁、留言彈幕頁
-- 文章功能：AI 摘要、代碼高亮
+- 頁面懶載入（Pjax）、圖片懶載入（LazyLoad）、離線應用（PWA） 。
+- 評論(Twikoo、Waline、Valine、Artalk、Giscus)，支援雙評論。
+- 晝夜切換（ColorMode） 。
+- 燈箱（medium-zoom、fancybox） 。
+- 數學公式（Latex） 。
+- 特色頁面：即刻短文、我的裝備、在線工具、音樂館、友鏈魚塘、相冊頁、豆瓣頁、留言彈幕頁。
+- 文章功能：AI 摘要、代碼高亮。
 
 ## Todo
 
@@ -60,7 +60,7 @@
 - [x] 雙評論
 - [x] 相冊
 - [x] 留言彈幕頁
-- [ ] 首頁頂部新樣式 
+- [x] 首頁頂部新樣式 
 
 ## 應用
 
@@ -85,4 +85,4 @@
 
 ## 版權
 
-[MIT](./LICENSE) License &copy; 2023-至今 [Efu](https://github.com/efuo)
+[MIT](./LICENSE) License &copy; 2023-至今 [Efu](https://github.com/everfu)

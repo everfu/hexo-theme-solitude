@@ -3,17 +3,18 @@ div#console
         i.solitude.st-close-fill
     if theme.console_plus
         div.console-card-group
-            if theme.console_plus && theme.comment.newest_comment.enable
+            if theme.recent_comments.enable && theme.recent_comments.img
                 div.console-card-group-left
                     div.console-card#card-newest-comments(onclick="sco.hideConsole()")
                         div.card-content
                             div.author-content-item-tips= _p('console.comment_tip')
                             div.author-content-item-title
                                 | #{_p('console.comment_title')}
-                                if theme.recent_comments.enable && theme.recent_comments.console
+                                if theme.recent_comments.enable
                                     a.recent-comment-more(href=url_for(theme.recent_comments.page) title=_p('console.recent_comment_more'))
                                         i.solitude.st-right-btn-fill
-                        div.aside-list
+                        a.recent-comment-image(href=url_for(theme.recent_comments.page))
+                            img(src=theme.recent_comments.img)
 
             div.console-card-group-right
                 div.console-card.tags(onclick="sco.hideConsole()")

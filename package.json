@@ -1,6 +1,6 @@
 {
   "name": "hexo-theme-solitude",
-  "version": "1.11.3",
+  "version": "1.12.0",
   "description": "A beautiful, powerful, and efficient Hexo theme developed by EverFu.",
   "main": "package.json",
   "scripts": {
@@ -16,14 +16,14 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/valor-x/hexo-theme-solitude.git"
+    "url": "https://github.com/everfu/hexo-theme-solitude"
   },
   "dependencies": {
     "hexo-renderer-stylus": "^3.0.0",
     "hexo-renderer-pug": "^3.0.0"
   },
   "bugs": {
-    "url": "https://github.com/valor-x/hexo-theme-solitude/issues",
+    "url": "https://github.com/everfu/hexo-theme-solitude/issues",
     "email": "o@efu.me"
   },
   "homepage": "https://www.efu.me/",

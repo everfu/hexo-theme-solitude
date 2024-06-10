@@ -1,5 +1,5 @@
 script.
-    window.addEventListener('load', () => {
+    (() => {
         const changeContent = (content) => {
             if (!content) return '';
             const replacements = [
@@ -12,14 +12,13 @@ script.
                 {regex: /<[^>]+>/g, replacement: ''}
             ]
             content = replacements.reduce((str, {regex, replacement}) => str.replace(regex, replacement), content)
-            return content.length > 150 ? `${content.substring(0, 150)}...` : content
+            return content.length > 150 ? `${content.substring(0, 100)}...` : content
         }
         const generateHtml = (array) => {
             const html = array.map(item => `
                 <div class='aside-list-item'>
-                    <div onclick='pjax.loadUrl("${item.url}")' class='thumbnail'>
+                    <div class='thumbnail'>
                         <img src='${item.avatar}' alt='${item.nick}'>
-                        <div class='name'><span>${item.nick}</span></div>
                     </div>
                     <div class='content'>
                         <div class='comment' onclick='pjax.loadUrl("${item.url}")'>${item.content}</div>
@@ -27,7 +26,7 @@ script.
                     </div>
                 </div>
             `).join('')
-            document.querySelector('#card-newest-comments .aside-list').innerHTML = array.length ? html : "!{_p('newest_comment.zero')}"
+            document.querySelector('.card-recent-comment .aside-list').innerHTML = array.length ? html : "!{_p('newest_comment.zero')}"
             window.lazyLoadInstance?.update()
             window.pjax?.refresh()
             sco?.changeTimeFormat(document.querySelectorAll('.aside-list-item time'))
@@ -37,7 +36,7 @@ script.
                 twikoo.getRecentComments({
                     envId: '!{theme.twikoo.envId}',
                     region: '',
-                    pageSize: 6,
+                    pageSize: !{limit},
                     includeReply: true
                 }).then(res => {
                     const twikooArray = res.map(e => ({
@@ -51,7 +50,7 @@ script.
                     generateHtml(twikooArray)
                 }).catch((err) => {
                     console.error(err);
-                    document.querySelector('#card-newest-comments .aside-list').textContent = "!{_p('newest_comment.error')}"
+                    document.querySelector('.card-recent-comment .aside-list').textContent = "!{_p('newest_comment.error')}"
                 })
             }
             if (typeof twikoo === 'object') {
@@ -64,5 +63,6 @@ script.
             const data = utils.saveToLocal.get('twikoo-newest-comment')
             data ? generateHtml(data) : getComment()
         }
-        newestCommentInit()
-    })
+        window.addEventListener('DOMContentLoaded', newestCommentInit, false)
+        window.addEventListener('pjax:complete', newestCommentInit, false);
+    })()

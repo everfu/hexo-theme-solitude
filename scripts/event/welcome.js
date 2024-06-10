@@ -9,6 +9,6 @@ hexo.on('ready', () => {
       ######  ####  ##### #####    #      ###   ######   ######
                             ${version}
   ===================================================================
-  GitHub: https://github.com/valor-x/hexo-theme-solitude
+  GitHub: https://github.com/everfu/hexo-theme-solitude
   `)
 })

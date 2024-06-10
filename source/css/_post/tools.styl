@@ -236,6 +236,11 @@
             box-shadow var(--efu-shadow-main)
             color var(--efu-white)
 
+            span.tagsPageCount
+              color var(--efu-lighttext)
+              background var(--efu-maskbgdeep)
+              transition all .2s ease-in-out 0s
+
           span.tags-punctuation
             font-size 12px
             margin-right 1px
@@ -244,14 +249,14 @@
 
           .tagsPageCount, /  #tag-page-tags .tagsPageCount
             padding 2px
-            background var(--efu-card-bg)
+            background var(--efu-fontcolor)
             border var(--style-border-always)
             min-width 22.5px
             display inline-block
             border-radius 4px
             text-align center
             font-size .6rem
-            color var(--efu-fontcolor)
+            color var(--efu-card-bg)
             margin-left 4px
     if hexo-config('post.share.enable')
       /.social-share *

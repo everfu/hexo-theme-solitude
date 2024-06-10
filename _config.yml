@@ -1,7 +1,7 @@
 #---------------------------
 # Hexo Theme Solitude
-# Author: Valor Team
-# Github: https://github.com/valor-x/hexo-theme-solitude
+# Author: EverFu
+# Github: https://github.com/everfu/hexo-theme-solitude
 #
 # 配置指南: https://solitude.js.org/
 # 你可以从指南中获得更详细的说明
@@ -9,8 +9,8 @@
 # Guide: https://solitude.js.org/
 # You can get more detailed help from the guide
 #
-# 赞助：https://afdian.net/a/efu0u0
-# sponsor: https://afdian.net/a/efu0u0
+# 赞助：https://afdian.net/a/everfu
+# sponsor: https://github.com/sponsors/everfu
 #---------------------------
 
 # 站点设置
@@ -38,7 +38,7 @@ nav:
   # logo group
   group:
   # 项目: # 分类名称
-  #   Solitude: https://github.com/valor-x/hexo-theme-solitude || /img/pwa/favicon.ico # 子菜单名称(submenu name): 链接地址(address) || 图标(icon)
+  #   Solitude: https://github.com/everfu/hexo-theme-solitude || /img/pwa/favicon.ico # 子菜单名称(submenu name): 链接地址(address) || 图标(icon)
 
   # 中心菜单
   # center menu
@@ -133,7 +133,7 @@ hometop:
     url: https://solitude.js.org/
     # 显示背景图片
     # Display background image
-    img: /img/default.png
+    img: /img/default.avif
     # 阴影颜色
     # Shadow color
     color: "none"
@@ -180,7 +180,7 @@ aside:
     author:
       # 头像
       # Avatar
-      img: /img/avatar.png
+      img: /img/avatar.avif
       # 表情图片链接
       # Emoticon image link
       # tip: 26x26 size
@@ -210,19 +210,19 @@ aside:
     # 个人信息卡片顶部按钮的切换文字
     # Switching text of the button at the top of the personal information card
     sayhello2: # 样式为2时无效
-    #  - 🤖️ 数码科技爱好者
-    #  - 🔍 分享与热心帮助
-    #  - 🏠 智能家居小能手
-    #  - 🔨 设计开发一条龙
-    #  - 🤝 专修交互与设计
-    #  - 🏃 脚踏实地行动派
-    #  - 🧱 团队小组发动机
-    #  - 💢 壮汉人狠话不多
-    #  - 🎮 电竞游戏爱好者
+    # - 🤖️ 数码科技爱好者
+    # - 🔍 分享与热心帮助
+    # - 🏠 智能家居小能手
+    # - 🔨 设计开发一条龙
+    # - 🤝 专修交互与设计
+    # - 🏃 脚踏实地行动派
+    # - 🧱 团队小组发动机
+    # - 💢 壮汉人狠话不多
+    # - 🎮 电竞游戏爱好者
     # 个人信息卡片底部的小图标，按照例子填写
     information: # 样式为1时请不要超过4个
-    #  Github: https://github.com/efuo || st-github-line # 名称：链接 || 图标 / Name: link || icon
-    #  Bilibili: https://space.bilibili.com/1329819902 || st-bilibili-line
+    # Github: https://github.com/efuo || st-github-line # 名称：链接 || 图标 / Name: link || icon
+    # Bilibili: https://space.bilibili.com/1329819902 || st-bilibili-line
 
   # 二维码
   # Official account QR code
@@ -369,13 +369,13 @@ post:
   share:
     enable: false
     list:
-    #  - qq
-    #  - weibo
-    #  - twitter
-    #  - facebook
-    #  - telegram
-    #  - whatsapp
-    #  - linkedin
+    # - qq
+    # - weibo
+    # - twitter
+    # - facebook
+    # - telegram
+    # - whatsapp
+    # - linkedin
   # 版权中订阅按钮跳转链接，填写地址后开启
   # Subscription button jump link in copyright
   rss: # /atom.xml
@@ -443,11 +443,11 @@ footer:
   information:
     author: false # 是否显示 site_icon / enable site_icon in footer
     left: # 左侧显示图标
-    #  Github: https://github.com/efuo || st-github-line # 名称：链接 || 图标 / Name: link || icon
-    #  Mail: mailto:o@efu.me || st-mail-line
+    # Github: https://github.com/efuo || st-github-line # 名称：链接 || 图标 / Name: link || icon
+    # Mail: mailto:o@efu.me || st-mail-line
     right: # 右侧显示图标
-    #  Bilibili: https://space.bilibili.com/1329819902 || st-bilibili-line
-    #  抖音: https://v.douyin.com/iJsLc8jt/ || st-douyin-fill
+    # Bilibili: https://space.bilibili.com/1329819902 || st-bilibili-line
+    # 抖音: https://v.douyin.com/iJsLc8jt/ || st-douyin-fill
 
   # 底部导航栏
   # Bottom navigation bar
@@ -483,7 +483,7 @@ footer:
     # 为了主题能够得到更多的支持，建议保留主题链接
     # In order for the theme to get more support, it is recommended to keep the theme link
     - name: 主题
-      url: https://github.com/valor-x/hexo-theme-solitude
+      url: https://github.com/everfu/hexo-theme-solitude
     # - name: 订阅
     #   url: /atom.xml
 
@@ -491,7 +491,7 @@ footer:
 errorpage:
   # 图片
   # image
-  img: /img/404.webp
+  img: /img/404.avif
   # 文字
   # text
   text: =awa= 页面走丢了
@@ -620,10 +620,10 @@ lazyload:
   field: site # post, site
   # 加载中显示图片
   # Loading display image
-  placeholder: /img/loading.gif
+  placeholder: /img/loading.avif
   # 加载失败显示图片
   # Loading failed display image
-  errorimg: /img/error_load.webp
+  errorimg: /img/error_load.avif
 
 # 加载动画
 # loading animation
@@ -784,7 +784,7 @@ twikoo: # https://twikoo.js.org/
 # waline 配置信息
 # waline settings
 waline: # https://waline.js.org/
-  envId:  # url: https://waline.wzsco.top
+  envId: # url: https://waline.wzsco.top
   pageview: false # 是否开启页面访问量统计 / Whether to enable page access statistics
   option: # waline配置项 / waline configuration item
 
@@ -804,6 +804,18 @@ valine:
 artalk:
   server: # server url / 后端地址
   site: # site name / 站点名
+  option: # options
+
+# giscus 配置信息
+# giscus settings
+# docs: https://giscus.app/
+giscus:
+  repo: # GitHub repository name
+  repo_id: # GitHub repository id
+  category_id: # GitHub repository category id
+  theme: 
+    light: light
+    dark: dark
   option: # options
 
 # 中控台扩展 ： 最新评论 + 标签 + 文章
@@ -832,8 +844,8 @@ css_prefix: false
 font:
   font-size: 16px
   code-font-size: 16px
-  font-family: 'PingFang SC,Hiragino Sans GB,Microsoft YaHei'
-  code-font-family: 'monospace, monospace'
+  font-family: "PingFang SC,Hiragino Sans GB,Microsoft YaHei"
+  code-font-family: "monospace, monospace"
 
 # 插入代码到头部 </head> 之前 和 底部 </body> 之前
 # Insert code before </head> and before </body>

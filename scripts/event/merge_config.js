@@ -29,7 +29,7 @@ hexo.extend.filter.register('before_generate', () => {
                 sup: 'Recommend',
                 title: 'Solitude Docs',
                 url: 'https://solitude.js.org/',
-                img: '/img/default.png',
+                img: '/img/default.avif',
                 color: 'none',
             }
         },
@@ -50,7 +50,7 @@ hexo.extend.filter.register('before_generate', () => {
                 style: 0,
                 author: {
                     img: '/img/logo.png',
-                    sticker: '/img/happy-sticker.png',
+                    sticker: '/img/happy-sticker.avif',
                 },
                 url: '/about/',
                 background: null,
@@ -71,6 +71,11 @@ hexo.extend.filter.register('before_generate', () => {
                 face: '',
                 backface: '',
                 backcolor: 'var(--efu-blue)'
+            },
+            newest_comment: {
+                enable: false,
+                storage: .5,
+                limit: 5
             },
             toc: {
                 post: true,
@@ -108,12 +113,12 @@ hexo.extend.filter.register('before_generate', () => {
             tags: true,
             categories: true,
             default: {
-                cover: ['/img/default.png'],
+                cover: ['/img/default.avif'],
             }
         },
         post: {
             default: {
-                cover: ['/img/default.png'],
+                cover: ['/img/default.avif'],
                 locate: 'China, Changsha',
                 copyright: {
                     enable: true,
@@ -186,7 +191,7 @@ hexo.extend.filter.register('before_generate', () => {
             license: null,
             links: [{
                 name: 'Solitude',
-                url: 'https://github.com/valor-x/hexo-theme-solitude',
+                url: 'https://github.com/everfu/hexo-theme-solitude',
             }]
         },
         errorpage: {
@@ -236,8 +241,8 @@ hexo.extend.filter.register('before_generate', () => {
         lazyload: {
             enable: false,
             field: 'site',
-            placeholder: '/img/loading.gif',
-            errorimg: '/img/error_load.webp'
+            placeholder: '/img/loading.avif',
+            errorimg: '/img/error_load.avif'
         },
         loading: {
             fullpage: false,
@@ -300,10 +305,6 @@ hexo.extend.filter.register('before_generate', () => {
             lazyload: false,
             count: false,
             avatar: 'https://cravatar.cn',
-            newest_comment: {
-                enable: false,
-                storage: .2
-            }
         },
         twikoo: {
             envId: 'your envId',
@@ -347,11 +348,11 @@ hexo.extend.filter.register('before_generate', () => {
             enable: false,
             manifest: '/manifest.json',
             theme_color: "#006a73",
-            mask_icon: '/img/logo.png',
-            apple_touch_icon: '/img/logo.png',
-            bookmark_icon: '/img/logo.png',
-            favicon_32_32: '/img/logo.png',
-            favicon_16_16: '/img/logo.png'
+            mask_icon: '/img/pwa/favicon.ico',
+            apple_touch_icon: '/img/pwa/favicon.ico',
+            bookmark_icon: '/img/pwa/favicon.ico',
+            favicon_32_32: '/img/pwa/favicon_32.ico',
+            favicon_16_16: '/img/pwa/favicon_16.ico'
         },
         google_adsense: {
             enable: false,

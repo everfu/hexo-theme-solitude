@@ -33,7 +33,7 @@ $ git push
 * 定期使用项目仓库内容更新自己仓库内容。
 
 ```bash
-$ git remote add upstream https://github.com/valor-x/Hexo-theme-solitude
+$ git remote add upstream https://github.com/everfu/hexo-theme-solitude
 $ git fetch upstream
 $ git checkout dev
 $ git rebase upstream/dev

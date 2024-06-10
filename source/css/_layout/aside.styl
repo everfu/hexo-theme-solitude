@@ -631,9 +631,9 @@ if hexo-config('aside.card.style') == 2
     gap .5rem
     z-index 1
     if hexo-config('aside.position') == 0
-        right 1rem
-      else
-        left 1rem
+      right 1rem
+    else
+      left 1rem
 
     .headline
       color var(--efu-gray)
@@ -777,7 +777,7 @@ if hexo-config('aside.card.style') == 2
     hr
       display flex
       position relative
-      margin 1rem 0
+      margin .5rem 0
       border 1px dashed var(--efu-theme-op)
 
     .item-headline
@@ -1048,3 +1048,50 @@ backcolor = convert(hexo-config('aside.flip.backcolor'))
 
   .card-widget.card-adsense
     padding 0
+
+if hexo-config('aside.newest_comment.enable')
+  .card-recent-comment
+    .recent-comment-more
+      margin-left auto
+      margin-right .5rem
+      &:hover
+        color var(--efu-lighttext)
+        transition .3s
+    .aside-list-item
+      padding: .5rem
+      width: 100%
+      display: flex
+      flex-direction: row
+      height: 80px
+      transition: .3s
+      position: relative
+      &:not(:last-child)
+        border-bottom 1px dashed rgba(255, 255, 255, .1)
+
+      .thumbnail img
+        width: 60px
+        height: 60px
+        margin-right: 8px
+        border-radius: 12px
+
+      .content
+        max-width: calc(100% - 68px)
+        line-height 1.5
+
+        .comment
+          overflow hidden
+          text-overflow ellipsis
+          display -webkit-box
+          font-size 14px
+          -webkit-line-clamp 2
+          transition .3s
+          -webkit-box-orient vertical
+          cursor pointer
+          &:hover
+            color var(--efu-lighttext)
+            transition .3s
+
+        .datetime
+          font-size 12px
+          color var(--efu-secondtext)
+          margin-top auto

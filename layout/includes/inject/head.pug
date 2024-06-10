@@ -27,7 +27,7 @@ include ../head/pwa.pug
 
 script.
     console.log(
-        "%c Program: Hexo %c Theme: Solitude %c Version: v1.11.3",
+        "%c Program: Hexo %c Theme: Solitude %c Version: v1.12.0",
         "border-radius:5px 0 0 5px;padding: 5px 10px;color:white;background:#ff3842;",
         "padding: 5px 10px;color:white;background:#3e9f50;",
         "padding: 5px 10px;color:white;background:#0084ff;border-radius:0 5px 5px 0",
@@ -39,7 +39,7 @@ if theme.memorial.enable
         mdate = (mdate.split(","));
         let ndate = new Date();
         for (let i of mdate) {
-            if (i == (ndate.getMonth()+1) + "-" + (ndate.getDate())) {
+            if (i === (ndate.getMonth()+1) + "-" + (ndate.getDate())) {
                 document.documentElement.classList.add('memorial');
             }
         }
