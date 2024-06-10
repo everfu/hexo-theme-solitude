@@ -19,7 +19,7 @@ script.
             return content.length > 150 ? content.substring(0, 100) + '...' : content;
         }
 
-        const $asideList = document.querySelector('#card-newest-comments .aside-list')
+        const $asideList = document.querySelector('.card-recent-comment .aside-list')
         const newestCommentInit = () => {
             const data = utils.saveToLocal.get('valine-newest-comment')
             if (data) {
