@@ -13,9 +13,8 @@
 ![npm package](https://img.shields.io/npm/v/hexo-theme-solitude?logo=npm)
 ![release](https://img.shields.io/github/package-json/v/valor-x/hexo-theme-solitude/master?color=%231ab1ad&label=release)
 ![license](https://img.shields.io/github/license/valor-x/hexo-theme-solitude?color=FF5531)
-[![Stars](https://img.shields.io/github/stars/valor-x/hexo-theme-solitude)](https://github.com/valor-x/hexo-theme-solitude/stargazers)
+[![Stars](https://img.shields.io/github/stars/everfu/hexo-theme-solitude)](https://github.com/everfu/hexo-theme-solitude/stargazers)
 [![NPM all downloads](https://img.shields.io/npm/dy/hexo-theme-solitude?color=white)](https://www.npmjs.com/package/hexo-theme-solitude)
-[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fvalor-x%2Fhexo-theme-solitude.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fvalor-x%2Fhexo-theme-solitude?ref=badge_shield)
 
 ![hexo version](https://img.shields.io/badge/hexo-7.0.0+-blue?logo=hexo&logoColor=white)
 ![node version](https://img.shields.io/badge/node-14.0.0-white?logo=node.js&logoColor=white)
@@ -48,7 +47,7 @@
 ## 特性
 
 - 页面懒加载（Pjax）、图片懒加载（LazyLoad）、离线应用（PWA）
-- 评论(Twikoo、Waline、Valine、Artalk)，支持双评论
+- 评论(Twikoo、Waline、Valine、Artalk、Giscus)，支持双评论
 - 昼夜切换(ColorMode)
 - 灯箱(medium-zoom、fancybox)
 - 数学公式(Latex)
@@ -63,7 +62,7 @@
 - [x] 弹幕留言页
 - [x] 首页顶部新样式 
 
-> 如有问题请提 [issue](https://github.com/valor-x/hexo-theme-solitude/issues)
+> 如有问题请提 [issue](https://github.com/everfu/hexo-theme-solitude/issues)
 
 ## 应用
 

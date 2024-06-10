@@ -29,7 +29,7 @@ hexo.extend.filter.register('before_generate', () => {
                 sup: 'Recommend',
                 title: 'Solitude Docs',
                 url: 'https://solitude.js.org/',
-                img: '/img/default.png',
+                img: '/img/default.avif',
                 color: 'none',
             }
         },
@@ -50,7 +50,7 @@ hexo.extend.filter.register('before_generate', () => {
                 style: 0,
                 author: {
                     img: '/img/logo.png',
-                    sticker: '/img/happy-sticker.png',
+                    sticker: '/img/happy-sticker.avif',
                 },
                 url: '/about/',
                 background: null,
@@ -108,12 +108,12 @@ hexo.extend.filter.register('before_generate', () => {
             tags: true,
             categories: true,
             default: {
-                cover: ['/img/default.png'],
+                cover: ['/img/default.avif'],
             }
         },
         post: {
             default: {
-                cover: ['/img/default.png'],
+                cover: ['/img/default.avif'],
                 locate: 'China, Changsha',
                 copyright: {
                     enable: true,
@@ -186,7 +186,7 @@ hexo.extend.filter.register('before_generate', () => {
             license: null,
             links: [{
                 name: 'Solitude',
-                url: 'https://github.com/valor-x/hexo-theme-solitude',
+                url: 'https://github.com/everfu/hexo-theme-solitude',
             }]
         },
         errorpage: {
@@ -236,8 +236,8 @@ hexo.extend.filter.register('before_generate', () => {
         lazyload: {
             enable: false,
             field: 'site',
-            placeholder: '/img/loading.gif',
-            errorimg: '/img/error_load.webp'
+            placeholder: '/img/loading.avif',
+            errorimg: '/img/error_load.avif'
         },
         loading: {
             fullpage: false,
