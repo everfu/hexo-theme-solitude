@@ -72,6 +72,11 @@ hexo.extend.filter.register('before_generate', () => {
                 backface: '',
                 backcolor: 'var(--efu-blue)'
             },
+            newest_comment: {
+                enable: false,
+                storage: .5,
+                limit: 5
+            },
             toc: {
                 post: true,
                 page: false,
@@ -300,10 +305,6 @@ hexo.extend.filter.register('before_generate', () => {
             lazyload: false,
             count: false,
             avatar: 'https://cravatar.cn',
-            newest_comment: {
-                enable: false,
-                storage: .2
-            }
         },
         twikoo: {
             envId: 'your envId',
@@ -347,11 +348,11 @@ hexo.extend.filter.register('before_generate', () => {
             enable: false,
             manifest: '/manifest.json',
             theme_color: "#006a73",
-            mask_icon: '/img/logo.png',
-            apple_touch_icon: '/img/logo.png',
-            bookmark_icon: '/img/logo.png',
-            favicon_32_32: '/img/logo.png',
-            favicon_16_16: '/img/logo.png'
+            mask_icon: '/img/pwa/favicon.ico',
+            apple_touch_icon: '/img/pwa/favicon.ico',
+            bookmark_icon: '/img/pwa/favicon.ico',
+            favicon_32_32: '/img/pwa/favicon_32.ico',
+            favicon_16_16: '/img/pwa/favicon_16.ico'
         },
         google_adsense: {
             enable: false,

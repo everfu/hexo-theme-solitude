@@ -1,10 +1,11 @@
-if theme.comment.use && theme.console_plus && theme.comment.newest_comment.enable
+- var limit = theme.aside.newest_comment.limit ? theme.aside.newest_comment.limit : 5
+if theme.comment.use
     case theme.comment.use[0]
         when 'Twikoo'
-            !=partial('includes/widgets/third-party/news-comment/twikoo', {}, {cache: true})
+            !=partial('includes/widgets/third-party/news-comment/twikoo', {limit}, {cache: true})
         when 'Waline'
-            !=partial('includes/widgets/third-party/news-comment/waline', {}, {cache: true})
+            !=partial('includes/widgets/third-party/news-comment/waline', {limit}, {cache: true})
         when 'Valine'
-            !=partial('includes/widgets/third-party/news-comment/valine', {}, {cache: true})
+            !=partial('includes/widgets/third-party/news-comment/valine', {limit}, {cache: true})
         when 'Artalk'
-            !=partial('includes/widgets/third-party/news-comment/artalk', {}, {cache: true})
+            !=partial('includes/widgets/third-party/news-comment/artalk', {limit}, {cache: true})

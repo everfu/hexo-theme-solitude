@@ -100,6 +100,7 @@ aside:
   back: 歡迎再次回來，
   sticker: 心情贴纸
   newpost: 最近发布
+  newcomment: 最新评论
   card:
     posts: '累計文章數:'
     tags: '標籤總數:'

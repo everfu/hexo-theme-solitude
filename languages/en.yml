@@ -98,6 +98,7 @@ aside:
   back: Welcome back again,
   sticker: Mood sticker
   newpost: New posts
+  newcomment: New comments
   card:
     posts: 'Posts:'
     tags: 'Tags:'

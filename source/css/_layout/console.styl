@@ -116,50 +116,6 @@
     display flex
     align-items center
 
-  .aside-list-item
-    .thumbnail
-      display flex
-      align-items center
-
-    &:hover
-      .thumbnail
-        color var(--efu-white)
-
-    .content
-      display flex
-      flex-direction column
-      height 100%
-      margin-top .5rem
-
-      .comment
-        -webkit-line-clamp 2
-        display -webkit-box
-        overflow hidden
-        -webkit-box-orient vertical
-        line-height 24px
-        font-size 14px
-
-        &::before
-          content ''
-          width 100%
-          height 100%
-          position absolute
-          top 0
-          left 0
-
-      &:hover
-        .comment
-          color var(--efu-white)
-
-      time
-        font-size 12px
-        color var(--efu-secondtext)
-        margin-top auto
-
-      &:hover
-        time
-          color var(--efu-white)
-
   .aside-list
     display flex
     flex-wrap wrap
@@ -183,8 +139,10 @@
         [data-theme="dark"] &
           background var(--efu-orange)
           color var(--efu-white)
+
   .button-group
     gap .5rem
+
     .console-btn-item
       &:hover
         span
@@ -350,36 +308,3 @@
   #consoleHideAside
     +maxWidth768()
       display none
-
-#card-newest-comments
-  .aside-list-item
-    background: var(--efu-card-bg)
-    border-radius: 12px
-    border: var(--style-border)
-    padding: 12px 16px
-    width: 49%
-    display: flex
-    flex-direction: column
-    height: 150px
-    transition: .3s
-    position: relative
-    cursor pointer
-
-    &:hover
-      background: var(--efu-main)
-      color: var(--efu-white)
-
-    &:not(:last-child)
-      margin-bottom: .5rem
-
-    .thumbnail img
-      width: 20px
-      height: 20px
-      margin-right: 8px
-      border-radius: 20px
-
-    .name
-      text-overflow: ellipsis
-      overflow: hidden
-      white-space: nowrap
-      font-weight: 700
