@@ -1,6 +1,7 @@
 each item in theme.verify_site || []
     meta(name=item.name, content=item.content)
 
+link(rel="canonical" href=urlNoIndex())
 link(rel="stylesheet", href=url_for(theme.cdn.solitude_css))
 
 // aplayer

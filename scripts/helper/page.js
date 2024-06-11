@@ -1,5 +1,5 @@
 "use strict";
-const { stripHTML, escapeHTML } = require('hexo-util')
+const { stripHTML, escapeHTML, prettyUrls } = require("hexo-util");
 hexo.extend.helper.register('page_description', function () {
     const { config, page } = this
     let description =  page.description || page.content || page.title || config.description
@@ -11,3 +11,7 @@ hexo.extend.helper.register('page_description', function () {
         return description
     }
 })
+
+hexo.extend.helper.register("urlNoIndex", function (url = null) {
+    return prettyUrls(url || this.url, { trailing_index: false, trailing_html: true });
+});

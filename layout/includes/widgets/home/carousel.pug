@@ -10,7 +10,24 @@ if recommends
                             img(src=item.cover, alt=item.title)
                         .blog-slider__content
                             span.blog-slider__title=item.title
-                            span.blog-slider__desc=item.description
+                            case theme.index_post_list.content
+                                when false
+                                    break
+                                when 1
+                                    span.blog-slider__desc= item.description
+                                when 2
+                                    if item.description
+                                        span.blog-slider__desc= item.description
+                                    else
+                                        - const content = strip_html(item.content)
+                                        - let expert = content.substring(0, theme.index_post_list.length).replace(/\d+/g, '').replace(/&#xF/g, '').replace(/&#x/g, '')
+                                        - content.length > theme.index_post_list.length ? expert += ' ...' : ''
+                                        .span.blog-slider__desc= expert
+                                default
+                                    - const content = strip_html(item.content)
+                                    - let expert = content.substring(0, theme.index_post_list.length).replace(/\d+/g, '').replace(/&#xF/g, '').replace(/&#x/g, '')
+                                    - content.length > theme.index_post_list.length ? expert += ' ...' : ''
+                                    .span.blog-slider__desc= expert
                             div.article-meta-wrap
                                 span.article-meta.tags
                                     each tag in item.tags.data
