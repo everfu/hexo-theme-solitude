@@ -767,7 +767,7 @@ katex:
 # comment
 # getting start: https://solitude.js.org/comments/comment
 comment:
-  use: # waline, twikoo, valine, artalk
+  use: # waline, twikoo, valine, artalk, giscus
   commentBarrage: false # 热评开关 / Hot comment switch
   lazyload: false # 懒加载
   count: false # 评论数展示
@@ -807,6 +807,17 @@ artalk:
   server: # server url / 后端地址
   site: # site name / 站点名
   option: # options
+
+# gitalk 配置信息
+# gitalk settings
+giscus:
+  repo: # GitHub 仓库名称 / GitHub repository name
+  repo_id: # GitHub 仓库ID / GitHub repository ID
+  category_id: # GitHub 仓库分类ID / GitHub repository category ID
+  theme:
+    light: light
+    dark: dark
+  option:
 
 # 中控台扩展 ： 最新评论 + 标签 + 文章
 console_plus: false
