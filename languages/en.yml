@@ -71,7 +71,10 @@ post:
   ai:
     title: Article Summary
     tip: Complaints
-
+  nav:
+    next: Next
+    prev: Previous
+    
 nav:
   site_name_title: Back to home
   backtop: Back to top

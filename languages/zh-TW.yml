@@ -81,6 +81,9 @@ post:
   ai:
     title: 文章摘要
     tip: 投訴
+  nav:
+    next: 下一篇
+    prev: 上一篇
 
 award:
   thanks: 致謝
