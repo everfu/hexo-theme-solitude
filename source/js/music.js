@@ -45,6 +45,7 @@ class ScoMusicPlayer {
         img.onload = () => {
             element.style.backgroundImage = musicCover.style.backgroundImage;
         };
+        element.className = 'show'
     }
 
     setLoadingScreen(loadingElement, backgroundElement) {
