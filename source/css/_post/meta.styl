@@ -35,8 +35,6 @@
       +maxWidth768()
         height 15rem
 
-  /*** 顶部背景 ***/
-
   .post-bg
     .main-hero-waves-area
       width 100%
@@ -109,22 +107,6 @@
         left 0
         box-shadow 110px -130px 300px 60px var(--efu-main) inset
 
-      +minWidth1300()
-        width 70%
-        height 100%
-        position relative
-        overflow hidden
-        margin 0 -20% 0 auto
-        transform rotate(10deg) translateY(-8%) scale(1.8)
-        filter blur(10px)
-        opacity 0
-
-        &.loaded
-          display block
-          opacity .5
-          animation showCover 1s .3s backwards
-          transform rotate(10deg) translateY(-10%) scale(2)
-
       +minWidth768()
         width 70%
         height 100%
@@ -153,10 +135,6 @@
 
       &.loaded
         display block
-
-    /*** 顶部背景 end ***/
-
-    /*** 顶部信息 ***/
 
     #post-info
       top 0
@@ -255,22 +233,14 @@
 
           > span:first-child
             margin-left 0
-            
 
-          .post-meta-date
-            opacity .6
-
-          .post-meta-wordcount
+          .post-meta-date, .post-meta-wordcount, .post-meta-position, .post-meta-pv
             opacity .6
 
           .post-meta-separator
             margin 0 1rem 0 0
 
-          .post-meta-position
-            opacity .6
-
           .post-meta-pv
-            opacity .6
             margin-right 8px
             padding 0 8px
             display flex

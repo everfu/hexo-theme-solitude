@@ -55,10 +55,11 @@
                                 #qrcode
                                 .reward-dec=_p('post.share.qrcode')
                         #share-qrcode
-                        script.
+                        script(pjax).
+                            typeof QRCode === 'function' && new QRCode(document.getElementById("qrcode"), '!{path}');
                             window.addEventListener('DOMContentLoaded', () => {
                                 new QRCode(document.getElementById("qrcode"), '!{path}');
-                            })
+                            });
 
     if copyright.enable || page.copyright
         .post-copyright__notice
