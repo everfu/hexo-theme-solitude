@@ -60,6 +60,7 @@ script.
             }
         }
         const newestCommentInit = () => {
+            if (!document.querySelector('.card-recent-comment')) return
             const data = utils.saveToLocal.get('twikoo-newest-comment')
             data ? generateHtml(data) : getComment()
         }

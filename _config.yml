@@ -374,13 +374,15 @@ post:
   share:
     enable: false
     list:
-    # - qq
-    # - weibo
-    # - twitter
-    # - facebook
-    # - telegram
-    # - whatsapp
-    # - linkedin
+    #  - qq
+    #  - weibo
+    #  - twitter
+    #  - facebook
+    #  - telegram
+    #  - whatsapp
+    #  - linkedin
+    #  - link
+    #  - qrcode
   # 版权中订阅按钮跳转链接，填写地址后开启
   # Subscription button jump link in copyright
   rss: # /atom.xml
