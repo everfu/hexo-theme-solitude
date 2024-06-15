@@ -12,6 +12,7 @@ pre[class*='language-']
 
   .property
   .class-name
+  .title
     color $highlight-title-light
 
   .string
@@ -32,6 +33,12 @@ pre[class*='language-']
   .boolean
     color $highlight-important-light
 
+  .deleted
+    color $highlight-deleted
+
+  .inserted
+    color $highlight-inserted
+
   [data-theme='dark'] &
     .keyword
     .function
@@ -45,6 +52,7 @@ pre[class*='language-']
 
     .property
     .class-name
+    .title
       color $highlight-title-dark
 
     .string
@@ -64,3 +72,9 @@ pre[class*='language-']
 
     .boolean
       color $highlight-important-dark
+
+    .deleted
+      color $highlight-deleted
+
+    .inserted
+      color $highlight-inserted
