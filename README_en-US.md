@@ -54,11 +54,8 @@
 
 ## Todo
 
-- [x] Artalk
-- [x] Use double comment
-- [x] Album
-- [x] Barrage message page
 - [x] New style at the top of the home page
+- [ ] Article sharing button
 
 > If you have any questions, please issue an [issue](https://github.com/everfu/hexo-theme-solitude/issues)
 

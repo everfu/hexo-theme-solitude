@@ -44,21 +44,18 @@
 
 ## 特性
 
-- 頁面懶載入（Pjax）、圖片懶載入（LazyLoad）、離線應用（PWA） 。
-- 評論(Twikoo、Waline、Valine、Artalk、Giscus)，支援雙評論。
-- 晝夜切換（ColorMode） 。
-- 燈箱（medium-zoom、fancybox） 。
-- 數學公式（Latex） 。
+- 頁面懶載入（Pjax）、圖片懶載入（LazyLoad）、離線應用（PWA）
+- 評論(Twikoo、Waline、Valine、Artalk、Giscus)，支援雙評論
+- 晝夜切換（ColorMode）
+- 燈箱（medium-zoom、fancybox）
+- 數學公式（Latex） 
 - 特色頁面：即刻短文、我的裝備、在線工具、音樂館、友鏈魚塘、相冊頁、豆瓣頁、留言彈幕頁。
 - 文章功能：AI 摘要、代碼高亮。
 
 ## Todo
 
-- [x] Artalk 評論
-- [x] 雙評論
-- [x] 相冊
-- [x] 留言彈幕頁
 - [x] 首頁頂部新樣式 
+- [ ] 文章分享按鈕
 
 ## 應用
 

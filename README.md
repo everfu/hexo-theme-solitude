@@ -54,11 +54,8 @@
 
 ## Todo
 
-- [x] Artalk 评论
-- [x] 双评论
-- [x] 相册
-- [x] 弹幕留言页
 - [x] 首页顶部新样式 
+- [ ] 文章分享按钮
 
 > 如有问题请提 [issue](https://github.com/everfu/hexo-theme-solitude/issues)
 
