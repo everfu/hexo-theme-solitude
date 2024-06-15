@@ -1,9 +1,9 @@
-// 移动端侧栏
 const sidebarFn = () => {
     const $toggleMenu = document.getElementById('toggle-menu');
     const $mobileSidebarMenus = document.getElementById('sidebar-menus');
     const $menuMask = document.getElementById('menu-mask');
     const $body = document.body;
+    
     const toggleMobileSidebar = (isOpen) => {
         utils.sidebarPaddingR();
         $body.style.overflow = isOpen ? 'hidden' : '';
@@ -11,27 +11,27 @@ const sidebarFn = () => {
         utils[isOpen ? 'fadeIn' : 'fadeOut']($menuMask, 0.5);
         $mobileSidebarMenus.classList[isOpen ? 'add' : 'remove']('open');
     }
-    $toggleMenu.addEventListener('click', () => toggleMobileSidebar(true));
-    $menuMask.addEventListener('click', () => {
+    const closeMobileSidebar = () => {
         if ($mobileSidebarMenus.classList.contains('open')) {
             toggleMobileSidebar(false);
         }
-    });
+    }
+    $toggleMenu.addEventListener('click', () => toggleMobileSidebar(true));
+    $menuMask.addEventListener('click', closeMobileSidebar);
+    
     window.addEventListener('resize', () => {
         if (utils.isHidden($toggleMenu) && $mobileSidebarMenus.classList.contains('open')) {
-            toggleMobileSidebar(false);
+            closeMobileSidebar();
         }
         sco.refreshWaterFall();
     });
 }
-
-// 滚动事件监听
-const scrollFn = function () {
+const scrollFn = () => {
     const innerHeight = window.innerHeight;
     if (document.body.scrollHeight <= innerHeight) return;
     let initTop = 0;
     const $header = document.getElementById('page-header');
-    const throttledScroll = utils.throttle(function (e) {
+    const throttledScroll = utils.throttle((e) => {
         initThemeColor();
         const currentTop = window.scrollY || document.documentElement.scrollTop;
         const isDown = scrollDirection(currentTop);
@@ -46,7 +46,7 @@ const scrollFn = function () {
             $header.classList.remove('nav-fixed', 'nav-visible');
         }
     }, 200);
-    window.addEventListener('scroll', function (e) {
+    window.addEventListener('scroll', (e) => {
         throttledScroll(e);
         if (window.scrollY === 0) {
             $header.classList.remove('nav-fixed', 'nav-visible');
@@ -59,8 +59,6 @@ const scrollFn = function () {
         return result;
     }
 }
-
-// 进度球
 const percent = () => {
     const docEl = document.documentElement;
     const body = document.body;
@@ -74,15 +72,11 @@ const percent = () => {
     percentDisplay.textContent = isNearEnd || scrolledPercent > 90 ? GLOBAL_CONFIG.lang.backtop : scrolledPercent;
     document.querySelectorAll(".needEndHide").forEach(item => item.classList.toggle("hide", totalScrollableHeight - scrollPos < 100));
 }
-
-// 展示今日卡片
 const showTodayCard = () => {
     const el = document.getElementById('todayCard');
     const topGroup = document.querySelector('.topGroup');
     topGroup?.addEventListener('mouseleave', () => el?.classList.remove('hide'));
 }
-
-// 初始化 IntersectionObserver
 const initObserver = () => {
     const commentElement = document.getElementById("post-comment");
     const paginationElement = document.getElementById("pagination");
@@ -100,8 +94,6 @@ const initObserver = () => {
         observer.observe(commentElement);
     }
 };
-
-// 复制版权信息
 const addCopyright = () => {
     if (!GLOBAL_CONFIG.copyright) return;
     const {limit, author, link, source, info} = GLOBAL_CONFIG.copyright;
@@ -112,25 +104,15 @@ const addCopyright = () => {
         e.clipboardData.setData('text', text);
     });
 };
-
-// 侧边栏状态
 const asideStatus = () => {
     const status = utils.saveToLocal.get('aside-status');
     document.documentElement.classList.toggle('hide-aside', status === 'hide');
 }
-
-// 初始化主题色
 function initThemeColor() {
     const currentTop = window.scrollY || document.documentElement.scrollTop;
     const themeColor = currentTop > 0 ? '--efu-card-bg' : PAGE_CONFIG.is_post ? '--efu-main' : '--efu-background';
     applyThemeColor(getComputedStyle(document.documentElement).getPropertyValue(themeColor));
 }
-
-/**
- * applyThemeColor
- * @description 应用主题色
- * @param color
- */
 function applyThemeColor(color) {
     const themeColorMeta = document.querySelector('meta[name="theme-color"]');
     const appleMobileWebAppMeta = document.querySelector('meta[name="apple-mobile-web-app-status-bar-style"]');
@@ -140,39 +122,17 @@ function applyThemeColor(color) {
         document.body.style.backgroundColor = color;
     }
 }
-
-/**
- * handleThemeChange
- * @description 切换主题色
- * @param mode
- */
 const handleThemeChange = mode => {
     const themeChange = window.globalFn?.themeChange || {}
     for (let key in themeChange) {
         themeChange[key](mode)
     }
 }
-
-// lastSayHello 上次打招呼的内容
-let lastSayHello = "";
-// 用于记录标签页是否被隐藏，从而改变下次执行打招呼的内容
-let wasPageHidden = false;
-// musicPlaying 是否正在播放音乐
-let musicPlaying = false
-// is_rm 是否启用右键菜单
-let is_rm = typeof rm !== 'undefined'
-
-/**
- * sco
- * @description solitude 主题的一些方法
- * @type {{showConsole: (function(): boolean), setTimeState: sco.setTimeState, toTop: (function(): void), changeTimeFormat(*): void, hideCookie: sco.hideCookie, owoBig(*): void, switchDarkMode: sco.switchDarkMode, openAllTags: sco.openAllTags, switchHideAside: sco.switchHideAside, addRuntime: sco.addRuntime, refreshWaterFall: sco.refreshWaterFall, categoriesBarActive: sco.categoriesBarActive, addNavBackgroundInit: sco.addNavBackgroundInit, toPage: sco.toPage, changeSayHelloText: sco.changeSayHelloText, initConsoleState: (function(): void), switchComments(): void, switchKeyboard: sco.switchKeyboard, listenToPageInputPress: sco.listenToPageInputPress, scrollTo: sco.scrollTo, musicToggle: sco.musicToggle, toTalk: sco.toTalk, switchCommentBarrage: sco.switchCommentBarrage, hideTodayCard: (function(): void), scrollCategoryBarToRight: sco.scrollCategoryBarToRight, scrollToComment: sco.scrollToComment, initbbtalk: sco.initbbtalk, tagPageActive: sco.tagPageActive, hideConsole: (function(): void), addPhotoFigcaption: sco.addPhotoFigcaption}}
- */
-let sco = {
-    /**
-     * hideCookie
-     * @description 隐藏 cookie 通知
-     */
-    hideCookie: function () {
+const sco = {
+    lastSayHello: "",
+    wasPageHidden: false,
+    musicPlaying: false,
+    hideCookie() {
         const cookiesWindow = document.getElementById("cookies-window");
         if (cookiesWindow) {
             setTimeout(() => {
@@ -181,12 +141,7 @@ let sco = {
             }, 3000);
         }
     },
-    /**
-     * scrollTo
-     * @description 滚动到指定元素
-     * @param elementId
-     */
-    scrollTo: function (elementId) {
+    scrollTo(elementId) {
         const targetElement = document.getElementById(elementId);
         if (targetElement) {
             const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - 80;
@@ -196,20 +151,16 @@ let sco = {
             });
         }
     },
-    /**
-     * musicToggle
-     * @description 音乐播放开关
-     */
-    musicToggle: function () {
+    musicToggle() {
         const $music = document.querySelector('#nav-music');
         const $meting = document.querySelector('meting-js');
         const $console = document.getElementById('consoleMusic');
         const $rm_text = document.querySelector('#menu-music-toggle span');
         const $rm_icon = document.querySelector('#menu-music-toggle i');
-        musicPlaying = !musicPlaying;
-        $music.classList.toggle("playing", musicPlaying);
-        $console.classList.toggle("on", musicPlaying);
-        if (musicPlaying) {
+        this.musicPlaying = !this.musicPlaying;
+        $music.classList.toggle("playing", this.musicPlaying);
+        $console.classList.toggle("on", this.musicPlaying);
+        if (this.musicPlaying) {
             $meting.aplayer.play();
             rm?.menuItems.music[0] && ($rm_text.textContent = GLOBAL_CONFIG.right_menu.music.stop) && ($rm_icon.className = 'solitude st-pause-fill')
         } else {
@@ -217,11 +168,7 @@ let sco = {
             rm?.menuItems.music[0] && ($rm_text.textContent = GLOBAL_CONFIG.right_menu.music.start) && ($rm_icon.className = 'solitude st-play-fill')
         }
     },
-    /**
-     * switchCommentBarrage
-     * @description 切换评论弹幕
-     */
-    switchCommentBarrage: function () {
+    switchCommentBarrage() {
         let commentBarrageElement = document.querySelector(".comment-barrage");
         if (!commentBarrageElement) return;
         const isDisplayed = window.getComputedStyle(commentBarrageElement).display === "flex";
@@ -230,11 +177,7 @@ let sco = {
         utils.saveToLocal.set("commentBarrageSwitch", !isDisplayed, .2);
         rm?.menuItems.barrage && rm.barrage(isDisplayed)
     },
-    /**
-     * switchHideAside
-     * @description 切换侧边栏
-     */
-    switchHideAside: function () {
+    switchHideAside() {
         const htmlClassList = document.documentElement.classList;
         const consoleHideAside = document.querySelector("#consoleHideAside");
         const isHideAside = htmlClassList.contains("hide-aside");
@@ -242,76 +185,43 @@ let sco = {
         htmlClassList.toggle("hide-aside");
         consoleHideAside.classList.toggle("on", !isHideAside);
     },
-    /**
-     * switchKeyboard
-     * @description 切换快捷键
-     */
-    switchKeyboard: function () {
-        sco_keyboards = !sco_keyboards;
+    switchKeyboard() {
+        this.sco_keyboards = !this.sco_keyboards;
         const consoleKeyboard = document.querySelector("#consoleKeyboard");
-        const keyboardFunction = sco_keyboards ? openKeyboard : closeKeyboard;
-        consoleKeyboard.classList.toggle("on", sco_keyboards);
+        const keyboardFunction = this.sco_keyboards ? openKeyboard : closeKeyboard;
+        consoleKeyboard.classList.toggle("on", this.sco_keyboards);
         keyboardFunction();
-        localStorage.setItem("keyboard", sco_keyboards);
+        localStorage.setItem("keyboard", this.sco_keyboards);
         document.getElementById('keyboard-tips')?.classList.remove('show');
     },
-    /**
-     * initConsoleState
-     * @description 初始化控制台状态
-     */
-    initConsoleState: () => document.documentElement.classList.contains("hide-aside") ? document.querySelector("#consoleHideAside").classList.add("on") : document.querySelector("#consoleHideAside").classList.remove("on"),
-    /**
-     * changeSayHelloText
-     * @description 更改打招呼文本
-     */
-    changeSayHelloText: function () {
+    initConsoleState() {
+        const consoleHideAside = document.querySelector("#consoleHideAside");
+        consoleHideAside.classList.toggle("on", !document.documentElement.classList.contains("hide-aside"));
+    },
+    changeSayHelloText() {
         const greetings = GLOBAL_CONFIG.aside.sayhello2;
         const greetingElement = document.getElementById("author-info__sayhi");
         let randomGreeting;
         do {
             randomGreeting = greetings[Math.floor(Math.random() * greetings.length)];
-        } while (randomGreeting === lastSayHello);
+        } while (randomGreeting === this.lastSayHello);
         greetingElement.textContent = randomGreeting;
-        lastSayHello = randomGreeting;
+        this.lastSayHello = randomGreeting;
     },
-    /**
-     * switchDarkMode
-     * @description 切换显示模式
-     */
-    switchDarkMode: function () {
+    switchDarkMode() {
         const isDarkMode = document.documentElement.getAttribute('data-theme') === 'dark';
         const newMode = isDarkMode ? 'light' : 'dark';
         document.documentElement.setAttribute('data-theme', newMode);
         utils.saveToLocal.set('theme', newMode, 0.02);
         utils.snackbarShow(GLOBAL_CONFIG.lang.theme[newMode], false, 2000);
-        if (is_rm) rm.mode(!isDarkMode);
+        if(typeof rm === 'object') rm.mode(!isDarkMode) && rm.hideRightMenu();
         handleThemeChange(newMode);
     },
-    /**
-     * hideTodayCard
-     * @description 隐藏今日卡片
-     */
     hideTodayCard: () => document.getElementById('todayCard').classList.add('hide'),
-    /**
-     * toTop
-     * @description 返回顶部
-     */
     toTop: () => utils.scrollToDest(0),
-    /**
-     * showConsole
-     * @description 显示控制台
-     */
     showConsole: () => document.getElementById('console')?.classList.toggle('show', true),
-    /**
-     * hideConsole
-     * @description 隐藏控制台
-     */
     hideConsole: () => document.getElementById('console')?.classList.remove('show'),
-    /**
-     * refreshWaterFall
-     * @description 刷新瀑布流
-     */
-    refreshWaterFall: function () {
+    refreshWaterFall() {
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -323,25 +233,16 @@ let sco = {
         });
         document.querySelectorAll('.waterfall').forEach(el => observer.observe(el));
     },
-    /**
-     * addRuntime
-     * @description 添加运行时间
-     */
-    addRuntime: function () {
-        let el = document.getElementById('runtimeshow')
-        el && GLOBAL_CONFIG.runtime && (el.innerText = utils.timeDiff(new Date(GLOBAL_CONFIG.runtime), new Date()) + GLOBAL_CONFIG.lang.day)
+    addRuntime() {
+        let el = document.getElementById('runtimeshow');
+        el && GLOBAL_CONFIG.runtime && (el.innerText = utils.timeDiff(new Date(GLOBAL_CONFIG.runtime), new Date()) + GLOBAL_CONFIG.lang.day);
     },
-    /**
-     * toTalk
-     * @description 回复评论
-     * @param txt
-     */
-    toTalk: function (txt) {
+    toTalk(txt) {
         const inputs = ["#wl-edit", ".el-textarea__inner", "#veditor", ".atk-textarea"];
         inputs.forEach(selector => {
             const el = document.querySelector(selector);
             if (el) {
-                el.dispatchEvent(new Event('input', {bubble: true, cancelable: true}));
+                el.dispatchEvent(new Event('input', { bubble: true, cancelable: true }));
                 el.value = '> ' + txt.replace(/\n/g, '\n> ') + '\n\n';
                 utils.scrollToDest(utils.getEleTop(document.getElementById('post-comment')), 300);
                 el.focus();
@@ -350,11 +251,7 @@ let sco = {
         });
         utils.snackbarShow(GLOBAL_CONFIG.lang.totalk, false, 2000);
     },
-    /**
-     * initbbtalk
-     * @description 初始化 bbtalk
-     */
-    initbbtalk: function () {
+    initbbtalk() {
         const bberTalkElement = document.querySelector('#bber-talk');
         if (bberTalkElement) {
             new Swiper('.swiper-container', {
@@ -367,28 +264,14 @@ let sco = {
             });
         }
     },
-    /**
-     * addPhotoFigcaption
-     * @description 添加图片标题
-     */
-    addPhotoFigcaption: function () {
+    addPhotoFigcaption() {
         document.querySelectorAll('#article-container img:not(.gallery-item img)').forEach(image => {
             const captionText = image.getAttribute('alt');
             captionText && image.insertAdjacentHTML('afterend', `<div class="img-alt is-center">${captionText}</div>`);
         });
     },
-    /**
-     * scrollToComment
-     * @description 滚动到评论
-     */
-    scrollToComment: function () {
-        utils.scrollToDest(utils.getEleTop(document.getElementById('post-comment')), 300)
-    },
-    /**
-     * setTimeState
-     * @description 设置时间状态
-     */
-    setTimeState: function () {
+    scrollToComment: () => utils.scrollToDest(utils.getEleTop(document.getElementById('post-comment')), 300),
+    setTimeState() {
         const el = document.getElementById('author-info__sayhi');
         if (el) {
             const hours = new Date().getHours();
@@ -408,29 +291,25 @@ let sco = {
             const nick = localData ? (localData.nick ? localData.nick : localData.display_name) : null;
 
             let prefix;
-            if (wasPageHidden) {
+            if (this.wasPageHidden) {
                 prefix = GLOBAL_CONFIG.aside.sayhello3.back + nick;
-                wasPageHidden = false;
+                this.wasPageHidden = false;
             } else {
                 prefix = GLOBAL_CONFIG.aside.sayhello3.prefix + nick;
             }
 
             const greetings = [
-                {start: 0, end: 5, text: nick ? prefix : lang.goodnight},
-                {start: 6, end: 10, text: nick ? prefix : lang.morning},
-                {start: 11, end: 14, text: nick ? prefix : lang.noon},
-                {start: 15, end: 18, text: nick ? prefix : lang.afternoon},
-                {start: 19, end: 24, text: nick ? prefix : lang.night},
+                { start: 0, end: 5, text: nick ? prefix : lang.goodnight },
+                { start: 6, end: 10, text: nick ? prefix : lang.morning },
+                { start: 11, end: 14, text: nick ? prefix : lang.noon },
+                { start: 15, end: 18, text: nick ? prefix : lang.afternoon },
+                { start: 19, end: 24, text: nick ? prefix : lang.night },
             ];
             const greeting = greetings.find(g => hours >= g.start && hours <= g.end);
             el.innerText = greeting.text;
         }
     },
-    /**
-     * tagPageActive
-     * @description 标签页当前标签高亮
-     */
-    tagPageActive: function () {
+    tagPageActive() {
         const decodedPath = decodeURIComponent(window.location.pathname);
         const isTagPage = /\/tags\/.*?\//.test(decodedPath);
         if (isTagPage) {
@@ -444,11 +323,7 @@ let sco = {
             }
         }
     },
-    /**
-     * categoriesBarActive
-     * @description 分类栏当前分类高亮
-     */
-    categoriesBarActive: function () {
+    categoriesBarActive() {
         const categoryBar = document.querySelector("#category-bar");
         const currentPath = decodeURIComponent(window.location.pathname);
         const isHomePage = currentPath === "/";
@@ -462,20 +337,16 @@ let sco = {
             }
         }
     },
-    /**
-     * scrollCategoryBarToRight
-     * @description 滚动分类栏到右侧
-     */
-    scrollCategoryBarToRight: function () {
+    scrollCategoryBarToRight() {
         const scrollBar = document.getElementById("category-bar-items");
         const nextElement = document.getElementById("category-bar-next");
         if (scrollBar) {
             const isScrollBarAtEnd = () => scrollBar.scrollLeft + scrollBar.clientWidth >= scrollBar.scrollWidth - 8;
             const scroll = () => {
                 if (isScrollBarAtEnd()) {
-                    scrollBar.scroll({left: 0, behavior: "smooth"});
+                    scrollBar.scroll({ left: 0, behavior: "smooth" });
                 } else {
-                    scrollBar.scrollBy({left: scrollBar.clientWidth, behavior: "smooth"});
+                    scrollBar.scrollBy({ left: scrollBar.clientWidth, behavior: "smooth" });
                 }
             };
             scrollBar.addEventListener("scroll", () => {
@@ -487,19 +358,11 @@ let sco = {
             scroll();
         }
     },
-    /**
-     * openAllTags
-     * @description 展开所有标签
-     */
-    openAllTags: () => {
+    openAllTags() {
         document.querySelectorAll(".card-allinfo .card-tag-cloud").forEach(tagCloudElement => tagCloudElement.classList.add("all-tags"));
         document.getElementById("more-tags-btn")?.remove();
     },
-    /**
-     * listenToPageInputPress
-     * @description 监听页码输入
-     */
-    listenToPageInputPress: function () {
+    listenToPageInputPress() {
         const toGroup = document.querySelector(".toPageGroup")
         const pageText = document.getElementById("toPageText");
         if (!pageText) return;
@@ -512,7 +375,7 @@ let sco = {
         }
         pageText.addEventListener("keydown", (event) => {
             if (event.keyCode === 13) {
-                sco.toPage();
+                this.toPage();
                 pjax.loadUrl(pageButton.href);
             }
         });
@@ -523,19 +386,11 @@ let sco = {
             }
         });
     },
-    /**
-     * addNavBackgroundInit
-     * @description 添加导航背景初始化
-     */
-    addNavBackgroundInit: function () {
+    addNavBackgroundInit() {
         const scrollTop = document.documentElement.scrollTop;
         (scrollTop !== 0) && document.getElementById("page-header").classList.add("nav-fixed", "nav-visible");
     },
-    /**
-     * toPage
-     * @description 跳转到指定页
-     */
-    toPage: function () {
+    toPage() {
         const pageNumbers = document.querySelectorAll(".page-number");
         const maxPageNumber = parseInt(pageNumbers[pageNumbers.length - 1].innerHTML);
         const inputElement = document.getElementById("toPageText");
@@ -544,11 +399,6 @@ let sco = {
             ? window.location.href.replace(/\/page\/\d+\/$/, "/") + "page/" + inputPageNumber + "/"
             : '/';
     },
-    /**
-     * owobig
-     * @description owo 大图
-     * @param owoSelector
-     */
     owoBig(owoSelector) {
         let owoBig = document.getElementById('owo-big');
         if (!owoBig) {
@@ -581,11 +431,6 @@ let sco = {
         document.addEventListener('mouseover', showOwoBig);
         document.addEventListener('mouseout', hideOwoBig);
     },
-    /**
-     * changeTimeFormat
-     * @description 更改时间格式
-     * @param selector
-     */
     changeTimeFormat(selector) {
         selector.forEach(item => {
             const timeVal = item.getAttribute('datetime')
@@ -593,10 +438,6 @@ let sco = {
             item.style.display = 'inline'
         })
     },
-    /**
-     * switchComments
-     * @description 切换评论
-     */
     switchComments() {
         const switchBtn = document.getElementById('switch-btn')
         if (!switchBtn) return
@@ -611,12 +452,7 @@ let sco = {
         }
         utils.addEventListenerPjax(switchBtn, 'click', handleSwitchBtn)
     }
-}
-
-/**
- * addHighlight
- * @description 添加代码高亮
- */
+};
 const addHighlight = () => {
     const highlight = GLOBAL_CONFIG.highlight;
     if (!highlight) return;
@@ -693,11 +529,6 @@ const addHighlight = () => {
         })
     }
 }
-
-/**
- * toc
- * @description 目录
- */
 class toc {
     static init() {
         const tocContainer = document.getElementById('card-toc')
@@ -714,13 +545,11 @@ class toc {
         })
         this.active(el)
     }
-
     static active(toc) {
         const $article = document.getElementById('article-container')
         const $tocContent = document.getElementById('toc-content')
         const list = $article.querySelectorAll('h1,h2,h3,h4,h5,h6')
         let detectItem = ''
-
         function autoScroll(el) {
             const activePosition = el.getBoundingClientRect().top
             const sidebarScrollTop = $tocContent.scrollTop
@@ -731,7 +560,6 @@ class toc {
                 $tocContent.scrollTop = sidebarScrollTop - 150
             }
         }
-
         function findHeadPosition(top) {
             if (top === 0) return false
             let currentIndex = ''
@@ -755,7 +583,6 @@ class toc {
                 }
             }
         }
-
         window.tocScrollFn = utils.throttle(function () {
             const currentTop = window.scrollY || document.documentElement.scrollTop
             findHeadPosition(currentTop)
@@ -763,48 +590,40 @@ class toc {
         window.addEventListener('scroll', tocScrollFn)
     }
 }
-
-/**
- * tabs
- * @description 外挂标签tabs
- */
 class tabs {
     static init() {
-        this.clickFnOfTabs()
-        this.backToTop()
+        this.clickFnOfTabs();
+        this.backToTop();
     }
-
     static clickFnOfTabs() {
-        document.querySelectorAll('#article-container .tab > button').forEach(function (item) {
+        document.querySelectorAll('#article-container .tab > button').forEach((item) => {
             item.addEventListener('click', function (e) {
-                const that = this
-                const $tabItem = that.parentNode
+                const that = this;
+                const $tabItem = that.parentNode;
                 if (!$tabItem.classList.contains('active')) {
-                    const $tabContent = $tabItem.parentNode.nextElementSibling
-                    const $siblings = utils.siblings($tabItem, '.active')[0]
-                    $siblings && $siblings.classList.remove('active')
-                    $tabItem.classList.add('active')
-                    const tabId = that.getAttribute('data-href').replace('#', '')
-                    const childList = [...$tabContent.children]
-                    childList.forEach(item => {
-                        if (item.id === tabId) item.classList.add('active')
-                        else item.classList.remove('active')
-                    })
+                    const $tabContent = $tabItem.parentNode.nextElementSibling;
+                    const $siblings = utils.siblings($tabItem, '.active')[0];
+                    $siblings && $siblings.classList.remove('active');
+                    $tabItem.classList.add('active');
+                    const tabId = that.getAttribute('data-href').replace('#', '');
+                    const childList = [...$tabContent.children];
+                    childList.forEach((item) => {
+                        if (item.id === tabId) item.classList.add('active');
+                        else item.classList.remove('active');
+                    });
                 }
-            })
-        })
+            });
+        });
     }
-
     static backToTop() {
-        document.querySelectorAll('#article-container .tabs .tab-to-top').forEach(function (item) {
+        document.querySelectorAll('#article-container .tabs .tab-to-top').forEach((item) => {
             item.addEventListener('click', function () {
-                utils.scrollToDest(utils.getEleTop(item.parentElement.parentElement.parentNode), 300)
-
-            })
-        })
+                utils.scrollToDest(utils.getEleTop(item.parentElement.parentElement.parentNode), 300);
+            });
+        });
     }
 }
-// 页面刷新
+
 window.refreshFn = () => {
     const {is_home, is_page, page, is_post} = PAGE_CONFIG;
     const {runtime, lazyload, lightbox, randomlink, covercolor, post_ai} = GLOBAL_CONFIG;
@@ -827,21 +646,23 @@ window.refreshFn = () => {
     if (covercolor.enable) coverColor();
     if (PAGE_CONFIG.toc) toc.init();
 }
-// 页面加载完成后执行
 document.addEventListener('DOMContentLoaded', () => {
     [addCopyright, sco.initConsoleState, window.refreshFn, asideStatus, () => window.onscroll = percent].forEach(fn => fn());
 });
-// 监听切换标签页
 document.addEventListener('visibilitychange', () => {
     if (document.hidden) {
-        wasPageHidden = true;
+        sco.wasPageHidden = true;
     }
 });
-// 一些快捷键绑定
 window.onkeydown = e => {
-    const {keyCode, ctrlKey, shiftKey} = e;
-    if (keyCode === 123 || (ctrlKey && shiftKey && keyCode === 67)) utils.snackbarShow(GLOBAL_CONFIG.lang.f12, false, 3000);
-    if (keyCode === 27) sco.hideConsole();
+    const { keyCode, ctrlKey, shiftKey } = e;
+    if (keyCode === 123 || (ctrlKey && shiftKey && keyCode === 67)) {
+        utils.snackbarShow(GLOBAL_CONFIG.lang.f12, false, 3000);
+    }
+    if (keyCode === 27) {
+        sco.hideConsole();
+    }
 };
-// 复制成功提示
-document.addEventListener('copy', () => utils.snackbarShow(GLOBAL_CONFIG.lang.copy.success, false, 3000));
+document.addEventListener('copy', () => {
+    utils.snackbarShow(GLOBAL_CONFIG.lang.copy.success, false, 3000);
+});
