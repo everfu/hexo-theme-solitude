@@ -6,26 +6,19 @@
 
   <h1>Hexo Theme Solitude</h1>
 
-  一款優雅的 Hexo 主題，支援懶載入、PWA、Latex以及多種評論系統。
+  一款優雅的 Hexo 主題，支援懶載入、PWA、Latex 以及多種評論系統。
 
    主題設計由 [@张洪Heo](https://github.com/zhheo)全權授權
 
-![npm package](https://img.shields.io/npm/v/hexo-theme-solitude?color=blue&logo=npm)
+![npm package](https://img.shields.io/npm/v/hexo-theme-solitude?logo=npm)
 ![release](https://img.shields.io/github/package-json/v/valor-x/hexo-theme-solitude/master?color=%231ab1ad&label=release)
 ![license](https://img.shields.io/github/license/valor-x/hexo-theme-solitude?color=FF5531)
-[![Stars](https://img.shields.io/github/stars/valor-x/hexo-theme-solitude)](https://github.com/everfu/hexo-theme-solitude/stargazers)
+[![Stars](https://img.shields.io/github/stars/everfu/hexo-theme-solitude)](https://github.com/everfu/hexo-theme-solitude/stargazers)
 [![NPM all downloads](https://img.shields.io/npm/dy/hexo-theme-solitude?color=white)](https://www.npmjs.com/package/hexo-theme-solitude)
 
 ![hexo version](https://img.shields.io/badge/hexo-7.0.0+-blue?logo=hexo&logoColor=white)
 ![node version](https://img.shields.io/badge/node-14.0.0-white?logo=node.js&logoColor=white)
-
-![Latex](https://img.shields.io/badge/latex-20B2AA?logo=Latex)
-![Ads](https://img.shields.io/badge/Google_Ads-black?logo=googleads)
-![algolia](https://img.shields.io/badge/algolia-457AFF?logo=algolia)
-
-![cdnjs](https://img.shields.io/badge/cdnjs-orange?logo=Cloudflare&logoColor=white)
-![mermaid](https://img.shields.io/badge/mermaid-ff3670?logo=mermaid&logoColor=white)
-[![pwa](https://img.shields.io/badge/pwa-red?logo=pwa)](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps)
+[![Socket Badge](https://socket.dev/api/badge/npm/package/hexo-theme-solitude/)](https://socket.dev/npm/package/hexo-theme-solitude/overview)
 
 [![twiter](https://img.shields.io/badge/Twitter-gray?logo=x)](https://twitter.com/efu_oo)
 [![TG](https://img.shields.io/badge/Telegram-gray?logo=Telegram&logoColor=white)](https://t.me/solitudePro)
@@ -55,7 +48,7 @@
 ## Todo
 
 - [x] 首頁頂部新樣式 
-- [ ] 文章分享按鈕
+- [x] 文章分享按钮
 
 ## 應用
 
@@ -71,6 +64,8 @@
 前往 [文檔](https://solitude.js.org/) 獲取更多資訊。
 
 ## 贊助者
+
+[!["Buy Me A Coffee"](https://img.buymeacoffee.com/button-api/?text=請我喝杯咖啡&emoji=%E2%98%95&everfu=ezgif&button_colour=FFDD00&font_colour=000000&font_family=Cookie&outline_colour=000000&coffee_colour=ffffff)](https://www.buymeacoffee.com/everfu)
 
 <p align="center">
   <a href="https://cdn.jsdelivr.net/gh/efuo/static/sponsors.svg">
