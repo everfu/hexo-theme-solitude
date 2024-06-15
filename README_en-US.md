@@ -18,6 +18,7 @@
 
 ![hexo version](https://img.shields.io/badge/hexo-7.0.0+-blue?logo=hexo&logoColor=white)
 ![node version](https://img.shields.io/badge/node-14.0.0-white?logo=node.js&logoColor=white)
+[![Socket Badge](https://socket.dev/api/badge/npm/package/hexo-theme-solitude/)](https://socket.dev/npm/package/hexo-theme-solitude/overview)
 
 ![Latex](https://img.shields.io/badge/latex-20B2AA?logo=Latex)
 ![Ads](https://img.shields.io/badge/Google_Ads-black?logo=googleads)
@@ -56,11 +57,8 @@
 
 ## Todo
 
-- [x] Artalk
-- [x] Use double comment
-- [x] Album
-- [x] Barrage message page
 - [x] New style at the top of the home page
+- [x] Article sharing button
 
 > If you have any questions, please issue an [issue](https://github.com/everfu/hexo-theme-solitude/issues)
 
