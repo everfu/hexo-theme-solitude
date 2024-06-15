@@ -68,7 +68,7 @@ Check out the [Documentation](https://solitude.js.org/) for more information.
 
 ## Sponsors
 
-[!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/everfu)
+[!["Buy Me A Coffee"](https://img.buymeacoffee.com/button-api/?text=Buy&nbsp;Me&nbsp;A&nbsp;Coffee&emoji=%E2%98%95&everfu=ezgif&button_colour=FFDD00&font_colour=000000&font_family=Cookie&outline_colour=000000&coffee_colour=ffffff)](https://www.buymeacoffee.com/everfu)
 
 <p align="center">
   <a href="https://cdn.jsdelivr.net/gh/efuo/static/sponsors.svg">
