@@ -79,7 +79,7 @@
 
 ## 赞助者
 
-[!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/everfu){:target="_blank"}
+[!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/everfu)
 
 <p align="center">
   <a href="https://cdn.jsdelivr.net/gh/efuo/static/sponsors.svg">
