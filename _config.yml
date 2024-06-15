@@ -654,7 +654,7 @@ highlight:
   theme: default # default: 默认 / mac : apple terminal
   # 代码配色
   # Code color
-  color: default # default: 默认  / dark / funky / okaidia / tomorrow / twilight / darcula / solarized-dark / solarized-light / material / github
+  color: default # default: 默认  / solidity: solidity / dracula: dracula
 
 # 图片灯箱
 # image lightbox
