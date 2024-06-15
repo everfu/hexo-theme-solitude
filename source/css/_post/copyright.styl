@@ -92,6 +92,7 @@
       height 40px
       margin .5rem auto
       gap .5rem
+      flex-wrap wrap
 
       .social-share-ico
         display flex
@@ -103,6 +104,10 @@
         border var(--style-border)
         cursor pointer
         transition .3s
+
+        +maxWidth768()
+          &:nth-child(n+6)
+            display none
 
         &:hover
           color white
@@ -164,6 +169,9 @@
         color #000
         border-color #000
 
+        +maxWidth900()
+          display none
+
         &:hover
           background-color #000
 
@@ -200,3 +208,7 @@
         border-radius 8px
         margin-bottom 8px
         border var(--style-border-always)
+
+        img
+          width 132px
+          height 132px

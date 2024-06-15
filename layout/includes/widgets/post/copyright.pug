@@ -54,7 +54,6 @@
                             .share-main-all
                                 #qrcode
                                 .reward-dec=_p('post.share.qrcode')
-                        #share-qrcode
                         script(pjax).
                             typeof QRCode === 'function' && new QRCode(document.getElementById("qrcode"), '!{path}');
                             window.addEventListener('DOMContentLoaded', () => {
