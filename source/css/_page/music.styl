@@ -26,10 +26,13 @@ body[data-type=music]
   height 200%
   top -50%
   left -50%
+  background-position 0 0
   background-size 40%
   transition 0.6s
-
+  background-color rgba(0, 0, 0, 0.4)
+  
   &:before
+    display none
     content ''
     background rgba(0, 0, 0, 0.4)
     backdrop-filter blur(200px)
@@ -40,6 +43,10 @@ body[data-type=music]
     left -50%
     width 200%
     height 200%
+
+  &.show
+    &:before
+      display block
 
 #Music-page
   max-width 1400px

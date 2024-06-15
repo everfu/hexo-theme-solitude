@@ -23,7 +23,6 @@
 [![twiter](https://img.shields.io/badge/Twitter-gray?logo=x)](https://twitter.com/efu_oo)
 [![TG](https://img.shields.io/badge/Telegram-gray?logo=Telegram&logoColor=white)](https://t.me/solitudePro)
 
-
 ![JetBrains](https://img.shields.io/badge/jetbrains-support-black?logo=jetbrains)
 ![DuoLingo](https://img.shields.io/badge/duolingo-support-black?logo=duolingo&logoColor=white)
 
@@ -38,11 +37,11 @@
 
 ## 特性
 
-- 頁面懶載入（Pjax）、圖片懶載入（LazyLoad）、離線應用（PWA） 。
-- 評論(Twikoo、Waline、Valine、Artalk、Giscus)，支援雙評論。
-- 晝夜切換（ColorMode） 。
-- 燈箱（medium-zoom、fancybox） 。
-- 數學公式（Latex） 。
+- 頁面懶載入（Pjax）、圖片懶載入（LazyLoad）、離線應用（PWA）
+- 評論(Twikoo、Waline、Valine、Artalk、Giscus)，支援雙評論
+- 晝夜切換（ColorMode）
+- 燈箱（medium-zoom、fancybox）
+- 數學公式（Latex） 
 - 特色頁面：即刻短文、我的裝備、在線工具、音樂館、友鏈魚塘、相冊頁、豆瓣頁、留言彈幕頁。
 - 文章功能：AI 摘要、代碼高亮。
 

@@ -21,6 +21,7 @@ script.
 
         const $asideList = document.querySelector('.card-recent-comment .aside-list')
         const newestCommentInit = () => {
+            if (!document.querySelector('.card-recent-comment')) return
             const data = utils.saveToLocal.get('valine-newest-comment')
             if (data) {
                 generateHtml(data)

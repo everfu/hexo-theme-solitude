@@ -1,163 +1,149 @@
 .relatedPosts
-  margin-top: 2rem
+  margin-top 2rem
   user-select none
 
-  > .relatedPosts-list
-    > div
-      position: relative
-      display: inline-block
-      overflow: hidden
-      margin: 3px
-      width: calc(33.333% - 6px)
-      height: 200px
-      background: var(--efu-main)
-      vertical-align: bottom
+  .relatedPosts-list > div
+    position relative
+    display inline-block
+    overflow hidden
+    margin 3px
+    width calc(33.333% - 6px)
+    height 200px
+    background var(--efu-main)
+    vertical-align bottom
 
     .cover
-      width: 360px
-      min-width: 45%
-      height: 100%
-      transition: all .6s ease 0s
-      object-fit: cover
-      filter: brightness(.9)
-      max-width: 45%
+      width 360px
+      min-width 45%
+      height 100%
+      transition all .6s ease 0s
+      object-fit cover
+      filter brightness(.9)
+      max-width 45%
 
       &::after
-        content: ' '
-        display: block
-        position: absolute
-        z-index: 0
-        top: 0
-        left: 0
-        width: 100%
-        height: 100%
-        background: url(error_img) 50%
-        background-size: cover
+        content ' '
+        display block
+        position absolute
+        z-index 0
+        top 0
+        left 0
+        width 100%
+        height 100%
+        background url(error_img) 50%
+        background-size cover
 
     .content
-      padding: 0 1rem
-      width: 100%
+      padding 0 1rem
+      width 100%
 
       .date
-        color: var(--light-grey)
-        font-size: 90%
+        color var(--light-grey)
+        font-size 90%
 
       .title
-        color: var(--efu-white)
-        -webkit-line-clamp: 2
-        margin-right: auto
+        color var(--efu-white)
+        -webkit-line-clamp 2
+        margin-right auto
 
     a
-      display: flex
-      width: 100%
-      height: 100%
+      display flex
+      width 100%
+      height 100%
 
-  > .headline
-    margin-bottom: .8rem
-    font-weight: 700
-    font-size: 20px
-    display: flex
-    align-items: center
+  .headline
+    margin-bottom .5rem
+    font-weight 700
+    font-size 20px
+    display flex
+    align-items center
 
     span
-      margin-right: auto
-      margin-left: 8px
+      margin-right auto
+      margin-left 8px
 
     a
-      font-weight: 400
+      font-weight 400
 
       &:hover
         color var(--efu-lighttext)
 
   &-link
-    display: block
-    justify-content: space-between
-    margin-left: 8px
-    font-size: 13px
+    display block
+    justify-content space-between
+    margin-left 8px
+    font-size 13px
 
 .relatedPosts-list
-  display: flex
-  flex-wrap: wrap
-  justify-content: space-between
-  flex-direction: column
+  display flex
+  flex-wrap wrap
+  justify-content space-between
+  flex-direction column
 
-@media screen and (max-width: 768px)
++maxWidth768()
+  .relatedPosts,
+  .relatedPosts-list > div
+    margin 2px
+    width calc(50% - 4px)
+    height 150px
+
++maxWidth600()
+  .relatedPosts,
+  .relatedPosts-list > div
+    width calc(100% - 4px)
+
++minWidth768()
+  #post > div.relatedPosts > div.relatedPosts-list > div
+    -webkit-mask-image -webkit-radial-gradient(center, #fff, #000)
+    border-radius 12px
+
+  .relatedPosts > .headline
+    font-size .8em
+
++maxWidth1300()
+  #post > div.relatedPosts > div.relatedPosts-list > div:nth-child(7),
+  #post > div.relatedPosts > div.relatedPosts-list > div:nth-child(8)
+    display none
+
+.relatedPosts > .relatedPosts-list > div
+  background var(--efu-secondbg)
+  border var(--style-border)
+  transition .3s
+  cursor pointer
+  overflow hidden
+  width 100%
+  margin-bottom 8px
+
+  &:hover
+    background var(--efu-main)
+
+  .content
+    .title
+      color var(--efu-fontcolor)
+      font-weight 700
+      line-height 1.5
+      -webkit-line-clamp 4
+      font-size .9rem
+      text-align left
+      overflow hidden
+
+    .date
+      color var(--efu-fontcolor)
+      display none
+
+  &:hover
+    a
+      .title
+        color var(--efu-white)
+
++maxWidth768()
   .relatedPosts
-    > .relatedPosts-list
-      > div
-        margin: 2px
-        width: calc(50% - 4px)
-        height: 150px
-
-@media screen and (max-width: 600px)
-  .relatedPosts
-    > .relatedPosts-list
-      > div
-        width: calc(100% - 4px)
-
-@media screen and (min-width: 768px)
-  #post
-    > div.relatedPosts
-      > div.relatedPosts-list
-        > div
-          -webkit-mask-image: -webkit-radial-gradient(center, #fff, #000)
-          border-radius: 12px
-
-  .relatedPosts
-    > .headline
-      font-size: .8em
-
-  @media screen and (max-width: 1300px)
-    #post
-      > div.relatedPosts
-        > div.relatedPosts-list
-          > div:nth-child(7)
-            display: none
-
-          > div:nth-child(8)
-            display: none
-
-.relatedPosts
-  > .relatedPosts-list
-    > div
-      background: var(--efu-secondbg)
-      border: var(--style-border)
-      transition: .3s
-      cursor: pointer
-      overflow: hidden
-      width: 100%
-      margin-bottom: 8px
-
-      &:hover
-        background: var(--efu-main)
-
-      .content
-        .title
-          color: var(--efu-fontcolor)
-          font-weight: 700
-          line-height: 1.5
-          -webkit-line-clamp: 4
-          font-size: .9rem
-          text-align: left
-          overflow: hidden
-
-        .date
-          color: var(--efu-fontcolor)
-          display: none
-
-      &:hover
-        a
-          .title
-            color: var(--efu-white)
-
-@media screen and (max-width: 768px)
-  .relatedPosts
-    display: none
+    display none
 
     > .relatedPosts-list
       > div
-        border-radius: 4px
+        border-radius 4px
 
-@media screen and (min-width: 768px)
++minWidth768()
   .relatedPosts
-    margin-top: 1rem
+    margin-top .5rem

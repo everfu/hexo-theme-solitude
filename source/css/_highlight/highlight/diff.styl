@@ -5,75 +5,47 @@ figure.highlight
     background var(--efu-hl-bg)
     border-radius 6px
     display initial
-  pre .deletion
-    color $highlight-deletion
 
-  pre .addition
-    color $highlight-addition
+  .keyword
+  .attr
+  .variable
+  .literal
+  .property
+    color $highlight-variable-light
 
-  pre .meta
-    color $highlight-purple
+  .number
+    color $highlight-number-light
 
-  pre
-    .comment
-      color $highlight-comment
+  .string
+    color $highlight-string-light
 
-    .variable,
-    .attribute,
-    .regexp,
-    .ruby .constant,
-    .xml .tag .title,
-    .xml .pi,
-    .xml .doctype,
-    .html .doctype,
-    .css .id,
-    .tag .name,
-    .css .class,
-    .css .pseudo
-      color $highlight-red
+  .built_in
+  .title
+  .params
+  .name
+    color $highlight-title-light
 
-    .tag
-      color $highlight-aqua
+  .emphasis
+    color $highlight-emphasis-light
 
-    .number,
-    .preprocessor,
-    .literal,
-    .params,
-    .constant,
-    .command
-      color $highlight-orange
+  [data-theme=dark] &  
+    .keyword
+    .attr
+    .variable
+    .property
+      color $highlight-variable-dark
+
+    .number
+      color $highlight-number-dark
+
+    .string
+      color $highlight-string-dark
 
     .built_in
-      color $highlight-yellow
+    .built_in
+    .title
+    .params
+      color $highlight-title-dark
 
-    .ruby .class .title,
-    .css .rules .attribute,
-    .string,
-    .value,
-    .inheritance,
-    .header,
-    .ruby .symbol,
-    .xml .cdata,
-    .special,
-    .number,
-    .formula
-      color $highlight-green
-
-    .keyword,
-    .title,
-    .css .hexcolor
-      color: $highlight-aqua
-
-    .function,
-    .python .decorator,
-    .python .title,
-    .ruby .function .title,
-    .ruby .title .keyword,
-    .perl .sub,
-    .javascript .title,
-    .coffeescript .title
-      color $highlight-blue
-
-    .tag .attr,
-    .javascript .function
-      color $highlight-purple
+    .emphasis
+      color $highlight-emphasis-dark

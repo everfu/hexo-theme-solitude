@@ -1,79 +1,80 @@
 pre[class*='language-']
-  .token
-    &.function,
-    &.punctuation
-     color $highlight-blue
 
-  .token.comment,
-  .token.prolog,
-  .token.doctype,
-  .token.cdata
-    color $highlight-comment
+  .keyword
+  .function
+    color $highlight-variable-light
 
-  .token.namespace
-    opacity: .7
+  .operator
+    color $highlight-variable-light
 
-  .token.operator,
-  .token.boolean,
-  .token.number
-    color: $highlight-orange
+  .number
+    color $highlight-number-light
 
-  .token.property
-    color: $highlight-yellow
+  .property
+  .class-name
+  .title
+    color $highlight-title-light
 
-  .token.tag
-    color: $highlight-blue
+  .string
+    color $highlight-string-light
+ 
+  .parameter
+    color $highlight-parameter-light
 
-  .token.string
-    color: $highlight-green
+  .blockquote
+    cikir $highlight-emphasis-light
 
-  .token.selector
-    color: $highlight-deletion
+  .comment
+    color $highlight-comment-light
 
-  .token.attr-name
-    color: $highlight-orange
+  .atrule
+    color $highlight-emphasis-light
 
-  .token.entity,
-  .token.url,
-  .language-css .token.string,
-  .style .token.string
-    color: $highlight-aqua
+  .boolean
+    color $highlight-important-light
 
-  .token.attr-value,
-  .token.keyword,
-  .token.control,
-  .token.directive,
-  .token.unit
-    color: $highlight-yellow
+  .deleted
+    color $highlight-deleted
 
-  .token.statement,
-  .token.regex,
-  .token.atrule
-    color: $highlight-aqua
+  .inserted
+    color $highlight-inserted
 
-  .token.placeholder,
-  .token.variable
-    color: $highlight-blue
+  [data-theme='dark'] &
+    .keyword
+    .function
+      color $highlight-variable-dark
 
-  .token.deleted
-    color: var(--efu-red)
+    .operator
+      color $highlight-variable-dark
 
-  .token.inserted
-    color: var(--efu-green)
+    .number
+      color $highlight-number-dark
 
-  .token.italic
-    font-style: italic
+    .property
+    .class-name
+    .title
+      color $highlight-title-dark
 
-  .token.important,
-  .token.bold
-    font-weight: bold
+    .string
+      color $highlight-string-dark
+      
+    .parameter
+      color $highlight-parameter-dark
 
-  .token.important
-    color: $highlight-orange
+    .blockquote
+      color $highlight-emphasis-dark
 
-  .token.entity
-    cursor: help
+    .comment
+      color $highlight-comment-dark
 
-  pre > code.highlight
-    outline: .4em solid $highlight-orange
-    outline-offset: .4em
+    .atrule
+      color $highlight-emphasis-dark
+
+    .boolean
+      color $highlight-important-dark
+
+    .deleted
+      color $highlight-deleted
+
+    .inserted
+      color $highlight-inserted

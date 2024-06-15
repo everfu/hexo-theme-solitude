@@ -1,44 +1,44 @@
 #post
   .post-tools
-    display flex
-    width 100%
-    justify-content center
-    margin-top 8px
-    flex-wrap wrap
-    user-select none
+    display: flex
+    width: 100%
+    justify-content: center
+    margin-top: 8px
+    flex-wrap: wrap
+    user-select: none
 
     .post-tools-left
-      white-space nowrap
-      display flex
-      text-overflow ellipsis
-      justify-content center
-      flex-wrap wrap
+      white-space: nowrap
+      display: flex
+      text-overflow: ellipsis
+      justify-content: center
+      flex-wrap: wrap
 
       #quit-box
-        position fixed
-        width 100vw
-        height 100vh
-        background rgba(0, 0, 0, .2)
-        top 0
-        left 0
-        opacity .01
-        display none
-        z-index 101
-        margin 0
+        position: fixed
+        width: 100vw
+        height: 100vh
+        background: rgba(0, 0, 0, .2)
+        top: 0
+        left: 0
+        opacity: .01
+        display: none
+        z-index: 101
+        margin: 0
 
         +maxWidth768()
-          height calc(100vh - 380px)
+          height: calc(100vh - 380px)
 
       // reward
       /.post-reward
-        position relative
-        text-align center
-        display flex
-        justify-content center
+        position: relative
+        text-align: center
+        display: flex
+        justify-content: center
 
         &:hover
           > .reward-main
-            display block
+            display: block
 
           +minWidth768()
             > .reward-main
@@ -46,48 +46,48 @@
               justify-content: left
 
           .reward-button
-            color var(--efu-white)
-            background var(--efu-theme)
-            box-shadow none
+            color: var(--efu-white)
+            background: var(--efu-theme)
+            box-shadow: none
 
         .reward-button
-          background var(--efu-red)
-          color var(--efu-white)
-          padding 0 16px
-          height 40px
-          border-radius 8px
-          line-height 39px
-          box-shadow var(--efu-shadow-red)
-          display inline-block
-          cursor pointer
-          transition all .4s ease 0s
+          background: var(--efu-red)
+          color: var(--efu-white)
+          padding: 0 16px
+          height: 40px
+          border-radius: 8px
+          line-height: 39px
+          box-shadow: var(--efu-shadow-red)
+          display: inline-block
+          cursor: pointer
+          transition: all .4s ease 0s
 
           i
-            margin-right 4px
+            margin-right: 4px
             
           &:hover
-            background-color var(--efu-theme)
+            background-color: var(--efu-theme)
 
         .reward-main
-          animation .3s ease .1s 1 normal both running donate_effcet
-          position absolute
-          bottom 40px
-          left -96px
-          z-index 100
-          display none
-          padding 0 0 15px
-          width fit-content
+          animation: .3s ease .1s 1 normal both running donate_effcet
+          position: absolute
+          bottom: 40px
+          left: -96px
+          z-index: 100
+          display: none
+          padding: 0 0 15px
+          width: fit-content
 
           +maxWidth768()
-            justify-content center !important
-            position fixed
-            bottom 0
-            left 0
-            right 0
-            z-index 1003
-            width 100%
-            margin auto
-            padding 0
+            justify-content: center !important
+            position: fixed
+            bottom: 0
+            left: 0
+            right: 0
+            z-index: 1003
+            width: 100%
+            margin: auto
+            padding: 0
 
           .reward-all
             margin: 0
@@ -101,268 +101,160 @@
             align-items: center
 
             +maxWidth768()
-              width 100%
-              display flex
-              flex-wrap wrap
-              justify-content space-around
-              padding 30px 10px 60px
-              border-radius 12px 12px 0 0
+              width: 100%
+              display: flex
+              flex-wrap: wrap
+              justify-content: space-around
+              padding: 30px 10px 60px
+              border-radius: 12px 12px 0 0
 
             &::before
-              position absolute
-              bottom -10px
-              left 0
-              width 100%
-              height 20px
-              content ""
+              position: absolute
+              bottom: -10px
+              left: 0
+              width: 100%
+              height: 20px
+              content: ""
 
             .reward-title
-              font-weight 700
-              color var(--efu-red)
-              text-wrap wrap
+              font-weight: 700
+              color: var(--efu-red)
+              text-wrap: wrap
 
             .reward-group
-              display flex
-              margin-top .5rem
+              display: flex
+              margin-top: .5rem
 
               .reward-item
-                display inline-block
-                padding 0 8px
-                list-style-type none
-                vertical-align top
+                display: inline-block
+                padding: 0 8px
+                list-style-type: none
+                vertical-align: top
 
                 img
-                  width 130px
-                  height 130px
+                  width: 130px
+                  height: 130px
 
                 .post-qr-code-desc
-                  padding-top .4rem
-                  width 130px
-                  color var(--efu-gray)
-                  margin-top -8px
-                  margin-bottom 8px
+                  padding-top: .4rem
+                  width: 130px
+                  color: var(--efu-gray)
+                  margin-top: -8px
+                  margin-bottom: 8px
 
                 .post-qr-code-img
-                  box-shadow var(--efu-shadow-lightblack)
-                  border-radius 12px
-                  border var(--style-border-always)
+                  box-shadow: var(--efu-shadow-lightblack)
+                  border-radius: 12px
+                  border: var(--style-border-always)
 
             .reward-main-btn
-              background var(--efu-secondbg)
-              color var(--efu-fontcolor)
-              display flex
-              flex-direction column
-              border-radius 12px
-              padding 4px 0
-              border var(--style-border-always)
-              width 100%
+              background: var(--efu-secondbg)
+              color: var(--efu-fontcolor)
+              display: flex
+              flex-direction: column
+              border-radius: 12px
+              padding: 4px 0
+              border: var(--style-border-always)
+              width: 100%
 
               &:hover
-                color var(--efu-white)
-                background var(--efu-red)
-                background-image url(/img/flower.gif)
-                box-shadow var(--efu-shadow-red)
+                color: var(--efu-white)
+                background: var(--efu-red)
+                background-image: url(/img/flower.gif)
+                box-shadow: var(--efu-shadow-red)
 
               .reward-text
-                margin-bottom 0
-                font-weight 700
+                margin-bottom: 0
+                font-weight: 700
 
               .reward-dec
-                font-size .6rem
-                text-wrap wrap
+                font-size: .6rem
+                text-wrap: wrap
 
       // rss
 
       .reward-link.mode
-        background var(--efu-green)
-        color var(--efu-white)
-        padding 0 16px
-        height 40px
-        line-height 39px
-        box-shadow var(--efu-shadow-green)
-        border-radius 8px
-        margin-left .5rem
-        cursor pointer
-        text-align center
-        transition .3s
+        background: var(--efu-green)
+        color: var(--efu-white)
+        padding: 0 16px
+        height: 40px
+        line-height: 39px
+        box-shadow: var(--efu-shadow-green)
+        border-radius: 8px
+        margin-left: .5rem
+        cursor: pointer
+        text-align: center
+        transition: .3s
 
         a
-          color var(--efu-white)
+          color: var(--efu-white)
 
         i
-          margin-right 4px
+          margin-right: 4px
 
         &:hover
-          background var(--efu-theme)
-          box-shadow none
+          background: var(--efu-theme)
+          box-shadow: none
 
 
   .post-tools-right
-    padding-right 0
-    display flex
-    align-items center
-    flex-direction row
-    justify-content space-between
-    flex-wrap wrap
+    padding-right: 0
+    display: flex
+    align-items: center
+    flex-direction: row
+    justify-content: space-between
+    flex-wrap: wrap
 
     .tag_share
       .post-meta__tag-list
-        display flex
-        padding 0
-        width 100%
-        flex-wrap wrap
-        flex-direction row
+        display: flex
+        padding: 0
+        width: 100%
+        flex-wrap: wrap
+        flex-direction: row
 
         a
-          margin-bottom 8px
-          margin-right 8px
+          margin-bottom: 8px
+          margin-right: 8px
 
         .post-meta__tags
-          background var(--efu-card-bg)
-          border var(--style-border-always)
-          color var(--efu-fontcolor)
-          border-radius 8px
-          display flex
-          align-items center
-          white-space nowrap
-          height 40px
-          padding 0 .6rem
-          width fit-content
-          font-size .85em
-          transition all .2s ease-in-out 0s
+          background: var(--efu-card-bg)
+          border: var(--style-border-always)
+          color: var(--efu-fontcolor)
+          border-radius: 8px
+          display: flex
+          align-items: center
+          white-space: nowrap
+          height: 40px
+          padding: 0 .6rem
+          width: fit-content
+          font-size: .85em
+          transition: all .2s ease-in-out 0s
 
           &:hover
-            background var(--efu-lighttext)
-            box-shadow var(--efu-shadow-main)
-            color var(--efu-white)
+            background: var(--efu-lighttext)
+            box-shadow: var(--efu-shadow-main)
+            color: var(--efu-white)
 
             span.tagsPageCount
-              color var(--efu-lighttext)
-              background var(--efu-maskbgdeep)
-              transition all .2s ease-in-out 0s
+              color: var(--efu-lighttext)
+              background: var(--efu-maskbgdeep)
+              transition: all .2s ease-in-out 0s
 
           span.tags-punctuation
-            font-size 12px
-            margin-right 1px
-            display flex
-            align-items center
+            font-size: 12px
+            margin-right: 1px
+            display: flex
+            align-items: center
 
           .tagsPageCount, /  #tag-page-tags .tagsPageCount
-            padding 2px
-            background var(--efu-fontcolor)
-            border var(--style-border-always)
-            min-width 22.5px
-            display inline-block
-            border-radius 4px
-            text-align center
-            font-size .6rem
-            color var(--efu-card-bg)
-            margin-left 4px
-    if hexo-config('post.share.enable')
-      /.social-share *
-        font-family solitude
-      /.social-share
-        display: flex;
-        justify-content: center;
-        margin 10px 0
-
-        +maxWidth768()
-          flex-wrap wrap
-
-        .social-share-ico
-          margin: 0 4px
-          width: 1.85em
-          height: 1.85em
-          font-size: 1.2em
-          line-height: 1.85em
-          border 1px solid
-          position: relative
-          display: inline-block;
-          border-radius 50%
-          text-align: center;
-          vertical-align: middle;
-          transition: background 0.6s ease-out 0s;
-          cursor pointer
-
-          &:hover
-            transition all .3s
-            color var(--efu-white)
-
-        .icon-qq
-          color #56b6e7
-          border-color #56b6e7
-
-          &:hover
-            background-color #56b6e7
-
-          &::before
-            content "\e0d0"
-
-        .icon-wechat
-          color #57bd6a
-          border-color #57bd6a
-
-          &::before
-            content "\e0d2"
-
-          &:hover
-            background-color #57bd6a
-
-        .icon-weibo
-          color #d44040
-          border-color #d44040
-
-          &::before
-            content "\e0e3"
-
-          &:hover
-            background-color #d44040
-
-        .icon-facebook
-          color #415dc9
-          border-color #415dc9
-
-          &::before
-            content "\e0e6"
-
-          &:hover
-            background-color #415dc9
-
-        .icon-twitter
-          color #56b6e7
-          border-color #56b6e7
-
-          &::before
-            content "\e0c1"
-
-          &:hover
-            background-color #56b6e7
-
-        .icon-telegram
-          color #56b6e7
-          border-color #56b6e7
-
-          &::before
-            content "\e062"
-
-          &:hover
-            background-color #56b6e7
-
-        .icon-linkedin
-          color #0077b5
-          border-color #0077b5
-
-          &::before
-            content "\e0ed"
-
-          &:hover
-            background-color #0077b5
-        .icon-whatsapp
-          color #25d366
-          border-color #25d366
-
-          &::before
-            content "\e0f0"
-
-          &:hover
-            background-color #25d366
+            padding: 2px
+            background: var(--efu-fontcolor)
+            border: var(--style-border-always)
+            min-width: 22.5px
+            display: inline-block
+            border-radius: 4px
+            text-align: center
+            font-size: .6rem
+            color: var(--efu-card-bg)
+            margin-left: 4px

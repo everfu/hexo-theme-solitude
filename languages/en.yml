@@ -58,10 +58,23 @@ post:
     reprint: This article is a reproduction or translation, and the copyright belongs to the original author. Please contact the original author for permission to republish this article.
     original: This piece of writing is an original article, utilizing the
     original_end: Agreement. For complete reproduction, please acknowledge the source as Courtesy of
+  share:
+    qq: Share to QQ
+    weibo: Share to Weibo
+    telegram: Share to Telegram
+    twitter: Share to Twitter
+    linkedin: Share to LinkedIn
+    facebook: Share to Facebook
+    link: Share to Link
+    qrcode: Share to QR code
+    whatsapp: Share to WhatsApp
   ai:
     title: Article Summary
     tip: Complaints
-
+  nav:
+    next: Next
+    prev: Previous
+    
 nav:
   site_name_title: Back to home
   backtop: Back to top

@@ -4,7 +4,7 @@
     border-width 1px
     transition 0.3s
     position relative
-    margin 80px 0 30px
+    margin 80px 0 .5rem
     border-radius 12px
     padding 34px 0 20px 0
     border var(--style-border-always)
@@ -85,3 +85,130 @@
             color var(--efu-white)
             cursor pointer
             border-radius 4px
+
+    .social-share
+      display flex
+      justify-content center
+      height 40px
+      margin .5rem auto
+      gap .5rem
+      flex-wrap wrap
+
+      .social-share-ico
+        display flex
+        justify-content center
+        align-items center
+        width 40px
+        height 40px
+        border-radius 12px
+        border var(--style-border)
+        cursor pointer
+        transition .3s
+
+        +maxWidth768()
+          &:nth-child(n+6)
+            display none
+
+        &:hover
+          color white
+
+      .icon-qq
+        color #56b6e7
+        border-color #56b6e7
+        &:hover
+            background-color #56b6e7
+
+      .icon-weibo
+        color #d44040
+        border-color #d44040
+
+        &:hover
+          background-color #d44040
+
+      .icon-facebook
+        color #415dc9
+        border-color #415dc9
+
+        &:hover
+          background-color #415dc9
+
+      .icon-twitter
+        color #56b6e7
+        border-color #56b6e7
+
+        &:hover
+          background-color #56b6e7
+
+      .icon-telegram
+        color #56b6e7
+        border-color #56b6e7
+
+        &:hover
+          background-color #56b6e7
+
+      .icon-linkedin
+        color #0077b5
+        border-color #0077b5
+
+        &:hover
+          background-color #0077b5
+      .icon-whatsapp
+        color #25d366
+        border-color #25d366
+
+        &:hover
+          background-color #25d366
+      .icon-link
+        color #425AEF
+        border-color #425AEF
+
+        &:hover
+          background-color #425AEF
+      .icon-qrcode
+        position relative
+        color #000
+        border-color #000
+
+        +maxWidth900()
+          display none
+
+        &:hover
+          background-color #000
+
+          .share-main
+            display flex
+
+        .share-main
+          display none
+          position absolute
+          bottom 1.7rem
+          z-index 100
+          padding-bottom 15px
+
+          &-all
+            padding 12px
+            border-radius 12px
+            background var(--efu-background)
+            animation donate_effcet 0.3s 0.1s ease both
+            flex-direction column
+            border var(--style-border-always)
+
+            .reward-dec
+              font-size 0.6rem
+              color var(--efu-fontcolor)!important
+              text-align center
+
+      #qrcode
+        width 150px
+        height 150px
+        min-width 150px
+        min-height 150px
+        background var(--efu-white)
+        padding 8px
+        border-radius 8px
+        margin-bottom 8px
+        border var(--style-border-always)
+
+        img
+          width 132px
+          height 132px

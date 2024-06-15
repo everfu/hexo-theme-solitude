@@ -2,6 +2,10 @@
   overflow hidden
   position inherit
   border var(--style-border-always)
+
+  div:only-child
+    width 100%!important
+
   +minWidth1300()
     position fixed
     width 300px
@@ -15,6 +19,7 @@
     overflow hidden
     cursor pointer
     opacity 0
+
   +maxWidth768()
     border-radius 12px
     border var(--style-border-always)
@@ -23,18 +28,22 @@
   &.pagination-post
     margin-top 1.5rem
     background var(--efu-card-bg)
+
     +minWidth768()
       border-radius 12px
       margin-top 1rem
+
     +minWidth1300()
       margin-top 0
 
   .next-post, .prev-post, .next-post.pull-right, .prev-post.pull-left
     background var(--efu-secondbg)
+
     +minWidth1300()
       background var(--efu-maskbgdeep)
       backdrop-filter blur(5px)
       transform translateZ(0)
+
     +maxWidth768()
       background var(--efu-card-bg)
 
@@ -45,6 +54,7 @@
   .prev-post.pull-left
     +minWidth1300()
       display none
+
     +maxWidth768()
       border-bottom var(--style-border-always)
 
@@ -54,9 +64,11 @@
 
   .next-post, .prev-post
     width 50%
+
     +minWidth1300()
       text-align left
       position relative
+
     +maxWidth768()
       width 100%
 
@@ -136,6 +148,7 @@
     padding 1rem 2rem
     width 100%
     transform translate(0, -50%)
+
     +minWidth768()
       padding 1rem 1.5rem 1rem 1.5rem
       position relative

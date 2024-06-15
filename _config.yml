@@ -148,8 +148,8 @@ carousel: false
 # Aside Settings
 # 侧边栏配置
 aside:
-  # 值：about（关于我）、newestPost（最新文章）、allInfo（网站信息）、flip（公众号二维码）
-  # Values: about (info card), newestPost (latest article), allInfo (website information), flip (official account QR code)
+  # 值：about（关于我）、newestPost（最新文章）、allInfo（网站信息）、flip（公众号二维码）、newest_comment（最新评论）
+  # Values: about (info card), newestPost (latest article), allInfo (website information), flip (official account QR code), newest_comment (latest comment)
 
   # 在主页显示的侧边栏信息
   # Sidebar information displayed on the homepage
@@ -239,6 +239,11 @@ aside:
     # 背景色：var(--efu-blue) / #000 / rgba(0,0,0,0.5) / linear-gradient(to right,#f65,#ffbf37)
     # Background color: var(--efu-blue) / #000 / rgba(0,0,0,0.5) / linear-gradient(to right,#f65,#ffbf37)
     backcolor: "var(--efu-blue)"
+
+  newest_comment:
+    enable: true
+    storage: .5 # 缓存时间 1: 1天 / .5 : 半天 / Cache time 1: 1 day .5 : half a day
+    limit: 5 # 评论数 / Number of comments
 
   # 页面目录
   # Page directory
@@ -369,13 +374,15 @@ post:
   share:
     enable: false
     list:
-    # - qq
-    # - weibo
-    # - twitter
-    # - facebook
-    # - telegram
-    # - whatsapp
-    # - linkedin
+    #  - qq
+    #  - weibo
+    #  - twitter
+    #  - facebook
+    #  - telegram
+    #  - whatsapp
+    #  - linkedin
+    #  - link
+    #  - qrcode
   # 版权中订阅按钮跳转链接，填写地址后开启
   # Subscription button jump link in copyright
   rss: # /atom.xml
@@ -527,8 +534,8 @@ recent_comments:
   # 缓存时间
   # Cache time
   cache: 0.2 # 1 = 1天 / 1 = 1 day
-  console: true # 控制台按钮 / console button
   page: /recentcomments/ # 最近评论页面 / recent comments page
+  img: /img/recent_c.avif # 中控台显示图片（不填不显示） / image displayed in the console
 
 # 留言板
 # message board
@@ -647,7 +654,7 @@ highlight:
   theme: default # default: 默认 / mac : apple terminal
   # 代码配色
   # Code color
-  color: default # default: 默认  / dark / funky / okaidia / tomorrow / twilight / darcula / solarized-dark / solarized-light / material / github
+  color: default # default: 默认  / solidity: solidity / dracula: dracula
 
 # 图片灯箱
 # image lightbox
@@ -762,15 +769,12 @@ katex:
 # comment
 # getting start: https://solitude.js.org/comments/comment
 comment:
-  use: # waline, twikoo, valine, artalk
+  use: # waline, twikoo, valine, artalk, giscus
   commentBarrage: false # 热评开关 / Hot comment switch
   lazyload: false # 懒加载
   count: false # 评论数展示
   pv: false # 是否使用評論統計頁面訪問
   avatar: https://cravatar.cn # Gravatar link
-  newest_comment:
-    enable: false
-    storage: .5 # 缓存时间 1: 1天 / .5 : 半天 / Cache time 1: 1 day .5 : half a day
 
 # twikoo 配置信息
 # twikoo settings
@@ -806,17 +810,16 @@ artalk:
   site: # site name / 站点名
   option: # options
 
-# giscus 配置信息
-# giscus settings
-# docs: https://giscus.app/
+# gitalk 配置信息
+# gitalk settings
 giscus:
-  repo: # GitHub repository name
-  repo_id: # GitHub repository id
-  category_id: # GitHub repository category id
-  theme: 
+  repo: # GitHub 仓库名称 / GitHub repository name
+  repo_id: # GitHub 仓库ID / GitHub repository ID
+  category_id: # GitHub 仓库分类ID / GitHub repository category ID
+  theme:
     light: light
     dark: dark
-  option: # options
+  option:
 
 # 中控台扩展 ： 最新评论 + 标签 + 文章
 console_plus: false
