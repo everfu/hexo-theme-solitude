@@ -24,13 +24,11 @@
 ![algolia](https://img.shields.io/badge/algolia-457AFF?logo=algolia)
 
 ![cdnjs](https://img.shields.io/badge/cdnjs-orange?logo=Cloudflare&logoColor=white)
-![A11y](https://img.shields.io/badge/A11y-green?logo=%C3%8Ele-de-France%20Mobilit%C3%A9s&logoColor=white)
 ![mermaid](https://img.shields.io/badge/mermaid-ff3670?logo=mermaid&logoColor=white)
 [![pwa](https://img.shields.io/badge/pwa-red?logo=pwa)](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps)
 
 [![twiter](https://img.shields.io/badge/Twitter-gray?logo=x)](https://twitter.com/efu_oo)
 [![TG](https://img.shields.io/badge/Telegram-gray?logo=Telegram&logoColor=white)](https://t.me/solitudePro)
-[![Discord](https://img.shields.io/discord/1218118131428495430?label=Discord&logo=Discord&labelColor=white&color=black)](https://discord.gg/Y8VEvVgW)
 
 ![JetBrains](https://img.shields.io/badge/jetbrains-support-black?logo=jetbrains)
 ![DuoLingo](https://img.shields.io/badge/duolingo-support-black?logo=duolingo&logoColor=white)
