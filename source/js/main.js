@@ -374,7 +374,7 @@ const sco = {
         }
         pageText.addEventListener("keydown", (event) => {
             if (event.keyCode === 13) {
-                this.toPage();
+                sco.toPage();
                 pjax.loadUrl(pageButton.href);
             }
         });
