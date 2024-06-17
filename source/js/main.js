@@ -28,7 +28,6 @@ const sidebarFn = () => {
 }
 const scrollFn = () => {
     const innerHeight = window.innerHeight;
-    if (document.body.scrollHeight <= innerHeight) return;
     let initTop = 0;
     const $header = document.getElementById('page-header');
     const throttledScroll = utils.throttle((e) => {
