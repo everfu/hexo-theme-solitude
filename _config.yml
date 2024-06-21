@@ -308,6 +308,7 @@ aside:
 # Configure information on the home page
 index_post_list:
   direction: column # row / column
+  column: 2 #2:2列 3:3列
   content: false # 1: post.description / 2: 自动获取description或截取内容(Automatically get descriptions or screenshots) / 3: 只使用截取内容(Use only screenshots) / false: 不显示内容(No content is displayed)
   length: 500 # 截取内容的长度 : The length of the screenshot content
   cover: both # left: 在左侧 : left / right: 在右侧 : right / both: 两侧 : both
