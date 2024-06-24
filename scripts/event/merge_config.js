@@ -104,6 +104,7 @@ hexo.extend.filter.register('before_generate', () => {
         },
         index_post_list: {
             direction: 'column',
+            column: 2,
             content: false,
             length: 500,
             cover: 'both'
