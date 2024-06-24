@@ -32,13 +32,6 @@ if hexo-config('index_post_list.direction') == "column"
       cursor pointer
       border var(--style-border)
 
-      +minWidth1300()
-        flex-direction column
-        width 100%
-        flex 1 1 40%
-        max-width 50%
-        box-shadow var(--efu-shadow-border)
-
       +maxWidth1300()
         margin-bottom .5rem
 
@@ -238,6 +231,25 @@ if hexo-config('index_post_list.direction') == "column"
           .sticky
             color var(--efu-fontcolor)
 
+  if hexo-config('index_post_list.direction') == "column" && hexo-config('index_post_list.column') == 2
+    #recent-posts
+      > .recent-post-item
+        +minWidth1300()
+          flex-direction column
+          width 100%
+          flex 1 1 40%
+          max-width 50%
+          box-shadow var(--efu-shadow-border)
+  else if hexo-config('index_post_list.direction') == "column" && hexo-config('index_post_list.column') == 3
+    #recent-posts
+      > .recent-post-item
+        +minWidth1300()
+          flex-direction column
+          width 100%
+          flex 1 1 33.3%
+          max-width 32.6%
+          box-shadow var(--efu-shadow-border)
+      
 else if hexo-config('index_post_list.direction') == "row"
   #recent-posts
     position relative
