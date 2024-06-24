@@ -47,8 +47,8 @@
 
 ## Todo
 
-- [x] New style at the top of the home page
-- [x] Article sharing button
+- [x] The list of articles is displayed in three columns on the homepage.
+- [x] btns tags plugin.
 
 > If you have any questions, please issue an [issue](https://github.com/everfu/hexo-theme-solitude/issues)
 
