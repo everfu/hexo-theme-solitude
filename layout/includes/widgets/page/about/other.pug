@@ -1,82 +1,83 @@
 - var tj = site.data.about.tj
 - var oneself = site.data.about.oneself
 
-.author-content
-    if tj
-        .about-statistic.author-content-item(style=`background: url(${tj.img});`)
-            .card-content
-                .author-content-item-tips=_p('about.other.tj.tip')
-                span.author-content-item-title=_p('about.other.tj.title')
-                #statistic
-                .post-tips
-                    = _p('about.other.tj.post_tip')
-                    case tj.provider
-                        when '51la'
-                            a(href="https://v6.51.la/") 51la网站统计
-                        when 'baidu'
-                            a(href="https://tongji.baidu.com/") 百度统计
-                if tj.button
-                    .banner-button-group
-                        a.banner-button(href=url_for(tj.button_link))
-                            i.solitude.st-right-btn-fill
-                            span.banner-button-text= tj.button_text
+if tj || oneself
+    .author-content
+        if tj
+            .about-statistic.author-content-item(style=`background: url(${tj.img});`)
+                .card-content
+                    .author-content-item-tips=_p('about.other.tj.tip')
+                    span.author-content-item-title=_p('about.other.tj.title')
+                    #statistic
+                    .post-tips
+                        = _p('about.other.tj.post_tip')
+                        case tj.provider
+                            when '51la'
+                                a(href="https://v6.51.la/") 51la网站统计
+                            when 'baidu'
+                                a(href="https://tongji.baidu.com/") 百度统计
+                    if tj.button
+                        .banner-button-group
+                            a.banner-button(href=url_for(tj.button_link))
+                                i.solitude.st-right-btn-fill
+                                span.banner-button-text= tj.button_text
 
-            case tj.provider
-                when '51la'
-                    script.
-                        fetch("#{tj.url}")
-                            .then(res => res.text())
-                            .then(data => {
-                                const title = ["最近活跃", "今日人数", "今日访问", "昨日人数", "昨日访问", "本月访问", "总访问量"];
-                                let num = data.match(/(<\/span><span>).*?(\/span><\/p>)/g);
-                                num = num.map(el => {
-                                    let val = el.replace(/(<\/span><span>)/g, "");
-                                    return val.replace(/(<\/span><\/p>)/g, "");
+                case tj.provider
+                    when '51la'
+                        script.
+                            fetch("#{tj.url}")
+                                .then(res => res.text())
+                                .then(data => {
+                                    const title = ["最近活跃", "今日人数", "今日访问", "昨日人数", "昨日访问", "本月访问", "总访问量"];
+                                    let num = data.match(/(<\/span><span>).*?(\/span><\/p>)/g);
+                                    num = num.map(el => {
+                                        let val = el.replace(/(<\/span><span>)/g, "");
+                                        return val.replace(/(<\/span><\/p>)/g, "");
+                                    });
+                                    const s = document.getElementById("statistic");
+                                    let html = '';
+                                    for (let i = 0; i < num.length; i++) {
+                                        if (i === 0 || i === num.length - 1) continue;
+                                        html += `<div><span>${title[i]}</span><span id="${title[i]}">${num[i]}</span></div>`;
+                                    }
+                                    s.innerHTML = html;
                                 });
-                                const s = document.getElementById("statistic");
-                                let html = '';
-                                for (let i = 0; i < num.length; i++) {
-                                    if (i === 0 || i === num.length - 1) continue;
-                                    html += `<div><span>${title[i]}</span><span id="${title[i]}">${num[i]}</span></div>`;
-                                }
-                                s.innerHTML = html;
-                            });
-                when 'baidu'
-                    script.
-                        fetch("#{tj.url}")
-                            .then(res => res.json())
-                            .then(data => {
-                                const title = {"today_uv": "今日人数", "today_pv": "今日访问", "yesterday_uv": "昨日人数", "yesterday_pv": "昨日访问", "last_month_pv": "最近月访问", "last_year_pv": "最近年访问"};
+                    when 'baidu'
+                        script.
+                            fetch("#{tj.url}")
+                                .then(res => res.json())
+                                .then(data => {
+                                    const title = {"today_uv": "今日人数", "today_pv": "今日访问", "yesterday_uv": "昨日人数", "yesterday_pv": "昨日访问", "last_month_pv": "最近月访问", "last_year_pv": "最近年访问"};
 
-                                let s = document.getElementById("statistic");
+                                    let s = document.getElementById("statistic");
 
-                                for (let key in data) {
-                                if (data.hasOwnProperty(key) && title[key]) {
-                                    s.innerHTML += `<div><span>${title[key]}</span><span id="${key}">${data[key]}</span></div>`;
-                                }
-                                }
-                            });
+                                    for (let key in data) {
+                                    if (data.hasOwnProperty(key) && title[key]) {
+                                        s.innerHTML += `<div><span>${title[key]}</span><span id="${key}">${data[key]}</span></div>`;
+                                    }
+                                    }
+                                });
 
 
-    if oneself
-        style.
-            :root {
-                --site-about-oneself-map--light: url(#{oneself.map.light});
-                --site-about-oneself-map--dark: url(#{oneself.map.dark});
-            }
-        .author-content-item-group.column.mapAndInfo
-            .author-content-item.map.single
-                span.map-title=_p('about.other.oneself.map_title') + oneself.location
-            .author-content-item.selfInfo.single
-                div
-                    span.selfInfo-title=_p('about.other.oneself.info_title1')
-                    span.selfInfo-content(style="color: #43a6c6;")= oneself.birthYear
-                div
-                    span.selfInfo-title= oneself.university
-                    span.selfInfo-content(style="color: #c69043;")= oneself.major
-                div
-                    span.selfInfo-title=_p('about.other.oneself.info_title2')
-                    span.selfInfo-content(style="color: #b04fe6;")= oneself.occupation
+        if oneself
+            style.
+                :root {
+                    --site-about-oneself-map--light: url(#{oneself.map.light});
+                    --site-about-oneself-map--dark: url(#{oneself.map.dark});
+                }
+            .author-content-item-group.column.mapAndInfo
+                .author-content-item.map.single
+                    span.map-title=_p('about.other.oneself.map_title') + oneself.location
+                .author-content-item.selfInfo.single
+                    div
+                        span.selfInfo-title=_p('about.other.oneself.info_title1')
+                        span.selfInfo-content(style="color: #43a6c6;")= oneself.birthYear
+                    div
+                        span.selfInfo-title= oneself.university
+                        span.selfInfo-content(style="color: #c69043;")= oneself.major
+                    div
+                        span.selfInfo-title=_p('about.other.oneself.info_title2')
+                        span.selfInfo-content(style="color: #b04fe6;")= oneself.occupation
 
 - var cause = site.data.about.cause
 
