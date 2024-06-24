@@ -32,6 +32,12 @@
   opacity 0
   transition .3s
 
+#post_chat_button
+  display none
+
+  +maxWidth768()
+    display block
+
 #postChat_iframeContainer
   z-index 1000
   border var(--style-border-always)
@@ -39,12 +45,21 @@
   animation to_show_fromLeftBottom .2s ease-out
   border-radius 12px
 
+  +maxWidth768()
+    width 100% !important
+    height 100% !important
+    bottom 0 !important
+    left 0 !important
+    max-width 100% !important
+    max-height 100% !important
+    border-radius 0 !important
+
 #efuTalk.on span.efuTalkTitle, #efuTalk:hover span.efuTalkTitle
   color var(--efu-card-bg)
   opacity 1
 
 #postChat_button
-  display none!important
+  display none !important
 
 #efuTalk i.solitude.efuTalkIcon
   width 18px
