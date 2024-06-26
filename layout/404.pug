@@ -19,6 +19,6 @@ block content
                         break
                     .aside-list-item
                         a.thumbnail(href=url_for(post.path), title=post.title)
-                            img(src=post.cover, alt=post.title)
+                            img(src=url_for(post.cover), alt=post.title)
                         .content
                             a.title(href=url_for(post.path), title=post.title)= post.title

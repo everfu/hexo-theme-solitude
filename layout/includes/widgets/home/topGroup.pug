@@ -5,7 +5,7 @@
             .post_cover
                 a(href=url_for(post.path), title=post.title)
                     span.recent-post-top-text= _p('home.recommend')
-                    img.post_bg(alt=post.title, src=post.cover)
+                    img.post_bg(alt=post.title, src=url_for(post.cover))
             .recent-post-info
                 a.article-title(href=url_for(post.path), title=post.title)= post.title
 

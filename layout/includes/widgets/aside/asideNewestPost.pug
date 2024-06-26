@@ -8,7 +8,7 @@
             if index <= 5
                 .aside-list-item
                     a.thumbnail(href=url_for(post.path) title=post.title)
-                        img(alt=post.title src=post.cover)
+                        img(alt=post.title src=url_for(post.cover))
                     .content
                         a.title(href=url_for(post.path) title=post.title)= post.title
                         if post.categories.data[0]

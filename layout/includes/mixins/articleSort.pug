@@ -5,7 +5,7 @@ each post in page.posts.find({ parent: { $exists: false } }).data
         .article-sort-item.year #{year}
     .article-sort-item
         a.article-sort-item-img(href=url_for(post.path) title=post.title)
-            img(src=post.cover alt=post.title)
+            img(src=url_for(post.cover) alt=post.title)
         .article-sort-item-info
             a.article-sort-item-title(href=url_for(post.path) title=post.title onclick="window.event.cancelBubble=true;") #{post.title}
             .article-sort-item-tags
