@@ -1,6 +1,7 @@
 @require line-number
 
-@require diff
+if hexo-config('highlight.enable')
+  @require diff
 
 #article-container
   pre[class*='language-']
