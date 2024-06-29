@@ -1,6 +1,6 @@
-@import "color"
-
-@import "theme/" + hexo-config('highlight.theme')
+if hexo-config('highlight.enable')
+  @import "color"
+  @import "theme/" + hexo-config('highlight.theme')
 
 if $highlight_enable
   @require "highlight/index.styl"
