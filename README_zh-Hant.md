@@ -10,6 +10,8 @@
 
    主題設計由 [@张洪Heo](https://github.com/zhheo)全權授權
 
+<a href="https://polar.sh/everfu"><img src="https://polar.sh/embed/seeks-funding-shield.svg?org=everfu" /></a>
+
 ![npm package](https://img.shields.io/npm/v/hexo-theme-solitude?logo=npm)
 ![release](https://img.shields.io/github/package-json/v/valor-x/hexo-theme-solitude/master?color=%231ab1ad&label=release)
 ![license](https://img.shields.io/github/license/valor-x/hexo-theme-solitude?color=FF5531)
