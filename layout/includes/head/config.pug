@@ -122,6 +122,16 @@
         }
     }
 
+    let highlight = false
+    if (theme.highlight.enable) {
+        highlight = {
+            limit: theme.highlight.limit,
+            expand: theme.highlight.expand,
+            copy: theme.highlight.copy,
+            syntax: config.syntax_highlighter
+        }
+    }
+
 script.
     const GLOBAL_CONFIG = {
         root: '!{config.root}',
@@ -133,13 +143,7 @@ script.
             error: '!{theme.lazyload.errorimg}'
         },
         copyright: !{copyright},
-        highlight: {
-            enable: !{theme.highlight.enable},
-            limit: !{theme.highlight.limit},
-            expand: !{theme.highlight.expand},
-            copy: !{theme.highlight.copy},
-            syntax: '!{config.syntax_highlighter}'
-        },
+        highlight: !{highlight ? JSON.stringify(highlight) : false},
         randomlink: !{theme.footer.randomlink},
         lang: !{JSON.stringify(lang)},
         aside: {
