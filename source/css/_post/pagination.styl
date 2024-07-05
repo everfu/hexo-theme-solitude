@@ -4,7 +4,14 @@
   border var(--style-border-always)
 
   div:only-child
-    width 100%!important
+    &.next-post, &.prev-post
+      width 100%
+
+    &.next-post a
+      border-left 0
+
+    &.prev-post a
+      border-right 0
 
   +minWidth1300()
     position fixed
@@ -113,7 +120,7 @@
     a
       +minWidth768()
         border-right var(--efu-main-op)
-        border-right-width 1px
+        border-right-width .5px
         border-right-style solid
 
       +minWidth1300()
@@ -131,7 +138,7 @@
     a
       +minWidth768()
         border-left var(--efu-main-op)
-        border-left-width 1px
+        border-left-width .5px
         border-left-style solid
         display flex
         align-items flex-start
