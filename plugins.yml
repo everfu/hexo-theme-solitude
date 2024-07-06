@@ -1,11 +1,11 @@
 algolia_search:
   name: algoliasearch
   file: dist/algoliasearch-lite.umd.js
-  version: 4.23.3
+  version: 4.24.0
 instantsearch:
   name: instantsearch.js
   file: dist/instantsearch.production.min.js
-  version: 4.70.0
+  version: 4.73.0
 pjax:
   name: pjax
   file: pjax.min.js
@@ -18,11 +18,11 @@ waline_js:
   name: '@waline/client'
   file: dist/waline.js
   other_name: waline
-  version: 3.2.1
+  version: 3.2.7
 waline_css:
   name: '@waline/client'
   file: dist/waline.css
-  version: 3.2.1
+  version: 3.2.7
   other_name: waline
 valine:
   name: valine
@@ -31,11 +31,11 @@ valine:
 artalk_css:
   name: artalk
   file: dist/Artalk.css
-  version: 2.8.6
+  version: 2.8.7
 artalk_js:
   name: artalk
   file: dist/Artalk.js
-  version: 2.8.6
+  version: 2.8.7
 katex:
   name: katex
   file: dist/katex.min.css
