@@ -376,6 +376,11 @@ hexo.extend.filter.register('before_generate', () => {
             },
             custom_list: []
         },
+        lure: {
+            enable: false,
+            jump: '404 Not Found',
+            back: 'ヾ(≧∇≦*)ゝ嘿嘿，上当了吧'
+        },
         CDN: {
             internal: 'local',
             third_party: 'cdnjs',

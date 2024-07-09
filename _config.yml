@@ -940,7 +940,7 @@ memorial:
 # 诱骗
 # lure
 lure:
-  enable: true
+  enable: false
   # 跳出
   # Jump out
   jump: "404 Not Found"
