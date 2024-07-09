@@ -961,6 +961,14 @@ expire:
   text_prev: "本文已于"
   text_next: "天前过期，如果内容不符，请联系站长更新。"
 
+# 背景图片
+# Background image
+background:
+  enable: false
+  img: https://img.truimo.com/2022/807b270630a51.jpg
+  opacity: 0.2
+
+
 # CDN
 # Don't modify the following settings unless you know how they work
 # 非必要请不要修改

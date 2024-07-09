@@ -70,6 +70,20 @@ body
     user-select none
     -webkit-user-select none
 
+  if hexo-config('background.enable')
+    &:before
+      top 0
+      left 0
+      right 0
+      bottom 0
+      z-index -1
+      content ""
+      position fixed
+      pointer-events none
+      background-blend-mode multiply
+      opacity hexo-config('background.opacity')
+      background url(hexo-config('background.img')) center / cover;
+
 *
   box-sizing border-box
 

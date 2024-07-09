@@ -388,6 +388,11 @@ hexo.extend.filter.register('before_generate', () => {
             text_prev: '本文已于',
             text_next: '天前过期，如果内容不符，请联系站长更新。',
         },
+        background: {
+            enable: false,
+            img: 'https://img.truimo.com/2022/807b270630a51.jpg',
+            opacity: .2,
+        },
         CDN: {
             internal: 'local',
             third_party: 'cdnjs',
