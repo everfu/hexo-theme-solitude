@@ -760,7 +760,7 @@ post_ai:
 
 # latex 公式支持
 # latex formula support
-# docs: https://solitude.js.org/configuration/extra#数学公式
+# docs: https://solitude.js.org/config/extend.html#数学公式
 katex:
   enable: false
   per_page: false # 是否在每页都加载 / Whether to load on each page
@@ -862,7 +862,7 @@ extends:
 
 # PWA
 # https://developer.mozilla.org/zh-CN/docs/Web/Progressive_web_apps
-# docs: https://solitude.js.org/configuration/extra#pwa
+# docs: https://solitude.js.org/config/extra#pwa
 pwa:
   enable: false
   manifest: /manifest.json # manifest.json 文件路径
