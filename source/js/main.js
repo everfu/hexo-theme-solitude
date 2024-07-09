@@ -637,7 +637,7 @@ class tabs {
         if (!GLOBAL_CONFIG.lure) return;
         let title = document.title;
         document.addEventListener('visibilitychange', () => {
-            const { lure } = GLOBAL_CONFIG;
+            const {lure} = GLOBAL_CONFIG;
             if (document.visibilityState === 'hidden') {
                 document.title = lure.jump;
             } else if (document.visibilityState === 'visible') {
@@ -648,11 +648,29 @@ class tabs {
             }
         });
     }
+
+    static expireAddListener() {
+        const {expire} = GLOBAL_CONFIG;
+        if (!expire) return;
+        const post_date = document.querySelector('.post-meta-date time');
+        if (!post_date) return;
+        const ex = Math.ceil((new Date().getTime() - new Date(post_date.getAttribute('datetime')).getTime()) / 1000 / 60 / 60 / 24);
+        if (expire.time > ex) return;
+        const ele = document.createElement('div');
+        ele.className = 'expire';
+        ele.innerHTML = `<i class="solitude st-circle-exclamation-solid"></i>${expire.text_prev}${-(expire.time - ex)}${expire.text_next}`;
+        const articleContainer = document.getElementById('article-container');
+        if (expire.position === 'top') {
+            articleContainer.insertBefore(ele, articleContainer.firstChild);
+        } else {
+            articleContainer.appendChild(ele);
+        }
+    }
 }
 
 window.refreshFn = () => {
     const {is_home, is_page, page, is_post} = PAGE_CONFIG;
-    const {runtime, lazyload, lightbox, randomlink, covercolor, post_ai, lure} = GLOBAL_CONFIG;
+    const {runtime, lazyload, lightbox, randomlink, covercolor, post_ai, lure, expire} = GLOBAL_CONFIG;
     const timeSelector = (is_home ? '.post-meta-date time' : is_post ? '.post-meta-date time' : '.datatime') + ', .webinfo-item time';
     document.body.setAttribute('data-type', page);
     sco.changeTimeFormat(document.querySelectorAll(timeSelector));
@@ -668,6 +686,9 @@ window.refreshFn = () => {
     if (is_post || is_page) {
         addHighlight();
         tabs.init();
+    }
+    if (is_post) {
+        if (expire) tabs.expireAddListener();
     }
     if (covercolor.enable) coverColor();
     if (PAGE_CONFIG.toc) toc.init();

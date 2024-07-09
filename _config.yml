@@ -948,6 +948,18 @@ lure:
   # Switch back
   back: "ヾ(≧∇≦*)ゝ嘿嘿，上当了吧"
 
+# 文章过期提醒
+# Article expiration reminder
+expire:
+  enable: false
+  # 过期时间
+  # Expiration time
+  time: 30
+  position: top # top / bottom
+  # 过期提示
+  # Expiration prompt
+  text_prev: "本文已于"
+  text_next: "天前过期，如果内容不符，请联系站长更新。"
 
 # CDN
 # Don't modify the following settings unless you know how they work
@@ -970,6 +982,7 @@ CDN:
 
   option:
     solitude_css: https://cdn2.codesign.qq.com/icons/7pOrz0WXB5ZWJPX/latest/iconfont.css
+    busuanzi_qj_js: https://pv.lemonso.com/js
     # algolia_search:
     # instantsearch:
     # pjax:

@@ -381,6 +381,13 @@ hexo.extend.filter.register('before_generate', () => {
             jump: '404 Not Found',
             back: 'ヾ(≧∇≦*)ゝ嘿嘿，上当了吧'
         },
+        expire: {
+            enable: false,
+            time: 30,
+            position: 'top',
+            text_prev: '本文已于',
+            text_next: '天前过期，如果内容不符，请联系站长更新。',
+        },
         CDN: {
             internal: 'local',
             third_party: 'cdnjs',

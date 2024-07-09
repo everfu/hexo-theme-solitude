@@ -140,6 +140,16 @@
         }
     }
 
+    let expire = false
+    if (theme.expire.enable) {
+        expire = {
+            time: theme.expire.time,
+            position: theme.expire.position,
+            text_prev: theme.expire.text_prev,
+            text_next: theme.expire.text_next,
+        }
+    }
+
 script.
     const GLOBAL_CONFIG = {
         root: '!{config.root}',
@@ -176,4 +186,5 @@ script.
         post_ai: !{post_ai},
         right_menu: !{rightMenu ? JSON.stringify(rightMenu) : false},
         lure: !{lure ? JSON.stringify(lure) : false},
+        expire: !{expire ? JSON.stringify(expire) : false},
     };
