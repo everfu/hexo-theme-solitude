@@ -660,11 +660,7 @@ class tabs {
         ele.className = 'expire';
         ele.innerHTML = `<i class="solitude st-circle-exclamation-solid"></i>${expire.text_prev}${-(expire.time - ex)}${expire.text_next}`;
         const articleContainer = document.getElementById('article-container');
-        if (expire.position === 'top') {
-            articleContainer.insertBefore(ele, articleContainer.firstChild);
-        } else {
-            articleContainer.appendChild(ele);
-        }
+        articleContainer.insertAdjacentElement(expire.position === 'top' ? 'afterbegin' : 'beforeend', ele);
     }
 }
 
