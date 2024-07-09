@@ -132,6 +132,14 @@
         }
     }
 
+    let lure = false
+    if (theme.lure.enable) {
+        lure = {
+            jump: theme.lure.jump,
+            back: theme.lure.back,
+        }
+    }
+
 script.
     const GLOBAL_CONFIG = {
         root: '!{config.root}',
@@ -167,4 +175,5 @@ script.
         lightbox: '!{ theme.mediumZoom ? "mediumZoom" : (theme.fancybox ? "fancybox" : "null")}',
         post_ai: !{post_ai},
         right_menu: !{rightMenu ? JSON.stringify(rightMenu) : false},
+        lure: !{lure ? JSON.stringify(lure) : false},
     };
