@@ -4,13 +4,18 @@
 include ../widgets/page/banner
 
 if enable && use
-    #console_recentcomments
+    .console_recentcomments
+    - var sel = '#page .console_recentcomments'
     case use[0]
         when 'Twikoo'
+            - var str_name = 'twikoo-recent-comments'
             include ../widgets/page/recentcomment/twikoo
         when 'Valine'
+            - var str_name = 'valine-recent-comments'
             include ../widgets/page/recentcomment/valine
         when 'Waline'
+            - var str_name = 'waline-recent-comments'
             include ../widgets/page/recentcomment/waline
         when 'Artalk'
+            - var str_name = 'artalk-recent-comments'
             include ../widgets/page/recentcomment/artalk

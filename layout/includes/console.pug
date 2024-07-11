@@ -17,15 +17,20 @@ div#console
                             if theme.recent_comments.enable
                                 a.recent-comment-more(href=url_for(theme.recent_comments.page) title=_p('console.recent_comment_more'))
                                     i.solitude.st-right-btn-fill
-                    #console_recentcomments
+                    .console_recentcomments
+                        - var sel = '.console-card .console_recentcomments'
                         case use[0]
                             when 'Twikoo'
+                                - var str_name = 'twikoo-recent-comments-console'
                                 include ./widgets/page/recentcomment/twikoo
                             when 'Valine'
+                                - var str_name = 'valine-recent-comments-console'
                                 include ./widgets/page/recentcomment/valine
                             when 'Waline'
+                                - var str_name = 'waline-recent-comments-console'
                                 include ./widgets/page/recentcomment/waline
                             when 'Artalk'
+                                - var str_name = 'artalk-recent-comments-console'
                                 include ./widgets/page/recentcomment/artalk
         if card.tags || card.archive
             div.console-card-group-right
