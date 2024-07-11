@@ -1,4 +1,5 @@
-header#page-header(class=is_post() ? 'post-bg' : 'not-top-img')
+header#page-header(class=is_post() && theme.post.default.cover_top && page.cover_top ? 'post-bg' : 'not-top-img')
     include ./nav.pug
     if is_post()
-        include ./widgets/post/postMeta.pug
+        if theme.post.default.top_cover
+            include ./widgets/post/postMeta.pug

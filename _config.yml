@@ -329,6 +329,7 @@ page:
 # post default settings
 post:
   default:
+    top_cover: false # 顶部描述 / Top description
     # 文章默认图片
     # default cover
     cover:
