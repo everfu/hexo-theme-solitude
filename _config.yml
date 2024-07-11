@@ -776,6 +776,9 @@ comment:
   count: false # 评论数展示
   pv: false # 是否使用評論統計頁面訪問
   avatar: https://cravatar.cn # Gravatar link
+  hot_tip: # 多人互动
+    enable: false # 开启后将在文章列表显示多人互动
+    count: 3 # 设置大于多少评论时显示
 
 # twikoo 配置信息
 # twikoo settings
@@ -967,7 +970,6 @@ background:
   enable: false
   img: https://img.truimo.com/2022/807b270630a51.jpg
   opacity: 0.2
-
 
 # CDN
 # Don't modify the following settings unless you know how they work
