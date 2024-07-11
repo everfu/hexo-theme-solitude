@@ -13,7 +13,6 @@ hexo.extend.filter.register('before_generate', () => {
             menu: null,
             right: {
                 random: false,
-                console: false,
                 custom: [],
             }
         },
@@ -119,6 +118,7 @@ hexo.extend.filter.register('before_generate', () => {
         },
         post: {
             default: {
+                top_cover: true,
                 cover: ['/img/default.avif'],
                 locate: 'China, Changsha',
                 copyright: {
@@ -336,6 +336,17 @@ hexo.extend.filter.register('before_generate', () => {
             server: 'your server',
             site: 'your site-name',
             option: null,
+        },
+        console: {
+            enable: false,
+            recentComment: {
+                enable: false,
+                storage: .2,
+            },
+            card: {
+                tags: true,
+                archive: true
+            }
         },
         verify_site: [],
         css_prefix: false,
