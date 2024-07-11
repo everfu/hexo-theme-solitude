@@ -328,7 +328,7 @@ const sco = {
     categoriesBarActive() {
         const categoryBar = document.querySelector("#category-bar");
         const currentPath = decodeURIComponent(window.location.pathname);
-        const isHomePage = currentPath === "/";
+        const isHomePage = currentPath === GLOBAL_CONFIG.root;
         if (categoryBar) {
             const categoryItems = categoryBar.querySelectorAll(".category-bar-item");
             categoryItems.forEach(item => item.classList.remove("select"));
