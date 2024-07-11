@@ -2,11 +2,11 @@
 
 script(pjax).
     (async () => {
-        document.querySelector('#comments-page').textContent = `#{__("loading")}`
+        document.querySelector('#console_recentcomments').textContent = `#{__("loading")}`
         const emojiReg = /<img [^>]+ atk-emoticon="[^"]+">/g
         let cache = utils.saveToLocal.get('artalk-recent-comments')
         if (cache) {
-            setHtml(document.querySelector('#comments-page'), cache)
+            setHtml(document.querySelector('#console_recentcomments'), cache)
             return
         }
         let ls = []
@@ -37,7 +37,7 @@ script(pjax).
                         content: formatContent(i.content)
                     })
                 }
-                setHtml(document.querySelector('#comments-page'), ls)
+                setHtml(document.querySelector('#console_recentcomments'), ls)
                 utils.saveToLocal.set('artalk-recent-comments', ls, !{cache})
             })
 

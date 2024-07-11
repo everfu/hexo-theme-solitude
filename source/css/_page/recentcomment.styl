@@ -1,4 +1,4 @@
-div#comments-page
+div#console_recentcomments
   display flex
   flex-wrap wrap
   gap 12px
@@ -19,6 +19,9 @@ div#comments-page
   gap 8px
   display flex
   flex-direction column
+
+  .console-card &
+    width calc(100% / 2 - 8px)
 
   +maxWidth900()
     width calc(100% / 2 - 6px)
@@ -69,7 +72,7 @@ div#comments-page
     font-size 12px
     line-height 12px
 
-#comments-page .comment-info img
+#console_recentcomments .comment-info img
   width 30px
   height 30px
   object-fit cover

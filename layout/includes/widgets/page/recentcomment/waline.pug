@@ -1,10 +1,10 @@
 script(pjax).
     (async () => {
-        document.querySelector('#comments-page').textContent = `#{__("loading")}`
+        document.querySelector('#console_recentcomments').textContent = `#{__("loading")}`
         const emojiReg = /<img [^>]+ class="wl-emoji">/g
         let cache = utils.saveToLocal.get('waline-recent-comments')
         if (cache) {
-            setHtml(document.querySelector('#comments-page'), cache)
+            setHtml(document.querySelector('#console_recentcomments'), cache)
             return
         }
         let ls = []
@@ -34,7 +34,7 @@ script(pjax).
                         content: formatContent(i.comment)
                     })
                 }
-                setHtml(document.querySelector('#comments-page'), ls)
+                setHtml(document.querySelector('#console_recentcomments'), ls)
                 utils.saveToLocal.set('waline-recent-comments', ls, !{cache})
             })
 

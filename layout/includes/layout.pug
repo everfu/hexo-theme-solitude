@@ -14,7 +14,8 @@ html(lang=config.language, data-theme="light")
             include ./loading.pug
 
         // console
-        include ./console.pug
+        if theme.console.enable
+            include ./console.pug
 
         // sidebar
         include ./sidebar.pug

@@ -825,8 +825,15 @@ giscus:
     dark: dark
   option:
 
-# 中控台扩展 ： 最新评论 + 标签 + 文章
-console_plus: false
+# 中控台
+console:
+  enable: false # 开启后显示中控台
+  recentComment: # 开启后显示最近评论
+    enable: false # 开启前请先配置评论
+    storage: .2 # 缓存时间
+  card:
+    tags: true # 开启后显示 标签
+    archive: true # 开启后显示 归档
 
 # 站点验证
 # Site verification
