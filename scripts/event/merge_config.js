@@ -405,7 +405,8 @@ hexo.extend.filter.register('before_generate', () => {
         },
         background: {
             enable: false,
-            img: 'https://img.truimo.com/2022/807b270630a51.jpg',
+            dark: 'https://bu.dusays.com/2023/09/29/651685ce667d1.jpg',
+            light: 'https://bu.dusays.com/2023/09/29/651685cc18d39.jpg',
             opacity: .2,
         },
         CDN: {

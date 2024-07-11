@@ -976,6 +976,7 @@ expire:
 # Background image
 background:
   enable: false
+  opacity: .2
   dark: https://bu.dusays.com/2023/09/29/651685ce667d1.jpg
   light: https://bu.dusays.com/2023/09/29/651685cc18d39.jpg
 
