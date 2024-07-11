@@ -2,11 +2,11 @@
 
 script(pjax).
     (async () => {
-        document.querySelector('#console_recentcomments').textContent = `#{__("loading")}`
+        document.querySelector('!{sel}').textContent = `#{__("loading")}`
         const emojiReg = /:[a-z0-9_\u4e00-\u9fa5]+:/g
-        let cache = utils.saveToLocal.get('valine-recent-comments')
+        let cache = utils.saveToLocal.get('!{str_name}')
         if (cache) {
-            setHtml(document.querySelector('#console_recentcomments'), cache)
+            setHtml(document.querySelector('!{sel}'), cache)
             return
         }
         let ls = []
@@ -42,8 +42,8 @@ script(pjax).
                     content: formatContent(i.comment)
                 })
             }
-            setHtml(document.querySelector('#console_recentcomments'), ls)
-            utils.saveToLocal.set('valine-recent-comments', ls, !{cache})
+            setHtml(document.querySelector('!{sel}'), ls)
+            utils.saveToLocal.set('!{str_name}', ls, !{cache})
         })
 
         function setHtml(el, data) {
