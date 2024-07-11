@@ -136,242 +136,251 @@
       &.loaded
         display block
 
-    #post-info
-      top 0
-      position absolute
-      padding 0 3rem
-      margin 0 auto
-      color var(--efu-white)
-      max-width 1400px
-      display flex
-      flex-direction column
-      align-items flex-start
+  #post-info
+    top 0
+    position absolute
+    padding 0 3rem
+    margin 0 auto
+    color var(--efu-white)
+    max-width 1400px
+    display flex
+    flex-direction column
+    align-items flex-start
+    height calc(100% + 0px)
+    justify-content center
+    animation slide-in .6s 0s backwards
+    width 100%
+    text-align center
+
+    +minWidth1300()
       height calc(100% + 0px)
+      top 0
+      display flex
       justify-content center
-      animation slide-in .6s 0s backwards
-      width 100%
-      text-align center
 
-      +minWidth1300()
-        height calc(100% + 0px)
-        top 0
-        display flex
-        justify-content center
+    +maxWidth900()
+      bottom 1.5rem
+      text-align left
 
-      +maxWidth900()
-        bottom 1.5rem
-        text-align left
+    +maxWidth768()
+      padding 0 6%
+      justify-content normal
+      padding-top 18rem
+
+    .post-title
+      color var(--efu-white)
+      font-weight 700
+      font-size 2.3rem
+      line-height 1.2
+      text-align left
+      margin 1rem 0 1rem 0
+      -webkit-line-clamp 2
+      padding 0
+      overflow hidden
 
       +maxWidth768()
-        padding 0 6%
-        justify-content normal
-        padding-top 18rem
+        font-size 1.2rem
+        -webkit-line-clamp 3
+        margin .2rem auto
+        text-align center
+        z-index 1
 
-      .post-title
-        color var(--efu-white)
-        font-weight 700
-        font-size 2.3rem
-        line-height 1.2
-        text-align left
-        margin 1rem 0 1rem 0
-        -webkit-line-clamp 2
-        padding 0
-        overflow hidden
+      +minWidth1300()
+        width 1100px
+        font-size 2.6rem !important
 
-        +maxWidth768()
-          font-size 1.2rem
-          -webkit-line-clamp 3
-          margin .2rem auto
-          text-align center
-          z-index 1
+    #post-meta
+      margin-top .4rem
+      transition .3s
+      display flex
+      user-select none
+      color var(--light-grey)
+      font-size 95%
 
-        +minWidth1300()
-          width 1100px
-          font-size 2.6rem !important
+      +maxWidth768()
+        font-size 90%
+        padding 0 2rem
 
-      #post-meta
-        margin-top .4rem
-        transition .3s
-        display flex
-        user-select none
+      a
         color var(--light-grey)
-        font-size 95%
+        transition all .3s ease-out 0s
+
+      i
+        font-size 16px
+        margin-right 4px
+
+      > div
+        text-align left
+
+      .meta-secondline
+        display flex
+        flex-direction row
+        flex-wrap wrap
+        justify-content flex-start
+        align-items center
 
         +maxWidth768()
-          font-size 90%
-          padding 0 2rem
+          justify-content center
 
-        a
-          color var(--light-grey)
-          transition all .3s ease-out 0s
-
-        i
-          font-size 16px
-          margin-right 4px
-
-        > div
-          text-align left
-
-        .meta-secondline
-          display flex
-          flex-direction row
-          flex-wrap wrap
-          justify-content flex-start
+        > span
+          display: flex
           align-items center
+          line-height 1
+          margin 0 .5rem
 
           +maxWidth768()
-            justify-content center
+            line-height 1.5
 
-          > span
-            display: flex
+        > span:first-child
+          margin-left 0
+
+        .post-meta-date, .post-meta-wordcount, .post-meta-position, .post-meta-pv
+          opacity .6
+
+        .post-meta-separator
+          margin 0 1rem 0 0
+
+        .post-meta-pv
+          margin-right 8px
+          padding 0 8px
+          display flex
+          align-items center
+          border-radius 12px
+
+          &:hover
+            opacity 1
+            background var(--efu-white-op)
+            text-decoration none
+            color var(--efu-white)
+
+        .post-meta-pv-cv
+          margin-left .8rem
+
+          #busuanzi_value_page_pv
+            font-weight 800
+
+        .post-meta-commentcount
+          opacity .6
+          cursor pointer
+          transition .3s
+          border-radius 12px
+          padding 8px
+
+          &:hover
+            opacity 1
+            background var(--efu-white-op)
+
+        .post-meta-wechat
+          margin-right .8rem
+          opacity .6
+          transition .3s
+          cursor pointer
+
+          &:hover
+            opacity 1
+            background var(--efu-white-op)
+
+    #post-firstinfo
+      text-align left
+      display flex
+      white-space nowrap
+      user-select none
+
+      +maxWidth768()
+        white-space nowrap
+        margin 0 auto
+        z-index 1
+
+        .tag_share
+          display none
+
+      .meta-firstline
+        display flex
+        align-items center
+        height 32px
+
+        +maxWidth768()
+          margin-bottom .4rem
+
+        .post-meta-original
+          background var(--efu-white-op)
+          color var(--efu-white)
+          padding 0 .5rem
+          font-size .7rem
+          margin auto
+          border-radius 8px
+          font-weight 700
+          line-height 32px
+          width 100%
+          height 100%
+          display flex
+
+          &:hover
+            color var(--efu-main)
+            background var(--efu-white)
+            border-radius 8px
+
+        .tag_share
+          margin-left .5rem
+
+          .post-meta__tag-list
+            display flex
+            flex-direction row
             align-items center
-            line-height 1
-            margin 0 .5rem
 
             +maxWidth768()
-              line-height 1.5
+              display none
 
-          > span:first-child
-            margin-left 0
+            &::-webkit-scrollbar
+              display none
 
-          .post-meta-date, .post-meta-wordcount, .post-meta-position, .post-meta-pv
-            opacity .6
-
-          .post-meta-separator
-            margin 0 1rem 0 0
-
-          .post-meta-pv
-            margin-right 8px
-            padding 0 8px
-            display flex
-            align-items center
-            border-radius 12px
-
-            &:hover
-              opacity 1
-              background var(--efu-white-op)
-              text-decoration none
+            .post-meta__tags
               color var(--efu-white)
+              opacity .8
+              margin-right 8px
+              padding 0 8px
+              border-radius 12px
+              display flex
+              align-items center
+              flex-direction row
 
-          .post-meta-pv-cv
-            margin-left .8rem
+              &:hover
+                color var(--efu-white)
+                opacity 1
+                background var(--efu-white-op)
 
-            #busuanzi_value_page_pv
-              font-weight 800
+              +maxWidth768()
+                margin 0 .5rem 0 0
 
-          .post-meta-commentcount
-            opacity .6
-            cursor pointer
-            transition .3s
-            border-radius 12px
-            padding 8px
-
-            &:hover
-              opacity 1
-              background var(--efu-white-op)
-
-          .post-meta-wechat
-            margin-right .8rem
-            opacity .6
-            transition .3s
-            cursor pointer
-
-            &:hover
-              opacity 1
-              background var(--efu-white-op)
-
-      #post-firstinfo
-        text-align left
-        display flex
-        white-space nowrap
-        user-select none
-
-        +maxWidth768()
-          white-space nowrap
-          margin 0 auto
-          z-index 1
-
-          .tag_share
-            display none
-
-        .meta-firstline
-          display flex
-          align-items center
+        span.post-meta-categories
+          background-color var(--efu-white-op)
+          border-radius 8px
+          line-height 32px
           height 32px
+          transition .3s
 
-          +maxWidth768()
-            margin-bottom .4rem
+          &:not(:first-child)
+            margin-left 8px
 
-          .post-meta-original
-            background var(--efu-white-op)
+          &:hover
+            background-color var(--efu-white)
+
+          a.post-meta-categories
             color var(--efu-white)
-            padding 0 .5rem
             font-size .7rem
-            margin auto
-            border-radius 8px
-            font-weight 700
-            line-height 32px
             width 100%
             height 100%
             display flex
+            padding 0 .5rem
 
             &:hover
               color var(--efu-main)
-              background var(--efu-white)
-              border-radius 8px
 
-          .tag_share
-            margin-left .5rem
-
-            .post-meta__tag-list
-              display flex
-              flex-direction row
-              align-items center
-
-              +maxWidth768()
-                display none
-
-              &::-webkit-scrollbar
-                display none
-
-              .post-meta__tags
-                color var(--efu-white)
-                opacity .8
-                margin-right 8px
-                padding 0 8px
-                border-radius 12px
-                display flex
-                align-items center
-                flex-direction row
-
-                &:hover
-                  color var(--efu-white)
-                  opacity 1
-                  background var(--efu-white-op)
-
-                +maxWidth768()
-                  margin 0 .5rem 0 0
-
-          span.post-meta-categories
-            background-color var(--efu-white-op)
-            border-radius 8px
-            line-height 32px
-            height 32px
-            transition .3s
-
-            &:not(:first-child)
-              margin-left 8px
-
-            &:hover
-              background-color var(--efu-white)
-
-            a.post-meta-categories
-              color var(--efu-white)
-              font-size .7rem
-              width 100%
-              height 100%
-              display flex
-              padding 0 .5rem
-
-              &:hover
-                color var(--efu-main)
+#post #post-info
+  height auto
+  position unset
+  padding 1rem 2rem
+  background var(--efu-main)
+  border-radius 12px 12px 0 0
+  +minWidth768()
+    min-height 250px

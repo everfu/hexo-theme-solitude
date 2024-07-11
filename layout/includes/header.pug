@@ -1,4 +1,6 @@
-header#page-header(class=is_post() ? 'post-bg' : 'not-top-img')
+- const not_cover = !(typeof page.not_cover ==='undefined' ? false : page.not_cover)
+header#page-header(class=is_post() && theme.post.default.top_cover && not_cover ? 'post-bg' : 'not-top-img')
     include ./nav.pug
     if is_post()
-        include ./widgets/post/postMeta.pug
+        if theme.post.default.top_cover && !page.not_cover
+            include ./widgets/post/postMeta.pug

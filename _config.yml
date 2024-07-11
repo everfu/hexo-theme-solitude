@@ -329,6 +329,7 @@ page:
 # post default settings
 post:
   default:
+    top_cover: true # 顶部描述 / Top description
     # 文章默认图片
     # default cover
     cover:
@@ -760,7 +761,7 @@ post_ai:
 
 # latex 公式支持
 # latex formula support
-# docs: https://solitude.js.org/configuration/extra#数学公式
+# docs: https://solitude.js.org/config/extend.html#数学公式
 katex:
   enable: false
   per_page: false # 是否在每页都加载 / Whether to load on each page
@@ -776,6 +777,9 @@ comment:
   count: false # 评论数展示
   pv: false # 是否使用評論統計頁面訪問
   avatar: https://cravatar.cn # Gravatar link
+  hot_tip: # 多人互动
+    enable: false # 开启后将在文章列表显示多人互动
+    count: 3 # 设置大于多少评论时显示
 
 # twikoo 配置信息
 # twikoo settings
@@ -822,8 +826,15 @@ giscus:
     dark: dark
   option:
 
-# 中控台扩展 ： 最新评论 + 标签 + 文章
-console_plus: false
+# 中控台
+console:
+  enable: false # 开启后显示中控台
+  recentComment: # 开启后显示最近评论
+    enable: false # 开启前请先配置评论
+    storage: .2 # 缓存时间
+  card:
+    tags: true # 开启后显示 标签
+    archive: true # 开启后显示 归档
 
 # 站点验证
 # Site verification
@@ -862,7 +873,7 @@ extends:
 
 # PWA
 # https://developer.mozilla.org/zh-CN/docs/Web/Progressive_web_apps
-# docs: https://solitude.js.org/configuration/extra#pwa
+# docs: https://solitude.js.org/config/extra#pwa
 pwa:
   enable: false
   manifest: /manifest.json # manifest.json 文件路径
@@ -931,11 +942,43 @@ memorial:
   enable: false
   # 日期, (M-D)
   # Date, (M-D)
-  # eg: 7-8, 9-18, 12-13 ...
+  # eg: 7-7, 9-18, 12-13 ...
   date:
-    - "7-8" #七八卢沟桥事变
-    - "9-18" #九一八事变/建军节
-    - "12-13" #南京国家公祭日
+    - "7-7" # 七七事变
+    - "9-18" # 九一八事变/建军节
+    - "12-13" # 南京国家公祭日
+
+# 诱骗
+# lure
+lure:
+  enable: false
+  # 跳出
+  # Jump out
+  jump: "404 Not Found"
+  # 切回
+  # Switch back
+  back: "ヾ(≧∇≦*)ゝ嘿嘿，上当了吧"
+
+# 文章过期提醒
+# Article expiration reminder
+expire:
+  enable: false
+  # 过期时间
+  # Expiration time
+  time: 30
+  position: top # top / bottom
+  # 过期提示
+  # Expiration prompt
+  text_prev: "本文已于"
+  text_next: "天前过期，如果内容不符，请联系站长更新。"
+
+# 背景图片
+# Background image
+background:
+  enable: false
+  opacity: .2
+  dark: https://bu.dusays.com/2023/09/29/651685ce667d1.jpg
+  light: https://bu.dusays.com/2023/09/29/651685cc18d39.jpg
 
 # CDN
 # Don't modify the following settings unless you know how they work
@@ -958,6 +1001,7 @@ CDN:
 
   option:
     solitude_css: https://cdn2.codesign.qq.com/icons/7pOrz0WXB5ZWJPX/latest/iconfont.css
+    busuanzi_qj_js: https://pv.lemonso.com/js
     # algolia_search:
     # instantsearch:
     # pjax:

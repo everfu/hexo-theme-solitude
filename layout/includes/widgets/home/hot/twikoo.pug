@@ -1,0 +1,46 @@
+script.
+    function updatePostsBasedOnComments() {
+        const location = window.location
+        const posts = Array.from(document.querySelectorAll('.recent-post-item[onclick] .post_cover a')).map(item => item.href.replace(location, '/'))
+
+        function get() {
+            twikoo.getCommentsCount({
+                envId: "!{theme.twikoo.envId}",
+                urls: posts,
+                includeReply: true
+            }).then(function (response) {
+                response.forEach(function (comment) {
+                    if (comment.count > !{count}) {
+                        const postElement = document.querySelector(`.recent-post-item[onclick*="${comment.url}"]`);
+                        if (postElement) {
+                            const infoTopTips = postElement.querySelector(".recent-post-info-top-tips"),
+                                originalSpan = infoTopTips ? infoTopTips.querySelector(".original") : null;
+                            if (originalSpan) {
+                                const hotTip = createHotTipElement();
+                                infoTopTips.insertBefore(hotTip, originalSpan);
+                            }
+                        }
+                    }
+                });
+            }).catch(function (error) {
+                console.error("Error fetching comments:", error);
+            });
+        }
+
+        function createHotTipElement() {
+            const hotTip = document.createElement("span");
+            hotTip.classList.add("hot-tip");
+
+            const icon = document.createElement("i");
+            icon.classList.add("solitude", "st-fire-fill");
+            hotTip.appendChild(icon);
+
+            const commentCount = document.createTextNode("!{_p('hot-tip')}");
+            hotTip.appendChild(commentCount);
+
+            return hotTip;
+        }
+
+        if (typeof twikoo === 'object') get()
+        else utils.getScript('!{url_for(theme.cdn.twikoo)}').then(get)
+    }

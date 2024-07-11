@@ -22,3 +22,6 @@ if hexo-config('aside.position') == 0
 else
   #home
     order 1
+
+if hexo-config('comment.hot_tip.enable')
+  @import "hot-tip.styl"

@@ -401,7 +401,8 @@ i.solitude
       box-shadow none
       border none
       padding 0 1rem
-      background var(--efu-background)
+  > #post
+    padding 0
 
 .show
   opacity 1 !important
@@ -429,3 +430,18 @@ if hexo-config('memorial.enable')
     -ms-filter grayscale(100%)
     -o-filter grayscale(100%)
     filter grayscale(100%)
+
+if hexo-config('background.enable')
+  #global_bg
+    position fixed
+    z-index 999
+    opacity hexo-config('background.opacity')
+    width 100%
+    height 100%
+    background-image url(hexo-config('background.light'))
+    background-size cover
+    pointer-events none
+    background-repeat no-repeat
+
+    [data-theme=dark] &
+      background-image url(hexo-config('background.dark'))

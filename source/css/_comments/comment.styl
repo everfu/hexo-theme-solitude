@@ -53,10 +53,9 @@
 .post-comment
   background var(--efu-card-bg)
 
-div#post-comment
-  margin-top 2rem
-
 #post-comment
+  .post &
+    padding 0 2rem
   > div.comment-head
     > div.comment-privacy
       display block
@@ -100,7 +99,7 @@ div#post-comment
 
   .comment-head
     font-size .8em
-    margin-bottom .5rem
+    margin .5rem 0
     position relative
 
     if hexo-config('comment.use')[1]

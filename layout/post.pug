@@ -3,9 +3,12 @@ extends includes/layout.pug
 block content
     main.layout#content-inner
         #post
-            if theme.post_ai.enable && page.ai
-                include includes/widgets/post/post-ai
-            article.post-content#article-container!= page.content
+            if page.not_cover
+                include includes/widgets/post/postInfo
+            article.post-content#article-container
+                if theme.post_ai.enable && page.ai
+                    include includes/widgets/post/post-ai
+                != page.content
             include includes/widgets/post/copyright
             .post-tools-right
                 .tag_share

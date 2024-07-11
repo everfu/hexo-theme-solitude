@@ -5,6 +5,7 @@ upload: 'datetime: '
 totalk: You don't need to delete blank lines, just type in your comments.
 loading: Loading...
 day: ' days'
+hot-tip: Hot
 
 theme:
   dark: Dark

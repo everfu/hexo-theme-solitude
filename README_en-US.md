@@ -2,7 +2,7 @@
 
 <div align="center">
 
-   <img src=".github/logo.svg" alt="Solitude logo" height="200">
+   <img src=".github/persona.avif" alt="Solitude logo" height="200">
 
    <h1>Hexo Theme Solitude</h1>
 
@@ -31,11 +31,11 @@
 [![gitee](https://img.shields.io/badge/Gitee-red?logo=gitee)](https://gitee.com/nsjjd_w/hexo-theme-solitude)
 [![gitlab](https://img.shields.io/badge/GitLab-blue?logo=gitlab)](https://gitlab.com/efu/hexo-theme-solitude)
 
-[Documentation](https://solitude.js.org/)丨[Preview](https://www.efu.me/)
+[Documentation](https://solitude.js.org/)丨[Preview](https://everfu.github.io/Solitude/)
 
 </div>
 
-![Screenshot](.github/screenshot.webp)
+![Screenshot](.github/screenshot.avif)
 
 ## Features
 

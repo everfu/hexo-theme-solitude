@@ -1,6 +1,8 @@
+- const { title, url, icon} = theme.hometop.banner
+
 div.banners-title
-    div.banners-title-big!= theme.hometop.banner.title
-    div.banners-title-small= theme.hometop.banner.url
+    div.banners-title-big!= title
+    div.banners-title-small= url
 - var group = theme.hometop.group
 if group
     div.banners-links
@@ -11,13 +13,14 @@ if group
                     i.solitude(class=array[1])
                 .banners-link-title= label
 
-div.tags-group-all
-    .tags-group-wrapper
-        each i in [1,2]
-            - var keys = Object.keys(theme.hometop.banner.icon)
-            - var pairs = keys.map((val, i) => i % 2 ? [keys[i - 1], val] : []).filter(x => x.length)
-            each pair in pairs
-                .tags-group-icon-pair
-                    each key in pair
-                        .tags-group-icon(style=`background: ${theme.hometop.banner.icon[key].color}`)
-                            img.nolazyload(src=theme.hometop.banner.icon[key].img, title=key)
+if icon
+    div.tags-group-all
+        .tags-group-wrapper
+            each i in [1,2]
+                - var keys = Object.keys(icon)
+                - var pairs = keys.map((val, i) => i % 2 ? [keys[i - 1], val] : []).filter(x => x.length)
+                each pair in pairs
+                    .tags-group-icon-pair
+                        each key in pair
+                            .tags-group-icon(style=`background: ${icon[key].color}`)
+                                img.nolazyload(src=icon[key].img, title=key)

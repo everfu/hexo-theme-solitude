@@ -1,6 +1,24 @@
 .flink#banners
   margin-bottom: .5rem
 
+.tags-group-title
+  font-size 14px
+  color var(--efu-card-bg)
+  background var(--efu-lighttext)
+  position absolute
+  width 100%
+  height 100%
+  display flex
+  border-radius 120px
+  align-items center
+  justify-content center
+  opacity 0
+  transition .3s
+
+.flink .tags-group-icon:hover .tags-group-title
+  opacity 1
+  backdrop-filter saturate(180%) blur(20px)
+
 .flink#article-container
   margin-top 1rem
 
@@ -67,7 +85,10 @@
         width calc(25% - 16px)
 
       +maxWidth768()
-        width calc(33.3333% - 16px)
+        width calc(100% / 3 - 16px)
+
+      +maxWidth600()
+        width calc(100% / 2 - 16px)
 
       .img
         border-radius 0

@@ -2,11 +2,11 @@
 
 script(pjax).
     (async () => {
-        document.querySelector('#comments-page').textContent = `#{__("loading")}`
+        document.querySelector('#console_recentcomments').textContent = `#{__("loading")}`
         const emojiReg = /<img class="tk-owo-emotion" [^>]+>/g
         let cache = utils.saveToLocal.get('twikoo-recent-comments')
         if (cache) {
-            setHtml(document.querySelector('#comments-page'), cache)
+            setHtml(document.querySelector('#console_recentcomments'), cache)
             return
         }
         let ls = []
@@ -44,7 +44,7 @@ script(pjax).
                     time: i.created
                 })
             }
-            setHtml(document.querySelector('#comments-page'), ls)
+            setHtml(document.querySelector('#console_recentcomments'), ls)
             utils.saveToLocal.set('twikoo-recent-comments', ls, !{cache})
         });
 

@@ -3,7 +3,7 @@ const sidebarFn = () => {
     const $mobileSidebarMenus = document.getElementById('sidebar-menus');
     const $menuMask = document.getElementById('menu-mask');
     const $body = document.body;
-    
+
     const toggleMobileSidebar = (isOpen) => {
         utils.sidebarPaddingR();
         $body.style.overflow = isOpen ? 'hidden' : '';
@@ -18,7 +18,7 @@ const sidebarFn = () => {
     }
     $toggleMenu.addEventListener('click', () => toggleMobileSidebar(true));
     $menuMask.addEventListener('click', closeMobileSidebar);
-    
+
     window.addEventListener('resize', () => {
         if (utils.isHidden($toggleMenu) && $mobileSidebarMenus.classList.contains('open')) {
             closeMobileSidebar();
@@ -107,11 +107,13 @@ const asideStatus = () => {
     const status = utils.saveToLocal.get('aside-status');
     document.documentElement.classList.toggle('hide-aside', status === 'hide');
 }
+
 function initThemeColor() {
     const currentTop = window.scrollY || document.documentElement.scrollTop;
     const themeColor = currentTop > 0 ? '--efu-card-bg' : PAGE_CONFIG.is_post ? '--efu-main' : '--efu-background';
     applyThemeColor(getComputedStyle(document.documentElement).getPropertyValue(themeColor));
 }
+
 function applyThemeColor(color) {
     const themeColorMeta = document.querySelector('meta[name="theme-color"]');
     const appleMobileWebAppMeta = document.querySelector('meta[name="apple-mobile-web-app-status-bar-style"]');
@@ -121,6 +123,7 @@ function applyThemeColor(color) {
         document.body.style.backgroundColor = color;
     }
 }
+
 const handleThemeChange = mode => {
     const themeChange = window.globalFn?.themeChange || {}
     for (let key in themeChange) {
@@ -213,7 +216,7 @@ const sco = {
         document.documentElement.setAttribute('data-theme', newMode);
         utils.saveToLocal.set('theme', newMode, 0.02);
         utils.snackbarShow(GLOBAL_CONFIG.lang.theme[newMode], false, 2000);
-        if(typeof rm === 'object') rm.mode(!isDarkMode) && rm.hideRightMenu();
+        if (typeof rm === 'object') rm.mode(!isDarkMode) && rm.hideRightMenu();
         handleThemeChange(newMode);
     },
     hideTodayCard: () => document.getElementById('todayCard').classList.add('hide'),
@@ -241,7 +244,7 @@ const sco = {
         inputs.forEach(selector => {
             const el = document.querySelector(selector);
             if (el) {
-                el.dispatchEvent(new Event('input', { bubble: true, cancelable: true }));
+                el.dispatchEvent(new Event('input', {bubble: true, cancelable: true}));
                 el.value = '> ' + txt.replace(/\n/g, '\n> ') + '\n\n';
                 utils.scrollToDest(utils.getEleTop(document.getElementById('post-comment')), 300);
                 el.focus();
@@ -298,11 +301,11 @@ const sco = {
             }
 
             const greetings = [
-                { start: 0, end: 5, text: nick ? prefix : lang.goodnight },
-                { start: 6, end: 10, text: nick ? prefix : lang.morning },
-                { start: 11, end: 14, text: nick ? prefix : lang.noon },
-                { start: 15, end: 18, text: nick ? prefix : lang.afternoon },
-                { start: 19, end: 24, text: nick ? prefix : lang.night },
+                {start: 0, end: 5, text: nick ? prefix : lang.goodnight},
+                {start: 6, end: 10, text: nick ? prefix : lang.morning},
+                {start: 11, end: 14, text: nick ? prefix : lang.noon},
+                {start: 15, end: 18, text: nick ? prefix : lang.afternoon},
+                {start: 19, end: 24, text: nick ? prefix : lang.night},
             ];
             const greeting = greetings.find(g => hours >= g.start && hours <= g.end);
             el.innerText = greeting.text;
@@ -325,7 +328,7 @@ const sco = {
     categoriesBarActive() {
         const categoryBar = document.querySelector("#category-bar");
         const currentPath = decodeURIComponent(window.location.pathname);
-        const isHomePage = currentPath === "/";
+        const isHomePage = currentPath === GLOBAL_CONFIG.root;
         if (categoryBar) {
             const categoryItems = categoryBar.querySelectorAll(".category-bar-item");
             categoryItems.forEach(item => item.classList.remove("select"));
@@ -343,9 +346,9 @@ const sco = {
             const isScrollBarAtEnd = () => scrollBar.scrollLeft + scrollBar.clientWidth >= scrollBar.scrollWidth - 8;
             const scroll = () => {
                 if (isScrollBarAtEnd()) {
-                    scrollBar.scroll({ left: 0, behavior: "smooth" });
+                    scrollBar.scroll({left: 0, behavior: "smooth"});
                 } else {
-                    scrollBar.scrollBy({ left: scrollBar.clientWidth, behavior: "smooth" });
+                    scrollBar.scrollBy({left: scrollBar.clientWidth, behavior: "smooth"});
                 }
             };
             scrollBar.addEventListener("scroll", () => {
@@ -528,6 +531,7 @@ const addHighlight = () => {
         })
     }
 }
+
 class toc {
     static init() {
         const tocContainer = document.getElementById('card-toc')
@@ -544,11 +548,13 @@ class toc {
         })
         this.active(el)
     }
+
     static active(toc) {
         const $article = document.getElementById('article-container')
         const $tocContent = document.getElementById('toc-content')
         const list = $article.querySelectorAll('h1,h2,h3,h4,h5,h6')
         let detectItem = ''
+
         function autoScroll(el) {
             const activePosition = el.getBoundingClientRect().top
             const sidebarScrollTop = $tocContent.scrollTop
@@ -559,6 +565,7 @@ class toc {
                 $tocContent.scrollTop = sidebarScrollTop - 150
             }
         }
+
         function findHeadPosition(top) {
             if (top === 0) return false
             let currentIndex = ''
@@ -582,6 +589,7 @@ class toc {
                 }
             }
         }
+
         window.tocScrollFn = utils.throttle(function () {
             const currentTop = window.scrollY || document.documentElement.scrollTop
             findHeadPosition(currentTop)
@@ -589,11 +597,13 @@ class toc {
         window.addEventListener('scroll', tocScrollFn)
     }
 }
+
 class tabs {
     static init() {
         this.clickFnOfTabs();
         this.backToTop();
     }
+
     static clickFnOfTabs() {
         document.querySelectorAll('#article-container .tab > button').forEach((item) => {
             item.addEventListener('click', function (e) {
@@ -614,6 +624,7 @@ class tabs {
             });
         });
     }
+
     static backToTop() {
         document.querySelectorAll('#article-container .tabs .tab-to-top').forEach((item) => {
             item.addEventListener('click', function () {
@@ -621,11 +632,41 @@ class tabs {
             });
         });
     }
+
+    static lureAddListener() {
+        if (!GLOBAL_CONFIG.lure) return;
+        let title = document.title;
+        document.addEventListener('visibilitychange', () => {
+            const {lure} = GLOBAL_CONFIG;
+            if (document.visibilityState === 'hidden') {
+                document.title = lure.jump;
+            } else if (document.visibilityState === 'visible') {
+                document.title = lure.back;
+                setTimeout(() => {
+                    document.title = title;
+                }, 2000);
+            }
+        });
+    }
+
+    static expireAddListener() {
+        const {expire} = GLOBAL_CONFIG;
+        if (!expire) return;
+        const post_date = document.querySelector('.post-meta-date time');
+        if (!post_date) return;
+        const ex = Math.ceil((new Date().getTime() - new Date(post_date.getAttribute('datetime')).getTime()) / 1000 / 60 / 60 / 24);
+        if (expire.time > ex) return;
+        const ele = document.createElement('div');
+        ele.className = 'expire';
+        ele.innerHTML = `<i class="solitude st-circle-exclamation-solid"></i>${expire.text_prev}${-(expire.time - ex)}${expire.text_next}`;
+        const articleContainer = document.getElementById('article-container');
+        articleContainer.insertAdjacentElement(expire.position === 'top' ? 'afterbegin' : 'beforeend', ele);
+    }
 }
 
 window.refreshFn = () => {
     const {is_home, is_page, page, is_post} = PAGE_CONFIG;
-    const {runtime, lazyload, lightbox, randomlink, covercolor, post_ai} = GLOBAL_CONFIG;
+    const {runtime, lazyload, lightbox, randomlink, covercolor, post_ai, lure, expire} = GLOBAL_CONFIG;
     const timeSelector = (is_home ? '.post-meta-date time' : is_post ? '.post-meta-date time' : '.datatime') + ', .webinfo-item time';
     document.body.setAttribute('data-type', page);
     sco.changeTimeFormat(document.querySelectorAll(timeSelector));
@@ -637,13 +678,20 @@ window.refreshFn = () => {
     post_ai && is_post && efu_ai.init();
     sco.switchComments();
     initObserver();
-    if (is_home) showTodayCard();
+    if (is_home){
+        showTodayCard();
+        typeof updatePostsBasedOnComments === 'function' && updatePostsBasedOnComments()
+    }
     if (is_post || is_page) {
         addHighlight();
         tabs.init();
     }
+    if (is_post) {
+        if (expire) tabs.expireAddListener();
+    }
     if (covercolor.enable) coverColor();
     if (PAGE_CONFIG.toc) toc.init();
+    if (lure) tabs.lureAddListener();
 }
 document.addEventListener('DOMContentLoaded', () => {
     [addCopyright, sco.initConsoleState, window.refreshFn, asideStatus, () => window.onscroll = percent].forEach(fn => fn());
@@ -654,7 +702,7 @@ document.addEventListener('visibilitychange', () => {
     }
 });
 window.onkeydown = e => {
-    const { keyCode, ctrlKey, shiftKey } = e;
+    const {keyCode, ctrlKey, shiftKey} = e;
     if (keyCode === 123 || (ctrlKey && shiftKey && keyCode === 67)) {
         utils.snackbarShow(GLOBAL_CONFIG.lang.f12, false, 3000);
     }

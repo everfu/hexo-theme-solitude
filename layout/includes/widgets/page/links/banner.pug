@@ -29,3 +29,4 @@
                         each y in pair
                             a.tags-group-icon(href=url_for(y.link), title=y.name)
                                 img(src=y.avatar + (site.data.links.banner_suffix || ''), title=y.name)
+                                span.tags-group-title=y.name

@@ -567,12 +567,6 @@
 .nav-button
   cursor pointer
 
-#site-name
-  .iconfont
-    font-size 20px
-    font-weight 400
-    line-height 48px
-
 #site-logo
   width 121px
 
@@ -738,14 +732,15 @@ if hexo-config('nav.group')
             background-color var(--efu-main)
 
 .post
-  if hexo-config('nav.group')
-    .back-home-button
-      color var(--efu-white)
-
-      &:hover
-        background var(--efu-white-op)
+  .post-bg
+    if hexo-config('nav.group')
+      .back-home-button
         color var(--efu-white)
-        cursor pointer
+
+        &:hover
+          background var(--efu-white-op)
+          color var(--efu-white)
+          cursor pointer
 
   #nav
     #site-name
@@ -761,6 +756,12 @@ if hexo-config('nav.group')
       #site-name
         &:after
           color var(--efu-card-bg)
+  .not-top-img
+    #nav
+      a
+        &:hover
+          +minWidth900()
+            background var(--efu-lighttext)
 
 .back-menu-list
   display flex

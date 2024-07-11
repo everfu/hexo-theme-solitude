@@ -1,4 +1,5 @@
 #post #pagination
+  width auto
   overflow hidden
   position inherit
   border var(--style-border-always)
@@ -33,15 +34,11 @@
     box-shadow var(--efu-shadow-border)
 
   &.pagination-post
-    margin-top 1.5rem
+    margin 0 2rem
     background var(--efu-card-bg)
 
     +minWidth768()
       border-radius 12px
-      margin-top 1rem
-
-    +minWidth1300()
-      margin-top 0
 
   .next-post, .prev-post, .next-post.pull-right, .prev-post.pull-left
     background var(--efu-secondbg)

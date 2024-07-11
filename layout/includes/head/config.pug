@@ -132,6 +132,24 @@
         }
     }
 
+    let lure = false
+    if (theme.lure.enable) {
+        lure = {
+            jump: theme.lure.jump,
+            back: theme.lure.back,
+        }
+    }
+
+    let expire = false
+    if (theme.expire.enable) {
+        expire = {
+            time: theme.expire.time,
+            position: theme.expire.position,
+            text_prev: theme.expire.text_prev,
+            text_next: theme.expire.text_next,
+        }
+    }
+
 script.
     const GLOBAL_CONFIG = {
         root: '!{config.root}',
@@ -167,4 +185,6 @@ script.
         lightbox: '!{ theme.mediumZoom ? "mediumZoom" : (theme.fancybox ? "fancybox" : "null")}',
         post_ai: !{post_ai},
         right_menu: !{rightMenu ? JSON.stringify(rightMenu) : false},
+        lure: !{lure ? JSON.stringify(lure) : false},
+        expire: !{expire ? JSON.stringify(expire) : false},
     };

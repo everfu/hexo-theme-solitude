@@ -25,6 +25,7 @@
       .recent-post-group
         display flex
         flex-direction row
+        justify-content space-between
         flex-wrap wrap
         align-content space-between
         gap .5rem
@@ -90,6 +91,10 @@
       transition .3s
       position relative
       box-shadow var(--efu-shadow-border)
+
+      &:nth-last-child(2):nth-child(1),
+      &:nth-last-child(1):nth-child(2)
+        width calc(100% / 2 - 0.5rem)
 
       +maxWidth1200()
         width 200px
@@ -244,6 +249,7 @@
 
           .banner-button-group
             bottom: 1rem
+
 .banners-links
   display flex
   position absolute

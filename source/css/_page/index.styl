@@ -6,7 +6,7 @@
 
 @import "error.styl"
 
-if hexo-config('recent_comments.enable')
+if hexo-config('recent_comments.enable') || (hexo-config('console.enable') && hexo-config('console.recentComment.enable'))
   @import "recentcomment.styl"
 
 if hexo-config('says.enable')
