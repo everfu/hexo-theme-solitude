@@ -678,7 +678,10 @@ window.refreshFn = () => {
     post_ai && is_post && efu_ai.init();
     sco.switchComments();
     initObserver();
-    if (is_home) showTodayCard();
+    if (is_home){
+        showTodayCard();
+        typeof updatePostsBasedOnComments === 'function' && updatePostsBasedOnComments()
+    }
     if (is_post || is_page) {
         addHighlight();
         tabs.init();

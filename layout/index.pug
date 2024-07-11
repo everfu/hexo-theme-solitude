@@ -12,6 +12,8 @@ block content
             #category-bar
                 include ./includes/widgets/home/categoryBar
             .recent-posts#recent-posts
+                if theme.comment.hot_tip.enable
+                    include ./includes/widgets/home/hot/index.pug
                 if theme.carousel && is_home_first_page()
                     include ./includes/widgets/home/carousel.pug
                 for post, index in page.posts.sort("-sticky" || "-date").data

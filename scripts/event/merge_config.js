@@ -306,6 +306,10 @@ hexo.extend.filter.register('before_generate', () => {
             lazyload: false,
             count: false,
             avatar: 'https://cravatar.cn',
+            hot_tip: {
+                enable: true,
+                count: 3
+            }
         },
         twikoo: {
             envId: 'your envId',
