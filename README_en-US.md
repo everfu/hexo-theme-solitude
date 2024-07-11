@@ -2,7 +2,7 @@
 
 <div align="center">
 
-   <img src=".github/logo.svg" alt="Solitude logo" height="200">
+   <img src=".github/persona.avif" alt="Solitude logo" height="200">
 
    <h1>Hexo Theme Solitude</h1>
 
@@ -35,7 +35,7 @@
 
 </div>
 
-![Screenshot](.github/screenshot.webp)
+![Screenshot](.github/screenshot.avif)
 
 ## Features
 
