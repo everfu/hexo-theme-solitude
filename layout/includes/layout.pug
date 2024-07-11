@@ -9,6 +9,10 @@ html(lang=config.language, data-theme="light")
         if theme.display_mode.universe
             canvas#universe
 
+        // background img
+        if theme.background.enable
+            #global_bg
+
         // loading
         if theme.loading.fullpage
             include ./loading.pug

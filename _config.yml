@@ -976,8 +976,8 @@ expire:
 # Background image
 background:
   enable: false
-  img: https://img.truimo.com/2022/807b270630a51.jpg
-  opacity: 0.2
+  dark: https://bu.dusays.com/2023/09/29/651685ce667d1.jpg
+  light: https://bu.dusays.com/2023/09/29/651685cc18d39.jpg
 
 # CDN
 # Don't modify the following settings unless you know how they work
