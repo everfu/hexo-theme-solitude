@@ -5,9 +5,10 @@ block content
         #post
             if !theme.post.default.top_cover
                 include includes/widgets/post/postInfo
-            if theme.post_ai.enable && page.ai
-                include includes/widgets/post/post-ai
-            article.post-content#article-container!= page.content
+            article.post-content#article-container
+                if theme.post_ai.enable && page.ai
+                    include includes/widgets/post/post-ai
+                != page.content
             include includes/widgets/post/copyright
             .post-tools-right
                 .tag_share
