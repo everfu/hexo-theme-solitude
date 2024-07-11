@@ -4,11 +4,6 @@ hexo.extend.filter.register('before_post_render', () => {
         const data = hexo.locals.get('data');
         const logger = hexo.log;
         const theme = hexo.theme.config;
-        if (theme.hometop.enable && !theme.hometop.banner.icon) {
-            logger.error('\n 启用banner的情况下，必须提供 icon 图片！\n 请在主题配置文件中设置 hometop.banner.icon 选项。');
-            logger.error('\n If banner is enabled, icon image must be supplied! \n Please set the hometop.banner.icon option in the theme configuration file.');
-            process.exit(-1);
-        }
         if (theme.says.enable && !data.essay) {
             logger.error('\n 启用说说的情况下，必须提供 essay 数据文件！\n 请新建 essay.yaml。');
             logger.error('\n If says is enabled, essay data must be supplied! \n Please create essay.yaml.');
