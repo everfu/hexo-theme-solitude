@@ -29,6 +29,13 @@ script.
             })
             const destroyArtalk = () => artalkItem.destroy()
             utils.addGlobalFn('pjax', destroyArtalk, 'destroyArtalk')
+            document.addEventListener('pjax:complete', function () {
+                artalkItem.update({
+                    pageKey: window.location.pathname,
+                    pageTitle: document.title
+                });
+                artalkItem.reload();
+            });
         }
         const loadArtalk = async () => {
             if (typeof Artalk === 'object') initArtalk()
