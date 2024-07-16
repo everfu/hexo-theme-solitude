@@ -13,16 +13,16 @@ pjax:
 twikoo:
   name: twikoo
   file: dist/twikoo.all.min.js
-  version: 1.6.36
+  version: 1.6.38
 waline_js:
   name: '@waline/client'
   file: dist/waline.js
   other_name: waline
-  version: 3.2.7
+  version: 3.3.0
 waline_css:
   name: '@waline/client'
   file: dist/waline.css
-  version: 3.2.7
+  version: 3.3.0
   other_name: waline
 valine:
   name: valine
