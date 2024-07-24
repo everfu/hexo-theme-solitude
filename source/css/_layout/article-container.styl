@@ -38,9 +38,9 @@
     overflow-x scroll
 
   a.headerlink
-    float right
     opacity .08
-    position relative
+    position absolute
+    right 0
     padding 0
     border none
     border-radius 8px
@@ -183,10 +183,11 @@
 
   &.post-content
     h1, h2, h3, h4
+      padding-right 1rem
+      position relative
       display flex
+      flex-wrap wrap
       align-items center
-      justify-content space-between
-      flex-direction row-reverse
       transition all .2s ease-out 0s
 
     h1
