@@ -133,7 +133,6 @@
       align-items center
       margin-right 1.5rem
       overflow hidden
-      gap .5rem
 
       +maxWidth768()
         margin-right 12px
@@ -142,6 +141,11 @@
         padding 0
 
       .nav-button
+        margin-left .5rem
+
+        &#nav-totop
+          margin-right .5rem
+
         a
           height 35px
           width 35px
@@ -270,7 +274,7 @@
       transform scale(0)
       margin-left 0
       overflow hidden
-      transition .3s ease-in
+      transition .3s
 
 #page-header #scroll-down .scroll-down-effects,
 #page-header #site-subtitle, #page-header #site-title
@@ -686,7 +690,7 @@ if hexo-config('nav.group')
       opacity 0
       pointer-events none
       backdrop-filter blur(20px)
-      -webkit-backdrop-filter  blur(20px)
+      -webkit-backdrop-filter blur(20px)
 
       +maxWidth768()
         left 0
@@ -756,6 +760,7 @@ if hexo-config('nav.group')
       #site-name
         &:after
           color var(--efu-card-bg)
+
   .not-top-img
     #nav
       a
@@ -893,7 +898,7 @@ if hexo-config('nav.group')
     overflow hidden
     left 0
 
-if hexo-config('nav.right.console')
+if hexo-config('console.enable')
   #nav-console
     +maxWidth768()
       display none

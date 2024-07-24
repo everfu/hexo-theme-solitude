@@ -23,8 +23,8 @@
     animation: slide-in .6s .3s backwards;
 
   +maxWidth768()
-    margin-bottom 0
-    margin-top 0
+    margin-bottom .5rem
+    margin-top .5rem
     border-radius 0
     background var(--efu-background)
     padding 0 1rem
@@ -33,6 +33,9 @@
   .category-bar-right
     display flex
     align-items center
+
+    +maxWidth768()
+      display none
 
     .category-bar-next
       margin-left 8px
@@ -63,15 +66,17 @@
     border-radius 8px
     align-items center
     height 30px
+    +maxWidth768()
+      height 44px
+      gap 6px
 
     &::-webkit-scrollbar
       display: none
 
     .category-bar-item
-      &:hover
-        a
-          background var(--efu-secondbg-bg)
-          color var(--efu-lighttext)
+        a:hover
+          background var(--efu-main)
+          color var(--efu-white)
 
       a
         padding .1rem .5rem
@@ -81,7 +86,12 @@
         display flex
         align-items center
         height 30px
-        border var(--style-border-always)
+
+        +maxWidth768()
+          border-radius 50px
+          background var(--efu-card-bg)
+          border var(--style-border-always)
+          padding 21px 16px
 
       &.select
         order -1
@@ -89,7 +99,3 @@
         a
           background var(--efu-theme)
           color var(--efu-white)
-
-    &.home
-      a
-        border initial

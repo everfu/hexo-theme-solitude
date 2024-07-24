@@ -6,6 +6,8 @@
 
   .post &
     padding 1rem 2rem
+    +maxWidth768()
+      padding .5rem
 
   iframe
     border-radius 12px
@@ -36,9 +38,9 @@
     overflow-x scroll
 
   a.headerlink
-    float right
     opacity .08
-    position relative
+    position absolute
+    right 0
     padding 0
     border none
     border-radius 8px
@@ -181,10 +183,11 @@
 
   &.post-content
     h1, h2, h3, h4
+      padding-right 1rem
+      position relative
       display flex
+      flex-wrap wrap
       align-items center
-      justify-content space-between
-      flex-direction row-reverse
       transition all .2s ease-out 0s
 
     h1
@@ -200,6 +203,12 @@
     h3, h4
       font-size 1.1rem
       line-height 1.3
+  hr
+    display flex
+    position relative
+    margin 0.5rem 0
+    border-width 0
+    border-top 1px dashed var(--efu-theme-op)
 
 if hexo-config('mediumZoom')
   .medium-zoom--opened .medium-zoom-overlay
