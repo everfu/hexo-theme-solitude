@@ -27,7 +27,7 @@ waline_css:
 valine:
   name: valine
   file: dist/Valine.min.js
-  version: 1.5.1
+  version: 1.5.2
 artalk_css:
   name: artalk
   file: dist/Artalk.css
