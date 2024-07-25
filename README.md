@@ -1,4 +1,4 @@
-简体中文丨[繁体中文](README_zh-Hant.md)丨[English](README_en-US.md)
+English丨[简体中文](README_zh_CN.md)丨[繁体中文](README_zh-Hant.md)
 
 <div align="center">
 
@@ -6,10 +6,10 @@
 
    <h1>Hexo Theme Solitude</h1>
 
-   一款优雅的 Hexo 主题，支持懒加载、PWA、Latex 以及多种评论系统。
-   
-   主题设计由 [@张洪Heo](https://github.com/zhheo) 全权授权
+   An elegant Hexo theme that supports lazy loading, PWA, Latex, and multiple comment systems.
 
+   Theme design is fully licensed by [@张洪Heo](https://github.com/zhheo).
+  
 <a href="https://polar.sh/everfu"><img src="https://polar.sh/embed/seeks-funding-shield.svg?org=everfu" /></a>
 
 ![npm package](https://img.shields.io/npm/v/hexo-theme-solitude?logo=npm)
@@ -31,55 +31,52 @@
 [![gitee](https://img.shields.io/badge/Gitee-red?logo=gitee)](https://gitee.com/nsjjd_w/hexo-theme-solitude)
 [![gitlab](https://img.shields.io/badge/GitLab-blue?logo=gitlab)](https://gitlab.com/efu/hexo-theme-solitude)
 
-[文档](https://solitude.js.org/)丨[预览](https://everfu.github.io/Solitude/)
+[Documentation](https://solitude.js.org/)丨[Preview](https://everfu.github.io/Solitude/)
 
 </div>
 
 ![Screenshot](.github/screenshot.avif)
 
-## 特性
+## Features
 
-- 页面懒加载（Pjax）、图片懒加载（LazyLoad）、离线应用（PWA）
-- 评论(Twikoo、Waline、Valine、Artalk、Giscus)，支持双评论
-- 昼夜切换(ColorMode)
-- 灯箱(medium-zoom、fancybox)
-- 数学公式(Latex)
-- 特色页面：即刻短文、我的装备、在线工具、音乐馆、友链鱼塘、相册页、豆瓣页、弹幕留言页
-- 文章功能：AI 摘要、代码高亮
+- Pjax、LazyLoad、PWA.
+- Comments(Twikoo、Waline、Valine、Artalk、Giscus), Can double comment.
+- ColorMode.
+- Lightbox(medium-zoom、fancybox).
+- Mathematical formulas(Latex).
+- Featured pages: Instant Short Article, My Equipment, Online Tools, Music Gallery, Friend Chain Fish Pond, Photo Album Page, Douban Page, Barrage message page.
+- Article features: AI summary, code highlighting.
 
 ## Todo
 
-- [x] 首页顶部新样式
-- [x] 首页文章列表三列显示
-- [x] btns 外挂标签
+- [x] The list of articles is displayed in three columns on the homepage.
+- [x] btns tags plugin.
 
-> 如有问题请提 [issue](https://github.com/everfu/hexo-theme-solitude/issues)
+> If you have any questions, please issue an [issue](https://github.com/everfu/hexo-theme-solitude/issues)
 
-## 应用
+## Setup
 
-1. 使用 NPM 包进行安装
+1. Use the NPM package
       ```bash
       npm i hexo-theme-solitude
       ```
-2. 应用主题
+2. Apply
       ```yaml
       theme: solitude
       ```
-   
-前往 [文档](https://solitude.js.org/) 获取更多信息。
 
-## 赞助者
+Check out the [Documentation](https://solitude.js.org/) for more information.
 
-[!["Buy Me A Coffee"](https://img.buymeacoffee.com/button-api/?text=请我喝杯咖啡&emoji=%E2%98%95&everfu=ezgif&button_colour=FFDD00&font_colour=000000&font_family=Cookie&outline_colour=000000&coffee_colour=ffffff)](https://www.buymeacoffee.com/everfu)
+## Sponsors
+
+[!["Buy Me A Coffee"](https://img.buymeacoffee.com/button-api/?text=Buy&nbsp;Me&nbsp;A&nbsp;Coffee&emoji=%E2%98%95&everfu=ezgif&button_colour=FFDD00&font_colour=000000&font_family=Cookie&outline_colour=000000&coffee_colour=ffffff)](https://www.buymeacoffee.com/everfu)
 
 <p align="center">
   <a href="https://cdn.jsdelivr.net/gh/efuo/static/sponsors.svg">
-    <img src='https://cdn.jsdelivr.net/gh/efuo/static/sponsors.svg' alt="赞助者"/>
+    <img src='https://cdn.jsdelivr.net/gh/efuo/static/sponsors.svg'/>
   </a>
 </p>
 
-## 版权
+## License
 
-[MIT](./LICENSE) License &copy; 2023-至今 [EverFu](https://github.com/efuo)
-
-[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fvalor-x%2Fhexo-theme-solitude.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fvalor-x%2Fhexo-theme-solitude?ref=badge_large)
+[MIT](./LICENSE) License &copy; 2023-PRESENT [Ever Fu](https://github.com/everfu)
