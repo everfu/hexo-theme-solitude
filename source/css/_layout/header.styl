@@ -143,9 +143,6 @@
       .nav-button
         margin-left .5rem
 
-        &#nav-totop
-          margin-right .5rem
-
         a
           height 35px
           width 35px
@@ -166,7 +163,55 @@
             transition .3s
 
           &.console_switchbutton
-            padding 4px 8px
+            padding 10px 8px
+
+            &:hover
+              label
+                i
+                  background var(--efu-white)
+
+                .left
+                  width .5rem
+                  height .3rem
+
+                .center
+                  width .5rem
+                  height .3rem
+                .right
+                  width .3rem
+                  height 100%
+
+            label
+              display flex
+              position relative
+              width 100%
+              height 100%
+              cursor pointer
+
+              i
+                transition all .3s
+                position absolute
+                border-radius 12px
+                background var(--efu-fontcolor)
+
+                .post &
+                  background var(--efu-white)
+
+                &.left
+                  top 0
+                  width 100%
+                  height .3rem
+
+                &.center
+                  bottom 0
+                  width .3rem
+                  height .3rem
+
+                &.right
+                  right 0
+                  bottom 0
+                  width .5rem
+                  height .3rem
 
         &.long
           a
@@ -344,18 +389,16 @@
         i, span, img
           opacity 0
 
-      &:after
+      i.fa-solid.fa-home
         +minWidth900()
           opacity: 1
 
-    &:after
+    i.fa-solid.fa-home
       +minWidth900()
         opacity 0
         position absolute
         display flex
         z-index 1
-        content "\e008"
-        font-family solitude, serif
         align-items center
         justify-content center
         font-size 22px
@@ -752,13 +795,13 @@ if hexo-config('nav.group')
         +minWidth900()
           align-items center
 
-      &:after
+      &:before
         color var(--efu-white)
 
   .nav-fixed
     #nav
       #site-name
-        &:after
+        i.fa-solid.fa-home
           color var(--efu-card-bg)
 
   .not-top-img

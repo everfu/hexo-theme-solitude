@@ -7,7 +7,7 @@ mixin info
         div.recent-post-info-top-tips
             if post.sticky && is_home()
                 span.article-meta.sticky-warp
-                    i.solitude.st-thumbtack-solid.sticky.orange
+                    i.solitude.fa-solid.fa-thumbtack.sticky.orange
                     span.sticky.orange= _p('home.sticky')
             each category in post.categories.data
                 span.original= category.name
@@ -42,7 +42,9 @@ mixin info
         span.article-meta.tags
             each tag in post.tags.data
                 a.article-meta__tags(href=url_for(tag.path), onclick="event.stopPropagation();")
-                    span.tags-punctuation=tag.name
+                    span.tags-punctuation
+                        i.solitude.fa-solid.fa-hashtag
+                        =tag.name
 
         span.post-meta-date
             time(datetime=moment(post.date))

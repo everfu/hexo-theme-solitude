@@ -358,7 +358,7 @@ b, strong
   position relative
 
 i.solitude
-  font-size 22px
+  font-size 16px
   line-height 1
   font-synthesis style
 
@@ -408,20 +408,20 @@ i.solitude
   opacity 1 !important
   pointer-events all !important
 
-span.tags-punctuation::before
-  content: "\e071"
-  font-family: solitude, serif !important
-  font-size: 12px
-  transition none
-  margin-right: 2px
-  opacity: .4
+span.tags-punctuation
+  i
+    font-weight bold
+    font-size: 14px
+    transition none
+    margin-right: 2px
+    opacity: .4
 
-  .hide-aside #page &
-    font-size 16px
+    .hide-aside #page &
+      font-size 16px
 
-  #post-info &
-    font-size 14px
-    line-height 32px
+    #post-info &
+      font-size 14px
+      line-height 32px
 
 if hexo-config('memorial.enable')
   .memorial

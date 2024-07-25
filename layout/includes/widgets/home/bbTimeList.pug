@@ -1,18 +1,16 @@
 .bbTimeList.container#bbTimeList(class=is_home_first_page() ? '' : 'more-page')
-    i.bber-logo.solitude.st-bblogo(onclick=`pjax.loadUrl('/essay/')`)
+    i.bber-logo.solitude.fa-solid.fa-newspaper(onclick=`pjax.loadUrl('/essay/')`)
     .swiper-container.swiper-no-swiping.swiper-container-initialized.swiper-container-vertical.swiper-container-pointer-events#bbtalk(tabindex="-1" onclick=`pjax.loadUrl('/essay/')`)
         .swiper-wrapper#bber-talk
             each item, i in site.data.essay.essay_list.slice(0, 10)
                 .li-style.swiper-slide
                     | #{item.content}
                     if item.image
-                        i.solitude.st-image-fill
+                        i.solitude.fa-solid.fa-image
                     else if item.aplayer
-                        i.solitude.st-disc-fill
-                    else if item.video
-                        i.solitude.st-video-fill
-                    else if item.bilibili
-                        i.solitude.st-bilibili-line
+                        i.solitude.fa-solid.fa-disc
+                    else if item.video || item.bilibili
+                        i.solitude.fa-solid.fa-video
                     else if item.link
-                        i.solitude.st-links
-    i.bber-gotobb.solitude.st-right-btn-fill(title=_p('home.bbtime.text') onclick=`pjax.loadUrl('/essay/')`)
+                        i.solitude.fa-solid.fa-link
+    i.bber-gotobb.solitude.fa-solid.fa-circle-chevron-right(title=_p('home.bbtime.text') onclick=`pjax.loadUrl('/essay/')`)

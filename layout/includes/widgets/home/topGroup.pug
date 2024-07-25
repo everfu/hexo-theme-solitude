@@ -16,7 +16,7 @@ mixin todayCardContent
     .todayCard-cover.nolazyload(style=`background: url('${theme.hometop.recommendList.img}') no-repeat center /cover`)
     .banner-button-group
         a.banner-button(onclick="window.event.cancelBubble=true;sco.hideTodayCard();")
-            i.solitude.st-add-fill
+            i.solitude.fa-solid.fa-circle-plus
             span.banner-button-text= _p('home.recommendmore')
 
 case theme.hometop.recommendList.url.startsWith('/')
