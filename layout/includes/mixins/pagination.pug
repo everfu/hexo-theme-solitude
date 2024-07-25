@@ -1,8 +1,8 @@
 nav#pagination
     div.pagination
-        - var options = {mid_size: 1,escape: false,next_text: `<div class="pagination_tips_next">${_p("pagination.next")}</div> <i class="solitude st-arrow-right-bold"></i>`,prev_text: `<i class="solitude st-arrow-left-bold"></i> <div class="pagination_tips_prev">${_p("pagination.prev")}</div>`}
+        - var options = {mid_size: 1,escape: false,next_text: `<div class="pagination_tips_next">${_p("pagination.next")}</div> <i class="solitude fa-solid fa-chevron-right"></i>`,prev_text: `<i class="solitude fa-solid fa-chevron-left"></i> <div class="pagination_tips_prev">${_p("pagination.prev")}</div>`}
         !=paginator(options)
         div.toPageGroup
             input#toPageText(oninput="value=value.replace(/[^0-9]/g,'')" maxlength="3" title=_p('pagination.to') onkeyup="if (this.value === '0') this.value = ''")
             a#toPageButton(onclick="sco.toPage()")
-                i.solitude.st-show-right-line
+                i.solitude.fa-solid.fa-angles-right

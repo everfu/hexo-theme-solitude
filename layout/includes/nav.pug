@@ -3,7 +3,7 @@ nav#nav.show
         #blog_name
             if theme.nav.group
                 .back-home-button(tabindex="-1")
-                    i.back-home-button-icon.solitude.st-more-fill
+                    i.back-home-button-icon.solitude.fa-solid.fa-bars-progress
                     include ./widgets/nav/group
             a#site-name(href=url_for("/"), title=_p('nav.site_name_title'))
                 if theme.site.name.class === 'i_class'
