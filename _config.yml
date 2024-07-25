@@ -21,8 +21,8 @@ site:
     # 显示类型 （i_class/text/img）
     # Display type (i_class/text/img)
     class: text
-    # 具体内容 例如：solitude st-logo / Efu / /img/logo.png
-    # Specific content, for example: solitude st-logo / Efu / /img/logo.png
+    # 具体内容 例如：fas fa-home / Efu / /img/logo.png
+    # Specific content, for example: fas fa-home / Efu / /img/logo.png
     custom: Solitude
   # 网页icon
   # Web icon
@@ -45,19 +45,19 @@ nav:
   menu:
     # 首页: / # 显示名称：路径 / Display name: path
     # 文库: # 显示名称 / Display name
-    #   文章列表: /archives/ || st-folder-fill # 子菜单名称：路径 || 图标 / Submenu name: path || icon
-    #   全部分类: /categories/ || st-checkbox-multiple-blank-fill
-    #   全部标签: /tags/ || st-price-tag-fill
+    #   文章列表: /archives/ || fas fa-folder-closed # 子菜单名称：路径 || 图标 / Submenu name: path || icon
+    #   全部分类: /categories/ || fas fa-clone
+    #   全部标签: /tags/ || fas fa-tags
     # 友链:
-    #   友链鱼塘: /moments/ || st-wifi-fill
-    #   友情链接: /links/ || st-group-fill
-    #   宝藏博主: javascript:travelling() || st-gift-fill
+    #   友链鱼塘: /moments/ || fas fa-wifi
+    #   友情链接: /links/ || fas fa-user-group
+    #   宝藏博主: javascript:travelling() || fas fa-gift
     # 我的:
-    #   装备: /equipment/ || st-laptop-line
-    #   工具箱: /tlink/ || st-tools-fill
-    #   音乐馆: /music/ || st-disc-fill
+    #   装备: /equipment/ || fas fa-laptop
+    #   工具箱: /tlink/ || fas fa-toolbox
+    #   音乐馆: /music/ || fas fa-music
     # 关于:
-    #   关于本站: /about/ || st-contacts-fill
+    #   关于本站: /about/ || fas fa-user
 
   # 右侧按钮
   # Button on the right
@@ -71,7 +71,7 @@ nav:
     custom:
       # - name: 开往 - 友链接力 # 显示文字 / Displayed text
       #   url: https://www.travellings.cn/go.html # 跳转链接 / Jump link
-      #   icon: st-train-line # 图标 / Icon
+      #   icon: fas fa-train # 图标 / Icon
       #   onclick: # 点击事件 / Click event
       #   id: travellings_button # id
 
@@ -115,9 +115,9 @@ hometop:
   # 左下跳转按钮
   # Banner lower left jump button
   group:
-    # 热门: /tags/热门/ || st-fire-fill || linear-gradient(to right, #f65, #ffbf37)
-    # 教程: /tags/教程/ || st-book-mark-fill || linear-gradient(to right, #358bff, #15c6ff)
-    # 精选: /tags/精选/ || st-star-smile-fill || linear-gradient(to right, #18e7ae, #1eebeb)
+    # 热门: /tags/热门/ || fas fa-fire || linear-gradient(to right, #f65, #ffbf37)
+    # 教程: /tags/教程/ || fas fa-book || linear-gradient(to right, #358bff, #15c6ff)
+    # 精选: /tags/精选/ || fas fa-star || linear-gradient(to right, #18e7ae, #1eebeb)
 
   # 右侧置顶列表（在文章的front matter中添加“recommend: true”）
   # Right top list (add "recommend: true" in the front matter of the article)
@@ -224,8 +224,8 @@ aside:
     # 个人信息卡片底部的小图标，按照例子填写
     # 样式为1时请不要超过4个
     information:
-      # Github: https://github.com/efuo || st-github-line # 名称：链接 || 图标 / Name: link || icon
-      # Bilibili: https://space.bilibili.com/1329819902 || st-bilibili-line
+      # Github: https://github.com/everfu || fas fa-github # 名称：链接 || 图标 / Name: link || icon
+      # Bilibili: https://space.bilibili.com/1329819902 || fas fa-bilibili
 
   # 二维码
   # Official account QR code
@@ -443,12 +443,12 @@ footer:
     author: false # 是否显示 site_icon / enable site_icon in footer
     # 左侧显示图标
     left:
-      # Github: https://github.com/efuo || st-github-line # 名称：链接 || 图标 / Name: link || icon
-      # Mail: mailto:o@efu.me || st-mail-line
+      # Github: https://github.com/efuo || fas fa-github # 名称：链接 || 图标 / Name: link || icon
+      # Mail: mailto:o@efu.me || fas fa-envelope
     # 右侧显示图标
     right:
-      # Bilibili: https://space.bilibili.com/1329819902 || st-bilibili-line
-      # 抖音: https://v.douyin.com/iJsLc8jt/ || st-douyin-fill
+      # Bilibili: https://space.bilibili.com/1329819902 || fas fa-bilibili
+      # 抖音: https://v.douyin.com/iJsLc8jt/ || fas fa-tiktok
 
   # 底部导航栏
   # Bottom navigation bar
@@ -916,22 +916,17 @@ right_menu:
     #   click: toRandomPost()
     #   id: menu-randomPost
     #   class:
-    #   icon: st-signal-tower-fill
+    #   icon: fas fa-tower-broadcast
     # - name: 全部分类
     #   click: pjax.loadUrl('/categories/') # 外链用 window.open，pjax 无法请求跨域内容
     #   id:
     #   class:
-    #   icon: st-checkbox-multiple-blank-fill
+    #   icon: fas fa-clone
     # - name: 全部标签
     #   click: pjax.loadUrl('/tags/')
     #   id:
     #   class:
-    #   icon: st-price-tag-fill
-    # - name: 赞助主题
-    #   click: window.open('https://afdian.net/a/efu0u0/', '_blank')
-    #   id:
-    #   class:
-    #   icon: st-afdian-line
+    #   icon: fas fa-tags
 
 # 哀悼模式，网页黑白
 # Mourning mode, web page black and white
