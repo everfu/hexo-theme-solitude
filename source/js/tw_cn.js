@@ -109,7 +109,6 @@ document.addEventListener('DOMContentLoaded', function () {
         if (translateButtonObject) {
             if (currentEncoding !== targetEncoding) {
                 translateButtonObject.lastChild.textContent = targetEncoding === 1 ? msgToSimplifiedChinese : msgToTraditionalChinese
-                translateButtonObject.firstChild.className = targetEncoding === 1 ? 'solitude st-jianben-line' : 'solitude st-panben-line'
                 setLang()
                 setTimeout(translateBody, translateDelay)
             }
