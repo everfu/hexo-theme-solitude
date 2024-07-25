@@ -69,16 +69,6 @@ post:
     reprint: 本文是转载或翻译文章，版权归原作者所有。转载本文请联系原作者。
     original: 本文是原创文章，采用
     original_end: 协议，完整转载请注明来自
-  share:
-    qq: 分享到QQ
-    weibo: 分享到微博
-    telegram: 分享到Telegram
-    twitter: 分享到Twitter
-    linkedin: 分享到LinkedIn
-    facebook: 分享到Facebook
-    link: 复制文章链接
-    qrcode: 使用手机扫码阅读这篇文章
-    whatsapp: 分享到WhatsApp
   ai:
     title: 文章摘要
     tip: 投訴
