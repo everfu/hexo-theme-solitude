@@ -3,14 +3,14 @@
     &.column
       display flex
       flex-direction column
-      width 49%
+      width calc(50% - (.5rem / 2))
       justify-content space-between
 
       +maxWidth768()
         width 100% !important
 
     &.mapAndInfo
-      width 59.5%
+      width calc(60% - (.5rem / 2))
       gap .5rem
 
   .author-content-item
