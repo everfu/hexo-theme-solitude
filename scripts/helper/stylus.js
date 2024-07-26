@@ -21,4 +21,5 @@ hexo.extend.filter.register('stylus:renderer', function (style) {
     style.define('$highlight_line_number', highlightLineNumber)
     style.define('$prismjs_enable', prismjsEnable)
     style.define('$prismjs_line_number', prismjsLineNumber)
+    style.define('$language', config.language)
 });

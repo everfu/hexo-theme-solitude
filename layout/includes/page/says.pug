@@ -13,7 +13,7 @@ if theme.says.enable
                                     time.datetime.bber_date(datetime=moment(item.date).format())
                                 if item.content
                                     a.bber-reply.goComment(onclick=`sco.toTalk('${item.content}')`)
-                                        i.solitude.st-chat-fill
+                                        i.solitude.fa-solid.fa-comment
 
                         #bber-content
                             p.datacont= item.content
@@ -38,19 +38,19 @@ if theme.says.enable
                             .bber-bottom
                                 .bber-info
                                     .bber-info-time
-                                        i.solitude.st-calendar-todo-fill
+                                        i.solitude.fa-solid.fa-calendar-days
                                         time.datetime(datetime=moment(item.date).format())
                                     if item.location
                                         .bber-info-location 
-                                            i.solitude.st-map-pin-fill
+                                            i.solitude.fa-solid.fa-map
                                             | #{item.location}
                                     if item.link
                                         a.bber-content-link(href=url_for(item.link) target="_blank")
-                                            i.solitude.st-link-m-line
+                                            i.solitude.fa-solid.fa-link
                                             | 链接
                                 if item.content
                                     a.bber-reply(onclick=`sco.toTalk('${item.content}')`)
-                                        i.solitude.st-chat-fill
+                                        i.solitude.fa-solid.fa-comment
             #bber-tips
                 if theme.says.strip === -1
                     | - 已展开所有短文 -

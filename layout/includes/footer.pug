@@ -42,7 +42,7 @@ div#st-footer
             div.footer-title-group
                 h3.footer-title= _p('footer.randomlink')
                 button.random-friends-btn(onclick='randomLinksList()', title=_p('footer.randomlink'))
-                    i.solitude.st-refresh-line
+                    i.solitude.fa-solid.fa-arrows-rotate
             div.footer-links#friend-links-in-footer
 div#footer-bar
     div.footer-bar-links
@@ -57,16 +57,16 @@ div#footer-bar
             each item in theme.footer.links
                 a.footer-bar-link(href=url_for(item.url), alt=item.name)!= item.name
             a.footer-bar-link.cc(href=url_for(theme.footer.license), aria-label = 'copyright')
-                i.solitude.st-copyright-line
-                i.solitude.st-creative-commons-by-line
-                i.solitude.st-creative-commons-nc-line
-                i.solitude.st-creative-commons-nd-line
+                i.solitude.fa-solid.fa-copyright
+                i.solitude.fa-brands.fa-creative-commons-by
+                i.solitude.fa-brands.fa-creative-commons-nc
+                i.solitude.fa-brands.fa-creative-commons-nd
 if theme.footer.privacy
     div.needEndHide#cookies-window
         div.cookies-window-title= __('cookies.title')
         div.cookies-window-content
             span.cookies-tip= __('cookies.tip')
             a.cookies-link(href=url_for(theme.footer.privacy), title=_p('cookies.privacy'))
-                i.solitude.st-right-btn-fill
+                i.solitude.fa-solid.fa-circle-chevron-right
 if theme.comment.use && theme.comment.commentBarrage
     div.comment-barrage.needEndHide

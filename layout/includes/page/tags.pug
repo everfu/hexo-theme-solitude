@@ -4,5 +4,6 @@ h1.page-title= __('page.tag')
         each tag in site.tags.find({ parent: { $exists: false } }).data
             a(href=url_for(tag.path))
                 span.tags-punctuation
-                = tag.name
-                span.tagsPageCount= tag.length
+                    i.solitude.fa-solid.fa-hashtag
+                    = tag.name
+                    span.tagsPageCount= tag.length

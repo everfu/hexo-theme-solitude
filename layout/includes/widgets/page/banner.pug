@@ -11,5 +11,5 @@
             .banner-button-group
                 - const isInternalLink = page.rightbtnlink.startsWith('/')
                 a.banner-button(onclick=isInternalLink ? `pjax.loadUrl("${page.rightbtnlink}")`: null, href=isInternalLink ? null : url_for(page.rightbtnlink), target=isInternalLink ? null : "_blank")
-                    i.solitude.st-right-btn-fill
+                    i.solitude.fa-solid.fa-circle-chevron-right
                     span.banner-button-text= page.rightbtn

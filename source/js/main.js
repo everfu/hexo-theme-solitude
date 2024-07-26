@@ -198,7 +198,7 @@ const sco = {
     },
     initConsoleState() {
         const consoleHideAside = document.querySelector("#consoleHideAside");
-        consoleHideAside.classList.toggle("on", !document.documentElement.classList.contains("hide-aside"));
+        consoleHideAside.classList.toggle("on", document.documentElement.classList.contains("hide-aside"));
     },
     changeSayHelloText() {
         const greetings = GLOBAL_CONFIG.aside.sayhello2;
@@ -464,9 +464,9 @@ const addHighlight = () => {
     const expandClass = !expand === true ? 'closed' : ''
     const $syntaxHighlight = syntax === 'highlight.js' ? document.querySelectorAll('figure.highlight') : document.querySelectorAll('pre[class*="language-"]')
     if (!(($isShowTool || limit) && $syntaxHighlight.length)) return
-    const copyEle = copy ? `<i class="solitude st-copy-fill copy-button"></i>` : '<i></i>';
-    const expandEle = `<i class="solitude st-arrow-down expand"></i>`;
-    const limitEle = limit ? `<i class="solitude st-show-line"></i>` : '<i></i>';
+    const copyEle = copy ? `<i class="solitude far fa-copy copy-button"></i>` : '<i></i>';
+    const expandEle = `<i class="solitude fas fa-angle-down expand"></i>`;
+    const limitEle = limit ? `<i class="solitude fas fa-angles-down"></i>` : '<i></i>';
     const alertInfo = (ele, text) => utils.snackbarShow(text, false, 2000)
     const copyFn = (e) => {
         const $buttonParent = e.parentNode
@@ -694,7 +694,7 @@ window.refreshFn = () => {
     if (lure) tabs.lureAddListener();
 }
 document.addEventListener('DOMContentLoaded', () => {
-    [addCopyright, sco.initConsoleState, window.refreshFn, asideStatus, () => window.onscroll = percent].forEach(fn => fn());
+    [addCopyright, window.refreshFn, asideStatus, () => window.onscroll = percent, sco.initConsoleState].forEach(fn => fn());
 });
 document.addEventListener('visibilitychange', () => {
     if (document.hidden) {

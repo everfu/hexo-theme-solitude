@@ -3,52 +3,52 @@
 div#rightMenu
     div.rightMenu-group.rightMenu-small
         div.rightMenu-item#menu-backward
-            i.solitude.st-arrow-left-line
+            i.solitude.fa-solid.fa-arrow-left
         div.rightMenu-item#menu-forward
-            i.solitude.st-arrow-right-line
+            i.solitude.fa-solid.fa-arrow-right
         div.rightMenu-item#menu-refresh
-            i.solitude.st-restart-line
+            i.solitude.fa-solid.fa-arrow-rotate-right
         div.rightMenu-item#menu-top
-            i.solitude.st-arrow-up-line
+            i.solitude.fa-solid.fa-arrow-up
     div.rightMenu-group.rightMenu-line.rightMenuPlugin
         div.rightMenu-item#menu-copytext
-            i.solitude.st-copy-fill
+            i.solitude.fa-solid.fa-clone
             span= _p('right_menu.copy')
         div.rightMenu-item#menu-pastetext
-            i.solitude.st-clipboard-fill
+            i.solitude.fa-solid.fa-clipboard
             span= _p('right_menu.paste')
         if theme.comment.use
             div.rightMenu-item#menu-commenttext
-                i.solitude.st-chat-new-fill
+                i.solitude.fa-solid.fa-comment-medical
                 span= _p('right_menu.comment')
         div.rightMenu-item#menu-newwindow
-            i.solitude.st-window-fill
+            i.solitude.fa-regular.fa-window-maximize
             span= _p('right_menu.new')
         div.rightMenu-item#menu-copylink
-            i.solitude.st-link-line
+            i.solitude.fa-solid.fa-link
             span= _p('right_menu.link')
         div.rightMenu-item#menu-copyimg
-            i.solitude.st-copy-fill
+            i.solitude.fa-solid.fa-clone
             span= _p('right_menu.img')
         div.rightMenu-item#menu-downloadimg
-            i.solitude.st-download-cloud-fill
+            i.solitude.fa-solid.fa-cloud-arrow-down
             span= _p('right_menu.downloadImg')
         if theme.search.enable
             div.rightMenu-item#menu-search
-                i.solitude.st-search-line
+                i.solitude.fa-solid.fa-magnifying-glass
                 span= _p('right_menu.search')
         if theme.capsule.enable
             div.rightMenu-item#menu-music-toggle
-                i.solitude.st-play-fill
+                i.solitude.fa-solid.fa-play
                 span= _p('right_menu.music.start')
             div.rightMenu-item#menu-music-back
-                i.solitude.st-skip-back-fill
+                i.solitude.fa-solid.fa-backward
                 span= _p('right_menu.music.back')
             div.rightMenu-item#menu-music-forward
-                i.solitude.st-skip-forward-fill
+                i.solitude.fa-solid.fa-forward
                 span= _p('right_menu.music.forward')
             div.rightMenu-item#menu-music-copyMusicName
-                i.solitude.st-copy-fill
+                i.solitude.fa-solid.fa-clone
                 span= _p('right_menu.music.copyMusicName')
     div.rightMenu-group.rightMenu-line.rightMenuOther
         each item,index in custom_list
@@ -58,10 +58,10 @@ div#rightMenu
     div.rightMenu-group.rightMenu-line.rightMenuOther
         if theme.right_menu.commentBarrage && theme.comment.use && theme.comment.commentBarrage
             div.rightMenu-item#menu-commentBarrage(onclick="sco.switchCommentBarrage()")
-                i.solitude.st-chat-fill
+                i.solitude.fa-solid.fa-comment
                 span.menu-commentBarrage-text= _p('right_menu.barrage.close')
         div.rightMenu-item#menu-darkmode(onclick="sco.switchDarkMode()")
-            i.solitude.st-moon-clear-fill
+            i.solitude.fa-solid.fa-circle-half-stroke
             case theme.display_mode.type
                 when 'auto'
                 when 'light'
@@ -70,11 +70,10 @@ div#rightMenu
                     span.menu-darkmode-text= _p('right_menu.dark')
         if theme.right_menu.translate.enable
             div.rightMenu-item#menu-translate
+                i.solitude.fa-solid.fa-language
                 case theme.right_menu.translate.defaultEncoding
                     when 2
-                        i.solitude.st-panben-line
                         span= _p('right_menu.chs_to_cht')
                     when 1
-                        i.solitude.st-jianben-line
                         span= _p('right_menu.cht_to_chs')
 div#rightmenu-mask

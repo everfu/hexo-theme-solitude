@@ -4,5 +4,6 @@ h1.page-title= _p('page.category')
         each item in site.categories.find({ parent: { $exists: false } }).data
             a(href=url_for(item.path))
                 span.tags-punctuation
-                = item.name
-                span.tagsPageCount= item.length
+                    i.solitude.fa-solid.fa-hashtag
+                    = item.name
+                    span.tagsPageCount= item.length

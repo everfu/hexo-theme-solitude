@@ -59,13 +59,11 @@ document.addEventListener('DOMContentLoaded', function () {
             currentEncoding = 1
             targetEncoding = 2
             translateButtonObject.lastChild.textContent = msgToTraditionalChinese
-            translateButtonObject.firstChild.className = 'solitude st-panben-line'
             utils.snackbarShow('你已切换为简体')
         } else if (targetEncoding === 2) {
             currentEncoding = 2
             targetEncoding = 1
             translateButtonObject.lastChild.textContent = msgToSimplifiedChinese
-            translateButtonObject.firstChild.className = 'solitude st-jianben-line'
             utils.snackbarShow('你已切換為繁體')
         }
         utils.saveToLocal.set(targetEncodingCookie, targetEncoding, 2)
@@ -111,7 +109,6 @@ document.addEventListener('DOMContentLoaded', function () {
         if (translateButtonObject) {
             if (currentEncoding !== targetEncoding) {
                 translateButtonObject.lastChild.textContent = targetEncoding === 1 ? msgToSimplifiedChinese : msgToTraditionalChinese
-                translateButtonObject.firstChild.className = targetEncoding === 1 ? 'solitude st-jianben-line' : 'solitude st-panben-line'
                 setLang()
                 setTimeout(translateBody, translateDelay)
             }

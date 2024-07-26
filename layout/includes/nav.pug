@@ -3,7 +3,7 @@ nav#nav.show
         #blog_name
             if theme.nav.group
                 .back-home-button(tabindex="-1")
-                    i.back-home-button-icon.solitude.st-more-fill
+                    i.back-home-button-icon.solitude.fab.fa-squarespace
                     include ./widgets/nav/group
             a#site-name(href=url_for("/"), title=_p('nav.site_name_title'))
                 if theme.site.name.class === 'i_class'
@@ -12,6 +12,7 @@ nav#nav.show
                     img(src=theme.site.name.custom, alt=config.title)
                 else if theme.site.name.class === 'text'
                     span.title= theme.site.name.custom
+                i.solitude.fa-solid.fa-home
         #page-name-mask
             #page-name
                 a#page-name-text(onclick="sco.toTop()")= title || config.title

@@ -70,12 +70,12 @@ pace_js:
 swiper_css:
   name: swiper
   file: swiper-bundle.min.css
-  version: 11.1.7
+  version: 11.0.5
   other_name: Swiper
 swiper_js:
   name: swiper
   file: swiper-bundle.min.js
-  version: 11.1.7
+  version: 11.0.5
   other_name: Swiper
 busuanzi_js:
   name: busuanzi
@@ -89,10 +89,10 @@ snackbar:
   name: node-snackbar
   file: dist/snackbar.min.js
   version: 0.1.16
-solitude_css:
-  name: solitude-source
-  file: icon/solitude.min.css
-  version: 1.0.5
+fontawesome:
+  name: font-awesome
+  file: css/all.min.css
+  version: 6.6.0
 medium_zoom:
   name: medium-zoom
   file: dist/medium-zoom.min.js

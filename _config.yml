@@ -9,306 +9,155 @@
 # Guide: https://solitude.js.org/
 # You can get more detailed help from the guide
 #
-# 赞助：https://afdian.net/a/everfu
-# sponsor: https://github.com/sponsors/everfu
+# 赞助：https://www.patreon.com/everfu
+# sponsor: https://www.patreon.com/everfu
 # ---------------------------
 
-# 站点设置
-# site settings
 site:
-  # Logo
   name:
-    # 显示类型 （i_class/text/img）
-    # Display type (i_class/text/img)
     class: text
-    # 具体内容 例如：solitude st-logo / Efu / /img/logo.png
-    # Specific content, for example: solitude st-logo / Efu / /img/logo.png
     custom: Solitude
-  # 网页icon
-  # Web icon
   siteIcon: /img/pwa/favicon.ico
-  # 页脚的Logo、加载动画默认的logo
-  # Logo in the footer, default logo for loading animation
   icon: /img/pwa/favicon.ico
 
-# 导航栏
-# NavBar
 nav:
-  # logo 箱子
-  # logo group
   group:
-    # 项目: # 分类名称
-    #   Solitude: https://github.com/everfu/hexo-theme-solitude || /img/pwa/favicon.ico # 子菜单名称(submenu name): 链接地址(address) || 图标(icon)
-
-  # 中心菜单
-  # center menu
+  #  项目: # 分类名称
+  #    Solitude: https://github.com/everfu/hexo-theme-solitude || /img/pwa/favicon.ico # 子菜单名称(submenu name): 链接地址(address) || 图标(icon)
   menu:
-    # 首页: / # 显示名称：路径 / Display name: path
-    # 文库: # 显示名称 / Display name
-    #   文章列表: /archives/ || st-folder-fill # 子菜单名称：路径 || 图标 / Submenu name: path || icon
-    #   全部分类: /categories/ || st-checkbox-multiple-blank-fill
-    #   全部标签: /tags/ || st-price-tag-fill
-    # 友链:
-    #   友链鱼塘: /moments/ || st-wifi-fill
-    #   友情链接: /links/ || st-group-fill
-    #   宝藏博主: javascript:travelling() || st-gift-fill
-    # 我的:
-    #   装备: /equipment/ || st-laptop-line
-    #   工具箱: /tlink/ || st-tools-fill
-    #   音乐馆: /music/ || st-disc-fill
-    # 关于:
-    #   关于本站: /about/ || st-contacts-fill
-
-  # 右侧按钮
-  # Button on the right
+  #  首页: / # 显示名称：路径 / Display name: path
+  #  文库: # 显示名称 / Display name
+  #    文章列表: /archives/ || fas fa-folder-closed # 子菜单名称：路径 || 图标 / Submenu name: path || icon
+  #    全部分类: /categories/ || fas fa-clone
+  #    全部标签: /tags/ || fas fa-tags
+  #  友链:
+  #    友链鱼塘: /moments/ || fas fa-wifi
+  #    友情链接: /links/ || fas fa-user-group
+  #    宝藏博主: javascript:travelling() || fas fa-gift
+  #  我的:
+  #    装备: /equipment/ || fas fa-laptop
+  #    工具箱: /tlink/ || fas fa-toolbox
+  #    音乐馆: /music/ || fas fa-music
+  #  关于:
+  #    关于本站: /about/ || fas fa-user
   right:
     random: false # 随机文章跳转 / random post button
     console: false # 控制台 / console
-    # 自定义按钮
-    # custom button
-    # 左至右
-    # from left to right
     custom:
-      # - name: 开往 - 友链接力 # 显示文字 / Displayed text
-      #   url: https://www.travellings.cn/go.html # 跳转链接 / Jump link
-      #   icon: st-train-line # 图标 / Icon
-      #   onclick: # 点击事件 / Click event
-      #   id: travellings_button # id
+    #  - name: 开往 - 友链接力 # 显示文字 / Displayed text
+    #    url: https://www.travellings.cn/go.html # 跳转链接 / Jump link
+    #    icon: fas fa-train # 图标 / Icon
+    #    onclick: # 点击事件 / Click event
+    #    id: travellings_button # id
 
-# 首页顶部样式
-# Home top style
 hometop:
-  enable: false # 是否打开 / if enable
-  # banner display
+  enable: false
   banner:
-    # 左上角显示大文字
-    # Large text displayed in the upper left corner
-    # tip：可使用html标签
-    # tip: html tags be used
-    title: 宁静致远<br>热爱生活
-    # 左上角显示小文字
-    # Small text displayed in the upper left corner
+    title: Tranquility <br>and love life
     url: Hexo Theme Solitude
-    # 轮播icon
-    # Carousel icon
-    # tip: 76x76 size
     icon:
-      # HTML: # 名字 / Name
-      #   img: https://7.isyangs.cn/34/65f2e42921677-34.png # 图片 / Image
-      #   color: "#e9572b" # 背景色 / Background color
-      # JS:
-      #   img: https://7.isyangs.cn/34/65f2e43ceddda-34.png
-      #   color: "#f7cb4f"
-      # Docker:
-      #   img: https://7.isyangs.cn/34/65f2e45462045-34.png
-      #   color: "#57b6e6"
-      # Flutter:
-      #   img: https://7.isyangs.cn/34/65f2e47acbe98-34.png
-      #   color: "#ffffff"
-      # WebPack:
-      #   img: https://7.isyangs.cn/34/65f2e488bf8ed-34.png
-      #   color: "#2e3a41"
-      # Git:
-      #   img: https://7.isyangs.cn/34/65f2e499066fa-34.png
-      #   color: "#df5b40"
-
-  # 左下跳转按钮
-  # Banner lower left jump button
+    #  HTML:
+    #    img: https://i.postimg.cc/vBWVnY8q/html.png
+    #    color: "#e9572b"
+    #  JS:
+    #    img: https://i.postimg.cc/3N10Ltv2/js.png
+    #    color: "#f7cb4f"
+    #  Docker:
+    #    img: https://i.postimg.cc/8Pk6Fg24/docker.png
+    #    color: "#57b6e6"
+    #  Flutter:
+    #    img: https://i.postimg.cc/hPC7T3gB/flutter.png
+    #    color: "#ffffff"
+    #  WebPack:
+    #    img: https://i.postimg.cc/dVLZBmtT/webpack.png
+    #    color: "#2e3a41"
+    #  Git:
+    #    img: https://i.postimg.cc/nhgjwjCS/git.png
+    #    color: "#df5b40"
   group:
-    # 热门: /tags/热门/ || st-fire-fill || linear-gradient(to right, #f65, #ffbf37)
-    # 教程: /tags/教程/ || st-book-mark-fill || linear-gradient(to right, #358bff, #15c6ff)
-    # 精选: /tags/精选/ || st-star-smile-fill || linear-gradient(to right, #18e7ae, #1eebeb)
-
-  # 右侧置顶列表（在文章的front matter中添加“recommend: true”）
-  # Right top list (add "recommend: true" in the front matter of the article)
+  #  Fire: /tags/Fire/ || fas fa-fire || linear-gradient(to right, #f65, #ffbf37)
+  #  Course: /tags/Course/ || fas fa-book || linear-gradient(to right, #358bff, #15c6ff)
+  #  Curation: /tags/Curation/ || fas fa-star || linear-gradient(to right, #18e7ae, #1eebeb)
   recommendList:
-    # 左上角显示文字
-    # Large text displayed in the upper left corner
-    sup: 置顶
-    # 左下角大字
-    # Large text in the lower left corner
-    title: Solitude 主题文档
-    # 点击跳转链接
-    # Click the jump link
+    sup: Top
+    title: Solitude Documentation
     url: https://solitude.js.org/
-    # 显示背景图片
-    # Display background image
     img: /img/default.avif
-    # 阴影颜色
-    # Shadow color
     color: "none"
 
-# carousel
-# 顶部推荐轮播图
-# 使用方法：在文章的front matter中添加“recommend: true”
-# tip：建议开了这个就不要开hometop，其功能类似
 carousel: false
 
-# --------------------------------------
-# Aside Settings
-# 侧边栏配置
 aside:
   # 值：about（关于我）、newestPost（最新文章）、allInfo（网站信息）、flip（公众号二维码）、newest_comment（最新评论）
   # Values: about (info card), newestPost (latest article), allInfo (website information), flip (official account QR code), newest_comment (latest comment)
-
-  # 在主页显示的侧边栏信息
-  # Sidebar information displayed on the homepage
   home:
-    # 固定的信息（滑动不跟随）
-    # Fixed information (not followed by sliding)
     noSticky: "about"
-    # 不固定的信息（滑动跟随）
-    # Unfixed information (sliding follow)
     Sticky: "allInfo"
-  # 在文章页显示的侧边栏信息
-  # Sidebar information displayed on the article page
   post:
     noSticky: "about"
     Sticky: "newestPost"
-  # 在页面中显示的侧边栏信息
-  # Sidebar information displayed on the
   page:
     noSticky: "about"
     Sticky: "newestPost,allInfo"
   position: 1 # left(0): 左侧 / right(1): 右侧
-  # 侧边栏个人信息卡片
-  # Sidebar personal information
   card:
     style: 0 # 0: Heo样式 ：1: 设计样式
-    # 头像信息
-    # Avatar information
     author:
-      # 头像
-      # Avatar
       img: /img/avatar.avif
-      # 表情图片链接
-      # Emoticon image link
-      # tip: 26x26 size
-      sticker: https://7.isyangs.cn/34/65f2e4e0423cc-34.png # 不填不显示
-    # 点击作者头像跳转链接
-    # Click the author's avatar to jump link
+      sticker:
     url: /about/
-    # 背景图片
-    # Background image
     background: # https://s3.qjqq.cn/47/663af296b85f4.webp!color # 不设置不会展示（仅样式为1、2时有效）
-    # 文案1
-    # label1
     content: 分享自己对编程的<b>热爱</b>，对美好生活的<b>向往</b>，对知识海洋<b>探索历程</b>。 # 样式为1时无效
-    # 文案2
-    # label2
     content2: 相信你可以在这里找到对你有用的知识和教程。 # 样式为1时无效
-    # 个人信息卡片底部的小图标，按照例子填写
-    # Small icons at the bottom of the personal information card, fill in according to the example
-    # 个人信息卡片顶部按钮的打招呼语句
-    # Greeting statement of the button at the top of the personal information card
-    # 样式为2时无效
     sayhello:
       morning: 一日之计在于晨
       noon: 吃饱了才有力气干活
       afternoon: 集中精力，攻克难关
       night: 不要太劳累了，早睡更健康
       goodnight: 睡个好觉，保证精力充沛
-    # 个人信息卡片顶部按钮的切换文字
-    # Switching text of the button at the top of the personal information card
-    # 样式为2时无效
     sayhello2:
-      # - 🤖️ 数码科技爱好者
-      # - 🔍 分享与热心帮助
-      # - 🏠 智能家居小能手
-      # - 🔨 设计开发一条龙
-      # - 🤝 专修交互与设计
-      # - 🏃 脚踏实地行动派
-      # - 🧱 团队小组发动机
-      # - 💢 壮汉人狠话不多
-      # - 🎮 电竞游戏爱好者
-    # 个人信息卡片底部的小图标，按照例子填写
-    # 样式为1时请不要超过4个
+    #  - 🤖️ 数码科技爱好者
+    #  - 🔍 分享与热心帮助
+    #  - 🏠 智能家居小能手
+    #  - 🔨 设计开发一条龙
+    #  - 🤝 专修交互与设计
+    #  - 🏃 脚踏实地行动派
+    #  - 🧱 团队小组发动机
+    #  - 💢 壮汉人狠话不多
+    #  - 🎮 电竞游戏爱好者
     information:
-      # Github: https://github.com/efuo || st-github-line # 名称：链接 || 图标 / Name: link || icon
-      # Bilibili: https://space.bilibili.com/1329819902 || st-bilibili-line
-
-  # 二维码
-  # Official account QR code
+    #  Github: https://github.com/everfu || fas fa-github # 名称：链接 || 图标 / Name: link || icon
+    #  Bilibili: https://space.bilibili.com/1329819902 || fas fa-bilibili
   flip:
-    # 右下角头像
-    # Avatar in the lower right corner
     favicon:
-    # 正面
-    # Front
     face:
-    # 鼠标悬停翻转图片
-    # Mouse hover flip image
     backface:
-    # 背景色：var(--efu-blue) / #000 / rgba(0,0,0,0.5) / linear-gradient(to right,#f65,#ffbf37)
-    # Background color: var(--efu-blue) / #000 / rgba(0,0,0,0.5) / linear-gradient(to right,#f65,#ffbf37)
     backcolor: "var(--efu-blue)"
-
   newest_comment:
     enable: true
     storage: .5 # 缓存时间 1: 1天 / .5 : 半天 / Cache time 1: 1 day .5 : half a day
     limit: 5 # 评论数 / Number of comments
-
-  # 页面目录
-  # Page directory
   toc:
-    # 在文章页显示
-    # Display on the article page
     post: true
-    # 在任意页显示
-    # Display on any page
     page: false
-    # 开启后不悬停目录有模糊效果
-    # After opening, there is a fuzzy effect without hovering over the directory
     vague: true
-
-  # 侧边栏文章列表
-  # Sidebar article list
   tags:
-    # 是否显示标签
-    # Whether to display tags
     enable: false
-    # 显示标签数量，当高于标签总数时，显示全部标签按钮
-    # Display the number of tags, when it is higher than the total number of tags, display all tags button
     limit: 20
-    # 高亮显示标签列表
-    # Highlighted tag list
     highlight_list:
     #  - Hexo
-
-  # 侧边栏归档
-  # aside archive
   archive:
     enable: false
-    # 显示类型
     type: "month" # month: 按月 / year: 按年 : month: by month / year: by year
-
-  # 建站信息
-  # Website information
   siteinfo:
-    # 文章数
-    # Number of articles
     postcount: true
-    # 总字数
-    # The number of words on the web site
     wordcount: false
-    # 访问量
-    # PV
     pv: true
-    # 访客数
-    # UV
     uv: true
-    # 最后更新日期
-    # Last update date
     updatetime: true
-    # 建站时间
-    # Website creation time
     runtimeenable: true
-    # 格式：yyyy-MM-dd hh:mm:ss
-    # Format: yyyy-MM-dd hh:mm:ss
     runtime: "2023-04-20 00:00:00"
 
-# 首页文章配置信息
-# Configure information on the home page
 index_post_list:
   direction: column # row / column
   column: 2 # 2:2列 3:3列
@@ -316,32 +165,20 @@ index_post_list:
   length: 500 # 截取内容的长度 : The length of the screenshot content
   cover: both # left: 在左侧 : left / right: 在右侧 : right / both: 两侧 : both
 
-# 页面默认设置
-# page default settings
 page:
   error: true # 404页面 / 404 page
   tags: true # 标签页 / Tags page
   categories: true # 分类页 / Categories page
   default: # 默认值 / Default value
-    # 默认图片
-    # default cover
     cover:
-      # - /img/default.png # 默认图片 / default cover
+    #  - /img/default.png # 默认图片 / default cover
 
-# 文章页默认设置
-# post default settings
 post:
   default:
     top_cover: true # 顶部描述 / Top description
-    # 文章默认图片
-    # default cover
     cover:
-      # -  # 默认图片 / default cover
-    # 文章发布默认地址
-    # default post locate
-    locate: 衡阳
-    # 文章默认版权
-    # default post copyright
+    #  -  # 默认图片 / default cover
+    locate: China
     copyright:
       enable: true
       author:
@@ -349,8 +186,6 @@ post:
         img: # 显示头像，不填写默认显示site_icon
       license: CC BY-NC-SA 4.0
       licenurl: https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh
-  # 顶部文章简介
-  # Top article introduction
   meta:
     date: false # 发布日期 / Release date
     updated: false # 更新日期 / Update date
@@ -359,46 +194,34 @@ post:
     readtime: false # 访问 / uv
     pv: false # 浏览量 / pv
     comment: false # 评论数 / Comment count
-  # 打赏
-  # reward
   award:
     enable: false
     appreciators: /about # 赞赏记录 / Appreciative records
     title: 感谢您的赞赏。
     desc: 因为有你们的支持，我才体会到写文章的价值。
     list:
-      # - name: 爱发电
-      #   qcode: https://s3.qjqq.cn/47/661ba8e695f17.webp!color
-      #   url: https://afdian.net/a/efu0u0/
-      #   color: var(--efu-purple)
-      # - name: Github Sponsor
-      #   qcode: https://s3.qjqq.cn/47/661ba900c4bc1.webp!color
-      #   url: https://github.com/sponsors/efuo
-      #   color: var(--efu-black)
-  # 分享按钮，需要是什么哪些按钮，填写后开启
-  share:
-    enable: false
-    list:
-      # - qq
-      # - weibo
-      # - twitter
-      # - facebook
-      # - telegram
-      # - whatsapp
-      # - linkedin
-      # - link
-      # - qrcode
-  # 版权中订阅按钮跳转链接，填写地址后开启
-  # Subscription button jump link in copyright
+    #  - name: Github Sponsor
+    #    qcode: https://s3.qjqq.cn/47/661ba900c4bc1.webp!color
+    #    url: https://github.com/sponsors/efuo
+    #    color: var(--efu-black)
+    share:
+      enable: false
+      list:
+      #  - qq
+      #  - weibo
+      #  - twitter
+      #  - facebook
+      #  - telegram
+      #  - whatsapp
+      #  - linkedin
+      #  - link
+      #  - qrcode
   rss: # /atom.xml
-  # 文章主题色获取
-  # Article theme color acquisition
   covercolor:
     enable: false
     mode: local # local：本地取色 / api：img2color取色 : local: local color / api: img2color color
     api: https://api.qjqq.cn/api/Imgcolor?img= # api地址 / api address
     time: 43200000 # api取色间隔（毫秒），默认为12小时 / api color interval (milliseconds), default is 12 hours
-  # footer
   footer:
     enable: true
     desc: 来自 Efu 的文章 # 介绍文字
@@ -407,14 +230,6 @@ post:
       name: 了解更多
       url: /about/
 
-# -------------------------
-# 自定义主题
-
-# 自定义配色
-# custom theme color
-# 注意：颜色值必须使用引号，如“#000”，否则可能会导致错误！
-# Note: The color value must be enclosed in quotation marks, such as "#000", otherwise it may cause an error!
-# --------------------------------------
 theme_color:
   dark: "#ffc848" # 暗色模式 / Dark mode
   dark_op: "#f2b94b23" # 暗色模式透明 / Dark mode transparent
@@ -424,130 +239,67 @@ theme_color:
   light_op: "#4259ef23" # 亮色模式透明 / Light mode transparent
   light_op_deep: "#4259efdd" # 亮色模式透明深色 / Light mode transparent dark
   light_none: "#4259ef01" # 亮色模式透明无色 / Light mode transparent colorless
-
-# 主题显示模式调整
-# theme display mode adjustment
-# 主题支持三种模式：自动切换、暗色模式、亮色模式
-# The theme supports three modes: automatic switching, dark mode, and light mode
-# --------------------------------------
 display_mode:
   type: auto # auto: 自动切换 / dark: 暗色模式 / light: 亮色模式 / auto: automatic switching / dark: dark mode / light: light mode
   universe: true # 开启后暗色模式下会显示星空背景 / After opening, the dark mode will display the starry sky background
 
-# 文章底部推荐文章
-# Recommended articles at the bottom of the article
-# --------------------------------------
 related_post:
   enable: false
-  # 推荐文章数量
-  # Number of recommended articles
   limit: 2
-  # 根据创建日期（created）或是更新日期（updated）
-  # According to the creation date (created) or the update date (updated)
   date_type: created
 
-# --------------------------------------
-# Footer Settings
-# 页脚配置
 footer:
-  # 底部上方一排图标
-  # Bottom row of icons
   information:
     author: false # 是否显示 site_icon / enable site_icon in footer
-    # 左侧显示图标
     left:
-      # Github: https://github.com/efuo || st-github-line # 名称：链接 || 图标 / Name: link || icon
-      # Mail: mailto:o@efu.me || st-mail-line
-    # 右侧显示图标
+    #  Github: https://github.com/efuo || fas fa-github # 名称：链接 || 图标 / Name: link || icon
+    #  Mail: mailto:o@efu.me || fas fa-envelope
     right:
-      # Bilibili: https://space.bilibili.com/1329819902 || st-bilibili-line
-      # 抖音: https://v.douyin.com/iJsLc8jt/ || st-douyin-fill
-
-  # 底部导航栏
-  # Bottom navigation bar
+    #  Bilibili: https://space.bilibili.com/1329819902 || fas fa-bilibili
+    #  抖音: https://v.douyin.com/iJsLc8jt/ || fas fa-tiktok
   group:
-    # 导航:
-    #   归档: /archives/
-    #   分类: /categories/
-    #   标签: /tags/
-    # 服务:
-    #   阿里云: https://aliyun.com/
-    #   51la统计: https://v6.51.la/
-    #   百度统计: https://tongji.baidu.com/
-    # 支持:
-    #   打赏记录: /about/
-    # 协议:
-    #   Cookies: /cookies/
-    #   用户协议: /privacy/
-    #   版权协议: /copyright/
+  #  导航:
+  #    归档: /archives/
+  #    分类: /categories/
+  #    标签: /tags/
+  #  服务:
+  #    阿里云: https://aliyun.com/
+  #    51la统计: https://v6.51.la/
+  #    百度统计: https://tongji.baidu.com/
+  #  支持:
+  #    打赏记录: /about/
+  #  协议:
+  #    Cookies: /cookies/
+  #    用户协议: /privacy/
+  #    版权协议: /copyright/
 
-  # 页脚随机友链
-  # Random links at footer
-  # warning: 打开前必须先配置links
-  # warning: links must be configured before opening
   randomlink: false
-  # 隐私助手右侧弹窗，填写路径后开启
-  # Privacy assistant right pop-up window, fill in the path to open
   privacy: # /privacy/
-  # 版权(Copyright)
   license: # /license/
-  # 页脚右侧链接，例如：ICP备案号、公安备案号等
-  # Footer right link, such as: ICP filing number, public security filing number, etc.
   links:
-    # 为了主题能够得到更多的支持，建议保留主题链接
-    # In order for the theme to get more support, it is recommended to keep the theme link
     - name: 主题
       url: https://github.com/everfu/hexo-theme-solitude
     # - name: 订阅
     #   url: /atom.xml
 
-# 404 页面(404 page)
 errorpage:
-  # 图片
-  # image
   img: /img/404.avif
-  # 文字
-  # text
   text: =awa= 页面走丢了
-  # 推荐文章列表
-  # Recommended article list
   recommendList: true
 
-# 即刻短文
-# talk now
-# 前置要求：需配置即刻短文页面
-# Pre-requirements: talk now page needs to be configured
 says:
   enable: false
-  # 主页的即刻轮播条
-  # Talk carousel bar on the homepage
   home_mini: false
-  # 1：张洪heo样式 / 2：Leonus样式
-  # 1: Zhang Hong heo style / 2: Leonus style
   style: 1
-  # 即刻短文仅展示前n条
-  # Talk short text only shows the first n
   strip: 30
 
-# 最近评论
-# recent comments
-# 前置要求：需配置最近评论页面和评论，否则显示为空
-# Pre-requirements: recent comments page needs to be configured and commented, otherwise it will be displayed as empty
 recent_comments:
   enable: false
-  # 评论数
-  # Number of comments
   limit: 50 # ⚠️waline 仅支持最大50条评论 / ⚠️waline only supports a maximum of 50 comments
-  # 缓存时间
-  # Cache time
   cache: 0.2 # 1 = 1天 / 1 = 1 day
   page: /recentcomments/ # 最近评论页面 / recent comments page
   img: /img/recent_c.avif # 中控台显示图片（不填不显示） / image displayed in the console
 
-# 留言板
-# message board
-# 前置要求：需配置留言板页面
-# Pre-requirements: message board page needs to be configured
 envelope:
   enable: false
   line: 10 # 显示行数
@@ -556,228 +308,115 @@ envelope:
   loop: true # 循环播放
   page: /message/ # 留言板页面 / message board page
 
-# -------------------------
-# meeting-api，用于界面中的音乐胶囊和音乐馆页，可自定义api，不会请勿动。
-# meeting-api, used for music capsules and music halls in the interface, can customize api, do not move if you don't know.
 meting_api: "https://meting.qjqq.cn/?server=:server&type=:type&id=:id&auth=:auth&r=:r" #自定义api
-# 音乐馆页
-# music page
 music:
   enable: false
-  # 音乐ID：歌单ID / 专辑ID / 歌手ID
-  # Music ID: playlist ID / album ID / singer ID
   id: 1994908354
-  # 播放列表的服务商。netease：网易云 / tencent：腾讯 / kugou：酷狗 / xiami：小米 / baidu：百度
-  # Music service provider. netease: Netease Cloud / tencent: Tencent / kugou: Kugou / xiaomi: Xiaomi / baidu: Baidu
   server: netease
-  # 播放列表的类型。song：单曲 / playlist：歌单 / album：专辑 / artist：歌手
-  # Type of playlist. song: Single / playlist: Playlist / album: Album / artist: Singer
   type: playlist
-  # 初始音量。0.8 = 80%，范围 0 到 1
-  # Initial volume. 0.8 = 80%, range 0 to 1
   volume: 0.8
-  # 是否开启互斥模式，即同时只能有一个播放器播放
-  # Whether to enable mutex mode, that is, only one player can play at the same time
   mutex: true
 
-# 音乐胶囊
-# capsule music
 capsule:
   enable: false
-  # 歌单id / playlist id
   id: 8407304077
-  # 播放列表的服务商。netease：网易云 / tencent：腾讯 / kugou：酷狗 / xiami：小米 / baidu：百度
-  # Music service provider. netease: Netease Cloud / tencent: Tencent / kugou: Kugou / xiaomi: Xiaomi / baidu: Baidu
   server: netease
-  # 播放列表的类型。song：单曲 / playlist：歌单 / album：专辑 / artist：歌手
-  # Type of playlist. song: Single / playlist: Playlist / album: Album / artist: Singer
   type: playlist
 
-# 快捷菜单
-# quick menu
 keyboard:
   enable: false # 是否开启键盘控制 / Whether to enable keyboard control
-  # 键盘控制配置
-  # Keyboard control configuration
   list:
-    # 说明：
-    # - name: 按键名称(name)
-    #   key: 按键(Key)
-    #   func: 方法(function)
-    #   sco: sco内置方法(sco.'function')
-    #   url: 跳转链接(link)
-    # ------------------
-    # - name: 关闭快捷键功能
-    #   key: K
-    #   func: keyboard
-    # - name: 打开中控台
-    #   key: A
-    #   sco: showConsole
-    # - name: 播放/暂停音乐
-    #   key: M
-    #   sco: musicToggle
-    # - name: 打开友情链接
-    #   key: L
-    #   url: /links/
+  #  - name: 关闭快捷键功能
+  #    key: K
+  #    func: keyboard
+  #  - name: 打开中控台
+  #    key: A
+  #    sco: showConsole
+  #  - name: 播放/暂停音乐
+  #    key: M
+  #    sco: musicToggle
+  #  - name: 打开友情链接
+  #    key: L
+  #    url: /links/
 
-# 复制
-# Copy
 copy:
   enable: true
   copyright: # Turn on Link copyright information after copying.（开启后将在默认增加版权信息）
     enable: true
     limit: 50 # 字数 / word count
 
-# 懒加载
-# lazyload
 lazyload:
   enable: false
   field: site # post, site
-  # 加载中显示图片
-  # Loading display image
   placeholder: /img/loading.avif
-  # 加载失败显示图片
-  # Loading failed display image
   errorimg: /img/error_load.avif
 
-# 加载动画
-# loading animation
 loading:
-  # 全局加载动画
-  # Global loading animation
   fullpage: false
-  # 顶部加载胶囊
-  # Top loading capsule
   pace: true
 
-#代码高亮增强
-# code highlight
 highlight:
   enable: true
   limit: 200 # 代码行高限制 / Code line limit
   copy: true # 是否开启复制按钮 / Whether to enable the copy button
   expand: true # 是否默认展开 / Whether to expand by default
-  # 代码块样式
-  # Code block style
   theme: default # default: 默认 / mac : apple terminal
-  # 代码配色
-  # Code color
   color: default # default: 默认  / solidity: solidity / dracula: dracula
 
-# 图片灯箱
-# image lightbox
-# warning：开启前下方的fancybox或mediumZoom必须打开一个
-# warning: One of the fancybox or mediumZoom below must be turned on before turning on
 lightbox: false
-# fancybox
-# https://fancyapps.com/fancybox/
 fancybox: false
-# mediumZoom
 mediumZoom: false
 
-# mermaid tags plugin
-# https://mermaid.js.org/
 mermaid: false
 
-# Open Graph
-# https://ogp.me/
-# https://developers.facebook.com/docs/sharing/webmasters/
 OpenGraph:
   enable: false
   options:
-    # twitter_card:
-    # twitter_image:
-    # twitter_id:
-    # twitter_site:
-    # google_plus:
-    # fb_admins:
-    # fb_app_id:
+  #  twitter_card:
+  #  twitter_image:
+  #  twitter_id:
+  #  twitter_site:
+  #  google_plus:
+  #  fb_admins:
+  #  fb_app_id:
 
-# 字数统计
-# word count
-# warning：开启前需要安装字数统计插件
-# warning: You need to install the word count plugin before turning it on
 wordcount: false
 
-# 访问统计
-# access statistics
 busuanzi: false
 busuanzi_use: 0 # 0: 原版 / 1: 青秸(other: 其它自定義的busuanzi平台)
 
-# 搜索
-# search
-# warning：开启前需要安装搜索插件
-# warning: You need to install the search plugin before turning it on
 search:
   enable: false
-  # algolia, local
-  type: local
-  # 推荐标签
-  # Recommended tags
+  type: local # local: 本地搜索 / algolia: Algolia搜索 / local: local search
   tags:
-    # - Solitude
-    # - Hexo
+  #  - Solitude
+  #  - Hexo
   algolia:
-    # hits:
-    #   per_page: 6
+  #  hits:
+  #    per_page: 6
   local:
     preload: false
     CDN:
 
-# Post Chat AI
-# 后台地址：https://ai.tianli0.top/?InviteID=OZ3Z0V2R
 tianli_talk:
   enable: false
   title: 智能客服与搜索
-  key:
-    # 参见 https://ai.tianli0.top/?InviteID=OZ3Z0V2R
-    # 默认值
-    # backgroundColor: var(--efu-main)
-    # bottom: 60px
+  key: # 请填写你的key
   option:
-    # 参见 https://ai.tianli0.top/codeMaker.html
-    # defaultInput: false
-    # upLoadWeb: true
-    # userTitle: Efu Chat
-    # userDesc: 你好，我是 Efu 的智能客服，有什么可以帮助你的？
-    # showInviteLink: https://ai.tianli0.top/?InviteID=OZ3Z0V2R
-    # blackDom:
-    #   - .aplayer
-# 文章摘要AI
-# post abstract AI
 post_ai:
   enable: false
-  # 右侧显示的模型名称
-  # Model name displayed on the right
   modelName: GPT 4
-  # key
-  # 具体获取方法见文档
-  # Specific acquisition method, see the document
   key:
-  # 自介
-  # talk
   talk: # 我是 Efu 开发的摘要生成助理EfuGPT，EfuGPT在静态部署时进行摘要的撰写，并且在访客访问时通过EfuCorrection转译后的文本摘要实现工具。我在这里只负责已经生成的摘要显示，你无法与我直接沟通，但我可以回答一些预设的问题。
-  # 随机文章按钮
-  # Random post button
   randomPost: false
-  # 举报链接，不填不显示
-  # Report link, do not fill in and do not display
   report: https://efu.me/
-  # 底部提示
-  # Bottom tip
   tips: # 此内容根据文章生成，并经过人工审核，仅用于文章内容的解释与总结
 
-# latex 公式支持
-# latex formula support
-# docs: https://solitude.js.org/config/extend.html#数学公式
 katex:
   enable: false
   per_page: false # 是否在每页都加载 / Whether to load on each page
   copytex: false # 是否开启复制公式 / Whether to enable copy formula
 
-# 评论
-# comment
-# getting start: https://solitude.js.org/comments/comment
 comment:
   use: # waline, twikoo, valine, artalk, giscus
   commentBarrage: false # 热评开关 / Hot comment switch
@@ -788,25 +427,16 @@ comment:
   hot_tip: # 多人互动
     enable: false # 开启后将在文章列表显示多人互动
     count: 3 # 设置大于多少评论时显示
-
-# twikoo 配置信息
-# twikoo settings
 twikoo: # https://twikoo.js.org/
   envId: # url: https://twikoo.sondy.top/
   region: # 环境地域，默认为 ap-shanghai，腾讯云环境填 ap-shanghai 或 ap-guangzhou；Vercel 环境不填
   style: true # Use custom styles when turned on / 开启后使用自定义样式
   accessToken: # AccessToken
   option: # twikoo option
-
-# waline 配置信息
-# waline settings
 waline: # https://waline.js.org/
   envId: # url: https://waline.wzsco.top
   pageview: false # 是否开启页面访问量统计 / Whether to enable page access statistics
   option: # waline配置项 / waline configuration item
-
-# valine 配置信息
-# valine settings
 valine:
   appId: # leancloud application app id
   appKey: # leancloud application app key
@@ -815,16 +445,10 @@ valine:
   visitor: false
   style: true # Use custom styles when turned on / 开启后使用自定义样式
   option: # options list
-
-# artalk 配置信息
-# artalk settings
 artalk:
   server: # server url / 后端地址
   site: # site name / 站点名
   option: # options
-
-# gitalk 配置信息
-# gitalk settings
 giscus:
   repo: # GitHub 仓库名称 / GitHub repository name
   repo_id: # GitHub 仓库ID / GitHub repository ID
@@ -834,7 +458,6 @@ giscus:
     dark: dark
   option:
 
-# 中控台
 console:
   enable: false # 开启后显示中控台
   recentComment: # 开启后显示最近评论
@@ -844,46 +467,27 @@ console:
     tags: true # 开启后显示 标签
     archive: true # 开启后显示 归档
 
-# 站点验证
-# Site verification
-# 仅需要填写验证代码即可，譬如：codeva-KReTIJu5us
-# Only need to fill in the verification code, such as: codeva-KReTIJu5us
 verify_site:
-  # - name: google-site-verification
-  #   content: xxxxxx
-  # - name: baidu-site-verification
-  #   content: xxxxxxx
+#  - name: google-site-verification
+#    content: xxxxxx
+#  - name: baidu-site-verification
+#    content: xxxxxxx
 
-# CSS 前缀
-# CSS prefix
-# 有些 CSS 并不是所有浏览器都支持，需要增加对应的前缀才会生效
-# Some CSS is not supported by all browsers, and you need to add the corresponding prefix to take effect
-# 开启 css_prefix 后，会自动为一些 CSS 增加前缀。（会增加 20%的体积）
-# After opening css_prefix, some CSS will be automatically prefixed. (Will increase 20% of the volume)
 css_prefix: false
 
-# Font 字体
-# Font
 font:
   font-size: 16px
   code-font-size: 16px
   font-family: "PingFang SC, Hiragino Sans GB, Microsoft YaHei"
   code-font-family: '"monospace", monospace'
 
-# 插入代码到头部 </head> 之前 和 底部 </body> 之前
-# Insert code before </head> and before </body>
-# 插入额外代码 如：统计，广告等
-# Insert additional code such as: statistics, advertising, etc.
 extends:
   head:
-    # 在head中插入 / Insert in head
-    # - <script src="https://cdn.bootcdn.net/ajax/libs/pace/1.2.4/pace.min.js"></script>
+  # 在head中插入 / Insert in head
+  #  - <script src="https://cdn.bootcdn.net/ajax/libs/pace/1.2.4/pace.min.js"></script>
   body:
-    # 在body中插入 / Insert in body
+  # 在body中插入 / Insert in body
 
-# PWA
-# https://developer.mozilla.org/zh-CN/docs/Web/Progressive_web_apps
-# docs: https://solitude.js.org/config/extra#pwa
 pwa:
   enable: false
   manifest: /manifest.json # manifest.json 文件路径
@@ -894,7 +498,6 @@ pwa:
   favicon_32_32: /img/pwa/favicon_32.ico # 32x32图标
   favicon_16_16: /img/pwa/favicon_16.ico # 16x16图标
 
-# 谷歌广告 (Google Adsense)
 google_adsense:
   enable: false
   auto_ads: false # 自动广告关闭后则为手动广告 / After auto ads are turned off, it is manual ads
@@ -903,114 +506,64 @@ google_adsense:
   post_card: true # 文章卡片广告 / Post card ads（首页文章列表）
   post_content: true # 文章内容广告 / Post content ads（文章内容底部广告）
   js: https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js # 谷歌广告js / Google Adsense js
-  # client id
-  # 无论是否开启自动广告，都需要填写 client id
-  # Whether to enable auto ads or not, you need to fill in the client id
   client: # ca-pub-XXXXXXXXXXXXXX
-  # slot id
-  # 只有关闭自动广告时才需要填写 slot id，可以在谷歌广告后台 按广告单元中创建广告位后获取
-  # Only when auto ads are turned off, you need to fill in the slot id, which can be obtained after creating an ad space in the Google Adsense background according to the ad unit
   slot: # 4236388782
 
-# 自定义右键菜单 (Custom Right Menu)
 right_menu:
   enable: false
   commentBarrage: false # 是否显示热评开关 / Whether to display the hot comment switch.
-  # 翻译功能（仅支持简繁）
-  # Translation function (Simplified and Traditional Chinese only)
   translate:
     enable: false
     defaultEncoding: 2 # 1: 默认繁体 2: 默认简体
     translateDelay: 0 # 首次加载翻译迟疑时间
-  # 自定义菜单项列表
-  # Customize the list of menu items.
   custom_list:
-    # - name: 随机短文
-    #   click: toRandomPost()
-    #   id: menu-randomPost
-    #   class:
-    #   icon: st-signal-tower-fill
-    # - name: 全部分类
-    #   click: pjax.loadUrl('/categories/') # 外链用 window.open，pjax 无法请求跨域内容
-    #   id:
-    #   class:
-    #   icon: st-checkbox-multiple-blank-fill
-    # - name: 全部标签
-    #   click: pjax.loadUrl('/tags/')
-    #   id:
-    #   class:
-    #   icon: st-price-tag-fill
-    # - name: 赞助主题
-    #   click: window.open('https://afdian.net/a/efu0u0/', '_blank')
-    #   id:
-    #   class:
-    #   icon: st-afdian-line
+  #  - name: 随机短文
+  #    click: toRandomPost()
+  #    id: menu-randomPost
+  #    class:
+  #    icon: fas fa-tower-broadcast
+  #  - name: 全部分类
+  #    click: pjax.loadUrl('/categories/') # 外链用 window.open，pjax 无法请求跨域内容
+  #    id:
+  #    class:
+  #    icon: fas fa-clone
+  #  - name: 全部标签
+  #    click: pjax.loadUrl('/tags/')
+  #    id:
+  #    class:
+  #    icon: fas fa-tags
 
-# 哀悼模式，网页黑白
-# Mourning mode, web page black and white
 memorial:
   enable: false
-  # 日期, (M-D)
-  # Date, (M-D)
-  # eg: 7-7, 9-18, 12-13 ...
   date:
-    - 7-7 # 七七事变
-    - 9-18 # 九一八事变
-    - 12-13 # 南京大屠杀国家公祭日
+  #  - 7-7 # 七七事变
+  #  - 9-18 # 九一八事变
+  #  - 12-13 # 南京大屠杀国家公祭日
 
-# 诱骗
-# lure
 lure:
   enable: false
-  # 跳出
-  # Jump out
   jump: 404 Not Found
-  # 切回
-  # Switch back
   back: ヾ(≧∇≦*)ゝ嘿嘿，上当了吧
 
-# 文章过期提醒
-# Article expiration reminder
 expire:
   enable: false
-  # 过期时间
-  # Expiration time
-  time: 30
+  time: 30 # days
   position: top # top / bottom
-  # 过期提示
-  # Expiration prompt
   text_prev: 本文已于
   text_next: 天前过期，如果内容不符，请联系站长更新。
 
-# 背景图片
-# Background image
 background:
   enable: false
   opacity: .2
   dark: https://bu.dusays.com/2023/09/29/651685ce667d1.jpg
   light: https://bu.dusays.com/2023/09/29/651685cc18d39.jpg
 
-# CDN
-# Don't modify the following settings unless you know how they work
-# 非必要请不要修改
 CDN:
-  # The CDN provider of internal scripts (主题内 js 的 cdn 配置)
-  # option: local/jsdelivr/unpkg/cdnjs/custom
-  # Dev version can only choose. ( dev版本只能为 local )
   internal: local
-  # The CDN provider of third party scripts (第三方 js 的 cdn 配置)
-  # option: jsdelivr/unpkg/cdnjs/custom
   third_party: cdnjs
-
-  # Add version number to url, true or false
   version: true
-
-  # Custom format
-  # For example: //open.lightxi.com/cdnjs/ajax/libs/${cdnjs_name}/${version}/${min_cdnjs_file}
   custom_format: //open.lightxi.com/cdnjs/ajax/libs/${cdnjs_name}/${version}/${min_cdnjs_file}
-
   option:
-    solitude_css: https://cdn2.codesign.qq.com/icons/7pOrz0WXB5ZWJPX/latest/iconfont.css
     busuanzi_qj_js: https://pv.lemonso.com/js
     # algolia_search:
     # instantsearch:
