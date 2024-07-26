@@ -22,62 +22,62 @@ site:
 
 nav:
   group:
-    # 项目: # 分类名称
-    #   Solitude: https://github.com/everfu/hexo-theme-solitude || /img/pwa/favicon.ico # 子菜单名称(submenu name): 链接地址(address) || 图标(icon)
+  #  项目: # 分类名称
+  #    Solitude: https://github.com/everfu/hexo-theme-solitude || /img/pwa/favicon.ico # 子菜单名称(submenu name): 链接地址(address) || 图标(icon)
   menu:
-    # 首页: / # 显示名称：路径 / Display name: path
-    # 文库: # 显示名称 / Display name
-    #   文章列表: /archives/ || fas fa-folder-closed # 子菜单名称：路径 || 图标 / Submenu name: path || icon
-    #   全部分类: /categories/ || fas fa-clone
-    #   全部标签: /tags/ || fas fa-tags
-    # 友链:
-    #   友链鱼塘: /moments/ || fas fa-wifi
-    #   友情链接: /links/ || fas fa-user-group
-    #   宝藏博主: javascript:travelling() || fas fa-gift
-    # 我的:
-    #   装备: /equipment/ || fas fa-laptop
-    #   工具箱: /tlink/ || fas fa-toolbox
-    #   音乐馆: /music/ || fas fa-music
-    # 关于:
-    #   关于本站: /about/ || fas fa-user
+  #  首页: / # 显示名称：路径 / Display name: path
+  #  文库: # 显示名称 / Display name
+  #    文章列表: /archives/ || fas fa-folder-closed # 子菜单名称：路径 || 图标 / Submenu name: path || icon
+  #    全部分类: /categories/ || fas fa-clone
+  #    全部标签: /tags/ || fas fa-tags
+  #  友链:
+  #    友链鱼塘: /moments/ || fas fa-wifi
+  #    友情链接: /links/ || fas fa-user-group
+  #    宝藏博主: javascript:travelling() || fas fa-gift
+  #  我的:
+  #    装备: /equipment/ || fas fa-laptop
+  #    工具箱: /tlink/ || fas fa-toolbox
+  #    音乐馆: /music/ || fas fa-music
+  #  关于:
+  #    关于本站: /about/ || fas fa-user
   right:
     random: false # 随机文章跳转 / random post button
     console: false # 控制台 / console
     custom:
-      # - name: 开往 - 友链接力 # 显示文字 / Displayed text
-      #   url: https://www.travellings.cn/go.html # 跳转链接 / Jump link
-      #   icon: fas fa-train # 图标 / Icon
-      #   onclick: # 点击事件 / Click event
-      #   id: travellings_button # id
+    #  - name: 开往 - 友链接力 # 显示文字 / Displayed text
+    #    url: https://www.travellings.cn/go.html # 跳转链接 / Jump link
+    #    icon: fas fa-train # 图标 / Icon
+    #    onclick: # 点击事件 / Click event
+    #    id: travellings_button # id
 
 hometop:
   enable: false
   banner:
-    title: 宁静致远<br>热爱生活
+    title: Tranquility <br>and love life
     url: Hexo Theme Solitude
     icon:
-      # HTML: # 名字 / Name
-      #   img: https://7.isyangs.cn/34/65f2e42921677-34.png # 图片 / Image
-      #   color: "#e9572b" # 背景色 / Background color
-      # JS:
-      #   img: https://7.isyangs.cn/34/65f2e43ceddda-34.png
-      #   color: "#f7cb4f"
-      # Docker:
-      #   img: https://7.isyangs.cn/34/65f2e45462045-34.png
-      #   color: "#57b6e6"
-      # Flutter:
-      #   img: https://7.isyangs.cn/34/65f2e47acbe98-34.png
-      #   color: "#ffffff"
-      # WebPack:
-      #   img: https://7.isyangs.cn/34/65f2e488bf8ed-34.png
-      #   color: "#2e3a41"
-      # Git:
-      #   img: https://7.isyangs.cn/34/65f2e499066fa-34.png
-      #   color: "#df5b40"
+    #  HTML:
+    #    img: https://i.postimg.cc/vBWVnY8q/html.png
+    #    color: "#e9572b"
+    #  JS:
+    #    img: https://i.postimg.cc/3N10Ltv2/js.png
+    #    color: "#f7cb4f"
+    #  Docker:
+    #    img: https://i.postimg.cc/8Pk6Fg24/docker.png
+    #    color: "#57b6e6"
+    #  Flutter:
+    #    img: https://i.postimg.cc/hPC7T3gB/flutter.png
+    #    color: "#ffffff"
+    #  WebPack:
+    #    img: https://i.postimg.cc/dVLZBmtT/webpack.png
+    #    color: "#2e3a41"
+    #  Git:
+    #    img: https://i.postimg.cc/nhgjwjCS/git.png
+    #    color: "#df5b40"
   group:
-    # 热门: /tags/热门/ || fas fa-fire || linear-gradient(to right, #f65, #ffbf37)
-    # 教程: /tags/教程/ || fas fa-book || linear-gradient(to right, #358bff, #15c6ff)
-    # 精选: /tags/精选/ || fas fa-star || linear-gradient(to right, #18e7ae, #1eebeb)
+  #  Fire: /tags/Fire/ || fas fa-fire || linear-gradient(to right, #f65, #ffbf37)
+  #  Course: /tags/Course/ || fas fa-book || linear-gradient(to right, #358bff, #15c6ff)
+  #  Curation: /tags/Curation/ || fas fa-star || linear-gradient(to right, #18e7ae, #1eebeb)
   recommendList:
     sup: Top
     title: Solitude Documentation
@@ -116,18 +116,18 @@ aside:
       night: 不要太劳累了，早睡更健康
       goodnight: 睡个好觉，保证精力充沛
     sayhello2:
-      # - 🤖️ 数码科技爱好者
-      # - 🔍 分享与热心帮助
-      # - 🏠 智能家居小能手
-      # - 🔨 设计开发一条龙
-      # - 🤝 专修交互与设计
-      # - 🏃 脚踏实地行动派
-      # - 🧱 团队小组发动机
-      # - 💢 壮汉人狠话不多
-      # - 🎮 电竞游戏爱好者
+    #  - 🤖️ 数码科技爱好者
+    #  - 🔍 分享与热心帮助
+    #  - 🏠 智能家居小能手
+    #  - 🔨 设计开发一条龙
+    #  - 🤝 专修交互与设计
+    #  - 🏃 脚踏实地行动派
+    #  - 🧱 团队小组发动机
+    #  - 💢 壮汉人狠话不多
+    #  - 🎮 电竞游戏爱好者
     information:
-      # Github: https://github.com/everfu || fas fa-github # 名称：链接 || 图标 / Name: link || icon
-      # Bilibili: https://space.bilibili.com/1329819902 || fas fa-bilibili
+    #  Github: https://github.com/everfu || fas fa-github # 名称：链接 || 图标 / Name: link || icon
+    #  Bilibili: https://space.bilibili.com/1329819902 || fas fa-bilibili
   flip:
     favicon:
     face:
@@ -171,13 +171,13 @@ page:
   categories: true # 分类页 / Categories page
   default: # 默认值 / Default value
     cover:
-      # - /img/default.png # 默认图片 / default cover
+    #  - /img/default.png # 默认图片 / default cover
 
 post:
   default:
     top_cover: true # 顶部描述 / Top description
     cover:
-      # -  # 默认图片 / default cover
+    #  -  # 默认图片 / default cover
     locate: China
     copyright:
       enable: true
@@ -200,29 +200,28 @@ post:
     title: 感谢您的赞赏。
     desc: 因为有你们的支持，我才体会到写文章的价值。
     list:
-      # - name: Github Sponsor
-      #   qcode: https://s3.qjqq.cn/47/661ba900c4bc1.webp!color
-      #   url: https://github.com/sponsors/efuo
-      #   color: var(--efu-black)
+    #  - name: Github Sponsor
+    #    qcode: https://s3.qjqq.cn/47/661ba900c4bc1.webp!color
+    #    url: https://github.com/sponsors/efuo
+    #    color: var(--efu-black)
     share:
       enable: false
       list:
-      # - qq
-      # - weibo
-      # - twitter
-      # - facebook
-      # - telegram
-      # - whatsapp
-      # - linkedin
-      # - link
-      # - qrcode
+      #  - qq
+      #  - weibo
+      #  - twitter
+      #  - facebook
+      #  - telegram
+      #  - whatsapp
+      #  - linkedin
+      #  - link
+      #  - qrcode
   rss: # /atom.xml
   covercolor:
     enable: false
     mode: local # local：本地取色 / api：img2color取色 : local: local color / api: img2color color
     api: https://api.qjqq.cn/api/Imgcolor?img= # api地址 / api address
     time: 43200000 # api取色间隔（毫秒），默认为12小时 / api color interval (milliseconds), default is 12 hours
-  # footer
   footer:
     enable: true
     desc: 来自 Efu 的文章 # 介绍文字
@@ -253,26 +252,26 @@ footer:
   information:
     author: false # 是否显示 site_icon / enable site_icon in footer
     left:
-      # Github: https://github.com/efuo || fas fa-github # 名称：链接 || 图标 / Name: link || icon
-      # Mail: mailto:o@efu.me || fas fa-envelope
+    #  Github: https://github.com/efuo || fas fa-github # 名称：链接 || 图标 / Name: link || icon
+    #  Mail: mailto:o@efu.me || fas fa-envelope
     right:
-      # Bilibili: https://space.bilibili.com/1329819902 || fas fa-bilibili
-      # 抖音: https://v.douyin.com/iJsLc8jt/ || fas fa-tiktok
+    #  Bilibili: https://space.bilibili.com/1329819902 || fas fa-bilibili
+    #  抖音: https://v.douyin.com/iJsLc8jt/ || fas fa-tiktok
   group:
-    # 导航:
-    #   归档: /archives/
-    #   分类: /categories/
-    #   标签: /tags/
-    # 服务:
-    #   阿里云: https://aliyun.com/
-    #   51la统计: https://v6.51.la/
-    #   百度统计: https://tongji.baidu.com/
-    # 支持:
-    #   打赏记录: /about/
-    # 协议:
-    #   Cookies: /cookies/
-    #   用户协议: /privacy/
-    #   版权协议: /copyright/
+  #  导航:
+  #    归档: /archives/
+  #    分类: /categories/
+  #    标签: /tags/
+  #  服务:
+  #    阿里云: https://aliyun.com/
+  #    51la统计: https://v6.51.la/
+  #    百度统计: https://tongji.baidu.com/
+  #  支持:
+  #    打赏记录: /about/
+  #  协议:
+  #    Cookies: /cookies/
+  #    用户协议: /privacy/
+  #    版权协议: /copyright/
 
   randomlink: false
   privacy: # /privacy/
@@ -327,25 +326,18 @@ capsule:
 keyboard:
   enable: false # 是否开启键盘控制 / Whether to enable keyboard control
   list:
-    # 说明：
-    # - name: 按键名称(name)
-    #   key: 按键(Key)
-    #   func: 方法(function)
-    #   sco: sco内置方法(sco.'function')
-    #   url: 跳转链接(link)
-    # ------------------
-    # - name: 关闭快捷键功能
-    #   key: K
-    #   func: keyboard
-    # - name: 打开中控台
-    #   key: A
-    #   sco: showConsole
-    # - name: 播放/暂停音乐
-    #   key: M
-    #   sco: musicToggle
-    # - name: 打开友情链接
-    #   key: L
-    #   url: /links/
+  #  - name: 关闭快捷键功能
+  #    key: K
+  #    func: keyboard
+  #  - name: 打开中控台
+  #    key: A
+  #    sco: showConsole
+  #  - name: 播放/暂停音乐
+  #    key: M
+  #    sco: musicToggle
+  #  - name: 打开友情链接
+  #    key: L
+  #    url: /links/
 
 copy:
   enable: true
@@ -380,13 +372,13 @@ mermaid: false
 OpenGraph:
   enable: false
   options:
-    # twitter_card:
-    # twitter_image:
-    # twitter_id:
-    # twitter_site:
-    # google_plus:
-    # fb_admins:
-    # fb_app_id:
+  #  twitter_card:
+  #  twitter_image:
+  #  twitter_id:
+  #  twitter_site:
+  #  google_plus:
+  #  fb_admins:
+  #  fb_app_id:
 
 wordcount: false
 
@@ -397,11 +389,11 @@ search:
   enable: false
   type: local # local: 本地搜索 / algolia: Algolia搜索 / local: local search
   tags:
-    # - Solitude
-    # - Hexo
+  #  - Solitude
+  #  - Hexo
   algolia:
-    # hits:
-    #   per_page: 6
+  #  hits:
+  #    per_page: 6
   local:
     preload: false
     CDN:
@@ -476,10 +468,10 @@ console:
     archive: true # 开启后显示 归档
 
 verify_site:
-  # - name: google-site-verification
-  #   content: xxxxxx
-  # - name: baidu-site-verification
-  #   content: xxxxxxx
+#  - name: google-site-verification
+#    content: xxxxxx
+#  - name: baidu-site-verification
+#    content: xxxxxxx
 
 css_prefix: false
 
@@ -491,10 +483,10 @@ font:
 
 extends:
   head:
-    # 在head中插入 / Insert in head
-    # - <script src="https://cdn.bootcdn.net/ajax/libs/pace/1.2.4/pace.min.js"></script>
+  # 在head中插入 / Insert in head
+  #  - <script src="https://cdn.bootcdn.net/ajax/libs/pace/1.2.4/pace.min.js"></script>
   body:
-    # 在body中插入 / Insert in body
+  # 在body中插入 / Insert in body
 
 pwa:
   enable: false
@@ -525,31 +517,28 @@ right_menu:
     defaultEncoding: 2 # 1: 默认繁体 2: 默认简体
     translateDelay: 0 # 首次加载翻译迟疑时间
   custom_list:
-    # - name: 随机短文
-    #   click: toRandomPost()
-    #   id: menu-randomPost
-    #   class:
-    #   icon: fas fa-tower-broadcast
-    # - name: 全部分类
-    #   click: pjax.loadUrl('/categories/') # 外链用 window.open，pjax 无法请求跨域内容
-    #   id:
-    #   class:
-    #   icon: fas fa-clone
-    # - name: 全部标签
-    #   click: pjax.loadUrl('/tags/')
-    #   id:
-    #   class:
-    #   icon: fas fa-tags
+  #  - name: 随机短文
+  #    click: toRandomPost()
+  #    id: menu-randomPost
+  #    class:
+  #    icon: fas fa-tower-broadcast
+  #  - name: 全部分类
+  #    click: pjax.loadUrl('/categories/') # 外链用 window.open，pjax 无法请求跨域内容
+  #    id:
+  #    class:
+  #    icon: fas fa-clone
+  #  - name: 全部标签
+  #    click: pjax.loadUrl('/tags/')
+  #    id:
+  #    class:
+  #    icon: fas fa-tags
 
 memorial:
   enable: false
-  # 日期, (M-D)
-  # Date, (M-D)
-  # eg: 7-7, 9-18, 12-13 ...
   date:
-    - 7-7 # 七七事变
-    - 9-18 # 九一八事变
-    - 12-13 # 南京大屠杀国家公祭日
+  #  - 7-7 # 七七事变
+  #  - 9-18 # 九一八事变
+  #  - 12-13 # 南京大屠杀国家公祭日
 
 lure:
   enable: false
