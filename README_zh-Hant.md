@@ -1,4 +1,4 @@
-[English](README.md)丨[简体中文](README_zh_CN.md)丨繁体中文
+[English](README.md)丨[简体中文](README_zh-Hans)丨繁体中文
 
 <div align="center">
   
@@ -66,8 +66,6 @@
 前往 [文檔](https://solitude.js.org/) 獲取更多資訊。
 
 ## 贊助者
-
-[!["Buy Me A Coffee"](https://img.buymeacoffee.com/button-api/?text=請我喝杯咖啡&emoji=%E2%98%95&everfu=ezgif&button_colour=FFDD00&font_colour=000000&font_family=Cookie&outline_colour=000000&coffee_colour=ffffff)](https://www.buymeacoffee.com/everfu)
 
 <p align="center">
   <a href="https://cdn.jsdelivr.net/gh/efuo/static/sponsors.svg">
