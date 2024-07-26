@@ -177,6 +177,7 @@
                 .center
                   width .5rem
                   height .3rem
+
                 .right
                   width .3rem
                   height 100%
@@ -394,16 +395,15 @@
           opacity: 1
 
     i.fa-solid.fa-home
-      +minWidth900()
-        opacity 0
-        position absolute
-        display flex
-        z-index 1
-        align-items center
-        justify-content center
-        font-size 22px
-        line-height 1
-        color var(--efu-card-bg)
+      opacity 0
+      position absolute
+      display flex
+      z-index 1
+      align-items center
+      justify-content center
+      font-size 22px
+      line-height 1
+      color var(--efu-card-bg)
 
     if hexo-config('site.name.class') == i_class
       i
