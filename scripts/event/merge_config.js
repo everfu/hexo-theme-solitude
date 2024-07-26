@@ -151,6 +151,10 @@ hexo.extend.filter.register('before_generate', () => {
                 api: 'https://api.qjqq.cn/api/Imgcolor?img=',
                 time: 43200000,
             },
+            share: {
+              enable: false,
+              list: []
+            },
             footer: {
                 enable: true,
                 desc: "来自 Efu 的文章",
