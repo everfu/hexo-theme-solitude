@@ -115,3 +115,8 @@ blueimp_md5:
   name: blueimp-md5
   file: js/md5.min.js
   version: 2.19.0
+qrcode:
+  name: qrcodejs
+  file: qrcode.min.js
+  version: 1.0.0
+  other_name: qrcodejs
