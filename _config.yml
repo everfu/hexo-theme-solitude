@@ -492,11 +492,11 @@ pwa:
   enable: false
   manifest: /manifest.json # manifest.json 文件路径
   theme_color: "#006a73" # 主题颜色
-  mask_icon: /img/pwa/favicon.ico # 遮罩图标
-  apple_touch_icon: /img/pwa/favicon.ico # 苹果触摸图标
-  bookmark_icon: /img/pwa/favicon.ico # 书签图标
-  favicon_32_32: /img/pwa/favicon_32.ico # 32x32图标
-  favicon_16_16: /img/pwa/favicon_16.ico # 16x16图标
+  mask_icon: /img/pwa/favicon.png # 遮罩图标
+  apple_touch_icon: /img/pwa/favicon.png # 苹果触摸图标
+  bookmark_icon: /img/pwa/favicon.png # 书签图标
+  favicon_32_32: /img/pwa/favicon_32.png # 32x32图标
+  favicon_16_16: /img/pwa/favicon_16.png # 16x16图标
 
 google_adsense:
   enable: false
