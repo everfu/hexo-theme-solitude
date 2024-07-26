@@ -26,7 +26,7 @@ const calculateColor = img => {
     const data = ctx.getImageData(0, 0, img.width, img.height).data;
     const {r, g, b} = calculateRGB(data);
     let value = rgbToHex(r, g, b);
-    return getContrastYIQ(value) === "light" ? LightenDarkenColor(value, -50) : value;
+    return getContrastYIQ(value) === "light" ? LightenDarkenColor(value, -50) : LightenDarkenColor(value, 20);
 }
 
 function calculateRGB(data) {
@@ -56,9 +56,9 @@ function LightenDarkenColor(col, amt) {
     }
 
     const num = parseInt(col, 16);
-    const r = Math.min(255, Math.max(0, (num >> 16) + amt));
-    const b = Math.min(255, Math.max(0, ((num >> 8) & 0xff) + amt));
-    const g = Math.min(255, Math.max(0, (num & 0xff) + amt));
+    const r = Math.min(255, Math.max(0, (num >> 16) + amt * 2));
+    const b = Math.min(255, Math.max(0, ((num >> 8) & 0xff) + amt * 2));
+    const g = Math.min(255, Math.max(0, (num & 0xff) + amt * 2));
 
     return `${usePound ? "#" : ""}${(g | (b << 8) | (r << 16)).toString(16).padStart(6, "0")}`;
 }
@@ -121,6 +121,12 @@ function setThemeColors(value, r = null, g = null, b = null) {
                     authorInfo[i].style.setProperty('background', 'var(--efu-white-op)');
                     authorInfo[i].style.setProperty('color', 'var(--efu-white)');
                 }
+
+                value = LightenDarkenColor(value, 50);
+                document.documentElement.style.setProperty('--efu-main', value);
+                document.documentElement.style.setProperty('--efu-main-op', value + '23');
+                document.documentElement.style.setProperty('--efu-main-op-deep', value + 'dd');
+                document.documentElement.style.setProperty('--efu-main-none', value + '00');
             }
         }
 
