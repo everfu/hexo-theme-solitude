@@ -198,7 +198,7 @@ const sco = {
     },
     initConsoleState() {
         const consoleHideAside = document.querySelector("#consoleHideAside");
-        consoleHideAside.classList.toggle("on", !document.documentElement.classList.contains("hide-aside"));
+        consoleHideAside.classList.toggle("on", document.documentElement.classList.contains("hide-aside"));
     },
     changeSayHelloText() {
         const greetings = GLOBAL_CONFIG.aside.sayhello2;
@@ -694,7 +694,7 @@ window.refreshFn = () => {
     if (lure) tabs.lureAddListener();
 }
 document.addEventListener('DOMContentLoaded', () => {
-    [addCopyright, sco.initConsoleState, window.refreshFn, asideStatus, () => window.onscroll = percent].forEach(fn => fn());
+    [addCopyright, window.refreshFn, asideStatus, () => window.onscroll = percent, sco.initConsoleState].forEach(fn => fn());
 });
 document.addEventListener('visibilitychange', () => {
     if (document.hidden) {
