@@ -564,7 +564,6 @@ CDN:
   version: true
   custom_format: //open.lightxi.com/cdnjs/ajax/libs/${cdnjs_name}/${version}/${min_cdnjs_file}
   option:
-    solitude_css: https://cdn2.codesign.qq.com/icons/7pOrz0WXB5ZWJPX/latest/iconfont.css
     busuanzi_qj_js: https://pv.lemonso.com/js
     # algolia_search:
     # instantsearch:
