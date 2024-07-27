@@ -112,6 +112,7 @@ hexo.extend.filter.register('before_generate', () => {
             error: true,
             tags: true,
             categories: true,
+            archives: 0,
             default: {
                 cover: ['/img/default.avif'],
             }
