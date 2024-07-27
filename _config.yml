@@ -113,11 +113,11 @@ aside:
     content: Here is my personal blog # Introduction (Invalid if style is 1)
     content2: I believe you can find knowledge and tutorials here that will be useful to you. # Introduction (Invalid if style is 1)
     sayhello: # Style 2 is invalid
-      # morning: ✨ Good morning. It's a new day 
-      # noon: It's time for a midday break 
-      # afternoon: Tea time. 🍵
-      # night: early bedtime
-      # goodnight: Good night 😴
+      morning: ✨ Good morning. It's a new day 
+      noon: It's time for a midday break 
+      afternoon: Tea time. 🍵
+      night: early bedtime
+      goodnight: Good night 😴
     sayhello2: # Style 2 is invalid, Triggered when sayhello is clicked.
       # - You'll make it.
       # - You're gonna make it.
