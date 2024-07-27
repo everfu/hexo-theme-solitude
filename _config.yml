@@ -196,6 +196,7 @@ page:
   error: true # 404 page
   tags: true # Tags page
   categories: true # Categories page
+  archives: 0 # list: Sort List / 1: Follow HomeList
   default: # Default value
     cover:
       # - /img/default.png # 默认图片 / default cover
