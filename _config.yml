@@ -317,7 +317,7 @@ footer:
 
   randomlink: false # Random link
   privacy: # /privacy/ # Privacy policy
-  license: # /license/ # License
+  license: # https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh # License
   links:
     - name: Theme
       url: https://github.com/everfu/hexo-theme-solitude

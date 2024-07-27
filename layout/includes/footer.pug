@@ -56,11 +56,12 @@ div#footer-bar
         div.footer-bar-right
             each item in theme.footer.links
                 a.footer-bar-link(href=url_for(item.url), alt=item.name)!= item.name
-            a.footer-bar-link.cc(href=url_for(theme.footer.license), aria-label = 'copyright')
-                i.solitude.fa-solid.fa-copyright
-                i.solitude.fa-brands.fa-creative-commons-by
-                i.solitude.fa-brands.fa-creative-commons-nc
-                i.solitude.fa-brands.fa-creative-commons-nd
+            if theme.footer.license
+                a.footer-bar-link.cc(href=url_for(theme.footer.license), aria-label = 'copyright')
+                    i.solitude.fa-solid.fa-copyright
+                    i.solitude.fa-brands.fa-creative-commons-by
+                    i.solitude.fa-brands.fa-creative-commons-nc
+                    i.solitude.fa-brands.fa-creative-commons-nd
 if theme.footer.privacy
     div.needEndHide#cookies-window
         div.cookies-window-title= __('cookies.title')
