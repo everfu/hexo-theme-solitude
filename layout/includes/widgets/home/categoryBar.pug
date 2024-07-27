@@ -12,4 +12,5 @@ div.category-bar-right
     if wordcount > 40 || categories.data.length > 10
         .category-bar-next#category-bar-next(onclick="sco.scrollCategoryBarToRight()")
             i.solitude.fa-solid.fa-angles-right
-    a.category-bar-more(href=url_for('/categories/'))= __('more')
+    if theme.page.categories
+        a.category-bar-more(href=url_for('/categories/'))= __('more')
