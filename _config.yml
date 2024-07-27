@@ -204,18 +204,18 @@ post:
     #    qcode: https://s3.qjqq.cn/47/661ba900c4bc1.webp!color
     #    url: https://github.com/sponsors/efuo
     #    color: var(--efu-black)
-    share:
-      enable: false
-      list:
-      #  - qq
-      #  - weibo
-      #  - twitter
-      #  - facebook
-      #  - telegram
-      #  - whatsapp
-      #  - linkedin
-      #  - link
-      #  - qrcode
+  share:
+    enable: false
+    list:
+    #  - qq
+    #  - weibo
+    #  - twitter
+    #  - facebook
+    #  - telegram
+    #  - whatsapp
+    #  - linkedin
+    #  - link
+    #  - qrcode
   rss: # /atom.xml
   covercolor:
     enable: false
