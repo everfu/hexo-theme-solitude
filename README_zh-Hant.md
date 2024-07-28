@@ -1,8 +1,6 @@
 [English](README.md)丨[简体中文](README_zh-Hans)丨繁体中文
 
 <div align="center">
-  
-   <img src=".github/persona.avif" alt="Solitude logo" height="200">
 
   <h1>Solitude</h1>
 
@@ -26,7 +24,11 @@
 
 </div>
 
+<div style="width: 80%; margin: 0 auto">
+
 ![Screenshot](.github/screenshot.avif)
+
+</div>
 
 ## 特性
 

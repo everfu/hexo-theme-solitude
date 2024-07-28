@@ -2,8 +2,6 @@ English丨[简体中文](README_zh-Hans)丨[繁体中文](README_zh-Hant.md)
 
 <div align="center">
 
-   <img src=".github/persona.avif" alt="Solitude logo" height="200">
-
    <h1>Solitude</h1>
 
    An elegant Hexo theme that supports lazy loading, PWA, Latex, and multiple comment systems.
@@ -26,7 +24,11 @@ English丨[简体中文](README_zh-Hans)丨[繁体中文](README_zh-Hant.md)
 
 </div>
 
+<div style="width: 80%; margin: 0 auto">
+
 ![Screenshot](.github/screenshot.avif)
+
+</div>
 
 ## Features
 

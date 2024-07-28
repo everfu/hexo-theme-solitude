@@ -2,8 +2,6 @@
 
 <div align="center">
 
-   <img src=".github/persona.avif" alt="Solitude logo" height="200">
-
    <h1>Solitude</h1>
 
    一款优雅的 Hexo 主题，支持懒加载、PWA、Latex 以及多种评论系统。
@@ -26,7 +24,11 @@
 
 </div>
 
+<div style="width: 80%; margin: 0 auto">
+
 ![Screenshot](.github/screenshot.avif)
+
+</div>
 
 ## 特性
 
