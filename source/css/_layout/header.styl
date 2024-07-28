@@ -19,13 +19,22 @@
         &:hover
           color var(--efu-card-bg)
 
-    &:not(.nav-fixed)
-      #nav
-        background var(--efu-none)
-        transition .3s
+  &:not(.nav-fixed)
+    #nav
+      background var(--efu-none)
+      transition .3s
 
-        +maxWidth768()
-          transition 0s
+      +maxWidth768()
+        transition 0s
+
+      .post &
+
+        #nav-right
+          .nav-button
+            .console_switchbutton
+              label
+                i
+                  background var(--efu-white)
 
 #page-header
   #site-title
@@ -141,6 +150,7 @@
         padding 0
 
       .nav-button
+        margin-left 12px
         cursor pointer
 
         a
@@ -150,6 +160,9 @@
           align-items center
           justify-content center
           border-radius 40px
+
+          i
+            font-size 20px
 
           &.totopbtn
             width 25px
@@ -163,7 +176,7 @@
             transition .3s
 
           &.console_switchbutton
-            padding 10px 8px
+            padding 10px 7.5px
 
             &:hover
               label
@@ -194,9 +207,6 @@
                 position absolute
                 border-radius 12px
                 background var(--efu-fontcolor)
-
-                .post &
-                  background var(--efu-white)
 
                 &.left
                   top 0
