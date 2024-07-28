@@ -198,6 +198,7 @@ const sco = {
     },
     initConsoleState() {
         const consoleHideAside = document.querySelector("#consoleHideAside");
+        if(!consoleHideAside) return;
         consoleHideAside.classList.toggle("on", document.documentElement.classList.contains("hide-aside"));
     },
     changeSayHelloText() {
