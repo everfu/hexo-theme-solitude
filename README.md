@@ -4,7 +4,7 @@ English丨[简体中文](README_zh-Hans.md)丨[繁体中文](README_zh-Hant.md)
 
    <h1>Solitude</h1>
 
-   An elegant Hexo theme that supports lazy loading, PWA, Latex, and multiple comment systems.
+   An elegant Hexo theme that supports lazy loading, PWA, Latex, and multiple commenting systems.
 
    Theme design is fully licensed by [@张洪Heo](https://github.com/zhheo).
 
@@ -32,13 +32,13 @@ English丨[简体中文](README_zh-Hans.md)丨[繁体中文](README_zh-Hant.md)
 
 ## Features
 
-- Pjax、LazyLoad、PWA.
-- Comments(Twikoo、Waline、Valine、Artalk、Giscus), Can double comment.
-- ColorMode.
-- Lightbox(medium-zoom、fancybox).
-- Mathematical formulas(Latex).
-- Featured pages: Instant Short Article, My Equipment, Online Tools, Music Gallery, Friend Chain Fish Pond, Photo Album Page, Douban Page, Barrage message page.
-- Article features: AI summary, code highlighting.
+- Page lazy loading (Pjax), image lazy loading (LazyLoad), offline application (PWA)
+- Comments (Twikoo, Waline, Valine, Artalk, Giscus), supporting dual comments
+- Day and night mode switch (ColorMode)
+- Lightbox (medium-zoom, fancybox)
+- Mathematical formulas (Latex)
+- Special pages: Moments, My Equipment, Online Tools, Music Library, Friends' Links, Photo Album, Douban Page, Danmaku Message Board
+- Article features: AI Summary, Code Highlighting
 
 ## Todo
 

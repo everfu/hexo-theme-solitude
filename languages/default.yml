@@ -94,19 +94,19 @@ award:
 search:
   empty: No results found
   hit: Found ${query} results for you
-  placeholder: Enter keywords to quickly search
+  placeholder: Enter keywords to search
   count: Total <b>${count}</b> results.
 
 head:
   noscript: Please enable JavaScript to view the site
 
 aside:
-  postcount: 'Posts :'
-  pv: 'PV :'
-  uv: 'UV :'
-  runtime: 'Runtime :'
-  updatetime: 'Last update :'
-  wordcount: 'Word count :'
+  postcount: 'Posts:'
+  pv: 'PV:'
+  uv: 'UV:'
+  runtime: 'Runtime:'
+  updatetime: 'Last update:'
+  wordcount: 'Word count:'
   toc: Table of contents
   tagmore: View all
   avatar: Avatar
@@ -125,7 +125,7 @@ console:
   comment_title: Latest comments
   tag_tip: Tags
   tag_title: Find interesting areas
-  switch_darkmode: Day and night switching
+  switch_darkmode: Day and night mode
   switch_hideAside: Sidebar display control
   switch_keyboard: Keyboard operation
   switch_music: Music switch
@@ -170,7 +170,7 @@ keyboard:
   title: Blog shortcuts
 
 newest_comment:
-  error: Unable to get a comment, please confirm that the relevant configuration is correct.
+  error: Unable to get comments, please check the configuration.
   zero: No comments.
 
 comment:
@@ -196,19 +196,19 @@ right_menu:
   cht_to_chs: 转为简体
   img_error: This image cannot be copied or downloaded.
   barrage:
-    open: OpenBarrage
-    close: CloseBarrage
+    open: Open Barrage
+    close: Close Barrage
   music:
     start: Play
     stop: Pause
     back: Back
     forward: Forward
-    copyMusicName: CopyName
+    copyMusicName: Copy Name
 
 pagination:
   prev: Prev
   next: Next
-  to: To page
+  to: Go to page
 
 about:
   other:
