@@ -123,8 +123,8 @@ aside:
       # - You're gonna make it.
       # - Good luck, stranger.
     information:
-    #  Github: https://github.com/everfu || fas fa-github # Name: link || icon
-    #  Bilibili: https://space.bilibili.com/1329819902 || fas fa-bilibili
+    #  Github: https://github.com/everfu || fab fa-github # Name: link || icon
+    #  Bilibili: https://space.bilibili.com/1329819902 || fab fa-bilibili
   # --------------------------- end ---------------------------
 
   # --------------------------- start ---------------------------
@@ -297,11 +297,11 @@ footer:
   information:
     author: false # enable site_icon in footer
     left:
-      # Github: https://github.com/efuo || fas fa-github # Name: link || icon
-      # Mail: mailto:o@efu.me || fas fa-envelope
+      # Github: https://github.com/efuo || fab fa-github # Name: link || icon
+      # Mail: mailto:o@efu.me || fab fa-envelope
     right:
-      # Bilibili: https://space.bilibili.com/1329819902 || fas fa-bilibili
-      # Douyin: https://v.douyin.com/iJsLc8jt/ || fas fa-tiktok
+      # Bilibili: https://space.bilibili.com/1329819902 || fab fa-bilibili
+      # Douyin: https://v.douyin.com/iJsLc8jt/ || fab fa-tiktok
   group:
     # Navgation:
     #   Archives: /archives/
