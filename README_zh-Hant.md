@@ -29,7 +29,8 @@
 ![DuoLingo](https://img.shields.io/badge/duolingo-support-black?logo=duolingo&logoColor=white)
 
 [![gitee](https://img.shields.io/badge/Gitee-red?logo=gitee)](https://gitee.com/nsjjd_w/hexo-theme-solitude)
-[![gitlab](https://img.shields.io/badge/GitLab-blue?logo=gitlab)](https://gitlab.com/efu/hexo-theme-solitude)
+
+![page view](https://komarev.com/ghpvc/?username=hexo-theme-solitude&abbreviated=true&base=12345)
 
 [文档](https://solitude.js.org/)丨[預覽](https://everfu.github.io/Solitude/)
 

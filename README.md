@@ -29,7 +29,8 @@ English丨[简体中文](README_zh-Hans)丨[繁体中文](README_zh-Hant.md)
 ![DuoLingo](https://img.shields.io/badge/duolingo-support-black?logo=duolingo&logoColor=white)
 
 [![gitee](https://img.shields.io/badge/Gitee-red?logo=gitee)](https://gitee.com/nsjjd_w/hexo-theme-solitude)
-[![gitlab](https://img.shields.io/badge/GitLab-blue?logo=gitlab)](https://gitlab.com/efu/hexo-theme-solitude)
+
+![page view](https://komarev.com/ghpvc/?username=hexo-theme-solitude&abbreviated=true&base=12345)
 
 [Documentation](https://solitude.js.org/)丨[Preview](https://everfu.github.io/Solitude/)
 
