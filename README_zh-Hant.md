@@ -10,27 +10,22 @@
 
    主題設計由 [@张洪Heo](https://github.com/zhheo)全權授權
 
-<a href="https://polar.sh/everfu"><img src="https://polar.sh/embed/seeks-funding-shield.svg?org=everfu" /></a>
+[![polar.sh](https://polar.sh/embed/seeks-funding-shield.svg?org=everfu)](https://polar.sh/everfu)
 
 ![npm package](https://img.shields.io/npm/v/hexo-theme-solitude?logo=npm)
-![release](https://img.shields.io/github/package-json/v/valor-x/hexo-theme-solitude/master?color=%231ab1ad&label=release)
-![license](https://img.shields.io/github/license/valor-x/hexo-theme-solitude?color=FF5531)
+![commit](https://img.shields.io/github/commit-activity/w/everfu/hexo-theme-solitude/dev)
+![license](https://img.shields.io/github/license/everfu/hexo-theme-solitude?color=FF5531)
 [![Stars](https://img.shields.io/github/stars/everfu/hexo-theme-solitude)](https://github.com/everfu/hexo-theme-solitude/stargazers)
 [![NPM all downloads](https://img.shields.io/npm/dy/hexo-theme-solitude?color=white)](https://www.npmjs.com/package/hexo-theme-solitude)
 
 ![hexo version](https://img.shields.io/badge/hexo-7.0.0+-blue?logo=hexo&logoColor=white)
-![node version](https://img.shields.io/badge/node-14.0.0-white?logo=node.js&logoColor=white)
+![node version](https://img.shields.io/badge/node-14.0.0+-white?logo=node.js&logoColor=white)
 [![Socket Badge](https://socket.dev/api/badge/npm/package/hexo-theme-solitude/)](https://socket.dev/npm/package/hexo-theme-solitude/overview)
 
-[![twiter](https://img.shields.io/badge/Twitter-gray?logo=x)](https://twitter.com/efu_oo)
-[![TG](https://img.shields.io/badge/Telegram-gray?logo=Telegram&logoColor=white)](https://t.me/solitudePro)
-
 ![JetBrains](https://img.shields.io/badge/jetbrains-support-black?logo=jetbrains)
-![DuoLingo](https://img.shields.io/badge/duolingo-support-black?logo=duolingo&logoColor=white)
-
-[![gitee](https://img.shields.io/badge/Gitee-red?logo=gitee)](https://gitee.com/nsjjd_w/hexo-theme-solitude)
 
 ![page view](https://komarev.com/ghpvc/?username=hexo-theme-solitude&abbreviated=true&base=12345)
+[![discord](https://img.shields.io/discord/1266610921942548553?style=flat&logo=discord&label=discord&logoColor=white)](https://discord.gg/HZXAnK4Sut)
 
 [文档](https://solitude.js.org/)丨[預覽](https://everfu.github.io/Solitude/)
 
@@ -67,6 +62,12 @@
 前往 [文檔](https://solitude.js.org/) 獲取更多資訊。
 
 ## 贊助者
+
+<div align="center">
+
+[![buy me a coffee](https://img.shields.io/badge/請我喝杯咖啡-支援一下-FFDD00?logo=buy-me-a-coffee&logoColor=yellow)](https://ko-fi.com/everfu)
+
+</div>
 
 <p align="center">
   <a href="https://cdn.jsdelivr.net/gh/efuo/static/sponsors.svg">
