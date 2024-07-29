@@ -64,7 +64,7 @@ Check out the [Documentation](https://solitude.js.org/) for more information.
 
 <div align="center">
 
-[![buy me a coffee](https://img.shields.io/badge/buy%20me%20a%20coffee-support-FFDD00?logo=buy-me-a-coffee&logoColor=white&style=for-the-badge)](https://ko-fi.com/everfu)
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/W7W1YSMOK)
 
 </div>
 
