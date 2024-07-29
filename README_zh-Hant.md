@@ -62,7 +62,7 @@
 
 <div align="center">
 
-[![buy me a coffee](https://img.shields.io/badge/請我喝杯咖啡-支援一下-3399FF?logo=buy-me-a-coffee&logoColor=white&style=for-the-badge)](https://ko-fi.com/everfu)
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/W7W1YSMOK)
 
 </div>
 
