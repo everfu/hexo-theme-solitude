@@ -5,12 +5,8 @@
 
 'use strict'
 
-function postTabs (args, content) {
+function postTabs ([name, active], content) {
   const tabBlock = /<!--\s*tab (.*?)\s*-->\n([\w\W\s\S]*?)<!--\s*endtab\s*-->/g
-
-  args = args.join(' ').split(',')
-  const tabName = args[0]
-  const tabActive = Number(args[1]) || 0
 
   const matches = []
   let match
@@ -18,7 +14,9 @@ function postTabs (args, content) {
   let tabNav = ''
   let tabContent = ''
 
-  !tabName && hexo.log.warn('Tabs block must have unique name!')
+  if (typeof active === 'undefined') {
+    active = 0
+  }
 
   while ((match = tabBlock.exec(content)) !== null) {
     matches.push(match[1])
@@ -35,17 +33,17 @@ function postTabs (args, content) {
     postContent = hexo.render.renderSync({ text: postContent, engine: 'markdown' }).trim()
 
     tabId += 1
-    tabHref = (tabName + ' ' + tabId).toLowerCase().split(' ').join('-');
+    tabHref = (name + ' ' + tabId).toLowerCase().split(' ').join('-');
 
-    ((tabCaption.length === 0) && (tabIcon.length === 0)) && (tabCaption = tabName + ' ' + tabId)
+    ((tabCaption.length === 0) && (tabIcon.length === 0)) && (tabCaption = name + ' ' + tabId)
 
     const isOnlyicon = tabIcon.length > 0 && tabCaption.length === 0 ? ' style="text-align: center;"' : ''
     const icon = tabIcon.trim()
     tabIcon.length > 0 && (tabIcon = `<i ${isOnlyicon} class="tab solitude ${icon}"></i>`)
 
-    const toTop = '<button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude st-arrow-up-line"></i></button>'
+    const toTop = '<button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button>'
 
-    const isActive = (tabActive > 0 && tabActive === tabId) || (tabActive === 0 && tabId === 1) ? ' active' : ''
+    const isActive = (active > 0 && active === tabId) || (active === 0 && tabId === 1) ? ' active' : ''
     tabNav += `<li class="tab${isActive}"><button type="button" data-href="#${tabHref}">${tabIcon + tabCaption.trim()}</button></li>`
     tabContent += `<div class="tab-item-content${isActive}" id="${tabHref}">${postContent + toTop}</div>`
   }
@@ -53,7 +51,7 @@ function postTabs (args, content) {
   tabNav = `<ul class="nav-tabs">${tabNav}</ul>`
   tabContent = `<div class="tab-contents">${tabContent}</div>`
 
-  return `<div class="tabs" id="${tabName.toLowerCase().split(' ').join('-')}">${tabNav + tabContent}</div>`
+  return `<div class="tabs" id="${name.toLowerCase().split(' ').join('-')}">${tabNav + tabContent}</div>`
 }
 
 hexo.extend.tag.register('tabs', postTabs, { ends: true })
