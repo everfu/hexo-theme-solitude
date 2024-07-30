@@ -1,6 +1,6 @@
 {
   "name": "hexo-theme-solitude",
-  "version": "2.0.4",
+  "version": "2.0.5",
   "description": "A beautiful, powerful, and efficient Hexo theme developed by EverFu.",
   "main": "package.json",
   "scripts": {
@@ -19,8 +19,8 @@
     "url": "https://github.com/everfu/hexo-theme-solitude"
   },
   "dependencies": {
-    "hexo-renderer-stylus": "^3.0.0",
-    "hexo-renderer-pug": "^3.0.0"
+    "hexo-renderer-pug": "^3.0.0",
+    "hexo-renderer-stylus": "^3.0.0"
   },
   "bugs": {
     "url": "https://github.com/everfu/hexo-theme-solitude/issues",
@@ -28,5 +28,8 @@
   },
   "homepage": "https://everfu.github.io/Solitude/",
   "author": "Hexo-Theme-Solitude<o@everfu.org>",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^22.0.0"
+  }
 }
