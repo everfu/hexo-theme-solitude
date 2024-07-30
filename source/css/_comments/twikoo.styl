@@ -1,9 +1,11 @@
 #twikoo
   .tk-submit
     margin-top 0
+
   .tk-admin-config-group-title
     margin-top 0
     line-height normal
+
   .tk-row
     .tk-col
       flex-direction column-reverse !important
@@ -227,8 +229,8 @@
 
 .tk-comments-container
   > .tk-comment
-    margin-top 0!important
-    margin-bottom 0.5rem!important
+    margin-top 0 !important
+    margin-bottom 0.5rem !important
     background var(--efu-card-bg)
     transition .3s
     border-radius 12px
@@ -335,52 +337,14 @@ img.tk-avatar-img
 .el-input--small
   .el-input__inner
     padding 8px
+
   .el-input__inner, .el-textarea__inner
-   border-radius 12px
+    border-radius 12px
 
 .el-input.el-input--small.el-input-group.el-input-group--prepend
   border-radius 12px
   background var(--efu-secondbg)
   border var(--style-border-always)
-
-.el-input.el-input--small.el-input-group.el-input-group--prepend:nth-child(1):before
-  content '输入QQ号会自动获取昵称和头像'
-
-.el-input.el-input--small.el-input-group.el-input-group--prepend:nth-child(2):before
-  content '收到回复将会发送到你的邮箱'
-
-.el-input.el-input--small.el-input-group.el-input-group--prepend:nth-child(3):before
-  content '可以通过昵称访问你的网站'
-
-.el-input.el-input--small.el-input-group.el-input-group--prepend:focus-within::before
-  display block
-  animation commonTipsIn .3s
-
-.el-input.el-input--small.el-input-group.el-input-group--prepend:focus-within::after
-  display block
-  animation commonTriangleIn .3s
-
-.el-input.el-input--small.el-input-group.el-input-group--prepend::before
-  display none
-  position absolute
-  top -60px
-  white-space nowrap
-  border-radius 10px
-  left 50%
-  transform translate(-50%)
-  padding 14px 18px
-  background #444
-  color #fff
-  z-index 100
-
-.el-input.el-input--small.el-input-group.el-input-group--prepend::after
-  display none
-  content ''
-  position absolute
-  border 12px solid transparent
-  border-top-color #444
-  left 50%
-  transform translate(-50%, -46px)
 
 .el-input-group__append, .el-input-group__prepend
   background-color var(--efu-card-bg) !important
@@ -449,6 +413,7 @@ button.el-button.tk-cancel.el-button--default.el-button--small
   &.OwO-open
     .OwO-body
       animation .3s ease .1s 1 normal both running donate_effcet
+
   .OwO-body
     z-index 102
     width 500px
@@ -479,10 +444,6 @@ button.el-button.tk-cancel.el-button--default.el-button--small
         box-shadow var(--efu-shadow-lightblack) !important
         border-radius 8px
 
-#twikoo > div.tk-comments > div.tk-submit > div.tk-row.actions > div > div.tk-action-icon.OwO.OwO-open > div.OwO-body > div > ul > li > span
-  line-height 48px
-  font-size 28px
-
 .OwO-packages
   background var(--efu-background)
   padding-left 8px !important
@@ -502,15 +463,3 @@ button.el-button.tk-cancel.el-button--default.el-button--small
       .OwO-packages
         li
           line-height 45px !important
-
-.tk-replies
-  .tk-content
-    margin-top 0 !important
-
-.el-input-group--prepend
-  .el-input__inner, .el-input-group__append
-    border-left-width 0 !important
-
-.el-textarea .el-input__count
-  color var(--efu-secondtext) !important
-  user-select none

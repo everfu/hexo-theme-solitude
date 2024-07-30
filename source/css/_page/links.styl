@@ -22,6 +22,8 @@
 .flink#article-container
   margin-top 1rem
 
+#article-container
+
   .flink-desc
     margin 0
     color var(--efu-secondtext)
@@ -226,122 +228,122 @@
           .flink-item-desc
             display none
 
-    > .flink-list-item
-      margin 6px 6px
-      transition .3s
-      border-radius 12px
-      transition-timing-function ease-in-out
-      position relative
-      width calc(20% - 12px)
-      border var(--style-border-always)
-      box-shadow var(--efu-shadow-border)
-      background var(--efu-card-bg)
+  .flink-list-item
+    margin 6px 6px
+    transition .3s
+    border-radius 12px
+    transition-timing-function ease-in-out
+    position relative
+    width calc(20% - 12px)
+    border var(--style-border-always)
+    box-shadow var(--efu-shadow-border)
+    background var(--efu-card-bg)
+    display flex
+    float left
+    overflow hidden
+    height 90px
+    line-height 17px
+    transform translateZ(0)
+
+    +maxWidth1200()
+      width calc(25% - 12px)
+
+    +maxWidth1024()
+      width calc(33.3333% - 12px)
+
+    +maxWidth768()
+      width calc(50% - 12px)
+
+    +maxWidth600()
+      width calc(100% - 12px)
+
+    a
       display flex
-      float left
-      overflow hidden
-      height 90px
-      line-height 17px
-      transform translateZ(0)
+      width 100%
+      height 100%
+      border none
+      align-items center
 
-      +maxWidth1200()
-        width calc(25% - 12px)
+      .img-alt
+        display none
 
-      +maxWidth1024()
-        width calc(33.3333% - 12px)
+      img
+        border-radius 32px
+        margin 15px 20px 15px 15px
+        transition .3s
+        background var(--efu-background)
+        min-width 60px
+        min-height 60px
+        float left
+        width 60px
+        height 60px
 
-      +maxWidth768()
-        width calc(50% - 12px)
+      .flink-item-info
+        display flex
+        flex-direction column
+        justify-content center
+        width calc(100% - 90px)
+        height fit-content
+        padding 0 4px
 
-      +maxWidth600()
-        width calc(100% - 12px)
+        span
+          transition .3s
+
+      .flink-item-name
+        text-align left
+        font-size 19px
+        line-height 20px
+        color var(--efu-fontcolor)
+        display block
+        padding 0 10px 0 0
+        font-weight 700
+        max-width calc(100% - 12px)
+        overflow hidden
+        text-overflow ellipsis
+        white-space nowrap
+
+      .flink-item-desc
+        white-space normal
+        padding 5px 10px 16px 0
+        color var(--efu-fontcolor)
+        text-align left
+        height 40px
+        text-overflow ellipsis
+        opacity .7
+        display -webkit-box
+        overflow hidden
+        -webkit-box-orient vertical
+        -webkit-line-clamp 2
+        font-size .93em
+
+    &:hover
+      background var(--efu-theme)
+
+      .site-card-tag
+        left: -50px
 
       a
-        display flex
-        width 100%
-        height 100%
-        border none
-        align-items center
-
-        .img-alt
-          display none
+        background 0 0
 
         img
-          border-radius 32px
-          margin 15px 20px 15px 15px
-          transition .3s
-          background var(--efu-background)
-          min-width 60px
-          min-height 60px
-          float left
-          width 60px
-          height 60px
+          transition .6s
+          width 0
+          height 0
+          opacity 0
+          margin 5px
+          min-width 0
+          min-height 0
 
-        .flink-item-info
-          display flex
-          flex-direction column
-          justify-content center
-          width calc(100% - 90px)
-          height fit-content
-          padding 0 4px
-
-          span
-            transition .3s
+      .flink-item-info
+        min-width calc(100% - 20px)
 
         .flink-item-name
-          text-align left
-          font-size 19px
-          line-height 20px
-          color var(--efu-fontcolor)
-          display block
-          padding 0 10px 0 0
-          font-weight 700
-          max-width calc(100% - 12px)
-          overflow hidden
-          text-overflow ellipsis
-          white-space nowrap
+          color var(--efu-card-bg)
 
         .flink-item-desc
-          white-space normal
-          padding 5px 10px 16px 0
-          color var(--efu-fontcolor)
-          text-align left
-          height 40px
-          text-overflow ellipsis
-          opacity .7
-          display -webkit-box
+          color var(--efu-card-bg)
           overflow hidden
-          -webkit-box-orient vertical
-          -webkit-line-clamp 2
-          font-size .93em
-
-      &:hover
-        background var(--efu-theme)
-
-        .site-card-tag
-          left: -50px
-
-        a
-          background 0 0
-
-          img
-            transition .6s
-            width 0
-            height 0
-            opacity 0
-            margin 5px
-            min-width 0
-            min-height 0
-
-        .flink-item-info
-          min-width calc(100% - 20px)
-
-          .flink-item-name
-            color var(--efu-card-bg)
-
-          .flink-item-desc
-            color var(--efu-card-bg)
-            overflow hidden
-            width 100%
+          width 100%
 
 @keyframes light_tag
   0%
