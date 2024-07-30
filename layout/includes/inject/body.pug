@@ -16,11 +16,11 @@ div
     script(src=url_for(theme.cdn.waterfall))
     script(src=url_for(theme.cdn.pjax))
 
-    if theme.mermaid
-        script(src=url_for(theme.cdn.mermaid_js))
-
     if theme.post.share.enable && theme.post.share.list && theme.post.share.list.includes('qrcode')
         script(src=url_for(theme.cdn.qrcode))
+
+    if theme.mermaid
+        script(src=url_for(theme.cdn.mermaid_js))
 
     if theme.display_mode.universe
         script(src=url_for(theme.cdn.universe_js))

@@ -465,7 +465,7 @@ const addHighlight = () => {
     const expandClass = !expand === true ? 'closed' : ''
     const $syntaxHighlight = syntax === 'highlight.js' ? document.querySelectorAll('figure.highlight') : document.querySelectorAll('pre[class*="language-"]')
     if (!(($isShowTool || limit) && $syntaxHighlight.length)) return
-    const copyEle = copy ? `<i class="solitude far fa-copy copy-button"></i>` : '<i></i>';
+    const copyEle = copy ? `<i class="solitude fas fa-copy copy-button"></i>` : '<i></i>';
     const expandEle = `<i class="solitude fas fa-angle-down expand"></i>`;
     const limitEle = limit ? `<i class="solitude fas fa-angles-down"></i>` : '<i></i>';
     const alertInfo = (ele, text) => utils.snackbarShow(text, false, 2000)
