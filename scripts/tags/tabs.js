@@ -31,8 +31,6 @@ function postTabs ([name, active], content) {
     let tabHref = ''
 
     postContent = hexo.render.renderSync({ text: postContent, engine: 'markdown' }).trim()
-
-    tabId += 1
     tabHref = (name + ' ' + tabId).toLowerCase().split(' ').join('-');
 
     ((tabCaption.length === 0) && (tabIcon.length === 0)) && (tabCaption = name + ' ' + tabId)
@@ -42,10 +40,11 @@ function postTabs ([name, active], content) {
     tabIcon.length > 0 && (tabIcon = `<i ${isOnlyicon} class="tab solitude ${icon}"></i>`)
 
     const toTop = '<button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button>'
-
-    const isActive = (active > 0 && active === tabId) || (active === 0 && tabId === 1) ? ' active' : ''
+    console.log(name, tabId, active)
+    const isActive = active === tabId ? ' active' : ''
     tabNav += `<li class="tab${isActive}"><button type="button" data-href="#${tabHref}">${tabIcon + tabCaption.trim()}</button></li>`
     tabContent += `<div class="tab-item-content${isActive}" id="${tabHref}">${postContent + toTop}</div>`
+    tabId += 1
   }
 
   tabNav = `<ul class="nav-tabs">${tabNav}</ul>`
