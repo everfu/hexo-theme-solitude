@@ -163,9 +163,9 @@ link:
   banner:
     toComment: 申请友链
     random: 随机访问
-  random: 点击前往按钮进入随机一个友链，不保证跳转网站的安全性和可用性。本次随机到的是本站友链：⌈ ${name} ⌋ 
+  random: 点击前往按钮进入随机一个友链，不保证跳转网站的安全性和可用性。本次随机到的是本站友链：⌈ ${name} ⌋
   to: 前往
-  
+
 keyboard:
   title: 博客快捷键
 
@@ -227,3 +227,8 @@ about:
 message:
   close: 隐藏弹幕
   open: 显示弹幕
+
+essay:
+  tip0: '- 已展开所有短文 -'
+  tip1: '- 只展示最近 #{count} 条短文 -'
+  link: '链接'

@@ -162,7 +162,7 @@ music:
 link:
   banner:
     toComment: 申請友鏈
-    random: 點擊前往按鈕進入隨機一個友鏈，不保證跳轉網站的安全性和可用性。本次隨機到的是本站友鏈：⌈ ${name} ⌋ 
+    random: 點擊前往按鈕進入隨機一個友鏈，不保證跳轉網站的安全性和可用性。本次隨機到的是本站友鏈：⌈ ${name} ⌋
     to: 前往
 keyboard:
   title: 博客快捷鍵
@@ -223,5 +223,10 @@ about:
     tip2: 瞭解更多關於
 
 message:
-  close: 隱藏彈幕 
+  close: 隱藏彈幕
   open: 顯示彈幕
+
+essay:
+  tip0: '- 已展開所有短文 -'
+  tip1: '- 只展示最近 #{count} 條短文 -'
+  link: '連接'
