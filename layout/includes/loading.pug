@@ -4,22 +4,34 @@ div(id="loading-box" onclick="preloader.endLoading();" style="zoom:1")
 
 script.
     const preloader = {
+        isLoaded: false,
         endLoading: () => {
-            document.getElementById('loading-box').classList.toggle('loaded');
+            if (!preloader.isLoaded) {
+                document.getElementById('loading-box').classList.add('loaded');
+                preloader.isLoaded = true;
+            }
         },
         initLoading: () => {
             document.getElementById('loading-box').classList.remove('loaded');
+            preloader.isLoaded = false;
         },
         removePaceDone: () => {
             document.getElementById('body').classList = 'pace-done';
         }
     }
+
     window.addEventListener('load', () => {
         preloader.endLoading();
     });
+
     window.addEventListener('pjax:send', () => {
         preloader.initLoading();
     });
+
     document.addEventListener('pjax:complete', () => {
         preloader.endLoading();
     });
+
+    setTimeout(() => {
+        preloader.endLoading();
+    }, 5000);
