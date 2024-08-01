@@ -76,7 +76,7 @@ post:
   nav:
     next: Next
     prev: Previous
-    
+
 
 nav:
   site_name_title: Back to home
@@ -110,7 +110,7 @@ aside:
   toc: Table of contents
   tagmore: View all
   avatar: Avatar
-  hello: Long time no see,
+  hello: 'Long time no see, '
   back: Welcome back again,
   sticker: Mood sticker
   newpost: New posts
@@ -227,3 +227,8 @@ about:
 message:
   close: Hide message
   open: Show message
+
+essay:
+  tip0: '- All expanded -'
+  tip1: '- Recent Exhibitions #{count} Short Articles -'
+  link: 'Link'

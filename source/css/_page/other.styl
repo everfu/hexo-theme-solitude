@@ -135,6 +135,11 @@ div#banners
       font-weight 700
       box-shadow var(--efu-shadow-blackdeep)
 
+      +maxWidth768()
+        .flink &
+          width 70px
+          height 70px
+
       &:nth-child(even)
         margin-top 1rem
         transform translate(-60px)

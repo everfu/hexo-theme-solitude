@@ -47,7 +47,7 @@ nav:
     #    icon: fas fa-train # Icon
     #    onclick: # Click event
     #    id: travellings_button # id
-# --------------------------- end --------------------------- 
+# --------------------------- end ---------------------------
 
 # --------------------------- start ---------------------------
 hometop:
@@ -75,9 +75,9 @@ hometop:
       #   img: https://i.postimg.cc/nhgjwjCS/git.png
       #   color: "#df5b40"
   group:
-    # Fire: /tags/Fire/ || fas fa-fire || linear-gradient(to right, #f65, #ffbf37)
-    # Course: /tags/Course/ || fas fa-book || linear-gradient(to right, #358bff, #15c6ff)
-    # Curation: /tags/Curation/ || fas fa-star || linear-gradient(to right, #18e7ae, #1eebeb)
+    # Fire: /tags/Fire/ || fas fa-fire || linear-gradient(to right,#f65,#ffbf37)
+    # Course: /tags/Course/ || fas fa-book || linear-gradient(to right,#358bff,#15c6ff)
+    # Curation: /tags/Curation/ || fas fa-star || linear-gradient(to right,#18e7ae,#1eebeb)
   recommendList:
     sup: Top
     title: Solitude Documentation
@@ -108,13 +108,13 @@ aside:
     author:
       img: /img/avatar.avif # url (avatar)
       sticker: # url (sticker), 24x24
-    url: /about/ # Click name to jump to address 
+    url: /about/ # Click name to jump to address
     background: # https://s3.qjqq.cn/47/663af296b85f4.webp!color # Background image(Invalid if style is 0)
     content: Here is my personal blog # Introduction (Invalid if style is 1)
     content2: I believe you can find knowledge and tutorials here that will be useful to you. # Introduction (Invalid if style is 1)
     sayhello: # Style 2 is invalid
-      morning: ✨ Good morning. It's a new day 
-      noon: It's time for a midday break 
+      morning: ✨ Good morning. It's a new day
+      noon: It's time for a midday break
       afternoon: Tea time. 🍵
       night: early bedtime
       goodnight: Good night 😴
@@ -175,7 +175,7 @@ aside:
     pv: true # PV
     uv: true # UV
     updatetime: true # Last update date
-    runtimeenable: true # Website creation time 
+    runtimeenable: true # Website creation time
     runtime: "2023-04-20 00:00:00" # Format: yyyy-MM-dd hh-mm-ss
   # --------------------------- end ---------------------------
 # --------------------------- end ---------------------------
@@ -338,6 +338,7 @@ errorpage:
 says:
   enable: false
   home_mini: false
+  page: '/essay/'
   style: 1
   strip: 30
 # --------------------------- end ---------------------------
@@ -364,8 +365,8 @@ envelope:
 # --------------------------- end ---------------------------
 
 # --------------------------- start ---------------------------
-# This part of the content uses metingjs, 
-# can only use NetEase Cloud Music, QQ Music and other music platforms supported by the mainland China region, 
+# This part of the content uses metingjs,
+# can only use NetEase Cloud Music, QQ Music and other music platforms supported by the mainland China region,
 # the subsequent consideration of the use of JSON files to store music information and customize the implementation of the third-party API does not depend on the.
 # Music Page
 meting_api: "https://meting.qjqq.cn/?server=:server&type=:type&id=:id&auth=:auth&r=:r" # Custom API
@@ -385,7 +386,7 @@ capsule:
 # --------------------------- end ---------------------------
 
 # --------------------------- start ---------------------------
-# Quick Menu 
+# Quick Menu
 # Open with shift + ?
 keyboard:
   enable: false
@@ -527,7 +528,7 @@ comment:
   lazyload: false # Lazy load
   count: false # Whether to use the comment count
   pv: false # Whether to use the page view count
-  avatar: https://cravatar.cn # Avatar
+  avatar: https://gravatar.com/avatar # Avatar
   hot_tip: # Hot comment tips
     enable: false
     count: 3 # Display when more than 3 comments
@@ -550,8 +551,8 @@ valine:
   style: true # Use custom styles when turned on
   option: # options list
 artalk:
-  server: # server url 
-  site: # site name 
+  server: # server url
+  site: # site name
   option: # options
 giscus:
   repo: # GitHub repository name
@@ -613,7 +614,7 @@ extends:
 # PWA
 pwa:
   enable: false
-  manifest: /manifest.json # manifest.json 
+  manifest: /manifest.json # manifest.json
   theme_color: "#006a73" # Theme color
   mask_icon: /img/pwa/favicon.png # Mask icon
   apple_touch_icon: /img/pwa/favicon.png # Apple touch icon

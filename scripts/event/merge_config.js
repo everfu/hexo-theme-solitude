@@ -158,10 +158,10 @@ hexo.extend.filter.register('before_generate', () => {
             },
             footer: {
                 enable: true,
-                desc: "来自 Efu 的文章",
+                desc: "The article from Solitude",
                 button: {
                     enable: true,
-                    name: '返回首页',
+                    name: 'Learn More',
                     url: '/'
                 }
             }
@@ -310,7 +310,7 @@ hexo.extend.filter.register('before_generate', () => {
             commentBarrage: false,
             lazyload: false,
             count: false,
-            avatar: 'https://cravatar.cn',
+            avatar: 'https://gravatar.com/avatar',
             hot_tip: {
                 enable: true,
                 count: 3
