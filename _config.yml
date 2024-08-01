@@ -75,9 +75,9 @@ hometop:
       #   img: https://i.postimg.cc/nhgjwjCS/git.png
       #   color: "#df5b40"
   group:
-    # Fire: /tags/Fire/ || fas fa-fire || linear-gradient(to right, #f65, #ffbf37)
-    # Course: /tags/Course/ || fas fa-book || linear-gradient(to right, #358bff, #15c6ff)
-    # Curation: /tags/Curation/ || fas fa-star || linear-gradient(to right, #18e7ae, #1eebeb)
+    # Fire: /tags/Fire/ || fas fa-fire || linear-gradient(to right,#f65,#ffbf37)
+    # Course: /tags/Course/ || fas fa-book || linear-gradient(to right,#358bff,#15c6ff)
+    # Curation: /tags/Curation/ || fas fa-star || linear-gradient(to right,#18e7ae,#1eebeb)
   recommendList:
     sup: Top
     title: Solitude Documentation
