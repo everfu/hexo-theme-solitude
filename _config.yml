@@ -338,6 +338,7 @@ errorpage:
 says:
   enable: false
   home_mini: false
+  page: '/essay/'
   style: 1
   strip: 30
 # --------------------------- end ---------------------------
@@ -527,7 +528,7 @@ comment:
   lazyload: false # Lazy load
   count: false # Whether to use the comment count
   pv: false # Whether to use the page view count
-  avatar: https://cravatar.cn # Avatar
+  avatar: https://gravatar.com/avatar # Avatar
   hot_tip: # Hot comment tips
     enable: false
     count: 3 # Display when more than 3 comments
