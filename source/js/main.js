@@ -650,19 +650,20 @@ class tabs {
     });
   }
 
-    static expireAddListener() {
-        const {expire} = GLOBAL_CONFIG;
-        if (!expire) return;
-        const post_date = document.querySelector('.post-meta-date time');
-        if (!post_date) return;
-        const ex = Math.ceil((new Date().getTime() - new Date(post_date.getAttribute('datetime')).getTime()) / 1000 / 60 / 60 / 24);
-        if (expire.time > ex) return;
-        const ele = document.createElement('div');
-        ele.className = 'expire';
-        ele.innerHTML = `<i class="solitude st-circle-exclamation-solid"></i>${expire.text_prev}${-(expire.time - ex)}${expire.text_next}`;
-        const articleContainer = document.getElementById('article-container');
-        articleContainer.insertAdjacentElement(expire.position === 'top' ? 'afterbegin' : 'beforeend', ele);
-    }
+  static expireAddListener() {
+    const {expire} = GLOBAL_CONFIG;
+    if (!expire) return;
+    const list = document.querySelectorAll('.post-meta-date time');
+    const post_date = list.length ? list[list.length - 1] : document.querySelector('.datatime');
+    if (!post_date) return;
+    const ex = Math.ceil((new Date().getTime() - new Date(post_date.getAttribute('datetime')).getTime()) / 1000 / 60 / 60 / 24);
+    if (expire.time > ex) return;
+    const ele = document.createElement('div');
+    ele.className = 'expire';
+    ele.innerHTML = `<i class="solitude st-circle-exclamation-solid"></i>${expire.text_prev}${-(expire.time - ex)}${expire.text_next}`;
+    const articleContainer = document.getElementById('article-container');
+    articleContainer.insertAdjacentElement(expire.position === 'top' ? 'afterbegin' : 'beforeend', ele);
+  }
 }
 
 window.refreshFn = () => {
