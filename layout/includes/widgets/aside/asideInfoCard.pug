@@ -39,15 +39,18 @@
                     .author-info__desc!= config.subtitle
 
                     .card-info__data.is-center
-                        a(href=url_for('/archives/') title=_p('aside.card.posts') + site.posts.length)
-                            .length-num= site.posts.length
-                            .headline= _p('page.archives')
-                        a(href=url_for('/tags/') title=_p('aside.card.tags') + site.tags.length)
-                            .length-num= site.tags.length
-                            .headline= _p('page.tag')
-                        a(href=url_for('/categories/') title=_p('aside.card.categories') + site.categories.length)
-                            .length-num= site.categories.length
-                            .headline= _p('page.category')
+                        if site.posts.length !== 0
+                          a(href=url_for('/archives/') title=_p('aside.card.posts') + site.posts.length)
+                              .length-num= site.posts.length
+                              .headline= _p('page.archives')
+                        if site.tags.length !== 0
+                          a(href=url_for('/tags/') title=_p('aside.card.tags') + site.tags.length)
+                              .length-num= site.tags.length
+                              .headline= _p('page.tag')
+                        if site.categories.length !== 0
+                          a(href=url_for('/categories/') title=_p('aside.card.categories') + site.categories.length)
+                              .length-num= site.categories.length
+                              .headline= _p('page.category')
 
                     .card-info-social-icons.is-center
                         each value, label in theme.aside.card.information || {}
