@@ -5,7 +5,7 @@ algolia_search:
 instantsearch:
   name: instantsearch.js
   file: dist/instantsearch.production.min.js
-  version: 4.73.2
+  version: 4.73.3
 pjax:
   name: pjax
   file: pjax.min.js
