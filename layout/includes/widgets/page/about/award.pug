@@ -1,7 +1,7 @@
 - award = site.data.about.award
 
 - var sum = 0
-if site.data.about.rewardList
+if site.data.about.rewardList && site.data.about.award.enable
     .author-content
         .author-content-item.single.reward
             .author-content-item-tips= _p('award.thanks')
