@@ -177,6 +177,12 @@
         color #fff
 
   #card-toc
+    &:hover
+      .toc-content
+        .toc-link:not(.active) span
+          if hexo-config('aside.toc.vague')
+            filter: blur(0)
+          opacity: 1
     +minWidth901()
       right 0
       padding .5rem
@@ -212,28 +218,20 @@
       .toc-item.active > .toc-child
         display block
 
-      &:hover
-      .toc-content
-        .toc-link:not(.active) span
-          if hexo-config('aside.toc.vague')
-            filter: blur(0)
-          opacity: 1
-
       .toc-item.active .toc-link
         opacity 1
         border-radius 8px
 
       .toc-link
+        transition all .2s ease-in-out 0s
         line-height 24px
         padding 8px
-        border-left 0 solid transparent
         border-radius 12px
         color var(--efu-secondtext)
-        cursor default
         min-height 40px
         display flex
         align-items center
-        transition all .2s ease-in-out 0s
+        cursor pointer
 
         &.active
           border-radius 12px
@@ -243,15 +241,15 @@
           font-weight 700
           font-size 20px
 
+        &:hover
+          background-color var(--efu-main-op-light)
+
         &:not(.active) span
           opacity .6
           cursor pointer
           if hexo-config('aside.toc.vague')
             filter blur(1px)
           transition .3s
-
-          &:hover
-            color var(--efu-lighttext)
 
 [data-theme=dark]
   .toc
@@ -1055,9 +1053,11 @@ if hexo-config('aside.newest_comment.enable')
     .recent-comment-more
       margin-left auto
       margin-right .5rem
+
       &:hover
         color var(--efu-lighttext)
         transition .3s
+
     .aside-list-item
       padding: .5rem
       width: 100%
@@ -1066,6 +1066,7 @@ if hexo-config('aside.newest_comment.enable')
       height: 80px
       transition: .3s
       position: relative
+
       &:not(:last-child)
         border-bottom 1px dashed rgba(255, 255, 255, .1)
 
@@ -1088,6 +1089,7 @@ if hexo-config('aside.newest_comment.enable')
           transition .3s
           -webkit-box-orient vertical
           cursor pointer
+
           &:hover
             color var(--efu-lighttext)
             transition .3s
