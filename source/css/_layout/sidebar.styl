@@ -176,12 +176,16 @@
       margin-bottom 60px
 
       a
-        color var(--efu-fontcolor) !important
+        color var(--efu-fontcolor)
         padding 2px 8px 2px 12px
         border-radius 8px
         border var(--style-border-always)
         background var(--efu-card-bg)
         font-size 14px !important
+
+        &:hover
+          background var(--efu-main)
+          color var(--efu-white)
 
         sup
           opacity .6
@@ -200,6 +204,12 @@
 
       span.darkmode_switchbutton
         padding 4px 8px
+        cursor pointer
+        transition all .5s ease 0s
+
+        &:hover
+          background var(--efu-main)
+          color var(--efu-white)
 
         [data-theme="dark"] &
           background var(--efu-orange)
