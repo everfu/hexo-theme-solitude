@@ -15,8 +15,7 @@ site:
   name:
     class: text # text / i_class / img
     custom: Solitude # Solitude / fas fa-ghost / /img/pwa/favicon.ico
-  siteIcon: /img/pwa/favicon.ico # Site icon
-  icon: /img/pwa/favicon.ico
+  icon: /img/pwa/favicon.ico # Site icon / 网站图标
 # --------------------------- end ---------------------------
 
 # --------------------------- start ---------------------------

@@ -1,6 +1,6 @@
 if theme.OpenGraph.enable
     -
-        const coverVal = page.cover || theme.site.siteIcon
+        const coverVal = page.cover || theme.site.icon
         let ogOption = {
             type: is_post() ? 'article' : 'website',
             image: coverVal ? full_url_for(coverVal) : '',
