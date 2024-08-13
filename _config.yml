@@ -1,16 +1,20 @@
 # ---------------------------
 # Hexo Theme Solitude
-# Author: EverFu
+# Author: Ever Fu
 # Github: https://github.com/everfu/hexo-theme-solitude
 #
 # Guide: https://solitude.js.org
 # You can get more detailed help from the guide
+# 指南：https://solitude.js.org
+# 你可以从指南中获取更详细的帮助
 #
-# sponsor: https://www.patreon.com/everfu
+# sponsor: https://ko-fi.com/everfu
+# 赞助：https://afdian.com/a/everfu
 # ---------------------------
 
 # --------------------------- start ---------------------------
 # Site information
+# 网站信息
 site:
   name:
     class: text # text / i_class / img
@@ -19,10 +23,17 @@ site:
 # --------------------------- end ---------------------------
 
 # --------------------------- start ---------------------------
+# Navigation bar
+# 导航栏
 nav:
+  # Left button
+  # 左侧按钮
   group:
   #  project: # name
   #    Solitude: https://github.com/everfu/hexo-theme-solitude || /img/pwa/favicon.ico # name: url || icon
+
+  # Menu
+  # 菜单
   menu:
     # Home: / # name: link
     # Article: # name
@@ -38,8 +49,11 @@ nav:
     #   Toobox: /tlink/ || fas fa-toolbox
     #   Music: /music/ || fas fa-music
     # About: /about/
-  right: # right button
-    random: false # Random article
+
+  # Right button
+  # 右侧按钮
+  right:
+    random: false # Random article / 随机文章按钮
     custom:
     #  - name: Start # name
     #    url: https://www.travellings.cn/go.html # Jump link
@@ -49,10 +63,12 @@ nav:
 # --------------------------- end ---------------------------
 
 # --------------------------- start ---------------------------
+# Home Top Banner
+# 首页顶部
 hometop:
   enable: false
   banner:
-    title: Tranquility <br>and love life
+    title: # Tranquility <br>and love life / 宁静致远 <br> 热爱生活 # Title
     url: Hexo Theme Solitude
     icon:
       # HTML: # name
@@ -74,21 +90,28 @@ hometop:
       #   img: https://i.postimg.cc/nhgjwjCS/git.png
       #   color: "#df5b40"
   group:
-    # Fire: /tags/Fire/ || fas fa-fire || linear-gradient(to right,#f65,#ffbf37)
-    # Course: /tags/Course/ || fas fa-book || linear-gradient(to right,#358bff,#15c6ff)
-    # Curation: /tags/Curation/ || fas fa-star || linear-gradient(to right,#18e7ae,#1eebeb)
+    # 热门: /tags/Fire/ || fas fa-fire || linear-gradient(to right,#f65,#ffbf37)
   recommendList:
-    sup: Top
-    title: Solitude Documentation
+    sup: 置顶
+    title: Solitude 官方文档
     url: https://solitude.js.org/
     img: /img/default.avif
     color: "none"
+
+# Article Top Banner
+# 文章推荐轮播图
 carousel: false
 # --------------------------- end ---------------------------
 
 # --------------------------- start ---------------------------
+# Aside
+# 侧边栏
 aside:
   # Values: about (info card), newestPost (latest article), allInfo (website information), flip (official account QR code), newest_comment (latest comment)
+  # 值: about(信息卡), newestPost(最新文章), allInfo(网站信息), flip(官方账号二维码), newest_comment(最新评论)
+
+  # Sticky: Fixed position / noSticky: Not fixed position
+  # Sticky: 固定位置 / noSticky: 不固定位置
   home: # on the homepage
     noSticky: "about"
     Sticky: "allInfo"
@@ -98,30 +121,39 @@ aside:
   page: # on the page
     noSticky: "about"
     Sticky: "newestPost,allInfo"
+  # 菜单栏位置(0: 左 1: 右)
   position: 1 # Sidebar positioning(0: left 1: right)
 
   # --------------------------- start ---------------------------
   # Information card
+  # 信息卡
   card:
     style: 0 # 0: default 1: style 1 2: style 2
     author:
-      img: /img/avatar.avif # url (avatar)
-      sticker: # url (sticker), 24x24
-    url: /about/ # Click name to jump to address
+      img: /img/avatar.avif # url
+      sticker: # url, 24x24 size
+    url: /about/ # link / 点击头像跳转链接
     background: # https://s3.qjqq.cn/47/663af296b85f4.webp!color # Background image(Invalid if style is 0)
-    content: Here is my personal blog # Introduction (Invalid if style is 1)
-    content2: I believe you can find knowledge and tutorials here that will be useful to you. # Introduction (Invalid if style is 1)
-    sayhello: # Style 2 is invalid
+    # Content(Invalid if style is 0)
+    # 内容(Style 0 无效)
+    content: # 这是我的博客 / This is my Blog
+    content2: # 一个热爱生活的人 / A person who loves life
+    # Style 2 is invalid
+    # Style 2 无效
+    sayhello:
       morning: ✨ Good morning. It's a new day
       noon: It's time for a midday break
       afternoon: Tea time. 🍵
       night: early bedtime
       goodnight: Good night 😴
     # Style 2 is invalid, Triggered when sayhello is clicked.
+    # Style 2 无效, 点击 sayhello 时触发
     sayhello2:
       # - You'll make it.
       # - You're gonna make it.
       # - Good luck, stranger.
+    # social
+    # 社交信息图标
     information:
     #  Github: https://github.com/everfu || fab fa-github # Name: link || icon
     #  Bilibili: https://space.bilibili.com/1329819902 || fab fa-bilibili
@@ -129,6 +161,7 @@ aside:
 
   # --------------------------- start ---------------------------
   # Sidebar QR code component
+  # 侧边栏二维码组件
   flip:
     favicon: # url (favicon)
     face: # url (QR code)
@@ -138,6 +171,7 @@ aside:
 
   # --------------------------- start ---------------------------
   # recent comments(⚠️ Comments need to be configured first.)
+  # 最新评论(⚠️ 需要先配置评论)
   newest_comment:
     enable: true
     storage: .5 # 缓存时间 1: 1天 / .5 : 半天 / Cache time 1: 1 day .5 : half a day
@@ -146,6 +180,7 @@ aside:
 
   # --------------------------- start ---------------------------
   # article table of contents
+  # 文章目录
   toc:
     post: true
     page: false
@@ -154,6 +189,7 @@ aside:
 
   # --------------------------- start ---------------------------
   # Tags
+  # 标签
   tags:
     enable: false
     limit: 20 # Number of tags displayed
@@ -164,80 +200,154 @@ aside:
 
   # --------------------------- start ---------------------------
   # Archive
+  # 归档
   archive:
     enable: false
     type: "month" # month: by month / year: by year
   # --------------------------- end ---------------------------
 
   # --------------------------- start ---------------------------
+  # Site Info
+  # 网站信息
   siteinfo:
-    postcount: true # Number of articles
-    wordcount: false # Total number of words
-    pv: true # PV
-    uv: true # UV
-    updatetime: true # Last update date
-    runtimeenable: true # Website creation time
-    runtime: "2023-04-20 00:00:00" # Format: yyyy-MM-dd hh-mm-ss
+    # Number of articles
+    # 文章数量
+    postcount: true
+    # Total number of words
+    # 总字数
+    wordcount: false
+    # PV
+    pv: true
+    # UV
+    uv: true
+    # Last update date
+    # 最后更新日期
+    updatetime: true
+    # Website creation time
+    # 网站创建时间
+    runtimeenable: true
+    # Format: yyyy-MM-dd hh-mm-ss
+    # 格式: yyyy-MM-dd hh-mm-ss
+    runtime: "2023-04-20 00:00:00"
   # --------------------------- end ---------------------------
 # --------------------------- end ---------------------------
 
 # --------------------------- start ---------------------------
 # Home page article configuration information
+# 首页文章配置信息
 index_post_list:
   direction: column # row / column
   column: 2 # 2: 2 columns 3: 3 columns
-  content: false # 1: post.description / 2: Automatically get descriptions or screenshots / 3: Use only interception / false: No content is displayed
-  length: 500 # The length of the screenshot content
-  cover: both # left: on the left : left / right: on the right : right / both: both sides : both
+  # 1: 1 post.description / 1: 使用自己写的文章摘要
+  # 2: 2 Automatically get descriptions or screenshots / 2: 自动获取描述或截图
+  # 3: 3 Use only interception / 3: 仅使用截取
+  # false: Do not display / false: 不显示
+  content: false
+  # The length of the screenshot content
+  # 截图内容长度
+  length: 500
+  # left: on the left : left / right: on the right : right / both: both sides : both
+  # left: 左侧 : left / right: 右侧 : right / both: 两侧 : both
+  cover: both
 # --------------------------- end ---------------------------
 
 # --------------------------- start ---------------------------
 # Page default settings
+# 页面默认设置
 page:
-  error: true # 404 page
-  tags: true # Tags page
-  categories: true # Categories page
-  archives: 0 # list: Sort List / 1: Follow HomeList
-  default: # Default value
+  # 404 page
+  # 404 页面
+  error: true
+  # Tags page
+  # 标签页面
+  tags: true
+  # Categories page
+  # 分类页面
+  categories: true
+  # list: Sort List / 1: Follow HomeList
+  # list: 排序列表 / 1: 跟随首页列表
+  archives: 0
+  # Default value
+  # 默认值
+  default:
+    # Default image when no cover is set
+    # 未设置封面时的默认图片
     cover:
       # - /img/default.png # 默认图片 / default cover
 # --------------------------- end ---------------------------
 
 # --------------------------- start ---------------------------
 # Post default settings
+# 文章默认设置
 post:
   default:
-    top_cover: true # Article information that displays a wave effect at the top of the article when opened.
+    # The cover of the article is displayed
+    # 文章封面显示
+    top_cover: true
     # Default image when no cover is set
+    # 未设置封面时的默认图片
     cover:
       # -  # 默认图片 / default cover
-    locate: China # Location
-    copyright: # Copyright
+    # Location
+    # 位置
+    locate: China
+    # Copyright
+    # 版权
+    copyright:
       enable: true
       author:
         url: /about/ # Author link
-        img: # Default site_icon is not filled in
-      license: CC BY-NC-SA 4.0 # License
-      licenurl: https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh # License link
-  meta: # Article meta information
-    date: false # Release date
-    updated: false # Update date
-    locate: false # Location
-    wordcount: false # Number of words
-    readtime: false # uv
-    pv: false # pv
-    comment: false # Comment count
-  award: # Reward
+        # Default icon is not filled in
+        # 不填显示默认图标
+        img:
+      # License
+      # 许可证
+      license: CC BY-NC-SA 4.0
+      # License link
+      # 许可证链接
+      licenurl: https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh
+  # Article meta information
+  # 文章元信息
+  meta:
+    # Release date
+    # 发布日期
+    date: false
+    # Update date
+    # 更新日期
+    updated: false
+    # Location
+    # 位置
+    locate: false
+    # Number of words
+    # 字数
+    wordcount: false
+    # uv
+    readtime: false
+    # pv
+    pv: false
+    # Comment count
+    # 评论数
+    comment: false
+  # Reward
+  # 打赏
+  award:
     enable: false
     appreciators: /about/ # Reward page
-    title: Thanks for your appreciation.
-    desc: Because of your support, I realize the value of writing articles.
+    # Reward Title
+    # 打赏标题
+    title: # Thanks for your appreciation. / 感谢您的赞赏
+    desc: # Because of your support, I realize the value of writing articles. / 由于您的支持，我才能够实现写作的价值。
+    # Reward list
+    # 打赏列表
     list:
       # - name: Github Sponsor
       #   qcode: https://s3.qjqq.cn/47/661ba900c4bc1.webp!color
       #   url: https://github.com/sponsors/everfu
       #   color: var(--efu-black)
-  share: # Share icon
+
+  # Share icon
+  # 分享图标
+  share:
     enable: false
     list:
       # - qq
@@ -250,17 +360,22 @@ post:
       # - link
       # - qrcode
   rss: # /atom.xml
-  covercolor: # After opening, the main color of the cover image will be used as the background color.
+  # Article reading progress
+  # 文章封面取色
+  covercolor:
     enable: false
-    mode: local # local: local color / api: img2color color
-    api: https://api.qjqq.cn/api/Imgcolor?img= # api address
-    time: 43200000 # api color interval (milliseconds), default is 12 hours
+    # local: local color / api: api color
+    mode: local
+    # api address / api 地址
+    api: https://api.qjqq.cn/api/Imgcolor?img=
+    # Storage / 缓存时间
+    time: 43200000
   footer:
-    enable: true
-    desc: Articles from Ever Fu. # description
+    enable: false
+    desc: # Articles from Ever Fu. / 文章来自 Ever Fu # description
     button: # Button
       enable: true
-      name: Learn more
+      name: # Learn more / 了解更多
       url: /about/
 # --------------------------- end ---------------------------
 
@@ -278,48 +393,64 @@ theme_color:
 # --------------------------- end ---------------------------
 
 # --------------------------- start ---------------------------
-# dark mode
+# display mode
+# 显示模式
 display_mode:
-  type: auto # auto: automatic switching / dark: dark mode / light: light mode
-  universe: true # After opening, the dark mode will display the starry sky background
-# auto: Recognize the current theme mode of the device
+  # auto: automatic switching(Recognize the current theme mode of the device) / dark: dark mode / light: light mode
+  # auto: 自动切换（识别设备当前主题模式） / dark: 深色模式 / light: 浅色模式
+  type: auto
+  # After opening, the dark mode will display the starry sky background
+  # 开启后深色模式会显示星空背景
+  universe: false
 # --------------------------- end ---------------------------
 
 # --------------------------- start ---------------------------
 # Related articles
+# 相关文章
 related_post:
   enable: false
   limit: 2
-  date_type: created # created: release date / updated: update date
+  # created: release date / updated: update date
+  # created: 发布日期 / updated: 更新日期
+  date_type: created
 # --------------------------- end ---------------------------
 
 # --------------------------- start ---------------------------
 # Footer
+# 页脚
 footer:
+  # Information social icon
   information:
-    author: false # enable site_icon in footer
+    author: false # enable site.icon in footer
     left:
-      # Github: https://github.com/efuo || fab fa-github # Name: link || icon
+      # Github: https://github.com/everfu || fab fa-github # Name: link || icon
       # Mail: mailto:o@efu.me || fab fa-envelope
     right:
       # Bilibili: https://space.bilibili.com/1329819902 || fab fa-bilibili
       # Douyin: https://v.douyin.com/iJsLc8jt/ || fab fa-tiktok
   group:
-    # Navgation:
+    # Navigation:
     #   Archives: /archives/
     #   Categories: /categories/
     #   Tags: /tags/
-    # Server:
-    #   Aliyun: https://aliyun.com/
-    #   51la: https://v6.51.la/
     # Arrangement:
     #   Cookies: /cookies/
     #   Privacy: /privacy/
     #   Copyright: /copyright/
 
+  # Random link
+  # 随机友链
   randomlink: false # Random link
-  privacy: # /privacy/ # Privacy policy
+  # Privacy policy
+  # 隐私政策
+  privacy: # /privacy/
+  # License
   license: # https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh # License
+
+  # Footer information text
+  # 页脚信息文字
+  # Please do not delete the theme information, this is respect for the author
+  # 请不要删除主题信息，这是对作者的尊重
   links:
     - name: Theme
       url: https://github.com/everfu/hexo-theme-solitude
@@ -328,7 +459,8 @@ footer:
 # --------------------------- end ---------------------------
 
 # --------------------------- start ---------------------------
-# error page
+# 404 page
+# 404 页面
 errorpage:
   img: /img/404.avif
   text: =awa= Page NotFound # Text
@@ -337,6 +469,7 @@ errorpage:
 
 # --------------------------- start ---------------------------
 # Says Page
+# 即可短文
 says:
   enable: false
   home_mini: false
@@ -347,6 +480,7 @@ says:
 
 # --------------------------- start ---------------------------
 # Recent comments Page
+# 最近评论页面
 recent_comments:
   enable: false
   limit: 50 # ⚠️waline 仅支持最大50条评论 / ⚠️waline only supports a maximum of 50 comments
@@ -357,6 +491,7 @@ recent_comments:
 
 # --------------------------- start ---------------------------
 # Danmaku Page
+# 弹幕留言页面
 envelope:
   enable: false
   line: 10 # 显示行数
@@ -369,27 +504,38 @@ envelope:
 # --------------------------- start ---------------------------
 # This part of the content uses metingjs,
 # can only use NetEase Cloud Music, QQ Music and other music platforms supported by the mainland China region,
-# the subsequent consideration of the use of JSON files to store music information and customize the implementation of the third-party API does not depend on the.
+# the subsequent consideration of the use of JSON files to store music information and customize the implementation of the third-party API does not depend on the page.
 # Music Page
 meting_api: "https://meting.qjqq.cn/?server=:server&type=:type&id=:id&auth=:auth&r=:r" # Custom API
 music:
   enable: false
+  # 歌单 ID / 单曲 ID
   id: 1994908354
+  # 服务商：netease / qq / xiami / kugou / baidu
   server: netease
+  # 类型：playlist / song
   type: playlist
+  # 默认音量
   volume: 0.8
+  # 是否自动播放
   mutex: true
 # Capsule music
+# 音乐胶囊
 capsule:
   enable: false
+  # 歌单 ID / 单曲 ID
   id: 8407304077
+  # 服务商：netease / qq / xiami / kugou / baidu
   server: netease
+  # 类型：playlist / song
   type: playlist
 # --------------------------- end ---------------------------
 
 # --------------------------- start ---------------------------
 # Quick Menu
 # Open with shift + ?
+# 快捷菜单
+# 使用 shift + ? 打开
 keyboard:
   enable: false
   list:
@@ -409,44 +555,71 @@ keyboard:
 
 # --------------------------- start ---------------------------
 # Copy
+#  information
+# 复制信息
 copy:
-  enable: true
-  copyright: # Turn on Link copyright information after copying.
-    enable: true
-    limit: 50 # When more than 50 copies, the copy will contain copyright information.
+  enable: false
+  # Turn on Link copyright information after copying.
+  # 复制后链接版权信息
+  copyright:
+    enable: false
+    # Display when the number of words copied exceeds
+    # 复制文字时超过多少字数显示
+    limit: 50
 # --------------------------- end ---------------------------
 
 # --------------------------- start ---------------------------
 # Lazyload
+# 图片懒加载
 lazyload:
   enable: false
-  field: site # post, site
+  # post, site
+  field: site
+  # 加载时替换图
   placeholder: /img/loading.avif
+  # 加载失败替换图
   errorimg: /img/error_load.avif
 # --------------------------- end ---------------------------
 
 # --------------------------- start ---------------------------
 # Loading
+# 加载
 loading:
-  fullpage: false # Full screen loading
-  pace: true # Pace loading
+  # Full screen loading
+  # 全屏加载
+  fullpage: false
+  # Pace loading
+  # Pace 加载
+  pace: true
 # --------------------------- end ---------------------------
 
 # --------------------------- start ---------------------------
 # Highlight
+# 代码块高亮
 highlight:
   enable: true
-  limit: 200 # Code line limit
-  copy: true # Whether to enable the copy button
-  expand: true # Whether to expand by default
-  theme: mac # default: default / mac : apple terminal
-  color: default # default / solidity / dracula
+  # Display the fold button when the number of words exceeds
+  # 当超过多少字时显示折叠按钮
+  limit: 200
+  # Whether to enable the copy button
+  # 是否启用复制按钮
+  copy: true
+  # Whether to expand by default
+  # 是否默认展开
+  expand: true
+  # default: default / mac : apple terminal
+  # default: 默认 / mac : 苹果终端
+  theme: mac
+  # default / solidity / dracula
+  color: default
 # --------------------------- end ---------------------------
 
 # --------------------------- start ---------------------------
 # Lightbox
+# 图片灯箱
 lightbox: false
 # warning: Please select any one, but cannot be turned on at the same time.
+# 警告: 请任选其一，但不能同时开启。
 fancybox: false # fancybox
 mediumZoom: false # mediumZoom
 # --------------------------- end ---------------------------
@@ -471,21 +644,30 @@ OpenGraph:
 # --------------------------- end ---------------------------
 
 # --------------------------- start ---------------------------
-# Wordcount
+# Word count
+# 字数统计
 # warning: Please install the hexo-wordcount plugin first.
+# 警告: 请先安装 hexo-wordcount 插件。
 wordcount: false
 # --------------------------- end ---------------------------
 
 # --------------------------- start ---------------------------
 # Busuanzi
 busuanzi: false
-busuanzi_use: 0 # 0: original / 1: qingjiao (other: other custom busuanzi platform)
+# 0: Use the original version of busuanzi / 1: Use the custom version of busuanzi
+# The difference between the original and the default: please search by yourself
+# 0：使用原版的不蒜子 / 1：使用不蒜子的自定义版本
+# 原版和默认的区别：请自行搜索
+busuanzi_use: 0
 # --------------------------- end ---------------------------
 
 # --------------------------- start ---------------------------
 # Search
+# warning: Please open the search page config: https://solitude.js.org/search/algolia or https://solitude.js.org/search/local
+# 警告: 请打开搜索页面配置: https://solitude.js.org/zh/search/algolia 或 https://solitude.js.org/zh/search/local
 search:
   enable: false
+  # type: 使用的搜索引擎 / search engine
   type: local # local / algolia
   tags:
     # - Solitude
@@ -500,6 +682,7 @@ search:
 
 # --------------------------- start ---------------------------
 # This part is only supported in mainland China, and we will consider supporting ChatGPT Key in the future.
+# 该部分仅支持中国大陆，后续会考虑支持 ChatGPT Key。
 tianli_talk:
   enable: false
   title: 智能客服与搜索 # title
@@ -517,33 +700,60 @@ post_ai:
 
 # --------------------------- start ---------------------------
 # Katex
+# Latex formula support
+# Latex 公式支持
 katex:
   enable: false
-  per_page: false # Whether to load on each page
-  copytex: false # Whether to enable copy formula
+  # Whether to load on each page
+  # 是否在每个页面加载
+  per_page: false
+  # Whether to enable copy formula
+  # 是否启用复制公式
+  copytex: false
 # --------------------------- end ---------------------------
 
 # --------------------------- start ---------------------------
+# Comment
+# 评论
 comment:
+  # Which commenting system to use(e.g. waline or waline,twikoo)
+  # 使用哪个评论系统（例如： waline or waline,twikoo）
   use: # waline, twikoo, valine, artalk, giscus # Up to two comment systems can be turned on at the same time
-  commentBarrage: false # Hot comment switch
-  lazyload: false # Lazy load
-  count: false # Whether to use the comment count
-  pv: false # Whether to use the page view count
-  avatar: https://gravatar.com/avatar # Avatar
-  hot_tip: # Hot comment tips
+  # Whether to display the hot comment switch.
+  # 是否显示热门评论开关
+  commentBarrage: false
+  # Lazy load
+  # 懒加载评论区
+  lazyload: false
+  # Whether to display the comment count
+  # 显示评论数
+  count: false
+  # PV
+  pv: false
+  # Avatar
+  avatar: https://gravatar.com/avatar
+  # Hot comment tips
+  # 热评提示
+  hot_tip:
     enable: false
-    count: 3 # Display when more than 3 comments
+    # Number of hot comments
+    count: 3
+# Twikoo: https://solitude.js.org/comment/twikoo
+# Twikoo: https://solitude.js.org/zh/comment/twikoo
 twikoo: # https://twikoo.js.org/
   envId: # url: https://twikoo.sondy.top/
   region: # Environment locale, default is ap-shanghai, Tencent cloud environment fill ap-shanghai or ap-guangzhou; Vercel environment do not fill the.
   style: true # Use custom styles when turned on
   accessToken: # AccessToken
   option: # twikoo option
+# Waline: https://solitude.js.org/comment/waline
+# Waline: https://solitude.js.org/zh/comment/waline
 waline: # https://waline.js.org/
   envId: # url: https://waline.wzsco.top
   pageview: false # Whether to enable page access statistics
   option: # waline configuration item
+# Valine: https://solitude.js.org/comment/valine
+# Valine: https://solitude.js.org/zh/comment/valine
 valine:
   appId: # leancloud application app id
   appKey: # leancloud application app key
@@ -552,10 +762,14 @@ valine:
   visitor: false
   style: true # Use custom styles when turned on
   option: # options list
+# Artalk: https://solitude.js.org/comment/artalk
+# Artalk: https://solitude.js.org/zh/comment/artalk
 artalk:
   server: # server url
   site: # site name
   option: # options
+# Giscus: https://solitude.js.org/comment/giscus
+# Giscus: https://solitude.js.org/zh/comment/giscus
 giscus:
   repo: # GitHub repository name
   repo_id: # GitHub repository ID
@@ -568,18 +782,28 @@ giscus:
 
 # --------------------------- start ---------------------------
 # Console
+# 控制台
 console:
   enable: false
-  recentComment: # Recent comments
+  # Recent comments
+  # 最新评论
+  recentComment:
     enable: false
-    storage: .2 # Cache time 1: 1 day / .5 : half a day
+    # Cache time 1: 1 day / .5 : half a day
+    # 缓存时间 1: 1天 / .5 : 半天
+    storage: .2
   card:
-    tags: true # Tags
-    archive: true # Archive
+    # Tags
+    # 标签
+    tags: true
+    # Archives
+    # 归档
+    archive: true
 # --------------------------- end ---------------------------
 
 # --------------------------- start ---------------------------
 # verification
+# 验证
 verify_site:
   # - name: google-site-verification
   #   content: xxxxxx
@@ -589,31 +813,44 @@ verify_site:
 
 # --------------------------- start ---------------------------
 # CSS Prefix
+# CSS 前缀
 # When turned on, it will automatically prefix the CSS (to get better browser support), but this will increase the size of the CSS file.
+# 开启后会自动给 CSS 加前缀（以获得更好的浏览器支持），但这会增加 CSS 文件的大小。
 css_prefix: false
 # --------------------------- end ---------------------------
 
 # --------------------------- start ---------------------------
 # Font
+# 字体
 font:
   font-size: 16px
   code-font-size: 16px
+  # Global font
+  # 全局字体
   font-family: "PingFang SC, Hiragino Sans GB, Microsoft YaHei"
+  # Code font
+  # 代码字体
   code-font-family: '"monospace", monospace'
 # --------------------------- end ---------------------------
 
 # --------------------------- start ---------------------------
 # Extend
+# 扩展
 extends:
-  head:
   # Insert in head
+  # 插入到 head
+  head:
   #  - <script src="https://cdn.bootcdn.net/ajax/libs/pace/1.2.4/pace.min.js"></script>
-  body:
+
   # Insert in body
+  # 插入到 body
+  body:
+  #  - <script src="https://cdn.bootcdn.net/ajax/libs/pace/1.2.4/pace.min.js"></script>
 # --------------------------- end ---------------------------
 
 # --------------------------- start ---------------------------
 # PWA
+# Progressive Web App
 pwa:
   enable: false
   manifest: /manifest.json # manifest.json
@@ -627,28 +864,47 @@ pwa:
 
 # --------------------------- start ---------------------------
 # Google Adsense
+# 谷歌广告
 google_adsense:
   enable: false
-  auto_ads: false # After auto ads are turned off, it is manual ads
-  enable_page_level_ads: true # Page-level ads
-  aside_card: true # Sidebar card ads
-  post_card: true # Post card ads
-  post_content: true # Post content ads
-  js: https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js # Google Adsense js
+  # Auto ads
+  # 自动广告
+  auto_ads: false
+  # Page-level ads
+  # 页面级广告
+  enable_page_level_ads: true
+  # Sidebar card ads
+  # 侧边栏卡片广告
+  aside_card: true
+  # Post card ads
+  # 文章卡片广告
+  post_card: true
+  # Post content ads
+  # 文章内容广告
+  post_content: true
+  # Google Adsense js
+  # 谷歌广告 js
+  js: https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js
   client: # ca-pub-XXXXXXXXXXXXXX
   slot: # 4236388782
 # --------------------------- end ---------------------------
 
 # --------------------------- start ---------------------------
 # Custom right menu
+# 自定义右键菜单
 right_menu:
   enable: false
-  commentBarrage: false # Whether to display the hot comment switch.
-  translate: # Simplified and Traditional Chinese translation.
+  # Whether to display the hot comment switch.
+  # 是否显示热门评论开关
+  commentBarrage: false
+  # Simplified and Traditional Chinese translation.
+  # 简繁体转换
+  translate:
     enable: false
     defaultEncoding: 2 # 1: 默认繁体 2: 默认简体
     translateDelay: 0 # 首次加载翻译迟疑时间
   # Custom list
+  # 自定义列表
   custom_list:
     # - name: Random
     #   click: toRandomPost()
@@ -670,6 +926,7 @@ right_menu:
 # --------------------------- start ---------------------------
 # Memorial
 # Turn the entire site gray on memorable days.
+# 在纪念日整个网站变灰
 memorial:
   enable: false
   date:
@@ -681,6 +938,7 @@ memorial:
 # --------------------------- start ---------------------------
 # Lure
 # When the user exits the page, modify the title
+# 当用户退出页面时，修改标题
 lure:
   enable: false
   jump: 404 Not Found
@@ -689,6 +947,7 @@ lure:
 
 # --------------------------- start ---------------------------
 # Article expiration
+# 文章过期
 expire:
   enable: false
   time: 30 # days
@@ -699,6 +958,7 @@ expire:
 
 # --------------------------- start ---------------------------
 # Background
+# 背景图片
 background:
   enable: false
   opacity: .2
