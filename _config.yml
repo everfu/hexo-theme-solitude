@@ -118,7 +118,8 @@ aside:
       afternoon: Tea time. 🍵
       night: early bedtime
       goodnight: Good night 😴
-    sayhello2: # Style 2 is invalid, Triggered when sayhello is clicked.
+    # Style 2 is invalid, Triggered when sayhello is clicked.
+    sayhello2:
       # - You'll make it.
       # - You're gonna make it.
       # - Good luck, stranger.
@@ -157,7 +158,8 @@ aside:
   tags:
     enable: false
     limit: 20 # Number of tags displayed
-    highlight_list: # Highlighted tags
+    # Highlighted tags
+    highlight_list:
       # - Hexo
   # --------------------------- end ---------------------------
 
@@ -207,7 +209,8 @@ page:
 post:
   default:
     top_cover: true # Article information that displays a wave effect at the top of the article when opened.
-    cover: # Default image when no cover is set
+    # Default image when no cover is set
+    cover:
       # -  # 默认图片 / default cover
     locate: China # Location
     copyright: # Copyright
@@ -238,15 +241,15 @@ post:
   share: # Share icon
     enable: false
     list:
-      #  - qq
-      #  - weibo
-      #  - twitter
-      #  - facebook
-      #  - telegram
-      #  - whatsapp
-      #  - linkedin
-      #  - link
-      #  - qrcode
+      # - qq
+      # - weibo
+      # - twitter
+      # - facebook
+      # - telegram
+      # - whatsapp
+      # - linkedin
+      # - link
+      # - qrcode
   rss: # /atom.xml
   covercolor: # After opening, the main color of the cover image will be used as the background color.
     enable: false
@@ -338,7 +341,7 @@ errorpage:
 says:
   enable: false
   home_mini: false
-  page: '/essay/'
+  page: /essay/
   style: 1
   strip: 30
 # --------------------------- end ---------------------------
@@ -646,7 +649,8 @@ right_menu:
     enable: false
     defaultEncoding: 2 # 1: 默认繁体 2: 默认简体
     translateDelay: 0 # 首次加载翻译迟疑时间
-  custom_list: # Custom list
+  # Custom list
+  custom_list:
     # - name: Random
     #   click: toRandomPost()
     #   id: menu-randomPost
@@ -690,8 +694,8 @@ expire:
   enable: false
   time: 30 # days
   position: top # top / bottom
-  text_prev: 'This article expired '
-  text_next: ' day ago, if the content does not match, please contact the webmaster to update it.'
+  text_prev: "This article expired "
+  text_next: " day ago, if the content does not match, please contact the webmaster to update it."
 # --------------------------- end ---------------------------
 
 # --------------------------- start ---------------------------
