@@ -26,8 +26,8 @@ site:
 # Navigation bar
 # 导航栏
 nav:
-  # Left button
-  # 左侧按钮
+  # Left Box
+  # 左侧盒子
   group:
   #  project: # name
   #    Solitude: https://github.com/everfu/hexo-theme-solitude || /img/pwa/favicon.ico # name: url || icon
@@ -691,7 +691,7 @@ post_ai:
   key:
   talk: # 我是 Efu 开发的摘要生成助理EfuGPT，EfuGPT在静态部署时进行摘要的撰写，并且在访客访问时通过EfuCorrection转译后的文本摘要实现工具。我在这里只负责已经生成的摘要显示，你无法与我直接沟通，但我可以回答一些预设的问题。
   randomPost: false
-  report: https://efu.me/
+  report: https://solitude.js.org
   tips: # 此内容根据文章生成，并经过人工审核，仅用于文章内容的解释与总结
 # --------------------------- end ---------------------------
 
@@ -736,7 +736,6 @@ comment:
     # Number of hot comments
     count: 3
 # Twikoo: https://solitude.js.org/comment/twikoo
-# Twikoo: https://solitude.js.org/zh/comment/twikoo
 twikoo: # https://twikoo.js.org/
   envId: # url: https://twikoo.sondy.top/
   region: # Environment locale, default is ap-shanghai, Tencent cloud environment fill ap-shanghai or ap-guangzhou; Vercel environment do not fill the.
@@ -744,13 +743,11 @@ twikoo: # https://twikoo.js.org/
   accessToken: # AccessToken
   option: # twikoo option
 # Waline: https://solitude.js.org/comment/waline
-# Waline: https://solitude.js.org/zh/comment/waline
 waline: # https://waline.js.org/
   envId: # url: https://waline.wzsco.top
   pageview: false # Whether to enable page access statistics
   option: # waline configuration item
 # Valine: https://solitude.js.org/comment/valine
-# Valine: https://solitude.js.org/zh/comment/valine
 valine:
   appId: # leancloud application app id
   appKey: # leancloud application app key
@@ -766,7 +763,6 @@ artalk:
   site: # site name
   option: # options
 # Giscus: https://solitude.js.org/comment/giscus
-# Giscus: https://solitude.js.org/zh/comment/giscus
 giscus:
   repo: # GitHub repository name
   repo_id: # GitHub repository ID
@@ -964,6 +960,8 @@ background:
 # --------------------------- end ---------------------------
 
 # --------------------------- start ---------------------------
+# Do not modify unless necessary
+# 非必要请勿修改
 CDN:
   internal: local # local / cdnjs / jsdelivr / unpkg / custom
   third_party: cdnjs # cdnjs / jsdelivr / unpkg / custom
