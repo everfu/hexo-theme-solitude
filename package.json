@@ -1,6 +1,6 @@
 {
   "name": "hexo-theme-solitude",
-  "version": "2.0.7",
+  "version": "2.0.8",
   "description": "A beautiful, powerful, and efficient Hexo theme developed by EverFu.",
   "main": "package.json",
   "scripts": {
@@ -28,8 +28,5 @@
   },
   "homepage": "https://everfu.github.io/Solitude/",
   "author": "Hexo-Theme-Solitude<o@everfu.org>",
-  "license": "MIT",
-  "devDependencies": {
-    "@types/node": "^22.0.0"
-  }
+  "license": "MIT"
 }
