@@ -441,9 +441,6 @@ footer:
   # Random link
   # 随机友链
   randomlink: false # Random link
-  # Privacy policy
-  # 隐私政策
-  privacy: # /privacy/
   # License
   license: # https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh # License
 

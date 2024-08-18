@@ -134,15 +134,6 @@ const sco = {
   lastSayHello: "",
   wasPageHidden: false,
   musicPlaying: false,
-  hideCookie() {
-    const cookiesWindow = document.getElementById("cookies-window");
-    if (cookiesWindow) {
-      setTimeout(() => {
-        cookiesWindow.classList.add("cw-hide");
-        setTimeout(() => cookiesWindow.style.display = "none", 1000);
-      }, 3000);
-    }
-  },
   scrollTo(elementId) {
     const targetElement = document.getElementById(elementId);
     if (targetElement) {
@@ -673,7 +664,7 @@ window.refreshFn = () => {
   document.body.setAttribute('data-type', page);
   sco.changeTimeFormat(document.querySelectorAll(timeSelector));
   runtime && sco.addRuntime();
-  [scrollFn, sidebarFn, sco.hideCookie, sco.addPhotoFigcaption, sco.setTimeState, sco.tagPageActive, sco.categoriesBarActive, sco.listenToPageInputPress, sco.addNavBackgroundInit, sco.refreshWaterFall].forEach(fn => fn());
+  [scrollFn, sidebarFn, sco.addPhotoFigcaption, sco.setTimeState, sco.tagPageActive, sco.categoriesBarActive, sco.listenToPageInputPress, sco.addNavBackgroundInit, sco.refreshWaterFall].forEach(fn => fn());
   lazyload.enable && utils.lazyloadImg();
   lightbox && utils.lightbox(document.querySelectorAll("#article-container img:not(.flink-avatar,.gallery-group img)"));
   randomlink && randomLinksList();

@@ -1,3 +1,5 @@
+- var { information , group } = theme.footer
+
 if theme.post.footer.enable && is_post()
     div#st-footer-bar
         div.footer-logo
@@ -11,24 +13,23 @@ if theme.post.footer.enable && is_post()
         if theme.post.footer.button.enable
             a.footer-bar-link(href=url_for(theme.post.footer.button.url))= theme.post.footer.button.name
 div#footer_deal
-    - var leftInfo = theme.footer && theme.footer.information && theme.footer.information.left || {}
-    - var rightInfo = theme.footer && theme.footer.information && theme.footer.information.right || {}
+    - var leftInfo = information.left
+    - var rightInfo = information.right
 
     each value, label in leftInfo
         - var array = value.split('||')
         a.deal_link(href=url_for(trim(array[0])), title=label)
             i.solitude(class=array[1])
 
-    if theme.footer.information.author
+    if information.author
         div#footer_mini_logo.nolazyload.footer_mini_logo(title=_p('nav.backtop'), onclick="sco.toTop()")
-            img(src=theme.site.icon, alt=_p('nav.backtop'))
+            img(src=information.author, alt=_p('nav.backtop'))
 
     each value, label in rightInfo
         - var array = value.split('||')
         a.deal_link(href=url_for(trim(array[0])), title=label)
             i.solitude(class=array[1])
 div#st-footer
-    - var group = theme.footer && theme.footer.group ? theme.footer.group : {}
 
     each value, x in group
         div.footer-group
@@ -57,17 +58,10 @@ div#footer-bar
             each item in theme.footer.links
                 a.footer-bar-link(href=url_for(item.url), alt=item.name)!= item.name
             if theme.footer.license
-                a.footer-bar-link.cc(href=url_for(theme.footer.license), aria-label = 'copyright')
+                a.footer-bar-link.cc(href=url_for(theme.footer.license))
                     i.solitude.fa-solid.fa-copyright
                     i.solitude.fa-brands.fa-creative-commons-by
                     i.solitude.fa-brands.fa-creative-commons-nc
                     i.solitude.fa-brands.fa-creative-commons-nd
-if theme.footer.privacy
-    div.needEndHide#cookies-window
-        div.cookies-window-title= __('cookies.title')
-        div.cookies-window-content
-            span.cookies-tip= __('cookies.tip')
-            a.cookies-link(href=url_for(theme.footer.privacy), title=_p('cookies.privacy'))
-                i.solitude.fa-solid.fa-circle-chevron-right
 if theme.comment.use && theme.comment.commentBarrage
     div.comment-barrage.needEndHide
