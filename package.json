@@ -28,8 +28,5 @@
   },
   "homepage": "https://everfu.github.io/Solitude/",
   "author": "Hexo-Theme-Solitude<o@everfu.org>",
-  "license": "MIT",
-  "devDependencies": {
-    "@types/node": "^22.0.0"
-  }
+  "license": "MIT"
 }
