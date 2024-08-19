@@ -13,8 +13,8 @@ if theme.post.footer.enable && is_post()
         if theme.post.footer.button.enable
             a.footer-bar-link(href=url_for(theme.post.footer.button.url))= theme.post.footer.button.name
 div#footer_deal
-    - var leftInfo = information.left
-    - var rightInfo = information.right
+    - var leftInfo = information.left || []
+    - var rightInfo = information.right || []
 
     each value, label in leftInfo
         - var array = value.split('||')
@@ -31,7 +31,7 @@ div#footer_deal
             i.solitude(class=array[1])
 div#st-footer
 
-    each value, x in group
+    each value, x in group || []
         div.footer-group
             h3.footer-title= x
             div.footer-links
