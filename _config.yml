@@ -421,7 +421,7 @@ related_post:
 footer:
   # Information social icon
   information:
-    author: false # enable site.icon in footer
+    author: false # img url / false
     left:
       # Github: https://github.com/everfu || fab fa-github # Name: link || icon
       # Mail: mailto:o@efu.me || fab fa-envelope
