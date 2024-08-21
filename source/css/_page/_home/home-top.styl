@@ -22,7 +22,7 @@
       &::-webkit-scrollbar
         display none
 
-      .recent-post-group
+      .top-post-group
         display flex
         flex-direction row
         justify-content start
@@ -76,7 +76,7 @@
       position relative
       animation slide-in .6s .1s backwards
 
-    .recent-post-item
+    .top-post-item
       display flex
       flex-direction column
       width calc(100% / 3 - 0.5rem)
@@ -100,7 +100,7 @@
         width 200px
         min-width 200px
 
-      &:hover .post_cover a .recent-post-top-text
+      &:hover .post_cover a .top-post-top-text
         left 0
 
       .post_cover
@@ -116,7 +116,7 @@
             width 100%
             background var(--efu-secondbg)
 
-          .recent-post-top-text
+          .top-post-top-text
             position absolute
             top 0
             left -50px
@@ -132,7 +132,7 @@
             if $language == 'en-US'
               left -90px
 
-      /.recent-post-info
+      /.top-post-info
         padding .3rem .5rem .3rem .5rem
         transition .3s
 
