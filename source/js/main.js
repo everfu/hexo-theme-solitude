@@ -666,7 +666,7 @@ window.refreshFn = () => {
   runtime && sco.addRuntime();
   [scrollFn, sidebarFn, sco.addPhotoFigcaption, sco.setTimeState, sco.tagPageActive, sco.categoriesBarActive, sco.listenToPageInputPress, sco.addNavBackgroundInit, sco.refreshWaterFall].forEach(fn => fn());
   lazyload.enable && utils.lazyloadImg();
-  lightbox && utils.lightbox(document.querySelectorAll("#article-container img:not(.flink-avatar,.gallery-group img)"));
+  lightbox && utils.lightbox(document.querySelectorAll("#article-container img:not(.flink-avatar,.gallery-group img, .no-lightbox)"));
   randomlink && randomLinksList();
   post_ai && is_post && efu_ai.init();
   sco.switchComments();
