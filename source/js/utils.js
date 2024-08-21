@@ -101,12 +101,6 @@
         },
         isMobile: () => /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent),
         isHidden: e => 0 === e.offsetHeight && 0 === e.offsetWidth,
-        addEventListenerPjax: (ele, event, fn, option = false) => {
-            ele.addEventListener(event, fn, option)
-            utils.addGlobalFn('pjax', () => {
-                ele.removeEventListener(event, fn, option)
-            })
-        },
         animateIn: (ele, text) => {
             Object.assign(ele.style, {display: 'block', animation: text});
         },

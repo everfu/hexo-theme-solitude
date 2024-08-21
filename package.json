@@ -1,7 +1,7 @@
 {
   "name": "hexo-theme-solitude",
-  "version": "2.0.9",
-  "description": "A beautiful, powerful, and efficient Hexo theme developed by EverFu.",
+  "version": "2.0.10",
+  "description": "A beautiful, powerful, and efficient Hexo theme developed by Ever Fu.",
   "main": "package.json",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -11,7 +11,7 @@
     "theme",
     "solitude",
     "Card UI Design",
-    "EverFu",
+    "Ever Fu",
     "hexo-theme-solitude"
   ],
   "repository": {
@@ -26,7 +26,7 @@
     "url": "https://github.com/everfu/hexo-theme-solitude/issues",
     "email": "o@everfu.org"
   },
-  "homepage": "https://everfu.github.io/Solitude/",
+  "homepage": "https://solitude.js.org",
   "author": "Hexo-Theme-Solitude<o@everfu.org>",
   "license": "MIT"
 }

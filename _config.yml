@@ -297,8 +297,8 @@ post:
       enable: true
       author:
         url: /about/ # Author link
-        # Default icon is not filled in
-        # 不填显示默认图标
+        # Default use site.icon
+        # 默认使用 site.icon
         img:
       # License
       # 许可证
@@ -624,6 +624,16 @@ mediumZoom: false # mediumZoom
 # --------------------------- start ---------------------------
 # Mermaid
 mermaid: false
+# --------------------------- end ---------------------------
+
+# --------------------------- start ---------------------------
+# Chart.js
+chart: false
+# --------------------------- end ---------------------------
+
+# --------------------------- start ---------------------------
+# typeit
+typeit: false
 # --------------------------- end ---------------------------
 
 # --------------------------- start ---------------------------

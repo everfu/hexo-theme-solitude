@@ -8,18 +8,7 @@
       padding 0
 
 if hexo-config('index_post_list.direction') == "column"
-  #recent-posts
-    position relative
-    +minWidth1300()
-      display flex
-      flex-wrap wrap
-      gap .5rem
-      transition width .3s
-
-    +maxWidth768()
-      padding 0 1rem
-
-    > .recent-post-item
+  .recent-post-item
       box-shadow var(--efu-shadow-light2black)
       display flex
       align-items center
@@ -230,6 +219,16 @@ if hexo-config('index_post_list.direction') == "column"
 
           .sticky
             color var(--efu-fontcolor)
+  #recent-posts
+    position relative
+    +minWidth1300()
+      display flex
+      flex-wrap wrap
+      gap .5rem
+      transition width .3s
+
+    +maxWidth768()
+      padding 0 1rem
 
   if hexo-config('index_post_list.direction') == "column" && hexo-config('index_post_list.column') == 2
     #recent-posts
@@ -249,23 +248,9 @@ if hexo-config('index_post_list.direction') == "column"
           flex 1 1 33.3%
           max-width 32.6%
           box-shadow var(--efu-shadow-border)
-      
+
 else if hexo-config('index_post_list.direction') == "row"
-  #recent-posts
-    position relative
-    display flex
-    flex-wrap wrap
-    justify-content space-between
-    align-items flex-start
-    align-content flex-start
-    user-select none
-    gap .5rem
-    transition width .3s
-
-    +maxWidth768()
-      padding 0 1rem
-
-    > .recent-post-item
+  .recent-post-item
       display flex
       align-items center
       animation slide-in .6s .4s backwards
@@ -474,3 +459,16 @@ else if hexo-config('index_post_list.direction') == "row"
 
           .sticky
             color var(--efu-fontcolor)
+  #recent-posts
+    position relative
+    display flex
+    flex-wrap wrap
+    justify-content space-between
+    align-items flex-start
+    align-content flex-start
+    user-select none
+    gap .5rem
+    transition width .3s
+
+    +maxWidth768()
+      padding 0 1rem

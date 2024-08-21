@@ -21,13 +21,13 @@ hexo.extend.helper.register('inject_head_js', function () {
             },
             get: function getWithExpiry(key) {
                 const itemStr = localStorage.getItem(key)
-    
+
                 if (!itemStr) {
                     return undefined
                 }
                 const item = JSON.parse(itemStr)
                 const now = new Date()
-    
+
                 if (now.getTime() > item.expiry) {
                     localStorage.removeItem(key)
                     return undefined
@@ -62,24 +62,30 @@ hexo.extend.helper.register('inject_head_js', function () {
                 script.onload = script.onreadystatechange = null
                 resolve()
               }
-    
+
               Object.keys(attr).forEach(key => {
                 script.setAttribute(key, attr[key])
               })
-    
+
               document.head.appendChild(script)
             }),
             addGlobalFn: (key, fn, name = false, parent = window) => {
                 const globalFn = parent.globalFn || {}
                 const keyObj = globalFn[key] || {}
-        
+
                 if (name && keyObj[name]) return
-        
+
                 name = name || Object.keys(keyObj).length
                 keyObj[name] = fn
                 globalFn[key] = keyObj
                 parent.globalFn = globalFn
             },
+            addEventListenerPjax: (ele, event, fn, option = false) => {
+              ele.addEventListener(event, fn, option)
+              utils.addGlobalFn('pjax', () => {
+                  ele.removeEventListener(event, fn, option)
+              })
+          },
         }
     `
     return `<script>(()=>{${createJS()}})()</script>`

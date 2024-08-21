@@ -109,8 +109,18 @@ fancyapps_css:
   other_name: fancyapps-ui
 mermaid_js:
   name: mermaid
-  file: dist/mermaid.min.js
+  file: dist/mermaid.js
   version: 10.9.1
+chart_js:
+  name: chart.js
+  file: dist/chart.umd.js
+  version: 4.4.1
+  other_name: Chart.js
+typeit_js:
+  name: typeit
+  file: index.umd.min.js
+  version: 8.8.4
+  other_name: typeit
 blueimp_md5:
   name: blueimp-md5
   file: js/md5.min.js
