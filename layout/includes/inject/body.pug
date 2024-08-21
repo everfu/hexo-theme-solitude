@@ -25,6 +25,9 @@ div
   if theme.chart
     script(src=url_for(theme.cdn.chart_js))
 
+  if theme.typeit
+    script(src=url_for(theme.cdn.typeit_js))
+
   if theme.display_mode.universe
     script(src=url_for(theme.cdn.universe_js))
     script.
