@@ -20,7 +20,7 @@
 [![discord](https://img.shields.io/discord/1266610921942548553?style=for-the-badge&logo=discord&label=discord&logoColor=white)](https://discord.gg/HZXAnK4Sut)
 ![JetBrains](https://img.shields.io/badge/jetbrains-support-black?logo=jetbrains&style=for-the-badge)
 
-[文档](https://solitude.js.org/)丨[預覽](https://everfu.github.io/Solitude/)
+[文档](https://solitude.js.org/)丨[預覽](https://solitude.js.org/preview/zh/)
 
 </div>
 
@@ -36,7 +36,7 @@
 - 評論(Twikoo、Waline、Valine、Artalk、Giscus)，支援雙評論
 - 晝夜切換（ColorMode）
 - 燈箱（medium-zoom、fancybox）
-- 數學公式（Latex） 
+- 數學公式（Latex）
 - 特色頁面：即刻短文、我的裝備、在線工具、音樂館、友鏈魚塘、相冊頁、豆瓣頁、留言彈幕頁。
 - 文章功能：AI 摘要、代碼高亮。
 

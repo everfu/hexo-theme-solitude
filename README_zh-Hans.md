@@ -5,7 +5,7 @@
    <h1>Solitude</h1>
 
    一款优雅的 Hexo 主题，支持懒加载、PWA、Latex 以及多种评论系统。
-   
+
    主题设计由 [@张洪Heo](https://github.com/zhheo) 全权授权
 
 ![npm package](https://img.shields.io/npm/v/hexo-theme-solitude?style=for-the-badge)
@@ -20,7 +20,7 @@
 [![discord](https://img.shields.io/discord/1266610921942548553?style=for-the-badge&logo=discord&label=discord&logoColor=white)](https://discord.gg/HZXAnK4Sut)
 ![JetBrains](https://img.shields.io/badge/jetbrains-support-black?logo=jetbrains&style=for-the-badge)
 
-[文档](https://solitude.js.org/)丨[预览](https://everfu.github.io/Solitude/)
+[文档](https://solitude.js.org/)丨[预览](https://solitude.js.org/preview/zh/)
 
 </div>
 
@@ -58,7 +58,7 @@
       ```yaml
       theme: solitude
       ```
-   
+
 前往 [文档](https://solitude.js.org/) 获取更多信息。
 
 ## 赞助者
