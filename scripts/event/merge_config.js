@@ -266,6 +266,7 @@ hexo.extend.filter.register('before_generate', () => {
         fancybox: false,
         mediumZoom: false,
         mermaid: false,
+        chart: false,
         OpenGraph: {
             enable: false,
             options: null
