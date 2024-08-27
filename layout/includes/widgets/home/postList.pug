@@ -19,25 +19,6 @@ mixin info
 
         a.article-title(href=url_for(post.path), title=post.title)= post.title
 
-    case theme.index_post_list.content
-        when false
-            break
-        when 1
-            .content!= post.description
-        when 2
-            if post.description
-                .content!= post.description
-            else
-                - const content = strip_html(post.content)
-                - let expert = content.substring(0, theme.index_post_list.length).replace(/\d+/g, '').replace(/&#xF/g, '').replace(/&#x/g, '')
-                - content.length > theme.index_post_list.length ? expert += ' ...' : ''
-                .content!= expert
-        default
-            - const content = strip_html(post.content)
-            - let expert = content.substring(0, theme.index_post_list.length).replace(/\d+/g, '').replace(/&#xF/g, '').replace(/&#x/g, '')
-            - content.length > theme.index_post_list.length ? expert += ' ...' : ''
-            .content!= expert
-
     div.article-meta-wrap
         span.article-meta.tags
             each tag in post.tags.data
