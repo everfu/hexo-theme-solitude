@@ -238,16 +238,6 @@ aside:
 index_post_list:
   direction: column # row / column
   column: 2 # 2: 2 columns 3: 3 columns
-  # 1: 1 post.description / 1: 使用自己写的文章摘要
-  # 2: 2 Automatically get descriptions or screenshots / 2: 自动获取描述或截图
-  # 3: 3 Use only interception / 3: 仅使用截取
-  # false: Do not display / false: 不显示
-  content: false
-  # The length of the screenshot content
-  # 截图内容长度
-  length: 500
-  # left: on the left : left / right: on the right : right / both: both sides : both
-  # left: 左侧 : left / right: 右侧 : right / both: 两侧 : both
   cover: both
 # --------------------------- end ---------------------------
 
@@ -661,10 +651,8 @@ wordcount: false
 # --------------------------- start ---------------------------
 # Busuanzi
 busuanzi: false
-# 0: Use the original version of busuanzi / 1: Use the custom version of busuanzi
-# The difference between the original and the default: please search by yourself
-# 0：使用原版的不蒜子 / 1：使用不蒜子的自定义版本
-# 原版和默认的区别：请自行搜索
+# 0: Original / 1: Custom
+# 0: 原版 / 1: 自定义版
 busuanzi_use: 0
 # --------------------------- end ---------------------------
 
@@ -978,8 +966,7 @@ CDN:
   version: true # Whether to use the version number
   custom_format: //open.lightxi.com/cdnjs/ajax/libs/${cdnjs_name}/${version}/${min_cdnjs_file} # Custom format
   # Directly override the default CDN link (highest priority)
-  option:
-    busuanzi_qj_js: https://pv.lemonso.com/js
+  options:
     # algolia_search:
     # instantsearch:
     # pjax:

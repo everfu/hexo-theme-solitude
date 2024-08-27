@@ -105,10 +105,7 @@ div
       script.
         carousel_swiper()
     if theme.busuanzi && (theme.aside.siteinfo.uv || theme.aside.siteinfo.pv)
-      if theme.busuanzi_use === 0
-        script(defer pjax src=url_for(theme.cdn.busuanzi_js))
-      else
-        script(defer pjax src=url_for(theme.cdn.busuanzi_qj_js))
+      script(defer pjax src=url_for(theme.cdn.busuanzi_js))
 
 
 if theme.footer.randomlink

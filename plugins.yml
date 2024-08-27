@@ -81,10 +81,6 @@ busuanzi_js:
   name: busuanzi
   file: bsz.pure.mini.js
   version: 2.3.0
-busuanzi_qj_js:
-  name: pearssauce-busuanzi
-  file: bsz.pure.js
-  version: 1.0.0
 snackbar:
   name: node-snackbar
   file: dist/snackbar.min.js
