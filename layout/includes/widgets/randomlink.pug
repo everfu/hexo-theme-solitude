@@ -2,7 +2,6 @@
 - var data = site.data.links.links
 if(data)
     each item in data
-        if item.type === "item"
             each y in item.link_list
                 - datalinks.push({ name: y.name,link: y.link})
 
