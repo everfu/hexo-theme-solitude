@@ -65,6 +65,7 @@ div
   if theme.post.covercolor.enable
     case theme.post.covercolor.mode
       when 'local'
+        script(src=url_for(theme.cdn.color_thief))
         script(src=url_for(theme.cdn.cover_local))
       when 'api'
         script.

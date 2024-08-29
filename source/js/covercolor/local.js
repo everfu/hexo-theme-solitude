@@ -12,93 +12,21 @@ function setDefaultThemeColors() {
 }
 
 const localColor = path => {
+    var colorThief = new ColorThief();
     const img = new Image();
     img.crossOrigin = "Anonymous";
-    img.onload = () => setThemeColors(calculateColor(img));
+    img.onload = () => setThemeColors(rgbToHex(colorThief.getColor(img)));
     img.onerror = () => console.error('Image Error');
     img.src = path;
 }
 
-const calculateColor = img => {
-    const canvas = document.createElement("canvas");
-    const ctx = canvas.getContext("2d");
-    ctx.drawImage(img, 0, 0);
-    const data = ctx.getImageData(0, 0, img.width, img.height).data;
-    const {r, g, b} = calculateRGB(data);
-    let value = rgbToHex(r, g, b);
-    return getContrastYIQ(value) === "light" ? LightenDarkenColor(value, -50) : LightenDarkenColor(value, 20);
-}
-
-function calculateRGB(data) {
-    let r = 0, g = 0, b = 0;
-    const step = 5;
-    for (let i = 0; i < data.length; i += 4 * step) {
-        r += data[i];
-        g += data[i + 1];
-        b += data[i + 2];
-    }
-    r = Math.floor(r / (data.length / 4 / step));
-    g = Math.floor(g / (data.length / 4 / step));
-    b = Math.floor(b / (data.length / 4 / step));
-    return {r, g, b};
-}
-
-function rgbToHex(r, g, b) {
-    return "#" + [r, g, b].map(x => x.toString(16).padStart(2, '0')).join('');
-}
-
-function LightenDarkenColor(col, amt) {
-    let usePound = false;
-
-    if (col[0] === "#") {
-        col = col.slice(1);
-        usePound = true;
-    }
-
-    const num = parseInt(col, 16);
-    const r = Math.min(255, Math.max(0, (num >> 16) + amt * 2));
-    const b = Math.min(255, Math.max(0, ((num >> 8) & 0xff) + amt * 2));
-    const g = Math.min(255, Math.max(0, (num & 0xff) + amt * 2));
-
-    return `${usePound ? "#" : ""}${(g | (b << 8) | (r << 16)).toString(16).padStart(6, "0")}`;
-}
-
-function getContrastYIQ(hexcolor) {
-    let colorrgb = colorRgb(hexcolor);
-    let colors = colorrgb.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/);
-    let red = colors[1];
-    let green = colors[2];
-    let blue = colors[3];
-    let brightness = (red * 299) + (green * 587) + (blue * 114);
-    brightness = brightness / 255000;
-    return brightness >= 0.5 ? "light" : "dark";
-}
-
-function colorRgb(str) {
-    const HEX_SHORT_REGEX = /^#([0-9a-fA-f]{3})$/;
-    const HEX_LONG_REGEX = /^#([0-9a-fA-f]{6})$/;
-    const HEX_SHORT_LENGTH = 4;
-
-    if (!str || typeof str !== 'string') {
-        return str;
-    }
-
-    const sColor = str.toLowerCase();
-    let hexValue = "";
-
-    if (sColor && (HEX_SHORT_REGEX.test(sColor) || HEX_LONG_REGEX.test(sColor))) {
-        hexValue = sColor.length === HEX_SHORT_LENGTH ?
-            sColor.replace(/^#(.)/g, "#$1$1") :
-            sColor;
-
-        const rgbValue = hexValue.slice(1)
-            .match(/.{2}/g)
-            .map(val => parseInt(val, 16));
-
-        return `rgb(${rgbValue[0]}, ${rgbValue[1]}, ${rgbValue[2]})`;
-    } else {
-        return sColor;
-    }
+const rgbToHex = ([r, g, b]) => {
+  const hex = '#' + [r, g, b].map(x => {
+    const component = Math.floor(x * 0.8);
+    const hexValue = component.toString(16);
+    return hexValue.length === 1 ? '0' + hexValue : hexValue;
+  }).join('');
+  return hex;
 }
 
 function setThemeColors(value, r = null, g = null, b = null) {
