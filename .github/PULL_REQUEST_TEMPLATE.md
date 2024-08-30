@@ -1,10 +1,3 @@
-<!---
-☝️ PR title should follow conventional commits (https://conventionalcommits.org)
-
-Please carefully read the contribution docs before creating a pull request
- 👉 https://github.com/valor-x/hexo-theme-solitude/blob/main/CONTRIBUTING.md
--->
-
 ### 🔗 链接 issue
 
 <!-- 请确保存在未解决的问题，将编号提及为 #123（示例） -->
@@ -32,4 +25,4 @@ Please carefully read the contribution docs before creating a pull request
 
 - [ ] 我已链接问题或讨论。
 - [ ] 我已经添加了测试（如果可能的话）。
-- [ ] 我已相应地更新了[文档](https://github.com/efuo/theme-solitude-docs)。
+- [ ] 我已相应地更新了[文档](https://github.com/everfu/solitude.js.org)。
