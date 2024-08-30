@@ -28,6 +28,7 @@
         justify-content start
         flex-wrap wrap
         align-content space-between
+        width 100%
         gap .5rem
 
         +maxWidth1200()
@@ -79,7 +80,7 @@
     .top-post-item
       display flex
       flex-direction column
-      width calc(100% / 3 - 0.5rem)
+      flex 1 1 30%
       align-items flex-start
       background var(--efu-card-bg)
       border-radius 12px
@@ -91,10 +92,6 @@
       position relative
       box-shadow var(--efu-shadow-border)
       min-width fit-content
-
-      &:nth-last-child(2):nth-child(1),
-      &:nth-last-child(1):nth-child(2)
-        width calc(100% / 2 - 0.5rem)
 
       +maxWidth1200()
         width 200px
@@ -272,9 +269,7 @@
   color var(--efu-white)
   position relative
   background-size 200%
-
-  &:not(:last-child)
-    margin-right 10px
+  margin-right 10px
 
   &:hover
     background-position 100% 0

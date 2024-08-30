@@ -104,8 +104,6 @@ hexo.extend.filter.register('before_generate', () => {
     index_post_list: {
       direction: 'column',
       column: 2,
-      content: false,
-      length: 500,
       cover: 'both'
     },
     page: {
@@ -168,13 +166,7 @@ hexo.extend.filter.register('before_generate', () => {
     },
     theme_color: {
       dark: "#ffc848",
-      dark_op: "#f2b94b23",
-      dark_op_deep: "#f2b94bdd",
-      dark_none: "#f2b94b00",
-      light: "#425AEF",
-      light_op: "#4259ef23",
-      light_op_deep: "#4259efdd",
-      light_none: "#4259ef01"
+      light: "#425AEF"
     },
     display_mode: {
       type: 'auto',
@@ -298,7 +290,7 @@ hexo.extend.filter.register('before_generate', () => {
       enable: false,
       modelName: 'GPT 3',
       key: 'your key',
-      talk: 'I am a AI.',
+      talk: '我是 Ai 机器人',
       randomPost: false,
       tips: 'AI is not perfect, please use it with caution.'
     },
@@ -361,7 +353,7 @@ hexo.extend.filter.register('before_generate', () => {
       'font-size': '16px',
       'code-font-size': '16px',
       'font-family': 'PingFang SC, Hiragino Sans GB,Microsoft YaHei',
-      'code-font-family': 'monospace, monospace',
+      'code-font-family': '"monospace", monospace',
     },
     extends: {
       head: [],
@@ -420,10 +412,8 @@ hexo.extend.filter.register('before_generate', () => {
       internal: 'local',
       third_party: 'cdnjs',
       version: true,
-      custom_format: 'https://cdn.staticfile.net/${cdnjs_name}/${version}/${min_cdnjs_file}',
-      option: {
-        solitude_css: 'https://cdn2.codesign.qq.com/icons/7pOrz0WXB5ZWJPX/latest/iconfont.css',
-      }
+      custom_format: '//open.lightxi.com/cdnjs/ajax/libs/${cdnjs_name}/${version}/${min_cdnjs_file}',
+      option: {}
     }
   }
   hexo.theme.config = Object.assign(defaultConfig, hexo.theme.config)

@@ -17,7 +17,6 @@
         - const data = site.data.links.links
         - for (let i = 0; i < 2; i++)
         each x in data
-            if x.type === "item"
                 - var pairs = []
                 each y, index in x.link_list
                     if (index % 2 === 0)

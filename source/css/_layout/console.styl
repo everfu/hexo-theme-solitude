@@ -34,6 +34,7 @@
     transform translateY(20px)
     transition .3s
     max-width 1400px
+    min-width 1000px
 
     +maxWidth1300()
       justify-content center
@@ -69,8 +70,7 @@
     overflow hidden
 
     +maxWidth1300()
-      width 100%
-      margin 0
+      display none
 
   .console-card
     background var(--efu-maskbg)
@@ -79,6 +79,9 @@
     border var(--style-border)
     box-shadow var(--efu-shadow-border)
     padding 40px
+    gap 24px
+    display: flex
+    flex-direction: column
 
   .console-card.tags
     height calc(100% - 172px)
@@ -179,10 +182,10 @@
 
   .console-card.tags
     .card-tag-cloud
-      margin-top 1.5rem
       display flex
       gap .5rem
       flex-wrap wrap
+      verflow-y: scroll
 
       a
         color var(--efu-fontcolor)
