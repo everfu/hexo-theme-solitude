@@ -290,7 +290,7 @@ hexo.extend.filter.register('before_generate', () => {
       enable: false,
       modelName: 'GPT 3',
       key: 'your key',
-      talk: 'I am a AI.',
+      talk: '我是 Ai 机器人',
       randomPost: false,
       tips: 'AI is not perfect, please use it with caution.'
     },
@@ -353,7 +353,7 @@ hexo.extend.filter.register('before_generate', () => {
       'font-size': '16px',
       'code-font-size': '16px',
       'font-family': 'PingFang SC, Hiragino Sans GB,Microsoft YaHei',
-      'code-font-family': 'monospace, monospace',
+      'code-font-family': '"monospace", monospace',
     },
     extends: {
       head: [],
