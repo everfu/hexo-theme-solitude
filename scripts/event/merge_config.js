@@ -166,13 +166,7 @@ hexo.extend.filter.register('before_generate', () => {
     },
     theme_color: {
       dark: "#ffc848",
-      dark_op: "#f2b94b23",
-      dark_op_deep: "#f2b94bdd",
-      dark_none: "#f2b94b00",
-      light: "#425AEF",
-      light_op: "#4259ef23",
-      light_op_deep: "#4259efdd",
-      light_none: "#4259ef01"
+      light: "#425AEF"
     },
     display_mode: {
       type: 'auto',

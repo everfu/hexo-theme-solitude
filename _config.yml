@@ -372,14 +372,8 @@ post:
 # --------------------------- start ---------------------------
 # Custom Theme Color
 theme_color:
-  dark: "#ffc848" # Dark mode
-  dark_op: "#f2b94b23" # Dark mode transparent
-  dark_op_deep: "#f2b94bdd" # Dark mode transparent dark
-  dark_none: "#f2b94b00" # Dark mode transparent colorless
-  light: "#425AEF" # Light mode
-  light_op: "#4259ef23" # Light mode transparent
-  light_op_deep: "#4259efdd" # Light mode transparent dark
-  light_none: "#4259ef01" # Light mode transparent colorless
+  dark: "#ffc848" # dark
+  light: "#425AEF" # light
 # --------------------------- end ---------------------------
 
 # --------------------------- start ---------------------------
