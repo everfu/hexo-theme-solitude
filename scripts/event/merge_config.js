@@ -412,10 +412,8 @@ hexo.extend.filter.register('before_generate', () => {
       internal: 'local',
       third_party: 'cdnjs',
       version: true,
-      custom_format: 'https://cdn.staticfile.net/${cdnjs_name}/${version}/${min_cdnjs_file}',
-      option: {
-        solitude_css: 'https://cdn2.codesign.qq.com/icons/7pOrz0WXB5ZWJPX/latest/iconfont.css',
-      }
+      custom_format: '//open.lightxi.com/cdnjs/ajax/libs/${cdnjs_name}/${version}/${min_cdnjs_file}',
+      option: {}
     }
   }
   hexo.theme.config = Object.assign(defaultConfig, hexo.theme.config)
