@@ -155,10 +155,10 @@ const sco = {
     $console.classList.toggle("on", this.musicPlaying);
     if (this.musicPlaying) {
       $meting.aplayer.play();
-      rm?.menuItems.music[0] && ($rm_text.textContent = GLOBAL_CONFIG.right_menu.music.stop) && ($rm_icon.className = 'solitude st-pause-fill')
+      (typeof rm !== 'undefined') && rm?.menuItems.music[0] && ($rm_text.textContent = GLOBAL_CONFIG.right_menu.music.stop) && ($rm_icon.className = 'solitude st-pause-fill')
     } else {
       $meting.aplayer.pause();
-      rm?.menuItems.music[0] && ($rm_text.textContent = GLOBAL_CONFIG.right_menu.music.start) && ($rm_icon.className = 'solitude st-play-fill')
+      (typeof rm !== 'undefined') && rm?.menuItems.music[0] && ($rm_text.textContent = GLOBAL_CONFIG.right_menu.music.start) && ($rm_icon.className = 'solitude st-play-fill')
     }
   },
   switchCommentBarrage() {
