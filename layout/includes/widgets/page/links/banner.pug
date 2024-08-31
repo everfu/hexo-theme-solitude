@@ -16,16 +16,17 @@
     .tags-group-wrapper
         - const data = site.data.links.links
         - for (let i = 0; i < 2; i++)
-        each x in data
-                - var pairs = []
-                each y, index in x.link_list
-                    if (index % 2 === 0)
-                        - pairs.push([y])
-                    else
-                        - pairs[pairs.length - 1].push(y)
-                each pair in pairs
-                    .tags-group-icon-pair
-                        each y in pair
-                            a.tags-group-icon(href=url_for(y.link), title=y.name)
-                                img(src=y.avatar + (site.data.links.banner_suffix || ''), title=y.name)
-                                span.tags-group-title=y.name
+        each item in [1,2]
+            each x in data
+                    - var pairs = []
+                    each y, index in x.link_list
+                        if (index % 2 === 0)
+                            - pairs.push([y])
+                        else
+                            - pairs[pairs.length - 1].push(y)
+                    each pair in pairs
+                        .tags-group-icon-pair
+                                each y in pair
+                                    a.tags-group-icon(href=url_for(y.link), title=y.name)
+                                        img(src=y.avatar + (site.data.links.banner_suffix || ''), title=y.name)
+                                        span.tags-group-title=y.name

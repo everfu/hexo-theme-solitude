@@ -1,8 +1,4 @@
-/**
- * Music Player
- * @description Initialize the music player and add event listeners to control the player
- */
-class ScoMusicPlayer {
+class MusicPlayer {
     constructor() {
         this.init();
     }
@@ -113,11 +109,8 @@ class ScoMusicPlayer {
     }
 }
 
-/**
- * Initialize the music player
- */
 function initializeMusicPlayer() {
     let exitingMusic = window.scoMusic;
     if (exitingMusic) exitingMusic.destroy();
-    window.scoMusic = new ScoMusicPlayer();
+    window.scoMusic = new MusicPlayer();
 }

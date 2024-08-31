@@ -27,10 +27,9 @@ const sidebarFn = () => {
   });
 }
 const scrollFn = () => {
-  const innerHeight = window.innerHeight;
   let initTop = 0;
   const $header = document.getElementById('page-header');
-  const throttledScroll = utils.throttle((e) => {
+  const throttledScroll = utils.throttle(() => {
     initThemeColor();
     const currentTop = window.scrollY || document.documentElement.scrollTop;
     const isDown = scrollDirection(currentTop);
@@ -155,10 +154,10 @@ const sco = {
     $console.classList.toggle("on", this.musicPlaying);
     if (this.musicPlaying) {
       $meting.aplayer.play();
-      rm?.menuItems.music[0] && ($rm_text.textContent = GLOBAL_CONFIG.right_menu.music.stop) && ($rm_icon.className = 'solitude st-pause-fill')
+      (typeof rm !== 'undefined') && rm?.menuItems.music[0] && ($rm_text.textContent = GLOBAL_CONFIG.right_menu.music.stop) && ($rm_icon.className = 'solitude st-pause-fill')
     } else {
       $meting.aplayer.pause();
-      rm?.menuItems.music[0] && ($rm_text.textContent = GLOBAL_CONFIG.right_menu.music.start) && ($rm_icon.className = 'solitude st-play-fill')
+      (typeof rm !== 'undefined') && rm?.menuItems.music[0] && ($rm_text.textContent = GLOBAL_CONFIG.right_menu.music.start) && ($rm_icon.className = 'solitude st-play-fill')
     }
   },
   switchCommentBarrage() {
@@ -598,7 +597,7 @@ class tabs {
 
   static clickFnOfTabs() {
     document.querySelectorAll('#article-container .tab > button').forEach((item) => {
-      item.addEventListener('click', function (e) {
+      item.addEventListener('click', function () {
         const that = this;
         const $tabItem = that.parentNode;
         if (!$tabItem.classList.contains('active')) {
@@ -668,7 +667,7 @@ window.refreshFn = () => {
   lazyload.enable && utils.lazyloadImg();
   lightbox && utils.lightbox(document.querySelectorAll("#article-container img:not(.flink-avatar,.gallery-group img, .no-lightbox)"));
   randomlink && randomLinksList();
-  post_ai && is_post && efu_ai.init();
+  post_ai && is_post && ai.init();
   sco.switchComments();
   initObserver();
   if (is_home) {

@@ -16,7 +16,6 @@
     color var(--efu-lighttext)
     border-radius 8px
     align-items center
-    padding 0 12px
     user-select none
 
     .ai-title-left
@@ -116,7 +115,6 @@
   .ai-bottom
     width 100%
     margin-top 12px
-    padding 0 12px
     display flex
 
     .ai-tips
@@ -126,5 +124,9 @@
 
     .ai-report
       font-size 12px
-      color var(--efu-secondtext)
+      color var(--efu-secondtext) !important
       white-space nowrap
+      border-bottom none!important
+
+      &:hover
+        background: none !important

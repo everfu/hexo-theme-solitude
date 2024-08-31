@@ -354,7 +354,7 @@ post:
   # 文章封面取色
   covercolor:
     enable: false
-    # local: local color / api: api color
+    # local: local color / api: api color / ave: oss average color
     mode: local
     # api address / api 地址
     api: https://api.qjqq.cn/api/Imgcolor?img=
