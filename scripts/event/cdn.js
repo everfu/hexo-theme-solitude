@@ -44,6 +44,11 @@ hexo.extend.filter.register('before_generate', () => {
             file: 'js/covercolor/api.js',
             version
         },
+        cover_ave: {
+            name: 'hexo-theme-solitude',
+            file: 'js/covercolor/ave.js',
+            version
+        },
         music_js: {
             name: 'hexo-theme-solitude',
             file: 'js/music.js',

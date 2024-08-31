@@ -74,6 +74,12 @@ div
             time: !{theme.post.covercolor.time}
           }
         script(src=url_for(theme.cdn.cover_api))
+      when 'ave'
+        script.
+          const coverColorConfig = {
+            time: !{theme.post.covercolor.time}
+          }
+        script(src=url_for(theme.cdn.cover_ave))
 
   if theme.loading.pace
     script(src=url_for(theme.cdn.pace_js))
