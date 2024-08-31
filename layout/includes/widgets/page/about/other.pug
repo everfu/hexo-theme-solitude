@@ -9,13 +9,7 @@ if tj || oneself
                     .author-content-item-tips=_p('about.other.tj.tip')
                     span.author-content-item-title=_p('about.other.tj.title')
                     #statistic
-                    .post-tips
-                        = _p('about.other.tj.post_tip')
-                        case tj.provider
-                            when '51la'
-                                a(href="https://v6.51.la/") 51la网站统计
-                            when 'baidu'
-                                a(href="https://tongji.baidu.com/") 百度统计
+                    .post-tips!= _p(tj.desc)
                     if tj.button
                         .banner-button-group
                             a.banner-button(href=url_for(tj.button_link))
@@ -42,7 +36,7 @@ if tj || oneself
                                     }
                                     s.innerHTML = html;
                                 });
-                    when 'baidu'
+                    when 'custom'
                         script.
                             fetch("#{tj.url}")
                                 .then(res => res.json())
