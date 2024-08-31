@@ -27,10 +27,9 @@ const sidebarFn = () => {
   });
 }
 const scrollFn = () => {
-  const innerHeight = window.innerHeight;
   let initTop = 0;
   const $header = document.getElementById('page-header');
-  const throttledScroll = utils.throttle((e) => {
+  const throttledScroll = utils.throttle(() => {
     initThemeColor();
     const currentTop = window.scrollY || document.documentElement.scrollTop;
     const isDown = scrollDirection(currentTop);
@@ -598,7 +597,7 @@ class tabs {
 
   static clickFnOfTabs() {
     document.querySelectorAll('#article-container .tab > button').forEach((item) => {
-      item.addEventListener('click', function (e) {
+      item.addEventListener('click', function () {
         const that = this;
         const $tabItem = that.parentNode;
         if (!$tabItem.classList.contains('active')) {
