@@ -667,7 +667,7 @@ window.refreshFn = () => {
   lazyload.enable && utils.lazyloadImg();
   lightbox && utils.lightbox(document.querySelectorAll("#article-container img:not(.flink-avatar,.gallery-group img, .no-lightbox)"));
   randomlink && randomLinksList();
-  post_ai && is_post && efu_ai.init();
+  post_ai && is_post && ai.init();
   sco.switchComments();
   initObserver();
   if (is_home) {
