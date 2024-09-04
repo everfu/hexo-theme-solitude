@@ -1,4 +1,9 @@
 const coverColor = () => {
+    const page_color = PAGE_CONFIG.color
+    if (page_color){
+        setThemeColors(page_color);
+        return;
+    }
     const path = document.getElementById("post-cover")?.src;
     path ? handleApiColor(path) : setDefaultThemeColors();
 }
