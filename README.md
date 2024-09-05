@@ -81,4 +81,6 @@ Check out the [Documentation](https://solitude.js.org/) for more information.
 
 ## License
 
-[MIT](./LICENSE) License &copy; 2023-PRESENT [Ever Fu](https://github.com/everfu)
+[MIT](./LICENSE) License &copy; 2023-PRESENT [一小只托尼](https://github.com/everfu)
+
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fvalor-x%2Fhexo-theme-solitude.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fvalor-x%2Fhexo-theme-solitude?ref=badge_large)
