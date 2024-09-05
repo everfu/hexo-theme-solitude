@@ -6,8 +6,8 @@
         - let index = 1
         each post in site.posts.data.sort((a, b) => b.date < a.date ? -1 : 1)
             if index <= 5
-                .aside-list-item
-                    a.thumbnail(href=url_for(post.path) title=post.title)
+                a.aside-list-item(href=url_for(post.path) title=post.title)
+                    .thumbnail
                         img(alt=post.title src=url_for(post.cover))
                     .content
                         span.title(href=url_for(post.path) title=post.title)= post.title
