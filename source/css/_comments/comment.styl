@@ -55,7 +55,9 @@
 
 #post-comment
   .post &
-    padding 0 2rem
+    padding 0 2rem .5rem
+    +maxWidth768()
+      padding 0 .5rem .5rem
   > div.comment-head
     > div.comment-privacy
       display block

@@ -35,7 +35,7 @@
                         span= min2read(page.content) + " min"
             if theme.post.meta.locate
                 span.post-meta-position(title=_p('post.ip') + page.locate)
-                    i.post-meta-icon.solitude.fa-solid.fa-map
+                    i.post-meta-icon.solitude.fas.fa-location-dot
                     span= page.locate
             if theme.post.meta.pv
                 a.post-meta-pv(href=url_for(page.path), title=_p('post.pv'))

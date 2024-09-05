@@ -82,6 +82,6 @@
 
 ## 版权
 
-[MIT](./LICENSE) License &copy; 2023-至今 [EverFu](https://github.com/efuo)
+[MIT](./LICENSE) License &copy; 2023-至今 [一小只托尼](https://github.com/efuo)
 
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fvalor-x%2Fhexo-theme-solitude.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fvalor-x%2Fhexo-theme-solitude?ref=badge_large)
