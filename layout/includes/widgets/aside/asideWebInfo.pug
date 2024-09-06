@@ -31,13 +31,13 @@
     if theme.aside.siteinfo.runtimeenable
         .webinfo-item
             .webinfo-item-title
-                i.item-icon.solitude.fa-solid.fa-calendar-days
+                i.item-icon.solitude.fa-solid.fa-calendar-day
                 .item-name= __('aside.runtime')
             .item-count#runtimeshow
     if theme.aside.siteinfo.updatetime
         .webinfo-item
             .webinfo-item-title
-                i.item-icon.solitude.fa-solid.fa-rotate-left
+                i.item-icon.solitude.fa-solid.fa-arrows-rotate
                 .item-name= __('aside.updatetime')
             time.item-count(datetime=new Date())
     if theme.wordcount && theme.aside.siteinfo.wordcount

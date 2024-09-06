@@ -18,11 +18,11 @@
         .meta-secondline
             if theme.post.meta.date
                 span.post-meta-date(title=_p('post.posted') + ' ' + full_date(page.date))
-                    i.post-meta-icon.solitude.fa-solid.fa-calendar-days
+                    i.post-meta-icon.solitude.fa-solid.fa-clock
                     time(datetime=date_xml(page.date))= date_xml(page.date)
             if theme.post.meta.updated
                 span.post-meta-date(title=_p('post.updated') + ' ' + full_date(page.updated))
-                    i.post-meta-icon.solitude.fa-solid.fa-arrow-rotate-right
+                    i.post-meta-icon.solitude.fa-solid.fa-arrows-rotate
                     time(datetime=date_xml(page.updated))= date_xml(page.updated)
             if theme.wordcount
                 span.post-meta-wordcount
