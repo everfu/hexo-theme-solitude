@@ -14,9 +14,7 @@ function postTabs ([name, active], content) {
   let tabNav = ''
   let tabContent = ''
 
-  if (typeof active === 'undefined') {
-    active = 0
-  }
+  active = Number(active) || 0
 
   while ((match = tabBlock.exec(content)) !== null) {
     matches.push(match[1])
