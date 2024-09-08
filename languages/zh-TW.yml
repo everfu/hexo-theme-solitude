@@ -140,6 +140,7 @@ console:
 sidebar:
   function: 功能
   darkmode: 顯示模式
+  siteinfo: 網站信息
 
 footer:
   description: 來自${title}的文章

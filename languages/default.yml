@@ -140,6 +140,7 @@ console:
 sidebar:
   function: Function
   darkmode: Display mode
+  siteinfo: Site information
 
 footer:
   description: Article from ${title}

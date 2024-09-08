@@ -744,32 +744,6 @@ if hexo-config('aside.card.style') == 2
     border var(--style-border-always)
 
 #aside-content
-  .card-webinfo
-    .webinfo
-      .webinfo-item-title
-        display flex
-
-        i
-          line-height: 2 !important
-          margin-right: 6px
-          width: 16px
-          text-align: center
-          font-size: 16px !important
-
-      .webinfo-item
-        display flex
-        justify-content space-between
-        white-space nowrap
-        -webkit-box-align center
-        align-items center
-        padding .1rem .5rem 0
-
-        div:first-child
-          -webkit-box-flex 1
-          flex 1 1 0
-          padding-right 1rem
-
-
   .card-allinfo
 
     hr
@@ -1098,3 +1072,27 @@ if hexo-config('aside.newest_comment.enable')
           font-size 12px
           color var(--efu-secondtext)
           margin-top auto
+
+.webinfo-item
+  display flex
+  justify-content space-between
+  white-space nowrap
+  -webkit-box-align center
+  align-items center
+  padding .1rem .5rem 0
+
+  div:first-child
+    -webkit-box-flex 1
+    flex 1 1 0
+    padding-right 1rem
+
+.webinfo
+  .webinfo-item-title
+    display flex
+
+    i
+      line-height: 2
+      margin-right: 6px
+      width: 16px
+      text-align: center
+      font-size: 16px
