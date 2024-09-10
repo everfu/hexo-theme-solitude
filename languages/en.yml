@@ -196,6 +196,7 @@ right_menu:
   chs_to_cht: 轉為繁體
   cht_to_chs: 转为简体
   img_error: This image cannot be copied or downloaded.
+  ctrl_original_menu: Hold Ctrl + right-click to open the browser's context menu
   barrage:
     open: Open Barrage
     close: Close Barrage

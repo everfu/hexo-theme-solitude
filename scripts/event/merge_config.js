@@ -383,6 +383,7 @@ hexo.extend.filter.register('before_generate', () => {
     right_menu: {
       enable: false,
       commentBarrage: false,
+      ctrlOriginalMenu: false,
       translate: {
         enable: false,
         defaultEncoding: 2,
