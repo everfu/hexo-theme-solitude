@@ -196,6 +196,7 @@ right_menu:
   chs_to_cht: 轉為繁體
   cht_to_chs: 转为简体
   img_error: 此图片无法复制与下载
+  ctrl_original_menu: 按住Ctrl+右键可打开浏览器右键菜单
   barrage:
     open: 显示热评
     close: 关闭热评

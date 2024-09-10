@@ -1,4 +1,5 @@
 let selectTextNow = "";
+let firstShowRightMenu = true;
 const selectText = () => {
     selectTextNow = document.selection
         ? document.selection.createRange().text
@@ -106,6 +107,15 @@ function stopMaskScroll() {
 
 window.oncontextmenu = (ele) => {
     if (document.body.clientWidth <= 768) return;
+    if (GLOBAL_CONFIG.right_menu.ctrlOriginalMenu) {
+        if (firstShowRightMenu) {
+            firstShowRightMenu = false;
+            utils.snackbarShow(GLOBAL_CONFIG.right_menu.ctrlOriginalMenu, false, 2000);
+        }
+        if (ele.ctrlKey) {
+            return true;
+        }
+    }
     let x = ele.clientX + 10;
     let y = ele.clientY;
     Array.from(rm.menuItems.other).forEach((item) => (item.style.display = "flex"));

@@ -882,6 +882,9 @@ right_menu:
   # Whether to display the hot comment switch.
   # 是否显示热门评论开关
   commentBarrage: false
+  # Whether to display the browser's context menu when hold Ctrl key.
+  # 是否在按住 Ctrl 键时显示浏览器右键菜单
+  ctrlOriginalMenu: false
   # Simplified and Traditional Chinese translation.
   # 简繁体转换
   translate:
