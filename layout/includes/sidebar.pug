@@ -30,3 +30,12 @@ div#sidebar(style="zoom: 1;")
                 each tag in site.tags.find({ parent: { $exists: false } }).data
                     a(href=url_for(tag.path))= tag.name
                         sup= tag.length
+        if theme.wordcount && theme.aside.siteinfo.wordcount
+            span.sidebar-menu-item-title= __('sidebar.siteinfo')
+            .webinfo
+                .webinfo-item
+                    .webinfo-item-title
+                        i.item-icon.solitude.fa-solid.fa-file-word
+                        .item-name= __('aside.wordcount')
+                    .item-count= totalcount(site)
+

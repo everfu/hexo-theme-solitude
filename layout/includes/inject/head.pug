@@ -48,3 +48,9 @@ if theme.extends.head
         != item
 
 !=fragment_cache('injectHeadJs', function(){return inject_head_js()})
+
+// theme
+include ../head/mode
+
+if theme.page.echart
+    script(src=url_for(theme.cdn.echarts))

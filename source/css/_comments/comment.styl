@@ -77,7 +77,7 @@
     font-size .6rem
     color var(--efu-secondtext)
     border-radius 8px
-  if index(hexo-config('comment.use'), ',') || hexo-config('comment.use')[1]
+  if hexo-config('comment.use')[1] || ',' in hexo-config('comment.use')
     &.move
       if hexo-config('comment.count')
         .comment-head
@@ -103,7 +103,7 @@
     margin .5rem 0
     position relative
 
-    if index(hexo-config('comment.use'), ',') || ',' in hexo-config('comment.use')
+    if hexo-config('comment.use')[1] || ',' in hexo-config('comment.use')
       .count span:last-child
         display none
 
@@ -139,7 +139,7 @@
             content ''
             transition .4s
 
-  if ',' in hexo-config('comment.use') || index(hexo-config('comment.use'), ',')
+  if hexo-config('comment.use')[1] || index(hexo-config('comment.use'), ',')
     .comment-wrap
       > div:last-child
         display none

@@ -487,7 +487,7 @@ envelope:
 # can only use NetEase Cloud Music, QQ Music and other music platforms supported by the mainland China region,
 # the subsequent consideration of the use of JSON files to store music information and customize the implementation of the third-party API does not depend on the page.
 # Music Page
-meting_api: "https://meting.qjqq.cn/?server=:server&type=:type&id=:id&auth=:auth&r=:r" # Custom API
+meting_api: "https://meting.everfu.cn/?server=:server&type=:type&id=:id&auth=:auth&r=:r" # Custom API
 music:
   enable: false
   # 歌单 ID / 单曲 ID
@@ -882,6 +882,9 @@ right_menu:
   # Whether to display the hot comment switch.
   # 是否显示热门评论开关
   commentBarrage: false
+  # Whether to display the browser's context menu when hold Ctrl key.
+  # 是否在按住 Ctrl 键时显示浏览器右键菜单
+  ctrlOriginalMenu: false
   # Simplified and Traditional Chinese translation.
   # 简繁体转换
   translate:

@@ -43,8 +43,6 @@
 ## Todo
 
 - [x] 首页顶部新样式
-- [x] 首页文章列表三列显示
-- [x] btns 外挂标签
 
 > 如有问题请提 [issue](https://github.com/everfu/hexo-theme-solitude/issues)
 

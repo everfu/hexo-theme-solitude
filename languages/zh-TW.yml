@@ -1,6 +1,6 @@
 more: 更多
 star: 喜歡這篇的人也看了
-random: 随便逛逛
+random: 隨便逛逛
 upload: 發佈時間：
 totalk: 無需刪除空行，直接輸入評論即可
 loading: 加載中...
@@ -18,9 +18,9 @@ copy:
 
 copy_copyright:
   author: 作者
-  link: 連結
+  link: 鏈結
   source: 來源
-  info: 著作權歸作者所有。 商業轉載請聯繫作者獲得授權，非商業轉載請註明出處。
+  info: 著作權歸作者所有。商業轉載請聯繫作者獲得授權，非商業轉載請註明出處。
 
 time:
   day: "天前"
@@ -41,16 +41,16 @@ nav:
   site_name_title: 返回博客主頁
   backtop: 返回頂部
   travellings: 開往-友鏈接力
-  search: 搜索
+  search: 搜尋
   randompost: 隨機一篇文章
-  console: 中控台
+  console: 主控台
 
 home:
   home: 推薦
   sticky: 置頂
   new: 最新
   read: 未讀
-  recommend: 荐
+  recommend: 薦
   recommendmore: 更多推薦
   archives: 全部文章
 
@@ -66,9 +66,9 @@ post:
   pv: 文章熱度
   comment: 評論數
   copyright:
-    reprint: 本文是转载或翻译文章，版权归原作者所有。转载本文请联系原作者。
-    original: 本文是原创文章，采用
-    original_end: 协议，完整转载请注明来自
+    reprint: 本文是轉載或翻譯文章，版權歸原作者所有。轉載本文請聯繫原作者。
+    original: 本文是原創文章，採用
+    original_end: 協議，完整轉載請註明來自
   share:
     qq: 分享到QQ
     weibo: 分享到微博
@@ -76,8 +76,8 @@ post:
     twitter: 分享到Twitter
     linkedin: 分享到LinkedIn
     facebook: 分享到Facebook
-    link: 复制文章链接
-    qrcode: 使用手机扫码阅读这篇文章
+    link: 複製文章鏈接
+    qrcode: 使用手機掃碼閱讀這篇文章
     whatsapp: 分享到WhatsApp
   ai:
     title: 文章摘要
@@ -109,12 +109,12 @@ aside:
   wordcount: '字數統計：'
   toc: 文章目錄
   tagmore: 查看全部
-  avatar: 头像
+  avatar: 頭像
   hello: 好久不見，
   back: 歡迎再次回來，
-  sticker: 心情贴纸
-  newpost: 最近发布
-  newcomment: 最新评论
+  sticker: 心情貼紙
+  newpost: 最近發佈
+  newcomment: 最新評論
   card:
     posts: '累計文章數:'
     tags: '標籤總數:'
@@ -124,22 +124,23 @@ console:
   comment_tip: 互動
   comment_title: 評論
   tag_tip: 標籤
-  tag_title: 標籤
-  switch_darkmode: 昼夜切換
-  switch_hideAside: 边栏显示控制
+  tag_title: 尋找感興趣的領域
+  switch_darkmode: 晝夜切換
+  switch_hideAside: 側邊欄顯示控制
   switch_keyboard: 鍵盤快捷鍵
   switch_music: 音樂開關
   archive_unit: 篇
   recent_comment_more: 最近評論
   newest_comment:
     image: 圖片
-    link: 連結
+    link: 鏈結
     code: 代碼
     emoji: 表情
 
 sidebar:
   function: 功能
   darkmode: 顯示模式
+  siteinfo: 網站信息
 
 footer:
   description: 來自${title}的文章
@@ -181,10 +182,10 @@ f12: 開發者模式已打開，請遵循GPL協定。
 
 right_menu:
   copy: 複製選中文本
-  paste: 粘貼文本
+  paste: 貼上文本
   comment: 引用到評論
   new: 新窗口打開
-  link: 複製連結位址
+  link: 複製鏈結位址
   img: 複製此圖片
   downloadImg: 下載此圖片
   search: 站內搜索
@@ -193,6 +194,7 @@ right_menu:
   chs_to_cht: 轉為繁體
   cht_to_chs: 转为简体
   img_error: 此圖片無法複製與下載
+  ctrl_original_menu: 按住Ctrl+右鍵可打開瀏覽器右鍵選單
   barrage:
     open: 顯示熱評
     close: 關閉熱評
@@ -229,4 +231,4 @@ message:
 essay:
   tip0: '- 已展開所有短文 -'
   tip1: '- 只展示最近 #{count} 條短文 -'
-  link: '連接'
+  link: '鏈結'
