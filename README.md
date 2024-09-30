@@ -42,7 +42,8 @@ English丨[简体中文](README_zh-Hans.md)丨[繁体中文](README_zh-Hant.md)
 
 ## Todo
 
-- [x] The list of articles is displayed in three columns on the homepage.
+- [X] Mobile directory support.
+- [X] Add a bottom right sidebar.
 
 > If you have any questions, please issue an [issue](https://github.com/everfu/hexo-theme-solitude/issues)
 

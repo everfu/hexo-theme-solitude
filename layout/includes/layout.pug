@@ -26,6 +26,10 @@ html(lang=config.language, data-theme="light")
         // keyboard
         if theme.keyboard.enable
             include ./keyboard.pug
+        
+        // righhtside
+        if theme.rightside.enable
+            include rightside
 
         #body-wrap(class = is_post() ? 'post' : 'page')
             include ./header.pug

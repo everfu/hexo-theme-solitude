@@ -234,3 +234,13 @@ essay:
   tip0: '- All expanded -'
   tip1: '- Recent Exhibitions #{count} Short Articles -'
   link: 'Link'
+
+rightside:
+  show:
+    gear: Settings
+    toc: Toc
+    comment: Comment
+    top: Top
+  hide:
+    translate: 简繁转换
+    mode: Mode

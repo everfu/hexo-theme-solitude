@@ -1,5 +1,6 @@
 #aside-content
-  width 300px
+  +minWidth1200()
+    width 300px
   if hexo-config('aside.position') == 0
     order 1
   else
@@ -12,7 +13,8 @@
       padding-left 15px
 
   +maxWidth1200()
-    display none
+    .card-widget:not(#card-toc)
+      display: none
 
   +minWidth1300()
     animation slide-in .6s .3s backwards
@@ -62,6 +64,7 @@
   .sticky_layout
     top calc(60px + .5rem)
     position sticky
+    z-index 10
     transition: top .3s ease 0s
 
   #author-info__sayhi
@@ -186,6 +189,21 @@
     +minWidth901()
       right 0
       padding .5rem
+
+    +maxWidth1200()
+        position: fixed
+        right: 3rem
+        bottom: 2rem
+        z-index: 100
+        max-width: 380px
+        max-height: calc(100% - 60px)
+        width: calc(100% - 80px)
+        transition: transform .3s
+        transform: scale(0)
+        transform-origin: right bottom
+
+        &.open
+          transform: scale(1)
 
     .toc-content
       overflow-y: auto

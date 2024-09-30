@@ -233,3 +233,13 @@ essay:
   tip0: '- 已展开所有短文 -'
   tip1: '- 只展示最近 #{count} 条短文 -'
   link: '链接'
+
+rightside:
+  show:
+    gear: 扩展
+    toc: 目录
+    comment: 评论
+    top: 返回顶部
+  hide:
+    translate: 简繁转换
+    mode: 显示模式切换
