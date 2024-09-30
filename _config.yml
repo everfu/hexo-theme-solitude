@@ -444,7 +444,7 @@ footer:
 # 404 页面
 errorpage:
   img: /img/404.avif
-  text: =awa= Page NotFound # Text
+  text: =awa= Page Not Found # Text
   recommendList: true
 # --------------------------- end ---------------------------
 
