@@ -42,7 +42,8 @@
 
 ## Todo
 
-- [x] 首页顶部新样式
+- [x] 移动端目录支持
+- [x] 增加右下角侧边栏
 
 > 如有问题请提 [issue](https://github.com/everfu/hexo-theme-solitude/issues)
 
