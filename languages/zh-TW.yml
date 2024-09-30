@@ -232,3 +232,13 @@ essay:
   tip0: '- 已展開所有短文 -'
   tip1: '- 只展示最近 #{count} 條短文 -'
   link: '鏈結'
+
+rightside:
+  show:
+    gear: 擴展
+    toc: 目錄
+    comment: 評論
+    top: 返回頂部
+  hide:
+    translate: 簡繁轉換
+    mode: 顯示模式切換
