@@ -1,0 +1,12 @@
+.rs_show
+    if theme.rightside.hide.enable
+        button.config(type='button' title='扩展' onclick='document.querySelector(".rs_hide").classList.toggle("show")')
+            i.fas.fa-gear.fa-spin
+    if page.toc
+        button.mobile.toc(type='button' title='目录' onclick="document.querySelector('#card-toc').classList.toggle('open')")
+            i.fas.fa-list
+    if page.comment
+        button.comment(type='button' title='评论' onclick="sco.scrollTo('post-comment')")
+            i.fas.fa-comment
+    button.top(type='button' title='返回顶部' onclick='sco.toTop()')
+        i.fas.fa-arrow-up

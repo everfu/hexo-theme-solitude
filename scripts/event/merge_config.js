@@ -384,11 +384,7 @@ hexo.extend.filter.register('before_generate', () => {
       enable: false,
       commentBarrage: false,
       ctrlOriginalMenu: false,
-      translate: {
-        enable: false,
-        defaultEncoding: 2,
-        translateDelay: 0,
-      },
+      translate: false,
       custom_list: []
     },
     lure: {
@@ -408,6 +404,19 @@ hexo.extend.filter.register('before_generate', () => {
       dark: 'https://bu.dusays.com/2023/09/29/651685ce667d1.jpg',
       light: 'https://bu.dusays.com/2023/09/29/651685cc18d39.jpg',
       opacity: .2,
+    },
+    translate: {
+      enable: false,
+      defaultEncoding: 2,
+      translateDelay: 0,
+    },
+    rightside: {
+      enable: false,
+      hide: {
+        enable: false,
+        translate: false,
+        mode: false
+      }
     },
     CDN: {
       internal: 'local',

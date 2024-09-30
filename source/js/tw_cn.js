@@ -1,12 +1,9 @@
 document.addEventListener('DOMContentLoaded', function () {
     const { defaultEncoding, translateDelay } = GLOBAL_CONFIG.right_menu.translate;
     const targetEncodingCookie = 'translate-chn-cht';
-    const msgToTraditionalChinese = '轉為繁體';
-    const msgToSimplifiedChinese = '转为简体';
 
     let currentEncoding = defaultEncoding;
     let targetEncoding = Number(utils.saveToLocal.get(targetEncodingCookie)) || defaultEncoding;
-    let translateButtonObject;
 
     function setLang() {
         document.documentElement.lang = targetEncoding === 1 ? 'zh-TW' : 'zh-CN';
@@ -23,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const objs = fobj && typeof fobj === 'object' ? fobj.childNodes : document.body.childNodes;
 
         objs.forEach(obj => {
-            if (['BR', 'HR'].includes(obj.tagName) || obj === translateButtonObject) return;
+            if (['BR', 'HR'].includes(obj.tagName)) return;
             
             if (obj.title) obj.title = translateText(obj.title);
             if (obj.alt) obj.alt = translateText(obj.alt);
@@ -36,12 +33,12 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    function translatePage() {
+    function translatePage(simeple, traditional ,button) {
         currentEncoding = targetEncoding;
         targetEncoding = targetEncoding === 1 ? 2 : 1;
-        translateButtonObject.lastChild.textContent = targetEncoding === 1 ? msgToSimplifiedChinese : msgToTraditionalChinese;
+        button.lastChild.textContent = targetEncoding === 1 ? simeple : traditional;
         
-        utils.snackbarShow(targetEncoding === 1 ? '你已切换为简体' : '你已切換為繁體');
+        utils.snackbarShow(targetEncoding === 1 ? '你已切換為繁體' : '你已切换为简体');
         utils.saveToLocal.set(targetEncodingCookie, targetEncoding, 2);
         setLang();
         translateBody();
@@ -75,14 +72,24 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function translateInitialization() {
-        translateButtonObject = document.getElementById('menu-translate');
-        if (translateButtonObject) {
+        let btn_1 = document.getElementById('menu-translate');
+        if (btn_1) {
+            btn_1.lastChild.textContent = targetEncoding === 1 ? '转为简体' : '转为繁体';
             if (currentEncoding !== targetEncoding) {
-                translateButtonObject.lastChild.textContent = targetEncoding === 1 ? msgToSimplifiedChinese : msgToTraditionalChinese;
                 setLang();
                 setTimeout(translateBody, translateDelay);
             }
-            translateButtonObject.addEventListener('click', translatePage, false);
+            btn_1.addEventListener('click', () => {translatePage( '转为简体','转为繁体',btn_1)}, false);
+        }
+
+        let btn_2 = document.querySelector('.rs_hide .translate');
+        if (btn_2) {
+            btn_2.lastChild.textContent = targetEncoding === 1 ? '简' : '繁';
+            if (currentEncoding !== targetEncoding) {
+                setLang();
+                setTimeout(translateBody, translateDelay);
+            }
+            btn_2.addEventListener('click', () => {translatePage('简','繁',btn_2)}, false);
         }
     }
 

@@ -68,10 +68,10 @@ div#rightMenu
                     span.menu-darkmode-text= _p('right_menu.light')
                 when 'dark'
                     span.menu-darkmode-text= _p('right_menu.dark')
-        if theme.right_menu.translate.enable
+        if theme.right_menu.translate
             div.rightMenu-item#menu-translate
                 i.solitude.fa-solid.fa-language
-                case theme.right_menu.translate.defaultEncoding
+                case theme.translate.defaultEncoding
                     when 2
                         span= _p('right_menu.chs_to_cht')
                     when 1

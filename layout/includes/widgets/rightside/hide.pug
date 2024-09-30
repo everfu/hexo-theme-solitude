@@ -1,0 +1,6 @@
+.rs_hide
+    if theme.rightside.hide.translate
+        button.translate(type='button' title='简繁转换')= '简'
+    if theme.rightside.hide.mode 
+        button.mode(type='button' title='显示模式切换' onclick='sco.switchDarkMode()')
+            i.fas.fa-circle-half-stroke

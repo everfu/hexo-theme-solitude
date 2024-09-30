@@ -1,0 +1,34 @@
+if hexo-config('rightside.enable')
+    #rightside
+        position: fixed
+        right: -2.5rem
+        bottom: 2.5rem
+        z-index: 1000
+        opacity: 0
+        transition: all .5s
+
+        button
+            display: block
+            margin-bottom: 5px
+            width: 1.8rem
+            height: 1.8rem
+            border-radius: 50%
+            background-color: var(--btn-bg)
+            color: var(--btn-color)
+            text-align: center
+            font-size: 16px
+
+            &.mobile
+                display: none
+
+                +maxWidth900()
+                    display: block
+
+        .rs_hide
+            transform: translate(45px, 0)
+            transition: all .4s
+            opacity 0
+            
+            &.show
+                opacity .8
+                transform: translate(0, 0)
