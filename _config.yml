@@ -968,6 +968,7 @@ rightside:
     enable: false
     translate: false
     mode: false
+    aside: false
 # --------------------------- start ---------------------------
 
 # --------------------------- start ---------------------------

@@ -18,6 +18,11 @@ if hexo-config('rightside.enable')
             text-align: center
             font-size: 16px
 
+            &.pc
+                display: blok
+                +maxWidth900()
+                    display: none
+
             &.mobile
                 display: none
 

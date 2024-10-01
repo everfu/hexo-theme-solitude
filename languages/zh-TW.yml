@@ -242,3 +242,4 @@ rightside:
   hide:
     translate: 簡繁轉換
     mode: 顯示模式切換
+    aside: 側邊欄
