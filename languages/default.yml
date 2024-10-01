@@ -243,3 +243,4 @@ rightside:
   hide:
     translate: 简繁转换
     mode: Mode
+    aside: Sidebar

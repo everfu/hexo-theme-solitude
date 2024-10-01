@@ -68,11 +68,13 @@ const percent = () => {
   const scrollPos = window.pageYOffset || docEl.scrollTop;
   const totalScrollableHeight = Math.max(body.scrollHeight, docEl.scrollHeight, body.offsetHeight, docEl.offsetHeight, body.clientHeight, docEl.clientHeight) - docEl.clientHeight;
   const scrolledPercent = Math.round((scrollPos / totalScrollableHeight) * 100);
-  const navToTop = document.querySelector("#nav-totop");
+  const navToTop = document.querySelector("#nav-totop") || null;
+  const rsToTop = document.querySelector(".rs_show .top i") || null;
   const percentDisplay = document.querySelector("#percent");
   const isNearEnd = (window.scrollY + docEl.clientHeight) >= (document.getElementById("post-comment") || document.getElementById("footer")).offsetTop;
-  navToTop.classList.toggle("long", isNearEnd || scrolledPercent > 90);
-  percentDisplay.textContent = isNearEnd || scrolledPercent > 90 ? GLOBAL_CONFIG.lang.backtop : scrolledPercent;
+  navToTop && navToTop.classList.toggle("long", isNearEnd || scrolledPercent > 90);
+  rsToTop && rsToTop.classList.toggle("show", isNearEnd || scrolledPercent > 90);
+  percentDisplay.textContent = isNearEnd || scrolledPercent > 90 ? navToTop ? GLOBAL_CONFIG.lang.backtop : '' : scrolledPercent;
   document.querySelectorAll(".needEndHide").forEach(item => item.classList.toggle("hide", totalScrollableHeight - scrollPos < 100));
 }
 const showTodayCard = () => {
