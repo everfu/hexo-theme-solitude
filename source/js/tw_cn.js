@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const { defaultEncoding, translateDelay } = GLOBAL_CONFIG.right_menu.translate;
+    const { defaultEncoding, translateDelay } = GLOBAL_CONFIG.translate;
     const targetEncodingCookie = 'translate-chn-cht';
 
     let currentEncoding = defaultEncoding;
