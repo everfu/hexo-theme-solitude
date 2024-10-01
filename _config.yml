@@ -963,6 +963,7 @@ translate:
 # 右下角悬停导航栏
 rightside:
   enable: false
+  percent: false
   hide:
     enable: false
     translate: false

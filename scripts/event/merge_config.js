@@ -412,6 +412,7 @@ hexo.extend.filter.register('before_generate', () => {
     },
     rightside: {
       enable: false,
+      percent: false,
       hide: {
         enable: false,
         translate: false,

@@ -23,6 +23,20 @@ if hexo-config('rightside.enable')
 
                 +maxWidth900()
                     display: block
+            
+            &.top
+                &:hover
+                    #percent
+                        display: none
+                    i
+                        display: block
+                        transition: all .3s
+                        transform: scale(1.3)
+                i
+                    transition: all .3s
+                    display: none
+                    &.show
+                        display: block
 
         .rs_hide
             transform: translate(45px, 0)
