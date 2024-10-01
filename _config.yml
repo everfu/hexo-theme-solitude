@@ -170,15 +170,6 @@ aside:
   # --------------------------- end ---------------------------
 
   # --------------------------- start ---------------------------
-  # recent comments(⚠️ Comments need to be configured first.)
-  # 最新评论(⚠️ 需要先配置评论)
-  newest_comment:
-    enable: true
-    storage: .5 # 缓存时间 1: 1天 / .5 : 半天 / Cache time 1: 1 day .5 : half a day
-    limit: 5 # 评论数 / Number of comments
-  # --------------------------- end ---------------------------
-
-  # --------------------------- start ---------------------------
   # article table of contents
   # 文章目录
   toc:
@@ -727,6 +718,12 @@ comment:
     enable: false
     # Number of hot comments
     count: 3
+  # recent comments(⚠️ Comments need to be configured first.)
+  # 最新评论(⚠️ 需要先配置评论)
+  newest_comment:
+    enable: true
+    storage: .5 # 缓存时间 1: 1天 / .5 : 半天 / Cache time 1: 1 day .5 : half a day
+    limit: 5 # 评论数 / Number of comments
 # Twikoo: https://solitude.js.org/comment/twikoo
 twikoo: # https://twikoo.js.org/
   envId: # url: https://twikoo.sondy.top/
