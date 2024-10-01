@@ -151,14 +151,14 @@ const sco = {
     }
   },
   musicToggle() {
-    const $music = document.querySelector('#nav-music');
-    const $meting = document.querySelector('meting-js');
-    const $console = document.getElementById('consoleMusic');
-    const $rm_text = document.querySelector('#menu-music-toggle span');
-    const $rm_icon = document.querySelector('#menu-music-toggle i');
+    const $music = document.querySelector('#nav-music') || null;
+    const $meting = document.querySelector('meting-js') || null;
+    const $console = document.getElementById('consoleMusic') || null;
+    const $rm_text = document.querySelector('#menu-music-toggle span') || null;
+    const $rm_icon = document.querySelector('#menu-music-toggle i') || null;
     this.musicPlaying = !this.musicPlaying;
     $music.classList.toggle("playing", this.musicPlaying);
-    $console.classList.toggle("on", this.musicPlaying);
+    $console && $console.classList.toggle("on", this.musicPlaying);
     if (this.musicPlaying) {
       $meting.aplayer.play();
       (typeof rm !== 'undefined') && rm?.menuItems.music[0] && ($rm_text.textContent = GLOBAL_CONFIG.right_menu.music.stop) && ($rm_icon.className = 'solitude fas fa-pause')
