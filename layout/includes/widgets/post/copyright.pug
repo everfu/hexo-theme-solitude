@@ -2,9 +2,9 @@
 .post-copyright
     .post-copyright__author_group
         a.post-copyright__author_img(href=url_for(copyright.author.url))
-            img.post-copyright__author_img_front(src=copyright.author.img || theme.site.icon)
-        .post-copyright__author_name= config.title
-        .post-copyright__author_desc= config.subtitle
+            img.post-copyright__author_img_front(src=page.avatar || copyright.author.img || theme.site.icon)
+        .post-copyright__author_name= page.author || config.title
+        .post-copyright__author_desc= page.desc || config.subtitle
     .post-tools#post-tools
         .post-tools-left
             #quit-box(onclick="RemoveRewardMask()")
