@@ -193,7 +193,7 @@
     +maxWidth1200()
         position: fixed
         right: 3rem
-        bottom: 2rem
+        bottom: 10px
         z-index: 100
         max-width: 380px
         max-height: calc(100% - 60px)
@@ -1040,7 +1040,7 @@ backcolor = convert(hexo-config('aside.flip.backcolor'))
   .card-widget.card-adsense
     padding 0
 
-if hexo-config('aside.newest_comment.enable')
+if hexo-config('comment.newest_comment.enable')
   .card-recent-comment
     .recent-comment-more
       margin-left auto
@@ -1060,7 +1060,7 @@ if hexo-config('aside.newest_comment.enable')
       position: relative
 
       &:not(:last-child)
-        border-bottom 1px dashed rgba(255, 255, 255, .1)
+        border-bottom var(--style-border-dashed)
 
       .thumbnail img
         width: 60px
