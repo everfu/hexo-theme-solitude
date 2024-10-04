@@ -37,7 +37,6 @@
             }
         },
         snackbarShow: (text, showAction = false, duration = 5000) => {
-            document.styleSheets[0].addRule(':root', `--efu-snackbar-time:${duration}ms!important`);
             Snackbar.show({
                 text,
                 showAction,
