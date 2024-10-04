@@ -169,10 +169,11 @@ const sco = {
   },
   switchCommentBarrage() {
     let commentBarrageElement = document.querySelector(".comment-barrage");
+    let consoleCommentBarrage = document.querySelector("#consoleCommentBarrage");
     if (!commentBarrageElement) return;
     const isDisplayed = window.getComputedStyle(commentBarrageElement).display === "flex";
     commentBarrageElement.style.display = isDisplayed ? "none" : "flex";
-    document.querySelector("#consoleCommentBarrage").classList.toggle("on", !isDisplayed);
+    consoleCommentBarrage && consoleCommentBarrage.classList.toggle("on", !isDisplayed);
     utils.saveToLocal.set("commentBarrageSwitch", !isDisplayed, .2);
     rm?.menuItems.barrage && rm.barrage(isDisplayed)
   },
@@ -226,7 +227,9 @@ const sco = {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           setTimeout(() => {
-            waterfall(entry.target) || entry.target.classList.add('show');
+            waterfall(entry.target).then(() => {
+              entry.target.classList.add('show');
+            });
           }, 300);
         }
       });

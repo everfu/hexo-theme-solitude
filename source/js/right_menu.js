@@ -175,6 +175,7 @@ window.oncontextmenu = (ele) => {
     Array.from(display ? rm.menuItems.other : rm.menuItems.plugin).forEach(
         (item) => (item.style.display = "none")
     );
+
     Array.from(display ? rm.menuItems.plugin : rm.menuItems.other).forEach(
         (item) => (item.style.display = "block")
     );
