@@ -20,7 +20,7 @@
 [![discord](https://img.shields.io/discord/1266610921942548553?style=for-the-badge&logo=discord&label=discord&logoColor=white)](https://discord.gg/HZXAnK4Sut)
 ![JetBrains](https://img.shields.io/badge/jetbrains-support-black?logo=jetbrains&style=for-the-badge)
 
-[文档](https://solitude.js.org/)丨[预览](https://solitude.js.org/preview/zh/)丨[作者](https://blog.everfu.cn/)
+[文档](https://solitude.js.org/)丨[预览](https://blog.everfu.cn/)
 
 </div>
 
