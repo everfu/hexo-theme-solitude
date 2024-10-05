@@ -12,6 +12,8 @@
 # 赞助：https://afdian.com/a/everfu
 # ---------------------------
 
+### Basic configuration
+
 # --------------------------- start ---------------------------
 # Site information
 # 网站信息
@@ -224,15 +226,6 @@ aside:
 # --------------------------- end ---------------------------
 
 # --------------------------- start ---------------------------
-# Home page article configuration information
-# 首页文章配置信息
-index_post_list:
-  direction: column # row / column
-  column: 2 # 2: 2 columns 3: 3 columns
-  cover: both
-# --------------------------- end ---------------------------
-
-# --------------------------- start ---------------------------
 # Page default settings
 # 页面默认设置
 page:
@@ -380,6 +373,60 @@ display_mode:
 # --------------------------- end ---------------------------
 
 # --------------------------- start ---------------------------
+# Font
+# 字体
+font:
+  font-size: 16px
+  code-font-size: 16px
+  # Global font
+  # 全局字体
+  font-family: "PingFang SC, Hiragino Sans GB, Microsoft YaHei"
+  # Code font
+  # 代码字体
+  code-font-family: '"monospace", monospace'
+# --------------------------- end ---------------------------
+
+# --------------------------- start ---------------------------
+# Background
+# 背景图片
+background:
+  enable: false
+  opacity: .2
+  dark: https://i.pinimg.com/originals/d8/b3/9d/d8b39d12b653810db452c437211aeb2e.png
+  light: https://i.pinimg.com/originals/93/57/38/935738ed9657b296c2ef0ebd2151eb66.jpg
+# --------------------------- end ---------------------------
+
+# --------------------------- start ---------------------------
+# Lure
+# When the user exits the page, modify the title
+# 当用户退出页面时，修改标题
+lure:
+  enable: false
+  jump: 404 Not Found
+  back: ヾ(≧∇≦*)ゝHey, hey, you fell for it.
+# --------------------------- end ---------------------------
+
+# --------------------------- start ---------------------------
+# Article expiration
+# 文章过期
+expire:
+  enable: false
+  time: 30 # days
+  position: top # top / bottom
+  text_prev: "This article expired "
+  text_next: " day ago, if the content does not match, please contact the webmaster to update it."
+# --------------------------- end ---------------------------
+
+# --------------------------- start ---------------------------
+# Home page article configuration information
+# 首页文章配置信息
+index_post_list:
+  direction: column # row / column
+  column: 2 # 2: 2 columns 3: 3 columns
+  cover: both
+# --------------------------- end ---------------------------
+
+# --------------------------- start ---------------------------
 # Related articles
 # 相关文章
 related_post:
@@ -391,6 +438,113 @@ related_post:
 # --------------------------- end ---------------------------
 
 # --------------------------- start ---------------------------
+# Custom right menu
+# 自定义右键菜单
+right_menu:
+  enable: false
+  # Whether to display the hot comment switch.
+  # 是否显示热门评论开关
+  commentBarrage: false
+  # Whether to display the browser's context menu when hold Ctrl key.
+  # 是否在按住 Ctrl 键时显示浏览器右键菜单
+  ctrlOriginalMenu: false
+  # Simplified and Traditional Chinese translation.
+  # 简繁体转换
+  translate: false
+  # Custom list
+  # 自定义列表
+  custom_list:
+    # - name: 随机文章
+    #   click: toRandomPost()
+    #   id: menu-randomPost
+    #   class:
+    #   icon: fas fa-tower-broadcast
+    # - name: 全部分类
+    #   click: pjax.loadUrl('/categories/') # External links with window.open, pjax can not request cross-domain content.
+    #   id:
+    #   class:
+    #   icon: fas fa-clone
+    # - name: 全部标签
+    #   click: pjax.loadUrl('/tags/')
+    #   id:
+    #   class:
+    #   icon: fas fa-tags
+# --------------------------- end -----------------------
+
+# --------------------------- start ---------------------------
+# Copy
+#  information
+# 复制信息
+copy:
+  enable: false
+  # Turn on Link copyright information after copying.
+  # 复制后链接版权信息
+  copyright:
+    enable: false
+    # Display when the number of words copied exceeds
+    # 复制文字时超过多少字数显示
+    limit: 50
+# --------------------------- end ---------------------------
+
+# --------------------------- start ---------------------------
+# Mermaid
+mermaid: false
+# --------------------------- end ---------------------------
+
+# --------------------------- start ---------------------------
+# Chart.js
+chart: false
+# --------------------------- end ---------------------------
+
+# --------------------------- start ---------------------------
+# typeit
+typeit: false
+# --------------------------- end ---------------------------
+
+### Extended configuration
+
+# --------------------------- start ---------------------------
+# Console
+# 控制台
+console:
+  enable: false
+  # Recent comments
+  # 最新评论
+  recentComment:
+    enable: false
+    # Cache time 1: 1 day / .5 : half a day
+    # 缓存时间 1: 1天 / .5 : 半天
+    storage: .2
+  card:
+    # Tags
+    # 标签
+    tags: true
+    # Archives
+    # 归档
+    archive: true
+# --------------------------- end ---------------------------
+
+# --------------------------- start ---------------------------
+translate:
+  enable: true
+  defaultEncoding: 2 # 1: 默认繁体 2: 默认简体
+  translateDelay: 0 # 首次加载翻译迟疑时间
+# --------------------------- end ---------------------------
+
+# --------------------------- start ---------------------------
+# Right-Sidebar
+# 右下角悬停导航栏
+rightside:
+  enable: false
+  percent: false
+  hide:
+    enable: false
+    translate: false
+    mode: false
+    aside: false
+# --------------------------- start ---------------------------
+
+# --------------------------- start ---------------------------
 # Footer
 # 页脚
 footer:
@@ -399,7 +553,7 @@ footer:
     author: false # img url / false
     left:
       # Github: https://github.com/everfu || fab fa-github # Name: link || icon
-      # Mail: mailto:o@efu.me || fab fa-envelope
+      # Mail: mailto:o@everfu.cn || fab fa-envelope
     right:
       # Bilibili: https://space.bilibili.com/1329819902 || fab fa-bilibili
       # Douyin: https://v.douyin.com/iJsLc8jt/ || fab fa-tiktok
@@ -440,57 +594,15 @@ errorpage:
 # --------------------------- end ---------------------------
 
 # --------------------------- start ---------------------------
-# Says Page
-# 即可短文
-says:
-  enable: false
-  home_mini: false
-  page: /essay/
-  style: 1
-  strip: 30
-# --------------------------- end ---------------------------
-
-# --------------------------- start ---------------------------
-# Recent comments Page
-# 最近评论页面
-recent_comments:
-  enable: false
-  limit: 50 # ⚠️waline 仅支持最大50条评论 / ⚠️waline only supports a maximum of 50 comments
-  cache: 0.2 # 1 = 1天 / 1 = 1 day
-  page: /recentcomments/ # 最近评论页面 / recent comments page
-  img: /img/recent_c.avif # 中控台显示图片（不填不显示） / image displayed in the console
-# --------------------------- end ---------------------------
-
-# --------------------------- start ---------------------------
-# Danmaku Page
-# 弹幕留言页面
-envelope:
-  enable: false
-  line: 10 # 显示行数
-  speed: 20 # 播放速度
-  hover: true # 鼠标悬停暂停
-  loop: true # 循环播放
-  page: /message/ # 留言板页面 / message board page
-# --------------------------- end ---------------------------
-
-# --------------------------- start ---------------------------
+# Meting API
 # This part of the content uses metingjs,
 # can only use NetEase Cloud Music, QQ Music and other music platforms supported by the mainland China region,
 # the subsequent consideration of the use of JSON files to store music information and customize the implementation of the third-party API does not depend on the page.
 # Music Page
 meting_api: "https://meting.everfu.cn/?server=:server&type=:type&id=:id&auth=:auth&r=:r" # Custom API
-music:
-  enable: false
-  # 歌单 ID / 单曲 ID
-  id: 1994908354
-  # 服务商：netease / qq / xiami / kugou / baidu
-  server: netease
-  # 类型：playlist / song
-  type: playlist
-  # 默认音量
-  volume: 0.8
-  # 是否自动播放
-  mutex: true
+# --------------------------- end ---------------------------
+
+# --------------------------- start ---------------------------
 # Capsule music
 # 音乐胶囊
 capsule:
@@ -523,21 +635,6 @@ keyboard:
     # - name: Open Links
     #   key: L
     #   url: /links/
-# --------------------------- end ---------------------------
-
-# --------------------------- start ---------------------------
-# Copy
-#  information
-# 复制信息
-copy:
-  enable: false
-  # Turn on Link copyright information after copying.
-  # 复制后链接版权信息
-  copyright:
-    enable: false
-    # Display when the number of words copied exceeds
-    # 复制文字时超过多少字数显示
-    limit: 50
 # --------------------------- end ---------------------------
 
 # --------------------------- start ---------------------------
@@ -597,18 +694,15 @@ mediumZoom: false # mediumZoom
 # --------------------------- end ---------------------------
 
 # --------------------------- start ---------------------------
-# Mermaid
-mermaid: false
-# --------------------------- end ---------------------------
-
-# --------------------------- start ---------------------------
-# Chart.js
-chart: false
-# --------------------------- end ---------------------------
-
-# --------------------------- start ---------------------------
-# typeit
-typeit: false
+# Memorial
+# Turn the entire site gray on memorable days.
+# 在纪念日整个网站变灰
+memorial:
+  enable: false
+  date:
+  #  - 7-7
+  #  - 9-18
+  #  - 12-13 # 国家公祭日
 # --------------------------- end ---------------------------
 
 # --------------------------- start ---------------------------
@@ -634,51 +728,6 @@ wordcount: false
 # --------------------------- end ---------------------------
 
 # --------------------------- start ---------------------------
-# Busuanzi
-busuanzi: false
-# 0: Original / 1: Custom
-# 0: 原版 / 1: 自定义版
-busuanzi_use: 0
-# --------------------------- end ---------------------------
-
-# --------------------------- start ---------------------------
-# Search
-# warning: Please open the search page config: https://solitude.js.org/search/algolia or https://solitude.js.org/search/local
-# 警告: 请打开搜索页面配置: https://solitude.js.org/zh/search/algolia 或 https://solitude.js.org/zh/search/local
-search:
-  enable: false
-  # type: 使用的搜索引擎 / search engine
-  type: local # local / algolia
-  tags:
-    # - Solitude
-    # - Hexo
-  algolia:
-    # hits:
-    #   per_page: 6
-  local:
-    preload: false
-    CDN: # url: search.xml
-# --------------------------- end ---------------------------
-
-# --------------------------- start ---------------------------
-# This part is only supported in mainland China, and we will consider supporting ChatGPT Key in the future.
-# 该部分仅支持中国大陆，后续会考虑支持 ChatGPT Key。
-tianli_talk:
-  enable: false
-  title: 智能客服与搜索 # title
-  key: # key
-  option:
-post_ai:
-  enable: false
-  modelName: GPT 4
-  key:
-  talk: # 我是 Efu 开发的摘要生成助理EfuGPT，EfuGPT在静态部署时进行摘要的撰写，并且在访客访问时通过EfuCorrection转译后的文本摘要实现工具。我在这里只负责已经生成的摘要显示，你无法与我直接沟通，但我可以回答一些预设的问题。
-  randomPost: false
-  report: https://solitude.js.org
-  tips: # 此内容根据文章生成，并经过人工审核，仅用于文章内容的解释与总结
-# --------------------------- end ---------------------------
-
-# --------------------------- start ---------------------------
 # Katex
 # Latex formula support
 # Latex 公式支持
@@ -690,6 +739,53 @@ katex:
   # Whether to enable copy formula
   # 是否启用复制公式
   copytex: false
+# --------------------------- end ---------------------------
+
+# --------------------------- start ---------------------------
+# verification
+# 验证
+verify_site:
+  # - name: google-site-verification
+  #   content: xxxxxx
+  # - name: baidu-site-verification
+  #   content: xxxxxxx
+# --------------------------- end ---------------------------
+
+# --------------------------- start ---------------------------
+# CSS Prefix
+# CSS 前缀
+# When turned on, it will automatically prefix the CSS (to get better browser support), but this will increase the size of the CSS file.
+# 开启后会自动给 CSS 加前缀（以获得更好的浏览器支持），但这会增加 CSS 文件的大小。
+css_prefix: false
+# --------------------------- end ---------------------------
+
+# --------------------------- start ---------------------------
+# Extend
+# 扩展
+extends:
+  # Insert in head
+  # 插入到 head
+  head:
+  #  - <script src="https://cdn.bootcdn.net/ajax/libs/pace/1.2.4/pace.min.js"></script>
+
+  # Insert in body
+  # 插入到 body
+  body:
+  #  - <script src="https://cdn.bootcdn.net/ajax/libs/pace/1.2.4/pace.min.js"></script>
+# --------------------------- end ---------------------------
+
+# --------------------------- start ---------------------------
+# PWA
+# Progressive Web App
+pwa:
+  enable: false
+  manifest: /manifest.json # manifest.json
+  theme_color: "#006a73" # Theme color
+  mask_icon: /img/pwa/favicon.png # Mask icon
+  apple_touch_icon: /img/pwa/favicon.png # Apple touch icon
+  bookmark_icon: /img/pwa/favicon.png # Bookmark icon
+  favicon_32_32: /img/pwa/favicon_32.png # 32x32 icon
+  favicon_16_16: /img/pwa/favicon_16.png # 16x16 icon
 # --------------------------- end ---------------------------
 
 # --------------------------- start ---------------------------
@@ -763,85 +859,97 @@ giscus:
 # --------------------------- end ---------------------------
 
 # --------------------------- start ---------------------------
-# Console
-# 控制台
-console:
+# Search
+search:
   enable: false
-  # Recent comments
-  # 最新评论
-  recentComment:
-    enable: false
-    # Cache time 1: 1 day / .5 : half a day
-    # 缓存时间 1: 1天 / .5 : 半天
-    storage: .2
-  card:
-    # Tags
-    # 标签
-    tags: true
-    # Archives
-    # 归档
-    archive: true
+  # type: 使用的搜索引擎 / search engine
+  type: local # local / algolia
+  tags:
+    # - Solitude
+    # - Hexo
+  algolia:
+    # hits:
+    #   per_page: 6
+  local:
+    preload: false
+    CDN: # url: search.xml
 # --------------------------- end ---------------------------
 
 # --------------------------- start ---------------------------
-# verification
-# 验证
-verify_site:
-  # - name: google-site-verification
-  #   content: xxxxxx
-  # - name: baidu-site-verification
-  #   content: xxxxxxx
-# --------------------------- end ---------------------------
-
-# --------------------------- start ---------------------------
-# CSS Prefix
-# CSS 前缀
-# When turned on, it will automatically prefix the CSS (to get better browser support), but this will increase the size of the CSS file.
-# 开启后会自动给 CSS 加前缀（以获得更好的浏览器支持），但这会增加 CSS 文件的大小。
-css_prefix: false
-# --------------------------- end ---------------------------
-
-# --------------------------- start ---------------------------
-# Font
-# 字体
-font:
-  font-size: 16px
-  code-font-size: 16px
-  # Global font
-  # 全局字体
-  font-family: "PingFang SC, Hiragino Sans GB, Microsoft YaHei"
-  # Code font
-  # 代码字体
-  code-font-family: '"monospace", monospace'
-# --------------------------- end ---------------------------
-
-# --------------------------- start ---------------------------
-# Extend
-# 扩展
-extends:
-  # Insert in head
-  # 插入到 head
-  head:
-  #  - <script src="https://cdn.bootcdn.net/ajax/libs/pace/1.2.4/pace.min.js"></script>
-
-  # Insert in body
-  # 插入到 body
-  body:
-  #  - <script src="https://cdn.bootcdn.net/ajax/libs/pace/1.2.4/pace.min.js"></script>
-# --------------------------- end ---------------------------
-
-# --------------------------- start ---------------------------
-# PWA
-# Progressive Web App
-pwa:
+# Music Page
+# 音乐馆
+music:
   enable: false
-  manifest: /manifest.json # manifest.json
-  theme_color: "#006a73" # Theme color
-  mask_icon: /img/pwa/favicon.png # Mask icon
-  apple_touch_icon: /img/pwa/favicon.png # Apple touch icon
-  bookmark_icon: /img/pwa/favicon.png # Bookmark icon
-  favicon_32_32: /img/pwa/favicon_32.png # 32x32 icon
-  favicon_16_16: /img/pwa/favicon_16.png # 16x16 icon
+  # 歌单 ID / 单曲 ID
+  id: 1994908354
+  # 服务商：netease / qq / xiami / kugou / baidu
+  server: netease
+  # 类型：playlist / song
+  type: playlist
+  # 默认音量
+  volume: 0.8
+  # 是否自动播放
+  mutex: true
+# --------------------------- end ---------------------------
+
+# --------------------------- start ---------------------------
+# Danmaku Page
+# 弹幕留言页面
+envelope:
+  enable: false
+  line: 10 # 显示行数
+  speed: 20 # 播放速度
+  hover: true # 鼠标悬停暂停
+  loop: true # 循环播放
+  page: /message/ # 留言板页面 / message board page
+# --------------------------- end ---------------------------
+
+# --------------------------- start ---------------------------
+# Says Page
+# 即可短文
+says:
+  enable: false
+  home_mini: false
+  page: /essay/
+  style: 1
+  strip: 30
+# --------------------------- end ---------------------------
+
+# --------------------------- start ---------------------------
+# Recent comments Page
+# 最近评论页面
+recent_comments:
+  enable: false
+  limit: 50 # ⚠️waline 仅支持最大50条评论 / ⚠️waline only supports a maximum of 50 comments
+  cache: 0.2 # 1 = 1天 / 1 = 1 day
+  page: /recentcomments/ # 最近评论页面 / recent comments page
+  img: /img/recent_c.avif # 中控台显示图片（不填不显示） / image displayed in the console
+# --------------------------- end ---------------------------
+
+# --------------------------- start ---------------------------
+# Busuanzi
+busuanzi: false
+# 0: Original / 1: Custom
+# 0: 原版 / 1: 自定义版
+busuanzi_use: 0
+# --------------------------- end ---------------------------
+
+# --------------------------- start ---------------------------
+# This part is only supported in mainland China, and we will consider supporting ChatGPT Key in the future.
+# 该部分仅支持中国大陆，后续会考虑支持 ChatGPT Key。
+tianli_talk:
+  enable: false
+  title: 智能客服与搜索 # title
+  key: # key
+  option:
+post_ai:
+  enable: false
+  modelName: GPT 4
+  key:
+  talk: # 我是 Efu 开发的摘要生成助理EfuGPT，EfuGPT在静态部署时进行摘要的撰写，并且在访客访问时通过EfuCorrection转译后的文本摘要实现工具。我在这里只负责已经生成的摘要显示，你无法与我直接沟通，但我可以回答一些预设的问题。
+  randomPost: false
+  report: https://solitude.js.org
+  tips: # 此内容根据文章生成，并经过人工审核，仅用于文章内容的解释与总结
 # --------------------------- end ---------------------------
 
 # --------------------------- start ---------------------------
@@ -870,103 +978,6 @@ google_adsense:
   client: # ca-pub-XXXXXXXXXXXXXX
   slot: # 4236388782
 # --------------------------- end ---------------------------
-
-# --------------------------- start ---------------------------
-# Custom right menu
-# 自定义右键菜单
-right_menu:
-  enable: false
-  # Whether to display the hot comment switch.
-  # 是否显示热门评论开关
-  commentBarrage: false
-  # Whether to display the browser's context menu when hold Ctrl key.
-  # 是否在按住 Ctrl 键时显示浏览器右键菜单
-  ctrlOriginalMenu: false
-  # Simplified and Traditional Chinese translation.
-  # 简繁体转换
-  translate: false
-  # Custom list
-  # 自定义列表
-  custom_list:
-    # - name: Random
-    #   click: toRandomPost()
-    #   id: menu-randomPost
-    #   class:
-    #   icon: fas fa-tower-broadcast
-    # - name: Categories
-    #   click: pjax.loadUrl('/categories/') # External links with window.open, pjax can not request cross-domain content.
-    #   id:
-    #   class:
-    #   icon: fas fa-clone
-    # - name: Tags
-    #   click: pjax.loadUrl('/tags/')
-    #   id:
-    #   class:
-    #   icon: fas fa-tags
-# --------------------------- end ---------------------------
-
-# --------------------------- start ---------------------------
-# Memorial
-# Turn the entire site gray on memorable days.
-# 在纪念日整个网站变灰
-memorial:
-  enable: false
-  date:
-  #  - 7-7
-  #  - 9-18
-  #  - 12-13 # 国家公祭日
-# --------------------------- end ---------------------------
-
-# --------------------------- start ---------------------------
-# Lure
-# When the user exits the page, modify the title
-# 当用户退出页面时，修改标题
-lure:
-  enable: false
-  jump: 404 Not Found
-  back: ヾ(≧∇≦*)ゝHey, hey, you fell for it.
-# --------------------------- end ---------------------------
-
-# --------------------------- start ---------------------------
-# Article expiration
-# 文章过期
-expire:
-  enable: false
-  time: 30 # days
-  position: top # top / bottom
-  text_prev: "This article expired "
-  text_next: " day ago, if the content does not match, please contact the webmaster to update it."
-# --------------------------- end ---------------------------
-
-# --------------------------- start ---------------------------
-# Background
-# 背景图片
-background:
-  enable: false
-  opacity: .2
-  dark: https://i.pinimg.com/originals/d8/b3/9d/d8b39d12b653810db452c437211aeb2e.png
-  light: https://i.pinimg.com/originals/93/57/38/935738ed9657b296c2ef0ebd2151eb66.jpg
-# --------------------------- end ---------------------------
-
-# --------------------------- start ---------------------------
-translate:
-  enable: true
-  defaultEncoding: 2 # 1: 默认繁体 2: 默认简体
-  translateDelay: 0 # 首次加载翻译迟疑时间
-# --------------------------- end ---------------------------
-
-# --------------------------- start ---------------------------
-# Right-Sidebar
-# 右下角悬停导航栏
-rightside:
-  enable: false
-  percent: false
-  hide:
-    enable: false
-    translate: false
-    mode: false
-    aside: false
-# --------------------------- start ---------------------------
 
 # --------------------------- start ---------------------------
 # Do not modify unless necessary
