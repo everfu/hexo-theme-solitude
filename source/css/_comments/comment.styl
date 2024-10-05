@@ -104,6 +104,9 @@
     position relative
 
     if hexo-config('comment.use')[1] || ',' in hexo-config('comment.use')
+      .count span:last-child
+        display none
+
       .comment-switch
         display inline-block
         float right
