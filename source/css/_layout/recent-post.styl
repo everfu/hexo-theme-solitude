@@ -2,10 +2,6 @@
   if hexo-config('aside.position') == 0
       order 2
 
-  #tag &
-    .recent-post-item
-      margin-top: 2.5rem
-
   #category &,
   #tag &
     +maxWidth768()
@@ -27,6 +23,8 @@ if hexo-config('index_post_list.direction') == "column"
 
       +maxWidth1300()
         margin-bottom .5rem
+        #tag &
+          margin-top: 2.5rem
 
       +maxWidth768()
         border-radius 12px
@@ -257,6 +255,8 @@ else if hexo-config('index_post_list.direction') == "row"
       flex-direction row
       width 100%
       box-shadow var(--efu-shadow-border)
+      #tag &
+          margin-top: 2.5rem
 
       +maxWidth768()
         border-radius 12px
