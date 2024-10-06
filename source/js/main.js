@@ -180,11 +180,16 @@ const sco = {
     }
   },
   musicBind() {
-    const $music = document.querySelector('#nav-music');
+    const music = document.querySelector('#nav-music');
     const name = document.querySelector('.aplayer-music');
+    const button = document.querySelector("#nav-music .aplayer-button");
     
     name?.addEventListener('click', () => {
-      $music.classList.toggle("stretch");
+      music.classList.toggle("stretch");
+    });
+
+    button?.addEventListener('click', () => {
+      this.musicToggle();
     });
     
     this.isMusicBind = true;
