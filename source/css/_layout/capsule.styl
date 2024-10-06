@@ -202,13 +202,13 @@ if hexo-config('capsule.enable')
         width: 0
         opacity: 0
         transition: 0.3s
-        margin-top: -2px
-        padding: 5px 0
+        margin-bottom: -15px
 
         p.aplayer-lrc-current 
           color: var(--efu-white)
           border: none
           min-height: 20px
+          filter: none
 
         &:after,
         &:before 
@@ -216,10 +216,7 @@ if hexo-config('capsule.enable')
 
         p 
           color: #ffffffb3
-          line-height: 40px !important
-          height: 40px !important
-          margin: 0px 0
-          vertical-align: top
+          filter: blur(.8px)
 
     &.stretch .aplayer.aplayer-withlrc .aplayer-lrc 
       width: 200px
