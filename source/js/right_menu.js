@@ -163,8 +163,8 @@ window.oncontextmenu = (ele) => {
     } else {
         rm.menuItems.paste.style.display = "none";
     }
-
-    if (tagName === "meting-js") {
+    let cls = ele.target.className.toLowerCase();
+    if (cls.match(/aplayer/)) {
         display = true;
         rm.menuItems.music.forEach((item) => (item.style.display = "flex"));
     } else {

@@ -231,6 +231,7 @@ hexo.extend.filter.register('before_generate', () => {
       id: '8407304077',
       server: 'netease',
       type: 'playlist',
+      volume: 0.8,
     },
     keyboard: {
       enable: false,

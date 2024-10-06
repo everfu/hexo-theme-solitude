@@ -158,6 +158,7 @@ const sco = {
     const $rm_icon = document.querySelector('#menu-music-toggle i') || null;
     this.musicPlaying = !this.musicPlaying;
     $music.classList.toggle("playing", this.musicPlaying);
+    $music.classList.toggle("stretch", this.musicPlaying);
     $console && $console.classList.toggle("on", this.musicPlaying);
     if (this.musicPlaying) {
       $meting.aplayer.play();
