@@ -362,16 +362,24 @@ i.solitude
   line-height 1
   font-synthesis style
 
+#body-wrap
+  display: flex
+  flex-direction: column
+  min-height: 100vh
+  justify-content: space-between
+
 .layout
   display: flex
   margin: 0 auto
   padding: 0 1.5rem
+  width 100%
   max-width: 1200px
   +maxWidth768()
     padding 0
 
   &#content-inner
     max-width: 1400px
+    flex-grow: 1
 
   /.hide-aside.layout
     max-width: 1400px
