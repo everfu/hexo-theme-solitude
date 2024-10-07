@@ -253,9 +253,10 @@
 
     +maxWidth768()
       width calc(50% - 12px)
+      height: 120px
 
-    +maxWidth600()
-      width calc(100% - 12px)
+      a
+        flex-direction: column
 
     a
       display flex
@@ -285,6 +286,19 @@
         width calc(100% - 90px)
         height fit-content
         padding 0 4px
+
+        +maxWidth768()
+          align-items center
+          width 100%
+
+          .flink-item-name
+            padding: 0
+            width: 100%
+            text-align: center
+            font-size: 14px
+
+          .flink-item-desc
+            display: none
 
         span
           transition .3s
