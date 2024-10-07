@@ -181,7 +181,7 @@ const sco = {
   },
   musicBind() {
     const $music = document.querySelector('#nav-music');
-    const $name = document.querySelector('.aplayer-music');
+    const $name = document.querySelector('#nav-music .aplayer-music');
     const $button = document.querySelector('#nav-music .aplayer-button');
     
     $name?.addEventListener('click', () => {
@@ -189,7 +189,9 @@ const sco = {
     });
 
     $button?.addEventListener('click', () => {
-      this.musicToggle();
+      this.musicPlaying = !this.musicPlaying;
+      $music.classList.toggle("stretch");
+      $music.classList.toggle("playing");
     });
     
     this.isMusicBind = true;
