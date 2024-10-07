@@ -150,7 +150,7 @@ const sco = {
       });
     }
   },
-  musicToggle() {
+  musicToggle(isMeting = true) {
     if (!this.isMusicBind) {
       this.musicBind();
     }
@@ -166,17 +166,19 @@ const sco = {
     $console?.classList.toggle("on", this.musicPlaying);
     
     if (this.musicPlaying) {
-      $meting.aplayer.play();
       if (typeof rm !== 'undefined' && rm?.menuItems.music[0]) {
         $rmText.textContent = GLOBAL_CONFIG.right_menu.music.stop;
         $rmIcon.className = 'solitude fas fa-pause';
       }
     } else {
-      $meting.aplayer.pause();
       if (typeof rm !== 'undefined' && rm?.menuItems.music[0]) {
         $rmText.textContent = GLOBAL_CONFIG.right_menu.music.start;
         $rmIcon.className = 'solitude fas fa-play';
       }
+    }
+
+    if(isMeting){
+      this.musicPlaying ? $meting.aplayer.play() : $meting.aplayer.pause();
     }
   },
   musicBind() {
@@ -189,9 +191,7 @@ const sco = {
     });
 
     $button?.addEventListener('click', () => {
-      this.musicPlaying = !this.musicPlaying;
-      $music.classList.toggle("stretch");
-      $music.classList.toggle("playing");
+      this.musicToggle(false);
     });
     
     this.isMusicBind = true;
