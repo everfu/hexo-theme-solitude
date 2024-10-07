@@ -240,6 +240,7 @@ rightside:
     toc: Toc
     comment: Comment
     top: Top
+    barrage: 弹
   hide:
     translate: 简繁转换
     mode: Mode

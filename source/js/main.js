@@ -218,7 +218,7 @@ const sco = {
     this.sco_keyboards = !this.sco_keyboards;
     const consoleKeyboard = document.querySelector("#consoleKeyboard");
     const keyboardFunction = this.sco_keyboards ? openKeyboard : closeKeyboard;
-    consoleKeyboard.classList.toggle("on", this.sco_keyboards);
+    consoleKeyboard?.classList.toggle("on", this.sco_keyboards);
     keyboardFunction();
     localStorage.setItem("keyboard", this.sco_keyboards);
     document.getElementById('keyboard-tips')?.classList.remove('show');
