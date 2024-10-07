@@ -180,15 +180,15 @@ const sco = {
     }
   },
   musicBind() {
-    const music = document.querySelector('#nav-music');
-    const name = document.querySelector('.aplayer-music');
-    const button = document.querySelector("#nav-music .aplayer-button");
+    const $music = document.querySelector('#nav-music');
+    const $name = document.querySelector('.aplayer-music');
+    const $button = document.querySelector('#nav-music .aplayer-button');
     
-    name?.addEventListener('click', () => {
-      music.classList.toggle("stretch");
+    $name?.addEventListener('click', () => {
+      $music.classList.toggle("stretch");
     });
 
-    button?.addEventListener('click', () => {
+    $button?.addEventListener('click', () => {
       this.musicToggle();
     });
     
