@@ -61,5 +61,6 @@ script.
     var sco_keyboards = localStorage.getItem('keyboard') === 'true'
     if (sco_keyboards) {
         openKeyboard();
-        document.getElementById('consoleKeyboard').classList.add('on');
+        let keyboard = document.getElementById('consoleKeyboard');
+        keyboard?.classList.add('on');
     }
