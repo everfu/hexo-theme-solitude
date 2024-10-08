@@ -20,7 +20,7 @@ English丨[简体中文](README_zh-Hans.md)丨[繁体中文](README_zh-Hant.md)
 [![discord](https://img.shields.io/discord/1266610921942548553?style=for-the-badge&logo=discord&label=discord&logoColor=white)](https://discord.gg/HZXAnK4Sut)
 ![JetBrains](https://img.shields.io/badge/jetbrains-support-black?logo=jetbrains&style=for-the-badge)
 
-[Docs](https://solitude.js.org/)丨[Preview](https://solitude.js.org/preview/)丨[Author](https://blog.everfu.cn/)
+[Docs](https://solitude.js.org/)丨[Preview](https://blog.everfu.cn/)
 
 </div>
 

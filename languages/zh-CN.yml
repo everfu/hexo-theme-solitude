@@ -240,6 +240,7 @@ rightside:
     toc: 目录
     comment: 评论
     top: 返回顶部
+    barrage: 弹
   hide:
     translate: 简繁转换
     mode: 显示模式切换

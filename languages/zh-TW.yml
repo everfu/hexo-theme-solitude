@@ -239,6 +239,7 @@ rightside:
     toc: 目錄
     comment: 評論
     top: 返回頂部
+    barrage: 彈
   hide:
     translate: 簡繁轉換
     mode: 顯示模式切換

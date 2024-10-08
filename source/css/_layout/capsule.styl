@@ -1,218 +1,229 @@
 if hexo-config('capsule.enable')
-  #nav-music
-    display flex
-    align-items center
-    z-index 11
-    position fixed
-    bottom 20px
-    left 20px
-    cursor pointer
-    transition .3s
-    transform-origin left bottom
-    box-shadow var(--efu-shadow-border)
-    border-radius 40px
-    overflow hidden
-    user-select none
+  @keyframes changeright
+    0%, 50%, 100%
+      transform: rotate(0deg) scale(1.1)
+      box-shadow: 0 0 2px #ffffff00
+    25%, 75%
+      transform: rotate(90deg) scale(1.1)
+      box-shadow: 0 0 14px #ffffff
 
-    +maxWidth798()
-      display none !important
+  @keyframes playingShadow 
+    0%, 100%
+      box-shadow: 0 0px 12px -3px var(--efu-none)
+    50%
+      box-shadow: 0 0px 12px 0px var(--efu-main)
 
-    span
-      user-select none
+  @keyframes lightBar 
+    0%, 100%
+      opacity: 0.1
+    60%
+      opacity: 0.3
 
-    div
-      user-select none
+  .aplayer.aplayer-narrow
+    .aplayer-body,
+    .aplayer-pic 
+      height: 66px
+      width: 66px
 
-    &.playing
-      box-shadow 0 0 12px -3px var(--efu-none)
-      -webkit-animation playingShadow 5s linear infinite
+  #nav-music 
+    display: flex
+    align-items: center
+    z-index: 12
+    position: fixed
+    bottom: 20px
+    left: 20px
+    cursor: pointer
+    transition: all 0.5s, left 0s
+    transform-origin: left bottom
+    box-shadow: var(--efu-shadow-border)
+    border-radius: 40px
+    overflow: hidden
 
-      .aplayer
-        background var(--efu-main-op-deep)
-        border var(--style-border-hover)
-        backdrop-filter saturate(180%) blur(20px)
-        -webkit-backdrop-filter blur(20px)
-        transform translateZ(0)
+    &:active 
+      transform: scale(0.97)
 
-        &.aplayer-withlrc
-          .aplayer-pic
-            box-shadow 0 0 14px #ffffffa6
-            -webkit-transform rotate(0) scale(1.1)
-            border-color var(--efu-white)
-            animation-play-state running
+    &.playing 
+      border: var(--style-border)
+      box-shadow: 0 0px 12px -3px var(--efu-none)
+      animation: playingShadow 5s linear infinite
 
-          .aplayer-info
-            color var(--efu-white)
+      .aplayer.aplayer-withlrc
+        .aplayer-pic 
+          box-shadow: 0 0 14px #ffffffa6
+          transform: rotate(0deg) scale(1.1)
+          border-color: var(--efu-white)
+          animation-play-state: running  
 
-          .aplayer-lrc
-            width 200px
-            margin-bottom 0
-            opacity 1
+        .aplayer-info 
+          color: var(--efu-white)
 
-        .aplayer-info
-          .aplayer-controller
-            .aplayer-bar-wrap
-              .aplayer-bar
-                opacity 1
+      #nav-music-hoverTips 
+        width: 0
 
-                .aplayer-played
-                  animation-play-state running
-                  height: 100%;
-                  opacity: .1;
-                  background-color: var(--efu-white) !important;
-                  animation: lightBar 5s ease infinite;
-                  animation-play-state: paused;
+      .aplayer 
+        background: var(--efu-main)
+        border: var(--style-border-hover)
+        backdrop-filter: saturate(180%) blur(20px)
+        transform: translateZ(0)
 
-      #nav-music-hoverTips
-        opacity 0
+      .aplayer .aplayer-info .aplayer-controller .aplayer-bar-wrap .aplayer-bar .aplayer-played 
+        animation-play-state: running
 
-    .aplayer
-      background var(--efu-card-bg)
-      border-radius 60px
-      height 41px
-      display flex
-      margin 0
-      pointer-events none
-      transition .3s
-      border var(--style-border)
-      box-shadow none
+    &:hover:not(.playing) #nav-music-hoverTips 
+      opacity: 1
 
-      &.aplayer-withlrc
-        .aplayer-pic
-          height 25px
-          width 25px
-          border-radius 40px
-          z-index 1
-          transition .3s
-          -webkit-transform rotate(0) scale(1)
-          border var(--style-border-always)
-          -webkit-animation changeright 24s linear infinite
-          animation-play-state paused
+    .aplayer.aplayer-withlrc
+      .aplayer-pic 
+        height: 25px
+        width: 25px
+        border-radius: 40px
+        z-index: 1
+        transition: 0.3s
+        transform: rotate(0deg) scale(1)
+        border: var(--style-border-always)
+        animation: changeright 24s linear infinite
+        animation-play-state: paused
 
-        .aplayer-info
-          height 100%
-          color var(--efu-fontcolor)
-          margin-left 8px
-          padding 0
-          display flex
-          align-items center
+      .aplayer-info 
+        height: 100%
+        color: var(--efu-fontcolor)
+        margin: 0
+        padding: 0
+        display: flex
+        align-items: center
 
-        .aplayer-lrc
-          width 0
-          opacity 0
-          transition .3s
-          margin-left 8px
-          margin-top -2px
+    #nav-music-hoverTips 
+      color: var(--efu-white)
+      background: var(--efu-main)
+      width: 100%
+      height: 100%
+      position: absolute
+      top: 0
+      left: 0
+      align-items: center
+      justify-content: center
+      display: flex
+      border-radius: 40px
+      opacity: 0
+      font-size: 12px
+      z-index: 2
+      transition: 0.3s
 
-      .aplayer-notice
-        display none
+    .aplayer 
+      background: var(--efu-card-bg)
+      border-radius: 60px
+      height: 41px
+      display: flex
+      margin: 0
+      transition: 0.3s
+      border: var(--style-border)
+      box-shadow: none
 
-      .aplayer-miniswitcher
-        display none
+      .aplayer-notice,
+      .aplayer-miniswitcher,
+      .aplayer-list 
+        display: none
 
-      .aplayer-body
-        position relative
-        display flex
-        align-items center
-        padding 0 12px 0 8px
+      .aplayer-body 
+        position: relative
+        display: flex
+        align-items: center
 
-      .aplayer-pic
-        .aplayer-play
-          opacity 0
+      .aplayer-info 
+        .aplayer-music 
+          margin: 0
+          display: flex
+          align-items: center
+          padding: 0 12px 0 8px
+          cursor: pointer
+          z-index: 1
+          height: 100%
 
-        div
-          display none
+          .aplayer-title 
+            cursor: pointer
+            line-height: 1
+            display: inline-block
+            white-space: nowrap
+            max-width: 120px
+            overflow: hidden
+            text-overflow: ellipsis
+            transition: 0.3s
+            user-select: none
 
-      .aplayer-info
-        .aplayer-music
-          margin 0
-          display flex
-          align-items center
-          padding 0
-          z-index 1
+        .aplayer-controller 
+          position: absolute
+          width: 100%
+          height: 100%
+          top: 0
+          left: 0
 
-          .aplayer-author
-            display none
+          .aplayer-bar-wrap 
+            margin: 0
+            padding: 0
 
-          .aplayer-title
-            cursor pointer
-            line-height 1
-            display inline-block
-            white-space nowrap
-            max-width 120px
-            overflow hidden
-            text-overflow ellipsis
-            transition .3s
+            .aplayer-bar 
+              height: 100%
+              background: 0 0
 
-        .aplayer-controller
-          position absolute
-          width 100%
-          height 100%
-          top 0
-          left 0
+              .aplayer-loaded 
+                display: none
 
-          .aplayer-time
-            display none
+              .aplayer-played 
+                height: 100%
+                opacity: 0.1
+                background-color: var(--efu-white) !important
+                animation: lightBar 5s ease infinite
+                animation-play-state: paused
 
-          .aplayer-bar-wrap
-            margin 0
-            padding 0
+      .aplayer-pic 
+        pointer-events: none
 
-            .aplayer-bar
-              height 100%
-              background 0 0
-              opacity 0
+        .aplayer-button 
+          bottom: 50%
+          right: 50%
+          transform: translate(50%, 50%)
+          margin: 0
+          transition: 0.3s
+          pointer-events all
 
-              .aplayer-loaded
-                display none
+        &:has(.aplayer-button.aplayer-play) 
+          animation-play-state: paused
+          transform: rotate(0deg) scale(1) !important
 
-              .aplayer-played
-                height 100%
-                opacity .1
-                background-color var(--efu-white) !important
-                -webkit-animation lightBar 5s ease infinite
-                animation-play-state paused
+        margin-left: 8px
 
-      &.aplayer-withlist
-        .aplayer-info
-          border none
+      .aplayer-info .aplayer-controller .aplayer-time,
+      .aplayer-info .aplayer-music .aplayer-author 
+        display: none
 
-      .aplayer-lrc
-        p
-          color #ffffffb3
-          filter blur(1px)
+      &.aplayer-withlist .aplayer-info 
+        border: none
 
-          &.aplayer-lrc-current
-            color var(--efu-white)
-            border none
-            filter blur(0)
+      .aplayer-lrc 
+        width: 0
+        opacity: 0
+        transition: 0.3s
+        margin-bottom: -15px
 
-    #nav-music-hoverTips
-      color var(--efu-white)
-      background var(--efu-main)
-      width 100%
-      height 100%
-      position absolute
-      top 0
-      left 0
-      align-items center
-      justify-content center
-      display flex
-      border-radius 40px
-      opacity 0
-      font-size 12px
-      z-index 2
-      pointer-events none
-      transition .3s
+        p.aplayer-lrc-current 
+          color: var(--efu-white)
+          border: none
+          min-height: 20px
+          filter: none
 
-    &:hover
-      &:not(.playing)
-        #nav-music-hoverTips
-          opacity 1
+        &:after,
+        &:before 
+          display: none
 
-    .aplayer-list
-      display none
+        p 
+          color: #ffffffb3
+          filter: blur(.8px)
 
-  #nav-music .aplayer .aplayer-lrc:after,
-  #nav-music .aplayer .aplayer-lrc:before
-    display none
+    &.stretch .aplayer.aplayer-withlrc .aplayer-lrc 
+      width: 200px
+      margin-left: 8px
+      opacity: 1
+
+  .aplayer-thumb
+    width: 0!important
+    height: 0!important

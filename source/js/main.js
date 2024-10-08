@@ -150,22 +150,51 @@ const sco = {
       });
     }
   },
-  musicToggle() {
-    const $music = document.querySelector('#nav-music') || null;
-    const $meting = document.querySelector('meting-js') || null;
-    const $console = document.getElementById('consoleMusic') || null;
-    const $rm_text = document.querySelector('#menu-music-toggle span') || null;
-    const $rm_icon = document.querySelector('#menu-music-toggle i') || null;
+  musicToggle(isMeting = true) {
+    if (!this.isMusicBind) {
+      this.musicBind();
+    }
+    const $music = document.querySelector('#nav-music');
+    const $meting = document.querySelector('meting-js');
+    const $console = document.getElementById('consoleMusic');
+    const $rmText = document.querySelector('#menu-music-toggle span');
+    const $rmIcon = document.querySelector('#menu-music-toggle i');
+    
     this.musicPlaying = !this.musicPlaying;
     $music.classList.toggle("playing", this.musicPlaying);
-    $console && $console.classList.toggle("on", this.musicPlaying);
+    $music.classList.toggle("stretch", this.musicPlaying);
+    $console?.classList.toggle("on", this.musicPlaying);
+    
     if (this.musicPlaying) {
-      $meting.aplayer.play();
-      (typeof rm !== 'undefined') && rm?.menuItems.music[0] && ($rm_text.textContent = GLOBAL_CONFIG.right_menu.music.stop) && ($rm_icon.className = 'solitude fas fa-pause')
+      if (typeof rm !== 'undefined' && rm?.menuItems.music[0]) {
+        $rmText.textContent = GLOBAL_CONFIG.right_menu.music.stop;
+        $rmIcon.className = 'solitude fas fa-pause';
+      }
     } else {
-      $meting.aplayer.pause();
-      (typeof rm !== 'undefined') && rm?.menuItems.music[0] && ($rm_text.textContent = GLOBAL_CONFIG.right_menu.music.start) && ($rm_icon.className = 'solitude fas fa-play')
+      if (typeof rm !== 'undefined' && rm?.menuItems.music[0]) {
+        $rmText.textContent = GLOBAL_CONFIG.right_menu.music.start;
+        $rmIcon.className = 'solitude fas fa-play';
+      }
     }
+
+    if(isMeting){
+      this.musicPlaying ? $meting.aplayer.play() : $meting.aplayer.pause();
+    }
+  },
+  musicBind() {
+    const $music = document.querySelector('#nav-music');
+    const $name = document.querySelector('#nav-music .aplayer-music');
+    const $button = document.querySelector('#nav-music .aplayer-button');
+    
+    $name?.addEventListener('click', () => {
+      $music.classList.toggle("stretch");
+    });
+
+    $button?.addEventListener('click', () => {
+      this.musicToggle(false);
+    });
+    
+    this.isMusicBind = true;
   },
   switchCommentBarrage() {
     let commentBarrageElement = document.querySelector(".comment-barrage");
@@ -189,7 +218,7 @@ const sco = {
     this.sco_keyboards = !this.sco_keyboards;
     const consoleKeyboard = document.querySelector("#consoleKeyboard");
     const keyboardFunction = this.sco_keyboards ? openKeyboard : closeKeyboard;
-    consoleKeyboard.classList.toggle("on", this.sco_keyboards);
+    consoleKeyboard?.classList.toggle("on", this.sco_keyboards);
     keyboardFunction();
     localStorage.setItem("keyboard", this.sco_keyboards);
     document.getElementById('keyboard-tips')?.classList.remove('show');

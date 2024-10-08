@@ -12,39 +12,40 @@ if theme.post.footer.enable && is_post()
         div.footer-bar-description=theme.post.footer.desc
         if theme.post.footer.button.enable
             a.footer-bar-link(href=url_for(theme.post.footer.button.url))= theme.post.footer.button.name
-div#footer_deal
-    - var leftInfo = information.left || []
-    - var rightInfo = information.right || []
+if information.left || information.right || information.author
+    div#footer_deal
+        - var leftInfo = information.left || []
+        - var rightInfo = information.right || []
 
-    each value, label in leftInfo
-        - var array = value.split('||')
-        a.deal_link(href=url_for(trim(array[0])), title=label)
-            i.solitude(class=array[1])
+        each value, label in leftInfo
+            - var array = value.split('||')
+            a.deal_link(href=url_for(trim(array[0])), title=label)
+                i.solitude(class=array[1])
 
-    if information.author
-        div#footer_mini_logo.nolazyload.footer_mini_logo(title=_p('nav.backtop'), onclick="sco.toTop()")
-            img(src=information.author, alt=_p('nav.backtop'))
+        if information.author
+            div#footer_mini_logo.nolazyload.footer_mini_logo(title=_p('nav.backtop'), onclick="sco.toTop()")
+                img(src=information.author, alt=_p('nav.backtop'))
 
-    each value, label in rightInfo
-        - var array = value.split('||')
-        a.deal_link(href=url_for(trim(array[0])), title=label)
-            i.solitude(class=array[1])
-div#st-footer
+        each value, label in rightInfo
+            - var array = value.split('||')
+            a.deal_link(href=url_for(trim(array[0])), title=label)
+                i.solitude(class=array[1])
+if group
+    div#st-footer
+        each value, x in group || []
+            div.footer-group
+                h3.footer-title= x
+                div.footer-links
+                    each url, y in value
+                        a.footer-item(href=url_for(url), title=y)= y
 
-    each value, x in group || []
-        div.footer-group
-            h3.footer-title= x
-            div.footer-links
-                each url, y in value
-                    a.footer-item(href=url_for(url), title=y)= y
-
-    if theme.footer && theme.footer.randomlink
-        div.footer-group
-            div.footer-title-group
-                h3.footer-title= _p('footer.randomlink')
-                button.random-friends-btn(onclick='randomLinksList()', title=_p('footer.randomlink'))
-                    i.solitude.fa-solid.fa-arrows-rotate
-            div.footer-links#friend-links-in-footer
+        if theme.footer && theme.footer.randomlink
+            div.footer-group
+                div.footer-title-group
+                    h3.footer-title= _p('footer.randomlink')
+                    button.random-friends-btn(onclick='randomLinksList()', title=_p('footer.randomlink'))
+                        i.solitude.fa-solid.fa-arrows-rotate
+                div.footer-links#friend-links-in-footer
 div#footer-bar
     div.footer-bar-links
         div.footer-bar-left

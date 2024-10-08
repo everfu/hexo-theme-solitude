@@ -8,6 +8,9 @@
     if page.comment
         button.comment(type='button' title=_p('rightside.show.comment') onclick="sco.scrollTo('post-comment')")
             i.fas.fa-comment
+    if theme.comment.commentBarrage && page.comment
+        button.barrage.pc(type='button' title=_p('rightside.show.barrage') onclick="sco.switchCommentBarrage()")
+            span= _p('rightside.show.barrage')
     button.top(type='button' title=_p('rightside.show.top') onclick='sco.toTop()')
         i.fas.fa-arrow-up
         span#percent= "0"

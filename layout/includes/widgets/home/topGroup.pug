@@ -1,23 +1,25 @@
 - var filteredPosts = site.posts.data.filter(item => item.recommend === true).slice(0,6)
-.top-post-group
-    each post in filteredPosts
-        .top-post-item
-            .post_cover
-                a(href=url_for(post.path), title=post.title)
-                    span.top-post-top-text= _p('home.recommend')
-                    img.post_bg(alt=post.title, src=url_for(post.cover))
-            .top-post-info
-                a.article-title(href=url_for(post.path), title=post.title)= post.title
+if filteredPosts.length > 0
+    .top-post-group
+        each post in filteredPosts
+            .top-post-item
+                .post_cover
+                    a(href=url_for(post.path), title=post.title)
+                        span.top-post-top-text= _p('home.recommend')
+                        img.post_bg(alt=post.title, src=url_for(post.cover))
+                .top-post-info
+                    a.article-title(href=url_for(post.path), title=post.title)= post.title
 
 mixin todayCardContent
     .todayCard-info
         .todayCard-tips= theme.hometop.recommendList.sup
         .todayCard-title= theme.hometop.recommendList.title
     .todayCard-cover.nolazyload(style=`background: url('${theme.hometop.recommendList.img}') no-repeat center /cover`)
-    .banner-button-group
-        a.banner-button(onclick="window.event.cancelBubble=true;sco.hideTodayCard();")
-            i.solitude.fa-solid.fa-circle-plus
-            span.banner-button-text= _p('home.recommendmore')
+    if filteredPosts.length > 0
+        .banner-button-group
+            a.banner-button(onclick="window.event.cancelBubble=true;sco.hideTodayCard();")
+                i.solitude.fa-solid.fa-circle-plus
+                span.banner-button-text= _p('home.recommendmore')
 
 case theme.hometop.recommendList.url.startsWith('/')
     when true
