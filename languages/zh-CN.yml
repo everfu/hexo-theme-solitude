@@ -96,6 +96,7 @@ search:
   hit: 找到 ${hits} 条结果，用时 ${time} 毫秒
   placeholder: 输入关键词快速查找
   count: 共 <b>${count}</b> 条结果。
+  load: 搜索中...
 
 head:
   noscript: 开启JavaScript才能访问本站哦~
