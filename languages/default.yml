@@ -96,6 +96,7 @@ search:
   hit: Found ${query} results for you
   placeholder: Enter keywords to search
   count: Total <b>${count}</b> results.
+  load: Loading...
 
 head:
   noscript: Please enable JavaScript to view the site

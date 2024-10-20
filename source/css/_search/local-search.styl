@@ -13,6 +13,8 @@
   transition 0.3s
   border-radius 8px
   animation slide-in .6s ease 0s 1 normal none running
+  gap 16px
+  flex-direction: column
 
   &:hover
     border var(--style-border-hover)
@@ -31,14 +33,10 @@
   .search-dialog-title
     font-weight 700
     color var(--efu-main)
-    padding 0 0 0.7rem
     font-size 1.4em
     line-height 1
 
   .search-close-button
-    position absolute
-    top 0.8rem
-    right 1rem
     color var(--efu-gray)
     font-size 1.4em
     line-height 1
@@ -77,7 +75,6 @@
 
   #search-pagination
     .pagination-list
-      margin 0.2rem 0 0
       padding 0
       text-align center
 
@@ -103,13 +100,13 @@
             color var(--efu-white)
 
   #search-tips
-    padding-top 12px
     color var(--efu-secondtext)
     right 0
     margin auto
 
     .search-result-count
       color var(--efu-gray)
+      font-size 12px
 
       b
         color var(--efu-main)
@@ -119,8 +116,6 @@
     margin 0 auto
     max-width 100%
     width 100%
-    padding-top 8px
-    padding-bottom 8px
 
     input
       height 100%
@@ -133,9 +128,9 @@
       color var(--efu-fontcolor)
       caret-color var(--efu-theme)
 
-      ::placeholder
+      &::placeholder
         color var(--efu-gray)
-        opacity .5
+        opacity .8
 
 #search-mask
   position fixed
@@ -159,3 +154,8 @@
     &:hover
       background var(--efu-main)
       color var(--efu-white)
+
+.search-nav
+  display: flex
+  justify-content: space-between
+  align-content: center

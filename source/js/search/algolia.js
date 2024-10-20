@@ -1,10 +1,10 @@
-window.addEventListener("load", () => {
+document.addEventListener("DOMContentLoaded", function () {
     const $searchMask = document.getElementById("search-mask");
     const $searchDialog = document.querySelector("#algolia-search .search-dialog");
 
     window.openSearch = () => {
         utils.animateIn($searchMask, "to_show 0.5s");
-        $searchDialog.style.display = "block";
+        $searchDialog.style.display = "flex";
         setTimeout(() => {
             document.querySelector("#algolia-search .ais-SearchBox-input").focus();
         }, 100);
@@ -68,12 +68,14 @@ window.addEventListener("load", () => {
 
     const search = instantsearch({
         indexName: algolia.indexName,
-        searchClient: algoliasearch(algolia.appId, algolia.apiKey),
+        searchClient: algoliasearch.algoliasearch(algolia.appId, algolia.apiKey),
         searchFunction(helper) {
             if (helper.state.query) {
-                let innerLoading = '<i class="solitude st-loading-line st-spin"></i>';
+                let innerLoading = `<div class="loading">${GLOBAL_CONFIG.lang.search.loading}</div>`;
                 document.getElementById("algolia-hits").innerHTML = innerLoading;
                 helper.search();
+            } else {
+                document.getElementById("algolia-hits").innerHTML = '';
             }
         },
     });
@@ -87,9 +89,8 @@ window.addEventListener("load", () => {
         showReset: false,
         showSubmit: false,
         placeholder: GLOBAL_CONFIG.lang.search.placeholder,
-        showLoadingIndicator: true,
-        searchOnEnterKeyPressOnly: true,
-        searchAsYouType: false,
+        showLoadingIndicator: false,
+        searchAsYouType: true,
     });
 
     const hits = instantsearch.widgets.hits({
@@ -98,7 +99,7 @@ window.addEventListener("load", () => {
             item(data) {
                 const link = data.permalink ? data.permalink : GLOBAL_CONFIG.root + data.path;
                 const result = data._highlightResult;
-                const loadingLogo = document.querySelector("#algolia-hits .st-spin");
+                const loadingLogo = document.querySelector("#algolia-hits .loading");
                 if (loadingLogo) {
                     loadingLogo.style.display = "none";
                 }
@@ -111,7 +112,7 @@ window.addEventListener("load", () => {
           </a>`;
             },
             empty: function (data) {
-                const loadingLogo = document.querySelector("#algolia-hits .st-spin");
+                const loadingLogo = document.querySelector("#algolia-hits .loading");
                 if (loadingLogo) {
                     loadingLogo.style.display = "none";
                 }
@@ -136,10 +137,10 @@ window.addEventListener("load", () => {
         scrollTo: false,
         showFirstLast: false,
         templates: {
-            first: '<i class="solitude st-show-left-line"></i>',
-            last: '<i class="solitude st-show-right-line"></i>',
-            previous: '<i class="solitude st-arrow-left-bold"></i>',
-            next: '<i class="solitude st-arrow-right-bold"></i>',
+            first: '<i class="solitude fas fa-angles-left"></i>',
+            last: '<i class="solitude fas fa-angles-right"></i>',
+            previous: '<i class="solitude fas fa-angle-left"></i>',
+            next: '<i class="solitude fas fa-angle-right"></i>',
         },
         cssClasses: {
             root: "pagination",
@@ -162,7 +163,7 @@ window.addEventListener("load", () => {
         },
     });
 
-    search.addWidgets([configure, searchBox,stats, hits, pagination]);
+    search.addWidgets([configure, searchBox, stats, hits, pagination]);
 
     search.start();
 

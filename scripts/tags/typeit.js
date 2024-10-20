@@ -4,7 +4,7 @@
 
 'use strict'
 
-const typeit = ([tag, options], content) => {
+const typeit = ([tag], content) => {
   const id = Math.random().toString(36).substr(2, 9);
   tag = tag || 'div';
   return `
@@ -15,8 +15,7 @@ const typeit = ([tag, options], content) => {
       const typeit = () => {
         const ctx = document.getElementById("typeit-${id}");
         if (!ctx) return;
-        new TypeIt("#typeit-${id}", ${options})
-          .type("${content}")
+        new TypeIt("#typeit-${id}", {${content}})
           .go();
       }
       document.addEventListener("DOMContentLoaded", typeit);

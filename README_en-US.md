@@ -1,12 +1,12 @@
-[English](README_en-US.md)丨[简体中文](README.md)丨繁体中文
+English丨[简体中文](README.md)丨[繁体中文](README_zh-Hant.md)
 
 <div align="center">
 
-  <h1 style="background: linear-gradient(to right, #76CBEC, #F7A137); -webkit-background-clip: text; color: transparent; font-size: 4.4rem">Solitude</h1>
+   <h1 style="background: linear-gradient(to right, #76CBEC, #F7A137); -webkit-background-clip: text; color: transparent; font-size: 4.4rem">Solitude</h1>
 
-  一款優雅的 Hexo 主題，支援懶載入、PWA、Latex 以及多種評論系統。
+   An elegant Hexo theme that supports lazy loading, PWA, Latex, and multiple commenting systems.
 
-   主題設計由 [@张洪Heo](https://github.com/zhheo) 全權授權
+   Theme design is fully licensed by [@张洪Heo](https://github.com/zhheo).
 
 ![npm package](https://img.shields.io/npm/v/hexo-theme-solitude?style=for-the-badge)
 ![license](https://img.shields.io/github/license/everfu/hexo-theme-solitude?color=FF5531&style=for-the-badge)
@@ -20,7 +20,7 @@
 [![discord](https://img.shields.io/discord/1266610921942548553?style=for-the-badge&logo=discord&label=discord&logoColor=white)](https://discord.gg/HZXAnK4Sut)
 ![JetBrains](https://img.shields.io/badge/jetbrains-support-black?logo=jetbrains&style=for-the-badge)
 
-[文档](https://solitude.js.org/)丨[預覽](https://blog.everfu.cn/)
+[Docs](https://solitude.js.org/)丨[Preview](https://blog.everfu.cn/)
 
 </div>
 
@@ -30,41 +30,43 @@
 
 </div>
 
-## 特性
+## Features
 
-- 頁面懶載入（Pjax）、圖片懶載入（LazyLoad）、離線應用（PWA）
-- 評論(Twikoo、Waline、Valine、Artalk、Giscus)，支援雙評論
-- 晝夜切換（ColorMode）
-- 燈箱（medium-zoom、fancybox）
-- 數學公式（Latex）
-- 特色頁面：即刻短文、我的裝備、在線工具、音樂館、友鏈魚塘、相冊頁、豆瓣頁、留言彈幕頁。
-- 文章功能：AI 摘要、代碼高亮。
+- Page lazy loading (Pjax), image lazy loading (LazyLoad), offline application (PWA)
+- Comments (Twikoo, Waline, Valine, Artalk, Giscus), supporting dual comments
+- Day and night mode switch (ColorMode)
+- Lightbox (medium-zoom, fancybox)
+- Mathematical formulas (Latex)
+- Special pages: Moments, My Equipment, Online Tools, Music Library, Friends' Links, Photo Album, Douban Page, Danmaku Message Board
+- Article features: AI Summary, Code Highlighting
 
 ## Todo
 
-- [x] 移動端目錄支援
-- [x] 增加右下角側邊欄
+- [X] Mobile directory support.
+- [X] Add a bottom right sidebar.
 
-## 應用
+> If you have any questions, please issue an [issue](https://github.com/everfu/hexo-theme-solitude/issues)
 
-1. 使用 NPM 包進行安裝
+## Setup
+
+1. Use the NPM package
       ```bash
       npm i hexo-theme-solitude
       ```
-2. 應用主題
+2. Apply
       ```yaml
       theme: solitude
       ```
 
-前往 [文檔](https://solitude.js.org/) 獲取更多資訊。
+Check out the [Documentation](https://solitude.js.org/) for more information.
 
-## 社區
+## Community
 
 [![Discord](https://img.shields.io/discord/1266610921942548553?style=for-the-badge&logo=discord&label=discord&logoColor=white)](https://discord.gg/HZXAnK4Sut)
-[![QQ 群](https://img.shields.io/badge/QQ%20群-948375336-FFD700?logo=Tencent-QQ&logoColor=white&style=for-the-badge)](https://qm.qq.com/q/mxfomMvJPG)
+[![QQ Group](https://img.shields.io/badge/QQ%20Group-948375336-FFD700?logo=Tencent-QQ&logoColor=white&style=for-the-badge)](https://qm.qq.com/q/mxfomMvJPG)
 
-## 版權
+## License
 
-[MIT](./LICENSE) License &copy; 2023-至今 [伍十七](https://github.com/everfu)
+[MIT](./LICENSE) License &copy; 2023-PRESENT [伍十七](https://github.com/everfu)
 
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fvalor-x%2Fhexo-theme-solitude.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fvalor-x%2Fhexo-theme-solitude?ref=badge_large)
