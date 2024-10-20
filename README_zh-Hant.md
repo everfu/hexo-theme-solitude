@@ -2,7 +2,7 @@
 
 <div align="center">
 
-  <h1>Solitude</h1>
+  <h1 style="background: linear-gradient(to right, #76CBEC, #F7A137); -webkit-background-clip: text; color: transparent; font-size: 4.4rem">Solitude</h1>
 
   一款優雅的 Hexo 主題，支援懶載入、PWA、Latex 以及多種評論系統。
 
@@ -16,7 +16,7 @@
 ![hexo version](https://img.shields.io/badge/hexo-7.0.0+-blue?logo=hexo&logoColor=white&style=for-the-badge)
 ![node version](https://img.shields.io/badge/node-14.0.0+-white?logo=node.js&logoColor=white&style=for-the-badge)
 
-![page view](https://komarev.com/ghpvc/?username=hexo-theme-solitude&abbreviated=true&base=12345&style=for-the-badge)
+![page view](https://komarev.com/ghpvc/?username=hexo-theme-solitude&abbreviated=true&style=for-the-badge)
 [![discord](https://img.shields.io/discord/1266610921942548553?style=for-the-badge&logo=discord&label=discord&logoColor=white)](https://discord.gg/HZXAnK4Sut)
 ![JetBrains](https://img.shields.io/badge/jetbrains-support-black?logo=jetbrains&style=for-the-badge)
 
@@ -58,20 +58,6 @@
 
 前往 [文檔](https://solitude.js.org/) 獲取更多資訊。
 
-## 贊助者
-
-<div align="center">
-
-[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/W7W1YSMOK)
-
-</div>
-
-<p align="center">
-  <a href="https://cdn.jsdelivr.net/gh/efuo/static/sponsors.svg">
-    <img src='https://cdn.jsdelivr.net/gh/efuo/static/sponsors.svg'/>
-  </a>
-</p>
-
 ## 社區
 
 [![Discord](https://img.shields.io/discord/1266610921942548553?style=for-the-badge&logo=discord&label=discord&logoColor=white)](https://discord.gg/HZXAnK4Sut)
@@ -79,6 +65,6 @@
 
 ## 版權
 
-[MIT](./LICENSE) License &copy; 2023-至今 [一小只托尼](https://github.com/everfu)
+[MIT](./LICENSE) License &copy; 2023-至今 [伍十七](https://github.com/everfu)
 
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fvalor-x%2Fhexo-theme-solitude.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fvalor-x%2Fhexo-theme-solitude?ref=badge_large)
