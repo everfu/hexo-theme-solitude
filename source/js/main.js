@@ -689,7 +689,7 @@ class tabs {
     if (expire.time > ex) return;
     const ele = document.createElement('div');
     ele.className = 'expire';
-    ele.innerHTML = `<i class="solitude st-circle-exclamation-solid"></i>${expire.text_prev}${-(expire.time - ex)}${expire.text_next}`;
+    ele.innerHTML = `<i class="solitude fas fa-circle-exclamation"></i>${expire.text_prev}${-(expire.time - ex)}${expire.text_next}`;
     const articleContainer = document.getElementById('article-container');
     articleContainer.insertAdjacentElement(expire.position === 'top' ? 'afterbegin' : 'beforeend', ele);
   }
