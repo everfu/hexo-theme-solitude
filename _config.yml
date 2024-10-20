@@ -37,30 +37,29 @@ nav:
   # Menu
   # 菜单
   menu:
-    # Home: / # name: link
-    # Article: # name
-    #   Archives: /archives/ || fas fa-folder-closed # item name: link || icon
-    #   Categories: /categories/ || fas fa-clone
-    #   Tags: /tags/ || fas fa-tags
-    # Friends:
-    #   Moments: /moments/ || fas fa-wifi
-    #   Links: /links/ || fas fa-user-group
-    #   Treasure: javascript:travelling() || fas fa-gift
-    # Myself:
-    #   Equipment: /equipment/ || fas fa-laptop
-    #   Toobox: /tlink/ || fas fa-toolbox
-    #   Music: /music/ || fas fa-music
-    # About: /about/
+    # 首页: / # name: link
+    # 文库: # name
+    #   全部文章: /archives/ || fas fa-folder-closed # item name: link || icon
+    #   全部分类: /categories/ || fas fa-clone
+    #   全部标签: /tags/ || fas fa-tags
+    # 友链:
+    #   朋友圈: /moments/ || fas fa-wifi
+    #   友情链接: /links/ || fas fa-user-group
+    #   宝藏博主: javascript:travelling() || fas fa-gift
+    # 关于:
+    #   我的装备: /equipment/ || fas fa-laptop
+    #   在线工具: /tlink/ || fas fa-toolbox
+    #   音乐馆: /music/ || fas fa-music
 
   # Right button
   # 右侧按钮
   right:
     random: false # Random article / 随机文章按钮
     custom:
-    #  - name: Start # name
-    #    url: https://www.travellings.cn/go.html # Jump link
-    #    icon: fas fa-train # Icon
-    #    onclick: # Click event
+    #  - name: 开往 # 名字
+    #    url: https://www.travellings.cn/go.html # 跳转链接
+    #    icon: fas fa-train # 图标
+    #    onclick: # 点击事件
     #    id: travellings_button # id
 # --------------------------- end ---------------------------
 
@@ -70,8 +69,8 @@ nav:
 hometop:
   enable: false
   banner:
-    title: # Tranquility <br>and love life / 宁静致远 <br> 热爱生活 # Title
-    url: Hexo Theme Solitude
+    title: # 宁静致远 <br> 热爱生活 # 标题
+    url: Hexo Theme Solitude # 小字
     icon:
       # HTML: # name
       #   img: https://i.postimg.cc/vBWVnY8q/html.png # url
@@ -143,17 +142,17 @@ aside:
     # Style 2 is invalid
     # Style 2 无效
     sayhello:
-      morning: ✨ Good morning. It's a new day
-      noon: It's time for a midday break
-      afternoon: Tea time. 🍵
-      night: early bedtime
-      goodnight: Good night 😴
+      morning: ✨ 早上好，新的一天开始了
+      noon: 🍲 午餐时间
+      afternoon: 🌞 下午好
+      night: 早点休息
+      goodnight: 晚安 😴
     # Style 2 is invalid, Triggered when sayhello is clicked.
     # Style 2 无效, 点击 sayhello 时触发
     sayhello2:
-      # - You'll make it.
-      # - You're gonna make it.
-      # - Good luck, stranger.
+      # - 你可以的
+      # - 你一定可以的
+      # - 祝你好运，陌生人
     # social
     # 社交信息图标
     information:
