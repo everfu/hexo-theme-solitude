@@ -43,11 +43,11 @@
                           a(href=url_for('/archives/') title=_p('aside.card.posts') + site.posts.length)
                               .length-num= site.posts.length
                               .headline= _p('page.archives')
-                        if site.tags.length !== 0 && theme.page.tags
+                        if site.tags.length !== 0 || theme.page.tags
                           a(href=url_for('/tags/') title=_p('aside.card.tags') + site.tags.length)
                               .length-num= site.tags.length
                               .headline= _p('page.tag')
-                        if site.categories.length !== 0 && theme.page.categories
+                        if site.categories.length !== 0 || theme.page.categories
                           a(href=url_for('/categories/') title=_p('aside.card.categories') + site.categories.length)
                               .length-num= site.categories.length
                               .headline= _p('page.category')

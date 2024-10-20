@@ -31,4 +31,5 @@ block content
             if page.comment
                 - var comment_js = true
                 include includes/widgets/third-party/comments/comment
-        include includes/widgets/aside/aside
+        if page.aside
+            include includes/widgets/aside/aside
