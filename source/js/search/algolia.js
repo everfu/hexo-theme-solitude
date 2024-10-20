@@ -74,6 +74,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 let innerLoading = `<div class="loading">${GLOBAL_CONFIG.lang.search.loading}</div>`;
                 document.getElementById("algolia-hits").innerHTML = innerLoading;
                 helper.search();
+            } else {
+                document.getElementById("algolia-hits").innerHTML = '';
             }
         },
     });
