@@ -12,7 +12,7 @@
     each item in noSticky
         include ./asideSwitch.pug
     .sticky_layout
-        if page.toc
+        if showToc
             include ./asideToc.pug
         each item in Sticky
             include ./asideSwitch.pug
