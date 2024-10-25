@@ -142,6 +142,6 @@ hexo.extend.filter.register('before_generate', () => {
     themeConfig.cdn = Object.assign(
         createCDNLink(internalSrc, CDN.internal, 'internal'),
         createCDNLink(thirdPartySrc, CDN.third_party),
-        deleteNullValue(CDN.option)
+        deleteNullValue(CDN.options)
     )
 })
