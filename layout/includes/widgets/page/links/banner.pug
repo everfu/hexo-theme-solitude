@@ -16,16 +16,19 @@
     .tags-group-wrapper
         - const data = site.data.links.links
         - for (let i = 0; i < 2; i++)
+            - var links = []
             each x in data
-                    - var pairs = []
-                    each y, index in x.link_list
-                        if (index % 2 === 0)
-                            - pairs.push([y])
-                        else
-                            - pairs[pairs.length - 1].push(y)
-                    each pair in pairs
-                        .tags-group-icon-pair
-                                each y in pair
-                                    a.tags-group-icon(href=url_for(y.link), title=y.name)
-                                        img(src=y.avatar + (site.data.links.banner_suffix || ''), title=y.name)
-                                        span.tags-group-title=y.name
+                each y in x.link_list
+                    - links.push(y)
+            - var pairs = []
+            each link, index in links
+                if (index % 2 === 0)
+                    - pairs.push([link])
+                else
+                    - pairs[pairs.length - 1].push(link)
+            each pair in pairs
+                .tags-group-icon-pair
+                    each y in pair
+                        a.tags-group-icon(href=url_for(y.link), title=y.name)
+                            img(src=y.avatar + (site.data.links.banner_suffix || ''), title=y.name)
+                            span.tags-group-title=y.name
