@@ -524,15 +524,9 @@ const addHighlight = () => {
   const createEle = (lang, item, service) => {
     const fragment = document.createDocumentFragment()
     if ($isShowTool) {
-      const captionItem = item.querySelector('figcaption')
-      let caption = ''
-      if (captionItem) {
-        caption = `<div class="caption">${captionItem.innerHTML}</div>`
-        item.removeChild(captionItem)
-      }
       const hlTools = document.createElement('div')
       hlTools.className = `highlight-tools ${expandClass}`
-      hlTools.innerHTML = expandEle + lang + caption + copyEle
+      hlTools.innerHTML = expandEle + lang + copyEle
       utils.addEventListenerPjax(hlTools, 'click', ToolsFn)
       fragment.appendChild(hlTools)
     }
