@@ -657,6 +657,9 @@ loading:
   # Full screen loading
   # 全屏加载
   fullpage: false
+  # Loading icon, default is siteicon
+  # 加载图标，不写默认siteicon
+  favicon: /img/favicon.png
   # Pace loading
   # Pace 加载
   pace: true

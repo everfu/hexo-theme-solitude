@@ -1,6 +1,6 @@
 div(id="loading-box" onclick="preloader.endLoading();" style="zoom:1")
     div.loading-bg
-        img.loading-img.nolazyload(src=url_for(theme.site.icon), alt="loading image")
+        img.loading-img.nolazyload(src=url_for(theme.loading.favicon || theme.site.icon), alt="loading image")
 
 script.
     const preloader = {
