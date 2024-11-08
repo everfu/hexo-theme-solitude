@@ -1,38 +1,49 @@
 const coverColor = () => {
-    const page_color = PAGE_CONFIG.color
-    if (page_color){
-        setThemeColors(page_color);
-        return;
+    const pageColor = PAGE_CONFIG.color;
+    if (pageColor) {
+        setThemeColors(pageColor);
+    } else {
+        const path = document.getElementById("post-cover")?.src;
+        path ? handleApiColor(path) : setDefaultThemeColors();
     }
-    const path = document.getElementById("post-cover")?.src;
-    path ? handleApiColor(path) : setDefaultThemeColors();
 }
 
 const handleApiColor = (path) => {
-    const cacheGroup = JSON.parse(localStorage.getItem('Solitude')) || {};
-    const color = cacheGroup.postcolor?.[path]?.value;
-    color ? setThemeColors(color) : img2color(path);
+    const cacheGroup = JSON.parse(localStorage.getItem('Solitude')) || { postcolor: {} };
+    const color = cacheGroup.postcolor[path]?.value;
+    if (color) {
+        setThemeColors(color);
+    } else {
+        img2color(path);
+    }
 }
 
 const img2color = (src) => {
     fetch(`${src}?imageAve`)
-        .then(response => response.json())
-        .then(({ RGB }) => {
-            RGB = `#${RGB.slice(2)}`;
-            setThemeColors(RGB);
-            cacheColor(src, RGB);
+        .then(response => {
+            if (!response.ok) throw new Error('Network response was not ok');
+            return response.json();
         })
-        .catch(console.error);
+        .then(({ RGB }) => {
+            const formattedRGB = `#${RGB.slice(2)}`;
+            setThemeColors(formattedRGB);
+            cacheColor(src, formattedRGB);
+        })
+        .catch(error => console.error('Error fetching color:', error));
 }
 
 const setThemeColors = (value) => {
     if (!value) return setDefaultThemeColors();
     const [r, g, b] = value.match(/\w\w/g).map(x => parseInt(x, 16));
-    const [main, op, opDeep, none] = [`${value}`, `${value}23`, `${value}dd`, `${value}00`];
-    document.documentElement.style.setProperty('--efu-main', main);
-    document.documentElement.style.setProperty('--efu-main-op', op);
-    document.documentElement.style.setProperty('--efu-main-op-deep', opDeep);
-    document.documentElement.style.setProperty('--efu-main-none', none);
+    const themeColors = {
+        main: value,
+        op: `${value}23`,
+        opDeep: `${value}dd`,
+        none: `${value}00`
+    };
+    Object.entries(themeColors).forEach(([key, color]) => {
+        document.documentElement.style.setProperty(`--efu-${key}`, color);
+    });
     adjustBrightness(r, g, b);
     document.getElementById("coverdiv").classList.add("loaded");
     initThemeColor();
@@ -40,7 +51,9 @@ const setThemeColors = (value) => {
 
 const setDefaultThemeColors = () => {
     const vars = ['--efu-theme', '--efu-theme-op', '--efu-theme-op-deep', '--efu-theme-none'];
-    vars.forEach((varName, i) => document.documentElement.style.setProperty(['--efu-main', '--efu-main-op', '--efu-main-op-deep', '--efu-main-none'][i], `var(${varName})`));
+    vars.forEach((varName, i) => {
+        document.documentElement.style.setProperty(['--efu-main', '--efu-main-op', '--efu-main-op-deep', '--efu-main-none'][i], `var(${varName})`);
+    });
     initThemeColor();
 }
 
@@ -51,10 +64,11 @@ const cacheColor = (src, color) => {
 }
 
 const adjustBrightness = (r, g, b) => {
-    if (Math.round(((r * 299) + (g * 587) + (b * 114)) / 1000) < 125) {
-        document.querySelectorAll('.card-content').forEach(item =>
-            item.style.setProperty('--efu-card-bg', 'var(--efu-white)')
-        );
+    const brightness = Math.round(((r * 299) + (g * 587) + (b * 114)) / 1000);
+    if (brightness < 125) {
+        document.querySelectorAll('.card-content').forEach(item => {
+            item.style.setProperty('--efu-card-bg', 'var(--efu-white)');
+        });
         document.querySelectorAll('.author-info__sayhi').forEach(item => {
             item.style.setProperty('background', 'var(--efu-white-op)');
             item.style.setProperty('color', 'var(--efu-white)');
