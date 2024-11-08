@@ -15,7 +15,8 @@ script.
                         if (postElement) {
                             const infoTopTips = postElement.querySelector(".recent-post-info-top-tips"),
                                 originalSpan = infoTopTips ? infoTopTips.querySelector(".original") : null;
-                            if (originalSpan) {
+                            const existingHotTip = infoTopTips ? infoTopTips.querySelector(".hot-tip") : null;
+                            if (!existingHotTip && originalSpan) {
                                 const hotTip = createHotTipElement();
                                 infoTopTips.insertBefore(hotTip, originalSpan);
                             }
