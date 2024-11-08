@@ -50,11 +50,12 @@ div#rightMenu
             div.rightMenu-item#menu-music-copyMusicName
                 i.solitude.fa-solid.fa-clone
                 span= _p('right_menu.music.copyMusicName')
-    div.rightMenu-group.rightMenu-line.rightMenuOther
-        each item,index in custom_list
-            div.rightMenu-item(id=item.id class=item.class onclick=item.click+'||rm.hideRightMenu()')
-                i.solitude(class=item.icon)
-                span= item.name
+    if custom_list.length > 0
+        div.rightMenu-group.rightMenu-line.rightMenuOther
+            each item,index in custom_list
+                div.rightMenu-item(id=item.id class=item.class onclick=item.click+'||rm.hideRightMenu()')
+                    i.solitude(class=item.icon)
+                    span= item.name
     div.rightMenu-group.rightMenu-line.rightMenuOther
         if theme.right_menu.commentBarrage && theme.comment.use && theme.comment.commentBarrage
             div.rightMenu-item#menu-commentBarrage(onclick="sco.switchCommentBarrage()")
