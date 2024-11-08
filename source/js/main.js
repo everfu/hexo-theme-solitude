@@ -552,7 +552,7 @@ const addHighlight = () => {
   if ($isPrismjs) {
     $syntaxHighlight.forEach(item => {
       const langName = item.getAttribute('data-language') || 'Code'
-      const highlightLangEle = `<div class="code-lang">${langName}</div>`
+      const highlightLangEle = `<div class="code-lang">${utils.escapeHtml(langName)}</div>`
       utils.wrap(item, 'figure', {
         class: 'highlight'
       })
@@ -562,7 +562,7 @@ const addHighlight = () => {
     $syntaxHighlight.forEach(item => {
       let langName = item.getAttribute('class').split(' ')[1]
       if (langName === 'plain' || langName === undefined) langName = 'Code'
-      const highlightLangEle = `<div class="code-lang">${langName}</div>`
+      const highlightLangEle = `<div class="code-lang">${utils.escapeHtml(langName)}</div>`
       createEle(highlightLangEle, item, 'hl')
     })
   }

@@ -196,6 +196,16 @@
 
             observerItem ? observerItem.observe(dom) : callback();
         },
+        escapeHtml: function (unsafe) {
+            return unsafe.replace(/[&<"']/g, function (m) {
+              return {
+                '&': '&amp;',
+                '<': '&lt;',
+                '"': '&quot;',
+                "'": '&#039;'
+              }[m];
+            });
+        }
     }
     window.utils = {...window.utils, ...utilsFn};
 })()
