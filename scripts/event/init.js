@@ -3,7 +3,6 @@ hexo.extend.filter.register('before_generate', () => {
     const nodeVer = process.version.replace(/^v/, '');
     const [majorVer] = nodeVer.split('.');
     const logger = hexo.log;
-    const config = hexo.config;
 
     if (hexoVer < 7.0) {
         logger.error('请把 Hexo 升级到 V7.0.0 或更高的版本！');
