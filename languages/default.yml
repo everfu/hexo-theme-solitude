@@ -1,248 +1,248 @@
-more: More
-star: Behold, those who found delight in this piece also perused
-random: Random
-upload: 'datetime: '
-totalk: You don't need to delete blank lines, just type in your comments.
-loading: Loading...
-day: ' days'
-hot-tip: Hot
+more: 更多
+star: 喜欢这篇的人也看了
+random: 随便逛逛
+upload: 发布时间：
+totalk: 无需删除空行，直接输入评论即可
+loading: 加载中...
+day: ' 天'
+hot-tip: 多人互动
 
+# Language: 简体中文
 theme:
-  dark: Dark
-  light: Light
+  dark: 已切换至深色模式
+  light: 已切换至浅色模式
 
 copy:
-  success: Copied
-  error: Copy failed
+  success: 复制成功
+  error: 复制失败
 
 copy_copyright:
-  author: Author
-  link: Link
-  source: Source
-  info: Copyright is owned by the author. For commercial reprints, please contact the author for authorization. For non-commercial reprints, please indicate the source.
+  author: 作者
+  link: 链接
+  source: 来源
+  info: 著作权归作者所有。 商业转载请联系作者获得授权，非商业转载请注明出处。
 
 time:
-  day: " days ago"
-  hour: " hours ago"
-  just: "just"
-  min: " minutes ago"
-  month: " months ago"
+  day: "天前"
+  hour: "小时前"
+  just: "刚刚"
+  min: "分钟前"
+  month: "个月前"
 
 page:
-  tag: Tags
-  category: Categories
-  tags: All tags
-  categories: All categories
-  archives: Archives
-  404: Page not found
-
-home:
-  home: Recommend
-  sticky: Sticky
-  new: New
-  read: Unread
-  recommend: Recommend
-  recommendmore: More
-  archives: All articles
-
-post:
-  reprint: Reprint
-  original: Original
-  cc: This article is a ${cc} article, pay attention to the copyright.
-  posted: Posted on
-  updated: Last updated on
-  wordcount: Word count
-  minread: Reading time
-  ip: The author's IP belongs to
-  pv: PV
-  comment: Comments
-  copyright:
-    reprint: This article is a reproduction or translation, and the copyright belongs to the original author. Please contact the original author for permission to republish this article.
-    original: This piece of writing is an original article, utilizing the
-    original_end: Agreement. For complete reproduction, please acknowledge the source as Courtesy of
-  share:
-    qq: Share to QQ
-    weibo: Share to Weibo
-    telegram: Share to Telegram
-    twitter: Share to Twitter
-    linkedin: Share to LinkedIn
-    facebook: Share to Facebook
-    link: Share to Link
-    qrcode: Share to QR code
-    whatsapp: Share to WhatsApp
-  ai:
-    title: Article Summary
-    tip: Complaints
-  nav:
-    next: Next
-    prev: Previous
-
+  tag: 标签
+  category: 分类
+  tags: 全部标签
+  categories: 全部分类
+  archives: 文章
+  404: 页面没有找到
 
 nav:
-  site_name_title: Back to home
-  backtop: Back to top
-  travellings: Traveling - Friends Link
-  search: Search
-  randompost: Random post
-  console: Console
+  site_name_title: 返回博客主页
+  backtop: 返回顶部
+  travellings: 开往-友链接力
+  search: 搜索
+  randompost: 随机一篇文章
+  console: 中控台
+
+home:
+  home: 推荐
+  sticky: 置顶
+  new: 最新
+  read: 未读
+  recommend: 荐
+  recommendmore: 更多推荐
+  archives: 全部文章
+
+post:
+  reprint: 转载或翻译
+  original: 原创
+  cc: 该文章为${cc}文章，注意版权协议
+  posted: 发布于
+  updated: 最后更新于
+  wordcount: 文章字数
+  minread: 阅读耗时
+  ip: 作者IP归属地为
+  pv: 文章热度
+  comment: 评论数
+  copyright:
+    reprint: 本文是转载或翻译文章，版权归原作者所有。转载本文请联系原作者。
+    original: 本文是原创文章，采用
+    original_end: 协议，完整转载请注明来自
+  share:
+    qq: 分享到QQ
+    weibo: 分享到微博
+    telegram: 分享到Telegram
+    twitter: 分享到Twitter
+    linkedin: 分享到LinkedIn
+    facebook: 分享到Facebook
+    link: 复制文章链接
+    qrcode: 使用手机扫码阅读这篇文章
+    whatsapp: 分享到WhatsApp
+  ai:
+    title: 文章摘要
+    tip: 投诉
+  nav:
+    next: 下一篇
+    prev: 上一篇
 
 award:
-  thanks: Thanks
-  tipping: Sponsor
-  title: List of appreciation
+  thanks: 致谢
+  tipping: 赞赏作者
+  title: 赞赏名单
 
 search:
-  empty: No results found
-  hit: Found ${query} results for you
-  placeholder: Enter keywords to search
-  count: Total <b>${count}</b> results.
-  load: Loading...
+  empty: 找不到你查询的内容：${query}
+  hit: 找到 ${hits} 条结果，用时 ${time} 毫秒
+  placeholder: 输入关键词快速查找
+  count: 共 <b>${count}</b> 条结果。
+  load: 搜索中...
 
 head:
-  noscript: Please enable JavaScript to view the site
+  noscript: 开启JavaScript才能访问本站哦~
 
 aside:
-  postcount: 'Posts:'
-  pv: 'PV:'
-  uv: 'UV:'
-  runtime: 'Runtime:'
-  updatetime: 'Last update:'
-  wordcount: 'Word count:'
-  toc: Table of contents
-  tagmore: View all
-  avatar: Avatar
-  hello: 'Long time no see, '
-  back: Welcome back again,
-  sticker: Mood sticker
-  newpost: New posts
-  newcomment: New comments
+  postcount: '文章总数 :'
+  pv: '总访问数 :'
+  uv: '总访客数 :'
+  runtime: '建站天数 :'
+  updatetime: '最后更新 :'
+  wordcount: '全站字数 :'
+  toc: 文章目录
+  tagmore: 查看全部
+  avatar: 头像
+  hello: 好久不见，
+  back: 欢迎再次回来，
+  sticker: 心情贴纸
+  newpost: 最近发布
+  newcomment: 最近评论
   card:
-    posts: 'Posts:'
-    tags: 'Tags:'
-    categories: 'Categories:'
+    posts: '累计文章数:'
+    tags: '标签总数:'
+    categories: '分类总数:'
 
 console:
-  comment_tip: Interaction
-  comment_title: Latest comments
-  tag_tip: Tags
-  tag_title: Find interesting areas
-  switch_darkmode: Day and night mode
-  switch_hideAside: Sidebar display control
-  switch_keyboard: Keyboard operation
-  switch_music: Music switch
-  archive_unit: Posts
-  recent_comment_more: Recent comments
+  comment_tip: 互动
+  comment_title: 最新评论
+  tag_tip: 标签
+  tag_title: 寻找感兴趣的领域
+  switch_darkmode: 昼夜切换
+  switch_hideAside: 边栏显示控制
+  switch_keyboard: 键盘快捷键
+  switch_music: 音乐开关
+  archive_unit: 篇
+  recent_comment_more: 最近评论
   newest_comment:
-    image: Image
-    link: Link
-    code: Code
-    emoji: Emoji
+    image: 图片
+    link: 链接
+    code: 代码
+    emoji: 表情
 
 sidebar:
-  function: Function
-  darkmode: Display mode
-  siteinfo: Site information
+  function: 功能
+  darkmode: 显示模式
+  siteinfo: 网站信息
 
 footer:
-  description: Article from ${title}
-  learnmore: Learn more
-  randomlink: Links
-  rss: Subscribe
-  theme: Theme
+  description: 来自${title}的文章
+  learnmore: 了解更多
+  randomlink: 友链
+  rss: 订阅
+  theme: 主题
 
 cookies:
-  title: Agreement reminder assistant
-  tip: Check out the efforts we make to protect your privacy
-  privacy: How this site protects your privacy
+  title: 协议提醒助手
+  tip: 查看本站为你的个人隐私做出的努力
+  privacy: 本站如何保护你的隐私
 
 music:
-  hit: Paused
+  hit: 音乐已暂停
 
 404:
-  button: Back to home
+  button: 返回首页
 
 link:
   banner:
-    toComment: Application link
-    random: Random Visit
-  random: 'Click the button to visit a random link. The safety and availability of the destination website are not guaranteed. The random link for this visit is: ⌈ ${name} ⌋ '
-  to: To
+    toComment: 申请友链
+    random: 随机访问
+  random: 点击前往按钮进入随机一个友链，不保证跳转网站的安全性和可用性。本次随机到的是本站友链：⌈ ${name} ⌋
+  to: 前往
 
 keyboard:
-  title: Blog shortcuts
+  title: 博客快捷键
 
 newest_comment:
-  error: Unable to get comments, please check the configuration.
-  zero: No comments.
+  error: 无法获取评论，请确认相关配置是否正确。
+  zero: 没有评论
 
 comment:
-  title: ' Comment'
+  title: 评论
 
 commentBarrage:
-  title: Hot
+  title: 热评
 
-f12: Developer mode is turned on, please follow the GPL.
+f12: 开发者模式已打开，请遵循GPL协议。
 
 right_menu:
-  copy: Copy
-  paste: Paste
-  comment: ToTalk
-  new: Open
-  link: Copy
-  img: Copy
-  downloadImg: Download
-  search: Search
-  dark: Light
-  light: Dark
+  copy: 复制选中文本
+  paste: 粘贴文本
+  comment: 引用到评论
+  new: 新窗口打开
+  link: 复制链接地址
+  img: 复制此图片
+  downloadImg: 下载此图片
+  search: 站内搜索
+  dark: 浅色模式
+  light: 深色模式
   chs_to_cht: 轉為繁體
   cht_to_chs: 转为简体
-  img_error: This image cannot be copied or downloaded.
-  ctrl_original_menu: Hold Ctrl + right-click to open the browser's context menu
+  img_error: 此图片无法复制与下载
+  ctrl_original_menu: 按住Ctrl+右键可打开浏览器右键菜单
   barrage:
-    open: Open Barrage
-    close: Close Barrage
+    open: 显示热评
+    close: 关闭热评
   music:
-    start: Play
-    stop: Pause
-    back: Back
-    forward: Forward
-    copyMusicName: Copy Name
+    start: 播放音乐
+    stop: 暂停音乐
+    back: 切换到上一首
+    forward: 切换到下一首
+    copyMusicName: 复制歌名
 
 pagination:
-  prev: Prev
-  next: Next
-  to: Go to page
+  prev: 上一页
+  next: 下一页
+  to: 跳转到指定页面
 
 about:
   other:
     oneself:
-      map_title: I live in
-      info_title1: Born
-      info_title2: Current occupation
+      map_title: 我现在住在
+      info_title1: 生于
+      info_title2: 现在职业
     tj:
-      tip: Data
-      title: Access statistics
+      tip: 数据
+      title: 访问统计
   personalities:
-    tip1: At
-    tip2: 'Learn more:'
+    tip1: 在
+    tip2: 了解更多关于
 
 message:
-  close: Hide message
-  open: Show message
+  close: 隐藏弹幕
+  open: 显示弹幕
 
 essay:
-  tip0: '- All expanded -'
-  tip1: '- Recent Exhibitions #{count} Short Articles -'
-  link: 'Link'
+  tip0: '- 已展开所有短文 -'
+  tip1: '- 只展示最近 #{count} 条短文 -'
+  link: '链接'
 
 rightside:
   show:
-    gear: Settings
-    toc: Toc
-    comment: Comment
-    top: Top
+    gear: 扩展
+    toc: 目录
+    comment: 评论
+    top: 返回顶部
     barrage: 弹
   hide:
     translate: 简繁转换
-    mode: Mode
-    aside: Sidebar
+    mode: 显示模式切换
+    aside: 侧边栏
