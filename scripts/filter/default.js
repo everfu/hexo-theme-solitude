@@ -19,6 +19,10 @@ hexo.extend.filter.register('after_post_render', function (data) {
         setCoverAndExcerpt(data.layout);
     }
 
+    if (data.layout === 'post') {
+        data.ai = data.ai || true;
+    }
+
     data.comment = !!(config.comment.use && data.comment !== false);
     return data;
 });
