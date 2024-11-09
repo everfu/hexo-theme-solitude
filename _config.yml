@@ -547,34 +547,31 @@ rightside:
 # Footer
 # 页脚
 footer:
-  # Information social icon
+  # 信息社交图标
   information:
     author: false # img url / false
     left:
-      # Github: https://github.com/everfu || fab fa-github # Name: link || icon
+      # Github: https://github.com/everfu || fab fa-github # 名称: 链接 || 图标
       # Mail: mailto:o@everfu.cn || fab fa-envelope
     right:
       # Bilibili: https://space.bilibili.com/1329819902 || fab fa-bilibili
       # Douyin: https://v.douyin.com/iJsLc8jt/ || fab fa-tiktok
   group:
-    # Navigation:
+    # 导航:
     #   Archives: /archives/
     #   Categories: /categories/
     #   Tags: /tags/
-    # Arrangement:
+    # 排列:
     #   Cookies: /cookies/
     #   Privacy: /privacy/
     #   Copyright: /copyright/
 
-  # Random link
   # 随机友链
-  randomlink: false # Random link
-  # License
-  license: # https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh # License
+  randomlink: false # 随机友链
+  # 许可证
+  license: # https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh # 许可证
 
-  # Footer information text
   # 页脚信息文字
-  # Please do not delete the theme information, this is respect for the author
   # 请不要删除主题信息，这是对作者的尊重
   links:
     - name: Theme
@@ -623,16 +620,16 @@ capsule:
 keyboard:
   enable: false
   list:
-    # - name: Close Keyboard
+    # - name: 关闭快捷菜单
     #   key: K
     #   func: keyboard
-    # - name: Open Console
+    # - name: 打开控制台
     #   key: A
     #   sco: showConsole
-    # - name: Play/Pause Music
+    # - name: 播放/暂停音乐
     #   key: M
     #   sco: musicToggle
-    # - name: Open Links
+    # - name: 打开友链
     #   key: L
     #   url: /links/
 # --------------------------- end ---------------------------
@@ -983,14 +980,13 @@ google_adsense:
 # --------------------------- end ---------------------------
 
 # --------------------------- start ---------------------------
-# Do not modify unless necessary
 # 非必要请勿修改
 CDN:
   internal: local # local / cdnjs / jsdelivr / unpkg / custom
   third_party: cdnjs # cdnjs / jsdelivr / unpkg / custom
-  version: true # Whether to use the version number
-  custom_format: //open.lightxi.com/cdnjs/ajax/libs/${cdnjs_name}/${version}/${min_cdnjs_file} # Custom format
-  # Directly override the default CDN link (highest priority)
+  version: true # 是否使用版本号
+  custom_format: //open.lightxi.com/cdnjs/ajax/libs/${cdnjs_name}/${version}/${min_cdnjs_file} # 自定义格式
+  # 直接覆盖默认 CDN 链接（优先级最高）
   options:
     # algolia_search:
     # instantsearch:
