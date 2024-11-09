@@ -645,7 +645,7 @@ lazyload:
   # post, site
   field: site
   # 加载时替换图
-  placeholder: /img/loading.avif
+  placeholder: ''
   # 加载失败替换图
   errorimg: /img/error_load.avif
 # --------------------------- end ---------------------------
