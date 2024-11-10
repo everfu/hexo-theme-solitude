@@ -1,12 +1,3 @@
-const escapeHtml = (unsafe) => {
-  return unsafe
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-    .replace(/"/g, "&quot;")
-    .replace(/'/g, "&#039;");
-};
-
 const sidebarFn = () => {
   const $toggleMenu = document.getElementById('toggle-menu');
   const $mobileSidebarMenus = document.getElementById('sidebar-menus');
@@ -302,7 +293,7 @@ const sco = {
     document.querySelectorAll('#article-container img:not(.gallery-item img)').forEach(image => {
       const captionText = image.getAttribute('alt');
       if (captionText) {
-        image.insertAdjacentHTML('afterend', `<div class="img-alt is-center">${escapeHtml(captionText)}</div>`);
+        image.insertAdjacentHTML('afterend', `<div class="img-alt is-center">${utils.escapeHtml(captionText)}</div>`);
       }
     });
   },
