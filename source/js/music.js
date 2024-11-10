@@ -2,21 +2,19 @@ class MusicPlayer {
     constructor() {
         this.init();
     }
+
     init() {
         document.documentElement.style.setProperty('--vh', `${window.innerHeight}px`);
         this.getCustomPlayList();
-        this.addEventListenerToDocument();
-        this.addButtonListEventListener();
+        this.addEventListeners();
     }
 
     getCustomPlayList() {
         this.changeMusicBg(false);
     }
-    addEventListenerToDocument() {
-        document.addEventListener("keydown", this.handleKeydown.bind(this));
-    }
 
-    addButtonListEventListener() {
+    addEventListeners() {
+        document.addEventListener("keydown", this.handleKeydown.bind(this));
         const aplayerList = document.querySelector(".aplayer-list");
         document.querySelector(".aplayer-lrc")?.addEventListener("click", () => {
             aplayerList.classList.toggle("aplayer-list-hide");
@@ -27,11 +25,7 @@ class MusicPlayer {
         const musicBg = document.getElementById("Music-bg");
         const musicLoading = document.getElementsByClassName("Music-loading")[0];
 
-        if (isChangeBg) {
-            this.updateBackgroundImage(musicBg);
-        } else {
-            this.setLoadingScreen(musicLoading, musicBg);
-        }
+        isChangeBg ? this.updateBackgroundImage(musicBg) : this.setLoadingScreen(musicLoading, musicBg);
     }
 
     updateBackgroundImage(element) {
@@ -40,8 +34,8 @@ class MusicPlayer {
         img.src = this.extractValue(musicCover.style.backgroundImage);
         img.onload = () => {
             element.style.backgroundImage = musicCover.style.backgroundImage;
+            element.className = 'show';
         };
-        element.className = 'show'
     }
 
     setLoadingScreen(loadingElement, backgroundElement) {
@@ -50,23 +44,20 @@ class MusicPlayer {
             if (musicCover) {
                 loadingElement.style.display = "none";
                 clearInterval(timer);
-                document.querySelector('meting-js');
                 this.addEventListenerChangeMusicBg();
                 backgroundElement.style.display = "block";
             }
-            this.addButtonListEventListener();
         }, 100);
     }
 
     extractValue(input) {
-        const valueRegex = /url\("([^"]+)"\)/;
-        const match = valueRegex.exec(input);
+        const match = /url\("([^"]+)"\)/.exec(input);
         return match ? match[1] : '';
     }
 
     addEventListenerChangeMusicBg() {
         const aplayer = document.querySelector("#Music-page meting-js").aplayer;
-        aplayer.on('loadeddata', this.changeMusicBg.bind(this, true));
+        aplayer.on('loadeddata', () => this.changeMusicBg(true));
         aplayer.on('timeupdate', this.lrcUpdate.bind(this));
     }
 
@@ -81,36 +72,27 @@ class MusicPlayer {
 
     handleKeydown(event) {
         const aplayer = document.querySelector('meting-js').aplayer;
-        switch (event.code) {
-            case "Space":
-                event.preventDefault();
-                aplayer.toggle();
-                break;
-            case "ArrowRight":
-                event.preventDefault();
-                aplayer.skipForward();
-                break;
-            case "ArrowLeft":
-                event.preventDefault();
-                aplayer.skipBack();
-                break;
-            case "ArrowUp":
-                event.preventDefault();
-                if (aplayer.volume < 1) aplayer.volume(aplayer.volume + 0.1);
-                break;
-            case "ArrowDown":
-                event.preventDefault();
-                if (aplayer.volume > 0) aplayer.volume(aplayer.volume - 0.1);
-                break;
+        const actions = {
+            "Space": () => aplayer.toggle(),
+            "ArrowRight": () => aplayer.skipForward(),
+            "ArrowLeft": () => aplayer.skipBack(),
+            "ArrowUp": () => { if (aplayer.volume < 1) aplayer.volume(aplayer.volume + 0.1); },
+            "ArrowDown": () => { if (aplayer.volume > 0) aplayer.volume(aplayer.volume - 0.1); }
+        };
+
+        if (actions[event.code]) {
+            event.preventDefault();
+            actions[event.code]();
         }
     }
+
     destroy() {
         document.removeEventListener("keydown", this.handleKeydown);
     }
 }
 
 function initializeMusicPlayer() {
-    let exitingMusic = window.scoMusic;
+    const exitingMusic = window.scoMusic;
     if (exitingMusic) exitingMusic.destroy();
     window.scoMusic = new MusicPlayer();
 }

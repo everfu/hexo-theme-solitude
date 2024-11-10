@@ -11,20 +11,21 @@
                 if (!previous && leading === false) previous = now;
                 const remaining = wait - (now - previous);
                 if (remaining <= 0 || remaining > wait) {
-                    if (timeout) {
-                        clearTimeout(timeout);
-                        timeout = null;
-                    }
+                    if (timeout) clearTimeout(timeout);
                     later(this, arguments);
                 } else if (!timeout && trailing !== false) {
                     timeout = setTimeout(() => later(this, arguments), remaining);
                 }
             };
         },
-        fadeIn: (ele, time) => ele.style.cssText = `display:block;animation: to_show ${time}s`,
+        fadeIn: (ele, time) => {
+            ele.style.display = 'block';
+            ele.style.animation = `to_show ${time}s`;
+        },
         fadeOut: (ele, time) => {
             const resetStyles = () => {
-                ele.style.cssText = "display: none; animation: '' ";
+                ele.style.display = 'none';
+                ele.style.animation = '';
                 ele.removeEventListener('animationend', resetStyles);
             };
             ele.addEventListener('animationend', resetStyles);
@@ -37,12 +38,7 @@
             }
         },
         snackbarShow: (text, showAction = false, duration = 5000) => {
-            Snackbar.show({
-                text,
-                showAction,
-                duration,
-                pos: 'top-center'
-            });
+            Snackbar.show({ text, showAction, duration, pos: 'top-center' });
         },
         copy: async (text) => {
             const message = await navigator.clipboard.writeText(text)
@@ -59,37 +55,27 @@
             return actualTop;
         },
         siblings: (ele, selector) => {
-            return [...ele.parentNode.children].filter((child) => {
-                if (selector) {
-                    return child !== ele && child.matches(selector)
-                }
-                return child !== ele
-            })
+            return [...ele.parentNode.children].filter(child => 
+                child !== ele && (!selector || child.matches(selector))
+            );
         },
-        randomNum: (length) => {
-            return Math.floor(Math.random() * length)
-        },
-        timeDiff: (timeObj, today) => {
-            const timeDiff = today.getTime() - timeObj.getTime();
-            return Math.floor(timeDiff / (1000 * 3600 * 24));
-        },
+        randomNum: length => Math.floor(Math.random() * length),
+        timeDiff: (timeObj, today) => Math.floor((today.getTime() - timeObj.getTime()) / (1000 * 3600 * 24)),
         scrollToDest: (pos, time = 500) => {
             const currentPos = window.pageYOffset;
             const isNavFixed = document.getElementById('page-header').classList.contains('nav-fixed');
             pos = currentPos > pos || isNavFixed ? pos - 70 : pos;
 
             if ('scrollBehavior' in document.documentElement.style) {
-                window.scrollTo({top: pos, behavior: 'smooth'});
+                window.scrollTo({ top: pos, behavior: 'smooth' });
                 return;
             }
 
             const distance = pos - currentPos;
             const step = currentTime => {
-                const start = start || currentTime;
-                const progress = currentTime - start;
-
+                const progress = currentTime - (start || currentTime);
                 if (progress < time) {
-                    window.scrollTo(0, currentPos + distance * progress / time);
+                    window.scrollTo(0, currentPos + (distance * progress) / time);
                     window.requestAnimationFrame(step);
                 } else {
                     window.scrollTo(0, pos);
@@ -99,9 +85,9 @@
             window.requestAnimationFrame(step);
         },
         isMobile: () => /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent),
-        isHidden: e => 0 === e.offsetHeight && 0 === e.offsetWidth,
+        isHidden: e => e.offsetHeight === 0 && e.offsetWidth === 0,
         animateIn: (ele, text) => {
-            Object.assign(ele.style, {display: 'block', animation: text});
+            Object.assign(ele.style, { display: 'block', animation: text });
         },
         animateOut: (ele, text) => {
             const resetAnimation = () => {
@@ -113,12 +99,10 @@
             ele.style.animation = text;
         },
         wrap: (selector, eleType, options) => {
-            const createEle = document.createElement(eleType)
-            for (const [key, value] of Object.entries(options)) {
-                createEle.setAttribute(key, value)
-            }
-            selector.parentNode.insertBefore(createEle, selector)
-            createEle.appendChild(selector)
+            const createEle = document.createElement(eleType);
+            Object.entries(options).forEach(([key, value]) => createEle.setAttribute(key, value));
+            selector.parentNode.insertBefore(createEle, selector);
+            createEle.appendChild(selector);
         },
         lazyloadImg: () => {
             window.lazyLoadInstance = new LazyLoad({
@@ -136,7 +120,7 @@
             };
 
             if (lightboxType === 'mediumZoom') {
-                mediumZoom && mediumZoom(selector, {background: "var(--efu-card-bg)"});
+                mediumZoom && mediumZoom(selector, { background: "var(--efu-card-bg)" });
             } else if (lightboxType === 'fancybox') {
                 selector.forEach(i => {
                     if (i.parentNode.tagName !== 'A') {
@@ -150,9 +134,9 @@
                     Fancybox.bind('[data-fancybox]', {
                         Hash: false,
                         animated: true,
-                        Thumbs: {showOnStart: false},
-                        Images: {Panzoom: {maxScale: 4}},
-                        Carousel: {transition: 'slide'},
+                        Thumbs: { showOnStart: false },
+                        Images: { Panzoom: { maxScale: 4 } },
+                        Carousel: { transition: 'slide' },
                         Toolbar: {
                             display: {
                                 left: ['infobar'],
@@ -173,18 +157,21 @@
             const hour = 3600000;
             const day = 86400000;
             const month = 2592000000;
-            const {time} = GLOBAL_CONFIG.lang;
-            const dayCount = Math.floor(dateDiff / day)
-            if (!more) return dayCount
-            const minuteCount = Math.floor(dateDiff / minute)
-            const hourCount = Math.floor(dateDiff / hour)
-            const monthCount = Math.floor(dateDiff / month)
-            if (monthCount > 12) return datePost.toISOString().slice(0, 10)
-            if (monthCount >= 1) return `${monthCount} ${time.month}`
-            if (dayCount >= 1) return `${dayCount} ${time.day}`
-            if (hourCount >= 1) return `${hourCount} ${time.hour}`
-            if (minuteCount >= 1) return `${minuteCount} ${time.min}`
-            return time.just
+            const { time } = GLOBAL_CONFIG.lang;
+
+            const dayCount = Math.floor(dateDiff / day);
+            if (!more) return dayCount;
+
+            const minuteCount = Math.floor(dateDiff / minute);
+            const hourCount = Math.floor(dateDiff / hour);
+            const monthCount = Math.floor(dateDiff / month);
+
+            if (monthCount > 12) return datePost.toISOString().slice(0, 10);
+            if (monthCount >= 1) return `${monthCount} ${time.month}`;
+            if (dayCount >= 1) return `${dayCount} ${time.day}`;
+            if (hourCount >= 1) return `${hourCount} ${time.hour}`;
+            if (minuteCount >= 1) return `${minuteCount} ${time.min}`;
+            return time.just;
         },
         loadComment: (dom, callback) => {
             const observerItem = 'IntersectionObserver' in window ? new IntersectionObserver((entries) => {
@@ -192,10 +179,16 @@
                     callback();
                     observerItem.disconnect();
                 }
-            }, {threshold: [0]}) : null;
+            }, { threshold: [0] }) : null;
 
             observerItem ? observerItem.observe(dom) : callback();
         },
-    }
-    window.utils = {...window.utils, ...utilsFn};
+        escapeHtml: unsafe => unsafe.replace(/[&<"']/g, m => ({
+            '&': '&amp;',
+            '<': '&lt;',
+            '"': '&quot;',
+            "'": '&#039;'
+        }[m])),
+    };
+    window.utils = { ...window.utils, ...utilsFn };
 })()

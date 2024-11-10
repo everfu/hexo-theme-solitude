@@ -33,18 +33,9 @@ hexo.extend.filter.register('before_generate', () => {
       }
     },
     aside: {
-      home: {
-        noSticky: 'about',
-        Sticky: 'allInfo'
-      },
-      post: {
-        noSticky: 'about',
-        Sticky: 'allInfo'
-      },
-      page: {
-        noSticky: 'about',
-        Sticky: 'allInfo'
-      },
+      home: { noSticky: 'about', Sticky: 'allInfo' },
+      post: { noSticky: 'about', Sticky: 'allInfo' },
+      page: { noSticky: 'about', Sticky: 'allInfo' },
       card: {
         style: 0,
         author: {
@@ -73,24 +64,12 @@ hexo.extend.filter.register('before_generate', () => {
       },
       newest_comment: {
         enable: false,
-        storage: .5,
+        storage: 0.5,
         limit: 5
       },
-      toc: {
-        post: true,
-        page: false,
-        vague: true,
-      },
-      tags: {
-        enable: true,
-        limit: 20,
-        highlight: false,
-        list: [],
-      },
-      archive: {
-        enable: true,
-        type: 'month'
-      },
+      toc: { post: true, page: false, vague: true },
+      tags: { enable: true, limit: 20, highlight: false, list: [] },
+      archive: { enable: true, type: 'month' },
       siteinfo: {
         postcount: true,
         wordcount: false,
@@ -111,9 +90,7 @@ hexo.extend.filter.register('before_generate', () => {
       tags: true,
       categories: true,
       archives: 0,
-      default: {
-        cover: ['/img/default.avif'],
-      }
+      default: { cover: ['/img/default.avif'] },
     },
     post: {
       default: {
@@ -150,10 +127,7 @@ hexo.extend.filter.register('before_generate', () => {
         api: 'https://api.qjqq.cn/api/Imgcolor?img=',
         time: 43200000,
       },
-      share: {
-        enable: false,
-        list: []
-      },
+      share: { enable: false, list: [] },
       footer: {
         enable: true,
         desc: "The article from Solitude",
@@ -341,7 +315,7 @@ hexo.extend.filter.register('before_generate', () => {
       enable: false,
       recentComment: {
         enable: false,
-        storage: .2,
+        storage: 0.2,
       },
       card: {
         tags: true,
@@ -404,7 +378,7 @@ hexo.extend.filter.register('before_generate', () => {
       enable: false,
       dark: 'https://bu.dusays.com/2023/09/29/651685ce667d1.jpg',
       light: 'https://bu.dusays.com/2023/09/29/651685cc18d39.jpg',
-      opacity: .2,
+      opacity: 0.2,
     },
     translate: {
       enable: false,
@@ -427,6 +401,7 @@ hexo.extend.filter.register('before_generate', () => {
       custom_format: '//open.lightxi.com/cdnjs/ajax/libs/${cdnjs_name}/${version}/${min_cdnjs_file}',
       option: {}
     }
-  }
-  hexo.theme.config = Object.assign(defaultConfig, hexo.theme.config)
+  };
+
+  hexo.theme.config = { ...defaultConfig, ...hexo.theme.config };
 }, 1)
