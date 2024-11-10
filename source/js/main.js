@@ -734,8 +734,8 @@ window.refreshFn = () => {
   initObserver();
   if (is_home) {
     showTodayCard();
-    typeof updatePostsBasedOnComments === 'function' && updatePostsBasedOnComments();
   }
+  typeof updatePostsBasedOnComments === 'function' && updatePostsBasedOnComments();
   if (is_post || is_page) {
     addHighlight();
     tabs.init();

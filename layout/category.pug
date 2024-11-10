@@ -9,4 +9,6 @@ block content
                 each post,index in page.posts.find({ parent: { $exists: false } }).data
                     include includes/widgets/home/postList
                 include includes/mixins/pagination
+            if theme.comment.hot_tip.enable
+                include ./includes/widgets/third-party/hot/index.pug
         include includes/widgets/aside/aside
