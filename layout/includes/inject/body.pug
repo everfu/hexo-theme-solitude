@@ -5,7 +5,7 @@ mixin katex
     script(src=url_for(theme.cdn.katex_copytex))
       script.
         (() => {
-          document.querySelectorAll('#article-container span.katex-display').forEach(item => {
+          document.querySelectorAll('.article-container span.katex-display').forEach(item => {
             utils.wrap(item, 'div', {class: 'katex-wrap'})
           })
         })();

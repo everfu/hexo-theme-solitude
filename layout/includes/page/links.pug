@@ -1,6 +1,6 @@
 .flink#banners
     include ../widgets/page/links/banner
-.flink#article-container
+.flink.article-container
     each data in site.data.links.links
         h2= data.class_name + " (" + data.link_list.length + ")"
         .flink-desc= data.descr
