@@ -29,31 +29,44 @@ const sidebarFn = () => {
 };
 
 const scrollFn = () => {
-  let initTop = 0;
+  const $rightside = document.getElementById('rightside');
   const $header = document.getElementById('page-header');
-  const $rightside = document.getElementById('rightside') || null;
+  let initTop = 0;
+
+  const updateHeaderAndRightside = (isDown, currentTop) => {
+    if (currentTop > 0) {
+      $header.classList.toggle('nav-visible', !isDown);
+      $header.classList.add('nav-fixed');
+      if ($rightside) {
+        $rightside.style.opacity = '0.8';
+        $rightside.style.transform = 'translateX(-58px)';
+      }
+    } else {
+      $header.classList.remove('nav-fixed', 'nav-visible');
+      if ($rightside) {
+        $rightside.style.opacity = '';
+        $rightside.style.transform = '';
+      }
+    }
+  };
 
   const throttledScroll = utils.throttle(() => {
     initThemeColor();
     const currentTop = window.scrollY || document.documentElement.scrollTop;
     const isDown = currentTop > initTop;
     initTop = currentTop;
-
-    if (currentTop > 0) {
-      $header.classList.toggle('nav-visible', !isDown);
-      $header.classList.add('nav-fixed');
-      if ($rightside) {
-        $rightside.style.cssText = 'opacity: 0.8; transform: translateX(-58px);';
-      }
-    } else {
-      $header.classList.remove('nav-fixed', 'nav-visible');
-      if ($rightside) {
-        $rightside.style.cssText = "opacity: ''; transform: ''";
-      }
-    }
+    updateHeaderAndRightside(isDown, currentTop);
   }, 200);
 
-  window.addEventListener('scroll', throttledScroll);
+  window.addEventListener('scroll', (e) => {
+    throttledScroll(e);
+    if (window.scrollY === 0) {
+        $header.classList.remove('nav-fixed', 'nav-visible');
+        if ($rightside) {
+          $rightside.style.cssText = "opacity: ''; transform: ''";
+        }
+    }
+  });
 };
 
 const percent = () => {
