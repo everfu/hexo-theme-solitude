@@ -1,24 +1,25 @@
-- var game1 = site.data.about.game1
-- var game2 = site.data.about.game2
+- var games = site.data.about.game
 
-if game1 || game2
+if games
     .author-content
-        if game1
-            .author-content-item.game-apex(style=`background: url(${game1.img}) no-repeat top; background-size: cover;`)
+        each game, index in games
+            style.
+                .game-#{index}::after {
+                    box-shadow: #{game.box_shadow} !important;
+                }
+            .author-content-item.game(class=`game-${index}`, style=`background: url(${game.img}) no-repeat top; background-size: cover;`)
                 .card-content
-                    .author-content-item-tips= game1.title
-                    span.author-content-item-title= game1.subtitle
+                    .author-content-item-tips= game.title
+                    span.author-content-item-title= game.subtitle
                     .content-bottom
-                        .tips= game1.tips_left
-                        .tips= game1.tips_right
-        if game2
-            .author-content-item.game-jl(style=`background: url(${game2.img}) no-repeat top; background-size: cover;`)
-                .card-content
-                    .author-content-item-tips= game2.title
-                    span.author-content-item-title= game2.subtitle
-                    .content-bottom
-                        .tips= game2.tips_left
-                        .tips= game2.tips_right
+                        if game.icon_group
+                            .icon-group
+                                each icon in game.icon_group
+                                    i(style=`background-image: url(${icon})`)
+                        else if game.tips_left
+                            .tips= game.tips_left
+                        if game.tips_right
+                            .tips= game.tips_right
 
 if site.data.about.likes
     - const likes = site.data.about.likes
