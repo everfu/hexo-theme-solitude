@@ -101,9 +101,11 @@ function stopMaskScroll() {
 
 window.oncontextmenu = (ele) => {
     if (document.body.clientWidth <= 768) return;
-    if (GLOBAL_CONFIG.right_menu.ctrlOriginalMenu && firstShowRightMenu) {
-        firstShowRightMenu = false;
-        utils.snackbarShow(GLOBAL_CONFIG.right_menu.ctrlOriginalMenu, false, 2000);
+    if (GLOBAL_CONFIG.right_menu.ctrlOriginalMenu) {
+        if (firstShowRightMenu) {
+            firstShowRightMenu = false;
+            utils.snackbarShow(GLOBAL_CONFIG.right_menu.ctrlOriginalMenu, false, 2000);
+        }
         if (ele.ctrlKey) return true;
     }
 
