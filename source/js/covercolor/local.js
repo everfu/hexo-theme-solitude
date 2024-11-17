@@ -61,6 +61,14 @@ const setThemeColors = (value, r = null, g = null, b = null) => {
     initThemeColor();
 }
 
+function LightenDarkenColor(col, amt) {
+    var usePound = false;
+    if (col[0] === "#") {
+        col = col.slice(1);
+        usePound = true;
+    }
+}
+
 const adjustCardStyles = () => {
     const cardContents = document.getElementsByClassName('card-content');
     Array.from(cardContents).forEach(item => {
