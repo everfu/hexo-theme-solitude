@@ -23,7 +23,7 @@ const localColor = path => {
     const colorThief = new ColorThief();
     const img = new Image();
     img.crossOrigin = "Anonymous";
-    img.onload = () => setThemeColors(rgbToHex(colorThief.getColor(img)));
+    img.onload = () => setThemeColors(rgbToHex(colorThief.getColor(img)), ...colorThief.getColor(img));
     img.onerror = () => console.error('Image Error');
     img.src = path;
 }
