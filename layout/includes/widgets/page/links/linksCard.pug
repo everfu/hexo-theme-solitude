@@ -2,8 +2,11 @@
     each item in data.link_list
         .site-card
             if item.tag
-                span.site-card-tag(class=item.color)= item.tag
-                    i.light
+                if item.color == 'vip' || item.color == 'speed'
+                    span.site-card-tag(class=item.color)= item.tag
+                        i.light
+                else
+                    span.site-card-tag(style=`background-color: ${item.color};`)= item.tag
             a.img(title=item.name, href=url_for(item.link))
                 img.flink-avatar(src=item.topimg + (data.topimg_suffix || ''), alt=item.name)
             a.info.cf-friends-link(title=item.name, href=url_for(item.link))
