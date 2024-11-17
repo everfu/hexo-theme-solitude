@@ -2,7 +2,7 @@
 
 <div align="center">
 
-  <h1 style="background: linear-gradient(to right, #76CBEC, #F7A137); -webkit-background-clip: text; color: transparent; font-size: 4.4rem">Solitude</h1>
+  <h1>Solitude</h1>
 
    一款优雅的 Hexo 主题，支持懒加载、PWA、Latex 以及多种评论系统。
 
