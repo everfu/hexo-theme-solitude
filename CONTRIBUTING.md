@@ -12,7 +12,7 @@
 
 ### PR方式贡献代码步骤
 
-* 在 GitHub 上 `fork` 到自己的仓库，如 `yife68/Hexo-Theme-Solitude`，然后 `clone` 到本地Hexo主题目录，并设置用户信息。
+* 在 GitHub 上 `fork` 到自己的仓库，如 `yife68/hexo-theme-solitude`，然后 `clone` 到本地Hexo主题目录，并设置用户信息。
 
 ```bash
 $ git clone git@github.com:{your-github-username}/hexo-theme-solitude.git themes/solitude
