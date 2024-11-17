@@ -29,31 +29,44 @@ const sidebarFn = () => {
 };
 
 const scrollFn = () => {
-  let initTop = 0;
+  const $rightside = document.getElementById('rightside');
   const $header = document.getElementById('page-header');
-  const $rightside = document.getElementById('rightside') || null;
+  let initTop = 0;
+
+  const updateHeaderAndRightside = (isDown, currentTop) => {
+    if (currentTop > 0) {
+      $header.classList.toggle('nav-visible', !isDown);
+      $header.classList.add('nav-fixed');
+      if ($rightside) {
+        $rightside.style.opacity = '0.8';
+        $rightside.style.transform = 'translateX(-58px)';
+      }
+    } else {
+      $header.classList.remove('nav-fixed', 'nav-visible');
+      if ($rightside) {
+        $rightside.style.opacity = '';
+        $rightside.style.transform = '';
+      }
+    }
+  };
 
   const throttledScroll = utils.throttle(() => {
     initThemeColor();
     const currentTop = window.scrollY || document.documentElement.scrollTop;
     const isDown = currentTop > initTop;
     initTop = currentTop;
-
-    if (currentTop > 0) {
-      $header.classList.toggle('nav-visible', !isDown);
-      $header.classList.add('nav-fixed');
-      if ($rightside) {
-        $rightside.style.cssText = 'opacity: 0.8; transform: translateX(-58px);';
-      }
-    } else {
-      $header.classList.remove('nav-fixed', 'nav-visible');
-      if ($rightside) {
-        $rightside.style.cssText = "opacity: ''; transform: ''";
-      }
-    }
+    updateHeaderAndRightside(isDown, currentTop);
   }, 200);
 
-  window.addEventListener('scroll', throttledScroll);
+  window.addEventListener('scroll', (e) => {
+    throttledScroll(e);
+    if (window.scrollY === 0) {
+        $header.classList.remove('nav-fixed', 'nav-visible');
+        if ($rightside) {
+          $rightside.style.cssText = "opacity: ''; transform: ''";
+        }
+    }
+  });
 };
 
 const percent = () => {
@@ -290,7 +303,7 @@ const sco = {
     }
   },
   addPhotoFigcaption() {
-    document.querySelectorAll('#article-container img:not(.gallery-item img)').forEach(image => {
+    document.querySelectorAll('.article-container img:not(.gallery-item img)').forEach(image => {
       const captionText = image.getAttribute('alt');
       if (captionText) {
         image.insertAdjacentHTML('afterend', `<div class="img-alt is-center">${utils.escapeHtml(captionText)}</div>`);
@@ -580,7 +593,7 @@ class toc {
   }
 
   static active(toc) {
-    const $article = document.getElementById('article-container');
+    const $article = document.querySelector('.article-container');
     const $tocContent = document.getElementById('toc-content');
     const list = $article.querySelectorAll('h1,h2,h3,h4,h5,h6');
     let detectItem = '';
@@ -635,7 +648,7 @@ class tabs {
   }
 
   static clickFnOfTabs() {
-    document.querySelectorAll('#article-container .tab > button').forEach((item) => {
+    document.querySelectorAll('.article-container .tab > button').forEach((item) => {
       item.addEventListener('click', function () {
         const $tabItem = this.parentNode;
         if (!$tabItem.classList.contains('active')) {
@@ -653,7 +666,7 @@ class tabs {
   }
 
   static backToTop() {
-    document.querySelectorAll('#article-container .tabs .tab-to-top').forEach((item) => {
+    document.querySelectorAll('.article-container .tabs .tab-to-top').forEach((item) => {
       item.addEventListener('click', function () {
         utils.scrollToDest(utils.getEleTop(this.parentElement.parentElement.parentNode), 300);
       });
@@ -727,7 +740,7 @@ window.refreshFn = () => {
   runtime && sco.addRuntime();
   [scrollFn, sidebarFn, sco.addPhotoFigcaption, sco.setTimeState, sco.tagPageActive, sco.categoriesBarActive, sco.listenToPageInputPress, sco.addNavBackgroundInit, sco.refreshWaterFall].forEach(fn => fn());
   lazyload.enable && utils.lazyloadImg();
-  lightbox && utils.lightbox(document.querySelectorAll("#article-container img:not(.flink-avatar,.gallery-group img, .no-lightbox)"));
+  lightbox && utils.lightbox(document.querySelectorAll(".article-container img:not(.flink-avatar,.gallery-group img, .no-lightbox)"));
   randomlink && randomLinksList();
   post_ai && is_post && ai.init();
   sco.switchComments();

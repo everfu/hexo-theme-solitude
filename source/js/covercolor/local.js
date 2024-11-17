@@ -23,7 +23,7 @@ const localColor = path => {
     const colorThief = new ColorThief();
     const img = new Image();
     img.crossOrigin = "Anonymous";
-    img.onload = () => setThemeColors(rgbToHex(colorThief.getColor(img)));
+    img.onload = () => setThemeColors(rgbToHex(colorThief.getColor(img)), ...colorThief.getColor(img));
     img.onerror = () => console.error('Image Error');
     img.src = path;
 }
@@ -59,6 +59,14 @@ const setThemeColors = (value, r = null, g = null, b = null) => {
 
     document.getElementById("coverdiv").classList.add("loaded");
     initThemeColor();
+}
+
+function LightenDarkenColor(col, amt) {
+    var usePound = false;
+    if (col[0] === "#") {
+        col = col.slice(1);
+        usePound = true;
+    }
 }
 
 const adjustCardStyles = () => {

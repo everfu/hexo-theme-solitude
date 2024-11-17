@@ -3,7 +3,7 @@
     .comment-headline
       display inline-block
       vertical-align middle
-      font-weight 700
+      font-weight bold
       font-size 20px
 
     #comment-switch
@@ -31,7 +31,7 @@
         background-color #307af6
         vertical-align middle
         cursor pointer
-        transition all .4s ease 0s
+        transition all .4s ease
 
         &::before
           position absolute
@@ -42,7 +42,7 @@
           border-radius 50%
           background-color #fff
           content ""
-          transition all .4s ease 0s
+          transition all .4s ease
 
         &.move
           background-color #ff7242
@@ -77,6 +77,7 @@
     font-size .6rem
     color var(--efu-secondtext)
     border-radius 8px
+
   if hexo-config('comment.use')[1] || ',' in hexo-config('comment.use')
     &.move
       if hexo-config('comment.count')

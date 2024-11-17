@@ -5,7 +5,7 @@ block content
         #post
             if page.not_cover
                 include includes/widgets/post/postInfo
-            article.post-content#article-container
+            article.post-content.article-container
                 if theme.post_ai.enable && page.ai
                     include includes/widgets/post/post-ai
                 != page.content
