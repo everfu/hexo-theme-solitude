@@ -1,12 +1,7 @@
 class MusicPlayer {
-    constructor() {
-        this.init();
-    }
-
     init() {
         document.documentElement.style.setProperty('--vh', `${window.innerHeight}px`);
         this.getCustomPlayList();
-        this.addEventListeners();
     }
 
     getCustomPlayList() {
@@ -47,6 +42,9 @@ class MusicPlayer {
                 this.addEventListenerChangeMusicBg();
                 backgroundElement.style.display = "block";
             }
+            else {
+                this.addEventListeners();
+            }
         }, 100);
     }
 
@@ -57,7 +55,10 @@ class MusicPlayer {
 
     addEventListenerChangeMusicBg() {
         const aplayer = document.querySelector("#Music-page meting-js").aplayer;
-        aplayer.on('loadeddata', () => this.changeMusicBg(true));
+        aplayer.on('loadeddata', () => {
+            this.changeMusicBg(true);
+            this.addEventListeners();
+        });
         aplayer.on('timeupdate', this.lrcUpdate.bind(this));
     }
 

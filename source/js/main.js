@@ -759,7 +759,7 @@ window.refreshFn = () => {
   if (covercolor.enable) coverColor();
   if (PAGE_CONFIG.toc) toc.init();
   if (lure) tabs.lureAddListener();
-
+  scoMusic.init();
   forPostFn();
 };
 
