@@ -1,7 +1,12 @@
 class MusicPlayer {
+    constructor() {
+        this.init();
+    }
+
     init() {
         document.documentElement.style.setProperty('--vh', `${window.innerHeight}px`);
         this.getCustomPlayList();
+        this.addEventListeners();
     }
 
     getCustomPlayList() {
@@ -11,9 +16,13 @@ class MusicPlayer {
     addEventListeners() {
         document.addEventListener("keydown", this.handleKeydown.bind(this));
         const aplayerList = document.querySelector(".aplayer-list");
-        document.querySelector(".aplayer-lrc")?.addEventListener("click", () => {
-            aplayerList.classList.toggle("aplayer-list-hide");
-        });
+        const aplayerLrc = document.querySelector(".aplayer-lrc");
+        if (aplayerLrc && !aplayerLrc.dataset.clickBound) {
+            aplayerLrc.addEventListener("click", () => {
+                aplayerList.classList.toggle("aplayer-list-hide");
+            });
+            aplayerLrc.dataset.clickBound = true;
+        }
     }
 
     changeMusicBg(isChangeBg = true) {
@@ -35,15 +44,13 @@ class MusicPlayer {
 
     setLoadingScreen(loadingElement, backgroundElement) {
         const timer = setInterval(() => {
+            this.addEventListeners();
             const musicCover = document.querySelector("#Music-page .aplayer-pic");
             if (musicCover) {
                 loadingElement.style.display = "none";
                 clearInterval(timer);
                 this.addEventListenerChangeMusicBg();
                 backgroundElement.style.display = "block";
-            }
-            else {
-                this.addEventListeners();
             }
         }, 100);
     }
@@ -55,10 +62,7 @@ class MusicPlayer {
 
     addEventListenerChangeMusicBg() {
         const aplayer = document.querySelector("#Music-page meting-js").aplayer;
-        aplayer.on('loadeddata', () => {
-            this.changeMusicBg(true);
-            this.addEventListeners();
-        });
+        aplayer.on('loadeddata', () => this.changeMusicBg(true));
         aplayer.on('timeupdate', this.lrcUpdate.bind(this));
     }
 
