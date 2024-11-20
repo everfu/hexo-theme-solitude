@@ -2,7 +2,7 @@ English丨[简体中文](README.md)丨[繁体中文](README_zh-Hant.md)
 
 <div align="center">
 
-   <h1 style="background: linear-gradient(to right, #76CBEC, #F7A137); -webkit-background-clip: text; color: transparent; font-size: 4.4rem">Solitude</h1>
+   <h1">Solitude</h1>
 
    An elegant Hexo theme that supports lazy loading, PWA, Latex, and multiple commenting systems.
 

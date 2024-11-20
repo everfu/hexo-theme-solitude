@@ -77,9 +77,9 @@ html
   line-height 1.15
   -webkit-text-size-adjust 100%
   text-size-adjust 100%
-  height: 100%;
-  font-size: 20px
-  overflow-y: overlay
+  height: 100%
+  font-size 20px
+  overflow-y overlay
 
 main
   display block
@@ -146,7 +146,7 @@ hr
   box-sizing content-box
   height 0
   overflow visible
-  display: none
+  display none
 
 a
   color var(--efu-fontcolor)
@@ -363,29 +363,29 @@ i.solitude
   font-synthesis style
 
 #body-wrap
-  display: flex
-  flex-direction: column
-  min-height: 100vh
-  justify-content: space-between
+  display flex
+  flex-direction column
+  min-height 100vh
+  justify-content space-between
 
 .layout
-  display: flex
-  margin: 0 auto
-  padding: 0 1.5rem
+  display flex
+  margin 0 auto
+  padding 0 1.5rem
   width 100%
-  max-width: 1200px
+  max-width 1200px
   +maxWidth768()
     padding 0
 
   &#content-inner
-    max-width: 1400px
-    flex-grow: 1
+    max-width 1400px
+    flex-grow 1
 
   /.hide-aside.layout
-    max-width: 1400px
+    max-width 1400px
 
     > div
-      width: 100% !important
+      width 100% !important
 
   > div:first-child
     width calc(100% - 300px)
@@ -419,10 +419,10 @@ i.solitude
 span.tags-punctuation
   i
     font-weight bold
-    font-size: 12px
+    font-size 12px
     transition none
-    margin-right: 2px
-    opacity: .4
+    margin-right 2px
+    opacity .4
 
     .hide-aside #page &
       font-size 16px

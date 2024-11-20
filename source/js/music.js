@@ -16,9 +16,13 @@ class MusicPlayer {
     addEventListeners() {
         document.addEventListener("keydown", this.handleKeydown.bind(this));
         const aplayerList = document.querySelector(".aplayer-list");
-        document.querySelector(".aplayer-lrc")?.addEventListener("click", () => {
-            aplayerList.classList.toggle("aplayer-list-hide");
-        });
+        const aplayerLrc = document.querySelector(".aplayer-lrc");
+        if (aplayerLrc && !aplayerLrc.dataset.clickBound) {
+            aplayerLrc.addEventListener("click", () => {
+                aplayerList.classList.toggle("aplayer-list-hide");
+            });
+            aplayerLrc.dataset.clickBound = true;
+        }
     }
 
     changeMusicBg(isChangeBg = true) {
@@ -40,6 +44,7 @@ class MusicPlayer {
 
     setLoadingScreen(loadingElement, backgroundElement) {
         const timer = setInterval(() => {
+            this.addEventListeners();
             const musicCover = document.querySelector("#Music-page .aplayer-pic");
             if (musicCover) {
                 loadingElement.style.display = "none";
