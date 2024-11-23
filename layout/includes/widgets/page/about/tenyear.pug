@@ -43,5 +43,5 @@ if tenyear
 
         if (document.getElementById("tenyear")) {
             tenYear();
-            window.Pjax.on('complete', tenYear);
+            document.addEventListener("pjax:complete", tenYear);
         }
