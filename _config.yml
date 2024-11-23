@@ -936,7 +936,7 @@ busuanzi_use: 0
 
 # --------------------------- start ---------------------------
 # This part is only supported in mainland China, and we will consider supporting ChatGPT Key in the future.
-# 该部分仅支持中国大陆，后续会考虑支持 ChatGPT Key。
+# 该部分仅支持中国大陆
 tianli_talk:
   enable: false
   title: 智能客服与搜索 # title
