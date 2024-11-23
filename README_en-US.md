@@ -19,8 +19,6 @@ Theme design fully authorized by [@Zhang Hong Heo](https://github.com/zhheo)
 ![page view](https://komarev.com/ghpvc/?username=hexo-theme-solitude&abbreviated=true)
 ![JetBrains](https://img.shields.io/badge/jetbrains-support-black?logo=jetbrains)
 
-[Documentation](https://solitude.js.org/zh/)丨[Preview](https://blog.everfu.cn/)
-
 </div>
 
 ## Features

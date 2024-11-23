@@ -19,8 +19,6 @@
 ![page view](https://komarev.com/ghpvc/?username=hexo-theme-solitude&abbreviated=true)
 ![JetBrains](https://img.shields.io/badge/jetbrains-support-black?logo=jetbrains)
 
-[文档](https://solitude.js.org/zh/)丨[预览](https://blog.everfu.cn/)
-
 </div>
 
 ## 特性
