@@ -2,11 +2,15 @@
 
 <div align="center">
 
-# Solitude
+<div style="width: 80%; margin: 0 auto">
 
-   一款優雅的 Hexo 主題，支持懶加載、PWA、Latex 以及多種評論系統。
+![Screenshot](.github/screenshot.avif)
 
-   主題設計由 [@張洪Heo](https://github.com/zhheo) 全權授權
+</div>
+
+一款優雅的 Hexo 主題，支持懶加載、PWA、Latex 以及多種評論系統。
+
+主題設計由 [@張洪Heo](https://github.com/zhheo) 全權授權
 
 ![npm package](https://img.shields.io/npm/v/hexo-theme-solitude)
 ![license](https://img.shields.io/github/license/everfu/hexo-theme-solitude?color=FF5531)
@@ -20,12 +24,6 @@
 ![JetBrains](https://img.shields.io/badge/jetbrains-support-black?logo=jetbrains)
 
 [文檔](https://solitude.js.org/zh/)丨[預覽](https://blog.everfu.cn/)
-
-</div>
-
-<div style="width: 80%; margin: 0 auto">
-
-![Screenshot](.github/screenshot.avif)
 
 </div>
 

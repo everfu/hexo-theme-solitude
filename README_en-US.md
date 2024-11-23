@@ -2,11 +2,15 @@ English丨[简体中文](README.md)丨[繁体中文](README_zh-Hant.md)
 
 <div align="center">
 
-# Solitude
+<div style="width: 80%; margin: 0 auto">
 
-   An elegant Hexo theme that supports lazy loading, PWA, Latex, and multiple comment systems.
+![Screenshot](.github/screenshot.avif)
 
-   Theme design fully authorized by [@Zhang Hong Heo](https://github.com/zhheo)
+</div>
+
+An elegant Hexo theme that supports lazy loading, PWA, Latex, and multiple comment systems.
+
+Theme design fully authorized by [@Zhang Hong Heo](https://github.com/zhheo)
 
 ![npm package](https://img.shields.io/npm/v/hexo-theme-solitude)
 ![license](https://img.shields.io/github/license/everfu/hexo-theme-solitude?color=FF5531)
@@ -20,12 +24,6 @@ English丨[简体中文](README.md)丨[繁体中文](README_zh-Hant.md)
 ![JetBrains](https://img.shields.io/badge/jetbrains-support-black?logo=jetbrains)
 
 [Documentation](https://solitude.js.org/zh/)丨[Preview](https://blog.everfu.cn/)
-
-</div>
-
-<div style="width: 80%; margin: 0 auto">
-
-![Screenshot](.github/screenshot.avif)
 
 </div>
 
