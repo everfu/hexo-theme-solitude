@@ -2,11 +2,7 @@
 
 <div align="center">
 
-<div style="width: 60%; margin: 0 auto">
-
-![Screenshot](.github/screenshot.avif)
-
-</div>
+<img width="80%" src=".github/screenshot.avif" />
 
 一款優雅的 Hexo 主題，支持懶加載、PWA、Latex 以及多種評論系統。
 

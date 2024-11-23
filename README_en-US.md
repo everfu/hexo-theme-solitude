@@ -2,11 +2,7 @@ English丨[简体中文](README.md)丨[繁体中文](README_zh-Hant.md)
 
 <div align="center">
 
-<div style="width: 60%; margin: 0 auto">
-
-![Screenshot](.github/screenshot.avif)
-
-</div>
+<img width="80%" src=".github/screenshot.avif" />
 
 An elegant Hexo theme that supports lazy loading, PWA, Latex, and multiple comment systems.
 
