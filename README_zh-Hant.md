@@ -2,7 +2,7 @@
 
 <div align="center">
 
-<img width="80%" src=".github/screenshot.avif" />
+<img width="70%" src=".github/screenshot.avif" />
 
 一款優雅的 Hexo 主題，支持懶加載、PWA、Latex 以及多種評論系統。
 
