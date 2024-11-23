@@ -135,10 +135,12 @@ window.oncontextmenu = (ele) => {
 
     rm.menuItems.paste.style.display = (tagName === "input" || tagName === "textarea") ? "flex" : "none";
 
-    if (cls.match(/aplayer/)) {
-        rm.menuItems.music.forEach(item => item.style.display = "flex");
-    } else {
-        rm.menuItems.music.forEach(item => item.style.display = "none");
+    if (GLOBAL_CONFIG.right_menu.music) {
+        if (cls.match(/aplayer/)) {
+            rm.menuItems.music.forEach(item => item.style.display = "flex");
+        } else {
+            rm.menuItems.music.forEach(item => item.style.display = "none");
+        }
     }
 
     Array.from(display ? rm.menuItems.other : rm.menuItems.plugin).forEach(item => item.style.display = "none");
