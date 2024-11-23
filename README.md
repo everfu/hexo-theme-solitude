@@ -2,7 +2,7 @@
 
 <div align="center">
 
-<div style="width: 80%; margin: 0 auto">
+<div style="width: 60%; margin: 0 auto">
 
 ![Screenshot](.github/screenshot.avif)
 

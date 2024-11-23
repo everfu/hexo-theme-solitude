@@ -2,7 +2,7 @@ English丨[简体中文](README.md)丨[繁体中文](README_zh-Hant.md)
 
 <div align="center">
 
-<div style="width: 80%; margin: 0 auto">
+<div style="width: 60%; margin: 0 auto">
 
 ![Screenshot](.github/screenshot.avif)
 
