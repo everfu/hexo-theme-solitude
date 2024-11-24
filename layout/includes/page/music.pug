@@ -1,7 +1,7 @@
 if theme.music.enable
     #Music-bg
     #Music-page
-        meting-js(id=theme.music.id server=theme.music.server type=theme.music.type mutex=theme.music.mutex ? "true" : "false" volume=theme.music.volume preload="none" data-lrctype="0" order="random")
+        meting-js(id=theme.music.id server=theme.music.server type=theme.music.type mutex=theme.music.mutex ? "true" : "false" volume=theme.music.volume preload="none" data-lrctype="0" order=theme.music.order)
     .Music-loading
         div APlayer加载中...
     script(pjax).
