@@ -571,6 +571,14 @@ footer:
   # 许可证
   license: # https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh # 许可证
 
+  # 备案
+  beian:
+    # - name: 湘公网安备43048102000175号
+    #   icon: https://ui.everfu.cn/28399dd1b7b415efb0b3d822c31f59af.png/cover
+    #   url: https://beian.mps.gov.cn/#/query/webSearch
+    # - name: 湘ICP备2024080357号-1
+    #   url: https://beian.miit.gov.cn/
+
   # 页脚信息文字
   # 请不要删除主题信息，这是对作者的尊重
   links:
