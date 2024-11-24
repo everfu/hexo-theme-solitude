@@ -9,7 +9,7 @@ if site.data.about.rewardList && site.data.about.award.enable
             .author-content-item-description
                 != award.description
             .reward-list-all
-                each reward in site.data.about.rewardList
+                each reward in site.data.about.rewardList.sort((a, b) => b.time - a.time) || []
                     - sum += reward.money
                     .reward-list-item
                         .reward-list-item-name= reward.name
