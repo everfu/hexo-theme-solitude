@@ -14,34 +14,29 @@ if tenyear
                 .end-time#tenyear-end-time= new Date(tenyear.end).toLocaleDateString()
 
     script.
-        const tenYear = () => {
-            const progressElement = document.querySelector(".progress");
-            const pastTimeElement = document.querySelector(".past-time");
-            const percentageLabelElement = document.querySelector(".percentage-label");
-            const startTimeElement = document.getElementById("tenyear-start-time");
-            const endTimeElement = document.getElementById("tenyear-end-time");
+        function updateTenYearProgress() {
+            let progressElement = document.querySelector(".progress");
+            let pastTimeElement = document.querySelector(".past-time");
+            let percentageLabelElement = document.querySelector(".percentage-label");
+            let startTimeElement = document.getElementById("tenyear-start-time");
+            let endTimeElement = document.getElementById("tenyear-end-time");
+            let startTime = new Date(startTimeElement.textContent).getTime();
+            let endTime = new Date(endTimeElement.textContent).getTime();
 
-            const startTime = new Date(startTimeElement.textContent).getTime();
-            const endTime = new Date(endTimeElement.textContent).getTime();
+            const currentTime = new Date().getTime();
+            const progress = ((currentTime - startTime) / (endTime - startTime) * 100);
+            const progressPercentage = Math.min(progress, 100) + "%";
 
-            const updateProgress = () => {
-                const currentTime = new Date().getTime();
-                const progress = ((currentTime - startTime) / (endTime - startTime) * 100);
-                const progressPercentage = Math.min(progress, 100) + "%";
-
-                pastTimeElement.style.setProperty("--past-time-percentage", progress + "%");
-                progressElement.style.setProperty("--progress-percentage", progressPercentage);
-                if (progress > 5) {
-                    percentageLabelElement.textContent = `${progress.toFixed(0)}%`;
-                    percentageLabelElement.style.left = `calc(${progress}% - 35px)`;
-                }
-            };
+            pastTimeElement.style.setProperty("--past-time-percentage", progress + "%");
+            progressElement.style.setProperty("--progress-percentage", progressPercentage);
+            if (progress > 5) {
+                percentageLabelElement.textContent = `${progress.toFixed(0)}%`;
+                percentageLabelElement.style.left = `calc(${progress}% - 35px)`;
+            }
 
             percentageLabelElement.style.visibility = "visible";
-            updateProgress();
-        };
+        }
 
         if (document.getElementById("tenyear")) {
-            tenYear();
-            document.addEventListener("pjax:complete", tenYear);
+            updateTenYearProgress();
         }
