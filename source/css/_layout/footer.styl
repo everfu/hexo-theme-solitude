@@ -164,7 +164,6 @@
       margin-left 8px
 
   /#footer-bar
-    padding 1rem
     color var(--efu-fontcolor)
     margin-top 1rem
     background var(--efu-secondbg)
@@ -183,31 +182,70 @@
       flex-wrap wrap
       align-items center
       line-height 1
+      padding 1rem 1.5rem
+      +maxWidth768()
+        justify-content center
+        gap 8px
 
     .footer-bar-left
       display flex
-      flex-wrap wrap
-      min-height 32px
-      align-items center
+      gap 8px
+      flex-direction column
+      +maxWidth768()
+        align-items center
 
       .copyright
         display flex
         flex-direction row
         align-items center
-        padding 0 8px
-        margin 0 4px
 
         .footer-bar-link
           margin 0
+      .beian-group
+        display flex
+        gap 8px
+        flex-wrap wrap
+        +maxWidth768()
+          justify-content center
+
+        a:hover
+          background 0 0
+          color var(--efu-main)
+
+        .beian-icon
+          height 14px
+          min-width 13px
+          min-height 14px
+
+        .footer-bar-link
+          font-size 12px
+          font-weight 400
+          color var(--efu-secondtext)
+          padding 0
+          margin 0
+          display flex
+          align-items center
+          gap 4px
+        
 
     .footer-bar-link
       margin 0 4px
       color var(--efu-fontcolor)
       font-size .8rem
-      padding 8px
-      border-radius 12px
       font-weight 700
       white-space nowrap
+      padding 8px
+      border-radius 32px
+      line-height 1
+      display flex
+      align-items center
+      gap 4px
+
+      .author-avatar
+        width 20px
+        border-radius 20px
+        min-height 20px
+        min-width 20px
 
       &.cc
         margin-right 0
