@@ -183,11 +183,16 @@
       align-items center
       line-height 1
       padding 1rem 1.5rem
+      +maxWidth768()
+        justify-content center
+        gap 8px
 
     .footer-bar-left
       display flex
       gap 8px
       flex-direction column
+      +maxWidth768()
+        align-items center
 
       .copyright
         display flex
@@ -200,6 +205,8 @@
         display flex
         gap 8px
         flex-wrap wrap
+        +maxWidth768()
+          justify-content center
 
         a:hover
           background 0 0
