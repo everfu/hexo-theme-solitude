@@ -86,9 +86,10 @@ snackbar:
   file: dist/snackbar.min.js
   version: 0.1.16
 fontawesome:
-  name: font-awesome
+  name: '@fortawesome/fontawesome-free'
   file: css/all.min.css
-  version: 6.6.0
+  version: 6.7.1
+  other_name: font-awesome
 medium_zoom:
   name: medium-zoom
   file: dist/medium-zoom.min.js
@@ -114,7 +115,7 @@ chart_js:
   other_name: Chart.js
 typeit_js:
   name: typeit
-  file: index.umd.min.js
+  file: dist/index.umd.min.js
   version: 8.8.7
   other_name: typeit
 blueimp_md5:
