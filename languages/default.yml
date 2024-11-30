@@ -131,6 +131,7 @@ console:
   switch_keyboard: 键盘快捷键
   switch_music: 音乐开关
   archive_unit: 篇
+  archive_all: 全部文章
   recent_comment_more: 最近评论
   newest_comment:
     image: 图片

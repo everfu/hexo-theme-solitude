@@ -34,7 +34,6 @@
     transform translateY(20px)
     transition .3s
     max-width 1400px
-    min-width 1000px
 
     +maxWidth1300()
       justify-content center
@@ -58,7 +57,7 @@
     width 40%
     height 100%
 
-    +maxWidth1300()
+    +maxWidth900()
       display none
 
   .console-card-group-right
@@ -69,8 +68,8 @@
     width 60%
     overflow hidden
 
-    +maxWidth1300()
-      display none
+    +maxWidth900()
+      width 100%
 
   .console-card
     background var(--efu-maskbg)
@@ -134,8 +133,8 @@
     width fit-content
 
     .console-btn-item
-      width 60px
-      height 60px
+      width 80px
+      height 40px
       transition .3s
       cursor pointer
 
@@ -162,7 +161,8 @@
         align-items center
         justify-content center
         color var(--efu-fontcolor)
-        transition all .3s
+        transition .3s
+        box-shadow var(--efu-shadow-border)
 
         i
           font-size 1rem
@@ -254,7 +254,7 @@
       gap .5rem
 
       li.card-archive-list-item
-        flex 0 1 24.101%
+        flex 0 1 calc(25% - .375rem)
 
       .card-archive-list-link
         border-radius 8px

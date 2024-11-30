@@ -9,3 +9,9 @@ ul.card-archive-list
                 .card-archive-list-count-group
                     span.card-archive-list-count= value
                     span.card-archive-list-count-unit= __('console.archive_unit')
+    li.card-archive-list-item
+        a.card-archive-list-link(href='/archives/')
+            span.card-archive-list-date= __('console.archive_all')
+            .card-archive-list-count-group
+                span.card-archive-list-count= site.posts.length
+                span.card-archive-list-count-unit= __('console.archive_unit')
