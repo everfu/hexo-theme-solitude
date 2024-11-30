@@ -82,7 +82,7 @@ div
         script(src=url_for(theme.cdn.cover_ave))
 
   if theme.loading.pace
-    script(src=url_for(theme.cdn.pace_js))
+    include ../mixins/pace.pug
 
   if theme.search.enable && theme.search.type === "algolia"
     script(src=url_for(theme.cdn.instantsearch))
