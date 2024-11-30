@@ -5,6 +5,10 @@ div.console_recentcomments
   min-height 100px
   width 100%
 
+  +maxWidth1300()
+    overflow-y scroll
+    scrollbar-width none
+
 .comment-card
   position relative
   width calc(100% / 3 - 8px)
@@ -22,8 +26,9 @@ div.console_recentcomments
   .console-card &
     width calc(100% / 2 - 8px)
 
-  +maxWidth900()
-    width calc(100% / 2 - 6px)
+  +maxWidth1300()
+    min-width 100%
+    height calc(100% / 3 - 8px)
 
   +maxWidth768()
     width 100%
