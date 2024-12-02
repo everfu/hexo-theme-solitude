@@ -552,7 +552,7 @@ footer:
     author: false # img url / false
     left:
       # Github: https://github.com/everfu || fab fa-github # 名称: 链接 || 图标
-      # Mail: mailto:o@everfu.cn || fab fa-envelope
+      # Mail: mailto:o@everfu.org || fab fa-envelope
     right:
       # Bilibili: https://space.bilibili.com/1329819902 || fab fa-bilibili
       # Douyin: https://v.douyin.com/iJsLc8jt/ || fab fa-tiktok
@@ -574,7 +574,7 @@ footer:
   # 备案
   beian:
     # - name: 湘公网安备43048102000175号
-    #   icon: https://ui.everfu.cn/28399dd1b7b415efb0b3d822c31f59af.png/cover
+    #   icon: https://beian.mps.gov.cn/img/logo01.dd7ff50e.png
     #   url: https://beian.mps.gov.cn/#/query/webSearch
     # - name: 湘ICP备2024080357号-1
     #   url: https://beian.miit.gov.cn/
@@ -603,7 +603,7 @@ errorpage:
 # can only use NetEase Cloud Music, QQ Music and other music platforms supported by the mainland China region,
 # the subsequent consideration of the use of JSON files to store music information and customize the implementation of the third-party API does not depend on the page.
 # Music Page
-meting_api: "https://meting.everfu.cn/?server=:server&type=:type&id=:id&auth=:auth&r=:r" # Custom API
+meting_api: "https://meting.qjqq.cn/?server=:server&type=:type&id=:id&auth=:auth&r=:r" # Custom API
 # --------------------------- end ---------------------------
 
 # --------------------------- start ---------------------------
@@ -612,7 +612,7 @@ meting_api: "https://meting.everfu.cn/?server=:server&type=:type&id=:id&auth=:au
 capsule:
   enable: false
   # 歌单 ID / 单曲 ID
-  id: 8407304077
+  id: 5144842535
   # 服务商：netease / qq / xiami / kugou / baidu
   server: netease
   # 类型：playlist / song
@@ -889,7 +889,7 @@ search:
 music:
   enable: false
   # 歌单 ID / 单曲 ID
-  id: 1994908354
+  id: 5144842535
   # 服务商：netease / qq / xiami / kugou / baidu
   server: netease
   # 类型：playlist / song
@@ -933,7 +933,6 @@ recent_comments:
   limit: 50 # ⚠️waline 仅支持最大50条评论 / ⚠️waline only supports a maximum of 50 comments
   cache: 0.2 # 1 = 1天 / 1 = 1 day
   page: /recentcomments/ # 最近评论页面 / recent comments page
-  img: /img/recent_c.avif # 中控台显示图片（不填不显示） / image displayed in the console
 # --------------------------- end ---------------------------
 
 # --------------------------- start ---------------------------
@@ -993,9 +992,9 @@ google_adsense:
 # 非必要请勿修改
 CDN:
   internal: local # local / cdnjs / jsdelivr / unpkg / custom
-  third_party: cdnjs # cdnjs / jsdelivr / unpkg / custom
+  third_party: custom # cdnjs / jsdelivr / unpkg / custom
   version: true # 是否使用版本号
-  custom_format: //open.lightxi.com/cdnjs/ajax/libs/${cdnjs_name}/${version}/${min_cdnjs_file} # 自定义格式
+  custom_format: https://fastly.jsdelivr.net/npm/${name}@${version}/${min_file} # 自定义格式
   # 直接覆盖默认 CDN 链接（优先级最高）
   options:
     # algolia_search:
