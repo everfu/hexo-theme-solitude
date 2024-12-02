@@ -25,9 +25,9 @@
   },
   "bugs": {
     "url": "https://github.com/everfu/hexo-theme-solitude/issues",
-    "email": "o@everfu.cn"
+    "email": "o@everfu.org"
   },
   "homepage": "https://solitude.js.org",
-  "author": "Hexo-Theme-Solitude<o@everfu.cn>",
+  "author": "Hexo-Theme-Solitude<o@everfu.org>",
   "license": "MIT"
 }

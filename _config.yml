@@ -552,7 +552,7 @@ footer:
     author: false # img url / false
     left:
       # Github: https://github.com/everfu || fab fa-github # 名称: 链接 || 图标
-      # Mail: mailto:o@everfu.cn || fab fa-envelope
+      # Mail: mailto:o@everfu.org || fab fa-envelope
     right:
       # Bilibili: https://space.bilibili.com/1329819902 || fab fa-bilibili
       # Douyin: https://v.douyin.com/iJsLc8jt/ || fab fa-tiktok
@@ -574,7 +574,7 @@ footer:
   # 备案
   beian:
     # - name: 湘公网安备43048102000175号
-    #   icon: https://ui.everfu.cn/28399dd1b7b415efb0b3d822c31f59af.png/cover
+    #   icon: https://beian.mps.gov.cn/img/logo01.dd7ff50e.png
     #   url: https://beian.mps.gov.cn/#/query/webSearch
     # - name: 湘ICP备2024080357号-1
     #   url: https://beian.miit.gov.cn/
