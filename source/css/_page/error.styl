@@ -63,12 +63,12 @@
           width 100%
           padding-bottom 2rem
 
-          .error_title
-            font-size 4rem
-
         .error_title
           font-size 9em
           line-height 1
+
+          +maxWidth768()
+            font-size 4rem
 
         .error_subtitle
           word-break break-word
@@ -81,12 +81,12 @@
           padding .3rem 1.5rem
           background var(--btn-bg)
           color var(--btn-color)
-          transition .3s
 
           &:hover
             background var(--efu-theme)
 
           i
+            font-size 16px
             padding-right .3rem
 
   .aside-list
@@ -98,10 +98,7 @@
 
     +maxWidth768()
       padding-top 0
-
-      .aside-list-item
-        .thumbnail
-          height 100px
+      margin 0
 
     .aside-list-group
       display flex
@@ -126,6 +123,9 @@
         height 200px
         background var(--efu-card-bg)
         display flex
+
+        +maxWidth768()
+          height 100px
 
       .content .title
         -webkit-line-clamp 2
