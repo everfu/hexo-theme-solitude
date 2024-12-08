@@ -93,6 +93,7 @@ hometop:
   group:
     # 热门: /tags/Fire/ || fas fa-fire || linear-gradient(to right,#f65,#ffbf37)
   recommendList:
+    enable: true
     sup: 置顶
     title: Solitude 官方文档
     url: https://solitude.js.org/

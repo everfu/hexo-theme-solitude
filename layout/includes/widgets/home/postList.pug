@@ -44,15 +44,17 @@ div.recent-post-item(onclick="pjax.loadUrl('" + url_for(post.path) + "')")
     else
         case position
             when 0
-                div.post_cover
-                    +cover()
+                if post.cover
+                    div.post_cover
+                        +cover()
                 div.recent-post-info
                     +info()
             when 1
                 div.recent-post-info
                     +info()
-                div.post_cover
-                    +cover()
+                if post.cover
+                    div.post_cover
+                        +cover()
 
 
 if theme.google_adsense && theme.google_adsense.enable && theme.google_adsense.auto_ads === false && theme.google_adsense.post_card
