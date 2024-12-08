@@ -3,5 +3,6 @@
         #bannerGroup
             #banners
                 include ./banner.pug
-        .topGroup
-            include ./topGroup.pug
+        if theme.hometop.recommendList.enable
+            .topGroup
+                include ./topGroup.pug
