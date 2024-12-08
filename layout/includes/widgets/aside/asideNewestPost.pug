@@ -5,8 +5,9 @@
     .aside-list
         each post in site.posts.data.sort((a, b) => b.date < a.date ? -1 : 1).slice(0, 5)
             a.aside-list-item(href=url_for(post.path) title=post.title)
-                .thumbnail
-                    img(alt=post.title src=url_for(post.cover))
+                if post.cover
+                    .thumbnail
+                        img(alt=post.title src=url_for(post.cover))
                 .content
                     span.title(href=url_for(post.path) title=post.title)= post.title
                     if post.categories.data[0]
