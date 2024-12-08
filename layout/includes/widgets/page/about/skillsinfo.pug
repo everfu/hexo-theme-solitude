@@ -18,13 +18,20 @@ if skills || careers
                                         .tags-group-icon-pair
                                             each item in pair
                                                 .tags-group-icon(style=`background:${item.color}`)
-                                                    img(src=item.icon, title=item.title)
+                                                    if item.img
+                                                        img(src=item.img, title=item.title)
+                                                    else if item.icon
+                                                        i(class=item.icon, title=item.title, style=`color: ${item.icon_color ? item.icon_color : ''}`)
                                         - pair = []
                         .skills-list
                             each tag in skills.tags
                                 .skill-info
                                     .skill-icon(style=`background:${tag.color}`)
-                                        img(src=tag.icon, title=tag.title)
+                                        if tag.img
+                                            img(src=tag.img, title=tag.title)
+                                        else if tag.icon
+                                            i(class=tag.icon, title=tag.title, style=`color: ${tag.icon_color ? tag.icon_color : ''}`)
+
                                     .skill-name
                                         span= tag.title
                             .etc ...
