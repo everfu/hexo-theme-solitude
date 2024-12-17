@@ -129,6 +129,6 @@ qrcode:
   other_name: qrcodejs
 color_thief:
   name: colorthief
-  file: color-thief.min.js
+  file: dist/color-thief.min.js
   version: 2.6.0
   other_name: color-thief
