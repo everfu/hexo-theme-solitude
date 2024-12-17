@@ -279,7 +279,7 @@ post:
       license: CC BY-NC-SA 4.0
       # License link
       # 许可证链接
-      licenurl: https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh
+      licenurl: https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-hans
   # Article meta information
   # 文章元信息
   meta:
@@ -570,7 +570,7 @@ footer:
   # 随机友链
   randomlink: false # 随机友链
   # 许可证
-  license: # https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh # 许可证
+  license: # https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-hans # 许可证
 
   # 备案
   beian:
