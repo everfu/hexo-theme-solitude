@@ -56,9 +56,15 @@
                                     #qrcode
                                     .reward-dec=_p('post.share.qrcode')
                             script(pjax).
-                                typeof QRCode === 'function' && new QRCode(document.getElementById("qrcode"), '!{path}');
+                                typeof QRCode === 'function' && new QRCode(document.getElementById("qrcode"), {
+                                    text: '!{path}',
+                                    correctLevel : QRCode.CorrectLevel.L
+                                });
                                 window.addEventListener('DOMContentLoaded', () => {
-                                    new QRCode(document.getElementById("qrcode"), '!{path}');
+                                    new QRCode(document.getElementById("qrcode"), {
+                                        text: '!{path}',
+                                        correctLevel : QRCode.CorrectLevel.L
+                                    });
                                 });
 
     if copyright.enable || page.copyright

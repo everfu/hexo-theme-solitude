@@ -1,11 +1,11 @@
 algolia_search:
   name: algoliasearch
   file: dist/algoliasearch.umd.js
-  version: 5.14.2
+  version: 5.17.1
 instantsearch:
   name: instantsearch.js
   file: dist/instantsearch.production.min.js
-  version: 4.75.5
+  version: 4.75.6
 pjax:
   name: pjax
   file: pjax.min.js
@@ -18,16 +18,16 @@ waline_js:
   name: '@waline/client'
   file: dist/waline.js
   other_name: waline
-  version: 3.3.2
+  version: 3.4.2
 waline_css:
   name: '@waline/client'
   file: dist/waline.css
-  version: 3.3.2
+  version: 3.4.2
   other_name: waline
 valine:
   name: valine
   file: dist/Valine.min.js
-  version: 1.5.2
+  version: 1.5.3
 artalk_css:
   name: artalk
   file: dist/Artalk.css
@@ -88,7 +88,7 @@ snackbar:
 fontawesome:
   name: '@fortawesome/fontawesome-free'
   file: css/all.min.css
-  version: 6.7.1
+  version: 6.7.2
   other_name: font-awesome
 medium_zoom:
   name: medium-zoom
@@ -107,7 +107,7 @@ fancyapps_css:
 mermaid_js:
   name: mermaid
   file: dist/mermaid.js
-  version: 11.4.0
+  version: 11.4.1
 chart_js:
   name: chart.js
   file: dist/chart.umd.js
@@ -129,6 +129,6 @@ qrcode:
   other_name: qrcodejs
 color_thief:
   name: colorthief
-  file: color-thief.min.js
+  file: dist/color-thief.min.js
   version: 2.6.0
   other_name: color-thief
