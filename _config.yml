@@ -553,7 +553,7 @@ footer:
     author: false # img url / false
     left:
       # Github: https://github.com/everfu || fab fa-github # 名称: 链接 || 图标
-      # Mail: mailto:o@everfu.org || fab fa-envelope
+      # Mail: mailto:o@everfu.org || far fa-envelope
     right:
       # Bilibili: https://space.bilibili.com/1329819902 || fab fa-bilibili
       # Douyin: https://v.douyin.com/iJsLc8jt/ || fab fa-tiktok
