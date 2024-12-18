@@ -17,6 +17,12 @@ div#sidebar(style="zoom: 1;")
                     a(href=url_for('/tags/'))
                         .headline=_p('page.tag')
                         .length-num=site.tags.find({parent: {$exists: false}}).length
+            if theme.recent_comments.enable
+                .data-item.is-center
+                    .data-item-link
+                        a(href=url_for(theme.recent_comments.page))
+                            .headline=_p('comment.title')
+                            include ./widgets/sidebar/comment
         span.sidebar-menu-item-title= __('sidebar.function')
         div.sidebar-menu-item
             span.darkmode_switchbutton.menu-child(onclick="sco.switchDarkMode()")
