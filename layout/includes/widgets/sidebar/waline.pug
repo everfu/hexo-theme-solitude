@@ -2,9 +2,9 @@
   i.solitude.fa-solid.fa-spinner.fa-spin
 
 script(pjax).
-	(async () => {
-		await fetch('!{theme.waline.envId}/api/comment?type=recent&count=-1', {method: 'GET'}).then(async res => res.json())
-			.then(async data => {
-				document.querySelector('#waline_allcount').innerHTML = data.length
-			})
-	})()
+  (async () => {
+    await fetch('!{theme.waline.envId}/api/comment?type=recent&count=-1', {method: 'GET'}).then(async res => res.json())
+      .then(async data => {
+        document.querySelector('#waline_allcount').innerHTML = data.length
+      })
+  })()
