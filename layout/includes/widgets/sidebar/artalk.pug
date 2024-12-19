@@ -5,9 +5,9 @@
 
 script(pjax).
   (async () => {
-		const searchParams = new URLSearchParams({'site_name': "!{site}", 'limit': '-1'})
-		await fetch(`!{server}/api/v2/stats/latest_comments?${searchParams}`, {method: 'GET'}).then(async res => res.json())
-			.then(async data => {
-				document.querySelector('#artalk_allcount').innerHTML = data.length
-			})
-	})()
+    const searchParams = new URLSearchParams({'site_name': "!{site}", 'limit': '-1'})
+    await fetch(`!{server}/api/v2/stats/latest_comments?${searchParams}`, {method: 'GET'}).then(async res => res.json())
+      .then(async data => {
+        document.querySelector('#artalk_allcount').innerHTML = data.length
+      })
+  })()
