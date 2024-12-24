@@ -1,0 +1,13 @@
+- const {use} = theme.comment
+
+case use[0]
+  when 'Twikoo'
+    !=partial('includes/widgets/sidebar/twikoo', {}, {cache: true})
+  when 'Waline'
+    !=partial('includes/widgets/sidebar/waline', {}, {cache: true})
+  when 'Valine'
+    !=partial('includes/widgets/sidebar/valine', {}, {cache: true})
+  when 'Artalk'
+    !=partial('includes/widgets/sidebar/artalk', {}, {cache: true})
+  when 'Giscus'
+    !=partial('includes/widgets/sidebar/giscus', {}, {cache: true})
