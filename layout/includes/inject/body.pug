@@ -111,7 +111,7 @@ div
     if is_home() && theme.carousel && site.posts.data.filter(item => item.recommend === true).slice(0, 6) || false
       script.
         carousel_swiper()
-    if theme.busuanzi && (theme.aside.siteinfo.uv || theme.aside.siteinfo.pv)
+    if theme.busuanzi && (theme.aside.siteinfo.uv || theme.aside.siteinfo.pv || is_post() && theme.post.meta.pv)
       script(defer pjax src=url_for(theme.cdn.busuanzi_js))
 
 
