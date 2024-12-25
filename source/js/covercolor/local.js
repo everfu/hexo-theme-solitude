@@ -91,7 +91,6 @@ function LightenDarkenColor(col, amt) {
   
 }
 
-
 const adjustCardStyles = () => {
     const cardContents = document.getElementsByClassName('card-content');
     Array.from(cardContents).forEach(item => {
