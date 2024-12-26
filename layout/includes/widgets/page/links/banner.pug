@@ -20,9 +20,10 @@
                 each y in x.link_list
                     - links.push(y)
             - if (links.length)
-                - while (links.length<10)
-                    - links = links.concat(links)
-                each i in [1,2,3,4]
+                - let originalLinks = links
+                - while (links.length<20)
+                    - links = links.concat(originalLinks)
+                each i in [1,2]
                     - links = links.concat(links)
             - var pairs = []
             each link, index in links
