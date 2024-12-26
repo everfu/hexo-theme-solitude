@@ -12,7 +12,8 @@ if skills || careers
                         .tags-group-all
                             .tags-group-wrapper
                                 - var pair = []
-                                each i in [1,2,3,4] 
+                                - let times = skills.tags.length? Math.ceil(20/skills.tags.length):0
+                                - for (let i = 0; i < 4 * times; i++)
                                     each tag, index in skills.tags
                                         - pair.push(tag)
                                         if pair.length === 2
