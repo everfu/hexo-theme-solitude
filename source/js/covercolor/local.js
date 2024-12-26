@@ -1,9 +1,10 @@
 const coverColor = () => {
     const pageColor = PAGE_CONFIG.color || document.getElementById("post-cover")?.src;
     if (pageColor) {
-        return localColor(pageColor);
+        localColor(pageColor);
+    } else {
+        setDefaultThemeColors();
     }
-    setDefaultThemeColors();
 }
 
 const setDefaultThemeColors = () => {
@@ -19,20 +20,20 @@ const setDefaultThemeColors = () => {
     initThemeColor();
 }
 
-const localColor = path => {
+const localColor = (path) => {
     const colorThief = new ColorThief();
     const img = new Image();
     img.crossOrigin = "Anonymous";
-    img.onload = () => setThemeColors(rgbToHex(colorThief.getColor(img)), ...colorThief.getColor(img));
+    img.onload = () => {
+        const color = colorThief.getColor(img);
+        setThemeColors(rgbToHex(color), ...color);
+    };
     img.onerror = () => console.error('Image Error');
     img.src = path;
 }
 
 const rgbToHex = ([r, g, b]) => {
-    return '#' + [r, g, b].map(x => {
-        const component = Math.floor(x * 0.8);
-        return component.toString(16).padStart(2, '0');
-    }).join('');
+    return '#' + [r, g, b].map(x => Math.floor(x * 0.8).toString(16).padStart(2, '0')).join('');
 }
 
 const setThemeColors = (value, r = null, g = null, b = null) => {
@@ -44,12 +45,13 @@ const setThemeColors = (value, r = null, g = null, b = null) => {
         '--efu-main-op-deep': value + 'dd',
         '--efu-main-none': value + '00'
     };
+    
     Object.entries(themeColors).forEach(([key, color]) => {
         document.documentElement.style.setProperty(key, color);
     });
 
-    if (r && g && b) {
-        const brightness = Math.round(((parseInt(r) * 299) + (parseInt(g) * 587) + (parseInt(b) * 114)) / 1000);
+    if (r !== null && g !== null && b !== null) {
+        const brightness = Math.round(((r * 299) + (g * 587) + (b * 114)) / 1000);
         if (brightness < 125) {
             adjustCardStyles();
             value = LightenDarkenColor(value, 50);
@@ -61,22 +63,32 @@ const setThemeColors = (value, r = null, g = null, b = null) => {
     initThemeColor();
 }
 
-function LightenDarkenColor(col, amt) {
-    var usePound = false;
+const LightenDarkenColor = (col, amt) => {
+    let usePound = false;
     if (col[0] === "#") {
         col = col.slice(1);
         usePound = true;
     }
+    let num = parseInt(col, 16);
+    let r = (num >> 16) + amt;
+    let g = ((num >> 8) & 0x00FF) + amt;
+    let b = (num & 0x0000FF) + amt;
+
+    r = Math.max(Math.min(r, 255), 0);
+    g = Math.max(Math.min(g, 255), 0);
+    b = Math.max(Math.min(b, 255), 0);
+
+    return (usePound ? "#" : "") + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1);
 }
 
 const adjustCardStyles = () => {
-    const cardContents = document.getElementsByClassName('card-content');
-    Array.from(cardContents).forEach(item => {
+    const cardContents = document.querySelectorAll('.card-content');
+    cardContents.forEach(item => {
         item.style.setProperty('--efu-card-bg', 'var(--efu-white)');
     });
 
-    const authorInfo = document.getElementsByClassName('author-info__sayhi');
-    Array.from(authorInfo).forEach(item => {
+    const authorInfo = document.querySelectorAll('.author-info__sayhi');
+    authorInfo.forEach(item => {
         item.style.setProperty('background', 'var(--efu-white-op)');
         item.style.setProperty('color', 'var(--efu-white)');
     });
