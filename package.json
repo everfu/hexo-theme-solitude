@@ -1,6 +1,6 @@
 {
   "name": "hexo-theme-solitude",
-  "version": "2.1.14",
+  "version": "2.1.15",
   "description": "A beautiful, powerful, and efficient Hexo theme developed by everfu.",
   "main": "package.json",
   "scripts": {
