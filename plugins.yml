@@ -1,7 +1,7 @@
 algolia_search:
   name: algoliasearch
   file: dist/algoliasearch.umd.js
-  version: 5.17.1
+  version: 5.18.0
 instantsearch:
   name: instantsearch.js
   file: dist/instantsearch.production.min.js
