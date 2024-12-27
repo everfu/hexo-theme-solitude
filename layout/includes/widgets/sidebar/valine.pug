@@ -1,0 +1,18 @@
+.length-num#valine_allcount
+  i.solitude.fa-solid.fa-spinner.fa-spin
+
+- const { appId, appKey, serverURLs } = theme.valine
+
+script(pjax).
+  (async () => {
+    await fetch('!{serverURLs}/1.1/classes/Comment?limit=-1&order=-createdAt', {
+      method: "GET",
+      headers: {
+        "X-LC-Id": '!{appId}',
+        "X-LC-Key": '!{appKey}',
+        "Content-Type": "application/json"
+      }
+    }).then(async res => res.json()).then(async results => {
+      document.querySelector('#valine_allcount').innerHTML = results.length
+    })
+  })()

@@ -1,0 +1,13 @@
+.length-num#artalk_allcount
+  i.solitude.fa-solid.fa-spinner.fa-spin
+
+- const { server, site } = theme.artalk
+
+script(pjax).
+  (async () => {
+    const searchParams = new URLSearchParams({'site_name': "!{site}", 'limit': '-1'})
+    await fetch(`!{server}/api/v2/stats/latest_comments?${searchParams}`, {method: 'GET'}).then(async res => res.json())
+      .then(async data => {
+        document.querySelector('#artalk_allcount').innerHTML = data.length
+      })
+  })()

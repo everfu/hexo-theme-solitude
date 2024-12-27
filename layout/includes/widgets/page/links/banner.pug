@@ -1,6 +1,6 @@
 .banners-title
-    .banners-title-small= page.title
-    .banners-title-big= page.desc
+    .banners-title-small= page.desc
+    .banners-title-big= page.title
 
 .banner-button-group
     if theme.footer.randomlink
@@ -12,23 +12,31 @@
             i.solitude.fa-solid.fa-circle-chevron-right
             span.solitude.banner-button-text=_p('link.banner.toComment')
 
-.tags-group-all.nowrapMove
-    .tags-group-wrapper
-        - const data = site.data.links.links
-        - for (let i = 0; i < 2; i++)
-            - var links = []
-            each x in data
-                each y in x.link_list
-                    - links.push(y)
-            - var pairs = []
-            each link, index in links
-                if (index % 2 === 0)
-                    - pairs.push([link])
-                else
-                    - pairs[pairs.length - 1].push(link)
-            each pair in pairs
-                .tags-group-icon-pair
-                    each y in pair
-                        a.tags-group-icon(href=url_for(y.link), title=y.name)
-                            img(src=y.avatar + (site.data.links.banner_suffix || ''), title=y.name)
-                            span.tags-group-title=y.name
+- if (site.data.links.swiper !== false)
+    .tags-group-all.nowrapMove
+        .tags-group-wrapper
+            - const data = site.data.links.links
+                - var links = []
+                each x in data
+                    each y in x.link_list
+                        - links.push(y)
+                - if (links.length)
+                    - let originalLinks = links
+                    - while (links.length<20)
+                        - links = links.concat(originalLinks)
+                    each i in [1,2]
+                        - links = links.concat(links)
+                - var pairs = []
+                each link, index in links
+                    if (index % 2 === 0)
+                        - pairs.push([link])
+                    else
+                        - pairs[pairs.length - 1].push(link)
+                each pair in pairs
+                    .tags-group-icon-pair
+                        each y in pair
+                            a.tags-group-icon(href=url_for(y.link), title=y.name)
+                                img(src=y.avatar + (site.data.links.banner_suffix || ''), title=y.name)
+                                span.tags-group-title=y.name
+- else
+    .tags-group-all(style="height:calc(3rem + 72px);")
