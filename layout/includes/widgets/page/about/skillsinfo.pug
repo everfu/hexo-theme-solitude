@@ -10,10 +10,12 @@ if skills || careers
                     span.author-content-item-title= skills.subtitle
                     .skills-style-group
                         .tags-group-all
-                            - let times = skills.tags.length? Math.ceil(20/skills.tags.length):0
-                            .tags-group-wrapper(style=`animation-duration: ${times*skills.tags.length*1000}ms`)
+                            - let times = 4 * (skills.tags.length? Math.ceil(20/skills.tags.length):0)
+                            - let length = times * skills.tags.length
+                            - let duration = length * 500
+                            .tags-group-wrapper(style=`animation-duration: ${duration}ms`)
                                 - var pair = []
-                                - for (let i = 0; i < 4 * times; i++)
+                                - for (let i = 0; i < times; i++)
                                     each tag, index in skills.tags
                                         - pair.push(tag)
                                         if pair.length === 2
