@@ -12,7 +12,7 @@ if skills || careers
                         .tags-group-all
                             - let times = 4 * (skills.tags.length? Math.ceil(20/skills.tags.length):0)
                             - let length = times * skills.tags.length
-                            - let duration = length * 500
+                            - let duration = length * (site.data.links.swiper_speed || 500)
                             .tags-group-wrapper(style=`animation-duration: ${duration}ms`)
                                 - var pair = []
                                 - for (let i = 0; i < times; i++)
