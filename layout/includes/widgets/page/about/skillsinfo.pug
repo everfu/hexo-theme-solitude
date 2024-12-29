@@ -23,7 +23,7 @@ if skills || careers
                                                 each item in pair
                                                     .tags-group-icon(style=`background:${item.color}`)
                                                         if item.img
-                                                            img.nolazyload(src=item.img, title=item.title)
+                                                            img(src=item.img, title=item.title)
                                                         else if item.icon
                                                             i(class=item.icon, title=item.title, style=`color: ${item.icon_color ? item.icon_color : ''}`)
                                             - pair = []
