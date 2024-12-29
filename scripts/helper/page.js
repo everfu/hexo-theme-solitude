@@ -13,5 +13,6 @@ hexo.extend.helper.register('page_description', function () {
 })
 
 hexo.extend.helper.register("urlNoIndex", function (url = null) {
-    return prettyUrls(url || this.url, { trailing_index: false, trailing_html: true });
+    const { config } = this
+    return prettyUrls(url || this.url, config.pretty_urls);
 });
