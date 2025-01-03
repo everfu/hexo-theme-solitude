@@ -123,7 +123,7 @@ window.oncontextmenu = (ele) => {
 
     rm.menuItems.copy.style.display = selectTextNow && window.getSelection() ? "flex" : "none";
     GLOBAL_CONFIG.comment && (rm.menuItems.comment.style.display = selectTextNow && window.getSelection() ? "flex" : "none");
-    rm.menuItems.search.style.display = selectTextNow && window.getSelection() ? "flex" : "none";
+    rm.menuItems.search && (rm.menuItems.search.style.display = selectTextNow && window.getSelection() ? "flex" : "none");
 
     rm.menuItems.new.style.display = link ? "flex" : "none";
     rm.menuItems.copyLink.style.display = link ? "flex" : "none";
