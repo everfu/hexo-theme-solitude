@@ -14,18 +14,18 @@
 
 - if (site.data.links.swiper !== false)
     .tags-group-all.nowrapMove
-        .tags-group-wrapper
-            - const data = site.data.links.links
-                - var links = []
-                each x in data
-                    each y in x.link_list
-                        - links.push(y)
-                - if (links.length)
-                    - let originalLinks = links
-                    - while (links.length<20)
-                        - links = links.concat(originalLinks)
-                    each i in [1,2]
-                        - links = links.concat(links)
+        - const data = site.data.links.links
+        - var links = []
+        each x in data
+            each y in x.link_list
+                - links.push(y)
+        - let times = 4 * (links.length? Math.ceil(20/links.length):0)
+        - let length = times * links.length
+        - let duration = length * 1500 - 1400
+        - let originalLinks = links
+        - for (let i = 1; i < times; i++)
+            - links = links.concat(originalLinks)
+        .tags-group-wrapper(style=`animation-duration: ${duration}ms`)
                 - var pairs = []
                 each link, index in links
                     if (index % 2 === 0)
