@@ -328,7 +328,7 @@ hexo.extend.filter.register('before_generate', () => {
       'font-size': '16px',
       'code-font-size': '16px',
       'font-family': 'PingFang SC, Hiragino Sans GB,Microsoft YaHei',
-      'code-font-family': '"monospace", monospace',
+      'code-font-family': 'ui-monospace, SFMono-Regular, "SF Mono", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace',
     },
     extends: {
       head: [],

@@ -383,7 +383,7 @@ font:
   font-family: "PingFang SC, Hiragino Sans GB, Microsoft YaHei"
   # Code font
   # 代码字体
-  code-font-family: '"monospace", monospace'
+  code-font-family: 'ui-monospace, SFMono-Regular, "SF Mono", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace'
 # --------------------------- end ---------------------------
 
 # --------------------------- start ---------------------------
