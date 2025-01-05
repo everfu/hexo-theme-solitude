@@ -1,4 +1,5 @@
-[English](README_en-US.md)丨简体中文丨[繁体中文](README_zh-Hant.md)
+> [!WARNING]
+> 该分支仅用于本人的个人博客使用，你可以随意拿取所需的修改，但我不对该分支的可用性做任何保证。
 
 <div align="center">
 
@@ -8,22 +9,12 @@
 
 主题设计由 [@张洪Heo](https://github.com/zhheo) 全权授权
 
-![npm package](https://img.shields.io/npm/v/hexo-theme-solitude)
-![license](https://img.shields.io/github/license/everfu/hexo-theme-solitude?color=FF5531)
-[![Stars](https://img.shields.io/github/stars/everfu/hexo-theme-solitude)](https://github.com/everfu/hexo-theme-solitude/stargazers)
-[![NPM all downloads](https://img.shields.io/npm/d18m/hexo-theme-solitude
-)](https://www.npmjs.com/package/hexo-theme-solitude)
 
 ![hexo version](https://img.shields.io/badge/hexo-7.0.0+-blue?logo=hexo&logoColor=white)
 ![node version](https://img.shields.io/badge/node-14.0.0+-white?logo=node.js&logoColor=white)
 ![JetBrains](https://img.shields.io/badge/jetbrains-support-white?logo=jetbrains)
 
-![page view](https://komarev.com/ghpvc/?username=hexo-theme-solitude&color=blue)
-![jsdelivr](https://img.shields.io/jsdelivr/npm/hd/hexo-theme-solitude
-)
-![npm publish](https://img.shields.io/github/actions/workflow/status/everfu/hexo-theme-solitude/npm-publish.yml)
-
-</div>
+[文档](https://solitude.js.org/)丨[预览](https://blog.xiemu.top/)
 
 ## 特性
 
@@ -34,29 +25,6 @@
 - 数学公式(Latex)
 - 特色页面：即刻短文、我的装备、在线工具、音乐馆、友链鱼塘、相册页、豆瓣页、弹幕留言页
 - 文章功能：AI 摘要、代码高亮
-
-> 如有问题请提 [issue](https://github.com/everfu/hexo-theme-solitude/issues)
-
-## 应用
-
-1. 使用 NPM 包进行安装
-
-      ```bash
-      npm i hexo-theme-solitude
-      ```
-
-2. 应用主题
-
-      ```yaml
-      theme: solitude
-      ```
-
-前往 [文档](https://solitude.js.org/zh/) 获取更多信息。
-
-## 社区
-
-[![Discord](https://img.shields.io/discord/1266610921942548553?logo=discord&label=discord&logoColor=white)](https://discord.gg/HZXAnK4Sut)
-[![QQ 群](https://img.shields.io/badge/QQ%20群-948375336-FFD700?logo=Tencent-QQ&logoColor=white)](https://qm.qq.com/q/mxfomMvJPG)
 
 ## 版权
 
