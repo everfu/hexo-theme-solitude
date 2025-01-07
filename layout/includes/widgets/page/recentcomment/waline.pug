@@ -10,7 +10,6 @@ script(pjax).
         let ls = []
         await fetch('!{theme.waline.envId}/api/comment?type=recent&count=!{limit}', {method: 'GET'}).then(async res => res.json())
             .then(async data => {
-                console.log(data)
                 for (const i of data.data) {
                     let title = ''
                     if (i.url) {
