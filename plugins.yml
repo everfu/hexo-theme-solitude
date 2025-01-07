@@ -111,7 +111,7 @@ mermaid_js:
 chart_js:
   name: chart.js
   file: dist/chart.umd.js
-  version: 4.4.1
+  version: 4.4.7
   other_name: Chart.js
 typeit_js:
   name: typeit

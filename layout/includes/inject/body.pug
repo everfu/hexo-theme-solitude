@@ -25,7 +25,7 @@ div
   if theme.chart
     script(src=url_for(theme.cdn.chart_js))
 
-  if theme.typeit
+  if theme.typeit || typeof theme.hometop.banner.desc === 'object'
     script(src=url_for(theme.cdn.typeit_js))
 
   if theme.display_mode.universe

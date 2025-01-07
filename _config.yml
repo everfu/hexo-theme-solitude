@@ -1,11 +1,11 @@
 # ---------------------------
 # Hexo Theme Solitude
-# Author: Ever Fu
+# Author: 伍十七(@everfu)
 # Github: https://github.com/everfu/hexo-theme-solitude
 #
 # Guide: https://solitude.js.org
 # You can get more detailed help from the guide
-# 指南：https://solitude.js.org
+# 指南：https://solitude.js.org/zh
 # 你可以从指南中获取更详细的帮助
 #
 # sponsor: https://ko-fi.com/everfu
@@ -21,7 +21,7 @@ site:
   name:
     class: text # text / i_class / img
     custom: Solitude # Solitude / fas fa-ghost / /img/pwa/favicon.ico
-  icon: /img/pwa/favicon.ico # Site icon / 网站图标
+  icon: /img/pwa/favicon.png # Site icon / 网站图标
 # --------------------------- end ---------------------------
 
 # --------------------------- start ---------------------------
@@ -69,8 +69,11 @@ nav:
 hometop:
   enable: false
   banner:
-    title: # 宁静致远 <br> 热爱生活 # 标题
-    url: Hexo Theme Solitude # 小字
+    title: 分享技术<br >与科技生活 # 大字
+    desc: 一个热爱生活的人 # 小字
+      # - 我只是一个普通的程序员
+      # - 但我有一个不平凡的梦想
+      # - 我希望能够改变世界
     icon:
       # HTML: # name
       #   img: https://i.postimg.cc/vBWVnY8q/html.png # url
@@ -380,7 +383,7 @@ font:
   code-font-size: 16px
   # Global font
   # 全局字体
-  font-family: "PingFang SC, Hiragino Sans GB, Microsoft YaHei"
+  font-family: "PingFang SC, Hiragino Sans GB, Microsoft YaHei, sans-serif"
   # Code font
   # 代码字体
   code-font-family: '"monospace", monospace'

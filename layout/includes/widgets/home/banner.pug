@@ -1,8 +1,15 @@
-- const { title, url, icon} = theme.hometop.banner
+- const { title, desc, icon} = theme.hometop.banner
 
 div.banners-title
     div.banners-title-big!= title
-    div.banners-title-small= url
+    - console.log(typeof(desc))
+    if typeof(desc) === 'object'
+        div.banners-title-small
+        script.
+            var home_subtitle = !{JSON.stringify(desc || [])};
+    else
+        div.banners-title-small= desc
+
 - var group = theme.hometop.group
 if group
     div.banners-links

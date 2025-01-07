@@ -483,6 +483,19 @@ const sco = {
       }
     };
     utils.addEventListenerPjax(switchBtn, 'click', handleSwitchBtn);
+  },
+  homeTypeit() {
+    if(typeof(home_subtitle) === 'undefined') return;
+    const ty = new TypeIt(".banners-title-small", {
+        speed: 200,
+        waitUntilVisible: true,
+        loop: true,
+        lifeLike: true,
+    });
+    home_subtitle.forEach(item => {
+        ty.type(item).pause(500).delete(item);
+    });
+    ty.go();
   }
 };
 
@@ -747,6 +760,7 @@ window.refreshFn = () => {
   initObserver();
   if (is_home) {
     showTodayCard();
+    sco.homeTypeit();
   }
   typeof updatePostsBasedOnComments === 'function' && updatePostsBasedOnComments();
   if (is_post || is_page) {

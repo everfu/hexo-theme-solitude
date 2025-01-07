@@ -3,8 +3,6 @@ hexo.extend.filter.register('stylus:renderer', function (style) {
     const data = hexo.locals.get('data');
 
     style.define('$about', data && data.about ? Object.keys(data.about) : false);
-    style.define('$link', !!(data && data.links) || !!(data && data.tlink))
-    style.define('$equipment', !!(data && data.equipment))
 
     // highlight
     const {syntax_highlighter: syntaxHighlighter, highlight, prismjs} = hexo.config

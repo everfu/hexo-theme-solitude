@@ -1,6 +1,7 @@
+- var $data = page.data
 #equipment
-    if site.data.equipment
-        each i in site.data.equipment
+    if $data
+        each i in site.data[$data]
             .equipment-item
                 h2.equipment-item-title= i.class_name
                 .equipment-item-description= i.description
