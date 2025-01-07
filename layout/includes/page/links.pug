@@ -1,7 +1,9 @@
-.flink#banners
-    include ../widgets/page/links/banner
+- var $data = page.data
+if page.banner
+    .flink#banners
+        include ../widgets/page/links/banner
 .flink.article-container
-    each data in site.data.links.links
+    each data in site.data[$data].links
         h2= data.class_name + " (" + data.link_list.length + ")"
         .flink-desc= data.descr
         case data.type
