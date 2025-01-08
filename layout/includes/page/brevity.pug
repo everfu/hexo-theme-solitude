@@ -3,7 +3,7 @@ if theme.brevity.enable
     #bber
         section.timeline.page-1
             ul.list.waterfall
-                each item in site.data.essay.essay_list.slice(0, theme.brevity.strip)
+                each item in site.data.brevity.slice(0, theme.brevity.strip)
                     li.item
                         if theme.brevity.style === 2
                             .meta
