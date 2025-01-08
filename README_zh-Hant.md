@@ -60,6 +60,8 @@
 
 ## 版權
 
+> 二次創作請保留主題版權信息
+
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fvalor-x%2Fhexo-theme-solitude.svg?type=small)](https://app.fossa.com/projects/git%2Bgithub.com%2Fvalor-x%2Fhexo-theme-solitude?ref=badge_large)
 
-[MIT](./LICENSE) License &copy; 2023-至今 [伍十七](https://github.com/everfu)
+[Apache-2.0](./LICENSE) License &copy; 2025-至今 [伍十七](https://github.com/everfu)
