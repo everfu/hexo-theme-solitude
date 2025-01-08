@@ -11,8 +11,8 @@
     "theme",
     "solitude",
     "Card UI Design",
-    "everfu",
-    "伍十七",
+    "@everfu",
+    "everly",
     "hexo-theme-solitude"
   ],
   "repository": {
@@ -25,9 +25,9 @@
   },
   "bugs": {
     "url": "https://github.com/everfu/hexo-theme-solitude/issues",
-    "email": "o@everfu.org"
+    "email": "o@efu.me"
   },
   "homepage": "https://solitude.js.org",
-  "author": "Hexo-Theme-Solitude<o@everfu.org>",
-  "license": "MIT"
+  "author": "Hexo-Theme-Solitude<o@efu.me>",
+  "license": "Apache-2.0"
 }
