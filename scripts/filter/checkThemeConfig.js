@@ -4,9 +4,9 @@ hexo.extend.filter.register('before_post_render', () => {
         const data = hexo.locals.get('data');
         const logger = hexo.log;
         const theme = hexo.theme.config;
-        if (theme.says.enable && !data.essay) {
-            logger.error('\n 启用即刻短文的情况下，请新建 essay.yaml。');
-            logger.error('\n If says is enabled, essay data must be supplied! \n Please create essay.yaml.');
+        if (theme.brevity.enable && !data.brevity) {
+            logger.error('\n 启用即刻短文的情况下，请新建 brevity.yaml。');
+            logger.error('\n If brevity is enabled, brevity data must be supplied! \n Please create brevity.yaml.');
             process.exit(-1);
         }
         if (theme.footer.randomlink && !data.links){

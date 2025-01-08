@@ -1,4 +1,4 @@
-if hexo-config('says.home_mini')
+if hexo-config('brevity.home_mini')
   #bbTimeList
     background var(--efu-card-bg)
     border-radius 12px
@@ -47,12 +47,12 @@ if hexo-config('says.home_mini')
     font-size 16px
     margin-left 1rem
 
-if hexo-config('says.enable')
+if hexo-config('brevity.enable')
   #bber
     margin-top .5rem
     width 100%
 
-    if hexo-config('says.style') == 2
+    if hexo-config('brevity.style') == 2
       .meta
         display flex
         align-items center
@@ -94,7 +94,7 @@ if hexo-config('says.enable')
         width 100%
         height 100%
 
-    if hexo-config('says.style') == 1
+    if hexo-config('brevity.style') == 1
       .bber-bottom
         display flex
         justify-content space-between

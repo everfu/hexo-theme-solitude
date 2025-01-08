@@ -171,7 +171,7 @@ hexo.extend.filter.register('before_generate', () => {
       text: '404 Not Found',
       recommendList: true
     },
-    says: {
+    brevity: {
       enable: false,
       home_mini: false,
       style: 1,

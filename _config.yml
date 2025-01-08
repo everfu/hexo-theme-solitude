@@ -919,9 +919,9 @@ envelope:
 # --------------------------- end ---------------------------
 
 # --------------------------- start ---------------------------
-# Says Page
+# Brevity Page
 # 即可短文
-says:
+brevity:
   enable: false
   home_mini: false
   page: /essay/
