@@ -21,7 +21,7 @@
   },
   "dependencies": {
     "hexo-renderer-pug": "^3.0.0",
-    "hexo-renderer-stylus": "^3.0.0"
+    "hexo-renderer-stylus": "^3.0.1"
   },
   "bugs": {
     "url": "https://github.com/everfu/hexo-theme-solitude/issues",
