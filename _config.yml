@@ -133,7 +133,6 @@ aside:
   # Information card
   # 信息卡
   card:
-    style: 0 # 0: default 1: style 1 2: style 2
     author:
       img: /img/avatar.avif # url
       sticker: # url, 24x24 size

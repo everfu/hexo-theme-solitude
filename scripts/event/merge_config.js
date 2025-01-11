@@ -37,7 +37,6 @@ hexo.extend.filter.register('before_generate', () => {
       post: { noSticky: 'about', Sticky: 'allInfo' },
       page: { noSticky: 'about', Sticky: 'allInfo' },
       card: {
-        style: 0,
         author: {
           img: '/img/logo.png',
           sticker: '/img/happy-sticker.avif',
