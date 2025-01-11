@@ -551,7 +551,7 @@ rightside:
 # Footer
 # 页脚
 footer:
-  # 信息社交图标
+  # 社交图标
   information:
     author: false # img url / false
     left:
@@ -560,6 +560,7 @@ footer:
     right:
       # Bilibili: https://space.bilibili.com/1329819902 || fab fa-bilibili
       # Douyin: https://v.douyin.com/iJsLc8jt/ || fab fa-tiktok
+  # 友情链接
   group:
     # 导航:
     #   Archives: /archives/
@@ -572,8 +573,6 @@ footer:
 
   # 随机友链
   randomlink: false # 随机友链
-  # 许可证
-  license: # https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-hans # 许可证
 
   # 备案
   beian:
@@ -590,6 +589,16 @@ footer:
       url: https://github.com/everfu/hexo-theme-solitude
     # - name: RSS
     #   url: /atom.xml
+    # - name: License
+    #   url: https://github.com/everfu/hexo-theme-solitude/blob/main/LICENSE
+    #   icon:
+    #     - fas fa-copyright
+    #     - fab fa-creative-commons-by
+    #     - fab fa-creative-commons-nc
+    #     - fab fa-creative-commons-nd
+    # - name: boringbay
+    #   url: https://boringbay.com/
+    #   img: https://boringbay.com/api/badge/www.efu.me
 # --------------------------- end ---------------------------
 
 # --------------------------- start ---------------------------
