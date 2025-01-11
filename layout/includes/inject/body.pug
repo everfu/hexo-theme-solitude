@@ -56,7 +56,7 @@ div
   if theme.post_ai.enable
     script(src=url_for(theme.cdn.post_ai))
 
-  if theme.capsule.enable || theme.music.enable || theme.brevity.enable
+  if theme.capsule.enable || theme.music.enable || theme.brevity.enable && theme.brevity.music
     script.
       var meting_api = '!{theme.meting_api}';
     script(src=url_for(theme.cdn.aplayer_js))

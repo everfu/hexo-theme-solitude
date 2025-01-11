@@ -933,6 +933,7 @@ envelope:
 brevity:
   enable: false
   home_mini: false
+  music: false
   page: /essay/
   style: 1
   strip: 30

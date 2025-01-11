@@ -173,6 +173,7 @@ hexo.extend.filter.register('before_generate', () => {
     },
     brevity: {
       enable: false,
+      music: false,
       home_mini: false,
       style: 1,
       strip: 30
