@@ -136,7 +136,6 @@ aside:
     author:
       img: /img/avatar.avif # url
       sticker: # url, 24x24 size
-    url: /about/ # link / 点击头像跳转链接
     # 内容 / Content
     content: # 这是我的博客 / This is my Blog
     state:
