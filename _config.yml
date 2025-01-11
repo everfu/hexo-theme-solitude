@@ -132,27 +132,20 @@ aside:
   # --------------------------- start ---------------------------
   # Information card
   # 信息卡
-  card:
+  my_card:
     author:
       img: /img/avatar.avif # url
       sticker: # url, 24x24 size
     url: /about/ # link / 点击头像跳转链接
-    background: # https://s3.qjqq.cn/47/663af296b85f4.webp!color # Background image(Invalid if style is 0)
-    # Content(Invalid if style is 0)
-    # 内容(Style 0 无效)
+    # 内容 / Content
     content: # 这是我的博客 / This is my Blog
-    content2: # 一个热爱生活的人 / A person who loves life
-    # Style 2 is invalid
-    # Style 2 无效
-    sayhello:
+    state:
       morning: ✨ 早上好，新的一天开始了
       noon: 🍲 午餐时间
       afternoon: 🌞 下午好
       night: 早点休息
       goodnight: 晚安 😴
-    # Style 2 is invalid, Triggered when sayhello is clicked.
-    # Style 2 无效, 点击 sayhello 时触发
-    sayhello2:
+    witty_words:
       # - 你可以的
       # - 你一定可以的
       # - 祝你好运，陌生人

@@ -42,17 +42,15 @@ hexo.extend.filter.register('before_generate', () => {
           sticker: '/img/happy-sticker.avif',
         },
         url: '/about/',
-        background: null,
         content1: 'Solitude',
-        content2: 'A simple theme for Hexo',
-        sayhello: {
+        state: {
           morning: 'Good Morning',
           noon: 'Good Noon',
           afternoon: 'Good Afternoon',
           night: 'Good Night',
           goodnight: 'Good Night',
         },
-        sayhello2: ['Welcome to Solitude', 'A simple theme for Hexo', 'Enjoy your time', 'Have a nice day', 'Good luck'],
+        witty_words: [],
         information: null,
       },
       flip: {

@@ -2,21 +2,20 @@
     .card-content
         .card-info-avatar.is-center
             .author-info__top-group
-                .author-info__sayhi#author-info__sayhi(onclick="sco.changeSayHelloText()")= _p('sayhello.morning')
+                .author-info__sayhi#author-info__sayhi(onclick="sco.changeWittyWord()")
         .avatar-img-group
-            img.avatar-img(alt=_p('aside.avatar'), src=theme.aside.card.author.img)
-            if theme.aside.card.author.sticker
+            img.avatar-img(alt=_p('aside.avatar'), src=theme.aside.my_card.author.img)
+            if theme.aside.my_card.author.sticker
                 .avatar-sticker
-                    img.avatar-sticker-img(src=theme.aside.card.author.sticker, alt=_p('aside.sticker'))
+                    img.avatar-sticker-img(src=theme.aside.my_card.author.sticker, alt=_p('aside.sticker'))
         .author-info__description_group
-            .author-info__description!= theme.aside.card.content
-            .author-info__description2!= theme.aside.card.content2
+            .author-info__description!= theme.aside.my_card.content
         .author-info__bottom-group
-            a.author-info__bottom-group-left(href=url_for(theme.aside.card.url))
+            a.author-info__bottom-group-left(href=url_for(theme.aside.my_card.url))
                 .author-info__name= config.author
                 .author-info__desc!= config.subtitle
             .card-info-social-icons.is-center
-                each value, label in theme.aside.card.information || {}
+                each value, label in theme.aside.my_card.information || {}
                     - var array = value.split('||')
                     a.social-icon(href=url_for(trim(array[0])), title=label)
                         i.solitude(class=array[1])

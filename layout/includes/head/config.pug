@@ -22,7 +22,7 @@
         }
     }
 
-    const sayhello2 = theme.aside?.card?.sayhello2?.map(item => `"${item}"`) || [];
+    const witty_words = theme.aside?.my_card?.witty_words?.map(item => `"${item}"`) || [];
     const [hello_prefix, hello_back] = [_p('aside.hello'), _p('aside.back')];
 
     let comment = false
@@ -173,15 +173,15 @@ script.
         randomlink: !{theme.footer.randomlink},
         lang: !{JSON.stringify(lang)},
         aside: {
-            sayhello: {
-                morning: "!{theme.aside.card.sayhello.morning}",
-                noon: "!{theme.aside.card.sayhello.noon}",
-                afternoon: "!{theme.aside.card.sayhello.afternoon}",
-                night: "!{theme.aside.card.sayhello.night}",
-                goodnight: "!{theme.aside.card.sayhello.goodnight}",
+            state: {
+                morning: "!{theme.aside.my_card.state.morning}",
+                noon: "!{theme.aside.my_card.state.noon}",
+                afternoon: "!{theme.aside.my_card.state.afternoon}",
+                night: "!{theme.aside.my_card.state.night}",
+                goodnight: "!{theme.aside.my_card.state.goodnight}",
             },
-            sayhello2: [!{sayhello2}],
-            sayhello3: {
+            witty_words: [!{witty_words}],
+            witty_comment: {
                 prefix: '!{hello_prefix}',
                 back: '!{hello_back}',
             },

@@ -276,7 +276,7 @@
 
 #aside-content
   .card-widget
-    if hexo-config('aside.card.author.sticker')
+    if hexo-config('aside.my_card.author.sticker')
       &:hover
         .avatar-sticker
           opacity 0
@@ -323,7 +323,7 @@
         transform scale(1.03)
 
   .card-info
-    if hexo-config('aside.card.author.sticker')
+    if hexo-config('aside.my_card.author.sticker')
       .avatar-sticker
         position absolute
         bottom -2px
@@ -403,17 +403,6 @@
         line-height 1.38
         margin .3rem 0
         text-align left
-        color var(--efu-card-bg)
-
-        b
-          color var(--efu-card-bg)
-
-      .author-info__description2
-        line-height 1.38
-        margin .3rem 0
-        text-align left
-        width 100%
-        z-index 2
         color var(--efu-card-bg)
 
         b
