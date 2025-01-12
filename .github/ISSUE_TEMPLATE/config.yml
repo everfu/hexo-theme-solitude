@@ -1,11 +1,11 @@
-blank_issues_enabled: false
+blank_issues_enabled: true
 contact_links:
   - name: 关于主题使用问题
-    url: https://github.com/valor-x/hexo-theme-solitude/discussions
+    url: https://github.com/everfu/hexo-theme-solitude/discussions
     about: 一些使用上碰到的问题 Discussion 询问。 Please ask questions in Discussion.
 
   - name: Solitude Q&A
-    url: https://docs.efu.me/faq
+    url: https://solitude.js.org/faq
     about: Solitude Q&A
 
   - name: QQ群
