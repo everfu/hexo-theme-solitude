@@ -1,20 +1,29 @@
-name: Node.js Package
+# .github/workflows/release.yml
+
+name: Release
+
+permissions:
+  contents: write
 
 on:
-  release:
-    types: [created]
+  push:
+    tags:
+      - 'v*'
 
 jobs:
-  build:
+  release:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
         with:
-          token: ${{ secrets.ACCESS_TOKEN }}
-      - uses: actions/setup-node@v2
+          fetch-depth: 0
+
+      - name: Set node
+        uses: actions/setup-node@v4
         with:
-          node-version: '14'
-          registry-url: 'https://registry.npmjs.org'
-      - run: npm publish
+          registry-url: https://registry.npmjs.org/
+          node-version: lts/*
+
+      - run: npx changelogithub # or changelogithub@0.12 if ensure the stable result
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
