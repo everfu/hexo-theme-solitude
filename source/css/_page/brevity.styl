@@ -1,4 +1,4 @@
-if hexo-config('says.home_mini')
+if hexo-config('brevity.home_mini')
   #bbTimeList
     background var(--efu-card-bg)
     border-radius 12px
@@ -47,12 +47,12 @@ if hexo-config('says.home_mini')
     font-size 16px
     margin-left 1rem
 
-if hexo-config('says.enable')
+if hexo-config('brevity.enable')
   #bber
     margin-top .5rem
     width 100%
 
-    if hexo-config('says.style') == 2
+    if hexo-config('brevity.style') == 2
       .meta
         display flex
         align-items center
@@ -94,7 +94,7 @@ if hexo-config('says.enable')
         width 100%
         height 100%
 
-    if hexo-config('says.style') == 1
+    if hexo-config('brevity.style') == 1
       .bber-bottom
         display flex
         justify-content space-between
@@ -161,68 +161,69 @@ if hexo-config('says.enable')
       i
         margin-right 4px
 
-    .bber-music
-      width 100%
-      height 90px
-      margin .5rem 0
-      border-radius 8px
-      overflow hidden
-      border var(--style-border-always)
-      background var(--efu-secondbg)
+    if hexo-config('brevity.music')
+      .bber-music
+        width 100%
+        height 90px
+        margin .5rem 0
+        border-radius 8px
+        overflow hidden
+        border var(--style-border-always)
+        background var(--efu-secondbg)
 
-      .aplayer-lrc
-        display none
+        .aplayer-lrc
+          display none
 
-    .aplayer
-      margin 0
+      .aplayer
+        margin 0
 
-      .aplayer-info
-        .aplayer-music
-          height 23px
+        .aplayer-info
+          .aplayer-music
+            height 23px
 
-          .aplayer-title
-            font-size .8rem
-            font-weight 700
-            margin 0
-            color var(--efu-black)
+            .aplayer-title
+              font-size .8rem
+              font-weight 700
+              margin 0
+              color var(--efu-black)
 
-        .aplayer-controller
-          align-items center
+          .aplayer-controller
+            align-items center
 
-          .aplayer-bar-wrap
-            padding 0
+            .aplayer-bar-wrap
+              padding 0
 
-            .aplayer-bar
-              background var(--efu-gray)
-              height 8px
-              border-radius 12px
-              transition .3s
-              overflow hidden
-
-              .aplayer-played
-                height 100%
-                border-radius 12px
-
-                .aplayer-thumb
-                  display none
-
-              .aplayer-loaded
-                height 100%
-                border-radius 12px
-
-            &:hover
               .aplayer-bar
-                height 12px
+                background var(--efu-gray)
+                height 8px
+                border-radius 12px
+                transition .3s
+                overflow hidden
 
-          .aplayer-time
-            position initial
+                .aplayer-played
+                  height 100%
+                  border-radius 12px
 
-      &.aplayer-withlrc
-        .aplayer-pic
-          height 82px
-          width 82px
-          margin 4px
-          border-radius 4px
+                  .aplayer-thumb
+                    display none
+
+                .aplayer-loaded
+                  height 100%
+                  border-radius 12px
+
+              &:hover
+                .aplayer-bar
+                  height 12px
+
+            .aplayer-time
+              position initial
+
+        &.aplayer-withlrc
+          .aplayer-pic
+            height 82px
+            width 82px
+            margin 4px
+            border-radius 4px
 
     .bber-video
       position relative

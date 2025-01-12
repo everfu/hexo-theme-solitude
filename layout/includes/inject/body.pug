@@ -50,13 +50,13 @@ div
       script(src=url_for(theme.cdn.medium_zoom))
     if theme.fancybox
       script(src=url_for(theme.cdn.fancyapps_ui))
-  if (theme.says.home_mini && theme.says.enable) || theme.carousel
+  if (theme.brevity.home_mini && theme.brevity.enable) || theme.carousel
     script(src=url_for(theme.cdn.swiper_js))
 
   if theme.post_ai.enable
     script(src=url_for(theme.cdn.post_ai))
 
-  if theme.capsule.enable || theme.music.enable || theme.says.enable
+  if theme.capsule.enable || theme.music.enable || theme.brevity.enable && theme.brevity.music
     script.
       var meting_api = '!{theme.meting_api}';
     script(src=url_for(theme.cdn.aplayer_js))
@@ -96,10 +96,10 @@ div
       != item
 
   .js-pjax
-    if is_home() && theme.says.enable && theme.says.home_mini
+    if is_home() && theme.brevity.enable && theme.brevity.home_mini
       script.
         sco.initbbtalk()
-    if page.type === 'says' && theme.says.enable
+    if page.type === 'brevity' && theme.brevity.enable
       script.
         GLOBAL_CONFIG.lightbox && utils.lightbox(document.querySelectorAll(".bber-content-img img"));
         sco.changeTimeFormat(document.querySelectorAll('.bber-info-time time'))

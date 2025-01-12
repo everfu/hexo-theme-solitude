@@ -132,28 +132,19 @@ aside:
   # --------------------------- start ---------------------------
   # Information card
   # 信息卡
-  card:
-    style: 0 # 0: default 1: style 1 2: style 2
+  my_card:
     author:
       img: /img/avatar.avif # url
       sticker: # url, 24x24 size
-    url: /about/ # link / 点击头像跳转链接
-    background: # https://s3.qjqq.cn/47/663af296b85f4.webp!color # Background image(Invalid if style is 0)
-    # Content(Invalid if style is 0)
-    # 内容(Style 0 无效)
+    # 内容 / Content
     content: # 这是我的博客 / This is my Blog
-    content2: # 一个热爱生活的人 / A person who loves life
-    # Style 2 is invalid
-    # Style 2 无效
-    sayhello:
+    state:
       morning: ✨ 早上好，新的一天开始了
       noon: 🍲 午餐时间
       afternoon: 🌞 下午好
       night: 早点休息
       goodnight: 晚安 😴
-    # Style 2 is invalid, Triggered when sayhello is clicked.
-    # Style 2 无效, 点击 sayhello 时触发
-    sayhello2:
+    witty_words:
       # - 你可以的
       # - 你一定可以的
       # - 祝你好运，陌生人
@@ -551,7 +542,7 @@ rightside:
 # Footer
 # 页脚
 footer:
-  # 信息社交图标
+  # 社交图标
   information:
     author: false # img url / false
     left:
@@ -560,6 +551,7 @@ footer:
     right:
       # Bilibili: https://space.bilibili.com/1329819902 || fab fa-bilibili
       # Douyin: https://v.douyin.com/iJsLc8jt/ || fab fa-tiktok
+  # 友情链接
   group:
     # 导航:
     #   Archives: /archives/
@@ -572,8 +564,6 @@ footer:
 
   # 随机友链
   randomlink: false # 随机友链
-  # 许可证
-  license: # https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-hans # 许可证
 
   # 备案
   beian:
@@ -590,6 +580,16 @@ footer:
       url: https://github.com/everfu/hexo-theme-solitude
     # - name: RSS
     #   url: /atom.xml
+    # - name: License
+    #   url: https://github.com/everfu/hexo-theme-solitude/blob/main/LICENSE
+    #   icon:
+    #     - fas fa-copyright
+    #     - fab fa-creative-commons-by
+    #     - fab fa-creative-commons-nc
+    #     - fab fa-creative-commons-nd
+    # - name: boringbay
+    #   url: https://boringbay.com/
+    #   img: https://boringbay.com/api/badge/www.efu.me
 # --------------------------- end ---------------------------
 
 # --------------------------- start ---------------------------
@@ -919,11 +919,12 @@ envelope:
 # --------------------------- end ---------------------------
 
 # --------------------------- start ---------------------------
-# Says Page
+# Brevity Page
 # 即可短文
-says:
+brevity:
   enable: false
   home_mini: false
+  music: false
   page: /essay/
   style: 1
   strip: 30

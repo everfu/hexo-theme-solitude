@@ -1,89 +1,21 @@
-- const {style ,url} = theme.aside.card
 .card-widget.card-info
     .card-content
-        case style
-            when 0
-                .card-info-avatar.is-center
-                    .author-info__top-group
-                        .author-info__sayhi#author-info__sayhi(onclick="sco.changeSayHelloText()")= _p('sayhello.morning')
-                .avatar-img-group
-                    img.avatar-img(alt=_p('aside.avatar'), src=theme.aside.card.author.img)
-                    if theme.aside.card.author.sticker
-                        .avatar-sticker
-                            img.avatar-sticker-img(src=theme.aside.card.author.sticker, alt=_p('aside.sticker'))
-                .author-info__description_group
-                    .author-info__description!= theme.aside.card.content
-                    .author-info__description2!= theme.aside.card.content2
-                .author-info__bottom-group
-                    a.author-info__bottom-group-left(href=url_for(theme.aside.card.url))
-                        .author-info__name= config.author
-                        .author-info__desc!= config.subtitle
-                    .card-info-social-icons.is-center
-                        each value, label in theme.aside.card.information || {}
-                            - var array = value.split('||')
-                            a.social-icon(href=url_for(trim(array[0])), title=label)
-                                i.solitude(class=array[1])
-            when 1
-                .card-info-bg-top
-                    .is-center
-                        .author-info__top-group
-                            .author-info__sayhi#author-info__sayhi(onclick="sco.changeSayHelloText()")= _p('sayhello.morning')
-                a.card-info-avatar(href=url_for(theme.aside.card.url) title=_p('aside.avatar'))
-                    .avatar-img
-                        img(src=theme.aside.card.author.img alt=_p('aside.avatar'))
-                    if theme.aside.card.author.sticker
-                        .avatar-sticker
-                            img.avatar-sticker-img(src=theme.aside.card.author.sticker, alt=_p('aside.sticker'))
-                .card-info__desc_group
-                    .author-info__name= config.author
-                    .author-info__desc!= config.subtitle
-
-                    .card-info__data.is-center
-                        if site.posts.length !== 0
-                          a(href=url_for('/archives/') title=_p('aside.card.posts') + site.posts.length)
-                              .length-num= site.posts.length
-                              .headline= _p('page.archives')
-                        if site.tags.length !== 0 || theme.page.tags
-                          a(href=url_for('/tags/') title=_p('aside.card.tags') + site.tags.length)
-                              .length-num= site.tags.length
-                              .headline= _p('page.tag')
-                        if site.categories.length !== 0 || theme.page.categories
-                          a(href=url_for('/categories/') title=_p('aside.card.categories') + site.categories.length)
-                              .length-num= site.categories.length
-                              .headline= _p('page.category')
-
-                    .card-info-social-icons.is-center
-                        each value, label in theme.aside.card.information || {}
-                            - var array = value.split('||')
-                            a.social-icon(href=url_for(trim(array[0])), title=label)
-                                i.solitude(class=array[1])
-            when 2
-                .card-info-bg-top
-                    .author-info-social
-                        .social-icons
-                            each value, label in theme.aside.card.information || {}
-                                - var array = value.split('||')
-                                a.social-icon(href=url_for(trim(array[0])), title=label)
-                                    i.solitude(class=array[1])
-                        span.more-info(onclick="document.querySelector('.social-icons').classList.toggle('show')")
-                            i.solitude.fa-solid.fa-ellipsis-vertical
-                a.card-info-avatar(href=url_for(theme.aside.card.url) title=_p('aside.avatar'))
-                    .avatar-img
-                        img(src=theme.aside.card.author.img alt=_p('aside.avatar'))
-                    if theme.aside.card.author.sticker
-                        .avatar-sticker
-                            img.avatar-sticker-img(src=theme.aside.card.author.sticker, alt=_p('aside.sticker'))
+        .card-info-avatar.is-center
+            .author-info__top-group
+                .author-info__sayhi#author-info__sayhi(onclick="sco.changeWittyWord()")
+        .avatar-img-group
+            img.avatar-img(alt=_p('aside.avatar'), src=theme.aside.my_card.author.img)
+            if theme.aside.my_card.author.sticker
+                .avatar-sticker
+                    img.avatar-sticker-img(src=theme.aside.my_card.author.sticker, alt=_p('aside.sticker'))
+        .author-info__description_group
+            .author-info__description!= theme.aside.my_card.content
+        .author-info__bottom-group
+            span.author-info__bottom-group-left
                 .author-info__name= config.author
-                .card-info__data.is-center
-                    a(href=url_for('/archives/') title=_p('aside.card.posts') + site.posts.length)
-                        .length-num= site.posts.length
-                        .headline= _p('page.archives')
-                    a(href=url_for('/tags/') title=_p('aside.card.tags') + site.tags.length)
-                        .length-num= site.tags.length
-                        .headline= _p('page.tag')
-                    a(href=url_for('/categories/') title=_p('aside.card.categories') + site.categories.length)
-                        .length-num= site.categories.length
-                        .headline= _p('page.category')
-                .card-info__desc_group
-                    .author-info__description!= theme.aside.card.content
-                    .author-info__description2!= theme.aside.card.content2
+                .author-info__desc!= config.subtitle
+            .card-info-social-icons.is-center
+                each value, label in theme.aside.my_card.information || {}
+                    - var array = value.split('||')
+                    a.social-icon(href=url_for(trim(array[0])), title=label)
+                        i.solitude(class=array[1])

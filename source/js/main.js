@@ -150,7 +150,7 @@ const handleThemeChange = mode => {
 };
 
 const sco = {
-  lastSayHello: "",
+  lastWittyWord: "",
   wasPageHidden: false,
   musicPlaying: false,
   scrollTo(elementId) {
@@ -232,15 +232,15 @@ const sco = {
     if (!consoleHideAside) return;
     consoleHideAside.classList.toggle("on", document.documentElement.classList.contains("hide-aside"));
   },
-  changeSayHelloText() {
-    const greetings = GLOBAL_CONFIG.aside.sayhello2;
+  changeWittyWord() {
+    const greetings = GLOBAL_CONFIG.aside.witty_words;
     const greetingElement = document.getElementById("author-info__sayhi");
     let randomGreeting;
     do {
       randomGreeting = greetings[Math.floor(Math.random() * greetings.length)];
-    } while (randomGreeting === this.lastSayHello);
+    } while (randomGreeting === this.lastWittyWord);
     greetingElement.textContent = randomGreeting;
-    this.lastSayHello = randomGreeting;
+    this.lastWittyWord = randomGreeting;
   },
   switchDarkMode() {
     const isDarkMode = document.documentElement.getAttribute('data-theme') === 'dark';
@@ -315,7 +315,7 @@ const sco = {
     const el = document.getElementById('author-info__sayhi');
     if (el) {
       const hours = new Date().getHours();
-      const lang = GLOBAL_CONFIG.aside.sayhello;
+      const lang = GLOBAL_CONFIG.aside.state;
 
       const localData = getLocalData(['twikoo', 'WALINE_USER_META', 'WALINE_USER', '_v_Cache_Meta', 'ArtalkUser']);
 
@@ -330,7 +330,7 @@ const sco = {
       };
       const nick = localData ? (localData.nick || localData.display_name) : null;
 
-      const prefix = this.wasPageHidden ? GLOBAL_CONFIG.aside.sayhello3.back + nick : GLOBAL_CONFIG.aside.sayhello3.prefix + nick;
+      const prefix = this.wasPageHidden ? GLOBAL_CONFIG.aside.witty_comment.back + nick : GLOBAL_CONFIG.aside.witty_comment.prefix + nick;
 
       const greetings = [
         { start: 0, end: 5, text: nick ? prefix : lang.goodnight },

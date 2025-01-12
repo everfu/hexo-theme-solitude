@@ -60,6 +60,8 @@ Visit [Documentation](https://solitude.js.org/zh/) for more information.
 
 ## License
 
+> Please retain the theme copyright information
+
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fvalor-x%2Fhexo-theme-solitude.svg?type=small)](https://app.fossa.com/projects/git%2Bgithub.com%2Fvalor-x%2Fhexo-theme-solitude?ref=badge_large)
 
-[MIT](./LICENSE) License &copy; 2023-present [everfu](https://github.com/everfu)
+[Apache-2.0](./LICENSE) License &copy; 2025-present [everfu](https://github.com/everfu)
