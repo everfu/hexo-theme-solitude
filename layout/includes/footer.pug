@@ -67,9 +67,9 @@ div#footer-bar
                                 if item.icon 
                                 img.beian-icon(src=url_for(item.icon), alt=item.name)
                             span.beian-name= item.name
-                    a.footer-bar-link(href="https://github.com/hexo")
+                    a.footer-bar-link(href=_p('hexo'))
                         = _p('framework_by') + 'Hexo'
-                    a.footer-bar-link(href="https://github.com/everfu/hexo-theme-solitude")
+                    a.footer-bar-link(href=_p('repo'))
                         = _p('theme_by') + 'Solitude'
         if theme.footer.links
             div.footer-bar-right
