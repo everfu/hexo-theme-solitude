@@ -1,15 +1,15 @@
-- const { home, post, page } = theme.aside
+- var { aside } = theme
 
 - var noSticky, Sticky
 if(is_home())
-    - noSticky = home.noSticky ? home.noSticky.split(',') : null
-    - Sticky = home.Sticky ? home.Sticky.split(',') : null
+    - noSticky = aside.home.noSticky ? aside.home.noSticky.split(',') : null
+    - Sticky = aside.home.Sticky ? aside.home.Sticky.split(',') : null
 else if(is_post())
-    - noSticky = post.noSticky ? post.noSticky.split(',') :  null
-    - Sticky = post.Sticky ? post.Sticky.split(',') : null
+    - noSticky = aside.post.noSticky ? aside.post.noSticky.split(',') :  null
+    - Sticky = aside.post.Sticky ? aside.post.Sticky.split(',') : null
 else if(is_page() || is_archive() || is_tag() || is_category())
-    - noSticky = page.noSticky ? page.noSticky.split(',') : null
-    - Sticky = page.Sticky ? page.Sticky.split(',') : null
+    - noSticky = aside.page.noSticky ? aside.page.noSticky.split(',') : null
+    - Sticky = aside.page.Sticky ? aside.page.Sticky.split(',') : null
 if noSticky || Sticky
     .aside-content#aside-content
         each item in noSticky

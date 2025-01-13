@@ -16,4 +16,4 @@ block content
                 include includes/mixins/pagination
             if theme.comment.hot_tip.enable
                 include ./includes/widgets/third-party/hot/index.pug
-        !=partial('includes/widgets/aside/aside', {}, {cache: false})
+        include includes/widgets/aside/aside
