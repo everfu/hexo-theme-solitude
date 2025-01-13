@@ -9,7 +9,6 @@ hexo.extend.filter.register('after_post_render', function (data) {
         data.locate = data.locate || locate;
         data.cc = data.cc || copyright;
         data.cover = data.cover || (cover?.length && cover[getRandomInt(0, cover.length)]);
-        data.top_color = data.top_color;
         data.not_cover = data.cover ? false : true;
         data.excerpt = layout === 'post' ? data.description || data.excerpt : data.title;
         data.toc = !!(config.aside.toc[layout] && data.toc !== false);
