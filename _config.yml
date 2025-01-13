@@ -136,6 +136,8 @@ aside:
     author:
       img: /img/logo.png # url
       sticker: # url, 24x24 size
+    # 介绍 / Introduction
+    description: 只有迎风，风筝才能飞得更高。
     # 内容 / Content
     content: # 这是我的博客 / This is my Blog
     state:
