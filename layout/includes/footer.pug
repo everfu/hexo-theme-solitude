@@ -50,12 +50,12 @@ div#footer-bar
     div.footer-bar-links
         div.footer-bar-left
             if moment(theme.aside.siteinfo.runtime).year() === new Date().getFullYear()
-                div.copyright © #{moment(theme.aside.siteinfo.runtime).year()} By&nbsp;
+                div.copyright © #{moment(theme.aside.siteinfo.runtime).year()}&nbsp;
                     a.footer-bar-link(href=url_for("/"))
                         img.author-avatar(src=url_for(theme.site.icon))
                         = config.author
             else
-                div.copyright © #{moment(theme.aside.siteinfo.runtime).year()} - #{new Date().getFullYear()} By&nbsp;
+                div.copyright © #{moment(theme.aside.siteinfo.runtime).year()} - #{new Date().getFullYear()}&nbsp;
                     a.footer-bar-link(href=url_for("/"))
                         img.author-avatar(src=url_for(theme.site.icon))
                         = config.author
