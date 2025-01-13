@@ -574,10 +574,7 @@ footer:
     #   url: https://beian.miit.gov.cn/
 
   # 页脚信息文字
-  # 请不要删除主题信息，这是对作者的尊重
   links:
-    - name: Theme
-      url: https://github.com/everfu/hexo-theme-solitude
     # - name: RSS
     #   url: /atom.xml
     # - name: License
