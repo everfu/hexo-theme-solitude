@@ -22,4 +22,4 @@ block content
                 // pagination
                 include ./includes/mixins/pagination
         // aside
-        include ./includes/widgets/aside/aside
+        !=partial('./includes/widgets/aside/aside', {}, {cache: false})

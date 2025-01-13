@@ -34,4 +34,4 @@ block content
                 - var comment_js = true
                 include includes/widgets/third-party/comments/comment
         if page.aside
-            include includes/widgets/aside/aside
+            !=partial('includes/widgets/aside/aside', {}, {cache: false})
