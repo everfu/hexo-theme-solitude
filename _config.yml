@@ -134,7 +134,7 @@ aside:
   # 信息卡
   my_card:
     author:
-      img: /img/avatar.avif # url
+      img: /img/logo.png # url
       sticker: # url, 24x24 size
     # 内容 / Content
     content: # 这是我的博客 / This is my Blog
