@@ -251,9 +251,6 @@ page:
 # 文章默认设置
 post:
   default:
-    # The cover of the article is displayed
-    # 文章封面显示
-    top_cover: false
     # Default image when no cover is set
     # 未设置封面时的默认图片
     cover:

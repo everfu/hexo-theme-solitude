@@ -91,7 +91,6 @@ hexo.extend.filter.register('before_generate', () => {
     },
     post: {
       default: {
-        top_cover: true,
         cover: ['/img/default.avif'],
         locate: 'China, Changsha',
         copyright: {
