@@ -40,12 +40,12 @@ katex:
   name: katex
   file: dist/katex.min.css
   other_name: KaTeX
-  version: 0.16.9
+  version: 0.16.21
 katex_copytex:
   name: katex
   file: dist/contrib/copy-tex.min.js
   other_name: KaTeX
-  version: 0.16.9
+  version: 0.16.21
 lazyload:
   name: vanilla-lazyload
   file: dist/lazyload.iife.min.js
