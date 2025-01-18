@@ -808,6 +808,9 @@ comment:
   # Whether to display the comment count
   # 显示评论数
   count: false
+  # Sidebar displays the total number of comments
+  # Sidebar 显示总评论数
+  sidebar: false
   # PV
   pv: false
   # Avatar
