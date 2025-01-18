@@ -1,3 +1,6 @@
+framework_by: 'Framework: '
+theme_by: 'Theme: '
+
 more: More
 star: Behold, those who found delight in this piece also perused
 random: Random
@@ -138,6 +141,7 @@ console:
     link: Link
     code: Code
     emoji: Emoji
+    empty: No comments...
 
 sidebar:
   function: Function

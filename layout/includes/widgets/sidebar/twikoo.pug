@@ -10,7 +10,7 @@ script(pjax).
       body: JSON.stringify({
         "event": "GET_RECENT_COMMENTS",
         "includeReply": true,
-        "pageSize": -1
+        "pageSize": 999
       }),
       headers: {'Content-Type': 'application/json'}
     }).then(res => res.json()).then(async ({data}) => {

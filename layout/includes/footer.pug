@@ -59,26 +59,30 @@ div#footer-bar
                     a.footer-bar-link(href=url_for("/"))
                         img.author-avatar(src=url_for(theme.site.icon))
                         = config.author
-            if theme.footer.beian
                 .beian-group
-                    - var beian = theme.footer.beian || []
-                    each item in beian
-                        a.footer-bar-link(href=url_for(item.url), title=item.name)
-                            if item.icon 
+                    if theme.footer.beian
+                        - var beian = theme.footer.beian || []
+                        each item in beian
+                            a.footer-bar-link(href=url_for(item.url), title=item.name)
+                                if item.icon 
                                 img.beian-icon(src=url_for(item.icon), alt=item.name)
                             span.beian-name= item.name
-
-        div.footer-bar-right
-            each item in theme.footer.links
-                if item.icon
-                    a.footer-bar-link(href=url_for(item.url), alt=item.name)
-                            each icon in item.icon
-                                i.solitude(class=icon)
-                else if item.img
-                    a.footer-bar-link(href=url_for(item.url), alt=item.name)
-                        img(src=url_for(item.img), alt=item.name)
-                else
-                    a.footer-bar-link(href=url_for(item.url), alt=item.name)!= item.name
-                    
+                    a.footer-bar-link(href=_p('hexo'))
+                        = _p('framework_by') + 'Hexo'
+                    a.footer-bar-link(href=_p('repo'))
+                        = _p('theme_by') + 'Solitude'
+        if theme.footer.links
+            div.footer-bar-right
+                each item in theme.footer.links
+                    if item.icon
+                        a.footer-bar-link(href=url_for(item.url), alt=item.name)
+                                each icon in item.icon
+                                    i.solitude(class=icon)
+                    else if item.img
+                        a.footer-bar-link(href=url_for(item.url), alt=item.name)
+                            img(src=url_for(item.img), alt=item.name)
+                    else
+                        a.footer-bar-link(href=url_for(item.url), alt=item.name)!= item.name
+                        
 if theme.comment.use && theme.comment.commentBarrage
     div.comment-barrage.needEndHide

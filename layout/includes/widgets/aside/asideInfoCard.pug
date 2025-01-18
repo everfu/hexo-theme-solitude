@@ -13,7 +13,7 @@
         .author-info__bottom-group
             span.author-info__bottom-group-left
                 .author-info__name= config.author
-                .author-info__desc!= config.subtitle
+                .author-info__desc!= theme.aside.my_card.description
             .card-info-social-icons.is-center
                 each value, label in theme.aside.my_card.information || {}
                     - var array = value.split('||')

@@ -1,18 +1,26 @@
-.aside-content#aside-content
-    - var noSticky, Sticky
-    if(is_home())
-        - noSticky = theme.aside.home.noSticky.split(',')
-        - Sticky = theme.aside.home.Sticky.split(',')
-    else if(is_post())
-        - noSticky = theme.aside.post.noSticky.split(',')
-        - Sticky = theme.aside.post.Sticky.split(',')
-    else if(is_page() || is_archive() || is_tag() || is_category())
-        - noSticky = theme.aside.page.noSticky.split(',')
-        - Sticky = theme.aside.page.Sticky.split(',')
-    each item in noSticky
-        include ./asideSwitch.pug
-    .sticky_layout
-        if showToc
-            include ./asideToc.pug
-        each item in Sticky
+- var { aside } = theme
+
+- var noSticky, Sticky
+if(is_home())
+    - noSticky = aside.home.noSticky ? aside.home.noSticky.split(',') : null
+    - Sticky = aside.home.Sticky ? aside.home.Sticky.split(',') : null
+else if(is_post())
+    - noSticky = aside.post.noSticky ? aside.post.noSticky.split(',') :  null
+    - Sticky = aside.post.Sticky ? aside.post.Sticky.split(',') : null
+else if(is_page() || is_archive() || is_tag() || is_category())
+    - noSticky = aside.page.noSticky ? aside.page.noSticky.split(',') : null
+    - Sticky = aside.page.Sticky ? aside.page.Sticky.split(',') : null
+if noSticky || Sticky
+    .aside-content#aside-content
+        each item in noSticky
             include ./asideSwitch.pug
+        .sticky_layout
+            if showToc
+                include ./asideToc.pug
+            each item in Sticky
+                include ./asideSwitch.pug
+else
+    style.
+        .layout > div:first-child {
+            width: 100%;
+        }

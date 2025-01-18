@@ -134,8 +134,10 @@ aside:
   # 信息卡
   my_card:
     author:
-      img: /img/avatar.avif # url
+      img: /img/logo.png # url
       sticker: # url, 24x24 size
+    # 介绍 / Introduction
+    description: 只有迎风，风筝才能飞得更高。
     # 内容 / Content
     content: # 这是我的博客 / This is my Blog
     state:
@@ -249,9 +251,6 @@ page:
 # 文章默认设置
 post:
   default:
-    # The cover of the article is displayed
-    # 文章封面显示
-    top_cover: true
     # Default image when no cover is set
     # 未设置封面时的默认图片
     cover:
@@ -263,11 +262,7 @@ post:
     # 版权
     copyright:
       enable: true
-      author:
-        url: /about/ # Author link
-        # Default use site.icon
-        # 默认使用 site.icon
-        img:
+      author: /img/logo.png # url
       # License
       # 许可证
       license: CC BY-NC-SA 4.0
@@ -574,10 +569,7 @@ footer:
     #   url: https://beian.miit.gov.cn/
 
   # 页脚信息文字
-  # 请不要删除主题信息，这是对作者的尊重
   links:
-    - name: Theme
-      url: https://github.com/everfu/hexo-theme-solitude
     # - name: RSS
     #   url: /atom.xml
     # - name: License
@@ -816,6 +808,9 @@ comment:
   # Whether to display the comment count
   # 显示评论数
   count: false
+  # Sidebar displays the total number of comments
+  # Sidebar 显示总评论数
+  sidebar: false
   # PV
   pv: false
   # Avatar

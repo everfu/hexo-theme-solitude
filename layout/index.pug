@@ -14,8 +14,6 @@ block content
             .recent-posts#recent-posts
                 if theme.comment.hot_tip.enable
                     include ./includes/widgets/third-party/hot/index.pug
-                if theme.carousel && is_home_first_page()
-                    include ./includes/widgets/home/carousel.pug
                 for post, index in page.posts.sort("-sticky" || "-date").data
                     include ./includes/widgets/home/postList
 

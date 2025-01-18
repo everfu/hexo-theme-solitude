@@ -1,3 +1,6 @@
+framework_by: 框架：
+theme_by: 主题：
+
 more: 更多
 star: 喜欢这篇的人也看了
 random: 随便逛逛
@@ -138,6 +141,7 @@ console:
     link: 链接
     code: 代码
     emoji: 表情
+    empty: 暂无评论...
 
 sidebar:
   function: 功能

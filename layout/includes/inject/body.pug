@@ -50,7 +50,7 @@ div
       script(src=url_for(theme.cdn.medium_zoom))
     if theme.fancybox
       script(src=url_for(theme.cdn.fancyapps_ui))
-  if (theme.brevity.home_mini && theme.brevity.enable) || theme.carousel
+  if (theme.brevity.home_mini && theme.brevity.enable)
     script(src=url_for(theme.cdn.swiper_js))
 
   if theme.post_ai.enable
@@ -108,9 +108,7 @@ div
     if theme.mermaid
       script.
         mermaid.run();
-    if is_home() && theme.carousel && site.posts.data.filter(item => item.recommend === true).slice(0, 6) || false
-      script.
-        carousel_swiper()
+
     if theme.busuanzi && (theme.aside.siteinfo.uv || theme.aside.siteinfo.pv || is_post() && theme.post.meta.pv)
       script(defer pjax src=url_for(theme.cdn.busuanzi_js))
 
