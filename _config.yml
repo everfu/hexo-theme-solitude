@@ -262,7 +262,7 @@ post:
     # 版权
     copyright:
       enable: true
-      author: img/logo.png # url
+      author: /img/logo.png # url
       # License
       # 许可证
       license: CC BY-NC-SA 4.0
