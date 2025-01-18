@@ -141,6 +141,7 @@ console:
     link: 链接
     code: 代码
     emoji: 表情
+    empty: 暂无评论...
 
 sidebar:
   function: 功能

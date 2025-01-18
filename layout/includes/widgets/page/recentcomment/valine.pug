@@ -47,7 +47,7 @@ script(pjax).
         })
 
         function setHtml(el, data) {
-            el.innerHTML = data.map(i => `
+            el.innerHTML = data.length !== 0 ? data.map(i => `
                         <div class="comment-card" title="${i.title}" onclick="pjax.loadUrl('${i.url}')">
                             <div class="comment-info">
                                 <img src="${i.avatar}" class="nolazyload" alt="${i.nick}">
@@ -61,7 +61,7 @@ script(pjax).
                             <i class="solitude fa-solid fa-comment"></i>
                             ${i.title}</div>
                         </div>
-                    `).join('')
+                    `).join('') : `#{__("console.newest_comment.empty")}`
             if (typeof sco !== 'undefined') sco.changeTimeFormat(document.querySelectorAll('.comment-time'))
             else {
                 document.addEventListener('pjax:complete', () => sco.changeTimeFormat(document.querySelectorAll('.comment-time')))

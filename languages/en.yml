@@ -141,6 +141,7 @@ console:
     link: Link
     code: Code
     emoji: Emoji
+    empty: No comments...
 
 sidebar:
   function: Function
