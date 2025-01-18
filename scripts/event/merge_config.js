@@ -246,6 +246,12 @@ hexo.extend.filter.register('before_generate', () => {
       local: {
         preload: false,
         CDN: null,
+      },
+      docsearch: {
+        appId: null,
+        apiKey: null,
+        indexName: null,
+        option: null
       }
     },
     rightside: {

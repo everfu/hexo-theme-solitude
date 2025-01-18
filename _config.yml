@@ -869,17 +869,27 @@ giscus:
 # Search
 search:
   enable: false
-  # type: 使用的搜索引擎 / search engine
-  type: local # local / algolia
+  type: # local / algolia / docsearch
   tags:
     # - Solitude
     # - Hexo
+  # Algolia
   algolia:
     # hits:
     #   per_page: 6
+  
+  # Local search
   local:
     preload: false
     CDN: # url: search.xml
+  
+  # DocSearch
+  # https://docsearch.algolia.com/
+  docsearch: 
+    appId: 
+    apiKey: 
+    indexName: 
+    option: 
 # --------------------------- end ---------------------------
 
 # --------------------------- start ---------------------------
