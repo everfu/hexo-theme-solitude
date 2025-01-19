@@ -3,7 +3,7 @@
     .banners-title-big= page.title
 
 .banner-button-group
-    if theme.footer.randomlink
+    if theme.footer.randomlink && site.data.links.random !== false
         a.banner-button.secondary(onclick="travelling()")
             i.solitude.fa-solid.fa-tower-broadcast
             span.banner-button-text=_p('link.banner.random')
