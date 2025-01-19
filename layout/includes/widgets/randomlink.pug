@@ -5,23 +5,24 @@ if(data)
             each y in item.link_list
                 - datalinks.push({ name: y.name,link: y.link})
 
+script.
+    const links = !{JSON.stringify(datalinks)}
 if site.data.links.random !== false
-    script.
-        const links = !{JSON.stringify(datalinks)}
-        const randomText = '!{_p('link.random')}'
-        function travelling() {
-            const link = links[utils.randomNum(links.length)];
-            Snackbar.show({
-                text: randomText.replace(/\$\{name}/,link.name),
-                duration: 8000,
-                pos: 'top-center',
-                actionText: '!{_p('link.to')}',
-                onActionClick: function(element) {
-                    element.style.opacity = 0;
-                    window.open(link.link, '_blank');
-                }
-            });
-        }
+script.
+    const randomText = '!{_p('link.random')}'
+    function travelling() {
+        const link = links[utils.randomNum(links.length)];
+        Snackbar.show({
+            text: randomText.replace(/\$\{name}/,link.name),
+            duration: 8000,
+            pos: 'top-center',
+            actionText: '!{_p('link.to')}',
+            onActionClick: function(element) {
+                element.style.opacity = 0;
+                window.open(link.link, '_blank');
+            }
+        });
+    }
 
 if theme.footer.randomlink
     script.
