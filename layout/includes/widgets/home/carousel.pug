@@ -28,15 +28,6 @@ if recommends
                                     - let expert = content.substring(0, theme.index_post_list.length).replace(/\d+/g, '').replace(/&#xF/g, '').replace(/&#x/g, '')
                                     - content.length > theme.index_post_list.length ? expert += ' ...' : ''
                                     .span.blog-slider__desc= expert
-                            div.article-meta-wrap
-                                span.article-meta.tags
-                                    each tag in item.tags.data
-                                        a.article-meta__tags(href=url_for(tag.path), onclick="event.stopPropagation();")
-                                            span.tags-punctuation
-                                                i.solitude.fas.fa-hashtag
-                                                =tag.name
-                                span.post-meta-date
-                                    time(datetime=moment(item.date))
             .blog-slider__pagination.swiper-pagination-clickable.swiper-pagination-bullets
 
     script.

@@ -19,11 +19,11 @@
             if theme.post.meta.date
                 span.post-meta-date(title=_p('post.posted') + ' ' + full_date(page.date))
                     i.post-meta-icon.solitude.fas.fa-calendar
-                    time(datetime=date_xml(page.date))= date_xml(page.date)
+                    time(datetime=date_xml(page.date))= moment(page.date).format(_p('date_format.long'))
             if theme.post.meta.updated
                 span.post-meta-date(title=_p('post.updated') + ' ' + full_date(page.updated))
                     i.post-meta-icon.solitude.fas.fa-calendar-check
-                    time(datetime=date_xml(page.updated))= date_xml(page.updated)
+                    time(datetime=date_xml(page.updated))= moment(page.updated).format(_p('date_format.long'))
             if theme.wordcount
                 span.post-meta-wordcount
                     if theme.post.meta.wordcount

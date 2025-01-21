@@ -6,6 +6,9 @@ totalk: 请在空行下面直接输入评论
 loading: 正在加载...
 day: ' 天'
 hot-tip: 多人互动
+date_format:
+  short: 'YY年MM月DD日'
+  long: 'YYYY年MM月DD日'
 
 # Language: 简体中文
 theme:
