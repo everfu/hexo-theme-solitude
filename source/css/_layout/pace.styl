@@ -4,37 +4,31 @@ if hexo-config('loading.pace')
     user-select: none
     z-index: 2000
     position: fixed
-    margin: auto
-    top: 4px
+    top: 56px
     left: 0
     right: 0
-    height: 8px
-    border-radius: 8px
-    width: 4rem
-    background: var(--efu-secondbg)
-    border: var(--style-border)
+    height: 4px
     overflow: hidden
+    transition: opacity 0.3s ease-out;
 
     &.pace-inactive
       opacity: 0
-      transition: .3s
-      top: -8px
+      transition: opacity 0.3s ease-out;
 
       .pace-progress
         opacity: 0
-        transition: .3s ease-in
+        transition: opacity 0.3s ease-out;
 
     .pace-progress
       box-sizing: border-box
-      transform: translate3d(0,0,0)
-      max-width: 200px
+      transform: translate3d(0, 0, 0)
       z-index: 2000
       display: block
       position: absolute
       top: 0
-      right: 100%
+      left: 0
       height: 100%
-      width: 100%
-      background: var(--efu-logo-color)
-      animation: gradient 2s ease infinite
+      width: 0
+      background: var(--efu-white)
+      animation: loader 2s ease infinite
       background-size: 200%

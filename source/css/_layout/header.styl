@@ -513,7 +513,7 @@
         background-color var(--efu-maskbgdeep)
         box-shadow var(--efu-shadow-black)
         border var(--style-border)
-        transition .3s
+        transition .2s cubic-bezier(0.25, 0.46, 0.45, 0.94)
         backdrop-filter blur(20px)
         top 35px
         position absolute
@@ -691,7 +691,7 @@ if hexo-config('nav.group')
     align-items center
     justify-content center
     margin-right 4px
-    transition .3s
+    transition 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94)
     border-radius 40px
 
     +maxWidth768()

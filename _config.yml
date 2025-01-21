@@ -67,41 +67,12 @@ nav:
 # Home Top Banner
 # 首页顶部
 hometop:
-  enable: false
+  enable: true
   banner:
-    title: 分享技术<br >与科技生活 # 大字
-    desc: 一个热爱生活的人 # 小字
-      # - 我只是一个普通的程序员
-      # - 但我有一个不平凡的梦想
-      # - 我希望能够改变世界
+    title:
+    desc:
     icon:
-      # HTML: # name
-      #   img: https://i.postimg.cc/vBWVnY8q/html.png # url
-      #   color: "#e9572b" # color
-      # JS:
-      #   img: https://i.postimg.cc/3N10Ltv2/js.png
-      #   color: "#f7cb4f"
-      # Docker:
-      #   img: https://i.postimg.cc/8Pk6Fg24/docker.png
-      #   color: "#57b6e6"
-      # Flutter:
-      #   img: https://i.postimg.cc/hPC7T3gB/flutter.png
-      #   color: "#ffffff"
-      # WebPack:
-      #   img: https://i.postimg.cc/dVLZBmtT/webpack.png
-      #   color: "#2e3a41"
-      # Git:
-      #   img: https://i.postimg.cc/nhgjwjCS/git.png
-      #   color: "#df5b40"
   group:
-    # 热门: /tags/Fire/ || fas fa-fire || linear-gradient(to right,#f65,#ffbf37)
-  recommendList:
-    enable: true
-    sup: 置顶
-    title: Solitude 官方文档
-    url: https://solitude.js.org/
-    img: /img/default.avif
-    color: "none"
 
 # Article Top Banner
 # 文章推荐轮播图
@@ -198,7 +169,7 @@ aside:
   # Archive
   # 归档
   archive:
-    enable: false
+    enable: true
     type: "month" # month: by month / year: by year
   # --------------------------- end ---------------------------
 
@@ -213,9 +184,9 @@ aside:
     # 总字数
     wordcount: false
     # PV
-    pv: true
+    pv: false
     # UV
-    uv: true
+    uv: false
     # Last update date
     # 最后更新日期
     updatetime: true
@@ -288,17 +259,17 @@ post:
   meta:
     # Release date
     # 发布日期
-    date: false
+    date: true
     # Update date
     # 更新日期
-    updated: false
+    updated: true
     # Location
     # 位置
-    locate: false
+    locate: true
     # Number of words
     # 字数
-    wordcount: false
-    # uv
+    wordcount: true
+    # 阅读时长
     readtime: false
     # pv
     pv: false
@@ -414,7 +385,7 @@ lure:
 # 文章过期
 expire:
   enable: false
-  time: 30 # days
+  time: 365 # days
   position: top # top / bottom
   text_prev: "This article expired "
   text_next: " day ago, if the content does not match, please contact the webmaster to update it."
@@ -424,7 +395,7 @@ expire:
 # Home page article configuration information
 # 首页文章配置信息
 index_post_list:
-  direction: column # row / column
+  direction: row # row / column
   column: 2 # 2: 2 columns 3: 3 columns
   cover: both
 # --------------------------- end ---------------------------
@@ -450,7 +421,7 @@ right_menu:
   commentBarrage: false
   # Whether to display the browser's context menu when hold Ctrl key.
   # 是否在按住 Ctrl 键时显示浏览器右键菜单
-  ctrlOriginalMenu: false
+  ctrlOriginalMenu: true
   # Simplified and Traditional Chinese translation.
   # 简繁体转换
   translate: false
@@ -479,7 +450,7 @@ right_menu:
 #  information
 # 复制信息
 copy:
-  enable: false
+  enable: true
   # Turn on Link copyright information after copying.
   # 复制后链接版权信息
   copyright:
@@ -517,7 +488,7 @@ console:
     enable: false
     # Cache time 1: 1 day / .5 : half a day
     # 缓存时间 1: 1天 / .5 : 半天
-    storage: .2
+    storage: .5
   card:
     # Tags
     # 标签
@@ -529,7 +500,7 @@ console:
 
 # --------------------------- start ---------------------------
 translate:
-  enable: true
+  enable: false
   defaultEncoding: 2 # 1: 默认繁体 2: 默认简体
   translateDelay: 0 # 首次加载翻译迟疑时间
 # --------------------------- end ---------------------------
@@ -553,7 +524,7 @@ rightside:
 footer:
   # 社交图标
   information:
-    author: false # img url / false
+    author:
     left:
       # Github: https://github.com/everfu || fab fa-github # 名称: 链接 || 图标
       # Mail: mailto:o@everfu.org || far fa-envelope
@@ -576,12 +547,9 @@ footer:
 
   # 备案
   beian:
-    # - name: 湘公网安备43048102000175号
-    #   icon: https://beian.mps.gov.cn/img/logo01.dd7ff50e.png
-    #   url: https://beian.mps.gov.cn/#/query/webSearch
-    # - name: 湘ICP备2024080357号-1
-    #   url: https://beian.miit.gov.cn/
-
+  #  - name: 萌ICP备********号
+  #    icon: https://icp.gov.moe/images/ico64.png
+  #    url: https://icp.gov.moe/?keyword=
   # 页脚信息文字
   # 请不要删除主题信息，这是对作者的尊重
   links:
@@ -784,15 +752,9 @@ css_prefix: false
 # Extend
 # 扩展
 extends:
-  # Insert in head
-  # 插入到 head
   head:
-  #  - <script src="https://cdn.bootcdn.net/ajax/libs/pace/1.2.4/pace.min.js"></script>
-
-  # Insert in body
-  # 插入到 body
   body:
-  #  - <script src="https://cdn.bootcdn.net/ajax/libs/pace/1.2.4/pace.min.js"></script>
+      - <script src="/js/link-decorator.js" defer></script>
 # --------------------------- end ---------------------------
 
 # --------------------------- start ---------------------------
@@ -884,7 +846,7 @@ giscus:
 search:
   enable: false
   # type: 使用的搜索引擎 / search engine
-  type: local # local / algolia
+  type: # local / algolia
   tags:
     # - Solitude
     # - Hexo

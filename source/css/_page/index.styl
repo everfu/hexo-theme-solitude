@@ -18,11 +18,14 @@ if hexo-config('music.enable')
 if hexo-config('google_adsense.enable')
   @import "google.styl"
 
-@import "equipment.styl"
+if $equipment
+  @import "equipment.styl"
 
-@import "links.styl"
+if $link
+  @import "links.styl"
 
-@import "_about/about"
+if $about
+  @import "_about/about"
 
 @import "other"
 

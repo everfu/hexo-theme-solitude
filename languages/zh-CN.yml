@@ -1,9 +1,9 @@
 more: 更多
 star: 喜欢这篇的人也看了
-random: 随便逛逛
+random: 随便看看
 upload: 发布时间：
-totalk: 无需删除空行，直接输入评论即可
-loading: 加载中...
+totalk: 请在空行下面直接输入评论
+loading: 正在加载...
 day: ' 天'
 hot-tip: 多人互动
 
@@ -35,14 +35,14 @@ page:
   tags: 全部标签
   categories: 全部分类
   archives: 文章
-  404: 页面没有找到
+  404: 虚空之地
 
 nav:
-  site_name_title: 返回博客主页
+  site_name_title: 返回主页
   backtop: 返回顶部
   travellings: 开往-友链接力
   search: 搜索
-  randompost: 随机一篇文章
+  randompost: 随机文章
   console: 中控台
 
 home:
@@ -55,19 +55,19 @@ home:
   archives: 全部文章
 
 post:
-  reprint: 转载或翻译
+  reprint: 转载
   original: 原创
   cc: 该文章为${cc}文章，注意版权协议
-  posted: 发布于
-  updated: 最后更新于
+  posted: 创建于
+  updated: 修改于
   wordcount: 文章字数
   minread: 阅读耗时
   ip: 作者IP归属地为
   pv: 文章热度
   comment: 评论数
   copyright:
-    reprint: 本文是转载或翻译文章，版权归原作者所有。转载本文请联系原作者。
-    original: 本文是原创文章，采用
+    reprint: 本文是转载文章，版权归原作者所有。转载本文请联系原作者。
+    original: 本文采用
     original_end: 协议，完整转载请注明来自
   share:
     qq: 分享到QQ
@@ -94,7 +94,7 @@ award:
 search:
   empty: 找不到你查询的内容：${query}
   hit: 找到 ${hits} 条结果，用时 ${time} 毫秒
-  placeholder: 输入关键词快速查找
+  placeholder: 在此输入你要搜索的内容
   count: 共 <b>${count}</b> 条结果。
   load: 搜索中...
 
@@ -103,16 +103,16 @@ head:
 
 aside:
   postcount: '文章总数 :'
-  pv: '总访问数 :'
-  uv: '总访客数 :'
+  pv: '总访问量 :'
+  uv: '总访客量 :'
   runtime: '建站天数 :'
   updatetime: '最后更新 :'
-  wordcount: '全站字数 :'
+  wordcount: '本站字数 :'
   toc: 文章目录
   tagmore: 查看全部
   avatar: 头像
-  hello: 好久不见，
-  back: 欢迎再次回来，
+  hello: 你好，
+  back: 欢迎回来，
   sticker: 心情贴纸
   newpost: 最近发布
   newcomment: 最近评论
@@ -166,7 +166,7 @@ link:
   banner:
     toComment: 申请友链
     random: 随机访问
-  random: 点击前往按钮进入随机一个友链，不保证跳转网站的安全性和可用性。本次随机到的是本站友链：⌈ ${name} ⌋
+  random: 点击前往按钮进入随机一个友链，不能保证跳转网站安全可用。本次随机到的是：⌈ ${name} ⌋
   to: 前往
 
 keyboard:
@@ -182,7 +182,7 @@ comment:
 commentBarrage:
   title: 热评
 
-f12: 开发者模式已打开，请遵循GPL协议。
+f12: 开发者模式已打开，请注意遵循 GPL 协议。
 
 right_menu:
   copy: 复制选中文本
@@ -233,7 +233,7 @@ message:
 
 essay:
   tip0: '- 已展开所有短文 -'
-  tip1: '- 只展示最近 #{count} 条短文 -'
+  tip1: '- 展示最近 #{count} 条短文 -'
   link: '链接'
 
 rightside:

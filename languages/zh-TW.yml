@@ -35,14 +35,14 @@ page:
   tags: 全部標籤
   categories: 全部分類
   archives: 文章
-  404: 頁面沒有找到
+  404: 你來到了不存在的區域
 
 nav:
-  site_name_title: 返回博客主頁
+  site_name_title: 返回主頁
   backtop: 返回頂部
   travellings: 開往-友鏈接力
   search: 搜尋
-  randompost: 隨機一篇文章
+  randompost: 隨機文章
   console: 主控台
 
 home:
@@ -58,8 +58,8 @@ post:
   reprint: 轉載或翻譯
   original: 原創
   cc: 該文章為${cc}文章，注意版權協議
-  posted: 發布於
-  updated: 最後更新於
+  posted: 創建於
+  updated: 修改於
   wordcount: 文章字數
   minread: 閱讀耗時
   ip: 作者IP歸屬地為
@@ -94,7 +94,7 @@ award:
 search:
   empty: 找不到你查詢的內容：${query}
   hit: 找到 ${hits} 條結果，用時 ${time} 毫秒
-  placeholder: 輸入關鍵詞快速查找
+  placeholder: 在此鍵入進行搜索
   count: 共 <b>${count}<b> 條結果。
   load: 加載中...
 
@@ -111,8 +111,8 @@ aside:
   toc: 文章目錄
   tagmore: 查看全部
   avatar: 頭像
-  hello: 好久不見，
-  back: 歡迎再次回來，
+  hello: 哈囉，
+  back: 歡迎回來，
   sticker: 心情貼紙
   newpost: 最近發佈
   newcomment: 最近評論
@@ -165,7 +165,7 @@ music:
 link:
   banner:
     toComment: 申請友鏈
-    random: 點擊前往按鈕進入隨機一個友鏈，不保證跳轉網站的安全性和可用性。本次隨機到的是本站友鏈：⌈ ${name} ⌋
+    random: 點擊前往按鈕進入隨機一個友鏈，不能保證跳轉網站的安全可用。本次隨機到的是本站友鏈：⌈ ${name} ⌋
     to: 前往
 keyboard:
   title: 博客快捷鍵
@@ -232,7 +232,7 @@ message:
 
 essay:
   tip0: '- 已展開所有短文 -'
-  tip1: '- 只展示最近 #{count} 條短文 -'
+  tip1: '- 展示最近 #{count} 條短文 -'
   link: '鏈結'
 
 rightside:

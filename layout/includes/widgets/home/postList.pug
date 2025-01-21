@@ -1,6 +1,5 @@
 mixin cover
     a(href=url_for(post.path), title=post.title)
-        img.post_bg(src=url_for(post.cover), alt=post.title)
 
 mixin info
     div.recent-post-info-top
@@ -37,24 +36,16 @@ if direction === 'row'
 
 div.recent-post-item(onclick="pjax.loadUrl('" + url_for(post.path) + "')")
     if direction === 'column'
-        div.post_cover
-            +cover()
         div.recent-post-info
             +info()
     else
         case position
             when 0
-                if post.cover
-                    div.post_cover
-                        +cover()
                 div.recent-post-info
                     +info()
             when 1
                 div.recent-post-info
                     +info()
-                if post.cover
-                    div.post_cover
-                        +cover()
 
 
 if theme.google_adsense && theme.google_adsense.enable && theme.google_adsense.auto_ads === false && theme.google_adsense.post_card
