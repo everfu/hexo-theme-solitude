@@ -11,7 +11,7 @@
                     each tag in page.tags.data
                         a.post-meta__tags(href=url_for(tag.path))
                             span.tags-name.tags-punctuation
-                                i.solitude.fa-solid.fa-hashtag
+                                i.solitude.fas.fa-hashtag
                                 = tag.name
     h1.post-title= page.title
     #post-meta
@@ -30,7 +30,7 @@
                         i.post-meta-icon.solitude.fas.fa-paragraph(title=_p('post.wordcount'))
                         span.word-count= wordcount(page.content) + " 字"
                     if theme.post.meta.readtime
-                        i.post-meta-icon.solitude.fa-solid.fa-clock(title=_p('post.minread'))
+                        i.post-meta-icon.solitude.fas.fa-clock(title=_p('post.minread'))
                         span= min2read(page.content) + " min"
             if theme.post.meta.locate
                 span.post-meta-position(title=_p('post.ip') + page.locate)
@@ -38,44 +38,44 @@
                     span= page.locate
             if theme.post.meta.pv && (theme.comment.use && theme.comment.pv || theme.busuanzi)
                 a.post-meta-pv(href=url_for(page.path), title=_p('post.pv'))
-                    i.post-meta-icon.solitude.fa-solid.fa-fire-flame-curved
+                    i.post-meta-icon.solitude.fas.fa-fire-flame-curved
                     if theme.comment.use && theme.comment.pv
                         case theme.comment.use[0]
                             when "Twikoo"
                                 span#twikoo_visitors
-                                    i.solitude.fa-solid.fa-spinner.fa-spin
+                                    i.solitude.fas.fa-spinner.fa-spin
                             when "Waline"
                                 span.waline-pageview-count
-                                    i.solitude.fa-solid.fa-spinner.fa-spin
+                                    i.solitude.fas.fa-spinner.fa-spin
                             when "Valine"
                                 span.leancloud_visitors(id=url_for(page.path))
                                     span.leancloud-visitors-count
-                                        i.solitude.fa-solid.fa-spinner.fa-spin
+                                        i.solitude.fas.fa-spinner.fa-spin
                             when 'Artalk'
                                 span#ArtalkPV
-                                    i.solitude.fa-solid.fa-spinner.fa-spin
+                                    i.solitude.fas.fa-spinner.fa-spin
                     else
                         if theme.busuanzi
                             if theme.busuanzi_use === 0
                                 span#busuanzi_value_page_pv
-                                    i.solitude.fa-solid.fa-spinner.fa-spin
+                                    i.solitude.fas.fa-spinner.fa-spin
                             else
                                 span#busuanzi_page_pv
-                                    i.solitude.fa-solid.fa-spinner.fa-spin
+                                    i.solitude.fas.fa-spinner.fa-spin
             if theme.post.meta.comment && page.comment && theme.comment.count && theme.comment.use
                 span.post-meta-commentcount(title=_p('post.comment'), onclick="sco.scrollTo('post-comment')")
-                    i.solitude.fa-solid.fa-comment
+                    i.solitude.fas.fa-comment
                     a(href=url_for(page.path) + "#post-comment")
                         case theme.comment.use[0]
                             when "Twikoo"
                                 span.twikoo-count
-                                    i.solitude.fa-solid.fa-spinner.fa-spin
+                                    i.solitude.fas.fa-spinner.fa-spin
                             when "Waline"
                                 span.waline-comment-count
-                                    i.solitude.fa-solid.fa-spinner.fa-spin
+                                    i.solitude.fas.fa-spinner.fa-spin
                             when "Valine"
                                 span.valine-comment-count(data-xid=url_for(page.path) itemprop="commentCount")
-                                    i.solitude.fa-solid.fa-spinner.fa-spin
+                                    i.solitude.fas.fa-spinner.fa-spin
                             when 'Artalk'
                                 span.artalk-count
-                                    i.solitude.fa-solid.fa-spinner.fa-spin
+                                    i.solitude.fas.fa-spinner.fa-spin

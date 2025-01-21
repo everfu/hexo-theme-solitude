@@ -26,7 +26,7 @@ div#sidebar(style="zoom: 1;")
         span.sidebar-menu-item-title= __('sidebar.function')
         div.sidebar-menu-item
             span.darkmode_switchbutton.menu-child(onclick="sco.switchDarkMode()")
-                i.solitude.fa-solid.fa-circle-half-stroke
+                i.solitude.fas.fa-circle-half-stroke
                 span= __('sidebar.darkmode')
         include ./widgets/nav/group
         include ./widgets/nav/menu.pug
@@ -41,7 +41,7 @@ div#sidebar(style="zoom: 1;")
             .webinfo
                 .webinfo-item
                     .webinfo-item-title
-                        i.item-icon.solitude.fa-solid.fa-file-word
+                        i.item-icon.solitude.fas.fa-file-word
                         .item-name= __('aside.wordcount')
                     .item-count= totalcount(site)
 

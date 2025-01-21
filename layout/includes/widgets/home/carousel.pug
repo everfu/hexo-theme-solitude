@@ -33,7 +33,7 @@ if recommends
                                     each tag in item.tags.data
                                         a.article-meta__tags(href=url_for(tag.path), onclick="event.stopPropagation();")
                                             span.tags-punctuation
-                                                i.solitude.fa-solid.fa-hashtag
+                                                i.solitude.fas.fa-hashtag
                                                 =tag.name
                                 span.post-meta-date
                                     time(datetime=moment(item.date))

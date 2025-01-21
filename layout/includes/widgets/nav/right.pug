@@ -6,11 +6,11 @@ each item in custom
 if theme.nav.right.random
     .nav-button#randomPost_button
         a.site-page(onclick="toRandomPost()", title=_p('nav.randompost'), href="javascript:void(0);")
-            i.solitude.fa-solid.fa-dice-d6
+            i.solitude.fas.fa-dice-d6
 if theme.search.enable
     .nav-button#search-button
         a.site-page.social-icon.search(href="javascript:void(0);", title=_p('nav.search'))
-            i.solitude.fa-solid.fa-magnifying-glass
+            i.solitude.fas.fa-magnifying-glass
 if theme.console.enable
     .nav-button#nav-console
         a.console_switchbutton(onclick="sco.showConsole()", title=_p('nav.console'), href="javascript:void(0);")
@@ -21,8 +21,8 @@ if theme.console.enable
 if !theme.rightside.percent
     .nav-button#nav-totop(onclick="sco.toTop()")
         a.totopbtn
-            i.solitude.fa-solid.fa-arrow-up
+            i.solitude.fas.fa-arrow-up
             span#percent= "0"
 #toggle-menu
     a.site-page
-        i.solitude.fa-solid.fa-bars
+        i.solitude.fas.fa-bars
