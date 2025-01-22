@@ -789,7 +789,7 @@ document.addEventListener('visibilitychange', () => {
 
 window.onkeydown = e => {
   const { keyCode, ctrlKey, shiftKey } = e;
-  if (keyCode === 123 || (ctrlKey && shiftKey && keyCode === 67)) {
+  if (keyCode === 123 || (ctrlKey && shiftKey && (keyCode === 67 || keyCode === 73))) {
     utils.snackbarShow(GLOBAL_CONFIG.lang.f12, false, 3000);
   }
   if (keyCode === 27) {
