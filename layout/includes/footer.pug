@@ -45,7 +45,7 @@ if group
                     h3.footer-title= _p('footer.randomlink')
                     button.random-friends-btn(onclick='randomLinksList()', title=_p('footer.randomlink'))
                         i.solitude.fas.fa-arrows-rotate
-                    a.more-friends-btn(href=url_for('/links/'), title=_p('more'))
+                    button.more-friends-btn(onclick='pjax.loadUrl("/links/")', title=_p('more'))
                         i.solitude.fas.fa-arrow-up-right-from-square
                 div.footer-links#friend-links-in-footer
 div#footer-bar

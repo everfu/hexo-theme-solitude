@@ -34,15 +34,15 @@
     transform translateY(20px)
     transition .3s
     max-width 1400px
-    min-width 1100px
+    min-width min(1100px, 90vw)
 
     +maxWidth1300()
       justify-content center
 
-    +maxWidth528()
+    +maxWidth628()
       display none
 
-    +maxHeight800()
+    +maxWidth800()
       display none
 
 
@@ -312,5 +312,5 @@
       display none
 
   #consoleHideAside
-    +maxWidth528()
+    +maxWidth628()
       display none

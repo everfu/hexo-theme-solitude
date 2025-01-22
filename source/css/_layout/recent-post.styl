@@ -4,7 +4,7 @@
 
   #category &,
   #tag &
-    +maxWidth528()
+    +maxWidth628()
       padding 0
 
 .recent-post-item
@@ -15,7 +15,7 @@
   text-shadow 0 0 .5rem var(--ld-bg-card),0 0 1rem var(--ld-bg-card)
   width 65% !important
 
-  +maxWidth528()
+  +maxWidth628()
     width 100% !important
 
 if hexo-config('index_post_list.direction') == "column"
@@ -37,7 +37,7 @@ if hexo-config('index_post_list.direction') == "column"
         #tag &:first-child
           margin-top: 2.5rem
 
-      +maxWidth528()
+      +maxWidth628()
         border-radius 12px
         border var(--style-border-always)
         box-shadow var(--efu-shadow-border)
@@ -84,7 +84,7 @@ if hexo-config('index_post_list.direction') == "column"
             min-height 100%
             user-select none
 
-          +maxWidth528()
+          +maxWidth628()
             border-radius: 12px 12px 0 0
 
       > .recent-post-info
@@ -210,7 +210,7 @@ if hexo-config('index_post_list.direction') == "column"
       gap .5rem
       transition width .3s
 
-    +maxWidth528()
+    +maxWidth628()
       padding 0 1rem
 
   if hexo-config('index_post_list.direction') == "column" && hexo-config('index_post_list.column') == 2
@@ -247,7 +247,7 @@ else if hexo-config('index_post_list.direction') == "row"
     transition: all .2s;
     width: min(320px, 40%);
     
-    +maxWidth528()
+    +maxWidth628()
       aspect-ratio: 2.4;
       height: auto;
       margin-bottom: -10%;
@@ -275,7 +275,7 @@ else if hexo-config('index_post_list.direction') == "row"
       #tag &:first-child
           margin-top: 2.5rem
 
-      +maxWidth528()
+      +maxWidth628()
         border-radius 12px
         border var(--style-border-always)
         box-shadow var(--efu-shadow-border)
@@ -318,7 +318,7 @@ else if hexo-config('index_post_list.direction') == "row"
           min-height 100%
           user-select none
 
-          +maxWidth528()
+          +maxWidth628()
             border-radius: 12px 12px 0 0
 
       > .recent-post-info
@@ -332,7 +332,7 @@ else if hexo-config('index_post_list.direction') == "row"
         flex-direction column
         justify-content space-between
         gap .5rem
-        +maxWidth528()
+        +maxWidth628()
           order 2
 
         .article-content
@@ -381,7 +381,7 @@ else if hexo-config('index_post_list.direction') == "row"
             display flex
             user-select none
 
-            +maxWidth528()
+            +maxWidth628()
               margin-top 20px
 
               i
@@ -460,5 +460,5 @@ else if hexo-config('index_post_list.direction') == "row"
     gap .5rem
     transition width .3s
 
-    +maxWidth528()
+    +maxWidth628()
       padding 0 1rem
