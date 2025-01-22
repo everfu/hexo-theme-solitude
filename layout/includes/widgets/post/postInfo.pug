@@ -28,7 +28,7 @@
                 span.post-meta-wordcount
                     if theme.post.meta.wordcount
                         i.post-meta-icon.solitude.fas.fa-paragraph(title=_p('post.wordcount'))
-                        span.word-count= wordcount(page.content) + " 字"
+                        span.word-count= wordcount(page.content).toString().replace("k",__('thousand')) + "字"
                     if theme.post.meta.readtime
                         i.post-meta-icon.solitude.fas.fa-clock(title=_p('post.minread'))
                         span= min2read(page.content) + " min"

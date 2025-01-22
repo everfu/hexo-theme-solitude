@@ -39,18 +39,30 @@
                     .author-info__desc!= config.subtitle
 
                     .card-info__data.is-center
-                        if site.posts.length !== 0
-                          a(href=url_for('/archives/') title=_p('aside.card.posts') + site.posts.length)
-                              .length-num= site.posts.length
-                              .headline= _p('page.archives')
-                        if site.tags.length !== 0 || theme.page.tags
-                          a(href=url_for('/tags/') title=_p('aside.card.tags') + site.tags.length)
-                              .length-num= site.tags.length
-                              .headline= _p('page.tag')
-                        if site.categories.length !== 0 || theme.page.categories
-                          a(href=url_for('/categories/') title=_p('aside.card.categories') + site.categories.length)
-                              .length-num= site.categories.length
-                              .headline= _p('page.category')
+                        if theme.aside.siteinfo.runtimeenable
+                            span
+                                .headline= _p('aside.runtime')
+                                .length-num#runtimeshow
+                        if theme.aside.siteinfo.updatetime
+                            span
+                                .headline= _p('aside.updatetime')
+                                time.auto-time.length-num(datetime=new Date(), style="display:block;")
+                        if theme.wordcount && theme.aside.siteinfo.wordcount
+                            span
+                                .headline= _p('aside.wordcount')
+                                .length-num= totalcount(site).toString().replace("k",_p('thousand'))
+                        //- if site.posts.length !== 0
+                        //-   a(href=url_for('/archives/') title=_p('aside.card.posts') + site.posts.length)
+                        //-       .headline= _p('page.archives')
+                        //-       .length-num= site.posts.length
+                        //- if site.tags.length !== 0 || theme.page.tags
+                        //-   a(href=url_for('/tags/') title=_p('aside.card.tags') + site.tags.length)
+                        //-       .headline= _p('page.tag')
+                        //-       .length-num= site.tags.length
+                        //- if site.categories.length !== 0 || theme.page.categories
+                        //-   a(href=url_for('/categories/') title=_p('aside.card.categories') + site.categories.length)
+                        //-       .headline= _p('page.category')
+                        //-       .length-num= site.categories.length
 
                     .card-info-social-icons.is-center
                         each value, label in theme.aside.card.information || {}

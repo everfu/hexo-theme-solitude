@@ -4,11 +4,13 @@ random: 随便看看
 upload: 发布时间：
 totalk: 请在空行下面直接输入评论
 loading: 正在加载...
-day: ' 天'
-hot-tip: 多人互动
+day: 天
 date_format:
   short: 'YY年MM月DD日'
   long: 'YYYY年MM月DD日'
+hot-tip: 多人互动
+words: 字
+thousand: 千
 
 # Language: 简体中文
 theme:
@@ -96,7 +98,7 @@ award:
 
 search:
   empty: 找不到你查询的内容：${query}
-  hit: 找到 ${hits} 条结果，用时 ${time} 毫秒
+  hit: 找到 ${hits} 条结果，用时 ${time} ms
   placeholder: 在此输入你要搜索的内容
   count: 共 <b>${count}</b> 条结果。
   load: 搜索中...
@@ -108,9 +110,9 @@ aside:
   postcount: '文章总数 :'
   pv: '总访问量 :'
   uv: '总访客量 :'
-  runtime: '建站天数 :'
-  updatetime: '最后更新 :'
-  wordcount: '本站字数 :'
+  runtime: '运营时长'
+  updatetime: '上次更新'
+  wordcount: '字数统计'
   toc: 文章目录
   tagmore: 查看全部
   avatar: 头像
@@ -169,7 +171,7 @@ link:
   banner:
     toComment: 申请友链
     random: 随机访问
-  random: 点击前往按钮进入随机一个友链，不能保证跳转网站安全可用。本次随机到的是：⌈ ${name} ⌋
+  random: 点击前往按钮进入随机一个友链，不能保证跳转链接安全可用。本次随机到的是：⌈ ${name} ⌋
   to: 前往
 
 keyboard:

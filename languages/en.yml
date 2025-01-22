@@ -9,6 +9,8 @@ hot-tip: Hot
 date_format:
   short: 'YY-MM-DD'
   long: 'YYYY-MM-DD'
+words: ''
+thousand: k
 
 theme:
   dark: Dark
@@ -108,9 +110,9 @@ aside:
   postcount: 'Posts:'
   pv: 'PV:'
   uv: 'UV:'
-  runtime: 'Runtime:'
-  updatetime: 'Last update:'
-  wordcount: 'Word count:'
+  runtime: 'Runtime'
+  updatetime: 'Last update'
+  wordcount: 'Word count'
   toc: Table of contents
   tagmore: View all
   avatar: Avatar

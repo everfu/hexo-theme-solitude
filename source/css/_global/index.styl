@@ -266,7 +266,7 @@ table
   border-collapse collapse
   empty-cells show
 
-  +maxWidth768()
+  +maxWidth528()
     display block
     overflow-x auto
 
@@ -295,6 +295,10 @@ img
   max-width 100%
   transition all .2s ease 0s
   -webkit-user-drag none
+  display: inline-block;
+  overflow: hidden;
+  overflow: clip;
+  transform: scale(1);
 
 img:not([src]), img[src=""]
   opacity 0
@@ -374,7 +378,7 @@ i.solitude
   padding 0 1.5rem
   width 100%
   max-width 1200px
-  +maxWidth768()
+  +maxWidth528()
     padding 0
 
   &#content-inner
@@ -405,7 +409,7 @@ i.solitude
     if hexo-config('aside.position') == 0
       order 2
 
-    +maxWidth768()
+    +maxWidth528()
       box-shadow none
       border none
       padding 0 1rem

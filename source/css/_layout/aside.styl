@@ -486,33 +486,33 @@ if hexo-config('aside.card.style') == 1
         width 100%
 
       .card-info-bg-top
-        min-height 140px
-        background: linear-gradient(-25deg, var(--efu-main), var(--efu-main-op-deep), var(--efu-main), var(--efu-main-op-deep))
-        background-size: 400%
-        if hexo-config('aside.card.background')
-          background-image url(hexo-config('aside.card.background'))
-          background-size cover
-          background-position center
-          background-repeat no-repeat
+        min-height 120px
+        //background: linear-gradient(-25deg, var(--efu-main), var(--efu-main-op-deep), var(--efu-main), var(--efu-main-op-deep))
+        //background-size: 400%
+        //if hexo-config('aside.card.background')
+        //  background-image url(hexo-config('aside.card.background'))
+        //  background-size cover
+        //  background-position center
+        //  background-repeat no-repeat
 
       .card-info-avatar
         width 114px
         height 114px
         right calc(50% - 57px)
-        top 75px
+        top 55px
         border-radius 500px
         position absolute
         transition cubic-bezier(.69, .39, 0, 1.21) .3s
         transform-origin bottom
         z-index 1
-        border 7px solid var(--efu-card-bg)
+        border 4px solid var(--efu-fontcolor)
 
         .avatar-img
           overflow hidden
           border-radius 500px
-          width 100px
+          width 100%
           cursor pointer
-          height 100px
+          height 100%
 
           img
             object-fit cover
@@ -583,7 +583,7 @@ if hexo-config('aside.card.style') == 1
           margin 12px 0 4px
           padding 0 20px
 
-          a
+          span
             position relative
             display table-cell
 
@@ -591,7 +591,7 @@ if hexo-config('aside.card.style') == 1
               transition all .3s
               color var(--efu-theme)
 
-              div
+              div, time
                 transition all .3s
                 color var(--efu-theme)
 
@@ -606,9 +606,9 @@ if hexo-config('aside.card.style') == 1
               background: var(--efu-fontcolor)
 
             .length-num
-              margin-top: -.32em
+              margin-top: 0em
               color: var(--efu-fontcolor)
-              font-size: 1.4em
+              font-size: 1em
               line-height: 1.5
 
             .headline

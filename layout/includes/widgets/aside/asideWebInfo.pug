@@ -28,21 +28,3 @@
                 else
                     span#busuanzi_site_uv
                         i.solitude.fas.fa-spinner.fa-spin
-    if theme.aside.siteinfo.runtimeenable
-        .webinfo-item
-            .webinfo-item-title
-                i.item-icon.solitude.fas.fa-calendar
-                .item-name= __('aside.runtime')
-            .item-count#runtimeshow
-    if theme.aside.siteinfo.updatetime
-        .webinfo-item
-            .webinfo-item-title
-                i.item-icon.solitude.fas.fa-calendar-check
-                .item-name= __('aside.updatetime')
-            time.item-count(datetime=new Date())
-    if theme.wordcount && theme.aside.siteinfo.wordcount
-        .webinfo-item
-            .webinfo-item-title
-                i.item-icon.solitude.fas.fa-paragraph
-                .item-name= __('aside.wordcount')
-            .item-count= totalcount(site)+ " 字"

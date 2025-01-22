@@ -9,6 +9,8 @@ hot-tip: 多人互動
 date_format:
   short: 'YY年MM月DD日'
   long: 'YYYY年MM月DD日'
+words: 字
+thousand: 千
 
 # Language: 繁體中文 (台灣)
 theme:
@@ -108,9 +110,9 @@ aside:
   postcount: '文章數：'
   pv: '瀏覽量：'
   uv: '訪客數：'
-  runtime: '運行時間：'
-  updatetime: '最後更新：'
-  wordcount: '字數統計：'
+  runtime: '運行時間'
+  updatetime: '最後更新'
+  wordcount: '字數統計'
   toc: 文章目錄
   tagmore: 查看全部
   avatar: 頭像

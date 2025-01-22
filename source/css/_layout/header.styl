@@ -24,7 +24,7 @@
       background var(--efu-none)
       transition .3s
 
-      +maxWidth768()
+      +maxWidth528()
         transition 0s
 
       .post &
@@ -58,7 +58,7 @@
     width 15rem
     text-align center
 
-    +maxWidth768()
+    +maxWidth528()
       display block
 
     .social-icon
@@ -84,7 +84,7 @@
   &.not-home-page
     height 20rem
 
-    +maxWidth768()
+    +maxWidth528()
       height 14rem
 
   #page-site-info
@@ -93,7 +93,7 @@
     padding 0 .5rem
     width 100%
 
-    +maxWidth768()
+    +maxWidth528()
       top 7rem
 
   #nav
@@ -104,7 +104,7 @@
     justify-content center
     user-select none
 
-    +maxWidth768()
+    +maxWidth528()
       transition 0s
 
     +maxWidth1400()
@@ -116,7 +116,7 @@
           &.solitude
             opacity 0
 
-            +maxWidth768()
+            +maxWidth528()
               opacity 1
 
     #nav-group
@@ -127,7 +127,7 @@
       padding 0 1.5rem
       align-items center
 
-      +maxWidth768()
+      +maxWidth528()
         width 100%
         display flex
         position relative
@@ -144,7 +144,7 @@
       margin-right 1.5rem
       overflow hidden
 
-      +maxWidth768()
+      +maxWidth528()
         margin-right 12px
 
       div
@@ -321,7 +321,7 @@
             z-index 101
 
     #travellings_button
-      +maxWidth768()
+      +maxWidth528()
         opacity 0
 
   &.no-top-img
@@ -364,7 +364,7 @@
   outline 1px solid var(--efu-none)
   justify-content space-between
 
-  +maxWidth768()
+  +maxWidth528()
     padding 0
 
   &.show
@@ -379,7 +379,7 @@
     padding .1rem 0 0 .3rem
     vertical-align top
 
-    +maxWidth768()
+    +maxWidth528()
       display inline-block
 
     &:hover
@@ -427,7 +427,7 @@
         line-height 35px
         padding 0 12px
 
-        +maxWidth768()
+        +maxWidth528()
           transition .1s
 
         +minWidth900()
@@ -441,7 +441,7 @@
         font-weight 700
         padding 0 5px
         line-height 2rem
-        +maxWidth768()
+        +maxWidth528()
           padding-left 8px
 
     if hexo-config('site.name.class') == img
@@ -469,7 +469,7 @@
       transition .3s
       color var(--efu-white)
 
-      +maxWidth768()
+      +maxWidth528()
         background var(--efu-none)
         box-shadow none
         transition .3s
@@ -485,7 +485,7 @@
     margin 0
     transform translateZ(0)
 
-    +maxWidth768()
+    +maxWidth528()
       display none
 
   .menus_items
@@ -694,7 +694,7 @@ if hexo-config('nav.group')
     transition 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94)
     border-radius 40px
 
-    +maxWidth768()
+    +maxWidth528()
       display: none
 
     i
@@ -712,7 +712,7 @@ if hexo-config('nav.group')
         left 1.5rem
         transform scale(1)
 
-        +maxWidth768()
+        +maxWidth528()
           padding-bottom 8px
           box-shadow var(--efu-shadow-border)
           left: 0
@@ -748,7 +748,7 @@ if hexo-config('nav.group')
       backdrop-filter blur(20px)
       -webkit-backdrop-filter blur(20px)
 
-      +maxWidth768()
+      +maxWidth528()
         left 0
 
       &:hover
@@ -870,7 +870,7 @@ if hexo-config('nav.group')
     margin-left .5rem
     color var(--efu-fontcolor)
 
-    +maxWidth768()
+    +maxWidth528()
       font-size 14px
 
 .page
@@ -903,7 +903,7 @@ if hexo-config('nav.group')
 
     #site-name
       i
-        +maxWidth768()
+        +maxWidth528()
           color var(--efu-fontcolor)
 
 #weblogo
@@ -958,5 +958,5 @@ if hexo-config('nav.group')
 
 if hexo-config('console.enable')
   #nav-console
-    +maxWidth768()
+    +maxWidth528()
       display none

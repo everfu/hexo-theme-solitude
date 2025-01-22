@@ -4,8 +4,19 @@
 
   #category &,
   #tag &
-    +maxWidth768()
+    +maxWidth528()
       padding 0
+
+.recent-post-item
+  position relative
+
+.post_bg+.recent-post-info
+  position relative
+  text-shadow 0 0 .5rem var(--ld-bg-card),0 0 1rem var(--ld-bg-card)
+  width 65% !important
+
+  +maxWidth528()
+    width 100% !important
 
 if hexo-config('index_post_list.direction') == "column"
   .recent-post-item
@@ -26,7 +37,7 @@ if hexo-config('index_post_list.direction') == "column"
         #tag &:first-child
           margin-top: 2.5rem
 
-      +maxWidth768()
+      +maxWidth528()
         border-radius 12px
         border var(--style-border-always)
         box-shadow var(--efu-shadow-border)
@@ -73,7 +84,7 @@ if hexo-config('index_post_list.direction') == "column"
             min-height 100%
             user-select none
 
-          +maxWidth768()
+          +maxWidth528()
             border-radius: 12px 12px 0 0
 
       > .recent-post-info
@@ -87,8 +98,6 @@ if hexo-config('index_post_list.direction') == "column"
         flex-direction column
         gap 16px
         justify-content space-between
-        +minWidth1300()
-          min-height 165px
 
         span.tags-punctuation
           transition .3s
@@ -201,7 +210,7 @@ if hexo-config('index_post_list.direction') == "column"
       gap .5rem
       transition width .3s
 
-    +maxWidth768()
+    +maxWidth528()
       padding 0 1rem
 
   if hexo-config('index_post_list.direction') == "column" && hexo-config('index_post_list.column') == 2
@@ -224,9 +233,34 @@ if hexo-config('index_post_list.direction') == "column"
           box-shadow var(--efu-shadow-border)
 
 else if hexo-config('index_post_list.direction') == "row"
+  img.post_bg
+    height: 100%;
+    margin: 0;
+    -webkit-mask: linear-gradient(90deg, transparent, #fff 50%);
+    mask: linear-gradient(90deg, transparent, #fff 50%);
+    -o-object-fit: cover;
+    object-fit: cover;
+    opacity: .8;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: all .2s;
+    width: min(320px, 40%);
+    
+    +maxWidth528()
+      aspect-ratio: 2.4;
+      height: auto;
+      margin-bottom: -10%;
+      -webkit-mask: linear-gradient(#fff 50%, transparent);
+      mask: linear-gradient(#fff 50%, transparent);
+      max-height: 256px;
+      max-width: none;
+      position: static;
+      width: 100%;
+
   .recent-post-item
       display flex
-      align-items center
+      align-items flex-start
       animation slide-in .6s .4s backwards
       transition all .3s ease 0s
       overflow hidden
@@ -241,7 +275,7 @@ else if hexo-config('index_post_list.direction') == "row"
       #tag &:first-child
           margin-top: 2.5rem
 
-      +maxWidth768()
+      +maxWidth528()
         border-radius 12px
         border var(--style-border-always)
         box-shadow var(--efu-shadow-border)
@@ -284,24 +318,25 @@ else if hexo-config('index_post_list.direction') == "row"
           min-height 100%
           user-select none
 
-          +maxWidth768()
+          +maxWidth528()
             border-radius: 12px 12px 0 0
 
       > .recent-post-info
         height 100%
         width 100%
-        padding 18px 32px 18px 32px
+        padding 16px
         cursor pointer
         position relative
         display flex
         overflow hidden
         flex-direction column
-        gap 16px
         justify-content space-between
-        +minWidth1300()
-          min-height 165px
-        +maxWidth768()
+        gap .5rem
+        +maxWidth528()
           order 2
+
+        .article-content
+          color var(--efu-secondtext)
 
         span.tags-punctuation
           transition .3s
@@ -312,6 +347,9 @@ else if hexo-config('index_post_list.direction') == "row"
         .recent-post-info-top
           position relative
           transition .3s
+          gap .5rem
+          display flex
+          flex-direction column
           width 100%
 
           .article-title
@@ -326,21 +364,25 @@ else if hexo-config('index_post_list.direction') == "row"
             display -webkit-box
             overflow hidden
             -webkit-box-orient vertical
+          
+          .article-content
+            padding 0 !important
+
+          > .sticky-warp
+              display flex
+              position relative
+              margin-right 8px
+              flex-direction row
+              justify-content center
+              align-items center
+              gap .5rem
 
           .recent-post-info-top-tips
             display flex
             user-select none
 
-            +maxWidth768()
+            +maxWidth528()
               margin-top 20px
-
-            > .sticky-warp
-              display flex
-              position relative
-              margin-right 8px
-              justify-content center
-              align-items center
-              font-size 0.5rem
 
               i
                 font-size .5rem
@@ -353,17 +395,8 @@ else if hexo-config('index_post_list.direction') == "row"
               position relative
               margin-right 8px
 
-            .unvisited-post
-              display flex
-              color var(--efu-secondtext)
-              font-size .5rem
-              position relative
-
-              &:visited
-                color var(--efu-card-bg)
-
         /.article-meta-wrap
-          color var(--efu-fontcolor)
+          color var(--efu-secondtext)
           font-size .7rem
           user-select none
           position relative
@@ -371,12 +404,10 @@ else if hexo-config('index_post_list.direction') == "row"
           display flex
           flex-direction row
           flex-wrap nowrap
-          justify-content space-between
+          justify-content flex-start
           width 100%
           left 0
           white-space nowrap
-          +maxWidth768()
-            bottom 16px
 
           > .article-meta
             margin 0 8px 0 0
@@ -384,6 +415,16 @@ else if hexo-config('index_post_list.direction') == "row"
             overflow hidden
             text-overflow ellipsis
             display flex
+
+            i
+              line-height: 2;
+              margin-right: 6px;
+              width: 1em;
+              text-align: center;
+              font-size: 1em;
+
+            &.post-meta-category
+              color var(--efu-theme)
 
             > .article-meta__tags
               margin-right 8px
@@ -419,5 +460,5 @@ else if hexo-config('index_post_list.direction') == "row"
     gap .5rem
     transition width .3s
 
-    +maxWidth768()
+    +maxWidth528()
       padding 0 1rem

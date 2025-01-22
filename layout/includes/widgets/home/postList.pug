@@ -1,24 +1,14 @@
 mixin cover
-    a(href=url_for(post.path), title=post.title)
+    img.nolazyload.post_bg(src=url_for(post.cover), alt=post.title)
 
 mixin info
     div.recent-post-info-top
-        div.recent-post-info-top-tips
-            if post.sticky && is_home()
-                span.article-meta.sticky-warp
-                    i.solitude.fas.fa-thumbtack.sticky.orange
-                    span.sticky.orange= _p('home.sticky')
-            each category in post.categories.data
-                span.original= category.name
+        span.article-meta.sticky-warp
+            if is_home() && post.sticky
+                i.solitude.fas.fa-thumbtack.sticky.orange
+            a.article-title(href=url_for(post.path), title=post.title)= post.title
 
-            if post.prev == null && is_home()
-                span.original= _p('home.new')
-
-            a.unvisited-post(href=url_for(post.path))= _p('home.read')
-
-        a.article-title(href=url_for(post.path), title=post.title)= post.title
-
-        div.article-content
+        div.article-content.article-container
             - let content = post.excerpt || strip_html(post.content)
             - let expert = content.substring(0, theme.index_post_list.length).replace(/\d+/g, '').replace(/&#xF/g, '').replace(/&#x/g, '')
             - content.length > theme.index_post_list.length ? expert += ' ...' : ''
@@ -26,8 +16,20 @@ mixin info
 
     div.article-meta-wrap
         span.article-meta.post-meta-date
-            time(datetime=date_xml(post.date))= moment(post.date).format(_p('date_format.short'))
-            
+            time(datetime=date_xml(post.date))
+                i.solitude.fas.fa-calendar
+                = moment(post.date).format(_p('date_format.short'))
+        span.article-meta.post-meta-category
+                span.original
+                    i.solitude.fas.fa-folder
+                    each category in post.categories.data
+                        - let categories=[]
+                        - categories.push(category.name)
+                        = categories.join(' ')
+        span.article-meta.post-meta-wordcount
+            span.word-count
+                i.solitude.fas.fa-paragraph
+                = wordcount(post.content).toString().replace("k",__('thousand')) + _p('words')
         span.article-meta.tags
             each tag in post.tags.data
                 a.article-meta__tags(href=url_for(tag.path), onclick="event.stopPropagation();")
@@ -46,6 +48,7 @@ div.recent-post-item(onclick="pjax.loadUrl('" + url_for(post.path) + "')")
         div.recent-post-info
             +info()
     else
+        +cover()
         case position
             when 0
                 div.recent-post-info

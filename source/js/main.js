@@ -467,7 +467,7 @@ const sco = {
     selector.forEach(item => {
       const timeVal = item.getAttribute('datetime');
       item.textContent = utils.diffDate(timeVal, true);
-      item.style.display = 'inline';
+      // item.style.display = 'inline';
     });
   },
   switchComments() {
@@ -734,7 +734,7 @@ const forPostFn = () => {
 window.refreshFn = () => {
   const { is_home, is_page, page, is_post } = PAGE_CONFIG;
   const { runtime, lazyload, lightbox, randomlink, covercolor, post_ai, lure, expire } = GLOBAL_CONFIG;
-  const timeSelector = '.webinfo-item time';
+  const timeSelector = 'time.auto-time';
   document.body.setAttribute('data-type', page);
   sco.changeTimeFormat(document.querySelectorAll(timeSelector));
   runtime && sco.addRuntime();
