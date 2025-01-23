@@ -402,7 +402,7 @@ const sco = {
     if (!pageText || lastPageNumber === 1) return;
     toGroup.style.display = "none";
     pageText.addEventListener("keydown", (event) => {
-      if (event.keyCode === 13) {
+      if (event.key === 'Enter') {
         sco.toPage();
         pjax.loadUrl(pageButton.href);
       }
@@ -772,11 +772,11 @@ document.addEventListener('visibilitychange', () => {
 });
 
 window.onkeydown = e => {
-  const { keyCode, ctrlKey, shiftKey } = e;
-  if (keyCode === 123 || (ctrlKey && shiftKey && keyCode === 67)) {
+  const { code, ctrlKey, shiftKey } = e;
+  if (code === 'F12' || (ctrlKey && shiftKey && (code === 'KeyI'|| code === 'KeyC'))) {
     utils.snackbarShow(GLOBAL_CONFIG.lang.f12, false, 3000);
   }
-  if (keyCode === 27) {
+  if (code === 27) {
     sco.hideConsole();
   }
 };
