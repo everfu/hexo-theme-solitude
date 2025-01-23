@@ -364,18 +364,12 @@ else if hexo-config('index_post_list.direction') == "row"
             display -webkit-box
             overflow hidden
             -webkit-box-orient vertical
+
+            i.sticky
+              margin-right 4px
           
           .article-content
             padding 0 !important
-
-          > .sticky-warp
-              display flex
-              position relative
-              margin-right 8px
-              flex-direction row
-              justify-content center
-              align-items center
-              gap .5rem
 
           .recent-post-info-top-tips
             display flex
@@ -424,7 +418,10 @@ else if hexo-config('index_post_list.direction') == "row"
               font-size: 1em;
 
             &.post-meta-category
-              color var(--efu-theme)
+              *
+                color var(--efu-theme)
+                a:hover
+                  color var(--efu-fontcolor)
 
             > .article-meta__tags
               margin-right 8px

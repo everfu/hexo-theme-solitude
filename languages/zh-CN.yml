@@ -155,6 +155,7 @@ footer:
   randomlink: 友链
   rss: 订阅
   theme: 主题
+  refresh: 随机刷新
 
 cookies:
   title: 协议提醒助手

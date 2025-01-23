@@ -3,9 +3,9 @@
         .meta-firstline
             - var cc = page.reprint ? _p('post.reprint') : _p('post.original')
             a.post-meta-original(title=_p('post.cc').replace(/\$\{cc}/, cc))= cc
-            if page.categories.data.length > 0
+            each category in page.categories.data
                 span.post-meta-categories
-                    a.post-meta-categories(href=url_for('/' + page.categories.data[0].path))= page.categories.data[0].name
+                    a.post-meta-categories(href=url_for('/' + category.path))= category.name
             .tag_share
                 .post-meta__tag-list
                     each tag in page.tags.data

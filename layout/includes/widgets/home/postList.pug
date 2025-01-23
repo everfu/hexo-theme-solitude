@@ -4,9 +4,10 @@ mixin cover
 mixin info
     div.recent-post-info-top
         span.article-meta.sticky-warp
-            if is_home() && post.sticky
-                i.solitude.fas.fa-thumbtack.sticky.orange
-            a.article-title(href=url_for(post.path), title=post.title)= post.title
+            a.article-title(href=url_for(post.path), title=post.title)
+                if is_home() && post.sticky
+                    i.solitude.fas.fa-thumbtack.sticky.orange
+                = post.title
 
         div.article-content.article-container
             - let content = post.excerpt || strip_html(post.content)
@@ -20,12 +21,10 @@ mixin info
                 i.solitude.fas.fa-calendar
                 = moment(post.date).format(_p('date_format.short'))
         span.article-meta.post-meta-category
-                span.original
+                span.original.post-meta-categories
                     i.solitude.fas.fa-folder
                     each category in post.categories.data
-                        - let categories=[]
-                        - categories.push(category.name)
-                        = categories.join(' ')
+                        a.post-meta-categories(href=url_for('/' + category.path), onclick="event.stopPropagation();")= category.name
         span.article-meta.post-meta-wordcount
             span.word-count
                 i.solitude.fas.fa-paragraph
