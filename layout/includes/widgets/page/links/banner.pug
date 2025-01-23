@@ -12,7 +12,7 @@
             i.solitude.fas.fa-circle-chevron-right
             span.solitude.banner-button-text=_p('link.banner.toComment')
 
-- if (site.data.links.swiper !== false)
+if (site.data.links.swiper !== false)
     .tags-group-all.nowrapMove
         - const data = site.data.links.links
         - var links = []
@@ -38,5 +38,5 @@
                             a.tags-group-icon(href=url_for(y.link), title=y.name)
                                 img(src=y.avatar + (site.data.links.banner_suffix || ''), title=y.name)
                                 span.tags-group-title=y.name
-- else
+else
     .tags-group-all(style="height:calc(3rem + 72px);")
