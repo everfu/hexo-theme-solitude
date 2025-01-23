@@ -399,10 +399,8 @@ const sco = {
     const pageButton = document.getElementById("toPageButton");
     const pageNumbers = document.querySelectorAll(".page-number");
     const lastPageNumber = +pageNumbers[pageNumbers.length - 1].textContent;
-    if (!pageText || lastPageNumber === 1) {
-      toGroup.style.display = "none";
-      return;
-    }
+    if (!pageText || lastPageNumber === 1) return;
+    toGroup.style.display = "none";
     pageText.addEventListener("keydown", (event) => {
       if (event.keyCode === 13) {
         sco.toPage();
