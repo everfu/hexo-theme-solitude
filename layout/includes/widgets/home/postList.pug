@@ -21,10 +21,13 @@ mixin info
                 i.solitude.fas.fa-calendar
                 = moment(post.date).format(_p('date_format.short'))
         span.article-meta.post-meta-category
-                span.original.post-meta-categories
-                    i.solitude.fas.fa-folder
-                    each category in post.categories.data
-                        a.post-meta-categories(href=url_for('/' + category.path), onclick="event.stopPropagation();")= category.name
+            - let category_icon = false
+            each category in post.categories.data
+                a.original.post-meta-categories(href=url_for('/' + category.path), onclick="event.stopPropagation();")
+                    if !category_count
+                        i.solitude.fas.fa-folder
+                        - category_icon = true
+                    = category.name
         span.article-meta.post-meta-wordcount
             span.word-count
                 i.solitude.fas.fa-paragraph

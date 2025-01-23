@@ -394,6 +394,7 @@ else if hexo-config('index_post_list.direction') == "row"
           font-size .7rem
           user-select none
           position relative
+          margin -5px 0
           transition .3s
           display flex
           flex-direction row
@@ -418,9 +419,9 @@ else if hexo-config('index_post_list.direction') == "row"
               font-size: 1em;
 
             &.post-meta-category
-              *
+              *:not(.solitude)
                 color var(--efu-theme)
-                a:hover
+                &:hover
                   color var(--efu-fontcolor)
 
             > .article-meta__tags
