@@ -42,7 +42,7 @@ hexo.extend.helper.register('related_posts', function (currentPost, allPosts) {
     let result = `
         <div class="relatedPosts">
             <div class="headline">
-                <i class="solitude fa-solid fa-star"></i>
+                <i class="solitude fas fa-star"></i>
                 <span>${headlineLang}</span>
                 <div class="relatedPosts-link">
                     <a onclick="event.preventDefault(); toRandomPost();" href="javascript:void(0);" rel="external nofollow" data-pjax-state="">${this._p('random')}</a>
