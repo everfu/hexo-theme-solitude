@@ -3,52 +3,52 @@
 div#rightMenu
     div.rightMenu-group.rightMenu-small
         div.rightMenu-item#menu-backward
-            i.solitude.fa-solid.fa-arrow-left
+            i.solitude.fas.fa-arrow-left
         div.rightMenu-item#menu-forward
-            i.solitude.fa-solid.fa-arrow-right
+            i.solitude.fas.fa-arrow-right
         div.rightMenu-item#menu-refresh
-            i.solitude.fa-solid.fa-arrows-rotate
+            i.solitude.fas.fa-arrows-rotate
         div.rightMenu-item#menu-top
-            i.solitude.fa-solid.fa-arrow-up
+            i.solitude.fas.fa-arrow-up
     div.rightMenu-group.rightMenu-line.rightMenuPlugin
         div.rightMenu-item#menu-copytext
-            i.solitude.fa-solid.fa-clone
+            i.solitude.fas.fa-clone
             span= _p('right_menu.copy')
         div.rightMenu-item#menu-pastetext
-            i.solitude.fa-solid.fa-clipboard
+            i.solitude.fas.fa-clipboard
             span= _p('right_menu.paste')
         if theme.comment.use
             div.rightMenu-item#menu-commenttext
-                i.solitude.fa-solid.fa-comment-medical
+                i.solitude.fas.fa-comment-medical
                 span= _p('right_menu.comment')
         div.rightMenu-item#menu-newwindow
-            i.solitude.fa-regular.fa-window-maximize
+            i.solitude.far.fa-window-maximize
             span= _p('right_menu.new')
         div.rightMenu-item#menu-copylink
-            i.solitude.fa-solid.fa-link
+            i.solitude.fas.fa-link
             span= _p('right_menu.link')
         div.rightMenu-item#menu-copyimg
-            i.solitude.fa-solid.fa-clone
+            i.solitude.fas.fa-clone
             span= _p('right_menu.img')
         div.rightMenu-item#menu-downloadimg
-            i.solitude.fa-solid.fa-cloud-arrow-down
+            i.solitude.fas.fa-cloud-arrow-down
             span= _p('right_menu.downloadImg')
         if theme.search.enable
             div.rightMenu-item#menu-search
-                i.solitude.fa-solid.fa-magnifying-glass
+                i.solitude.fas.fa-magnifying-glass
                 span= _p('right_menu.search')
         if theme.capsule.enable
             div.rightMenu-item#menu-music-toggle
-                i.solitude.fa-solid.fa-play
+                i.solitude.fas.fa-play
                 span= _p('right_menu.music.start')
             div.rightMenu-item#menu-music-back
-                i.solitude.fa-solid.fa-backward
+                i.solitude.fas.fa-backward
                 span= _p('right_menu.music.back')
             div.rightMenu-item#menu-music-forward
-                i.solitude.fa-solid.fa-forward
+                i.solitude.fas.fa-forward
                 span= _p('right_menu.music.forward')
             div.rightMenu-item#menu-music-copyMusicName
-                i.solitude.fa-solid.fa-clone
+                i.solitude.fas.fa-clone
                 span= _p('right_menu.music.copyMusicName')
     if custom_list.length > 0
         div.rightMenu-group.rightMenu-line.rightMenuOther
@@ -59,10 +59,10 @@ div#rightMenu
     div.rightMenu-group.rightMenu-line.rightMenuOther
         if theme.right_menu.commentBarrage && theme.comment.use && theme.comment.commentBarrage
             div.rightMenu-item#menu-commentBarrage(onclick="sco.switchCommentBarrage()")
-                i.solitude.fa-solid.fa-comment
+                i.solitude.fas.fa-comment
                 span.menu-commentBarrage-text= _p('right_menu.barrage.close')
         div.rightMenu-item#menu-darkmode(onclick="sco.switchDarkMode()")
-            i.solitude.fa-solid.fa-circle-half-stroke
+            i.solitude.fas.fa-circle-half-stroke
             case theme.display_mode.type
                 when 'auto'
                 when 'light'
@@ -71,7 +71,7 @@ div#rightMenu
                     span.menu-darkmode-text= _p('right_menu.dark')
         if theme.right_menu.translate
             div.rightMenu-item#menu-translate
-                i.solitude.fa-solid.fa-language
+                i.solitude.fas.fa-language
                 case theme.translate.defaultEncoding
                     when 2
                         span= _p('right_menu.chs_to_cht')
