@@ -146,7 +146,7 @@ console:
 
 sidebar:
   function: 功能
-  darkmode: 显示模式
+  darkmode: 昼夜切换
   siteinfo: 网站信息
 
 footer:

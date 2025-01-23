@@ -5,10 +5,17 @@ if menu
         each value, label in menu
             .menus_item
                 if typeof value !== 'object'
-                    a.site-page(href=url_for(value))
+                    a.site-page(href=url_for(trim(value.split('||')[0])))
                         span= label
+                    ul.menus_item_child.hide
+                        li
+                            - var array = value.split('||')
+                            a.site-page.child(href=url_for(trim(array[0])))
+                                if array[1]
+                                    i.solitude(class=array[1])
+                                span= label
                 else
-                    a.site-page(href="javascript:void(0);")
+                    a.site-page
                         span= label
                     ul.menus_item_child
                         each childValue, childLabel in value

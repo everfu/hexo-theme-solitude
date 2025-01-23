@@ -4,7 +4,7 @@ random: 随便看看
 upload: 发布时间：
 totalk: 请在空行下面直接输入评论
 loading: 正在加载...
-day: 天
+day: ' 天'
 date_format:
   short: 'YY年MM月DD日'
   long: 'YYYY年MM月DD日'
@@ -112,7 +112,7 @@ aside:
   uv: '总访客量 :'
   runtime: '运营时长'
   updatetime: '上次更新'
-  wordcount: '字数统计'
+  wordcount: '本站字数'
   toc: 文章目录
   tagmore: 查看全部
   avatar: 头像
@@ -146,7 +146,7 @@ console:
 
 sidebar:
   function: 功能
-  darkmode: 显示模式
+  darkmode: 昼夜切换
   siteinfo: 网站信息
 
 footer:
@@ -155,7 +155,6 @@ footer:
   randomlink: 友链
   rss: 订阅
   theme: 主题
-  refresh: 随机刷新
 
 cookies:
   title: 协议提醒助手
