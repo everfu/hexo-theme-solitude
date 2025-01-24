@@ -1,9 +1,9 @@
 .card-widget.card-recent-comment
     .item-headline
-        i.solitude.fa-solid.fa-comment
+        i.solitude.fas.fa-comment
         span= _p('aside.newcomment')
         if theme.recent_comments.enable
             a.recent-comment-more(href=url_for(theme.recent_comments.page) title=_p('console.recent_comment_more'))
-                i.solitude.fa-solid.fa-circle-chevron-right
+                i.solitude.fas.fa-circle-chevron-right
     .aside-list
     include ../third-party/news-comment/newest-comment.pug

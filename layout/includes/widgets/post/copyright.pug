@@ -3,7 +3,7 @@
     .post-copyright__author_group
         .post-copyright__author_img
             img.post-copyright__author_img_front(src=url_for(page.avatar || copyright.author || theme.site.icon))
-        .post-copyright__author_name= page.author || config.title
+        .post-copyright__author_name= page.author || config.author
         .post-copyright__author_desc= page.desc || config.subtitle
     .post-tools#post-tools
         .post-tools-left
@@ -13,7 +13,7 @@
             if theme.post.rss
                 .reward-link.mode
                     a.reward-link-button(href=url_for(theme.post.rss))
-                        i.solitude.fa-solid.fa-seedling
+                        i.solitude.fas.fa-seedling
                         = _p('footer.rss')
     if theme.post.share.enable
         .social-share
