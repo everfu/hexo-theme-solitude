@@ -2,14 +2,14 @@
 
 - var noSticky, Sticky
 if(is_home())
-    - noSticky = aside.home.noSticky ? aside.home.noSticky.split(',') : null
-    - Sticky = aside.home.Sticky ? aside.home.Sticky.split(',') : null
+    - noSticky = aside.home.noSticky ? aside.home.noSticky.split(',') : []
+    - Sticky = aside.home.Sticky ? aside.home.Sticky.split(',') : []
 else if(is_post())
-    - noSticky = aside.post.noSticky ? aside.post.noSticky.split(',') :  null
-    - Sticky = aside.post.Sticky ? aside.post.Sticky.split(',') : null
+    - noSticky = aside.post.noSticky ? aside.post.noSticky.split(',') :  []
+    - Sticky = aside.post.Sticky ? aside.post.Sticky.split(',') : []
 else if(is_page() || is_archive() || is_tag() || is_category())
-    - noSticky = aside.page.noSticky ? aside.page.noSticky.split(',') : null
-    - Sticky = aside.page.Sticky ? aside.page.Sticky.split(',') : null
+    - noSticky = aside.page.noSticky ? aside.page.noSticky.split(',') : []
+    - Sticky = aside.page.Sticky ? aside.page.Sticky.split(',') : []
 if noSticky || Sticky
     .aside-content#aside-content
         each item in noSticky
