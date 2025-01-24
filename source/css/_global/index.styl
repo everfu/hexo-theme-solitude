@@ -397,13 +397,15 @@ i.solitude
     box-shadow var(--efu-shadow-border)
     padding 1rem 2rem
     border-radius 12px
-    background var(--efu-card-bg)
     border var(--style-border)
     align-self flex-start
     animation slide-in .6s .1s backwards
     position relative
     if hexo-config('aside.position') == 0
       order 2
+
+    +minWidth768()
+      background var(--efu-card-bg)
 
     +maxWidth768()
       box-shadow none

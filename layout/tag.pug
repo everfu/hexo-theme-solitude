@@ -7,7 +7,7 @@ block content
                 each tag in site.tags.find({ parent: { $exists: false } }).data
                     a(id=tag.name class=(tag.name === page.tag ? 'select' : '') href=url_for(tag.path))
                         span.tags-punctuation
-                            i.solitude.fa-solid.fa-hashtag
+                            i.solitude.fas.fa-hashtag
                             =tag.name
                             span.tagsPageCount=tag.length
             .recent-posts#recent-posts

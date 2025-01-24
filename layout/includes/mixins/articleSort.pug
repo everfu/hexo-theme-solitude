@@ -12,5 +12,5 @@ each post in page.posts.find({ parent: { $exists: false } }).data
                 each tags in post.tags.data
                     a.article-meta__tags(href=url_for(tags.path) onclick="window.event.cancelBubble=true;")
                         span.tags-punctuation
-                            i.solitude.fa-solid.fa-hashtag
+                            i.solitude.fas.fa-hashtag
                             =tags.name
