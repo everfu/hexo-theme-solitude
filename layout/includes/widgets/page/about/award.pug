@@ -14,7 +14,7 @@ if site.data.about.rewardList && site.data.about.award.enable
                     .reward-list-item
                         .reward-list-item-name= reward.name
                         .reward-list-bottom-group
-                            .reward-list-item-money(style=(reward.vip ? "background: var(--efu-vip);color: var(--efu-white)" : ""))
+                            .reward-list-item-money(style="background-color:" + reward.color)
                                 if reward.icon
                                     i.solitude(class=reward.icon)
                                 | ¥ #{reward.money}
