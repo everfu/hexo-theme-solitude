@@ -45,7 +45,21 @@ div#console
                                     sup= tag.length
                 if card.archive
                     div.console-card.history(onclick="sco.hideConsole()")
-                        include ./widgets/aside/asideArchive.pug
+                        - var archives = getArchiveLength(card.archive ? card.archive : 'year')
+                        ul.card-archive-list
+                            each value, key in archives
+                                li.item
+                                    a(href=`/archives/${key}/`)
+                                        span.date= key
+                                        .count-group
+                                            span.count= value
+                                            span.unit= __('console.archive_unit')
+                            li.item
+                                a(href='/archives/')
+                                    span.date= __('console.archive_all')
+                                    .count-group
+                                        span.count= site.posts.length
+                                        span.unit= __('console.archive_unit')
 
     div.button-group
         div.console-btn-item

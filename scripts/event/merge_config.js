@@ -66,7 +66,6 @@ hexo.extend.filter.register('before_generate', () => {
       },
       toc: { post: true, page: false, vague: true },
       tags: { enable: true, limit: 20, highlight: false, list: [] },
-      archive: { enable: true, type: 'month' },
       siteinfo: {
         postcount: true,
         wordcount: false,

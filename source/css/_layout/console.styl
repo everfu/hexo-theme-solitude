@@ -250,13 +250,14 @@
       display flex
       flex-direction row
       flex-wrap wrap
-      height 164px
+      justify-content flex-start
       gap .5rem
+      height 164px
 
-      li.card-archive-list-item
-        flex 0 1 calc(35% - .625rem)
+      li.item
+        flex 1 1 calc(100% / 4 - 1.5rem)
 
-      .card-archive-list-link
+      a
         border-radius 8px
         display flex
         flex-direction column
@@ -271,15 +272,15 @@
           color var(--efu-white)
           cursor pointer
 
-        .card-archive-list-date
+        .date
           font-size 14px
           opacity .6
 
-        .card-archive-list-count-group
+        .count-group
           display flex
           flex-direction row
 
-          .card-archive-list-count
+          .count
             width auto
             text-align left
             font-size 1.1rem
@@ -287,7 +288,7 @@
             margin-right 2px
             font-weight 700
 
-          .card-archive-list-count-unit
+          .unit
             width auto
             text-align left
             font-size 14px
