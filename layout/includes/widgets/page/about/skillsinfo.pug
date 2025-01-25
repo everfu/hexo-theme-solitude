@@ -10,23 +10,19 @@ if skills || careers
                     span.author-content-item-title= skills.subtitle
                     .skills-style-group
                         .tags-group-all
-                            - let times = 4 * (skills.tags.length? Math.ceil(20/skills.tags.length):0)
-                            - let length = times * skills.tags.length
-                            - let duration = length * 1200 - 900
-                            .tags-group-wrapper(style=`animation-duration: ${duration}ms`)
+                            .tags-group-wrapper
                                 - var pair = []
-                                - for (let i = 0; i < times; i++)
-                                    each tag, index in skills.tags
-                                        - pair.push(tag)
-                                        if pair.length === 2
-                                            .tags-group-icon-pair
-                                                each item in pair
-                                                    .tags-group-icon(style=`background:${item.color}`)
-                                                        if item.img
-                                                            img(src=item.img, title=item.title)
-                                                        else if item.icon
-                                                            i(class=item.icon, title=item.title, style=`color: ${item.icon_color ? item.icon_color : ''}`)
-                                            - pair = []
+                                each tag, index in skills.tags
+                                    - pair.push(tag)
+                                    if pair.length === 2
+                                        .tags-group-icon-pair
+                                            each item in pair
+                                                .tags-group-icon(style=`background:${item.color}`)
+                                                    if item.img
+                                                        img(src=item.img, title=item.title)
+                                                    else if item.icon
+                                                        i(class=item.icon, title=item.title, style=`color: ${item.icon_color ? item.icon_color : ''}`)
+                                        - pair = []
                         .skills-list
                             each tag in skills.tags
                                 .skill-info
