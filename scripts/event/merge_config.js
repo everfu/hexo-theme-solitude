@@ -53,12 +53,6 @@ hexo.extend.filter.register('before_generate', () => {
         witty_words: [],
         information: null,
       },
-      flip: {
-        favicon: '',
-        face: '',
-        backface: '',
-        backcolor: 'var(--efu-blue)'
-      },
       newest_comment: {
         enable: false,
         storage: 0.5,
@@ -66,7 +60,6 @@ hexo.extend.filter.register('before_generate', () => {
       },
       toc: { post: true, page: false, vague: true },
       tags: { enable: true, limit: 20, highlight: false, list: [] },
-      archive: { enable: true, type: 'month' },
       siteinfo: {
         postcount: true,
         wordcount: false,

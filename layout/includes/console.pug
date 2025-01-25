@@ -5,7 +5,7 @@
 
 div#console
     div.close-btn(onclick="sco.hideConsole()")
-        i.solitude.fa-solid.fa-xmark
+        i.solitude.fas.fa-xmark
     div.console-card-group
         if use && recentComment.enable
             div.console-card-group-left
@@ -16,7 +16,7 @@ div#console
                             | #{_p('console.comment_title')}
                             if theme.recent_comments.enable
                                 a.recent-comment-more(href=url_for(theme.recent_comments.page) title=_p('console.recent_comment_more'))
-                                    i.solitude.fa-solid.fa-circle-chevron-right
+                                    i.solitude.fas.fa-circle-chevron-right
                     .console_recentcomments
                         - var sel = '.console-card .console_recentcomments'
                         case use[0]
@@ -45,25 +45,39 @@ div#console
                                     sup= tag.length
                 if card.archive
                     div.console-card.history(onclick="sco.hideConsole()")
-                        include ./widgets/aside/asideArchive.pug
+                        - var archives = getArchiveLength(card.archive ? card.archive : 'year')
+                        ul.card-archive-list
+                            each value, key in archives
+                                li.item
+                                    a(href=`/archives/${key}/`)
+                                        span.date= key
+                                        .count-group
+                                            span.count= value
+                                            span.unit= __('console.archive_unit')
+                            li.item
+                                a(href='/archives/')
+                                    span.date= __('console.archive_all')
+                                    .count-group
+                                        span.count= site.posts.length
+                                        span.unit= __('console.archive_unit')
 
     div.button-group
         div.console-btn-item
             span.darkmode_switchbutton(onclick="sco.switchDarkMode()", title=_p('console.switch_darkmode'))
-                i.solitude.fa-solid.fa-circle-half-stroke
+                i.solitude.fas.fa-circle-half-stroke
         div.console-btn-item#consoleHideAside
             span.asideSwitch(onclick="sco.switchHideAside()", title=_p('console.switch_hideAside'))
                 i.solitude.fas.fa-arrows-left-right-to-line
         if theme.keyboard.enable
             div.console-btn-item#consoleKeyboard(onclick="sco.switchKeyboard()")
                 span.keyboardSwitch(title=_p('console.switch_keyboard'))
-                    i.solitude.fa-solid.fa-keyboard
+                    i.solitude.fas.fa-keyboard
         if theme.capsule.enable
             div.console-btn-item#consoleMusic(onclick="sco.musicToggle()")
                 span.music-switch(title=_p('console.switch_music'))
-                    i.solitude.fa-solid.fa-compact-disc
+                    i.solitude.fas.fa-compact-disc
         if theme.comment.use && theme.comment.commentBarrage
             div.console-btn-item.on#consoleCommentBarrage(onclick="sco.switchCommentBarrage()")
                 span.commentBarrage
-                    i.solitude.fa-solid.fa-comment
+                    i.solitude.fas.fa-comment
     div.console-mask(onclick="sco.hideConsole()")

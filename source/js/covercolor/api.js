@@ -71,7 +71,7 @@ function adjustBrightness(r, g, b) {
         [...document.getElementsByClassName('card-content')].forEach(item => {
             item.style.setProperty('--efu-card-bg', 'var(--efu-white)');
         });
-        [...document.getElementsByClassName('author-info__sayhi')].forEach(item => {
+        [...document.getElementsByClassName('sayhi')].forEach(item => {
             item.style.setProperty('background', 'var(--efu-white-op)');
             item.style.setProperty('color', 'var(--efu-white)');
         });

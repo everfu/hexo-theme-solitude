@@ -26,12 +26,12 @@ div#sidebar(style="zoom: 1;")
         span.sidebar-menu-item-title= __('sidebar.function')
         div.sidebar-menu-item
             span.darkmode_switchbutton.menu-child(onclick="sco.switchDarkMode()")
-                i.solitude.fa-solid.fa-circle-half-stroke
+                i.solitude.fas.fa-circle-half-stroke
                 span= __('sidebar.darkmode')
         include ./widgets/nav/group
         include ./widgets/nav/menu.pug
         span.sidebar-menu-item-title= __('page.tag')
-        div.card-widget.card-tags.card-archives.card-webinfo.card-allinfo
+        div.card-tags
             div.card-tag-cloud
                 each tag in site.tags.find({ parent: { $exists: false } }).data
                     a(href=url_for(tag.path))= tag.name
@@ -40,8 +40,5 @@ div#sidebar(style="zoom: 1;")
             span.sidebar-menu-item-title= __('sidebar.siteinfo')
             .webinfo
                 .webinfo-item
-                    .webinfo-item-title
-                        i.item-icon.solitude.fa-solid.fa-file-word
-                        .item-name= __('aside.wordcount')
+                    .item-name= __('aside.wordcount')
                     .item-count= totalcount(site)
-

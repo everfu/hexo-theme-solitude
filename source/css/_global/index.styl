@@ -55,6 +55,8 @@
   --card-hover-box-shadow 0 3px 8px 6px rgba(7, 17, 27, 0.15)
   --offset 0px
   --hlscrollbar-bg #121212
+  --gap .5rem
+  --radius 8px
 
 body
   position relative
@@ -143,10 +145,8 @@ h1, h2, h3, h4, h5, h6
   color var(--efu-fontcolor)
 
 hr
-  box-sizing content-box
-  height 0
-  overflow visible
-  display none
+  margin .5rem 0
+  border 1px dashed var(--efu-theme-op)
 
 a
   color var(--efu-fontcolor)
@@ -381,14 +381,15 @@ i.solitude
     max-width 1400px
     flex-grow 1
 
-  /.hide-aside.layout
-    max-width 1400px
-
-    > div
-      width 100% !important
+  &.hide-aside
+    > div:first-child
+      width 100%
 
   > div:first-child
     width calc(100% - 300px)
+
+    .hide-aside &
+      width 100%
 
     +maxWidth1200()
       width 100%
@@ -397,13 +398,15 @@ i.solitude
     box-shadow var(--efu-shadow-border)
     padding 1rem 2rem
     border-radius 12px
-    background var(--efu-card-bg)
     border var(--style-border)
     align-self flex-start
     animation slide-in .6s .1s backwards
     position relative
     if hexo-config('aside.position') == 0
       order 2
+
+    +minWidth768()
+      background var(--efu-card-bg)
 
     +maxWidth768()
       box-shadow none
@@ -423,9 +426,6 @@ span.tags-punctuation
     transition none
     margin-right 2px
     opacity .4
-
-    .hide-aside #page &
-      font-size 16px
 
     #post-info &
       font-size 14px

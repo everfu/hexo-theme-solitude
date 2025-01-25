@@ -12,12 +12,12 @@ else if(is_page() || is_archive() || is_tag() || is_category())
     - Sticky = aside.page.Sticky ? aside.page.Sticky.split(',') : null
 if noSticky || Sticky
     .aside-content#aside-content
-        each item in noSticky
+        each item in noSticky || []
             include ./asideSwitch.pug
         .sticky_layout
             if showToc
                 include ./asideToc.pug
-            each item in Sticky
+            each item in Sticky || []
                 include ./asideSwitch.pug
 else
     style.

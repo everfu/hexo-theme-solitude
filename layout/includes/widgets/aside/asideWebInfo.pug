@@ -1,48 +1,36 @@
 .webinfo
     if theme.aside.siteinfo.postcount
         .webinfo-item
-            .webinfo-item-title
-                i.item-icon.fa-solid.fa-folder-closed
-                .item-name= __('aside.postcount')
+            .item-name= __('aside.postcount')
             .item-count= site.posts.length
     if theme.busuanzi
         if theme.aside.siteinfo.pv
             .webinfo-item
-                .webinfo-item-title
-                    i.item-icon.solitude.fa-solid.fa-eye
-                    .item-name= __('aside.pv')
+                .item-name= __('aside.pv')
                 if theme.busuanzi_use === 0
                     span#busuanzi_value_site_pv
-                        i.solitude.fa-solid.fa-spinner.fa-spin
+                        i.solitude.fas.fa-spinner.fa-spin
                 else
                     span#busuanzi_site_pv
-                        i.solitude.fa-solid.fa-spinner.fa-spin
+                        i.solitude.fas.fa-spinner.fa-spin
         if theme.aside.siteinfo.uv
             .webinfo-item
-                .webinfo-item-title
-                    i.item-icon.solitude.fa-solid.fa-user
-                    .item-name= __('aside.uv')
+                .item-name= __('aside.uv')
                 if theme.busuanzi_use === 0
                     span#busuanzi_value_site_uv
-                        i.solitude.fa-solid.fa-spinner.fa-spin
+                        i.solitude.fas.fa-spinner.fa-spin
                 else
                     span#busuanzi_site_uv
-                        i.solitude.fa-solid.fa-spinner.fa-spin
+                        i.solitude.fas.fa-spinner.fa-spin
     if theme.aside.siteinfo.runtimeenable
         .webinfo-item
-            .webinfo-item-title
-                i.item-icon.solitude.fa-solid.fa-calendar-day
-                .item-name= __('aside.runtime')
+            .item-name= __('aside.runtime')
             .item-count#runtimeshow
     if theme.aside.siteinfo.updatetime
         .webinfo-item
-            .webinfo-item-title
-                i.item-icon.solitude.fa-solid.fa-arrows-rotate
-                .item-name= __('aside.updatetime')
+            .item-name= __('aside.updatetime')
             time.item-count(datetime=new Date())
     if theme.wordcount && theme.aside.siteinfo.wordcount
         .webinfo-item
-            .webinfo-item-title
-                i.item-icon.solitude.fa-solid.fa-file-word
-                .item-name= __('aside.wordcount')
+            .item-name= __('aside.wordcount')
             .item-count= totalcount(site)

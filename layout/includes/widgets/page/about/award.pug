@@ -14,7 +14,7 @@ if site.data.about.rewardList && site.data.about.award.enable
                     .reward-list-item
                         .reward-list-item-name= reward.name
                         .reward-list-bottom-group
-                            .reward-list-item-money(style=(reward.vip ? "background: var(--efu-vip);color: var(--efu-white)" : ""))
+                            .reward-list-item-money(style="background-color:" + reward.color)
                                 if reward.icon
                                     i.solitude(class=reward.icon)
                                 | ¥ #{reward.money}
@@ -23,7 +23,7 @@ if site.data.about.rewardList && site.data.about.award.enable
                     .post-reward
                         .post-reward(onclick="AddRewardMask()")
                         .reward-button(title=_p('award.tipping'))
-                            i.solitude.fa-solid.fa-heart
+                            i.solitude.fas.fa-heart
                             = _p('award.tipping')
                         .reward-main
                             ul.reward-all

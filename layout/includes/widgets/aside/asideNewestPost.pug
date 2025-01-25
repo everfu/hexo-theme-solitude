@@ -1,6 +1,6 @@
 .card-widget.card-recent-post
     .item-headline
-        i.solitude.fa-solid.fa-map
+        i.solitude.fas.fa-map
         span= _p('aside.newpost')
     .aside-list
         each post in site.posts.data.sort((a, b) => b.date < a.date ? -1 : 1).slice(0, 5)
@@ -11,4 +11,4 @@
                 .content
                     span.title(href=url_for(post.path) title=post.title)= post.title
                     if post.categories.data[0]
-                        span.article-recent_post_categories(href=url_for(post.path))= post.categories.data[0].name
+                        span.categories(href=url_for(post.path))= post.categories.data[0].name

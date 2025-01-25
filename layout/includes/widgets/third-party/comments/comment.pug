@@ -3,7 +3,7 @@
 #post-comment
     .comment-head
         .comment-headline
-            i.solitude.fa-solid.fa-comment
+            i.solitude.fas.fa-comment
             span=' ' + _p('comment.title')
             if count && is_post()
                 span.count
@@ -12,13 +12,13 @@
                         case name
                             when "Twikoo"
                                 span.twikoo-count
-                                    i.solitude.fa-solid.fa-spinner.fa-spin
+                                    i.solitude.fas.fa-spinner.fa-spin
                             when "Waline"
                                 span.waline-comment-count
-                                    i.solitude.fa-solid.fa-spinner.fa-spin
+                                    i.solitude.fas.fa-spinner.fa-spin
                             when "Valine"
                                 span.valine-comment-count(data-xid=url_for(page.path) itemprop="commentCount")
-                                    i.solitude.fa-solid.fa-spinner.fa-spin
+                                    i.solitude.fas.fa-spinner.fa-spin
                             when "Artalk"
                                 span.artalk-count
                             when "Giscus"
