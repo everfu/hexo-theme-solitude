@@ -53,12 +53,6 @@ hexo.extend.filter.register('before_generate', () => {
         witty_words: [],
         information: null,
       },
-      flip: {
-        favicon: '',
-        face: '',
-        backface: '',
-        backcolor: 'var(--efu-blue)'
-      },
       newest_comment: {
         enable: false,
         storage: 0.5,

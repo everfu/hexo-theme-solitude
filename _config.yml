@@ -112,8 +112,8 @@ carousel: false
 # Aside
 # 侧边栏
 aside:
-  # Values: about (info card), newestPost (latest article), allInfo (website information), flip (official account QR code), newest_comment (latest comment)
-  # 值: about(信息卡), newestPost(最新文章), allInfo(网站信息), flip(官方账号二维码), newest_comment(最新评论)
+  # Values: about (info card), newestPost (latest article), allInfo (website information), newest_comment (latest comment)
+  # 值: about(信息卡), newestPost(最新文章), allInfo(网站信息), newest_comment(最新评论)
 
   # Sticky: Fixed position / noSticky: Not fixed position
   # Sticky: 固定位置 / noSticky: 不固定位置
@@ -155,16 +155,6 @@ aside:
     information:
     #  Github: https://github.com/everfu || fab fa-github # Name: link || icon
     #  Bilibili: https://space.bilibili.com/1329819902 || fab fa-bilibili
-  # --------------------------- end ---------------------------
-
-  # --------------------------- start ---------------------------
-  # Sidebar QR code component
-  # 侧边栏二维码组件
-  flip:
-    favicon: # url (favicon)
-    face: # url (QR code)
-    backface: # url (QR code)
-    backcolor: "var(--efu-blue)" # Background color
   # --------------------------- end ---------------------------
 
   # --------------------------- start ---------------------------

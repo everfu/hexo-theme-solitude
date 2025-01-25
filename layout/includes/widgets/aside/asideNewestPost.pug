@@ -11,4 +11,4 @@
                 .content
                     span.title(href=url_for(post.path) title=post.title)= post.title
                     if post.categories.data[0]
-                        span.article-recent_post_categories(href=url_for(post.path))= post.categories.data[0].name
+                        span.categories(href=url_for(post.path))= post.categories.data[0].name

@@ -87,7 +87,7 @@ const adjustCardStyles = () => {
         item.style.setProperty('--efu-card-bg', 'var(--efu-white)');
     });
 
-    const authorInfo = document.querySelectorAll('.author-info__sayhi');
+    const authorInfo = document.querySelectorAll('.sayhi');
     authorInfo.forEach(item => {
         item.style.setProperty('background', 'var(--efu-white-op)');
         item.style.setProperty('color', 'var(--efu-white)');

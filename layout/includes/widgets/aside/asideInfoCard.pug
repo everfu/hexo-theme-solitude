@@ -1,20 +1,19 @@
 .card-widget.card-info
     .card-content
         .card-info-avatar.is-center
-            .author-info__top-group
-                .author-info__sayhi#author-info__sayhi(onclick="sco.changeWittyWord()")
-        .avatar-img-group
-            img.avatar-img(alt=_p('aside.avatar'), src=theme.aside.my_card.author.img)
+            .top-group
+                .sayhi#sayhi(onclick="sco.changeWittyWord()")
+        .avatar
+            img(alt=_p('aside.avatar'), src=theme.aside.my_card.author.img)
             if theme.aside.my_card.author.sticker
-                .avatar-sticker
-                    img.avatar-sticker-img(src=theme.aside.my_card.author.sticker, alt=_p('aside.sticker'))
-        .author-info__description_group
-            .author-info__description!= theme.aside.my_card.content
-        .author-info__bottom-group
-            span.author-info__bottom-group-left
-                .author-info__name= config.author
-                .author-info__desc!= theme.aside.my_card.description
-            .card-info-social-icons.is-center
+                .sticker
+                    img.sticker-img(src=theme.aside.my_card.author.sticker, alt=_p('aside.sticker'))
+        .description!= theme.aside.my_card.content
+        .bottom-group
+            span.left
+                .name= config.author
+                .desc!= theme.aside.my_card.description
+            .social-icons.is-center
                 each value, label in theme.aside.my_card.information || {}
                     - var array = value.split('||')
                     a.social-icon(href=url_for(trim(array[0])), title=label)

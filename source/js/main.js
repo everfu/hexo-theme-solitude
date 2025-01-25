@@ -234,7 +234,7 @@ const sco = {
   },
   changeWittyWord() {
     const greetings = GLOBAL_CONFIG.aside.witty_words;
-    const greetingElement = document.getElementById("author-info__sayhi");
+    const greetingElement = document.getElementById("sayhi");
     let randomGreeting;
     do {
       randomGreeting = greetings[Math.floor(Math.random() * greetings.length)];
@@ -312,7 +312,7 @@ const sco = {
   },
   scrollToComment: () => utils.scrollToDest(utils.getEleTop(document.getElementById('post-comment')), 300),
   setTimeState() {
-    const el = document.getElementById('author-info__sayhi');
+    const el = document.getElementById('sayhi');
     if (el) {
       const hours = new Date().getHours();
       const lang = GLOBAL_CONFIG.aside.state;

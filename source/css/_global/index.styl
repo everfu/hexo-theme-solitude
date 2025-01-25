@@ -55,6 +55,8 @@
   --card-hover-box-shadow 0 3px 8px 6px rgba(7, 17, 27, 0.15)
   --offset 0px
   --hlscrollbar-bg #121212
+  --gap .5rem
+  --radius 8px
 
 body
   position relative
@@ -143,10 +145,8 @@ h1, h2, h3, h4, h5, h6
   color var(--efu-fontcolor)
 
 hr
-  box-sizing content-box
-  height 0
-  overflow visible
-  display none
+  margin .5rem 0
+  border 1px dashed var(--efu-theme-op)
 
 a
   color var(--efu-fontcolor)
@@ -381,14 +381,11 @@ i.solitude
     max-width 1400px
     flex-grow 1
 
-  /.hide-aside.layout
-    max-width 1400px
-
-    > div
-      width 100% !important
-
   > div:first-child
     width calc(100% - 300px)
+
+    .hide-aside &
+      width 100%
 
     +maxWidth1200()
       width 100%
@@ -425,9 +422,6 @@ span.tags-punctuation
     transition none
     margin-right 2px
     opacity .4
-
-    .hide-aside #page &
-      font-size 16px
 
     #post-info &
       font-size 14px
