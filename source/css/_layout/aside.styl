@@ -211,13 +211,31 @@
     font-size 14px
 
 .card-tag-cloud
-  max-height 360px
   overflow hidden
   position relative
   display flex
   flex-direction row
   flex-wrap wrap
   gap 5px
+
+  #aside-content &
+    max-height 360px
+
+    &.all-tags
+      max-height none
+
+      &::after
+        display none
+
+    &::after
+      content ""
+      position absolute
+      bottom 0
+      left 0
+      right 0
+      height 150px
+      background-image linear-gradient(to top, var(--efu-card-bg), transparent)
+      pointer-events none
 
   a
     color var(--efu-fontcolor)
@@ -467,3 +485,21 @@ if hexo-config('comment.newest_comment.enable')
           font-size 12px
           color var(--efu-secondtext)
           margin-top auto
+
+#more-tags-btn
+  transition .3s
+  width 100%
+  text-align center
+  background var(--efu-secondbg)
+  color var(--efu-fontcolor)
+  border-radius 8px
+  display flex
+  justify-content center
+  font-size 14px
+  padding 4px 0
+  border var(--style-border-always)
+  box-shadow var(--heo-shadow-border)
+  cursor pointer
+
+  &:hover
+    background var(--efu-main)
