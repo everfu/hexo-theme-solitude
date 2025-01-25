@@ -15,28 +15,18 @@
 - if (site.data.links.swiper !== false)
     .tags-group-all.nowrapMove
         - const data = site.data.links.links.filter(x => x.type !== 'discn')
-        - var links = []
-        each x in data
-            each y in x.link_list
-                - links.push(y)
-        - let times = 4 * (links.length? Math.ceil(20/links.length):0)
-        - let length = times * links.length
-        - let duration = length * 1500 - 1400
-        - let originalLinks = links
-        - for (let i = 1; i < times; i++)
-            - links = links.concat(originalLinks)
-        .tags-group-wrapper(style=`animation-duration: ${duration}ms`)
-                - var pairs = []
-                each link, index in links
-                    if (index % 2 === 0)
-                        - pairs.push([link])
-                    else
-                        - pairs[pairs.length - 1].push(link)
-                each pair in pairs
-                    .tags-group-icon-pair
-                        each y in pair
-                            a.tags-group-icon(href=url_for(y.link), title=y.name)
-                                img(src=y.avatar + (site.data.links.banner_suffix || ''), title=y.name)
-                                span.tags-group-title=y.name
+        - const links = data.flatMap(x => x.link_list)
+        .tags-group-wrapper
+            - const pairs = links.reduce(function(acc, link, index) {
+            -    if (index % 2 === 0) acc.push([link])
+            -    else acc[acc.length - 1].push(link)
+            -    return acc
+            - }, [])
+            each pair in pairs
+                .tags-group-icon-pair
+                    each y in pair
+                        a.tags-group-icon(href=url_for(y.link), title=y.name)
+                            img(src=y.avatar + (site.data.links.banner_suffix || ''), title=y.name)
+                            span.tags-group-title=y.name
 - else
     .tags-group-all(style="height:calc(3rem + 72px);")
