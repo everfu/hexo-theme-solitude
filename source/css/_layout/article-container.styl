@@ -22,16 +22,6 @@
     &.fancybox
       border-bottom none
 
-    &:not(.fancybox)
-      padding 0 4px
-
-      &:hover
-        border 0
-        text-decoration none
-        color var(--efu-white)
-        border-radius 4px
-        background var(--efu-main)
-
   .table-wrap
     margin 1rem 0
     border-radius 8px
@@ -73,16 +63,16 @@
     a
       &:not(.fancybox)
         text-decoration none
-        border-bottom 2px dotted var(--efu-lighttext)
-        color var(--efu-fontcolor)
+        border none
+        color var(--efu-theme)
         font-weight 700
         padding 0 4px
-        border-radius 4px 4px 0 0
+        background linear-gradient(to top, var(--efu-theme-op), var(--efu-theme-op)) no-repeat bottom / 100% .1em
+        transition all .2s
 
         &:hover
-          color var(--efu-white)
           border-radius 4px
-          background var(--efu-main)
+          background-size: 100% 100%
 
   blockquote
     p
