@@ -36,46 +36,6 @@
         height 15rem
 
   .post-bg
-    .main-hero-waves-area
-      width 100%
-      position absolute
-      left 0
-      bottom -11px
-
-    .waves-area .waves-svg
-      width 100%
-      height 60px
-
-    .parallax > use
-      animation move-forever 30s cubic-bezier(.55, .5, .45, .5) infinite
-
-    .parallax > use:nth-child(1)
-      animation-delay -2s
-      animation-duration 7s
-      fill var(--efu-background)
-      opacity .5
-
-    .parallax > use:nth-child(2)
-      animation-delay -3s
-      animation-duration 10s
-      fill var(--efu-background)
-      opacity .6
-
-    .parallax > use:nth-child(3)
-      animation-delay -4s
-      animation-duration 13s
-      fill var(--efu-background)
-      opacity .7
-
-    .parallax > use:nth-child(4)
-      animation-delay -5s
-      animation-duration 20s
-      fill var(--efu-background)
-
-    +maxWidth768()
-      .main-hero-waves-area
-        display none
-
     #post-cover
       width 100%
       height 100%
