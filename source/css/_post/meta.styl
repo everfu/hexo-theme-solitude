@@ -334,11 +334,21 @@
             &:hover
               color var(--efu-main)
 
-#post #post-info
-  height auto
-  position unset
-  padding 1rem 2rem
-  background var(--efu-hovertext)
-  border-radius 12px 12px 0 0
-  +minWidth768()
-    min-height 250px
+#post 
+  #post-info
+    height auto
+    position unset
+    padding 1rem 2rem
+    background var(--efu-hovertext)
+    border-radius 12px 12px 0 0
+    +minWidth768()
+      min-height 250px
+    
+#post-info-bottom
+  display flex
+  position absolute
+  width 100%
+  bottom 0
+  border-radius 1rem 1rem 0 0
+  padding .5rem 0
+  background var(--efu-background)
