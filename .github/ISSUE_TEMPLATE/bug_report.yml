@@ -49,7 +49,7 @@ body:
         注意：在`Hexo 7.0+`版本中，Node的最低支持的版本为：14.0.0。
         你可以前往 [Node.js 版本限制](https://hexo.io/zh-cn/docs/#Node-js-%E7%89%88%E6%9C%AC%E9%99%90%E5%88%B6)进行查看详情。
       options:
-        - Hexo 7.0.0
+        - Hexo 7.0+
         - Hexo 6.3.0及以下
     validations:
       required: true
