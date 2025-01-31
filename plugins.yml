@@ -5,7 +5,7 @@ algolia_search:
 instantsearch:
   name: instantsearch.js
   file: dist/instantsearch.production.min.js
-  version: 4.75.6
+  version: 4.75.7
 docsearch_css:
   name: '@docsearch/css'
   other_name: docsearch-css
@@ -28,11 +28,11 @@ waline_js:
   name: '@waline/client'
   file: dist/waline.js
   other_name: waline
-  version: 3.4.2
+  version: 3.4.3
 waline_css:
   name: '@waline/client'
   file: dist/waline.css
-  version: 3.4.2
+  version: 3.4.3
   other_name: waline
 valine:
   name: valine
