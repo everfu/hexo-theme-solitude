@@ -11,7 +11,7 @@ if theme.brevity.enable
                                 .info
                                     span.bber_nick= config.author
                                     time.datetime.bber_date(datetime=moment(item.date).format())
-                                if item.content
+                                if theme.comment.use && item.content
                                     a.bber-reply.goComment(onclick=`sco.toTalk('${item.content}')`)
                                         i.solitude.fas.fa-comment
 
@@ -48,7 +48,7 @@ if theme.brevity.enable
                                         a.bber-content-link(href=url_for(item.link) target="_blank")
                                             i.solitude.fas.fa-link
                                             = _p('essay.link')
-                                if item.content
+                                if theme.comment.use && item.content
                                     a.bber-reply(onclick=`sco.toTalk('${item.content}')`)
                                         i.solitude.fas.fa-comment
             #bber-tips

@@ -14,11 +14,12 @@
                                 .equipment-item-content-item-name(onclick='utils.copy("' + item.name + '")')= item.name
                                 .equipment-item-content-item-specification= item.specification
                                 .equipment-item-content-item-description= item.description
-                                if item.link
-                                    .equipment-item-content-item-toolbar
+                                .equipment-item-content-item-toolbar
+                                    if item.link
                                         if item.link.includes('https://') || item.link.includes('http://')
                                             a.equipment-item-content-item-link(href=item.link, target="_blank") 详情
                                         else
                                             a.equipment-item-content-item-link(href=item.link) 查看文章
+                                    if theme.comment.use
                                         a.bber-reply(onclick=`sco.toTalk('${item.description}')`)
                                             i.solitude.fas.fa-comment(style="font-size: 1rem;")
