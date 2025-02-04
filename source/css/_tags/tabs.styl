@@ -1,107 +1,38 @@
-
-.article-container .tabs
+.tabs
   position relative
-  border 1px solid var(--tab-border-color)
-
-  > .nav-tabs
-    > .tab
-      margin 4px
-      padding 0
-      list-style none
-
-      +maxWidth768()
-        -webkit-box-flex 1
-        flex-grow 1
-
-      button i
-        width 1.5em
-        font-size inherit
-
-      &.active button
-        cursor default
-        border var(--style-border-hover-always)
-        background var(--efu-background)
-        border-radius 8px;
-
-      &:not(.active) button:hover
-        border-top 2px solid var(--tab-button-hover-bg)
-        background var(--tab-button-hover-bg)
-
-  > .tab-contents .tab-item-content
-    position relative
-    display none
-    padding 1.8rem 1.2rem
-    background var(--efu-background)
-    border var(--style-border-always)
-
-    +maxWidth768()
-      padding 1.2rem .7rem
-
-    &.active
-      display block
-      animation .5s ease 0s 1 normal none running tabshow
-
-  .tab-to-top
-    position relative
-    display block
-    margin 16px 0 0 auto
-    color #99a9bf
-
-  margin 1rem 0
-  border-radius 12px
-  overflow hidden
-  box-shadow var(--efu-shadow-border)
-  padding 8px
-  background var(--efu-card-bg)
-  border var(--style-border)
 
   .nav-tabs
+    margin-top 0
+    display flex
     background var(--efu-card-bg)
-    padding 16px
-    display flex
-    justify-content center
-    flex-wrap wrap
-    flex-direction row
-
-    +maxWidth768()
-      padding 0
-      margin-bottom 8px
-
-  > .nav-tabs > .tab button
-    -webkit-transition all 0s
-    background var(--efu-secondbg)
-    transition .3s
     border var(--style-border-always)
-    border-radius 8px
-    font-size 14px
-    line-height 1
-    padding 8px 16px
-    display flex
-    width 100%
-    justify-content center
-    align-items center
-    color var(--efu-fontcolor)
+    border-radius var(--radius)
+    margin-bottom .5rem
+    padding .3rem .5rem
+    gap .5rem
 
-  > .nav-tabs > .tab:not(.active) button:hover
-    background var(--efu-main)
-    color var(--efu-white)
-    transition .3s
-    border var(--style-border-hover-always)
+    .tab
+      border-radius 8px
+      padding 0 .3rem
+      transition background 0.3s ease, color 0.3s ease
 
-.tab-item-content
-  background var(--efu-card-bg)
+      &.active
+        background var(--light-grey)
 
-.article-container .tabs
+      i
+        font-size 14px
 
-  > .tab-contents .tab-item-content.active
-    animation tabshow 0s
-    -webkit-animation tabshow 0s
-    padding 1.2rem
-    border-radius 8px
+  .tab-contents
+    padding .5rem
+    border var(--style-border-always)
+    border-radius var(--radius)
+    transition opacity 0.3s ease, transform 0.3s ease
 
-    +maxWidth768()
-      padding .5rem .5rem
-
-.tab-contents
-  border-radius 8px
-  overflow hidden
+    .tab-item-content.active
+      display block
+      opacity 1
+      transform translateY(0)
+    .tab-item-content
+      display none
+      opacity 0
+      transform translateY(-10px)
