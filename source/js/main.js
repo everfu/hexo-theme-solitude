@@ -5,7 +5,6 @@ const sidebarFn = () => {
   const $body = document.body;
 
   const toggleMobileSidebar = (isOpen) => {
-    utils.sidebarPaddingR();
     $body.style.overflow = isOpen ? "hidden" : "";
     utils[isOpen ? "fadeIn" : "fadeOut"]($menuMask, 0.5);
     $mobileSidebarMenus.classList.toggle("open", isOpen);

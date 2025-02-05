@@ -31,12 +31,6 @@
             ele.addEventListener('animationend', resetStyles);
             ele.style.animation = `to_hide ${time}s`;
         },
-        sidebarPaddingR: () => {
-            const paddingRight = window.innerWidth - document.body.clientWidth;
-            if (paddingRight > 0) {
-                document.body.style.paddingRight = `${paddingRight}px`;
-            }
-        },
         snackbarShow: (text, showAction = false, duration = 5000) => {
             Snackbar.show({ text, showAction, duration, pos: 'top-center' });
         },
