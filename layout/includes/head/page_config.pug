@@ -8,6 +8,6 @@ script#config-diff.
         page: '!{page.type}',
         toc: !{showToc},
         comment: !{!!page.comment},
-        ai_text: !{is_post && page.ai_text ? "'"+ page.ai_text+"'" : false},
+        ai_text: !{is_post && theme.post.ai.enable && page.ai_text ? "'"+ page.ai_text+"'" : false},
         color: !{page.color ? "'"+ page.color+"'" : false},
     }
