@@ -96,7 +96,7 @@ hexo.extend.filter.register(
         },
         ai: {
           enable: false,
-          model: "GPT 3",
+          modelName: "GPT 3",
         },
         meta: {
           date: false,
@@ -260,14 +260,6 @@ hexo.extend.filter.register(
           enable: false,
           limit: 50,
         },
-      },
-      post_ai: {
-        enable: false,
-        modelName: "GPT 3",
-        key: "your key",
-        talk: "我是 Ai 机器人",
-        randomPost: false,
-        tips: "AI is not perfect, please use it with caution.",
       },
       katex: {
         enable: false,
