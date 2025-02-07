@@ -900,17 +900,9 @@ const forPostFn = () => {
 };
 
 window.refreshFn = () => {
-  const { is_home, is_page, page, is_post } = PAGE_CONFIG;
-  const {
-    runtime,
-    lazyload,
-    lightbox,
-    randomlink,
-    covercolor,
-    post_ai,
-    lure,
-    expire,
-  } = GLOBAL_CONFIG;
+  const { is_home, is_page, page, is_post, ai_text } = PAGE_CONFIG;
+  const { runtime, lazyload, lightbox, randomlink, covercolor, lure, expire } =
+    GLOBAL_CONFIG;
   const timeSelector =
     (is_home
       ? ".post-meta-date time"
@@ -939,7 +931,7 @@ window.refreshFn = () => {
       )
     );
   randomlink && randomLinksList();
-  post_ai && is_post && ai.init();
+  ai_text && is_post && ai.init();
   sco.switchComments();
   initObserver();
   if (is_home) {

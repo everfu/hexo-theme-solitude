@@ -7,7 +7,7 @@ random: 随便逛逛
 upload: 发布时间：
 totalk: 无需删除空行，直接输入评论即可
 loading: 加载中...
-day: ' 天'
+day: " 天"
 hot-tip: 多人互动
 
 # Language: 简体中文
@@ -84,7 +84,6 @@ post:
     whatsapp: 分享到WhatsApp
   ai:
     title: 文章摘要
-    tip: 投诉
   nav:
     next: 下一篇
     prev: 上一篇
@@ -105,12 +104,12 @@ head:
   noscript: 开启JavaScript才能访问本站哦~
 
 aside:
-  postcount: '文章总数 :'
-  pv: '总访问数 :'
-  uv: '总访客数 :'
-  runtime: '建站天数 :'
-  updatetime: '最后更新 :'
-  wordcount: '全站字数 :'
+  postcount: "文章总数 :"
+  pv: "总访问数 :"
+  uv: "总访客数 :"
+  runtime: "建站天数 :"
+  updatetime: "最后更新 :"
+  wordcount: "全站字数 :"
   toc: 文章目录
   tagmore: 查看全部
   avatar: 头像
@@ -120,9 +119,9 @@ aside:
   newpost: 最近发布
   newcomment: 最近评论
   card:
-    posts: '累计文章数:'
-    tags: '标签总数:'
-    categories: '分类总数:'
+    posts: "累计文章数:"
+    tags: "标签总数:"
+    categories: "分类总数:"
 
 console:
   comment_tip: 互动
@@ -236,9 +235,9 @@ message:
   open: 显示弹幕
 
 essay:
-  tip0: '- 已展开所有短文 -'
-  tip1: '- 只展示最近 #{count} 条短文 -'
-  link: '链接'
+  tip0: "- 已展开所有短文 -"
+  tip1: "- 只展示最近 #{count} 条短文 -"
+  link: "链接"
 
 rightside:
   show:

@@ -1,13 +1,13 @@
-framework_by: 'Framework: '
-theme_by: 'Theme: '
+framework_by: "Framework: "
+theme_by: "Theme: "
 
 more: More
 star: Behold, those who found delight in this piece also perused
 random: Random
-upload: 'datetime: '
+upload: "datetime: "
 totalk: You don't need to delete blank lines, just type in your comments.
 loading: Loading...
-day: ' days'
+day: " days"
 hot-tip: Hot
 
 theme:
@@ -75,11 +75,9 @@ post:
     whatsapp: Share to WhatsApp
   ai:
     title: Article Summary
-    tip: Complaints
   nav:
     next: Next
     prev: Previous
-
 
 nav:
   site_name_title: Back to home
@@ -105,24 +103,24 @@ head:
   noscript: Please enable JavaScript to view the site
 
 aside:
-  postcount: 'Posts:'
-  pv: 'PV:'
-  uv: 'UV:'
-  runtime: 'Runtime:'
-  updatetime: 'Last update:'
-  wordcount: 'Word count:'
+  postcount: "Posts:"
+  pv: "PV:"
+  uv: "UV:"
+  runtime: "Runtime:"
+  updatetime: "Last update:"
+  wordcount: "Word count:"
   toc: Table of contents
   tagmore: View all
   avatar: Avatar
-  hello: 'Long time no see, '
+  hello: "Long time no see, "
   back: Welcome back again,
   sticker: Mood sticker
   newpost: New posts
   newcomment: New comments
   card:
-    posts: 'Posts:'
-    tags: 'Tags:'
-    categories: 'Categories:'
+    posts: "Posts:"
+    tags: "Tags:"
+    categories: "Categories:"
 
 console:
   comment_tip: Interaction
@@ -170,7 +168,7 @@ link:
   banner:
     toComment: Application link
     random: Random Visit
-  random: 'Click the button to visit a random link. The safety and availability of the destination website are not guaranteed. The random link for this visit is: ⌈ ${name} ⌋ '
+  random: "Click the button to visit a random link. The safety and availability of the destination website are not guaranteed. The random link for this visit is: ⌈ ${name} ⌋ "
   to: To
 
 keyboard:
@@ -181,7 +179,7 @@ newest_comment:
   zero: No comments.
 
 comment:
-  title: ' Comment'
+  title: " Comment"
 
 commentBarrage:
   title: Hot
@@ -227,19 +225,19 @@ about:
     tj:
       tip: Data
       title: Access statistics
-      post_tip: 'Stats from:'
+      post_tip: "Stats from:"
   personalities:
     tip1: At
-    tip2: 'Learn more:'
+    tip2: "Learn more:"
 
 message:
   close: Hide message
   open: Show message
 
 essay:
-  tip0: '- All expanded -'
-  tip1: '- Recent Exhibitions #{count} Short Articles -'
-  link: 'Link'
+  tip0: "- All expanded -"
+  tip1: "- Recent Exhibitions #{count} Short Articles -"
+  link: "Link"
 
 rightside:
   show:

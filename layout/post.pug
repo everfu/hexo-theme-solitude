@@ -6,6 +6,8 @@ block content
             if page.not_cover
                 include includes/widgets/post/postInfo
             article.post-content.article-container
+                if page.ai_text
+                    include includes/widgets/post/ai
                 != page.content
             include includes/widgets/post/copyright
             .post-tools-right

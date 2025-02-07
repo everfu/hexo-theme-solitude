@@ -34,16 +34,6 @@
         }
     }
 
-    let post_ai = false
-
-    if (theme.post_ai.enable) {
-        post_ai = JSON.stringify({
-            key: theme.post_ai.key,
-            talk: theme.post_ai.talk,
-            randomPost: theme.post_ai.randomPost,
-        })
-    }
-
     let copyright = false;
     if (theme.copy.enable && theme.copy.copyright.enable) {
         copyright = JSON.stringify({
@@ -191,7 +181,6 @@ script.
         },
         comment: !{comment ? JSON.stringify(comment) : false},
         lightbox: '!{ theme.mediumZoom ? "mediumZoom" : (theme.fancybox ? "fancybox" : "null")}',
-        post_ai: !{post_ai},
         right_menu: !{rightMenu ? JSON.stringify(rightMenu) : false},
         translate: !{translate ? JSON.stringify(translate) : false},
         lure: !{lure ? JSON.stringify(lure) : false},

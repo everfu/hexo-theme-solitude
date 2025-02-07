@@ -7,7 +7,7 @@ random: 隨便逛逛
 upload: 發佈時間：
 totalk: 無需刪除空行，直接輸入評論即可
 loading: 加載中...
-day: ' 天'
+day: " 天"
 hot-tip: 多人互動
 
 # Language: 繁體中文 (台灣)
@@ -84,7 +84,6 @@ post:
     whatsapp: 分享到WhatsApp
   ai:
     title: 文章摘要
-    tip: 投訴
   nav:
     next: 下一篇
     prev: 上一篇
@@ -105,12 +104,12 @@ head:
   noscript: 開啟JavaScript才能訪問本站哦~
 
 aside:
-  postcount: '文章數：'
-  pv: '瀏覽量：'
-  uv: '訪客數：'
-  runtime: '運行時間：'
-  updatetime: '最後更新：'
-  wordcount: '字數統計：'
+  postcount: "文章數："
+  pv: "瀏覽量："
+  uv: "訪客數："
+  runtime: "運行時間："
+  updatetime: "最後更新："
+  wordcount: "字數統計："
   toc: 文章目錄
   tagmore: 查看全部
   avatar: 頭像
@@ -120,9 +119,9 @@ aside:
   newpost: 最近發佈
   newcomment: 最近評論
   card:
-    posts: '累計文章數:'
-    tags: '標籤總數:'
-    categories: '分類總數:'
+    posts: "累計文章數:"
+    tags: "標籤總數:"
+    categories: "分類總數:"
 
 console:
   comment_tip: 互動
@@ -235,9 +234,9 @@ message:
   open: 顯示彈幕
 
 essay:
-  tip0: '- 已展開所有短文 -'
-  tip1: '- 只展示最近 #{count} 條短文 -'
-  link: '鏈結'
+  tip0: "- 已展開所有短文 -"
+  tip1: "- 只展示最近 #{count} 條短文 -"
+  link: "鏈結"
 
 rightside:
   show:

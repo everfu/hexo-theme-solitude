@@ -94,6 +94,10 @@ hexo.extend.filter.register(
             licenurl: "https://creativecommons.org/licenses/by-nc-sa/4.0/",
           },
         },
+        ai: {
+          enable: false,
+          model: "GPT 3",
+        },
         meta: {
           date: false,
           updated: false,
