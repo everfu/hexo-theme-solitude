@@ -53,7 +53,7 @@ div
   if (theme.brevity.home_mini && theme.brevity.enable)
     script(src=url_for(theme.cdn.swiper_js))
 
-  iif theme.post.ai.enable
+  if theme.post.ai.enable
     script(src=url_for(theme.cdn.post_ai))
 
   if theme.capsule.enable || theme.music.enable || theme.brevity.enable && theme.brevity.music
