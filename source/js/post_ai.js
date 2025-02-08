@@ -44,6 +44,17 @@ class POST_AI {
   }
 
   AIEngine() {}
+
+  destroy() {
+    this.scoGPTIsRunning = false;
+    const tagElement = document.querySelector(".ai-tag");
+    tagElement?.classList.remove("loadingAI");
+  }
 }
 
 const ai = new POST_AI();
+
+document.addEventListener('pjax:complete', () => {
+  ai.destroy(); // 销毁旧实例
+  ai.init(); // 重新初始化
+});
