@@ -12,17 +12,18 @@ if skills || careers
                         .tags-group-all
                             .tags-group-wrapper
                                 - var pair = []
-                                each tag, index in skills.tags
-                                    - pair.push(tag)
-                                    if pair.length === 2
-                                        .tags-group-icon-pair
-                                            each item in pair
-                                                .tags-group-icon(style=`background:${item.color}`)
-                                                    if item.img
-                                                        img(src=item.img, title=item.title)
-                                                    else if item.icon
-                                                        i(class=item.icon, title=item.title, style=`color: ${item.icon_color ? item.icon_color : ''}`)
-                                        - pair = []
+                                each i in [0,1]
+                                    each tag, index in skills.tags
+                                        - pair.push(tag)
+                                        if pair.length === 2
+                                            .tags-group-icon-pair
+                                                each item in pair
+                                                    .tags-group-icon(style=`background:${item.color}`)
+                                                        if item.img
+                                                            img(src=item.img, title=item.title)
+                                                        else if item.icon
+                                                            i(class=item.icon, title=item.title, style=`color: ${item.icon_color ? item.icon_color : ''}`)
+                                            - pair = []
                         .skills-list
                             each tag in skills.tags
                                 .skill-info
