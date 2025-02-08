@@ -40,7 +40,7 @@ class POST_AI {
     item.classList.add("char");
     item.textContent = char;
     element.appendChild(item);
-    const animationDelay = 80;
+    const animationDelay = 30;
 
     if (text.length == index + 1) {
       document.querySelector(".ai-tag").classList.remove("loadingAI");

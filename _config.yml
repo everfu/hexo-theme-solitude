@@ -254,7 +254,7 @@ post:
       licenurl: https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-hans
   ai:
     enable: false
-    model: 小七 GPT
+    modelName: 小七 GPT
   # Article meta information
   # 文章元信息
   meta:
