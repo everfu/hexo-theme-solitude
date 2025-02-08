@@ -22,11 +22,12 @@
             -    else acc[acc.length - 1].push(link)
             -    return acc
             - }, [])
-            each pair in pairs
-                .tags-group-icon-pair
-                    each y in pair
-                        a.tags-group-icon(href=url_for(y.link), title=y.name)
-                            img(src=y.avatar + (site.data.links.banner_suffix || ''), title=y.name)
-                            span.tags-group-title=y.name
+            each i in [0, 1]
+                each pair in pairs
+                    .tags-group-icon-pair
+                        each y in pair
+                            a.tags-group-icon(href=url_for(y.link), title=y.name)
+                                img(src=y.avatar + (site.data.links.banner_suffix || ''), title=y.name)
+                                span.tags-group-title=y.name
 - else
     .tags-group-all(style="height:calc(3rem + 72px);")
