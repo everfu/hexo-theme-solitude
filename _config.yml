@@ -252,6 +252,8 @@ post:
       # License link
       # 许可证链接
       licenurl: https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-hans
+  # Article Local AI（If Installed tianliGPT plugin, it's not recommended to fill in the corresponding field of the article and enable this function）
+  # 文章本地AI（若已安装tianliGPT插件，不建议再填写文章对应字段并开启此功能）
   ai:
     enable: false
     modelName: 小七 GPT
