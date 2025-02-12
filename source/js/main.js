@@ -931,7 +931,11 @@ window.refreshFn = () => {
       )
     );
   randomlink && randomLinksList();
-  ai_text && is_post && ai.init();
+  if (is_post) {
+    if (ai_text) {
+      ai.init();
+    }
+  }
   sco.switchComments();
   initObserver();
   if (is_home) {

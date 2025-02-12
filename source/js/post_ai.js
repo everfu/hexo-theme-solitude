@@ -1,65 +1,60 @@
-class POST_AI {
-  constructor() {
-    this.aiTalkMode = false;
-    this.aiPostExplanation = "";
-    this.scoGPTIsRunning = false;
-    this.aiPostExplanation = PAGE_CONFIG.ai_text || "";
-  }
+class AIPostRenderer {
+  static ANIMATION_DELAY_MS = 30;
+  static AI_EXPLANATION_SELECTOR = ".ai-explanation";
+  static AI_TAG_SELECTOR = ".ai-tag";
 
   init() {
-    this.aiShowAnimation(this.aiPostExplanation);
-    this.AIEngine();
+    this.tagElement = document.querySelector(AIPostRenderer.AI_TAG_SELECTOR);
+    this.isAnimating = false;
+    this.aiContent = PAGE_CONFIG?.ai_text || "";
+    this.explanationElement = document.querySelector(
+      AIPostRenderer.AI_EXPLANATION_SELECTOR
+    );
+    this.renderAIContent();
   }
 
-  aiShowAnimation(text, delay = 0) {
-    const explanationElement = document.querySelector(".ai-explanation");
-    const tagElement = document.querySelector(".ai-tag");
+  renderAIContent() {
+    if (!this.validateElements() || !this.aiContent) return;
 
-    if (!explanationElement || this.scoGPTIsRunning) return;
-
-    this.scoGPTIsRunning = true;
-    tagElement.classList.add("loadingAI");
-    explanationElement.style.display = "block";
-    explanationElement.innerHTML =
-      '生成中...<span class="blinking-cursor"></span>';
-
-    setTimeout(() => {
-      explanationElement.innerHTML = "";
-      this.showCharByChar(explanationElement, text, 0);
-    }, delay);
+    this.prepareAnimation();
+    this.startTextAnimation();
   }
 
-  showCharByChar(element, text, index) {
-    if (index >= text.length) {
-      this.scoGPTIsRunning = false;
-      return;
-    }
-
-    const char = text[index];
-    const item = document.createElement("span");
-    item.classList.add("char");
-    item.textContent = char;
-    element.appendChild(item);
-    const animationDelay = 30;
-
-    if (text.length == index + 1) {
-      document.querySelector(".ai-tag").classList.remove("loadingAI");
-    } else {
-      setTimeout(() => {
-        this.showCharByChar(element, text, index + 1);
-      }, animationDelay);
-    }
+  validateElements() {
+    return this.explanationElement && this.tagElement && !this.isAnimating;
   }
 
-  AIEngine() {
-    const tagElement = document.querySelector(".ai-tag");
-    tagElement.addEventListener("click", () => {
-      if (!this.scoGPTIsRunning) {
-        this.aiTalkMode = true;
-        this.aiShowAnimation(this.config.talk);
+  prepareAnimation() {
+    this.isAnimating = true;
+    this.tagElement.classList.add("loadingAI");
+    this.explanationElement.innerHTML = "";
+  }
+
+  startTextAnimation() {
+    const animate = (index) => {
+      if (index >= this.aiContent.length) {
+        this.completeAnimation();
+        return;
       }
-    });
+
+      this.appendCharacter(this.aiContent[index]);
+      setTimeout(() => animate(index + 1), AIPostRenderer.ANIMATION_DELAY_MS);
+    };
+
+    animate(0);
+  }
+
+  appendCharacter(char) {
+    const charElement = document.createElement("span");
+    charElement.className = "char";
+    charElement.textContent = char;
+    this.explanationElement.appendChild(charElement);
+  }
+
+  completeAnimation() {
+    this.isAnimating = false;
+    this.tagElement.classList.remove("loadingAI");
   }
 }
 
-const ai = new POST_AI();
+const ai = new AIPostRenderer();
