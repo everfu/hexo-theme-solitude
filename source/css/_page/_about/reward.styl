@@ -18,12 +18,12 @@
         display flex
         flex-wrap wrap
         flex-direction row
-        margin 1rem -.25rem .5rem
+        margin 1rem -.125rem .5rem
 
         .post-reward
           position absolute
-          right 2rem
-          top 2rem
+          right 1rem
+          top 1rem
 
           .reward-main
             top 60px
@@ -57,26 +57,27 @@
           padding 1rem
           border-radius 12px
           border var(--style-border-always)
-          width calc((100% / 6) - .5rem)
-          margin 0 .25rem .5rem .25rem
+          width calc((100% / 6) - .25rem)
+          margin 0 .125rem .5rem .125rem
           box-shadow var(--efu-shadow-border)
+          display flex
           flex-direction column
           justify-content space-between
 
           +maxWidth1200()
-            width calc((100% / 4) - .5rem)
+            width calc((100% / 4) - .25rem)
 
           +maxWidth900()
-            width calc((100% / 2) - .5rem)
+            width calc((100% / 2) - .25rem)
 
           +maxWidth768()
-            width 100%
+            width calc((100% / 2) - .25rem)
 
           .reward-list-item-name
             font-size 1rem
             font-weight 700
             line-height 1
-            margin-bottom .5rem
+            margin-bottom .25rem
             white-space nowrap
             overflow hidden
             text-overflow ellipsis
@@ -96,12 +97,12 @@
             align-items center
             justify-content center
             border-radius 4px
-            margin-right 4px
+            margin-right 2px
             white-space nowrap
 
             .solitude
               font-size 14px
-              margin-right 4px
+              margin-right 2px
               color var(--efu-card-bg)
 
           .reward-list-item-time
@@ -112,4 +113,4 @@
     .reward-list-tips
       p
         font-size 12px
-        color var(--efu-secondtext)
+        color var (--efu-secondtext)
