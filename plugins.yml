@@ -7,12 +7,12 @@ instantsearch:
   file: dist/instantsearch.production.min.js
   version: 4.75.7
 docsearch_css:
-  name: '@docsearch/css'
+  name: "@docsearch/css"
   other_name: docsearch-css
   file: dist/style.css
   version: 3.8.2
 docsearch_js:
-  name: '@docsearch/js'
+  name: "@docsearch/js"
   other_name: docsearch-js
   file: dist/umd/index.js
   version: 3.8.2
@@ -25,12 +25,12 @@ twikoo:
   file: dist/twikoo.all.min.js
   version: 1.6.41
 waline_js:
-  name: '@waline/client'
+  name: "@waline/client"
   file: dist/waline.js
   other_name: waline
   version: 3.4.3
 waline_css:
-  name: '@waline/client'
+  name: "@waline/client"
   file: dist/waline.css
   version: 3.4.3
   other_name: waline
@@ -96,7 +96,7 @@ snackbar:
   file: dist/snackbar.min.js
   version: 0.1.16
 fontawesome:
-  name: '@fortawesome/fontawesome-free'
+  name: "@fortawesome/fontawesome-free"
   file: css/all.min.css
   version: 6.7.2
   other_name: font-awesome
@@ -105,12 +105,12 @@ medium_zoom:
   file: dist/medium-zoom.min.js
   version: 1.1.0
 fancyapps_ui:
-  name: '@fancyapps/ui'
+  name: "@fancyapps/ui"
   file: dist/fancybox/fancybox.umd.js
   version: 5.0.36
   other_name: fancyapps-ui
 fancyapps_css:
-  name: '@fancyapps/ui'
+  name: "@fancyapps/ui"
   file: dist/fancybox/fancybox.css
   version: 5.0.36
   other_name: fancyapps-ui
@@ -125,7 +125,7 @@ chart_js:
   other_name: Chart.js
 typeit_js:
   name: typeit
-  file: dist/index.umd.min.js
+  file: dist/index.umd.js
   version: 8.8.7
   other_name: typeit
 blueimp_md5:
