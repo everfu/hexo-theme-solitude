@@ -1,100 +1,102 @@
+galleryHeight = 250px
+transitionTime = 0.35s
+easeTransition = 375ms ease-in 0.2s
+
 .article-container
   figure.gallery-group
-    position: relative
-    overflow: hidden
-    margin: 0
-    width: calc(50% - 8px)
-    height: 250px
-    border-radius: 8px
-    background: var(--efu-black)
-    -webkit-transform: translate3d(0, 0, 0)
+    position relative
+    overflow hidden
+    margin 0
+    width calc(50% - 8px)
+    height galleryHeight
+    border-radius 8px
+    background var(--efu-black)
+    -webkit-transform translate3d(0, 0, 0)
 
     +maxWidth600()
-      width: calc(100% - 8px)
+      width calc(100% - 8px)
 
     &:hover
       img
-        opacity: .4
-        transform: translate3d(0, 0, 0)
-
+        opacity 0.4
+        transform translate3d(0, 0, 0)
       .gallery-group-name::after
-        transform: translate3d(0, 0, 0)
-
+        transform translate3d(0, 0, 0)
       p
-        opacity: 1
-        transform: translate3d(0, 0, 0)
+        opacity 1
+        transform translate3d(0, 0, 0)
 
     img
-      position: relative
-      margin: 0
-      max-width: none
-      width: calc(100% + 20px)
-      height: 250px
-      backface-visibility: hidden
-      opacity: .8
-      transition: all .3s, filter 375ms ease-in .2s
-      transform: translate3d(-10px, 0, 0)
-      object-fit: cover
+      position relative
+      margin 0
+      max-width none
+      width calc(100% + 20px)
+      height galleryHeight
+      backface-visibility hidden
+      opacity 0.8
+      transition all 0.3s, filter easeTransition
+      transform translate3d(-10px, 0, 0)
+      object-fit cover
       border none
 
     figcaption
-      position: absolute
-      top: 0
-      left: 0
-      padding: 30px
-      width: 100%
-      height: 100%
-      color: var(--efu-white)
-      text-transform: uppercase
-      backface-visibility: hidden
+      position absolute
+      top 0
+      left 0
+      padding 30px
+      width 100%
+      height 100%
+      color var(--efu-white)
+      text-transform uppercase
+      backface-visibility hidden
 
       & > a
-        position: absolute
-        top: 0
-        right: 0
-        bottom: 0
-        left: 0
-        z-index: 1000
-        opacity: 0
+        position absolute
+        top 0
+        right 0
+        bottom 0
+        left 0
+        z-index 1000
+        opacity 0
 
     p
       @extend .limit-more-line
-      margin: 0
-      padding: 8px 0 0
-      letter-spacing: 1px
-      font-size: 1.1em
-      line-height: 1.5
-      opacity: 0
-      transition: opacity .35s, transform .35s
-      transform: translate3d(100%, 0, 0)
-      -webkit-line-clamp: 4
+      margin 0
+      padding 8px 0 0
+      letter-spacing 1px
+      font-size 1.1em
+      line-height 1.5
+      opacity 0
+      transition opacity transitionTime, transform transitionTime
+      transform translate3d(100%, 0, 0)
+      -webkit-line-clamp 4
 
     .gallery-group-name
       @extend .limit-more-line
-      position: relative
-      margin: 0
-      padding: 8px 0
-      font-weight: bold
-      font-size: 1.65em
-      line-height: 1.5
-      -webkit-line-clamp: 2
+      position relative
+      margin 0
+      padding 8px 0
+      font-weight bold
+      font-size 1.65em
+      line-height 1.5
+      -webkit-line-clamp 2
 
       &:after
-        position: absolute
-        bottom: 0
-        left: 0
-        width: 100%
-        height: 2px
-        background: var(--efu-white)
-        content: ''
-        transition: transform .35s
-        transform: translate3d(-100%, 0, 0)
+        position absolute
+        bottom 0
+        left 0
+        width 100%
+        height 2px
+        background var(--efu-white)
+        content ''
+        transition transform transitionTime
+        transform translate3d(-100%, 0, 0)
 
   .gallery-group-main
     overflow auto
     display flex
-    gap .5rem
-    margin-top .5rem
+    gap 0.5rem
+    margin-top 0.5rem
     flex-wrap wrap
 
   .gallery-item
@@ -104,21 +106,18 @@
     position relative
 
     +maxWidth1200()
-     width 32.97%
+      width 32.97%
 
     +maxWidth768()
       width 49.97%
 
     img
-      max-width: 100%;
-      border-radius: 0;
+      max-width 100%
+      border-radius 0
       margin 0
-
-      / #page &
-          border-radius 8px
 
 .waterfall
   opacity 0
-  transition .3s
+  transition 0.3s
   &.show
     opacity 1
