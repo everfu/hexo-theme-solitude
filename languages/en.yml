@@ -58,6 +58,7 @@ post:
   minread: Reading time
   ip: The author's IP belongs to
   pv: PV
+  min: min
   comment: Comments
   copyright:
     reprint: This article is a reproduction or translation, and the copyright belongs to the original author. Please contact the original author for permission to republish this article.

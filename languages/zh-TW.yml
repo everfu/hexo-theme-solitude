@@ -67,6 +67,7 @@ post:
   minread: 閱讀耗時
   ip: 作者IP歸屬地為
   pv: 文章熱度
+  min: 分
   comment: 評論數
   copyright:
     reprint: 本文是轉載或翻譯文章，版權歸原作者所有。轉載本文請聯繫原作者。

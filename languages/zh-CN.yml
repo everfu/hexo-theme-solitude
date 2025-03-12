@@ -67,6 +67,7 @@ post:
   minread: 阅读耗时
   ip: 作者IP归属地为
   pv: 文章热度
+  min: 分钟
   comment: 评论数
   copyright:
     reprint: 本文是转载或翻译文章，版权归原作者所有。转载本文请联系原作者。
