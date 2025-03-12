@@ -32,7 +32,7 @@
                     span.post-meta-separator
                     if theme.post.meta.readtime
                         i.post-meta-icon.solitude.fas.fa-clock(title=_p('post.minread'))
-                        span= min2read(page.content) + " min"
+                        span= min2read(page.content) + ' ' + _p('post.min')
             if theme.post.meta.locate
                 span.post-meta-position(title=_p('post.ip') + page.locate)
                     i.post-meta-icon.solitude.fas.fa-location-dot
