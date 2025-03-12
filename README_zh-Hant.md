@@ -6,21 +6,19 @@
 
 一款優雅的 Hexo 主題，支持懶加載、PWA、Latex 以及多種評論系統。
 
-主題設計由 [@張洪Heo](https://github.com/zhheo) 全權授權
+主題設計由 [@張洪 Heo](https://github.com/zhheo) 全權授權
 
 ![npm package](https://img.shields.io/npm/v/hexo-theme-solitude)
 ![license](https://img.shields.io/github/license/everfu/hexo-theme-solitude?color=FF5531)
 [![Stars](https://img.shields.io/github/stars/everfu/hexo-theme-solitude)](https://github.com/everfu/hexo-theme-solitude/stargazers)
-[![NPM all downloads](https://img.shields.io/npm/d18m/hexo-theme-solitude
-)](https://www.npmjs.com/package/hexo-theme-solitude)
+[![NPM all downloads](https://img.shields.io/npm/d18m/hexo-theme-solitude)](https://www.npmjs.com/package/hexo-theme-solitude)
 
 ![hexo version](https://img.shields.io/badge/hexo-7.0.0+-blue?logo=hexo&logoColor=white)
 ![node version](https://img.shields.io/badge/node-14.0.0+-white?logo=node.js&logoColor=white)
 ![JetBrains](https://img.shields.io/badge/jetbrains-support-white?logo=jetbrains)
 
 ![page view](https://komarev.com/ghpvc/?username=hexo-theme-solitude&color=blue)
-![jsdelivr](https://img.shields.io/jsdelivr/npm/hd/hexo-theme-solitude
-)
+![jsdelivr](https://img.shields.io/jsdelivr/npm/hd/hexo-theme-solitude)
 ![npm publish](https://img.shields.io/github/actions/workflow/status/everfu/hexo-theme-solitude/npm-publish.yml)
 
 </div>
@@ -41,17 +39,17 @@
 
 1. 使用 NPM 包進行安裝
 
-      ```bash
-      npm i hexo-theme-solitude
-      ```
+   ```bash
+   npm i hexo-theme-solitude
+   ```
 
 2. 應用主題
 
-      ```yaml
-      theme: solitude
-      ```
+   ```yaml
+   theme: solitude
+   ```
 
-前往 [文檔](https://solitude.js.org/zh/) 獲取更多信息。
+前往 [文檔](https://solitude.js.org/) 獲取更多信息。
 
 ## 社區
 
