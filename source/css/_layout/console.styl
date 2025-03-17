@@ -42,7 +42,7 @@
       display none
 
     +maxHeight800()
-      display none
+      padding-top 30px
 
 
   &.show
@@ -84,6 +84,8 @@
 
   .console-card.tags
     height calc(100% - 172px)
+    +maxHeight800()
+      height 100%
 
   .console-mask
     background var(--efu-maskbgdeep)
@@ -227,11 +229,11 @@
       line-height 1
       transform rotate(-30deg)
       transition .6s
+      border-radius 32px
 
     i:hover
       color var(--efu-hovertext)
       background var(--efu-main-op)
-      border-radius 32px
 
   .console-card.history
     margin-top 8px
@@ -241,6 +243,9 @@
     border none
     overflow hidden
     border-radius 0
+
+    +maxHeight800()
+      display none
 
     .item-headline
       display none
