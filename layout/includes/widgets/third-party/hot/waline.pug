@@ -1,0 +1,47 @@
+script.
+  function updatePostsBasedOnComments() {
+    const location = window.location.origin;
+    const posts = Array.from(document.querySelectorAll('.recent-post-item[onclick] .post_cover a'))
+      .map(item => item.href.replace(location, ''));
+    const fetchCommentsCount = () => {
+      const requests = posts.map(url => {
+        return fetch(`#{theme.waline.envId}/api/comment?type=count&url=${encodeURIComponent(url)}`)
+          .then(response => response.json())
+          .then(data => ({
+            url: url,
+            count: data.errno === 0 ? data.data[0] : 0
+          }));
+      });
+      Promise.all(requests)
+        .then(handleCommentsResponse)
+        .catch(error => console.error("Error fetching comments:", error));
+    };
+    const handleCommentsResponse = (response) => {
+      response.forEach(({ url, count }) => {
+        if (count > #{count}) {
+          const postElement = document.querySelector(`.recent-post-item[onclick*="${url}"]`);
+          if (postElement) updatePostElement(postElement);
+        }
+      });
+    };
+    const updatePostElement = (postElement) => {
+      const infoTopTips = postElement.querySelector(".recent-post-info-top-tips");
+      const originalSpan = infoTopTips?.querySelector(".original");
+      const existingHotTip = infoTopTips?.querySelector(".hot-tip");
+      if (!existingHotTip && originalSpan) {
+        const hotTip = createHotTipElement();
+        infoTopTips.insertBefore(hotTip, originalSpan);
+      }
+    };
+    const createHotTipElement = () => {
+      const hotTip = document.createElement("span");
+      hotTip.classList.add("hot-tip");
+      const icon = document.createElement("i");
+      icon.classList.add("solitude", "fas", "fa-fire-flame-curved");
+      hotTip.appendChild(icon);
+      const commentCount = document.createTextNode("#{_p('hot-tip')}");
+      hotTip.appendChild(commentCount);
+      return hotTip;
+    };
+      fetchCommentsCount();
+  }
