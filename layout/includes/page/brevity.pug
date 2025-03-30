@@ -20,7 +20,10 @@ if theme.brevity.enable
                             if item.image
                                 .bber-content-img
                                     each img in item.image
-                                        img(src=img alt="image")
+                                        if typeof img === 'string'
+                                            img(src=img, alt=item.content || "图片暂无描述")
+                                        else
+                                            img(src=img.url, alt=(img.alt || item.content || "图片暂无描述"))
 
                         if item.aplayer
                             .bber-music
