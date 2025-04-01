@@ -173,6 +173,17 @@ div#banners
   margin-top 0
   margin-bottom: 12px
 
+  &::before
+    content ''
+    position absolute
+    width 100%
+    height 100%
+    background var(--efu-black)
+    opacity .3
+    z-index 1
+    top 0
+    left 0
+
 .author-content-item
   flex 4
   border-radius 12px
