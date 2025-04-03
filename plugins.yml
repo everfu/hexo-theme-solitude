@@ -50,12 +50,12 @@ katex:
   name: katex
   file: dist/katex.min.css
   other_name: KaTeX
-  version: 0.16.21
+  version: 0.16.9
 katex_copytex:
   name: katex
   file: dist/contrib/copy-tex.min.js
   other_name: KaTeX
-  version: 0.16.21
+  version: 0.16.9
 lazyload:
   name: vanilla-lazyload
   file: dist/lazyload.iife.min.js
@@ -121,7 +121,7 @@ mermaid_js:
 chart_js:
   name: chart.js
   file: dist/chart.umd.js
-  version: 4.4.7
+  version: 4.4.1
   other_name: Chart.js
 typeit_js:
   name: typeit

@@ -903,12 +903,7 @@ window.refreshFn = () => {
   const { is_home, is_page, page, is_post, ai_text } = PAGE_CONFIG;
   const { runtime, lazyload, lightbox, randomlink, covercolor, lure, expire } =
     GLOBAL_CONFIG;
-  const timeSelector =
-    (is_home || is_page
-      ? ".post-meta-date time"
-      : is_post
-      ? ".post-meta-date time"
-      : ".datetime") + ", .webinfo-item time";
+  const timeSelector = ".datetime, .webinfo-item time, .post-meta-date time";
   document.body.setAttribute("data-type", page);
   sco.changeTimeFormat(document.querySelectorAll(timeSelector));
   runtime && sco.addRuntime();
