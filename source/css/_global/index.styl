@@ -380,7 +380,6 @@ i.solitude
   &#content-inner
     max-width 1400px
     flex-grow 1
-    padding-top .5rem
 
   &.hide-aside
     > div:first-child
@@ -396,18 +395,11 @@ i.solitude
       width 100%
 
   > #post, #category, #tag, #archive
-    box-shadow var(--efu-shadow-border)
-    padding 1rem 2rem
-    border-radius 12px
-    border var(--style-border)
     align-self flex-start
     animation slide-in .6s .1s backwards
     position relative
     if hexo-config('aside.position') == 0
       order 2
-
-    +minWidth768()
-      background var(--efu-card-bg)
 
     +maxWidth768()
       box-shadow none

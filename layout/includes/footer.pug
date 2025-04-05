@@ -66,7 +66,7 @@ div#footer-bar
                             a.footer-bar-link(href=url_for(item.url), title=item.name)
                                 if item.icon 
                                     img.beian-icon(src=url_for(item.icon), alt=item.name)
-                            span.beian-name= item.name
+                                span.beian-name= item.name
                     a.footer-bar-link(href=_p('hexo'))
                         = _p('framework_by') + 'Hexo'
                     a.footer-bar-link(href=_p('repo'))

@@ -1,8 +1,4 @@
 #tag
-  +minWidth1300()
-    padding: 4rem 2rem 1rem 2rem!important
-    overflow hidden
-
   +maxWidth768()
     padding 0 1rem
 
@@ -10,19 +6,18 @@
     display flex
     flex-direction row
     flex-wrap wrap
-    margin 0
-    margin-bottom 0.5rem
-    position absolute
-    z-index 2
     width 100%
-    padding 1rem 2rem
+    position absolute
+    z-index 1
     left 0
     top 0
-    max-height 64px
-    overflow hidden
+    max-height 44px
+    overflow: hidden
     background var(--efu-card-bg)
     backdrop-filter saturate(180%) blur(20px)
     transition .1s ease-out
+    border-radius 12px
+    border var(--style-border-always)
 
     &:hover
       max-height 1000px
