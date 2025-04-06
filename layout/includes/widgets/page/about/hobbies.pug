@@ -22,17 +22,38 @@ if games
                             .tips= game.tips_right
 
 if site.data.about.likes
-    - const likes = site.data.about.likes
-    .author-content
-        each like in likes
-            .author-content-item(class=like.type, style=`background: url(${like.bg}) no-repeat center; background-size: cover;`)
-                .card-content
-                    .author-content-item-tips= like.tips
-                    span.author-content-item-title= like.title
-                    .content-bottom
-                        .tips= like.subtips
-                        if like.button
-                            .banner-button-group
-                                a.banner-button(href=url_for(like.button_link))
-                                    i.solitude.fas.fa-circle-chevron-right
-                                    span.banner-button-text= like.button_text
+  - const likes = site.data.about.likes
+  .author-content
+    each like in likes
+      if like.type === 'comic'
+        .author-content-item.comic
+            .card-content
+             .author-content-item-tips= like.tips
+             span.author-content-item-title= like.title
+             .content-bottom
+              if like.subtips
+                .tips= like.subtips
+              if like.button
+                .banner-button-group
+                  a.banner-button(href=url_for(like.button_link))
+                    i.solitude.fas.fa-circle-chevron-right
+                    span.banner-button-text= like.button_text
+             .comic-box
+              each item in like.list
+               a.comic-item(href=item.href target="_blank", rel="noopener noreferrer", title=item.name)
+                .comic-item-cover
+                 img.nolazyload(src=item.cover, alt=item.name)
+ 
+      else
+        .author-content-item(class=like.type style=`background: url(${like.bg}) no-repeat center/cover`)
+          .card-content
+            .author-content-item-tips= like.tips
+            span.author-content-item-title= like.title
+            .content-bottom
+              if like.subtips
+                .tips= like.subtips
+              if like.button
+                .banner-button-group
+                  a.banner-button(href=url_for(like.button_link))
+                    i.solitude.fas.fa-circle-chevron-right
+                    span.banner-button-text= like.button_text
