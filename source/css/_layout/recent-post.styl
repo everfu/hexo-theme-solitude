@@ -8,10 +8,8 @@
       padding 0
 
 #tag-page-tags+#recent-posts
-  margin-top: calc(64px - 0.5rem)
-
-  +maxWidth768()
-    margin-top: calc(74px - 0.5rem)
+  +minWidth768()
+    margin-top calc(64px - 0.5rem)
 
 if hexo-config('index_post_list.direction') == "column"
   .recent-post-item
@@ -29,8 +27,6 @@ if hexo-config('index_post_list.direction') == "column"
 
       +maxWidth1300()
         margin-bottom .5rem
-        #tag &:first-child
-          margin-top: 2.5rem
 
       +maxWidth768()
         border-radius 12px
