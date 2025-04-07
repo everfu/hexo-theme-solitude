@@ -32,6 +32,8 @@
     position relative
     
     .comic-box
+      width 110%
+      height 100%
       display flex
       position absolute
       left 50%
@@ -81,26 +83,11 @@
           max-width none
           transition 0.8s
 
-+maxWidth12000()
   .author-content-item.comic
     .comic-box
-      width 110%
-      height 100%
-
-+maxWidth1400()
-  .author-content-item.comic
-    .comic-box
-      width 120%
-      height 100%      
-
-+maxWidth768()
-  .author-content-item.comic
-    .comic-box
-      width 109%
-      height 100%
-
-+maxWidth690()
-  .author-content-item.comic
-    .comic-box
-      width 120%
-      height 100%
+      +maxWidth1400()
+          width 120%
+          height 100%      
+      +maxWidth768()
+          width 109%
+          height 100%
