@@ -54,6 +54,18 @@ div#footer-bar
                     a.footer-bar-link(href=url_for("/"))
                         img.author-avatar(src=url_for(theme.site.icon))
                         = config.author
+                .beian-group
+                    if theme.footer.beian
+                        - var beian = theme.footer.beian || []
+                        each item in beian
+                            a.footer-bar-link(href=url_for(item.url), title=item.name)
+                                if item.icon 
+                                    img.beian-icon(src=url_for(item.icon), alt=item.name)
+                                span.beian-name= item.name
+                    a.footer-bar-link(href=_p('hexo'))
+                        = _p('framework_by') + 'Hexo'
+                    a.footer-bar-link(href=_p('repo'))
+                        = _p('theme_by') + 'Solitude'
             else
                 div.copyright © #{moment(theme.aside.siteinfo.runtime).year()} - #{new Date().getFullYear()} By&nbsp;
                     a.footer-bar-link(href=url_for("/"))
