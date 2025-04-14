@@ -55,8 +55,8 @@ script(pjax).
                             `).join('') : `#{__("console.newest_comment.empty")}`
             if (typeof utils !== 'undefined') utils.diffDateFormat(document.querySelectorAll('.comment-time'))
             else {
-                document.addEventListener('pjax:complete', () => utils.diffDateFormat(document.querySelectorAll('.comment-time'))
-                document.addEventListener('DOMContentLoaded', () => utils.diffDateFormat(document.querySelectorAll('.comment-time'))
+                document.addEventListener('pjax:complete', () => utils.diffDateFormat(document.querySelectorAll('.comment-time')))
+                document.addEventListener('DOMContentLoaded', () => utils.diffDateFormat(document.querySelectorAll('.comment-time')))
             }
         }
 
