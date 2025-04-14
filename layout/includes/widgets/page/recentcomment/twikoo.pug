@@ -64,10 +64,10 @@ script(pjax).
                     ${i.title}</div>
                 </div>
             `).join('') : `#{__("console.newest_comment.empty")}`
-            if (typeof sco !== 'undefined') sco.changeTimeFormat(document.querySelectorAll('.comment-time'))
+            if (typeof utils !== 'undefined') utils.diffDateFormat(document.querySelectorAll('.comment-time'))
             else {
-                document.addEventListener('pjax:complete', () => sco.changeTimeFormat(document.querySelectorAll('.comment-time')))
-                document.addEventListener('DOMContentLoaded', () => sco.changeTimeFormat(document.querySelectorAll('.comment-time')))
+                document.addEventListener('pjax:complete', () => utils.diffDateFormat(document.querySelectorAll('.comment-time')))
+                document.addEventListener('DOMContentLoaded', () => utils.diffDateFormat(document.querySelectorAll('.comment-time')))
             }
         }
 
