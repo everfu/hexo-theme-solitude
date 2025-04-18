@@ -1,7 +1,7 @@
 div.console_recentcomments
   display flex
   flex-wrap wrap
-  gap 12px
+  gap 8px
   min-height 100px
   width 100%
 
@@ -24,7 +24,12 @@ div.console_recentcomments
   flex-direction column
 
   .console-card &
-    width calc(100% / 2 - 8px)
+    width calc(100% / 2 - 4px)
+    min-width 140px
+    min-height calc(100% / 3 - 6px)
+
+    +maxWidth1200()
+      width 100%
 
   +maxWidth1300()
     min-width 100%

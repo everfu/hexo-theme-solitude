@@ -32,9 +32,9 @@
     position relative
     
     .comic-box
-      display flex
       width 110%
       height 100%
+      display flex
       position absolute
       left 50%
       top 0
@@ -54,7 +54,6 @@
     .content-bottom
       z-index 3
       color var(--efu-white)
-      pointer-events none
     
     .comic-item
       height 100%
@@ -82,3 +81,12 @@
           height 100%
           max-width none
           transition 0.8s
+
+  .author-content-item.comic
+    .comic-box
+      +maxWidth1400()
+          width 120%
+          height 100%      
+      +maxWidth768()
+          width 109%
+          height 100%
