@@ -1,36 +1,60 @@
-const coverColor = () => {
-    const pageColor = PAGE_CONFIG.color;
-    if (pageColor) {
-        setThemeColors(pageColor);
-        return;
+const coverColor = (music = false) => {
+    if (music) {
+        var coverPath = document.querySelector("#nav-music .aplayer-pic").style.backgroundImage;
+        const coverPathMatch = /url\("([^"]+)"\)/.exec(coverPath);
+        coverPath = coverPathMatch ? coverPathMatch[1] : '';
+        if (coverPath) {
+            handleApiColor(coverPath,music);
+        }
     }
-    
-    const path = document.getElementById("post-cover")?.src;
-    if (path) {
-        handleApiColor(path);
-    } else {
-        setDefaultThemeColors();
+    else {
+        const pageColor = PAGE_CONFIG.color;
+        if (pageColor) {
+            setThemeColors(pageColor);
+            return;
+        }
+        
+        const path = document.getElementById("post-cover")?.src;
+        if (path) {
+            handleApiColor(path);
+        } else {
+            setDefaultThemeColors();
+        }
     }
 }
 
-function handleApiColor(path) {
+function handleApiColor(path, music = false) {
     const cacheGroup = JSON.parse(localStorage.getItem('Solitude')) || {};
     if (cacheGroup.postcolor?.[path]) {
         setThemeColors(cacheGroup.postcolor[path].value);
     } else {
         img2color(path);
     }
+    if (music) {
+        img2color(path, music);
+    }
 }
 
-function img2color(src) {
+function setMusicColor(value) {
+    if (!value) return setDefaultThemeColors();
+    const item = document.querySelector("#nav-music")
+    item.style.setProperty('--efu-music', value);
+}
+
+function img2color(src, music = false) {
     fetch(`${coverColorConfig.api}${encodeURIComponent(src)}`)
         .then(response => {
             if (!response.ok) throw new Error('Network response was not ok');
             return response.json();
         })
         .then(data => {
-            setThemeColors(data.RGB);
-            cacheColor(src, data.RGB);
+            if(music) {
+                setMusicColor(data.RGB);
+            }
+            else {
+                setThemeColors(data.RGB);
+                cacheColor(src, data.RGB);
+            }
         })
         .catch(error => console.error('Error fetching color:', error));
 }

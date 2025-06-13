@@ -53,7 +53,7 @@
                                     span.leancloud-visitors-count
                                         i.solitude.fas.fa-spinner.fa-spin
                             when 'Artalk'
-                                span#ArtalkPV
+                                span.artalk-pv-count
                                     i.solitude.fas.fa-spinner.fa-spin
                     else
                         if theme.busuanzi
@@ -78,5 +78,5 @@
                                 span.valine-comment-count(data-xid=url_for(page.path) itemprop="commentCount")
                                     i.solitude.fas.fa-spinner.fa-spin
                             when 'Artalk'
-                                span.artalk-count
+                                span.artalk-comment-count
                                     i.solitude.fas.fa-spinner.fa-spin

@@ -10,7 +10,7 @@
   0%, 100%
     box-shadow: 0 0px 12px -3px var(--efu-none)
   50%
-    box-shadow: 0 0px 12px 0px var(--efu-main)
+    box-shadow: 0 0px 12px 0px var(--efu-music)
 
 @keyframes lightBar
   0%, 100%
@@ -34,15 +34,12 @@
   cursor: pointer
   transition: all 0.5s, left 0s
   transform-origin: left bottom
-  box-shadow: var(--efu-shadow-border)
   border-radius: 40px
   overflow: hidden
-
-  &:active
-    transform: scale(0.97)
+  .aplayer-button
+    display none
 
   &.playing
-    border: var(--style-border)
     box-shadow: 0 0px 12px -3px var(--efu-none)
     animation: playingShadow 5s linear infinite
 
@@ -56,20 +53,38 @@
       .aplayer-info
         color: var(--efu-white)
 
-    #nav-music-hoverTips
-      width: 0
-
     .aplayer
-      background: var(--efu-main)
-      border: var(--style-border-hover)
+      background: var(--efu-music)
       backdrop-filter: saturate(180%) blur(20px)
       transform: translateZ(0)
 
     .aplayer .aplayer-info .aplayer-controller .aplayer-bar-wrap .aplayer-bar .aplayer-played
       animation-play-state: running
 
-  &:hover:not(.playing) #nav-music-hoverTips
+  &:hover #nav-music-hoverTips
     opacity: 1
+  
+  &:hover:not(.playing)
+    #nav-music-hoverTips
+      justify-content: center
+      padding-right: 0
+    #music-play
+      display: flex
+      padding 5px 10px
+      width 100%
+      height 100%
+      justify-content center
+      align-items center
+
+  &.playing
+    #nav-music-hoverTips
+      width 180px
+      right 0
+      left auto
+      background linear-gradient(to left,var(--efu-music) 60%,transparent)
+    &:hover
+      #nav-music-hoverTips > i:not(#music-play)
+        display: block
 
   .aplayer.aplayer-withlrc
     .aplayer-pic
@@ -86,14 +101,15 @@
     .aplayer-info
       height: 100%
       color: var(--efu-fontcolor)
-      margin: 0
+      margin 0
+      margin-right 8px
       padding: 0
       display: flex
       align-items: center
 
   #nav-music-hoverTips
     color: var(--efu-white)
-    background: var(--efu-main)
+    background: var(--efu-music)
     width: 100%
     height: 100%
     position: absolute
@@ -107,15 +123,22 @@
     font-size: 12px
     z-index: 2
     transition: 0.3s
+    justify-content flex-end 
+    gap 1rem
+    padding-right 1rem
+
+    i
+      font-size: 16px
+      display none
+      cursor pointer
 
   .aplayer
-    background: var(--efu-card-bg)
+    background: var(--efu-music)
     border-radius: 60px
     height: 41px
     display: flex
     margin: 0
     transition: 0.3s
-    border: var(--style-border)
     box-shadow: none
 
     .aplayer-notice,
@@ -133,7 +156,8 @@
         margin: 0
         display: flex
         align-items: center
-        padding: 0 12px 0 8px
+        padding-bottom 0
+        padding-left 8px
         cursor: pointer
         z-index: 1
         height: 100%
@@ -148,13 +172,14 @@
           text-overflow: ellipsis
           transition: 0.3s
           user-select: none
+          color var(--efu-white)
 
       .aplayer-controller
-        position: absolute
-        width: 100%
-        height: 100%
-        top: 0
-        left: 0
+        // position: absolute
+        // width: 100%
+        // height: 100%
+        // top: 0
+        // left: 0
 
         .aplayer-bar-wrap
           margin: 0
@@ -220,7 +245,6 @@
 
   &.stretch .aplayer.aplayer-withlrc .aplayer-lrc
     width: 200px
-    margin-left: 8px
     opacity: 1
 
 .aplayer-thumb
