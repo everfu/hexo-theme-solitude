@@ -1,4 +1,4 @@
-- const { appId, appKey, serverURLs } = theme.valine
+- const { appId, appKey, avatar, serverURLs } = theme.valine
 
 script(pjax).
     (async () => {
@@ -37,7 +37,7 @@ script(pjax).
                     title: title,
                     url: i.url,
                     nick: i.nick,
-                    avatar: '!{avatar}' + '/avatar/' + md5(i.mail.trim().toLowerCase()),
+                    avatar: '!{avatar}' + md5(i.mail.trim().toLowerCase()),
                     time: i.createdAt,
                     content: formatContent(i.comment)
                 })
