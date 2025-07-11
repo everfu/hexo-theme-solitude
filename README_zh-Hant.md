@@ -21,6 +21,12 @@
 ![jsdelivr](https://img.shields.io/jsdelivr/npm/hd/hexo-theme-solitude)
 ![npm publish](https://img.shields.io/github/actions/workflow/status/everfu/hexo-theme-solitude/npm-publish.yml)
 
+[本项目 CDN 加速及安全防护由 Tencent EdgeOne 赞助](https://edgeone.ai/zh?from=github)
+
+<a href="https://edgeone.ai/zh?from=github">
+   <img src="./.github/edgeone.avif" width="250">
+</a>
+
 </div>
 
 ## 特性
