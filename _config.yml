@@ -237,7 +237,7 @@ post:
     # Default image when no cover is set
     # 未设置封面时的默认图片
     cover:
-      # -  # 默认图片 / default cover
+      # - /img/default.avif # 默认图片 / default cover
     # Location
     # 位置
     locate: China

@@ -1,3 +1,8 @@
 div.needEndHide#nav-music
-  #nav-music-hoverTips(onclick='sco.musicToggle()')= __('music.hit')
+  #nav-music-hoverTips
+    i#music-prev.music-control-btn.fas.fa-backward-step(onclick='sco.musicSkipBack()')
+    i#music-pause.music-control-btn.fas.fa-pause(onclick='sco.musicToggle()')
+    i#music-play.music-control-btn.fas.fa-play(onclick='sco.musicToggle()')
+    i#music-next.music-control-btn.fas.fa-forward-step(onclick='sco.musicSkipForward()')
+
   meting-js(id=theme.capsule.id server=theme.capsule.server type=theme.capsule.type mutex="true" preload="none" theme="var(--efu-main)" data-lrctype="0" order="random" volume=theme.capsule.volume)
