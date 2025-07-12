@@ -103,10 +103,6 @@ hometop:
     url: https://solitude.js.org/
     img: /img/default.avif
     color: "none"
-
-# Article Top Banner
-# 文章推荐轮播图
-carousel: false
 # --------------------------- end ---------------------------
 
 # --------------------------- start ---------------------------
