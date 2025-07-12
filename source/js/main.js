@@ -213,7 +213,7 @@ const sco = {
     if (!this.isMusicBind) this.musicBind();
     
     const $music = document.querySelector("#nav-music");
-    const $meting = document.querySelector("meting-js");
+    const $meting = document.querySelector("#nav-music meting-js");
     const $console = document.getElementById("consoleMusic");
     
     this.musicPlaying = !this.musicPlaying;
