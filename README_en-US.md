@@ -1,4 +1,4 @@
-English 丨[简体中文](README.md)丨[繁体中文](README_zh-Hant.md)
+English 丨 [Español](README_es-ES.md) 丨 [简体中文](README.md)丨[繁体中文](README_zh-Hant.md)
 
 <div align="center">
 
