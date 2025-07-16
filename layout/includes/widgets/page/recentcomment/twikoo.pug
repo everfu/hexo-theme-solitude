@@ -1,4 +1,5 @@
 - const {envId} = theme.twikoo
+- const avatarUrl = theme.comment.avatar
 
 script(pjax).
     (async () => {
@@ -21,7 +22,7 @@ script(pjax).
             headers: {'Content-Type': 'application/json'}
         }).then(res => res.json()).then(async ({data}) => {
             for (const i of data) {
-                if (i.avatar === undefined) i.avatar = '!{avatar}/avatar/d615d5793929e8c7d70eab5f00f7f5f1?d=mp'
+                if (i.avatar === undefined) i.avatar = '!{avatarUrl}/avatar/d615d5793929e8c7d70eab5f00f7f5f1?d=mp'
                 let title = ''
                 if (i.url) {
                     await fetch(i.url).then(res => res.text()).then(html => {

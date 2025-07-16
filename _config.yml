@@ -5,7 +5,7 @@
 #
 # Guide: https://solitude.js.org
 # You can get more detailed help from the guide
-# 指南：https://solitude.js.org/zh
+# 指南：https://solitude.js.org/cn
 # 你可以从指南中获取更详细的帮助
 #
 # sponsor: https://ko-fi.com/everfu
@@ -38,17 +38,17 @@ nav:
   # 菜单
   menu:
     # 首页: / # name: link
-    # 文库: # name
-    #   全部文章: /archives/ || fas fa-folder-closed # item name: link || icon
-    #   全部分类: /categories/ || fas fa-clone
-    #   全部标签: /tags/ || fas fa-tags
+    # 文章: # name
+    #   归档: /archives/ || fas fa-folder-closed # item name: link || icon
+    #   分类: /categories/ || fas fa-clone
+    #   标签: /tags/ || fas fa-tags
     # 友链:
     #   朋友圈: /moments/ || fas fa-wifi
     #   友情链接: /links/ || fas fa-user-group
     #   宝藏博主: javascript:travelling() || fas fa-gift
-    # 关于:
-    #   我的装备: /equipment/ || fas fa-laptop
-    #   在线工具: /tlink/ || fas fa-toolbox
+    # 我的:
+    #   关于: /about/ || fas fa-user
+    #   装备: /kit/ || fas fa-laptop
     #   音乐馆: /music/ || fas fa-music
 
   # Right button
@@ -811,19 +811,19 @@ comment:
     enable: true
     storage: .5 # 缓存时间 1: 1天 / .5 : 半天 / Cache time 1: 1 day .5 : half a day
     limit: 5 # 评论数 / Number of comments
-# Twikoo: https://solitude.js.org/comment/twikoo
+# Twikoo: https://solitude.js.org/configuration/comment/twikoo
 twikoo: # https://twikoo.js.org/
   envId: # url: https://twikoo.sondy.top/
   region: # Environment locale, default is ap-shanghai, Tencent cloud environment fill ap-shanghai or ap-guangzhou; Vercel environment do not fill the.
   style: true # Use custom styles when turned on
   accessToken: # AccessToken
   option: # twikoo option
-# Waline: https://solitude.js.org/comment/waline
+# Waline: https://solitude.js.org/configuration/comment/waline
 waline: # https://waline.js.org/
   envId: # url: https://waline.wzsco.top
   pageview: false # Whether to enable page access statistics
   option: # waline configuration item
-# Valine: https://solitude.js.org/comment/valine
+# Valine: https://solitude.js.org/configuration/comment/valine
 valine:
   appId: # leancloud application app id
   appKey: # leancloud application app key
@@ -832,13 +832,12 @@ valine:
   visitor: false
   style: true # Use custom styles when turned on
   option: # options list
-# Artalk: https://solitude.js.org/comment/artalk
-# Artalk: https://solitude.js.org/zh/comment/artalk
+# Artalk: https://solitude.js.org/configuration/comment/artalk
 artalk:
   server: # server url
   site: # site name
   option: # options
-# Giscus: https://solitude.js.org/comment/giscus
+# Giscus: https://solitude.js.org/configuration/comment/giscus
 giscus:
   repo: # GitHub repository name
   repo_id: # GitHub repository ID
@@ -909,7 +908,7 @@ envelope:
 
 # --------------------------- start ---------------------------
 # Brevity Page
-# 即可短文
+# 即刻短文
 brevity:
   enable: false
   home_mini: false
