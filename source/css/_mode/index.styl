@@ -12,7 +12,6 @@
   --efu-yellow-op #ffc93e30
   --efu-orange #ff953e
   --efu-fontcolor #f7f7fa
-  --efu-background #18171d
   --efu-reverse #fff
   --efu-maskbg rgba(0, 0, 0, 0.6)
   --efu-maskbgdeep rgba(0, 0, 0, 0.85)
@@ -43,6 +42,11 @@
   --efu-hl-bg $hl_bg_dark
   --efu-hltools-bg $hltools_bg_dark
 
+  if hexo-config('background.enable')
+    --efu-background rgba(24, 23, 29, 0.3)
+  else
+    --efu-background #18171d
+
 [data-theme=light]
   --efu-theme $light_theme
   --efu-theme-op $light_theme_op
@@ -58,7 +62,6 @@
   --efu-orange #e38100
   --efu-purple #7a60d2
   --efu-fontcolor #363636
-  --efu-background #f7f9fe
   --efu-reverse #000
   --efu-maskbg rgba(255, 255, 255, 0.6)
   --efu-maskbgdeep rgba(255, 255, 255, 0.85)
@@ -89,6 +92,11 @@
   --efu-navbg var(--efu-theme-op)
   --efu-hl-bg $hl_bg_light
   --efu-hltools-bg $hltools_bg_light
+
+  if hexo-config('background.enable')
+    --efu-background #f7f9fe
+  else
+    --efu-background #f7f9fe
 
 :root
   +maxWidth768()
