@@ -21,12 +21,6 @@ Diseño del tema totalmente autorizado por [@Zhang Hong Heo](https://github.com/
 ![jsdelivr](https://img.shields.io/jsdelivr/npm/hd/hexo-theme-solitude)
 ![Publicación npm](https://img.shields.io/github/actions/workflow/status/everfu/hexo-theme-solitude/npm-publish.yml)
 
-[La aceleración CDN y la protección de seguridad de este proyecto son patrocinadas por Tencent EdgeOne](https://edgeone.ai/zh?from=github)
-
-<a href="https://edgeone.ai/zh?from=github">
-    <img src="./.github/edgeone.avif" width="250">
-</a>
-
 </div>
 
 ## Características
@@ -62,6 +56,22 @@ Visita la [Documentación](https://solitude.js.org/) para más información.
 [![Discord](https://img.shields.io/discord/1266610921942548553?logo=discord&label=discord&logoColor=white)](https://discord.gg/HZXAnK4Sut)
 [![Grupo QQ](https://img.shields.io/badge/QQ%20Group-948375336-FFD700?logo=Tencent-QQ&logoColor=white)](https://qm.qq.com/q/mxfomMvJPG)
 
+## Patrocinadores
+
+<a href="https://edgeone.ai/zh?from=github">
+    <img src="./.github/edgeone.avif" width="250">
+</a>
+
+[La aceleración CDN y la protección de seguridad de este proyecto son patrocinadas por Tencent EdgeOne](https://edgeone.ai/zh?from=github)
+
+---
+
+<a href="https://yxvm.com/">
+    <img src="./.github/support.avif" style="border-radius:8px" width="250">
+</a>
+
+[NodeSupport](https://github.com/NodeSeekDev/NodeSupport) ha patrocinado este proyecto
+
 ## Licencia
 
 > Por favor, mantén la información de copyright del tema
@@ -69,4 +79,3 @@ Visita la [Documentación](https://solitude.js.org/) para más información.
 [![Estado FOSSA](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fvalor-x%2Fhexo-theme-solitude.svg?type=small)](https://app.fossa.com/projects/git%2Bgithub.com%2Fvalor-x%2Fhexo-theme-solitude?ref=badge_large)
 
 Licencia [Apache-2.0](./LICENSE) &copy; 2025-presente [everfu](https://github.com/everfu)
-
