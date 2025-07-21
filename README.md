@@ -21,6 +21,8 @@
 ![jsdelivr](https://img.shields.io/jsdelivr/npm/hd/hexo-theme-solitude)
 ![npm publish](https://img.shields.io/github/actions/workflow/status/everfu/hexo-theme-solitude/npm-publish.yml)
 
+</div>
+
 ## 特性
 
 - 页面懒加载（Pjax）、图片懒加载（LazyLoad）、离线应用（PWA）
