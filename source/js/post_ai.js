@@ -1,18 +1,17 @@
 import { Solitude } from "./core/api.js";
 
 class AIPostRenderer {
-  static ANIMATION_DELAY_MS = 30;
   static AI_EXPLANATION_SELECTOR = ".ai-explanation";
   static AI_TAG_SELECTOR = ".ai-tag";
 
   constructor() {
-    this.startTextAnimation = this.startTextAnimation.bind(this);
+    this.initialize = this.initialize.bind(this);
     this.animationFrame = null;
   }
 
   init() {
     if (document.readyState === "loading") {
-      document.addEventListener("DOMContentLoaded", this.initialize.bind(this));
+      document.addEventListener("DOMContentLoaded", this.initialize, { once: true });
     } else {
       this.initialize();
     }
@@ -48,6 +47,7 @@ class AIPostRenderer {
 
   renderAIContent() {
     this.prepareAnimation();
+    this.charSequence = this.parseContent(this.aiContent);
     this.animationFrame = requestAnimationFrame(() =>
       this.startTextAnimation(0)
     );
@@ -57,41 +57,53 @@ class AIPostRenderer {
     this.isAnimating = true;
     this.tagElement.classList.add("loadingAI");
     this.explanationElement.textContent = "";
+    this.currentBoldElement = null;
+  }
+
+  parseContent(content) {
+    const sequence = [];
+    const segmenter = new Intl.Segmenter(undefined, { granularity: "grapheme" });
+    for (const [index, part] of content.split(/(\*\*[^*]+\*\*)/u).entries()) {
+      const bold = index % 2 === 1;
+      const text = bold ? part.slice(2, -2) : part;
+      for (const { segment: char } of segmenter.segment(text)) {
+        sequence.push({ char, bold });
+      }
+    }
+    return sequence;
   }
 
   startTextAnimation(index) {
-    if (index >= this.aiContent.length) {
+    if (index >= this.charSequence.length) {
       this.completeAnimation();
       return;
     }
 
-    this.appendCharacter(this.aiContent[index]);
+    this.appendCharacter(this.charSequence[index]);
     this.animationFrame = requestAnimationFrame(() =>
       this.startTextAnimation(index + 1)
     );
   }
 
-  appendCharacter(char) {
-    if (!this.fragment) this.fragment = document.createDocumentFragment();
-
+  appendCharacter({ char, bold }) {
     const charElement = document.createElement("span");
     charElement.className = "char";
     charElement.textContent = char;
-    this.fragment.appendChild(charElement);
-
-    if (this.fragment.childNodes.length % 1 === 0) {
-      this.explanationElement.appendChild(this.fragment);
-      this.fragment = null;
+    if (bold) {
+      if (!this.currentBoldElement) {
+        this.currentBoldElement = document.createElement("strong");
+        this.explanationElement.appendChild(this.currentBoldElement);
+      }
+      this.currentBoldElement.appendChild(charElement);
+    } else {
+      this.currentBoldElement = null;
+      this.explanationElement.appendChild(charElement);
     }
   }
 
   completeAnimation() {
-    if (this.fragment) {
-      this.explanationElement.appendChild(this.fragment);
-      this.fragment = null;
-    }
-
     cancelAnimationFrame(this.animationFrame);
+    this.animationFrame = null;
     this.isAnimating = false;
     this.tagElement.classList.remove("loadingAI");
 
@@ -104,26 +116,19 @@ class AIPostRenderer {
   cancel() {
     cancelAnimationFrame(this.animationFrame);
     this.animationFrame = null;
-    this.fragment = null;
+    this.charSequence = [];
+    this.currentBoldElement = null;
+    document.removeEventListener("DOMContentLoaded", this.initialize);
     this.isAnimating = false;
     this.tagElement?.classList.remove("loadingAI");
   }
 
   get aiContent() {
-    return Solitude.page?.ai_text || "";
+    const content = Solitude.page?.ai_text;
+    return typeof content === "string" ? content : "";
   }
 }
 
-const aiPostRenderer = (() => {
-  let instance;
-  return () => {
-    if (!instance) {
-      instance = new AIPostRenderer();
-      instance.init();
-    }
-    return instance;
-  };
-})();
-
-export const ai = aiPostRenderer();
+// The page refresh lifecycle owns initialization and cancellation.
+export const ai = new AIPostRenderer();
 export default ai;
