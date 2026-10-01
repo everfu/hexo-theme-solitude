@@ -228,6 +228,8 @@ post:
       licenurl: https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-hans
   # Article Local AI
   # 文章本地AI
+  # Summary uses ai_text first, then description; supports spaces and **bold**.
+  # 摘要优先使用 ai_text，为空时使用 description；支持空格和 **加粗**。
   ai:
     enable: false
     modelName: 小七 GPT

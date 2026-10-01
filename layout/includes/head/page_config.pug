@@ -16,7 +16,7 @@
             : (is_tag() ? 'tag' : (page.type || page.layout || 'page'))))),
     toc: showToc,
     comment: !!page.comment,
-    ai_text: is_post() && theme.post.ai.enable && page.ai_text ? page.ai_text : false,
+    ai_text: is_post() && theme.post.ai.enable ? page.ai_text || page.description || false : false,
     color: page.color || false
   }
 template#config-diff!= JSON.stringify(pageConfig).replace(/</g, '\\u003c')
