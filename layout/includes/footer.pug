@@ -53,7 +53,7 @@ mixin footerDeals()
           heotip=_p('nav.backtop')
           data-solitude-action="toTop"
         )
-          img(src=information.author, alt=_p('nav.backtop'))
+          img.nolazyload(src=url_for(information.author), alt=_p('nav.backtop'))
 
       //- 右侧链接
       each value, label in rightInfo
