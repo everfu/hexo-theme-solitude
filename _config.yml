@@ -68,34 +68,6 @@ nav:
 # 首页顶部
 hometop:
   enable: false
-  banner:
-    title: 分享技术<br >与科技生活 # 大字
-    desc:
-      一个热爱生活的人 # 小字
-      # - 我只是一个普通的程序员
-      # - 但我有一个不平凡的梦想
-      # - 我希望能够改变世界
-    icon:
-      # HTML: # name
-      #   img: https://i.postimg.cc/vBWVnY8q/html.png # url
-      #   color: "#e9572b" # color
-      # JS:
-      #   img: https://i.postimg.cc/3N10Ltv2/js.png
-      #   color: "#f7cb4f"
-      # Docker:
-      #   img: https://i.postimg.cc/8Pk6Fg24/docker.png
-      #   color: "#57b6e6"
-      # Flutter:
-      #   img: https://i.postimg.cc/hPC7T3gB/flutter.png
-      #   color: "#ffffff"
-      # WebPack:
-      #   img: https://i.postimg.cc/dVLZBmtT/webpack.png
-      #   color: "#2e3a41"
-      # Git:
-      #   img: https://i.postimg.cc/nhgjwjCS/git.png
-      #   color: "#df5b40"
-  group:
-    # 热门: /tags/Fire/ || fas fa-fire || linear-gradient(to right,#f65,#ffbf37)
   # Recommended items are sorted by order; items without order keep their declared order.
   # 推荐内容按 order 升序排列；未设置 order 时保持声明顺序。
   recommendList:
