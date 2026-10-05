@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29" shape-rendering="crispEdges">
+  <title>Demo reward QR code</title>
+  <rect width="29" height="29" fill="#fff"/>
+  <path fill="#111827" d="M2 2h7v7H2zm2 2v3h3V4zm16-2h7v7h-7zm2 2v3h3V4zM2 20h7v7H2zm2 2v3h3v-3zM11 2h2v2h-2zm4 0h3v2h-3zm-4 4h2v2h-2zm4-1h2v4h-2zm3 5h2v2h-2zm3 0h2v3h-2zm4 1h2v2h-2zM2 11h2v3H2zm3 0h4v2H5zm-3 5h3v2H2zm5-2h2v4H7zm4-4h3v2h-3zm1 3h2v3h-2zm3-2h2v2h-2zm0 4h4v2h-4zm-4 3h2v3h-2zm3 1h2v2h-2zm3-1h3v2h-3zm4-3h2v3h-2zm3 0h3v2h-3zm-4 4h2v2h-2zm3 2h4v2h-4zm-12 2h3v2h-3zm4-1h2v4h-2zm3 2h2v3h-2zm4 1h2v2h-2zm3-1h2v3h-2z"/>
+  <rect x="11" y="27" width="2" height="1" fill="#111827"/>
+  <rect x="15" y="27" width="3" height="1" fill="#111827"/>
+</svg>

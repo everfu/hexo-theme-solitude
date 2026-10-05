@@ -20,7 +20,7 @@
 site:
   name:
     class: text # text / i_class / img
-    custom: Solitude # Solitude / fas fa-ghost / /img/pwa/favicon.ico
+    custom: Solitude # Solitude / fas fa-ghost / /img/pwa/favicon.png
   icon: /img/logo.png # Site icon / 网站图标
 # --------------------------- end ---------------------------
 
@@ -32,7 +32,7 @@ nav:
   # 左侧盒子
   group:
   #  project: # name
-  #    Solitude: https://github.com/everfu/hexo-theme-solitude || /img/pwa/favicon.ico # name: url || icon
+  #    Solitude: https://github.com/everfu/hexo-theme-solitude || /img/pwa/favicon.png # name: url || icon
 
   # Menu
   # 菜单
@@ -228,7 +228,7 @@ page:
     # Default image when no cover is set
     # 未设置封面时的默认图片
     cover:
-      # - /img/default.png # 默认图片 / default cover
+      # - /img/default.avif # 默认图片 / default cover
 # --------------------------- end ---------------------------
 
 # --------------------------- start ---------------------------

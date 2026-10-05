@@ -1,0 +1,38 @@
+{
+  "tool": "built-in imagegen",
+  "style": "Existing Astro paper airplane and paper-cut cover references",
+  "references": [
+    "public/img/logo.png",
+    "public/img/demo/cover-getting-started-v2.webp"
+  ],
+  "images": [
+    {
+      "id": "solitude-banner",
+      "prompt": "Use case: stylized-concept. Asset type: shared Solitude blog theme illustration. Style: premium layered paper-cut sculpture with tactile matte paper grain, crisp folded edges, soft realistic depth shadows. Palette: deep midnight navy, cream white, restrained coral orange accents. Inspired by the provided cover's layered paper landscape and the provided logo's friendly cream paper airplane. No text, no letters, no numbers, no watermark, no framework logos. These are style references, not edit targets. Primary request: a wide landscape brand banner, 16:9 framing, a single cream folded paper airplane gliding over layered navy hills toward a warm cream sunrise; a few coral paper layers echo its trajectory. Calm, spacious, editorial composition, entire airplane visible, no cartoon face required. A universal emblem of writing and discovery.",
+      "transparent_background": false,
+      "original": "docs/brand/originals/solitude-banner.png",
+      "original_sha256": "81037b852708f3e692032033062434f72d49ea3ae73354902c262755e15838a5"
+    },
+    {
+      "id": "creative-space",
+      "prompt": "Use case: stylized-concept. Asset type: shared Solitude blog theme illustration. Style: premium layered paper-cut sculpture with tactile matte paper grain, crisp folded edges, soft realistic depth shadows. Palette: deep midnight navy, cream white, restrained coral orange accents. Inspired by the provided cover's layered paper landscape and the provided logo's friendly cream paper airplane. No text, no letters, no numbers, no watermark, no framework logos. These are style references, not edit targets. Primary request: a landscape about-page creative workspace illustration, 3:2 framing. A quiet paper-sculpture writing desk with a notebook, pencil, desk lamp and a cream folded paper airplane, against layered navy window scenery lit by a warm dawn. A coral notebook detail. Thoughtful cozy atmosphere. No people, no personal photographs, no readable writing or simulated text. Main desk arrangement centrally framed to remain recognizable when cropped to a square.",
+      "transparent_background": false,
+      "original": "docs/brand/originals/creative-space.png",
+      "original_sha256": "348877cd450a832c53617333a66b151ee05c0a1185134ec9eec6c4b6a826ad8e"
+    },
+    {
+      "id": "paper-plane-badge",
+      "prompt": "Use case: stylized-concept. Asset type: shared Solitude blog theme illustration. Style: premium layered paper-cut sculpture with tactile matte paper grain, crisp folded edges, soft realistic depth shadows. Palette: deep midnight navy, cream white, restrained coral orange accents. Inspired by the provided cover's layered paper landscape and the provided logo's friendly cream paper airplane. No text, no letters, no numbers, no watermark, no framework logos. These are style references, not edit targets. Primary request: a square transparent-background badge asset, a single friendly cream folded paper airplane, elegant thick dark navy edging and a small coral fold accent, facing diagonally upward to the right, centered with generous transparent margins. Tactile paper-cut craft, simple readable silhouette even at 48 pixels. Only the isolated airplane, genuine transparent alpha background, no circular backing, no cast shadow outside the object, no checkerboard baked into image.",
+      "transparent_background": true,
+      "original": "docs/brand/originals/paper-plane-badge.png",
+      "original_sha256": "ed3dbeb239e92aba274e3b82c0b93e4482007f9570d6f3a73ddad880eb5e337d"
+    },
+    {
+      "id": "reward-paper",
+      "prompt": "Use case: stylized-concept. Asset type: shared Solitude blog theme illustration. Style: premium layered paper-cut sculpture with tactile matte paper grain, crisp folded edges, soft realistic depth shadows. Palette: deep midnight navy, cream white, restrained coral orange accents. Inspired by the provided cover's layered paper landscape and the provided logo's friendly cream paper airplane. No text, no letters, no numbers, no watermark, no framework logos. These are style references, not edit targets. Primary request: a square background decoration for a donation button, abstract repeating-feeling layered paper folds with small cream paper airplanes at the outer corners, deep navy base and restrained coral ribbon-like paper layers. Keep center dark navy, low contrast and uncluttered for overlaid white button text; fine tactile matte paper texture. No text or symbols other than paper airplanes. Square framing.",
+      "transparent_background": false,
+      "original": "docs/brand/originals/reward-paper.png",
+      "original_sha256": "04fdd2091d062bbb92ec0312db5db7e158a52177306f51a21df24c53d2dc7b45"
+    }
+  ]
+}

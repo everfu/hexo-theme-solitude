@@ -15,7 +15,10 @@
     "README_en-US.md",
     "README_es-ES.md",
     "README_zh-Hant.md",
-    "LICENSE"
+    "LICENSE",
+    "docs/shared-assets.json",
+    "docs/shared-assets.md",
+    "docs/brand/generation-prompts.json"
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",

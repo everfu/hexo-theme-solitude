@@ -2,7 +2,9 @@ English 丨 [Español](README_es-ES.md) 丨 [简体中文](README.md)丨[繁体�
 
 <div align="center">
 
-<img width="50%" style="margin-bottom: 2vh" src=".github/logo.avif" />
+<img src="source/img/logo.png" width="120" height="120" alt="Solitude paper airplane logo" />
+
+# Hexo Solitude
 
 An elegant Hexo theme that supports lazy loading, PWA, Latex, and multiple comment systems.
 
@@ -22,6 +24,10 @@ Theme design fully authorized by [@Zhang Hong Heo](https://github.com/zhheo)
 ![npm publish](https://img.shields.io/github/actions/workflow/status/everfu/hexo-theme-solitude/npm-publish.yml)
 
 </div>
+
+<p align="center">
+  <img src="source/img/brand/solitude-banner.webp" width="960" height="540" alt="Solitude paper airplane over a layered paper landscape" />
+</p>
 
 ## Features
 
@@ -67,10 +73,6 @@ The browser runtime uses native ES modules and exposes one stable extension entr
 [![QQ Group](https://img.shields.io/badge/QQ%20Group-948375336-FFD700?logo=Tencent-QQ&logoColor=white)](https://qm.qq.com/q/mxfomMvJPG)
 
 ## Sponsors
-
-<a href="https://edgeone.ai/zh?from=github">
-   <img src="./.github/edgeone.avif" width="250">
-</a>
 
 [The CDN acceleration and security protection of this project are sponsored by Tencent EdgeOne](https://edgeone.ai/zh?from=github)
 

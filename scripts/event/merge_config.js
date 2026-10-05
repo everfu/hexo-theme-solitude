@@ -7,8 +7,8 @@ hexo.extend.filter.register(
           class: "text",
           custom: "Solitude",
         },
-        siteIcon: "/img/pwa/favicon.ico",
-        icon: "icon",
+        siteIcon: "/img/pwa/favicon.png",
+        icon: "/img/logo.png",
       },
       nav: {
         group: null,
@@ -44,7 +44,7 @@ hexo.extend.filter.register(
         card: {
           author: {
             img: "/img/logo.png",
-            sticker: "/img/happy-sticker.avif",
+            sticker: "/img/brand/paper-plane-badge.webp",
           },
           url: "/about/",
           content1: "Solitude",
@@ -216,7 +216,7 @@ hexo.extend.filter.register(
       lazyload: {
         enable: false,
         field: "site",
-        placeholder: "/img/loading.avif",
+        placeholder: "",
         errorimg: "/img/error_load.avif",
       },
       loading: {
@@ -339,11 +339,11 @@ hexo.extend.filter.register(
         enable: false,
         manifest: "/manifest.json",
         theme_color: "#006a73",
-        mask_icon: "/img/pwa/favicon.ico",
-        apple_touch_icon: "/img/pwa/favicon.ico",
-        bookmark_icon: "/img/pwa/favicon.ico",
-        favicon_32_32: "/img/pwa/favicon_32.ico",
-        favicon_16_16: "/img/pwa/favicon_16.ico",
+        mask_icon: "/img/pwa/favicon.png",
+        apple_touch_icon: "/img/pwa/favicon.png",
+        bookmark_icon: "/img/pwa/favicon.png",
+        favicon_32_32: "/img/pwa/favicon_32.png",
+        favicon_16_16: "/img/pwa/favicon_16.png",
       },
       google_adsense: {
         enable: false,

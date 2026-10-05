@@ -1,0 +1,537 @@
+{
+  "version": 1,
+  "source_project": "astro-solitude",
+  "style": "Existing Astro paper airplane, navy/cream/coral paper-cut illustrations",
+  "assets": [
+    {
+      "source": "public/img/404.avif",
+      "targets": {
+        "astro": "public/img/404.avif",
+        "hexo": "source/img/404.avif",
+        "hugo": "static/img/404.avif"
+      },
+      "sha256": "deacb03e6d9cf822e32431f2e2f10e50eec320aca3aeae0e6c44ee2a120681b5",
+      "provenance": {
+        "kind": "existing-theme-asset",
+        "source_project": "astro-solitude",
+        "attribution": "Solitude theme; retain original copyright and notices"
+      }
+    },
+    {
+      "source": "public/img/brand/creative-space.webp",
+      "targets": {
+        "astro": "public/img/brand/creative-space.webp",
+        "hexo": "source/img/brand/creative-space.webp",
+        "hugo": "static/img/brand/creative-space.webp"
+      },
+      "sha256": "3f5417246e3b60c7ea1d2bbe14b96bd5bdf3e884097f4b92c10488761f299b1c",
+      "provenance": {
+        "kind": "generated-artwork",
+        "id": "creative-space",
+        "prompt": "Use case: stylized-concept. Asset type: shared Solitude blog theme illustration. Style: premium layered paper-cut sculpture with tactile matte paper grain, crisp folded edges, soft realistic depth shadows. Palette: deep midnight navy, cream white, restrained coral orange accents. Inspired by the provided cover's layered paper landscape and the provided logo's friendly cream paper airplane. No text, no letters, no numbers, no watermark, no framework logos. These are style references, not edit targets. Primary request: a landscape about-page creative workspace illustration, 3:2 framing. A quiet paper-sculpture writing desk with a notebook, pencil, desk lamp and a cream folded paper airplane, against layered navy window scenery lit by a warm dawn. A coral notebook detail. Thoughtful cozy atmosphere. No people, no personal photographs, no readable writing or simulated text. Main desk arrangement centrally framed to remain recognizable when cropped to a square.",
+        "transparent_background": false,
+        "original": "docs/brand/originals/creative-space.png",
+        "original_sha256": "348877cd450a832c53617333a66b151ee05c0a1185134ec9eec6c4b6a826ad8e",
+        "tool": "built-in imagegen"
+      }
+    },
+    {
+      "source": "public/img/brand/paper-plane-badge.webp",
+      "targets": {
+        "astro": "public/img/brand/paper-plane-badge.webp",
+        "hexo": "source/img/brand/paper-plane-badge.webp",
+        "hugo": "static/img/brand/paper-plane-badge.webp"
+      },
+      "sha256": "6a8d620bb2d32c2b67486656f7c90bf4a929fe20936e562fd0933f70983c5fa5",
+      "provenance": {
+        "kind": "generated-artwork",
+        "id": "paper-plane-badge",
+        "prompt": "Use case: stylized-concept. Asset type: shared Solitude blog theme illustration. Style: premium layered paper-cut sculpture with tactile matte paper grain, crisp folded edges, soft realistic depth shadows. Palette: deep midnight navy, cream white, restrained coral orange accents. Inspired by the provided cover's layered paper landscape and the provided logo's friendly cream paper airplane. No text, no letters, no numbers, no watermark, no framework logos. These are style references, not edit targets. Primary request: a square transparent-background badge asset, a single friendly cream folded paper airplane, elegant thick dark navy edging and a small coral fold accent, facing diagonally upward to the right, centered with generous transparent margins. Tactile paper-cut craft, simple readable silhouette even at 48 pixels. Only the isolated airplane, genuine transparent alpha background, no circular backing, no cast shadow outside the object, no checkerboard baked into image.",
+        "transparent_background": true,
+        "original": "docs/brand/originals/paper-plane-badge.png",
+        "original_sha256": "ed3dbeb239e92aba274e3b82c0b93e4482007f9570d6f3a73ddad880eb5e337d",
+        "tool": "built-in imagegen"
+      }
+    },
+    {
+      "source": "public/img/brand/reward-paper.webp",
+      "targets": {
+        "astro": "public/img/brand/reward-paper.webp",
+        "hexo": "source/img/brand/reward-paper.webp",
+        "hugo": "static/img/brand/reward-paper.webp"
+      },
+      "sha256": "1921b90d7350b4cdf3883ca084215131c492f6e85a3cd5e8568899bb4c7d2056",
+      "provenance": {
+        "kind": "generated-artwork",
+        "id": "reward-paper",
+        "prompt": "Use case: stylized-concept. Asset type: shared Solitude blog theme illustration. Style: premium layered paper-cut sculpture with tactile matte paper grain, crisp folded edges, soft realistic depth shadows. Palette: deep midnight navy, cream white, restrained coral orange accents. Inspired by the provided cover's layered paper landscape and the provided logo's friendly cream paper airplane. No text, no letters, no numbers, no watermark, no framework logos. These are style references, not edit targets. Primary request: a square background decoration for a donation button, abstract repeating-feeling layered paper folds with small cream paper airplanes at the outer corners, deep navy base and restrained coral ribbon-like paper layers. Keep center dark navy, low contrast and uncluttered for overlaid white button text; fine tactile matte paper texture. No text or symbols other than paper airplanes. Square framing.",
+        "transparent_background": false,
+        "original": "docs/brand/originals/reward-paper.png",
+        "original_sha256": "04fdd2091d062bbb92ec0312db5db7e158a52177306f51a21df24c53d2dc7b45",
+        "tool": "built-in imagegen"
+      }
+    },
+    {
+      "source": "public/img/brand/solitude-banner.webp",
+      "targets": {
+        "astro": "public/img/brand/solitude-banner.webp",
+        "hexo": "source/img/brand/solitude-banner.webp",
+        "hugo": "static/img/brand/solitude-banner.webp"
+      },
+      "sha256": "fbae7335bf1b1c862f8d43667f3123d720a50818ed805c651f7a50908329bdfd",
+      "provenance": {
+        "kind": "generated-artwork",
+        "id": "solitude-banner",
+        "prompt": "Use case: stylized-concept. Asset type: shared Solitude blog theme illustration. Style: premium layered paper-cut sculpture with tactile matte paper grain, crisp folded edges, soft realistic depth shadows. Palette: deep midnight navy, cream white, restrained coral orange accents. Inspired by the provided cover's layered paper landscape and the provided logo's friendly cream paper airplane. No text, no letters, no numbers, no watermark, no framework logos. These are style references, not edit targets. Primary request: a wide landscape brand banner, 16:9 framing, a single cream folded paper airplane gliding over layered navy hills toward a warm cream sunrise; a few coral paper layers echo its trajectory. Calm, spacious, editorial composition, entire airplane visible, no cartoon face required. A universal emblem of writing and discovery.",
+        "transparent_background": false,
+        "original": "docs/brand/originals/solitude-banner.png",
+        "original_sha256": "81037b852708f3e692032033062434f72d49ea3ae73354902c262755e15838a5",
+        "tool": "built-in imagegen"
+      }
+    },
+    {
+      "source": "public/img/default.avif",
+      "targets": {
+        "astro": "public/img/default.avif",
+        "hexo": "source/img/default.avif",
+        "hugo": "static/img/default.avif"
+      },
+      "sha256": "8464763983be06c3f893de13416d69cc955baf006f7686e89c0fffcf4f4400ed",
+      "provenance": {
+        "kind": "existing-theme-asset",
+        "source_project": "astro-solitude",
+        "attribution": "Solitude theme; retain original copyright and notices"
+      }
+    },
+    {
+      "source": "public/img/default_avatar.avif",
+      "targets": {
+        "astro": "public/img/default_avatar.avif",
+        "hexo": "source/img/default_avatar.avif",
+        "hugo": "static/img/default_avatar.avif"
+      },
+      "sha256": "3210b0d20ffbf794eef35ccdafe635305a4df7148c6c58e58ac8c8b893a15469",
+      "provenance": {
+        "kind": "existing-theme-asset",
+        "source_project": "astro-solitude",
+        "attribution": "Solitude theme; retain original copyright and notices"
+      }
+    },
+    {
+      "source": "public/img/demo/about/game-apex-v1.webp",
+      "targets": {
+        "astro": "public/img/demo/about/game-apex-v1.webp",
+        "hexo": "source/img/demo/about/game-apex-v1.webp",
+        "hugo": "static/img/demo/about/game-apex-v1.webp"
+      },
+      "sha256": "00c4325f3b74faeee4a5683f61a06118c235374ef7a514ebc034d06147a37fdb",
+      "provenance": {
+        "kind": "existing-theme-asset",
+        "source_project": "astro-solitude",
+        "attribution": "Solitude theme; retain original copyright and notices"
+      }
+    },
+    {
+      "source": "public/img/demo/about/game-aram-v2.webp",
+      "targets": {
+        "astro": "public/img/demo/about/game-aram-v2.webp",
+        "hexo": "source/img/demo/about/game-aram-v2.webp",
+        "hugo": "static/img/demo/about/game-aram-v2.webp"
+      },
+      "sha256": "995a0a99c7c7f22d59a2d13f07a342310a69717536448912167e7c6beb8c9e4f",
+      "provenance": {
+        "kind": "existing-theme-asset",
+        "source_project": "astro-solitude",
+        "attribution": "Solitude theme; retain original copyright and notices"
+      }
+    },
+    {
+      "source": "public/img/demo/about/hero-aurelion-sol-v2.webp",
+      "targets": {
+        "astro": "public/img/demo/about/hero-aurelion-sol-v2.webp",
+        "hexo": "source/img/demo/about/hero-aurelion-sol-v2.webp",
+        "hugo": "static/img/demo/about/hero-aurelion-sol-v2.webp"
+      },
+      "sha256": "dbc31c8b0b6928bcc3028fe3cb23c696633e0ceae5cbc451a4fd196907c7603c",
+      "provenance": {
+        "kind": "existing-theme-asset",
+        "source_project": "astro-solitude",
+        "attribution": "Solitude theme; retain original copyright and notices"
+      }
+    },
+    {
+      "source": "public/img/demo/about/hero-hwei-v2.webp",
+      "targets": {
+        "astro": "public/img/demo/about/hero-hwei-v2.webp",
+        "hexo": "source/img/demo/about/hero-hwei-v2.webp",
+        "hugo": "static/img/demo/about/hero-hwei-v2.webp"
+      },
+      "sha256": "87e07893370c78e11aabe0a1c8ff74663d04b2e35ddee7c9c05a0e9501a0f241",
+      "provenance": {
+        "kind": "existing-theme-asset",
+        "source_project": "astro-solitude",
+        "attribution": "Solitude theme; retain original copyright and notices"
+      }
+    },
+    {
+      "source": "public/img/demo/about/hero-mel-v2.webp",
+      "targets": {
+        "astro": "public/img/demo/about/hero-mel-v2.webp",
+        "hexo": "source/img/demo/about/hero-mel-v2.webp",
+        "hugo": "static/img/demo/about/hero-mel-v2.webp"
+      },
+      "sha256": "25e8c83a6c0ae5abbca331db4d98f6cf6d43d064e093a86e203abb4951039719",
+      "provenance": {
+        "kind": "existing-theme-asset",
+        "source_project": "astro-solitude",
+        "attribution": "Solitude theme; retain original copyright and notices"
+      }
+    },
+    {
+      "source": "public/img/demo/about/hero-neeko-v2.webp",
+      "targets": {
+        "astro": "public/img/demo/about/hero-neeko-v2.webp",
+        "hexo": "source/img/demo/about/hero-neeko-v2.webp",
+        "hugo": "static/img/demo/about/hero-neeko-v2.webp"
+      },
+      "sha256": "21a95ce4beb0a9ea8ec0e86db77a1f7fad329c8db038056ccf7753210ba5f571",
+      "provenance": {
+        "kind": "existing-theme-asset",
+        "source_project": "astro-solitude",
+        "attribution": "Solitude theme; retain original copyright and notices"
+      }
+    },
+    {
+      "source": "public/img/demo/about/hero-smolder-v2.webp",
+      "targets": {
+        "astro": "public/img/demo/about/hero-smolder-v2.webp",
+        "hexo": "source/img/demo/about/hero-smolder-v2.webp",
+        "hugo": "static/img/demo/about/hero-smolder-v2.webp"
+      },
+      "sha256": "fc909616b07175da3bad6146d4a859943ea72814738fff3b154cebf07662eb1b",
+      "provenance": {
+        "kind": "existing-theme-asset",
+        "source_project": "astro-solitude",
+        "attribution": "Solitude theme; retain original copyright and notices"
+      }
+    },
+    {
+      "source": "public/img/demo/about/hero-twitch-v2.webp",
+      "targets": {
+        "astro": "public/img/demo/about/hero-twitch-v2.webp",
+        "hexo": "source/img/demo/about/hero-twitch-v2.webp",
+        "hugo": "static/img/demo/about/hero-twitch-v2.webp"
+      },
+      "sha256": "e9802191ea335c925c7abb3883ce94642befe7d7f961b1063b82b9593cf31072",
+      "provenance": {
+        "kind": "existing-theme-asset",
+        "source_project": "astro-solitude",
+        "attribution": "Solitude theme; retain original copyright and notices"
+      }
+    },
+    {
+      "source": "public/img/demo/about/mode-aram-v2.webp",
+      "targets": {
+        "astro": "public/img/demo/about/mode-aram-v2.webp",
+        "hexo": "source/img/demo/about/mode-aram-v2.webp",
+        "hugo": "static/img/demo/about/mode-aram-v2.webp"
+      },
+      "sha256": "9a9d1c871d918644234087851f63b2f6fb2a3d78823fecfc693af7530e6cf486",
+      "provenance": {
+        "kind": "existing-theme-asset",
+        "source_project": "astro-solitude",
+        "attribution": "Solitude theme; retain original copyright and notices"
+      }
+    },
+    {
+      "source": "public/img/demo/about/music-listening-v2.webp",
+      "targets": {
+        "astro": "public/img/demo/about/music-listening-v2.webp",
+        "hexo": "source/img/demo/about/music-listening-v2.webp",
+        "hugo": "static/img/demo/about/music-listening-v2.webp"
+      },
+      "sha256": "1ebbffb5a84ee16b81565e80ce2f9c631bd1fa496515553ca29f17d62efa5a58",
+      "provenance": {
+        "kind": "existing-theme-asset",
+        "source_project": "astro-solitude",
+        "attribution": "Solitude theme; retain original copyright and notices"
+      }
+    },
+    {
+      "source": "public/img/demo/about/personality-enfj-v2.png",
+      "targets": {
+        "astro": "public/img/demo/about/personality-enfj-v2.png",
+        "hexo": "source/img/demo/about/personality-enfj-v2.png",
+        "hugo": "static/img/demo/about/personality-enfj-v2.png"
+      },
+      "sha256": "f6fdd42fd9a1c52e87e4b334f2a2dfdec96592c792e80b15d45289f9b29883e4",
+      "provenance": {
+        "kind": "existing-theme-asset",
+        "source_project": "astro-solitude",
+        "attribution": "Solitude theme; retain original copyright and notices"
+      }
+    },
+    {
+      "source": "public/img/demo/cover-getting-started-v2.webp",
+      "targets": {
+        "astro": "public/img/demo/cover-getting-started-v2.webp",
+        "hexo": "source/img/demo/cover-getting-started-v2.webp",
+        "hugo": "static/img/demo/cover-getting-started-v2.webp"
+      },
+      "sha256": "2f1455be042de5802c6beeadca2ec8f9a13e12ddace3848c1a7325daf2871e3d",
+      "provenance": {
+        "kind": "existing-theme-asset",
+        "source_project": "astro-solitude",
+        "attribution": "Solitude theme; retain original copyright and notices"
+      }
+    },
+    {
+      "source": "public/img/demo/cover-legacy-url-v2.webp",
+      "targets": {
+        "astro": "public/img/demo/cover-legacy-url-v2.webp",
+        "hexo": "source/img/demo/cover-legacy-url-v2.webp",
+        "hugo": "static/img/demo/cover-legacy-url-v2.webp"
+      },
+      "sha256": "de54781ecff371ca4e9e2bc8ec178492d12458065a277fb3668fbe8b30fa1843",
+      "provenance": {
+        "kind": "existing-theme-asset",
+        "source_project": "astro-solitude",
+        "attribution": "Solitude theme; retain original copyright and notices"
+      }
+    },
+    {
+      "source": "public/img/demo/cover-pagination-page-two-v2.webp",
+      "targets": {
+        "astro": "public/img/demo/cover-pagination-page-two-v2.webp",
+        "hexo": "source/img/demo/cover-pagination-page-two-v2.webp",
+        "hugo": "static/img/demo/cover-pagination-page-two-v2.webp"
+      },
+      "sha256": "a7ff45a25f055ca0bab3f9087e73fbf468467ef1dfd798b162e1b6f76749185a",
+      "provenance": {
+        "kind": "existing-theme-asset",
+        "source_project": "astro-solitude",
+        "attribution": "Solitude theme; retain original copyright and notices"
+      }
+    },
+    {
+      "source": "public/img/demo/cover-pagination-v2.webp",
+      "targets": {
+        "astro": "public/img/demo/cover-pagination-v2.webp",
+        "hexo": "source/img/demo/cover-pagination-v2.webp",
+        "hugo": "static/img/demo/cover-pagination-v2.webp"
+      },
+      "sha256": "8ac476cf23d19725f0a8e5517f3744f9f770d2c950840a1a88a8d3704b27a8b7",
+      "provenance": {
+        "kind": "existing-theme-asset",
+        "source_project": "astro-solitude",
+        "attribution": "Solitude theme; retain original copyright and notices"
+      }
+    },
+    {
+      "source": "public/img/demo/cover-shortcodes-v2.webp",
+      "targets": {
+        "astro": "public/img/demo/cover-shortcodes-v2.webp",
+        "hexo": "source/img/demo/cover-shortcodes-v2.webp",
+        "hugo": "static/img/demo/cover-shortcodes-v2.webp"
+      },
+      "sha256": "8762a5130afbe911f88007de01ae7d8f8510e69f7cab4bf1a66a6c2c3e940718",
+      "provenance": {
+        "kind": "existing-theme-asset",
+        "source_project": "astro-solitude",
+        "attribution": "Solitude theme; retain original copyright and notices"
+      }
+    },
+    {
+      "source": "public/img/demo/generated/solitude-crystal-orbit.png",
+      "targets": {
+        "astro": "public/img/demo/generated/solitude-crystal-orbit.png",
+        "hexo": "source/img/demo/generated/solitude-crystal-orbit.png",
+        "hugo": "static/img/demo/generated/solitude-crystal-orbit.png"
+      },
+      "sha256": "e5f0fffd903911f5cc847c8748dece2730e646dcbdffc1f138fb4bd99d11a5fd",
+      "provenance": {
+        "kind": "existing-theme-asset",
+        "source_project": "astro-solitude",
+        "attribution": "Solitude theme; retain original copyright and notices"
+      }
+    },
+    {
+      "source": "public/img/demo/reward-qr.svg",
+      "targets": {
+        "astro": "public/img/demo/reward-qr.svg",
+        "hexo": "source/img/demo/reward-qr.svg",
+        "hugo": "static/img/demo/reward-qr.svg"
+      },
+      "sha256": "4209b5f9482ad627ba242ab28eff679ba985a1e8aedf5d33d8c54b53157fa30c",
+      "provenance": {
+        "kind": "existing-theme-asset",
+        "source_project": "astro-solitude",
+        "attribution": "Solitude theme; retain original copyright and notices"
+      }
+    },
+    {
+      "source": "public/img/error_load.avif",
+      "targets": {
+        "astro": "public/img/error_load.avif",
+        "hexo": "source/img/error_load.avif",
+        "hugo": "static/img/error_load.avif"
+      },
+      "sha256": "8524ad9ed4ac4f5bc06edc0ac1515cce9fc475f88b361a978b370117d4413d04",
+      "provenance": {
+        "kind": "existing-theme-asset",
+        "source_project": "astro-solitude",
+        "attribution": "Solitude theme; retain original copyright and notices"
+      }
+    },
+    {
+      "source": "public/img/logo.png",
+      "targets": {
+        "astro": "public/img/logo.png",
+        "hexo": "source/img/logo.png",
+        "hugo": "static/img/logo.png"
+      },
+      "sha256": "5ccb95c886c092bce7849dd30d4d4c5fd0b218e52257fea382cc6e1c5e97a277",
+      "provenance": {
+        "kind": "existing-theme-asset",
+        "source_project": "astro-solitude",
+        "attribution": "Solitude theme; retain original copyright and notices"
+      }
+    },
+    {
+      "source": "public/img/pwa/favicon.png",
+      "targets": {
+        "astro": "public/img/pwa/favicon.png",
+        "hexo": "source/img/pwa/favicon.png",
+        "hugo": "static/img/pwa/favicon.png"
+      },
+      "sha256": "2561c52acbbf19d569bd63a9c836b443b9c907f0ee89ea4d4ba58e9cb353997f",
+      "provenance": {
+        "kind": "existing-theme-asset",
+        "source_project": "astro-solitude",
+        "attribution": "Solitude theme; retain original copyright and notices"
+      }
+    },
+    {
+      "source": "public/img/pwa/favicon_16.png",
+      "targets": {
+        "astro": "public/img/pwa/favicon_16.png",
+        "hexo": "source/img/pwa/favicon_16.png",
+        "hugo": "static/img/pwa/favicon_16.png"
+      },
+      "sha256": "1f5f389294359be997b75dde8143394a2ad9382cf9f3fd98a23e62cff886d609",
+      "provenance": {
+        "kind": "existing-theme-asset",
+        "source_project": "astro-solitude",
+        "attribution": "Solitude theme; retain original copyright and notices"
+      }
+    },
+    {
+      "source": "public/img/pwa/favicon_32.png",
+      "targets": {
+        "astro": "public/img/pwa/favicon_32.png",
+        "hexo": "source/img/pwa/favicon_32.png",
+        "hugo": "static/img/pwa/favicon_32.png"
+      },
+      "sha256": "88fa321ec71eb50ada03bf458ce820a53a0d57db19bd56f05d2e7094cb327493",
+      "provenance": {
+        "kind": "existing-theme-asset",
+        "source_project": "astro-solitude",
+        "attribution": "Solitude theme; retain original copyright and notices"
+      }
+    },
+    {
+      "source": "public/media/shortcodes/README.md",
+      "targets": {
+        "astro": "public/media/shortcodes/README.md",
+        "hexo": "source/media/shortcodes/README.md",
+        "hugo": "exampleSite/static/media/shortcodes/README.md"
+      },
+      "sha256": "ced1ea3611500de2feb357255de9bd9cc707493a3aa3fb15c5455b8ba3550279",
+      "provenance": {
+        "kind": "sample-media",
+        "upstream": "https://github.com/mdn/shared-assets",
+        "attribution_file": "media/shortcodes/README.md"
+      }
+    },
+    {
+      "source": "public/media/shortcodes/flower.mp4",
+      "targets": {
+        "astro": "public/media/shortcodes/flower.mp4",
+        "hexo": "source/media/shortcodes/flower.mp4",
+        "hugo": "exampleSite/static/media/shortcodes/flower.mp4"
+      },
+      "sha256": "0cd83d944a6ca7822b4a8306cecc60a36e859b041f6702c6a1ad9ead78924451",
+      "provenance": {
+        "kind": "sample-media",
+        "upstream": "https://github.com/mdn/shared-assets",
+        "attribution_file": "media/shortcodes/README.md"
+      }
+    },
+    {
+      "source": "public/media/shortcodes/friday.mp4",
+      "targets": {
+        "astro": "public/media/shortcodes/friday.mp4",
+        "hexo": "source/media/shortcodes/friday.mp4",
+        "hugo": "exampleSite/static/media/shortcodes/friday.mp4"
+      },
+      "sha256": "339504acdef44f4e50c760e657cf76a8df60f25c91a239682abda56ac1886e90",
+      "provenance": {
+        "kind": "sample-media",
+        "upstream": "https://github.com/mdn/shared-assets",
+        "attribution_file": "media/shortcodes/README.md"
+      }
+    },
+    {
+      "source": "public/media/shortcodes/t-rex-roar.mp3",
+      "targets": {
+        "astro": "public/media/shortcodes/t-rex-roar.mp3",
+        "hexo": "source/media/shortcodes/t-rex-roar.mp3",
+        "hugo": "exampleSite/static/media/shortcodes/t-rex-roar.mp3"
+      },
+      "sha256": "41191d0727073bf848bcc8f0bd851d71a0b0058e901abb1c1b236ad327bda52e",
+      "provenance": {
+        "kind": "sample-media",
+        "upstream": "https://github.com/mdn/shared-assets",
+        "attribution_file": "media/shortcodes/README.md"
+      }
+    },
+    {
+      "source": "docs/shared-assets.md",
+      "targets": {
+        "astro": "docs/shared-assets.md",
+        "hexo": "docs/shared-assets.md",
+        "hugo": "docs/shared-assets.md"
+      },
+      "sha256": "b057c2f3808ee247573d05e36614cd18b7fc64502b1569b04243e4b8d246ea64",
+      "provenance": {
+        "kind": "asset-documentation"
+      }
+    },
+    {
+      "source": "docs/brand/generation-prompts.json",
+      "targets": {
+        "astro": "docs/brand/generation-prompts.json",
+        "hexo": "docs/brand/generation-prompts.json",
+        "hugo": "docs/brand/generation-prompts.json"
+      },
+      "sha256": "3097f7db37102b3950c84599c4e9158c576f72c2d8f653794b872b0913724dec",
+      "provenance": {
+        "kind": "asset-documentation"
+      }
+    }
+  ],
+  "removals": {
+    "astro": [],
+    "hexo": [
+      "source/img/flower.gif",
+      "source/img/icons/apps.svg",
+      ".github/logo.avif",
+      ".github/edgeone.avif"
+    ],
+    "hugo": [
+      "static/img/demo/about/personal-photo-selfie-wide.png",
+      "static/img/demo/about/personal-photo-badge-self.png",
+      ".github/logo.avif"
+    ]
+  }
+}

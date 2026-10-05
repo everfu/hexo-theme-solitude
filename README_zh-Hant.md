@@ -2,7 +2,9 @@
 
 <div align="center">
 
-<img width="50%" style="margin-bottom: 2vh" src=".github/logo.avif" />
+<img src="source/img/logo.png" width="120" height="120" alt="Solitude paper airplane logo" />
+
+# Hexo Solitude
 
 一款優雅的 Hexo 主題，支持懶加載、PWA、Latex 以及多種評論系統。
 
@@ -22,6 +24,10 @@
 ![npm publish](https://img.shields.io/github/actions/workflow/status/everfu/hexo-theme-solitude/npm-publish.yml)
 
 </div>
+
+<p align="center">
+  <img src="source/img/brand/solitude-banner.webp" width="960" height="540" alt="Solitude paper airplane over a layered paper landscape" />
+</p>
 
 ## 特性
 
@@ -57,10 +63,6 @@
 [![QQ 群](https://img.shields.io/badge/QQ%20群-948375336-FFD700?logo=Tencent-QQ&logoColor=white)](https://qm.qq.com/q/mxfomMvJPG)
 
 ## 贊助商
-
-<a href="https://edgeone.ai/zh?from=github">
-   <img src="./.github/edgeone.avif" width="250">
-</a>
 
 [本项目 CDN 加速及安全防护由 Tencent EdgeOne 赞助](https://edgeone.ai/zh?from=github)
 
