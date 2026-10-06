@@ -1,4 +1,5 @@
-#twikoo
+#twikoo,
+.twikoo
   .tk-submit
     margin-top 0
 
@@ -83,10 +84,12 @@
 
 #page
   .tk-meta-input
-    .el-input
+    .el-input,
+    .tk-input:not(.tk-textarea)
       box-shadow var(--efu-shadow-border)
 
-.el-loading-mask
+.twikoo .el-loading-mask,
+.twikoo .tk-loading
   background-color none !important
 
 .tk-tag
@@ -123,7 +126,8 @@
   display none
 
 .tk-comments
-  .el-button--primary
+  .el-button--primary,
+  .tk-button--primary
     border-color var(--efu-fontcolor) !important
     color var(--efu-card-bg) !important
     border-radius 12px !important
@@ -137,9 +141,13 @@
     height 34px
 
   .el-button--primary.is-disabled,
+  .tk-button--primary.is-disabled,
   .el-button--primary.is-disabled:active,
+  .tk-button--primary.is-disabled:active,
   .el-button--primary.is-disabled:focus,
-  .el-button--primary.is-disabled:hover
+  .tk-button--primary.is-disabled:focus,
+  .el-button--primary.is-disabled:hover,
+  .tk-button--primary.is-disabled:hover
     opacity .2
 
 .tk-row-actions-start
@@ -149,7 +157,8 @@
 
 @media screen and (max-width: 768px)
   .tk-submit
-    .el-button--primary
+    .el-button--primary,
+    .tk-button--primary
       width 5rem
       height 122px
       top -132px
@@ -257,7 +266,11 @@
     left .5rem
 
 .tk-icon
-  position absolute
+  position static
+
+.twikoo .tk-submit-action-icon svg
+  width 1em
+  height 1em
 
 .tk-comments-no
   display none !important
@@ -304,16 +317,20 @@
   margin-top 0 !important
 
 .tk-meta-input
-  .el-input
-    .el-input-group__prepend
+  .el-input,
+  .tk-input:not(.tk-textarea)
+    .el-input-group__prepend,
+    .tk-input-group__prepend
       box-shadow none
       border-radius 12px 0 0 12px
       user-select none
 
 @media screen and (max-width: 768px)
   .tk-meta-input
-    .el-input
-      .el-input-group__prepend
+    .el-input,
+    .tk-input:not(.tk-textarea)
+      .el-input-group__prepend,
+      .tk-input-group__prepend
         padding 0 .3rem !important
 
   .tk-meta-input
@@ -323,11 +340,12 @@
     position inherit !important
 
   .tk-meta-input
-    .el-input
+    .el-input,
+    .tk-input:not(.tk-textarea)
       margin-left 0 !important
       width 100% !important
 
-  .tk-icon
+  .tk-icon.__comments
     position absolute
     right 0
 
@@ -336,25 +354,35 @@ img.tk-avatar-img
   border-radius 32px
   border var(--style-border-always)
 
-.el-input--small
-  .el-input__inner
+.twikoo .el-input--small,
+.twikoo .tk-input--small:not(.tk-textarea)
+  .el-input__inner,
+  input.tk-input__inner
     padding 8px
 
-  .el-input__inner, .el-textarea__inner
+  .el-input__inner,
+  input.tk-input__inner,
+  .el-textarea__inner,
+  .tk-textarea__inner
     border-radius 12px
 
-.el-input.el-input--small.el-input-group.el-input-group--prepend
+.twikoo .el-input.el-input--small.el-input-group.el-input-group--prepend,
+.twikoo .tk-input.tk-input--small.tk-input--group
   border-radius 12px
   background var(--efu-secondbg)
   border var(--style-border-always)
 
-.el-input-group__append, .el-input-group__prepend
+.twikoo .el-input-group__append,
+.twikoo .tk-input-group__append,
+.twikoo .el-input-group__prepend,
+.twikoo .tk-input-group__prepend
   background-color var(--efu-card-bg)
   color var(--efu-fontcolor) !important
   border 0 !important
   font-weight 700
 
-.el-input__inner
+.twikoo .el-input__inner,
+.twikoo input.tk-input__inner
   background-color var(--efu-secondbg) !important
   border 0 !important
   color var(--efu-fontcolor) !important
@@ -363,14 +391,17 @@ img.tk-avatar-img
   line-height 32px
   border-radius 12px
 
-.page
-  .el-input__inner
+.page .twikoo
+  .el-input__inner,
+  input.tk-input__inner
     background var(--efu-card-bg) !important
 
-.el-input__inner:focus
+.twikoo .el-input__inner:focus,
+.twikoo input.tk-input__inner:focus
   border none
 
-.el-textarea__inner
+.twikoo .el-textarea__inner,
+.twikoo .tk-textarea__inner
   background-color var(--efu-secondbg)
   color var(--efu-fontcolor) !important
   border-radius 12px !important
@@ -380,32 +411,38 @@ img.tk-avatar-img
   box-shadow none !important
 
 @media screen and (max-width: 768px)
-  .el-textarea__inner
+  .twikoo .el-textarea__inner,
+  .twikoo .tk-textarea__inner
     background var(--efu-card-bg) !important
 
 #page
-  .el-textarea__inner
+  .twikoo .el-textarea__inner,
+  .twikoo .tk-textarea__inner
     background var(--efu-card-bg) !important
     box-shadow var(--efu-shadow-border)
 
-.el-textarea__inner:focus
+.twikoo .el-textarea__inner:focus,
+.twikoo .tk-textarea__inner:focus
   border var(--style-border-hover-always) !important
   box-shadow var(--efu-shadow-main)
 
-.el-button
+.twikoo .el-button,
+.twikoo .tk-button
   background-color var(--efu-fontcolor) !important
   border 0 solid var(--efu-main) !important
   color var(--efu-background) !important
   border-radius 8px !important
 
-.el-button:hover
+.twikoo .el-button:hover,
+.twikoo .tk-button:hover
   background var(--efu-black) !important
   color var(--efu-white) !important
 
-.el-button.tk-preview
+.twikoo .el-button.tk-preview,
+.twikoo .tk-button.tk-preview
   display none !important
 
-button.el-button.tk-cancel.el-button--default.el-button--small
+button.tk-cancel
   background var(--efu-secondbg) !important
   border-radius 8px !important
   color var(--efu-fontcolor) !important

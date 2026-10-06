@@ -8,7 +8,10 @@ if hexo-config('brevity.home_mini')
     border var(--style-border)
     transition .3s
     height 50px
-    width 100%
+    width calc(100% - 60px)
+    max-width 1340px
+    margin-left auto
+    margin-right auto
     justify-content space-between
     user-select none
     align-items center
@@ -25,13 +28,15 @@ if hexo-config('brevity.home_mini')
         box-shadow var(--efu-shadow-main)
 
     +maxWidth768()
-      margin 0
+      width calc(100% - 32px)
+      margin 0 auto
       background var(--efu-background)
       border none
       padding 0 .2rem
 
   i.bber-logo,
   i.bber-gotobb
+    flex-shrink 0
     transition .3s
     cursor pointer
 
@@ -362,6 +367,8 @@ if hexo-config('brevity.enable')
         margin-left .5rem
 
   #bbtalk
+    flex 1
+    min-width 0
     overflow hidden
     width 100%
     text-overflow ellipsis

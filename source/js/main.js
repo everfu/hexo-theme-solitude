@@ -861,7 +861,7 @@ const actions = {
   initbbtalk() {
     const bberTalkElement = document.querySelector("#bber-talk");
     if (bberTalkElement) {
-      new Swiper(".swiper-container", {
+      const swiper = new Swiper("#bbtalk", {
         direction: "vertical",
         loop: true,
         autoplay: {
@@ -869,6 +869,7 @@ const actions = {
           pauseOnMouseEnter: true,
         },
       });
+      lifecycle.add(() => swiper.destroy());
     }
   },
   addPhotoFigcaption() {
@@ -1112,20 +1113,7 @@ const actions = {
     };
     Solitude.addEventListenerPjax(switchBtn, "click", handleSwitchBtn);
   },
-  homeTypeit() {
-    if (typeof home_subtitle === "undefined") return;
-    const ty = new TypeIt(".banners-title-small", {
-      speed: 200,
-      waitUntilVisible: true,
-      loop: true,
-      lifeLike: true,
-    });
-    home_subtitle.forEach((item) => {
-      ty.type(item).pause(500).delete(item);
-    });
-    ty.go();
-    lifecycle.add(() => ty.destroy?.());
-  },
+
 };
 
 Object.assign(Solitude, actions);
@@ -1536,7 +1524,7 @@ Solitude.refresh = async () => {
   if (is_home) {
     showTodayCard();
     initHomeCenter();
-    Solitude.homeTypeit();
+    Solitude.initbbtalk();
   }
   typeof updatePostsBasedOnComments === "function" &&
     updatePostsBasedOnComments();

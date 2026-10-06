@@ -45,3 +45,7 @@
       display none
       opacity 0
       transform translateY(-10px)
+
+// Keep the tag plugin fold icon centered in its open state.
+.article-container details.solitude-tag.tag-fold[open] .tag-fold-summary .tag-fold-icon::after
+  transform translate(-50%, -50%) rotate(180deg)

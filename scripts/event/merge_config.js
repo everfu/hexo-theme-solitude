@@ -20,12 +20,6 @@ hexo.extend.filter.register(
       },
       hometop: {
         enable: false,
-        banner: {
-          title: "Solitude",
-          url: "A simple theme for Hexo",
-          icon: null,
-        },
-        group: null,
         recommendList: [
           {
             order: 1,
